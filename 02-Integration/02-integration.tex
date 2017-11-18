@@ -1,0 +1,355 @@
+\documentclass[12pt,compress,aspectratio=169]{beamer}
+
+\mode<presentation>
+{
+  \usetheme{Singapore}
+  \setbeamersize{text margin left=.5cm,text margin right=.5cm}
+%  \setbeamertemplate{navigation symbols}{} % suppress nav bar
+%  \setbeamercovered{transparent}
+}
+\usefonttheme{professionalfonts}
+\usepackage{amsmath}
+\usepackage{siunitx}
+%\usepackage{graphicx}
+%\usepackage{tikz}
+\usepackage{mathpazo}
+\usepackage[scaled]{helvet}
+%\usepackage{xcolor,colortbl}
+%\usepackage{hyperref}
+
+\sisetup{number-math-rm=\mathnormal}
+
+\title{2.\ Calculus in Physics--Integration}
+\subtitle{AP Physics}
+\author[TML]{Dr.\ Timothy Leung}
+\institute{Olympiads School}
+\date{Fall 2017}
+
+\newcommand{\pic}[2]{\includegraphics[width=#1\textwidth]{#2}}
+\newcommand{\mb}[1]{\ensuremath\mathbf{#1}}
+
+\begin{document}
+
+\begin{frame}
+  \frametitle{Files for You to Download}
+  \begin{itemize}
+  \item\texttt{00-outline.pdf}--The course outline
+  \item\texttt{01-Calculus-print.pdf}--The slides that I used last week
+  \item\texttt{01-integration.pdf}--The slides that I am using right now
+  \item\texttt{01-Homework.pdf}--Last/this week's homework assignment
+  \end{itemize}
+  Please download/print the PDF file for the class slides before each class.
+\end{frame}
+
+\section{Differentiation}
+
+\begin{frame}
+  \frametitle{On Differential Calculus}
+  \framesubtitle{A quick review}
+  \begin{itemize}
+  \item Finding out how quickly a physical quantity is changing (``rate of
+    change'' of that quantity)
+  \item Math: slopes of functions
+  \item Terminology:
+    \begin{itemize}
+    \item A \textbf{\emph{derivative}}: The slope of a function (noun)
+    \item To \textbf{\emph{differentiate}}: Finding the derivative with respect
+      to a variable (verb)
+    \end{itemize}
+  \item Last class: went through the rules and some examples of derivatives
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Examples of Derivatives in Physics}
+  \begin{itemize}
+  \item Instantaneous velocity $\mb{v}(t)$ is the derivative of position
+    $\mb{s}(t)$
+    {\Large
+      \begin{displaymath}
+        \mb{v}(t)=\frac{d\mb{s}}{dt}
+      \end{displaymath}
+    }
+  \item Instantaneous acceleration $\mb{a}(t)$ is the derivative of velocity
+    $\mb{v}(t)$. It's also the ``second derivative'' (derivative of a
+    derivative) of position $\mb{s}$ with respect to time
+    
+    \vspace{-.2in}{\Large
+      \begin{displaymath}
+        \mb{a}(t)=\frac{d\mb{v}}{dt}=\frac{d^2\mb{s}}{dt^2}
+      \end{displaymath}
+    }
+  \item Instantaneous force $\mb{F}(t)$ is the derivative of momentum
+    $\mb{p}$ (Newton's second law of motion)
+
+    \vspace{-.3in}{\Large
+      \begin{displaymath}
+        \mb{F}(t)=\frac{d\mb{p}}{dt}
+      \end{displaymath}
+    }
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{They're All Vectors}
+  \framesubtitle{Resolve them into components}
+  \begin{itemize}
+  \item Notice that position $\mb{s}$, velocity $\mb{v}$, acceleration $\mb{a}$,
+    momentum $\mb{p}$, force $\mb{F}$ are all vector quantities with $x$, $y$
+    and $z$ components
+  \item In this case, we take the derivative separately in each direction.
+
+    \vspace{-.2in}{\Large
+      \begin{displaymath}
+        \mb{v}(t)=\frac{d\mb{s}}{dt}
+        =\frac{d}{dt}\left(s_x(t)\mb{i}+s_y(t)\mb{j}+s_z(t)\mb{k} \right)
+      \end{displaymath}
+    }
+    where $s_x$, $s_y$ and $s_z$ are the $x$-, $y$- and $z$-components of
+    $\mb{s}$
+  \item In AP or 1st-year physics, $s_x$, $s_y$ and $s_z$ are functions of time
+    only, but in practical problems in physics and engineering, they are often
+    functions of $x$, $y$ and $z$ coordinates as well. (This is
+    \emph{multi-variable calculus}. It's a lot of fun!)
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{What the Notation Tell Us}
+  \begin{itemize}
+  \item When we say we that \textbf{velocity is the time rate of change of
+    position}
+    {\Large
+      \begin{displaymath}
+        \mb{v}=\frac{d\mb{s}}{dt}
+      \end{displaymath}
+    }
+  \item We are really asking \textbf{what is the (small) change in position
+    $d\mb{s}$ for an infinitesimal (infinitely small) change in time $dt$?}
+  \end{itemize}
+\end{frame}
+
+\section{Integration}
+
+\begin{frame}
+  \frametitle{}
+  \begin{center}
+    {\LARGE\textbf{NOW ON TO INTEGRATION}}
+  \end{center}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Integration: Area Under the Curve}
+  \framesubtitle{Let's start with an example}
+  \begin{itemize}
+  \item A car is moving with speed $v(t)=5t$. What is its displacement at $t=5$?
+  \item We know that if on a $v$-$t$ graph, and the area under that curve is
+    the displacement. So how do we find the area?
+  \item If we divide $5$ into many small time intervals:
+    \begin{displaymath}
+      \Delta t_1,\;\Delta t_2,\;\Delta t_3,\;\Delta t_4,\ldots,\;\Delta t_n
+    \end{displaymath}
+    We can find the displacement in teach of these $\Delta t_i$, and
+  \item In this example, the total displacement would be  
+    \begin{displaymath}
+      d(5)=\lim_{n\rightarrow\infty}\sum_{i=1}^{n}v(t_i)\Delta t_i=\int_{t_1}^{t_2}v(t)dt=
+      \int_{t=0}^{5}5t\;dt=\frac{5}{2}t^2\Big|^5_0=\frac{125}{2}
+    \end{displaymath}
+  \end{itemize}
+\end{frame}
+
+%\begin{frame}
+%  \frametitle{Integration: Differentiation in Reverse}
+%  \begin{displaymath}
+%    \frac{d}{dt}\left(t^2\right)=\frac{1}{2}t
+%    \quad\quad\longrightarrow\quad\quad
+%    \int\frac{1}{2}tdt=t^2
+%  \end{displaymath}
+%\end{frame}
+%
+%\begin{frame}
+%  \frametitle{Commonly Used Integrals in Physics}
+%  Calculating an integral can be a very daunting task. But these few rules
+%  should help:
+%
+%  \begin{align*}
+%    \int x^ndx&=\frac{1}{n+1}x^{n+1}+C\\
+%    \int \frac{1}{x}&=\ln x+C\\
+%    \int\cos xdx&=\sin x+C\\
+%    \int\sin xdx&=-\cos x+C
+%  \end{align*}
+%\end{frame}
+%
+%\begin{frame}
+%  \frametitle{Area Under A Curve}
+%  What is the area under the curve
+%  \begin{displaymath}
+%    f(x)=2x^2+3x+1\quad\textsf{between}\quad x=1\;\textsf{and}\;x=5
+%  \end{displaymath}
+%  Our integration works like this:
+%  \begin{align*}
+%    A&=\int_1^5\left(2x^2+3x+1\right)dt\\
+%    &=\left(\frac{2}{3}x^3+\frac{3}{2}x^2+x\right)|^5_3\\
+%    &=24+\frac{196}{3}
+%  \end{align*}
+%\end{frame}
+%
+%\begin{frame}
+%  \frametitle{Kinematic Equations}
+%  \begin{itemize}
+%  \item Remember this equation:
+%
+%    \vspace{-.2in}{\large
+%      \begin{displaymath}
+%        s(t)=s_0+v_0t+\frac{1}{2}at^2
+%      \end{displaymath}
+%    }
+%    
+%    \vspace{-0.1in}(the notation that you used may be a little bit different,
+%    but it's the same equation)
+%  \item We actually obtained this by integrating a constant acceleration
+%  \end{itemize}
+%\end{frame}
+%
+%\begin{frame}
+%  \frametitle{Integration to Find Volume}
+%  \begin{itemize}
+%  \item Interested in finding the volume when we rotate \emph{any} function
+%    about the $x$ axis
+%  \item Many applications in physics, e.g.\ finding the centre of
+%    mass or centroid of shapes
+%  \end{itemize}
+%  \begin{columns}
+%    \column{.33\textwidth}
+%    \pic{1}{cone.png}
+%    \column{.64\textwidth}
+%    \begin{itemize}
+%    \item Each circular disk the yellow has a volume of $\pi r^2dx$,
+%      where $r=f(x)$, so the volume of each disk is in fact:
+%      
+%      \vspace{-0.3in}{\Large
+%        \begin{displaymath}
+%          dV=\pi f(x)^{2} dx
+%        \end{displaymath}
+%      }    
+%    \item ``summing'' them together gives us the integral:
+%      
+%      \vspace{-0.2in}{\Large
+%        \begin{displaymath}
+%          \boxed{V=\int_{x_1}^{x_2} dV=\int_{x_1}^{x_2} \pi f(x)^{2} dx}
+%        \end{displaymath}
+%      }
+%    \end{itemize}
+%  \end{columns}
+%\end{frame}
+%
+%\begin{frame}
+%  \frametitle{Integration to Find Volume}
+%  \textbf{Example:} Find the volume of the following shape:
+%  \begin{itemize}
+%  \item In this question, $f(x)=3x$, and we are integrating from $x_1=0$ to
+%    $x_2=1$
+%  \end{itemize}
+%  \vspace{.1in}
+%  \begin{columns}
+%    \column{.37\textwidth}
+%    \pic{1}{cone.png}
+%    \column{.6\textwidth}
+%    We use the formula from before:
+%    \begin{align*}
+%      V&=\int_{x_1}^{x_2} \pi f(x)^{2} dx\\
+%      &=\int_{0}^{1} \pi 9x^2dx\\
+%      &=9\pi\int_{0}^{1} x^2dx\\
+%      &=3\pi x^3\Big|^1_0\\
+%      &=3\pi
+%    \end{align*}
+%  \end{columns}
+%\end{frame}
+%
+%\begin{frame}
+%  \frametitle{One Last Example}
+%
+%  \textbf{Using Integration to calculate work done by non-constant force}
+%
+%  A force of $F(t)=5t\si{\N}$ is applied on an object $m=\SI{1}{\kg}$ at
+%  rest, there is no friction force. What would be the displacement and work
+%  done on this object at $t=\SI{3}{\s}$?
+%
+%  \begin{enumerate}
+%  \item<2-> Apply Newton's second law to find acceleration:
+%    $\displaystyle a(t)=\frac{F}{m}=5t$
+%  \item<3-> Then we integrate to get velocity:
+%    $\displaystyle v(t)=\int a(t)=\frac{5}{2}t^2$
+%  \item<4-> And finally, displacement:
+%    $\displaystyle s(t)=\int v(t)=\frac{5}{6}t^3\quad\longrightarrow\quad
+%    \textsf{at}\;t=3, \boxed{d=\frac{45}{2}\si{m}}$
+%  \item<5-> Integrate force with velocity to find work done:
+%    $\displaystyle W=\int F(t)v(t)dt =\int\frac{25}{2}t^3dt=\frac{25}{8}t^4
+%    \quad\longrightarrow\quad
+%    \textsf{at}\;t=3,\;\boxed{W=\frac{2025}{8}\si{J}}$
+%  \end{enumerate}
+%\end{frame}
+%
+
+\begin{frame}
+  \frametitle{Remember Our Kinematic Equations?}
+  \begin{itemize}
+  \item In Physics 11 and 12, you were introduced to a set of 5 kinematic
+    equations, which applies to constant acceleration.
+  \item Now that we know something about integration, we can understand these
+    equations a little bit better
+  \item We start with a constant acceleration $a$. The velocity is the integral:
+    
+    \vspace{-.2in}{\Large
+      \begin{displaymath}
+        v(t)=\int adt=at+C
+      \end{displaymath}
+    }
+  \item We know that at $t=0$, $v=v_0$ (``initial value''). Substituting those
+    allow to find $C=v_0$, and therefore
+    
+    \vspace{-0.3in}{\Large
+      \begin{displaymath}
+        \boxed{v(t)=v_0+at}
+      \end{displaymath}
+    }
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Remember Our Kinematic Equations?}
+  \begin{itemize}
+  \item Now we integrate $v(t)$ again to get position $s(t)$:
+    \vspace{-0.1in}{\Large
+      \begin{displaymath}
+        s(t)&=\int v(t)dt=\int(v_0+at)dt=v_ot + \frac{1}{2}at^2+C
+      \end{displaymath}
+    }
+  \item Again, we take advantage of know our initial position, so $C=s_o$, and
+    we have:
+    
+    \vspace{-0.2in}{\Large
+      \begin{displaymath}
+        \boxed{s(t)= s_0 + v_ot + \frac{1}{2}at^2}
+      \end{displaymath}
+    }
+  \item You may be more familiar with this expression, where we use
+    \emph{displacement} $\Delta s(t) = s(t)-s_0$ instead of position $s$:
+
+    \vspace{-0.25in}{\Large
+      \begin{displaymath}
+        \Delta s(t)= v_ot + \frac{1}{2}at^2
+      \end{displaymath}
+    }
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Remember Our Kinematic Equations?}
+  \begin{itemize}
+  \item In practical situations, acceleration is \emph{not} constant, and we
+    generally have to differentiate or integrate to find your answers.
+  \end{itemize}
+\end{frame}
+
+\end{document}

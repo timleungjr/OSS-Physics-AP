@@ -228,9 +228,9 @@
 
     \begin{align*}
       v&=\frac{s(2+h)-s(2)}{(2+h)-2}=\frac{3(2+h)^2-3(2)^2}{h}\\
-      &=\frac{3(4+4h+h^2)-12}{h}=\frac{4h+h^2}{h}=4+h\\
+      &=\frac{3(4+4h+h^2)-12}{h}=\frac{12h+3h^2}{h}=12+3h\\
     \end{align*}
-  \item Since we know that $h$ is a very very small number, we have $v=4$!
+  \item Since we know that $h$ is a very very small number, we have $v=12$!
   \end{itemize}
 \end{frame}
 
@@ -337,7 +337,7 @@
     {\large
       \begin{displaymath}
       \frac{d}{dt}\sin t = \cos t\quad\quad\quad
-      \frac{d}{dt}\cos t = \sin t
+      \frac{d}{dt}\cos t = -\sin t
       \end{displaymath}
     }
   \item For AP-level physics, you will not need to be an expert in all things
@@ -379,7 +379,7 @@
 
     \vspace{-.1in}{\large
       \begin{displaymath}
-        \mb{F}=m\mb{a}=m\frac{d\mb{v}}{dt}=m\frac{d^2\mb{s}}{dt}
+        \mb{F}=m\mb{a}=m\frac{d\mb{v}}{dt}=m\frac{d^2\mb{s}}{dt^2}
       \end{displaymath}
     }
   \item That's a \emph{special case} where mass $m$ remains constant, and
@@ -427,11 +427,11 @@
   \frametitle{Solving the Example Without Calculus}
   \framesubtitle{Not Recommended}
   \begin{itemize}
-  \item Before the rain started, the net force on the truck is zero. Once the
+  \item Before the rain started, the net force on the cart is zero. Once the
     rain started though,
   \item After \SI{1}{\s}, the cart gains \SI{0.01}{\kg} of water in the bed
   \item That means we need to accelerate this water from rest to
-    \SI{5}{m/s} in \SI{1}{\s}, i.e.\ $a=1\si{m/s^2}$
+    \SI{5}{m/s} in \SI{1}{\s}, i.e.\ $a=5\si{m/s^2}$
   \item This \SI{1}{\s} worth of water will require a force of
     \begin{displaymath}
       F=ma=0.05\si{N}
@@ -538,7 +538,7 @@
     We can find the displacement in teach of these $\Delta t_i$, and
   \item In this example, the total displacement would be  
     \begin{displaymath}
-      d(5)=\sum_{i=1}^{n}v(t_i)\Delta t_i=\int_{t_1}^{t_2}v(t)dt=
+      d(5)=\lim_{n\rightarrow\infty}\sum_{i=1}^{n}v(t_i)\Delta t_i=\int_{t_1}^{t_2}v(t)dt=
       \int_{t=0}^{5}5t\;dt=\frac{5}{2}t^2\Big|^5_0=\frac{125}{2}
     \end{displaymath}
   \end{itemize}
