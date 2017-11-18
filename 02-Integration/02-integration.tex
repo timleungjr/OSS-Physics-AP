@@ -8,7 +8,7 @@
 %  \setbeamercovered{transparent}
 }
 \usefonttheme{professionalfonts}
-\usepackage{amsmath}
+\usepackage{amsmath,bm}
 \usepackage{siunitx}
 %\usepackage{graphicx}
 \usepackage{tikz}
@@ -29,6 +29,10 @@
 \newcommand{\mb}[1]{\ensuremath\mathbf{#1}}
 
 \begin{document}
+
+\begin{frame}
+  \maketitle
+\end{frame}
 
 \begin{frame}
   \frametitle{Files for You to Download}
@@ -59,6 +63,7 @@
   \item Last class: went through the rules and some examples of derivatives
   \end{itemize}
 \end{frame}
+
 
 \begin{frame}
   \frametitle{Examples of Derivatives in Physics}
@@ -102,7 +107,10 @@
     \vspace{-.2in}{\Large
       \begin{displaymath}
         \mb{v}(t)=\frac{d\mb{s}}{dt}
-        =\frac{d}{dt}\left[s_x(t)\mb{i}+s_y(t)\mb{j}+s_z(t)\mb{k} \right]
+        =\frac{d}{dt}\left[
+          s_x(t)\bm{\hat{\imath}}+
+          s_y(t)\bm{\hat{\jmath}}+
+          s_z(t)\bm{\hat{k}} \right]
       \end{displaymath}
     }
     where $s_x$, $s_y$ and $s_z$ are the $x$-, $y$- and $z$-components of
@@ -115,7 +123,34 @@
 \end{frame}
 
 \begin{frame}
-  \frametitle{What the Notation Tell Us}
+  \frametitle{Other Derivatives}
+  \framesubtitle{\ldots Not Always With Respect to Time}
+  \begin{itemize}
+  \item\textbf{Electric force} is the derivative of electrical potential
+    energy with respect to radial distance:
+
+    \vspace{-.3in}{\Large
+      \begin{displaymath}
+        F_q=-\frac{dU_q}{dr}=-\frac{d}{dr}\left[\frac{kq_1q_2}{r}\right]
+      \end{displaymath}
+    }
+
+    \vspace{-.1in}Gravitational force and gravitational potential energy are
+    related in the same way
+  \item\textbf{Electric Field} is the derivative of electric potential
+    difference $V$ with respect to the radial distance
+
+    \vspace{-.2in}{\Large
+      \begin{displaymath}
+        E=-\frac{dV}{dr}
+      \end{displaymath}
+    }
+        
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{What the Notation Tells Us}
   \begin{itemize}
   \item When we say we that \textbf{velocity is the time rate of change of
     position}
@@ -125,7 +160,7 @@
       \end{displaymath}
     }
   \item We are really asking \textbf{what is the (small) change in position
-    $d\mb{s}$ for an infinitesimal (infinitely small) change in time $dt$?}
+    $d\mb{s}$ over an infinitesimal (infinitely small) change in time $dt$?}
   \end{itemize}
 \end{frame}
 
@@ -512,13 +547,8 @@
     \setcounter{enumi}{2}
   \item We integrate again to get an expression for position $s(t)$:
     \begin{displaymath}
-      s(t)=\int_0^3 v(t)dt=\frac{5}{6}t^3+s_0
-    \end{displaymath}
-    We don't know initial position $s_0$, but we can move it to the
-    LHS to get displacement, which is what we need:
-    \begin{displaymath}
-      \Delta s(t)=\frac{5}{6}t^3\Big|^3_0=\frac{5}{6}\left(3^3-0\right)=
-      \frac{45}{2}\;\si{\metre}
+      \Delta s(t)=\int_0^3 v(t)dt=\frac{5}{6}t^3\Big|_0^3
+      =\frac{5}{6}\left(3^3-0\right)=\frac{45}{2}\;\si{\metre}
     \end{displaymath}
   \end{enumerate}
 \end{frame}
