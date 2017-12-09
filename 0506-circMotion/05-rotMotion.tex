@@ -3,7 +3,6 @@
 \mode<presentation>
 {
   \usetheme{Singapore}
-  %\usetheme{Wronki}
   \setbeamersize{text margin left=1cm,text margin right=1cm}
 %  \setbeamertemplate{navigation symbols}{} % suppress nav bar
 %  \setbeamercovered{transparent}
@@ -20,7 +19,7 @@
 
 \sisetup{number-math-rm=\mathnormal}
 
-\title{Classes 5 \& 6: Circular Motion}
+\title{Class 5: Circular Motion}
 \subtitle{AP Physics}
 \author[TML]{Timothy Leung, Ph.D.}
 \institute{Olympiads School}
@@ -40,7 +39,7 @@
   \framesubtitle{Please download/print the PDF file}
   \begin{itemize}
 %  %\item\texttt{00-outline.pdf}--The course outline (slightly updated)
-  \item\texttt{0506-circular-print.pdf}--The ``print version'' of this week
+  \item\texttt{05-rotMotion-print.pdf}--The ``print version'' of this week
     and next week's slides. I recommend printing 4 slides per page.
   \item\texttt{0506-Homework.pdf} This week's homework.
 %    We are taking up questions from Class 3 today, but please hand in Classes 3
@@ -165,18 +164,25 @@
     \end{tikzpicture}
     \column{.7\textwidth}
     \begin{itemize}
-    \item We can relate the actual speed $v$ to the $\omega$ simply by:
+    \item Speed $v$ and $\omega$ are related simply by:
 
       \vspace{-0.35in}{\Large
         \begin{displaymath}
           \boxed{v=r\omega}
         \end{displaymath}
       }
+    \item Or in vector form:
+
+      \vspace{-0.35in}{\Large
+        \begin{displaymath}
+          \boxed{\mb{v}=\bm{\omega}\times\mb{r}}
+        \end{displaymath}
+      }
     \item $\mb{v}$ is always tangent to circle (perpendicular to $\mb{r}$)
     \item We can also relate $\omega$ to \textbf{frequency} and \textbf{period}
       of the rotation:
 
-      \vspace{-0.35in}{\Large
+      \vspace{-0.4in}{\Large
         \begin{displaymath}
           \boxed{f=\frac{\omega}{2\pi}}\quad
           \boxed{T=\frac{2\pi}{\omega}}\quad
@@ -190,6 +196,34 @@
   \end{columns}
 \end{frame}
 
+
+\begin{frame}
+  \frametitle{Rotating Object Without Slipping}
+  A tire with radius $r$ rolls along the road with an angular velocity $\omega$
+  \emph{without slipping}. (This is a very common case for analysis.)  What
+  is its velocity $v$
+  \begin{enumerate}[a.]
+  \item at the contact between the ground and the tire?
+  \item at the center?
+  \item at the top of the tire?
+  \end{enumerate}
+  \vspace{-0.4in}
+  \begin{center}
+    \hspace{1in}
+    \begin{tikzpicture}[scale=0.7]
+      \draw[fill=black](0,0) circle(3);
+      \draw[fill=white](0,0) circle(2.2);
+      \draw[ultra thick](-6,-3)--(6,-3);
+      \draw[ultra thick,blue!70,->](-0.707,-0.707) arc(225:135:1)
+      node[midway,left]{$\omega$};
+      \draw[fill=blue!70,blue!70](0,-3) circle(0.1) node[below right]{$v_a$};
+      \draw[fill=blue!70,blue!70](0,0) circle(0.1);
+      \draw[ultra thick,blue!70,->](0,0)--(1,0) node[pos=1,right]{$v_b$};
+      \draw[fill=blue!70,blue!70](0,3) circle(0.1);
+      \draw[ultra thick,blue!70,->](0,3)--(2,3) node[pos=1,right]{$v_c$};
+    \end{tikzpicture}
+  \end{center}
+\end{frame}
 
 \begin{frame}
   \frametitle{Rigid Body Motion}
@@ -322,7 +356,7 @@
     }
     \begin{itemize}
     \item The \emph{provided} force comes from FBD
-    \item The \emph{required} force comes from the equation we have
+    \item The \emph{required} force comes from the centripetal equation we have
     \end{itemize}
   \end{enumerate}
 \end{frame}
@@ -442,7 +476,7 @@
     
     \vspace{-0.3in}{\LARGE
     \begin{displaymath}
-      \boxed{\mb{F}_\mathrm{net}=m\mb{a}}
+      \mb{F}_\mathrm{net}=m\mb{a}
     \end{displaymath}
   }
   \item Is it also true for \emph{circular} motion?
@@ -560,8 +594,8 @@
     \end{tikzpicture}
   \end{center}
   \begin{itemize}
-  \item<2-> $F_1$ will rotate the beam counter clockwise
-  \item<3-> $F_2$ will rotate the beam clockwise
+  \item<2-> $F_1$ will rotate the board counter clockwise
+  \item<3-> $F_2$ will rotate the board clockwise
   \item<4-> The beam will remain static (in equilibrium) if
 
     \vspace{-0.2in}{\Large
@@ -646,14 +680,28 @@
     a distance $r$ from the center (shown on the right). It has an
     \textbf{angular momentum} ($L$) of
     
-    \vspace{-0.1in}{\Large
+    \vspace{-0.25in}{\Large
       \begin{displaymath}
-        \boxed{L=rmv=mr^2\omega=I\omega}
+        \boxed{\mb{L}=\mb{r}\times\mb{p}}
       \end{displaymath}
     }
-
-    The quantity $I$ is called the \textbf{moment of inertia}.
     
+    \vspace{-0.15in}Expanding the terms in the definition:
+    
+    \vspace{-0.4in}{\Large
+      \begin{displaymath}
+        \mb{L}=\mb{r}\times(m\mb{v})=m\mb{r}\times(\bm{\omega}\times\mb{r})
+        =mr^2\bm{\omega}
+      \end{displaymath}
+    }
+    gives us:
+    
+    \vspace{-0.3in}{\Large
+      \begin{displaymath}
+        \boxed{\mb{L}=I\bm{\omega}}
+      \end{displaymath}
+    }
+    The quantity $I$ is called the \textbf{moment of inertia}.
     \column{0.23\textwidth}
     \begin{tikzpicture}[scale=2.5]
       \begin{scope}[rotate=70]
@@ -698,6 +746,13 @@
 
 
 \begin{frame}
+  \frametitle{Moment of Inertia}
+  \begin{center}
+    \pic{.7}{mic.png}
+  \end{center}
+\end{frame}
+
+\begin{frame}
   \frametitle{Angular Momentum and Moment of Inertia}
   \begin{itemize}
   \item Linear and angular momentum have very similar expressions
@@ -721,19 +776,29 @@
 
   \vspace{-0.35in}{\Large
     \begin{displaymath}
-      \tau=rF=rm\frac{dv}{dt}=\frac{d(rmv)}{dt}\quad\longrightarrow\quad
+      \bm{\tau}=\mb{r}\times\mb{F}=\mb{r}\times\frac{d\mb{p}}{dt}
+      =\frac{d(\mb{r}\times\mb{p})}{dt}\;\;\longrightarrow\;\;
+%      \tau=rF=rm\frac{dv}{dt}=\frac{d(rmv)}{dt}\quad\longrightarrow\quad
 %    \end{displaymath}
 %    \begin{displaymath}
       \boxed{\bm{\tau} =\frac{d\mb{L}}{dt}}
     \end{displaymath}
   }
   \begin{itemize}
-  \item If the net torque acting on a system is zero, then the rate of change
-    of the angular momentum is zero, and we say that the angular momentum has
-    been conserved. 
+  \item If the net torque on a system is zero, then the rate of change
+    of angular momentum is zero, and we say that the angular momentum is
+    conserved. 
   \item e.g.\ When an ice skater starts to spin and draws his arms inward.
-    Since angular momentum is conserved, the response to a decrease in radius
-    is a increase in angular velocity $\omega$.
+    Since angular momentum is conserved, a decrease in $r$ means an
+    increase in $\omega$.
+  \item If moment of inertia $I$ is constant in time, the net torque is given
+    by:
+
+    \vspace{-0.2in}{\Large
+      \begin{displaymath}
+        \boxed{\bm{\tau}=I\bm{\alpha}}
+      \end{displaymath}
+    }
   \end{itemize}
 \end{frame}
 
@@ -761,37 +826,64 @@
 
 \begin{frame}
   \frametitle{Rotational Kinetic Energy}
-  \begin{itemize}
-  \item Linear
-
-    \vspace{-0.2in}{\Large
-      \begin{displaymath}
-        K=\frac{1}{2}mv^2
-      \end{displaymath}
-    }
-  \item Angular
-
-    \vspace{-0.2in}{\Large
-      \begin{displaymath}
-        \boxed{K=\frac{1}{2}I\omega^2}
-      \end{displaymath}
-    }
-  \end{itemize}
+  To find the kinetic energy of a rotating system of particles (discrete number
+  of particles, or continuous mass distribution), we can sum (or or integrate)
+  the kinetic energy of the individual particles:
+    
+  \vspace{-0.3in}{\large
+    \begin{align*}
+      K&=\sum_i\frac{1}{2}m_iv_i^2=\frac{1}{2}\left(\sum_i m_ir_i^2\right)\omega^2\\
+      K&=\int\frac{1}{2}v^2dm=\frac{1}{2}\left(\int r^2dm\right)\omega^2
+    \end{align*}
+  }
+  
+  \vspace{-0.15in}It's no surprise that in both case, rotational kinetic energy
+  is given by:
+  
+  \vspace{-0.2in}{\Large
+    \begin{displaymath}
+      \boxed{K=\frac{1}{2}I\omega^2}
+    \end{displaymath}
+  }
 \end{frame}
+
 
 \begin{frame}
-  \frametitle{Linear vs.\ Angular Motion}
-  \begin{center}
-    \begin{tabular}{c|l|l}
-      & Linear & Angular\\\hline
-      Equation of Motion &
-      $\displaystyle \mb{F}_\mathrm{net}=\frac{d\mb{p}}{dt}=m\mb{a}$ &
-      $\displaystyle \bm{\tau}=\mb{F}\times\mb{r}=\frac{d\mb{L}}{dt}=I\alpha$\\
-      Momentum & $\mb{p}=m\mb{v}$ & $\mb{L}=m\mb{v}\times\mb{r}$\\
-      Kinetic Energy & $\displaystyle K=\frac{1}{2}mv^2$ &
-      $\displaystyle K=\frac{1}{2}I\omega^2$ \\
-      \end{tabular}
-  \end{center}
+  \frametitle{Kinetic Energy of a Rotating System}
+  The total kinetic energy of a rotating system is the sum of its translational
+  and rotational kinetic energies at its center of mass:
+
+  \vspace{-0.2in}{\Large
+    \begin{displaymath}
+      \boxed{K=\frac{1}{2}mv_\mathrm{CM}^2+\frac{1}{2}I_\mathrm{CM}\omega^2}
+    \end{displaymath}
+  }
+  
+  In this case, $I_\mathrm{CM}$ is calculated at the center of mass. For simple
+  problems, we only need to compute rotational kinetic energy at the pivot:
+
+  \vspace{-0.2in}{\Large
+    \begin{displaymath}
+      \boxed{K=\frac{1}{2}I_\mathrm{P}\omega^2}
+    \end{displaymath}
+  }
+  
+  In this case, the $I_\mathrm{P}$ is calculated at the pivot.
+  \textbf{IMPORTANT:} $I_\mathrm{CM}\neq I_\mathrm{P}$
 \end{frame}
+%\begin{frame}
+%  \frametitle{Linear vs.\ Angular Motion}
+%  \begin{center}
+%    \begin{tabular}{c|l|l}
+%      & Linear & Angular\\\hline
+%      Equation of Motion &
+%      $\displaystyle \mb{F}_\mathrm{net}=\frac{d\mb{p}}{dt}=m\mb{a}$ &
+%      $\displaystyle \bm{\tau}=\mb{F}\times\mb{r}=\frac{d\mb{L}}{dt}=I\alpha$\\
+%      Momentum & $\mb{p}=m\mb{v}$ & $\mb{L}=m\mb{v}\times\mb{r}$\\
+%      Kinetic Energy & $\displaystyle K=\frac{1}{2}mv^2$ &
+%      $\displaystyle K=\frac{1}{2}I\omega^2$ \\
+%      \end{tabular}
+%  \end{center}
+%\end{frame}
 
 \end{document}
