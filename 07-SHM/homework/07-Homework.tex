@@ -1,12 +1,13 @@
 \documentclass[12pt]{article}
 
-\usepackage[margin=0.7in,letterpaper]{geometry}
+\usepackage[margin=.8in,letterpaper]{geometry}
 \usepackage{enumitem}
 \usepackage{graphicx}
 \usepackage{tikz}%,graphicx,wrapfig}
 \usepackage{mathpazo}
 \usepackage[scaled]{helvet}
 \usepackage{siunitx}
+\usepackage{multicol}
 
 \usetikzlibrary{decorations.pathmorphing,patterns}
 
@@ -29,6 +30,10 @@
   }
 \end{center}
 
+%\noindent On all of the questions in this book, you may neglect air resistance
+%and use $g =\SI{10}{m/s^2}$ unless otherwise noted.
+
+%\begin{multicols}{2}
 \begin{enumerate}[leftmargin=50pt,label=\underline{\hspace{0.4in}} \arabic*.]
 
 \item A simple pendulum has a mass $m$, length $L$, and period $T$. If the
@@ -41,13 +46,13 @@
   \item unchanged
   \end{enumerate}
 
-\item A mass oscillates on the end of a spring that obeys Hooke’s law. Which of
+\item A mass oscillates on the end of a spring that obeys Hooke's law. Which of
   the following statements is true?
-  \begin{enumerate}[noitemsep,topsep=0pt]
+  \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt]
   \item The amplitude of oscillation is equal to the potential energy of the
     spring.
   \item The kinetic energy of the oscillating mass is constant.
-  \item The maximum potential energy occurs when the mass reaches the
+  \item Maximum potential energy occurs when the mass reaches the
     equilibrium position.
   \item The potential energy of the spring at the amplitude is equal to the
     kinetic energy at the equilibrium position.
@@ -62,7 +67,7 @@
   \begin{enumerate}[noitemsep,topsep=0pt]
   \item harmonic motion with a period of $2$ \si{s}
   \item harmonic motion with a period of $1$ \si{s}
-  \item harmonic motion with a period of $1⁄2$ \si{s}
+  \item harmonic motion with a period of $1/2$ \si{s}
   \item motion with a constant velocity
   \item motion with a constant momentum
   \end{enumerate}
@@ -71,7 +76,7 @@
   according to the equation $x = 6 \cos(4t)$. The period of oscillation of the
   object is
   \begin{enumerate}[noitemsep,topsep=0pt]
-  \item $1⁄4$ \si{s}
+  \item $1/4$ \si{s}
   \item\SI{4}{s}
   \item\SI{\pi/4}{s}
   \item\SI{\pi/2}{s}
@@ -83,14 +88,14 @@
   pendulum to $2f$?
   \begin{enumerate}[noitemsep,topsep=0pt]
     \item Increase the length of the pendulum to $4L$
-    \item Decrease the length of the pendulum to $1⁄4L$
+    \item Decrease the length of the pendulum to $1/4L$
     \item Increase the length of the pendulum to $2L$
-    \item Decrease the length of the pendulum to $1⁄2L$
-    \item Decrease the mass of the pendulum to $1⁄2m$
+    \item Decrease the length of the pendulum to $1/2L$
+    \item Decrease the mass of the pendulum to $1/2m$
   \end{enumerate}
 
-  \begin{center}
-    \begin{tikzpicture}
+  \vspace{-0.1in}\begin{center}
+    \begin{tikzpicture}[scale=1.1]
       \fill [pattern=north east lines] (-2,4) rectangle (2,4.2);
       \draw[ultra thick] (-2,4)--(2,4);
       \draw[thick,
@@ -103,13 +108,13 @@
     \end{tikzpicture}
   \end{center}
 
-\item A mass hangs from two parallel springs, each with the same spring
+\item\vspace{-.2in} A mass hangs from two parallel springs, each with the same spring
   constant $k$. Compared to the period $T$ of the same mass oscillating on
   one of the springs, the period of oscillation of the mass with both
   springs connected to it is
   \begin{enumerate}[noitemsep,topsep=0pt]
-  \item $\frac{1}{4}T$
-  \item $\frac{1}{2}T$
+  \item $1/4T$
+  \item $1/2T$
   \item $T$ (unchanged)
   \item $2T$
   \item $4T$
@@ -132,7 +137,7 @@
 \end{enumerate}
 
 \noindent Questions 8-10: A harmonic oscillator follows the equation
-$\displaystyle \frac{d^2x}{dt^2}=-4x$. The spring constant $k$ is \SI{4}{N/m}.
+$\displaystyle\frac{d^2x}{dt^2}=-4x$. The spring constant $k$ is \SI{4}{N/m}.
 
 \begin{enumerate}[leftmargin=50pt,label=\underline{\hspace{0.4in}} \arabic*.]
   \setcounter{enumi}{7}
@@ -144,7 +149,7 @@ $\displaystyle \frac{d^2x}{dt^2}=-4x$. The spring constant $k$ is \SI{4}{N/m}.
   \item\SI{8}{rad/s}
   \item\SI{16}{rad/s}
   \end{enumerate}
-  
+
 \item The mass $m$ oscillating on the spring is
   \begin{enumerate}[noitemsep,topsep=0pt]
   \item\SI{1}{\kg}
@@ -175,7 +180,7 @@ $\displaystyle \frac{d^2x}{dt^2}=-4x$. The spring constant $k$ is \SI{4}{N/m}.
   \item $1⁄4 g$
   \end{enumerate}
 
-  \begin{center}
+  \vspace{-.45in}\begin{center}
     \begin{tikzpicture}
       \fill [pattern=north east lines] (-5,0)--(0,0)--(0,2)--(0.2,2)--(0.2,-0.2)
       --(-5,-0.2)--cycle;
@@ -189,7 +194,8 @@ $\displaystyle \frac{d^2x}{dt^2}=-4x$. The spring constant $k$ is \SI{4}{N/m}.
     \end{tikzpicture}
   \end{center}
   
-\item\vspace{-0.2in} A block of mass \SI{1.0}{\kg} is sliding on a frictionless horizontal
+\item\vspace{-0.2in} A block of mass \SI{1.0}{\kg} is sliding on a frictionless
+  horizontal
   surface with a speed of \SI{4.0}{m/s} when it collides inelastically with
   another \SI{1.0}{kg} block attached to a spring. The spring compresses a
   distance of \SI{0.5}{m} after the collision. The force constant $k$ of the
@@ -203,7 +209,7 @@ $\displaystyle \frac{d^2x}{dt^2}=-4x$. The spring constant $k$ is \SI{4}{N/m}.
   \end{enumerate}
 
   \begin{center}
-    \pic{0.5}{projectile.png}
+    \pic{0.45}{projectile.png}
   \end{center}
   
 \item A block of mass \SI{0.5}{kg} rests up against a compressed spring of force
@@ -220,7 +226,7 @@ $\displaystyle \frac{d^2x}{dt^2}=-4x$. The spring constant $k$ is \SI{4}{N/m}.
   \end{enumerate}
 \end{enumerate}
 
-
+\newpage
 \noindent The following questions are ``review'' questions for kinematics.
 
 \begin{enumerate}[leftmargin=50pt,label=\underline{\hspace{0.4in}} \arabic*.]
@@ -238,175 +244,96 @@ $\displaystyle \frac{d^2x}{dt^2}=-4x$. The spring constant $k$ is \SI{4}{N/m}.
   \item There is no other angle other than \ang{60} in which the ball will have
     a range of \SI{100}{m}.
   \end{enumerate}
-  \begin{center}
+
+  \vspace{-.23in}\begin{center}
     \pic{0.3}{golf.png}
   \end{center}
 
+\item\vspace{-.2in}A particle moves on a horizontal surface with a constant acceleration of
+  \SI{6}{m/s^2} in the $x$-direction and \SI{4}{m/s^2} in the $y$-direction. The
+  initial velocity of the particle is \SI{3}{m/s} in the $x$-direction.
+  The speed of the particle after \SI{4}{s} is
+  \begin{enumerate}[noitemsep,topsep=0pt]
+  \item\SI{16}{m/s}
+  \item\SI{27}{m/s}
+  \item\SI{31}{m/s}
+  \item\SI{44}{m/s}
+  \item\SI{985}{m/s}
+  \end{enumerate}
 
-%\item Two disks are fixed to a vertical axle that is rotating with a constant
-%  angular speed $\omega$. The smaller disk has a mass $m$ and a radius $r$, and
-%  the larger disk has a mass $2m$ and radius $2r$. The general equation for the
-%  rotational inertia of a disk of mass $M$ and radius $R$ is $\frac{1}{2}MR^2$.
-%  The ratio of the angular momentum of the larger disk to the smaller disk is\\
-%  \begin{minipage}{0.3\textwidth}
-%    \begin{enumerate}[noitemsep,topsep=0pt]
-%    \item$1/4$
-%    \item$4/1$
-%    \item$1/2$
-%    \item$2/1$
-%    \item$8/1$
-%    \end{enumerate}
-%  \end{minipage}
-%  \begin{minipage}{0.6\textwidth}
-%    \pic{.5}{2disks.png}
-%  \end{minipage}
-%  
-%\item A light rod has a mass attached at each end. At one end is a \SI{6}{\kg}
-%  mass, and at the other end is a \SI{3}{\kg} mass. An axis can be placed at
-%  any of the points shown. Through which point should an axis be placed so that
-%  the rotational inertia is the greatest about that axis?
-%  
-%  \begin{minipage}{0.3\textwidth}
-%    \begin{enumerate}[noitemsep,topsep=0pt]
-%    \item A
-%    \item B
-%    \item C
-%    \item D
-%    \item E
-%    \end{enumerate}
-%  \end{minipage}
-%  \begin{minipage}{0.6\textwidth}
-%    \pic{.8}{light-rod.png}
-%  \end{minipage}
-%
-%\item Two wheels are attached to each other and fixed so that they can only
-%  turn together. The smaller wheel has a radius of $r$ and the larger wheel
-%  has a radius of $3r$. The two wheels can rotate together on a frictionless
-%  axle. Three forces act tangentially on the edge of the wheels as shown.
-%  The magnitude of the net torque acting on the system of wheels is\\
-%  \begin{minipage}{0.3\textwidth}
-%    \begin{enumerate}[noitemsep,topsep=0pt]
-%    \item$Fr$
-%    \item$2Fr$
-%    \item$3Fr$
-%    \item$4Fr$
-%    \item$6Fr$
-%    \end{enumerate}
-%  \end{minipage}
-%  \begin{minipage}{0.6\textwidth}
-%    \pic{.5}{2wheels.png}
-%  \end{minipage}
-%  \newpage
-%
-%\item Astronauts are conducting an experiment in a negligible gravity
-%  environment. Two spheres of mass m are attached to either end of a
-%  light rod. As the rod and spheres float motionless in space, an astronaut
-%  launches a piece of sticky clay, also of mass m, toward one of the
-%  spheres so that the clay strikes and sticks to the sphere perpendicular to
-%  the rod. Which of the following statements is true of the motion of the
-%  rod, clay, and spheres after the collision?
-%  
-%  \begin{minipage}{0.6\textwidth}
-%    \begin{enumerate}[topsep=5pt]
-%    \item Linear momentum is not conserved, but angular momentum is conserved.
-%    \item Angular momentum is not conserved, but linear momentum is conserved.
-%    \item Kinetic energy is conserved, but angular momentum is not conserved.
-%    \item Kinetic energy is conserved, but linear momentum is not conserved.
-%    \item Both linear momentum and angular momentum are conserved, but kinetic
-%      energy is not conserved.
-%    \end{enumerate}
-%  \end{minipage}
-%  \begin{minipage}{0.3\textwidth}
-%    \pic{1}{collision1.png}
-%  \end{minipage}
-%  
-%\item One end of a stick of length $L$, rotational inertia $I$, and mass $m$ is
-%  pivoted on an axle with negligible friction at point $P$. The other end is
-%  tied to a string and held in a horizontal position. When the string is cut,
-%  the stick rotates counterclockwise. The angular speed $\omega$ of the stick
-%  when it reaches the bottom of its swing is\\
-%  \begin{minipage}{0.3\textwidth}
-%    \begin{enumerate}[noitemsep,topsep=0pt]
-%    \item$\displaystyle\frac{mgL}{I}$
-%    \item$\displaystyle\sqrt{\frac{mgL}{I}}$
-%    \item$\displaystyle\sqrt{\frac{2mgL}{I}}$
-%    \item$\displaystyle\sqrt{\frac{mgL}{2I}}$
-%    \item$\displaystyle\sqrt{\frac{4mgL}{I}}$
-%    \end{enumerate}
-%  \end{minipage}
-%  \begin{minipage}{0.65\textwidth}
-%    \pic{.7}{end-of-stick.png}
-%  \end{minipage}
-%
-%\item A belt is wrapped around two wheels as shown. The smaller wheel has
-%  a radius $r$, and the larger wheel has a radius $2r$. When the wheels turn,
-%  the belt does not slip on the wheels, and gives the smaller wheel an
-%  angular speed $\omega$. The angular speed of the larger wheel is
-%  
-%  \begin{minipage}{0.3\textwidth}
-%    \begin{enumerate}[noitemsep,topsep=0pt]
-%    \item $\displaystyle \omega$
-%    \item $\displaystyle 2\omega$
-%    \item $\displaystyle \frac{1}{2}\omega$
-%    \item $\displaystyle \frac{1}{4}\omega$
-%    \item $\displaystyle 4\omega$
-%    \end{enumerate}
-%  \end{minipage}
-%  \begin{minipage}{0.65\textwidth}
-%    \pic{.7}{wheels.png}
-%  \end{minipage}  
-%  \newpage
-%
-%\item A disk is mounted on a fixed axle. The rotational inertia of the disk is
-%  $I$. The angular velocity of the disk is decreased from $\omega_0$ to
-%  $\omega_f$ during a time $\Delta t$ due to friction in the axle. The
-%  magnitude of the average net torque acting on the wheel is
-%  \begin{enumerate}[noitemsep,topsep=0pt]
-%  \item $\displaystyle\frac{\omega_f-\omega_0}{\Delta t}$
-%  \item $\displaystyle\frac{(\omega_f-\omega_o)^2}{\Delta t}$
-%  \item $\displaystyle\frac{I(\omega_f-\omega_o)}{\Delta t}$
-%  \item $\displaystyle\frac{I(\omega_f-\omega_o)^2}{\Delta t}$
-%  \item $\displaystyle\frac{I(\omega_f-\omega_o)}{\Delta t^2}$
-%  \end{enumerate}
-%
-%\item The average power developed by the friction in the axle of the disk
-%  from the previous question to bring it to a complete stop is
-%  \begin{enumerate}[noitemsep,topsep=0pt]
-%  \item $\displaystyle\frac{\omega_o}{\Delta t}$
-%  \item $\displaystyle\frac{(\omega_o)^2}{\Delta t}$
-%  \item $\displaystyle\frac{I(\omega_f-\omega_o)}{\Delta t}$
-%  \item $\displaystyle\frac{I\omega_o^2}{\Delta t}$
-%  \item $\displaystyle\frac{I(\omega_f-\omega_o)}{\Delta t^2}$
-%  \end{enumerate}
-%
-%\item A light rod of negligible mass is pivoted at point $P$ a distance $L$ from
-%  one end as shown. A mass $m$ is attached to the left end of the rod at a
-%  distance of $3L$ from the pivot, and another mass $4m$ is attached to the
-%  other end a distance $L$ from the pivot. The system begins from rest in the
-%  horizontal position. The net torque acting on the system due to gravitational
-%  forces is
-%  
-%  \begin{minipage}{0.4\textwidth}
-%    \begin{enumerate}[noitemsep,topsep=0pt]
-%    \item $4mgL$ clockwise
-%    \item $3mgL$ clockwise
-%    \item $3mgL$ counterclockwise
-%    \item $mgL$ counterclockwise
-%    \item $mgL$ clockwise
-%    \end{enumerate}
-%  \end{minipage}
-%  \begin{minipage}{0.5\textwidth}
-%    \pic{1}{light-rod2.png}
-%  \end{minipage}
-%
-%\item The angular acceleration of the system when it is released from rest is
-%  \begin{enumerate}[noitemsep,topsep=0pt]
-%  \item zero
-%  \item $\displaystyle\frac{g}{5L}$
-%  \item $\displaystyle\frac{g}{4L}$
-%  \item $\displaystyle\frac{g}{13L}$
-%  \item  $\displaystyle\frac{g}{L}$
-%  \end{enumerate}
+\item The displacement of the particle (from the previous question) from its
+  initial position is
+  \begin{enumerate}[noitemsep,topsep=0pt]
+  \item\SI{16}{\metre}
+  \item\SI{32}{\metre}
+  \item\SI{60}{\metre}
+  \item\SI{68}{\metre}
+  \item\SI{92}{\metre}
+  \end{enumerate}
+
+  \vspace{-0.5in}\begin{center}
+    \pic{0.3}{bounce.png}
+  \end{center}
+  
+\item\vspace{-.2in} A rubber ball is dropped from rest onto a plane angled at \ang{30} to the
+  horizontal floor and bounces off the plane with a horizontal speed $v_o$.
+  The ball lands on the plane a distance $D$ along the plane, as shown above.
+  In terms of $v_o$, $D$, and $g$, the speed of the ball just before striking
+  the plane is
+  \begin{enumerate}[noitemsep,topsep=0pt]
+  \item $v_o$
+  \item $\displaystyle\left(v_o^2+2D\sin\theta g\right)^\frac{1}{2}$
+  \item $\displaystyle\left(v_o+\frac{D\sin\theta}{g}\right)^\frac{1}{2}$
+  \item $\displaystyle\left(v_o^2+\frac{D\sin\theta}{g}\right)^\frac{1}{2}$
+  \item $\displaystyle\left(2D\sin\theta g\right)^\frac{1}{2}$
+  \end{enumerate}
+
+  \vspace{-.2in}\begin{center}
+    \pic{.55}{projectile2.png}
+  \end{center}
+
+\item\vspace{-.2in} A projectile is launched from a platform \SI{20}{m} high above level
+  ground. The projectile is launched with a velocity of \SI{40}{m/s} at an
+  angle of \ang{60} above the horizontal. The projectile follows a parabolic
+  path and reaches its original height at a horizontal distance of \SI{80}{m},
+  but moves past the height of the cliff to strike the ground below. The total
+  time from the launch until it strikes the ground is
+  \begin{enumerate}[noitemsep,topsep=0pt]
+  \item\SI{2}{\second}
+  \item\SI{4}{\second}
+  \item\SI{6}{\second}
+  \item\SI{9}{\second}
+  \item\SI{10}{\second}
+  \end{enumerate}
+
+ \vspace{-.45in}\begin{center}
+   \pic{.45}{cup.png}
+ \end{center}
+
+\item\vspace{-.2in}A small ball is launched with a speed of \SI{8}{m/s} at an angle of
+  \ang{30} from the horizontal. A cup is hung so that it is in position to
+  catch the ball when it reaches its maximum height. How far above the floor
+  should the cup be hung to catch the ball?
+  \begin{enumerate}[noitemsep,topsep=0pt]
+  \item\SI{2.4}{\metre}
+  \item\SI{1.6}{\metre}
+  \item\SI{1.0}{\metre}
+  \item\SI{0.8}{\metre}
+  \item\SI{0.4}{\metre}
+  \end{enumerate}
+
+\item A small airplane can fly at \SI{200}{km/h} with no wind. The pilot of the
+  plane would like to fly to a destination \SI{100}{\km} due north of his
+  present position, but there is a crosswind of \SI{50}{km/h} east. How much
+  time is required for the plane to fly north to its destination?
+  \begin{enumerate}[noitemsep,topsep=0pt]
+  \item less than \SI{1/2}{h}
+  \item \SI{1/2}{h}
+  \item more than \SI{1/2}{h}
+  \item \SI{1}{h}
+  \item more than \SI{1}{h}
+  \end{enumerate}
+
 \end{enumerate}
 
 \newpage
@@ -447,6 +374,44 @@ $\displaystyle \frac{d^2x}{dt^2}=-4x$. The spring constant $k$ is \SI{4}{N/m}.
   \item What is the frequency of oscillation?
   \item Write the equation that represents the speed of the mass as a function
     of time.
+  \end{enumerate}
+  \newpage
+
+\item The acceleration vs.\ time graph shows the motion of an elevator during a
+  $20$-second time interval. The elevator starts from rest at time $t=0$. 
+  \begin{center}
+    \pic{.7}{a-t.png}
+  \end{center}
+  \begin{enumerate}[noitemsep]
+  \item Determine the instantaneous velocity of the elevator at the end of
+    \SI{10}{s}.
+    \vspace{1.5in}
+  \item Determine the displacement of the elevator after \SI{5}{s}.
+    \vspace{1.5in}
+  \item On the axes below, sketch the graph that represents the velocity vs.\
+    time graph for the elevator for the $20$-second time interval.
+    \begin{center}
+      \pic{.8}{v-t.png}
+    \end{center}
+    \newpage
+  \end{enumerate}
+  
+\item A particle follows a parabolic path with the equation $y=2x^2$ as shown.
+  The $x$-component of the particle's velocity $v_x$ as a function of time $t$
+  is $6$, that is, the horizontal displacement is $x=6t$.
+  \begin{center}
+    \begin{tikzpicture}[scale=1.6]
+      \draw[very thick,->](0,0)--(5,0) node[pos=1,right]{$x$};
+      \draw[very thick,->](0,0)--(0,4) node[pos=1,above]{$y$};
+      \draw[very thick,smooth,samples=20,domain=0:4.2] plot(\x,{.2*\x*\x});
+      \draw[fill=black](3,1.8) circle(0.05) node[right]{$P$};
+    \end{tikzpicture}
+  \end{center}
+  \begin{enumerate}[noitemsep]
+  \item Determine the $y$-component of the particle's velocity $v_y$ as a
+    function of time.
+  \item On the diagram above, sketch arrows to represent the horizontal and
+    vertical components of the particle's acceleration at point $P$.
   \end{enumerate}
 \end{enumerate}
 \end{document}
