@@ -21,13 +21,13 @@
 
 \sisetup{number-math-rm=\mathnormal}
 
-\title{Class 8: Gravitation}
-\subtitle{AP Physics}
+\title{Class 8: Universal Gravitation}
+\subtitle{AP Physics (1, 2 and C)}
 \author[TML]{Timothy Leung, Ph.D.}
 \institute{Olympiads School}
 \date{Fall/Winter 2017}
 
-%\newcommand{\pic}[2]{\includegraphics[width=#1\textwidth]{#2}}
+\newcommand{\pic}[2]{\includegraphics[width=#1\textwidth]{#2}}
 \newcommand{\mb}[1]{\ensuremath\mathbf{#1}}
 
 \begin{document}
@@ -37,74 +37,102 @@
 \end{frame}
 
 
+\section[Intro]{Introduction}
+
 \begin{frame}
   \frametitle{Files to Download}
   \framesubtitle{Please download/print the PDF file}
-%  If you have not done so already, please download the following files.
-%  \begin{itemize}
+  If you have not done so already, please download the following files.
+  \begin{itemize}
 %  \item\texttt{00-outline.pdf}--The slightly-updated course outline
-%  \item\texttt{07-shm-print.pdf}--The ``print version'' of this week's
-%    slides. I recommend printing 4 slides per page.
-%  \item\texttt{07-Homework.pdf} This week's homework.
-%  \end{itemize}
+  \item\texttt{08-gravitation-print.pdf}--The ``print version'' of this week's
+    slides. I recommend printing 4 slides per page.
+  \item\texttt{08-Homework.pdf} This week's homework.
+  \end{itemize}
 \end{frame}
 
 
 \begin{frame}
   \frametitle{Today's Plan}
-%  \begin{enumerate}
-%  \item Take up (some) questions from Classes 4 and 5/6 homework
-%  \item Go over this week's slides (hopefully it won't take too long)
-%  \end{enumerate}
+  \begin{enumerate}
+  \item Take up (some) questions from Class 7
+  \item Go over this week's slides (hopefully it won't take too long)
+  \end{enumerate}
 \end{frame}
 
 
 
-\section{Gravitational Force}
-%\begin{frame}
-%  \frametitle{Hooke's Law}
-%\end{frame}
-%
+\section[$\mb{F}_g$]{Gravitational Force ($\mb{F}_g$)}
+\begin{frame}
+  \frametitle{Universal Gravitation}
+  This topics we will discuss in this class are covered in AP Physics 1, 2 and
+  C exams.
+  \begin{itemize}
+  \item Gravitational force ($\mb{F}_g$)
+  \item Gravitational field ($\mb{g}$)
+  \item Gravitational potential energy
+  \item Kepler's laws of planetary motion
+  \end{itemize}
+\end{frame}
+
 
 \begin{frame}
-  \frametitle{Gravitational Force}
-%  \begin{itemize}
-%  \item Consider the forces acting on a mass connected horizontally to a spring
+  \frametitle{Newton's Law of Universal Gravitation}
   \begin{center}
     \begin{tikzpicture}[scale=0.8]
-      \draw[thick,fill=gray!70] (7.75,0) arc(75:105:30)
+      \draw[thick,fill=gray!30] (7.75,0) arc(75:105:30)
       node[midway,below]{$m_1$};
       \draw[fill=blue!50] (0,4) circle(0.2) node[right]{$m_2$};
-      \draw[ultra thick, red,->] (0,4)--(0,3)
+      \draw[ultra thick, red!65,->] (0,4)--(0,3)
       node[pos=1,below]{$\mb{F}_g$};
-      \draw[->,thick](5,1.5)--(5,3) node[pos=1,above]{$\hat{\mb{r}}$};
+      \draw[->,thick](5,1.5)--(5,3) node[pos=1,above]{$\hat{\mb{r}}_{12}$};
+      \draw[->,thick](-5,3)--(-5,1.5) node[pos=1,below]{$\hat{\mb{r}}_{21}$};
     \end{tikzpicture}
   \end{center}
-%  \item<3->$\mb{F}_g$ and $\mb{F}_N$ cancel out, so net force is due only to
-%    spring force $\mb{F}_s=-k\mb{x}$. This is true both when the spring is in
-%    compression or extension.
-%  \item<4->Applying Newton's 2nd law in the $x$-direction, we get
-%    
-%  \vspace{-0.2in}
 
-  {\Large
+  \vspace{-0.4in}{\Large
     \begin{displaymath}
-      \mb{F}_g=-\frac{Gm_1m_2}{r^2}\hat{\mb{r}}
+      \boxed{
+        \mb{F}_g
+        =-\frac{Gm_1m_2}{r^2}\hat{\mb{r}}_{12}
+        =+\frac{Gm_1m_2}{r^2}\hat{\mb{r}}_{21}
+      }
     \end{displaymath}
   }
-%  \end{itemize}
+
+  where \fbox{$G=\SI{6.67e-11}{N.m^2/kg^2}$} is the universal gravitation
+  constant, and $\hat{\mb{r}}_{12}$ and $\hat{\mb{r}}_{21}$ are
+  \emph{unit vectors} (length=$1$)
 \end{frame}
 
 
+\begin{frame}
+  \frametitle{Universal Gravitation}
+  \begin{itemize}
+  \item If $m_1$ exerts a gravitational force $\mb{F}_g$ on $m_2$, then $m_2$
+    also exerts a gravitational force $-\mb{F}_g$ on $m_1$.
+  \item The two forces are equal in magnitude and opposite in direction
+    (Newton's 3rd law)
+  \item Assumption: $m_1$ and $m_2$ are \emph{point masses}
+    (they do not occupy any space)
+  \item Therefore, for the universal gravitational equation to work:
+    
+    \vspace{-0.2in}{\Large
+      \begin{displaymath}
+        r>(r_1+r_2)
+      \end{displaymath}
+    }
+  \end{itemize}
+\end{frame}
 
-\section{Gravitational Potential Energy}
+\section[$U_g$]{Gravitational Potential Energy ($U_g$)}
 
 
 \begin{frame}
   \frametitle{Gravitational Potential Energy}
 
   \begin{itemize}
-  \item The gravitrational potential energy is defined as:
+  \item The gravitational potential energy is defined as:
     {\Large
       \begin{displaymath}
         \boxed{U_g=-\frac{Gm_1m_2}{r}}
@@ -119,25 +147,16 @@
 
 
 \begin{frame}
-  \frametitle{Relating Gravitational Potential Energy to Force}%{Relating $U_g$ and $\mb{F}_g$}% and $\mb{g}$}
-  %\framesubtitle{It Helps to Know Calculus}
+  \frametitle{Relating Gravitational Potential Energy to Force}
   \begin{itemize}
-  \item If you know \emph{vector} calculus, you can easily see that
-    gravitational force ($\mb{F}_g$) is the negative gradient of the
-    gravitational potential energy ($U_g$):
-    %through the gradient operator:
-    %and gravitational field ($\mb{g}$) are related to
+  \item If you know vector calculus, you can easily see that gravitational
+    force ($\mb{F}_g$) is the negative gradient of the gravitational potential
+    energy ($U_g$):
 
     \vspace{-0.1in}{\Large
       \begin{displaymath}
         \mb{F}_g=-\nabla U_g=
         -\frac{\partial U_g}{\partial r}\hat{\mb{r}}
-        %\quad\;\;
-        %\mb{g}=\nabla \left(\frac{U_g}{m}\right)=
-        %-\frac{\partial}{\partial r}\left(\frac{U_g}{m}\right)
-        %\hat{\mb{r}}
-%        \quad\textrm{where}\quad
-%        U_g=-\frac{Gm_1m_2}{r}
       \end{displaymath}
     }
   \item Even without using vector calculus, you should still see that, like
@@ -185,30 +204,7 @@
 %\end{frame}
 %
 %
-%\begin{frame}
-%  \frametitle{Mass on a Spring}
-%  \framesubtitle{Angular Velocity}
-%  \begin{itemize}
-%  \item Substituting expressions of $x(t)$ and $x''(t)$ into the ODE, we find
-%    our equation is satisfied if angular velocity (angular frequency) is:
-%
-%    \vspace{-0.2in}{\Large
-%      \begin{displaymath}
-%        \boxed{\omega=\sqrt{\frac{k}{m}}}
-%      \end{displaymath}
-%    }
-%  \item Angular velocity $\omega$ does not depend on amplitude $A$
-%
-%  \item The period $T$ and frequency $f$ of the motion are given by:
-%
-%    \vspace{-0.2in}{\Large
-%      \begin{displaymath}
-%        \boxed{f=\frac{1}{2\pi}\sqrt{\frac{k}{m}}}\quad\quad\quad
-%        \boxed{T=\frac{1}{f}=2\pi\sqrt{\frac{m}{k}}}
-%      \end{displaymath}
-%    }
-%  \end{itemize}
-%\end{frame}
+
 %
 %
 %\begin{frame}
@@ -357,7 +353,7 @@
 
 
 
-\section{Gravitational Field}
+\section[$\mb{g}$]{Gravitational Field ($\mb{g}$)}
 
 
 \begin{frame}
@@ -477,9 +473,9 @@
         \boxed{\mb{g}=\frac{\mb{F}_g}{m}}
       \end{displaymath}
     }
-  \item $\mb{F}_g$ and  $\mb{g}$ are \emph{vectors} in the same direction:
-    toward the centre of the source mass that created the field
-  \item All vector operations apply
+  \item $\mb{F}_g$ and  $\mb{g}$ are vectors in the same direction: toward the
+    centre of the source mass that created the field, therefore all vector
+    operations apply
   \end{itemize}
 
   \begin{center}
@@ -507,7 +503,6 @@
 %
 \begin{frame}
   \frametitle{Relating $U_g$, $\mb{F}_g$ and $\mb{g}$}
-  %\framesubtitle{It Helps to Know Calculus}
   \begin{itemize}
   \item Knowing that $\mb{F}_g$ and $\mb{g}$ only differ by a constant, we can
     also relate gravitational field to $U_g$ by the gradient operator:
@@ -551,84 +546,192 @@
 \section{Orbital Motion}
 
 \begin{frame}
-  \frametitle{Orbital Velocity}
-%  \begin{columns}
-%    \column{0.75\textwidth}
+  \frametitle{Orbital Speed}
+  \framesubtitle{Newton's Thought Experiment}
+  \begin{center}
+    \pic{1}{figure-5.jpg}
+  \end{center}
+
+  \vspace{-.3in}So how fast is fast enough?
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Orbital Speed}
+  \framesubtitle{Relating Gravitational and Centripetal Force}
+  \begin{itemize}
+%  \item The velocity required for an object to reach an orbital path without
+%    falling back onto the surface. For example:
 %    \begin{itemize}
-%    \item Substitute $F_\theta$ into Newton's second law, and cancelling mass
-%      term, we get:
-%
-%      \vspace{-0.45in}{\Large
-%        \begin{displaymath}
-%          F_\theta=ma_\theta\quad\longrightarrow\quad
-%          -g\sin\theta=L\frac{d^2\theta}{dt^2}
-%        \end{displaymath}
-%    }
-%    \item For small angles, $\sin\theta\approx\theta$, and we get the ODE for
-%      the pendulum:
-%      
-%      \vspace{-0.2in}{\Large
-%        \begin{displaymath}
-%          \frac{d^2\theta}{dt^2}+\frac{g}{L}\theta=0
-%        \end{displaymath}
-%      }
-%    \item This ODE has the same form as the mass-spring system!
+%    \item A spy satellite orbiting around Earth
+%    \item The moon orbiting around Earth
+%    \item The Earth orbiting around the Sun
 %    \end{itemize}
-%    \column{0.25\textwidth}
-%    \begin{tikzpicture}
-%      \fill[pattern=north east lines] (-1,0) rectangle (1,0.2);
-%      \draw[very thick](-1,0)--(1,0);
-%      \begin{scope}[rotate=10]
-%        \draw[thick](0,0)--(0,-5);
-%        \tikzstyle{balloon}=[ball color=red];    
-%        \shade[balloon] (0,-5) circle (0.2) node[below right]{$m$};
-%      \end{scope}
-%      \draw[dashed,thin](0,0)--(0,-5);
-%      \draw[->](0,-2) arc(270:280:2) node[pos=0.5,below]{$\theta$};
-%    \end{tikzpicture}
-%  \end{columns}
+  \item Assume a circular orbit (since we know it best)
+  \item The centripetal force (required force) is equal to the gravitational
+    force (supplied force):
+
+    \vspace{-0.3in}{\Large
+      \begin{displaymath}
+        \underbrace{\frac{GMm}{r^2}}_\mathrm{F_g}
+        =\underbrace{\frac{mv^2}{r}}_\mathrm{F_c}
+      \end{displaymath}
+    }
+    where $r$ is the distance between the centres of the two objects
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Orbital Speed}
+  \begin{itemize}
+  \item Cancelling $m$, and $r$ in both sides of the equation, and solving for
+    $v$, we get:
+    
+    \vspace{-0.15in}{\Large
+      \begin{displaymath}
+        \boxed{v_\mathrm{orbit}=\sqrt{\frac{GM}{r}}}
+      \end{displaymath}
+    }
+  \item Orbital speed $v_\mathrm{orbit}$ is sometimes also called orbital
+    velocity
+  \item Does not depend on the mass of the object in orbit
+  \item A $\SI{1.5e-13}{\kg}$ speck of cosmic dust and the $\SI{419600}{\kg}$
+    International Space Station both have the same $v_\mathrm{orbit}$ around
+    Earth if they are at the same altitude
+  \end{itemize}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Escape Speed}
+  An object can leave the surface of Earth at any speed. But when all the
+  kinetic energy of that object is converted to gravitational potential, it'll
+  return back to the surface of the earth. There is, however, a \emph{minimum}
+  velocity at which the object \emph{would not} fall back to Earth because of
+  gravity.
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Escape Speed}
+  \begin{itemize}
+  \item The gravitational potential energy of an object with mass $m$ on the
+    surface of a planet (with mass $M$ and radius $r$) is
+
+    \vspace{-0.15in}{\Large
+      \begin{displaymath}
+        U_g=-\frac{GMm}{r}
+      \end{displaymath}
+    }
+  \item The most amount of work that you can do is to bring it to the other side
+    of the universe $r=\infty$, where $U_g=0$.
+  \item If you start with \emph{more} kinetic energy than required to do all
+    the work, then the object has \emph{escaped} the gravitational pull of the
+    planet.
+  \end{itemize}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Escape Speed}
+  \begin{itemize}
+  \item Set $K$ to equal to $-U_g$:
+    
+    \vspace{-0.2in}{\Large
+      \begin{displaymath}
+        \frac{1}{2}mv^2=\frac{GMm}{r}
+      \end{displaymath}
+    }
+  \item We can then solve for escape speed $v=v_\mathrm{esc}$:
+
+    \vspace{-0.2in}{\Large
+      \begin{displaymath}
+        \boxed{v_\mathrm{esc}=\sqrt{\frac{2GM}{r}}}
+      \end{displaymath}
+    }
+
+  \item There is a simple relationship between orbital speed and escape
+    speed:
+
+    \vspace{-.2in}{\Large
+      \begin{displaymath}
+        \boxed{v_\mathrm{esc}=\sqrt{2} v_\mathrm{orbit}}
+      \end{displaymath}
+    }
+    %For any $v>v_\mathrm{esc}$ the object can break free of a planet's 
+    %gravitational pull.
+  \end{itemize}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{What if I'm not escaping from the surface?}
+  \begin{itemize}
+  \item These two situations have the same escape speed:
+    \begin{center}
+      \begin{tikzpicture}[scale=1.5]
+        \draw[fill=blue!80](0,0) circle(0.2) node[midway,below]{\tiny $M$};
+        \draw[dotted,thick] (0,0) circle(1);
+        \begin{scope}[rotate around={45:(0,0)}]
+          \draw[fill=black!70](1,0) circle(0.075);
+          \draw[->,thick](0,0)--(1,0) node[midway,right]{\tiny $R$};
+          \draw[fill=black!70](2.5,-0.5) circle(0.075);
+          \draw[->,dashed](1.075,0) to[out=0,in=135](2.5,-0.5);      
+        \end{scope}
+      \end{tikzpicture}
+      \hspace{0.2in}
+      \begin{tikzpicture}[scale=1.5]
+        \draw[fill=blue!20] (0,0) circle(1) node[midway,below]{\tiny $M$};
+        \begin{scope}[rotate around={45:(0,0)}]
+          \draw[fill=black!70](1,0) circle(0.075);
+          \draw[->,thick](0,0)--(1,0) node[midway,right]{\tiny $R$};
+          \draw[fill=black!70](2.5,-0.5) circle(0.075);
+          \draw[->,dashed](1.075,0) to[out=0,in=135](2.5,-0.5);      
+        \end{scope}
+      \end{tikzpicture}
+    \end{center}
+
+  \item The only difference is that an object already in orbit (left figure)
+    already has orbital speed $v_\mathrm{orbit}$, so escaping from that orbit
+    requires an additional speed of
+
+    \vspace{-0.45in}{\Large
+      \begin{displaymath}
+        \Delta v=v_\mathrm{esc}-v_\mathrm{orbit}
+      \end{displaymath}
+    }
+  \end{itemize}
 \end{frame}
 
 
 \begin{frame}
   \frametitle{Orbital Energies}
   \begin{itemize}
-  \item Kinetic Energy
-%
-%    \vspace{-0.25in}{\Large
-%      \begin{displaymath}
-%        \boxed{\theta(t)=\theta_\mathrm{max}\sin(\omega t+\phi)}
-%      \end{displaymath}
-%    }
-%
-%    \vspace{-0.15in}where angular velocity $\omega$ is given by
-%    
-%    \vspace{-0.15in}{\Large
-%      \begin{displaymath}
-%        \boxed{\omega=\sqrt{\frac{g}{L}}}
-%      \end{displaymath}
-%    }
-%
-%    \vspace{-0.1in} and $\phi$ is a phase shift based on the initial condition
-%    of the pendulum.
-  \item Gravitational Potential Energy
-  \item Total Energy
-%    $\theta_\mathrm{max}<\ang{15}$
+  \item We can obtain the \textbf{orbital kinetic energy} by using the orbital
+    speed in our expression of kinetic energy:
+
+    \vspace{-.35in}{\Large
+      \begin{displaymath}
+        K_\mathrm{orbit}=\frac{1}{2}mv_\mathrm{orbit}^2=\frac{1}{2}m
+        \left(\sqrt{\frac{GM}{r}}\right)^2=\boxed{\frac{GMm}{2r}}
+      \end{displaymath}
+    }
+  \item And we already have an expression for
+    \textbf{gravitational potential energy}:
+
+    \vspace{-0.15in}{\Large
+      \begin{displaymath}
+        U_g=-\frac{GMm}{r}=-2K_\mathrm{orbit}
+      \end{displaymath}
+    }
+  \item\textbf{Total orbital energy} is the sum of $K$ and $U_g$!
+
+    \vspace{-0.15in}{\Large
+      \begin{displaymath}
+        E_T=K+U_g=-\frac{GMm}{2r}=-K_\mathrm{orbit}
+      \end{displaymath}
+      }
   \end{itemize}
-\end{frame}
-
-
-\begin{frame}
-  \frametitle{Escape Velocity}
-%  \textbf{Example 4:} A simple pendulum consists of a mass $m$ attached to a
-%  light string of length $l$. If the system is oscillating through small
-%  angles, which of the following is true
-%  \begin{enumerate}[(a)]
-%  \item The frequency is independent of the acceleration due to gravity, $g$.
-%  \item The period depends on the amplitude of the oscillation.
-%  \item The period is independent of the mass $m$.
-%  \item The period is independent of the length $l$.
-%  \end{enumerate}
 \end{frame}
 
 
