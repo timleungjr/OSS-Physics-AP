@@ -26,7 +26,7 @@
 \subtitle{AP Physics (1, 2 and C)}
 \author[TML]{Timothy Leung, Ph.D.}
 \institute{Olympiads School}
-\date{Fall/Winter 2017}
+\date{January 2018}
 
 \newcommand{\pic}[2]{\includegraphics[width=#1\textwidth]{#2}}
 \newcommand{\mb}[1]{\ensuremath\mathbf{#1}}
@@ -45,21 +45,21 @@
   \framesubtitle{Please download/print the PDF file}
   If you have not done so already, please download the following files.
   \begin{itemize}
-  \item\texttt{08-gravitation.pdf}--This week's
+  \item\texttt{08-gravitation.pdf}---This week's
     slides. I recommend printing 4 slides per page.
-  \item\texttt{08-Homework.pdf} This week's homework. (The file is not ready
+  \item\texttt{08-Homework.pdf}---This week's homework. (The file is not ready
     yet; it will be posted in the next day or two.)
   \end{itemize}
 \end{frame}
 
 
-\begin{frame}
-  \frametitle{Today's Plan}
-  \begin{enumerate}
-  \item Take up (some) questions from Class 7
-  \item Go over this week's slides (hopefully it won't take too long)
-  \end{enumerate}
-\end{frame}
+%\begin{frame}
+%  \frametitle{Today's Plan}
+%  \begin{enumerate}
+%  \item Take up (some) questions from Class 7
+%  \item Go over this week's slides (hopefully it won't take too long)
+%  \end{enumerate}
+%\end{frame}
 
 
 
@@ -223,8 +223,8 @@
     \column{0.3\textwidth}
 
     \begin{tikzpicture}[scale=0.5]
-      \draw[thick,fill=gray](0,0) circle(5) node[above]{$m_1$};
-      \draw[thick,fill=white](0,0) circle(4.9) node[above]{$m_1$};
+      \draw[thick,fill=gray](0,0) circle(5);% node[above]{$m_1$};
+      \draw[thick,fill=white](0,0) circle(4.9);% node[above]{$m_1$};
       \draw[ultra thick,<->,rotate=30](0,0)--(4.9,0) node[midway,below]{$R$};
       \draw[thick,fill=red!65](1,-1) circle(0.2) node[below]{$m_2$};
     \end{tikzpicture}
@@ -358,7 +358,7 @@
 
     \vspace{-.2in}{\Large
       \begin{displaymath}
-        T=2\pi\frac{m}{k}
+        T=2\pi\sqrt{\frac{m}{k}}
       \end{displaymath}
     }
 
@@ -373,6 +373,25 @@
     
   \end{columns}
 \end{frame}
+
+
+\begin{frame}
+  \frametitle{Gravitational Field Lines}
+  \begin{center}
+    \begin{tikzpicture}[scale=1.5]
+      \foreach \x in {0,...,9}\draw[red!50,ultra thick,rotate=36*\x](0,0)--(0,1);
+      \foreach \x in {0,...,9}\draw[red!50,<-,ultra thick,rotate around={36*\x:(0,0)}](0,0.95)--(0,1.5);
+      \draw[fill=blue!20,thick](0,0) circle(0.3) node{$m$};
+    \end{tikzpicture}
+  \end{center}
+  \begin{itemize}
+  \item The direction of $\mb{g}$ is towards the centre of the object that
+    created it
+  \item Field lines do not tell the intensity (i.e.\ magnitude) of $\mb{g}$,
+    only the direction
+  \end{itemize}
+\end{frame}
+
 
 
 
@@ -416,7 +435,7 @@
   \item A falling object is always decreasing in $U_g$
   \item ``Steepest descent'': the direction of $\mb{F}$ is the shortest path
     to decrease $U_g$ 
-  \item Objects travelling perpendicular to $\mb{F}$ has constant $U_g$
+  \item Objects traveling perpendicular to $\mb{F}$ has constant $U_g$
   \end{itemize}
 \end{frame}
 
@@ -438,25 +457,7 @@
   i.e.
   \begin{itemize}
   \item The direction of $\mb{g}$ is the shortest path to decrease $U_g$ 
-  \item Objects travelling perpendicular to $\mb{g}$ has constant $U_g$
-  \end{itemize}
-\end{frame}
-
-
-\begin{frame}
-  \frametitle{Gravitational Field Lines}
-  \begin{center}
-    \begin{tikzpicture}[scale=1.5]
-      \foreach \x in {0,...,9}\draw[red!50,ultra thick,rotate=36*\x](0,0)--(0,1);
-      \foreach \x in {0,...,9}\draw[red!50,<-,ultra thick,rotate around={36*\x:(0,0)}](0,0.95)--(0,1.5);
-      \draw[fill=blue!20,thick](0,0) circle(0.3) node{$m$};
-    \end{tikzpicture}
-  \end{center}
-  \begin{itemize}
-  \item The direction of $\mb{g}$ is towards the centre of the object that
-    created it
-  \item Field lines do not tell the intensity (i.e.\ magnitude) of $\mb{g}$,
-    only the direction
+  \item Objects traveling perpendicular to $\mb{g}$ has constant $U_g$
   \end{itemize}
 \end{frame}
 
@@ -676,8 +677,8 @@
   \begin{itemize}
   \item Centripetal motion is based on rotation around a fixed point, but this
     is \emph{not} the case for celestial mechanics!
-  \item Just as Earth orbits around the Sun, the Sun also experiences a
-    centripetal force and therefore ``orbits'' around Earth
+  \item Just as Earth experiences a gravitational force by the Sun, the Sun
+    also experiences a gravitational force from Earth
   \item This problem is especially important when the two objects orbiting each
     other has similar masses (e.g.\ a binary star system)
   \end{itemize}
@@ -690,7 +691,7 @@
   \item\textbf{Law of Ellipses:} The orbit of a planet is an ellipse with the
     Sun at one of the two foci.
   \item\textbf{Law of Equal Areas:} A line segment joining a planet and the Sun
-    sweeps out equal areas
+    sweeps out equal areas during equal intervals of time
   \item \textbf{Law of Periods:} The square of the orbital period of a planet
     is proportional to the cube of the semi-major axis of its orbit.
   \end{enumerate}
@@ -712,16 +713,16 @@
     \column{0.7\textwidth}
     \begin{itemize}
     \item The area of the ellipse is $A=\pi ab$
-    \item The relationship between $r$ and $\theta$ given by:
+    \item For an ellipse, the relationship between $r$ and $\theta$ given by:
 
-      \vspace{-.3in}{\Large
+      \vspace{-.35in}{\Large
         \begin{displaymath}
           r=\frac{a(1-e^2)}{1+e\cos\theta}
-          \quad\textnormal{\footnotesize where}\quad
+          \quad\textnormal{\normalsize where}\quad
           0\leq e < 1
         \end{displaymath}
       }
-    \item when $e=0$ it's a circle
+    \item when $e=0$ it's a circle: $r=a$
     \item When $e=1$ it's no longer an ellipse
     \end{itemize}
   \end{columns}
@@ -1047,7 +1048,7 @@
       
       \vspace{-.3in}{\Large
         \begin{displaymath}
-          dA=\frac{1}{2}r^2d\theta
+          dA=\int_0^rrdrd\theta=\frac{1}{2}r^2d\theta
         \end{displaymath}
       }
     \item Take the time derivative of both sides, and we have an expression for
@@ -1068,7 +1069,7 @@
 
   \begin{itemize}
   \item But hurray! We know that the angular component of velocity
-    ($\mb{v}_\theta$) is related to the angular velocity $\mb{\omega}$, so:
+    ($\mb{v}_\theta$) is related to the angular velocity $\bm{\omega}$, so:
     
     \vspace{-.25in}{\Large
       \begin{displaymath}
@@ -1082,7 +1083,7 @@
     
     \vspace{-.4in}{\Large
       \begin{displaymath}
-        rv_\theta=|\mb{r}\times\mb{v}_\theta|=|\frac{\mb{L}}{\mu}|=\frac{L}{\mu}
+        rv_\theta=\left|\mb{r}\times\mb{v}_\theta\right|=\left|\frac{\mb{L}}{\mu}\right|=\frac{L}{\mu}
         \quad\longrightarrow\quad
         \boxed{\frac{dA}{dt} =\frac{L}{2\mu}}
       \end{displaymath}
