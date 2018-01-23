@@ -26,7 +26,8 @@
 
 \newcommand{\pic}[2]{\includegraphics[width=#1\textwidth]{#2}}
 \newcommand{\mb}[1]{\mathbf{#1}}
-%\newcommand{\magdir}[2]{$#1\;[\mathrm{#2}]$}
+\newcommand{\eq}[2]{\vspace{#1}{\Large\begin{displaymath}#2\end{displaymath}}}
+
 
 \begin{document}
 
@@ -80,13 +81,11 @@
   \frametitle{Coulomb's Law for Electrostatic Force}
   The magnitude of the \textbf{electrostatic force} between two point charges
   is given by:
- 
-  \vspace{-.1in}{\Large
-    \begin{displaymath}
-      \boxed{F_q=\frac{k\left|q_1q_2\right|}{r^2}}
-    \end{displaymath}
+
+  \eq{-.1in}{
+    \boxed{F_q=\frac{k\left|q_1q_2\right|}{r^2}}
   }
-  
+
   \vspace{-.1in}
   \begin{center}
     \begin{tabular}{l|c|l}
@@ -106,43 +105,6 @@
 \end{frame}
 
 
-%\begin{frame}
-%  \frametitle{Similarities Between $\mb{F}_g$ to $\mb{F}_q$}
-%  \vspace{-0.2in}
-%  \begin{columns}
-%    \column{0.5\textwidth}
-%    \begin{center}
-%      Electric Force (point charge):
-%      {\LARGE
-%        \begin{displaymath}
-%          \boxed{F_q=\frac{k\left|q_1q_2\right|}{r^2}}
-%        \end{displaymath}
-%      }
-%    \end{center}
-%    \column{0.5\textwidth}
-%    \begin{center}
-%      Gravitational Force (point mass):
-%      {\LARGE
-%        \begin{displaymath}
-%          \boxed{F_g=\frac{Gm_1m_2}{r^2}}
-%        \end{displaymath}
-%      }
-%    \end{center}
-%  \end{columns}
-%  \begin{itemize}
-%  \item Similarities:
-%    \begin{itemize}
-%    \item Both inversely proportional to $r^2$
-%    \item Both are scaled by a constant
-%      \end{itemize}
-%  \item Difference:
-%    \begin{itemize}
-%    \item For gravity only positive mass
-%    \item Electric charge can be either positive or negative
-%    \end{itemize}
-%  \end{itemize}
-%\end{frame}
-
 \section[$\mb{E}$]{Electric Field}
 
 \begin{frame}
@@ -150,20 +112,16 @@
   We can get \textbf{electric field} by repeating the same procedure as with
   gravitational field. Again, let's group the variables in Coulomb's equation:
 
-  \vspace{-0.2in}{\Large
-    \begin{displaymath}
-      F_q=\underbrace{\left[\frac{kq_1}{r^2}\right]}_{=E}q_2
-    \end{displaymath}
+  \eq{-.2in}{
+    F_q=\underbrace{\left[\frac{kq_1}{r^2}\right]}_{=E}q_2
   }
 
   \vspace{-0.1in}
   We can say that charge $q_1$ creates an ``electric field'' ($E$) with an
   intensity
 
-  \vspace{-0.2in}{\Large
-    \begin{displaymath}
-      E=\frac{kq_1}{r^2}
-    \end{displaymath}
+  \eq{-0.2in}{
+    E=\frac{kq_1}{r^2}
   }
 
   \vspace{-0.1in}
@@ -181,11 +139,8 @@
   \textbf{The direction of the field is radially outward from a positive
     point charge and radially inward towards a negative charge.}
 
-  \vspace{-0.2in}
-  {\Large
-    \begin{displaymath}
-      \boxed{E=\frac{kq_s}{r^2}}
-    \end{displaymath}
+  \eq{-0.2in}{
+    \boxed{E=\frac{kq_s}{r^2}}
   }
   \begin{center}
     \begin{tabular}{l|c|l}
@@ -208,10 +163,8 @@
   And when there is a charge $q$, the electric force $\mb{F}_q$ that it
   experiences in the presence of $\mb{E}$ is:
 
-  \vspace{-.2in}{\Large
-    \begin{displaymath}
-      \boxed{\mb{F}_q=\mb{E}q}
-    \end{displaymath}
+  \eq{-.2in}{
+    \boxed{\mb{F}_q=\mb{E}q}
   }
 
   \vspace{-.1in}$\mb{F}_q$ and $\mb{E}$ are vectors, and following the
@@ -244,37 +197,7 @@
 \end{frame}
 
 
-
-
-%\begin{frame}
-%  \frametitle{Example Problem}
-%  \textbf{Example 2:} What is the electric field intensity at a point
-%  \SI{30.0}{cm} from the centre of a small sphere that has a positive charge of
-%  \SI{2.0e-6}{C}? ($k=\SI{8.99e9}{N.m^2/C^2}$)
-%\end{frame}
-
-%\begin{frame}
-%  \frametitle{Example Problem}
-%  \textbf{Example 3:} Three charges, A(\SI{+6.0}{\micro\coulomb}),
-%  B(\SI{-5.0}{\micro\coulomb}), and C(\SI{+6.0}{\micro\coulomb}), are located at
-%  the corners of a square with sides that are \SI{5.0}{cm} long. What is the
-%  electric field intensity at point D?
-%  \begin{center}
-%    \pic{0.55}{graphics/charges-square.png}
-%  \end{center}
-%\end{frame}
-%
-%\begin{frame}
-%  \frametitle{Example Problem (Cont.)}
-%  \begin{center}
-%    \pic{0.5}{graphics/charges-square-forces.png}
-%  \end{center}
-%\end{frame}
-
-
-
 \section[$U_q$ and $V$]{Electric Potential \& Potential Energy}
-
 
 \begin{frame}
   \frametitle{Electrical Potential Energy}
@@ -283,20 +206,16 @@
   If we move a charged particle against the electric force, work must be done
   (either positive or negative, depending on which way the particle moves):
   
-  \vspace{-.3in}{\Large
-    \begin{displaymath}
-      W=\int\mb{F}_q\cdot d\mb{s}
-      =kq_1q_2\int_{r_1}^{r_2}\frac{dr}{r^2}
-      =-\frac{kq_1q_2}{r}=-\Delta U_q
-    \end{displaymath}
+  \eq{-.3in}{
+    W=\int\mb{F}_q\cdot d\mb{s}
+    =kq_1q_2\int_{r_1}^{r_2}\frac{dr}{r^2}
+    =-\frac{kq_1q_2}{r}=-\Delta U_q
   }
 
   \vspace{-.1in}\textbf{Electrical potential energy} is defined as:
     
-  \vspace{-.2in}{\Large
-    \begin{displaymath}
-      \boxed{U_q=\frac{kq_1q_2}{r}}
-    \end{displaymath}
+  \eq{-.2in}{
+    \boxed{U_q=\frac{kq_1q_2}{r}}
   }
 
   \vspace{-.1in}$U_q$ can be positive or negative, because charged particles
@@ -313,35 +232,22 @@
     \begin{center}
       Two positive charges:
 
-      \vspace{-0.3in}{\Large
-        \begin{displaymath}
-          U_q>0
-        \end{displaymath}
-      }
+      \eq{-0.3in}{U_q>0}
     \end{center}
     \column{0.33\textwidth}
     \begin{center}
       Two negative charges:
 
-      \vspace{-0.3in}{\Large
-        \begin{displaymath}
-          U_q>0
-        \end{displaymath}
-      }
+      \eq{-0.3in}{U_q>0}
     \end{center}
     \column{0.34\textwidth}
     \begin{center}
       One positive and one negative charge:
 
-      \vspace{-0.5in}{\Large
-        \begin{displaymath}
-          U_q<0
-        \end{displaymath}
-      }
+      \eq{-0.5in}{U_q<0}
     \end{center}
   \end{columns}
 
-  \vspace{.4in}
   \begin{itemize}
   \item $U_q>0$ means positive work is done to bring two charges together from
    $r=\infty$ to $r$ (both charges of the same sign)
@@ -360,10 +266,8 @@
   \item In the trivial case (small changes in height, no change in $g$), it is
     just
 
-    \vspace{-.2in}{\Large
-      \begin{displaymath}
-        \frac{\Delta U_q}{m}=g\Delta h
-      \end{displaymath}
+    \eq{-.2in}{
+      \frac{\Delta U_q}{m}=g\Delta h
     }
   \end{itemize}
   (We have actually looked at this briefly in our discussion on universal
@@ -378,19 +282,15 @@
   and the constant is called the \textbf{electric potential}. For a point
   charge, it is defined as
 
-  \vspace{-.2in}{\Large
-    \begin{displaymath}
-      \boxed{V=\frac{U_q}{q}=\frac{kq}{r}}
-    \end{displaymath}
+  \eq{-.2in}{
+    \boxed{V=\frac{U_q}{q}=\frac{kq}{r}}
   }
 
   The unit for electric potential is a \emph{volt} which is
   \emph{one joule per coulomb}:
 
-  \vspace{-.25in}{\Large
-    \begin{displaymath}
-      \SI{1}{V}=\SI{1}{J/C}
-    \end{displaymath}
+  \eq{-.25in}{
+    \SI{1}{V}=\SI{1}{J/C}
   }
 \end{frame}
 
@@ -401,10 +301,8 @@
   We can easily that there is also a relationship between electrical potential
   $V$ and electrical potential energy:
   
-  \vspace{-.2in}{\Large
-    \begin{displaymath}
-      \boxed{\Delta V=-\int\mb{E}\cdot d\mb{s}}
-    \end{displaymath}
+  \eq{-.2in}{
+    \boxed{\Delta V=-\int\mb{E}\cdot d\mb{s}}
   }
 \end{frame}
 
@@ -416,18 +314,18 @@
   The change in electric potential is called the
   \textbf{potential difference} or \textbf{voltage}:
 
-  \vspace{-.2in}{\Large
-    \begin{displaymath}
-      \boxed{\Delta V=\frac{\Delta U_q}{q}}\quad\textsf{\normalsize and}\quad
-      \boxed{dV=\frac{dU_q}{q}}
-    \end{displaymath}
+  \eq{-.2in}{
+    \boxed{\Delta V=\frac{\Delta U_q}{q}}\quad\textsf{\normalsize and}\quad
+    \boxed{dV=\frac{dU_q}{q}}
   }
 
   Here, we can relate $\Delta V$ to an equation that we knew from Physics 11,
   which related to the energy dissipated in a resistor in a circuit
   $\Delta U$ to the voltage drop $\Delta V$:
     
-  \vspace{-.2in}{\Large\[\boxed{\Delta U=q\Delta V}\]}
+  \eq{-.2in}{
+    \boxed{\Delta U=q\Delta V}
+  }
 
   Electric potential difference also has the unit \emph{volts} (\si{V})
 \end{frame}
@@ -455,37 +353,7 @@
     \end{displaymath}
   \end{itemize}
 \end{frame}
-%\begin{frame}
-%  \frametitle{Potential Difference and Potential Energy}
-%  \begin{columns}
-%    \column{0.48\textwidth}
-%    \begin{center}
-%      Electric Potential Energy
-%    \end{center}
-%    {\Large
-%      \begin{displaymath}
-%        \boxed{U_q=\frac{kq_1q_2}{r}}
-%      \end{displaymath}
-%    }
-%    \column{0.48\textwidth}
-%    \begin{center}
-%      Electric Potential Difference
-%    \end{center}
-%    {\Large
-%      \begin{displaymath}
-%        \boxed{V=\frac{kq}{r}}
-%      \end{displaymath}
-%    }
-%  \end{columns}
-%  \begin{itemize}
-%  \item Two very similar expressions
-%  \item Analogy: Carrying a bucket of water up a mountain
-%    \begin{itemize}
-%    \item $U_q$ is the work that I have to do
-%    \item $V$ is the height of the mountain
-%    \end{itemize}
-%  \end{itemize}
-%\end{frame}
+
 
 \begin{frame}
   \frametitle{Relating $U_q$, $\mb{F}_q$ and $\mb{E}$}
@@ -495,12 +363,10 @@
     electrical potential energy ($U_q$), and electric field ($\mb{E}$) to the
     electric potential ($V$):
 
-    \vspace{-.1in}{\Large
-      \begin{displaymath}
-        \mb{F}_q=-\nabla U_q=-\frac{\partial U_q}{\partial r}\hat{\mb{r}}
-        \quad\;\;
-        \mb{E}=-\nabla V=-\frac{\partial V}{\partial r}\hat{\mb{r}}
-      \end{displaymath}
+    \eq{-.3in}{
+      \mb{F}_q=-\nabla U_q=-\frac{\partial U_q}{\partial r}\hat{\mb{r}}
+      \quad\;\;
+      \mb{E}=-\nabla V=-\frac{\partial V}{\partial r}\hat{\mb{r}}
     }
   
   \item\vspace{-.2in}Electric force $\mb{F}_q$ always points from high
@@ -508,52 +374,16 @@
   \item Notice that electric field can also be expressed as the change of
     electric potential per unit distance, which has the unit
     
-    \vspace{-.1in}\begin{displaymath}
+    \eq{-.25in}{
       \SI{1}{N/C}=\SI{1}{V/m}
-    \end{displaymath}
-    Electric field is sometimes also called ``potential gradient''
+    }
+    
+    \vspace{-.2in}Electric field is also called ``potential gradient''
   \end{itemize}
 \end{frame}
 
 
 
-%\begin{frame}
-%  \frametitle{Example Problem}
-%  \textbf{Example 4:} A small sphere with a charge of \SI{-3.0}{\micro\coulomb}
-%  creates an electric field. Calculate the electric potential difference at
-%  point A, located \SI{2.0}{cm} from the source charge, and at point B, located
-%  \SI{5.0}{cm} from the same source charge. Which point is at higher potential?
-%
-%  \begin{center}
-%    \pic{0.5}{graphics/neg-potential.png}
-%  \end{center}
-%\end{frame}
-%
-%\begin{frame}
-%  \frametitle{Example Problem}
-%  \textbf{Example 5:} The diagram shows three charges, A(\SI{5.0}{\micro C}),
-%  B(\SI{-7.0}{\micro C}), and C(\SI{2.0}{\micro C}), placed at three corners of
-%  a rectangle.
-%  Point D is the fourth corner. What is the electric potential difference at
-%  point D?
-%  \begin{center}
-%    \pic{0.6}{graphics/multi-potential.png}
-%  \end{center}
-%\end{frame}
-
-
-
-%\section{Field Structure}
-%
-%\begin{frame}
-%  \frametitle{Field Structure}
-%  How should we draw the field lines?
-%  \begin{center}
-%    \pic{.3}{graphics/plate1.png}
-%    \pic{.3}{graphics/plate2.png}
-%  \end{center}
-%\end{frame}
-%
 \begin{frame}
   \frametitle{Equipotential Lines}
   \begin{center}
@@ -579,33 +409,16 @@
   \item $E$ is proportional to the charge density (charge per unit
     area) on the plates:
 
-    \vspace{-.2in}{\Large
-      \begin{displaymath}
-        E\propto\sigma\quad\textsf{\normalsize where}\quad
-        \sigma=\frac{\sigma}{A}
-      \end{displaymath}
+    \eq{-.2in}{
+      E\propto\sigma\quad\textsf{\normalsize where}\quad
+      \sigma=\frac{\sigma}{A}
     }
   \item $E$ outside the plates is very low (close to zero), except for
     the fringe effects at the edges of the plates. 
   \end{itemize}
 \end{frame}
 
-%\begin{frame}
-%  \frametitle{Example Problem}
-%  \textbf{Example 6}: An identical pair of metal plates is mounted parallel on
-%  insulating stands \SI{20}{cm} apart and equal amounts of opposite charges are
-%  placed on the plates. The electric field intensity at the midpoint between the
-%  plates is \SI{400}{N/C}.
-%  \begin{enumerate}
-%  \item What is the electric field intensity at a point \SI{5.0}{cm} from the
-%    positive plate?
-%  \item If the same amount of charge was placed on plates that have twice the
-%    area and are \SI{20}{cm} apart, what would be the electric field intensity
-%    at the point \SI{5.0}{cm} from the positive plate?
-%  \item What would be the electric field intensity of the original plates if
-%    the distance of separation of the plates was doubled?
-%  \end{enumerate}
-%\end{frame}
+
 
 \begin{frame}
   \frametitle{Electric Field and Potential Difference}
@@ -613,19 +426,15 @@
   The relationship between electric field ($\mb{E}$) and electric potential
   difference ($V$):
     
-  \vspace{-.15in}{\Large
-    \begin{displaymath}
-      \mb{E}=-\frac{\partial V}{\partial r}
-    \end{displaymath}
+  \eq{-.15in}{
+    \mb{E}=-\frac{\partial V}{\partial r}
   }
 
   In a uniform electric field (e.g.\ parallel plate) it simplifies to a very
   simple equation:
 
-  \vspace{-.2in}{\Large
-    \begin{displaymath}
-      \boxed{E=\frac{\Delta V}{d}}
-    \end{displaymath}
+  \eq{-.2in}{
+    \boxed{E=\frac{\Delta V}{d}}
   }
 
   \vspace{-.1in}
@@ -639,20 +448,5 @@
     \end{tabular}
   \end{center}
 \end{frame}
-
-%\begin{frame}
-%  \frametitle{Example Problem}
-%  \textbf{Example 7:} Two parallel plates \SI{5.0}{cm} apart are oppositely
-%  charged. The electric potential difference across the plates is \SI{80.0}{V}.
-%  \begin{itemize}
-%  \item What is the electric field intensity between the plates?
-%  \item What is the potential difference at point A?
-%  \item What is the potential difference at point B?
-%  \item What is the potential difference between points A and B?
-%  \item What force would be experienced by a small \SI{2.0}{\micro C} charge
-%    placed at point A?
-%  \end{itemize}
-%\end{frame}
-
 
 \end{document}
