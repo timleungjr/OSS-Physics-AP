@@ -44,11 +44,14 @@
   \begin{enumerate}
   \item\texttt{10-electrostatics.pdf}---This presentation. If you want to print
     on paper, I recommend printing 4 pages per side.
-  \item\texttt{10-Homework.pdf}---Homework assignment for this class and next
-    week.
-    The assignment is similar in format compared to the actual AP exams, with
-    most questions being multiple-choice questions. The assignment has more
-    questions though.
+%  \item\texttt{10-Homework.pdf}---Homework assignment for this class and next
+%    week.
+%    The assignment is similar in format compared to the actual AP exams, with
+%    most questions being multiple-choice questions. The assignment has more
+    %    questions though.
+
+  \item There is no assignment this week. It will be combined into a larger one
+    for next week, when we deal with distributed charges and capacitors.
   \end{enumerate}
   
   Please download/print the PDF file before each class. There is no point
@@ -209,7 +212,7 @@
   \eq{-.3in}{
     W=\int\mb{F}_q\cdot d\mb{s}
     =kq_1q_2\int_{r_1}^{r_2}\frac{dr}{r^2}
-    =-\frac{kq_1q_2}{r}=-\Delta U_q
+    =-\frac{kq_1q_2}{r}\Big|^{r_2}_{r_1}=-\Delta U_q
   }
 
   \vspace{-.1in}\textbf{Electrical potential energy} is defined as:
@@ -218,8 +221,8 @@
     \boxed{U_q=\frac{kq_1q_2}{r}}
   }
 
-  \vspace{-.1in}$U_q$ can be positive or negative, because charged particles
-  can be either positive or negative
+  \vspace{-.1in}$U_q$ can be (+) or (-), because charged particles can be
+  either (+) or (-)
 \end{frame}
 
 
@@ -248,6 +251,7 @@
     \end{center}
   \end{columns}
 
+  \vspace{.2in}
   \begin{itemize}
   \item $U_q>0$ means positive work is done to bring two charges together from
    $r=\infty$ to $r$ (both charges of the same sign)
@@ -258,20 +262,24 @@
 
 \begin{frame}
   \frametitle{Electric Potential}
-  \begin{itemize}
-  \item When I move an object of mass $m$ against a gravitational force from
-    one point to another, the work that I do is directly proportional to $m$
-  \item i.e.\ there is a ``constant'' in that scales with \emph{any} mass, as
-    long as they move between those same two points
-  \item In the trivial case (small changes in height, no change in $g$), it is
-    just
+  \framesubtitle{Start with an Analogy}
 
-    \eq{-.2in}{
-      \frac{\Delta U_q}{m}=g\Delta h
-    }
-  \end{itemize}
-  (We have actually looked at this briefly in our discussion on universal
-  gravitation.)
+  When I move an object of mass $m$ against a gravitational force from one
+  point to another, the work that I do is directly proportional to $m$, i.e.\
+  there is a ``constant'' in that scales with \emph{any} mass, as long as they
+  move between those same two points:
+
+  \eq{-.25in}{W=Km}
+
+  \vspace{-.15in}In the trivial case (small changes in height, no change in
+  $g$), this constant is just
+
+  \eq{-.15in}{
+    \frac{W}{m}=g\Delta h
+  }
+
+  \vspace{-.1in}(We have actually looked at this briefly in our discussion on
+  universal gravitation.)
 \end{frame}
 
 
@@ -292,16 +300,11 @@
   \eq{-.25in}{
     \SI{1}{V}=\SI{1}{J/C}
   }
-\end{frame}
 
-
-\begin{frame}
-  \frametitle{Electrical Potential}
+  \vspace{-.15in}We can easily that there is also a relationship between
+  electrical potential $V$ and electrical potential energy:
   
-  We can easily that there is also a relationship between electrical potential
-  $V$ and electrical potential energy:
-  
-  \eq{-.2in}{
+  \eq{-.18in}{
     \boxed{\Delta V=-\int\mb{E}\cdot d\mb{s}}
   }
 \end{frame}
@@ -358,27 +361,26 @@
 \begin{frame}
   \frametitle{Relating $U_q$, $\mb{F}_q$ and $\mb{E}$}
   \framesubtitle{Our Integrals In Reverse}
-  \begin{itemize}
-  \item Using vector calculus, we can relate electric force ($\mb{F}_q$) to
-    electrical potential energy ($U_q$), and electric field ($\mb{E}$) to the
-    electric potential ($V$):
+  Using vector calculus, we can relate electric force ($\mb{F}_q$) to
+  electric potential energy ($U_q$), and electric field ($\mb{E}$) to the
+  electric potential ($V$):
 
-    \eq{-.3in}{
-      \mb{F}_q=-\nabla U_q=-\frac{\partial U_q}{\partial r}\hat{\mb{r}}
-      \quad\;\;
-      \mb{E}=-\nabla V=-\frac{\partial V}{\partial r}\hat{\mb{r}}
-    }
-  
+  \eq{-.2in}{
+    \mb{F}_q=-\nabla U_q=-\frac{\partial U_q}{\partial r}\hat{\mb{r}}
+    \quad\;\;
+    \mb{E}=-\nabla V=-\frac{\partial V}{\partial r}\hat{\mb{r}}
+  }
+
+  \begin{itemize}  
   \item\vspace{-.2in}Electric force $\mb{F}_q$ always points from high
     potential to low potential energy
-  \item Notice that electric field can also be expressed as the change of
-    electric potential per unit distance, which has the unit
+  \item Electric field can also be expressed as the change of electric
+    potential per unit distance, which has the unit
     
     \eq{-.25in}{
       \SI{1}{N/C}=\SI{1}{V/m}
     }
-    
-    \vspace{-.2in}Electric field is also called ``potential gradient''
+  \item Electric field is also called ``potential gradient''
   \end{itemize}
 \end{frame}
 
