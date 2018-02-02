@@ -1,0 +1,424 @@
+\documentclass[12pt]{article}
+
+\usepackage[margin=.75in,letterpaper]{geometry}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{mathpazo}
+\usepackage[scaled]{helvet}
+\usepackage{siunitx}
+
+\usetikzlibrary{decorations.pathmorphing,patterns}
+
+\sisetup{number-math-rm=\mathnormal}
+
+\renewcommand{\familydefault}{\sfdefault}
+
+\newcommand{\pic}[2]{\includegraphics[width=#1\textwidth]{#2}}
+\newcommand{\magdir}[2]{$#1\;[\mathrm{#2}]$}
+\newcommand{\mb}[1]{\mathbf{#1}}
+
+\setlength{\parindent}{0pt}
+
+\begin{document}
+
+\begin{center}
+  Student \#: \underline{\hspace{1in}}\hspace{1.9in}
+  Student Name: \underline{\hspace{2in}}\\
+  \vspace{0.3in}{\LARGE
+    AP Physics Class 10 \& 11: Electrostatics \& Gauss's Law}
+\end{center}
+
+The questions in this homework assignment cover AP 1 and C exams. Some of the
+questions are not typically questions.
+
+\begin{enumerate}[leftmargin=50pt,label=\underline{\hspace{0.4in}} \arabic*.]
+
+
+\item Two electric objects experience a repulsive force. What happens to that
+  force if the distance between the objects is doubled?
+  \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt]
+  \item It decreases to one-fourth its value.
+  \item It decreases to one-half its value.
+  \item It stays the same.
+  \item It doubles.
+  \item It quadruples.
+  \end{enumerate}
+
+\item A pith ball is a tiny piece of Styrofoam that is covered with a
+  conductive paint. One pith ball initially has a charge of \SI{6.4e-8}{C},
+  and it touches an identical, neutral pith ball. After the pith balls are
+  separated, what is the charge on the pith ball that had the initial charge?
+  \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt]
+  \item\SI{6.4e-8}{C}
+  \item\SI{3.2e-8}{C}
+  \item\SI{0}{C}
+  \item\SI{-3.2e-8}{C}
+  \item\SI{-6.4e-8}{C}
+  \end{enumerate}
+
+\item Glass becomes positively charged when it is rubbed with silk. Which
+  of the following is the best description of what’s happening?
+  \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt]
+  \item Electrons are rubbed off the glass onto the silk.
+  \item Electrons are rubbed off the silk onto the glass.
+  \item Protons are rubbed off the glass onto the silk.
+  \item Protons are rubbed off the silk onto the glass.
+  \item Neutrons in the glass have an affinity for positive charge.
+  \end{enumerate}
+  
+\item Consider an isolated, neutral system consisting of wool fabric and a
+  rubber rod. If the rubber rod is rubbed with wool to become negatively
+  charged, what can be said about the wool fabric?
+  \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt]
+  \item It becomes equally negatively charged.
+  \item It becomes equally positively charged.
+  \item It becomes negatively charged but not equally.
+  \item It becomes positively charged but not equally.
+  \item In a neutral system, neither object can become charged.
+  \end{enumerate}
+
+\item An electron and a proton are separated by \SI{1.50e-10}{m}. If they are
+  released, which one will accelerate at a greater rate, and what is the
+  magnitude of that acceleration?
+  \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt]
+  \item The electron; \SI{1.12e22}{m/s^2}
+  \item The proton; \SI{1.12e22}{m/s^2}
+  \item The electron; \SI{6.13e18}{m/s^2}
+  \item The proton; \SI{6.13e18}{m/s^2}
+  \item They both accelerate at the same rate; \SI{1.02e-8}{m/s^2}
+  \end{enumerate}
+
+%\item A proposed ``space elevator'' can lift a \SI{1,000}{kg} payload to an
+%  orbit of \SI{150}{km} above the Earth's surface. The radius of the Earth is
+%  \SI{6.4e6}{m}, and the Earth's mass is \SI{6e24}{kg}. What is the
+%  gravitational potential energy of the payload when it reaches orbit?
+%  \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt]
+%  \item\SI{1.0e3}{J}
+%  \item\SI{2.7e6}{J}
+%  \item\SI{6.1e10}{J}
+%  \item\SI{2.7e12}{J}
+%  \item\SI{1.0e15}{J}
+%  \end{enumerate}
+%
+%\item The Earth is at an average distance of \SI{1}{AU} from the Sun and has an
+%  orbital period of \SI{1}{year}. Jupiter orbits the Sun at approximately
+%  \SI{5}{AU}. About how long is the orbital period of Jupiter?
+%  \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt]
+%  \item\SI{1}{year}
+%  \item\SI{2}{years}
+%  \item\SI{5}{years}
+%  \item\SI{11}{years}
+%  \item\SI{125}{years}
+%  \end{enumerate}
+%  
+%\item A satellite orbits the Earth at a distance of \SI{200}{km}. If the mass
+%  of the Earth is \SI{6.0e24}{kg} and the Earth's radius is \SI{6.4e6}{m}, what
+%  is the satellite's speed?
+%  \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt]
+%  \item\SI{1e3}{m/s}
+%  \item\SI{3.5e3}{m/s}
+%  \item\SI{7.8e3}{m/s}
+%  \item\SI{5e6}{m/s}
+%  \item\SI{6.1e7}{m/s}
+%  \end{enumerate}
+%  
+%\item Mars orbits the Sun at a distance of \SI{2.3e11}{m}. The mass of the Sun
+%  is \SI{2e30}{kg}, and the mass of Mars is \SI{6.4e23}{kg}. Approximately
+%  what is the gravitational force that the Sun exerts on Mars?
+%  \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt]
+%  \item\SI{1.6e20}{N}
+%  \item\SI{1.6e21}{N}
+%  \item\SI{3.7e21}{N}
+%  \item\SI{3.7e32}{N}
+%  \item\SI{3.7e42}{N}
+%  \end{enumerate}
+%
+%\item When climbing from sea level to the top of Mount Everest, a hiker
+%  changes elevation by \SI{8848}{m}. By what percentage will the
+%  gravitational field of the Earth change during the climb? (The Earth's
+%  mass is \SI{6.0e24}{kg}, and its radius is \SI{6.4e6}{m}.)
+%  \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt]
+%  \item It will increase by approximately $0.3\%$.
+%  \item It will decrease by approximately $0.3\%$.
+%  \item It will increase by approximately $12\%$.
+%  \item It will decrease by approximately $12\%$.
+%  \item The gravitational field strength will not change.
+%  \end{enumerate}
+%  \newpage
+%  
+%\item Four planets, A through D, orbit the same star. The relative masses and
+%  distances from the star for each planet are shown in the table. For
+%  example, Planet A has twice the mass of Planet B, and Planet D has
+%  three times the orbital radius of Planet A. Which planet has the highest
+%  gravitational attraction to the star?
+%  \begin{center}
+%    \begin{tabular}{lll}
+%      \hline
+%      \textbf{Planet} & \textbf{Relative mass} & \textbf{Relative distance}\\
+%      \hline
+%      A\hspace{0.4in}& $2m$   & $r$    \\ \hline
+%      B & $m$    & $0.1r$\hspace{0.25in} \\ \hline
+%      C & $0.5m$\hspace{0.25in} & $2r$   \\ \hline
+%      D & $4m$   & $3r$   \\ \hline
+%    \end{tabular}
+%  \end{center}
+%  \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt]
+%  \item Planet A
+%  \item Planet B
+%  \item Planet C
+%  \item Planet D
+%  \item All have the same gravitational attraction to the star.
+%  \end{enumerate}
+%
+%\item A satellite orbits the Earth at a distance that is four times the radius
+%  of the Earth. If the acceleration due to gravity near the surface of the Earth
+%  is $g$, the acceleration of the satellite is most nearly
+%  \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt]
+%  \item zero
+%  \item $g/2$
+%  \item $g/4$
+%  \item $g/8$
+%  \item $g/16$
+%  \end{enumerate}
+%
+%\item The mass of a planet is $1⁄4$ that of Earth and its radius is half of
+%  Earth's radius. The acceleration due to gravity on this planet is most nearly
+%  \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt]
+%  \item\SI{2 }{m/s^2}
+%  \item\SI{4 }{m/s^2}
+%  \item\SI{5 }{m/s^2}
+%  \item\SI{10}{m/s^2}
+%  \item\SI{20}{m/s^2}
+%  \end{enumerate}
+%  \begin{center}
+%    \vspace{-.25in}
+%    \begin{tikzpicture}[scale=1.4]
+%      \tikzstyle{balloon}=[ball color=gray];
+%      \draw(0,0) ellipse (2 and 1);
+%      \draw[fill=black](2,0) circle(0.05) node[right]{A};
+%      \draw[fill=black](-2,0) circle(0.05) node[left]{B};
+%      \shade[balloon] (0.5,0) circle (0.2);
+%    \end{tikzpicture}
+%  \end{center}
+%  
+%\item A satellite orbits the Earth in an elliptical orbit, with point A being
+%  close to the Earth and point B farther away. As the satellite moves from
+%  point A to point B, which of the following is true of the angular momentum and
+%  kinetic energy of the satellite?
+%  
+%  \begin{tabular}{lll}
+%    & \underline{Angular momentum} & \underline{Kinetic energy}\\
+%    (a) & Increases & Remains constant \\
+%    (b) & Remains constant & Increases \\
+%    (c) & Decreases & Remains constant \\
+%    (d) & Remains constant & Decreases \\
+%    (e) & Remains constant & Remains constant
+%  \end{tabular}
+%
+%\item Two planets of mass $M$ and $9M$ are in the same solar system. The
+%  radius of the planet of mass $M$ is $R$. In order for the acceleration due to
+%  gravity to be the same for each planet, the radius of the planet of mass
+%  $9M$ would have to be
+%  \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt]
+%  \item $1/2\;R$
+%  \item $R$
+%  \item $2R$
+%  \item $3R$
+%  \item $9R$
+%  \end{enumerate}
+%  \vspace{-0.5in}
+%  \begin{center}
+%    \begin{tikzpicture}[scale=0.7]
+%      \draw[fill=gray!60](0,0) circle(0.25);
+%      \draw[dashed](0,0) circle(1);
+%      \draw[dashed](0,0) circle(3);
+%      \draw(0,0)--(1,0) node[pos=1,right]{$x$} node[midway,above]{$R$};
+%      \draw[fill=black](1,0) circle(0.05);
+%      \begin{scope}[rotate=230]
+%        \draw(0,0)--(3,0) node[pos=1,right]{$y$} node[pos=0.7,right]{$3R$};
+%        \draw[fill=black](3,0) circle(0.05);
+%      \end{scope}
+%    \end{tikzpicture}
+%  \end{center}
+%\item Two planets, X and Y, orbit a star. Planet X orbits at a radius $R$, and
+%  Planet Y orbits at a radius $3R$. Which of the following best represents
+%  the relationship between the acceleration $a_X$ of Planet X and the
+%  acceleration $a_Y$ of Planet Y?
+%  \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt]  
+%  \item $a_X = 9a_Y$
+%  \item $9a_X = a_Y$
+%  \item $a_X = 3a_Y$
+%  \item $3a_X = a_Y$
+%  \item $a_X = a_Y$
+%  \end{enumerate}
+%\item A satellite is in a stable circular orbit around the Earth at a radius $R$
+%  and speed $v$. At what radius would the satellite travel in a stable orbit
+%  with a speed $2v$?
+%  \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt]  
+%  \item $1⁄4\;R$
+%  \item $1⁄2\;R$
+%  \item $R$
+%  \item $2R$
+%  \item $4R$
+%  \end{enumerate}
+%
+%\item The Earth and the moon apply a gravitational force to each other.
+%  Which of the following statements is true?
+%  \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt]  
+%  \item The Earth applies a greater force on the moon than the moon exerts on
+%    the Earth.
+%  \item The Earth applies a smaller force on the moon than the moon exerts on
+%    the Earth.
+%  \item The Earth applies a force on the moon, but the moon does not exert a
+%    force on the Earth.
+%  \item The Earth does not apply a force on the moon, but the moon exerts a
+%    force on the Earth.
+%  \item The force the Earth applies to the moon is equal and opposite to the
+%    force the moon applies to the Earth.
+%  \end{enumerate}
+%  \newpage
+%  
+%\item Two masses exert a gravitational force $F$ on each other. If one of the
+%  masses is doubled, and the distance between the masses is tripled, the
+%  new force between them is
+%  \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt]  
+%  \item $6F$
+%  \item $2/3\;F$
+%  \item $2/9\;F$
+%  \item $3/2\;F$
+%  \item $4/9\;F$
+%  \end{enumerate}
+%
+%\item A planet orbits at a radius $R$ around a star of mass $M$. The period of
+%  orbit of the planet is
+%  \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt]  
+%  \item $\displaystyle\sqrt{\frac{4\pi^2R^2}{GM}}$
+%  \item $\displaystyle\frac{4\pi^2R^3}{GM}$
+%  \item $\displaystyle\sqrt{\frac{4\pi^2R^3}{GM}}$
+%  \item $\displaystyle\sqrt{\frac{4\pi^2R}{GM}}$
+%  \item $\displaystyle\frac{GM}{4\pi^2R}$
+%  \end{enumerate}
+%  
+%\item A moon orbits a large planet in an elliptical orbit, with its closest
+%  approach at a distance $a$, and its farthest distance $b$. The speed of the
+%  moon at point b is $v$. The speed at point $a$ is
+%  \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt]  
+%  \item $\displaystyle\frac{av}{b}$
+%  \item $\displaystyle\frac{bv}{a}$
+%  \item $\displaystyle\frac{(a+b)v}{b}$
+%  \item $\displaystyle\frac{(b-a)v}{b}$
+%  \item $\displaystyle\frac{2bv}{a}$
+%  \end{enumerate}
+%
+%
+%\item A satellite orbits the Earth in an elliptical orbit. Which of the
+%  following statements is true?
+%  \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt]  
+%  \item The angular velocity of the satellite increases as it travels
+%    farther from the Earth.
+%  \item The acceleration of the satellite increases as it travels closer
+%    to the Earth.
+%  \item The angular momentum of the satellite increases as it travels
+%    closer to the Earth.
+%  \item The potential energy of the satellite is equal to its kinetic
+%    energy at all points in the orbit.
+%  \item The speed of the satellite must remain constant for it to remain
+%    in orbit around the Earth.
+%  \end{enumerate}
+%
+%  \begin{center}
+%    \begin{tikzpicture}[scale=0.8]
+%      \tikzstyle{balloon}=[ball color=gray];
+%      \draw(0,0) circle(0.25);
+%      \draw[dashed](0,0) circle(3) node[below]{$M$};
+%      \begin{scope}[rotate=50]
+%        \draw[->](0.25,0)--(2.8,0) node[midway,right]{$R$};
+%        \shade[balloon] (3,0) circle (0.2) node[right]{$m$};
+%        \draw[thick,->](3,0.25)--(3,1.25) node[pos=1,above]{$v$};
+%      \end{scope}
+%      \begin{scope}[rotate=130]
+%        \shade[balloon] (3,0) circle (0.2) node[left]{$2m$};
+%        \draw[thick,->](3,-0.25)--(3,-1.25) node[pos=1,above]{$v$};
+%      \end{scope}
+%    \end{tikzpicture}
+%  \end{center}
+%  
+%\item\vspace{-.15in}Two moons of mass $m$ and $2m$ orbit a planet of mass $M$
+%  at the same radius $R$ and speed $v$ toward each other, as shown. The moons
+%  collide and stick together without destroying either moon. The total momentum
+%  of the moons after the collision is
+%  \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt]  
+%  \item $mv$
+%  \item $2mv$
+%  \item $3mv$
+%  \item $6mv$
+%  \item zero
+%  \end{enumerate}
+%
+%\item The velocity of the two masses after the collision above is
+%  \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt]  
+%  \item $v$ counterclockwise
+%  \item $v/2$ counterclockwise
+%  \item $v/2$ clockwise
+%  \item $v/3$ counterclockwise
+%  \item $v/3$ clockwise
+%  \end{enumerate}
+%
+%\item Consider a two-star system shown above, which consists of two stars of
+%  mass $m$ rotating in a circle of radius $r$ about their center of mass. What
+%  is the total energy of the two-star system?
+%  \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt]  
+%  \item $-Gm^2/2r$
+%  \item $Gm^2/2r$
+%  \item $Gm^2/4r$
+%  \item $3Gm^2/4r$
+%  \item $-Gm^2/4r$
+%  \end{enumerate}
+%
+%\item If a planet has twice the radius of Earth and half of Earth's density,
+%  what is the acceleration due to gravity on the surface of the planet (in
+%  terms of the gravitational acceleration $g$ on the surface of Earth)?
+%  \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt]  
+%  \item $4g$
+%  \item $2g$
+%  \item $g$
+%  \item $g/2$
+%  \item $g/4$
+%  \end{enumerate}
+\end{enumerate}
+
+\newpage
+\noindent\textbf{Free-Response Questions:}
+
+\begin{enumerate}[leftmargin=15pt]
+
+\item A charged spherical shell
+%  charge and touches an identical pith ball that is initially neutral. The
+%  diagram below (not to scale) shows the final configuration of the two pith
+%  balls as they hang from threads:
+%  \begin{center}
+%    \begin{tikzpicture}[scale=1.3]
+%      \draw[thick](0,0)--(1,-2);
+%      \draw[thick](0,0)--(-1,-2);
+%      \draw[fill=gray!70](1,-2) circle(0.2);
+%      \draw[fill=gray!70](-1,-2) circle(0.2);
+%      \draw(-1,-2.5)--(1,-2.5) node[midway,below]{\SI{52}{cm}};
+%      \draw(-1,-2.35)--(-1,-2.65);
+%      \draw( 1,-2.35)--( 1,-2.65);
+%    \end{tikzpicture}
+%  \end{center}
+%  \begin{enumerate}[noitemsep]
+%  \item Explain the value of the charge on each pith ball after they are
+%    separated.
+%  \item Construct a free-body diagram with symbols representing all the forces
+%    on the pith ball on the right.
+%  \item Calculate the value of all the forces on the pith ball in your
+%    free-body diagram.
+%  \item Determine the angle between the threads in the diagram above.
+%  \end{enumerate}
+%
+%
+%  
+\end{enumerate}
+\end{document}
