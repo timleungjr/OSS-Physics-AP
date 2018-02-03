@@ -1,22 +1,17 @@
 \documentclass[12pt]{article}
 
-\usepackage[margin=.75in,letterpaper]{geometry}
+\usepackage[margin=.8in,letterpaper]{geometry}
 \usepackage{enumitem}
-\usepackage{graphicx}
 \usepackage{tikz}
 \usepackage{mathpazo}
 \usepackage[scaled]{helvet}
 \usepackage{siunitx}
-
-\usetikzlibrary{decorations.pathmorphing,patterns}
 
 \sisetup{number-math-rm=\mathnormal}
 
 \renewcommand{\familydefault}{\sfdefault}
 
 \newcommand{\pic}[2]{\includegraphics[width=#1\textwidth]{#2}}
-\newcommand{\magdir}[2]{$#1\;[\mathrm{#2}]$}
-\newcommand{\mb}[1]{\mathbf{#1}}
 
 \setlength{\parindent}{0pt}
 
@@ -29,15 +24,11 @@
     AP Physics Class 10 \& 11: Electrostatics \& Gauss's Law}
 \end{center}
 
-The questions in this homework assignment cover AP 1 and C exams. Some of the
-questions are not typically questions.
-
 \begin{enumerate}[leftmargin=50pt,label=\underline{\hspace{0.4in}} \arabic*.]
-
 
 \item Two electric objects experience a repulsive force. What happens to that
   force if the distance between the objects is doubled?
-  \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt]
+  \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
   \item It decreases to one-fourth its value.
   \item It decreases to one-half its value.
   \item It stays the same.
@@ -49,7 +40,7 @@ questions are not typically questions.
   conductive paint. One pith ball initially has a charge of \SI{6.4e-8}{C},
   and it touches an identical, neutral pith ball. After the pith balls are
   separated, what is the charge on the pith ball that had the initial charge?
-  \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt]
+  \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
   \item\SI{6.4e-8}{C}
   \item\SI{3.2e-8}{C}
   \item\SI{0}{C}
@@ -59,7 +50,7 @@ questions are not typically questions.
 
 \item Glass becomes positively charged when it is rubbed with silk. Which
   of the following is the best description of what’s happening?
-  \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt]
+  \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
   \item Electrons are rubbed off the glass onto the silk.
   \item Electrons are rubbed off the silk onto the glass.
   \item Protons are rubbed off the glass onto the silk.
@@ -70,7 +61,7 @@ questions are not typically questions.
 \item Consider an isolated, neutral system consisting of wool fabric and a
   rubber rod. If the rubber rod is rubbed with wool to become negatively
   charged, what can be said about the wool fabric?
-  \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt]
+  \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
   \item It becomes equally negatively charged.
   \item It becomes equally positively charged.
   \item It becomes negatively charged but not equally.
@@ -81,7 +72,7 @@ questions are not typically questions.
 \item An electron and a proton are separated by \SI{1.50e-10}{m}. If they are
   released, which one will accelerate at a greater rate, and what is the
   magnitude of that acceleration?
-  \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt]
+  \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
   \item The electron; \SI{1.12e22}{m/s^2}
   \item The proton; \SI{1.12e22}{m/s^2}
   \item The electron; \SI{6.13e18}{m/s^2}
@@ -89,144 +80,231 @@ questions are not typically questions.
   \item They both accelerate at the same rate; \SI{1.02e-8}{m/s^2}
   \end{enumerate}
 
-%\item A proposed ``space elevator'' can lift a \SI{1,000}{kg} payload to an
-%  orbit of \SI{150}{km} above the Earth's surface. The radius of the Earth is
-%  \SI{6.4e6}{m}, and the Earth's mass is \SI{6e24}{kg}. What is the
-%  gravitational potential energy of the payload when it reaches orbit?
-%  \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt]
-%  \item\SI{1.0e3}{J}
-%  \item\SI{2.7e6}{J}
-%  \item\SI{6.1e10}{J}
-%  \item\SI{2.7e12}{J}
-%  \item\SI{1.0e15}{J}
-%  \end{enumerate}
-%
-%\item The Earth is at an average distance of \SI{1}{AU} from the Sun and has an
-%  orbital period of \SI{1}{year}. Jupiter orbits the Sun at approximately
-%  \SI{5}{AU}. About how long is the orbital period of Jupiter?
-%  \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt]
-%  \item\SI{1}{year}
-%  \item\SI{2}{years}
-%  \item\SI{5}{years}
-%  \item\SI{11}{years}
-%  \item\SI{125}{years}
-%  \end{enumerate}
-%  
-%\item A satellite orbits the Earth at a distance of \SI{200}{km}. If the mass
-%  of the Earth is \SI{6.0e24}{kg} and the Earth's radius is \SI{6.4e6}{m}, what
-%  is the satellite's speed?
-%  \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt]
-%  \item\SI{1e3}{m/s}
-%  \item\SI{3.5e3}{m/s}
-%  \item\SI{7.8e3}{m/s}
-%  \item\SI{5e6}{m/s}
-%  \item\SI{6.1e7}{m/s}
-%  \end{enumerate}
-%  
-%\item Mars orbits the Sun at a distance of \SI{2.3e11}{m}. The mass of the Sun
-%  is \SI{2e30}{kg}, and the mass of Mars is \SI{6.4e23}{kg}. Approximately
-%  what is the gravitational force that the Sun exerts on Mars?
-%  \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt]
-%  \item\SI{1.6e20}{N}
-%  \item\SI{1.6e21}{N}
-%  \item\SI{3.7e21}{N}
-%  \item\SI{3.7e32}{N}
-%  \item\SI{3.7e42}{N}
-%  \end{enumerate}
-%
-%\item When climbing from sea level to the top of Mount Everest, a hiker
-%  changes elevation by \SI{8848}{m}. By what percentage will the
-%  gravitational field of the Earth change during the climb? (The Earth's
-%  mass is \SI{6.0e24}{kg}, and its radius is \SI{6.4e6}{m}.)
-%  \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt]
-%  \item It will increase by approximately $0.3\%$.
-%  \item It will decrease by approximately $0.3\%$.
-%  \item It will increase by approximately $12\%$.
-%  \item It will decrease by approximately $12\%$.
-%  \item The gravitational field strength will not change.
-%  \end{enumerate}
-%  \newpage
-%  
-%\item Four planets, A through D, orbit the same star. The relative masses and
-%  distances from the star for each planet are shown in the table. For
-%  example, Planet A has twice the mass of Planet B, and Planet D has
-%  three times the orbital radius of Planet A. Which planet has the highest
-%  gravitational attraction to the star?
-%  \begin{center}
-%    \begin{tabular}{lll}
-%      \hline
-%      \textbf{Planet} & \textbf{Relative mass} & \textbf{Relative distance}\\
-%      \hline
-%      A\hspace{0.4in}& $2m$   & $r$    \\ \hline
-%      B & $m$    & $0.1r$\hspace{0.25in} \\ \hline
-%      C & $0.5m$\hspace{0.25in} & $2r$   \\ \hline
-%      D & $4m$   & $3r$   \\ \hline
-%    \end{tabular}
-%  \end{center}
-%  \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt]
-%  \item Planet A
-%  \item Planet B
-%  \item Planet C
-%  \item Planet D
-%  \item All have the same gravitational attraction to the star.
-%  \end{enumerate}
-%
-%\item A satellite orbits the Earth at a distance that is four times the radius
-%  of the Earth. If the acceleration due to gravity near the surface of the Earth
-%  is $g$, the acceleration of the satellite is most nearly
-%  \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt]
-%  \item zero
-%  \item $g/2$
-%  \item $g/4$
-%  \item $g/8$
-%  \item $g/16$
-%  \end{enumerate}
-%
-%\item The mass of a planet is $1⁄4$ that of Earth and its radius is half of
-%  Earth's radius. The acceleration due to gravity on this planet is most nearly
-%  \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt]
-%  \item\SI{2 }{m/s^2}
-%  \item\SI{4 }{m/s^2}
-%  \item\SI{5 }{m/s^2}
-%  \item\SI{10}{m/s^2}
-%  \item\SI{20}{m/s^2}
-%  \end{enumerate}
-%  \begin{center}
-%    \vspace{-.25in}
-%    \begin{tikzpicture}[scale=1.4]
-%      \tikzstyle{balloon}=[ball color=gray];
-%      \draw(0,0) ellipse (2 and 1);
-%      \draw[fill=black](2,0) circle(0.05) node[right]{A};
-%      \draw[fill=black](-2,0) circle(0.05) node[left]{B};
-%      \shade[balloon] (0.5,0) circle (0.2);
-%    \end{tikzpicture}
-%  \end{center}
-%  
-%\item A satellite orbits the Earth in an elliptical orbit, with point A being
-%  close to the Earth and point B farther away. As the satellite moves from
-%  point A to point B, which of the following is true of the angular momentum and
-%  kinetic energy of the satellite?
-%  
-%  \begin{tabular}{lll}
-%    & \underline{Angular momentum} & \underline{Kinetic energy}\\
-%    (a) & Increases & Remains constant \\
-%    (b) & Remains constant & Increases \\
-%    (c) & Decreases & Remains constant \\
-%    (d) & Remains constant & Decreases \\
-%    (e) & Remains constant & Remains constant
-%  \end{tabular}
-%
-%\item Two planets of mass $M$ and $9M$ are in the same solar system. The
-%  radius of the planet of mass $M$ is $R$. In order for the acceleration due to
-%  gravity to be the same for each planet, the radius of the planet of mass
-%  $9M$ would have to be
-%  \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt]
-%  \item $1/2\;R$
-%  \item $R$
-%  \item $2R$
-%  \item $3R$
-%  \item $9R$
-%  \end{enumerate}
+\item Four charges are arranged at the corners of a square of side a as shown.
+  Which of the following is true of the electric field and the electric
+  potential at the center of the square?
+
+  \begin{minipage}{.25\textwidth}
+    \begin{tikzpicture}[scale=3.3]
+      \draw[dashed](0,0)--(1,0)--(1,1) node[midway,right]{$a$}
+      --(0,1)--cycle;
+      \draw[fill=black](.5,.5) circle(0.03);
+      \draw[fill=white](0,0) circle(0.05) node[below left]{$q$};
+      \draw[fill=white](1,0) circle(0.05) node[below right]{$q$};
+      \draw[fill=white](0,1) circle(0.05) node[above left]{$q$};
+      \draw[fill=white](1,1) circle(0.05) node[above right]{$q$};
+    \end{tikzpicture}
+  \end{minipage}
+  \begin{minipage}{.68\textwidth}
+    \begin{tabular}{rll}
+      & \underline{Electric Field} & \underline{Electric Potential}\\
+      (a) & zero & zero \\
+      (b) & $\frac{kQ}{a\sqrt{2}}$ & zero \\
+      (c) & $\frac{kQ^2}{2a^2}$ &  $\frac{kQ}{2a}$\\
+      (d) & zero &  $\frac{kQ}{\sqrt{2a}}$\\
+      (e) & $\frac{kQ^2}{2a}$ & $\frac{kQ}{a\sqrt{2}}$
+    \end{tabular}
+  \end{minipage}
+
+\item Which of the following diagrams best represents how you might rearrange
+  the charges so that the electric field at the center would point directly
+  toward the top of the page?
+  \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
+  \item\begin{tikzpicture}[scale=1.3]
+      \draw[dashed](0,0) rectangle(1,1);
+      \draw[fill=white](0,0) circle(0.1) node[below left]{$-q$};
+      \draw[fill=white](1,0) circle(0.1) node[below right]{$+q$};
+      \draw[fill=white](0,1) circle(0.1) node[above left]{$-q$};
+      \draw[fill=white](1,1) circle(0.1) node[above right]{$+q$};
+    \end{tikzpicture}
+  \item\begin{tikzpicture}[scale=1.3]
+      \draw[dashed](0,0) rectangle(1,1);
+      \draw[fill=white](0,0) circle(0.1) node[below left]{$+q$};
+      \draw[fill=white](1,0) circle(0.1) node[below right]{$+q$};
+      \draw[fill=white](0,1) circle(0.1) node[above left]{$-q$};
+      \draw[fill=white](1,1) circle(0.1) node[above right]{$-q$};
+    \end{tikzpicture}
+  \item\begin{tikzpicture}[scale=1.3]
+      \draw[dashed](0,0) rectangle(1,1);
+      \draw[fill=white](0,0) circle(0.1) node[below left]{$-q$};
+      \draw[fill=white](1,0) circle(0.1) node[below right]{$-q$};
+      \draw[fill=white](0,1) circle(0.1) node[above left]{$+q$};
+      \draw[fill=white](1,1) circle(0.1) node[above right]{$+q$};
+    \end{tikzpicture}
+  \item\begin{tikzpicture}[scale=1.3]
+      \draw[dashed](0,0) rectangle(1,1);
+      \draw[fill=white](0,0) circle(0.1) node[below left]{$+q$};
+      \draw[fill=white](1,0) circle(0.1) node[below right]{$-q$};
+      \draw[fill=white](0,1) circle(0.1) node[above left]{$-q$};
+      \draw[fill=white](1,1) circle(0.1) node[above right]{$+q$};
+    \end{tikzpicture}
+  \item\begin{tikzpicture}[scale=1.3]
+      \draw[dashed](0,0) rectangle(1,1);
+      \draw[fill=white](0,0) circle(0.1) node[below left]{$+q$};
+      \draw[fill=white](1,0) circle(0.1) node[below right]{$-q$};
+      \draw[fill=white](0,1) circle(0.1) node[above left]{$+q$};
+      \draw[fill=white](1,1) circle(0.1) node[above right]{$-q$};
+    \end{tikzpicture}
+  \end{enumerate}
+\newpage
+
+\item Three charges, $+Q$, $−Q$, and $+2Q$, are arranged in an equilateral
+  triangle as shown. Which of the arrows below best represents the direction of
+  the electric field at the center of the triangle?
+  
+  \begin{minipage}{.5\textwidth}
+    \begin{tikzpicture}[scale=3.3]
+      \draw[dashed](0,0)--(1,0)--(.5,.866)--cycle;
+      \draw[fill=black](.5,.289) circle(0.03);
+      \draw[fill=white](0,0) circle(0.05) node[left]{$+Q\;$};
+      \draw[fill=white](1,0) circle(0.05) node[right]{$\;-Q$};
+      \draw[fill=white](.5,.866) circle(0.05) node[above]{$2Q$};
+    \end{tikzpicture}
+  \end{minipage}
+  \begin{minipage}{.4\textwidth}
+    \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
+    \item $\displaystyle\downarrow$
+    \item $\displaystyle\uparrow$
+    \item $\displaystyle\searrow$
+    \item $\displaystyle\swarrow$
+    \item $\displaystyle\nearrow$
+    \end{enumerate}
+\end{minipage}
+  
+\item A nonconducting sphere does not have a uniform charge density, but the
+density $\rho$ varies with the distance $r$ from the center of the sphere
+according to the equation $\rho=\beta r$ where $\beta$ is a positive constant.
+The electric field inside the sphere ($r<R$) at a distance $r$ from the
+center of the sphere is
+\begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
+  \item $\displaystyle\frac{\beta r^2}{12\epsilon_0}$
+  \item $\displaystyle\frac{\beta r^3}{3\epsilon_0}$
+  \item $\displaystyle\frac{\beta r}{2\epsilon_0}$
+  \item $\displaystyle\frac{\beta r^2}{2\epsilon_0}$
+  \item $\displaystyle\frac{\beta r^2}{4\epsilon_0}$
+  \end{enumerate}
+  
+\item The electric potential at the surface of the sphere from the last
+  question is
+  \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
+  \item $\displaystyle\frac{\beta R^3}{4\epsilon_0}$
+  \item $\displaystyle\frac{\beta R}{2\epsilon_0}$
+  \item $\displaystyle\frac{\beta R^3}{3\epsilon_0}$
+  \item $\displaystyle\frac{\beta R^2}{2\epsilon_0}$
+  \item $\displaystyle\frac{\beta R^2}{4\epsilon_0}$
+  \end{enumerate}
+
+\item According to Gauss's law, the net electric flux passing through a closed
+  surface is
+  \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
+  \item positive if the flux is entering the surface
+  \item negative if the flux is exiting the surface
+  \item positive if the net charge inside the surface is zero
+  \item negative if the net charge inside the surface is zero
+  \item zero if the net charge inside the surface is zero
+  \end{enumerate}
+  \newpage
+\item According to Gauss's law, which of the following statements is true?
+  \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
+  \item It is possible to have a nonzero electric field, but zero electric flux.
+  \item It is possible to have a nonzero electric flux, but zero electric field.
+  \item It is possible to have a nonzero electric flux through a closed surface
+    even if the enclosed charge in a surface is zero.
+  \item If a surface is not closed (such as a sheet of paper), the flux through
+    it must be zero.
+  \item It is possible for charges located outside a closed surface to produce
+    a net positive flux through the surface.
+  \end{enumerate}
+
+\item Electric potential
+  \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
+  \item is a vector quantity that depends on the direction of the electric
+    field
+  \item is a scalar quantity that depends on the magnitude and sign of charges
+    in the vicinity
+  \item is a scalar quantity that depends on the square of the distance from
+    the charges in the vicinity
+  \item is a vector quantity that depends on the sign of the charges in the
+    vicinity
+  \item is a vector quantity that must point from high to low potential
+  \end{enumerate}
+
+\item A cube has sides of length $a$. The cube rests so that one side rests on
+  the $x$-axis as shown. An electric field is established in the $x$-direction
+  according to the function $E_x=bx^2$ , where $b$ is a positive constant.
+  Which of the following statements is true?
+
+  \hspace{-.7in}
+  \begin{minipage}{.4\textwidth}
+    \pic{1}{cube.png}
+  \end{minipage}
+  \begin{minipage}{.6\textwidth}
+    \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
+    \item There is a net charge inside the cube.
+    \item There is no net charge inside the cube.
+    \item The flux passing through the cube is negative.
+    \item The flux passing through the cube is zero.
+    \item The flux diminishes while passing through the cube.
+    \end{enumerate}
+  \end{minipage}
+
+\item The charge inside the cube from the previous question can be expressed by
+  the equation
+  \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
+  \item $\epsilon_0ba$
+  \item $\epsilon_0ba^2$
+  \item $\epsilon_0ba^3$
+  \item $\epsilon_0ba^4$
+  \item $\epsilon_0b^22a^2$
+  \end{enumerate}
+
+\item Gauss's law is most convenient to use when calculating an electric field
+  due to
+  \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
+  \item charges outside a closed surface
+  \item charges inside a closed surface that has high symmetry
+  \item charges inside a closed surface that has low symmetry
+  \item a potential difference that is negative
+  \item a potential difference that is positive
+  \end{enumerate}
+\newpage
+\item Which of the following statements is true of electric field and
+  equipotential lines?
+  \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
+  \item The electric field vector always points in the same direction as the
+    equipotential lines.
+  \item The electric field always points in the opposite direction of the
+    equipotential lines.
+  \item The electric field always points perpendicular to the equipotential
+    lines.
+  \item The electric field is always equal to the equipotential lines.
+  \item Equipotential lines always form a circle around electric field lines.
+  \end{enumerate}
+
+\item The potential $V$ as a function of distance $r$ for a particular charge
+  distribution is given by the equation $V=ar^{-1}$. The electric field as
+  a function of distance $r$ from the charge distribution is
+  \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
+  \item $1/3\;ar^{-3}$
+  \item $2ar^{-1}$
+  \item $ar^{−2}$
+  \item $−a(\ln r)$
+  \item $−ar^{-2}$
+  \end{enumerate}
+  
+  \vspace{-.35in}
+  \begin{center}
+    \begin{tikzpicture}[scale=1.3]
+      \draw (0,0) ellipse (0.7 and 1.3);
+      \draw[->](0,0)--(0,1.3) node[midway,right]{R};
+      \draw[dashed](0,0)--(0,-1.3);
+      \draw[dashed](-3.2,0)--(3.2,0);
+      \foreach \x in {-3,-2,-1,1,2,3}{
+        \draw(\x,-.2)--(\x,.2) node[pos=0,below] {$\x d$};
+      }
+    \end{tikzpicture}
+  \end{center}
+
 %  \vspace{-0.5in}
 %  \begin{center}
 %    \begin{tikzpicture}[scale=0.7]
@@ -241,21 +319,22 @@ questions are not typically questions.
 %      \end{scope}
 %    \end{tikzpicture}
 %  \end{center}
-%\item Two planets, X and Y, orbit a star. Planet X orbits at a radius $R$, and
-%  Planet Y orbits at a radius $3R$. Which of the following best represents
-%  the relationship between the acceleration $a_X$ of Planet X and the
-%  acceleration $a_Y$ of Planet Y?
-%  \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt]  
-%  \item $a_X = 9a_Y$
-%  \item $9a_X = a_Y$
-%  \item $a_X = 3a_Y$
-%  \item $3a_X = a_Y$
-%  \item $a_X = a_Y$
-%  \end{enumerate}
+\item A positively charged ring of radius R is made of conducting material and
+  has a charge $Q$ distributed uniformly around it. The center of the ring is
+  located at point 0 on the $x$-axis. The potential $V$ at a distance $3d$ from
+  point 0 on the $x$-axis is
+  \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]  
+  \item $\displaystyle V=\frac{kQ}{9d^2}$
+  \item $\displaystyle V=\frac{kQ}{3d^2}$
+  \item $\displaystyle V=\frac{kQ}{R^2+9d^2}$
+  \item $\displaystyle V=\sqrt{\frac{kQ}{R^2+9d^2}}$
+  \item $\displaystyle V=\frac{kQ}{\sqrt{R^2+9d^2}}$
+  \end{enumerate}
+
 %\item A satellite is in a stable circular orbit around the Earth at a radius $R$
 %  and speed $v$. At what radius would the satellite travel in a stable orbit
 %  with a speed $2v$?
-%  \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt]  
+%  \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]  
 %  \item $1⁄4\;R$
 %  \item $1⁄2\;R$
 %  \item $R$
@@ -265,7 +344,7 @@ questions are not typically questions.
 %
 %\item The Earth and the moon apply a gravitational force to each other.
 %  Which of the following statements is true?
-%  \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt]  
+%  \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]  
 %  \item The Earth applies a greater force on the moon than the moon exerts on
 %    the Earth.
 %  \item The Earth applies a smaller force on the moon than the moon exerts on
@@ -282,7 +361,7 @@ questions are not typically questions.
 %\item Two masses exert a gravitational force $F$ on each other. If one of the
 %  masses is doubled, and the distance between the masses is tripled, the
 %  new force between them is
-%  \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt]  
+%  \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]  
 %  \item $6F$
 %  \item $2/3\;F$
 %  \item $2/9\;F$
@@ -292,7 +371,7 @@ questions are not typically questions.
 %
 %\item A planet orbits at a radius $R$ around a star of mass $M$. The period of
 %  orbit of the planet is
-%  \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt]  
+%  \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]  
 %  \item $\displaystyle\sqrt{\frac{4\pi^2R^2}{GM}}$
 %  \item $\displaystyle\frac{4\pi^2R^3}{GM}$
 %  \item $\displaystyle\sqrt{\frac{4\pi^2R^3}{GM}}$
@@ -303,7 +382,7 @@ questions are not typically questions.
 %\item A moon orbits a large planet in an elliptical orbit, with its closest
 %  approach at a distance $a$, and its farthest distance $b$. The speed of the
 %  moon at point b is $v$. The speed at point $a$ is
-%  \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt]  
+%  \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]  
 %  \item $\displaystyle\frac{av}{b}$
 %  \item $\displaystyle\frac{bv}{a}$
 %  \item $\displaystyle\frac{(a+b)v}{b}$
@@ -314,7 +393,7 @@ questions are not typically questions.
 %
 %\item A satellite orbits the Earth in an elliptical orbit. Which of the
 %  following statements is true?
-%  \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt]  
+%  \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]  
 %  \item The angular velocity of the satellite increases as it travels
 %    farther from the Earth.
 %  \item The acceleration of the satellite increases as it travels closer
@@ -348,7 +427,7 @@ questions are not typically questions.
 %  at the same radius $R$ and speed $v$ toward each other, as shown. The moons
 %  collide and stick together without destroying either moon. The total momentum
 %  of the moons after the collision is
-%  \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt]  
+%  \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]  
 %  \item $mv$
 %  \item $2mv$
 %  \item $3mv$
@@ -357,7 +436,7 @@ questions are not typically questions.
 %  \end{enumerate}
 %
 %\item The velocity of the two masses after the collision above is
-%  \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt]  
+%  \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]  
 %  \item $v$ counterclockwise
 %  \item $v/2$ counterclockwise
 %  \item $v/2$ clockwise
@@ -368,7 +447,7 @@ questions are not typically questions.
 %\item Consider a two-star system shown above, which consists of two stars of
 %  mass $m$ rotating in a circle of radius $r$ about their center of mass. What
 %  is the total energy of the two-star system?
-%  \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt]  
+%  \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]  
 %  \item $-Gm^2/2r$
 %  \item $Gm^2/2r$
 %  \item $Gm^2/4r$
@@ -379,7 +458,7 @@ questions are not typically questions.
 %\item If a planet has twice the radius of Earth and half of Earth's density,
 %  what is the acceleration due to gravity on the surface of the planet (in
 %  terms of the gravitational acceleration $g$ on the surface of Earth)?
-%  \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt]  
+%  \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)] 
 %  \item $4g$
 %  \item $2g$
 %  \item $g$
@@ -393,32 +472,106 @@ questions are not typically questions.
 
 \begin{enumerate}[leftmargin=15pt]
 
-\item A charged spherical shell
-%  charge and touches an identical pith ball that is initially neutral. The
-%  diagram below (not to scale) shows the final configuration of the two pith
-%  balls as they hang from threads:
-%  \begin{center}
-%    \begin{tikzpicture}[scale=1.3]
-%      \draw[thick](0,0)--(1,-2);
-%      \draw[thick](0,0)--(-1,-2);
-%      \draw[fill=gray!70](1,-2) circle(0.2);
-%      \draw[fill=gray!70](-1,-2) circle(0.2);
-%      \draw(-1,-2.5)--(1,-2.5) node[midway,below]{\SI{52}{cm}};
-%      \draw(-1,-2.35)--(-1,-2.65);
-%      \draw( 1,-2.35)--( 1,-2.65);
-%    \end{tikzpicture}
-%  \end{center}
-%  \begin{enumerate}[noitemsep]
-%  \item Explain the value of the charge on each pith ball after they are
-%    separated.
-%  \item Construct a free-body diagram with symbols representing all the forces
-%    on the pith ball on the right.
-%  \item Calculate the value of all the forces on the pith ball in your
-%    free-body diagram.
-%  \item Determine the angle between the threads in the diagram above.
-%  \end{enumerate}
-%
-%
-%  
+\item Two identical small spheres of mass $m$ are suspended from a common point
+  by threads of length L. When each sphere carries a charge $q$, each thread
+  makes an angle $\theta$ with the vertical as shown in the figure below.
+  (a) Express charge $q$ in terms of $\theta$, $m$, $L$ and any other relevant
+  constants, and (b) Compute $q$ if $m=\SI{10}{\gram}$, $L=\SI{50}{cm}$ and
+  $\theta=\ang{10}$.
+  
+  \begin{tikzpicture}[scale=1.3]
+    \tikzstyle{balloon}=[ball color=red!60];
+    \fill[yellow!85!gray](-1.5,0) rectangle(1.5,0.15);
+    \draw[very thick,yellow](-1.5,0)--(1.5,0);
+    \draw[dashed,very thick,blue!80!gray](0,0)--(0,-4);
+    \draw[<->](0,-2.5) arc (270:285:2.5) node[midway,below]{$\theta$};
+    \draw[<->](0,-2.5) arc (270:255:2.5) node[midway,below]{$\theta$};
+    \begin{scope}[rotate=15]
+      \draw(0,0)--(0,-3.5) node[midway,right]{$L$};
+      \shade[balloon] (0,-3.5) circle (0.25) node[below]{$q$};
+    \end{scope}
+    \begin{scope}[rotate=-15]
+      \draw(0,0)--(0,-3.5) node[midway,left]{$L$};
+      \shade[balloon] (0,-3.5) circle (0.25) node[below]{$q$};
+    \end{scope}
+  \end{tikzpicture}
+  \vspace{1.35in}
+  
+\item Five equal charges $Q$ are equally spaced on a semicircle or radius $R$
+  as shown in the figure below. Find the force on a charge $q$ located at the
+  centerof the semicircle.
+  
+  \begin{tikzpicture}[scale=1.2]
+    \tikzstyle{balloon}=[ball color=yellow!40];
+    \draw(0,-1.75)--(0,3) node[pos=1,above]{$y$};
+    \draw(0,0)--(2.75,0) node[pos=1,right]{$x$};
+    \draw[->,rotate=120](0,0)--(1.75,0) node[midway,above right]{$R$};
+    \draw(0,1.75) arc (90:270:1.75);
+    \foreach \x in {0,45,...,180}
+    \shade[balloon,rotate=\x] (0,1.75) circle (0.2) node[left]{$Q\;\;$};
+    \shade[balloon] (0,0) circle(0.12) node[right]{$\;q$};
+  \end{tikzpicture}
+  \newpage
+\item Two positive charges $+q$ are on the $y$ axis at $y=+a$ and $y=-a$.
+  \begin{enumerate}[noitemsep]
+  \item Show that the electric field on the $x$ axis is along the $x$ axis with
+    $E_x=2kqx(x^2+a^2)^{-3/2}$.
+  \item Show that near the origin, when $x\ll a$, $E_x\approx 2kqx/a^3$.
+  \item Show that for $x\gg a$, $E_x\approx 2kq/x^2$.
+  \item Explain why you should expect the result in (c) even before calculating
+    it.
+  \end{enumerate}
+  A bead of mass $m$ with a negative charge $-q$ slides along a thread that
+  runs along the $x$ axis.
+  \begin{enumerate}[noitemsep]
+  \item Show that for small displacements $x\ll a$, the bead experiences a
+    restoring force that is proportional to $x$ and therefore undergoes
+    simple harmonic motion.
+  \item Find the period of the motion.
+  \end{enumerate}
+  \newpage
+
+\item Using Gauss's law, find
+  \begin{enumerate}
+  \item the electric field strength inside and outside of a uniformly charged
+    hollow sphere of radius $R$ and surface charge density $\sigma$ (charge
+    per unit area).
+
+  \item the electric field inside and outside an infinitely long cyclindrical
+    shell of charge of radius $R$ with charge discibution $\sigma$ (charge
+    per unit area).
+  \item the electric field strength inside and outside a infinitely long solid
+    cylinder of radius $R$ carrying a linear uniform charge density $\rho$
+    (charge per unit volume).
+  \end{enumerate}
+  Hint: In all cases, think about where to put the Gaussian surface. Take
+  advantage of symmetry.
+  \newpage
+
+\item A parallel-plate capacitor has a capacitance $C_0$ and plate separation
+  of $d$. To dielectric slabs of constants $\kappa_1$ and $\kappa_2$, each of
+  thickness $d/2$ and having the same area as the plates, are inserted between
+  the plates as shown in the figure below. When the free charge on the plates
+  are $Q$,
+  \begin{enumerate}[noitemsep]
+  \item find the electric field in each of the dielectric
+  \item find the potential difference between the plates
+  \item show that the new capacitance is given by:
+    $\displaystyle C=\frac{\kappa_1\kappa_2}{\kappa_1+\kappa_2}C_0$
+  \end{enumerate}
+  \pic{0.25}{stacked.png}
+  \vspace{1.5in}
+
+\item Several point charges produce the equipotential lines shown.
+  \begin{enumerate}[noitemsep]
+  \item At which point on the diagram is the magnitude of the electric field
+    greatest? Explain.
+  \item Points C and D are approximately \SI{0.02}{\metre} apart. Point F is
+    halfway between points C and D. What is the electric field at point F?
+  \item A \SI{5.0}{\micro\coulomb} point charge is moved from point C to point
+    E, then to point D by an external force. Determine the work done by the
+    external force.
+  \end{enumerate}
+  \pic{.45}{equipotentials.png}
 \end{enumerate}
 \end{document}
