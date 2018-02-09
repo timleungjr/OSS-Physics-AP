@@ -58,10 +58,11 @@
   \frametitle{Files for You to Download}
   Download from the school website:
   \begin{enumerate}
-  \item\texttt{12-Cicuits.pdf}---This presentation. If you want to print on
-    paper, I recommend printing 4 pages per side.
+  \item\texttt{12-Circuits\_print.pdf}---The print version of this
+    presentation. If you want to print on paper, I recommend printing 4 pages
+    per side.
   \item\texttt{13-Homework.pdf}---Homework assignment for this class and next
-    class. The file will be ready when Class 13 slides are posted.
+    class. The file will be posted along Class 13 slides.
   \end{enumerate}
 
   \vspace{.2in}Please download/print the PDF file before each class. There is
@@ -114,24 +115,114 @@
 
 \end{frame}
 
+
+\begin{frame}
+  \frametitle{Resistance of a Conductor}
+  The resistance of a conductor is proportional to the resistivity $\rho$ and
+  its length $L$, and inversely proportional to the cross-sectional area $A$:
+
+  \eq{-.2in}{
+    \boxed{R = \rho\frac{L}{A}}
+  }
+
+  \begin{center}
+    \begin{tabular}{l|c|l}
+      \rowcolor{pink}
+      \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
+      Resistance           & $R$    & \si{\ohm} (ohms) \\
+      Resistivity          & $\rho$ & \si{\ohm.\metre} (ohm metres) \\
+      Length of conductor  & $L$    & \si{\metre} (metres) \\
+      Cross-sectional area & $A$    & \si{\metre^2} (square metres) \\
+    \end{tabular}
+  \end{center}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Resistance of a Conductor}
+
+  \eq{-.2in}{
+    \boxed{R = \rho\frac{L}{A}}
+  }
+
+  \begin{columns}
+    \column{0.5\textwidth}
+    \begin{center}
+      \begin{tabular}{c|c|c}
+        \rowcolor{blue!70!gray}
+        {\color{white}Gauge} & 
+        {\color{white}Diameter} & 
+        {\color{white}$R/L$} \\
+        \rowcolor{blue!70!gray}
+        & {\color{white}(\si{mm})} & 
+        {\color{white}(\SI{e-3}{\ohm/m})}\\ \hline
+        0  & \num{9.35} & \num{0.31} \\
+        10 & \num{2.59} & \num{2.20} \\
+        14 & \num{1.63} & \num{8.54} \\
+        18 & \num{1.02} & \num{21.90} \\
+        22 & \num{0.64} & \num{51.70} \\
+      \end{tabular}
+    \end{center}
+    \column{0.5\textwidth}
+    \begin{center}
+      \begin{tabular}{c|c}
+        \rowcolor{blue!70!gray}
+        {\color{white} Material} & 
+        {\color{white} Resistivity $\rho$ (\si{\ohm.m})}\\ \hline
+        silver    & \num{1.6e-8} \\
+        copper    & \num{1.7e-8} \\
+        aluminum  & \num{2.7e-8} \\
+        tungsten  & \num{5.6e-8} \\
+        Nichrome  & \num{100e-8} \\
+        carbon    & \num{3500e-8}\\
+        germanium & \num{0.46} \\
+        glass     & \num{e10} to \num{e14}\\
+      \end{tabular}
+    \end{center}
+  \end{columns}
+\end{frame}
+
+
+
 \section{Ohm's Law}
 
 \begin{frame}
   \frametitle{Ohm's Law}
+
+  The electric potential difference $V$ across a ``load'' (resistor) equals the
+  product of the current $I$ through the load and the resistance $R$ of the
+  load.
+
+  \eq{-.2in}{
+    \boxed{V=IR}
+  }
+  
+  \vspace{-.2in}
+  \begin{center}
+    \begin{tabular}{l|c|l}
+      \rowcolor{pink}
+      \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
+      Potential difference & $V$    & \si{\volt} (volt) \\
+      Current              & $I$    & \si{\ampere} (ampere) \\
+      Resistance           & $R$    & \si{\ohm} (ohm) \\
+    \end{tabular}
+  \end{center}
+
+  A resistor is considered ``ohmic'' if it obeys Ohm's law
 \end{frame}
 
 
 \begin{frame}
   \frametitle{Power Dissipated by a Resistor}
 
-  We know (from Physics 11) that power is the rate at which work $W$ is done,
-  and we also know from electrostatics, the change in electric potential energy
+  Power is the rate at which work $W$ is done, and from electrostatics, the
+  change in electric potential energy
   $\Delta E_q$ (i.e.\ the work done!) is proportional to the amount of charge
-  $q$ and the voltage $V$. Now we can get a very simple expression for power.
+  $q$ and the voltage $V$. This gives a very simple expression for power
   through a resistor:
   
   \eq{-.15in}{
-    P=\frac{dW}{dt}=\frac{d(qV)}{dt}=\left(\frac{dq}{dt}\right)=\boxed{IV}
+    P=\frac{dW}{dt}=\frac{d(qV)}{dt}=\left(\frac{dq}{dt}\right)V=\boxed{IV}
   }
   \begin{center}
     \begin{tabular}{l|c|l}
@@ -170,46 +261,65 @@
 
 \begin{frame}
   \frametitle{Kirchkoff's Current Law}
-%  Let's extend what we know to a disk of radius $R$ and charge density $\sigma$
-%  \begin{columns}
-%    \column{.3\textwidth}
-%    \pic{1.2}{serway.png}
-%    \column{.67\textwidth}
-%    \begin{itemize}
-%    \item We start with the solution from the ring problem, and replace $Q$
-%      with $dq=2\pi\sigma a da$:
-%
-%      \eq{-.2in}{
-%        dE_x =\frac{2\pi kx\sigma ada}{(x^2+a^2)^{3/2}}
-%      }
-%    \item Integrating over the entire disk:
-%
-%      \eq{-.3in}{
-%        E_x =\pi kx\sigma\int\frac{2ada}{(x^2+a^2)^{3/2}}
-%      }
-%
-%      \vspace{-.15in}This is not an easy integral!
-%    \end{itemize}
-%  \end{columns}
+  The electric current that flows into any junction in an electric circuit must
+  be equal to the current which flows out.
+
+  \vspace{.2in}
+  \begin{columns}
+    \column{.3\textwidth}
+    \begin{center}
+      \begin{tikzpicture}[scale=1.5]
+        \draw[thick](0,0) to[short,o-] (1,0) to[short,-o] (1,-1);
+        \draw[thick](1,1) to[short,o-] (1,0) to[short,-o] (2,0);
+        \draw[ultra thick,red,->](.25,0)--(.75,0) node[midway,above]{$I_1$};
+        \draw[ultra thick,red,->](1,.75)--(1,.25) node[midway,left]{$I_2$};
+        \draw[ultra thick,red,->](1.25,0)--(1.75,0) node[midway,below]{$I_3$};
+        \draw[ultra thick,red,->](1,-.25)--(1,-.75) node[midway,right]{$I_4$};
+        \fill[black](1,0) circle(0.03);
+      \end{tikzpicture}
+    \end{center}
+    \column{.7\textwidth}
+    e.g.\ if there are 4 paths to the junction at the center, with $I_1$ and
+    $I_2$ going into the junction, and $I_3$ and $I_4$ coming out, then the
+    current law says that
+
+    \eq{-.3in}{I_1+I_2-I_3-I_4=0}
+  \end{columns}
+
+  \vspace{.2in}Basically, it means that there cannot be any accumulation of
+  charges anywhere in the circuit. The law is a consequence of conservation of
+  energy.
 \end{frame}
 
 
 \begin{frame}
   \frametitle{Kirchkoff's Voltage Law}
-%  \begin{columns}
-%    \column{.3\textwidth}
-%    \pic{1.2}{serway.png}
-%    \column{.67\textwidth}
-%    \begin{itemize}
-%    \item Luckily for us, the integral is in the form of $\int u^ndu$, with
-%      $u=x^2+a^2$ and $n=\frac{-3}{2}$.
-%    \item You can find the integral in any math textbook:
-%
-%      \eq{-.3in}{
-%        \boxed{E_x =2\pi k\sigma\left(1-\frac{x}{\sqrt{x^2+R^2}}\right)}
-%      }
-%      \end{itemize}
-%  \end{columns}
+
+  The voltage changes around any closed loop in the circuit must sum to zero,
+  no matter what path you take through an electric circuit.
+
+  \vspace{.1in}
+  \begin{columns}
+    \column{.3\textwidth}
+    \begin{center}
+      \begin{tikzpicture}[scale=1.8,american voltages]
+        \draw[thick](0,0) to[battery=$V$] (0,1.5)--(1,1.5) to[R=$R$] (1,0)--(0,0);
+      \end{tikzpicture}
+    \end{center}
+    \column{.7\textwidth}
+    Assume that the current flows clockwise and we draw a clockwise loop, we
+    get
+
+    \eq{-.45in}{ V-V_R=0\;\;\rightarrow\;\; V-IR=0}
+
+    \vspace{-.25in}If I incorrectly guess that $I$ flows counterclockwise, I
+    will still have a similar expression
+
+    \eq{-.45in}{-V_R-V=0\;\;\rightarrow\;\; -V-IR=0}
+  \end{columns}
+
+  \vspace{-.1in}When solving for $I$, we get a negative number, indicating
+  that my guess was in the wrong direction.
 \end{frame}
 
 
@@ -221,9 +331,6 @@
     \column{.32\textwidth}
     \begin{tikzpicture}
      \draw[thick] (0,2) to[short,o-] (1,2) to[R=$R_1$] (1,0) to[short,-o] (0,0);
-%      to[battery,l=$V$] (0,2)
-%      to[cspst] (0,4)
-%      to[short] (1.5,4) to[R=$R_1$] (1.5,0) to[short] (0,0);
      \draw[thick](1,2)  to[short] (2.25,2)to[R=$R_2$] (2.25,0)to[short] (1,0);
      \draw[thick](2.25,2)to[short](3.5,2) to[R=$R_3\ldots$] (3.5,0)
      to[short] (2.25,0);
@@ -253,7 +360,7 @@
 \begin{frame}
   \frametitle{Resistors in Parallel}
   \framesubtitle{Equivalent Resistance}
-  Through applying Ohm's Law and Kirkoff's laws, we find the equivalent
+  Through applying Ohm's Law and Kirchkoff's laws, we find the equivalent
   resistance of a parallel circuit: \textbf{The inverse of the equivalent
     resistance for resistors connected in parallel is the sum of the inverses
     of the individual resistances.}
@@ -280,20 +387,28 @@
   \begin{center}
     \begin{tikzpicture}
       \draw[thick](0,0) to[R=$R_1$,o-] (2,0) to[R=$R_2$] (4,0)
-      to[R=$R_3$,-o] (6,0)
+      to[R=$R_3$,-o] (6,0);
     \end{tikzpicture}
   \end{center}
+
+  \vspace{.1in}The analysis for resistors in series is similar (but easier).
+  From the current law, the current through each resistor is the same:
+
+  \eq{-.2in}{I_1=I_2=I_3=\cdots=I}
+
+  \vspace{-.15in}And the total voltage drop across all resistor is therefore:
+
+  \eq{-.4in}{V=V_1+V_2+V_3+\cdot=I(R_1+R_2+R_3+\cdots)}
 \end{frame}
 
 \begin{frame}
   \frametitle{Resistors in Series}
   \frametitle{Equivalent Resistance}
-  Again, through applying Ohm's Law and Kirkoff's laws, we find that when
-  resistors are connected in series: \textbf{the equivalent equivalent
-    resistance of loads is the sum of the resistances of the individual
-    loads.}
+  Again, through applying Ohm's Law and Kirchkoff's laws, we find that when
+  resistors are connected in series: \textbf{the equivalent resistance of loads
+    is the sum of the resistances of the individual loads.}
 
-  \eq{-0.3in}{
+  \eq{-.2in}{
     \boxed{R_\mathrm{eq}=R_1 + R_2 + \cdots + R_N}
   }
 
@@ -309,20 +424,108 @@
 
 
 \begin{frame}
-  \frametitle{Example Problem}
-%    \textbf{Gauss's law} tells us that if we have a closed surface (think of
-%    the surface of a balloon), the total electric flux is very well defined:
-%
-%    \eq{-.2in}{\boxed{
-%        \Phi_\mathrm{total}
-%        =\oint\mb{E}\cdot d\mb{A}
-%        =\frac{Q_\mathrm{encl}}{\epsilon_0}
-%    }}
-%    
-%    \vspace{-.1in}where $Q_\mathrm{encl}$ is the charge enclosed by the surface,
-%    and $\epsilon_0=\SI{8.85e-12}{C^2/N.m^2}$ is the permittivity of free space.
-%    That closed surface is called a \textbf{Gaussian surface}.
+  \frametitle{Example Problem (Simple)}
+  A simple circuit analysis problem will involve one voltage source and
+  resistors connected, some in parallel, and some in series. Below is a typical
+  example:
+
+  \vspace{.2in}
+  \begin{columns}
+    \column{.4\textwidth}
+    \begin{tikzpicture}[scale=.8,american voltages]
+      \draw(0,0) to[R=2<\ohm>](0,2) to[battery=100<\volt>] (0,4) to[short]
+      (1,4) to [R=10<\ohm>] (3,4)--(3,4.5) to[R=40<\ohm>] (5,4.5)
+      to[short] (5,4) to[short] (5.5,4)--(5.5,0)--(0,0);
+      \draw(3,4)--(3,3.5) to[R,l_=10<\ohm>] (5,3.5)--(5,4);
+      \draw[dashed] (-1.8,0.25) rectangle(0.6,3.75);
+    \end{tikzpicture}
+    \column{.6\textwidth}
+    Two \SI{10}{\ohm} resistors and a \SI{40}{\ohm} resistor are connected as
+    shown to a \SI{100}{\volt} emf source with internal resistance
+    \SI{2}{\ohm}. How much power is dissipated by the \SI{40}{\ohm} resistor?
+    \begin{enumerate}[(A)]
+    \item\SI{160}{\watt}
+    \item\SI{40}{\watt}
+    \item\SI{400}{\watt}
+    \item\SI{5}{\watt}
+    \item\SI{500}{\watt}
+    \end{enumerate}
+  \end{columns}
 \end{frame}
+
+
+\begin{frame}
+  \frametitle{Tips for Solving ``Simple'' Circuit Problems}
+  \begin{enumerate}
+  \item Identify groups of resistors that are in parallel or in series, and
+    find their equivalent resistance.
+  \item Gradually reduce the entire circuit to one voltage source and one
+    resistor.
+  \item Using Ohm's law, find the current out of the battery.
+  \item Uing Kirchkoff's laws, find the current through each of the resistors.
+  \end{enumerate}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Circuits Aren't Always Simple}
+  Some of these problems require you to solve a system of linear equations.
+  The following is a simple example with two voltage sources:
+  \begin{center}
+    \begin{tikzpicture}[american voltages]
+      \draw(0,0) to[battery=$V_1$](0,2) to[R=$R_1$](2,2) to[R=$R_3$](2,0)--(0,0);
+      \draw(2,0)--(4,0) to[battery,l_=$V_2$](4,2) to[R,l_=$R_2$](2,2);
+      \uncover<2->{
+        \draw[very thick,red,->](2,0.4)--(2,0)
+        node[midway,right]{\tiny $I_1+I_2$};
+        \draw[very thick,red,->] (0.6,0.4)..controls (0,2) and (2,2)..(1.6,.4)
+        node[midway,below]{\tiny $I_1$};
+        \draw[very thick,red,->] (3.4,0.4)..controls (4,2) and (2,2)..(2.4,.4)
+        node[midway,below]{\tiny $I_2$};
+      }
+    \end{tikzpicture}
+  \end{center}
+  \uncover<2->{
+    In this case, we have to draw two loops of current.
+  }
+\end{frame}
+
+\begin{frame}
+  \frametitle{A More Difficult Example}
+  \begin{columns}
+    \column{.4\textwidth}
+    \begin{tikzpicture}[american voltages]
+      \draw(0,0) to[battery=$V_1$](0,2) to[R=$R_1$](2,2)to[R=$R_3$](2,0)--(0,0);
+      \draw(2,0)--(4,0) to[battery,l_=$V_2$](4,2) to[R,l_=$R_2$](2,2);
+      \draw[very thick,red,->](2,0.4)--(2,0)
+      node[midway,right]{\tiny $I_1+I_2$};
+      \draw[very thick,red,->] (0.6,0.4)..controls (0,2) and (2,2)..(1.6,.4)
+      node[midway,below]{\tiny $I_1$};
+      \draw[very thick,red,->] (3.4,0.4)..controls (4,2) and (2,2)..(2.4,.4)
+      node[midway,below]{\tiny $I_2$};
+    \end{tikzpicture}
+    \column{.6\textwidth}
+    We split the circuit into two loops, and apply Kirchkoff's voltage in both:
+
+    \vspace{-.4in}{\Large
+      \begin{align*}
+        V_1-I_1R_1-(I_1+I_2)R_3&=0\\
+        V_2-I_2R_2-(I_1+I_2)R_3&=0
+      \end{align*}
+    }
+  \end{columns}
+  Two equations, two unknowns ($I_1$ and $I_2$). We can subtract (2) from (1),
+  then solve for $I_1$ and $I_2$:
+
+  \eq{-.4in}{
+    I_1=\frac{V_1-I_2R_3}{R_1+R_3}
+    \quad\quad
+    I_2=
+    \frac{\left[V_2-\frac{(V_1-V_2)R_3}{R_1}\right]}
+         {\left[R_2+\frac{(R_1+R_2)R_3}{R_1}\right]}
+  }
+\end{frame}
+
+
 
 
 
