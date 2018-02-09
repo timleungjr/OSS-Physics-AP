@@ -45,10 +45,10 @@
   \begin{center}
     \fbox{
       \begin{minipage}{.6\textwidth}
-        Tim will be away to do a concert in Ottawa next Saturday (February
-        17). There will be a supply teacher for next week. Please be kind
-        to him! Tim will return to Olympiads on Sunday, February 18,, and will
-        resume teaching this class on the 24th (class 14).
+        Tim will be away for a concert in Ottawa next Saturday (February 17).
+        There will be a supply teacher for next week. Please be kind! Tim will
+        return to Olympiads on Sunday, February 18,, and will resume teaching
+        this class on the 24th (class 14).
       \end{minipage}
     }
   \end{center}
@@ -71,48 +71,81 @@
 \end{frame}
 
 
+\section{Current}
+
+\begin{frame}
+  \frametitle{Current}
+  We define conventional current as the rate at which positive charges flows
+  through a wire, i.e.:
+
+  \eq{-.3in}{\boxed{I=\frac{dQ}{dt}}}
+
+  We can also think of the current as the flux of ``charge density'' flowing
+  past a surface, i.e.:
+  
+  \eq{-.3in}{\boxed{I=\int\mb{J}\cdot d\mb{A}}}
+
+  $d\mb{A}$ is defined the same way as Gauss's law, with its
+  magnitude being the infinitesimal area $dA$ and the direction being the
+  outward normal from the surface. This expression is especially important when
+  dealing with plasma etc.
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Current}
+  \begin{itemize}
+  \item We now know that in a wire, instead of positive charges flowing in one
+    direction, we have, in fact, electrons (negative charges) flowing in the
+    opposite direction
+  \item We are treating current as a scalar quantity, but later we will have to
+    treat it as a vector
+  \item As charges move through a conductor, the will lose potential energy
+  \item How much energy it loses depends on the resistance of the material
+  \end{itemize}
+\end{frame}
+
 
 \section{Resistors}
 
+
 \begin{frame}
-  \frametitle{Resistors}
-%  From last class (and Physics 12), we know that the electric field from a
-%  point charge $q$ is given by:
-%
-%  \eq{-.2in}{\mb{E}=\frac{kq}{r^2}\hat{\mb{r}}}
-%  
-%  where $\hat{\mb{r}}$ is the outward radial direction from the charge. The
-%  total field at a point $P$ from a distribution of charge is found by
-%  integrating through the entire volume of the charge:
-%
-%  \eq{-.2in}{\boxed{\mb{E}=\int_V\frac{kdq}{r^2}\hat{\mb{r}}}}
+  \frametitle{Resistivity}
+  The resistivity of a material is related to the electric field and current
+  density inside
+
+  \eq{-.3in}{
+    \boxed{\mb{E}=\rho\mb{J}}
+    \quad\quad\text{\large in scalar:}\;
+    \boxed{\rho=\left|\frac{E}{J}\right|}
+  }
+
+  \begin{center}
+    \begin{tabular}{l|c|l}
+      \rowcolor{pink}
+      \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
+      Electric field & $\mb{E}$ & \si{\newton/\coulomb} (newtons per coulomb) \\
+      Charge density & $\mb{J}$ & \si{\ampere/m^2} (amperes per metre square) \\
+      Resistivity & $\rho$ & \si{\ohm/\metre} (ohms per metre)
+    \end{tabular}
+  \end{center}
 \end{frame}
 
-
 \begin{frame}
-  \frametitle{Resistors}
-%%  \begin{columns}
-%%    \column{.3\textwidth}
-%%    \pic{1}{thinrod.jpg}
-%%    \column{.7\textwidth}
-%%    \begin{itemize}
-%%    \item A thin rod with length $\ell$, and charge distribution $\lambda$
-%%    \item The parallel component $dE_x$ does not contribute, but
-%%      perpendicular component $dE_y$ does:
-%%
-%%      \eq{-.2in}{
-%%        dE_y=\frac{k dq}{r^2}\cos\theta
-%%        =\frac{k\lambda dx}{r^2}\cos\theta
-%%      }
-%%    \item We integrate through the 
-%%    \end{itemize}
-%%  \end{columns}
-\end{frame}
+  \frametitle{Resistivity}
 
-
-\begin{frame}
-  \frametitle{Resistors}
-
+  \eq{-.05in}{
+    \boxed{\mb{E}=\rho\mb{J}}
+    \quad\quad\text{\large in scalar:}\;
+    \boxed{\rho=\left|\frac{E}{J}\right|}
+  }
+  \begin{itemize}
+  \item In a conductor, because the electrons are free to move, the electric
+    field tend to be very small, and the resistivity is low.
+  \item In a dielectric (non conducting material), electrons cannot move
+    easily--only polarize themselves--the electric field are generally strong,
+    and the resistivity is higher.
+  \end{itemize}
 \end{frame}
 
 
@@ -493,6 +526,8 @@
   \frametitle{A More Difficult Example}
   \begin{columns}
     \column{.4\textwidth}
+    
+    \vspace{-.3in}
     \begin{tikzpicture}[american voltages]
       \draw(0,0) to[battery=$V_1$](0,2) to[R=$R_1$](2,2)to[R=$R_3$](2,0)--(0,0);
       \draw(2,0)--(4,0) to[battery,l_=$V_2$](4,2) to[R,l_=$R_2$](2,2);
@@ -513,8 +548,9 @@
       \end{align*}
     }
   \end{columns}
-  Two equations, two unknowns ($I_1$ and $I_2$). We can subtract (2) from (1),
-  then solve for $I_1$ and $I_2$:
+
+  \vspace{-.1in}Two equations, two unknowns ($I_1$ and $I_2$). We can subtract
+  (2) from (1), then solve for $I_1$ and $I_2$:
 
   \eq{-.4in}{
     I_1=\frac{V_1-I_2R_3}{R_1+R_3}
@@ -528,54 +564,134 @@
 \end{frame}
 
 
+\begin{frame}
+  \frametitle{This is As Difficult As It'll Get}
+  \framesubtitle{And This Is Your Homework}
+  \begin{columns}
+    \column{.45\textwidth}
+    \begin{tikzpicture}[american voltages,scale=1.2]
+      \draw[thick](0,0) to[short,*-](0,2) to[R=3<\ohm>,*-] (0,4)
+      to[battery1=42<\volt>,*-](2,4) to[R=3<\ohm>] (4,4) to[short,*-](4,2)
+      to[R=4<\ohm>,*-](4,0) to[short,*-](2,0) to[battery1=6<\volt>,*-](2,2)
+      to[R,l_=4<\ohm>,*-](0,2);
+      \draw[thick](0,0) to[R,l_=6<\ohm>](2,0);
+      \draw[thick](2,2) to[R,l_=6<\ohm>](4,2);
+      \uncover<2->{
+        \draw[ultra thick,red,->]
+        (.5,3.5)..controls(4.75,4)and(4.75,2)..(.5,2.5)
+        node[midway,left]{$I$};
+        \draw[ultra thick,red,->] (0.6,0.4)..controls (0,2) and (2,2)..(1.4,.4)
+        node[midway,below]{$I_2$};
+        \draw[ultra thick,red,->] (2.6,0.4)..controls (2,2) and (4,2)..(3.4,.4)
+        node[midway,below]{$I_1$};
+      }
+    \end{tikzpicture}
+    \column{.55\textwidth}
+    \begin{itemize}
+    \item To solve this problem, we define a few ``loops'' around the circuit:
+      one on top, one on bottom left, and one on bottom right.
+    \item<2-> Apply the voltage law in the loops. For example, in the
+      lower left:
+
+      \eq{-.5in}{
+        4(I-I_2)-6-6I_2=0
+      }      
+    \item<2->\vspace{-.1in} Solve the linear system to find the current. If the
+      current that you worked out is negative, it means that you have the
+      direction wrong.
+    \end{itemize}
+  \end{columns}
+\end{frame}
 
 
 
-\section{Capacitors in Circuits}
 
-
+\section{Capacitors in Circuit}
 \begin{frame}
   \frametitle{Capacitors in Parallel}
+  \begin{center}
+    \begin{tikzpicture}[scale=1.2]
+      \draw[thick](0,1)to[short,o-](1,1) to[C=$C_1$] (1,0)to[short,-o](0,0);
+      \draw[thick](1,1)--(3,1) to[C=$C_2$]       (3,0)--(1,0);
+      \draw[thick](3,1)--(5,1) to[C=$C_3\ldots$] (5,0)--(3,0);
+    \end{tikzpicture}
+  \end{center}
 
-%  \begin{columns}
-%    \column{.25\textwidth}
-%    \begin{tikzpicture}[scale=1.2]
-%      \fill[red!65!black](0,0) circle(0.07);
-%      \draw[dashed,thick](0,0) circle(1.5);
-%      \foreach \x in {0,...,13}{
-%        \draw[red!65!black,thick,rotate=30*\x,->](0,0)--(0,1);
-%      }
-%      \draw[thick,->](0,1.5)--(0,2)
-%      node[pos=1,above]{\footnotesize$\hat{\mb{n}}$};
-%      \node[red!65!black] at (1.1,0) (E) {\footnotesize$\mb{E}$};
-%    \end{tikzpicture}
-%    \column{.75\textwidth}
-%    By symmetry, electric field lines are radially outward from the charge, so
-%    the integral reduces to:
+  \vspace{-.1in}
+  From the voltage law, we know that the voltage across all the capacitors are
+  the same, i.e.\ $V_1=V_2=V_3-\cdots=V$. We can express the total charge
+  $Q_\mathrm{tot}$ stored across all the capacitors of capacitance and this
+  common voltage $V$: 
 
-  \eq{-.2in}{\boxed{C_\mathrm{eq}=C_1+C_2+\cdots+C_N}}
+  \eq{-.4in}{
+    Q_\mathrm{tot}=Q_1+Q_2+Q_3+\cdots=C_1V+C_2V+C_3V+\cdots
+  }
+  
+  \vspace{-.2in}Factoring out $V$ from each term gives us the equivalent
+  capacitance:
 
-%    Since area of a sphere is $A=4\pi r^2$, we recover Coulomb's law:
-%
-%    \eq{-.3in}{ E=\frac{1}{4\pi\epsilon_0}\frac{q}{r^2}=\frac{kq}{r^2}}
-%    
-%    (In fact, it was through studying point charges that Gauss's law was
-%    discovered, so it should not be a surprise that they agree.)
-%  \end{columns}
+  \eq{-.25in}{\boxed{C_\mathrm{eq}=C_1+C_2+\cdots+C_N}}
 \end{frame}
 
 
 \begin{frame}
   \frametitle{Capacitors in Series}
-%  In the homework questions this week, you will be asked to find the
-%  electric field strength inside and outside of a few common configurations:
-%  \begin{itemize}
-%  \item Inside \& outside of a spherical shell of charge
-%  \item Inside \& outside of a uniformly charged solid sphere
-%  \item Near an infinite line charge
-%  \item Inside \& outside an infinitely long solid cylinder of charge
-%  \item Inside \& outside a cylindrical shell of charge
-%  \end{itemize}
+  Likewise, we can do a similar analysis to capacitors connected in series.
+
+  \vspace{-.15in}
+  \begin{center}
+    \begin{tikzpicture}[scale=1.2]
+      \draw[thick](0,0) to[C=$C_1$,o-] (1.25,0) to[C=$C_2$] (2.5,0)
+      to[C=$C_3$,-o] (3.75,0);
+    \end{tikzpicture}
+  \end{center}
+
+  \vspace{-.15in}
+  The total voltage across these capacitors are the sum of the
+  voltages across each of them, i.e.\ $V_\mathrm{tot}=V_1+V_2+V_3+\cdots$
+  
+  \vspace{.1in}We recognize that the charge stored on all the capacitors must
+  be the same! We can then write the total voltage in terms of capacitance and
+  charge:
+
+  \eq{-.2in}{
+    V_\mathrm{tot}=\frac{Q}{C_1}+\frac{Q}{C_2}+\frac{Q}{C_3}+\cdots
+  }
+\end{frame}
+
+\begin{frame}
+  \frametitle{Capacitors in Series}
+  \framesubtitle{Equivalent Capacitance}
+  The inverse of the equivalent capacitance for $N$ capacitors connected in
+  series is the sum of the inverses of the individual capacitance.
+
+  \eq{-.2in}{
+    \boxed{
+      \frac{1}{C_\mathrm{eq}}
+      =\frac{1}{C_1}+\frac{1}{C_2}+\cdots+\frac{1}{C_N}
+    }
+  }
+  
+  Make sure we don't confuse ourselves with resistors.
+\end{frame}
+
+\begin{frame}
+  \frametitle{How Do We Know That Charges Are The Same?}
+  It's actually quite easy to show that the charges across all the capacitors
+  are the same.
+
+  \vspace{-.2in}
+  \begin{center}
+    \begin{tikzpicture}[scale=1.5]
+      \draw[thick](0,0) to[C=$C_1$,o-] (1.25,0) to[C=$C_2$,-o] (2.5,0);
+      \draw[dashed](0.625,-.75) rectangle (1.875,1.2);
+    \end{tikzpicture}
+  \end{center}
+
+  The capacitor plates and the wire connecting them are really one piece of
+  conductor. There is nowhere for the charges to leave the conductor, therefore
+  when charges are accumulating on $C_1$, $C_2$ must also have the same charge
+  because of conservation of charges.
 \end{frame}
 
 
@@ -584,218 +700,195 @@
 
 \begin{frame}
   \frametitle{Circuits with Resistors and Capacitors}
-%  \begin{columns}
-%    \column{.25\textwidth}
-%    \pic{1.3}{elec_gauss_figure9.jpg}
-%    \column{.75\textwidth}
-%    \begin{itemize}
-%    \item Charge density (charge per unit area) $\sigma$
-%    \item By symmetry, $\mb{E}$ must be perpendicular to the plane
-%    \item Our Gaussian surface is a cylinder shown in the left with an area
-%      $A$; the height of the cylinder is unimportant
-%    \item We can see that nothing ``flows out'' of the side of the cylinder,
-%      only at the ends.
-%    \item The total flux is $\Phi=E(2A)$
-%    \item The enclosed charge is $Q_\mathrm{encl}=\sigma A$.
-%    \end{itemize}
-%  \end{columns}
+  Now that we have seen how resistors and capacitors behave in a circuit, we
+  can look into combining them in to an ``R-C circuit''.
+
+  \vspace{-.2in}
+  \begin{center}
+    \begin{tikzpicture}[american voltages]
+      \draw[thick](0,0)
+      to[battery=$V$] (0,2)
+      to[R=$R$] (2,2)
+      to[C=$C$] (2,0)--(0,0);
+    \end{tikzpicture}
+  \end{center}
+
+  The simplest form is a resistor and capacitor connected in series, and
+  then connect to a voltage source. Because of the nature of capacitors, the
+  current through the circuit will not be steady as were the case with only
+  resistors.
 \end{frame}
 
 
 \begin{frame}
-  \frametitle{Discharging a capacitor}
-%  \begin{columns}
-%    \column{.3\textwidth}
-%    \pic{1.25}{elec_gauss_figure9.jpg}
-%    \column{.7\textwidth}
-%    Gauss's law simplifies to:
-%    
-%    \eq{-.35in}{
-%      \oint\mb{E}\cdot d\mb{A}=\frac{Q_\mathrm{encl}}{\epsilon_0}
-%      \;\;\rightarrow\;\;
-%      E(2A)=\frac{\sigma A}{\epsilon_0}
-%    }
-%
-%    Solving for $E$, we get:
-%
-%    \eq{-.3in}{\boxed{E=\frac{\sigma}{2\epsilon_0}}}
-%    \begin{itemize}
-%    \item $E$ is a constant
-%    \item Independent of distance from the plane
-%    \item Both sides of the plane are the same
-%    \end{itemize}
-%  \end{columns}
+  \frametitle{Discharging a Capacitor}
+
+  We start the analysis with something even simpler. There is no voltage source,
+  and the capacitor is already charged to $V_c=Q_\mathrm{tot}/C$. What happens
+  when the current begin to flow?
+
+  \begin{columns}
+    \column{.3\textwidth}
+    \begin{center}
+      \begin{tikzpicture}
+        \draw[thick](0,0) to[R=$R$] (0,2)--(2,2) to[C=$C$] (2,0)--(0,0);
+      \end{tikzpicture}
+    \end{center}
+    \column{.7\textwidth}
+    As current starts to flow, the charge on the capacitor decrease. Over time
+    the current decreases, until the capacitor is fully discharged, and current
+    stops flowing.
+  \end{columns}
+
+  \vspace{.25in}Apply the voltage law for the circuit, and substitute
+  the definition of current $I=dQ/dt$ and the voltage across a capacitor
+  $V_c=Q/R$:
+
+  \eq{-.2in}{V_c-IR=0\quad\rightarrow\quad \frac{Q}{C}-R\frac{dQ}{dt}=0}
 \end{frame}
+
+
+\begin{frame}
+  \frametitle{Discharging a Capacitor}
+  Separating the $Q$ terms on the left side of the equation, and leaving
+  everything else on the right side, we get:
+
+  \eq{-.2in}{
+    \frac{dQ}{Q}=\frac{-dt}{RC}
+  }
+
+  which we can now integrate and ``exponentiate'':
+
+  \eq{-.35in}{
+    \int\frac{dQ}{Q}=\int\frac{dt}{RC}
+    \;\rightarrow\;
+    \ln Q=\frac{-t}{RC} + K
+    \;\rightarrow\;
+    Q=e^Ke^{-t/RC}
+  }
+
+  \vspace{-.1in}the constant of integration $K$ is related to initial charge on
+  the capacitor $Q_\mathrm{tot}$:
+
+  \eq{-.2in}{e^K=Q_\mathrm{tot}}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Discharging a Capacitor}
+  The expression of charge across the capacitor is time-dependent:
+
+  \eq{-.15in}{\boxed{Q(t)=Q_0e^{-t/\tau}}}
+
+  \vspace{-.1in}where $Q_\mathrm{tot}$ is the initial charge on the capacitor,
+  and $\tau=RC$ is called the \textbf{time constant}. Taking the time
+  derivative of $Q(t)$ gives us the current through the circuit:
+
+  \eq{-.25in}{\boxed{I(t)=\frac{dQ}{dt}=I_0e^{-t/\tau}}}
+
+  where the initially current at $t=0$ is given by
+  $I_0=Q_\mathrm{tot}/\tau=Q_\mathrm{tot}/RC$.
+\end{frame}
+
+\begin{frame}
+  \frametitle{Charging a Capacitor}
+  \begin{columns}
+    \column{.3\textwidth}
+    
+    \vspace{-.25in}
+    \begin{tikzpicture}[american voltages,scale=1.2]
+      \draw[thick](0,0)
+      to[battery=$V$] (0,2)
+      to[R=$R$] (2,2)
+      to[C=$C$] (2,0)--(0,0);
+    \end{tikzpicture}
+    \column{.7\textwidth}
+    In charging up the capacitor, we go back to our original circuit, and
+    apply the voltage law, then substitute the expression for current and
+    voltage across the capacitor:
+
+    \eq{-.15in}{
+      V-R\frac{dQ}{dt}-\frac{Q}{C}=0
+    }
+  \end{columns}
+
+  \vspace{.2in}Again, separating variables, and integrating, we get:
+
+  \eq{-.3in}{
+    \int\frac{dQ}{CV-Q}=\int\frac{dt}{RC}
+    \;\;\rightarrow\;\;\ln(CV-Q)=\frac{-t}{RC}+K
+  }
+ \end{frame}
 
 
 
 \begin{frame}
   \frametitle{Charging a Capacitor}
-%  Remember being told that the electric field between two charged plates
-%  is constant?
-%
-%  \begin{itemize}
-%  \item Two plates, each producing an electric field pointing in the same
-%    direction
-%  \item The total electric field is twice the value that we found on the last
-%    slide
-%
-%    \eq{-.1in}{\boxed{E=\frac{\sigma}{\epsilon_0}}}
-%
-%    which is what we already know!
-%  \end{itemize}
+
+  ``Exponentiating'' both sides, we have
+  
+  \eq{-.3in}{CV-Q=e^Ke^{-t/RC}}
+
+  \vspace{-.15in}To find the constant of integration $K$, we note that at $t=0$,
+  the charge across the capacitor is $0$, and we get
+
+  \eq{-.25in}{e^K=CV=Q_\mathrm{tot}}
+
+  \vspace{-.15in}which is the charge stored in the capacitor at the end. 
+  Substitute this back into the equation:
+
+  \eq{-.3in}{\boxed{Q(t)=Q_\mathrm{tot}(1-e^{-t/RC})}}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Capacitors}
+
+  \eq{-.15in}{\boxed{Q(t)=Q_\mathrm{tot}(1-e^{-t/\tau})}}
+
+  \vspace{-.15in}Charging a capacitor has the same time constant $\tau=RC$ as
+  during discharge. We can also differentiate to find the current through the
+  circuit; it is identical to the equation for discharge:
+
+  \eq{-.2in}{
+    \boxed{I(t)=\frac{dQ}{dt}=I_0e^{-t/\tau}}
+  }
+
+  \vspace{-.1in}where the initial current is given by
+  $I_o=Q_\mathrm{tot}/\tau=V/R$. This makes sense because $V_C(t=0)=0$, and all
+  of the energy must be dissipated through the resistor. Similarly at
+  $I(t=\infty)=0$.
 \end{frame}
 
 
+\begin{frame}
+  \frametitle{Two Small Notes}
+  \begin{enumerate}
+  \item When a capacitor is uncharged, there is no voltage across the plate,
+    it acts like a short circuit.
+  \item When a capacitor is charged, there is a voltage across it, but no
+    current flows \emph{through} it. Effectively it acts like an open circuit.
+  \end{enumerate}
+\end{frame}
 
-%\section{Capacitors}
-%
-%
-%\begin{frame}
-%  \frametitle{Capacitors}
-%  \textbf{Capacitors} stores energy in a circuit. The
-%  simplest form of a capacitor is a set of closely spaced parallel plates:
-%
-%  \vspace{-.3in}
-%  \begin{center}
-%    \pic{.5}{cap19.png}
-%  \end{center}
-%  
-%  \vspace{-.15in}When the plates are connected to a battery, the battery
-%  transfer charges to the plates until the potential difference (voltage) $V$
-%  equals the battery terminals. This takes almost no time. After that, one
-%  plate has charge $+Q$; the other has $-Q$.
-%\end{frame}
-%
-%\begin{frame}
-%  \frametitle{Parallel-Plate Capacitors}
-%  Since we know what $E=\sigma/\epsilon_0$ between the plates, and the
-%  relationship $E=V/d$, we can relate $V$ to the amount of charge $Q$ stored
-%  between the plates:
-%
-%  \eq{-.3in}{ V=Ed=\frac{\sigma}{\epsilon_0}d=\frac{Qd}{\epsilon_0A}}
-%
-%  The ratio between charge $Q$ and voltage $V$ is defined as the
-%  \textbf{capacitance} $C$:
-%
-%  \eq{-.1in}{
-%    \boxed{C=\frac{Q}{V}}
-%    \quad\quad
-%    \text{\normalsize for parallel plates:}
-%    \;\;
-%    C=\frac{\epsilon_0A}{d}
-%    \;\;\text{\normalsize (constant!)}
-%  }
-%\end{frame}
-%
-%
-%\begin{frame}
-%  \frametitle{Parallel-Plate Capacitors}
-%
-%  Capacitance $C$ is defined as the ratio between charge $Q$ ($+$ on one
-%  plate; $-$ on the other) and potential difference (voltage) $V$:
-%  
-%  \eq{-.05in}{
-%    \boxed{C=\frac{Q}{V}}
-%  }
-%  
-%  \begin{center}
-%    \begin{tabular}{l|c|l}
-%      \rowcolor{pink}
-%      \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
-%      Capacitance   & $C$   & \si{\farad} (farads)\\
-%      Charge        & $Q$   & \si{\coulomb} (coulombs)\\
-%      Voltage across the plates & $V$ & \si{\volt} (volts)
-%    \end{tabular}
-%  \end{center}
-%
-%\end{frame}
-%
-%\begin{frame}
-%  \frametitle{Real Capacitors}
-%  \begin{columns}
-%    \column{.25\textwidth}
-%    \pic{1.2}{Figure_20_05_05a.jpg}
-%    \column{.75\textwidth}
-%    \begin{itemize}
-%    \item Parallel-plate capacitors are very common in electric circuits,
-%      but a vacuum between the plates is not very effective
-%    \item Instead, a \textbf{dielectric} (nonconducting) material is inserted
-%      between the plates
-%    \item When the plates are charged, the electric field of the plates
-%      polarizes the dielectric.
-%    \item The dielectric now produces an electric field that opposes the field
-%      from the plates, therefore reduces the effective voltage, and increasing
-%      the capacitance
-%    \end{itemize}
-%  \end{columns}
-%\end{frame}
-%
-%
-%\begin{frame}
-%  \frametitle{Dielectric Constant}
-%  \begin{columns}
-%    \column{.65\textwidth}
-%    If electric field without dielectric is $E_0$, then $E$ in the
-%    dielectric is reduced by $\kappa$, the \textbf{dielectric constant}:
-%
-%    \eq{-.25in}{\boxed{E=\frac{E_0}{\kappa}}}
-%
-%    \vspace{-.1in}The capacitance in a dielectric is now amplified:
-%
-%    \eq{-.25in}{\boxed{C=\kappa C_0}}
-%
-%    \vspace{-.15in}We can also view the dielectric as something that
-%    increases the effective permittivity:
-%
-%    \eq{-.3in}{\boxed{\epsilon=\kappa\epsilon_0}}
-%
-%    \column{.35\textwidth}
-%    \begin{tabular}{l|l}
-%      \rowcolor{pink}
-%      \textbf{Material} & $\kappa$ \\ \hline
-%      Air         & \num{1.00059} \\
-%      Bakelite    & \num{4.9} \\
-%      Pyrex glass & \num{5.6} \\
-%      Neoprene    & \num{6.9} \\
-%      Plexiglas  & \num{3.4} \\
-%      Polystyrene & \num{2.55} \\
-%      Water (\SI{20}{\celsius}) & \num{80} 
-%    \end{tabular}
-%    \end{columns}
-%\end{frame}
-%
-%
-%\begin{frame}
-%  \frametitle{Storage of Electrical Energy}
-%  \begin{center}
-%    \pic{.45}{slide14.jpg}
-%  \end{center}
-%
-%  \begin{itemize}
-%  \item When charging up a capacitor, imagine positive charges moving from the
-%    negatively charged plate to the positively charged plate
-%  \item Initially neither plates are charged, so moving the first charge takes
-%    very little work; as the electric field builds, more and more work needs
-%    to be done
-%  \end{itemize}
-%\end{frame}
-%
-%\begin{frame}
-%  \frametitle{Storage of Electrical Energy}
-%
-%  Starting from the beginning---when the plates aren't charged---if we move an
-%  infinitesimally charge $dq$ across the plates, the infinitesimal work done
-%  $dU$ is related to the capacitance:
-%
-%  \eq{-.3in}{dU=Vdq=\frac{q}{C}dq}
-%
-%  \vspace{-.1in}To fully charge the plates, the total work $U$ is the integral:
-%
-%  \eq{-.2in}{U=\int dU=\int_0^Q\frac{q}{C}dq=\frac{1}{2}\frac{Q^2}{C}}
-%
-%  There are different ways to express $U$ using definition of capacitance:
-%
-%  \eq{-.2in}{\boxed{U=\frac{1}{2}\frac{Q^2}{C}=\frac{1}{2}QV=\frac{1}{2}CV^2}}
-%\end{frame}
+\begin{frame}
+  \frametitle{A More Difficult Problem}
+  \begin{columns}
+    \column{.48\textwidth}
+    \begin{tikzpicture}[scale=1.2,american voltages]
+      \draw[thick] (0,0) to[battery1=12<\volt>,*-*] (0,2) to[R=4<\ohm>] (2,2)
+      to[short,*-](2.46,2.3);
+      \draw[thick](2.5,2) to[short,*-*] (3,2) to[short,-*] (4,2)
+      to[C=6<\micro\farad>,-*] (4,0)--(0,0);
+      \draw[thick] (3,0) to[R=8<\ohm>,*-] (3,2);
+    \end{tikzpicture}
+    \column{.52\textwidth}
+    The capacitor in the circuit is initially uncharged. Find the current
+    through the battery
+    \begin{enumerate}
+    \item Immediately after the switch is closed
+    \item A long time after the switch is closed
+    \end{enumerate}
+  \end{columns}
+\end{frame}
+
 \end{document}
