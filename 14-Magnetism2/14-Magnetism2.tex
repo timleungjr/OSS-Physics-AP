@@ -71,7 +71,8 @@
   \frametitle{Amp\`{e}re's Law}
   \begin{columns}
     \column{.25\textwidth}
-
+    \pic{1}{amlaw.png}
+    
     \column{.75\textwidth}
     Like Gauss's law to calculate electric fields for symmetric configurations,
     \textbf{Amp\`{e}re's law} can be used to calculate the magnetic field for
@@ -80,7 +81,7 @@
     \eq{-.1in}{\boxed{\oint_C \mb{B}\cdot d\boldsymbol{\ell}=\mu_o I_C}}
     where
     \begin{itemize}
-    \item $C$ is a close curve around a current
+    \item $C$ is a closed curve around a current (``Amperian lop'')
     \item $d\boldsymbol{\ell}$ is an infinitesimal length along the closed curve
     \item $I_c$ is the net current that penetrates the area bounded by $C$
     \end{itemize}
@@ -124,10 +125,9 @@
       carrying wire wound around a donut-shaped core \par}
     
     \column{.7\textwidth}
-    Another application of Amp\`{e}re's Law is the \textbf{toroid}.
-
-    \vspace{.05in}This time, we put our loop at $a<r<b$ inside the toroid. Once
-    again, because of symmetry, Amp\`{e}re's law reduces to:
+    Another application of Amp\`{e}re's Law is the \textbf{toroid}. This time,
+    we put our loop at $a<r<b$ inside the toroid. Once again, because of
+    symmetry, Amp\`{e}re's law reduces to:
 
     \vspace{-.35in}{\Large
       \begin{align*}
@@ -247,9 +247,39 @@
   \item Unlike in a circuit, where the \emph{emf} is concentrated at the
     terminals of the battery, the induced \emph{emf} is spread across the
     entire wire.
-  \item Since \emph{emf} is work per unit charge, that means that there is an
-    electric field inside the wire to move the charges.
   \end{itemize}
+  \begin{columns}
+    \column{.3\textwidth}
+    \begin{center}
+      \begin{tikzpicture}[scale=.35]
+        \foreach \xx in {-4.5,-3,...,4.5}{
+          \foreach \yy in {-4.5,-3,...,4.5}{
+            \node at (\xx,\yy) {\footnotesize\textcolor{green!80!black}{$\times$}};
+          }
+        }
+        \draw[gray,ultra thick](0,0) circle(2.9);
+        \draw[->,rotate=45](0,0)--(2.9,0) node[midway,left]{\footnotesize $r$};
+        \foreach \x in {0,90,...,360} {
+          \begin{scope}[rotate=\x]
+            \draw[ultra thick,red!80!black,->](2.9,0)--(2.9,2.5)
+            node[pos=0,above left]{$\mb{E}$};
+          \end{scope}
+        }
+      \end{tikzpicture}
+    \end{center}
+    
+    \column{.7\textwidth}
+    \begin{itemize}
+    \item Since \emph{emf} is work per unit charge, that means that there is an
+      electric field inside the wire to move the charges.
+    \item In this example:
+      \begin{itemize}
+      \item Magnetic field $\mb{B}$ into the page
+      \item The direction of the electric field $\mb{E}$ corresponds to an
+        \emph{increase} in magnetic flux
+      \end{itemize}
+    \end{itemize}
+  \end{columns}
 \end{frame}
 
 
@@ -269,15 +299,15 @@
 \end{frame}
 
 
-\begin{frame}
-  \frametitle{Example Problem}
-  \textbf{Example:} A magnetic field $\mb{B}$ is perpendicular to the plane of
-  the page, and uniform in a circular region of radius $R$ as shown. Outside of
-  the circular region, $\mb{B}=\mb{0}$. The rate of change of the magnitude of
-  $\mb{B}$ is $dB/dt$. What is the magnitude of the induced electric field in 
-  the plane of the page at a distance $r$ from the center of the circular
-  region?
-\end{frame}
+%\begin{frame}
+%  \frametitle{Example Problem}
+%  \textbf{Example:} A magnetic field $\mb{B}$ is perpendicular to the plane of
+%  the page, and uniform in a circular region of radius $R$ as shown. Outside of
+%  the circular region, $\mb{B}=\mb{0}$. The rate of change of the magnitude of
+%  $\mb{B}$ is $dB/dt$. What is the magnitude of the induced electric field in 
+%  the plane of the page at a distance $r$ from the center of the circular
+%  region?
+%\end{frame}
 
 
 \begin{frame}
@@ -312,9 +342,10 @@
     \pic{1}{generator.png}
 
     \column{.65\textwidth}
-    Given that
+    When the coil is turning, the angle between the coil and the magnetic field
+    is:
     
-    \eq{-.4in}{ \theta=\omega t+\delta} 
+    \eq{-.3in}{ \theta=\omega t+\delta} 
 
     \vspace{-.2in}where $\delta$ is the initial angle, the magnetic flux
     through the coil is given by
