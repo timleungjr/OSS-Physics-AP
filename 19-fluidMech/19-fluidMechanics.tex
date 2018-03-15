@@ -1,0 +1,258 @@
+\documentclass[12pt,aspectratio=169]{beamer}
+
+\mode<presentation>
+{
+  \usetheme{Singapore}
+ %\setbeamersize{text margin left=.6cm,text margin right=.6cm}
+%  \setbeamertemplate{navigation symbols}{} % suppress nav bar
+%  \setbeamercovered{transparent}
+}
+\usefonttheme{professionalfonts}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{amsmath}
+\usepackage{mathpazo}
+\usepackage[scaled]{helvet}
+\usepackage{xcolor,colortbl}
+\usepackage{siunitx}
+\usepackage{hyperref}
+
+\sisetup{detect-all}
+
+\title{Classes 19: Fluid Mechanics}
+\subtitle{AP Physics}
+\author[TML]{Dr.\ Timothy Leung}
+\institute{Olympiads School}
+\date{March 2018}
+
+\newcommand{\pic}[2]{\includegraphics[width=#1\textwidth]{#2}}
+\newcommand{\mb}[1]{\mathbf{#1}}
+\newcommand{\eq}[2]{\vspace{#1}{\Large\begin{displaymath}#2\end{displaymath}}}
+%\newcommand{\protip}[1]{
+%  \begin{center}
+%    \fbox{
+%      \begin{minipage}{.95\textwidth}
+%        {\footnotesize
+%          \textbf{Protip: }#1
+%        }
+%      \end{minipage}
+%    }
+%  \end{center}
+%}
+
+\begin{document}
+
+\begin{frame}
+  \maketitle
+\end{frame}
+
+
+%\section[Intro]{Introduction}
+
+\begin{frame}
+  \frametitle{Files for You to Download}
+  Download from the school website:
+  \begin{enumerate}
+  \item\texttt{19-fluidMechanics.pdf}---This
+    presentation. If you want to print the slides on paper, I recommend
+    printing 4 slides per page.
+  \item\texttt{20-Homework.pdf}---Homework assignment for Classes 19 and 20,
+    which cover Fluid Mechanics and Thermodynamics
+  \end{enumerate}
+
+  \vspace{.2in}Please download/print the PDF file before each class. When you
+  are taking notes, pay particular attention to things I say that aren't
+  necessarily on the slides.
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Disclaimer}
+  \framesubtitle{Use of Calculus}
+  Fluid mechanics is part of the AP Physics 2 Exam, which does not require
+  calculus. However, in the interest in completeness, \emph{some} calculus will
+  still be used when deriving equations.
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{What is a Fluid}
+
+  \begin{itemize}
+  \item\textbf{The simplistic explanstion:} anything that flows
+
+  \item\textbf{The scientific explanation:} Any substancs that deform
+    \emph{continuously} under oblique stress
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Properties of Fluids}
+  \framesubtitle{Density}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Continuity}
+  A fluid is considered to be continuousin space.
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Properties of Fluids}
+  \framesubtitle{Viscosity}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Hydrostatics}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Buoyancy}
+  When an object is submerged inside a fluid, the fluid exerts a pressure at
+  the surface of the object. We can integrate the pressure over the entire
+  surface area and find the total force the fluid exerts on the object.
+\end{frame}
+
+
+
+\begin{frame}
+  \frametitle{An Easier Explanation of Buoyancy}
+  \framesubtitle{Not Much Calculus}
+
+  The pressure difference difference between the top and bottom . If we
+  integrate over the entire surface, we get the buoyance force $\mb{B}$:
+
+  \eq{-.2in}{
+    \boxed{\mb{B}=\rho_{\textrm{fluid}}gV_{\textrm{disp}}}
+  }
+
+  where $\rho_{\textrm{fluid}}$ is the density of the displaced fluid, and
+  $V_{\textrm{disp}}$ is the volume displaced. This equation is known as
+  \textbf{Archimedes' principle}.
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Buoyancy}
+
+  Buoyancy depends on:
+  \begin{itemize}
+  \item the density of the (displaced) fluid $\rho_{\textrm{fluid}}$
+  \item the volume of the fluid displaced $V_{\textrm{disp}}$, and
+  \item the local acceleration due to gravity $g$
+  \end{itemize}
+  Buoyancy does not depend on:
+  \begin{itemize}
+  \item the mass of the immersed object, or
+  \item the density of the immersed object
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Buoyancy}
+  Objects immersed in a fluid have an ``apparent weight'' that is reduced by the
+  buoyant force:
+
+  \vspace{-.3in}{\Large
+    \begin{align*}
+      \mb{W}′ &= \mb{W}-\mb{B}\\
+      \mb{W}′ &= (\rho_{\textrm{obj}}-\rho_{\textrm{fluid}})\mb{g}V
+    \end{align*}
+  }
+  $\mb{W}'$ is proportional to the relative density
+  ($\rho'=\rho_{\textrm{obj}}-\rho_{\textrm{fluid}}$)
+\end{frame}
+
+\begin{frame}
+  \frametitle{Buoyancy}
+  For a submerged object:
+  \begin{center}
+    \begin{tabular}{c|c|c|c}
+      \rowcolor{pink}
+      Densities	&
+      $B>W_{\textrm{obj}}$ &
+      $B=W_{\textrm{obj}}$ &
+      $B<W_{\textrm{obj}}$ \\\hline
+      $\rho_{\textrm{obj}}<\rho_{\textrm{fluid}}$ & object rises & float on surface & \\
+      $\rho_{\textrm{obj}}=\rho_{\textrm{fluid}}$ & & neutral buoyancy & \\
+      $\rho_{\textrm{obj}}>\rho_{\textrm{fluid}}$ & & & object sinks
+    \end{tabular}
+  \end{center}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{How Submarines Work}
+  \framesubtitle{Like this?}
+  \begin{center}
+    \pic{.7}{EbHMOXk.jpg}
+  \end{center}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{How Submarines Work}
+  Like most ships, a submarine does not naturally sink because of the buoyance
+  force. When a submarine submerges, water needed to be pumped inside
+  ``ballast tanks'' to make the ship heavier.
+  \begin{center}
+    \pic{1}{risinglemur.jpg}
+  \end{center}
+\end{frame}
+
+
+
+\begin{frame}
+  \frametitle{Bernoulli Equation}
+
+  \eq{-.01in}{\boxed{
+      p_1+\frac{1}{2}\rho v_1^2 + \rho gz_1=
+      p_2+\frac{1}{2}\rho v_2^2 + \rho gz_2
+  }}
+  The term $\displaystyle\frac{1}{2}\rho v^2 $ is called ``dynamic pressure''
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Bernoulli Equation}
+
+  \eq{-.01in}{\boxed{
+      p_1+\frac{1}{2}\rho v_1^2 + \rho gz_1=
+      p_2+\frac{1}{2}\rho v_2^2 + \rho gz_2
+  }}
+
+  Bernoulli's equation is valid when
+  \begin{itemize}
+  \item the flow is \textbf{steady} (independent of time)
+  \item the flow is \textbf{incompressible}--compressibility (i.e. changes in
+    density of the fluid) effects are negligible for Mach number $M<0.30$
+  \item the flow \textbf{along a single streamline}
+  \item there is \textbf{no shaft work} done along the streamline between 1 and
+    2
+  \item there is \textbf{no heat transfer} along the streamline between 1 and 2
+  \end{itemize}
+\end{frame}
+
+
+
+\begin{frame}
+  \frametitle{Bernoulli Equation}
+
+  Regions where Bernoulli equation is valid:
+  \begin{center}
+    \pic{.8}{bernoulli.jpg}
+  \end{center}
+\end{frame}
+
+
+
+\begin{frame}
+  \frametitle{How Does A Wing Work?}
+
+  When air flows past a wing, a force is generated
+\end{frame}
+
+\end{document}
