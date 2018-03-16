@@ -94,7 +94,7 @@
 
 \begin{frame}
   \frametitle{Continuity}
-  A fluid is considered to be continuousin space.
+  A fluid is considered to be continuous in space.
 \end{frame}
 
 
@@ -111,52 +111,110 @@
 
 \begin{frame}
   \frametitle{Buoyancy}
-  When an object is submerged inside a fluid, the fluid exerts a pressure at
-  the surface of the object. We can integrate the pressure over the entire
-  surface area and find the total force the fluid exerts on the object.
+  \framesubtitle{Everything Floats a Little}
+  When an object is submerged inside a fluid (e.g.\ water, air, etc), the fluid
+  exerts a pressure at the surface of the object. We can integrate the pressure
+  over the entire surface area and find the total force the fluid exerts on the
+  object.
 \end{frame}
 
 
+
+\begin{frame}
+  \frametitle{Derivation of Buoyance Force}
+  We can integrate the pressure over the entire surface to find the total force,
+  or take some knowledge of vector calculus (divergence theorem):
+
+  \eq{-.1in}{
+    \mb{B}
+    =-\oint_S p\mb{n}dS
+    =-\iiint \nabla p dV
+  }
+  
+  Since pressure is given by $p=\rho gz$---a function in $z$ only---the
+  gradient easy to compute: $\nabla p=\rho g\hat{\mb{k}}$, giving us
+
+  \eq{-.1in}{
+    \mb{B}
+    =\rho_\mathrm{fluid}g\hat{\mb{k}}\iiint dV = \rho_\mathrm{fluid}gV\hat{\mb{k}}
+  }
+\end{frame}
+
+\begin{frame}
+  \frametitle{Derivation of Buoyance Force}
+  Although the derivation required a lot of calculus, the expression of
+  buoyance force is \emph{very} straightforward:
+  
+  \eq{-.2in}{
+    \boxed{\mb{B} = \rho_\mathrm{fluid}gV\hat{\mb{k}}=
+      m_\mathrm{fluid}g\hat{\mb{k}}}
+  }
+  
+  where $\rho_\mathrm{fluid}$ is the density of the displaced fluid, and
+  $V$ is the volume displaced. This equation is known as
+  \textbf{Archimedes' principle}.
+  
+  \vspace{.25in}\textbf{Buoyance force has a magnitude that equals to the
+    weight of the fluid displaced by the submerged object, pointing upward.}
+\end{frame}
 
 \begin{frame}
   \frametitle{An Easier Explanation of Buoyancy}
   \framesubtitle{Not Much Calculus}
+  \begin{columns}
+    \column{.7\textwidth}
+    There is a simpler way to find the buoyance force, by taking an
+    infinitesimal ``tube'' of the object, and finding the pressure difference
+    between the top and bottom of the tube:
 
-  The pressure difference difference between the top and bottom . If we
-  integrate over the entire surface, we get the buoyance force $\mb{B}$:
+    \vspace{-.5in}{\Large
+      \begin{align*}
+        \mb{B}&=\int (p_2-p_1)dA\\
+        &= \rho g\int(z_2-z_1)dA\\
+        &=\rho g V
+      \end{align*}
+    }
 
-  \eq{-.2in}{
-    \boxed{\mb{B}=\rho_{\textrm{fluid}}gV_{\textrm{disp}}}
-  }
+    \vspace{-.2in}which is the same expression that we got with calculus.
 
-  where $\rho_{\textrm{fluid}}$ is the density of the displaced fluid, and
-  $V_{\textrm{disp}}$ is the volume displaced. This equation is known as
-  \textbf{Archimedes' principle}.
+    \column{.3\textwidth}
+    \pic{1}{buoyancy.jpg}
+  \end{columns}
+%  The pressure difference difference between the top and bottom . If we
+%  integrate over the entire surface, we get the buoyance force $\mb{B}$:
+%
+%  \eq{-.2in}{
+%    \boxed{\mb{B}=\rho_{\textrm{fluid}}gV_{\textrm{disp}}}
+%  }
+%
+%  where $\rho_{\textrm{fluid}}$ is the density of the displaced fluid, and
+%  $V_{\textrm{disp}}$ is the volume displaced. This equation is known as
+%  \textbf{Archimedes' principle}.
 \end{frame}
 
 
 \begin{frame}
   \frametitle{Buoyancy}
 
-  Buoyancy depends on:
-  \begin{itemize}
-  \item the density of the (displaced) fluid $\rho_{\textrm{fluid}}$
-  \item the volume of the fluid displaced $V_{\textrm{disp}}$, and
-  \item the local acceleration due to gravity $g$
-  \end{itemize}
-  Buoyancy does not depend on:
+%  Buoyancy depends on:
+%  \begin{itemize}
+%  \item the density of the (displaced) fluid $\rho_\mathrm{fluid}$
+%  \item the volume of the fluid displaced $V$, and
+%  \item the local acceleration due to gravity $g$
+%  \end{itemize}
+  Note that buoyancy does not depend on:
   \begin{itemize}
   \item the mass of the immersed object, or
   \item the density of the immersed object
   \end{itemize}
-\end{frame}
-
-\begin{frame}
-  \frametitle{Buoyancy}
+%\end{frame}
+%
+%\begin{frame}
+%  \frametitle{Buoyancy}
   Objects immersed in a fluid have an ``apparent weight'' that is reduced by the
-  buoyant force:
+  buoyance force:
 
-  \vspace{-.3in}{\Large
+  \vspace{-.45in}{\Large
     \begin{align*}
       \mb{W}′ &= \mb{W}-\mb{B}\\
       \mb{W}′ &= (\rho_{\textrm{obj}}-\rho_{\textrm{fluid}})\mb{g}V
@@ -204,6 +262,44 @@
 \end{frame}
 
 
+\begin{frame}
+  \frametitle{Stable? Or unstable?}
+  \begin{itemize}
+  \item Buoyance force $\mb{B}$ acts at the \emph{center of buoyancy} (CB) of
+    the submerged object
+    \begin{itemize}
+    \item The CB is the CG \emph{if the object has constant density}
+    \item The actual CG of the object may be at a different position
+    \item Sometimes the object is not fully submerged
+    \end{itemize}
+  \item Therefore $\mb{F}_g$ and $\mb{B}$ may act at different points, creating
+    a torque/moment on the object
+  \end{itemize}
+  \begin{center}
+    \vspace{-.15in}\pic{.6}{stable-unstable.jpg}
+  \end{center}
+\end{frame}
+
+
+
+\begin{frame}
+  \frametitle{Fluid Flow}
+  Flow of fluid out of a surface requires us to look at the flux function again:
+  Volume flux is defined as:
+  
+  \eq{-.15in}{
+    \boxed{\Phi_\mathrm{V}=\int\mb{V}\cdot d\mb{A}}
+  }
+    
+  \vspace{-.1in}where $\mb{V}$ is the velocity (vector field) at the surface,
+  and $d\mb{A}$ is the infinitesimal area pointing \textbf{outwards}. We can
+  also expressed volume flux using the outward normal unit vector
+  $\hat{\mb{n}}$:
+
+  \eq{-.15in}{
+    \boxed{\Phi_\mathrm{V}=\int\mb{V}\cdot\hat{\mb{n}}dA}
+  }
+\end{frame}
 
 \begin{frame}
   \frametitle{Bernoulli Equation}
