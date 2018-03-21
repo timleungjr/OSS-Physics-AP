@@ -79,8 +79,8 @@
   \frametitle{What is a Fluid}
 
   \begin{itemize}
-  \item\textbf{The simplistic explanstion:} anything that flows
-
+  \item\textbf{The simple explanstion:} anything that flows, which covers
+    most \emph{gases} and \emph{liquids}
   \item\textbf{The scientific explanation:} Any substancs that deform
     \emph{continuously} under oblique stress
   \end{itemize}
@@ -114,8 +114,8 @@
   \framesubtitle{Everything Floats a Little}
   When an object is submerged inside a fluid (e.g.\ water, air, etc), the fluid
   exerts a pressure at the surface of the object. We can integrate the pressure
-  over the entire surface area and find the total force the fluid exerts on the
-  object.
+  over the entire surface area $S$ to find the total force $\mb{B}$ the fluid
+  exerts on the object.
   \begin{center}
     \pic{.35}{rock_fbvectors.jpg}
   \end{center}
@@ -125,8 +125,8 @@
 
 \begin{frame}
   \frametitle{Derivation of Buoyance Force}
-  We can integrate the pressure over the entire surface to find the total force,
-  or take some knowledge of vector calculus (divergence theorem):
+  Integrate the pressure$p$ over the entire surface $S$ to find the total force
+  $\mb{B}$, or take some knowledge of vector calculus (divergence theorem):
 
   \eq{-.1in}{
     \mb{B}
@@ -134,8 +134,8 @@
     =-\iiint \nabla p dV
   }
   
-  Since pressure is given by $p=\rho gz$---a function in $z$ only---the
-  gradient easy to compute: $\nabla p=\rho g\hat{\mb{k}}$, giving us
+  Since pressure $p=\rho gz$ is a function in $z$ only, the gradient easy to
+  compute: $\nabla p=\partial p/\partial z=\rho g\hat{\mb{k}}$, giving us
 
   \eq{-.1in}{
     \mb{B}
@@ -146,7 +146,7 @@
 \begin{frame}
   \frametitle{Derivation of Buoyance Force}
   Although the derivation required a lot of calculus, the expression of
-  buoyance force is \emph{very} straightforward:
+  buoyance force is straightforward:
   
   \eq{-.2in}{
     \boxed{\mb{B} = \rho_\mathrm{fluid}gV\hat{\mb{k}}=
@@ -173,8 +173,8 @@
     \vspace{-.5in}{\Large
       \begin{align*}
         \mb{B}&=\int (p_2-p_1)dA\\
-        &= \rho g\int(z_2-z_1)dA\\
-        &=\rho g V
+        &= \rho_\mathrm{fluid} g\int(z_2-z_1)dA\\
+        &=\rho_\mathrm{fluid} g V
       \end{align*}
     }
 
@@ -183,16 +183,6 @@
     \column{.3\textwidth}
     \pic{1}{buoyancy.jpg}
   \end{columns}
-%  The pressure difference difference between the top and bottom . If we
-%  integrate over the entire surface, we get the buoyance force $\mb{B}$:
-%
-%  \eq{-.2in}{
-%    \boxed{\mb{B}=\rho_{\textrm{fluid}}gV_{\textrm{disp}}}
-%  }
-%
-%  where $\rho_{\textrm{fluid}}$ is the density of the displaced fluid, and
-%  $V_{\textrm{disp}}$ is the volume displaced. This equation is known as
-%  \textbf{Archimedes' principle}.
 \end{frame}
 
 
@@ -214,35 +204,32 @@
 %
 %\begin{frame}
 %  \frametitle{Buoyancy}
-  Objects immersed in a fluid have an ``apparent weight'' that is reduced by the
-  buoyance force:
+  \vspace{.15in}Objects immersed in a fluid have an ``apparent weight''
+  $\mb{W}'$ that is reduced by the buoyance force:
 
-  \vspace{-.45in}{\Large
-    \begin{align*}
-      \mb{W}′ &= \mb{W}-\mb{B}\\
-      \mb{W}′ &= (\rho_{\textrm{obj}}-\rho_{\textrm{fluid}})\mb{g}V
-    \end{align*}
+  \eq{-.2in}{
+    \mb{W}' = \mb{W}-\mb{B}=\rho'\mb{g}V
   }
-  $\mb{W}'$ is proportional to the relative density
-  ($\rho'=\rho_{\textrm{obj}}-\rho_{\textrm{fluid}}$)
+  
+  where $\rho'=\rho_{\textrm{obj}}-\rho_{\textrm{fluid}}$ is the relative density
 \end{frame}
 
-\begin{frame}
-  \frametitle{Buoyancy}
-  For a submerged object:
-  \begin{center}
-    \begin{tabular}{c|c|c|c}
-      \rowcolor{pink}
-      Densities	&
-      $B>W_{\textrm{obj}}$ &
-      $B=W_{\textrm{obj}}$ &
-      $B<W_{\textrm{obj}}$ \\\hline
-      $\rho_{\textrm{obj}}<\rho_{\textrm{fluid}}$ & object rises & float on surface & \\
-      $\rho_{\textrm{obj}}=\rho_{\textrm{fluid}}$ & & neutral buoyancy & \\
-      $\rho_{\textrm{obj}}>\rho_{\textrm{fluid}}$ & & & object sinks
-    \end{tabular}
-  \end{center}
-\end{frame}
+%\begin{frame}
+%  \frametitle{Buoyancy}
+%  For a submerged object:
+%  \begin{center}
+%    \begin{tabular}{c|c|c|c}
+%      \rowcolor{pink}
+%      Densities	&
+%      $B>W_{\textrm{obj}}$ &
+%      $B=W_{\textrm{obj}}$ &
+%      $B<W_{\textrm{obj}}$ \\\hline
+%      $\rho_{\textrm{obj}}<\rho_{\textrm{fluid}}$ & object rises & float on surface & \\
+%      $\rho_{\textrm{obj}}=\rho_{\textrm{fluid}}$ & & neutral buoyancy & \\
+%      $\rho_{\textrm{obj}}>\rho_{\textrm{fluid}}$ & & & object sinks
+%    \end{tabular}
+%  \end{center}
+%\end{frame}
 
 
 \begin{frame}
@@ -271,38 +258,205 @@
   \item Buoyance force $\mb{B}$ acts at the \emph{center of buoyancy} (CB) of
     the submerged object
     \begin{itemize}
-    \item The CB is the CG \emph{if the object has constant density}
+    \item The CB is the CG \emph{if the object has constant density} and is
+      fully submerged
     \item The actual CG of the object may be at a different position
     \item Sometimes the object is not fully submerged
     \end{itemize}
-  \item Therefore $\mb{F}_g$ and $\mb{B}$ may act at different points, creating
+  \item $\mb{F}_g$ and $\mb{B}$ may act at different points, creating
     a torque/moment on the object
   \end{itemize}
   \begin{center}
-    \vspace{-.15in}\pic{.6}{stable-unstable.jpg}
+    \vspace{-.15in}
+    \pic{.6}{stable-unstable.jpg}
   \end{center}
 \end{frame}
 
 
-
 \begin{frame}
-  \frametitle{Fluid Flow}
-  Flow of fluid out of a surface requires us to look at the flux function again:
-  Volume flux is defined as:
-  
-  \eq{-.15in}{
-    \boxed{\Phi_\mathrm{V}=\int\mb{V}\cdot d\mb{A}}
-  }
-    
-  \vspace{-.1in}where $\mb{V}$ is the velocity (vector field) at the surface,
-  and $d\mb{A}$ is the infinitesimal area pointing \textbf{outwards}. We can
-  also expressed volume flux using the outward normal unit vector
-  $\hat{\mb{n}}$:
+  \frametitle{Fluid Flow: Continuity}
+  In a fixed volume (known as a ``control volume'', or CV) we can quantify how
+  fluid mass changes in the CV:
+  \begin{center}
+    \textbf{Rate of decrease in mass in the CV = mass flux out of the CV}
+  \end{center}
 
-  \eq{-.15in}{
-    \boxed{\Phi_\mathrm{V}=\int\mb{V}\cdot\hat{\mb{n}}dA}
+  On the left hand side, the fluid mass in the CV is the integral of density
+  over the volume:
+
+  \eq{-.35in}{ \int_{CV}\rho dV }
+  
+  The rate of decrease is therefore the negative of the time derivative:
+  
+  \eq{-.25in}{
+    -\frac{\partial}{\partial t}\int_{CV}\rho dV %=
+%    -\int_CV\frac{\partial\rho}{\partial t}dV
   }
 \end{frame}
+
+
+\begin{frame}
+  \frametitle{Fluid Flow: Continuity}
+  The mass flux out of the surfaces of the control volume the volume flux
+  multiplied by the fluid density at the surface:
+
+  %Applying the divergence theorem, we can convert this surface interested
+
+  \eq{-.2in}{
+    \int_{CS}\rho\mb{v}\cdot d\mb{A} %=
+    %\int_{CV}\nabla\cdot(\rho\mb{v}dV
+  }
+  
+  Combining the LHS and RHS terms, we have the \emph{integral} form of the
+  continuity equation:
+
+  \eq{-.2in}{\boxed{
+      \int_{CV}\frac{\partial\rho}{\partial t}dV +
+      \int_{CS}\rho\mb{v}\cdot d\mb{A}=0
+  }}
+    %\int_{CV}\nabla\cdot(\rho\mb{v}dV=0
+  %The   
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Fluid Flow: Continuity}
+  With some clever use of vector calculus, we get the \emph{differential form}
+  of the continuity equation:
+
+  \eq{-.2in}{
+    \frac{\partial\rho}{\partial t} + \nabla\cdot(\rho\mb{v})=0
+  }
+
+  \ldots which is still too difficult. So in AP Physics we usually only look at
+  simple cases where
+  \begin{itemize}
+  \item Steady flow (time independent)
+  \item Constant density
+  \item Flow perpendicular to control surfaces
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Inlet Outlet Flow}
+  \begin{center}
+    Diagram
+  \end{center}
+  In this example, the mass flowing at the inlet is the same as the flow out of
+  it:
+
+  \eq{-.2in}{
+    \rho_1 v_1A_1=\rho_2 v_2A_2
+  }
+  And if density is constant, the $\rho$ terms will cancel.
+\end{frame}
+
+      
+\begin{frame}
+  \frametitle{Example: Multiple Inlet \& Outlets}
+    examples
+\end{frame}
+
+\begin{frame}
+  \frametitle{Governing Equations for Fluid Dynamics}
+
+  To properly describe fluid flows, there are three conservation equations:
+  \begin{itemize}
+  \item continuity
+  \item momentum, and
+  \item energy
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Fluid Flow: Momentum Equation}
+  In the momentum equation, the rate of decrease of total momentum inside the
+  control volume CV is the net momentum flux of the fluid out of the control
+  volume plus the normal and shear forces acting on the fluid:
+
+  \eq{-.2in}{
+    \frac{\partial(\rho\mb{v})}{\partial t} +
+    \rho(\mb{v}\cdot\nabla)\mb{v} =
+    -\nabla p +\mb{f}+\mu\nabla^2\mb{v}
+  }
+  (That's pretty hard, so thankfully you won't need this equation for AP
+  Physics.)
+\end{frame}
+
+\begin{frame}
+  \frametitle{Fluid Flow: Energy Equation}
+  The energy equation follows a similar thought process as the previous two
+  equations, but the terms are even more complicated:
+
+
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Navier-Stokes Equations}
+  The three conservation equations combined together is called the
+  \textbf{Navier-Stokes equations}. In differential form, they are usually
+  written as:
+
+
+  Even for a 2nd-year engineering student with lots of experience with
+  calculus, solving the N-S equation is still a daunting task.
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Let's Make Some Assumptions}
+  If we can make these assumptions:
+  \begin{itemize}
+  \item the flow is steady
+    \begin{itemize}
+    \item all derivatives w.r.t.\ time are zero
+    \end{itemize}
+  \item the flow is inviscid
+    \begin{itemize}
+    \item ``inviscid'' means zero viscosity
+    \item no friction
+    \item no shear stresses
+    \item Only forces are pressure at the surface
+    \end{itemize}
+  \item there is \textbf{no shaft work} done along the streamline
+  \item there is \textbf{no heat transfer} along the streamline
+  \end{itemize}
+  Then the N-S equations reduces to the
+  \textbf{Bernoulli equation}
+  
+  \eq{-.1in}{\boxed{
+      p_1+\frac{1}{2}\rho v_1^2 + \rho gz_1=
+      p_2+\frac{1}{2}\rho v_2^2 + \rho gz_2
+  }}
+
+\end{frame}
+
+%\begin{fame}
+%  \frametitle{Flow Continuity}
+%  Usually the continuity equation is written in \emph{differential form}, by
+%  applying the \emph{divergence theorem} to the flux term:
+%
+%  \vspace{-.3in}{
+%    \begin{align*}
+%      \int_{CV}\frac{\partial\rho}{\partial t}dV+
+%      \int_{CS}\rho\mb{v}\cdot d\mb{A}=&0\\
+%    \end{align*}
+%  }
+%\end{frame}
+%  \eq{-.15in}{
+%    \boxed{\Phi_\mathrm{V}=\int\mb{V}\cdot d\mb{A}}
+%  }
+%    
+%  \vspace{-.1in}where $\mb{V}$ is the velocity (vector field) at the surface,
+%  and $d\mb{A}$ is the infinitesimal area pointing \textbf{outwards}. We can
+%  also expressed volume flux using the outward normal unit vector
+%  $\hat{\mb{n}}$:
+%
+%  \eq{-.15in}{
+%    \boxed{\Phi_\mathrm{V}=\int\mb{V}\cdot\hat{\mb{n}}dA}
+%  }
+%\end{frame}
 
 \begin{frame}
   \frametitle{Bernoulli Equation}
@@ -323,17 +477,17 @@
       p_2+\frac{1}{2}\rho v_2^2 + \rho gz_2
   }}
 
-  Bernoulli's equation is valid when
-  \begin{itemize}
-  \item the flow is \textbf{steady} (independent of time)
-  \item the flow is \textbf{incompressible}--compressibility (i.e. changes in
-    density of the fluid) effects are negligible for Mach number $M<0.30$
-  \item the flow \textbf{along a single streamline}
-  \item there is \textbf{no shaft work} done along the streamline between 1 and
-    2
-  \item there is \textbf{no heat transfer} along the streamline between 1 and 2
-  \end{itemize}
-\end{frame}
+%  Bernoulli's equation is valid when
+%  \begin{itemize}
+%  \item the flow is \textbf{steady} (independent of time)
+%  \item the flow is \textbf{incompressible}--compressibility (i.e. changes in
+%    density of the fluid) effects are negligible for Mach number $M<0.30$
+%  \item the flow \textbf{along a single streamline}
+%  \item there is \textbf{no shaft work} done along the streamline between 1 and
+%    2
+%  \item there is \textbf{no heat transfer} along the streamline between 1 and 2
+%  \end{itemize}
+%\end{frame}
 
 
 

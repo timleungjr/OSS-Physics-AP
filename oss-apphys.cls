@@ -19,6 +19,8 @@
   \lhead{Olympiads School}
   \lfoot{}\cfoot{-\textsf{\textbf{\thepage}}-}
   \rfoot{\textsf{\textbf{GO ON TO THE NEXT PAGE.}}}
+  %\renewcommand{\headrulewidth}{2pt}
+  %\renewcommand{\footrulewidth}{1pt}
 }
 
 \newcommand{\gentitle}[3]{
