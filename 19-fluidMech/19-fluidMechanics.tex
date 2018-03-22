@@ -10,12 +10,12 @@
 \usefonttheme{professionalfonts}
 \usepackage{graphicx}
 \usepackage{tikz}
-\usepackage{amsmath}
+\usepackage{amsmath,bm}
 \usepackage{mathpazo}
 \usepackage[scaled]{helvet}
 \usepackage{xcolor,colortbl}
 \usepackage{siunitx}
-\usepackage{hyperref}
+%\usepackage{hyperref}
 
 \sisetup{detect-all}
 
@@ -47,7 +47,6 @@
 \end{frame}
 
 
-%\section[Intro]{Introduction}
 
 \begin{frame}
   \frametitle{Files for You to Download}
@@ -66,6 +65,7 @@
 \end{frame}
 
 
+
 \begin{frame}
   \frametitle{Disclaimer}
   \framesubtitle{Use of Calculus}
@@ -75,38 +75,123 @@
 \end{frame}
 
 
+
 \begin{frame}
   \frametitle{What is a Fluid}
 
   \begin{itemize}
-  \item\textbf{The simple explanstion:} anything that flows, which covers
-    most \emph{gases} and \emph{liquids}
+  \item\textbf{The simple explanation:} anything that flows, which covers
+    most \emph{gases} and \emph{liquids} and \emph{plasmas}
   \item\textbf{The scientific explanation:} Any substancs that deform
     \emph{continuously} under oblique stress
   \end{itemize}
+
+  \vspace{.2in}In fluid mechanics, we assume that a fluid is continuous:
+  it will fill all available space without gaps
 \end{frame}
 
-\begin{frame}
-  \frametitle{Properties of Fluids}
-  \framesubtitle{Density}
-\end{frame}
-
-
-\begin{frame}
-  \frametitle{Continuity}
-  A fluid is considered to be continuous in space.
-\end{frame}
 
 
 \begin{frame}
-  \frametitle{Properties of Fluids}
-  \framesubtitle{Viscosity}
+  \frametitle{Some Properties of Fluids}
+
+  \textbf{Density} $\rho$ of a fluid is defined as the mass $m$ per unit
+  volume $V$:
+  
+  \eq{-.2in}{
+    \rho=\frac{m_\mathrm{fluid}}{V_\mathrm{fluid}}
+  }
+
+  \textbf{Viscosity} $\mu$ measures how ``thick'' a fluid is; e.g.\ honey is
+  more viscous than water. It relates the rate of deformation
+  ($\partial u/\partial y$) of the fluid to the shear stress $\tau$ that it
+  experiences:
+
+  \eq{-.3in}{
+    \tau = \mu\frac{\partial u}{\partial y}
+  }
+
+  Shear stress defined as $\tau=F/A$ which has the same unit (\si{\pascal}) as
+  pressure. In AP Physics, we will, for now, ignore viscous effects, as
+  important as they are
 \end{frame}
+
 
 
 \begin{frame}
   \frametitle{Hydrostatics}
+  \begin{itemize}
+  \item The pressure of fluid on an object depends on the density and depth of
+    the object:
+
+    \eq{-.3in}{ \boxed{p=p_0+\rho_\mathrm{fluid}gz} }
+    
+    where $g$ is the acceleration due to gravity, $z$ is the depth below the
+    surface, and $p_0=\SI{1.01e5}{\pascal}$ is the atmospheric pressure at the
+    surface.
+
+  \item Pressure is the same in all directions
+  \item Pressure is defined as force per unit area, and the unit is pascal:
+
+    \eq{-.2in}{
+      \boxed{p=\frac{F}{A}}\quad\quad \SI{1}{\pascal}=\SI{1}{\newton/\metre^2}
+    }
+  \end{itemize}
 \end{frame}
+
+
+
+\begin{frame}
+  \frametitle{Pascal's Principle}
+  If force is applied somewhere on a container holding fluid, the pressure
+  increases \emph{everywhere} in the fluid, not just where the force is applied.
+
+  \vspace{.3in} i.e.\ the pressure of the force will be transmitted into the
+  fluid.
+\end{frame}
+
+
+
+\begin{frame}
+  \frametitle{A Simple Example}
+  \begin{columns}
+
+    \column{.7\textwidth}
+    \textbf{Example 1:} An aquarium is filled with water. The lateral wall of
+    the aquarium is \SI{40}{cm} long and \SI{30}{cm} high. Using \SI{10}{m/s^2}
+    for the acceleration due to gravity, and \SI{1}{g/cm^3} for density of
+    water, the force on the lateral wall of the aquarium is:
+    \begin{enumerate}[(a)]
+    \item\SI{36}{N}
+    \item\SI{90}{N}
+    \item\SI{180}{N}
+    \item\SI{1500}{N}
+    \end{enumerate}
+
+    \column{.3\textwidth}
+    \pic{1}{home-fish-tank.jpg}
+  \end{columns}
+\end{frame}
+
+
+
+\begin{frame}
+  \frametitle{Example}
+  \textbf{Example 2:} Consider the hydraulic jack in the diagram. A person
+  stands on a piston that pushes down on a thin cylinder full of water. The
+  cylinder is connected via pipes to a wide platform on top of which rests a
+  1-ton (\SI{1000}{kg}) car. The area of the platform under the car is
+  \SI{25}{m^2}; the person stands on a \SI{0.3}{m^2} piston. What is the
+  lightest weight of a person who could successfully lift the car?
+  \begin{center}
+    \vspace{-.2in}
+    \pic{.4}{jack.png}
+    
+    \vspace{-.2in}{\tiny Believe it or not, there \emph{is} someone who draws
+      worse diagrams than Tim!}
+  \end{center}
+\end{frame}
+
 
 
 \begin{frame}
@@ -125,32 +210,37 @@
 
 \begin{frame}
   \frametitle{Derivation of Buoyance Force}
-  Integrate the pressure$p$ over the entire surface $S$ to find the total force
-  $\mb{B}$, or take some knowledge of vector calculus (divergence theorem):
+  Integrate the pressure $p$ over the entire surface $S$ to find the total force
+  $\mb{B}$, or take some knowledge of vector calculus (divergence theorem) so
+  that you don't have to:
 
-  \eq{-.1in}{
+  \eq{-.25in}{
     \mb{B}
-    =-\oint_S p\mb{n}dS
+    =-\oint_S p\hat{\mb{n}}dS
     =-\iiint \nabla p dV
   }
   
   Since pressure $p=\rho gz$ is a function in $z$ only, the gradient easy to
-  compute: $\nabla p=\partial p/\partial z=\rho g\hat{\mb{k}}$, giving us
+  compute: $\nabla p=dp/dz=\rho g\bm{\hat{k}}$, giving us
 
   \eq{-.1in}{
     \mb{B}
-    =\rho_\mathrm{fluid}g\hat{\mb{k}}\iiint dV = \rho_\mathrm{fluid}gV\hat{\mb{k}}
+    =\rho_\mathrm{fluid}g\bm{\hat{k}}\iiint dV
+    =\rho_\mathrm{fluid}gV\bm{\hat{k}}
   }
 \end{frame}
+
+
 
 \begin{frame}
   \frametitle{Derivation of Buoyance Force}
   Although the derivation required a lot of calculus, the expression of
-  buoyance force is straightforward:
+  buoyance force is straightforward (and \emph{this} is what you need to
+  remember):
   
-  \eq{-.2in}{
-    \boxed{\mb{B} = \rho_\mathrm{fluid}gV\hat{\mb{k}}=
-      m_\mathrm{fluid}g\hat{\mb{k}}}
+  \eq{-.1in}{
+    \boxed{\mb{B} = \rho_\mathrm{fluid}gV\bm{\hat{k}}=
+      m_\mathrm{fluid}g\bm{\hat{k}}}
   }
   
   where $\rho_\mathrm{fluid}$ is the density of the displaced fluid, and
@@ -160,6 +250,8 @@
   \vspace{.25in}\textbf{Buoyance force has a magnitude that equals to the
     weight of the fluid displaced by the submerged object, pointing upward.}
 \end{frame}
+
+
 
 \begin{frame}
   \frametitle{An Easier Explanation of Buoyancy}
@@ -186,9 +278,9 @@
 \end{frame}
 
 
+
 \begin{frame}
   \frametitle{Buoyancy}
-
 %  Buoyancy depends on:
 %  \begin{itemize}
 %  \item the density of the (displaced) fluid $\rho_\mathrm{fluid}$
@@ -241,36 +333,98 @@
 \end{frame}
 
 
+
 \begin{frame}
   \frametitle{How Submarines Work}
-  Like most ships, a submarine does not naturally sink because of the buoyance
-  force. When a submarine submerges, water needed to be pumped inside
-  ``ballast tanks'' to make the ship heavier.
+  Like all ships, a submarine does not naturally sink due to buoyancy. When a
+  submarine submerges, water needed to be pumped into the  ``ballast tanks'' in
+  the hull to make the ship heavier.
   \begin{center}
     \pic{1}{risinglemur.jpg}
   \end{center}
 \end{frame}
 
 
+
 \begin{frame}
   \frametitle{Stable? Or unstable?}
+  Buoyance force $\mb{B}$ acts at the \emph{center of buoyancy} (CB) of a
+  submerged object
   \begin{itemize}
-  \item Buoyance force $\mb{B}$ acts at the \emph{center of buoyancy} (CB) of
-    the submerged object
-    \begin{itemize}
-    \item The CB is the CG \emph{if the object has constant density} and is
-      fully submerged
-    \item The actual CG of the object may be at a different position
-    \item Sometimes the object is not fully submerged
-    \end{itemize}
-  \item $\mb{F}_g$ and $\mb{B}$ may act at different points, creating
-    a torque/moment on the object
+  \item The CB is the CG \emph{if the object has constant density} and is
+    fully submerged
+  \item The actual CG of the object may be at a different position
+  \item Sometimes the object is not fully submerged
   \end{itemize}
+  
+  $\mb{F}_g$ and $\mb{B}$ may act at different points, creating a torque/moment
+  on the object
   \begin{center}
-    \vspace{-.15in}
-    \pic{.6}{stable-unstable.jpg}
+    %\vspace{-.15in}
+    \pic{.5}{stable-unstable.jpg}
   \end{center}
 \end{frame}
+
+
+
+\begin{frame}
+  \frametitle{Example}
+  \begin{columns}
+
+    \column{.7\textwidth}
+    \textbf{Example 3:} An apple is held completely submerged just below the
+    surface of a container of water. The apple is then moved to a deeper point
+    in the water. Compared with the force needed to hold the water just below
+    the surface, what is the force needed to hold it at a deeper point?
+    \begin{enumerate}[(a)]
+    \item Larger
+    \item The same
+    \item Smaller
+    \item Impossible to determine
+    \end{enumerate}
+
+    \column{.3\textwidth}
+    \pic{1}{apple.jpg}
+  \end{columns}
+\end{frame}
+
+
+
+\begin{frame}
+  \frametitle{Example}
+
+  \begin{columns}
+
+    \column{.4\textwidth}
+    \pic{1}{hpa_b.jpg}
+
+    \column{.6\textwidth}
+    \textbf{Example 4:} A salvage ship tries to raise a sunken miniature
+    submarine from the bottom of Lake Superior. The submarine and its contents
+    have a mass of \SI{72000}{kg} and a volume of \SI{18.9}{m^3}. What upward
+    force must be applied to raise the submarine? The density of water is
+    \SI{1000}{kg/m^3}.
+    \begin{enumerate}[(a)]
+    \item\SI{1.8e5}{\newton}
+    \item\SI{2.0e5}{\newton}
+    \item\SI{4.8e5}{\newton}
+    \item\SI{5.2e5}{\newton}
+    \end{enumerate}
+    
+  \end{columns}
+\end{frame}
+
+
+
+\begin{frame}
+  \frametitle{Fluid Flow}
+
+  \begin{center}
+    As important as it is to understand hydrostatics,\\
+    it's way more interesting when the fluid is moving!
+  \end{center}
+\end{frame}
+
 
 
 \begin{frame}
@@ -278,21 +432,20 @@
   In a fixed volume (known as a ``control volume'', or CV) we can quantify how
   fluid mass changes in the CV:
   \begin{center}
-    \textbf{Rate of decrease in mass in the CV = mass flux out of the CV}
+    \textbf{rate of decrease in mass in the CV = mass flux out of the CV}
   \end{center}
 
-  On the left hand side, the fluid mass in the CV is the integral of density
-  over the volume:
+  The fluid mass in the CV is the integral of density over the volume:
 
-  \eq{-.35in}{ \int_{CV}\rho dV }
+  \eq{-.2in}{ \int_{CV}\rho dV }
   
   The rate of decrease is therefore the negative of the time derivative:
   
   \eq{-.25in}{
-    -\frac{\partial}{\partial t}\int_{CV}\rho dV %=
-%    -\int_CV\frac{\partial\rho}{\partial t}dV
+    -\frac{\partial}{\partial t}\int_{CV}\rho dV
   }
 \end{frame}
+
 
 
 \begin{frame}
@@ -302,10 +455,7 @@
 
   %Applying the divergence theorem, we can convert this surface interested
 
-  \eq{-.2in}{
-    \int_{CS}\rho\mb{v}\cdot d\mb{A} %=
-    %\int_{CV}\nabla\cdot(\rho\mb{v}dV
-  }
+  \eq{-.2in}{ \int_{CS}\rho\mb{v}\cdot d\mb{A} }
   
   Combining the LHS and RHS terms, we have the \emph{integral} form of the
   continuity equation:
@@ -314,8 +464,6 @@
       \int_{CV}\frac{\partial\rho}{\partial t}dV +
       \int_{CS}\rho\mb{v}\cdot d\mb{A}=0
   }}
-    %\int_{CV}\nabla\cdot(\rho\mb{v}dV=0
-  %The   
 \end{frame}
 
 
@@ -337,6 +485,8 @@
   \end{itemize}
 \end{frame}
 
+
+
 \begin{frame}
   \frametitle{Inlet Outlet Flow}
   \begin{center}
@@ -345,17 +495,23 @@
   In this example, the mass flowing at the inlet is the same as the flow out of
   it:
 
-  \eq{-.2in}{
-    \rho_1 v_1A_1=\rho_2 v_2A_2
-  }
-  And if density is constant, the $\rho$ terms will cancel.
+  \eq{-.2in}{\boxed{\rho_1 v_1A_1=\rho_2 v_2A_2}}
+  
+  \vspace{-.15in}And if fluid density is constant (incompressible flow), the
+  $\rho$ terms on both sides of the equation will cancel:
+
+  \eq{-.3in}{\boxed{v_1A_1=v_2A_2}}
 \end{frame}
 
-      
+
+
 \begin{frame}
   \frametitle{Example: Multiple Inlet \& Outlets}
-    examples
+
+  \textbf{Example 5:} 
 \end{frame}
+
+
 
 \begin{frame}
   \frametitle{Governing Equations for Fluid Dynamics}
@@ -369,56 +525,82 @@
 \end{frame}
 
 \begin{frame}
-  \frametitle{Fluid Flow: Momentum Equation}
-  In the momentum equation, the rate of decrease of total momentum inside the
-  control volume CV is the net momentum flux of the fluid out of the control
-  volume plus the normal and shear forces acting on the fluid:
+  \frametitle{Fluid Flow: Momentum \& Energy Equations}
+  In the momentum equation, the rate of decrease of total fluid momentum inside
+  the control volume CV is the net momentum flux of the fluid out of the CV
+  all the forces (pressure, body, shear) acting on the fluid:
 
-  \eq{-.2in}{
+  \eq{-.15in}{
     \frac{\partial(\rho\mb{v})}{\partial t} +
-    \rho(\mb{v}\cdot\nabla)\mb{v} =
-    -\nabla p +\mb{f}+\mu\nabla^2\mb{v}
+    \nabla(\rho\mb{v}\otimes\mb{v}) = -\nabla p +\mb{f}+\mu\nabla^2\mb{v}
   }
-  (That's pretty hard, so thankfully you won't need this equation for AP
-  Physics.)
-\end{frame}
+  
+  \vspace{-.1in}(This is even more complicated than the continuity equation, so
+  thankfully you won't need this equation for AP Physics!)
 
-\begin{frame}
-  \frametitle{Fluid Flow: Energy Equation}
-  The energy equation follows a similar thought process as the previous two
-  equations, but the terms are even more complicated:
-
+  \vspace{.2in}The energy equation follows a similar thought process as the
+  previous two equations, but the terms are even more complicated.
 
 \end{frame}
+
 
 
 \begin{frame}
   \frametitle{Navier-Stokes Equations}
-  The three conservation equations combined together is called the
+  Together, the three conservation equations are called the
   \textbf{Navier-Stokes equations}. In differential form, they are usually
   written as:
+  
+  \vspace{-.4in}{\Large
+    \begin{align*}
+      \frac{\partial\rho}{\partial t} + \nabla\cdotp(\rho\mb{v})&=0\\
+      \frac{\partial(\rho\mb{v})}{\partial t} +
+      \nabla(\rho\mb{v}\otimes\mb{v}) &= -\nabla p +\mb{f}+\mu\nabla^2\mb{v}\\
+      \frac{\partial e}{\partial t} + \nabla\cdotp(e\mb{v})&=
+      -\nabla\cdotp p +\frac{1}{Re\; Pr}\nabla q +
+      \frac{1}{Re}\nabla\cdotp(\tau\cdotp\mb{v})
+    \end{align*}
 
+  }
 
-  Even for a 2nd-year engineering student with lots of experience with
-  calculus, solving the N-S equation is still a daunting task.
+  Even for a 2nd-year engineering student experienced with calculus, solving
+  the N-S equations is still a daunting task, so let's make some assumptions!
 \end{frame}
+
 
 
 \begin{frame}
   \frametitle{Let's Make Some Assumptions}
-  If we can make these assumptions:
+  \framesubtitle{For an ``ideal fluid flow''}
+  The flow is \textbf{steady}
   \begin{itemize}
-  \item the flow is steady
-    \begin{itemize}
-    \item all derivatives w.r.t.\ time are zero
-    \end{itemize}
-  \item the flow is inviscid
-    \begin{itemize}
-    \item ``inviscid'' means zero viscosity
-    \item no friction
-    \item no shear stresses
-    \item Only forces are pressure at the surface
-    \end{itemize}
+  \item Flow is ``time independent'', i.e.\ does not change with time
+  \item All derivatives w.r.t.\ time are zero
+  \end{itemize}
+
+  The flow is \textbf{inviscid}
+  \begin{itemize}
+  \item The fluid has no viscosity
+  \item No friction between the fluid and the surrounding, and therefore
+  \item No shear stresses on the fluid
+  \item Only forces are pressure at the surface, and body forces from gravity
+  \end{itemize}
+
+  The flow is \textbf{incompressible}
+  \begin{itemize}
+  \item Density is constant throughout
+  \item The compressibility of fluid usually depends on its flow velocity,
+    at Mach number of $M\approx 0.3$, fluid becomes incompressible
+  \end{itemize}
+\end{frame}
+
+
+
+\begin{frame}
+  \frametitle{Let's Make Some Assumptions}
+  \framesubtitle{For an ``ideal fluid flow''}
+  We will also assume that
+  \begin{itemize}
   \item there is \textbf{no shaft work} done along the streamline
   \item there is \textbf{no heat transfer} along the streamline
   \end{itemize}
@@ -428,9 +610,14 @@
   \eq{-.1in}{\boxed{
       p_1+\frac{1}{2}\rho v_1^2 + \rho gz_1=
       p_2+\frac{1}{2}\rho v_2^2 + \rho gz_2
-  }}
-
+    }
+  }
+  
+  The term $\displaystyle\frac{1}{2}\rho v^2$ is called ``dynamic pressure'',
+  and $\rho gz$ is the ``hydrostatic pressure''
 \end{frame}
+
+
 
 %\begin{fame}
 %  \frametitle{Flow Continuity}
@@ -457,26 +644,25 @@
 %    \boxed{\Phi_\mathrm{V}=\int\mb{V}\cdot\hat{\mb{n}}dA}
 %  }
 %\end{frame}
-
-\begin{frame}
-  \frametitle{Bernoulli Equation}
-
-  \eq{-.01in}{\boxed{
-      p_1+\frac{1}{2}\rho v_1^2 + \rho gz_1=
-      p_2+\frac{1}{2}\rho v_2^2 + \rho gz_2
-  }}
-  The term $\displaystyle\frac{1}{2}\rho v^2 $ is called ``dynamic pressure''
-\end{frame}
-
-
-\begin{frame}
-  \frametitle{Bernoulli Equation}
-
-  \eq{-.01in}{\boxed{
-      p_1+\frac{1}{2}\rho v_1^2 + \rho gz_1=
-      p_2+\frac{1}{2}\rho v_2^2 + \rho gz_2
-  }}
-
+%
+%\begin{frame}
+%  \frametitle{Bernoulli Equation}
+%
+%  \eq{-.01in}{\boxed{
+%      p_1+\frac{1}{2}\rho v_1^2 + \rho gz_1=
+%      p_2+\frac{1}{2}\rho v_2^2 + \rho gz_2
+%  }}
+%\end{frame}
+%
+%
+%\begin{frame}
+%  \frametitle{Bernoulli Equation}
+%
+%  \eq{-.01in}{\boxed{
+%      p_1+\frac{1}{2}\rho v_1^2 + \rho gz_1=
+%      p_2+\frac{1}{2}\rho v_2^2 + \rho gz_2
+%  }}
+%
 %  Bernoulli's equation is valid when
 %  \begin{itemize}
 %  \item the flow is \textbf{steady} (independent of time)
@@ -498,6 +684,14 @@
   \begin{center}
     \pic{.8}{bernoulli.jpg}
   \end{center}
+\end{frame}
+
+
+
+\begin{frame}
+  \frametitle{Example}
+
+  \textbf{Example 6:}
 \end{frame}
 
 
