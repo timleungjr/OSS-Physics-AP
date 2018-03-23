@@ -36,7 +36,7 @@
 \newcommand{\genfreetitle}[3]{
   \begin{center}
     \textbf{
-      PHYSICS #1: #2 \\
+      AP PHYSICS #1: #2 \\
       SECTION II\\
       #3 Questions}
   \end{center}

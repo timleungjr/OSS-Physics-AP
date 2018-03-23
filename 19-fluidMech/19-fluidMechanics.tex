@@ -82,7 +82,7 @@
   \begin{itemize}
   \item\textbf{The simple explanation:} anything that flows, which covers
     most \emph{gases} and \emph{liquids} and \emph{plasmas}
-  \item\textbf{The scientific explanation:} Any substancs that deform
+  \item\textbf{The scientific explanation:} Any substance that deforms
     \emph{continuously} under oblique stress
   \end{itemize}
 
@@ -112,8 +112,8 @@
   }
 
   Shear stress defined as $\tau=F/A$ which has the same unit (\si{\pascal}) as
-  pressure. In AP Physics, we will, for now, ignore viscous effects, as
-  important as they are
+  pressure. In AP Physics, we will ignore viscous effects, as important as they
+  are
 \end{frame}
 
 
@@ -148,6 +148,50 @@
 
   \vspace{.3in} i.e.\ the pressure of the force will be transmitted into the
   fluid.
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Pressure with Different Fluids}
+  \begin{columns}
+
+    \column{.3\textwidth}
+    \begin{tikzpicture}
+      \draw[ultra thick,->](-1,2)--(-1,4.5) node[pos=1,above]{$z$};
+
+      \fill[white!5!blue!80](0,0)   rectangle(3,1);
+      \fill[white!10!blue!60](0,1)   rectangle(3,2.5);
+      \fill[white!30!blue!45](0,2.5) rectangle(3,3);
+      \fill[white!40!blue!30](0,3)   rectangle(3,4.2);
+      \fill[white!50!blue!20](0,4.2) rectangle(3,5);
+      \node at (-.2,5) {$z=z_1$};
+      \node at (-.2,4.2) {$z_2$};
+      \node at (-.2,3) {$z_3$};
+      \node at (-.2,2.5) {$z_4$};
+      \node at (-.2,1) {$z_5$};
+      \node at (-.2,0) {$z_6$};
+
+      \node at (1.5,5.1) {\tiny Known pressure $z$};
+      \node at (1.5,4.3) {\tiny Oil, $\rho_O$};
+      \node at (1.5,3.1) {\tiny Water, $\rho_W$};
+      \node at (1.5,2.6) {\tiny Glycerine, $\rho_G$};
+      \node at (1.5,1.1) {\tiny Mercury, $\rho_M$};
+    \end{tikzpicture}
+    
+    \column{.7\textwidth}
+    For the fluid surface to remain static, the fluid pressure on both side of
+    the interface have to be equal. (Obviously!) In this example:
+
+    \vspace{-.45in}{\Large
+      \begin{align*}
+        p_2-p_1&=\rho_Og(z_2-z_1)\\
+        p_3-p_2&=\rho_Wg(z_3-z_2)\\
+        p_4-p_3&=\rho_Gg(z_4-z_3)\\
+        p_5-p_4&=\rho_Mg(z_5-z_4)\\\hline
+        p_5-p_1&=\sum \Delta p
+      \end{align*}
+    }
+  \end{columns}
 \end{frame}
 
 
@@ -191,6 +235,55 @@
       worse diagrams than Tim!}
   \end{center}
 \end{frame}
+
+
+
+\begin{frame}
+  \frametitle{A ``Manometer'' Example}
+  \begin{columns}
+
+    \column{.55\textwidth}
+    \textbf{Example 3:} Pressure gauge $B$ is to measure the pressure at point
+    $A$ in a water flow, as shown in the figure on the right. If the pressure at
+    $B$ is \SI{87}{\kilo\pascal}, estimate the pressure at $A$, in
+    \si{\kilo\pascal}. Assume all fluids are at \SI{20}{\celsius}.
+
+    \vspace{.1in}The densities of water, mercury and SAE 30 oil are,
+    respectively:
+
+    \vspace{-.3in}
+    \begin{align*}
+      \rho_\mathrm{water}&=\SI{1000}{kg/m^3}\\
+      \rho_\mathrm{Hg}&=\SI{13600}{kg/m^3}\\
+      \rho_\mathrm{oil}&=\SI{890}{kg/m^3}
+    \end{align*}
+    
+    \column{.45\textwidth}
+    \pic{1}{mano.jpg}
+  \end{columns}
+\end{frame}
+
+
+
+%\begin{frame}
+%  \frametitle{Hydrostatic Example: Forces on a Hinge}
+%  \begin{columns}
+%
+%    \column{.45\textwidth}
+%    \begin{tikzpicture}
+%      \begin{
+%    \end{tikzpicture}
+%    
+%    \column{.55\textwidth}
+%    The gate in the figure on the left is \SI{5}{m} wide, is hinged at point
+%    $B$, and rests against a smooth wall at point $A$. Compute
+%    \begin{enumerate}[(a)]
+%    \item the force on the gate due to seawater pressure, and
+%    \item the horizontal force $P$ exerted by the wall at point $A$, and
+%    \item the reaction at the hinge $B$
+%    \end{enumerate}
+%  \end{columns}
+%\end{frame}
 
 
 
@@ -372,7 +465,7 @@
   \begin{columns}
 
     \column{.7\textwidth}
-    \textbf{Example 3:} An apple is held completely submerged just below the
+    \textbf{Example 4:} An apple is held completely submerged just below the
     surface of a container of water. The apple is then moved to a deeper point
     in the water. Compared with the force needed to hold the water just below
     the surface, what is the force needed to hold it at a deeper point?
@@ -399,7 +492,7 @@
     \pic{1}{hpa_b.jpg}
 
     \column{.6\textwidth}
-    \textbf{Example 4:} A salvage ship tries to raise a sunken miniature
+    \textbf{Example 5:} A salvage ship tries to raise a sunken miniature
     submarine from the bottom of Lake Superior. The submarine and its contents
     have a mass of \SI{72000}{kg} and a volume of \SI{18.9}{m^3}. What upward
     force must be applied to raise the submarine? The density of water is
@@ -426,11 +519,19 @@
 \end{frame}
 
 
+\begin{frame}
+  \frametitle{Control Volume and Control Surfaces}
+  A control volume ``CV'' is a fixed volume in which fluid is able to flow in
+  and out of it. The surfaces of the control volume is called the control
+  surface ``CS''.
+  \begin{center}
+    \pic{.5}{CV-CS.jpg}
+  \end{center}
+\end{frame}
 
 \begin{frame}
   \frametitle{Fluid Flow: Continuity}
-  In a fixed volume (known as a ``control volume'', or CV) we can quantify how
-  fluid mass changes in the CV:
+  In a CV, we can quantify how fluid mass changes inside:
   \begin{center}
     \textbf{rate of decrease in mass in the CV = mass flux out of the CV}
   \end{center}
@@ -490,7 +591,7 @@
 \begin{frame}
   \frametitle{Inlet Outlet Flow}
   \begin{center}
-    Diagram
+    \pic{.5}{physicsbook_fluids_graphik_26.png}
   \end{center}
   In this example, the mass flowing at the inlet is the same as the flow out of
   it:
@@ -507,8 +608,38 @@
 
 \begin{frame}
   \frametitle{Example: Multiple Inlet \& Outlets}
+  \begin{columns}
 
-  \textbf{Example 5:} 
+    \column{.43\textwidth}
+    \begin{tikzpicture}[scale=.9]
+      \fill[blue!20!gray!30](0,0) rectangle(4,4);
+      \fill[blue!20!gray!30](2.5,0) rectangle(3.25,-1);
+      \fill[blue!20!gray!30](-1,.5) rectangle(0,1.5);
+      \fill[blue!20!gray!30](4,3) rectangle(5,3.75);
+      \draw[very thick](-1,1.5)--(0,1.5)--(0,4)--(4,4)--(4,3.75)--(5,3.75);
+      \draw[very thick](-1,0.5)--(0,0.5)--(0,0)--(2.5,0)--(2.5,-1);
+      \draw[very thick](3.25,-1)--(3.25,0)--(4,0)--(4,3)--(5,3);
+      \node[draw] at (-.5,2.25) (a) {1};
+      \node[draw] at (4.5,4.5) (b) {2};
+      \node[draw] at (4,-.5) (c) {3};
+      \draw(-.5,1.5)--(a);
+      \draw(4.5,3.75)--(b);
+      \draw(3.25,-.5)--(c);
+      \draw[->,very thick,blue](-1.5,1)--(-.5,1);
+      \draw[->,very thick,blue](4.5,3.375)--(5.5,3.375);
+      \draw[<->,very thick,blue](2.875,-.5)--(2.875,-1.5);
+    \end{tikzpicture}
+
+    \column{.57\textwidth}
+    \textbf{Example 6:} Water at \SI{20}{\celsius} flows steadily through a
+    closed tank, as shown in the figure. As section 1, $D_1=\SI{6}{cm}$ and
+    the volume flow is \SI{100}{m^3/h}. At section 2, $D_1=\SI{5}{cm}$ and the
+    average velocity is \SI{8}{m/s}. If $D_3=\SI{4}{cm}$, what is
+    \begin{enumerate}
+    \item the flow rate $Q_3$ in \si{m^3/h}?
+    \item the average $v_3$ in \si{m/s}?
+    \end{enumerate}
+  \end{columns}
 \end{frame}
 
 
@@ -691,15 +822,26 @@
 \begin{frame}
   \frametitle{Example}
 
-  \textbf{Example 6:}
+  \textbf{Example 7:} Find a relation between the nozzle discharge velocity
+  $V$ and the tank free-surface height $h$. Assume frictionless flow.
+  \begin{center}
+    diagram here White p.160 Example 3.21
+  \end{center}
+
+  {
+    \footnotesize (The line labelled ``EGL'' is called the
+    ``energy grade line'', or the ``Bernoulli head'', given by the equation
+    $h_0=z+p/\rho g+v^2/2g$. In the region where Bernoulli equation is valid,
+    EGL is a constant.)\par
+  }
 \end{frame}
-
-
-
-\begin{frame}
-  \frametitle{How Does A Wing Work?}
-
-  When air flows past a wing, a force is generated
-\end{frame}
-
-\end{document}
+%
+%
+%
+%\begin{frame}
+%  \frametitle{How Does A Wing Work?}
+%
+%  When air flows past a wing, a force is generated
+%\end{frame}
+%
+%\end{document}
