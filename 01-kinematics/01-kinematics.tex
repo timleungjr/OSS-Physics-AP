@@ -1,0 +1,983 @@
+\documentclass[12pt,compress,aspectratio=169]{beamer}
+
+\mode<presentation>
+{
+  \usetheme{Singapore}
+  \setbeamersize{text margin left=.5cm,text margin right=.5cm}
+%  \setbeamertemplate{navigation symbols}{} % suppress nav bar
+%  \setbeamercovered{transparent}
+}
+\usefonttheme{professionalfonts}
+\usepackage{amsmath}
+\usepackage{siunitx}
+%\usepackage{graphicx}
+%\usepackage{tikz}
+\usepackage{mathpazo}
+\usepackage[scaled]{helvet}
+\usepackage{bm}
+%\usepackage{xcolor,colortbl}
+%\usepackage{hyperref}
+
+\title{1.\ Kinematics, With Calculus}
+\subtitle{Advanced Placement Physics}
+\author[TML]{Dr.\ Timothy Leung}
+\institute{Olympiads School}
+\date{Fall 2017}
+
+\newcommand{\pic}[2]{\includegraphics[width=#1\textwidth]{#2}}
+\newcommand{\mb}[1]{\ensuremath\mathbf{#1}}
+\newcommand{\eq}[2]{\vspace{#1}{\Large\begin{displaymath}#2\end{displaymath}}}
+
+
+\begin{document}
+
+\begin{frame}
+  \frametitle{}
+  {\LARGE
+    \begin{center}
+      \textbf{WELCOME TO AP PHYSICS}
+    \end{center}
+  }
+\end{frame}
+
+
+\section{Housekeeping}
+
+\begin{frame}
+  \frametitle{Hi, My Name is Tim}
+  \begin{columns}
+
+    \column{.3\textwidth}
+    \pic{1}{tim.jpg}
+    
+    \column{.7\textwidth}
+    \begin{itemize}
+    \item B.A.Sc.\ in Engineering Physics (UBC)
+      \begin{itemize}
+      \item Won the Roy Nodwell Prize for my design of a solar car
+      \end{itemize}
+    \item M.A.Sc.\ and Ph.D.\ in Aerospace Engineering (UTIAS)
+      \begin{itemize}
+      \item ``Computational Fluid Dynamics'' (CFD)
+      \item ``Aerodynamic shape optimization''
+      \item Aircraft design
+      \end{itemize}
+    \item Also spent a year in Vancouver as a professional violinist\ldots
+    \end{itemize}
+  \end{columns}
+\end{frame}
+
+
+
+\begin{frame}
+  \frametitle{Tim's Past Research Work}
+  \begin{center}
+    \pic{0.25}{view-grid-original-1024x899.jpg}\hspace{0.01in}
+    \pic{0.25}{view-grid-final-1024x899.jpg}\hspace{0.01in}
+    \pic{0.225}{flowsolution-original-1024x1000.jpg}\hspace{0.01in}
+    \pic{0.225}{flowsolution-deformed-1024x1000.jpg}
+  \end{center}
+\end{frame}
+
+
+
+\begin{frame}
+  \frametitle{Classroom Rules}
+  If you have been in my Grade 11 and 12 classes before, the rules are the
+  same:
+  \begin{itemize}
+  \item Treat each other with respect, and I'll treat you like an adult.
+  \item If you need to go to the bathroom, you don't need my permission
+  \item Raise your hands if you have a question. Don't wait too long
+  \item E-mail me at \textbf{\texttt{tim@timleungjr.ca}} for any questions
+    related to physics and math and engineering
+  \item Do \textbf{\emph{not}} try to find me on social media
+  \end{itemize}
+\end{frame}
+
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+
+
+\begin{frame}
+  \frametitle{Pre-requisites}
+  \begin{itemize}
+  \item\textbf{Physics 11 and 12} As AP Physics is primarily taught at the
+    first-year university level, you wil need to be comfortable with the topics
+    covered in high-school physics courses.
+  \item\textbf{Calculus} The AP Physics C exams are calculus based, and you
+    will be required to perform basic differentiation and integration. You
+    don't need to be a caclulus expert, but some basic knowledge is required.
+    The differentiation and integration in the course are generally not
+    difficult, but there are occassional challenges.
+  \item\textbf{Vectors} You need to be comfortable with vector operations,
+    including addition and subtraction, multiplication and division by
+    constants, as well as dot products and cross products.
+  \end{itemize}
+\end{frame}
+
+
+
+\begin{frame}
+  \frametitle{The AP Physics Exams}
+  \begin{itemize}
+  \item Offered in May of each year.
+  \item There are 4 AP Physics courses:
+    \begin{itemize}
+    \item Physics 1
+    \item Physics 2
+    \item Physics C--Mechanics
+    \item Physics C--Electricity and Magnetism
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Files for You to Download}
+  \begin{itemize}
+  \item\texttt{00-courseOutline.pdf}--The course outline
+  \item\texttt{01-Calculus-2x2.pdf}--The slides that I am using right now
+  \item\texttt{02-Homework.pdf}--The homework assignment for Topics 1
+    (Kinematics) and 2 (Dynamics). The homework assignment is due at
+    \emph{the class after we have finished Topic 2}.
+  \end{itemize}
+  Please download/print the PDF file for the class slides before each class.
+  There is no point copying notes that are already printed out for you.
+  Instead, take notes on things I say that aren't necessarily on the slides.
+\end{frame}
+
+
+
+
+\section{Vectors}
+
+\begin{frame}
+  \frametitle{Writing Vectors}
+  In Physics 11 and 12, vectors are generally written by separating the
+  magnitude from the direction, e.g.\ a velocity vector can be written as:
+  
+  \eq{-.1in}{
+    \mb{v}=\SI{4.5}{m/s}\text{ [N \ang{55} E]}
+  }
+
+  \vspace{-.1in}This format is intuitive for describing \emph{one} vector in
+  2D, but extending into 3D space, and performing vector operations are
+  difficult. Instead, vectors in this class are generally written in components
+  using the ``ijk notation'', like this:
+
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Dot Products}
+  
+\end{frame}
+
+
+
+\begin{frame}
+  \frametitle{Cross Products}
+  
+\end{frame}
+
+\section{Calculus}
+
+\begin{frame}
+  \frametitle{Calculus is Invented for Physics}
+  \framesubtitle{Thanks, Issac Newton}
+  \begin{itemize}
+  \item We cannot learn physics properly without calculus (you have got
+    away with it long enough in Grade 11 and 12 Physics classes\ldots)
+  \item Differential calculus was ``invented'' so that we can understand
+    motion, especially on non-constant velocity and acceleration.
+  \item You may have already noticed that a lot of the word problems in
+    calculus are really physics problems
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Differentiation and Integration}
+  \begin{itemize}
+  \item\textbf{Differential Calculus}
+    \begin{itemize}
+    \item Finding how quickly something is changing (``rate of change'' of a
+      quantity)
+    \item Math: slopes of functions
+    \item Physics: how quickly a physical quantity is changing in time and/or
+      space
+    \item Examples: velocity (how quickly position changes), acceleration
+      (how quickly velocity changes), power (how quickly work is done)
+    \end{itemize}
+  \item\textbf{Integral Calculus}
+    \begin{itemize}
+    \item The opposite of differentiation
+    \item We use it to compute the area under a curve, or
+    \item Summation of many small terms
+    \item Examples: area under the $\mb{v}$-$t$ graph (displacement), area
+      under the $\mb{F}$-$t$ graph (impulse), area under the $F$-$d$ graph
+      (work)
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Derivative}
+%  \framesubtitle{Time Derivative of Displacement}
+%  \begin{itemize}
+%  \item In fact, this is the very \emph{definition} of a derivative.
+  For any arbitrary function $f(x)$, the derivative with respect to
+  (``w.r.t.'') $x$ is:
+
+  \eq{-.2in}{
+    \boxed{f'(x)=\lim_{h\rightarrow 0}\frac{f(x+h)-f(x)}{h}}
+  }
+
+  The ``limit as $h$ approaches $0$'' is the mathematical way of making $h$
+  a very small number
+%  \end{itemize}
+\end{frame}
+
+
+
+\begin{frame}
+  \frametitle{Know the Tricks for Differentiaion}
+%  It's tedious to use the definition of the derivative every time I want
+%  to compute the velocity of an object. Thankfully mathematicians have
+  %  recognized some patterns:
+  The derivative of a constant (``$C$'') with respect to any variable is zero.
+  (This is obvious, since the slope of the function $f(x)=C$ is zero.)
+
+  \eq{-.2in}{\frac{dC}{dt}=0}
+    
+  \vspace{-.1in}A constant multiple of any function $f$ can be factored outside
+  the derivative:
+    
+  \eq{-.2in}{ \frac{d}{dx}(af)=a\frac{df}{dx} }
+
+  The derivative of a sum is the sum of a derivative:
+  
+  \eq{-.2in}{
+    \frac{d}{dt}\left(f(t)+g(t)\right) = \frac{df}{dt}+\frac{dg}{dt}
+  }
+\end{frame}
+
+
+
+\begin{frame}
+  \frametitle{Time-Saving Rules for Differentiation}  
+  Power Rule:
+
+  \eq{-.1in}{
+    \frac{d}{dt}\left(t^n\right) = nt^{n-1}\quad\text{\normalsize for}
+    \quad n\neq 0}
+  %If $n=0$ we really just have a constant.
+  
+%  \item Try these examples:
+%    \begin{displaymath}
+%      \frac{d}{dt}\left(3t^2\right)=\quad\quad\quad
+%      \frac{d}{dt}\left(t^3 + t + 4\right)=\quad\quad\quad
+%      \frac{d}{dt}\left(\frac{1}{t}\right)=
+%    \end{displaymath}
+%  \end{itemize}
+
+  Sines and cosines:
+  
+  \vspace{-.4in}{\Large
+    \begin{align*}
+      \frac{d}{dt}\sin t &= \cos t\\
+      \frac{d}{dt}\cos t &= -\sin t
+      \end{align*}
+  }
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Partial Derivatives}
+
+  
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Integration}
+%  \begin{itemize}
+%  \item If: $v(t)$ is the derivative of $s(t)$,
+%  \item Then: $s(t)$ is the ``antiderivative'' of $v(t)$
+  If $F(x)$ is the antiderivative of $f(x)$, they are related this way:
+    
+  \eq{-.15in}{
+    \frac{d}{dx}F(x)=f(x)\quad\longrightarrow\quad F(x)=\int f(x)dx
+  }
+    
+  The mathematical proof is actually the fundamental theorem of calculus.
+
+%  \item If we want to integrate $f(x)$, we are actually asking
+%    ``what function $F(x)$ has a derivative equal to $f(x)$''?
+%  \item A simple example with $f(x)=t$ and $F(x)=\frac{1}{2}t^2$:
+%
+%    \vspace{-0.1in}{\large
+%      \begin{displaymath}
+%        \frac{d}{dt}\left(\frac{1}{2}t^2\right)=t
+%        \quad\longrightarrow\quad
+%      \int tdt=\frac{1}{2}t^2
+%      \end{displaymath}
+%    }
+%  \end{itemize}
+\end{frame}
+
+
+
+\begin{frame}
+  \frametitle{Common Integrals in Physics}
+  Integrating a function can be a very daunting task (even though it's often
+  necessary), but the integral you'll see in AP Physics are relatively
+  straightforward. These examples should help in most cases:
+
+  \begin{itemize}
+  \item Power Rule in reverse:
+
+    \eq{-.2in}{ \int x^ndx=\frac{1}{n+1}x^{n+1}+C}
+
+  \item Natural logarithm:
+
+    \eq{-.3in}{ \int \frac{1}{x}dx =\ln |x|+C }
+  \end{itemize}
+  We can ``ignore'' (i.e.\ cancel) the constant of integration $C$ for definite
+  integrals.
+\end{frame}
+
+
+
+\begin{frame}
+  \frametitle{Common Integrals in Physics}
+  \begin{itemize}
+  \item Sines and cosines:
+    
+    \vspace{-.3in}{\Large
+      \begin{align*}
+        \int\cos xdx&=\sin x+C\\
+        \int\sin xdx&=-\cos x+C
+      \end{align*}
+    }
+  \end{itemize}
+  We can ``ignore'' (i.e.\ cancel) the constant of integration $C$ for definite
+  integrals.
+\end{frame}
+
+
+
+
+\begin{frame}
+  \frametitle{Definite vs.\ Indefinite Integral}
+  \framesubtitle{This Should Be a Review}
+  \begin{itemize}
+  \item Integral can be either \textbf{indefinite} or \textbf{definite}
+  \item An ``indefinite'' integral is another function, e.g.\ position
+    $\mb{s}(t)$ as a function of time is found by integrating velocity
+    $\mb{v}(t)$:
+
+    \eq{-.2in}{
+      \mb{s}(t)=\int\mb{v}(t)dt=\cdots+\mb{C}
+    }
+  \item A ``constant of integration'' $\mb{C}$ is added to the integral
+    $\mb{s}(t)$. It is obtained through applying ``initial condition'' to the
+    problem.
+%  \item Note: If $s(t)=\mathrm{[something]}+C$ and we take the
+%    derivative of $s$ to find $v(t)$, the constant term disappears regardless
+%    of what value it has.
+  \end{itemize}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Definite Integrals}
+
+  A \textbf{definite} intgral has lower and upper bounds. e.g., given
+  $\mb{v}(t)$, the displacement between $t_1$ and $t_2$ can be found:
+
+  \eq{-.3in}{ \Delta\mb{s}=\int_{t_1}^{t_2} \mb{v}(t)dt }
+
+  Once we have computed the integral, we have to evaluate between the limits:
+  
+  \eq{-.2in}{\Delta\mb{s} = \mb{s}(t)\Big|^{t_2}_{t_1}=\mb{s}(t_2)-\mb{s}(t_1) }
+
+  We do not have to bother with the constant of integration $\mb{C}$, since it
+  cancels when we evaluate the upper and lower bound.
+\end{frame}
+%
+%\section{Differentiation}
+%
+%\begin{frame}
+%  \frametitle{}
+%  \begin{center}
+%    {\Large\textbf{FIRST, WE LOOK AT DIFFERENTIATION}
+%    }
+%  \end{center}
+%\end{frame}
+%
+%\subsection{Kinematics}
+%
+%\begin{frame}
+%  \frametitle{Velocity, Time Derivative of Displacement}
+%  \begin{columns}
+%    \column{.3\textwidth}
+%    \pic{1}{speedometer.jpg}
+%    \column{0.62\textwidth}
+%    Suppose the motion of a car is governed by the equation:
+%
+%      \vspace{-.4in}{\Large
+%        \begin{displaymath}
+%          s(t)=3t^2
+%        \end{displaymath}
+%      }
+%      
+%      \vspace{-0.2in}where $s$ is the car's position along a straight path at
+%      time $t$. \textbf{What is its velocity at $t=2$?}
+%  \end{columns}
+%  
+%  \vspace{.2in}(At the moment it's not important what \emph{units} we use. May
+%  be $s$ is in metres and $t$ in seconds, or $s$ in kilometres and $t$ in hours.
+%  The principle still holds regardless.)
+%\end{frame}
+%
+%
+%\begin{frame}
+%  \frametitle{Instantaneous Velocity}
+%  \begin{itemize}
+%  \item We can use $s(t)$ to find the average velocity between $t=2$ and $3$:
+%    \begin{displaymath}
+%      v_\mathrm{ave}=\frac{s(3)-s(2)}{3-2}=\frac{27-12}{1}=15
+%    \end{displaymath}
+%  \item Or the average velocity between $t=2$ and $t=2.5$
+%  \item Or the average velocity between $t=2$ and $t=2.1$
+%  \item But I cannot just plug in $t=2$ into $s(t)$ and expect to get the
+%    instantaneous velocity, because average velocity needs two specific time
+%    values.
+%  \item Perhaps I can find the average velocity between $t=\num{2}$ and\ldots
+%    \uncover<2>{
+%      \num{2.000000000001}?
+%    }
+%  \end{itemize}
+%\end{frame}
+%
+%
+%\begin{frame}
+%  \frametitle{Solution: Differentiate!}
+%  \begin{itemize}
+%  \item The premise of differential calculus (as applied to our example) is
+%    that if we can find the average velocity between $t=2$ and
+%    $t=2+h$, where $h$ is a \emph{very} small positive number, we have
+%    actually found the \emph{instantaneous} velocity at $t=2$
+%
+%    \begin{align*}
+%      v&=\frac{s(2+h)-s(2)}{(2+h)-2}=\frac{3(2+h)^2-3(2)^2}{h}\\
+%      &=\frac{3(4+4h+h^2)-12}{h}=\frac{12h+3h^2}{h}=12+3h\\
+%    \end{align*}
+%  \item Since we know that $h$ is a very very small number, we have $v=12$!
+%  \end{itemize}
+%\end{frame}
+%
+%
+
+\section{Kinematics}
+
+
+\begin{frame}
+  \frametitle{Instantaneous Velocity}
+  \framesubtitle{Time Derivative of Position}
+  The \emph{instantaneous} velocity of an object is the time derivative of its
+  position:
+
+  \eq{-.2in}{
+    \boxed{\mb{v}(t)=
+      \frac{d\mb{s}(t)}{dt}}
+  }
+  
+  Since position $\mb{s}$ has $x$, $y$ and $z$ components in the
+  $\bm{\hat{\imath}}$, $\bm{\hat{\jmath}}$ directions, and $\bm{\hat{k}}$
+  directions, the velocity is therefore:
+
+  \eq{-.3in}{
+    \mb{v}(t)= \frac{d\mb{s}}{dt}=\frac{ds_x}{dt}\bm{\hat{\imath}} +
+    \frac{ds_y}{dt}\bm{\hat{\jmath}} + \frac{ds_z}{dt}\bm{\hat{k}}
+  }
+
+  $s_x$, $s_y$ and $s_z$ can be functions of time and of $x$, $y$ and
+  $z$ coordinates as well.
+\end{frame}
+
+
+
+\begin{frame}
+  \frametitle{Integrating Velocity to Get Position/Displacement}
+  If velocity is the time derivative of position, then position is the time
+  integral of velocity (fundamental theorem of calculus):
+  
+  \eq{-.2in}{
+    \mb{s}(t)=\int\mb{v}(t)dt + S_0
+  }
+
+  As both $\mb{s}$ and $\mb{v}$ are vectors, we need to integrate in each
+  direction:
+
+  \eq{-.2in}{ \mb{s}(t)= \left(
+    \int v_x\bm{\hat{\imath}} +
+    \int v_y\bm{\hat{\jmath}} +
+    \int v_z\bm{\hat{k}}
+    \right) dt
+  }
+
+%  We can also take advantage of know our initial position, so $s_o$, and
+%    we have:
+%    
+%    \vspace{-0.2in}{\Large
+%      \begin{displaymath}
+%        \boxed{s(t)= s_0 + v_ot + \frac{1}{2}at^2}
+%      \end{displaymath}
+%    }
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Instantaneous Acceleration}
+  In the same way that velocity is the time derivative of position,
+  \textbf{acceleration is the time derivative of velocity}, i.e.:
+
+  \eq{-.2in}{
+    \boxed{\mb{a}(t)= \frac{d\mb{v}(t)}{dt}=\frac{d^2\mb{s}(t)}{dt^2}}
+  }
+  
+  Acceleration is the second derivative of position, i.e.
+  \begin{enumerate}
+  \item Take derivative of $\mb{s}(t)$ to get $\mb{v}(t)=\mb{s}'(t)$
+  \item Take derivative again of $\mb{v}(t)$ to get $\mb{a}(t)=\mb{v}'(t)$
+  \end{enumerate}
+%  \item<2->\textbf{Example:} If the position of an object is given by
+%    $\displaystyle s(t)=3t^5$, what is
+%    \begin{itemize}
+%    \item the velocity at $t=1$ and
+%    \item the acceleration at $t=1$?
+%    \end{itemize}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Integrating Acceleration to Get Velocity}
+%  \begin{itemize}
+%  \item In Physics 11 and 12, you were introduced to a set of kinematic
+%    equations for constant acceleration. (High-school teachers like to call
+%    them the ``Big Five'' equations.)
+%  %\item Now that we know something about integration, we can understand these
+%  %  equations a little bit better
+  Similar to the relationship between velocity and position, we also know that
+  velocity $\mb{v}(t)$ is the time integral of acceleration $\mb{a}(t)$:
+    
+  \eq{-.2in}{
+    \mb{v}(t)=\int\mb{a}(t)dt
+  }
+
+  Again, since both $\mb{v}$ and $\mb{a}$ are vectors, we need to integrate in
+  each direction:
+
+  \eq{-.2in}{ \mb{v}(t)=
+    \left(\int a_x\bm{\hat{\imath}} +
+    \int a_y\bm{\hat{\jmath}} +
+    \int a_z\bm{\hat{k}}\right) dt
+  }
+  
+%  \item At $t=0$, $v=v_0$ (``initial value''). Substituting those
+%    values to find $C=v_0$, and therefore
+%    
+%    \vspace{-0.3in}{\Large
+%      \begin{displaymath}
+%        \boxed{v(t)=v_0+at}
+%      \end{displaymath}
+%    }
+ % \end{itemize}
+\end{frame}
+
+
+
+
+%
+%
+%
+%%\subsection{Dynamics}
+%\begin{frame}
+%  \frametitle{Newton's Second Law of Motion}
+%  \begin{itemize}
+%  \item You may be familiar with Newton's second law written as:
+%
+%    \vspace{-.1in}{\large
+%      \begin{displaymath}
+%        \mb{F}=m\mb{a}=m\frac{d\mb{v}}{dt}=m\frac{d^2\mb{s}}{dt^2}
+%      \end{displaymath}
+%    }
+%  \item That's a \emph{special case} where mass $m$ remains constant, and
+%    $\mb{F}$ is only related to acceleration
+%  \item In Grade 11 and 12 physics (no calculus!), we only deal with
+%    cases where $\mb{F}$ is a constant (acceleration $\mb{a}$ is constant)
+%  \item With differential calculus, however, we can relate an acceleration
+%    that is time depending (i.e.\ changes with time) with a time-depend force
+%  \end{itemize}
+%\end{frame}
+%
+%\begin{frame}
+%  \frametitle{Newton's Second Law of Motion}
+%  \framesubtitle{General Form}
+%  \begin{itemize}
+%  \item The general form of Newton's second law is actually this:
+%    {\large 
+%      \begin{displaymath}
+%        \mb{F}=m\mb{a}=m\frac{d\mb{v}}{dt}=\frac{d(m\mb{v})}{dt}=
+%        \frac{d\mb{p}}{dt}
+%      \end{displaymath}
+%    }
+%    the vector quantity $\mb{p}=m\mb{v}$ is an object's momentum
+%  \item In this case, we do not require either the mass or velocity to be
+%    constant; both can vary with time.
+%  \end{itemize}
+%\end{frame}
+%
+%
+%\begin{frame}
+%  \frametitle{Let's Try To Do an Example}
+%  Suppose there is a small cart moving along an icy road with no friction. The
+%  cart has mass \SI{5}{kg} and a constant velocity \SI{5}{m/s}.
+%  Suddenly it begins to rain and rain water is collected in the bed of the
+%  cart. Now the cart's mass changes as
+%  \begin{displaymath}
+%    m(t)=5+0.01t\;\si{\kg}
+%  \end{displaymath}
+%  That is, every second the mass of the cart increases by \SI{0.01}{\kg}.
+%  \textbf{If the cart wants to have the same velocity, what would be the force
+%    needed?}
+%\end{frame}
+%
+%\begin{frame}
+%  \frametitle{Solving the Example Without Calculus}
+%  \framesubtitle{Not Recommended}
+%  \begin{itemize}
+%  \item Before the rain started, the net force on the cart is zero. Once the
+%    rain started though,
+%  \item After \SI{1}{\s}, the cart gains \SI{0.01}{\kg} of water in the bed
+%  \item That means we need to accelerate this water from rest to
+%    \SI{5}{m/s} in \SI{1}{\s}, i.e.\ $a=5\si{m/s^2}$
+%  \item This \SI{1}{\s} worth of water will require a force of
+%    \begin{displaymath}
+%      F=ma=0.05\si{N}
+%    \end{displaymath}
+%  \end{itemize}
+%\end{frame}
+%
+%
+%\begin{frame}
+%  \frametitle{Try it With Calculus}
+%  \frametitle{Much Easier}
+%  \begin{itemize}
+%  \item Apply Newton's second law of motion:
+%    \begin{displaymath}
+%      F=\frac{d(mv)}{dt}=\frac{d}{dt}(5+0.01t)(5)=5\frac{d}{dt}(5+0.01t)=
+%      0.05\;\si{N}
+%    \end{displaymath}
+%  \item We can see that in this case, although $v$ is constant, because mass
+%    $m$ changes with time, there is a net force applied to the cart. 
+%  \end{itemize}
+%
+%\end{frame}
+%
+%\begin{frame}
+%  \frametitle{Let's Make This a Challenge}
+%  \frametitle{A Familiar Problem}
+%  Suppose there is a small cart moving along an icy road with no friction. The
+%  cart has mass \SI{5}{kg} and a constant velocity \SI{5}{m/s}. Suddenly it
+%  begins to snow and the wet snow is collected in the bed of the cart. Now the
+%  cart's mass changes as
+%  \begin{displaymath}
+%    m(t)=5+0.01t\;\si{\kg}
+%  \end{displaymath}
+%
+%  If the cart wants to have the velocity of
+%  \begin{displaymath}
+%    v(t)=5+0.1t
+%  \end{displaymath}
+%  what would be the force needed?
+%\end{frame}
+%
+%\begin{frame}
+%  \frametitle{Newton's Second Law}
+%  \begin{itemize}
+%  \item We can apply Newton's second law again:
+%    \begin{align*}
+%      F(t)&=\frac{d(mv)}{dt}=\frac{d}{dt}\left[(5+0.01t)(5+0.1t)\right]\\
+%      &=\frac{d}{dt}\left(25+0.55t+0.001t^2 \right)=0.55+0.002t
+%    \end{align*}
+%  \item Since both mass and velocity are changing with time, force is not a
+%    constant, but it's also a function of time
+%  \end{itemize}
+%\end{frame}
+%
+%\begin{frame}
+%  \frametitle{Another Way of Looking At the Problem}
+%  \begin{itemize}
+%  \item Think of this as a two part problem:
+%    \begin{itemize}
+%    \item Force $F_1$ is used to provide the acceleration for the existing mass
+%      $(5+0.01t)\times 0.1$
+%    \item Force $F_2$ is used to accelerate new water into the speed
+%      $0.01\times (5+0.1t)$
+%    \item In all, $F=F_1+F_2$
+%    \end{itemize}
+%  \item In fact, this is actually the ``product rule'' in calculus:
+%    {\large
+%      \begin{displaymath}
+%        \frac{d}{dx}\left(f(x)g(x)\right)=
+%        f'(x)g(x)+f(x)g'(x)
+%      \end{displaymath}
+%    }
+%  \item Applying this to our example, we really have
+%    \begin{align*}
+%      F(t)&=\frac{d(mv)}{dt}=m(t)v'(t)+m'(t)v(t)\\
+%      &=(5+0.01t)\frac{d}{dt}(5+0.1t)+(5+0.1t)\frac{d}{dt}(5+0.01t)\\
+%      &=(5+0.01t)(0.1)+ (5+0.1t)(0.01)=0.55+0.002t
+%    \end{align*}
+%  \end{itemize}
+%\end{frame}
+%
+%
+%\section{Integration}
+%
+%\begin{frame}
+%  \frametitle{}
+%  \begin{center}
+%    {\LARGE\textbf{NOW ON TO INTEGRATION}}
+%  \end{center}
+%\end{frame}
+%
+%\begin{frame}
+%  \frametitle{Integration: Area Under the Curve}
+%
+%  \begin{itemize}
+%  \item Let's to an example: A car is moving with speed $v(t)=5t$. What is its
+%    displacement at $t=5$?
+%  \item We know that if on a $v$-$t$ graph, and the area under that curve is
+%    the displacement. So how do we find the area?
+%  \item If we divide $5$ into many small time intervals:
+%    \begin{displaymath}
+%      \Delta t_1,\;\Delta t_2,\;\Delta t_3,\;\Delta t_4,\ldots,\;\Delta t_n
+%    \end{displaymath}
+%    We can find the displacement in teach of these $\Delta t_i$, and
+%  \item In this example, the total displacement would be  
+%    \begin{displaymath}
+%      d(5)=\lim_{n\rightarrow\infty}\sum_{i=1}^{n}v(t_i)\Delta t_i=\int_{t_1}^{t_2}v(t)dt=
+%      \int_{t=0}^{5}5t\;dt=\frac{5}{2}t^2\Big|^5_0=\frac{125}{2}
+%    \end{displaymath}
+%  \end{itemize}
+%\end{frame}
+%
+%\begin{frame}
+%  \frametitle{Integration: Differentiation in Reverse}
+%  \begin{displaymath}
+%    \frac{d}{dt}\left(t^2\right)=\frac{1}{2}t
+%    \quad\quad\longrightarrow\quad\quad
+%    \int\frac{1}{2}tdt=t^2
+%  \end{displaymath}
+%\end{frame}
+%
+
+%\begin{frame}
+%  \frametitle{Area Under A Curve}
+%  What is the area under the curve
+%  \begin{displaymath}
+%    f(x)=2x^2+3x+1\quad\textsf{between}\quad x=1\;\textsf{and}\;x=5
+%  \end{displaymath}
+%  Our integration works like this:
+%  \begin{align*}
+%    A&=\int_1^5\left(2x^2+3x+1\right)dt\\
+%    &=\left(\frac{2}{3}x^3+\frac{3}{2}x^2+x\right)|^5_3\\
+%    &=24+\frac{196}{3}
+%  \end{align*}
+%\end{frame}
+%
+
+\section{Kinematic Equations}
+
+
+\begin{frame}
+  \frametitle{Kinematic Equations For Constant Acceleration}
+
+  Even though \emph{some} of the problems require calculus, these kinematic
+  equations are still a very powerful tool, as there will be constant
+  acceleration in many cases.
+
+  \vspace{-.3in}{\Large
+    \begin{align*}
+      \Delta\mb{s} &=\mb{v}_1\Delta t + \frac{1}{2}\mb{a}\Delta t^2\\
+      \Delta\mb{s} &=\mb{v}_2\Delta t - \frac{1}{2}\mb{a}\Delta t^2\\
+      \Delta\mb{s} &=\frac{\mb{v}_1+\mb{v}_2}{2} \Delta t\\
+      \mb{v}_2 &=\mb{v}_1+\mb{a}\Delta t\\
+      v_2^2 &= v_1^2+ 2a \Delta d
+    \end{align*}
+  }
+%    \column{.65\textwidth}
+%    \begin{itemize}
+%    \item Only for constant acceleration
+    %\item For 2D or 3D problems, each direction should have its own kinematic
+    %  equations
+%    \end{itemize}
+%  \end{columns}
+\end{frame}
+
+
+
+\begin{frame}
+  \frametitle{Solving Kinematic Problems}
+
+  The variables of interests are:
+
+  \eq{-.25in}{\Delta\mb{s}\quad\mb{v}_1\quad\mb{v}_2\quad\Delta t\quad\mb{a}}
+
+  \begin{itemize}
+  \item For single-object problems, you are usually given 3 of the 5 variables,
+    and you are asked to find a 4th one
+  \item For two-object problems, the motion of the two objects are connected by
+    time interval $\Delta t$ and displacement $\Delta\mb{s}$
+  \end{itemize}  
+\end{frame}
+
+
+%\begin{frame}
+%  \frametitle{Kinematic Equations}
+%  \begin{itemize}
+%  \item Remember this equation:
+%
+%    \vspace{-.2in}{\large
+%      \begin{displaymath}
+%        s(t)=s_0+v_0t+\frac{1}{2}at^2
+%      \end{displaymath}
+%    }
+%    
+%    \vspace{-0.1in}(the notation that you used may be a little bit different,
+%    but it's the same equation)
+%  \item We actually obtained this by integrating a constant acceleration
+%  \end{itemize}
+%\end{frame}
+%
+%\begin{frame}
+%  \frametitle{Integration to Find Volume}
+%  \begin{itemize}
+%  \item Interested in finding the volume when we rotate \emph{any} function
+%    about the $x$ axis
+%  \item Many applications in physics, e.g.\ finding the centre of
+%    mass or centroid of shapes
+%  \end{itemize}
+%  \begin{columns}
+%    \column{.33\textwidth}
+%    \pic{1}{cone.png}
+%    \column{.64\textwidth}
+%    \begin{itemize}
+%    \item Each circular disk the yellow has a volume of $\pi r^2dx$,
+%      where $r=f(x)$, so the volume of each disk is in fact:
+%      
+%      \vspace{-0.3in}{\Large
+%        \begin{displaymath}
+%          dV=\pi f(x)^{2} dx
+%        \end{displaymath}
+%      }    
+%    \item ``summing'' them together gives us the integral:
+%      
+%      \vspace{-0.2in}{\Large
+%        \begin{displaymath}
+%          \boxed{V=\int_{x_1}^{x_2} dV=\int_{x_1}^{x_2} \pi f(x)^{2} dx}
+%        \end{displaymath}
+%      }
+%    \end{itemize}
+%  \end{columns}
+%\end{frame}
+%
+%\begin{frame}
+%  \frametitle{Integration to Find Volume}
+%  \textbf{Example:} Find the volume of the following shape:
+%  \begin{itemize}
+%  \item In this question, $f(x)=3x$, and we are integrating from $x_1=0$ to
+%    $x_2=1$
+%  \end{itemize}
+%  \vspace{.1in}
+%  \begin{columns}
+%    \column{.37\textwidth}
+%    \pic{1}{cone.png}
+%    \column{.6\textwidth}
+%    We use the formula from before:
+%    \begin{align*}
+%      V&=\int_{x_1}^{x_2} \pi f(x)^{2} dx\\
+%      &=\int_{0}^{1} \pi 9x^2dx\\
+%      &=9\pi\int_{0}^{1} x^2dx\\
+%      &=3\pi x^3\Big|^1_0\\
+%      &=3\pi
+%    \end{align*}
+%  \end{columns}
+%\end{frame}
+%
+%\begin{frame}
+%  \frametitle{One Last Example}
+%
+%  \textbf{Using Integration to calculate work done by non-constant force}
+%
+%  A force of $F(t)=5t\si{\N}$ is applied on an object $m=\SI{1}{\kg}$ at
+%  rest, there is no friction force. What would be the displacement and work
+%  done on this object at $t=\SI{3}{\s}$?
+%
+%  \begin{enumerate}
+%  \item<2-> Apply Newton's second law to find acceleration:
+%    $\displaystyle a(t)=\frac{F}{m}=5t$
+%  \item<3-> Then we integrate to get velocity:
+%    $\displaystyle v(t)=\int a(t)=\frac{5}{2}t^2$
+%  \item<4-> And finally, displacement:
+%    $\displaystyle s(t)=\int v(t)=\frac{5}{6}t^3\quad\longrightarrow\quad
+%    \textsf{at}\;t=3, \boxed{d=\frac{45}{2}\si{m}}$
+%  \item<5-> Integrate force with velocity to find work done:
+%    $\displaystyle W=\int F(t)v(t)dt =\int\frac{25}{2}t^3dt=\frac{25}{8}t^4
+%    \quad\longrightarrow\quad
+%    \textsf{at}\;t=3,\;\boxed{W=\frac{2025}{8}\si{J}}$
+%  \end{enumerate}
+%\end{frame}
+%
+%
+%
+%
+%\begin{frame}
+%  \frametitle{Remember Our Kinematic Equations?}
+%  \begin{itemize}
+%  \item Now we integrate $v(t)$ again to get position $s(t)$:
+%    \vspace{-0.1in}{\Large
+%      \begin{displaymath}
+%        s(t)=\int v(t)dt=\int(v_0+at)dt=v_ot + \frac{1}{2}at^2+C
+%      \end{displaymath}
+%    }
+%  \item Again, we take advantage of know our initial position, so $C=s_o$, and
+%    we have:
+%    
+%    \vspace{-0.2in}{\Large
+%      \begin{displaymath}
+%        \boxed{s(t)= s_0 + v_ot + \frac{1}{2}at^2}
+%      \end{displaymath}
+%    }
+%  \item You may be more familiar with this expression, where we use
+%    \emph{displacement} $\Delta s(t) = s(t)-s_0$ instead of position $s$:
+%
+%    \vspace{-0.25in}{\Large
+%      \begin{displaymath}
+%        \Delta s(t)= v_ot + \frac{1}{2}at^2
+%      \end{displaymath}
+%    }
+%  \end{itemize}
+%\end{frame}
+%
+
+
+\end{document}
