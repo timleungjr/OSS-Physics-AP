@@ -28,6 +28,7 @@
 
 \newcommand{\mb}[1]{\mathbf{#1}}
 \newcommand{\pic}[2]{\includegraphics[width=#1\textwidth]{#2}}
+\newcommand{\eq}[2]{\vspace{#1}{\Large\begin{displaymath}#2\end{displaymath}}}
 
 
 \begin{document}
@@ -175,10 +176,8 @@
   \vspace{-.15in}Disturbances in $\mb{E}$ and $\mb{B}$ travel as an
   ``electromagnetic wave'', with a speed:
 
-  \vspace{-.25in}{\Large
-    \begin{displaymath}
-      c=\frac{1}{\sqrt{\varepsilon_0\mu_0}}=\SI{299792458}{m/s}
-    \end{displaymath}
+  \eq{-.25in}{
+    c=\frac{1}{\sqrt{\varepsilon_0\mu_0}}=\SI{299792458}{m/s}
   }
 \end{frame}
 
@@ -250,16 +249,14 @@
   \item Each photon has energy $E=hf$
   \end{itemize}
 
-    \vspace{-.3in}{\Large
-      \begin{displaymath}
-        \boxed{K_\mathrm{max}=
-          \begin{cases}
-            hf-\varphi & \text{\Large if }hf>\varphi\\
-            0          & \text{\Large otherwise}
-          \end{cases}
-        }
-      \end{displaymath}
+  \eq{-.3in}{
+    \boxed{K_\mathrm{max}=
+      \begin{cases}
+        hf-\varphi & \text{if }hf>\varphi\\
+        0          & \text{otherwise}
+      \end{cases}
     }
+  }
   \begin{center}
     \begin{tabular}{l|c|l}
       \rowcolor{pink}
@@ -308,10 +305,8 @@
     momentum--just like a particle
   \end{itemize}
 
-  \vspace{-.3in}{\LARGE
-    \begin{displaymath}
-      \boxed{p=\frac{E}{c}=\frac{hf}{c}=\frac{h}{\lambda}}
-    \end{displaymath}
+  \eq{-.3in}{
+    \boxed{p=\frac{E}{c}=\frac{hf}{c}=\frac{h}{\lambda}}
   }
 \end{frame}
 
@@ -330,10 +325,8 @@
   The momentum of a photon is prpoortional to Planck's constant and 
   inversely proportional to its wavelength.
 
-  \vspace{-.2in}{\LARGE
-    \begin{displaymath}
-      \boxed{p=\frac{h}{\lambda}}
-    \end{displaymath}
+  \eq{-.2in}{
+    \boxed{p=\frac{h}{\lambda}}
   }
 
   \begin{center}
@@ -401,11 +394,9 @@
   If matter is also a wave, then what would be its wavelength? Let's solve
   momentum equation for $\lambda$:
 
-  \vspace{-.3in}{\LARGE
-    \begin{displaymath}
-      p=\frac{h}{\lambda}\;\;\rightarrow\;\;
-      \lambda=\frac{h}{p}\;\;\rightarrow\;\;\boxed{\lambda=\frac{h}{mv}}
-    \end{displaymath}
+  \eq{-.3in}{
+    p=\frac{h}{\lambda}\;\;\rightarrow\;\;
+    \lambda=\frac{h}{p}\;\;\rightarrow\;\;\boxed{\lambda=\frac{h}{mv}}
   }
 
   \vspace{-.1in}
@@ -421,41 +412,70 @@
   \end{center}
 \end{frame}
 
-%\begin{frame}
-%  \frametitle{Example Problem}
-%  \textbf{Example 2:} Calculate the wavelength of an electron moving with a
-%  velocity of $6.39\e{6}m/s$.
-%\end{frame}
-%
-%\section{Duality}
-%\begin{frame}
-%  \frametitle{Particle-Wave Duality}
-%  \textbf{The Copenhagen interpretation:}
-%  \begin{itemize}
-%  \item Accepted view: wave-particle duality
-%  \item An experiment can either show:
-%    \begin{itemize}
-%    \item The wave nature: diffraction, refraction (e.g.\ light)
-%    \item The particle nature: scattering (Compton effect), photoelectric
-%      effect
-%    \item But not both.
-%    \end{itemize}
-%  \end{itemize}
-%\end{frame}
-%
-%\begin{frame}
-%  \frametitle{What Else Can You Learn from Quantum Mechanics}
-%  \begin{itemize}
-%  \item Heisenberg Uncertainty Principle
-%  \item Schr\"{o}dinger's Equation:
-%    \begin{itemize}
-%    \item The differential equations that governs the quantum state of a
-%      quantum system changes in time
-%    \item It's like what Newton's Second Law to classical mechanics
-%    \item Explains the orbits of electrons in atoms
-%    \item ``Schr\"{o}dinger's Cat'' thought experiment
-%    \end{itemize}
-%  \end{itemize}
-%\end{frame}
-%
+\begin{frame}
+  \frametitle{Heisenberg Uncertainty Principle}
+  Because of the wave properties of particles, you can never be completely
+  certain of the relationship between an object's momentum $p$ and position
+  $x$:
+
+  \eq{-.1in}{
+    \boxed{\Delta p\Delta x\leq \frac{1}{2}\hbar}
+  }
+  
+  where $\hbar$ is the \textbf{reduced Plank constant}, or
+  \textbf{Dirac constant}:
+
+  \eq{-.1in}{
+    \hbar=\frac{h}{2\pi}=\SI{1.054e-34}{\joule.\second}
+  }
+\end{frame}
+
+\begin{frame}
+  \frametitle{Bohr Atomic  Model}
+  \begin{itemize}
+  \item The ``orbital'' model of electrons does not work, because
+  \item As the electron orbits a nucleus, it radiates EM radiation, and lose
+    energy
+  \item The orbit will eventually collapse
+  \item Bohr postulated that electron can move in certain ``non-radiating''
+    orbits, corresponding to energy levels:
+
+    \eq{-.1in}{
+      \boxed{E_n=-\frac{k^2e^4m}{2\hbar^2}\frac{Z^2}{n^2}}
+    }
+
+  \item From the wave-particle duality perspective, the ``orbits'' correspond
+    more to a standing wave around the nucleus
+    (remember that a standing wave does not lose energy)
+  \end{itemize}
+\end{frame}
+
+
+
+\begin{frame}
+  \frametitle{Hydrogen Emission}
+  \begin{columns}
+
+    \column{.6\textwidth}
+    \begin{itemize}
+    \item Lyman series:
+      \begin{itemize}
+      \item the EM emissions when the electrons drop from a higher energy state
+        ($E_n$) to the ground state $n=1$ (i.e.\ $E_1$)
+      \item The frequency is given by:
+        
+        \eq{-.2in}{
+          f=\frac{E_1-E_n}{h}
+        }
+      \item We can apply universal wave equation to get the wavelengths
+      \end{itemize}
+    \item Balmer series--dropping to $E_2$
+    \item Paschen series--dropping to $E_3$
+    \end{itemize}
+
+    \column{.4\textwidth}
+    \pic{1}{400px-Hydrogen_transitions.png}
+  \end{columns}
+\end{frame}
+
 \end{document}
