@@ -93,11 +93,10 @@
 \usepackage[document]{ragged2e}
 \usepackage[none]{hyphenat}
 \usepackage{siunitx}
-%\usepackage[siunitx]{circuitikz}
 \usepackage{multicol}
 \usepackage{fancyhdr}
 
 \usetikzlibrary{decorations.pathmorphing,patterns}
 
-%\sisetup{number-math-rm=\mathnormal}
-\sisetup{detect-all}
+\sisetup{number-math-rm=\mathnormal}
+%\sisetup{detect-all}
