@@ -1,0 +1,895 @@
+\documentclass{../../oss-apphys}
+\usepackage[siunitx]{circuitikz}
+
+\begin{document}
+\genheader
+
+\gentitle{1 \& C}{KINEMATICS}{1 \& 2}
+
+\genmultidirections
+
+\gengravity
+
+\raggedcolumns
+\begin{multicols}{2}
+
+  On all of the questions in this book, you may neglect air resistance and use
+  $g=\SI{10}{m/s^2}$ unless otherwise noted.
+
+  \vspace{.3in}\textbf{Questions 1-2}
+  
+  A ball of mass \SI{.5}{\kilo\gram} is launched horizontally from the top of a
+  cliff \SI{80}{m} high with a speed of \SI{20}{m/s} at time $t=0$.
+  \begin{center}
+    \begin{tikzpicture}[scale=.5]
+      \draw[very thick](0,5)--(0,0)--(6,0);
+      \draw[<->,very thick](-.5,0)--(-.5,5) node[midway,left]{\SI{80}{\metre}};
+      \draw[thick,->](0,5.3)--(1.5,5.3) node[pos=1,right]{\SI{20}{m/s}};
+      \draw[thick,fill=gray](0,5.3) circle(.2);
+    \end{tikzpicture}
+  \end{center}
+  \begin{enumerate}[leftmargin=18pt]
+  \item The horizontal distance $x$ traveled by the ball before striking the
+    ground is
+    \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
+    \item\SI{20 }{m}
+    \item\SI{40 }{m}
+    \item\SI{80 }{m} 
+    \item\SI{160}{m}
+    \item\SI{320}{m}
+    \end{enumerate}
+  %\item Which of the following graphs best represents the vertical speed $v_y$
+  %  of the ball from $t=0$ until just before the ball strikes the ground?
+
+  \item The speed of the ball just before striking the ground is
+    \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
+    \item\SI{4 }{\metre\per\second}
+    \item\SI{14}{\metre\per\second}
+    \item\SI{20}{\metre\per\second}
+    \item\SI{44}{\metre\per\second}
+    \item\SI{64}{\metre\per\second}
+    \end{enumerate}
+  \end{enumerate}
+
+  \columnbreak
+  \textbf{Questions 3-4}
+  
+  A sprinter starting from rest runs a $100$-meter race on a straight track. The
+  sprinter covers the first $10$ meters with a constant acceleration in $2$
+  seconds. The sprinter runs the remaining \SI{90}{m} with the same velocity he
+  had at the end of \SI{2}{s}.
+
+  \begin{enumerate}[resume,leftmargin=18pt]
+  \item The sprinter's velocity at the end of the first \SI{2}{\second} is
+    \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
+    \item\SI{5 }{\metre\per\second}
+    \item\SI{10}{\metre\per\second}
+    \item\SI{20}{\metre\per\second}
+    \item\SI{40}{\metre\per\second}
+    \item\SI{60}{\metre\per\second}
+    \end{enumerate}
+
+  \item The total time it takes for the sprinter to run the full \SI{100}{m} is
+    \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
+    \item\SI{2 }{\second}
+    \item\SI{9 }{\second}
+    \item\SI{10}{\second}
+    \item\SI{11}{\second}
+    \item\SI{12}{\second}
+    \end{enumerate}
+    \columnbreak
+    
+  \item A block of mass \SI{2}{kg} is attached to a string that is wrapped
+    around a pulley of negligible mass and allowed to descend from rest a
+    vertical distance of \SI{1.2}{\metre} in a time of \SI{1.5}{\second}. The
+    acceleration of the block is most nearly
+    \begin{center}
+      \vspace{-.2in}
+      \pic{.15}{block-pulley.png}
+    \end{center}
+    \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
+    \item\SI{0.2}{\metre\per\second^2}
+    \item\SI{0.6}{\metre\per\second^2}
+    \item\SI{1.1}{\metre\per\second^2}
+    \item\SI{1.4}{\metre\per\second^2}
+    \item\SI{1.5}{\metre\per\second^2}
+    \end{enumerate}
+  \item A helicopter raises a package with an upward constant speed of 3 m/s.
+    The rope suddenly breaks when the package is 8 meters above the
+    ground. Neglecting air resistance, calculate the speed at which the
+    package strikes the ground.
+    \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
+    \item\SI{13 }{\metre\per\second}
+    \item\SI{26 }{\metre\per\second}
+    \item\SI{84 }{\metre\per\second}
+    \item\SI{169}{\metre\per\second}
+    \item\SI{202}{\metre\per\second}
+    \end{enumerate}
+    
+  \item A ball is attached to a string of length \SI{.8}{\metre} and is swung
+    in a vertical circle. The bottom of the circle is \SI{.2}{\metre} above the
+    floor. If the string breaks at the top of the circle when the speed of the
+    ball is \SI{5}{m/s}, the horizontal distance the ball travels before
+    striking the floor is
+    \begin{center}
+      \vspace{-.2in}
+      \pic{.15}{ball-string.png}
+    \end{center}
+    \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
+    \item\SI{0.8 }{\metre}
+    \item\SI{2.3 }{\metre}
+    \item\SI{3.0 }{\metre}
+    \item\SI{5.0 }{\metre}
+    \item\SI{13.2}{\metre}
+    \end{enumerate}
+    
+  \item A golf ball is hit from level ground and has a horizontal range of
+    \SI{100}{m}. The ball leaves the golf club at an angle of \ang{60} to the
+    level ground. At what other angle(s) can the ball be struck at the same
+    initial velocity and still have a range of \SI{100}{m}?
+    \begin{center}
+      \vspace{-.2in}
+      \pic{.25}{golf-ball.png}
+    \end{center}
+    \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
+    \item\ang{30}
+    \item\ang{20} and \ang{80}
+    \item\ang{10} and \ang{120}
+    \item\ang{45} and \ang{135}
+    \item There is no other angle other than \ang{60} in which the ball will
+      have a range of \SI{100}{m}.
+    \end{enumerate}
+  \end{enumerate}
+%  \item A small cart is moving with an initial positive velocity of 4.0 m/s on a
+%    track of negligible friction when it rolls up the ramp, just makes it over
+%    the top, and rolls back down the ramp. The cart then rolls along the
+%    level track. Which of the following graphs best represents the velocity
+%    vs. time graph for the entire trip?
+%    \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
+%      (A)
+%      (B)(C)
+%      (D)
+%      (E)
+%    \end{enumerate}
+%  \end{enumerate}
+  
+  \textbf{Questions 9-10}
+
+  A particle moves on a horizontal surface with a constant acceleration of
+  \SI{6}{m/s^2} in the $x$-direction and \SI{4}{m/s^2} in the $y$-direction. The
+  initial velocity of the particle is 3 m/s in the x-direction.
+  
+  \begin{enumerate}[resume,leftmargin=18pt]
+  \item The speed of the particle after 4 s is
+    \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
+    \item\SI{16 }{\metre\per\second}
+    \item\SI{27 }{\metre\per\second}
+    \item\SI{31 }{\metre\per\second}
+    \item\SI{44 }{\metre\per\second}
+    \item\SI{985}{\metre\per\second}
+    \end{enumerate}
+    
+  \item The displacement of the particle from its initial position is
+    \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
+    \item\SI{16}{\metre}
+    \item\SI{32}{\metre}
+    \item\SI{60}{\metre}
+    \item\SI{68}{\metre}
+    \item\SI{92}{\metre}
+    \end{enumerate}
+
+%  \textf{Questions 14-15}
+%
+%  The graph shown represents the motion of a cart rolling along a horizontal
+%track.
+%14. The time(s) at which the object is at rest is
+%(A) zero
+%(B) 8 s and 36 s
+%(C) 18 s and 40 s
+%(D) 24 s and 34 s
+%(E) 40 s and 50 s
+%15. The time(s) at which the cart changes direction is
+%(A) zero
+%(B) 8 s and 36 s
+%(C) 18 s and 40 s
+%(D) 24 s and 34 s
+  %(E) 40 s and 50 s
+
+  \item A rubber ball is dropped from rest onto a plane angled at \ang{30} to
+    the horizontal floor and bounces off the plane with a horizontal speed
+    $v_o$. The ball lands on the plane a distance $D$ along the plane, as shown
+    below. In terms of $v_o$, $D$, and $g$, the speed of the ball just before
+    striking the plane is
+    \begin{center}
+      \pic{.28}{bounce.png}
+    \end{center}
+    \begin{enumerate}[noitemsep,topsep=0pt]
+    \item $v_o$
+    \item $\displaystyle\left(v_o^2+2D\sin\theta g\right)^\frac{1}{2}$
+    \item $\displaystyle\left(v_o+\frac{D\sin\theta}{g}\right)^\frac{1}{2}$
+    \item $\displaystyle\left(v_o^2+\frac{D\sin\theta}{g}\right)^\frac{1}{2}$
+    \item $\displaystyle\left(2D\sin\theta g\right)^\frac{1}{2}$
+    \end{enumerate}
+    \columnbreak
+    
+  \item A space explorer throws a tool downward on a planet with an initial
+    velocity of \SI{2.0}{m/s} from a height of \SI{6}{m} above the surface. The
+    tool strikes the surface in a time of \SI{2}{s}. The acceleration due to
+    gravity on the planet is
+    \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
+    \item\SI{1 }{\metre\per\second^2}
+    \item\SI{2 }{\metre\per\second^2}
+    \item\SI{3 }{\metre\per\second^2}
+    \item\SI{4 }{\metre\per\second^2}
+    \item\SI{10}{\metre\per\second^2}
+    \end{enumerate}
+    
+  \item A projectile is launched from a platform \SI{20}{m} high above level
+    ground. The projectile is launched with a velocity of \SI{40}{m/s} at an
+    angle of \ang{60} above the horizontal. The projectile follows a parabolic
+    path and reaches its original height at a horizontal distance of \SI{80}{m},
+    but moves past the height of the cliff to strike the ground below. The total
+    time from the launch until it strikes the ground is
+
+    \pic{.45}{projectile2.png}
+
+    \begin{enumerate}[noitemsep,topsep=0pt]
+    \item\SI{2}{\second}
+    \item\SI{4}{\second}
+    \item\SI{6}{\second}
+    \item\SI{9}{\second}
+    \item\SI{10}{\second}
+    \end{enumerate}
+
+  \item A stack of coffee filters falls from rest through the air. Due to air
+    resistance, the filters fall with an acceleration proportional to the
+    velocity of fall, that is, $a=-kv$, where $k$ is a positive constant. The
+    velocity of the falling filters as a function of time of fall is
+    \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
+    \item $-kv^2$
+    \item $-1⁄2kv^2$
+    \item $-k$
+    \item $\ln(kt)$
+    \item $v_0e^{-kt}$
+    \end{enumerate}
+    
+%\item Which of the following best represents the graph of velocity vs.\ time
+%  from $t = 0$ until the filters reach terminal velocity?
+    %  \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
+    \columnbreak
+    
+  \item A small ball is launched with a speed of \SI{8}{m/s} at an angle of
+    \ang{30} from the horizontal. A cup is hung so that it is in position to
+    catch the ball when it reaches its maximum height. How far above the floor
+    should the cup be hung to catch the ball?
+    
+    \pic{.35}{cup.png}
+
+    \begin{enumerate}[noitemsep,topsep=0pt]
+    \item\SI{2.4}{\metre}
+    \item\SI{1.6}{\metre}
+    \item\SI{1.0}{\metre}
+    \item\SI{0.8}{\metre}
+    \item\SI{0.4}{\metre}
+    \end{enumerate}
+  \end{enumerate}
+  
+  \textbf{Questions 16-17}
+
+  A car of mass m travels along a straight horizontal road. The car begins with
+  a speed $v_0$, but accelerates according to the velocity function
+  $\displaystyle v=\left(v_0^2+\frac{Ct^2}{m}\right)$, where $t$ is time.
+
+  \begin{enumerate}[resume,leftmargin=18pt]
+  \item The speed of the car is zero at a time $t$ of
+    \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
+    \item zero
+    \item $2t$
+    \item $4t$
+    \item $\sqrt{8t}$
+    \item The speed of the car is never zero.
+    \end{enumerate}
+    
+  \item The acceleration of the car as a function of time is
+    \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
+    \item $\displaystyle\left(v_0^2+\frac{Ct^2}{m}\right)$
+    \item $\displaystyle\left(v_0^2+\frac{2Ct^2}{m}\right)$
+    \item $\displaystyle\left(v_0+\frac{Ct}{m}\right)$
+    \item $\displaystyle\left(\frac{2Ct}{m}\right)$
+    \item $\displaystyle\left(\frac{2Ct^2}{m}\right)$
+    \end{enumerate}
+  \end{enumerate}
+  \columnbreak
+  
+  \textbf{Questions 18-19}
+
+  The graph shown below represents the velocity vs.\ time graphs for two cars,
+  $P$ and $Q$. Car $P$ begins with a speed $v_P$, and Car $Q$ begins with a
+  speed $v_Q$ which is twice the velocity of Car $P$, that is, $v_Q=2v_P$.
+  \begin{center}
+    \begin{tikzpicture}[scale=.5]
+      \draw[thick,->](0,0)--(5,0) node[pos=1,right]{$t$};
+      \draw[thick,->](0,0)--(0,5) node[pos=1,above]{$v$};
+      \draw[ultra thick](0,4)--(4,0);
+      \draw[ultra thick](0,2)--(4,2);
+      \draw[thick](2,.2)--(2,-.2) node[pos=1,below]{10};
+      \draw[thick](4,.2)--(4,-.2) node[pos=1,below]{20};
+      \draw[thick](.2,4)--(-.2,4) node[pos=1,left]{$v_Q$};
+      \draw[thick](.2,2)--(-.2,2) node[pos=1,left]{$v_P$};
+      \end{tikzpicture}
+  \end{center}
+  \begin{enumerate}[resume,leftmargin=18pt]
+  \item Which of the following is true at a time of \SI{10}{\second}?
+    \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
+    \item The cars occupy the same position.
+    \item Car $P$ is at rest.
+    \item $v_Q>v_P$
+    \item $v_P>v_Q$
+    \item Car $Q$ is ahead of Car $P$.
+    \end{enumerate}
+
+  \item Which of the following is true at a time of \SI{20}{\second}?
+    \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
+    \item The cars occupy the same position.
+    \item Car $P$ is at rest.
+    \item $v_Q>v_P$
+    \item $a_P=a_Q$
+    \item Car $P$ is ahead of Car $Q$.
+    \end{enumerate}
+
+  \item The velocity vs.\ time graph below represents the motion of a bicycle
+    rider. The displacement of the rider between $0$ and \SI{4}{\hour} is
+    \begin{center}
+      \pic{.25}{bikerider.png}
+    \end{center}
+    \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
+    \item +\SI{10}{\kilo\metre}
+    \item +\SI{20}{\kilo\metre}
+    \item +\SI{30}{\kilo\metre}
+    \item +\SI{40}{\kilo\metre}
+    \item -\SI{10}{\kilo\metre}
+    \end{enumerate}
+    \columnbreak
+    
+  \item A car is initially moving with a positive velocity of \SI{20}{m/s} when
+    it passes the origin at time $t=0$. The car continues to move at
+    \SI{20}{m/s} between $t=0$ and $t=\SI{2}{s}$. At $t=\SI{2}{s}$, the driver
+    presses the brake, giving the car an acceleration of \SI{-4}{m/s^2}. The
+    displacement of the car at $t=\SI{6}{s}$ is
+    \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
+    \item\SI{40}{\metre}
+    \item\SI{32}{\metre}
+    \item\SI{48}{\metre}
+    \item\SI{64}{\metre}
+    \item\SI{88}{\metre}
+    \end{enumerate}
+
+  \item Which of the following pairs of graphs could show the position vs.\
+    time and velocity vs.\ time graphs for the acceleration vs. time graph
+    shown above? Assume $v=0$ and $x=0$ at $t=0$.
+    \begin{center}
+      \begin{tikzpicture}[scale=.5]
+        \draw[thick,->](0,0)--(8,0) node[pos=1,right]{$t$};
+        \draw[thick,->](0,-3)--(0,3) node[pos=1,above]{$a$};
+        \draw[ultra thick](0,2)--(2,2);
+        \draw[ultra thick](2,0)--(4,0);
+        \draw[ultra thick](4,-2)--(6,-2);
+        \draw[ultra thick](6,0)--(8,0);
+        \draw[thick,dashed](2,2)--(2,0);
+        \draw[thick,dashed](4,0)--(4,-2);
+        \draw[thick,dashed](6,0)--(6,-2);
+      \end{tikzpicture}
+    \end{center}
+    \pic{.48}{xt-vt.png}
+    \columnbreak
+    
+  \item A small airplane can fly at \SI{200}{km/h} with no wind. The pilot of
+    the plane would like to fly to a destination \SI{100}{km} due north of his
+    present position, but there is a crosswind of \SI{50}{km/h} east. How much
+    time is required for the plane to fly north to its destination?
+    \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
+    \item less than \SI{1/2}{\hour}
+    \item \SI{1/2}{\hour}
+    \item more than \SI{1/2}{\hour}
+    \item \SI{1}{\hour}
+    \item more than \SI{1}{\hour}
+    \end{enumerate}
+  
+  \item Two velocity vectors $v_1$ and $v_2$ each have a magnitude of 10 m/s.
+    Graph 1 shows the velocity $v_1$ at $t =\SI{0}{s}$, and then the same object
+    has a velocity $v_2$ at $t=\SI{2}{s}$, shown in Graph 2. Which of the
+    following vectors best represents the average acceleration vector that
+    causes the object's velocity to change from $v_1$ to $v_2$ ?
+    \begin{center}
+      \begin{tikzpicture}[scale=.5]
+        \draw[thick](-2,0)--(2,0);
+        \draw[thick](0,-2)--(0,2) node[pos=0,below]{Graph 1};
+        \draw[ultra thick,->](0,0)--(1.5,0) node[pos=1,above]{$v_1$};
+      \end{tikzpicture}
+      \hspace{.2in}
+      \begin{tikzpicture}[scale=.5]
+        \draw[thick](-2,0)--(2,0);
+        \draw[thick](0,-2)--(0,2) node[pos=0,below]{Graph 2};
+        \draw[ultra thick,->](0,0)--(0,1.5) node[pos=1,right]{$v_2$};
+      \end{tikzpicture}
+    \end{center}
+    \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
+    \item\begin{tikzpicture}[scale=.5]
+      \draw[thick](-2,0)--(2,0);
+      \draw[thick](0,-2)--(0,2);
+        \draw[ultra thick,->](0,0)--(0,1.5);
+    \end{tikzpicture}
+    \item\begin{tikzpicture}[scale=.5]
+      \draw[thick](-2,0)--(2,0);
+      \draw[thick](0,-2)--(0,2);
+      \draw[ultra thick,->](0,0)--(1.5,0);
+    \end{tikzpicture}
+    \item\begin{tikzpicture}[scale=.5]
+        \draw[thick](-2,0)--(2,0);
+        \draw[thick](0,-2)--(0,2);
+        \draw[ultra thick,->](0,0)--(-1.5,0);
+    \end{tikzpicture}
+    \item\begin{tikzpicture}[scale=.5]
+      \draw[thick](-2,0)--(2,0);
+      \draw[thick](0,-2)--(0,2);
+        \draw[ultra thick,->](0,0)--(1.12,1.12);
+    \end{tikzpicture}
+    \item\begin{tikzpicture}[scale=.5]
+      \draw[thick](-2,0)--(2,0);
+      \draw[thick](0,-2)--(0,2);
+        \draw[ultra thick,->](0,0)--(-1.12,1.12);
+    \end{tikzpicture}
+    \end{enumerate}
+  \item An object starts from rest at $t=0$ and position $x=0$, then moves in a
+    straight line with an acceleration described by the equation $a=4t^2$ in
+    \si{m/s^2}. What is the position of the object at $t=\SI{3}{s}$?
+    \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
+    \item\SI{6}{\metre}
+    \item\SI{1}{\metre}
+    \item\SI{27}{\metre}
+    \item\SI{54}{\metre}
+    \item\SI{108}{\metre}
+    \end{enumerate}
+    
+  \item A ball is dropped from rest from the top of a cliff $80$ meters high. At
+    the same time, a rock is thrown horizontally from the top of the same
+    cliff. The rock and ball hit the level ground below a distance of
+    \SI{40}{\metre} apart. The horizontal velocity of the rock that was thrown
+    was most nearly
+    \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
+    \item\SI{5}{\metre\per\second}
+    \item\SI{10}{\metre\per\second}
+    \item\SI{20}{\metre\per\second}
+    \item\SI{40}{\metre\per\second}
+    \item\SI{80}{\metre\per\second}
+    \end{enumerate}
+    
+  \item A stone is dropped near the surface of Mars and falls with an
+    acceleration of \SI{3.8}{m/s^2}. This means that the
+    \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
+    \item distance the stone falls increases 3.8 meters for each second of
+      fall
+    \item derivative of the distance fallen with respect to time is
+      \SI{3.8}{m/s}
+    \item derivative of the velocity with respect to time is \SI{3.8}{m/s^2}
+    \item velocity is constant at \SI{3.8}{m/s}
+    \item derivative of the acceleration is \SI{3.8}{m/s^2}
+    \end{enumerate}
+
+    \item A 600 kg car accelerates uniformly from rest. After 4 s, it reaches a
+      speed of 24 m/s. During the 4 s, the car has traveled a distance of
+      \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
+      \item\SI{12}{\metre}
+      \item\SI{24}{\metre}
+      \item\SI{36}{\metre}
+      \item\SI{48}{\metre}
+      \item\SI{96}{\metre}
+      \end{enumerate}
+      \columnbreak
+      
+    \item A passenger on a train moving horizontally at a constant speed
+      relative to the ground drops a ball from his window. A stationary
+      observer on the ground sees the ball falling with a speed $v_1$ at an
+      angle to the vertical at the instant it is dropped from the train window,
+      but the ball appears to be falling vertically with a speed $v_2$ at the
+      same instant as viewed by the train passenger. What is the speed
+      (magnitude of velocity) of the train relative to the ground after the
+      ball is dropped? Neglect air resistance.
+      \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
+      \item $ v_1 + v_2$
+      \item $ v_1 - v_2$
+      \item $ v_1^2 + v_2^2$
+      \item $ v_1^2 - v_2^2$
+      \item $\sqrt{v_1^2 - v_2^2}$
+      \end{enumerate}
+      
+    \item A ball is hit straight up into the air with an upward positive
+      velocity. Wich of the following describes the velocity and acceleration
+      of the ball at the instant it reaches the top of its flight?
+      \begin{tabular}{lll}
+        & Velocity & Acceleration\\ \hline
+        (A) & $0$ & $0$\\
+        (B) & $0$ & $g$\\
+        (C) & $2v_0$ & $g$\\
+        (D) & $\frac{1}{2}v_0$ & $0$\\
+        (E) & $0$ & $\frac{1}{2}g$
+      \end{tabular}
+      
+    \item A toy dart gun fires a dart at an angle of \ang{45} to the horizontal
+      and the dart reaches a maximum height of $1$ meter. If the dart were fired
+      straight up into the air along the vertical, the dart would reach a height
+      of
+      \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
+      \item\SI{1}{\metre}
+      \item\SI{2}{\metre}
+      \item\SI{3}{\metre}
+      \item\SI{4}{\metre}
+      \item\SI{5}{\metre}
+      \end{enumerate}
+  \end{enumerate}
+  
+  %\textbf{Questions 32-33}
+  %
+  %A projectile is launched at the angle and follows the trajectory shown below.
+  %
+  \begin{enumerate}[resume,leftmargin=18pt]
+  %\item Which of the following indicates the direction of the velocity at point
+  %  A?
+  %
+  %\item Which of the following indicates the direction of the acceleration at
+  %  point B?
+  %  \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
+  %  \end{enumerate}
+    
+  \item The graph below shows the displacement as a function of time for a
+    car moving in a straight line. Which of the following graphs shows the
+    velocity vs.\ time graph for the same time intervals?
+    \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
+    \item
+    \item
+    \item
+    \item
+    \item
+    \end{enumerate}
+  \end{enumerate}
+
+  \textbf{Questions 33-34}
+  
+  \begin{enumerate}[resume,leftmargin=18pt]
+  \item An object is released from rest and falls through a resistive medium.
+    The resistance causes the velocity of the object to change according to the
+    equation $v=16t-\frac{1}{2}t^4$ , where $v$ is in \si{m/s} and time is in
+    \si{s}. Which of the following is a possible equation for the acceleration
+    of the object as a function of time?
+    \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
+    \item $16-2t^2$
+    \item $16-2t^3$
+    \item $16-2t$
+    \item $8t^3-2t^2$
+    \item $32t^3-2t^5$
+    \end{enumerate}
+    
+  \item What is the terminal velocity of the object as it falls?
+    \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
+    \item \SI{5 }{\metre\per\second}
+    \item \SI{10}{\metre\per\second}
+    \item \SI{24}{\metre\per\second}
+    \item \SI{32}{\metre\per\second}
+    \item The object never reaches a terminal velocity.
+    \end{enumerate}
+  
+  \item A student jumps off a cliff with an initial horizontal velocity $v$ and
+    lands in a lake below at a distance of $x$ from the base of the cliff. In
+    terms of his initial velocity $v$, how fast would he have had to jump to
+    land a distance $2x$ from the base of the cliff?
+    \begin{center}
+      \begin{tikzpicture}[scale=.5]
+        \draw[thick](0,4)--(0,0)--(6,0);
+        \draw[thick,->](0,4.2)--(1,4.2) node[pos=1,right]{$v$};
+        \draw[fill=gray,thick] (0,4.2) circle(.1);
+        \draw[thick](2,.2)--(2,-.2) node[pos=1,below]{$x$};
+        \draw[thick](4,.2)--(4,-.2) node[pos=1,below]{$2x$};
+      \end{tikzpicture}
+    \end{center}
+    \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
+    \item $\sqrt{2v}$
+    \item $2v$
+    \item $4v$
+    \item $8v$
+    \item $16v$
+    \end{enumerate}
+
+  \item An astronaut drops a hammer on a moon with no atmosphere. The hammer
+    falls a distance of $2$ meters in the first second. What is the
+    acceleration due to gravity on this moon?
+    \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
+    \item\SI{1}{\metre\per\second^2}
+    \item\SI{2}{\metre\per\second^2}
+    \item\SI{3}{\metre\per\second^2}
+    \item\SI{4}{\metre\per\second^2}
+    \item\SI{8}{\metre\per\second^2}
+    \end{enumerate}
+
+  \item A car travels \SI{300}{m} in \SI{60}{s}, then travels \SI{200}{m} in
+    \SI{30}{s}. The average speed of the car is
+    \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
+    \item\SI{5.6}{\metre\per\second}
+    \item\SI{5.0}{\metre\per\second}
+    \item\SI{3.0}{\metre\per\second}
+    \item\SI{2.3}{\metre\per\second}
+    \item\SI{12.}{\metre\per\second}
+    \end{enumerate}
+    \columnbreak
+    
+  \item The motion of an object is represented by the acceleration vs.\ time
+    graph below. Which of the following statements is true about the
+    motion of the object?
+    \begin{center}
+      \begin{tikzpicture}[scale=.5]
+        \draw[thick,->](0,0)--(6.3,0) node[pos=1,right]{$t$};
+        \draw[thick,->](0,-3.5)--(0,3.5) node[pos=1,above]{$a$};
+        \draw[ultra thick](0,2)--(2,2);
+        \draw[ultra thick](2,-2)--(4,-2);
+        \draw[dashed,thick](2,2)--(2,-2);
+        \draw[thick](2,.2)--(2,-.2) node[pos=1,below]{2};
+        \draw[thick](4,.2)--(4,-.2) node[pos=1,below]{4};
+        \draw[thick](.2,2)--(-.2,2) node[pos=1,left]{+2};
+        \draw[thick](.2,-2)--(-.2,-2) node[pos=1,left]{-2};
+      \end{tikzpicture}
+    \end{center}
+    \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
+    \item The object returns to its original position.
+    \item The velocity of the object is zero at a time of \SI{2}{\second}.
+    \item The velocity of the object is zero at a time of \SI{4}{\second}.
+    \item The displacement of the object is zero at a time of \SI{4}{\second}.
+    \item The acceleration of the object is zero at a time of \SI{2}{\second}.
+    \end{enumerate}
+%Free ResponseThe acceleration vs. time graph shows the motion of an elevator during a 20-
+%second time interval. The elevator starts from rest at time t = 0.
+%46. Determine the instantaneous velocity of the elevator at the end of 10 s.
+%47. Determine the displacement of the elevator after 5 s.
+%48. On the axes below, sketch the graph that represents the velocity vs.
+%time graph for the elevator for the 20-second time interval.Questions 49–50. A particle follows a parabolic path with the equation y =
+%2x 2 as shown. The x-component of the particle’s velocity v x as a function of
+%time t is 6, that is, the horizontal displacement is x = 6t.
+%49. Determine the y-component of the particle’s velocity v y as a function
+%of time.
+%50. On the diagram below, sketch arrows to represent the horizontal and
+%vertical components of the particle’s acceleration at point P.
+   
+  \end{enumerate}
+\end{multicols}
+
+\newpage
+\begin{center}
+  {\Large
+    \textbf{AP\textsuperscript{\textregistered} Physics 1 \&C: Kinematics\\
+      Student Answer Sheet for Multiple-Choice Section}
+  }
+  
+  \begin{minipage}[t]{.3\textwidth}
+  \vspace{.2in}
+  \bgroup
+  \begin{tabular}{>{\centering}m{1.3cm} >{\centering}m{1.7cm}}
+    No. & Answer
+  \end{tabular}\\
+  \def\arraystretch{1.5}
+  \begin{tabular}{|>{\centering}m{1.3cm}|>{\centering}m{1.7cm}|}
+    \hline
+    1 & \\ \hline
+    2 & \\ \hline
+    3 & \\ \hline
+    4 & \\ \hline
+    5 & \\ \hline
+    6 & \\ \hline
+    7 & \\ \hline
+    8 & \\ \hline
+    9 & \\ \hline
+    10 & \\ \hline
+    11 & \\ \hline
+    12 & \\ \hline
+    13 & \\ \hline
+    14 & \\ \hline
+    15 & \\ \hline
+    16 & \\ \hline
+    17 & \\ \hline
+    18 & \\ \hline
+    19 & \\ \hline
+    20 & \\ \hline
+    21 & \\ \hline
+    22 & \\ \hline
+    23 & \\ \hline
+    24 & \\ \hline
+    25 & \\ \hline
+  \end{tabular}
+  \egroup
+  \end{minipage}
+  \begin{minipage}[t]{.3\textwidth}
+  \vspace{.2in}
+  \bgroup
+  \begin{tabular}{>{\centering}m{1.3cm} >{\centering}m{1.7cm}}
+    No. & Answer
+  \end{tabular}\\
+  \def\arraystretch{1.5}
+  \begin{tabular}{|>{\centering}m{1.3cm}|>{\centering}m{1.7cm}|}
+    \hline
+    26 & \\ \hline
+    27 & \\ \hline
+    28 & \\ \hline
+    29 & \\ \hline
+    30 & \\ \hline
+    31 & \\ \hline
+    32 & \\ \hline
+    33 & \\ \hline
+    34 & \\ \hline
+    35 & \\ \hline
+    36 & \\ \hline
+    37 & \\ \hline
+    38 & \\ \hline
+  \end{tabular}
+  \egroup
+  \end{minipage}
+\end{center}
+\newpage
+
+\genfreetitle{1 \& C}{KINEMATICS}{4}
+
+\genfreedirections{10}
+
+%\begin{enumerate}[leftmargin=15pt]
+%
+%\item A lead box containing radioactive materials that emit both electrons and
+%  positrons is placed near an apparatus consisting of an evacuated capacitor
+%  that is filled with a magnetic field, as shown in the figure. Electrons that
+%  enter along the center line of the capacitor plates travel straight through
+%  (undeflected) with a velocity of $v=\SI{1.0e7}{m/s}$ and out
+%  the hole in the center of the apparatus on the right. The capacitor plates
+%  are separated by a distance of $d=\SI{0.020}{\metre}$; each plate has an area
+%  of $A=\SI{1.0e-4}{m^2}$ and a potential difference of $\Delta V$. A uniform
+%  magnetic field of $B=\SI{0.030}{\tesla}$ is directed out of the page between
+%  the plates, as shown in the figure.
+%
+%  \vspace{-.2in}
+%  \begin{center}
+%    \begin{tikzpicture}[scale=1.2]
+%      \draw(0,0) rectangle(5,0.2);
+%      \draw(0,1.8) rectangle(5,2);
+%      \draw(-.75,0.2) rectangle(-2.5,1.8)
+%      node[midway]{\footnotesize Radioactive};
+%      \foreach \x in {.5,1,...,4.5}{
+%        \foreach \y in {.5,1,1.5} \draw(\x,\y) circle(0.075);
+%      }
+%      \draw[dashed](0,1)--(7,1);
+%      \draw[very thick,<->](4.3,.2)--(4.3,1.8) node[pos=.7,left]{$d$};
+%      \foreach \xx in {-.5,5.5}{
+%        \draw[fill=gray!60](\xx,1) circle (0.1);
+%        \draw[very thick,->](\xx+.2,1)--(\xx+1.2,1) node[midway,above]{$v$};
+%      }
+%      \draw(5.4,1.3) rectangle(5.6,2.5);
+%      \draw(5.4,0.7) rectangle(5.6,-.5);
+%    \end{tikzpicture}
+%  \end{center}
+%
+%  \begin{enumerate}[noitemsep]
+%  \item\vspace{-.2in} Explain why it is acceptable to neglect the effects of
+%    gravity on the electrons passing through the apparatus.
+%  \item
+%    \begin{enumerate}
+%    \item Explain why the electrons pass through the capacitor plates
+%      undeflected. Support your argument with an algebraic equation
+%      and an appropriately drawn force diagram.
+%
+%    \item Use your equation to calculate the potential difference ($\Delta V$)
+%      between the capacitor plates.
+%
+%    \item Which capacitor plate has the highest potential? Justify your 
+%      reasoning making reference to the electric field.
+%
+%    \item Calculate the magnitude of the energy that is stored in the capacitor.
+%    \end{enumerate}
+%
+%  \item A positron enters the apparatus along the same path as the
+%    electrons from part (b).
+%    \begin{enumerate}
+%    \item Explain why the positron, traveling at the same speed as the
+%      electrons, will also travel straight through the device undeflected.
+%      Support your argument with an equation.
+%    \item A second positron enters the apparatus at a speed of $2v$. Sketch
+%      the path of the positron through the capacitor plates on the figure.
+%    \end{enumerate}
+%
+%  \item An electron exits the apparatus at a velocity of $v=\SI{1.0e7}{m/s}$
+%    parallel to a long wire of a circuit, as shown in the figure. The
+%    distance between the electron and the wire is \SI{1}{mm}.
+%    \begin{center}
+%      \begin{tikzpicture}[american voltages,scale=1.2]
+%        \draw(0,-.5)--(0,1)--(4,1)--(4,-.5) to[battery1=$\mathcal{E}$] (2,-.5)
+%        to[R=$R$] (0,-.5);
+%        \draw[fill=gray!60](1.5,1.3) circle (0.1);
+%        \draw[thick,->](1.7,1.3)--(2.7,1.3) node[midway,above]{$v$};
+%      \end{tikzpicture}
+%    \end{center}
+%    \begin{enumerate}
+%    \item Calculate the potential difference-to-resistance ratio of the circuit
+%      such that the electron will experience a force $F$ of \SI{1.3e-16}{N}.
+%    \item Draw a force vector on the figure to show the direction of the force
+%      on the electron.
+%    \end{enumerate}
+%  \end{enumerate}
+%\end{enumerate}
+%\newpage
+%Perform calculations for Question 1 here.
+%\newpage
+%
+%\begin{center}
+%  \begin{tikzpicture}[scale=.8]
+%    \foreach \x in {0,...,8} {
+%      \foreach \y in {0,...,4} \node at (\x,\y) {\textcolor{blue}{$\times$}};
+%    }
+%    \draw[fill=brown!60](-.5,3.4) rectangle(7.8,3.6);
+%    \draw[fill=brown!60](-.5,0.4) rectangle(7.8,0.6);
+%    \draw[fill=brown](3.2,-.2) rectangle(3.8,4.2);
+%    \draw[<->](-0.7,0.5)--(-0.7,3.5) node[midway,left]{$\ell$};
+%    \node at (3.5,4.5) {$\mb{B}$ into page};
+%    \node at (8,0.5) {$b$};
+%    \node at (8,3.5) {$a$};
+%    \node at (4.1,2.5) {$R$};
+%  \end{tikzpicture}
+%\end{center}
+%
+%\begin{enumerate}[leftmargin=18pt]
+%  \setcounter{enumi}{1}
+%\item In the above figure, a rod has a resistance and the rails have negligible
+%  resistance. A battery of emf $\mathcal{E}$ and negligible internal resistance
+%  is connected between points $a$ and $b$ such that the current in the rod is
+%  downward. The rod is placed at rest aqt $t=0$.
+%  \begin{enumerate}[noitemsep]
+%  \item Find the force on the rod as a function of speed $v$.
+%  \item Show that the rod reaches terminal velocity, and find the expression for
+%    it.
+%  \item What is the current when the rod reaches its terminal velocity?
+%  \end{enumerate}
+%  \vspace{2in}
+%  
+%\item In the above figure, the rod has a resistance of $R$ and the rails have
+%  negligible resistance. A capacitor with charge $Q_0$ and capacitance $C$ is
+%  connected between points $a$ and $b$ such that the current in the road is
+%  downward. The rod is places at rest at $t=0$.
+%  \begin{enumerate}[noitemsep]
+%  \item Write the equation of motion for the rod on the rails.
+%  \item Show that the terminal speed of the rod down the rail is related to the
+%    final charge on the capacitor.
+%  \end{enumerate}
+%\end{enumerate}
+%\newpage
+%\begin{center}
+%  \begin{tikzpicture}[scale=.8]
+%    \draw[blue!60!red,ultra thick](0,0) rectangle(4,4);
+%    \draw[<->](0,4.3)--(4,4.3) node[midway,above]{\SI{20}{cm}};
+%    \foreach \x in {0.5,1.5,...,3.5} {
+%      \foreach \y in {0.5,1.5,...,3.5} \fill[blue!70](\x,\y) circle(0.05);
+%    }
+%    \node at (3,3) {$\mb{B}$};
+%    \draw[very thick](-1,1.6) rectangle(0.7,2.7);
+%    \draw[<->](-1.2,1.6)--(-1.2,2.7) node[midway,left]{\SI{5}{cm}};
+%    \draw[<->](-1,2.9)--(.7,2.9) node[midway,above]{\SI{10}{cm}};
+%    \draw[green!80!black,ultra thick,->](.7,2.2)--(1.7,2.2)
+%    node[pos=1,right]{$v$};
+%  \end{tikzpicture} 
+%\end{center}
+%
+%\begin{enumerate}[leftmargin=18pt]
+%
+%  \setcounter{enumi}{3}
+%\item A \SI{10}{cm} by \SI{5}{cm} rectangular loop with resistance
+%  \SI{2.5}{\ohm} is pulled through a region of uniform magnetic field
+%  $B=\SI{1.7}{\tesla}$ with constant speed $v=\SI{2.4}{cm/s}$. The front of the
+%  loop enters the region of the magnetic field at time $t=0$.
+%  \begin{enumerate}[noitemsep,leftmargin=18pt]
+%  \item Find and graph the flux through the loop as a function of time.
+%  \item Find and graph the included emf and the current in the loop as a
+%    function of time. Neglect any self inductance of the loop and extend your
+%    graph from $t=0$ to $t=\SI{16}{\second}$.
+%  \end{enumerate}
+%\end{enumerate}
+\end{document}

@@ -73,10 +73,12 @@
         \draw[thick,red,dashed](0,0)--(1,0);
         \draw[thick,red](1,0)--(5,0);
       \end{scope}
-      \draw[->](0,0)--(5,0)
-      node[pos=1,below]{$T_C$};
-      \draw(0,0)--(0,.15)
-      node[pos=0,below]{\footnotesize\SI{-273.15}{\celsius}};
+      \begin{scope}[rotate=32]
+        \draw[thick,blue,dashed](0,0)--(1,0);
+        \draw[thick,blue](1,0)--(5.2,0);
+      \end{scope}
+      \draw[->](0,0)--(5,0) node[pos=1,below]{$T_C$};
+      \draw(0,0)--(0,.15) node[pos=0,below]{\scriptsize\SI{-273.15}{\celsius}};
       \draw[->](2,0)--(2,2.5) node[pos=1,left]{$P$};
     \end{tikzpicture}
   \end{center}

@@ -98,5 +98,18 @@
 
 \usetikzlibrary{decorations.pathmorphing,patterns}
 
-\sisetup{number-math-rm=\mathnormal}
-%\sisetup{detect-all}
+%\sisetup{number-math-rm=\mathnormal}
+%\sisetup{
+%}
+\sisetup{
+  %  mode=text,
+  detect-all,
+  %number-math-rm=\mathnormal,
+%  text-sf=\sffamily,
+%  text-rm=\sffamily,
+  inter-unit-product =\cdot,
+  per-mode=symbol,
+  group-separator={,},
+}
+%}
+
