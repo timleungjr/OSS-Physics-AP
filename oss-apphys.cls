@@ -9,6 +9,9 @@
 %\renewcommand{\familydefault}{\sfdefault}
 
 \newcommand{\pic}[2]{\includegraphics[width=#1\textwidth]{#2}}
+\newcommand{\cpic}[2]{\begin{center}
+    \includegraphics[width=#1\textwidth]{#2}
+  \end{center}}
 \newcommand{\magdir}[2]{#1 \text{[#2]}}
 \newcommand{\mb}[1]{\mathbf{#1}}
 
