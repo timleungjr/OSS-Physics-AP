@@ -16,6 +16,7 @@
 \usepackage{xcolor,colortbl}
 \usepackage{hyperref}
 \usepackage{siunitx}
+\usepackage{bm}
 
 \sisetup{
   number-math-rm=\mathnormal,
@@ -36,7 +37,9 @@
 
 \begin{document}
 
-\section{Dynamics}
+\begin{frame}
+  \maketitle
+\end{frame}
 
 \begin{frame}
   \frametitle{Dynamics}
@@ -50,7 +53,7 @@
 
 
 
-\subsection{Newton's Laws}
+\section{Newton's Laws}
 
 \begin{frame}
   \frametitle{Newton's First Law}
@@ -66,8 +69,7 @@
   \vspace{.3in}
   \begin{itemize}
   \item Uniform motion: constant velocity
-  \item Keep in mind that an object at rest is also in uniform motion: it has
-    a velocity of zero.
+  \item An object at rest is also in uniform motion: it has a velocity of zero
   \item Common Examples:
     \begin{itemize}
     \item spacecraft in ``deep space''
@@ -96,15 +98,16 @@
     \begin{tabular}{l|c|l}
       \rowcolor{pink}
       \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
-      Net force (sum of all forces)  & $\mb{F}_{\textrm{net}}$ & \si{N}\\
-      Mass         & $m$       & \si{kg}\\
-      Acceleration & $\mb{a}$  & \si{m/s^2}\\
+      Net force (sum of all forces)  & $\mb{F}_{\textrm{net}}$ &
+      \si{N} (newtons)\\
+      Mass         & $m$       & \si{kg} (kilograms) \\
+      Acceleration & $\mb{a}$  & \si{m/s^2} (meters per second squared) \\
     \end{tabular}
   \end{center}
 
-  Actually, this equation isn't exactly what Newton wrote. He wrote that force
-  is the rate of change of the ``quantity of motion'' (momentum). We will be
-  looking into that more next class.
+  Actually, this isn't exactly what Newton said. He wrote that force is the
+  rate of change of the ``quantity of motion'' (momentum). We will be looking
+  into that in the next topic.
 \end{frame}
 
 
@@ -149,50 +152,56 @@
 
 
 \begin{frame}{Forces}
+
+  A \textbf{force} is the interaction between the objects.
   \begin{itemize}
-  \item A \textbf{force} is the interaction between the objects.
-    \begin{itemize}
-    \item When there is interaction, then forces are created
-    \item A ``push'' or a ``pull''
+  \item When there is interaction, then forces are created
+  \item A ``push'' or a ``pull''
 %    \item Gravity: interaction between to objects with mass
 %    \item Electric force: interaction between two charged object
 %    \item Nuclear force: interaction between protons, electrons and neutrons
-    \end{itemize}
-
-  \item Newton considered all forces acting at a single point of an object
-    called the centre of gravity (``CG'')
-    \begin{itemize}
-    \item The centre of gravity is also called the center of mass (``CM'')
-    \item If the density of an object is constant, then the CG is also the
-      geometric centre (centroid) of the object
-    \item Sooner we will look into how to find the center of mass of diferent
-      things
-    \end{itemize}
   \end{itemize}
-\end{frame}
 
-
-
-\begin{frame}{Forces}
+  There are two broad categories of forces:
   \begin{itemize}
-  \item There are two broad categories of forces:
-    \begin{itemize}
-    \item\textbf{Contact forces} act between two objects that are in contact
-      with one another
-    \item\textbf{Non-contact forces} act between two objects without them
-      touching each other. They are also called ``action-at-a-distance'' force
-    \end{itemize}
-    
-  \item If the net force on an object is zero ($\Sigma\mb{F}=\mb{0}$) then the
-    object is in a \emph{state of equilibrium}
-    \begin{itemize}
-    \item Dynamic equilibrium: the object is moving relative to us
-    \item Static equilibrium: the object is not moving relative to us
-    \end{itemize}  
+  \item\textbf{Contact forces} act between two objects that are in contact
+    with one another
+  \item\textbf{Non-contact forces} act between two objects without them
+    touching each other. They are also called ``action-at-a-distance'' force
   \end{itemize}
 \end{frame}
 
 
+
+\begin{frame}{Center of Mass}
+  \begin{columns}
+    \column{.7\textwidth}
+    Newton considered all forces acting at a single point of an object called
+    the center of gravity (``CG'')
+    \begin{itemize}
+    \item The center of gravity is also called the center of mass (``CM'')
+    \item If the density of an object is constant, then the CG is also the
+      geometric center (centroid) of the object
+    \item Sooner we will look into how to compute the centers of mass of
+      different objects
+    \end{itemize}
+
+    \column{.3\textwidth}
+    \pic{1}{graphics/cofm.png}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Static \& Dynamic Equilibrium}
+  If the net force on an object is zero ($\Sigma\mb{F}=\mb{0}$) then the
+  object is in a \emph{state of equilibrium}
+  \begin{itemize}
+  \item Dynamic equilibrium: the object is moving relative to us
+  \item Static equilibrium: the object is not moving relative to us
+  \end{itemize}
+\end{frame}
+
+
+\section{Common Forces}
 
 \begin{frame}{Common Forces}
   Common everyday forces that we encounter in Physics 12 include:
@@ -203,25 +212,27 @@
   \item Tension $\mb{F}_T$
   \item Applied force $\mb{F}_a$
   \item Spring force $\mb{F}_e$
-  \item Air resistance (drag) $\mb{D}$
-  \item Electrostatic force $\mb{F}_q$ (E \& M exam)
-  \item Magnetic force $\mb{F}_M$ (E \& M exam)
+  \item Drag $\mb{F}_d$ (fluid resistance, then again in fluid mechanics)
+  \item Buoyant Force $\mb{F}_B$ (discussed in fluid mechanics)
+  \item Electrostatic force $\mb{F}_q$ (discussed in E \& M exam)
+  \item Magnetic force $\mb{F}_M$ (discussed E \& M exam)
   \end{itemize}
 \end{frame}
 
 
 
 \begin{frame}{Gravity}
-  \begin{itemize}
-  \item The force of attraction between all objects with mass
+  Gravity is the force of attraction between all objects with mass
     
-    \eq{-.2in}{
-      \boxed{\mb{F}_g=m\mb{g}}
-    }
-  \item Near surface of Earth, use $g=\SI{9.81}{m/s^2}$ or $g=\SI{10}{m/s^2}$
-  \item There may be problems where you are asked to find the value of $g$ on
-    some ``distant unknown planet''.
-  \item $\mb{F}_g$ always points \textbf{down}
+  \eq{-.2in}{
+    \boxed{\mb{F}_g=m\mb{g}}
+  }
+  \begin{itemize}
+  \item\vspace{-.15in}Near surface of Earth, use $g=\SI{9.81}{m/s^2}$ or
+    $g=\SI{10}{m/s^2}$
+  \item You may be asked to find the value of $g$ on some ``unknown planet''.
+  \item $\mb{F}_g$ always points \textbf{down} (the direction of $\mb{F}_g$ is
+    how the concept of down is \emph{defined})
   \item Newton's law of universal gravity:
 
     \eq{-.3in}{
@@ -234,79 +245,19 @@
 
 
 
-\begin{frame}
-  \frametitle{Friction}
-  \begin{itemize}
-  \item A force that opposes the sliding of two surface across one another
-  \item Always act in a the direction opposite to motion or attempted motion
-  \item Two types: \emph{static friction} and \emph{kinetic friction}
-%  \item Proportional to how much force the two surfaces are pressed against
-%    each other (expressed by normal force $F_N$)
-%  \item Also depends on the type of surfaces--coefficient of friction
-%    ($\mu_s$ for static, $\mu_k$ for kinetic), which depends on
-%    \begin{itemize}
-%    \item What materials the surfaces are made of
-%    \item Whether a lubricant is used
-%    \end{itemize}
-  \end{itemize}
-  
-  \begin{center}
-   \pic{.7}{graphics/friction.jpg}
-  \end{center}
-\end{frame}
-
-
-\begin{frame}
-  \frametitle{Static Friction}
-  \begin{itemize}
-  \item The friction between the two surfaces when there is no relative
-    motion between them
-  \item Static friction increases with increasing applied force
-    $F_\mathrm{a}$. It is at maximum when the object is just about to move.
-  \end{itemize}
-
-  \eq{-.3in}{\boxed{\max F_s = \mu_sF_N}}
-
-  \begin{itemize}
-  \item $\mu_s$ is the static friction coefficient (does not have a unit)
-  \item $F_N$ is the normal force
-  \item I didn't use vector notation. This equation deals with the magnitude
-    only
-  \end{itemize}
-  {\footnotesize (\textbf{Pro tip:} The symbol for the coefficient of friction
-    $\mu$ is the Greek letter \emph{mu})}
-\end{frame}
-
-\begin{frame}
-  \frametitle{Kinetic Friction}
-  
-  \eq{0pt}{\boxed{F_k = \mu_kF_N}}
-
-  \begin{itemize}
-  \item The friction between two surfaces moving relative to each other
-  \item $F_k$ is constant along the path of movement as long
-    as the normal force stays constant
-  \item $\mu_k$ is the kinetic friction coefficient (does not have a unit). It
-  is always lower than the static coefficient, otherwise nothing will ever move
-    
-    \eq{-.3in}{\mu_k\leq\mu_s}
-  \end{itemize}
-\end{frame}
-
-\begin{frame}
-  \frametitle{Normal Force}
+\begin{frame}{Normal Force}
   \begin{columns}
     \column{.25\textwidth}
     \begin{center}
-    \begin{tikzpicture}{scale=1.5}
-      \draw [very thick] (-1,0)--(2.5,0);
-      \draw [fill=pink,thick] (0,0) rectangle (1.5,1);
-      \fill (.75,.5) circle(2pt);
-      \draw [->,very thick] (.75,.5)--(.75,-.5)
-      node[pos=1,below]{$\mb{F}_g$};
-      \draw [->,very thick] (.75,.5)--(.75,1.5)
-      node[pos=1,above]{$\mb{F}_N$};
-    \end{tikzpicture}
+      \begin{tikzpicture}{scale=1.5}
+        \draw [very thick] (-1,0)--(2.5,0);
+        \draw [fill=pink,thick] (0,0) rectangle (1.5,1);
+        \fill (.75,.5) circle(2pt);
+        \draw [->,very thick] (.75,.5)--(.75,-.5)
+        node[pos=1,below]{$\mb{F}_g$};
+        \draw [->,very thick] (.75,.5)--(.75,1.5)
+        node[pos=1,above]{$\mb{F}_N$};
+      \end{tikzpicture}
     \end{center}
     \begin{displaymath}
       \mb{F}_g=m\mb{g}=-\mb{F}_N
@@ -323,8 +274,7 @@
   \end{columns}
 \end{frame}
 
-\begin{frame}
-  \frametitle{Normal Forces on a Slope}
+\begin{frame}{Normal Force on a Slope}
   For this case, we label the $x$-axis to be along the slope, and $y$-axis to
   be perpendicular to the slope.
   \begin{columns}
@@ -370,51 +320,262 @@
   \end{columns}
 \end{frame}
 
+
 \begin{frame}
-  \frametitle{Example Problem}
-  \textbf{Example 8:} To move a \SI{45}{kg} wooden crate across a wooden floor
-  ($\mu=0.20$), you tie a rope onto the crate and pull on the rope. While you
-  are pulling the rope with a force of \SI{115}{N}, it makes an angle of
-  \ang{15}
-  with the horizontal. How much time elapses between the time at which the
-  crate just starts to move and the time at which you are pulling it with a
-  velocity of \SI{1.4}{m/s}?
+  \frametitle{Friction}
+  \begin{itemize}
+  \item A force that opposes the sliding of two surface against one another
+  \item Always act in a direction that opposes motion or attempted motion
+  \item Depends on:
+    \begin{itemize}
+    \item The amount of force the two surfaces are pressed against each other,
+      reflected in the normal force $F_N$
+    \item Type of surfaces reflected by ``coefficient of friction''
+      ($\mu_s$ for static, $\mu_k$ for kinetic), which itself depends on
+    \item The material(s) the surfaces are made of, and
+    \item Whether a lubricant is used
+    \end{itemize}
+  \end{itemize}
   \begin{center}
-    \pic{.5}{graphics/pull-box.png}
+    \vspace{-.1in}
+    \pic{.5}{graphics/friction.jpg}
   \end{center}
 \end{frame}
 
-\begin{frame}
-  \frametitle{Example Problem}
-  \textbf{Example 9:} You are holding an \SI{85}{kg} trunk at the top of a ramp
-  that slopes from a moving van to the ground, making an angle of \ang{35} with
-  the ground. You lose your grip and the trunk begins to slide.
+
+
+\begin{frame}{Static Friction}
+  \textbf{Static friction} between the two surfaces is when there is no
+  relative motion between them
   \begin{itemize}
-  \item If the coefficient of friction between the trunk and the ramp is
-    $0.42$, what is the acceleration of the trunk?
-  \item If the trunk slides \SI{1.3}{m} before reaching the bottom of the ramp,
-    for what time interval did it slide?
+  \item Increases with increasing applied force
+  \item Maximum when the object is just about to move
   \end{itemize}
+
+  \eq{-.2in}{\boxed{F_s\leq\mu_sF_N}}
+
+  \begin{center}
+    \begin{tabular}{l|c|l}
+      \rowcolor{pink}
+      \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
+      Static friction  & $\mb{F}_s$ & \si{\newton} (newtons)\\
+      Static friction coefficient & $\mu_s$ & no units \\
+      Normal force     & $\mb{F}_N$ & \si{\newton} (newtons)
+    \end{tabular}
+  \end{center}
 \end{frame}
 
-\begin{frame}
-  \frametitle{Example: Vertical Motion}
-  \textbf{Example 10:} A \SI{55}{kg} person is standing on a scale in an
-  elevator. If
-  the scale is calibrated in \emph{newtons}, what is the reading on the scale
-  when the elevator is not moving? If the elevator begins to accelerate upward
-  at \SI{.75}{m/s^2}, what will be the reading on the scale?
+
+
+\begin{frame}{Kinetic Friction}
+  \textbf{Kinetic friction} between two surfaces is when they are moving
+  relative to each other
+  \begin{itemize}
+  \item $F_k$ is constant along the path of movement as long as the $\mb{F}_N$
+    stays constant
+  \end{itemize}
+
+  \eq{-.3in}{\boxed{F_k = \mu_kF_N}}
+  \begin{center}
+    \begin{tabular}{l|c|l}
+      \rowcolor{pink}
+      \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
+      Kinetic friction  & $\mb{F}_k$ & \si{\newton} (newtons)\\
+      Kinetic friction coefficient & $\mu_k$ & no units \\
+      Normal force     & $\mb{F}_N$ & \si{\newton} (newtons)
+    \end{tabular}
+  \end{center}
 \end{frame}
 
 
-\subsection{Connected Bodies}
+
+\begin{frame}{Static and Kinetic Coefficients of Friction}    
+  Kinetic friction coefficient is always lower than the static coefficient,
+  otherwise nothing will ever move:
+    
+  \eq{-.4in}{\mu_k\leq\mu_s}
+
+  Consider a simple case of a box being pulled along a level floor. The
+  free-body diagram is simple (left). How do the magnitudes of the applied
+  force $F_a$ and friction $f$ compare?
+  \begin{columns}
+    \column{.4\textwidth}
+    \begin{center}
+      \begin{tikzpicture}
+        \draw [very thick] (-1,0)--(2.5,0);
+        \draw [fill=pink,thick] (0,0) rectangle (1.5,1);
+        \fill (.75,.5) circle(2pt);
+        \draw[->,very thick](.75,.5)--(.75,-.5) node[pos=1,below]{$\mb{F}_g$};
+        \draw[->,very thick](.75,.5)--(.75,1.5) node[pos=1,above]{$\mb{F}_N$};
+        \draw[->,very thick](.75,.5)--(2.,.5) node[pos=1,right]{$\mb{F}_a$};
+        \draw[->,very thick](.75,.5)--(.1,.5) node[pos=1,left]{$\mb{f}$};
+      \end{tikzpicture}
+    \end{center}
+
+    \column{.6\textwidth}
+    \begin{center}
+      \begin{tikzpicture}[scale=.5]
+        \draw[very thick,->](0,0)--(10,0) node[pos=1,right]{$F_a$};
+        \draw[very thick,->](0,0)--(0,5) node[pos=1,left]{$f$};
+      \end{tikzpicture}
+    \end{center}
+  \end{columns}
+\end{frame}
 
 
-\begin{frame}
-  \frametitle{Tension in a Cable}
-  \textbf{Tension:} The magnitude of the force exerted on and by a cable, rope,
-  or string. How do engineers determine the amount of tension needed for a
-  specific object (bridges, floors or light fixtures)?
+
+\begin{frame}{Drag}
+  \begin{itemize}
+  \item The force opposing to the motion of an object moving in a fluid
+  \item Unlike kinetic friction, drag depend on velocity\footnotemark
+  \item Sources of drag:
+    \begin{itemize}
+    \item\textbf{Form drag} is due to the shape of the object
+    \item\textbf{Skin friction} is due to the friction of the fluid against
+      the surface of the object moving through it
+    \item\textbf{Interference drag} is due to when airflow around one part of
+      an object occupying the same space as the airflow around another part
+      (e.g.\ fuselage and wing of an airplane)
+    \end{itemize}
+  \end{itemize}
+  \footnotetext{Some high-school textbooks incorrectly state that
+    ``air resistance is a force of friction''. While drag does includes a
+    friction component, the primary contribution to drag is due to the shape.}
+\end{frame}
+
+
+
+\begin{frame}{Drag}
+  The direction of the drag force $\mb{F}_d$ moving in a fluid is opposite to
+  the velocity vector, and its magnitude is:
+
+  \eq{-.2in}{
+    F_d=\frac{1}{2}\rho V_\infty^2A_\mathrm{ref}C_d
+  }
+  
+  \begin{center}
+    \begin{tabular}{l|c|l}
+      \rowcolor{pink}
+      \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
+      Air resistance (Drag) & $F_d$  & \si{\newton} (newtons)\\
+      Density of the fluid & $\rho$ & \si{\kg/\m^3}
+      (kilograms per meters cubed)\\
+      Far-field fluid velocity & $V_\infty$ & \si{\m/\s} (meters per second) \\
+      Reference area   & $A_\mathrm{ref}$ & \si{m^2} (meters squared) \\
+      Drag coefficient & $C_d$ & (no unit)
+    \end{tabular}
+  \end{center}
+  
+  {\footnotesize Drag coefficient depends on the shape and surface smoothness
+    of the object. For blunt objects $A_\mathrm{ref}$ is the frontal area; for
+    streamlined objects $A_\mathrm{ref}$ is the planform (top-view) area\par}
+\end{frame}
+
+
+
+\begin{frame}{Drag}
+  In AP Physics you are \emph{not} asked to know the drag equation. However,
+  you should know that drag (air resistance) depends on the motion of the
+  object and is not a constant.
+\end{frame}
+
+
+\begin{frame}{Terminal Velocity}
+  When we take drag force into account, we understand that the drag force
+  increases as an object speeds up, and therefore a free-falling object does
+  \emph{not} accelerate infinitely. Instead it reaches a
+  \textbf{terminal velocity}.
+
+  \begin{columns}
+    \column{.33\textwidth}
+    
+    {\footnotesize There is no air resistance just as the object \emph{begins}
+      to fall. Acceleration is due to gravity alone.\par}
+
+    \vspace{-.15in}
+    \begin{center}
+      \begin{tikzpicture}[scale=.9]
+        \draw[very thick,->](0,0)--(0,-1.5) node[pos=1,below]{$\mb{F}_g$};
+        \draw[very thick,->,white](0,0)--(0,1.5) node[pos=1,above]{$\mb{F}_d$};
+        \fill(0,0) circle(0.07);
+      \end{tikzpicture}
+    \end{center}
+    
+    \column{.33\textwidth}
+
+    {\footnotesize Drag increases as $v$ increases. Magnitude of acceleration
+      decreases, but the object continues to gather speed\par}
+
+    \vspace{-.15in}
+    \begin{center}
+      \begin{tikzpicture}[scale=.9]
+        \draw[very thick,->](0,0)--(0,-1.5) node[pos=1,below]{$\mb{F}_g$};
+        \draw[very thick,->,white](0,0)--(0,1.5) node[pos=1,above]{$\mb{F}_d$};
+        \draw[very thick,->,green](0,0)--(0,.6) node[pos=1,above]{$\mb{F}_d$};
+        \fill(0,0) circle(0.07);
+      \end{tikzpicture}
+    \end{center}
+    
+    \column{.33\textwidth}
+    
+    {\footnotesize Terminal velocity is reached when the drag force equals the
+      object's weight. Not net force; no acceleration.\par}
+
+    \vspace{-.15in}
+    \begin{center}
+      \begin{tikzpicture}[scale=.9]
+        \draw[very thick,->](0,0)--(0,-1.5) node[pos=1,below]{$\mb{F}_g$};
+        \draw[very thick,->,red](0,0)--(0,1.5) node[pos=1,above]{$\mb{F}_d$};
+        \fill(0,0) circle(0.07);
+      \end{tikzpicture}
+    \end{center}
+        
+  \end{columns}
+\end{frame}
+
+
+
+
+%\begin{frame}
+%  \frametitle{Example Problem}
+%  \textbf{Example 8:} To move a \SI{45}{kg} wooden crate across a wooden floor
+%  ($\mu=0.20$), you tie a rope onto the crate and pull on the rope. While you
+%  are pulling the rope with a force of \SI{115}{N}, it makes an angle of
+%  \ang{15}
+%  with the horizontal. How much time elapses between the time at which the
+%  crate just starts to move and the time at which you are pulling it with a
+%  velocity of \SI{1.4}{m/s}?
+%  \begin{center}
+%    \pic{.5}{graphics/pull-box.png}
+%  \end{center}
+%\end{frame}
+%
+%\begin{frame}
+%  \frametitle{Example Problem}
+%  \textbf{Example 9:} You are holding an \SI{85}{kg} trunk at the top of a ramp
+%  that slopes from a moving van to the ground, making an angle of \ang{35} with
+%  the ground. You lose your grip and the trunk begins to slide.
+%  \begin{itemize}
+%  \item If the coefficient of friction between the trunk and the ramp is
+%    $0.42$, what is the acceleration of the trunk?
+%  \item If the trunk slides \SI{1.3}{m} before reaching the bottom of the ramp,
+%    for what time interval did it slide?
+%  \end{itemize}
+%\end{frame}
+%
+%\begin{frame}
+%  \frametitle{Example: Vertical Motion}
+%  \textbf{Example 10:} A \SI{55}{kg} person is standing on a scale in an
+%  elevator. If
+%  the scale is calibrated in \emph{newtons}, what is the reading on the scale
+%  when the elevator is not moving? If the elevator begins to accelerate upward
+%  at \SI{.75}{m/s^2}, what will be the reading on the scale?
+%\end{frame}
+
+
+\begin{frame}{Tension in a Cable}
+  \textbf{Tension} is the force exerted on and by a cable, rope,
+  or string.
 
   \begin{itemize}
   \item You can't push on a rope
@@ -425,15 +586,234 @@
 
 
 
-\begin{frame}
-  \frametitle{Example Problem}
-  \textbf{Example 11:} An elevator filled with people has a total mass of
-  \SI{2245}{kg}. As the elevator begins to rise, the acceleration is
-  \SI{.55}{m/s^2}. What is the tension in the cable that is lifting the
-  elevator?   
+\begin{frame}{Spring Force}
+  The spring force $F_e$ is the force a compressed or stretched spring
+  exerts onto objects connected to it. It obeys Hooke's Law:
+  
+  \eq{-.2in}{
+    \mb{F}_e=-k\mb{x}
+  }
+  where $\mb{x}$ is the relative displacement of the ends of the spring.
+  \begin{center}
+    \pic{.35}{graphics/spring-example1.png}
+  \end{center}
 \end{frame}
 
 
+\begin{frame}{Spring Force}
+  \begin{center}
+    \pic{.3}{graphics/spring-example1.png}
+  \end{center}
+  \begin{itemize}
+  \item As the object falls onto the spring, the spring begins to compress
+  \item As the spring compresses, the spring force (pointing up!) increases
+    linearly (Hooke's law)
+  \item At some point, the spring force balances the weight of the block
+    \begin{itemize}
+    \item At this point, the \emph{acceleration} is zero
+    \item But the velocity continues to be downward
+    \end{itemize}
+  \item The spring continues to compress until velocity is zero
+  \end{itemize}
+\end{frame}
+
+
+
+\begin{frame}{Spring Force}
+  \begin{center}
+    \pic{.3}{graphics/spring-example1.png}
+  \end{center}
+  \begin{itemize}
+  \item Solving this problem using dynamics is difficult, because:
+    \begin{itemize}
+    \item Spring force scales linearly with \emph{displacement}, but
+    \item Net force scales linearly with \emph{acceleration} (2nd time
+      derivative of displacement)
+    \end{itemize}
+  \item Note that the block continues to \emph{increase} velocity even after
+    it starts to compress the spring.
+  \item Acceleration is zero only after the spring has compressed some amount
+  \end{itemize}
+\end{frame}
+
+
+
+\begin{frame}{Buoyancy}
+  \framesubtitle{Everything Floats a Little}
+  When an object is submerged inside a fluid (e.g.\ water, air, etc), the fluid
+  exerts a pressure at the surface of the object. We can integrate the pressure
+  over the entire surface area $S$ to find the total force $\mb{B}$ the fluid
+  exerts on the object.
+  \begin{center}
+    \pic{.25}{graphics/rock_fbvectors.jpg}
+  \end{center}
+\end{frame}
+
+
+
+\begin{frame}{Buoyancy}
+  \framesubtitle{Everything Floats a Little}
+  The buoyant force is given by:
+  \eq{-.1in}{
+    \mb{B}
+    =\rho_\mathrm{fluid}g\bm{\hat{k}}\iiint dV
+    =\rho_\mathrm{fluid}gV\bm{\hat{k}}
+  }
+
+  \begin{center}
+    \begin{tabular}{l|c|l}
+      \rowcolor{pink}
+      \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
+      Buoyant force & $\mb{B}$  & \si{\newton} (newtons)\\
+      Density of the fluid & $\rho_\mathrm{fluid}$ & \si{\kg/\m^3}
+      (kilograms per meters cubed)\\
+      Volume of the object & $V$ & \si{\m/\s} (meters per second)
+    \end{tabular}
+  \end{center}
+
+  We will discuss this later in the course, when we deal with fluid mechanics.
+\end{frame}
+
+
+
+\section{Free-Body Diagrams}
+
+
+\begin{frame}{Free Body Diagrams}
+  \begin{itemize}
+  \item An object's acceleration (if there is going to be any at all) depends
+    on net force $\mb{F}_\mathrm{net}$)
+  \item Without a vector sum of all the forces, we cannot determine the
+    magnitude, direction of the acceleration, or how acceleration will evolve
+    in time
+  \item We use \textbf{free body diagrams} (FBD) to represent all the forces.
+    \begin{itemize}
+    \item Very important in solving any dynamics problems
+    \item Don't try to save this step, even if the problem does not ask for it
+    \item Always draw FBD for solving classical mechanics problem
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+
+
+
+\begin{frame}{Free Body Diagrams}
+
+  \textbf{Step 1:} Draw a ``big dot'' to represent the CG of the
+  object (This makes sense, because we assume that all masses are point masses
+  anyway)
+
+  \begin{center}
+      \begin{tikzpicture}[scale=.8]
+        \draw [gray!50,thick] (-1,0)--(4,0);
+        \draw [gray!50,fill=pink!30,thick] (0,0) rectangle (3,2);
+        \fill[black] (1.5,1) circle(.1) node[above]{\footnotesize CG};
+        \uncover<2>{
+          \draw[->](3.5,.5)--(4.5,.5) node[pos=1,right]{\tiny $x$};
+          \draw[->](3.5,.5)--(3.5,1.5) node[pos=1,above]{\tiny $y$};
+        }
+      \end{tikzpicture}
+  \end{center}
+
+  \uncover<2>{
+    \textbf{Step 2:} Define a coordinate system ($x$ and $y$ axes)
+    \begin{itemize}
+    \item We can define the axes in any arbitrary direction, \emph{but we want
+      to simplify our problem, not to make it more complicated}, so instead:
+    \item Define them such that the sum of along one axis (usually $y$) is
+      always zero
+    \end{itemize}
+  }
+\end{frame}
+
+
+\begin{frame}{Free Body Diagrams}
+  \textbf{Step 3:} Identify all the forces are acting on the object
+  \begin{itemize}
+  \item Make note of the direction of the forces.
+  \item Gravity is a must!
+  \end{itemize}
+  \begin{center}
+    \begin{tikzpicture}[scale=.8]
+      \draw [gray!50,thick] (-1,0)--(4,0);
+      \draw [gray!50,fill=pink!30,thick] (0,0) rectangle (3,2);
+      \fill[black] (1.5,1) circle(.1);
+        \draw[->](3.5,.5)--(4.5,.5) node[pos=1,right]{\tiny $x$};
+        \draw[->](3.5,.5)--(3.5,1.5) node[pos=1,above]{\tiny $y$};
+        \draw [->,very thick] (1.5,1)--(1.5,-.5) node[pos=1,below]{$\mb{F}_g$};
+        \draw [->,very thick] (1.5,1)--(1.5,2.5) node[pos=1,above]{$\mb{F}_N$};
+        \draw [->,very thick] (1.5,1)--(3.1,1) node[pos=1,below]{$\mb{F}_a$};
+        \draw [->,very thick] (1.5,1)--(.75,1) node[pos=1,left]{$\mb{F}_f$};
+    \end{tikzpicture}
+  \end{center}
+\end{frame}
+
+
+
+\begin{frame}{Free Body Diagrams}
+  \textbf{Step 4:} The free-body diagram itself does not require drawing the
+  object itself
+  \begin{itemize}
+  \item Make sure the arrows representing the forces originate at the CG
+  \item It is generally a good practice to approximately scale the lengths of
+    the arrows to the magnitude of the forces
+  \end{itemize}
+
+  \begin{center}
+    \begin{tikzpicture}[scale=.8]
+      \fill[black] (1.5,1) circle(.1);
+      \draw[->](3.5,.5)--(4.5,.5) node[pos=1,right]{\tiny $x$};
+      \draw[->](3.5,.5)--(3.5,1.5) node[pos=1,above]{\tiny $y$};
+      \draw [->,very thick] (1.5,1)--(1.5,-.5) node[pos=1,below]{$\mb{F}_g$};
+      \draw [->,very thick] (1.5,1)--(1.5,2.5) node[pos=1,above]{$\mb{F}_N$};
+      \draw [->,very thick] (1.5,1)--(3.1,1) node[pos=1,below]{$\mb{F}_a$};
+      \draw [->,very thick] (1.5,1)--(.75,1) node[pos=1,left]{$\mb{F}_f$};
+    \end{tikzpicture}
+  \end{center}
+\end{frame}
+
+
+
+\begin{frame}{Solving Force Problem}
+  \begin{itemize}
+  \item If you have chosen your coordinate system properly, you should have
+    \begin{itemize}
+    \item Normal force along the $\bm{\hat{\jmath}}$ direction
+    \item Friction force along the $\bm{\hat{\imath}}$ axis      
+    \end{itemize}
+  \item Break down the forces into the $x$ and $y$ components
+  \item Sum the forces in the direction that doesn't have a net force (usually
+    $y$ axis)
+  \item Sum the forces in the other axis, and find out what the acceleration is
+  \item Solve the motion of the object
+  \end{itemize}
+\end{frame}
+
+
+%\begin{frame}
+%  \frametitle{Example Problem}
+%  A more difficult static problem may involve two surfaces with two different
+%  friction coefficients. For example, a ladder leaning on a wall.
+%
+%  \vspace{.2in}
+%  \begin{columns}
+%    \column{.75\textwidth}
+%    \textbf{Example:} A uniform ladder is $L=\SI{5.}{\metre}$ long and weighs
+%    \SI{400.}{\newton}. The ladder rests against a slippery vertical wall, as
+%    shown in Figure. The inclination angle between the ladder and the rough
+%    floor is $\theta=\ang{53}$. Find the reaction forces from the floor and
+%    from the wall on the ladder and the coefficient of static friction $\mu_s$
+%    at the interface of the ladder with the floor that prevents the ladder from
+%    slipping.
+%
+%    \column{.25\textwidth}
+%    \pic{1}{graphics/ladder.png}
+%  \end{columns}
+%\end{frame}
+
+
+
+\section{Multi-Body Problems}
 
 \begin{frame}
   \frametitle{Applying Newton's Third Law on Connected Bodies}
@@ -441,9 +821,9 @@
     \pic{.7}{graphics/worldslongestroadtrainwithpowertrailer8.jpg}
   \end{center}
   \begin{itemize}
-  \item Usually the objects are connected by a cable or a solid linkage with
-    negligible mass
-  \item All object have the same acceleration
+  \item The objects are connected by a cable or a solid linkage with negligible
+    mass
+  \item All objects (usually) have the same acceleration
   \item Require multiple free-body diagrams
   \end{itemize}
 \end{frame}
@@ -457,13 +837,13 @@
   \item Draw a FBD on each of the objects
   \item Sum all the forces on all the objects along the direction of motion
     \begin{itemize}
-    \item Direction of motion are usually very obvious
-    \item All the tension forces should cancel, because they are ``internal''
-      forces and not ``external forces''
+    \item Direction of motion is usually very obvious
+    \item All internal forces should cancel and do not figure into the
+      acceleration of the system
     \end{itemize}
   \item Compute the acceleration of the entire system using Newton's second law
     \begin{itemize}
-    \item Remember that every object has the same acceleration!
+    \item Remember that (usually) every object has the same acceleration!
     \end{itemize}
   \item Go back to the FBD of each of the objects and compute the unknown
     forces (usually tension)
@@ -474,10 +854,10 @@
 
 \begin{frame}
   \frametitle{Connected Bodies: Example}
-  \textbf{Example 12:} A tractor-trailer pulling two trailers starts from rest
-  and accelerates to a speed of \SI{16.2}{km/h} in \SI{15}{s} on a straight,
-  level
-  section of highway. The mass of the truck itself (T) is \SI{5450}{kg}, the
+  \textbf{Example:} A tractor-trailer pulling two trailers starts from rest
+  and accelerates with an acceleration $a$ on a straight, level road.
+  The mass of the truck itself (T) is $m_T$, while the masses of the are
+  equal \SI{5450}{kg}, the
   mass of the first trailer (A) is \SI{31500}{kg}, and the mass of the second
   trailer (B) is \SI{19600}{kg}.
   \begin{itemize}
@@ -491,33 +871,52 @@
 \end{frame}
 
 
+\begin{frame}{Connected Bodies}
+  Other type of connected bodies problem may be like this
 
-%\begin{frame}
-%  \frametitle{Example Problem: Towing}
-%  \textbf{Example 7:} A $1700kg$ car is towing a larger vehicle with mass
-%  $2400kg$. The two vehicles accelerate uniformly from a stoplight, reaching a
-%  speed of $15km/h$ in $11s$. Find the force needed to accelerate the connected
-%  vehicles, as well as the minimum strength of the rope between them.
-%  \begin{center}
-%    \pic{.55}{graphics/car-tow-truck.png}
-%  \end{center}
-%\end{frame}
+  \vspace{.2in}
+  \begin{columns}
+    \column{.5\textwidth}
+    Multiple objects pressed against one another:
+    \begin{center}
+      \begin{tikzpicture}[scale=.8]
+        \draw(-1,0)--(5.5,0);
+        \draw(0,0) rectangle(1,1);
+        \draw(1,0) rectangle(3,1.5);
+        \draw(3,0) rectangle(4.5,2);
+        \draw[very thick,->](-1.5,.5)--(0,.5) node[pos=0,left]{$\mb{F}_a$};
+      \end{tikzpicture}
+    \end{center}
+    
+    \column{.5\textwidth}
+    Multiple objects stacked on top of one another:
+    \begin{center}
+      \begin{tikzpicture}[scale=.8]
+        \draw(-1,0)--(5.5,0);
+        \draw(0,0) rectangle(4.5,1);
+        \draw(1,1) rectangle(3.5,1.5);
+        \draw(2,1.5) rectangle(2.5,2);
+        \draw[very thick,->](4.5,.5)--(6,.5) node[pos=1,right]{$\mb{F}_a$};
+      \end{tikzpicture}
+    \end{center}
+  \end{columns}
+\end{frame}
 
 
-
+\section{Pulley Problems}
 \begin{frame}
   \frametitle{Example Problem: Atwood Machine}
   An \textbf{Atwood machine} is made of two objects connected by a rope that
   runs over a pulley. The pulley allows the direction of force and direction
   of motion to change between two objects.
   \begin{columns}
-    \column{.5\textwidth}
+    \column{.35\textwidth}
     \begin{center}
-      \pic{1}{graphics/atwood.png}
+      \pic{1}{graphics/pulley_prob_2.png}
     \end{center}
-    \column{.5\textwidth}
-    \textbf{Example 13:} The object on the left ($m_1$) has a mass of
-    \SI{8.5}{kg} and the object on the right ($m_2$) has a mass of \SI{17}{kg}.
+    \column{.65\textwidth}
+    \textbf{Example:} The object on the left has a mass of $M$ and the object
+    on the right has a mass of $m$.
     \begin{itemize}
     \item What is the acceleration of the masses?
     \item What is the tension in the rope?
@@ -526,40 +925,108 @@
 \end{frame}
 
 
-
-\begin{frame}
-  \frametitle{A More Typical Problem}
-  \textbf{Example 14:}
-  More typically, an Atwood machine problem is one where two objects are
-  sliding on a surface. These surfaces may have (or may not) have friction.
-  In this example, two blocks are connected by a mass-less string over a
-  friction-less pulley as shown in the diagram.
+\begin{frame}{A Slightly More Difficult Problem}
   \begin{columns}
-    \column{.45\textwidth}
-    \begin{tikzpicture}[scale=.8]
-      \draw[thick](0,0)--(-4,0) node[midway,below]{\tiny $\mu_k=0.14$};
-      \draw(-1.75,0) rectangle(-3,.75) node[midway]{\tiny\SI{0.80}{\kg}};
-      \draw(-1.75,.44)--(.1,.44);
-      \begin{scope}[rotate=-30]
-        \draw[thick](0,0)--(5,0) node[midway,left]{\tiny $\mu_k=0.14$};
-        \draw(3,0) rectangle(4.25,.75) node[midway]{\tiny\SI{2.}{\kg}};
-        \draw(3,.44)--(-.05,.44);
-      \end{scope}
-      \begin{scope}[rotate=-15]
-        \draw (0,0)--(0,.3);
-        \draw (0,.3) circle(.15);
-      \end{scope}
-      \draw[gray!50](0,0)--(0,-2);
-      \draw[->](0,-.5)arc(270:330:.5)node[midway,right]{\tiny\ang{60}};
-    \end{tikzpicture}
-    \column{.55\textwidth}
-
-    \begin{enumerate}[(a)]
-    \item Determine the acceleration of the blocks.
-    \item Calculate the tension in the string.
-    \item If the string broke, for what minimum value of the coefficient of
-      static friction would the \SI{2.}{kg} block not begin to slide?
-    \end{enumerate}
+    \column{.35\textwidth}
+    \pic{1}{graphics/pulley_prob_5.png}
+    
+    \column{.65\textwidth}
+    Two blocks of mass $m$ and $M$ are connected via pulley with a
+    configuration as shown on the left. The coefficient of static friction is
+    $\mu_s$, between blocks and surface. What is the maximum mass $m$ so that
+    no sliding occurs?
   \end{columns}
 \end{frame}
+
+
+
+\begin{frame}{A Difficult Problem!}
+  \begin{columns}
+    \column{.6\textwidth}
+    \textbf{Example:} Two blocks of mass $m$ and $M$ are connected via pulley
+    with a configuration as shown on the right. The coefficient of static
+    friction between the left block and the surface is $\mu_{s,1}$, and the
+    coefficient of static friction between the right block and the surface is
+    $\mu_{s,2}$. Formulate a mathematical inequality for the condition that no
+    sliding occurs. There may be more than one inequality. 
+    
+    \column{.4\textwidth}
+    \pic{1}{graphics/pulley_prob_6.png}
+  \end{columns}
+\end{frame}
+
+
+
+\begin{frame}{Multiple Pulleys}
+  When there are multiple pulleys involved, we have to remember that tension
+  force is distributed evenly along the cable.
+
+  \vspace{.2in}
+  \begin{columns}
+    \column{.6\textwidth}
+    \textbf{Example:} A block of mass m is pulled, via two pulleys as shown, at
+    constant velocity along a surface inclined at angle $\theta$. The
+    coefficient of kinetic friction is $\mu_k$, between block and surface.
+    Determine the pulling force $F$. Ignore the mass of the pulleys. 
+    
+    \column{.4\textwidth}
+    \pic{1}{graphics/pulley_prob_7.png}
+  \end{columns}  
+\end{frame}
+
+
+\begin{frame}{One More!}
+  \begin{columns}
+    \column{.75\textwidth}
+    \textbf{Example:} A block of mass $M$ is lifted at constant velocity, via
+    an arrangement of pulleys as shown. Determine the pulling force $F$. Ignore
+    the mass of the pulleys. 
+
+    \uncover<2>{
+      \vspace{.2in}\textbf{Example:} The pulling force is replaced by a $10M$
+      mass, and was let go. What are the accelerations of the $M$ and the
+      $10M$ mass?
+    }
+    
+    \column{.25\textwidth}
+    \pic{1}{graphics/pulley_prob_9.png}
+  \end{columns}
+\end{frame}
+
+
+%\begin{frame}
+%  \frametitle{A More Typical Problem}
+%  \textbf{Example 14:}
+%  More typically, an Atwood machine problem is one where two objects are
+%  sliding on a surface. These surfaces may have (or may not) have friction.
+%  In this example, two blocks are connected by a mass-less string over a
+%  friction-less pulley as shown in the diagram.
+%  \begin{columns}
+%    \column{.45\textwidth}
+%    \begin{tikzpicture}[scale=.8]
+%      \draw[thick](0,0)--(-4,0) node[midway,below]{\tiny $\mu_k=0.14$};
+%      \draw(-1.75,0) rectangle(-3,.75) node[midway]{\tiny\SI{0.80}{\kg}};
+%      \draw(-1.75,.44)--(.1,.44);
+%      \begin{scope}[rotate=-30]
+%        \draw[thick](0,0)--(5,0) node[midway,left]{\tiny $\mu_k=0.14$};
+%        \draw(3,0) rectangle(4.25,.75) node[midway]{\tiny\SI{2.}{\kg}};
+%        \draw(3,.44)--(-.05,.44);
+%      \end{scope}
+%      \begin{scope}[rotate=-15]
+%        \draw (0,0)--(0,.3);
+%        \draw (0,.3) circle(.15);
+%      \end{scope}
+%      \draw[gray!50](0,0)--(0,-2);
+%      \draw[->](0,-.5)arc(270:330:.5)node[midway,right]{\tiny\ang{60}};
+%    \end{tikzpicture}
+%    \column{.55\textwidth}
+%
+%    \begin{enumerate}[(a)]
+%    \item Determine the acceleration of the blocks.
+%    \item Calculate the tension in the string.
+%    \item If the string broke, for what minimum value of the coefficient of
+%      static friction would the \SI{2.}{kg} block not begin to slide?
+%    \end{enumerate}
+%  \end{columns}
+%\end{frame}
 \end{document}

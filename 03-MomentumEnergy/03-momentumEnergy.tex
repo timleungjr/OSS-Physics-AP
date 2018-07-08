@@ -10,23 +10,28 @@
 \usefonttheme{professionalfonts}
 \usepackage{amsmath,bm}
 \usepackage{siunitx}
-%\usepackage{graphicx}
 \usepackage{tikz}
 \usepackage{mathpazo}
 \usepackage[scaled]{helvet}
 \usepackage{xcolor,colortbl}
-%\usepackage{hyperref}
 
-\sisetup{number-math-rm=\mathnormal}
+\sisetup{
+  number-math-rm=\mathnormal,
+  per-mode=symbol
+}
 
-\title{3.\ Energy, Momentum and Collisions}
-\subtitle{AP Physics}
+\usetikzlibrary{decorations.pathmorphing,patterns}
+
+
+\title{Topic 3: Energy, Momentum and Collisions}
+\subtitle{Advanced Placement Physics}
 \author[TML]{Dr.\ Timothy Leung}
 \institute{Olympiads School}
-\date{Fall 2017}
+\date{Summer 2018}
 
 \newcommand{\pic}[2]{\includegraphics[width=#1\textwidth]{#2}}
 \newcommand{\mb}[1]{\ensuremath\mathbf{#1}}
+\newcommand{\eq}[2]{\vspace{#1}{\Large\begin{displaymath}#2\end{displaymath}}}
 
 \begin{document}
 
@@ -41,35 +46,54 @@
   \item\texttt{03-momentumEnergy.pdf}--This week's slides
   \item\texttt{03-Homework.pdf} This week's homework
   \end{itemize}
-  Please download/print the PDF file.
+  Please download/print the PDF file for the class slides before each class.
+  There is no point copying notes that are already printed out for you.
+  Instead, take notes on things I say that aren't necessarily on the slides.
 \end{frame}
 
+
+
 \section{Energy}
+
+\begin{frame}{Work and Energy}
+
+  We start with some definition at are (unfortunately) not very useful:
+
+  \begin{itemize}
+    \item \textbf{Energy} is the ability to do work.
+    \item \textbf{Work} is the mechanism in which energy is transformed.
+  \end{itemize}
+  
+  Luckily, we can also use equations to define these concepts.
+\end{frame}
+
+
 \begin{frame}
   \frametitle{Work}
-  \begin{itemize}
-  \item\textbf{Work} is defined as
-    {\Large
-      \begin{displaymath}
-        \boxed{W=\int\mb{F}\cdot d\mb{r}}
-      \end{displaymath}
-    }
-  \item Dot product of force $\mb{F}$ and infinitesimal displacement $d\mb{r}$
+  \textbf{Mechanical work} is the integral of the dot product between a force
+  $\mb{F}$ and the infinitesimal displacement vector $\mb{r}$:
 
-  \item No work done if $\mb{F}\cdot\mb{r}=0$ i.e.\ force is perpendicular to
-    displacement
+  \eq{-.2in}{
+    \boxed{W=\int_{r_1}^{r_2}\mb{F}(r)\cdot d\mb{r}}
+  }
+
+  \begin{itemize}
+  \item No work done if the force is perpendicular to displacement
+    (i.e.\ $\mb{F}\cdot\mb{r}=0$)
   \item No work done if no displacement
   \item Negative work done is possible
+  \item When there are multiple forces acting on an object, we can compute the
+    work done by each \emph{each} force
   \end{itemize}
 \end{frame}
 
-\begin{frame}
-  \frametitle{Kinetic Energy}
-  \begin{itemize}
-  \item When we apply a force on an object to accelerate it, and the resulting
-    amount of work done is given by
 
-    \vspace{-0.3in}{\Large
+
+\begin{frame}{Kinetic Energy}
+  When we apply a force on an object to accelerate it, and the resulting amount
+  of work done is given by
+
+  \vspace{-.3in}{\Large
       \begin{align*}
         W&=\int\mb{F}\cdot d\mb{x}=\int m\mb{a}\cdot d\mb{x}\\
         &=\int m\frac{d\mb{v}}{dt}\cdot d\mb{x}
@@ -77,17 +101,35 @@
         &=\int_{v_1}^{v_2} mvdv=\Delta\left(\frac{1}{2}mv^2\right)=\Delta K
       \end{align*}
     }
-  \item where $K=\frac{1}{2}mv^2$ is the (translational) kinetic energy
+  where $\displaystyle K=\frac{1}{2}mv^2$ is the (translational)
+  \textbf{kinetic energy}
+\end{frame}
+
+
+
+\begin{frame}{Work and Kinetic Energy}
+  In fact, the \emph{definition} of kinetic energy came from this integration,
+  in that we want to say that work equals to the change in \emph{something},
+  and we called that kinetic energy.
+
+  \eq{-.15in}{
+    \boxed{W_\mathrm{net}=\Delta K}
+  }
+  \begin{itemize}
+  \item\vspace{-.15in} $\Delta K$ can be positive or negative depending on the
+    dot product
+  \item There may be multiple forces acting on an object; each of the forces
+    can add or take away kinetic energy from an object
+  \item Therefore we use the ``net'' amount of work done in the above equation
   \end{itemize}
 \end{frame}
 
 
-\begin{frame}
-  \frametitle{Example}
-  \textbf{Example 1:}A force $F=(\SI{4}{kg/s^2})x\bm{\hat{\imath}}$ acts on an
-  object of mass
-  \SI{2}{kg} as it moves from $x=0$ to $x=\SI{5}{m}$. Given that the object is
-  at rest at $x=0$,
+
+\begin{frame}{Example}
+  \textbf{Example 1:} A force $F=(\SI{4.}{kg/s^2})x\,bm{\hat{\imath}}$ acts on an
+  object of mass \SI{2.}{kg} as it moves from $x=0$ to $x=\SI{5.}{\metre}$.
+  Given that the object is at rest at $x=0$,
   \begin{enumerate}[(a)]
   \item Calculate the net work
   \item What is the final speed of the object?
@@ -96,52 +138,265 @@
 
 
 \begin{frame}
-  \frametitle{Gravitational Force and Potential Energy}
-  \begin{itemize}
-  \item For objects near Earth, the force of gravity is
-   
-    \vspace{-.2in}{\Large
-      \begin{displaymath}
-        F_g=mg
-      \end{displaymath}
-    }
-  \item The work done to raise an object from $h_1$ to $h_2$ is therefore:
+  \frametitle{Gravitational Force \& Potential Energy}
+  The gravitational force (weight) of an object is defined as:
+  
+  \eq{-.25in}{
+    \boxed{\mb{F}_g=m\mb{g}}
+  }
+  
+  \vspace{-.15in}For objects near the surface of Earth, we assume that
+  $\mb{g}=-g\bm{\hat{\jmath}}=-10\bm{\hat{\jmath}}$
+  (in \si{\metre\per\second^2}) is a constant. The work done to raise an object
+  from height $h_1$ to $h_2$ is therefore:
 
-    \vspace{-.3in}{\Large
-      \begin{align*}
-        W&=\int \mb{F}_g\cdot d\mb{h}
-        =\int_{h_1}^{h_2} -mg\bm{\hat{\jmath}}\cdot dh\hat{\bm{\jmath}}\\
-        &=-mgh\Big|^{h_2}_{h_1}=-\Delta(mgh)=-\Delta U_g
+  \vspace{-.35in}{\Large
+    \begin{align*}
+      W&=\int \mb{F}_g\cdot d\mb{h}
+      =\int_{h_1}^{h_2} -mg\bm{\hat{\jmath}}\cdot dh\hat{\bm{\jmath}}\\
+      &=-mgh\Big|^{h_2}_{h_1}=-\Delta(mgh)=-\Delta U_g
     \end{align*}
-    }
-  \item $U_g=mgh$ is the gravitational potential energy
-  \end{itemize}
+  }
+
+  \vspace{-.15in}where $U_g=mgh$ is the \textbf{gravitational potential energy}
 \end{frame}
- 
+
+
+
+%\begin{frame}{Work and Kinetic Energy}
+%  Like kinetic energy, the definition of gravitational potential energy came
+%  from this integration, in that work equals to the change in \emph{something},
+%  and we called that gravitational potential energy.
+%
+%  \eq{-.2in}{
+%    \boxed{W_\mathrm{net}=\Delta U_g}
+%  }
+%  \begin{itemize}
+%  \item\vspace{-.15in} $\Delta U_g$ can be positive or negative depending on
+%    the direction of the force
+%  \item There may be multiple forces acting on an object; each of the forces
+%    can add or take away gravitational potential energy from an object
+%  \end{itemize}
+%\end{frame}
+
+
+
 \begin{frame}
   \frametitle{Spring Force \& Elastic Potential Energy}
-  \begin{itemize}
-  \item The spring force $F_x$ is the force a compressed or stretched spring
-    exerts onto objects connected to it. It obeys Hooke's Law:
+  The spring force $\mb{F}_e$ is the force a compressed or stretched spring
+  exerts onto objects connected to it. It obeys Hooke's Law:
     
-    \vspace{-.2in}{\Large
-      \begin{displaymath}
-        F_x=-kx
-      \end{displaymath}
-    }
-  \item If we apply Hooke's law into the work equation, we can find the
-    work done when compressing/stretching a spring:
+  \eq{-.2in}{
+    \boxed{\mb{F}_e=-k\mb{x}}
+  }
 
-    \vspace{-.35in}{\Large
-      \begin{align*}
-        W&=\int F_xdx=\int -kxdx=-\frac{1}{2}kx^2\Big|^{x_2}_{x_1}
-        =-\Delta\left(\frac{1}{2}kx^2\right)\\
-        &=-\Delta U_e
-      \end{align*}
-    }
-  \item $U_e=\frac{1}{2}kx^2$ is the elastic potential energy
+  \vspace{-.2in}When Hooke's law is applied to the work equation, we can find
+  the work done to compress/stretch a spring:
+
+  \vspace{-.35in}{\Large
+    \begin{align*}
+      W&=\int\mb{F}_e\cdot d\mb{x}=\int -kxdx=-\frac{1}{2}kx^2\Big|^{x_2}_{x_1}
+      =-\Delta\left(\frac{1}{2}kx^2\right)\\
+      &=-\Delta U_e
+    \end{align*}
+  }
+  where $U_e=\frac{1}{2}kx^2$ is the elastic potential energy
+\end{frame}
+
+
+
+\begin{frame}{Work and Kinetic Energy}
+  Like kinetic energy, the definition of gravitational and elastic potential
+  energies came from integrating the work equation, in that work equals to the
+  change in \emph{something}, and we called that potential energy.
+
+  \eq{-.2in}{
+    \boxed{W_\mathrm{net}=\Delta U}
+  }
+  \begin{itemize}
+  \item\vspace{-.15in} $\Delta U$ can be positive or negative depending on the
+    direction of the force
+  \item There may be multiple forces acting on an object; each of the forces
+    can add or take away gravitational potential energy from an object
   \end{itemize}
 \end{frame}
+
+
+
+\begin{frame}
+  \frametitle{The Work-Energy Theorem and Conservation of Energy}
+  Work is equal to the sum of the changing potential and kinetic energy.
+  $K$ is the kinetic energy of objects, and $U$ are all the potential energies.
+
+  \eq{-.25in}{\boxed{W = \Delta U+\Delta K}}
+
+  For an \emph{isolated system}, the net amount of work done to the system
+  by its surrounding must be zero, i.e.\ $W=0$, therefore energy in the system
+  must be conserved
+  
+  \eq{-.3in}{\boxed{U + K = U' + K'}}
+
+  Let's take a closer look at isolated systems
+\end{frame}
+
+
+
+
+
+
+\begin{frame}
+  \frametitle{Isolated Systems and the Conservation of Energy}
+  \begin{itemize}
+  \item An isolated system is a system of objects that does not interact with
+    its surroundings
+  \item ``Interaction'' can be in the form of
+    \begin{itemize}
+    \item Friction
+    \item Exchange of heat
+    \item Sound emission
+    \end{itemize}
+  \item Think of an isolated system as a bunch of objects inside an insulated
+    box
+  \end{itemize}
+  \begin{center}
+    \begin{tikzpicture}[scale=0.8]
+      \fill[pattern=north east lines] (0,0) rectangle(5,4);
+      \draw[ultra thick] (0,0) rectangle(5,4);
+      \draw[ultra thick,fill=white](0.25,0.25) rectangle(4.75,3.75);
+      \draw[thick,
+        decoration={aspect=0.3,segment length=2mm, amplitude=2.5mm, coil},
+        decorate] (2.5,3.75)--(2.5,2.25) node[midway,right]{$\;\;k$};
+      \draw[fill=black!40](2,2.25) rectangle(3,1.25) node[midway]{$m$};
+    \end{tikzpicture}
+  \end{center}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Isolated Systems and Conservation of Energy}
+  \begin{itemize}
+  \item Since the system is isolated from the surrounding environment, the
+    environment can't do any work on it, by definition!
+  \item Likewise, the energy inside the system cannot escape either
+  \item Therefore energy is conserved
+  \item There are \emph{internal} force inside the system that is doing work,
+    but the work only converts kinetic energy into potential energies, and vice
+    versa.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Example: Mass sliding on a spring}
+
+  \begin{itemize}
+  \item Assuming that there is no friction in any part of the system
+  \item The isolated system consists of the mass and the spring 
+  \item Energies:
+    \begin{itemize}
+    \item Kinetic energy of the mass
+    \item Elastic potential energy stored in the spring
+    \end{itemize}
+  \end{itemize}
+  \begin{center}
+    \begin{tikzpicture}[scale=1.1]
+      \node[fill=blue!70,inner sep=4.5mm] (a) at (5.5,1) {$m$};
+      \draw[thick,draw=black!70,
+        decoration={aspect=0.3,segment length=2mm, amplitude=2.5mm, coil},
+        decorate] (0,1)--(4.95,1);
+      \fill [pattern=north east lines] (6.5,0.5)--(6.5,0.3)--(-0.2,0.3)
+      --(-0.2,2)--(0,2)--(0,0.5)--cycle;
+      \draw[very thick] (0,0.5)--(6.5,0.5);
+      \draw[very thick] (0,0.5)--(0,2);
+    \end{tikzpicture}
+  \end{center}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Example: Gravity}
+
+  \begin{center}
+    \begin{tikzpicture}[scale=0.8]
+      \draw[thick,fill=gray!30] (7.75,0) arc(75:105:30);
+      \draw[fill=blue!50] (0,4) circle(0.2) node[right]{$\;m$};
+      \draw[ultra thick, red!65,->] (0,4)--(0,3) node[pos=1,below]{$\mb{F}_g$};
+    \end{tikzpicture}
+  \end{center}
+  
+  \begin{itemize}
+  \item The isolated system consists only of the mass and Earth.
+  \item Assuming no friction
+  \item Energies:
+    \begin{itemize}
+    \item Kinetic energy of the mass
+    \item Gravitational potential energy of the mass
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Example: A vertical spring-mass system}
+
+  \begin{columns}
+    \column{.17\textwidth}
+    \begin{tikzpicture}[scale=1.3]
+      \node[fill=blue!70,inner sep=3.5mm] (b) at (1,2) {};
+      \draw[thick,
+        decoration={aspect=0.3,segment length=2mm, amplitude=2.5mm, coil},
+        decorate] (1,5)--(b); 
+      \fill [pattern=north east lines] (0,5) rectangle (2,5.2);
+      \draw[ultra thick] (0,5)--(2,5);
+    \end{tikzpicture}
+    \column{.85\textwidth}
+    \begin{itemize}
+    \item The system consists of a mass, a spring and Earth
+    \item Energies:
+      \begin{itemize}
+      \item Kinetic energy of the mass
+      \item Gravitational potential energy of the mass
+      \item Elastic potential energy stored in the spring
+      \end{itemize}
+    \item The total energy of the system is conserved if there is no friction
+    \end{itemize}
+  \end{columns}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{What if there is friction?}
+  Energy is always conserved as long as your system is defined properly
+
+  \begin{columns}
+    \column{.2\textwidth}
+    \begin{tikzpicture}[scale=0.7]
+      \fill[pattern=north east lines] (0,0) rectangle(5,4);
+      \draw[ultra thick] (0,0) rectangle(5,4);
+      \draw[ultra thick,fill=blue!10](0.25,0.25) rectangle(4.75,3.75);
+      \draw[thick,
+        decoration={aspect=0.3,segment length=2mm, amplitude=2.5mm, coil},
+        decorate] (2.5,3.75)--(2.5,2.25) node[midway,right]{$\;\;k$};
+      \draw[fill=black!40](2,2.25) rectangle(3,1.25) node[midway]{$m$};
+    \end{tikzpicture}
+    \column{.8\textwidth}
+    \begin{itemize}
+    \item The system consists of a mass, a spring, Earth and all the air
+      particles inside the box
+    \item As the mass vibrates, friction with air slows it down
+    \item While the mass loses energy, the temperature of the air rises due to
+      friction
+    \item Energies:
+      \begin{itemize}
+      \item Kinetic and gravitational potential energies of the mass
+      \item Elastic potential energy stored in the spring
+      \item Kinetic energy of the vibration of the air molecules
+      \end{itemize}
+    \item Total energy is conserved even as the mass stops moving
+    \end{itemize}
+  \end{columns}
+\end{frame}
+
+
 
 \begin{frame}
   \frametitle{Conservative Forces}
@@ -153,10 +408,8 @@
     between two points is independent of the path taken. This force is related
     to a potential energy by:
     
-    \vspace{-.2in}{\Large
-      \begin{displaymath}
-        \boxed{F_x=-\frac{dU}{dx}}
-      \end{displaymath}
+    \eq{-.2in}{
+      \boxed{F_x=-\frac{dU}{dx}}
     }
   \item The direction of the force decreases the potential energy
   \end{itemize}
@@ -234,10 +487,8 @@
   \textbf{Linear momentum} is directly proportional to the object's
   \textbf{mass} and its \textbf{velocity}.
 
-  \vspace{-0.35in}{\Huge
-    \begin{displaymath}
-      \boxed{\mb{p}=m\mb{v}}
-    \end{displaymath}
+  \eq{-.35in}{
+    \boxed{\mb{p}=m\mb{v}}
   }
   \begin{center}
     \begin{tabular}{l|c|l}
@@ -260,11 +511,9 @@
   Start with our ``standard form'' of Newton's second law of motion with
   constant $m$, we can find out how $\Delta\mb{p}$ relates to $\mb{F}$:
  
-  \vspace{-0.25in}{\Large
-    \begin{displaymath}
-      \sum\mb{F}=m\mb{a}=m\frac{d\mb{v}}{dt}=\frac{d(m\mb{v})}{dt}
-      =\frac{d\mb{p}}{dt}
-    \end{displaymath}
+  \eq{-.25in}{
+    \sum\mb{F}=m\mb{a}=m\frac{d\mb{v}}{dt}=\frac{d(m\mb{v})}{dt}
+    =\frac{d\mb{p}}{dt}
   }
   \begin{itemize}
   \item $\mb{F}=\mb{p}'(t)$ is the general form, $\mb{F}=m\mb{a}$ is a special
@@ -283,18 +532,13 @@
   Let's get this by looking at Newton's 2nd law again. If we rearrange the
   variables:
   
-  \vspace{-.2in}{\LARGE
-    \begin{displaymath}
-      \mb{F}=\frac{d\mb{p}}{dt}\;\rightarrow\;
-      \mb{F}dt=d\mb{p}
-    \end{displaymath}
+  \eq{-.2in}{
+    \mb{F}=\frac{d\mb{p}}{dt}\;\rightarrow\; \mb{F}dt=d\mb{p}
   }
   We can integrate both sides to get the \textbf{impulse-momentum theorem}.
  
-  \vspace{-.2in}{\LARGE
-    \begin{displaymath}
-      \boxed{\mb{J}=\int_{t_1}^{t_2}\mb{F}dt=\int d\mb{p}=\Delta\mb{p}}
-    \end{displaymath}
+  \eq{-.2in}{
+    \boxed{\mb{J}=\int_{t_1}^{t_2}\mb{F}dt=\int d\mb{p}=\Delta\mb{p}}
   }
   The quantity $\mb{J}$ is called the impulse.
 \end{frame}
@@ -306,10 +550,8 @@
   \item $\mb{F}$, $\mb{p}$ and $\mb{J}$ are all vectors, so the integral can
     be evaluated in each of the $x$, $y$ and $z$ axis, e.g.
 
-    \vspace{-.3in}{\Large
-      \begin{displaymath}
-        J_x=\int_{t_1}^{t_2}F_xdt=\int dp_x=\Delta p_x
-      \end{displaymath}
+    \eq{-.3in}{
+      J_x=\int_{t_1}^{t_2}F_xdt=\int dp_x=\Delta p_x
     }
     
     \vspace{-.2in}for the $x$ direction.
@@ -317,11 +559,9 @@
     impulse. In reality, the average force really is a ``force'' that gets the
     same impulse as the integral on the last slide, i.e.
 
-    \vspace{-.35in}{\Large
-      \begin{displaymath}
-        \mb{F}_\mathrm{ave}=\frac{\int_{t_1}^{t_2}\mb{F}dt}{t_2-t_1}
-        =\frac{\mb{J}}{\Delta t}
-      \end{displaymath}
+    \eq{-.35in}{
+      \mb{F}_\mathrm{ave}=\frac{\int_{t_1}^{t_2}\mb{F}dt}{t_2-t_1}
+      =\frac{\mb{J}}{\Delta t}
      }
   \item Note that impulse does not depend on whether the object moves
   \end{itemize}
@@ -360,10 +600,8 @@
   \item Suppose there is no external force, the momentum of the total system
     would always be constant. We saw that a few slides ago:
 
-    \vspace{-.2in}{\Large
-      \begin{displaymath}
-        \sum\mb{p}(t_1)=\sum\mb{p}(t_2)
-      \end{displaymath}
+    \eq{-.2in}{
+      \sum\mb{p}(t_1)=\sum\mb{p}(t_2)
     }
   \end{itemize}
 \end{frame}
