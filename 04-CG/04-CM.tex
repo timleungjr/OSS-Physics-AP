@@ -4,7 +4,7 @@
 {
   \usetheme{Singapore}
   \setbeamersize{text margin left=0.75cm,text margin right=1cm}
-  \setbeamertemplate{navigation symbols}{} % suppress nav bar
+%  \setbeamertemplate{navigation symbols}{} % suppress nav bar
 %  \setbeamercovered{transparent}
 }
 \usefonttheme{professionalfonts}
@@ -19,14 +19,17 @@
 
 \sisetup{number-math-rm=\mathnormal}
 
-\title{Class 4.\ Center of Mass}
-\subtitle{AP Physics}
+\title{Topic 4: Center of Mass}
+\subtitle{Advanced Placement Physics}
 \author[TML]{Timothy Leung, Ph.D.}
 \institute{Olympiads School}
-\date{Fall/Winter 2017}
+%\date{Fall/Winter 2017}
+\date{Summer 2018}
 
 \newcommand{\pic}[2]{\includegraphics[width=#1\textwidth]{#2}}
 \newcommand{\mb}[1]{\ensuremath\mathbf{#1}}
+\newcommand{\eq}[2]{\vspace{#1}{\Large\begin{displaymath}#2\end{displaymath}}}
+
 
 \begin{document}
 
@@ -34,36 +37,37 @@
   \maketitle
 \end{frame}
 
-\begin{frame}
-  \frametitle{Files for You to Download}
-  \framesubtitle{Please download/print the PDF file}
-  \begin{itemize}
-  %\item\texttt{00-outline.pdf}--The course outline (slightly updated)
-  \item\texttt{04-CM-print.pdf}--The ``print version'' of this week's slides.
-    I recommend that you print 4 slides per page.
-  \item\texttt{04-Homework.pdf} (Available after Dec.\ 2) This week's homework.
-    We are taking up questions from Class 3 today, but please hand in Classes 3
-    \& 4 homework together next week.
-  \end{itemize}
-\end{frame}
-
-\begin{frame}
-  \frametitle{Today's Plan}
-  \begin{enumerate}
-  \item Go over today's slides on center of mass
-  \item Take up homework questions from last week's class (do not hand them in
-    yet; wait another week)
-  \item Time permitting: take up questions from Class 1 and 2 (calculus)
-  \end{enumerate}
-\end{frame}
+%\begin{frame}
+%  \frametitle{Files for You to Download}
+%  \framesubtitle{Please download/print the PDF file}
+%  \begin{itemize}
+%  %\item\texttt{00-outline.pdf}--The course outline (slightly updated)
+%  \item\texttt{04-CM-print.pdf}--The ``print version'' of this week's slides.
+%    I recommend that you print 4 slides per page.
+%  \item\texttt{04-Homework.pdf} (Available after Dec.\ 2) This week's homework.
+%    We are taking up questions from Class 3 today, but please hand in Classes 3
+%    \& 4 homework together next week.
+%  \end{itemize}
+%\end{frame}
+%
+%\begin{frame}
+%  \frametitle{Today's Plan}
+%  \begin{enumerate}
+%  \item Go over today's slides on center of mass
+%  \item Take up homework questions from last week's class (do not hand them in
+%    yet; wait another week)
+%  \item Time permitting: take up questions from Class 1 and 2 (calculus)
+%  \end{enumerate}
+%\end{frame}
 
 
 \begin{frame}
   \frametitle{Center of Mass}
-  Finding an object's center of mass\footnote{\textbf{Pro-tip:} Since the AP
-    Physics exam is \emph{American}, the spelling convention we will use in
-    class will be American as well, as in \emph{center} instead of
-    \emph{centre}, \emph{labor} instead of \emph{labour}.}
+  Finding an object's center of mass
+  %\footnote{\textbf{Pro-tip:} Since the AP
+  %  Physics exam is \emph{American}, the spelling convention we will use in
+  %  class will be American as well, as in \emph{center} instead of
+  %  \emph{centre}, \emph{labor} instead of \emph{labour}.}
   is important, because
   \begin{itemize}
   \item Newton's laws of motion are formulated by treating an objects as point
@@ -78,8 +82,9 @@
 
 \begin{frame}
   \frametitle{Start with a Definition} %, and an Example}
-  The center of mass (``CM''), or center of gravity (``CG''), is the
-  \emph{weighted average of the masses in a system.} The ``system'' may be:
+  The \textbf{center of mass} (``CM''), or \textbf{center of gravity} (``CG''),
+  is the \emph{weighted average of the masses in a system.} The ``system'' may
+  be:
   \begin{itemize}
   \item A collection of individual particles (use summation to compute CM)
   \item A continuous distribution of mass with constant density (use
@@ -93,26 +98,24 @@
 
 \begin{frame}
   \frametitle{Simple Example}
-  \begin{itemize}
-  \item We start with a very simple example: there are two equal masses along
-    the $x$-axis. What is the center of mass of the system?
+  We start with a very simple example: there are two equal masses along the
+  $x$-axis. What is the center of mass of the system?
     
-    \vspace{0.25in}
-    \begin{center}
-      \begin{tikzpicture}
-        \draw[->] (-4,0)--(4,0) node[pos=1,right]{$x$};
-        \draw[fill=gray!50] (-2.5,0) circle(0.3) node{$m$};
-        \draw[fill=gray!50] (2.5,0) circle(0.3)  node{$m$};
-        \uncover<2->{
-          \draw[fill=black] (0,0) circle(0.05) node[below]{CM};
-        }
-      \end{tikzpicture}
-    \end{center}
-    \vspace{0.2in}
+  \vspace{.25in}
+  \begin{center}
+    \begin{tikzpicture}
+      \draw[->] (-4,0)--(4,0) node[pos=1,right]{$x$};
+      \draw[fill=gray!50] (-2.5,0) circle(.3) node{$m$};
+      \draw[fill=gray!50] (2.5,0)  circle(.3) node{$m$};
+      \uncover<2->{
+        \draw[fill=black] (0,0) circle(.05) node[below]{CM};
+      }
+    \end{tikzpicture}
+  \end{center}
+  \vspace{.2in}
 
-  \item<2-> The answer is really simple: it's at the half way point between
-    the two!
-  \end{itemize}
+  \uncover<2->{The answer is really simple: it's at the half way point between
+    the two masses!}
 \end{frame}
 
  
@@ -123,18 +126,18 @@
   \item This is still not a terribly difficult problem; you can still
     \emph{guess} the right answer without know the equation for center of mass.
     
-    \vspace{0.25in}
+    \vspace{.25in}
     \begin{center}
       \begin{tikzpicture}
         \draw[->] (-4,0)--(4,0) node[pos=1,right]{$x$};
-        \draw[fill=gray!50] (-2.5,0) circle(0.3) node{$m$};
-        \draw[fill=gray!50] (2.5,0) circle(0.42)  node{$2m$};
+        \draw[fill=gray!50] (-2.5,0) circle(.3) node{$m$};
+        \draw[fill=gray!50] (2.5,0) circle(.42) node{$2m$};
         \uncover<2->{
-          \draw[fill=black] (0.833,0) circle(0.05) node[below]{CM};
+          \draw[fill=black] (.833,0) circle(.05) node[below]{CM};
         }
       \end{tikzpicture}
     \end{center}
-    \vspace{0.15in}
+    \vspace{.15in}
 
   \item<2-> The answer is still simple. The CM is no longer at the half way
     point between the two masses, but now $\frac{1}{3}$ the total distance from
@@ -146,39 +149,36 @@
 \begin{frame}
   \frametitle{Complicating Things Further}
   \framesubtitle{Many Point Masses}
-  \begin{itemize}
-  \item If we increase the number of point masses along the $x$-axis, our
-    problem can become much more complicated (although still not devastatingly
-    so)
+  If we increase the number of point masses along the $x$-axis, our problem can
+  become much more complicated (although still not devastatingly so)
 
-    \vspace{0.1in}
-    \begin{center}
-      \begin{tikzpicture}
-        \draw[->] (-4,0)--(4,0) node[pos=1,right]{$x$};
-        \draw[fill=gray!50] (-3.2,0) circle(0.4);
-        \draw[fill=gray!50] (-2.5,0) circle(0.1);
-        \draw[fill=gray!50] (1.5,0) circle(0.15);
-        \draw[fill=gray!50] (0  ,0) circle(0.3);
-        \draw[fill=gray!50] (2.5,0) circle(0.25);
-      \end{tikzpicture}
-    \end{center}
-
-  \item Difficulties really arises when there are many masses in the system in
-    2D or 3D:
+  \vspace{.1in}
+  \begin{center}
+    \begin{tikzpicture}
+      \draw[->] (-4,0)--(4,0) node[pos=1,right]{$x$};
+      \draw[fill=gray!50] (-3.2,0) circle(.4);
+      \draw[fill=gray!50] (-2.5,0) circle(.1);
+      \draw[fill=gray!50] (1.5,0) circle(.15);
+      \draw[fill=gray!50] (0  ,0) circle(.3);
+      \draw[fill=gray!50] (2.5,0) circle(.25);
+    \end{tikzpicture}
+  \end{center}
+  
+  Difficulties really arises when there are many masses in the system in 2D or
+  3D:
     
-    \vspace{-0.1in}
-    \begin{center}
-      \begin{tikzpicture}
-        \draw[->] (-3,0)--(3,0) node[pos=1,right]{$x$};
-        \draw[->] (0,-1.5)--(0,1.5) node[pos=1,above]{$y$};
-        \draw[fill=gray!50] (-1.3,1) circle(0.4);
-        \draw[fill=gray!50] (-1.5,-0.5) circle(0.1);
-        \draw[fill=gray!50] (1,0.3) circle(0.15);
-        \draw[fill=gray!50] (0,.3) circle(0.2);
-        \draw[fill=gray!50] (2,-1) circle(0.25);
-      \end{tikzpicture}
-    \end{center}
-  \end{itemize}
+  \vspace{-.1in}
+  \begin{center}
+    \begin{tikzpicture}
+      \draw[->] (-3,0)--(3,0) node[pos=1,right]{$x$};
+      \draw[->] (0,-1.5)--(0,1.5) node[pos=1,above]{$y$};
+      \draw[fill=gray!50] (-1.3,1) circle(.4);
+      \draw[fill=gray!50] (-1.5,-.5) circle(.1);
+      \draw[fill=gray!50] (1,.3) circle(.15);
+      \draw[fill=gray!50] (0,.3) circle(.2);
+      \draw[fill=gray!50] (2,-1) circle(.25);
+    \end{tikzpicture}
+  \end{center}
 \end{frame}
 
 
@@ -207,7 +207,7 @@
 \begin{frame}
   \frametitle{Breaking Down Into Components}
   
-  {\large
+  {\Large
     \begin{displaymath}
       \mb{x}_\mathrm{CM}=\frac{\sum \mb{x}_i m_i}{\sum m_i}
     \end{displaymath}
@@ -215,17 +215,13 @@
   \begin{itemize}
   \item Position vectors have $x$, $y$ and $z$ components: 
     $\mb{x}=x\hat{\bm{\imath}} + y\hat{\bm{\jmath}} + z\hat{\bm{k}}$
-  \item We can deal with each component individually. For example, in the
-    $y$-direction:
+  \item We can deal with each component individually, i.e.:
 
-    \vspace{-.2in}{\large
-      \begin{displaymath}
-        y_\mathrm{CM}=\frac{\sum y_i m_i}{\sum m_i}
-    \end{displaymath}
+    \eq{-.2in}{
+      x_\mathrm{CM}=\frac{\sum x_i m_i}{\sum m_i}\quad\quad
+      y_\mathrm{CM}=\frac{\sum y_i m_i}{\sum m_i}\quad\quad
+      z_\mathrm{CM}=\frac{\sum z_i m_i}{\sum m_i}
     }
-    
-    where $y_\mathrm{CM}$ is the $y$-coordinate of the CM, and $y_i$ are the
-    $y$-coordinates of the individual point masses
   \end{itemize}
 \end{frame}
 
@@ -235,31 +231,27 @@
   \textbf{Example 1:} Consider the following masses and their coordinates
   which make up a ``discrete mass'' rigid body''
   \begin{align*}
-    m_1&=\SI{5.0}{\kg} &\mb{x}_1&=3\hat{\bm{\imath}}-2\hat{\bm{k}}\\
-    m_2&=\SI{10.0}{\kg}&\mb{x}_2&=-4\hat{\bm{\imath}}+2\hat{\bm{\jmath}}+7\hat{\bm{k}}\\
-    m_3&=\SI{1.0}{\kg}&\mb{x}_3&=10\hat{\bm{\imath}}-17\hat{\bm{\jmath}}+10\hat{\bm{k}}
+    m_1&=\SI{5.}{\kg} &\mb{x}_1&=3\hat{\bm{\imath}}-2\hat{\bm{k}}\\
+    m_2&=\SI{10.}{\kg}&\mb{x}_2&=-4\hat{\bm{\imath}}+2\hat{\bm{\jmath}}+7\hat{\bm{k}}\\
+    m_3&=\SI{1.}{\kg}&\mb{x}_3&=10\hat{\bm{\imath}}-17\hat{\bm{\jmath}}+10\hat{\bm{k}}
   \end{align*}
   What are the coordinates for the center of mass of this system?
 \end{frame}
 \begin{frame}
   \frametitle{Continuous Mass Distribution}
-  Most real-life masses are not a discrete collection of point masses, so for
-  continuous mass distributions, we take the limit of when the number of
-  masses approaches $\infty$:
+  In general, masses are not a discrete collection of point masses, but a
+  continuous distribution of mass. In this case, we take the limit of when the
+  number of masses approaches $\infty$:
   
-  \vspace{-0.25in}{\LARGE
-    \begin{displaymath}
-      \mb{x}_\mathrm{CM}=\lim_{n\rightarrow\infty}
-      \left(\frac{\sum_{i=1}^n \mb{x}_i m_i}{\sum_{i=1}^n m_i}\right)
-    \end{displaymath}
+  \eq{-.25in}{
+    \mb{x}_\mathrm{CM}=\lim_{n\rightarrow\infty}
+    \left(\frac{\sum_{i=1}^n \mb{x}_i m_i}{\sum_{i=1}^n m_i}\right)
   }
 
-  This, in fact, gives us an integral version of our equation:
+  This gives us an integral version of our equation:
 
-  \vspace{-0.2in}{\LARGE
-    \begin{displaymath}
-      \boxed{\mb{x}_\mathrm{CM}=\frac{\int\mb{x} dm}{\int dm}}
-    \end{displaymath}
+  \eq{-.2in}{
+    \boxed{\mb{x}_\mathrm{CM}=\frac{\int\mb{x} dm}{\int dm}}
   }
 \end{frame}
 
@@ -291,27 +283,26 @@
 
 \begin{frame}
   \frametitle{An Example with Integrals}
-  \begin{minipage}{0.59\textwidth}
+  \begin{columns}
+    \column{.65\textwidth}
     \textbf{Example 2:} A triangular plate is placed in a Cartesian coordinate
     system with two of its edges along the $x$ and $y$-axis. The length of the
     edges along the axes are $a$ and $b$ respectively. Assuming that the
     surface area density $\sigma$ is uniform, determine the coordinate of its
     center of mass.
-  \end{minipage}
-  \begin{minipage}{0.4\textwidth}
-    \begin{center}
-      \begin{tikzpicture}[scale=0.8]
-        \draw[->](0,0)--(4,0) node[pos=1,right]{\footnotesize $x$};
-        \draw[->](0,0)--(0,5) node[pos=1,above]{\footnotesize $y$};
-        \draw[fill=gray!60](0,0)--(3,0) node[midway,below]{$a$}
-        --(0,4)--cycle node[midway,left]{$b$};
-        \uncover<2->{
-          \draw[fill=red](1,0)--(1.2,0)--(1.2,2.4)--(1.0,2.67)
+
+    \column{.35\textwidth}
+    \begin{tikzpicture}[scale=.8]
+      \draw[->](0,0)--(4,0) node[pos=1,right]{\footnotesize $x$};
+      \draw[->](0,0)--(0,5) node[pos=1,above]{\footnotesize $y$};
+      \draw[fill=gray!60](0,0)--(3,0) node[midway,below]{$a$}
+      --(0,4)--cycle node[midway,left]{$b$};
+      \uncover<2->{
+        \draw[fill=red](1,0)--(1.2,0)--(1.2,2.4)--(1,2.67)
           node[midway,right]{\footnotesize $dm$}--cycle;
-        }
-      \end{tikzpicture}
-    \end{center}
-  \end{minipage}
+      }
+    \end{tikzpicture}
+  \end{columns}
 \end{frame}
 
 
@@ -319,26 +310,25 @@
   \frametitle{A Difficult Example to Try at Home}
   This is not typically an AP-level problem, but this example shows how we
   can use integral to find the center of mass for something very complicated.
-  \begin{minipage}{0.58\textwidth}
+  \begin{columns}
+    \column{.6\textwidth}
     \textbf{Example 3:} Find the $x$-coordinate of the center of mass in the
     shape bound by the two functions shown on the right.
-  \end{minipage}
-  \begin{minipage}{0.4\textwidth}
-    \begin{center}
-      \begin{tikzpicture}[scale=3]
-        \draw[->](0,0)--(1.25,0) node[pos=1,right]{\footnotesize $x$};
-        \draw[->](0,0)--(0,1.25) node[pos=1,above]{\footnotesize $y$};
-        \draw[fill=green!40]
-        plot[smooth,samples=50,domain=0:1] (\x,{\x*\x*\x})--
-        plot[smooth,samples=50,domain=1:0] (\x,{\x^(0.5)});
-        
-        \draw[red!70,thick] plot[smooth,samples=50,domain=0:1] (\x,{\x*\x*\x});
-        \draw[blue!70,thick] plot[smooth,samples=50,domain=0:1] (\x,{\x^(0.5)});
-        \node at (0.4,0.85){\textcolor{blue!70}{\footnotesize $y=\sqrt{x}$}};
-        \node at (0.9,0.3){\textcolor{red!70}{\footnotesize $y=x^3$}};
-      \end{tikzpicture}
-    \end{center}
-  \end{minipage}
+
+    \column{.4\textwidth}
+    \begin{tikzpicture}[scale=3]
+      \draw[->](0,0)--(1.25,0) node[pos=1,right]{\footnotesize $x$};
+      \draw[->](0,0)--(0,1.25) node[pos=1,above]{\footnotesize $y$};
+      \draw[fill=green!40]
+      plot[smooth,samples=50,domain=0:1] (\x,{\x*\x*\x})--
+      plot[smooth,samples=50,domain=1:0] (\x,{\x^(.5)});
+      
+      \draw[red!70,thick] plot[smooth,samples=50,domain=0:1] (\x,{\x*\x*\x});
+      \draw[blue!70,thick] plot[smooth,samples=50,domain=0:1] (\x,{\x^(.5)});
+      \node at (.4,.85){\textcolor{blue!70}{\footnotesize $y=\sqrt{x}$}};
+      \node at (.9,.3){\textcolor{red!70}{\footnotesize $y=x^3$}};
+    \end{tikzpicture}
+  \end{columns}
 \end{frame}
 
 \begin{frame}
@@ -366,10 +356,10 @@
       \begin{tikzpicture}
         \draw[thick,fill=gray](0,0) circle(2);
         \draw[thick,fill=white](0,1) circle(1);
-        \draw[fill=black](0,0) circle(0.04);
+        \draw[fill=black](0,0) circle(.04);
         \draw[thick,->](0,0)--(-1.41,-1.41) node[midway,below]{\footnotesize$r$};
-        \draw[fill=black](0,1) circle(0.04);
-        \draw[thick,->](0,1)--(0.707,.293) node[pos=1,right]{\footnotesize$r/2$};
+        \draw[fill=black](0,1) circle(.04);
+        \draw[thick,->](0,1)--(.707,.293) node[pos=1,right]{\footnotesize$r/2$};
       \end{tikzpicture}
     \end{center}
   \end{itemize}
@@ -382,13 +372,13 @@
   \item This is how we would think of it:
     
     \begin{center}
-      \begin{tikzpicture}[scale=0.6]
+      \begin{tikzpicture}[scale=.6]
         \draw[thick,fill=gray](0,0) circle(2);
         \draw[thick,fill=white](0,1) circle(1);
-        \draw[fill=black](0,0) circle(0.04);
+        \draw[fill=black](0,0) circle(.04);
         \draw[thick,->](0,0)--(-1.41,-1.41) node[midway,below]{\footnotesize$r$};
-        \draw[fill=black](0,1) circle(0.04);
-        \draw[thick,->](0,1)--(0.707,.293) node[pos=1,right]{\footnotesize$r/2$};
+        \draw[fill=black](0,1) circle(.04);
+        \draw[thick,->](0,1)--(.707,.293) node[pos=1,right]{\footnotesize$r/2$};
       
         \draw[thick,fill=gray](6,0) circle(2) node{\large$A$};
         \draw[thick,fill=gray](11,1) circle(1) node{\large$B$};
@@ -416,37 +406,31 @@
 
 \begin{frame}
   \frametitle{Velocity, Acceleration and Momentum}
-  \begin{itemize}
-  \item We can take the time derivative of the equation for $\mb{x}_\mathrm{CM}$
-    to get a (very similar) expression for the velocity of the CM:
-    
-    \vspace{-0.1in}{\large
-      \begin{displaymath}
-        \mb{v}_\mathrm{CM}=\frac{d\mb{x}_\mathrm{CM}}{dt}
-        =\frac{1}{m}\frac{d}{dt}\left(\int\mb{x}dm\right)
-        =\frac{1}{m}\int\frac{d\mb{x}}{dt}dm
-        =\frac{\int \mb{v}dm}{m}
-      \end{displaymath}
-    }
-  \item The integral in the numerator is the sum of the momentum of all the
-    masses in the system ($\mb{p}_\mathrm{net}$) which means that we have
 
-    \vspace{-0.2in}{\large
-      \begin{displaymath}
-        \mb{p}_\mathrm{net}=m\mb{v}_\mathrm{CM}
-      \end{displaymath}
-    }
-  \item Taking the derivative of $\mb{p}_\mathrm{net}$ allows us to relate force
-    and acceleration at the CM as well:
+  We can take the time derivative of the equation for $\mb{x}_\mathrm{CM}$ to
+  get the velocity of the CM:
     
-    \vspace{-.15in}{\large
-      \begin{displaymath}
-        \mb{F}_\mathrm{net}=\frac{d\mb{p}_\mathrm{net}}{dt}
-        =m\frac{d\mb{v}_\mathrm{CM}}{dt}=m\mb{a}_\mathrm{CM}
-      \end{displaymath}
+  \eq{-.35in}{
+    \mb{v}_\mathrm{CM}=\frac{d\mb{x}_\mathrm{CM}}{dt}
+    =\frac{1}{m}\frac{d}{dt}\left(\int\mb{x}dm\right)
+    =\frac{1}{m}\int\frac{d\mb{x}}{dt}dm
+    =\frac{\int \mb{v}dm}{m}
+  }
+  
+  The integral in the numerator is the sum of the momentum of all the masses in
+  the system ($\mb{p}_\mathrm{net}$) which means that we have
+
+  \eq{-.27in}{
+    \mb{p}_\mathrm{net}=m\mb{v}_\mathrm{CM}
     }
-  \end{itemize}
-\end{frame}
+
+  \vspace{-.15in}Taking the derivative of $\mb{p}_\mathrm{net}$ allows us to
+  relate force and acceleration at the CM as well:
+    
+  \eq{-.3in}{
+    \mb{F}_\mathrm{net}=\frac{d\mb{p}_\mathrm{net}}{dt}
+    =m\frac{d\mb{v}_\mathrm{CM}}{dt}=m\mb{a}_\mathrm{CM}
+  }\end{frame}
 
 
 %\begin{frame}

@@ -19,14 +19,17 @@
 
 \sisetup{number-math-rm=\mathnormal}
 
-\title{Class 5: Circular Motion}
-\subtitle{AP Physics}
+\title{Topic 5: Circular Motion}
+\subtitle{Advanced Placement Physics}
 \author[TML]{Timothy Leung, Ph.D.}
 \institute{Olympiads School}
-\date{Fall/Winter 2017}
+%\date{Fall/Winter 2017}
+\date{Summer 2017}
 
 \newcommand{\pic}[2]{\includegraphics[width=#1\textwidth]{#2}}
 \newcommand{\mb}[1]{\ensuremath\mathbf{#1}}
+\newcommand{\eq}[2]{\vspace{#1}{\Large\begin{displaymath}#2\end{displaymath}}}
+
 
 \begin{document}
 
@@ -34,42 +37,43 @@
   \maketitle
 \end{frame}
 
-\begin{frame}
-  \frametitle{Files to Download}
-  \framesubtitle{Please download/print the PDF file}
-  \begin{itemize}
-%  %\item\texttt{00-outline.pdf}--The course outline (slightly updated)
-  \item\texttt{05-rotMotion-print.pdf}--The ``print version'' of this week
-    and next week's slides. I recommend printing 4 slides per page.
-  \item\texttt{0506-Homework.pdf} This week's homework.
-%    We are taking up questions from Class 3 today, but please hand in Classes 3
-%    \& 4 homework together next week.
-  \end{itemize}
-\end{frame}
-
-
-\begin{frame}
-  \frametitle{Today's Plan}
-  \begin{enumerate}
-  \item Take up questions from Classes 3 and 4 homework
-  \item Go over this week's slides (it will take more than one day)
-  %\item Time permitting: take up questions from Class 1 and 2 (calculus)
-  \end{enumerate}
-\end{frame}
+%\begin{frame}
+%  \frametitle{Files to Download}
+%  \framesubtitle{Please download/print the PDF file}
+%  \begin{itemize}
+%%  %\item\texttt{00-outline.pdf}--The course outline (slightly updated)
+%  \item\texttt{05-rotMotion-print.pdf}--The ``print version'' of this week
+%    and next week's slides. I recommend printing 4 slides per page.
+%  \item\texttt{0506-Homework.pdf} This week's homework.
+%%    We are taking up questions from Class 3 today, but please hand in Classes 3
+%%    \& 4 homework together next week.
+%  \end{itemize}
+%\end{frame}
+%
+%
+%\begin{frame}
+%  \frametitle{Today's Plan}
+%  \begin{enumerate}
+%  \item Take up questions from Classes 3 and 4 homework
+%  \item Go over this week's slides (it will take more than one day)
+%  %\item Time permitting: take up questions from Class 1 and 2 (calculus)
+%  \end{enumerate}
+%\end{frame}
 
 
 \section{Polar Coordinates}
+
 \begin{frame}
-  \frametitle{Polar Coordinate System}
+  \frametitle{Polar Coordinate System in 2D}
   \begin{columns}
     \column{.28\textwidth}
-    \begin{tikzpicture}[scale=0.75]
+    \begin{tikzpicture}[scale=.75]
       \draw[->](-3,0)--(3,0) node[pos=1,right]{\footnotesize$x$};
       \draw[->](0,-3)--(0,3) node[pos=1,above]{\footnotesize$y$};
       \draw[thick] (0,0) circle(2.5);
       \begin{scope}[rotate=38]
         \draw[->] (0,0)--(2.42,0) node[midway,above]{\footnotesize$r$};
-        \draw[fill=red!60] (2.5,0) circle(0.08)
+        \draw[fill=red!60] (2.5,0) circle(.08)
         node[above right]{\footnotesize$(x,y)$};
       \end{scope}
       \draw(1,0)[->] arc(0:38:1) node[midway,right]{\footnotesize$\theta$};
@@ -83,21 +87,19 @@
       \item $r$ is distance from the origin
       \item $\theta$ standard angle
       \end{itemize}
-%      \vspace{-0.2in}{\large
+%      \vspace{-.2in}{\large
 %        \begin{displaymath}
 %          \mb{r}=r\hat{\bm{r}}+\theta\hat{\bm{\theta}}
 %        \end{displaymath}
 %      }
     \item Cartesian coordinates are related to the polar coordinates by:
 
-      \vspace{-0.45in}{\large
+      \vspace{-.45in}{\large
         \begin{align*}
           x&=r\cos\theta\\
           y&=r\sin\theta
         \end{align*}
       }
-    \item In 3D, $z$ coordinates of both Cartesian and polar systems
-      are the same
     \end{itemize}
   \end{columns}
 \end{frame}
@@ -108,13 +110,13 @@
   \framesubtitle{Angular Position and Angular Velocity}
   \begin{columns}
     \column{.28\textwidth}
-    \begin{tikzpicture}[scale=0.75]
+    \begin{tikzpicture}[scale=.75]
       \draw[->](-3,0)--(3,0) node[pos=1,right]{\footnotesize$x$};
       \draw[->](0,-3)--(0,3) node[pos=1,above]{\footnotesize$y$};
       \draw[thick] (0,0) circle(2.5);
       \begin{scope}[rotate=38]
         \draw[->] (0,0)--(2.42,0) node[midway,above]{\footnotesize$r$};
-        \draw[fill=red!60] (2.5,0) circle(0.08)
+        \draw[fill=red!60] (2.5,0) circle(.08)
         node[above right]{\footnotesize$(x,y)$};
       \end{scope}
       \draw(1,0)[->] arc(0:38:1) node[midway,right]{\footnotesize$\theta$};
@@ -124,7 +126,7 @@
     \item For constant $r$, \textbf{angular position} $\theta$ determines an
       object's position as a function of time:
       
-      \vspace{-0.2in}{\large
+      \vspace{-.2in}{\large
         \begin{displaymath}
           \boxed{\theta=\theta(t)}
         \end{displaymath}
@@ -132,7 +134,7 @@
     \item\textbf{Angular velocity} $\omega$ (or \textbf{angular frequency})
       is its time derivative
       
-      \vspace{-0.3in}{\large
+      \vspace{-.3in}{\large
         \begin{displaymath}
           \boxed{\omega=\frac{d\theta(t)}{dt}}
         \end{displaymath}
@@ -149,15 +151,15 @@
   \framesubtitle{Angular Velocity}
   \begin{columns}
     \column{.28\textwidth}
-    \begin{tikzpicture}[scale=0.75]
+    \begin{tikzpicture}[scale=.75]
       \draw[->](-3,0)--(3,0) node[pos=1,right]{\footnotesize$x$};
       \draw[->](0,-3)--(0,3) node[pos=1,above]{\footnotesize$y$};
       \draw[thick] (0,0) circle(2.5);
       \begin{scope}[rotate=38]
         \draw[->] (0,0)--(2.42,0) node[midway,above]{\footnotesize$r$};
-        \draw[fill=red!60] (2.5,0) circle(0.08)
+        \draw[fill=red!60] (2.5,0) circle(.08)
         node[above right]{\footnotesize$(x,y)$};
-        \draw[ultra thick,->](2.5,0.08)--(2.5,1.5)
+        \draw[ultra thick,->](2.5,.08)--(2.5,1.5)
         node[pos=1,above]{\footnotesize$\mb{v}$};
       \end{scope}
       \draw(1,0)[->] arc(0:38:1) node[midway,right]{\footnotesize$\theta$};
@@ -166,31 +168,25 @@
     \begin{itemize}
     \item Speed $v$ and $\omega$ are related simply by:
 
-      \vspace{-0.35in}{\Large
-        \begin{displaymath}
-          \boxed{v=r\omega}
-        \end{displaymath}
+      \eq{-.35in}{
+        \boxed{v=r\omega}
       }
     \item Or in vector form:
 
-      \vspace{-0.35in}{\Large
-        \begin{displaymath}
-          \boxed{\mb{v}=\bm{\omega}\times\mb{r}}
-        \end{displaymath}
+      \eq{-.35in}{
+        \boxed{\mb{v}=\bm{\omega}\times\mb{r}}
       }
     \item $\mb{v}$ is always tangent to circle (perpendicular to $\mb{r}$)
     \item We can also relate $\omega$ to \textbf{frequency} and \textbf{period}
       of the rotation:
 
-      \vspace{-0.4in}{\Large
-        \begin{displaymath}
-          \boxed{f=\frac{\omega}{2\pi}}\quad
-          \boxed{T=\frac{2\pi}{\omega}}\quad
-          \boxed{f=\frac{1}{T}}
-        \end{displaymath}
+      \eq{-.4in}{
+        \boxed{f=\frac{\omega}{2\pi}}\quad
+        \boxed{T=\frac{2\pi}{\omega}}\quad
+        \boxed{f=\frac{1}{T}}
       }
       
-      \vspace{-0.1in}$T$ is in seconds (\si{\s}) and $f$ is in hertz
+      \vspace{-.1in}$T$ is in seconds (\si{\s}) and $f$ is in hertz
       (\si{\hertz})
     \end{itemize}
   \end{columns}
@@ -207,19 +203,20 @@
   \item at the center?
   \item at the top of the tire?
   \end{enumerate}
-  \vspace{-0.4in}
+
+  \vspace{-.4in}
   \begin{center}
     \hspace{1in}
-    \begin{tikzpicture}[scale=0.7]
+    \begin{tikzpicture}[scale=.7]
       \draw[fill=black](0,0) circle(3);
       \draw[fill=white](0,0) circle(2.2);
       \draw[ultra thick](-6,-3)--(6,-3);
-      \draw[ultra thick,blue!70,->](-0.707,-0.707) arc(225:135:1)
+      \draw[ultra thick,blue!70,->](-.707,-.707) arc(225:135:1)
       node[midway,left]{$\omega$};
-      \draw[fill=blue!70,blue!70](0,-3) circle(0.1) node[below right]{$v_a$};
-      \draw[fill=blue!70,blue!70](0,0) circle(0.1);
+      \draw[fill=blue!70,blue!70](0,-3) circle(.1) node[below right]{$v_a$};
+      \draw[fill=blue!70,blue!70](0,0) circle(.1);
       \draw[ultra thick,blue!70,->](0,0)--(1,0) node[pos=1,right]{$v_b$};
-      \draw[fill=blue!70,blue!70](0,3) circle(0.1);
+      \draw[fill=blue!70,blue!70](0,3) circle(.1);
       \draw[ultra thick,blue!70,->](0,3)--(2,3) node[pos=1,right]{$v_c$};
     \end{tikzpicture}
   \end{center}
@@ -232,22 +229,18 @@
   \item The derivative of $\omega$ with respect to time gives us
     \textbf{angular acceleration}:
 
-    \vspace{-0.2in}{\Large
-      \begin{displaymath}
-        \boxed{\alpha=\frac{d\omega(t)}{dt}=\frac{d^2\theta(t)}{dt^2}}
-      \end{displaymath}
+    \eq{-.2in}{
+      \boxed{\alpha=\frac{d\omega(t)}{dt}=\frac{d^2\theta(t)}{dt^2}}
     }
 
-    \vspace{-0.1in}$\alpha$ has the unit of \si{rad/\sec^2}.
+    \vspace{-.1in}$\alpha$ has the unit of \si{rad/\sec^2}.
 
   \item For \emph{uniform} circular motion, $\omega$ is constant, and $\alpha=0$
   \item Not surprisingly, \textbf{tangential acceleration} is related to
     angular acceleration by the radius $r$
     
-    \vspace{-0.2in}{\Large
-      \begin{displaymath}
-        \boxed{a_\theta=\frac{dv}{dt}=r\frac{d\omega(t)}{dt}=r\alpha}
-      \end{displaymath}
+    \eq{-.2in}{
+      \boxed{a_\theta=\frac{dv}{dt}=r\frac{d\omega(t)}{dt}=r\alpha}
     }
 
   \end{itemize}
@@ -261,14 +254,15 @@
   motion:
   
   \begin{columns}
-    \column{0.55\textwidth}
+    \column{.55\textwidth}
     {\LARGE
       \begin{align*}
         \Delta\theta&=\omega_1\Delta t + \frac{1}{2}\alpha\Delta t^2\\
         \Delta\theta&=\omega_2\Delta t - \frac{1}{2}\alpha\Delta t^2
       \end{align*}
     }
-    \column{0.45\textwidth}
+    
+    \column{.45\textwidth}
     {\LARGE
       \begin{align*}
         \Delta\theta&=\frac{\omega_1+\omega_2}{2} \Delta t\\
@@ -284,48 +278,45 @@
 \begin{frame}
   \frametitle{A Simple Example}
   \textbf{Example 1:} An object moves in a circle with angular acceleration
-  \SI{3}{rad/\s^2}. The radius is \SI{2}{\metre} and it starts from rest. How
+  \SI{3.}{rad/\s^2}. The radius is \SI{2.}{\metre} and it starts from rest. How
   long it takes for this object to finish a circle?
 \end{frame}
 
 
 \begin{frame}
   \frametitle{Nothing is Ever \emph{That} Simple}
-  \begin{itemize}
-  \item Remember, even when $\alpha=0$, we still have a centripetal
-    acceleration $a_r$ for any circular motion
 
-    \vspace{-0.1in}{\large
-      \begin{displaymath}
-        \boxed{a_r=\frac{v^2}{r}=\omega^2r=\frac{4\pi^2r}{T^2}=4\pi^2rf^2}
-      \end{displaymath}
-    }
+  Remember, even when $\alpha=0$, we still have a centripetal acceleration
+  $a_r$ for any circular motion
 
-  \item And with the acceleration, there is always a \textbf{centripetal force}
+  \eq{-.1in}{
+    \boxed{a_r=\frac{v^2}{r}=\omega^2r=\frac{4\pi^2r}{T^2}=4\pi^2rf^2}
+  }
 
-    \vspace{-0.1in}{\large
-      \begin{displaymath}
-        \boxed{F_r=ma_r=\frac{mv^2}{r}}
-      \end{displaymath}
-    }
-  \end{itemize}
+  And with the centripetal acceleration, there is also a
+  \textbf{centripetal force}
+
+  \eq{-.1in}{
+    \boxed{F_r=ma_r=\frac{mv^2}{r}}
+  }
 \end{frame}
 
 
 \begin{frame}
   \frametitle{Acceleration: The General Case}
   \begin{columns}
-    \column{0.2\textwidth}
+    \column{.2\textwidth}
     \begin{tikzpicture}[scale=4.3]
       %\draw[dashed] (0,0) circle(3);
-      \draw[dashed] (0.866,-0.5) arc(-30:30:1);
-      \draw[ultra thick, red,->] (1,0)--(0.5,0)
+      \draw[dashed] (.866,-.5) arc(-30:30:1);
+      \draw[ultra thick, red,->] (1,0)--(.5,0)
       node[pos=0.5,below]{\footnotesize $a_c=\frac{v^2}{r}$};
-      \draw[ultra thick, blue,->] (1,0)--(1,0.3)
+      \draw[ultra thick, blue,->] (1,0)--(1,.3)
       node[pos=1,above right]{\footnotesize $a_\theta=r\alpha$};
-      \fill (1,0) circle(0.02);
+      \fill (1,0) circle(.02);
     \end{tikzpicture}
-    \column{0.8\textwidth}
+    
+    \column{.8\textwidth}
     \begin{itemize}
     \item In general circular motion, there are two components of acceleration:
       \begin{itemize}
@@ -349,10 +340,8 @@
   \item Is there any circular motion?
   \item If so, the condition for circular motion is:
 
-    \vspace{-0.2in}{\Large
-      \begin{displaymath}
-        \mb{F}_\mathrm{provided}=\mb{F}_\mathrm{required}
-      \end{displaymath}
+    \eq{-.2in}{
+      \mb{F}_\mathrm{provided}=\mb{F}_\mathrm{required}
     }
     \begin{itemize}
     \item The \emph{provided} force comes from FBD
@@ -365,12 +354,13 @@
 \begin{frame}
   \frametitle{Example: Horizontal Motion}
   \begin{columns}
-    \column{0.4\textwidth}
+    \column{.4\textwidth}
     \pic{1}{puck-on-table.jpg}
-    \column{0.6\textwidth}
-    \textbf{Example 2:} In the figure on the left, a mass $m_1=\SI{3}{\kg}$ is
-    rolling around a frictionless table with radius $R=\SI{1}{\metre}$. with a
-    speed of \SI{2}{\metre/s}. What is the mass of the weight $m_2$?
+    
+    \column{.6\textwidth}
+    \textbf{Example 2:} In the figure on the left, a mass $m_1=\SI{3.}{\kg}$ is
+    rolling around a frictionless table with radius $R=\SI{1.}{\metre}$. with a
+    speed of \SI{2.}{\metre/s}. What is the mass of the weight $m_2$?
   \end{columns}
 \end{frame}
 
@@ -404,7 +394,7 @@
 \begin{frame}
   \frametitle{Example}
   \textbf{Example 4:} A cord is tied to a pail of water, and the pail is swung
-  in a vertical circle of \SI{1}{\metre}. What must be the minimum velocity of
+  in a vertical circle of \SI{1.}{\metre}. What must be the minimum velocity of
   the pail be at its highest point so that no water spills out?
 
   \begin{enumerate}[(a)]
@@ -457,7 +447,7 @@
 
   \begin{center}
     \fbox{
-      \begin{minipage}{0.7\textwidth}
+      \begin{minipage}{.7\textwidth}
         Two people stand on a board of uniform density. One person has a mass of
         \SI{50}{\kg} and stands \SI{10}{\metre} away from the fulcrum (pivot).
         The second person has a mass of \SI{65}{\kg}. How far away from the
@@ -474,10 +464,8 @@
   \begin{itemize}
   \item Newton's 2nd Law of motion:
     
-    \vspace{-0.3in}{\LARGE
-    \begin{displaymath}
+    \eq{-.2in}{
       \mb{F}_\mathrm{net}=m\mb{a}
-    \end{displaymath}
   }
   \item Is it also true for \emph{circular} motion?
   \item If a net force $\mb{F}_\mathrm{net}$ causes a mass to accelerate
@@ -485,7 +473,7 @@
   \end{itemize}
 
   \uncover<2->{
-    \vspace{0.3in}
+    \vspace{.3in}
     \textbf{Answer: } We need to introduce a few concepts first\ldots
   }
 \end{frame}
@@ -496,9 +484,9 @@
   of the pencil with equal force $\textcolor{red}{F}$. \textbf{What happens?}
   \begin{center}
     \begin{tikzpicture}[scale=1.5]
-      \fill[black!75,draw=black,ultra thick] (-2,-0.15) rectangle (2,0.15);
+      \fill[black!75,draw=black,ultra thick] (-2,-.15) rectangle (2,.15);
       \draw[ultra thick,red,->](-1.8,-.7)--(-1.8,-.15) node[pos=0,below]{$F$};
-      \draw[ultra thick,red,->]( 1.8,0.7)--( 1.8,0.15) node[pos=0,above]{$F$};
+      \draw[ultra thick,red,->]( 1.8, .7)--( 1.8, .15) node[pos=0,above]{$F$};
     \end{tikzpicture}
   \end{center}
   $\mb{F}_\mathrm{net}=\mb{0}$, therefore $\mb{a}=\mb{0}$. But (obviously) it
@@ -520,14 +508,11 @@
   \begin{columns}
     \column{.45\textwidth}
 
-    \vspace{-0.5in}
-    {\Huge
-      \begin{displaymath}
-        \boxed{\tau=rF_a\sin\theta}
-      \end{displaymath}
+    \eq{-.3in}{
+      \boxed{\tau=rF_a\sin\theta}
     }
 
-    \vspace{-0.3in}
+    \vspace{-.3in}
     \begin{itemize}
     \item $\tau$ = torque
     \item $r$ = ``moment arm''
@@ -537,12 +522,12 @@
     \column{.55\textwidth}
     \begin{center}
       \begin{tikzpicture}[scale=3]
-        \fill[black!75,draw=black!75] (0,-0.1) rectangle (2,0.1);
+        \fill[black!75,draw=black!75] (0,-.1) rectangle (2,.1);
         \fill[black!75,draw=black,thick] (0,0) circle (.2);
         \fill[black] (0,0) circle (.03);
         \draw[ultra thick,red,->](0,0)--(1.8,0) node[midway,below]{$\mb{r}$};
         \draw[ultra thick,blue,->](1.2,-.7)--(1.8,0)node[pos=0,below]{$\mb{F}_a$};
-        \draw[ultra thick,->] (1.4,0) arc(180:229:0.4)
+        \draw[ultra thick,->] (1.4,0) arc(180:229:.4)
         node[midway,left]{$\theta$};
       \end{tikzpicture}
     \end{center}
@@ -554,18 +539,15 @@
   In vector form, torque $\bm{\tau}$ is the cross product of the moment arm
   $\mb{r}$ and the applied force $\mb{F}_a$.
 
-  \vspace{-0.2in}
-  {\Huge
-    \begin{displaymath}
-      \boxed{\bm{\tau}=\mb{r}\times\mb{F}_a}
-    \end{displaymath}
+  \eq{-.2in}{
+    \boxed{\bm{\tau}=\mb{r}\times\mb{F}_a}
   }
 
-  \vspace{-0.2in}
+  \vspace{-.2in}
   \begin{center}
     \begin{tikzpicture}[scale=2.5]
-      \fill[black!75,draw=black!75] (0,-0.1) rectangle (2,0.1);
-      \fill[black!75,draw=black,thick] (0,0) circle (.2);
+      \fill[gray!75,draw=black!75] (0,-.1) rectangle (2,.1);
+      \fill[gray!75,draw=black,thick] (0,0) circle (.2);
       \fill[black] (0,0) circle (.02);
       \draw[ultra thick,->](0,0)--(1.8,0) node[midway,below]{$\mb{r}$};
       \draw[ultra thick,->](1.8,0)--(1.5,.75)node[pos=1,above]{$\mb{F}_a$};
@@ -580,9 +562,9 @@
   Going back to the example question:
   \begin{center}
     \begin{tikzpicture}
-      \fill[black!75,draw=black!75] (-5,-0.05) rectangle (5,0.05);
+      \fill[black!75,draw=black!75] (-5,-.05) rectangle (5,.05);
       \fill (0,0) circle (.1);
-      \draw[ultra thick](0,0)--(0.5,-1.5)--(-0.5,-1.5)--(0,0);
+      \draw[ultra thick](0,0)--(.5,-1.5)--(-.5,-1.5)--(0,0);
       \uncover<2->{
         \draw[ultra thick,red!75,->](0,0)--(-4.8,0) node[pos=.5,below]{$d_1$};
         \draw[ultra thick,red!75,->](-4.8,0)--(-4.8,-1)node[pos=1,below]{$F_1$};
@@ -598,11 +580,7 @@
   \item<3-> $F_2$ will rotate the board clockwise
   \item<4-> The beam will remain static (in equilibrium) if
 
-    \vspace{-0.2in}{\Large
-    \begin{displaymath}
-      F_1d_1=F_2d_2
-    \end{displaymath}
-  }
+    \eq{-.2in}{ F_1d_1=F_2d_2 }
   \end{itemize}
 \end{frame}
 
@@ -612,22 +590,18 @@
   Just like \textbf{translational equilibrium} is when the force acting on an
   object is zero:
   
-  \vspace{-0.35in}{\Large
-    \begin{displaymath}
-      \mb{F}=\mb{0}
-    \end{displaymath}
+  \eq{-.35in}{
+    \mb{F}=\mb{0}
   }
 
-  \vspace{-0.1in}An object is in \textbf{rotational equilibrium} when the
+  \vspace{-.1in}An object is in \textbf{rotational equilibrium} when the
   net torque acting on it is zero:
 
-  \vspace{-0.2in}{\Large
-    \begin{displaymath}
-      \bm{\tau}=\mb{0}
-    \end{displaymath}
+  \eq{-.2in}{
+    \bm{\tau}=\mb{0}
   }
 
-  \vspace{-0.1in}Note that it doesn't mean that the object isn't rotating, it
+  \vspace{-.1in}Note that it doesn't mean that the object isn't rotating, it
   just means that the object's rotational state isn't changing, i.e. $\alpha=0$
 \end{frame}
 
@@ -637,27 +611,28 @@
   \frametitle{Example Problem}
   \textbf{Example 7a:} Find the net torque on point C.
 
-  \vspace{-0.2in}\begin{center}
+  \vspace{-.2in}
+  \begin{center}
     \begin{tikzpicture}[scale=2.5]
-      \fill[blue!40!white,draw=black,thick] (-1.65,-0.15) rectangle (1.65,0.15);
-      \draw[thick,<->](-1.5,-0.5)--(1.5,-0.5) node[midway,below]{\SI{3.0}{m}};
-      \draw[thick,<->](-1.5,0.5)--(0,0.5) node[midway,below]{\SI{1.5}{m}};
+      \fill[blue!40!white,draw=black,thick] (-1.65,-.15) rectangle (1.65,.15);
+      \draw[thick,<->](-1.5,-.5)--(1.5,-.5) node[midway,below]{\SI{3.}{m}};
+      \draw[thick,<->](-1.5,.5)--(0,.5) node[midway,below]{\SI{1.5}{m}};
       \draw[dashed,thick](-2.5,0)--(2.5,0);
       \draw[dashed,thick](0,.5)--(0,-.5);
       \draw[ultra thick,orange,->](0,0)--(1,1)node[pos=1,right]{\SI{30}{N}};
-      \draw[thick,->](0,0.4)arc(90:45:0.4)
-      node[pos=0.7,above]{\footnotesize\ang{45}};
-      \draw[ultra thick,orange,->](-1.5,0)--(-2.3,-0.46)
+      \draw[thick,->](0,.4)arc(90:45:.4)
+      node[pos=.7,above]{\footnotesize\ang{45}};
+      \draw[ultra thick,orange,->](-1.5,0)--(-2.3,-.46)
       node[pos=1,left]{\SI{20}{\newton}};
-      \draw[thick,->](-1.9,0) arc(180:210:0.4)
+      \draw[thick,->](-1.9,0) arc(180:210:.4)
       node[midway,left]{\footnotesize\ang{30}};
-      \draw[ultra thick,orange,->](1.5,0)--(2.0,-0.29)
+      \draw[ultra thick,orange,->](1.5,0)--(2,-.29)
       node[pos=1,right]{\SI{10}{\newton}};
-      \draw[thick,->](1.9,0) arc(0:-30:0.4)
+      \draw[thick,->](1.9,0) arc(0:-30:.4)
       node[midway,right]{\footnotesize\ang{30}};
-      \fill[black,draw=black,thick] (-1.5,0) circle (0.1);
-      \fill[black,draw=black,thick] (   0,0) circle (0.1);
-      \fill[black,draw=black,thick] ( 1.5,0) circle (0.1);
+      \fill[black,draw=black,thick] (-1.5,0) circle(.1);
+      \fill[black,draw=black,thick] (   0,0) circle(.1);
+      \fill[black,draw=black,thick] ( 1.5,0) circle(.1);
       \node(A) at (-1.5,0) {\color{white}\textbf{A}};
       \node(B) at (0,0) {\color{white}\textbf{B}};
       \node(C) at (1.5,0) {\color{white}\textbf{C}};
@@ -680,34 +655,30 @@
     a distance $r$ from the center (shown on the right). It has an
     \textbf{angular momentum} ($L$) of
     
-    \vspace{-0.25in}{\Large
-      \begin{displaymath}
-        \boxed{\mb{L}=\mb{r}\times\mb{p}}
-      \end{displaymath}
+    \eq{-.25in}{
+      \boxed{\mb{L}=\mb{r}\times\mb{p}}
     }
     
-    \vspace{-0.15in}Expanding the terms in the definition:
+    \vspace{-.15in}Expanding the terms in the definition:
     
-    \vspace{-0.4in}{\Large
-      \begin{displaymath}
-        \mb{L}=\mb{r}\times(m\mb{v})=m\mb{r}\times(\bm{\omega}\times\mb{r})
-        =mr^2\bm{\omega}
-      \end{displaymath}
+    \eq{-.4in}{
+      \mb{L}=\mb{r}\times(m\mb{v})=m\mb{r}\times(\bm{\omega}\times\mb{r})
+      =mr^2\bm{\omega}
     }
-    gives us:
     
-    \vspace{-0.3in}{\Large
-      \begin{displaymath}
-        \boxed{\mb{L}=I\bm{\omega}}
-      \end{displaymath}
+    \vspace{-.15in}Which gives us:
+    
+    \eq{-.3in}{
+      \boxed{\mb{L}=I\bm{\omega}}
     }
     The quantity $I$ is called the \textbf{moment of inertia}.
-    \column{0.23\textwidth}
+    
+    \column{.23\textwidth}
     \begin{tikzpicture}[scale=2.5]
       \begin{scope}[rotate=70]
-        \fill[black!75,draw=black!75] (0,-0.02) rectangle (2,0.02);
+        \fill[black!75,draw=black!75] (0,-.02) rectangle (2,.02);
         \fill[blue!75,draw=blue,thick] (2,0) circle(.05);
-        \node(M) at (2,-0.2) {$m$};
+        \node(M) at (2,-.2) {$m$};
         \fill[black] (0,0) circle (.05);
         \draw[ultra thick,red,->](0,0)--(2,0)node[pos=.5,right]{$\mb{r}$};
         \draw[ultra thick,->](2,0)--(2,.5)node[pos=1,above]{$\mb{v}$};
@@ -722,24 +693,18 @@
   \begin{itemize}
   \item For a single particle:
     
-    \vspace{-0.3in}{\Large
-      \begin{displaymath}
-        \boxed{I=r^2m}
-      \end{displaymath}
+    \eq{-.3in}{
+      \boxed{I=r^2m}
     }
   \item A collection of particles:
 
-    \vspace{-0.25in}{\Large
-      \begin{displaymath}
-        \boxed{I=\sum r_i^2m_i}
-      \end{displaymath}
+    \eq{-.25in}{
+      \boxed{I=\sum r_i^2m_i}
     }
   \item Continuous distribution of mass
 
-    \vspace{-0.2in}{\Large
-      \begin{displaymath}
-        \boxed{I=\int r^2dm}
-      \end{displaymath}
+    \eq{-.2in}{
+      \boxed{I=\int r^2dm}
     }
   \end{itemize}
 \end{frame}
@@ -757,10 +722,8 @@
   \begin{itemize}
   \item Linear and angular momentum have very similar expressions
     
-    \vspace{-0.25in}{\Large
-      \begin{displaymath}
-        \mb{p}=m\mb{v}\quad\quad\quad \mb{L}=I\bm{\omega}
-      \end{displaymath}
+    \eq{-.25in}{
+      \mb{p}=m\mb{v}\quad\quad\quad \mb{L}=I\bm{\omega}
     }
   \item Just like $\mb{p}$ describes the overall translational state of a
     physical system, $\mb{L}$ describes its overall rotational state
@@ -774,15 +737,13 @@
 \begin{frame}
   \frametitle{Conservation of Angular Momentum}
 
-  \vspace{-0.35in}{\Large
-    \begin{displaymath}
-      \bm{\tau}=\mb{r}\times\mb{F}=\mb{r}\times\frac{d\mb{p}}{dt}
-      =\frac{d(\mb{r}\times\mb{p})}{dt}\;\;\longrightarrow\;\;
+  \eq{-.35in}{
+    \bm{\tau}=\mb{r}\times\mb{F}=\mb{r}\times\frac{d\mb{p}}{dt}
+    =\frac{d(\mb{r}\times\mb{p})}{dt}\;\;\longrightarrow\;\;
 %      \tau=rF=rm\frac{dv}{dt}=\frac{d(rmv)}{dt}\quad\longrightarrow\quad
 %    \end{displaymath}
 %    \begin{displaymath}
-      \boxed{\bm{\tau} =\frac{d\mb{L}}{dt}}
-    \end{displaymath}
+    \boxed{\bm{\tau} =\frac{d\mb{L}}{dt}}
   }
   \begin{itemize}
   \item If the net torque on a system is zero, then the rate of change
@@ -794,10 +755,8 @@
   \item If moment of inertia $I$ is constant in time, the net torque is given
     by:
 
-    \vspace{-0.2in}{\Large
-      \begin{displaymath}
-        \boxed{\bm{\tau}=I\bm{\alpha}}
-      \end{displaymath}
+    \eq{-.2in}{
+      \boxed{\bm{\tau}=I\bm{\alpha}}
     }
   \end{itemize}
 \end{frame}
@@ -806,16 +765,16 @@
 \begin{frame}
   \frametitle{Example Problem}
   \textbf{Example 8:} A skater extends her arms (both arms!), holding a
-  \SI{2.0}{\kg} mass in each hand. She is rotating about a vertical axis at a
+  \SI{2.}{\kg} mass in each hand. She is rotating about a vertical axis at a
   given rate. She brings her arms inward towards her body in such a way that
-  the distance of each mass from the axis changes from \SI{1.0}{\metre} to
-  \SI{0.50}{\metre}. Her rate of rotation (neglecting her own mass) will?
+  the distance of each mass from the axis changes from \SI{1.}{\metre} to
+  \SI{.50}{\metre}. Her rate of rotation (neglecting her own mass) will?
 \end{frame}
 
 
 \begin{frame}
   \frametitle{Last Example}
-  \textbf{Example 9:} A \SI{1}{\kg} mass swings in a vertical circle after
+  \textbf{Example 9:} A \SI{1.}{\kg} mass swings in a vertical circle after
   having been released from a horizontal position with zero initial velocity.
   The mass is attached to a massless rigid rod of length \SI{1.5}{\metre}. What
   is the angular momentum of the mass, when it is in its lowest position?
@@ -830,20 +789,18 @@
   of particles, or continuous mass distribution), we can sum (or or integrate)
   the kinetic energy of the individual particles:
     
-  \vspace{-0.3in}{\large
+  \vspace{-.3in}{\Large
     \begin{align*}
       K&=\sum_i\frac{1}{2}m_iv_i^2=\frac{1}{2}\left(\sum_i m_ir_i^2\right)\omega^2\\
       K&=\int\frac{1}{2}v^2dm=\frac{1}{2}\left(\int r^2dm\right)\omega^2
     \end{align*}
   }
   
-  \vspace{-0.15in}It's no surprise that in both case, rotational kinetic energy
+  \vspace{-.1in}It's no surprise that in both case, rotational kinetic energy
   is given by:
   
-  \vspace{-0.2in}{\Large
-    \begin{displaymath}
-      \boxed{K=\frac{1}{2}I\omega^2}
-    \end{displaymath}
+  \eq{-.2in}{
+    \boxed{K=\frac{1}{2}I\omega^2}
   }
 \end{frame}
 
@@ -853,19 +810,15 @@
   The total kinetic energy of a rotating system is the sum of its translational
   and rotational kinetic energies at its center of mass:
 
-  \vspace{-0.2in}{\Large
-    \begin{displaymath}
-      \boxed{K=\frac{1}{2}mv_\mathrm{CM}^2+\frac{1}{2}I_\mathrm{CM}\omega^2}
-    \end{displaymath}
+  \eq{-.2in}{
+    \boxed{K=\frac{1}{2}mv_\mathrm{CM}^2+\frac{1}{2}I_\mathrm{CM}\omega^2}
   }
   
   In this case, $I_\mathrm{CM}$ is calculated at the center of mass. For simple
   problems, we only need to compute rotational kinetic energy at the pivot:
 
-  \vspace{-0.2in}{\Large
-    \begin{displaymath}
-      \boxed{K=\frac{1}{2}I_\mathrm{P}\omega^2}
-    \end{displaymath}
+  \eq{-.2in}{
+    \boxed{K=\frac{1}{2}I_\mathrm{P}\omega^2}
   }
   
   In this case, the $I_\mathrm{P}$ is calculated at the pivot.
