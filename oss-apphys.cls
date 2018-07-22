@@ -110,7 +110,7 @@
   %number-math-rm=\mathnormal,
 %  text-sf=\sffamily,
 %  text-rm=\sffamily,
-  inter-unit-product =\cdot,
+  inter-unit-product =\ensuremath{\cdot{}},
   per-mode=symbol,
   group-separator={,},
 }

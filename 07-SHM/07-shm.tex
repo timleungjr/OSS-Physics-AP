@@ -19,43 +19,46 @@
 
 \usetikzlibrary{decorations.pathmorphing,patterns}
 
-\sisetup{number-math-rm=\mathnormal}
+\sisetup{
+  number-math-rm=\mathnormal,
+  per-mode=symbol
+}
 
-\title{Class 7: Simple Harmonic Motions and Vibrations}
-\subtitle{AP Physics}
-\author[TML]{Timothy Leung, Ph.D.}
+\title{Topic 7: Simple Harmonic Motions and Vibrations}
+\subtitle{Advanced Placement Physics}
+\author[TML]{Dr.\ Timothy Leung}
 \institute{Olympiads School}
-\date{Fall/Winter 2017}
+\date{Summer 2018}
 
 %\newcommand{\pic}[2]{\includegraphics[width=#1\textwidth]{#2}}
 \newcommand{\mb}[1]{\ensuremath\mathbf{#1}}
-%
+\newcommand{\eq}[2]{\vspace{#1}{\Large\begin{displaymath}#2\end{displaymath}}}
+
 \begin{document}
 
 \begin{frame}
   \maketitle
 \end{frame}
 
-\begin{frame}
-  \frametitle{Files to Download}
-  \framesubtitle{Please download/print the PDF file}
-  If you have not done so already, please download the following files.
-  \begin{itemize}
-  \item\texttt{00-outline.pdf}--The slightly-updated course outline
-  \item\texttt{07-shm-print.pdf}--The ``print version'' of this week's
-    slides. I recommend printing 4 slides per page.
-  \item\texttt{07-Homework.pdf} This week's homework.
-  \end{itemize}
-\end{frame}
-
-
-\begin{frame}
-  \frametitle{Today's Plan}
-  \begin{enumerate}
-  \item Take up (some) questions from Classes 4 and 5/6 homework
-  \item Go over this week's slides (hopefully it won't take too long)
-  \end{enumerate}
-\end{frame}
+%\begin{frame}
+%  \frametitle{Files to Download}
+%  \framesubtitle{Please download/print the PDF file}
+%  If you have not done so already, please download the following files.
+%  \begin{itemize}
+%  \item\texttt{07-shm-print.pdf}--The ``print version'' of this week's
+%    slides. I recommend printing 4 slides per page.
+%  \item\texttt{07-Homework.pdf} This week's homework.
+%  \end{itemize}
+%\end{frame}
+%
+%
+%\begin{frame}
+%  \frametitle{Today's Plan}
+%  \begin{enumerate}
+%  \item Take up (some) questions from Classes 4 and 5/6 homework
+%  \item Go over this week's slides (hopefully it won't take too long)
+%  \end{enumerate}
+%\end{frame}
 
 
 \section{Hooke's Law}
@@ -64,10 +67,8 @@
   \begin{itemize}
   \item Hooke's Law for an ideal spring
 
-    \vspace{-.2in}{\Large
-      \begin{displaymath}
-        \boxed{\mb{F}_s=-k\mb{x}}
-      \end{displaymath}
+    \eq{-.2in}{
+      \boxed{\mb{F}_s=-k\mb{x}}
     }
   \item Spring force $\mb{F}_s$ is the force that a compressed/stretched
     spring exerts on another object
@@ -79,25 +80,22 @@
 
 \begin{frame}
   \frametitle{Review of Elastic Potential Energy}
-  \begin{itemize}
-  \item Applying Hooke's law in the work equation, we can find the work done
-    when compressing/stretching a spring:
+  Applying Hooke's law in the work equation, we can find the work done when
+  compressing/stretching a spring:
 
-    \vspace{-.35in}{\Large
-      \begin{align*}
-        W&=\int^{x_2}_{x_1}Fdx=-\int^{x_2}_{x_1}kxdx
-        =-\frac{1}{2}kx^2\Big|^{x_2}_{x_1}\\
-        &=-\Delta\left(\frac{1}{2}kx^2\right)=-\Delta U_e
-      \end{align*}
-    }
-  \item where elastic potential energy is defined as
+  \vspace{-.35in}{\Large
+    \begin{align*}
+      W&=\int^{x_2}_{x_1}Fdx=-\int^{x_2}_{x_1}kxdx
+      =-\frac{1}{2}kx^2\Big|^{x_2}_{x_1}\\
+      &=-\Delta\left(\frac{1}{2}kx^2\right)=-\Delta U_e
+    \end{align*}
+  }
 
-    \vspace{-.2in}{\Large
-      \begin{displaymath}
-        \boxed{U_e=\frac{1}{2}kx^2}
-      \end{displaymath}
-    }
-  \end{itemize}
+  \vspace{-.2in}where elastic potential energy is defined as
+
+  \eq{-.2in}{
+    \boxed{U_e=\frac{1}{2}kx^2}
+  }
 \end{frame}
 
 \section{Spring-Mass}
@@ -126,17 +124,15 @@
         }
         \draw[->,thick](7,1)--(7.8,1) node[pos=1,right]{\footnotesize $x$};
       \end{tikzpicture}
-
     \end{center}
   \item<3->$\mb{F}_g$ and $\mb{F}_N$ cancel out, so net force is due only to
     spring force $\mb{F}_s=-k\mb{x}$. This is true both when the spring is in
-    compression or extension.
+    compression or extension. (In the diagram above, the spring is in
+    extension.)
   \item<4->Applying Newton's 2nd law in the $x$-direction, we get
     
-    \vspace{-0.2in}{\Large
-      \begin{displaymath}
-        F_s=ma\quad\longrightarrow\quad-kx=m\frac{d^2x}{dt^2}
-      \end{displaymath}
+    \eq{-.2in}{
+      F_s=ma\quad\longrightarrow\quad-kx=m\frac{d^2x}{dt^2}
     }
 
   \end{itemize}
@@ -158,14 +154,12 @@
     $\cos(t)$
   \item<2-> We start with this general form
     
-    \vspace{-0.3in}{\Large
-      \begin{displaymath}
-        x(t)=A\sin(\omega t+\phi)
-      \end{displaymath}
+    \eq{-.3in}{
+      x(t)=A\sin(\omega t+\phi)
     }
 
-    \vspace{-0.2in}We usually prefer using $\sin$ over $\cos$, but the
-    two functions only differ in $\phi$
+    \vspace{-.2in}We usually prefer using $\sin$ over $\cos$, but the two
+    functions only differ in $\phi$
   \end{itemize}
 \end{frame}
 
@@ -176,14 +170,12 @@
   \item The governing equation for simple harmonic equation is a
     \emph{second-order ordinary differential equation}:
 
-    \vspace{-0.15in}{\Large
-      \begin{displaymath}
-        \boxed{\frac{d^2x}{dt^2}+\frac{k}{m}x=0}
-      \end{displaymath}
+    \eq{-.15in}{
+      \boxed{\frac{d^2x}{dt^2}+\frac{k}{m}x=0}
     }
   \item Starting with our general form, we can take the 1st and 2nd derivatives:
  
-    \vspace{-0.35in}{\Large
+    \vspace{-.35in}{\Large
       \begin{align*}
         x(t)&=A\sin(\omega t+\phi)\\
         x'(t)&=A\omega\cos(\omega t+\phi)\\
@@ -191,7 +183,7 @@
       \end{align*}
     }
     
-    \vspace{-0.2in}$\omega$ is the angular velocity, and $A$ is the amplitude,
+    \vspace{-.2in}$\omega$ is the angular velocity, and $A$ is the amplitude,
     and $\phi$ is a phase shift that depends on the initial condition
   \end{itemize}
 \end{frame}
@@ -204,19 +196,15 @@
   \item Substituting expressions of $x(t)$ and $x''(t)$ into the ODE, we find
     our equation is satisfied if angular velocity (angular frequency) is:
 
-    \vspace{-0.2in}{\Large
-      \begin{displaymath}
-        \boxed{\omega=\sqrt{\frac{k}{m}}}
-      \end{displaymath}
+    \eq{-0.2in}{
+      \boxed{\omega=\sqrt{\frac{k}{m}}}
     }
   \item Angular velocity $\omega$ does not depend on amplitude $A$
   \item The period $T$ and frequency $f$ of the motion are given by:
 
-    \vspace{-0.2in}{\Large
-      \begin{displaymath}
-        \boxed{f=\frac{1}{2\pi}\sqrt{\frac{k}{m}}}\quad\quad\quad
-        \boxed{T=\frac{1}{f}=2\pi\sqrt{\frac{m}{k}}}
-      \end{displaymath}
+    \eq{-0.2in}{
+      \boxed{f=\frac{1}{2\pi}\sqrt{\frac{k}{m}}}\quad\quad\quad
+      \boxed{T=\frac{1}{f}=2\pi\sqrt{\frac{m}{k}}}
     }
   \end{itemize}
 \end{frame}
@@ -242,15 +230,13 @@
     \item For a vertical spring-mass system, the analysis is \emph{slightly}
       more complicated (we have to consider weight as well):
 
-      \vspace{-0.2in}{\large
-        \begin{displaymath}
-          mg-kx=m\frac{d^2x}{dt^2}
-        \end{displaymath}
+      \eq{-.2in}{
+        mg-kx=m\frac{d^2x}{dt^2}
     }
     \item But since $mg$ is a constant, the only difference is the addition of a
       constant $B$ in our expression of $x(t)$:
     
-      \vspace{-0.35in}{\large
+      \vspace{-0.35in}{\Large
         \begin{align*}
           x(t)&=A\sin(\omega t+\phi) +B\\
           x''(t)&=-A\omega^2\sin(\omega t+\phi)
@@ -280,19 +266,15 @@
     \begin{itemize}
     \item Substituting $x(t)$ and $x''(t)$ into the differential equation gives
 
-      \vspace{-0.2in}{\Large
-        \begin{displaymath}
-          B=\frac{mg}{k}
-        \end{displaymath}
+      \eq{-.2in}{
+        B=\frac{mg}{k}
       }
     \item $B$ is just the stretching of the spring due to its weight
     \item Angular velocity is the same as the horizontal case! It is still
       given by:
 
-      \vspace{-0.35in}{\Large
-        \begin{displaymath}
-          \omega=\sqrt{\frac{k}{m}}
-        \end{displaymath}
+      \eq{-.35in}{
+        \omega=\sqrt{\frac{k}{m}}
       }
     \end{itemize}
   \end{columns}
@@ -308,17 +290,13 @@
   \item The forces by the spring on the mass (and by the mass on the spring)
     are \emph{internal} forces, and energy in the system is conserved:
 
-    \vspace{-0.2in}{\Large
-      \begin{displaymath}
-        K_1 + U_{e,1} + U_{g,1} = K_2 + U_{e,2} + U_{g,2}
-      \end{displaymath}
+    \eq{-0.2in}{
+      K_1 + U_{e,1} + U_{g,1} = K_2 + U_{e,2} + U_{g,2}
     }
   \item For the horizontal spring-mass system, the total energy is:
     
-    \vspace{-0.2in}{\Large
-      \begin{displaymath}
-        E_\mathrm{total}=\frac{1}{2}kA^2
-      \end{displaymath}
+    \eq{-.2in}{
+      E_\mathrm{total}=\frac{1}{2}kA^2
    }
   \end{itemize}
 \end{frame}
@@ -373,7 +351,7 @@
 \begin{frame}
   \frametitle{What About a Pendulum?}
   \begin{columns}
-    \column{0.75\textwidth}
+    \column{.75\textwidth}
     \begin{itemize}
     \item Pendulums also exhibit oscillatory motion
     \item For a pendulum, there are two forces acting on the mass: weight
@@ -385,7 +363,7 @@
       have anything to do with the restoring force
     \end{itemize}
 
-    \column{0.25\textwidth}
+    \column{.25\textwidth}
     \begin{tikzpicture}
       \fill[pattern=north east lines] (-1,0) rectangle (1,0.2);
       \draw[very thick](-1,0)--(1,0);
@@ -415,23 +393,20 @@
     \item Substitute $F_\theta$ into Newton's second law, and cancelling mass
       term, we get:
 
-      \vspace{-0.45in}{\Large
-        \begin{displaymath}
-          F_\theta=ma_\theta\quad\longrightarrow\quad
-          -g\sin\theta=L\frac{d^2\theta}{dt^2}
-        \end{displaymath}
+      \eq{-.45in}{
+        F_\theta=ma_\theta\quad\longrightarrow\quad
+        -g\sin\theta=L\frac{d^2\theta}{dt^2}
     }
     \item For small angles, $\sin\theta\approx\theta$, and we get the ODE for
       the pendulum:
       
-      \vspace{-0.2in}{\Large
-        \begin{displaymath}
-          \frac{d^2\theta}{dt^2}+\frac{g}{L}\theta=0
-        \end{displaymath}
+      \eq{-.2in}{
+        \frac{d^2\theta}{dt^2}+\frac{g}{L}\theta=0
       }
     \item This ODE has the same form as the mass-spring system!
     \end{itemize}
-    \column{0.25\textwidth}
+    
+    \column{.25\textwidth}
     \begin{tikzpicture}
       \fill[pattern=north east lines] (-1,0) rectangle (1,0.2);
       \draw[very thick](-1,0)--(1,0);
@@ -452,21 +427,17 @@
   \begin{itemize}
   \item The solution for $\theta(t)$ is very similar to the spring-mass system:
 
-    \vspace{-0.25in}{\Large
-      \begin{displaymath}
-        \boxed{\theta(t)=\theta_\mathrm{max}\sin(\omega t+\phi)}
-      \end{displaymath}
+    \eq{-.25in}{
+      \boxed{\theta(t)=\theta_\mathrm{max}\sin(\omega t+\phi)}
     }
 
     \vspace{-0.15in}where angular velocity $\omega$ is given by
     
-    \vspace{-0.15in}{\Large
-      \begin{displaymath}
-        \boxed{\omega=\sqrt{\frac{g}{L}}}
-      \end{displaymath}
+    \eq{-.15in}{
+      \boxed{\omega=\sqrt{\frac{g}{L}}}
     }
 
-    \vspace{-0.1in} and $\phi$ is a phase shift based on the initial condition
+    \vspace{-.1in} and $\phi$ is a phase shift based on the initial condition
     of the pendulum.
   \item Remember that this equation is only valid for small angles, i.e.\
     $\theta_\mathrm{max}<\ang{15}$
@@ -507,12 +478,12 @@
   \frametitle{Think About $g$}
   \textbf{Example 6:} A little girl is playing with a toy pendulum while riding
   in an elevator. Being an astute and educated young lass, she notes that the 
-  period of the pendulum is $T=\SI{0.5}{\second}$. Suddenly the cables
+  period of the pendulum is $T=\SI{.5}{\second}$. Suddenly the cables
   supporting the elevator break and all  of the brakes and safety features fail
   simultaneously. The elevator plunges into free fall. The young girl is
   astonished to discover that the pendulum has:
   \begin{enumerate}[(a)]
-  \item continued oscillating with a period of \SI{0.5}{\second}.
+  \item continued oscillating with a period of \SI{.5}{\second}.
   \item stopped oscillating entirely.
   \item decreased its rate of oscillation to have a longer period.
   \item increased its rate of oscillation to have a lesser period.
