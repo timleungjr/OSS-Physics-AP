@@ -16,13 +16,16 @@
 \usepackage{xcolor,colortbl}
 \usepackage{siunitx}
 
-\sisetup{number-math-rm=\mathnormal}
+\sisetup{
+  number-math-rm=\mathnormal,
+  per-mode=symbol
+}
 
-\title{Class 10: Electrostatics}
-\subtitle{AP Physics}
+\title{Topic 9: Electrostatics}
+\subtitle{Advanced Placement Physics}
 \author[TML]{Dr.\ Timothy Leung}
 \institute{Olympiads School}
-\date{Januay 2018}
+\date{Summer 2018}
 
 \newcommand{\pic}[2]{\includegraphics[width=#1\textwidth]{#2}}
 \newcommand{\mb}[1]{\mathbf{#1}}
@@ -38,29 +41,29 @@
 
 \section[Intro]{Introduction}
 
-\begin{frame}
-  \frametitle{Files for You to Download}
-  Download from the school website:
-  \begin{enumerate}
-  \item\texttt{10-electrostatics.pdf}---This presentation. If you want to print
-    on paper, I recommend printing 4 pages per side.
-%  \item\texttt{10-Homework.pdf}---Homework assignment for this class and next
-%    week.
-%    The assignment is similar in format compared to the actual AP exams, with
-%    most questions being multiple-choice questions. The assignment has more
-    %    questions though.
+%\begin{frame}
+%  \frametitle{Files for You to Download}
+%  Download from the school website:
+%  \begin{enumerate}
+%  \item\texttt{10-electrostatics.pdf}---This presentation. If you want to print
+%    on paper, I recommend printing 4 pages per side.
+%%  \item\texttt{10-Homework.pdf}---Homework assignment for this class and next
+%%    week.
+%%    The assignment is similar in format compared to the actual AP exams, with
+%%    most questions being multiple-choice questions. The assignment has more
+%    %    questions though.
+%
+%  \item There is no assignment this week. It will be combined into a larger one
+%    for next week, when we deal with distributed charges and capacitors.
+%  \end{enumerate}
+%  
+%  Please download/print the PDF file before each class. There is no point
+%  copying notes that are already printed out for you. Instead, take notes on
+%  things I say that aren't necessarily on the slides.
+%\end{frame}
 
-  \item There is no assignment this week. It will be combined into a larger one
-    for next week, when we deal with distributed charges and capacitors.
-  \end{enumerate}
-  
-  Please download/print the PDF file before each class. There is no point
-  copying notes that are already printed out for you. Instead, take notes on
-  things I say that aren't necessarily on the slides.
-\end{frame}
 
-
-\section[$\mb{F}_q$]{Electric Force}
+\section[$\mb{F}_q$]{Electrostatic Force}
 
 \begin{frame}
   \frametitle{The Charges Are}
@@ -73,8 +76,7 @@
   \item Similar charges are repel, opposite charges attract
   \end{itemize}
 
-  \vspace{0.2in}
-  We will start with electrostatics:
+  \vspace{.2in}We start with electrostatics:
   \begin{itemize}
   \item Charges that are not moving relative to one another
   \end{itemize}
@@ -82,11 +84,10 @@
 
 \begin{frame}
   \frametitle{Coulomb's Law for Electrostatic Force}
-  The magnitude of the \textbf{electrostatic force} between two point charges
-  is given by:
+  The \textbf{electrostatic force} between two point charges is given by:
 
   \eq{-.1in}{
-    \boxed{F_q=\frac{k\left|q_1q_2\right|}{r^2}}
+    \boxed{F_q=-\frac{kq_1q_2}{r^2}\mb{\hat{r}}_{12}}
   }
 
   \vspace{-.1in}
@@ -96,8 +97,10 @@
       \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
       Electrostatic force            & $F_q$ &  \si{\newton} (newtons)\\
       Coulomb's constant (electrostatic constant) & $k$   & \si{N.m^2/C^2} \\
-      Point charges 1 and 2 (occupies no space) & $q_1$, $q_2$ & \si{C} (coulombs)\\
+      Point charges 1 and 2 (occupies no space) & $q_1$, $q_2$ &
+      \si{\coulomb} (coulombs)\\
       Distance between point charges & $r$   & \si{\metre} (meters)\\
+      Unit vector of direction between point charges & $\mb{\hat{r}}$ &
     \end{tabular}
   \end{center}
 
@@ -136,25 +139,24 @@
 
 \begin{frame}
   \frametitle{Electric Field Intensity Near a Point Charge}
-  The electric field intensity a distance $r$ away from a point charge is
-  the product of Coulomb's constant and the charge, divided by the square
-  of the distance from the charge.
-  \textbf{The direction of the field is radially outward from a positive
-    point charge and radially inward towards a negative charge.}
+  The electric field a distance $r$ away from a point charge is given by:
 
-  \eq{-0.2in}{
-    \boxed{E=\frac{kq_s}{r^2}}
+  \eq{-.2in}{
+    \boxed{\mb{E}=\frac{kq_s}{r^2}\mb{\hat{r}}}
   }
   \begin{center}
     \begin{tabular}{l|c|l}
       \rowcolor{pink}
       \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
-      Electric field intensity    & $E$   & \si{N/C} (newtons per coulomb)\\
+      Electric field intensity    & $E$   & \si{\newton\per\coulomb}
+      (newtons per coulomb)\\
       Coulomb's constant          & $k$   & \si{N.m^2/C^2} \\
-      Source charge               & $q_s$ & \si{C} (coulombs) \\
-      Distance from source charge & $r$   & \si{m} (meters)  \\
+      Source charge               & $q_s$ & \si{\coulomb} (coulombs) \\
+      Distance from source charge & $r$   & \si{\metre} (meters)  \\
     \end{tabular}
   \end{center}
+  \textbf{The direction of the field is radially outward from a positive
+    point charge and radially inward toward a negative charge.}
 \end{frame}
 
 
@@ -163,7 +165,7 @@
   \frametitle{Think Electric Field}
 
   $\mb{E}$ \emph{doesn't do anything} until another charge interacts with it.
-  And when there is a charge $q$, the electric force $\mb{F}_q$ that it
+  And when there is a charge $q$, the electrostatic force $\mb{F}_q$ that it
   experiences in the presence of $\mb{E}$ is:
 
   \eq{-.2in}{
@@ -206,12 +208,12 @@
   \frametitle{Electrical Potential Energy}
   \framesubtitle{(Follow the Same Work on Gravitational Potential Energy)}
 
-  If we move a charged particle against the electric force, work must be done
-  (either positive or negative, depending on which way the particle moves):
+  If we move a charged particle against the electrostatic force, work must be
+  done (either positive or negative, depending on which way the particle moves):
   
   \eq{-.3in}{
-    W=\int\mb{F}_q\cdot d\mb{s}
-    =kq_1q_2\int_{r_1}^{r_2}\frac{dr}{r^2}
+    W=\int\mb{F}_q\cdot d\mb{r}
+    =-kq_1q_2\int_{r_1}^{r_2}\frac{dr}{r^2}
     =-\frac{kq_1q_2}{r}\Big|^{r_2}_{r_1}=-\Delta U_q
   }
 
@@ -231,23 +233,25 @@
 \begin{frame}
   \frametitle{How it Differs from Gravitational Potential}
   \begin{columns}
-    \column{0.33\textwidth}
+    \column{.33\textwidth}
     \begin{center}
       Two positive charges:
 
-      \eq{-0.3in}{U_q>0}
+      \eq{-.3in}{U_q>0}
     \end{center}
-    \column{0.33\textwidth}
+    
+    \column{.33\textwidth}
     \begin{center}
       Two negative charges:
 
-      \eq{-0.3in}{U_q>0}
+      \eq{-.3in}{U_q>0}
     \end{center}
-    \column{0.34\textwidth}
+    
+    \column{.34\textwidth}
     \begin{center}
       One positive and one negative charge:
 
-      \eq{-0.5in}{U_q<0}
+      \eq{-.5in}{U_q<0}
     \end{center}
   \end{columns}
 
@@ -269,13 +273,13 @@
   there is a ``constant'' in that scales with \emph{any} mass, as long as they
   move between those same two points:
 
-  \eq{-.25in}{W=Km}
+  \eq{-.25in}{W=\Delta U_g=Km}
 
   \vspace{-.15in}In the trivial case (small changes in height, no change in
   $g$), this constant is just
 
   \eq{-.15in}{
-    \frac{W}{m}=g\Delta h
+    \frac{\Delta U_g}{m}=g\Delta h
   }
 
   \vspace{-.1in}(We have actually looked at this briefly in our discussion on
@@ -286,26 +290,26 @@
 \begin{frame}
   \frametitle{Electric Potential}
 
-  This is also true for moving a charged particle against an electric force,
-  and the constant is called the \textbf{electric potential}. For a point
-  charge, it is defined as
+  This is also true for moving a charged particle $q$ against an electric
+  electric field created by $q_s$, and the ``constant'' is called the
+  \textbf{electric potential}. For a point charge, it is defined as:
 
-  \eq{-.2in}{
-    \boxed{V=\frac{U_q}{q}=\frac{kq}{r}}
+  \eq{-.3in}{
+    \boxed{V=\frac{U_q}{q}=\frac{kq_s}{r}}
   }
 
   The unit for electric potential is a \emph{volt} which is
   \emph{one joule per coulomb}:
 
   \eq{-.25in}{
-    \SI{1}{V}=\SI{1}{J/C}
+    \SI{1}{\volt}=\SI{1}{\joule\per\coulomb}
   }
 
   \vspace{-.15in}We can easily that there is also a relationship between
   electrical potential $V$ and electric field $\mb{E}$:
   
-  \eq{-.18in}{
-    \boxed{\Delta V=-\int\mb{E}\cdot d\mb{s}}
+  \eq{-.3in}{
+    \boxed{\Delta V=\int\mb{E}\cdot d\mb{r}}
   }
 \end{frame}
 
@@ -315,7 +319,7 @@
   \frametitle{Potential Difference (Voltage)}
 
   The change in electric potential is called the
-  \textbf{potential difference} or \textbf{voltage}:
+  \textbf{electric potential difference} or \textbf{voltage}:
 
   \eq{-.2in}{
     \boxed{\Delta V=\frac{\Delta U_q}{q}}\quad\textsf{\normalsize and}\quad
@@ -330,15 +334,15 @@
     \boxed{\Delta U=q\Delta V}
   }
 
-  Electric potential difference also has the unit \emph{volts} (\si{V})
+  Electric potential difference also has the unit \emph{volts} (\si{\volt})
 \end{frame}
 
 
 
 \begin{frame}
   \frametitle{Getting Those Names Right}
-  Remember that these three quantities are all scalars, as opposed to electric
-  force $\mb{F}_q$ and electric field $\mb{E}$ which are vectors
+  Remember that these three quantities are all scalars, as opposed to
+  electrostatic force $\mb{F}_q$ and electric field $\mb{E}$ which are vectors
 
   \vspace{.1in}
   \begin{itemize}
@@ -361,7 +365,7 @@
 \begin{frame}
   \frametitle{Relating $U_q$, $\mb{F}_q$ and $\mb{E}$}
   \framesubtitle{Our Integrals In Reverse}
-  Using vector calculus, we can relate electric force ($\mb{F}_q$) to
+  Using vector calculus, we can relate electrostatic force ($\mb{F}_q$) to
   electric potential energy ($U_q$), and electric field ($\mb{E}$) to the
   electric potential ($V$):
 
@@ -372,13 +376,13 @@
   }
 
   \begin{itemize}  
-  \item\vspace{-.2in}Electric force $\mb{F}_q$ always points from high
+  \item\vspace{-.2in}Electrostatic force $\mb{F}_q$ always points from high
     potential to low potential energy
   \item Electric field can also be expressed as the change of electric
     potential per unit distance, which has the unit
     
     \eq{-.25in}{
-      \SI{1}{N/C}=\SI{1}{V/m}
+      \SI{1}{\newton\per\coulomb}=\SI{1}{\volt\per\metre}
     }
   \item Electric field is also called ``potential gradient''
   \end{itemize}
@@ -422,7 +426,7 @@
 
 
 \begin{frame}
-  \frametitle{Electric Field and Potential Difference}
+  \frametitle{Electric Field and Electric Potential Difference}
   
   The relationship between electric field ($\mb{E}$) and electric potential
   difference ($V$):
@@ -443,9 +447,11 @@
     \begin{tabular}{l|c|l}
       \rowcolor{pink}
       \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
-      Electric field intensity & $E$ & \si{N/C} (newtons per coulomb) \\
-      Potential difference between plates & $\Delta V$ & \si{V} (volts) \\
-      Distance between plates       & $d$ & \si{m} (meters)\\
+      Electric field intensity & $E$ & \si{\newton\per\coulomb}
+      (newtons per coulomb) \\
+      Electric potential difference between plates & $\Delta V$ &
+      \si{\volt} (volts) \\
+      Distance between plates       & $d$ & \si{\metre} (meters)\\
     \end{tabular}
   \end{center}
 \end{frame}

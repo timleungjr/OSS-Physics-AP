@@ -19,11 +19,11 @@
 
 \sisetup{number-math-rm=\mathnormal}
 
-\title{Class 12: Circuits Analysis}
-\subtitle{AP Physics}
+\title{Topic 11: Circuits Analysis}
+\subtitle{Advanced Placement Physics}
 \author[TML]{Dr.\ Timothy Leung}
 \institute{Olympiads School}
-\date{February 2018}
+\date{Summer 2018}
 
 \newcommand{\pic}[2]{\includegraphics[width=#1\textwidth]{#2}}
 \newcommand{\mb}[1]{\mathbf{#1}}
@@ -39,36 +39,36 @@
 
 \section[Intro]{Introduction}
 
-\begin{frame}
-  \frametitle{Notice: Tim Will Be Away Next Week}
-
-  \begin{center}
-    \fbox{
-      \begin{minipage}{.65\textwidth}
-        Tim will be away for a concert in Ottawa next Saturday (February 17).
-        There will be a supply teacher. Please be kind! Tim will return to
-        Olympiads on Sunday, February 18, and will resume teaching this class
-        on the 24th (class 14).
-      \end{minipage}
-    }
-  \end{center}
-\end{frame}
-
-\begin{frame}
-  \frametitle{Files for You to Download}
-  Download from the school website:
-  \begin{enumerate}
-  \item\texttt{12-Circuits\_print.pdf}---The print version of this
-    presentation. If you want to print on paper, I recommend printing 4 pages
-    per side.
-  \item\texttt{13-Homework.pdf}---Homework assignment for this class and next
-    class. The file will be posted along Class 13 slides.
-  \end{enumerate}
-
-  \vspace{.2in}Please download/print the PDF file before each class. There is
-  no point copying notes that are already printed out for you. Instead, take
-  notes on things I say that aren't necessarily on the slides.
-\end{frame}
+%\begin{frame}
+%  \frametitle{Notice: Tim Will Be Away Next Week}
+%
+%  \begin{center}
+%    \fbox{
+%      \begin{minipage}{.65\textwidth}
+%        Tim will be away for a concert in Ottawa next Saturday (February 17).
+%        There will be a supply teacher. Please be kind! Tim will return to
+%        Olympiads on Sunday, February 18, and will resume teaching this class
+%        on the 24th (class 14).
+%      \end{minipage}
+%    }
+%  \end{center}
+%\end{frame}
+%
+%\begin{frame}
+%  \frametitle{Files for You to Download}
+%  Download from the school website:
+%  \begin{enumerate}
+%  \item\texttt{12-Circuits\_print.pdf}---The print version of this
+%    presentation. If you want to print on paper, I recommend printing 4 pages
+%    per side.
+%  \item\texttt{13-Homework.pdf}---Homework assignment for this class and next
+%    class. The file will be posted along Class 13 slides.
+%  \end{enumerate}
+%
+%  \vspace{.2in}Please download/print the PDF file before each class. There is
+%  no point copying notes that are already printed out for you. Instead, take
+%  notes on things I say that aren't necessarily on the slides.
+%\end{frame}
 
 
 \section{Current}
@@ -111,8 +111,8 @@
 
 \begin{frame}
   \frametitle{Resistivity}
-  The resistivity of a material is related to the electric field and current
-  density inside
+  The resistivity of a material is proportional to the electric field and
+  current density:
 
   \eq{-.3in}{
     \boxed{\mb{E}=\rho\mb{J}}
@@ -182,11 +182,11 @@
     \column{0.5\textwidth}
     \begin{center}
       \begin{tabular}{c|c|c}
-        \rowcolor{blue!70!gray}
+        \rowcolor{blue!50}
         {\color{white}Gauge} & 
         {\color{white}Diameter} & 
         {\color{white}$R/L$} \\
-        \rowcolor{blue!70!gray}
+        \rowcolor{blue!50}
         & {\color{white}(\si{mm})} & 
         {\color{white}(\SI{e-3}{\ohm/m})}\\ \hline
         0  & \num{9.35} & \num{0.31} \\
@@ -196,10 +196,11 @@
         22 & \num{0.64} & \num{51.70} \\
       \end{tabular}
     \end{center}
+    
     \column{0.5\textwidth}
     \begin{center}
       \begin{tabular}{c|c}
-        \rowcolor{blue!70!gray}
+        \rowcolor{blue!50}
         {\color{white} Material} & 
         {\color{white} Resistivity $\rho$ (\si{\ohm.m})}\\ \hline
         silver    & \num{1.6e-8} \\
@@ -394,17 +395,16 @@
   \frametitle{Resistors in Parallel}
   \framesubtitle{Equivalent Resistance}
   Through applying Ohm's Law and Kirchkoff's laws, we find the equivalent
-  resistance of a parallel circuit: \textbf{The inverse of the equivalent
-    resistance for resistors connected in parallel is the sum of the inverses
-    of the individual resistances.}
+  resistance of a parallel circuit, which we have known since Grade 9:
+  \textbf{The inverse of the equivalent resistance for resistors connected in
+    parallel is the sum of the inverses of the individual resistances.}
 
-  \eq{-.3in}{
+  \eq{-.2in}{
     \boxed{
       \frac{1}{R_\mathrm{eq}}
       =\frac{1}{R_1}+\frac{1}{R_2}+\cdots+\frac{1}{R_N}
     }
   }
-  
   \begin{center}
     \begin{tabular}{l|c|l}
       \rowcolor{pink}
@@ -444,7 +444,6 @@
   \eq{-.2in}{
     \boxed{R_\mathrm{eq}=R_1 + R_2 + \cdots + R_N}
   }
-
   \begin{center}
     \begin{tabular}{l|c|l}
       \rowcolor{pink}
@@ -768,8 +767,8 @@
     Q=e^Ke^{-t/RC}
   }
 
-  \vspace{-.1in}the constant of integration $K$ is related to initial charge on
-  the capacitor $Q_\mathrm{tot}$:
+  \vspace{-.1in}the constant of integration $K$ is the initial charge on the
+  capacitor $Q_\mathrm{tot}$:
 
   \eq{-.2in}{e^K=Q_\mathrm{tot}}
 \end{frame}
@@ -872,9 +871,9 @@
 \end{frame}
 
 \begin{frame}
-  \frametitle{A More Difficult Problem}
-  \begin{columns}
-    \column{.48\textwidth}
+  \frametitle{A Slightly More Difficult Problem}
+  \begin{center}
+%    \column{.48\textwidth}
     \begin{tikzpicture}[scale=1.2,american voltages]
       \draw[thick] (0,0) to[battery1=12<\volt>,*-*] (0,2) to[R=4<\ohm>] (2,2)
       to[short,*-](2.46,2.3);
@@ -882,14 +881,15 @@
       to[C=6<\micro\farad>,-*] (4,0)--(0,0);
       \draw[thick] (3,0) to[R=8<\ohm>,*-] (3,2);
     \end{tikzpicture}
-    \column{.52\textwidth}
-    The capacitor in the circuit is initially uncharged. Find the current
-    through the battery
-    \begin{enumerate}
-    \item Immediately after the switch is closed
-    \item A long time after the switch is closed
-    \end{enumerate}
-  \end{columns}
+  \end{center}
+%    \column{.52\textwidth}
+  \textbf{Example:} The capacitor in the circuit is initially uncharged. Find
+  the current through the battery
+  \begin{enumerate}
+  \item Immediately after the switch is closed
+  \item A long time after the switch is closed
+  \end{enumerate}
+%  \end{columns}
 \end{frame}
 
 \end{document}
