@@ -744,7 +744,7 @@
   the definition of current $I=dQ/dt$ and the voltage across a capacitor
   $V_c=Q/C$:
 
-  \eq{-.2in}{V_c-IR=0\quad\rightarrow\quad \frac{Q}{C}-R\frac{dQ}{dt}=0}
+  \eq{-.2in}{V_c-IR=0\quad\rightarrow\quad -\frac{Q}{C}-R\frac{dQ}{dt}=0}
 \end{frame}
 
 
@@ -760,7 +760,7 @@
   which we can now integrate and ``exponentiate'':
 
   \eq{-.35in}{
-    \int\frac{dQ}{Q}=\int\frac{dt}{RC}
+    \int\frac{dQ}{Q}=\int\frac{-dt}{RC}
     \;\rightarrow\;
     \ln Q=\frac{-t}{RC} + K
     \;\rightarrow\;
@@ -770,7 +770,9 @@
   \vspace{-.1in}the constant of integration $K$ is the initial charge on the
   capacitor $Q_\mathrm{tot}$:
 
-  \eq{-.2in}{e^K=Q_\mathrm{tot}}
+  \eq{-.2in}{
+    e^K=Q_\mathrm{tot}
+  }
 \end{frame}
 
 
@@ -780,11 +782,13 @@
 
   \eq{-.15in}{\boxed{Q(t)=Q_0e^{-t/\tau}}}
 
-  \vspace{-.1in}where $Q_\mathrm{tot}$ is the initial charge on the capacitor,
-  and $\tau=RC$ is called the \textbf{time constant}. Taking the time
-  derivative of $Q(t)$ gives us the current through the circuit:
+  \vspace{-.1in}where $Q_0=Q_\mathrm{tot}$ is the initial charge on the
+  capacitor, and $\tau=RC$ is called the \textbf{time constant}. Taking the
+  time derivative of $Q(t)$ gives us the current through the circuit:
 
-  \eq{-.25in}{\boxed{I(t)=\frac{dQ}{dt}=I_0e^{-t/\tau}}}
+  \eq{-.25in}{
+    \boxed{I(t)=\frac{dQ}{dt}=I_0e^{-t/\tau}}
+  }
 
   where the initially current at $t=0$ is given by
   $I_0=Q_\mathrm{tot}/\tau=Q_\mathrm{tot}/RC$.

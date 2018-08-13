@@ -52,21 +52,21 @@
 
 %\section[Intro]{Introduction}
 
-\begin{frame}
-  \frametitle{Files for You to Download}
-  Download from the school website:
-  \begin{enumerate}
-  \item\texttt{16-maxwellsEquations.pdf}---This
-    presentation. If you want to print the slides on paper, I recommend
-    printing 4 slides per page.
-%  \item\texttt{14-Homework.pdf}---Homework assignment for Class 14.
-%    Please note the new formatting style
-  \end{enumerate}
-
-  \vspace{.2in}Please download/print the PDF file before each class. When you
-  are taking notes, pay particular attention to things I say that aren't
-  necessarily on the slides.
-\end{frame}
+%\begin{frame}
+%  \frametitle{Files for You to Download}
+%  Download from the school website:
+%  \begin{enumerate}
+%  \item\texttt{16-maxwellsEquations.pdf}---This
+%    presentation. If you want to print the slides on paper, I recommend
+%    printing 4 slides per page.
+%%  \item\texttt{14-Homework.pdf}---Homework assignment for Class 14.
+%%    Please note the new formatting style
+%  \end{enumerate}
+%
+%  \vspace{.2in}Please download/print the PDF file before each class. When you
+%  are taking notes, pay particular attention to things I say that aren't
+%  necessarily on the slides.
+%\end{frame}
 
 
 \begin{frame}
@@ -75,11 +75,14 @@
   Amp\`{e}re's law, as we know it, only applied to \emph{steady} currents:
 
   \eq{-.1in}{
-    \oint_C \mb{B}\cdot d\boldsymbol{\ell}=\mu_0 I
+    \oint_C \mb{B}\cdot d\boldsymbol{\ell}=\mu_0 I_c
   }
-
-  But current are not always steady in $RC$ circuits. Applying Amp\`{e}re's law
-  at a charging/discharging capacitor gives an ambiguous answer
+  However,
+  \begin{itemize}
+  \item Current are usually not steady in $RC$ circuits
+  \item Applying Amp\`{e}re's law at a charging/discharging capacitor gives an
+    ambiguous answer
+  \end{itemize}
 \end{frame}
 
 \begin{frame}
@@ -89,9 +92,9 @@
     \pic{.3}{mag_displacement_fig3.jpg}
   \end{center}
 
-  Four surfaces bounded by the same circular amperian loop (think blowing a
-  soap bubble). Surfaces \numlist{1;2;4} have currents penetrating through
-  them, but surface \num{3} does not
+  \vspace{-.15in}Four surfaces bounded by the same circular Amperian loop
+  (think blowing a soap bubble). Surfaces \numlist{1;2;4} have currents
+  penetrating through them, but surface \num{3} does not.
 \end{frame}
 
 \begin{frame}
@@ -130,10 +133,13 @@
 
 \begin{frame}
   \frametitle{Maxwell's Equations}
-  Maxwell recognized the relationship between electricity and
-  magnetism in \textbf{Gauss's law}, \textbf{Faraday's law} and
-  \textbf{Amp\`{e}re's law}, and combined them into a unifying set of
-  equations, now known as \textbf{Maxwell's equations} for electrodynamics.
+  \begin{itemize}
+  \item Maxwell recognized the relationship between electricity and
+    magnetism in \textbf{Gauss's law}, \textbf{Faraday's law} and
+    \textbf{Amp\`{e}re's law}
+  \item combined them into a unified set of equations, now known as
+    \textbf{Maxwell's equations} for electrodynamics.
+  \end{itemize}
 \end{frame}
 
 
@@ -142,7 +148,7 @@
   Maxwell's equations can be expressed in its integral form, which is how we
   have studied the equations in the first place:
 
-  {\Large
+  \vspace{-.2in}{\Large
     \begin{align*}
       \oint\mb{E}\cdot d\mb{A} &=\frac{q}{\varepsilon_0} &
       \text{\normalsize (Gauss, for $\mb{E}$)}\\
@@ -203,14 +209,14 @@
 
     \column{.75\textwidth}
     \begin{itemize}
-    \item Usually Maxwell's equations are expressed in \emph{differential} form,
+    \item Often Maxwell's equations are expressed in \emph{differential} form,
       which is obtained using vector calculus. Follow
       [\underline{\href{https://www.wikihow.com/Convert-Maxwell\%27s-Equations-into-Differential-Form}{this link}}]
       to see how it's done.
-    \item The differential form gives a clear picture of how the \emph{time}
-      rate of change of $\mb{E}$ and $\mb{B}$ are related to the \emph{spatial}
-      rate of change of the other field
-    \item The last two equations (Faraday's law and Amp\`{e}re's law) together
+    \item The differential form shows how the \emph{time derivatives} of
+      $\mb{E}$ and $\mb{B}$ are related to the \emph{spatial derivatives}
+      of the other field
+    \item The last two equations (Faraday's and Amp\`{e}re's laws) together
       represent two set of second order partial differential equations (one for
       each field), the solution of which represents a traveling wave
     \end{itemize}
@@ -220,8 +226,8 @@
 
 \begin{frame}
   \frametitle{Electromagnetic (EM) Wave}
-  We can manipulate Maxwell's equations to show that an ``electromagnetic
-  wave'' must exist. A simple case where electric and magnetic fields vary in
+  Maxwell's equations show that an ``electromagnetic wave'' must exist. In a
+  simple case where electric and magnetic fields only vary in
   $x$ and time $t$ only, i.e.\ $\mb{E}=\mb{E}(x,t)$ and $\mb{B}=\mb{B}(x,t)$,
   Faraday's and Amp\`{e}re's laws reduce to:
 
@@ -232,7 +238,7 @@
   }
 
   Taking the spatial derivative of $E$ with respect to $x$ on both
-  side of Faraday's law, we get:
+  side of Faraday's law, and switch the order of differentiation, we get:
 
   \eq{-.3in}{
       \frac{\partial}{\partial x}
@@ -264,8 +270,8 @@
     \mu_0\varepsilon_0\frac{\partial^2 E}{dt^2}
   }
   
-  Compare this to the standard form of the one-dimensional wave equation (a
-  second-order partial differential equation):
+  This is the standard form of the 1D wave equation (a 2nd-order partial
+  differential equation):
 
   \eq{-.2in}{
     \frac{\partial^2\Psi}{\partial x^2}=
@@ -278,9 +284,9 @@
   \begin{itemize}
   \item ``Second-order'' means that the equation deals with second derivatives,
     in this case, in $x$ and in $t$.
-  \item ``Partial'' means the equation involves partial derivatives, which is
-    the derivative you take when the function is made of more than one
-    variables, and you are only differentiating against one variable
+  \item ``Partial'' means the equation involves partial derivatives (i.e.\
+    when a function has more than one variables, and you only differentiate
+    against one variable)
   \item We can also repeat the exercise by first differentiating Amp\`{e}re's
     law to get
 
@@ -322,7 +328,7 @@
   A peculiar feature of Maxwell's equation:
   \begin{itemize}
   \item When applying \emph{Galilean transformation} (our classical equation for
-    \emph{relative velocity}) to these equations, they seem to fail 
+    \emph{relative motion}) to Maxwell's equations, they seem to ``fail''
   \item Gauss's law for magnetism break down: magnetic field lines appear to
     have beginnings/ends
   \item So does that mean that in \emph{some} inertial frames of reference,
