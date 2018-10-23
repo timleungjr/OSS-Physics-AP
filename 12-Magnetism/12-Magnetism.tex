@@ -1022,49 +1022,69 @@
 
 \begin{frame}
   \frametitle{Magnetic Energy}
-  Just as a capacitor stores energy, the energy stored by an inductor carrying
-  a current $I$ in given by:
+  Just as a capacitor stores energy in its electric field, an inductor coil
+  carrying a current $I$ stores energy in its magnetic field, given by:
 
-  \eq{-.2in}{ \boxed{U_m=\frac{1}{2}LI^2}}
+  \eq{-.2in}{
+    \boxed{U_m=\frac{1}{2}LI^2}
+  }
 
   We can also define a \textbf{magnetic energy density}:
 
-  \eq{-.2in}{ \boxed{\eta_m=\frac{B^2}{2\mu_0}}}
-
+  \eq{-.2in}{
+    \boxed{\eta_m=\frac{B^2}{2\mu_0}}
+  }
 \end{frame}
 
 
+\section{LC Circuit}
+\begin{frame}
+  \frametitle{LC Circuit}
+  The final type of circuit that we will study in AP Physics is the LC
+  circuit. In its simplest form, the circuit has an inductor and capacitor
+  connected in series:
+  \begin{center}
+    \begin{tikzpicture}[american voltages,scale=1.2]
+      \draw[thick](0,0) to[L=$L$] (0,2)--(2,2) to[C=$C$] (2,0)--(0,0);
+    \end{tikzpicture}
+  \end{center}
+  We apply the Kirchkoff's voltage law:
+  
+  \eq{-.2in}{
+    -V_L-V_C=0
+    \quad\rightarrow\quad
+    L\frac{dI}{dt}+\frac{Q}{C}=0
+  }
+\end{frame}
+
+\begin{frame}
+  \frametitle{LC Circuits}
+  Since both terms are continuously differentiable, we can differentiate both
+  sides of the equation, which gives:
+
+  \eq{-.2in}{
+    L\frac{d^2I}{dt^2}+\frac{1}{C}\underbrace{\frac{dQ}{dt}}_I=0
+  }
+
+  In fact, the above equation is one that we have studied many topics ago:
+
+  \eq{-.2in}{
+    \frac{d^2I}{dt^2}+\frac{1}{LC}I=0
+  }
+
+  This is a second-order ordinary differential equation, and the solution is
+  the simple harmonic motion.
+\end{frame}
 
 
-%\section{Maxwell's Equations}
-%\begin{frame}
-%  \frametitle{Maxwell's Equations in Integral Form}
-%  James Clerk Maxwell recognized the relationship between electricity and
-%  magnetism, and combined the few laws into a unifying set of equations, now
-%  known as \textbf{Maxwell's equations} for electrodynamics:
-%
-%
-%  By manipulating the equations, we can show the existence of a
-%  ``electromagnetic wave'' that travels at the speed of light.
-%\end{frame}
-%
-%\begin{frame}
-%  \frametitle{Maxwell's Equations in Differential Form}
-%\end{frame}
+\begin{frame}
+  \frametitle{LC Circuit}
+  The current inside of an LC circuit is given by:
+
+  \eq{-.2in}{
+    I(t)=I_o\sin(\omega t + \varphi)\quad\text{where}\quad
+    \omega=\frac{1}{\sqrt{LC}}
+  }
+\end{frame}
 
 \end{document}
-
-
-
-%
-%\begin{frame}
-%  \frametitle{Faraday's Law}
-%  Faraday's law states that the rate of change of magnetic flux produces an
-%  electromotive force:
-%
-%  \eq{-.2in}{
-%    \boxed{\mathcal{E}=-\frac{d\Phi}{dt}}
-%  }
-%\end{frame}
-%
-%\end{document}

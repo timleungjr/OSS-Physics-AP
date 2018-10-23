@@ -23,11 +23,12 @@
   per-mode=symbol
 }
 
-\title{1.\ Kinematics, With Calculus}
+\title{Topic 1: Introduction \& Kinematics} %, With Calculus}
 \subtitle{Advanced Placement Physics}
 \author[TML]{Dr.\ Timothy Leung}
 \institute{Olympiads School}
-\date{Summer 2018}
+%\date{Summer 2018}
+\date{Fall 2018}
 
 \newcommand{\pic}[2]{\includegraphics[width=#1\textwidth]{#2}}
 \newcommand{\mb}[1]{\ensuremath\mathbf{#1}}
@@ -135,9 +136,9 @@
 \end{frame}
 
 
-
-\titlepage
-
+\begin{frame}
+  \titlepage
+\end{frame}
 
 %\begin{frame}
 %  \frametitle{Files for You to Download}
@@ -158,23 +159,21 @@
 
 \section{Vectors}
 
-\begin{frame}
-  \frametitle{Notes on  Writing Vectors}
-  Like in my Physics 12 class (and most university textbooks), we \emph{print}
-  vectors using a bold face font, while using use the ``arrow on top'' format
-  when \emph{writing}.
-  \vspace{0.1in}
+\begin{frame}{Notes on  Writing Vectors}
+  In this course, we \emph{print} vectors using a bold face font, while using
+  use the ``arrow on top'' format when \emph{writing}.
+  \vspace{.1in}
   \begin{columns}
-    \column{0.43\textwidth}
+    \column{.43\textwidth}
     \textbf{In print (books, journal papers)}
-    \vspace{-0.2in}{\LARGE
+    \vspace{-.2in}{\LARGE
       \begin{displaymath}
         \mathbf{v}\quad\mathbf{F}_g\quad\mathbf{p}\quad\mathbf{I}
       \end{displaymath}
     }
-    \column{0.5\textwidth}
+    \column{.5\textwidth}
     \textbf{Handwritten (used by some books)}
-    \vspace{-0.2in}{\LARGE
+    \vspace{-.2in}{\LARGE
       \begin{displaymath}
         \vec{v}\quad\vec{F}_g\quad\vec{p}\quad\vec{I}
       \end{displaymath}
@@ -182,25 +181,23 @@
   \end{columns}
 
   When we write the magnitude of these vectors, we have two options:
-  \vspace{0.1in}
+  \vspace{.1in}
   \begin{columns}
-    \column{0.5\textwidth}
+    \column{.5\textwidth}
     \textbf{With absolute-value sign}
-    \vspace{-0.2in}{\LARGE
+    \vspace{-.2in}{\LARGE
       \begin{displaymath}
         |\mathbf{v}|\quad|\mathbf{F}_g|\quad|\mathbf{p}|\quad|\mathbf{I}|
       \end{displaymath}
     }
-    \column{0.42\textwidth}
+    \column{.42\textwidth}
     \textbf{Or as a scalar value}
-      \vspace{-0.2in}{\LARGE
+      \vspace{-.2in}{\LARGE
         \begin{displaymath}
           v\quad F_g\quad p \quad I
         \end{displaymath}
       }
   \end{columns}
-
-  This actually makes sense because the magnitude of a vector is a scalar
 \end{frame}
 
 
@@ -359,7 +356,7 @@
   \framesubtitle{Thanks, Issac Newton}
   \begin{itemize}
   \item We cannot learn physics properly without calculus (you got away with it
-    long enough in Grade 11 and 12 Physics classes\ldots)
+    long enough in grades 11 and 12\ldots)
   \item Calculus was ``invented'' so that we can understand motion, especially
     non-constant velocities and accelerations
   \item You may have already noticed that a lot of the word problems in
@@ -595,11 +592,12 @@
     bodies (groups of objects)
   \item Relationship between 
     \begin{itemize}
-    \item Position \& displacement
+    \item Position
+    \item Displacement
     \item Velocity
     \item Acceleration
     \end{itemize}
-  \item Kinematics does not deal with what causes the motion
+  \item Kinematics does not deal with what causes motion
   \end{itemize}
 \end{frame}
 
@@ -667,7 +665,7 @@
 
 \begin{frame}{Integrating Velocity to Get Position/Displacement}
   If instantaneous velocity $\mb{v}$ is the rate of change of position
-  $\mb{x}$ with respect to time $t$, then $\mb{x}$ is the time integral of
+  $\mb{x}$ w.r.t.\ time $t$, then $\mb{x}$ is the time integral of
   $\mb{v}$ (by the fundamental theorem of calculus):
   
   \eq{-.2in}{
@@ -721,7 +719,7 @@
 
 
 \begin{frame}{Instantaneous Acceleration}
-  In the same way that velocity is the time derivative of position,
+  In the same way that velocity is the derivative of position w.r.t\ time,
   \textbf{acceleration is the rate of change in velocity}, i.e.:
 
   \eq{-.2in}{
@@ -875,23 +873,23 @@
 
     \vspace{-.3in}{\Large
       \begin{align*}
-        \Delta\mb{x} &=\mb{v}_1\Delta t + \frac{1}{2}\mb{a}\Delta t^2\\
-        \Delta\mb{x} &=\mb{v}_2\Delta t - \frac{1}{2}\mb{a}\Delta t^2\\
-        \Delta\mb{x} &=\frac{\mb{v}_1+\mb{v}_2}{2} \Delta t\\
-        \mb{v}_2 &=\mb{v}_1+\mb{a}\Delta t\\
+        \Delta\mb{x} &=\mb{v}_1t + \frac{1}{2}\mb{a}t^2\\
+        \Delta\mb{x} &=\mb{v}_2t - \frac{1}{2}\mb{a}t^2\\
+        \Delta\mb{x} &=\frac{\mb{v}_1+\mb{v}_2}{2}t\\
+        \mb{v}_2 &=\mb{v}_1+\mb{a}t\\
         v_2^2 &= v_1^2+ 2a \Delta x
       \end{align*}
     }
     
     \column{.55\textwidth}
-    Even though \emph{some} of the kinematic problems that you encounter in
+    Although \emph{some} kinematic problems in
     AP Physics require calculus, these basic kinematic equations are still a
     very powerful tool.
     \begin{itemize}
     \item The variables of interests are:
 
       \eq{-.3in}{
-        \Delta\mb{x}\quad\mb{v}_1\quad\mb{v}_2\quad\Delta t\quad\mb{a}
+        \Delta\mb{x}\quad\mb{v}_1\quad\mb{v}_2\quad t\quad\mb{a}
       }
     \item Only applicable for constant acceleration
     \end{itemize}
@@ -932,16 +930,14 @@
   \item For projectile motion, there is no acceleration in the $x$ direction,
     i.e.\ $a_x=0$, therefore the kinematic equations reduce to just
     
-    \eq{-.35in}{\Delta x=v_x\Delta t}
+    \eq{-.35in}{\Delta x=v_xt\bm{\hat{\imath}}}
   \item The only acceleration is in the $y$ direction:
     
-    \eq{-.25in}{a_y=\magdir{\SI{9.81}{m/s^2}}{down}}
+    \eq{-.25in}{a_y=-g\bm{\hat{\jmath}}=\SI{9.81}{m/s^2}\bm{\hat{\jmath}}}
 
-    \vspace{-.15in}We \emph{usually} define the (+) direction to be
-    \textrm{[up]}, so $g=\SI{-9.81}{m/s^2}$, but it can change depending on the
-    problem
-  \item The variable that connects the two directions is the time interval
-    $\Delta t$
+    \vspace{-.15in}We \emph{usually} define the $\bm{\hat{\jmath}}$ direction
+    to be \emph{up}.
+  \item The variable that connects the two directions is time $t$
   \end{itemize}
 \end{frame}
 
