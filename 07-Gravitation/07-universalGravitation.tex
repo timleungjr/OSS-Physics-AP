@@ -27,9 +27,9 @@
 
 \title{Topic 7: Universal Gravitation}
 \subtitle{Advanced Placement Physics}
-\author[TML]{Dr.\ Timothy Leung}
+\author[TML]{Timothy Leung, Ph.D.}
 \institute{Olympiads School}
-\date{Summer 2018}
+\date{Fall 2018}
 
 \newcommand{\pic}[2]{\includegraphics[width=#1\textwidth]{#2}}
 \newcommand{\mb}[1]{\ensuremath\mathbf{#1}}
@@ -119,8 +119,9 @@
   \item The two forces are equal in magnitude and opposite in direction
     (Newton's 3rd law)
   \item Assumption: $m_1$ and $m_2$ are \emph{point masses}
-    that do not occupy any space. We have already shown that the forces acting
-    on an ensemble of masses is the same as acting at its center of mass
+    that do not occupy any space.
+  \item Recall: forces acting on an ensemble of masses is the same as acting at
+    its center of mass
   \item Therefore, for the universal gravitational equation to work:
     
     \eq{-.2in}{
@@ -433,7 +434,7 @@
 \section{Orbits}
 
 \begin{frame}
-  \frametitle{Celestial Mechanics \& Kepler's Laws of Planetary Motion}
+  \frametitle{Orbital Mechanics \& Kepler's Laws of Planetary Motion}
   In Physics 12, you studied briefly at the orbits of satellites around Earth,
   or the orbit of Earth and other planets around the Sun.
   \begin{itemize}
@@ -556,8 +557,8 @@
     \end{tikzpicture}
   \end{center}
   
-  Both objects are escapeing from distance $r$ from the centre of
-  the planet. The difference is that the object in orbit (left) already has
+  Both objects are escaping from distance $r$ from the centre of the planet.
+  The difference is that the object in orbit (left) already has
   orbital speed $v_\mathrm{orbit}$, so escaping from that orbit requires an
   additional speed of
 
@@ -600,7 +601,7 @@
 
 
 
-\section{Celestial Mechanics}
+\section{Orbital Mechanics}
 
 
 \begin{frame}
@@ -775,13 +776,13 @@
 
 \begin{frame}
   \frametitle{Gravity is a Central Force}
+  Gravity is called a \textbf{central force} in that
   \begin{itemize}
-  \item Gravity is called a \emph{central force} in that
-  \item Gravitational force $\mb{F}_g$ is in the $-\hat{\mb{r}}$ direction, i.e.
-    $\mb{F}\times\mb{r}=\mb{0}$
+  \item Gravitational force $\mb{F}_g$ is always in the $-\hat{\mb{r}}$
+    direction, i.e.\ $\mb{F}\times\mb{r}=\mb{0}$
   \item Therefore gravity doesn't add torque
-  \item No change in angular momentum: $\mb{L}=\text{constant}$
-  \item This is true regardless of whether the orbit is circular or elliptical
+  \item And therefore angular momentum $\mb{L}$ is constant
+  \item True regardless of whether the orbit is circular or elliptical
   \end{itemize}
 \end{frame}
 
@@ -1004,28 +1005,29 @@
 
 \begin{frame}
   \frametitle{Kepler's Third Law: The Law of Periods}
-  Now that we have an expression for areal velocity (a constant!), we can
-  integrate with respect to time, from $t=0$ to $t=T$ to get the period:
+  The area swept by the planet through one orbital period is the areal velocity
+  (constant!) integrated by time, from $t=0$ to $t=T$:
 
   \eq{-.2in}{
-    \int_0^T\frac{dA}{dt}dt=\frac{L}{2\mu}\int_0^Tdt
-    \quad\longrightarrow\quad
-    A=\frac{L}{2\mu}T
+    A=\int dA=\int_0^T\frac{dA}{dt}dt=\frac{L}{2\mu}\int_0^Tdt=\frac{L}{2\mu}T
   }
 
-  But we know that the area of an ellipse is given by:
+  This area is an ellipse, given by the equation:
 
   \eq{-.2in}{
-    A=\pi ab\quad\quad\textnormal{and}\quad\quad b^2=a^2(1-e^2)
+    %A=\pi ab\quad\quad\textnormal{and}\quad\quad b^2=a^2(1-e^2)
+    A=\pi ab=\pi a^2\sqrt{1-e^2}
   }
 
-  where $e$ is the eccentricity of the ellipse. Combine that also with the
-  expression for angular momentum:
+  \vspace{-.1in}%where $e$ is the eccentricity of the ellipse.
+  Combining the two equations above give this expression:
 
   \eq{-.2in}{
-    L=\mu\sqrt{GMa(1-e^2)}
+    T^2=\frac{\mu^2}{L^2}4\pi^2a^4(1-e^2)
+    %L=\mu\sqrt{GMa(1-e^2)}
   }
-  where $M$ is the total mass of the two celestial objects
+  There is still the variables $L$ and $e$ to eliminate
+  %where $M$ is the total mass of the two celestial objects
 \end{frame}
 
 

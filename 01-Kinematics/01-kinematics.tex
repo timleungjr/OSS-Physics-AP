@@ -27,7 +27,6 @@
 \subtitle{Advanced Placement Physics}
 \author[TML]{Dr.\ Timothy Leung}
 \institute{Olympiads School}
-%\date{Summer 2018}
 \date{Fall 2018}
 
 \newcommand{\pic}[2]{\includegraphics[width=#1\textwidth]{#2}}
@@ -50,8 +49,7 @@
 \section{Housekeeping}
 
 
-\begin{frame}
-  \frametitle{Pre-requisites}
+\begin{frame}{Pre-requisites}
   \begin{itemize}
   \item\textbf{Physics 11 and 12} As AP Physics is primarily taught at the
     first-year university level, you will need to be comfortable with the
@@ -69,8 +67,7 @@
 
 
 
-\begin{frame}
-  \frametitle{The AP Physics Exams}
+\begin{frame}{The AP Physics Exams}
   There are 4 AP Physics exams:
   \begin{itemize}
   \item Physics 1
@@ -79,45 +76,6 @@
   \item Physics C--Electricity and Magnetism
   \end{itemize}
   Offered in first or second week of May of each year
-\end{frame}
-
-
-
-
-\begin{frame}
-  \frametitle{Hi, My Name is Tim}
-  \begin{columns}
-
-    \column{.3\textwidth}
-    \pic{1}{tim.jpg}
-    
-    \column{.7\textwidth}
-    \begin{itemize}
-    \item B.A.Sc.\ in Engineering Physics (UBC)
-      \begin{itemize}
-      \item Won the Roy Nodwell Prize for my design of a solar car
-      \end{itemize}
-    \item M.A.Sc.\ and Ph.D.\ in Aerospace Engineering (UTIAS)
-      \begin{itemize}
-      \item ``Computational Fluid Dynamics'' (CFD)
-      \item ``Aerodynamic shape optimization''
-      \item Aircraft design
-      \end{itemize}
-    \item Also spent a year in Vancouver as a professional violinist\ldots
-    \end{itemize}
-  \end{columns}
-\end{frame}
-
-
-
-\begin{frame}
-  \frametitle{Tim's Past Research Work}
-  \begin{center}
-    \pic{0.25}{view-grid-original-1024x899.jpg}\hspace{0.01in}
-    \pic{0.25}{view-grid-final-1024x899.jpg}\hspace{0.01in}
-    \pic{0.225}{flowsolution-original-1024x1000.jpg}\hspace{0.01in}
-    \pic{0.225}{flowsolution-deformed-1024x1000.jpg}
-  \end{center}
 \end{frame}
 
 
@@ -138,20 +96,20 @@
   \titlepage
 \end{frame}
 
-%\begin{frame}
-%  \frametitle{Files for You to Download}
-%  \begin{itemize}
-%  \item\texttt{00-courseOutline.pdf}--The course outline that I am handing to
-%    you now.
-%  \item\texttt{01-kinematics.pdf}--The slides that I am using right now. If
-%    you wish to print them, I recommend printing $4$ slides per page.`
-%  \item\texttt{01-Homework.pdf}--The homework assignment for Topic 1
-%    (Kinematics).
-%  \end{itemize}
-%  Please download/print the PDF file for the class slides before each class.
-%  There is no point copying notes that are already printed out for you.
-%  Instead, take notes on things I say that aren't necessarily on the slides.
-%\end{frame}
+\begin{frame}
+  \frametitle{Files for You to Download}
+  \begin{itemize}
+  \item\texttt{00-courseOutline.pdf}--The course outline that I am handing to
+    you now.
+  \item\texttt{01-kinematics.pdf}--The slides that I am using right now. If
+    you wish to print them, we recommend printing $4$ slides per page.
+  \item\texttt{02-dynamics.pdf}--The slides that I will be using next week.
+  \item\texttt{02-Homework.pdf}--The homework assignment for Topics 1 \& 2.
+  \end{itemize}
+  Please download/print the PDF file for the class slides before each class.
+  There is no point copying notes that are already printed out for you.
+  Instead, take notes on things I say that aren't necessarily on the slides.
+\end{frame}
 
 
 
@@ -200,8 +158,8 @@
 
 
 \begin{frame}{Writing Vectors}
-  In Physics 11 and 12, vectors are written by separating the magnitude from
-  the direction, e.g.\ a velocity vector can be written as:
+  In Physics 11 and 12, vectors are often written by separating the magnitude
+  from the direction, e.g.\ a velocity vector can be written as:
   
   \eq{-.1in}{
     \mb{v}=\SI{4.5}{m/s}\text{ [N \ang{55} E]}
@@ -210,7 +168,7 @@
   \begin{itemize}
   \item Intuitive for describing \emph{one} vector in 2D
   \item Complicated to describe direction when extended into 3D
-  \item Difficult to perform vector arithmetic
+  \item Difficult to perform vector arithmetics
   \end{itemize}
 \end{frame}
 
@@ -353,8 +311,8 @@
 \begin{frame}{Calculus is Invented for Physics}
   \framesubtitle{Thanks, Issac Newton}
   \begin{itemize}
-  \item We cannot learn physics properly without calculus (you got away with it
-    long enough in grades 11 and 12\ldots)
+  \item We cannot learn physics properly without calculus %(you got away with it
+    %long enough in grades 11 and 12\ldots)
   \item Calculus was ``invented'' so that we can understand motion, especially
     non-constant velocities and accelerations
   \item You may have already noticed that a lot of the word problems in
@@ -423,8 +381,7 @@
 
 
 
-\begin{frame}
-  \frametitle{Time-Saving Rules for Differentiation}
+\begin{frame}{Time-Saving Rules for Differentiation}
   Power Rule:
 
   \eq{-.3in}{
@@ -485,16 +442,16 @@
 
 \begin{frame}{Partial Derivatives}
   Equations in physics are often functions with many variables. For
-  example, gravitational potential energy $U_g$ has three variables: the masses
-  $m_1$ and $m_2$ and their distance $r$:
+  example, gravitational potential energy $U_g$ has three variables: masses
+  $m_1$ and $m_2$ and the distance $r$ between them:
 
   \eq{-.25in}{ U_g(m_1,m_2,r)=-\frac{Gm_1m_2}{r} }
 
   %A \textbf{partial derivative} is
   Differentiating w.r.t.\ one variable while holding other variables
-  constant gives its \textbf{partial derivative}. We use
-  the $\partial$ symbol. In this example, the partial derivative of $U_g$
-  w.r.t.\ $r$ is
+  constant gives its \textbf{partial derivative}. (We use
+  the $\partial$ symbol for partial derivatives). In this example, the partial
+  derivative of $U_g$ w.r.t.\ $r$ is
 
   \eq{-.2in}{ \frac{\partial U_g}{\partial r}=\frac{Gm_1m_2}{r^2}}
 
@@ -516,9 +473,8 @@
 
 
 \begin{frame}{Common Integrals in Physics}
-  Integration can be very daunting (even though it's often necessary), but the
-  integrals in AP Physics are relatively straightforward. These examples should
-  help in most cases:
+  Integration, while often necessary, can be very daunting, but integrals in AP
+  Physics are generally straightforward. These rules should help in most cases:
 
   \begin{itemize}
   \item Power rule in reverse:
@@ -543,8 +499,8 @@
       \end{align*}
     }
   \end{itemize}
-  We can ``ignore'' (i.e.\ cancel) the constant of integration $C$ for definite
-  integrals.
+  %We can ``ignore'' (i.e.\ cancel) the constant of integration $C$ for definite
+  %integrals.
 \end{frame}
 
 
@@ -930,7 +886,7 @@
     \eq{-.35in}{\Delta x=v_xt\bm{\hat{\imath}}}
   \item The only acceleration is in the $y$ direction:
     
-    \eq{-.25in}{a_y=-g\bm{\hat{\jmath}}=\SI{9.81}{m/s^2}\bm{\hat{\jmath}}}
+    \eq{-.25in}{a_y=-g\bm{\hat{\jmath}}=\SI{-9.81}{m/s^2}\bm{\hat{\jmath}}}
 
     \vspace{-.15in}We \emph{usually} define the $\bm{\hat{\jmath}}$ direction
     to be \emph{up}.
