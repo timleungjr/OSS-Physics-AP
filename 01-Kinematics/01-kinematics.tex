@@ -301,7 +301,7 @@
   \item The direction of the arrow gives the index of the cross product
     (e.g.\ $\bm{\hat{\imath}}\times\bm{\hat{\jmath}}=\bm{\hat{k}}$)
   \item Going against the direction of the arrow gives the negative of the next
-    index (e.g.\ $\bm{\hat{k}}\times\bm{\hat{\jmath}}=\bm{\hat{\imath}}$)
+    index (e.g.\ $\bm{\hat{k}}\times\bm{\hat{\jmath}}=-\bm{\hat{\imath}}$)
   \end{itemize}
 \end{frame}
 
@@ -325,8 +325,7 @@
   \begin{itemize}
   \item\textbf{Differential Calculus}
     \begin{itemize}
-    \item Finding how quickly something is changing (``rate of change'' of a
-      quantity)
+    \item How quickly something is changing (``rate of change'' of a quantity)
     \item Math: slopes of functions
     \item Physics: how quickly a physical quantity is changing in time and/or
       space
@@ -527,11 +526,16 @@
   A \textbf{definite} integral has lower and upper bounds. e.g., given
   $\mb{v}(t)$, the displacement between $t_1$ and $t_2$ can be found:
 
-  \eq{-.3in}{ \Delta\mb{x}=\int_{t_1}^{t_2} \mb{v}(t)dt }
+  \eq{-.3in}{ \Delta\mb{x}=\int_{t_0}^{t_1} \mb{v}(t)dt }
 
   Once we have computed the integral, we evaluate the limits:
   
-  \eq{-.2in}{\Delta\mb{x} = \mb{x}(t)\Big|^{t_2}_{t_1}=\mb{x}(t_2)-\mb{x}(t_1) }
+  \eq{-.2in}{
+    \Delta\mb{x} =
+    \mb{x}(t)\Big|^{t_1}_{t_0}=
+    \mb{x}(t_1)-\mb{x}(t_0)=
+    \mb{x}_1-\mb{x}_0
+  }
 
   The constant of integration $\mb{C}$ cancels when we evaluate the upper and
   lower bounds.
@@ -619,15 +623,15 @@
 \begin{frame}{Integrating Velocity to Get Position/Displacement}
   If instantaneous velocity $\mb{v}$ is the rate of change of position
   $\mb{x}$ w.r.t.\ time $t$, then $\mb{x}$ is the time integral of
-  $\mb{v}$ (by the fundamental theorem of calculus):
+  $\mb{v}$:
   
   \eq{-.2in}{
     \mb{x}(t)=\int\mb{v}(t)dt + \mb{x}_0
   }
   
-  where $\mb{x}_0=\mb{x}(0)$ is the \emph{initial position} at $t=0$. As both
-  $\mb{x}$ and $\mb{v}$ are vectors, we integrate each component to get
-  $\mb{x}$:
+  The constant of integral $\mb{x}_0=\mb{x}(0)$ is the \emph{initial position}
+  at $t=0$. As both $\mb{x}$ and $\mb{v}$ are vectors, we integrate each
+  component to get $\mb{x}$:
 
   \eq{-.2in}{ \mb{x}(t)= \left(
     \int v_x\bm{\hat{\imath}} +
@@ -640,18 +644,17 @@
 
 \begin{frame}{Average Velocity}
   The \textbf{average velocity} of an object is the the change in position
-  $\Delta\mb{v}$ over a finite time interval:
+  $\Delta\mb{x}$ over a finite time interval $\Delta t$:
 
   \eq{-.3in}{
-    \boxed{\mb{v}_\mathrm{ave}= \frac{\Delta\mb{x}}{\Delta t}}
+    \boxed{\overline{\mb{v}}= \frac{\Delta\mb{x}}{\Delta t}}
   }
   
-  Just like for instantaneous velocity, we can find the $x$, $y$
-  and $z$ components of average velocity by separating components in each
-  direction:
+  Like instantaneous velocity, we can find the $x$, $y$ and $z$ components of
+  average velocity by separating components in each direction:
 
   \eq{-.2in}{
-    \mb{v}_\mathrm{ave}= %\frac{\Delta\mb{x}}{\Delta t} =
+    \overline{\mb{v}}=
     \frac{\Delta x}{\Delta t}\bm{\hat{\imath}} +
     \frac{\Delta y}{\Delta t}\bm{\hat{\jmath}} +
     \frac{\Delta z}{\Delta t}\bm{\hat{k}}
@@ -684,6 +687,26 @@
   \item Take derivative of $\mb{x}(t)$ to get $\mb{v}(t)=\mb{x}'(t)$
   \item Take derivative again of $\mb{v}(t)$ to get $\mb{a}(t)=\mb{v}'(t)$
   \end{enumerate}
+\end{frame}
+
+
+
+\begin{frame}{Special Notation When Differentiating With Time}
+  Physicists and engineers use a special notation when the derivative is
+  taken with respect to time, by writing a dot above the variable:
+  \begin{itemize}
+  \item Velocity:
+
+    \eq{-.2in}{
+      \boxed{\mb{v}(t)= \dot{\mb{x}}(t)}
+    }
+  \item Acceleration:
+
+    \eq{-.2in}{
+      \boxed{\mb{a}(t)= \dot{\mb{v}}(t)=\ddot{\mb{x}}(t)}
+    }
+  \end{itemize}
+  
 \end{frame}
 
 
@@ -720,10 +743,8 @@
 \end{frame}
 
 
-\begin{frame}{Converting Motion Graphs}
-  For constant velocity (uniform motion), the motion graphs are like this:
-
-  \vspace{-.1in}
+\begin{frame}{Motion Graphs}
+  \framesubtitle{Uniform Motion (Constant Velocity)}
   \begin{center}
     \begin{tikzpicture}[scale=.5]
       \draw[->,thick] (0,0)--(4.5,0) node[pos=1,right]{$t$};
@@ -746,18 +767,15 @@
 
   \begin{itemize}
   \item Constant velocity has a straight line in the $d-t$ graph
-  \item The slope of the $d-t$ graph is the velocity $v$ %(may be positive,
-    %negative or zero)
-  \item There is no acceleration so $a=0$ for all $t$
+  \item The slope of the $d-t$ graph is the velocity $v$
+  \item The slope of the $v-t$ graph is the acceleration $a$, which is zero in
+    this case
   \end{itemize}
 \end{frame}
 
 
-\begin{frame}{Converting Motion Graphs}
-  For constant acceleration (uniform acceleration), the motion graphs are like
-  this:
-
-  \vspace{-.1in}
+\begin{frame}{Motion Graphs}
+  \framesubtitle{Uniform (Constant) Acceleration}
   \begin{center}
     \begin{tikzpicture}[scale=.5]
       \draw[->,thick] (0,0)--(4.5,0) node[pos=1,right]{$t$};
@@ -785,15 +803,52 @@
     \item If the parabola is \emph{convex}, then acceleration is positive
     \item If the parabola is \emph{concave}, then acceleration is negative
     \end{itemize}
-  \item The $v-t$ graph is a straight line; the slope of this graph (a constant)
-    is the acceleration
+  \item The $v-t$ graph is a straight line; its slope (a constant) is the
+    acceleration
+  \end{itemize}
+\end{frame}
+
+
+\begin{frame}{Motion Graphs}
+  \framesubtitle{Simple Harmonic Motion}
+  For oscillatory motion, or \textbf{simple harmonic motion} (we will study
+  this more in-depth later), neither position, velocity nor acceleration are
+  constant:
+
+  \vspace{-.1in}
+  \begin{center}
+    \begin{tikzpicture}[scale=.5]
+      \draw[->,thick] (0,0)--(4.5,0) node[pos=1,right]{$t$};
+      \draw[->,thick] (0,-2.5)--(0,2.5) node[pos=1,above]{$d$};
+      \draw[smooth,samples=50,domain=0:4,red!80!black,ultra thick]
+      plot({\x},{2*sin(150*\x)});
+    \end{tikzpicture}
+    \hspace{.15in}
+    \begin{tikzpicture}[scale=.5]
+      \draw[->,thick] (0,0)--(4.5,0) node[pos=1,right]{$t$};
+      \draw[->,thick] (0,-2.5)--(0,2.5) node[pos=1,above]{$v$};
+      \draw[smooth,samples=50,domain=0:4,red!80!black,ultra thick]
+      plot({\x},{2*cos(150*\x)});
+    \end{tikzpicture}
+    \hspace{.15in}
+    \begin{tikzpicture}[scale=.5]
+      \draw[->,thick] (0,0)--(4.5,0) node[pos=1,right]{$t$};
+      \draw[->,thick] (0,-2.5)--(0,2.5) node[pos=1,above]{$a$};
+      \draw[smooth,samples=50,domain=0:4,red!80!black,ultra thick]
+      plot({\x},{-2*sin(150*\x)});
+    \end{tikzpicture}
+  \end{center}
+  Bottomline: regardless of the type motion,
+  \begin{itemize}
+  \item The $v-t$ graph is the slope of the $d-t$ graph
+  \item The $a-t$ graph is the slope of the $d-t$ graph
   \end{itemize}
 \end{frame}
 
 
 \begin{frame}{Area Under $v-t$ Graph}
-  Let's not forget the area under the $v-t$ graph is the displacement. (This
-  should be obvious, since $x$ is the time integral of $v$.)
+  The area under the $v-t$ graph is the displacement $x-x_0$. (This should be
+  obvious, since $x$ is the time integral of $v$.)
   \begin{columns}
     \column{.3\textwidth}
     \begin{center}
@@ -826,11 +881,9 @@
 
     \vspace{-.3in}{\Large
       \begin{align*}
-        \Delta\mb{x} &=\mb{v}_1t + \frac{1}{2}\mb{a}t^2\\
-        \Delta\mb{x} &=\mb{v}_2t - \frac{1}{2}\mb{a}t^2\\
-        \Delta\mb{x} &=\frac{\mb{v}_1+\mb{v}_2}{2}t\\
-        \mb{v}_2 &=\mb{v}_1+\mb{a}t\\
-        v_2^2 &= v_1^2+ 2a \Delta x
+        \mb{x} &= \mb{x}_0+ \mb{v}_0t + \frac{1}{2}\mb{a}t^2\\
+        \mb{v} &=\mb{v}_0+\mb{a}t\\
+        v^2 &= v_0^2+ 2a(x-x_0)
       \end{align*}
     }
     
@@ -841,8 +894,8 @@
     \begin{itemize}
     \item The variables of interests are:
 
-      \eq{-.3in}{
-        \Delta\mb{x}\quad\mb{v}_1\quad\mb{v}_2\quad t\quad\mb{a}
+      \eq{-.4in}{
+        \mb{x}_0\quad\mb{x}\quad\mb{v}_0 \quad\mb{v}\quad t\quad\mb{a}
       }
     \item Only applicable for constant acceleration
     \end{itemize}
@@ -883,13 +936,12 @@
   \item For projectile motion, there is no acceleration in the $x$ direction,
     i.e.\ $a_x=0$, therefore the kinematic equations reduce to just
     
-    \eq{-.35in}{\Delta x=v_xt\bm{\hat{\imath}}}
-  \item The only acceleration is in the $y$ direction:
+    \eq{-.25in}{x=v_xt\bm{\hat{\imath}}}
+  \item The only acceleration is in the $\bm{\hat{\jmath}}$ direction. In the
+    standard Cartesian coordinate system, this usually means that
+    $\bm{\hat{\jmath}}$ direction is \emph{up}:
     
-    \eq{-.25in}{a_y=-g\bm{\hat{\jmath}}=\SI{-9.81}{m/s^2}\bm{\hat{\jmath}}}
-
-    \vspace{-.15in}We \emph{usually} define the $\bm{\hat{\jmath}}$ direction
-    to be \emph{up}.
+    \eq{-.25in}{a_y=-g\bm{\hat{\jmath}}}
   \item The variable that connects the two directions is time $t$
   \end{itemize}
 \end{frame}
@@ -910,6 +962,7 @@
 \end{frame}
 
 
+
 \begin{frame}{Maximum Range}
   \eq{-.1in}{R=\frac{v_i^2\sin(2\theta)}{g}}
   
@@ -928,6 +981,89 @@
       \theta_2=\ang{90}-\theta_1
     }
   \end{itemize}
+\end{frame}
+
+
+\section{Relative Motion}
+
+%\begin{frame}{Relative Motion}
+%  Reconciling different frame of reference from different observer's
+%  perspectives
+%  \begin{columns} 
+%    \column{.5\textwidth}
+%    Example: sailing
+%      \begin{itemize}
+%      \item Account for current
+%      \item Account for wind
+%      %\item Account for man power on the boat
+%      \end{itemize}
+%      
+%      \column{.5\textwidth}
+%      \pic{1}{images/MJ_Newsletter_16-4-09_Rescue.jpg}
+%  \end{columns}
+%\end{frame}
+
+
+
+\begin{frame}{Relative Motion}
+  \framesubtitle{Relative Motion Notation}
+  When expressing relative motion, the first subscript ($A$) represents the
+  moving object, and the second subscript ($B$) represents the frame of
+  reference:
+
+  \eq{-.25in}{
+    \mb{v}_{AB}
+  } 
+
+  \vspace{.15in}If an airplane (``P'') is traveling at
+  \magdir{\SI{251}{\kilo\metre\per\hour}}{N} relative to Earth (``E''), its
+  velocity is expressed as:
+
+  \eq{-.2in}{
+    \mb{v}_{PE}=\magdir{\SI{251}{\kilo\metre\per\hour}}{N}
+  }
+\end{frame}
+
+
+
+\begin{frame}{Relative Motion}
+  If the airplane flies in windy air (``A'') we must consider the velocity of
+  the airplane relative to air $\mb{v}_{PA}$ and the velocity of the air
+  relative to Earth $\mb{v}_{AE}$. The velocity of the airplane relative to
+  Earth is therefore
+
+  \eq{-.2in}{
+    \mb{v}_{PE}=\mb{v}_{PA}+\mb{v}_{AE}
+  }
+
+  \vspace{-.1in}If an airplane is flying at a constant velocity of
+  \magdir{\SI{253}{km/h}}{S} relative to the air and the air velocity is
+  \magdir{\SI{24}{km/h}}{N}, what is the velocity of the airplane relative to
+  Earth?
+\end{frame}
+
+
+
+\begin{frame}{Relative Motion}
+  In classical mechanics, the equation for relative motion follows the
+  \textbf{Galilean law of velocity addition}\footnote{This equation was
+    thought to be so obvious that it didn't even have a name until Einstein
+    found it to be incorrect for speeds close to the speed of light}:
+
+  \eq{-.2in}{
+    \boxed{\mb{v}_{AC}=\mb{v}_{AB}+\mb{v}_{BC}}
+  }
+
+  \vspace{-.1in}The velocity of $A$ relative to reference frame $C$ is the
+  velocity of $A$ relative to reference frame $B$, plus the velocity of $B$
+  relative to $C$.
+
+  \vspace{.2in}If we add another frame of reference (``$D$''), the equation
+  becomes:
+
+  \eq{-.2in}{
+    \mb{v}_{AD}=\mb{v}_{AB}+\mb{v}_{BC}+\mb{v}_{CD}
+  }
 \end{frame}
 
 
