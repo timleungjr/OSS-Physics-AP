@@ -31,7 +31,7 @@
     \vspace{-.35in}
            {\large
              \textbf{AP PHYSICS #1: #2\\
-               (Classes #3)}
+               (Topics #3)}
            }
   \end{center}
 }

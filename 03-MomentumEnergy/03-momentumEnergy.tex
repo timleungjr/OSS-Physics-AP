@@ -69,7 +69,7 @@
 
 \begin{frame}{Work}
   \textbf{Mechanical work} is performed when a force $\mb{F}$ is used to
-  displace an object by an infinitesimal amount $\mb{r}$, i.e.:
+  displace an object by an infinitesimal amount $d\mb{r}$:
 
   \eq{-.2in}{
     \boxed{W=\int_{r_1}^{r_2}\mb{F}(r)\cdot d\mb{r}}
@@ -78,9 +78,10 @@
   \begin{itemize}
   \item No work done if the force is perpendicular to displacement
     (i.e.\ $\mb{F}\cdot d\mb{r}=0$)
-  \item No work done if no displacement
-  \item Negative work done is possible if $\mb{F}$ is opposite direction to
-    $\mb{r}$
+  \item No work done if no displacement ($d\mb{r}=\mb{0}$)
+  \item Work can be positive or negative depending on the dot product
+    %work done is possible if $\mb{F}$ is opposite direction to
+    %$\mb{r}$ ($\mb{F}\cdot d\mb{r}=0$
   \item When there are multiple forces acting on an object, we can compute the
     work done by each \emph{each} force
   \end{itemize}
@@ -89,8 +90,8 @@
 
 
 \begin{frame}{Kinetic Energy}
-  When we apply a force on an object to accelerate it, and the resulting amount
-  of work done is given by
+  When we apply a force on an object to accelerate it, the resulting amount of
+  work done is given by:
 
   \vspace{-.3in}{\Large
       \begin{align*}
@@ -189,8 +190,8 @@
     \boxed{\mb{F}_e=-k\mb{x}}
   }
 
-  \vspace{-.2in}When Hooke's law is applied to the work equation, we can find
-  the work done to compress/stretch a spring:
+  \vspace{-.2in}When applied to the work equation, we can find the work done to
+  compress/stretch a spring:
 
   \vspace{-.35in}{\Large
     \begin{align*}
@@ -199,24 +200,46 @@
       &=-\Delta U_e
     \end{align*}
   }
-  where $U_e=\frac{1}{2}kx^2$ is the elastic potential energy
+  where $U_e=\frac{1}{2}kx^2$ is the \textbf{elastic potential energy}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Conservative Forces}
+  \begin{itemize}
+  \item Gravitational force, spring force,  electrostatic force (later in the
+    course) are called \textbf{conservative forces}
+  \item Work done by a conservative force is independent of the path taken
+  \item This force is related to the potential energy by the gradient operator:
+    
+    \eq{-.2in}{
+      \boxed{\mb{F}=-\nabla U=
+        -\frac{\partial U}{\partial x}\bm{\hat{\imath}}
+        -\frac{\partial U}{\partial y}\bm{\hat{\jmath}}
+        -\frac{\partial U}{\partial z}\hat{\bm{k}}
+      }
+    }
+  \item The direction of the force decreases the potential energy and increases
+    the kinetic energy
+  \end{itemize}
 \end{frame}
 
 
 
-\begin{frame}{Work and Kinetic Energy}
-  Like kinetic energy, the definition of gravitational and elastic potential
-  energies came from integrating the work equation, in that work equals to the
-  change in \emph{something}, and we called that potential energy.
+\begin{frame}{Work and Potential Energy}
+  Like kinetic energy, the expressions for potential energies come from
+  integrating the work equation, in that work equals to the change in
+  \emph{something}, and we called that potential energy.
 
   \eq{-.2in}{
-    \boxed{W_\mathrm{net}=-\Delta U}
+    \boxed{W_\mathrm{net}=\Delta U}
   }
   \begin{itemize}
   \item\vspace{-.15in} $\Delta U$ can be positive or negative depending on the
     direction of the force
   \item There may be multiple forces acting on an object; each of the forces
     can add or take away potential energies from an object
+  \item Conservative forces always decreases potential energy      
   \end{itemize}
 \end{frame}
 
@@ -244,8 +267,8 @@
 \begin{frame}
   \frametitle{Isolated Systems and the Conservation of Energy}
   \begin{itemize}
-  \item An isolated system is a system of objects that does not interact with
-    its surroundings
+  \item\textbf{Isolated system:} a system of objects that does not interact with
+    the surrounding
   \item ``Interaction'' can be in the form of
     \begin{itemize}
     \item Friction
@@ -321,7 +344,7 @@
   \end{center}
   
   \begin{itemize}
-  \item The isolated system consists only of the mass and Earth.
+  \item The isolated system consists of the mass and Earth
   \item Assuming no friction
   \item Energies:
     \begin{itemize}
@@ -333,7 +356,7 @@
 
 
 \begin{frame}
-  \frametitle{Example: A vertical spring-mass system}
+  \frametitle{Example: Vertical spring-mass system}
 
   \begin{columns}
     \column{.17\textwidth}
@@ -393,24 +416,6 @@
   \end{columns}
 \end{frame}
 
-
-
-\begin{frame}
-  \frametitle{Conservative Forces}
-  \begin{itemize}
-  \item Gravitational force and spring force (and also electrostatic force)
-    are called \textbf{conservative forces}
-  \item A conservative force has the property that the work done in moving a
-    particle
-    between two points is independent of the path taken. This force is related
-    to a potential energy by:
-    
-    \eq{-.2in}{
-      \boxed{F_x=-\frac{dU}{dx}}
-    }
-  \item The direction of the force decreases the potential energy
-  \end{itemize}
-\end{frame}
 
 \begin{frame}
   \frametitle{Conservation of Energy}
@@ -483,10 +488,10 @@
 
 \begin{frame}
   \frametitle{Linear Momentum}
-  \textbf{Linear momentum} is directly proportional to the object's
-  \textbf{mass} and its \textbf{velocity}.
+  \textbf{Linear momentum} is proportional to the object's \textbf{mass} and
+  its \textbf{velocity}.
 
-  \eq{-.35in}{
+  \eq{-.2in}{
     \boxed{\mb{p}=m\mb{v}}
   }
   \begin{center}
@@ -515,14 +520,14 @@
     =\frac{d\mb{p}}{dt}
   }
   \begin{itemize}
-  \item $\mb{F}=\mb{p}'(t)$ is the general form, $\mb{F}=m\mb{a}$ is a special
-    case
+  \item $\mb{F}_\mathrm{net}=\dot{\mb{p}}(t)$ is the general form,
+    $\mb{F}_\mathrm{net}=m\mb{a}$ is a special case
   \item Momentum is conserved (i.e.\ $\sum\mb{p}$ constant) when the net force
     on an object or a system of objects is zero.
   \item Internal forces do not contribute to net force, in that case:
 
     \eq{-.2in}{
-      \sum\mb{p}(t_1)=\sum\mb{p}(t_2)
+      \sum_i\mb{p}_i(t_1)=\sum_i\mb{p}_i(t_2)
     }
   \end{itemize}
 \end{frame}
@@ -533,12 +538,16 @@
   variables:
   
   \eq{-.2in}{
-    \mb{F}=\frac{d\mb{p}}{dt}\;\rightarrow\; \mb{F}dt=d\mb{p}
+    \mb{F}_\mathrm{net}=\frac{d\mb{p}}{dt}\;\rightarrow\;
+    \mb{F}_\mathrm{net}dt=d\mb{p}
   }
   We can integrate both sides to get the \textbf{impulse-momentum theorem}.
  
   \eq{-.2in}{
-    \boxed{\mb{J}=\int_{t_1}^{t_2}\mb{F}dt=\int d\mb{p}=\Delta\mb{p}}
+    \boxed{
+      \mb{J}_\mathrm{net}
+      =\int_{t_1}^{t_2}\mb{F}_\mathrm{net}dt
+      =\int d\mb{p}=\Delta\mb{p}}
   }
   The quantity $\mb{J}$ is called the impulse.
 \end{frame}
@@ -548,20 +557,21 @@
   \frametitle{Impulse}
   \begin{itemize}
   \item $\mb{F}$, $\mb{p}$ and $\mb{J}$ are all vectors, so the integral can
-    be evaluated in each of the $x$, $y$ and $z$ axis, e.g.
+    be evaluated in each of the $x$, $y$ and $z$ axis, i.e., for the $x$
+    direction:
 
-    \eq{-.3in}{
+    \eq{-.25in}{
       J_x=\int_{t_1}^{t_2}F_xdt=\int dp_x=\Delta p_x
     }
-    
-    \vspace{-.2in}for the $x$ direction.
+
   \item\textbf{Average force:} is a ``force'' that gets the same impulse, i.e.
 
     \eq{-.2in}{
-      \mb{F}_\mathrm{ave}=\frac{\int_{t_1}^{t_2}\mb{F}dt}{t_2-t_1}
+      \overline{\mb{F}}=\frac{\int_{t_1}^{t_2}\mb{F}dt}{t_2-t_1}
       =\frac{\mb{J}}{\Delta t}
      }
-  \item Note that impulse does not depend on whether the object moves
+  \item Note that impulse from each individual force does not depend on whether
+    the object moves
   \end{itemize}
 \end{frame}
 
@@ -670,7 +680,7 @@
 
 \begin{frame}
   \frametitle{Collision Problem}
-  \textbf{Example 7:} Two objects with equal mass are heading towards each
+  \textbf{Example 7:} Two objects with equal mass are heading toward each
   other with equal speeds, undergo a head-on collision. Which one of the
   following statement is correct?
   \begin{enumerate}[(a)]
@@ -788,19 +798,19 @@
   \item Elastic Collision:
     \begin{itemize}
     \item Total kinetic energy is conserved
-    \item Momentum is conserved
+    \item<alert@2> Momentum is conserved
     \end{itemize}
   \item Inelastic collision:
     \begin{itemize}
     \item Kinetic energy is \textbf{not} conserved
-    \item Momentum is conserved
+    \item<alert@2> Momentum is conserved
     \end{itemize}
   \item Completely inelastic collision:
     \begin{itemize}
     \item ``Perfectly inelastic collision''
     \item The objects move together after the collision
     \item Kinetic energy is \textbf{not} conserved
-    \item Momentum is conserved
+    \item<alert@2> Momentum is conserved
     \end{itemize}
   \end{itemize}
 \end{frame}
@@ -843,7 +853,7 @@
   \frametitle{Elastic Collision Example}
   
   \textbf{Example 17:} Throw a ball to a really big wall, when the ball reaches
-  the wall, it has a velocity \SI{10}{\metre\per\second} towards the wall. If
+  the wall, it has a velocity \SI{10}{\metre\per\second} toward the wall. If
   the collision is elastic, what would the final velocity of the ball be?
 \end{frame}
 
@@ -851,7 +861,7 @@
 \begin{frame}
   \frametitle{Elastic Collision Example}
   \textbf{Example 18:} Throw a ball with a velocity \SI{4.}{\metre\per\second}
-  toward a train with a velocity \SI{40}{\metre\per\second} towards the ball.
+  toward a train with a velocity \SI{40}{\metre\per\second} toward the ball.
   If the collision is elastic, what would the final velocity of the ball be?
 \end{frame}
 
