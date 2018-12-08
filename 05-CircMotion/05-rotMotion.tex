@@ -14,14 +14,17 @@
 \usepackage{tikz}
 \usepackage{mathpazo}
 \usepackage[scaled]{helvet}
-%\usepackage{xcolor,colortbl}
+\usepackage{xcolor,colortbl}
 %\usepackage{hyperref}
 
-\sisetup{number-math-rm=\mathnormal}
+\sisetup{
+  number-math-rm=\mathnormal,
+  per-mode=symbol
+}
 
 \title{Topic 5: Circular Motion}
 \subtitle{Advanced Placement Physics}
-\author[TML]{Timothy Leung, Ph.D.}
+\author[TML]{Dr.\ Timothy Leung}
 \institute{Olympiads School}
 \date{Fall 2018}
 
@@ -36,20 +39,20 @@
   \maketitle
 \end{frame}
 
-%\begin{frame}
-%  \frametitle{Files to Download}
-%  \framesubtitle{Please download/print the PDF file}
-%  \begin{itemize}
+
+\begin{frame}{Files to Download}
+  \framesubtitle{Please download/print the PDF file}
+  \begin{itemize}
 %%  %\item\texttt{00-outline.pdf}--The course outline (slightly updated)
-%  \item\texttt{05-rotMotion-print.pdf}--The ``print version'' of this week
-%    and next week's slides. I recommend printing 4 slides per page.
-%  \item\texttt{0506-Homework.pdf} This week's homework.
-%%    We are taking up questions from Class 3 today, but please hand in Classes 3
+  \item\texttt{05-rotMotion-print.pdf}--The ``print version'' of the slides for
+    this topic. I recommend printing 4 slides per page.
+  \item\texttt{05-06-Homework.pdf} This week's homework.
+%%  We are taking up questions from Class 3 today, but please hand in Classes 3
 %%    \& 4 homework together next week.
-%  \end{itemize}
-%\end{frame}
-%
-%
+  \end{itemize}
+\end{frame}
+
+
 %\begin{frame}
 %  \frametitle{Today's Plan}
 %  \begin{enumerate}
@@ -62,8 +65,7 @@
 
 \section{Polar Coordinates}
 
-\begin{frame}
-  \frametitle{Polar Coordinate System in 2D}
+\begin{frame}{Polar Coordinate System in 2D}
   \begin{columns}
     \column{.28\textwidth}
     \begin{tikzpicture}[scale=.75]
@@ -79,21 +81,23 @@
     \end{tikzpicture}
     \column{.7\textwidth}
     \begin{itemize}
-    \item Cartesian system $\mb{x}(x,y)$ is not the only option!
+    \item Cartesian coordinate system $\mb{x}(x,y)$ is not the only way to
+      describe the position of an object
     \item For circular motion, \textbf{polar coordinates} are better
     \item Position described by $\mb{r}(r,\theta)$
       \begin{itemize}
       \item $r$ is distance from the origin
-      \item $\theta$ standard angle
+      \item $\theta$ is the standard angle, measured counter-clockwise from the
+        positive $x$ axis
       \end{itemize}
 %      \vspace{-.2in}{\large
 %        \begin{displaymath}
 %          \mb{r}=r\hat{\bm{r}}+\theta\hat{\bm{\theta}}
 %        \end{displaymath}
 %      }
-    \item Cartesian coordinates are related to the polar coordinates by:
+    \item Cartesian and polar coordinates are related by:
 
-      \vspace{-.45in}{\large
+      \vspace{-.3in}{\large
         \begin{align*}
           x&=r\cos\theta\\
           y&=r\sin\theta
@@ -104,11 +108,10 @@
 \end{frame}
 
 
-\begin{frame}
-  \frametitle{Rigid Body Motion}
+\begin{frame}{Rigid Body Motion}
   \framesubtitle{Angular Position and Angular Velocity}
   \begin{columns}
-    \column{.28\textwidth}
+    \column{.32\textwidth}
     \begin{tikzpicture}[scale=.75]
       \draw[->](-3,0)--(3,0) node[pos=1,right]{\footnotesize$x$};
       \draw[->](0,-3)--(0,3) node[pos=1,above]{\footnotesize$y$};
@@ -120,24 +123,20 @@
       \end{scope}
       \draw(1,0)[->] arc(0:38:1) node[midway,right]{\footnotesize$\theta$};
     \end{tikzpicture}
-    \column{.7\textwidth}
+    
+    \column{.68\textwidth}
+    For constant $r$, \textbf{angular position} $\theta$ determines an object's
+    position as a function of time:
+      
+    \eq{-.2in}{ \boxed{\theta=\theta(t)}}
+    
+    \vspace{-.2in}\textbf{Angular velocity} $\omega$ (or
+    \textbf{angular frequency}) is its time derivative
+      
+    \eq{-.4in}{
+      \boxed{\omega=\frac{d\theta(t)}{dt}}
+    }
     \begin{itemize}
-    \item For constant $r$, \textbf{angular position} $\theta$ determines an
-      object's position as a function of time:
-      
-      \vspace{-.2in}{\large
-        \begin{displaymath}
-          \boxed{\theta=\theta(t)}
-        \end{displaymath}
-      }
-    \item\textbf{Angular velocity} $\omega$ (or \textbf{angular frequency})
-      is its time derivative
-      
-      \vspace{-.3in}{\large
-        \begin{displaymath}
-          \boxed{\omega=\frac{d\theta(t)}{dt}}
-        \end{displaymath}
-      }
     \item $\theta$ is measured in \si{radians}, and $\omega$ in \si{rad/\s}
     \item e.g.\ an object rotating at one revolution per second has an angular
       velocity of $\omega=\SI{2\pi}{/\s}$
@@ -145,8 +144,9 @@
   \end{columns}
 \end{frame}
 
-\begin{frame}
-  \frametitle{Rigid Body Motion}
+
+
+\begin{frame}{Rigid Body Motion}
   \framesubtitle{Angular Velocity}
   \begin{columns}
     \column{.28\textwidth}
@@ -163,19 +163,20 @@
       \end{scope}
       \draw(1,0)[->] arc(0:38:1) node[midway,right]{\footnotesize$\theta$};
     \end{tikzpicture}
+
     \column{.7\textwidth}
+
+    Speed $v$ and $\omega$ are related simply by:
+
+    \eq{-.35in}{ \boxed{v=r\omega} }
+    
+    \vspace{-.2in}In vector form:
+
+    \eq{-.35in}{ \boxed{\mb{v}=\bm{\omega}\times\mb{r}} }
+    
     \begin{itemize}
-    \item Speed $v$ and $\omega$ are related simply by:
-
-      \eq{-.35in}{
-        \boxed{v=r\omega}
-      }
-    \item Or in vector form:
-
-      \eq{-.35in}{
-        \boxed{\mb{v}=\bm{\omega}\times\mb{r}}
-      }
-    \item $\mb{v}$ is always tangent to circle (perpendicular to $\mb{r}$)
+    \item\vspace{-.2in}$\mb{v}$ is always tangent to circle (perpendicular to
+      $\mb{r}$)
     \item We can also relate $\omega$ to \textbf{frequency} and \textbf{period}
       of the rotation:
 
@@ -192,8 +193,7 @@
 \end{frame}
 
 
-\begin{frame}
-  \frametitle{Rotating Object Without Slipping}
+\begin{frame}{Rotating Object Without Slipping}
   A tire with radius $r$ rolls along the road with an angular velocity $\omega$
   \emph{without slipping}. (This is a very common case for analysis.)  What
   is its velocity $v$
@@ -232,7 +232,7 @@
       \boxed{\alpha=\frac{d\omega(t)}{dt}=\frac{d^2\theta(t)}{dt^2}}
     }
 
-    \vspace{-.1in}$\alpha$ has the unit of \si{rad/\sec^2}.
+    \vspace{-.1in}$\alpha$ has the unit of \si{rad/\second^2}.
 
   \item For \emph{uniform} circular motion, $\omega$ is constant, and $\alpha=0$
   \item Not surprisingly, \textbf{tangential acceleration} is related to
@@ -254,19 +254,18 @@
   
   \begin{columns}
     \column{.55\textwidth}
-    {\LARGE
+    {\Large
       \begin{align*}
-        \Delta\theta&=\omega_1 t + \frac{1}{2}\alpha t^2\\
-        \Delta\theta&=\omega_2 t - \frac{1}{2}\alpha t^2
+        \theta&=\theta_0 + \omega_0 t + \frac{1}{2}\alpha t^2\\
+        \theta&=\theta_0+ \frac{\omega_0+\omega}{2} t
       \end{align*}
     }
     
     \column{.45\textwidth}
-    {\LARGE
+    {\Large
       \begin{align*}
-        \Delta\theta&=\frac{\omega_1+\omega_2}{2} t\\
-        \omega_2&= \omega_1+ \alpha t\\
-        \omega_2^2& = \omega_1^2+ 2\alpha\Delta\theta
+        \omega&= \omega_0+ \alpha t\\
+        \omega^2& = \omega_0^2+ 2\alpha(\theta-\theta_0)
       \end{align*}
     }
   \end{columns}
@@ -349,8 +348,7 @@
 \end{frame}
 
 
-\begin{frame}
-  \frametitle{Example: Horizontal Motion}
+\begin{frame}{Example: Horizontal Motion}
   \begin{columns}
     \column{.4\textwidth}
     \pic{1}{puck-on-table.jpg}
@@ -363,8 +361,7 @@
 \end{frame}
 
 
-\begin{frame}
-  \frametitle{Another Example: Exit Ramp}
+\begin{frame}{Another Example: Exit Ramp}
   \textbf{Example 3:} A car exits a highway on a ramp that is banked at
   \ang{15} to the horizontal. The exit ramp has a radius of curvature of
   \SI{65}{\metre}. If the conditions are extremely icy and the driver cannot
@@ -373,8 +370,7 @@
 \end{frame}
 
 
-\begin{frame}
-  \frametitle{Vertical Circles}
+\begin{frame}{Vertical Circles}
   \begin{itemize}
   \item Uniform circular motion with a horizontal path is straightforward
   \item For vertical motion:
@@ -389,8 +385,7 @@
 \end{frame}
 
 
-\begin{frame}
-  \frametitle{Example}
+\begin{frame}{Example Problem}
   \textbf{Example 4:} A cord is tied to a pail of water, and the pail is swung
   in a vertical circle of \SI{1.}{\metre}. What must be the minimum velocity of
   the pail be at its highest point so that no water spills out?
@@ -404,14 +399,12 @@
 \end{frame}
 
 
-\begin{frame}
-  \frametitle{Example: Roller Coaster}
+\begin{frame}{Example: Roller Coaster}
   \textbf{Example 5:} A roller coaster car is on a track that forms a circular
   loop, of radius $R$, in the vertical plane. If the car is to maintain contact
   with the track at the top of the loop (generally considered to be a good
   thing), what is the minimum speed that the car must have at the bottom of the
   loop. Ignore air resistance and rolling friction.
-
   \begin{enumerate}[(a)]
   \item $\sqrt{2gR}$
   \item $\sqrt{3gR}$
@@ -421,8 +414,7 @@
 \end{frame}
 
 
-\begin{frame}
-  \frametitle{Example}
+\begin{frame}{Example}
   \textbf{Example 6:} A stone of mass $m$ is attached to a light strong string
   and whirled in a \emph{vertical} circle of radius $r$. At the exact bottom of
   the path, the tension of the string is three times the weight of the stone.
@@ -456,15 +448,15 @@
   \end{center}
 \end{frame}
 
-\begin{frame}
-  \frametitle{Equation of Motion}
+\begin{frame}{Equation of Motion}
   \framesubtitle{Newton's Second Law}
-  \begin{itemize}
-  \item Newton's 2nd law of motion:
+
+  Recall Newton's second law of motion for objects with constant mass:
     
-    \eq{-.2in}{
-      \mb{F}_\mathrm{net}=m\mb{a}
+  \eq{-.2in}{
+    \mb{F}_\mathrm{net}=m\mb{a}
   }
+  \begin{itemize}
   \item Is it also true for \emph{circular} motion?
   \item If a net force $\mb{F}_\mathrm{net}$ causes a mass to accelerate
     (linearly), what causes a mass to go into circular motion?
@@ -478,11 +470,11 @@
 
 \begin{frame}
   \frametitle{Torque (Moment)}
-  I have a pencil sitting on a table, and with my fingers, I push the two ends
-  of the pencil with equal force $\textcolor{red}{F}$. \textbf{What happens?}
+  I have a rod on a table, and with my fingers, I push the two ends of the rod
+  with equal force $\textcolor{red}{F}$. \textbf{What happens?}
   \begin{center}
     \begin{tikzpicture}[scale=1.5]
-      \fill[black!75,draw=black,ultra thick] (-2,-.15) rectangle (2,.15);
+      \fill[black!75,draw=black,thick] (-2,-.15) rectangle (2,.15);
       \draw[ultra thick,red,->](-1.8,-.7)--(-1.8,-.15) node[pos=0,below]{$F$};
       \draw[ultra thick,red,->]( 1.8, .7)--( 1.8, .15) node[pos=0,above]{$F$};
     \end{tikzpicture}
@@ -494,63 +486,61 @@
 
 \begin{frame}
   \frametitle{What is Torque?}
-  \begin{itemize}
-  \item The tendency of a force to cause or change the rotational motion of a
-    body.
-  \item A force acting at a point some distance from a fulcrum (or pivot, CG
-    etc\ldots)
-  \item Also referred to as \emph{moment}
-  \item e.g. the force to twist a screw
-  \end{itemize}
+  \textbf{Torque} (or \textbf{moment}) is the tendency for a force to change
+  the rotational motion of a body.
   
-  \begin{columns}
-    \column{.45\textwidth}
-
-    \eq{-.3in}{
-      \boxed{\tau=rF_a\sin\theta}
-    }
-
-    \vspace{-.3in}
-    \begin{itemize}
-    \item $\tau$ = torque
-    \item $r$ = ``moment arm''
-    \item $F_a$ = applied force
-    \item $\theta$ = angle between $\mb{F}_a$ and $\mb{r}$
-    \end{itemize}
-    \column{.55\textwidth}
-    \begin{center}
-      \begin{tikzpicture}[scale=3]
-        \fill[black!75,draw=black!75] (0,-.1) rectangle (2,.1);
-        \fill[black!75,draw=black,thick] (0,0) circle (.2);
-        \fill[black] (0,0) circle (.03);
-        \draw[ultra thick,red,->](0,0)--(1.8,0) node[midway,below]{$\mb{r}$};
-        \draw[ultra thick,blue,->](1.2,-.7)--(1.8,0)node[pos=0,below]{$\mb{F}_a$};
-        \draw[ultra thick,->] (1.4,0) arc(180:229:.4)
-        node[midway,left]{$\theta$};
-      \end{tikzpicture}
-    \end{center}
-  \end{columns}
-\end{frame}
-
-\begin{frame}
-  \frametitle{Vector Notation}
-  In vector form, torque $\bm{\tau}$ is the cross product of the moment arm
-  $\mb{r}$ and the applied force $\mb{F}_a$.
-
-  \eq{-.2in}{
-    \boxed{\bm{\tau}=\mb{r}\times\mb{F}_a}
-  }
-
-  \vspace{-.2in}
+  \begin{itemize}
+  \item A force $\mb{F}_a$ acting at a point some distance $\mb{r}$ (called the
+    \textbf{moment arm}) from a \textbf{fulcrum} (or \textbf{pivot}) at an angle
+    $\phi$ between $\mb{F}_a$ and $\mb{r}$
+  \item e.g.\ the force to twist a screw
+%  \item In the example below, an applied force $\mb{F}_a$ is applied away from
+%    the pivot at an angle $\phi$. This generates a torque around the pivot.
+  \end{itemize}
   \begin{center}
     \begin{tikzpicture}[scale=2.5]
-      \fill[gray!75,draw=black!75] (0,-.1) rectangle (2,.1);
-      \fill[gray!75,draw=black,thick] (0,0) circle (.2);
-      \fill[black] (0,0) circle (.02);
-      \draw[ultra thick,->](0,0)--(1.8,0) node[midway,below]{$\mb{r}$};
-      \draw[ultra thick,->](1.8,0)--(1.5,.75)node[pos=1,above]{$\mb{F}_a$};
+      \fill[black!75,draw=black!75] (0,-.1) rectangle (2,.1);
+      \fill[black!75,draw=black,thick] (0,0) circle (.2);
+      \fill[black] (0,0) circle (.03);
+      \draw[ultra thick,red,->](0,0)--(1.8,0) node[midway,below]{$\mb{r}$};
+      \draw[ultra thick,blue,->](1.2,-.7)--(1.8,0)node[pos=0,below]{$\mb{F}_a$};
+      \draw[ultra thick,->] (1.4,0) arc(180:229:.4)
+      node[midway,left]{$\phi$};
     \end{tikzpicture}
   \end{center}
+\end{frame}
+
+\begin{frame}{Torque}
+  In scalar form, we can express torque $\mb{\tau}$ as the force $\mb{F}_a$,
+  the \textbf{moment arm} $\mb{r}$ and the angle $\phi$ between $\mb{F}_a$ and
+  $\mb{r}$:
+
+  \eq{-.2in}{\boxed{\tau=rF_a\sin\phi}}
+  
+  \vspace{-.1in}In vector form, we use the cross-product:
+
+  \eq{-.2in}{\boxed{\bm{\tau}=\mb{r}\times\mb{F}_a}}
+
+  \begin{center}
+    \begin{tabular}{l|c|l}
+      \rowcolor{pink}
+      \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
+      Torque        & $\bm{\tau}$ & \si{\newton\metre} (newton meters)\\
+      Applied force & $\mb{F}_a$  & \si{\newton} (newtons)\\
+      Moment arm (from fulcrum to force) & $\mb{r}$ & \si{\metre} (meters) \\
+      Angle between force and moment arm & $\phi$ & (no units)
+    \end{tabular}
+  \end{center}
+%  \vspace{-.2in}
+%  \begin{center}
+%    \begin{tikzpicture}[scale=2.5]
+%      \fill[gray!75,draw=black!75] (0,-.1) rectangle (2,.1);
+%      \fill[gray!75,draw=black,thick] (0,0) circle (.2);
+%      \fill[black] (0,0) circle (.02);
+%      \draw[ultra thick,->](0,0)--(1.8,0) node[midway,below]{$\mb{r}$};
+%      \draw[ultra thick,->](1.8,0)--(1.5,.75)node[pos=1,above]{$\mb{F}_a$};
+%    \end{tikzpicture}
+%  \end{center}
 \end{frame}
 
 
@@ -764,7 +754,7 @@
   \frametitle{Example Problem}
   \textbf{Example 8:} A skater extends her arms (both arms!), holding a
   \SI{2.}{\kg} mass in each hand. She is rotating about a vertical axis at a
-  given rate. She brings her arms inward towards her body in such a way that
+  given rate. She brings her arms inward toward her body in such a way that
   the distance of each mass from the axis changes from \SI{1.}{\metre} to
   \SI{.50}{\metre}. Her rate of rotation (neglecting her own mass) will?
 \end{frame}
