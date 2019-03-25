@@ -1,8 +1,7 @@
 \documentclass[12pt,compress,aspectratio=169]{beamer}
 
 \mode<presentation>{
-  \usetheme{../mtheme-master/metropolis}
-%  \usetheme{Singapore}
+  \usetheme{Singapore}
 %  \setbeamertemplate{navigation symbols}{} % suppress nav bar
 %  \setbeamercovered{transparent}
 }
@@ -21,12 +20,13 @@
   per-mode=symbol
 }
 
-\title{Topic 23: Special Relativity}
+\title{Topic 21: Special Relativity}
 \subtitle{Advanced Placement Physics}
 \author[TML]{Dr.\ Timothy Leung}
 \institute{Olympiads School}
 %\author{Olympiads School}
-\date{Summer 2018}
+%\date{Summer 2018}
+\date{Winter/Spring 2019}
 
 
 
@@ -47,24 +47,24 @@
 
 
 \section[Intro]{Introduction}
-\begin{frame}
-  \frametitle{Introduction}
-  These slides are an expanded version of the slides used for Grade 12 Physics
-  (with some additional calculus). Two versions of the slides are downloadable
-  from the school website:
+
+\begin{frame}{Introduction}
+  These slides for this topic are an expanded version of the slides used for
+  Grade 12 Physics (with some additional calculus). There are two versions of
+  the slides; both are downloadable from the school website:
   \begin{itemize}
   \item The long version
     \begin{itemize}
     \item More background information (more than needed for the AP 2 Exam) and
       derivations and integrations
     \item May answer some of your questions about the specifics of the theory
-    \item \texttt{23a-relativity\_long.pdf}
+    \item \texttt{21-relativity-long.pdf}
     \end{itemize}
   \item The short version
     \begin{itemize}
     \item More ``to the point''
     \item The version that is used during class
-    \item \texttt{23a-relativity\_short.pdf}
+    \item \texttt{21-relativity-short.pdf}
     \end{itemize}
   \end{itemize}
   There is also a handout on how to solve and interpret the time dilation
@@ -72,14 +72,14 @@
 \end{frame}
 
 
-\begin{frame}
-  \frametitle{Frame of Reference}
-  \framesubtitle{A Quick Review}
-  A \textbf{frame of reference} (or ``reference frame'', or just ``frame'') is
-  a hypothetical mobile ``laboratory'' an observer uses to make measurements
-  (e.g.\ mass, lengths, time). At a minimum, it includes:
+\section{Reference Frame}
+
+\begin{frame}{Frame of Reference}
+  You can think of a \textbf{frame of reference} (or ``reference frame'', or
+  just ``frame'') as a hypothetical mobile ``laboratory'' an observer uses to
+  make measurements (e.g.\ mass, lengths, time). At a minimum, it includes:
   \begin{itemize}
-  \item A ruler to measure lengths
+  \item Some rulers (i.e.\ coordinate system) to measure  positions and lengths
   \item A clock to measure the passage of time
   \item A scale to compare forces
   \item A balance to measure masses
@@ -91,11 +91,10 @@
 \end{frame}
 
 
-\begin{frame}
-  \frametitle{Frame of Reference}
-  \framesubtitle{A Quick Review}
+
+\begin{frame}{Frame of Reference}
   \begin{itemize}
-  \item We assume that the hypothetical laboratory is \emph{perfect}---the
+  \item We assume that the hypothetical laboratory is \emph{perfect}---all the
     hypothetical ``instruments'' have zero errors
   \item What matters is the \emph{motion} (at rest, uniform motion, acceleration
     etc) of your laboratory, and how it affects the measurement that you make
@@ -104,77 +103,103 @@
 \end{frame}
 
 
-\begin{frame}
-  \frametitle{Newtonian (Classical) Relativity}
-
-  In Newtonian physics, space and time are \emph{absolute}:
+\begin{frame}{Inertial Frame of Reference}
+  An \textbf{inertial frame of reference} is one that is moving in uniform
+  motion (i.e.\ constant velocity, zero acceleration)
   \begin{itemize}
-  \item \SI{1}{m} is \SI{1}{m} no matter where you are in the universe
-  \item \SI{1}{s} is \SI{1}{s} no matter where you are in the universe
+  \item In an inertial frame, Newton's first and second laws of motion are valid
+  \item Since all uniform motion are treated the same way, you may consider
+    any inertial frames of reference to be \emph{at rest}
+  \end{itemize}
+  \vspace{.2in}
+  \begin{block}{The Principle of Relativity}
+    All laws of motion must apply equally in all inertial frames of reference.
+  \end{block}
+\end{frame}
+
+
+
+\begin{frame}{Inertial Frame of Reference}
+  Observer A is moving uniformly with the skateboard, while Observer B is
+  standing on the side of the road.
+  \begin{center}
+    \pic{.65}{graphics/57.jpg}
+  \end{center}
+  When Observer A tosses a ball upward:
+  \begin{itemize}
+  \item A sees only vertical motion, while
+  \item B sees the ball traveling in a parabolic curve, although
+  \item A \& B see different motion, they agree on the \emph{equations} that
+    govern the motion
+  \end{itemize}
+\end{frame}
+
+
+
+\begin{frame}{Inertial Frame of Reference}
+  Observer A sees the same motion (only vertical motion) regardless of
+  whether he is moving uniformly w.r.t.\ B or not\footnote{as long as
+    \emph{neither} are accelerating}.
+  \begin{center}
+    \pic{.65}{graphics/57.jpg}
+  \end{center}
+  \begin{itemize}
+  \item Valid for A to conclude that he is at rest, but that B is moving
+  \item Likewise, it is also valid for B to think that he is at rest, but that
+    A is moving
+  \end{itemize}
+\end{frame}
+    
+
+\begin{frame}{Newtonian (Classical) Relativity}
+  When studying kinematics and dynamics, we made some assumptions that are
+  obvious: space and time are \emph{absolute}:
+  \begin{itemize}
+  \item \SI{1}{m} is \SI{1}{m} no matter where you are, or how you are moving
+  \item \SI{1}{s} is \SI{1}{s} no matter where you are, or how you are moving
   \item Measurements of space and time do not depend on motion
   \end{itemize}
   If space and time are absolute, then \emph{all} velocities are relative
   \begin{itemize}
   \item Measured velocities depend on the motion of the observer
+  \item Galilean velocity addition rule:
+
+    \eq{-.25in}{
+      \boxed{\mb{v}_{AC}=\mb{v}_{AB}+\mb{v}_{BC}}
+    }
   \end{itemize}
-  An \textbf{inertial frame of reference} is moving in uniform motion (constant
-  velocity, zero acceleration)
-
-
-  \vspace{.2in}
-  \begin{block}{The Principle of Relativity}
-    All laws of physics must apply equally in all inertial frames of reference.
-  \end{block}
 \end{frame}
 
 
-\begin{frame}
-  \frametitle{Inertial Frame of Reference}
-  \framesubtitle{A Quick Review}
-  \begin{itemize}
-  \item Observer A is moving with the skateboard at a constant velocity
-  \item Observer B is standing on the side of the road
-  \item Both observers see different motion, but they agree on the equations
-    that govern the motion
-  \end{itemize}
-  \begin{center}
-    \pic{.75}{graphics/57.jpg}
-  \end{center}
-\end{frame}
+%\begin{frame}{New Physics: Maxwell's Equations}
+%  \begin{columns}
+%    \column{0.3\textwidth}
+%    \begin{center}
+%      \pic{1}{graphics/PORTRAIT-James-Clerk-Maxwell.jpg}\\
+%      James Clerk Maxwell
+%    \end{center}
+%    \column{0.7\textwidth}
+%    \begin{itemize}
+%    \item Classical laws of electrodynamics
+%    \item Published in 1861 and 1862
+%    \item Explains the relationship between
+%      \begin{itemize}
+%      \item Electricity
+%      \item Electric Circuits
+%      \item Magnetism
+%      \item Optics
+%      \end{itemize}
+%    \item Previously these disciplines are thought to be separate and not
+%      related
+%    \end{itemize}
+%  \end{columns}
+%\end{frame}
 
 
-
-\begin{frame}
-  \frametitle{New Physics: Maxwell's Equations}
-  \begin{columns}
-    \column{0.3\textwidth}
-    \begin{center}
-      \pic{1}{graphics/PORTRAIT-James-Clerk-Maxwell.jpg}\\
-      James Clerk Maxwell
-    \end{center}
-    \column{0.7\textwidth}
-    \begin{itemize}
-    \item Classical laws of electrodynamics
-    \item Published in 1861 and 1862
-    \item Explains the relationship between
-      \begin{itemize}
-      \item Electricity
-      \item Electric Circuits
-      \item Magnetism
-      \item Optics
-      \end{itemize}
-    \item Previously these disciplines are thought to be separate and not
-      related
-    \end{itemize}
-  \end{columns}
-\end{frame}
-
-
-\begin{frame}
-  \frametitle{Maxwell's Equations in a Vacuum}
-  \framesubtitle{Everything Comes Back to This}
-
-  \vspace{-.3in}{\Large
+\begin{frame}{Maxwell's Equations}
+  Maxwell's equations on electrodynamics in a vacuum (studied previously):
+  
+  \vspace{-.35in}{\Large
     \begin{align*}
       \nabla\cdot\mb{E} &= 0\\
       \nabla\cdot\mb{B} &= 0\\
@@ -183,8 +208,8 @@
     \end{align*}
   }
   
-  \vspace{-.15in}Disturbances in $\mb{E}$ and $\mb{B}$ travel as an
-  ``electromagnetic wave'', with a speed:
+  \vspace{-.1in}Disturbances in $\mb{E}$ and $\mb{B}$ travel as an
+  \emph{electromagnetic wave} with a speed $c$:
 
   \vspace{-.25in}{\Large
     \begin{displaymath}
@@ -198,15 +223,15 @@
   \frametitle{Peculiar features of Maxwell's equation}
   \begin{itemize}
   \item Does not mention the \emph{medium} in which EM waves travels
-  \item When applying \emph{Galilean transformation} (classical equation for
-    adding velocities) to Maxwell's equations, asymmetry is introduced
+  \item When applying \emph{Galilean transformation} (from which we obtain
+    the velocity addition rule) to Maxwell's equations, asymmetry is introduced
   \item Gauss's law for magnetism break down: magnetic field lines appear to
     have beginnings/ends
-  \item In \emph{some} inertial frames of reference,
-    Maxwell's equations are simple and elegant, but in another inertial frame
-    of reference, they are ugly and complex
-  \item Physicists at the time theorized that---perhaps---there is/are actually
-    \emph{preferred} inertial frame(s) of references
+  \item In \emph{some} inertial frames of reference, Maxwell's equations are
+    simple and elegant, but transform the equation into another inertial frame,
+    the equations are ugly and complex!
+  \item Physicists at the time began to theorize that (perhaps) there is an
+    actual \emph{preferred} inertial frame of references
   \item This violate the \emph{principle of relativity}
   \end{itemize}
 \end{frame}
@@ -214,46 +239,45 @@
 
 \begin{frame}
   \frametitle{The Illusive Aether}
+  Maxwell's hypothesis: the speed of light $c$ is relative to a hypothetical
+  \textbf{luminiferous aether} (or just \textbf{ether}) that permeates the
+  universe, with some fantastic properties:
   \begin{itemize}
-  \item Maxwell's hypothesis: the speed of light $c_0$ is relative to a
-    hypothetical ``luminiferous aether''
-  \item In order for this ``aether'' (or ``ether'') to exist, it must have some
-    fantastic (as in, a fantasy, too good to be true!) properties:
-    \begin{itemize}
-    \item \emph{All} space is filled with aether
-    \item Massless
-    \item Zero viscosity
-    \item Non-dispersive
-    \item Incompressible
-    \item Continuous at a very small (sub-atomic) scale
-    \end{itemize}
+  \item \emph{All} space is filled with aether
+  \item Massless
+  \item Zero viscosity
+  \item Non-dispersive
+  \item Incompressible
+  \item Continuous at a very small (sub-atomic) scale
   \end{itemize}
+  Spoiler alert: Aether doesn't exist.
 \end{frame}
 
 
 
-\begin{frame}
-  \frametitle{The Michelson-Morley Experiment}
+\begin{frame}{The Michelson-Morley Experiment}
   If ether exists, then at different times of the year, the Earth will have a
   different relative velocity with respect to it:
   \begin{center}
-    \pic{.45}{graphics/2000px-AetherWind.png}
+    \pic{.4}{graphics/2000px-AetherWind.png}
   \end{center}
   And it will cause light to either speed up, or slow down.
 \end{frame}
 
 
 
-\begin{frame}
-  \frametitle{The Michelson Interferometer}
-  \pic{1}{graphics/michelsonmorley.jpg}\\
-  The experiment is ingenious but very difficult\ldots
+\begin{frame}{Michelson-Morley Experiment}
+  American phycisists Albert Michelson\footnote{Nobel Prize in Physics, 1907}
+  and Edward Morley designed an ingenious but very difficult experiment to
+  detect ether using an \textbf{interferometer}
+  \begin{center}
+    \pic{.8}{graphics/michelsonmorley.jpg}
+  \end{center}
 \end{frame}
 
 
 
-\begin{frame}
-  \frametitle{The Michelson Interferometer}
+\begin{frame}{The Michelson Interferometer}
   \begin{columns}
     \column{.35\textwidth}
     \begin{center}
@@ -268,28 +292,30 @@
       screen where interference patterns are observed
     \item The two paths are the same length, so if the \emph{speed} of the light
       changes, we should see an interference pattern
-    \item\textbf{Except none were ever found!}
+    \item\textbf{Except none were ever found!} The interference patterns that
+      could be observed were well within experimental errors, and far below
+      expected values
     \end{itemize}
   \end{columns}
 \end{frame}
 
 
 
-\begin{frame}
-  \frametitle{What To Do with ``Null Result''}
+\begin{frame}{What To Do with ``Null Result''}
   The Michelson-Morley experiment failed to detect the illusive ether, even
   after many refinements. What does this mean?
   \begin{itemize}
   \item Majority view
     \begin{itemize}
-    \item\textbf{The experiment was flawed!}
-    \item Keep improving the experiment (or design a better experiment) and the
-      ether will eventually be found
+    \item\textbf{The experiment was flawed!} It is actually not a bad guess,
+      since the experiment is known to be a difficult one
+    \item Keep improving the experiment (or design a better experiment) and
+      Earth's motion relative to ether will eventually be found
     \end{itemize}
   \item Minority view:
     \begin{itemize}
     \item\textbf{The hypothesis is wrong!}
-    \item The experiment showed it for what it is: ether cannot be found
+    \item The experiment showed it for what it is: ether cannot be detected
     \end{itemize}
   \item A few physicists: The must be \textbf{another explanation} that saves
     both experiment and theory
@@ -298,34 +324,49 @@
 
 
 
-\begin{frame}
-  \frametitle{Hendrik Lorentz}
+\begin{frame}{Hendrik Lorentz\footnote{Nobel Prize in Physics, 1902}}
   \begin{columns}
     
-    \column{0.25\textwidth}
+    \column{.18\textwidth}
     \begin{center}
       \pic{1.2}{graphics/lorentz.jpg}\\
-      {\footnotesize Hendrik Antoon Lorentz}
+          {\footnotesize Hendrik Lorentz}
     \end{center}
     
-    \column{0.75\textwidth}
+    \column{.82\textwidth}
     \begin{itemize}
-    \item Considered the Michelson-Morley experiment to be significant
-    \item Objects travelling in the direction of ether contracts in length,
-      nullifying the experimental results
-    \item Lorentz Factor:
+    \item Considered the findings of Michelson-Morley experiment to be
+      significant
+    \item Hypothesis: objects traveling in the direction of ether must
+      contract in length, therefore nullifying the experimental results
       
-      \eq{-.25in}{
+      \eq{-.3in}{
         \boxed{\gamma=\lorentz}
       }
-    \item \emph{No known physical phenomenon} can cause anything to contract
+    \item\emph{No known physical phenomenon} can cause an object to contract
     \item Lorentz was on to something, but his thinking was wrong
     \end{itemize}
   \end{columns}
 \end{frame}
 
-\begin{frame}
-  \frametitle{Making Maxwell's Equations Work}
+
+\begin{frame}{Strange Behavior in Absolute Space Time}
+  French mathematician Henri Poincar\'{e} also hypothesized that ether affects
+  the flow of time the direction of flow. The equation is similar to the
+  discovery by Lorentz:
+
+  \eq{-.2in}{
+    \boxed{t' =\frac{t}{\bigsqrt}}
+  }
+
+  However, both Poincar\'{e} and Lorentz depended their hypothesis on
+  \begin{itemize}
+  \item Absolute time and space
+  \item Existence of aether
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Making Maxwell's Equations Work}
   \framesubtitle{Albert Einstein in 1905, Age 26}
   \begin{columns}
     \column{.2\textwidth}
@@ -334,10 +375,11 @@
   
     \column{.8\textwidth}
     \begin{itemize}
-    \item Einstein was 26 years old working as a patent clerk in Switzerland
+    \item Einstein was working as a patent clerk in Switzerland while completing
+      his Ph.D.
       \begin{itemize}
-      \item believed in the principle of relativity, and therefore
-      \item rejected the concept of a preferred frame of reference
+      \item Believed in the principle of relativity, and therefore
+      \item Rejected the concept of a preferred frame of reference
       \end{itemize}
     \item The failure of the Michelson-Morley experiment to find the flow of
       ether proves that it does not exist
@@ -349,37 +391,37 @@
 \end{frame}
 
 
-\begin{frame}
-  \frametitle{Special Relativity}
-  \vspace{.15in}Published in the journal \emph{Annalen der Physik} on September
-  26, 1905 in the article \emph{On the Electrodynamics of Moving Bodies}
+\begin{frame}{Special Relativity}
+  Published in \emph{Annalen der Physik} on September 26, 1905 in the article
+  \emph{On the Electrodynamics of Moving Bodies}
   \begin{itemize}
-  \item Submitted on June 30, 1905 and passed for publication
-  \item Einstein's third paper that year
-  \item Mentions the names of only five other scientists: Newton, Maxwell,
-    Hertz, Doppler and Lorentz
-  \item Does not have any references to any publications
+  \item Submitted on June 30, 1905 and passed for publication by a referee
+  \item Einstein's third paper (of four) that year
+  \item Mentions only five other scientists by name: Newton, Maxwell, Hertz,
+    Doppler and Lorentz, but does not contain references to any publications
   \item Ignored by most physicists at first, until Max Planck took interests
-  \item Called ``Special relativity'' because it describes a ``special case''
+  \item Called ``special relativity'' because it describes a ``special case''
     without effects of gravity
   \end{itemize}
 \end{frame}
 
-\begin{frame}
-  \frametitle{Postulates of Special Relativity}
+
+
+\begin{frame}{Postulates of Special Relativity}
   \begin{block}{The Principle of Relativity}
-    All laws of physics must apply equally in all inertial frames of reference.
+    \emph{All} laws of physics must apply equally in \emph{all} inertial frames
+    of reference.
   \end{block}
   \begin{itemize}
-  \item Reaffirms the principle in which all physics is based on
-  \item Extend the principle to include electrodynamics
+  \item Reaffirms the principle in which physics is based on
+  \item Extend the principle to include electrodynamics (Maxwell's equations)
   \end{itemize}
 
   \vspace{.1in}
   \begin{block}{The Principle of Invariant Light Speed}
-    As measured in any inertial frame of reference, light is always propagated
-    in empty space with a definite velocity $c$ that is independent of the
-    state of motion of the emitting body.
+    As measured in any inertial frame of reference, light always propagates in
+    empty space with a definite velocity $c$, independent of the state of
+    motion of the emitting body.
   \end{block}
   \begin{itemize}
   \item Reaffirms the results from Michelson-Morley experiment
@@ -396,13 +438,13 @@
 \begin{frame}
   \frametitle{What's so Special About Special Relativity?}
 
-  \textbf{Classical (Newtonian) relativity:}
+  Classical (Newtonian) relativity:
   \begin{itemize}
   \item Space and time are absolute (invariant), therefore
   \item The speed of light must be relative to the observer
   \end{itemize}
 
-  \textbf{Einstein's special relativity:}
+  Einstein's special relativity:
   \begin{itemize}
   \item The speed of light is absolute (invariant), therefore
   \item Space and time must be relative to the observer
@@ -410,38 +452,33 @@
 
   We must modify our traditional concepts:
   \begin{itemize}
-  \item Measurement of space (our ruler in the $x$-, $y$- and $z$-directions)
-  \item Measurement of time (our clock)
+  \item Measurement of space (our concept of the coordinate system)
+  \item Measurement of time (our clocks)
   \item Concept of simultaneity (whether two events happens at the same time)
   \end{itemize}
 \end{frame}
 
-%\begin{frame}
-%  \frametitle{Simultaneity: Thought Experiment}
-%  If you see two sets of fire works ignite at exactly the same time--one off to
-%  your left and the other far to your right. About \SI{100}{\metre} behind you,
-%  a car is travelling along a highway at \SI{95}{km/h}. Do the passengers in
-%  the car see the fire works igniting simultaneously or do they think that one
-%  set ignited before the other?
-%\end{frame}
-
 \section{Simultaneity}
 
-\begin{frame}
-  \frametitle{Simultaneity: A Thought Experiment}
-  Lightning bolt strikes the ends of a moving train
+\begin{frame}{The Relativity of Simultaneity}
+  This \emph{thought experiment} is similar to the one that Einstein presented.
+  Suppose lightning bolt strikes the ends of a high-speed moving train. Did it
+  happen simultaneously?
   \begin{center}
-    \pic{.5}{graphics/87-1-1024x673.png}
+    \pic{.4}{graphics/87-1-1024x673.png}
   \end{center}
-  \vspace{-0.1in}
+
   \begin{itemize}
+  \item\vspace{-.15in} Two \emph{independent} events: lightning striking the
+    front, and lightning striking the back of the train
   \item The man on the ground sees the lightning bolt striking at the same time
   \item The woman on the moving train sees the lightning bolt on the right first
   \end{itemize}
 \end{frame}
 
-\begin{frame}
-  \frametitle{Simultaneity: A Thought Experiment}
+
+
+\begin{frame}{Relativity of Simultaneity}
   From the man's perspective:
   \begin{itemize}
   \item He is stationary, but the train is moving
@@ -449,6 +486,7 @@
     and the back of the train
   \item The flash from the two lightning bolts arrive at his eyes at the same
     time
+  \item Since the speed of light is a constant regardless of motion
   \end{itemize}
   Therefore, his conclusions are:
   \begin{itemize}
@@ -460,15 +498,15 @@
 \end{frame}
 
 
-\begin{frame}
-  \frametitle{Simultaneity: A Thought Experiment}
-  Now, from the woman's perspective:
+\begin{frame}{Relativity of Simultaneity}
+  From the woman's perspective:
   \begin{itemize}
-  \item\emph{She} and the train are stationary, but the man and the rest of the
-    world are moving
+  \item\emph{She} is stationary, but the man and the rest of the world are
+    moving
   \item When the lightnings strike, she is at an equal distance from the two
     ends of the train
   \item The flash from the front arrive first, then the back
+  \item Since the speed of light is a constant regardless of motion
   \end{itemize}
   Therefore, her conclusions are:
   \begin{itemize}
@@ -480,15 +518,15 @@
 \end{frame}
 
 
-\begin{frame}
-  \frametitle{Simultaneity: A Thought Experiment}
+\begin{frame}{Relativity of Simultaneity}
   \begin{itemize}
   \item The two observers disagree on the result, but
     \begin{itemize}
     \item Neither person is wrong
     \item Neither person is misinformed
     \end{itemize}
-  \item Both observers are valid \emph{inertial} frames of reference
+  \item Both observers are valid \emph{inertial} frames of reference, and
+    therefore both can consider themselves at rest
   \item This means that simultaneity depends on your motion
   \end{itemize}
   
@@ -500,43 +538,40 @@
 
 \section{Time Dilation}
 
-\begin{frame}
-  \frametitle{Time Dilation: A Thought Experiment}
+\begin{frame}{Relativity of Time}
   \begin{center}
     \pic{.7}{graphics/spaceship.png}
-    %\pic{.4}{graphics/light-a-b.png}
   \end{center}
-  I'm on a spaceship traveling in deep space, and I shine a light from $A$ to
-  $B$. The distance between $A$ and $B$ is really just:
 
-  \vspace{-.3in}{\Large
-    \begin{displaymath}
+  \vspace{-.2in}While on a spaceship traveling through space, and I shine a
+  light from $A$ (the bottom of my ship) to $B$ (at the top of my ship). The
+  distance between $A$ and $B$ is:
+
+  \eq{-.45in}{
       |AB|=ct
-    \end{displaymath}
   }
 
-  \vspace{-.2in}I know the speed of light $c$, and I know how long it took for
-  the light pulse to reach $B$.
+  \vspace{-.2in}Knowing the speed of light $c$, and how long it takes for the
+  light pulse to reach $B$, I can calculate the dimensions of my spaceship.
 \end{frame}
 
 
-\begin{frame}
-  \frametitle{Time Dilation: A Thought Experiment}
+\begin{frame}{Relativity of Time}
   \begin{center}
     \pic{.7}{graphics/spaceship.png}
-    %\pic{.7}{graphics/light-a-b-rocket.png}
   \end{center}
-  You are in space station watching my spaceship go past you at speed $v$. You
-  would see that same beam of light travel from $A$ to $B'$ instead.
+  Meanwhile, you are on a small planet watching my spaceship go past at speed
+  $v$. You see that same beam of light travel from $A$ to $B'$ instead.
   \begin{center}
     \pic{.7}{graphics/light-a-b-prime.png}
   \end{center}
 \end{frame}
 
-\begin{frame}
-  \frametitle{Time Dilation: A Thought Experiment}
+\begin{frame}{Relativity of Time}
+  We can relate the time interval of the beam of light observed by me (on the
+  spaceship) and you (on the planet) using pythagorean theorem:
   \begin{center}
-    \pic{.7}{graphics/dilation.png}
+    \pic{.6}{graphics/dilation.png}
   \end{center}
   \begin{align*}
     c^2t'^2 &=v^2t'^2 + c^2t^2\\
@@ -547,8 +582,8 @@
 \end{frame}
 
 
-\begin{frame}
-  \frametitle{Time Dilation: A Thought Experiment}
+\begin{frame}{Relativity of Time}
+  The relationship between observer is given by:
   
   \eq{-.2in}{
     \boxed{t' =\frac{t}{\bigsqrt}}
@@ -556,121 +591,138 @@
   \begin{itemize}
   \item $t$ is called the \textbf{proper time}. It is the time measured
     by a person at rest relative to the object or event.
-  \item $t'$ is called the \textbf{ordinary time}, \textbf{expanded time}, or
-    \textbf{dilated time}. It is the time measured by a moving observer in
-    another inertial frame of reference.
-    %Since $\bigsqrt$ is always smaller than 1,
-    $t'$ is always greater than $t$.
+  \item $t'$ is called the \textbf{ordinary time} (aka \textbf{expanded time}
+    or \textbf{dilated time}). It is the time measured by a moving observer in
+    another inertial frame of reference. $t'$ is always greater than $t$.
   \end{itemize}
 \end{frame}
 
-\begin{frame}
-  \frametitle{Example Problem}
-  \textbf{Example 1a:} A rocket speeds past an asteroid at $0.600c$. If an
-  observer in the rocket sees \SI{10.0}{s} pass on her watch, how long would
-  that time interval be as seen by an observer on the asteroid?
 
-  \uncover<2->{
-    \vspace{.3in}\textbf{Example 1b:} A rocket speeds past an asteroid at
-    $0.600c$. If an observer in the \emph{asteroid} sees \SI{10.0}{s} pass on
-    his watch, how long would that time interval be as seen by an observer on
-    the \emph{rocket}?
-  }
 
-  \uncover<3->{
-    \vspace{.3in}How can that be?!
-  }
+\begin{frame}{Example Problem}
+  \textbf{Example 1a:} A rocket speeds past an asteroid at $v=0.600c$. If an
+  observer in the rocket sees \SI{10.}{\second} pass on her watch, how long
+  would that time interval be as seen by an observer on the asteroid?
+
+  \begin{displaymath}
+    t' =\frac{t}{\bigsqrt}=\frac{10.0}{\sqrt{1-0.600^2}}=\SI{16.7}{\second}
+  \end{displaymath}
+
+  \begin{itemize}
+  \item The observer in the rocket observes that the moving clock
+    (on the asteroid) runs slow because time flows more slowly,
+  \item Therefore a passage of time of \SI{10.}{\second} on the rocket
+    requires \SI{16.7}{\second} on the asteroid
+  \end{itemize}
+\end{frame}
+
+
+\begin{frame}{Example Problem}
+  \textbf{Example 1b:} A rocket speeds past an asteroid at $0.600c$. If an
+  observer in the \emph{asteroid} sees \SI{10.}{\second} pass on his watch, how
+  long would that time interval be as seen by an observer on the \emph{rocket}?
+
+  \begin{displaymath}
+    t' =\frac{t}{\bigsqrt}=\frac{10.0}{\sqrt{1-0.600^2}}=\SI{16.7}{\second}
+  \end{displaymath}
+
+  \begin{itemize}
+  \item This problem is exactly the same as the last one!
+  \item The observer in the asteroid observes that the moving clock
+    (this time, on the rocket) runs slow because time flows more slowly
+  \item Therefore a passage of time of \SI{10.}{\second} on the asteroid
+    requires \SI{16.7}{\second} on the rocket
+  \end{itemize}
+\end{frame}
+
+
+
+\begin{frame}{How can that be?}
+  How can the observer in the asteroid sees time in the rocket runs slowly,
+  while the observer in the rocket \emph{also} sees time in the asteroid runs
+  slowly?
+
+  \vspace{.3in}The answer is the relativty of simultaneity. The clocks on the
+  asteroid and on the rocket are never synchronized.
 \end{frame}
 
 
 \section{Length Contraction}
 
-\begin{frame}
-  \frametitle{Abandoning Concept of Absolute Space: Length Contraction}
-  \framesubtitle{Another Example}
+\begin{frame}{Relativity of Space}
   Captain Quick is a comic book hero who can run at nearly the speed of light.
-  In his hand, he is carrying a flare with a lit fuse set to explode in
-  \SI{1.5}{\micro\second}. The flare must be placed into its bracket before this
-  happens. The distance ($L$) between the flare and the bracket is
-  \SI{402}{\metre}.
-\end{frame}
-
-\begin{frame}
-  \frametitle{Abandoning Concept of Absolute Space: Length Contraction}
-  \framesubtitle{Another Example}
+  In his hand, he is carrying a bomb set to explode in \SI{1.5}{\micro\second}.
+  The bomb must be placed into its bracket before this happens. The distance
+  ($L$) between the flare and the bracket is \SI{402}{\metre}.
   \begin{center}
-    \pic{0.85}{graphics/captain-quick.png}
+    \vspace{-.15in}\pic{.7}{graphics/captain-quick.png}
   \end{center}
 \end{frame}
 
 
-\begin{frame}
-  \frametitle{Abandoning Concept of Absolute Space: Length Contraction}
-  \framesubtitle{Another Example}
-  If Captain Quick runs at \SI{2.00e8}{m/s}, according to classical mechanics,
-  he will not make it in time:
+\begin{frame}{Relativity of Space}
+  Suppose Captain Quick runs at \SI{2.00e8}{\metre\per\second}, according to
+  classical mechanics, he will not make it in time:
   \begin{displaymath}
-    t= \frac{L}{v}=\frac{\SI{402}{m}}{\SI{2.00e8}{m/s}}
-    =\SI{2.01e-6}{s}=\SI{2.01}{\micro s}
+    t= \frac{L}{v}=\frac{\SI{402}{\metre}}{\SI{2.00e8}{\metre\per\second}}
+    =\SI{2.01e-6}{\second}=\SI{2.01}{\micro\second}
   \end{displaymath}
   But according to relativistic mechanics, he makes it just in time\ldots
 \end{frame}
 
-\begin{frame}
-  \frametitle{Abandoning Concept of Absolute Space: Length Contraction}
-  \framesubtitle{Another Example}
+
+\begin{frame}{Relativity of Space}
   To a stationary observer, the time on the flare is slowed:
   \begin{displaymath}
     t'
     = \frac{t}{\bigsqrt}
-    = \frac{\SI{1.5e-6}{s}}{\sqrt{1-\left(\frac{2}{3}\right)^2}}
-    = \frac{\SI{1.5e-6}{s}}{0.7454}
-    = \SI{2.01e-6}{s}
+    = \frac{\num{1.5e-6}}{\sqrt{1-\left(\frac{2.00}{3.00}\right)^2}}
+    = \SI{2.01e-6}{\second}
   \end{displaymath}
   The stationary observer sees a passage of time of
-  $t'=\SI{2.01}{\micro\second}$, but
-  Captain Quick, who is in the same reference frame as the flare, experiences
-  a passage of time of $t=\SI{1.50}{\micro\second}$, precisely the
-  time for the flare to explode.
+  $t'=\SI{2.01}{\micro\second}$, but Captain Quick, who is in the same
+  reference frame as the flare, experiences a passage of time of
+  $t=\SI{1.50}{\micro\second}$, precisely the time for the flare to explode.
 \end{frame}
 
-\begin{frame}
-  \frametitle{Abandoning Concept of Absolute Space: Length Contraction}
-  \framesubtitle{Another Example}
-  \begin{itemize}
-  \item So, if Captain Quick sees only $t=\SI{1.50}{\micro s}$, then
-    how far did he travel?
-  \item He isn't travelling any faster, so he only other possibility is that
-    \textbf{the distance actually got shorter} (in his frame of reference).
-  \item How much did the distance contract?
-  \end{itemize}
-  
-  \eq{-.2in}{
-    \boxed{L'=L\bigsqrt}
-  }
 
+\begin{frame}{Relativity of Space}
+  If Captain Quick sees only $t=\SI{1.50}{\micro\second}$, then how far did he
+  travel?
+  \begin{itemize}
+  \item Both Captain Quick and the observer on the side of the road agree that
+    he is traveling at $v=\SI{2.00e8}{\metre\per\second}$
+  \item The only possibility is that \emph{the distance actually got shorter}
+    in Captain Quick's frame of reference, by this amount:
+    
+    \eq{-.2in}{
+      \boxed{L'=L\bigsqrt}
+    }
+  \end{itemize}
   For this example:
   \begin{displaymath}
-    L'=L\bigsqrt=(\SI{402}{m})\cdot\sqrt{1-\left(\frac{2}{3}\right)^2}
-    =\SI{300}{m}
+    L'=L\bigsqrt=402\sqrt{1-\left(\frac{2.00}{3.00}\right)^2}=\SI{300}{\metre}
   \end{displaymath}
 \end{frame}
 
 
-\begin{frame}
-  \frametitle{Length Contraction}
+\begin{frame}{Length Contraction}
   Length contraction only occurs in the direction of motion
   \begin{center}
     \pic{.8}{graphics/baseball-contraction.jpg}
     \end{center}
 \end{frame}
 
+\begin{frame}{Example Problem}
+  \textbf{Example 2:} A spacecraft passes Earth at a speed of \SI{2.00e8}{m/s}.
+  If observers on Earth measure the length of the spacecraft to be
+  \SI{554}{\metre}, how long would it be according to its passengers?
+\end{frame}
 
 
 \section{Lorentz Factor}
 
-\begin{frame}
-  \frametitle{Lorentz Factor}
+\begin{frame}{Lorentz Factor}
   The \textbf{Lorentz factor} $\gamma$ is a short-hand for writing length
   contraction, time dilation and relativistic mass:
 
@@ -686,16 +738,15 @@
 \end{frame}
 
 
-\begin{frame}
-  \frametitle{Let's Summarize}
+\begin{frame}{Summary}
   \begin{center}
     \begin{tikzpicture}[scale=2]
       \draw[ultra thick,->] (1,.5)--(2,.5) node[pos=0,left] {\textbf{A}};
       \draw[ultra thick,->] (3,0)--(2,0) node[pos=0,right]{\textbf{B}};
     \end{tikzpicture}
   \end{center}
-  If Person A and Person B are moving at constant velocity relative to one 
-  another (doesn't matter if they're moving towards, or away from each other)
+  If observers A and B are moving at constant velocity relative to one another
+  (doesn't matter if they're moving toward, or away from each other)
   \begin{itemize}
   \item They cannot agree whether any events happens at the same time or not
   \item Each sees the other's clock running slow
@@ -704,19 +755,11 @@
   \end{itemize}
 \end{frame}
 
-\begin{frame}
-  \frametitle{Example Problem}
-  \textbf{Example 2:} A spacecraft passes Earth at a speed of \SI{2.00e8}{m/s}.
-  If observers on Earth measure the length of the spacecraft to be
-  \SI{554}{m}, how long would it be according to its passengers?
-\end{frame}
 
-
-\begin{frame}
-  \frametitle{Lorentz Transformation}
-  The equations for time dilation and length contraction only tell part of the
-  story. In order to account for the loss of simultaneity from one frame to
-  another, we need to use the \textbf{Lorentz transformation:}
+\begin{frame}{Lorentz Transformation}
+  Time dilation and length contraction only tell part of the story. To account
+  for the loss of simultaneity from one inertial frame to another, we need to
+  use the \textbf{Lorentz transformation:}
 
   \vspace{-.45in}{\Large
     \begin{align*}
@@ -732,10 +775,10 @@
   length-contraction equations, but aren't really there.
 \end{frame}
 
-\begin{frame}
-  \frametitle{Lorentz Transformation}
+\begin{frame}{Lorentz Transformation}
   For slow speeds $v\ll c$, Lorentz transformation reduces to the Galilean
-  transformation from classical mechanics.
+  transformation from classical mechanics, from which the velocity addition
+  rule is formulated:
 
   \vspace{-.45in}{\Large
     \begin{align*}
@@ -751,31 +794,43 @@
 
 \section{Rel.\ Velocity}
 
-\begin{frame}
-  \frametitle{Relative Velocity}
+\begin{frame}{Relative Velocity}
   \begin{itemize}
   \item Unlike in classical mechanics, velocities (speeds) do not simply add
-  \item If the observer in frame $S$ measures an object moving along the
-    $x$-axis at velocity $u$, then the observer in the referenfe frame $S′$
-    that is moving at velocity $v$ in the $x$-direction with respect to $S$,
-    will measure the object moving with velocity $u′$:
+  \item We have to account for time dilation and length contraction, which is
+    included in the Lorentz transformation
+  \item\textbf{Einstein velocity addition rule}:
 
     \eq{-.2in}{
-      u'=
-      \frac{dx'}{dt'}=
-      \frac{\gamma(dx-vdt)}{\gamma(dt-vdx/c^2)}=
-      \frac{(dx/dt)-v}{1-(v/c^2)(dx/dt)}=
-      \frac{u-v}{1-uv/c^2}
+      \boxed{
+        \mb{v}_{AC}=
+        \frac{\mb{v}_{AB}+\mb{v}_{BC}}
+             {1+\frac{\mb{v}_{AB}\mb{v}_{BC}}{c^2}}
+      }
     }
-    
-  \item The other frame S will measure:
-    \eq{-.2in}{
-      u=
-      \frac{dx}{dt}=
-      \frac{\gamma(dx'+vdt')}{\gamma(dt'+vdx'/c^2)}=
-      \frac{(dx'/dt')+v}{1+(v/c^2)(dx'/dt')}=
-      \frac{u'+v}{1+u'v/c^2}
-    }
+  \item If $\mb{v}_{AB}\ll c$ and $\mb{v}_{BC}\ll c$, we recover Galilean
+    velocity addition rule
+%  \item If the observer in frame $S$ measures an object moving along the
+%    $x$-axis at velocity $u$, then the observer in the referenfe frame $S′$
+%    that is moving at velocity $v$ in the $x$-direction with respect to $S$,
+%    will measure the object moving with velocity $u′$:
+%
+%    \eq{-.2in}{
+%      u'=
+%      \frac{dx'}{dt'}=
+%      \frac{\gamma(dx-vdt)}{\gamma(dt-vdx/c^2)}=
+%      \frac{(dx/dt)-v}{1-(v/c^2)(dx/dt)}=
+%      \frac{u-v}{1-uv/c^2}
+%    }
+%    
+%  \item The other frame S will measure:
+%    \eq{-.2in}{
+%      u=
+%      \frac{dx}{dt}=
+%      \frac{\gamma(dx'+vdt')}{\gamma(dt'+vdx'/c^2)}=
+%      \frac{(dx'/dt')+v}{1+(v/c^2)(dx'/dt')}=
+%      \frac{u'+v}{1+u'v/c^2}
+%    }
   \end{itemize}
 \end{frame}
 
@@ -784,9 +839,9 @@
 
 \begin{frame}
   \frametitle{Relativistic Momentum}
-  In Physics 12, you were taught that momentum is mass times velocity. And back
-  in Physics 11, you were taught that velocity is displacement over time.
-  \textbf{These definitions have not changed.}
+  In Grade 12 Physics, you were taught that momentum is mass times velocity.
+  And in Grade 11 Physics, you were taught that velocity is displacement over
+  time. \emph{These definitions have not changed.}
 
   \eq{-.2in}{
     \mb{p}=m\frac{d\mb{x}}{dt}
@@ -799,26 +854,25 @@
   \eq{-.2in}{
     \mb{p}=m\frac{d\mb{x}}{dt}
     =\frac{md\mb{x}}{\bigsqrt\;dt}
-    =\frac{m\mb{v}}{\bigsqrt}
+    =\boxed{\frac{m\mb{v}}{\bigsqrt}}
   }
 \end{frame}
 
 
-\section[Mass]{Relativistic Mass}
+\section[RE.\ Mass]{Relativistic Mass}
 
-\begin{frame}
-  \frametitle{Relativistic Mass}
+\begin{frame}{Relativistic Mass}
   From the relativistic momentum expression, we see the relativistic aspect to
-  mass as well. The apparent mass $m'$ as measured by a moving observer is
-  related to its rest mass (intrinsic mass, invariant mass) $m$ by the Lorentz
-  factor:
+  mass as well. The \textbf{apparent mass} (or \textbf{relativistic mass}) $m'$
+  as measured by a moving observer is related to its \textbf{rest mass} (or
+  \textbf{intrinsic mass} or \textbf{invariant mass}) $m$ by the Lorentz factor:
 
   \eq{-.18in}{
     \boxed{m'=\frac{m}{\bigsqrt}=\gamma m}
   }
   
-  The intrinsic mass has not increased, but a moving observer will note that
-  the object behaves as if it is more massive. As $v\rightarrow c$,
+  The intrinsic mass of a moving object does not change, but a moving observer
+  will observe that it behaves as if it is more massive. As $v\rightarrow c$,
   $m\rightarrow\infty$.
 \end{frame}
 
@@ -826,8 +880,7 @@
 
 \section[Energy]{Relativistic Energy}
 
-\begin{frame}
-  \frametitle{Work and Energy}
+\begin{frame}{Work and Energy}
   Einstein published a fourth paper in \emph{Annalen der Physik} on November
   21, 1905 (received Sept.\ 27) titled ``Does the Inertia of a Body Depend Upon
   Its Energy Content?'' (In German: Ist die Tr\"{a}gheit eines K\"{o}rpers von
@@ -838,17 +891,16 @@
 \end{frame}
 
 
-\begin{frame}
-  \frametitle{Work and Energy}
-  In Physics 12, you were taught that force is the rate of change of momentum
-  with respect to time. \textbf{This definition has not changed.}
+\begin{frame}{Work and Energy}
+  In Grade 12 Physics, you were taught that force is the rate of change of
+  momentum with respect to time. \emph{This definition has not changed.}
 
   \eq{-.2in}{
     \mb{F}=\frac{d\mb{p}}{dt}
   }
 
   \vspace{-.1in}and that work is the integral of the dot product between force
-  and displacement vectors. \textbf{This definition has not changed either.}
+  and displacement vectors. \emph{This definition has not changed either.}
 
   \eq{-.2in}{
     W=\int\mb{F}\cdot d\mb{x}=\int\frac{d\mb{p}}{dt}\cdot \mb{dx}
@@ -868,16 +920,15 @@
     W=\int Fdx=\int\frac{dp}{dt}dx=\int vdp
   }
   
-  \vspace{-.15in}We assume that both velocity and momentum are continuous in
-  time. Since momentum is a function of both $\gamma$ and $v$, we apply the
-  chain rule to find the infinitesimal change in momentum ($dp$) with respect
-  to $d\gamma$ and $dv$:
+  \vspace{-.15in}Assume that both velocity and momentum are continuous functions
+  in time. We then apply the chain rule to find the infinitesimal change in
+  momentum ($dp$) with respect to $\gamma$ and $v$:
   
   \eq{-.3in}{
     p=\gamma mv \quad\rightarrow\quad dp= \gamma dv +vd\gamma
   }
 
-  \vspace{-.15in}Substituting that into the integral, we have:
+  \vspace{-.15in}Substituting that back into the integral, we have:
   
   \eq{-.25in}{
     W=\int vdp=\int mv(\gamma dv +vd\gamma)=
@@ -885,14 +936,15 @@
   }
 \end{frame}
 
+
 \begin{frame}
   \frametitle{Work and Energy}
-  We want to integrate with respect to $\gamma$, so we need to express $v$
-  and $dv$ in terms of $\gamma$ using its definition:
+  One of the integral is with respect to $\gamma$, so we express $v$ and $dv$
+  in terms of $\gamma$ using its definition:
 
   \eq{-.2in}{
     v^2=c^2\left[1-\left(\frac{1}{\gamma}\right)^2\right]
-    \quad\quad
+    \quad\rightarrow\quad
     dv=\frac{c^2}{\gamma^3v}d\gamma
   }
 \end{frame}
@@ -921,7 +973,7 @@
   The integral gives us this expression:
   
   \eq{-.15in}{
-    W=\gamma mc^2-mc^2 = K
+    W=\gamma mc^2-mc^2
   }
 
   \vspace{-.15in}We know from the work-kinetic energy theorem that the work $W$
@@ -935,15 +987,16 @@
       \rowcolor{pink}
       \textbf{Variable} & \textbf{Symbol} & \textbf{SI Unit}\\ \hline
       Kinetic energy of an object & $K$  & \si{\joule}\\
-      Relativistic mass (measured in moving frame) & $m'$ & \si{\kilo\gram}\\
+      Apparent mass (measured in moving frame) & $m'$ & \si{\kilo\gram}\\
       Rest mass (measured in stationary frame) & $m$  & \si{\kilo\gram}\\
       Speed of light              & $c$ & \si{\metre\per\second}
     \end{tabular}
   \end{center}
 \end{frame}
 
-\begin{frame}
-  \frametitle{Relativistic Energy}
+
+
+\begin{frame}{Relativistic Energy}
   \framesubtitle{What This All Means}
   {\Large
     \begin{displaymath}
@@ -987,7 +1040,7 @@
   \item Mass-energy equivalence doesn't merely mean that mass can be converted
     into energy, and vice versa (although this is true), but rather, one can be
     converted into the other
-    \textbf{because they are fundamentally the same thing}
+    \emph{because they are fundamentally the same thing}
   \end{itemize}
 \end{frame}
 
@@ -1013,11 +1066,10 @@
     \begin{tabular}{l|c|l}
       \rowcolor{pink}
       \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
-      Total energy   & $E$ & \si{\joule} (joules) \\
-      Momentum       & $p$ & \si{\kilo\gram\metre/\second}
-      (kilogram meters per second) \\
-      Rest mass      & $m$ & \si{\kilo\gram} (kilogram)\\
-      Speed of light & $c$ & \si{\metre/\second} (meter per second)
+      Total energy   & $E$ & \si{\joule} \\
+      Momentum       & $p$ & \si{\kilo\gram.\metre/\second}\\
+      Rest mass      & $m$ & \si{\kilo\gram} \\
+      Speed of light & $c$ & \si{\metre/\second}
     \end{tabular}
   \end{center}
 \end{frame}

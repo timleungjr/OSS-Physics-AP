@@ -21,12 +21,13 @@
   per-mode=symbol
 }
 
-\title{Topic 23: Special Relativity}
+\title{Topic 21: Special Relativity}
 \subtitle{Advanced Placement Physics}
 \author[TML]{Dr.\ Timothy Leung}
 \institute{Olympiads School}
 %\author{Olympiads School}
-\date{Summer 2018}
+%\date{Summer 2018}
+\date{Winter/Spring 2019}
 
 
 
@@ -46,25 +47,24 @@
 
 
 
-\section[Intro]{Introduction}
 \begin{frame}
   \frametitle{Introduction}
-  These slides for this unit are an expanded version of Grade 12 Physics slides
-  (with some additional calculus). Two versions of the slides are downloadable
-  from the school website:
+  These slides for this topic are an expanded version of Grade 12 Physics slides
+  (with some additional calculus). There are two versions of the slides; both
+  are downloadablefrom the school website:
   \begin{itemize}
   \item The long version
     \begin{itemize}
     \item More background information (more than needed for the AP 2 Exam) and
       derivations and integrations
     \item May answer some of your questions about the specifics of the theory
-    \item \texttt{23a-relativity\_long.pdf}
+    \item \texttt{21-relativity-long.pdf}
     \end{itemize}
   \item<alert@1> The short version
     \begin{itemize}
     \item More ``to the point''
     \item The version that is used during class
-    \item \texttt{23a-relativity\_short.pdf}
+    \item \texttt{21-relativity-short.pdf}
     \end{itemize}
   \end{itemize}
   There is also a handout on how to solve and interpret the time dilation
@@ -75,26 +75,62 @@
 \begin{frame}
   \frametitle{Frame of Reference}
   \framesubtitle{A Quick Review}
-  \begin{itemize}
-  \item A \textbf{frame of reference} is a hypothetical, perfect, mobile
-    ``laboratory'' an observer uses to make measurements (mass, lengths, time,
-    etc). At a minimum, it includes:
-    \begin{itemize}
-    \item A ruler to measure lengths
-    \item A clock to measure the passage of time
-    \item A scale to compare forces
-    \item A balance to measure masses
-    \end{itemize}
-  \item What matters is the \emph{motion} (at rest, uniform motion, acceleration
-    etc) of your laboratory, and how it affects the measurement that you make
-  \item An \textbf{inertial frame of reference} is one that is moving in
-    uniform motion
+  A \textbf{frame of reference} is a hypothetical mobile ``laboratory'' an
+  observer uses to make measurements, e.g.:
+  \begin{itemize} 
+  \item Some rulers to (i.e.\ coordinate system) measure positions and lengths
+  \item A clock to measure the passage of time
+  \item A scale to compare forces
+  \item A balance to measure masses
   \end{itemize}
-  
-  \vspace{.1in}
+  What matters is the \emph{motion} (at rest, uniform motion, acceleration
+    etc) of your laboratory, and how it affects the measurement that you make
+%  \item An \textbf{inertial frame of reference} is one that is moving in
+%    uniform motion
+%  \end{itemize}
+%  
+%  \vspace{.1in}
+%  \begin{block}{The Principle of Relativity}
+%    The laws of motion must apply equally in all inertial frames of reference.
+%  \end{block}
+\end{frame}
+
+
+\begin{frame}{Inertial Frame of Reference}
+  An \textbf{inertial frame of reference} is one that is moving in uniform
+  motion (i.e.\ constant velocity, zero acceleration)
+  \begin{itemize}
+  \item In an inertial frame, Newton's first and second laws of motion are valid
+  \item Since all uniform motion are treated the same way, you may consider
+    any inertial frames of reference to be \emph{at rest}
+  \end{itemize}
+  \vspace{.2in}
   \begin{block}{The Principle of Relativity}
-    The laws of motion must apply equally in all inertial frames of reference.
+    All laws of motion must apply equally in all inertial frames of reference.
   \end{block}
+\end{frame}
+
+
+\begin{frame}{Inertial Frame of Reference}
+  \framesubtitle{A Quick Review}
+  \begin{itemize}
+  \item Observer A is moving uniformly with the skateboard
+    \begin{itemize}
+    \item It is perfectly valid for A to think that he is at rest, but B is
+      moving
+    \end{itemize}
+  \item Observer B is standing on the side of the road
+    \begin{itemize}
+    \item It is perfectly valid for B to think that he is at rest, but A is
+      moving
+    \end{itemize}
+  \item A \& B see different motion, but they agree on the equations
+    that govern the motion
+  \end{itemize}
+  \begin{center}
+    \vspace{-.1in}
+    \pic{.65}{graphics/57.jpg}
+  \end{center}
 \end{frame}
 
 
@@ -102,13 +138,18 @@
   \frametitle{Newtonian (Classical) Relativity}
   In Newtonian physics, space and time are \emph{absolute}:
   \begin{itemize}
-  \item \SI{1}{m} is \SI{1}{m} no matter where you are in the universe
-  \item \SI{1}{s} is \SI{1}{s} no matter where you are in the universe
+  \item \SI{1}{m} is \SI{1}{m} no matter where you are, or how you are moving
+  \item \SI{1}{s} is \SI{1}{s} no matter where you are, or how you are moving
   \item Measurements of space and time do not depend on motion
   \end{itemize}
   If space and time are absolute, then \emph{all} velocities are relative
   \begin{itemize}
   \item Measured velocities depend on the motion of the observer
+  \item Galilean velocity addition rule:
+    
+    \eq{-.25in}{
+      \boxed{\mb{v}_{AC}=\mb{v}_{AB}+\mb{v}_{BC}}
+    }
   \end{itemize}
 \end{frame}
 
@@ -162,7 +203,7 @@
 \begin{frame}
   \frametitle{The Illusive Aether}
   \begin{itemize}
-  \item Maxwell's hypothesis: the speed of light $c_0$ is relative to a
+  \item Maxwell's hypothesis: the speed of light $c$ is relative to a
     hypothetical ``luminiferous aether''
   \item In order for this ``aether'' (or ``ether'') to exist, it must have some
     fantastic (as in, a fantasy, too good to be true!) properties:
@@ -216,7 +257,7 @@
 %    \column{0.75\textwidth}
 %    \begin{itemize}
 %    \item Considered the Michelson-Morley experiment to be significant
-%    \item Objects travelling in the direction of ether contracts in length,
+%    \item Objects traveling in the direction of ether contracts in length,
 %      nullifying the experimental results
 %    \item Lorentz Factor:
 %      
@@ -301,8 +342,8 @@
   \end{itemize}
 \end{frame}
 
-\begin{frame}
-  \frametitle{Simultaneity: A Thought Experiment}
+
+\begin{frame}{Relativity of Simultaneity}
   Lightning bolt strikes the ends of a moving train
   \begin{center}
     \pic{.5}{graphics/87-1-1024x673.png}
@@ -314,8 +355,8 @@
   \end{itemize}
 \end{frame}
 
-\begin{frame}
-  \frametitle{Simultaneity: A Thought Experiment}
+
+\begin{frame}{Relativity of Simultaneity}
   \begin{itemize}
   \item The two observers disagree on the result, but
     \begin{itemize}
@@ -332,10 +373,7 @@
 
 
 
-\begin{frame}
-  \frametitle{Time Dilation}
-  \framesubtitle{A Moving Clock Runs Slow}
-
+\begin{frame}{Relativity of Time}
   Time on a moving object, as perceived by a stationary observer, appears to
   slow down:
   
@@ -376,9 +414,7 @@
   }
 \end{frame}
 
-
-\begin{frame}
-  \frametitle{Length Contraction}
+\begin{frame}{Relativity of Space}
   The length of an object, as measured by a moving observer, is contracted in
   length:
   
@@ -413,16 +449,15 @@
 %\end{frame}
 
 
-\begin{frame}
-  \frametitle{Let's Summarize}
+\begin{frame}{Summary Summarize}
   \begin{center}
     \begin{tikzpicture}[scale=2]
       \draw[ultra thick,->] (1,.5)--(2,.5) node[pos=0,left] {\textbf{A}};
       \draw[ultra thick,->] (3,0)--(2,0) node[pos=0,right]{\textbf{B}};
     \end{tikzpicture}
   \end{center}
-  If Person A and Person B are moving at constant velocity relative to one 
-  another (doesn't matter if they're moving towards, or away from each other)
+  If observers A and B are moving at constant velocity relative to one another
+  (doesn't matter if they're moving toward, or away from each other)
   \begin{itemize}
   \item They cannot agree whether any events happens at the same time or not
   \item Each sees the other's clock running slow
@@ -431,16 +466,14 @@
   \end{itemize}
 \end{frame}
 
-\begin{frame}
-  \frametitle{Example Problem}
+\begin{frame}{Example Problem}
   \textbf{Example 2:} A spacecraft passes Earth at a speed of \SI{2.00e8}{m/s}.
   If observers on Earth measure the length of the spacecraft to be
   \SI{554}{m}, how long would it be according to its passengers?
 \end{frame}
 
 
-\begin{frame}
-  \frametitle{Lorentz Transformation}
+\begin{frame}{Lorentz Transformation}
   The equations for time dilation and length contraction only tell part of the
   story. In order to account for the loss of simultaneity from one reference
   frame to another, we need to use the \textbf{Lorentz transformation:}
@@ -454,13 +487,14 @@
     \end{align*}
   }
   
-  \vspace{-.1in}The Lorentz transformation ``solves'' many paradoxes
-  (e.g.\ the twin paradox) from the time-dilation and
-  length-contraction equations, but aren't really there.
+  \vspace{-.1in}The Lorentz transformation ``solves'' many paradoxes (e.g.\ the
+  twin paradox) from the time-dilation and length-contraction equations, but
+  aren't really there.
 \end{frame}
 
-\begin{frame}
-  \frametitle{Lorentz Transformation}
+
+
+\begin{frame}{Lorentz Transformation}
   For slow speeds $v\ll c$, Lorentz transformation reduces to the Galilean
   transformation from classical mechanics.
 
@@ -476,42 +510,29 @@
 
 
 
-\section{Rel.\ Velocity}
-
-\begin{frame}
-  \frametitle{Relative Velocity}
+\begin{frame}{Relative Velocity}
   \begin{itemize}
   \item Unlike in classical mechanics, velocities (speeds) do not simply add
-  \item If the observer in frame $S$ measures an object moving along the
-    $x$-axis at velocity $u$, then the observer in the referenfe frame $S′$
-    that is moving at velocity $v$ in the $x$-direction with respect to $S$,
-    will measure the object moving with velocity $u′$:
+  \item We have to account for time dilation and length contraction, which is
+    included in the Lorentz transformation
+  \item\textbf{Einstein velocity addition rule}:
 
     \eq{-.2in}{
-      u'=
-      \frac{dx'}{dt'}=
-      \frac{\gamma(dx-vdt)}{\gamma(dt-vdx/c^2)}=
-      \frac{(dx/dt)-v}{1-(v/c^2)(dx/dt)}=
-      \frac{u-v}{1-uv/c^2}
+      \boxed{
+        \mb{v}_{AC}=
+        \frac{\mb{v}_{AB}+\mb{v}_{BC}}
+             {1+\frac{\mb{v}_{AB}\mb{v}_{BC}}{c^2}}
+      }
     }
-    
-  \item The other frame S will measure:
-    \eq{-.2in}{
-      u=
-      \frac{dx}{dt}=
-      \frac{\gamma(dx'+vdt')}{\gamma(dt'+vdx'/c^2)}=
-      \frac{(dx'/dt')+v}{1+(v/c^2)(dx'/dt')}=
-      \frac{u'+v}{1+u'v/c^2}
-    }
+  \item If $\mb{v}_{AB}\ll c$ and $\mb{v}_{BC}\ll c$, we recover Galilean
+    velocity addition rule
   \end{itemize}
 \end{frame}
 
 
 
-\begin{frame}
-  \frametitle{Relativistic Momentum}
-
-  \textbf{The definition of momentum has not changed}, but in relativistic
+\begin{frame}{Relativistic Momentum}
+  \emph{The definition of momentum has not changed}, but in relativistic
   momentum, we must now include the effects of time dilation and/or length
   contraction:
 
@@ -521,24 +542,24 @@
 \end{frame}
 
 
-\begin{frame}
-  \frametitle{Relativistic Mass}
+\begin{frame}{Relativistic Mass}
+
   Relativistic momentum equation show that there is a relativistic aspect to
-  mass. The apparent mass $m'$ as measured by a moving observer is related to
-  its rest mass (intrinsic mass, invariant mass) $m$ by the Lorentz factor:
+  mass. The \textbf{apparent mass} (or \textbf{relativistic mass}) $m'$
+  as measured by a moving observer is related to its \textbf{rest mass} (or
+  \textbf{intrinsic mass} or \textbf{invariant mass}) $m$ by the Lorentz factor:
 
   \eq{-.18in}{
     \boxed{m'=\frac{m}{\bigsqrt}=\gamma m}
   }
-  
-  The intrinsic mass has not increased, but a moving observer will see the
-  object behave as if it is more massive. As $v\rightarrow c$,
+
+  The intrinsic mass of a moving object does not change, but a moving observer
+  will observe that it behaves as if it is more massive. As $v\rightarrow c$,
   $m\rightarrow\infty$.
 \end{frame}
 
 
 
-\section[Energy]{Relativistic Energy}
 
 %\begin{frame}
 %  \frametitle{Work and Energy}
@@ -554,18 +575,15 @@
 
 \begin{frame}
   \frametitle{Work and Energy}
-  Recall the definition of work. \textbf{This definition has not changed.}
+  Recall the definition of work. \emph{This definition has not changed.}
 
   \eq{-.2in}{
     W=\int\mb{F}\cdot d\mb{x}=\int\frac{d\mb{p}}{dt}\cdot \mb{dx}
   }
 
-  \vspace{-.1in}Since we now have a relativistic expression for momentum, we
-  substitute that new expression into the expression for force, and then
-  integrate.
-
-  \vspace{.2in}Doing the integral gives a surprisingly simple expression for
-  kinetic energy $K$:
+  We substitute the \emph{relativistic} expression for momentum
+  into the expression and then integrate. It gives a surprisingly simple
+  expression:
   
   \eq{-.15in}{
     W=\gamma mc^2-mc^2
@@ -577,8 +595,8 @@
 \begin{frame}
   \frametitle{Work and Energy}
 
-  We know from the work-kinetic energy theorem that the work $W$ done is equal
-  to the change in kinetic energy $K$, therefore
+  We know from the work-energy theorem that the work $W$ done is equal to the
+  change in kinetic energy $K$, therefore
  
   \eq{-.2in}{ \boxed{K=m'c^2-mc^2} }
 
@@ -588,15 +606,15 @@
       \rowcolor{pink}
       \textbf{Variable} & \textbf{Symbol} & \textbf{SI Unit}\\ \hline
       Kinetic energy of an object & $K$  & \si{\joule}\\
-      Relativistic mass (measured in moving frame) & $m'$ & \si{\kilo\gram}\\
+      Apparent mass (measured in moving frame) & $m'$ & \si{\kilo\gram}\\
       Rest mass (measured in stationary frame) & $m$  & \si{\kilo\gram}\\
-      Speed of light              & $c_0$ & \si{\metre\per\second}
+      Speed of light              & $c$ & \si{\metre\per\second}
     \end{tabular}
   \end{center}
 
   \textbf{The full integration is shown in the long version of the slides. The
     integral is not very complicated, but it does require some experience with
-    intgral calculus.}
+    integral calculus.}
 \end{frame}
 
 \begin{frame}
@@ -642,7 +660,7 @@
   \item Mass-energy equivalence doesn't merely mean that mass can be converted
     into energy, and vice versa (although this is true), but rather, one can be
     converted into the other
-    \textbf{because they are fundamentally the same thing}
+    \emph{because they are fundamentally the same thing}
   \end{itemize}
 \end{frame}
 
@@ -668,11 +686,10 @@
     \begin{tabular}{l|c|l}
       \rowcolor{pink}
       \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
-      Total energy   & $E$ & \si{\joule} (joules) \\
-      Momentum       & $p$ & \si{\kilo\gram\metre/\second}
-      (kilogram meters per second) \\
-      Rest mass      & $m$ & \si{\kilo\gram} (kilogram)\\
-      Speed of light & $c$ & \si{\metre/\second} (meter per second)
+      Total energy   & $E$ & \si{\joule}\\
+      Momentum       & $p$ & \si{\kilo\gram\metre/\second}\\
+      Rest mass      & $m$ & \si{\kilo\gram}\\
+      Speed of light & $c$ & \si{\metre/\second}
     \end{tabular}
   \end{center}
 
@@ -758,7 +775,7 @@
 
 \begin{frame}
   \frametitle{Kinetic Energy---Classical vs.\ Relativistic}
-  Applying the \textbf{binomial series expansion} to $\gamma$ gives a
+  Applying the \textbf{binomial series expansion} of $\gamma$ gives a
   series representation of kinetic energy $K$:
 
   \vspace{-.3in}{\Large
