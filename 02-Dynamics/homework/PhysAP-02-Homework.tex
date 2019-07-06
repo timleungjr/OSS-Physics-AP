@@ -1760,7 +1760,7 @@
 %\end{center}
 %\newpage
 
-\genfreetitle{1 \& C}{KINEMATICS \& DYNAMICS}{8}
+\genfreetitle{1 \& C}{KINEMATICS \& DYNAMICS}{9}
 
 \genfreedirections{10}
 
@@ -1786,7 +1786,7 @@
   \end{enumerate}
   
 \item A particle follows a parabolic path with the equation $y=2x^2$ as shown.
-  The $x$-component of the particle's position is given by $x=3t^2$.
+  The $x$-component of the particle's position is given by $x=3t$.
   \begin{center}
     \begin{tikzpicture}[scale=1]
       \draw[very thick,->](0,0)--(5,0) node[pos=1,right]{$x$};
@@ -1812,24 +1812,38 @@
   \end{enumerate}
   \newpage
 
-\item An object moves on a plane as
-  $\displaystyle \mb{d}(t)=2t^2\bm{\hat{\imath}}+\frac{1}{t}\bm{\hat{\jmath}}$
-  for $t\geq\SI{2}{\s}$. Find
+\item An object has a position vector given by
+  $\displaystyle \mb{r}(t)=30t\bm{\hat{\imath}}+(40t-5t^2)\bm{\hat{\jmath}}$,
+  where $\mb{r}$ is in meters and $t$ is in seconds. Find
   \begin{enumerate}[noitemsep,topsep=0pt]
-  \item its displacement at $t=\SI{3}{\s}$.
-  \item its velocity and speed at $t=\SI{3}{\s}$.
-  \item its acceleration as a function of time and the magnitude of the
-    acceleration.
+  \item its displacement between $t=1$ and $t=3$
+  \item its instantaneous velocity as a function of time
+  \item its instantaneous acceleration as a function of time
   \end{enumerate}
   \vspace{3.5in}
-  
-\item An object has velocity $v(t)=t^2-2t$ for $t\geq 0$:
-  \begin{enumerate}[noitemsep,topsep=0pt]
-  \item Describe its motion.
-  \item Find its displacement in \SI{5}{\second}.
-  \item Find its displacement between \num{3} and \SI{5}{\second}.
-  \end{enumerate}
+
+\item Two balls are thrown with equal speeds $v_0$ from the top of a cliff of
+  height $H$. One ball is thrown upward at an angle $\alpha$ above the
+  horizontal; the other ball is thrown downward at an angle of $\beta$ below
+  the horizontal. Show that each ball strikes the ground with the same speed,
+  and find that speed in terms of $H$ and the initial speed $v_0$.
   \newpage
+%\item An object moves on a plane as
+%  $\displaystyle \mb{d}(t)=2t^2\bm{\hat{\imath}}+\frac{1}{t}\bm{\hat{\jmath}}$
+%  for $t\geq\SI{2}{\s}$. Find
+%  \begin{enumerate}[noitemsep,topsep=0pt]
+%  \item its displacement at $t=\SI{3}{\s}$.
+%  \item its velocity and speed at $t=\SI{3}{\s}$.
+%  \item its acceleration as a function of time and the magnitude of the
+%    acceleration.
+%  \end{enumerate}
+%  
+%\item An object has velocity $v(t)=t^2-2t$ for $t\geq 0$:
+%  \begin{enumerate}[noitemsep,topsep=0pt]
+%  \item Describe its motion.
+%  \item Find its displacement in \SI{5}{\second}.
+%  \item Find its displacement between \num{3} and \SI{5}{\second}.
+%  \end{enumerate}
   
 \item Three masses are connected by two strings as shown. One of the strings
   is passed over a pulley of negligible mass and friction. The pulley is
@@ -1866,15 +1880,59 @@
     reaches the bottom of the plane?
   \end{enumerate}
   \newpage
-\item  Two blocks of mass $m$ and $M$ are connected via pulley with a
-  configuration as shown on the right. The coefficient of static friction
-  between the left block and the surface is $\mu_{s,1}$, and the coefficient of
-  static friction between the right block and the surface is $\mu_{s,2}$.
-  Formulate a mathematical inequality for the condition that no sliding occurs.
-  There may be more than one inequality.
+\item A \SI{2.}{\kilo\gram} block sits on a \SI{4.}{\kilo\gram} that is
+  resting on a frictionless table, as shown below. The coefficient of
+  friction between the blocks are $\mu_s=0.30$ and $\mu_k=0.20$.
+  \begin{enumerate}[topsep=0pt,itemsep=0pt]
+  \item What is the maximum force $\mb{F}$ that can be applied if the
+    \SI{2.}{\kilo\gram} block is not to slide on the \SI{4.}{\kilo\gram} block.
+  \item If $\mb{F}$ is half this value, find the acceleration of each block and
+    the force of firciotn acting on each block.
+  \item If $\mb{F}$ is twice the value found in (a), find the acceleration of
+    each block.
+  \end{enumerate}
   \begin{center}
-    \pic{.4}{pulley_prob_6.png}
+    \begin{tikzpicture}
+      \draw (0,0)--(6,0);
+      \fill[green!30!gray!50] (1.8,0)rectangle(4.2,1.5)
+      node[midway,black]{\SI{4.}{kg}};
+      \fill[yellow!50](2.5,1.5)rectangle(3.5,2.2)
+      node[midway,black]{\SI{2.}{kg}};
+      \draw[ultra thick,red!80!black,->](4.2,.75)--(6.2,.75)
+      node[pos=1,right]{$\mb{F}$};
+    \end{tikzpicture}
   \end{center}
+  \vspace{2.25in}
+  
+\item A \SI{2.}{\kilo\gram} body rests on a smooth wedge that has an inclination
+  of \ang{60} and an acceleration $\mb{a}$ to the right such that the mass
+  remains stationary relative to the wedge.
+  \begin{enumerate}[noitemsep,topsep=0pt]
+  \item Find $\mb{a}$.
+  \item What would happen if the wedge were given a greater acceleration?
+  \end{enumerate}
+  \begin{center}
+    \begin{tikzpicture}[scale=2]
+      \draw[ultra thick,green!40!black,->](.5,.6)--(1.7,.6)
+      node[pos=1,right,black]{$\mb{a}$};
+      \draw(-1,0)--(2,0);
+      \fill[blue!50!gray!50](0,0)--(0,1.7)--(1,0)--cycle;
+      \draw[->](.7,0) arc(180:120:.3) node[midway,left]{\ang{60}};
+      \begin{scope}[rotate around={-60:(1,0)}]
+        \fill[red!50!gray!50](0,0) rectangle(-.5,.5)
+        node[midway,black]{\SI{2.}{kg}};
+      \end{scope}
+    \end{tikzpicture}
+  \end{center}
+%\item  Two blocks of mass $m$ and $M$ are connected via pulley with a
+%  configuration as shown on the right. The coefficient of static friction
+%  between the left block and the surface is $\mu_{s,1}$, and the coefficient of
+%  static friction between the right block and the surface is $\mu_{s,2}$.
+%  Formulate a mathematical inequality for the condition that no sliding occurs.
+%  There may be more than one inequality.
+%  \begin{center}
+%    \pic{.4}{pulley_prob_6.png}
+%  \end{center}
 \end{enumerate}
 
 \end{document}

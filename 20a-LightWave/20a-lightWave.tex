@@ -20,11 +20,11 @@
   per-mode=symbol
 }
 
-\title{Light Wave (Supplemental Slides)}
+\title{Topic 20: Light Wave and Optics}
 \subtitle{Advanced Placement Physics}
 \author[TML]{Dr.\ Timothy Leung}
 \institute{Olympiads School}
-\date{Summer 2018}
+\date{Spring 2019}
 
 \newcommand{\pic}[2]{\includegraphics[width=#1\textwidth]{#2}}
 \newcommand{\half}{\ensuremath\frac{1}{2}}
@@ -37,39 +37,11 @@
   \maketitle
 \end{frame}
 
-\begin{frame}
-  \frametitle{What These Slides Are About}
-  These slides are condensed from the Grade 12 Physics slides for the unit on
-  \emph{The Wave Nature of Light}. Some of the information are also
-  presented in other classes.
-\end{frame}
-
 %\begin{frame}
-%  \frametitle{In This Unit}
-%  In this unit, we will be discussing some important properties of light:
-%  \begin{itemize}
-%  \item Light waves passing through a medium
-%    \begin{itemize}
-%    \item Reflection
-%    \item Refraction
-%    \item Dispersion
-%    \end{itemize}
-%  \item Light waves passing through an opening
-%    \begin{itemize}
-%    \item Diffraction
-%    \item Interference
-%    \item Optical resolution
-%    \end{itemize}
-%  \item The nature of light? (What kind of wave is light?)
-%    \begin{itemize}
-%    \item Maxwell's equations
-%    \item Electromagnetic waves
-%    \item Polarization of light
-%    \item Speed of light
-%    \end{itemize}
-%  \end{itemize}
-%  Some of the topics that we are discussing are reviews\ldots but with new
-%  insights and more information.
+%  \frametitle{What These Slides Are About}
+%  These slides are condensed from the Grade 12 Physics slides for the unit on
+%  \emph{The Wave Nature of Light}. Some of the information are also
+%  presented in other classes.
 %\end{frame}
 
 \section{Huygens}
@@ -81,17 +53,16 @@
   \item Others, including Christiaan Huygen (Dutch) and Augustin-Jean Fresnel
     (French), believed that light is a wave
   \end{itemize}
-  \vspace{.4in}
 
-  Huygen's Princple: all waves are in fact an infinite series of circular
-  wavelets
+  \vspace{.4in}Huygen's Princple: all waves are in fact an infinite series of
+  circular wavelets
 \end{frame}
 
 \section{Reflection}
 \begin{frame}
   \frametitle{Reflection of Light}
   \textbf{Law of Reflection}
-  
+
   The incident ray, the reflected ray, and the normal to the surface of the
   mirror all lie in the same plane, and the angle of reflection is equal to
   the angle of incidence.  
@@ -131,104 +102,86 @@
   \end{columns}
 \end{frame}
 
-\begin{frame}
-  \frametitle{Refraction of Light Through a Medium}
-    You have probably all seen this diagram of light entering from one medium
-    to another.
-    \begin{center}
-      \pic{.3}{snells_interface.png}
-    \end{center}
-    Light could be going in either direction, from top to bottom ($n_1$ to
-    $n_2$) or from bottom to top ($n_2$ to $n_1$)
-\end{frame}
-
-\begin{frame}
-  \frametitle{Refraction Happens in Ocean Waves Too!}
+\begin{frame}{Refraction of Light Through a Medium}
+  You have probably all seen this diagram of light entering from one medium
+  to another. Light could be going in either direction, from top to bottom
+  ($n_1$ to $n_2$) or from bottom to top ($n_2$ to $n_1$)
   \begin{center}
-    \pic{.5}{refraction-water-waves.png}
+    \vspace{-.2in}
+    \begin{tikzpicture}[scale=.9]
+      \fill[gray!70](-3,-2) rectangle (3,0);
+      \draw[very thick](-3,0)--(3,0);
+      \draw[red!80,very thick](-2,2)--(0,0)--(1,-2);
+      \draw[dashed,black!70,very thick](0,2)--(0,-2);
+      \draw[->,thick](0,1) arc(90:135:1) node[midway,above]{$\theta_1$};
+      \draw[->,thick](0,-1)arc(270:297:1) node[midway,below]{$\theta_2$};
+      \node at (-2,.3) {$n_1$};
+      \node at (-2,-.3){$n_2$};
+      \node at (2,.3) {$v_1$};
+      \node at (2,-.3){$v_2$};
+    \end{tikzpicture}
   \end{center}
-  Refraction happens not only with light, we see the same behaviour in ocean
-  waves, when the wave travel from deeper water (faster waves) to shallow
-  depths.
+  \textbf{Snell's law} relates the refractive indices $n$ of the two media
+  to the directions of propagation in terms of the angles to the normal. 
+
+  \eq{-.2in}{
+    \boxed{n_1\sin\theta_1=n_2\sin\theta_2}
+  }
 \end{frame}
 
-\begin{frame}
-  \frametitle{Refraction and Huygens Principle}
+
+\begin{frame}{Refraction and Huygens Principle}
   \begin{columns}
     \column{.5\textwidth}
     \pic{1}{huygen.png}
     \column{.47\textwidth}
-    We can explain the refraction phenomenon using Huygens' Principle
+    We can explain the refraction phenomenon using Huygens' principle
   \end{columns}
 \end{frame}
 
-\begin{frame}
-  \frametitle{Snell's Law}
 
-  \textbf{Snell's law} relates the indices of refraction $n$ of the two media
-  to the directions of propagation in terms of the angles to the normal. 
-
-  \vspace{-.2in}
-  {\Huge
-    \begin{displaymath}
-      \boxed{n_1\sin\theta_1=n_2\sin\theta_2}
-    \end{displaymath}
-  }
-  
-  \vspace{.1in}
-  \begin{center}
-    \begin{tabular}{l|c|c}
-      \rowcolor{pink}
-      \textbf{Variable} & \textbf{Symbol} & \textbf{SI Unit}\\ \hline
-      Indices of refraction of the media & $n_1$, $n_2$ & (no units)\\
-      Incident angle of light   & $\theta_1$ & (no units)\\
-      Refraction angle of light & $\theta_2$ & (no units)\\
-    \end{tabular}
-  \end{center}
-\end{frame}
 
 \begin{frame}
   \frametitle{Index of Refraction}
 
-  \textbf{Index of refraction} ($n$) is defined as the speed of light in vacuum
-  ($c$) divided by the speed of light in the medium ($v$).
+  \textbf{Index of refraction} ($n$) (or \textbf{refractive index}) is the
+  ratio of the speed of light in a vacuum ($c$) to the speed of light in the
+  medium ($v$):
 
   \eq{-.2in}{
     \boxed{n=\frac{c}{v}=\frac{\lambda_\mathrm{vacuum}}{\lambda}}
   }
 
-  When light enters a second medium, the \emph{frequency} remains
-  unchanged (i.e.\ the colour doesn't change!) but since the speed changes,
-  the \emph{wavelength} also changes:
+  When light enters a second medium, the \emph{frequency} remains unchanged but
+  since the speed changes, the \emph{wavelength} also changes:
     
   \eq{-.2in}{
     \boxed{\frac{n_1}{n_2}=\frac{\lambda_2}{\lambda_1}}
   }
 \end{frame}
 
-\begin{frame}
-  \frametitle{Index of Refraction of Common Materials}
+
+
+\begin{frame}{Index of Refraction of Common Materials}
   \begin{center}
     \begin{tabular}{c|c||c|c}
       \rowcolor{pink}
-      \textbf{Material} & \textbf{n} & \textbf{Material} & \textbf{n}\\ \hline
+      \textbf{Material} & $n$ & \textbf{Material} & $n$ \\ \hline
       Vacuum           & 1        & Ethanol     & 1.362 \\
       Air              & 1.000277 & Glycerine   & 1.473 \\
       Water at \SI{20}{\celsius} & 1.33 & Ice         & 1.31 \\
       Carbon disulfide & 1.63     & Polystyrene & 1.59 \\
       Methylene iodide & 1.74     & Crown glass & 1.50-1.62\\
-      Diamond          & 2.417    & Flint glass & 1.57-1.75\\
+      Diamond          & 2.417    & Flint glass & 1.57-1.75
     \end{tabular}
   \end{center}
-  
-  \vspace{.2in}
   The values given are \emph{approximate} and do not account for the small
-  variation of index with light wavelength which is called
-  \textbf{dispersion}. We'll get to that later!
+  variation of index with light wavelength which causes dispersion.
 \end{frame}
 
-\begin{frame}
-  \frametitle{Total Internal Reflection}
+
+
+\begin{frame}{Total Internal Reflection}
   \framesubtitle{From High Index to Low Index}
   Snell's law still holds, but something weird can happen:
   \begin{center}
@@ -242,101 +195,58 @@
 
 \section{Dispersion}
 
-\begin{frame}
-  \frametitle{Colour of Light and Wavelength}
-  Human eyes perceive different frequencies of light as different colours.
-  The visible spectrum of light:
+\begin{frame}{Color of Light and Wavelength}
+  Human eyes perceive different frequencies of light as different colors:
   \begin{center}
     \pic{.45}{visiblespectrum.png}
   \end{center}
   \begin{itemize}
-  \item The ``colour'' of the light depends on its frequency (\& wavelength
-    when it's in a vacuum)
-  \item \emph{White light} is light that contains waves in all frequencies.
+  \item The \emph{color} of the light is usually expressed in its wavelength
+    while in a vacuum
+  \item \emph{White light} is light that contains waves in all frequencies
   \end{itemize}
 \end{frame}
 
-\begin{frame}
-  \frametitle{Dispersion of Light Through Refraction}
+
+
+\begin{frame}{Dispersion of Light Through Refraction}
   \begin{columns}
-    \column{.4\textwidth}
-    \pic{1}{white-light-split.jpg}
-    \column{.55\textwidth}
+    \column{.2\textwidth}
+    \pic{1.2}{white-light-split.jpg}
+    
+    \column{.8\textwidth}
     \begin{itemize}
     \item When white light passes through a prism it is separated into
-      different colours (spectrum) through refraction.
-    \item This is because the index of refraction $n$ is slightly different for
-      different wavelengths
-    \item Otherwise, we will never see a rainbow
+      different colors (spectrum) through refraction.
+    \item This is because refractive index $n$ varies slightly for different
+      frequencies/wavelengths
     \end{itemize}
+  \end{columns}
+  \begin{columns}
+    \column{.7\textwidth}
+    \begin{itemize}
+    \item For certain types of glass, the refractive index can vary
+      significantly over the visible spectrum
+    \item Without dispersion, we would never see a rainbow
+    \end{itemize}
+    \column{.3\textwidth}
+    \pic{1}{Dispersion-curve.png}
   \end{columns}
 \end{frame}
 
-\begin{frame}
-  \frametitle{Wavelength Dependency of Index of Refraction}
-  \begin{center}
-    \pic{.5}{Dispersion-curve.png}
-  \end{center}
-\end{frame}
-
-\begin{frame}
-  \frametitle{Chromatic Aberration}
-  \framesubtitle{This is What Disperson Can Do!}
-  When looking at an image through a low-quality binocular, magnifying glass, or
-  telescope, we often see the edges of images blurred a bit. Sometimes we see
-  a rainbow-coloured edge:
-  \begin{center}
-    \pic{.5}{choosing03-pic002.png}
-  \end{center}
-  Chromatic Aberration can occur even with high-quality camera lenses,
-  particularly with wide-angle lenses where light from high angles have to bend
-  towards the camera sensor/film, requiring high lens curvature.
-\end{frame}
-
-\begin{frame}
-  \frametitle{Chromatic Aberration}
-  \framesubtitle{This is What Disperson Can Do!}
-  The reason that chromatic aberration happens is the same reason that prisms
-  work: \textbf{dispersion of light}
-  \begin{center}
-    \pic{.5}{chromatic-aberration.jpg}
-  \end{center}
-  The focal lengths for different frequencies (colour) of light are different,
-  thus blurring the image. So how do we fix it?
-\end{frame}
-
-\begin{frame}
-  \frametitle{Chromatic Aberration: Camera Lens Design}
-  By lining different lenses of different materials and geometries, we can
-  correct for the chromatic aberration.
-  \begin{center}
-    \pic{.5}{Apochromatic-Lens.png}
-  \end{center}
-  \begin{itemize}
-  \item Lens design is a closely guarded secret by camera companies
-  \item Shape of the lens, material and coating are all factors
-  \item A ``lens'' on a DSLR camera can have up to 30 lens ``elements''
-  \end{itemize}
-\end{frame}
 
 
 \section{Interference}
 
-\begin{frame}
-  \frametitle{Thomas Young's Double-Slit Experiment}
+\begin{frame}{Thomas Young's Double-Slit Experiment}
   \framesubtitle{First definitive evidence that light is a wave}
   \begin{columns}
     \column{.45\textwidth}
     \pic{1}{double-slit1.png}
     \column{.52\textwidth}
-    \begin{itemize}
-    \item\textbf{Monochromatic light} light with a single colour (frequency);
-      the light source can be a laser, LED , or gas lamp (most likely what Young
-      used)
-    \item\textbf{Slit:} an opening; also called an \textbf{aperture}
-    \item The \textbf{screen} far away from the slits is also called the
-      \textbf{projection}
-    \end{itemize}
+    Thomas Young used sent monochromatic light (light with a single frequency)
+    through two narrow rectangular slits, causing an pattern to be projected on
+    a screen farther away
   \end{columns}
 
   \vspace{.15in}Double-slit experiment showed that light causes interference,
@@ -380,10 +290,9 @@
       \draw[fill=gray!50](0,.8)--(0,-.8)--(-.2,-.8)--(-.2,.8)--cycle;
       \draw[fill=gray!50](0,-3)--(0,-1.2)--(-.2,-1.2)--(-.2,-3);
       \draw[<->](-.5,-1)--(-.5,1) node[midway,left]{\footnotesize $d$};
-      %\draw[dashed](0,0)--(8,0);
 
-      \draw[fill=black](-.1,1) circle(.08);
-      \draw[fill=black](-.1,-1)circle(.08);
+      \draw[fill=black](-.1,1) circle(.05);
+      \draw[fill=black](-.1,-1)circle(.05);
       \foreach \x in {.5,1,...,3} {
         \pgfmathsetmacro\xx{\x+.6};
         \draw(\x,1) arc(0:30:\xx); \draw(\x,1) arc(0:-30:\xx);
@@ -418,9 +327,8 @@
   \end{columns}
 \end{frame}
 
-\begin{frame}
-  \frametitle{Double-Slit Interference}
-  \framesubtitle{Constructive Interference}
+\begin{frame}{Double-Slit Interference}
+  \framesubtitle{Constructive \& Destructive Interference}
   A bright fringe (constructive interference) occurs when the path difference
   ($d\sin\theta$) is an integer ($n$) multiple of wavelength ($\lambda$), i.e.
   
@@ -428,9 +336,8 @@
     \boxed{\pm n\lambda = d\sin\theta_n}
   }
 
-  Conversely, a dark fringe (destructive interference) occurs when the path
-  difference ($d\sin\theta$) is a half-number ($n+\frac{1}{2}$) multiple of
-  wavelength ($\lambda$), i.e.
+  A dark fringe (destructive interference) occurs when the path difference
+  is a half-number ($n+\frac{1}{2}$) multiple of wavelength ($\lambda$), i.e.
   
   \eq{-.2in}{
     \boxed{\pm\left(n+\frac{1}{2}\right)\lambda = d\sin\theta_n}
@@ -444,61 +351,59 @@
   \begin{center}
     \pic{.65}{path-difference.png}
   \end{center}
-  %The path difference between slits that light has to travel to reach the screen
-  %is given by $d\sin\theta$.
 \end{frame}
 
-\begin{frame}
-  \frametitle{Approximation of The Wavelength of Light}
-  We can estimate the wavelength of light based on the distances between bright
-  fringes, by applying the \textbf{small-angle approximation} (make sure
-  $\theta$ is in \emph{radians}):
-
+\begin{frame}{Approximation of The Wavelength of Light}
+  We can estimate the wavelength of light based on the distances between
+  fringes using the small-angle approximation:
+  
   \eq{-.25in}{
     \theta\approx\tan\theta\approx\sin\theta
   }
   
-  \vspace{-.15in}The distance from slits to the screen ($x$), and the distance
+  \vspace{-.15in}The distance from slits to the screen ($L$), and the distance
   of the $n$-th bright fringe from the centre ($y_n$) to $\theta_n$ can be
   approximated by:
 
   \eq{-.2in}{
-    \tan\theta_n=\frac{y_n}{x}\approx\sin\theta_n
+    \tan\theta_n=\frac{y_n}{L}\approx\sin\theta_n
   }
   
-  \vspace{-.1in}We can substitute our approximation into the constructive
+  \vspace{-.1in}Substituting our small-angle approximation into the constructive
   interference equation:
 
   \eq{-.2in}{
-    n\lambda\approx\frac{y_nd}{x}
+    n\lambda\approx\frac{y_nd}{L}
     \quad\longrightarrow\quad
-    \boxed{\lambda\approx\frac{\Delta y d}{x}}
+    \boxed{\lambda\approx\frac{\Delta y d}{L}}
   }
-\end{frame}
-
-\begin{frame}
-  \frametitle{Approximation of The Wavelength of Light}
-  This equation applies equally to dark fringes (nodal lines) as well as bright
-  fringes.
   
-  \eq{-.2in}{
-    \boxed{\lambda\approx\frac{\Delta y d}{x}}
-  }
-  \begin{center}
-    \begin{tabular}{l|c|l}
-      \rowcolor{pink}
-      \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
-      Wavelength                     & $\lambda$  & \si{\metre} (metre) \\
-      Distance between fringes       & $\Delta y$ & \si{\metre} (metre) \\
-      Distance between slits         & $d$        & \si{\metre} (metre) \\
-      Distance from slits to screen & $x$        & \si{\metre} (metre) \\
-    \end{tabular}
-  \end{center}
-
-  Since the approximation is based on small angles, we generally apply this
-  to $\Delta y$ close to the centre, where light from both slits are deflected
-  by a small angle.
+  This equation applies equally to dark fringes as well. 
 \end{frame}
+
+
+
+%\begin{frame}{Approximation of The Wavelength of Light}
+%  
+%  
+%  \eq{-.2in}{
+%    \boxed{\lambda\approx\frac{\Delta y d}{x}}
+%  }
+%  \begin{center}
+%    \begin{tabular}{l|c|l}
+%      \rowcolor{pink}
+%      \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
+%      Wavelength                     & $\lambda$  & \si{\metre}\\
+%      Distance between fringes       & $\Delta y$ & \si{\metre} \\
+%      Distance between slits         & $d$        & \si{\metre} \\
+%      Distance from slits to screen & $x$        & \si{\metre}
+%    \end{tabular}
+%  \end{center}
+%
+%  Since the approximation is based on small angles, we generally apply this
+%  to $\Delta y$ close to the centre, where light from both slits are deflected
+%  by a small angle.
+%end{frame}
 
 
 \begin{frame}
@@ -548,7 +453,7 @@
     \begin{itemize}
     \item ``Far-field diffraction''
     \item The distance between the aperture and the projection is large
-    \item Will only focus on this form of diffraction in Physics 12 because
+    \item Will only focus on this form of diffraction in AP Physics because
       the pattern is easier to understand
     \end{itemize}
   \end{itemize}
@@ -559,26 +464,20 @@
   The Fresnel number tell us when to use Fresnel diffraction (difficult) and
   when to use Fraunhofer (easier):
 
-  \vspace{-.3in}{\huge
-    \begin{displaymath}
-      F=\frac{W^2}{\lambda L}
-    \end{displaymath}
+  \eq{-.3in}{
+    F=\frac{W^2}{\lambda L}
   }
   \begin{center}
     \begin{tabular}{l|c|l}
       \rowcolor{pink}
       \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
       Fresnel Number        & $F$         & (no units) \\
-      Characteristic length of the aperture & $W$ & \si{\metre} (metres)\\
-      Wavelength of light   & $\lambda$           & \si{\metre} (metres)\\
-      Distance from aperture to projection & $L$  & \si{\metre} (metres)\\
+      Characteristic length of the aperture & $W$ & \si{\metre} (meters)\\
+      Wavelength of light   & $\lambda$           & \si{\metre} (meters)\\
+      Distance from aperture to projection & $L$  & \si{\metre} (meters)
     \end{tabular}
   \end{center}
-
-  \begin{itemize}
-  \item Fresnel diffraction if $F\gg 1$; Fraunhofer diffraction if $F\ll 1$
-  \item In Physics 12, we will only deal with Fraunhofer diffraction
-  \end{itemize}
+  Fresnel diffraction if $F\gg 1$; Fraunhofer diffraction if $F\ll 1$
 \end{frame}
 
 \begin{frame}
@@ -819,24 +718,19 @@
     \column{.5\textwidth}
     Rectangular aperture:
 
-    \vspace{-.3in}
-    {\Huge
-      \begin{displaymath}
-        \boxed{\theta_\mathrm{min}=\frac{\lambda}{W}}
-      \end{displaymath}
+    \eq{-.2in}{
+      \boxed{\theta_\mathrm{min}=\frac{\lambda}{W}}
     }
     \column{.5\textwidth}
     Circular aperture:
 
-    \vspace{-.3in}
-    {\Huge
-      \begin{displaymath}
-        \boxed{\theta_\mathrm{min}=\frac{1.22\lambda}{D}}
-      \end{displaymath}
+    \eq{-.2in}{
+      \boxed{\theta_\mathrm{min}=\frac{1.22\lambda}{D}}
     }
   \end{columns}
-  \textbf{Note:} The angle $\theta_\mathrm{min}$ is measured in \textbf{radians}
-  not degree.
+
+  \vspace{.2in}\textbf{Note:} The angle $\theta_\mathrm{min}$ is measured in
+  \emph{radians}.
 \end{frame}
 
 \begin{frame}
