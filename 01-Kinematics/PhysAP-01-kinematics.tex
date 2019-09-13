@@ -28,7 +28,7 @@
 \author[TML]{Dr.\ Timothy Leung}
 \institute{Olympiads School}
 %\date{Fall 2018}
-\date{Summer 2019}
+\date{Novemver 2, 2019}
 
 \newcommand{\pic}[2]{\includegraphics[width=#1\textwidth]{#2}}
 \newcommand{\mb}[1]{\ensuremath\mathbf{#1}}
@@ -37,8 +37,8 @@
 
 \begin{document}
 
-\begin{frame}
-  \frametitle{}
+\begin{frame}{}
+
   {\LARGE
     \begin{center}
       \textbf{WELCOME TO AP PHYSICS}
@@ -102,11 +102,12 @@
   \begin{itemize}
   \item\texttt{PhysAP-courseOutline.pdf}--The course outline that I am handing
     to you now.
+  \item\texttt{PhysAP-equationSheet.pdf}--An equation sheet that you will be
+    using during the exams.
   \item\texttt{PhysAP-01-kinematics.pdf}--The slides that I am using right now.
   \item\texttt{PhysAP-02-dynamics.pdf}--The slides that I will be using next
     class.
-  \item\texttt{PhysAP-02-Homework.pdf}--The homework assignment for Topics 1 \&
-    2.
+  \item\texttt{PhysAP-03-Homework.pdf}--Homework problems for Topics 1 \& 2.
   \end{itemize}
   Please download/print the PDF file for the class slides before each class.
   There is no point copying notes that are already printed out for you.
@@ -268,8 +269,8 @@
 
 
 \begin{frame}{Cross Products}
-  The general notation for the cross product in 3D space is computed by doing
-  the determinant of this $3\times 3$ matrix:
+  The cross product of any two vectors in 3D space is the determinant of this
+  $3\times 3$ matrix:
   
   \eq{-.2in}{
     \mb{A}\times\mb{B}=
@@ -285,8 +286,8 @@
 %      (A_zB_y-B_yA_x)\bm{\hat{k}}
   }
   
-  and the order of the cross product is important. (This is why you have to
-  get the right hand rule correctly.)
+  The order of the cross product is important. (This is why you have to get the
+  right hand rule correctly.)
 
   \eq{-.2in}{
     \mb{A}\times\mb{B}=-\mb{B}\times\mb{A}
@@ -295,10 +296,10 @@
 
 
 \begin{frame}{Cross Product}
-  Luckily, most cross products applications in AP Physics are simpler, so we
+  Most cross products applications in AP Physics are simpler, so we
   only have to remember this circle:
   \begin{center}
-    \vspace{-.2in}\pic{.12}{cross-product-circle.png}
+    \pic{.12}{cross-product-circle.png}
   \end{center}
   \begin{itemize}
   \item The direction of the arrow gives the index of the cross product
@@ -467,8 +468,7 @@
     \frac{d}{dx}F(x)=f(x)\quad\longrightarrow\quad F(x)=\int f(x)dx
   }
     
-  The mathematical proof is actually the
-  \textbf{fundamental theorem of calculus}.
+  The mathematical proof is the \textbf{fundamental theorem of calculus}.
 \end{frame}
 
 
@@ -528,7 +528,7 @@
   A \textbf{definite} integral has lower and upper bounds. e.g., given
   $\mb{v}(t)$, the displacement between $t_1$ and $t_2$ can be found:
 
-  \eq{-.3in}{ \Delta\mb{x}=\int_{t_0}^{t_1} \mb{v}(t)dt }
+  \eq{-.2in}{ \Delta\mb{x}=\int_{t_0}^{t_1} \mb{v}(t)dt }
 
   Once we have computed the integral, we evaluate the limits:
   
@@ -571,7 +571,7 @@
   ``reference point''.
 
   \eq{-.2in}{
-    \mb{x}=x\bm{\hat{\imath}} + y\bm{\hat{\jmath}} + z\bm{\hat{k}}
+    \mb{x}(t)=x(t)\bm{\hat{\imath}} + y(t)\bm{\hat{\jmath}} + z(t)\bm{\hat{k}}
   }
 
   \vspace{-.2in}
@@ -710,7 +710,8 @@
       \boxed{\mb{a}(t)= \dot{\mb{v}}(t)=\ddot{\mb{x}}(t)}
     }
   \end{itemize}
-  
+
+  We will use this notation when it is convenient
 \end{frame}
 
 
@@ -876,6 +877,28 @@
 \end{frame}
 
 
+
+\begin{frame}{For Those Who Are Curious}{We are not using these in AP Physics}
+  The time derivative of acceleration is called \textbf{jerk}, with a unit
+  of \si{\metre\per\second^3}:
+
+  \eq{-.15in}{
+    \mb{j}=\frac{d\mb{a}}{dt}=\frac{d^2\mb{v}}{dt^2}=\frac{d^3\mb{x}}{dt^3}
+  }
+
+  The time derivative of jerk is \textbf{jounce}, or \textbf{snap}, with a
+  unit of \si{\metre\per\second^4}:
+  
+  \eq{-.15in}{
+    \mb{s}=\frac{d\mb{j}}{dt}=\frac{d^2\mb{a}}{dt^2}=\frac{d^3\mb{v}}{dt^3}
+    =\frac{d^4\mb{x}}{dt^4}
+  }
+  
+  The next two derivatives of snap is called facetiously called \textbf{crackle}
+  and \textbf{pop}, but these higher derivatives of position vector are rarely
+  seen.
+\end{frame}
+
 \section{Kinematic Equations}
 
 \begin{frame}
@@ -907,31 +930,32 @@
 \end{frame}
 
 
-\begin{frame}{Solving Typical Kinematics Problems}
-  
-  \textbf{One object:} the problem provides $3$ of the $5$ variables, and you
-  are asked to find a $4$th one.
-  \begin{itemize}
-  \item Define the positive direction (usually very obvious)
-  \item Apply the correct kinematic equation and solve the problem!
-  \end{itemize}
-
-  \vspace{.2in}\textbf{Two objects:} two objects are in motion. Usually one of
-  them is moving at constant velocity while the other is accelerating.
-  \begin{itemize}
-  \item Time interval $\Delta t$ and displacement $\Delta\mb{x}$ of the two
-    objects are related
-  \item Examples:
-    \begin{itemize}
-    \item Police car chasing a speeder
-    \item Two football players running towards each other
-    \item A person trying to catch the bus
-    \end{itemize}
-  \end{itemize}
-\end{frame}
+%\begin{frame}{Solving Typical Kinematics Problems}
+%  
+%  \textbf{One object:} the problem provides $3$ of the $5$ variables, and you
+%  are asked to find a $4$th one.
+%  \begin{itemize}
+%  \item Define the positive direction (usually very obvious)
+%  \item Apply the correct kinematic equation and solve the problem!
+%  \end{itemize}
+%
+%  \vspace{.2in}\textbf{Two objects:} two objects are in motion. Usually one of
+%  them is moving at constant velocity while the other is accelerating.
+%  \begin{itemize}
+%  \item Time interval $\Delta t$ and displacement $\Delta\mb{x}$ of the two
+%    objects are related
+%  \item Examples:
+%    \begin{itemize}
+%    \item Police car chasing a speeder
+%    \item Two football players running towards each other
+%    \item A person trying to catch the bus
+%    \end{itemize}
+%  \end{itemize}
+%\end{frame}
 
 
 \section{Projectile Motion}
+
 \begin{frame}{Projectile Motion}
   \begin{itemize}
   \item For 2D problems, resolve the problem into its
