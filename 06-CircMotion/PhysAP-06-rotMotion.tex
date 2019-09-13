@@ -22,11 +22,11 @@
   per-mode=symbol
 }
 
-\title{Topic 5: Circular Motion}
+\title{Topic 6: General Circular Motion}
 \subtitle{Advanced Placement Physics}
 \author[TML]{Dr.\ Timothy Leung}
 \institute{Olympiads School}
-\date{Fall 2018}
+\date{December 7, 2019}
 
 \newcommand{\pic}[2]{\includegraphics[width=#1\textwidth]{#2}}
 \newcommand{\mb}[1]{\ensuremath\mathbf{#1}}
@@ -41,14 +41,11 @@
 
 
 \begin{frame}{Files to Download}
-  \framesubtitle{Please download/print the PDF file}
   \begin{itemize}
-%%  %\item\texttt{00-outline.pdf}--The course outline (slightly updated)
-  \item\texttt{05-rotMotion-print.pdf}--The ``print version'' of the slides for
-    this topic. I recommend printing 4 slides per page.
-  \item\texttt{05-06-Homework.pdf} This week's homework.
-%%  We are taking up questions from Class 3 today, but please hand in Classes 3
-%%    \& 4 homework together next week.
+  \item\texttt{PhysAP-06-rotMotion-print.pdf}--The ``print version'' of the
+    slides for this topic. If you must print, I recommend printing 4 slides per
+    page.
+  \item\texttt{PhysAP-07-Homework.pdf} Homework problems for Topics 6 and 7.
   \end{itemize}
 \end{frame}
 
@@ -90,11 +87,6 @@
       \item $\theta$ is the standard angle, measured counter-clockwise from the
         positive $x$ axis
       \end{itemize}
-%      \vspace{-.2in}{\large
-%        \begin{displaymath}
-%          \mb{r}=r\hat{\bm{r}}+\theta\hat{\bm{\theta}}
-%        \end{displaymath}
-%      }
     \item Cartesian and polar coordinates are related by:
 
       \vspace{-.3in}{\large
@@ -108,8 +100,7 @@
 \end{frame}
 
 
-\begin{frame}{Rigid Body Motion}
-  \framesubtitle{Angular Position and Angular Velocity}
+\begin{frame}{Rigid Body Motion}{Angular Position and Angular Velocity}
   \begin{columns}
     \column{.32\textwidth}
     \begin{tikzpicture}[scale=.75]
@@ -128,26 +119,27 @@
     For constant $r$, \textbf{angular position} $\theta$ determines an object's
     position as a function of time:
       
-    \eq{-.2in}{ \boxed{\theta=\theta(t)}}
-    
-    \vspace{-.2in}\textbf{Angular velocity} $\omega$ (or
-    \textbf{angular frequency}) is its time derivative
-      
-    \eq{-.4in}{
-      \boxed{\omega=\frac{d\theta(t)}{dt}}
+    \eq{-.2in}{
+      \boxed{\theta=\theta(t)}
     }
-    \begin{itemize}
-    \item $\theta$ is measured in \si{radians}, and $\omega$ in \si{rad/\s}
-    \item e.g.\ an object rotating at one revolution per second has an angular
-      velocity of $\omega=\SI{2\pi}{/\s}$
-    \end{itemize}
+    
+    \textbf{Angular velocity} $\omega$ (or \textbf{angular frequency}) is its
+    time derivative
+      
+    \eq{-.2in}{
+      \boxed{\omega(t)=\frac{d\theta(t)}{dt}=\dot{\theta}(t)}
+    }
+
+    $\theta$ is measured in \si{radians}, and $\omega$ in \si{rad/\s}
+    %\item e.g.\ an object rotating at one revolution per second has an angular
+    %velocity of $\omega=\SI{2\pi}{/\s}$
+    %\end{itemize}
   \end{columns}
 \end{frame}
 
 
 
-\begin{frame}{Rigid Body Motion}
-  \framesubtitle{Angular Velocity}
+\begin{frame}{Rigid Body Motion}{Angular Velocity}
   \begin{columns}
     \column{.28\textwidth}
     \begin{tikzpicture}[scale=.75]
@@ -221,28 +213,25 @@
   \end{center}
 \end{frame}
 
-\begin{frame}
-  \frametitle{Rigid Body Motion}
-  \framesubtitle{Angular Acceleration}
-  \begin{itemize}
-  \item The derivative of $\omega$ with respect to time gives us
-    \textbf{angular acceleration}:
+\begin{frame}{Rigid Body Motion}{Angular Acceleration}
 
-    \eq{-.2in}{
-      \boxed{\alpha=\frac{d\omega(t)}{dt}=\frac{d^2\theta(t)}{dt^2}}
-    }
+  The derivative of $\omega$ with respect to time gives us
+  \textbf{angular acceleration}, which has a unit of \si{rad/\second^2}:
 
-    \vspace{-.1in}$\alpha$ has the unit of \si{rad/\second^2}.
+  \eq{-.2in}{
+    \boxed{\alpha=\dot{\omega}(t)=\ddot{\theta}(t)}
+  }
 
-  \item For \emph{uniform} circular motion, $\omega$ is constant, and $\alpha=0$
-  \item Not surprisingly, \textbf{tangential acceleration} is related to
-    angular acceleration by the radius $r$
+  Similar to the relationship between velocity and angular velocity,
+  \textbf{tangential acceleration} $a_\theta$ is related to angular acceleration
+  $\alpha$ by the radius $r$:
     
-    \eq{-.2in}{
-      \boxed{a_\theta=\frac{dv}{dt}=r\frac{d\omega(t)}{dt}=r\alpha}
-    }
-
-  \end{itemize}
+  \eq{-.2in}{
+    \boxed{a_\theta(t)=\dot{v}(t)=r\dot{\omega}(t)=r\alpha}
+  }
+    
+  For \emph{uniform} circular motion, $\omega$ is constant, and therefore
+  $\alpha=0$
 \end{frame}
 
 
@@ -273,16 +262,16 @@
 \end{frame}
 
 
-\begin{frame}
-  \frametitle{A Simple Example}
+
+\begin{frame}{A Simple Example}
   \textbf{Example 1:} An object moves in a circle with angular acceleration
   \SI{3.}{rad/\s^2}. The radius is \SI{2.}{\metre} and it starts from rest. How
   long does it take for this object to finish a circle?
 \end{frame}
 
 
-\begin{frame}
-  \frametitle{Nothing is Ever \emph{That} Simple}
+
+\begin{frame}{Nothing is Ever \emph{That} Simple}
 
   Remember, even when $\alpha=0$, we still have a centripetal acceleration
   $a_r$ for any circular motion
@@ -300,8 +289,8 @@
 \end{frame}
 
 
-\begin{frame}
-  \frametitle{Acceleration: The General Case}
+
+\begin{frame}{Acceleration: The General Case}
   \begin{columns}
     \column{.2\textwidth}
     \begin{tikzpicture}[scale=4.3]
@@ -329,9 +318,7 @@
 \end{frame}
 
 
-\begin{frame}
-  \frametitle{How to Solve Circular Motion Problems}
-
+\begin{frame}{How to Solve Circular Motion Problems}
   A two-step process:
   \begin{enumerate}
   \item Is there any circular motion?
@@ -348,15 +335,17 @@
 \end{frame}
 
 
+
 \begin{frame}{Example: Horizontal Motion}
   \begin{columns}
     \column{.4\textwidth}
     \pic{1}{puck-on-table.jpg}
     
     \column{.6\textwidth}
-    \textbf{Example 2:} In the figure on the left, a mass $m_1=\SI{3.}{\kg}$ is
-    rolling around a frictionless table with radius $R=\SI{1.}{\metre}$. with a
-    speed of \SI{2.}{\metre/s}. What is the mass of the weight $m_2$?
+    \textbf{Example 2:} In the figure on the left, a mass
+    $m_1=\SI{3.}{\kilo\gram}$ is rolling around a frictionless table with
+    radius $R=\SI{1.}{\metre}$. with a speed of \SI{2.}{\metre\per\second}.
+    What is the mass of the weight $m_2$?
   \end{columns}
 \end{frame}
 
@@ -368,6 +357,7 @@
   depend on any friction to help make the turn, at what speed should the driver
   travel so that the car will not skid off the ramp? What if there is friction?
 \end{frame}
+
 
 
 \begin{frame}{Vertical Circles}
@@ -385,16 +375,17 @@
 \end{frame}
 
 
+
 \begin{frame}{Example Problem}
   \textbf{Example 4:} A cord is tied to a pail of water, and the pail is swung
   in a vertical circle of \SI{1.}{\metre}. What must be the minimum velocity of
   the pail be at its highest point so that no water spills out?
 
   \begin{enumerate}[(a)]
-  \item\SI{3.1}{m/\s}
-  \item\SI{5.6}{m/\s}
-  \item\SI{20.7}{m/\s}
-  \item\SI{100.5}{m/\s}
+  \item\SI{3.1}{\metre\per\second}
+  \item\SI{5.6}{\metre\per\second}
+  \item\SI{20.7}{\metre\per\second}
+  \item\SI{100.5}{\metre\per\second}
   \end{enumerate}
 \end{frame}
 
@@ -430,27 +421,24 @@
 
 \section{Torque}
 
-
-\begin{frame}
-  \frametitle{Torque and Rotational Equilibrium}
+\begin{frame}{Torque and Rotational Equilibrium}
   Let's consider this question:
-
   \begin{center}
     \fbox{
       \begin{minipage}{.7\textwidth}
         Two people stand on a board of uniform density. One person has a mass of
-        \SI{50}{\kg} and stands \SI{10}{\metre} away from the fulcrum (pivot).
-        The second person has a mass of \SI{65}{\kg}. How far away from the
-        fulcrum would the second person have to stand for the system to have
-        to be in equilibrium?
+        \SI{50}{\kilo\gram} and stands \SI{10}{\metre} away from the fulcrum
+        (pivot). The second person has a mass of \SI{65}{\kilo\gram}. How far
+        away from the fulcrum would the second person have to stand for the
+        system to have to be in equilibrium?
       \end{minipage}
     }
   \end{center}
 \end{frame}
 
-\begin{frame}{Equation of Motion}
-  \framesubtitle{Newton's Second Law}
 
+
+\begin{frame}{Equation of Motion}{Newton's Second Law}
   Recall Newton's second law of motion for objects with constant mass:
     
   \eq{-.2in}{
@@ -468,8 +456,9 @@
   }
 \end{frame}
 
-\begin{frame}
-  \frametitle{Torque (Moment)}
+
+
+\begin{frame}{Torque}
   I have a rod on a table, and with my fingers, I push the two ends of the rod
   with equal force $\textcolor{red}{F}$. \textbf{What happens?}
   \begin{center}
@@ -484,8 +473,8 @@
 \end{frame}
 
 
-\begin{frame}
-  \frametitle{What is Torque?}
+
+\begin{frame}{What is Torque?}
   \textbf{Torque} (or \textbf{moment}) is the tendency for a force to change
   the rotational motion of a body.
   
@@ -510,6 +499,8 @@
   \end{center}
 \end{frame}
 
+
+
 \begin{frame}{Torque}
   In scalar form, we can express torque $\bm{\tau}$ as the force $\mb{F}_a$,
   the \textbf{moment arm} $\mb{r}$ and the angle $\phi$ between $\mb{F}_a$ and
@@ -526,8 +517,8 @@
       \rowcolor{pink}
       \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
       Torque        & $\bm{\tau}$ & \si{\newton\metre} (newton meters)\\
-      Applied force & $\mb{F}_a$  & \si{\newton} (newtons)\\
-      Moment arm (from fulcrum to force) & $\mb{r}$ & \si{\metre} (meters) \\
+      Applied force & $\mb{F}_a$  & \si{\newton} \\
+      Moment arm (from fulcrum to force) & $\mb{r}$ & \si{\metre}\\
       Angle between force and moment arm & $\phi$ & (no units)
     \end{tabular}
   \end{center}
@@ -545,8 +536,7 @@
 
 
 
-\begin{frame}
-  \frametitle{Torque (Moment)}
+\begin{frame}{Torque}
   Going back to the example question:
   \begin{center}
     \begin{tikzpicture}
@@ -564,17 +554,16 @@
     \end{tikzpicture}
   \end{center}
   \begin{itemize}
-  \item<2-> $F_1$ will rotate the board counter clockwise
-  \item<3-> $F_2$ will rotate the board clockwise
-  \item<4-> The beam will remain static (in equilibrium) if
+  \item<2->$F_1$ will rotate the board counter clockwise
+  \item<3->$F_2$ will rotate the board clockwise
+  \item<4->The beam will remain static (in equilibrium) if
 
     \eq{-.2in}{ F_1d_1=F_2d_2 }
   \end{itemize}
 \end{frame}
 
 
-\begin{frame}
-  \frametitle{Rotational Equilibrium}
+\begin{frame}{Rotational Equilibrium}
   Just like \textbf{translational equilibrium} is when the force acting on an
   object is zero:
   
@@ -595,8 +584,7 @@
 
 
 
-\begin{frame}
-  \frametitle{Example Problem}
+\begin{frame}{Example Problem}
   \textbf{Example 7a:} Find the net torque on point C.
 
   \vspace{-.2in}
@@ -635,8 +623,7 @@
 
 \section{Angular Momentum}
 
-\begin{frame}
-  \frametitle{Angular Momentum}
+\begin{frame}{Angular Momentum}
   \begin{columns}
     \column{.77\textwidth}
     Consider a mass $m$ connected to a massless beam rotates with speed $v$ at
@@ -676,8 +663,7 @@
 \end{frame}
 
 
-\begin{frame}
-  \frametitle{Moment of Inertia}
+\begin{frame}{Moment of Inertia}
   \begin{itemize}
   \item For a single particle:
     
@@ -698,15 +684,15 @@
 \end{frame}
 
 
-\begin{frame}
-  \frametitle{Moment of Inertia}
+\begin{frame}{Moment of Inertia}
   \begin{center}
     \pic{.7}{mic.png}
   \end{center}
 \end{frame}
 
-\begin{frame}
-  \frametitle{Angular Momentum and Moment of Inertia}
+
+
+\begin{frame}{Angular Momentum and Moment of Inertia}
   \begin{itemize}
   \item Linear and angular momentum have very similar expressions
     
@@ -722,8 +708,7 @@
 
 
 
-\begin{frame}
-  \frametitle{Conservation of Angular Momentum}
+\begin{frame}{Conservation of Angular Momentum}
 
   \eq{-.35in}{
     \bm{\tau}=\mb{r}\times\mb{F}=\mb{r}\times\frac{d\mb{p}}{dt}
@@ -750,29 +735,29 @@
 \end{frame}
 
 
-\begin{frame}
-  \frametitle{Example Problem}
+
+\begin{frame}{Example Problem}
   \textbf{Example 8:} A skater extends her arms (both arms!), holding a
-  \SI{2.}{\kg} mass in each hand. She is rotating about a vertical axis at a
-  given rate. She brings her arms inward toward her body in such a way that
+  \SI{2.}{\kilo\gram} mass in each hand. She is rotating about a vertical axis
+  at a given rate. She brings her arms inward toward her body in such a way that
   the distance of each mass from the axis changes from \SI{1.}{\metre} to
   \SI{.50}{\metre}. Her rate of rotation (neglecting her own mass) will?
 \end{frame}
 
 
-\begin{frame}
-  \frametitle{Last Example}
-  \textbf{Example 9:} A \SI{1.}{\kg} mass swings in a vertical circle after
-  having been released from a horizontal position with zero initial velocity.
-  The mass is attached to a massless rigid rod of length \SI{1.5}{\metre}. What
-  is the angular momentum of the mass, when it is in its lowest position?
+
+\begin{frame}{Last Example}
+  \textbf{Example 9:} A \SI{1.}{\kilo\gram} mass swings in a vertical circle
+  after having been released from a horizontal position with zero initial
+  velocity. The mass is attached to a massless rigid rod of length
+  \SI{1.5}{\metre}. What is the angular momentum of the mass, when it is in its
+  lowest position?
 \end{frame}
 
 
 \section{Rotational Kinetic Energy}
 
-\begin{frame}
-  \frametitle{Rotational Kinetic Energy}
+\begin{frame}{Rotational Kinetic Energy}
   To find the kinetic energy of a rotating system of particles (discrete number
   of particles, or continuous mass distribution), we sum (or integrate) the
   kinetic energy of the individual particles:
@@ -793,8 +778,8 @@
 \end{frame}
 
 
-\begin{frame}
-  \frametitle{Kinetic Energy of a Rotating System}
+
+\begin{frame}{Kinetic Energy of a Rotating System}
   The total kinetic energy of a rotating system is the sum of its translational
   and rotational kinetic energies at its center of mass:
 
@@ -826,5 +811,4 @@
 %      \end{tabular}
 %  \end{center}
 %\end{frame}
-
 \end{document}

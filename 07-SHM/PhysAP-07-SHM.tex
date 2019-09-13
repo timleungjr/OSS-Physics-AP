@@ -24,11 +24,11 @@
   per-mode=symbol
 }
 
-\title{Topic 6: Simple Harmonic Motion}
+\title{Topic 7: Simple Harmonic Motion}
 \subtitle{Advanced Placement Physics}
 \author[TML]{Dr.\ Timothy Leung}
 \institute{Olympiads School}
-\date{Fall 2018}
+\date{December 14, 2019}
 
 %\newcommand{\pic}[2]{\includegraphics[width=#1\textwidth]{#2}}
 \newcommand{\mb}[1]{\ensuremath\mathbf{#1}}
@@ -40,68 +40,56 @@
   \maketitle
 \end{frame}
 
-%\begin{frame}
-%  \frametitle{Files to Download}
-%  \framesubtitle{Please download/print the PDF file}
-%  If you have not done so already, please download the following files.
-%  \begin{itemize}
-%  \item\texttt{07-shm-print.pdf}--The ``print version'' of this week's
-%    slides. I recommend printing 4 slides per page.
-%  \item\texttt{07-Homework.pdf} This week's homework.
-%  \end{itemize}
-%\end{frame}
-%
-%
-%\begin{frame}
-%  \frametitle{Today's Plan}
-%  \begin{enumerate}
-%  \item Take up (some) questions from Classes 4 and 5/6 homework
-%  \item Go over this week's slides (hopefully it won't take too long)
-%  \end{enumerate}
-%\end{frame}
-
-
-\section{Hooke's Law}
-\begin{frame}
-  \frametitle{Quick Review of Hooke's Law}
+\begin{frame}{Files to Download}
+  Please download the following files if you have not already done so.
   \begin{itemize}
-  \item Hooke's Law for an ideal spring
-
-    \eq{-.2in}{
-      \boxed{\mb{F}_s=-k\mb{x}}
-    }
-  \item Spring force $\mb{F}_s$ is the force that a compressed/stretched
-    spring exerts on another object
-  \item Spring constant $k$ (or \emph{Hooke's constant},
-    \emph{force constant}) describes the stiffness of the spring
+  \item\texttt{PhysAP-07-SHM-print.pdf}--The ``print version'' of the slides
+    for this topic.
+  \item\texttt{PhysAP-07-Homework.pdf} Homework problems for this topic.
   \end{itemize}
 \end{frame}
 
 
-\begin{frame}
-  \frametitle{Review of Elastic Potential Energy}
+
+\section{Hooke's Law}
+
+\begin{frame}{Quick Review of Hooke's Law}
+  Hooke's Law for an ideal spring
+
+  \eq{-.2in}{
+    \boxed{\mb{F}_s=-k\mb{x}}
+  }
+  \begin{itemize}
+  \item Spring force $\mb{F}_s$ is the force that a compressed/stretched
+    spring exerts on another object
+  \item Spring constant $k$ (or \emph{Hooke's constant},
+    \emph{force constant}) is the stiffness of the spring
+  \end{itemize}
+\end{frame}
+
+
+
+\begin{frame}{Review of Elastic Potential Energy}
   Applying Hooke's law in the work equation, we can find the work done when
   compressing/stretching a spring:
 
-  \vspace{-.35in}{\Large
-    \begin{align*}
-      W&=\int^{x_2}_{x_1}Fdx=-\int^{x_2}_{x_1}kxdx
-      =-\frac{1}{2}kx^2\Big|^{x_2}_{x_1}\\
-      &=-\Delta\left(\frac{1}{2}kx^2\right)=-\Delta U_e
-    \end{align*}
+  \eq{-.25in}{
+    W=\int^{x_2}_{x_1}\mb{F}_e\cdot d\mb{x}=-\int^{x_2}_{x_1}kxdx
+    =-\frac{1}{2}kx^2\Big|^{x_2}_{x_1}=-\Delta U_e
   }
 
-  \vspace{-.2in}where elastic potential energy is defined as
+  where elastic potential energy is defined as
 
   \eq{-.2in}{
     \boxed{U_e=\frac{1}{2}kx^2}
   }
 \end{frame}
 
+
+
 \section{Spring-Mass}
 
-\begin{frame}
-  \frametitle{Mass on a Spring}
+\begin{frame}{Mass on a Spring}
   \begin{itemize}
   \item Consider the forces acting on a mass connected horizontally to a spring
     \begin{center}
@@ -166,47 +154,46 @@
 
 \begin{frame}
   \frametitle{It's Very Ordinary}
-  \begin{itemize}
-  \item The governing equation for simple harmonic equation is a
-    \emph{second-order ordinary differential equation}:
 
-    \eq{-.15in}{
-      \boxed{\frac{d^2x}{dt^2}+\frac{k}{m}x=0}
-    }
-  \item Starting with our general form, we can take the 1st and 2nd derivatives:
+  The governing equation for simple harmonic equation is a
+  \emph{second-order ordinary differential equation}:
+
+  \eq{-.15in}{
+    \boxed{\frac{d^2x}{dt^2}+\frac{k}{m}x=0}
+  }
+  
+  Starting with our general form, we can take the 1st and 2nd derivatives:
  
-    \vspace{-.35in}{\Large
-      \begin{align*}
-        x(t)&=A\sin(\omega t+\phi)\\
-        x'(t)&=A\omega\cos(\omega t+\phi)\\
-        x''(t)&=-A\omega^2\sin(\omega t+\phi)=-\omega^2x
-      \end{align*}
-    }
-    
-    \vspace{-.2in}$\omega$ is the angular velocity, and $A$ is the amplitude,
-    and $\phi$ is a phase shift that depends on the initial condition
-  \end{itemize}
+  \vspace{-.35in}{\Large
+    \begin{align*}
+      x(t)&=A\sin(\omega t+\phi)\\
+      v(t)&=\dot{x}(t)=A\omega\cos(\omega t+\phi)\\
+      a(t)&=\ddot{x}(t)=-A\omega^2\sin(\omega t+\phi)=-\omega^2x
+    \end{align*}
+  }
+  
+  \vspace{-.2in}$\omega$ is the angular velocity, and $A$ is the amplitude,
+  and $\phi$ is a phase shift that depends on the initial condition
 \end{frame}
 
 
-\begin{frame}
-  \frametitle{Mass on a Spring}
-  \framesubtitle{Angular Velocity}
-  \begin{itemize}
-  \item Substituting expressions of $x(t)$ and $x''(t)$ into the ODE, we find
-    our equation is satisfied if angular velocity (angular frequency) is:
 
-    \eq{-0.2in}{
-      \boxed{\omega=\sqrt{\frac{k}{m}}}
-    }
-  \item Angular velocity $\omega$ does not depend on amplitude $A$
-  \item The period $T$ and frequency $f$ of the motion are given by:
+\begin{frame}{Mass on a Spring}{Angular Velocity}
+  Substituting expressions of $x(t)$ and $\ddot{x}(t)$ into the ODE, we find
+  our equation is satisfied if angular velocity (angular frequency) is:
 
-    \eq{-0.2in}{
-      \boxed{f=\frac{1}{2\pi}\sqrt{\frac{k}{m}}}\quad\quad\quad
-      \boxed{T=\frac{1}{f}=2\pi\sqrt{\frac{m}{k}}}
-    }
-  \end{itemize}
+  \eq{-.2in}{
+    \boxed{\omega=\sqrt{\frac{k}{m}}}
+  }
+
+  The period $T$ and frequency $f$ of the motion are given by:
+
+  \eq{-.2in}{
+    \boxed{f=\frac{1}{2\pi}\sqrt{\frac{k}{m}}}\quad\quad\quad
+    \boxed{T=\frac{1}{f}=2\pi\sqrt{\frac{m}{k}}}
+  }
+
+  Angular velocity, frequency and period do not depend on amplitude $A$
 \end{frame}
 
 
@@ -236,10 +223,11 @@
     \item But since $mg$ is a constant, the only difference is the addition of a
       constant $B$ in our expression of $x(t)$:
     
-      \vspace{-0.35in}{\Large
+      \vspace{-.4in}{\Large
         \begin{align*}
           x(t)&=A\sin(\omega t+\phi) +B\\
-          x''(t)&=-A\omega^2\sin(\omega t+\phi)
+          v(t)&=\dot{x}(t)=A\omega\cos(\omega t+\phi)\\
+          a(t)&=\ddot{x}(t)=-A\omega^2\sin(\omega t+\phi)
         \end{align*}
       }
     \end{itemize}
@@ -247,8 +235,8 @@
 \end{frame}
 
 
-\begin{frame}
-  \frametitle{Vertical Spring-Mass System}
+
+\begin{frame}{Vertical Spring-Mass System}
   \begin{columns}
     \column{.17\textwidth}
     \begin{tikzpicture}[scale=1.3]
@@ -269,7 +257,7 @@
       \eq{-.2in}{
         B=\frac{mg}{k}
       }
-    \item $B$ is just the stretching of the spring due to its weight
+      which is just the stretching of the spring due to its weight
     \item Angular velocity is the same as the horizontal case! It is still
       given by:
 
@@ -282,8 +270,7 @@
 
 
 
-\begin{frame}
-  \frametitle{Conservation of Energy in a Spring-Mass System}
+\begin{frame}{Conservation of Energy in a Spring-Mass System}
   \begin{itemize}
   \item In both the horizontal and vertical spring-mass systems, there is no
     friction, and so the mass and the spring form an isolated system
@@ -310,8 +297,7 @@
 %\end{frame}
 
 
-\begin{frame}
-  \frametitle{Simple Example}
+\begin{frame}{Simple Example}
   \textbf{Example 2:} A mass suspended from a spring is oscillating up and
   down. Consider the following two statements:
   \begin{enumerate}
@@ -331,8 +317,7 @@
 
 
 
-\begin{frame}
-  \frametitle{Another Example}
+\begin{frame}{Another Example}
   \textbf{Example 3:} An object of mass \SI{5}{\kg} hangs from a spring and
   oscillates with a period of \SI{0.5}{\second}. By how much will the
   equilibrium length of the spring be shortened when the object is removed.
@@ -348,8 +333,7 @@
 
 \section{Simple Pendulum}
 
-\begin{frame}
-  \frametitle{What About a Pendulum?}
+\begin{frame}{What About a Pendulum?}
   \begin{columns}
     \column{.75\textwidth}
     \begin{itemize}
@@ -385,26 +369,26 @@
 \end{frame}
 
 
-\begin{frame}
-  \frametitle{The Pendulum}
+
+\begin{frame}{The Pendulum}
   \begin{columns}
     \column{0.75\textwidth}
-    \begin{itemize}
-    \item Substitute $F_\theta$ into Newton's second law, and cancelling mass
-      term, we get:
+    Substitute $F_\theta$ into Newton's second law, and cancelling mass term, we
+    get:
 
-      \eq{-.45in}{
-        F_\theta=ma_\theta\quad\longrightarrow\quad
-        -g\sin\theta=L\frac{d^2\theta}{dt^2}
+    \eq{-.45in}{
+      F_\theta=ma_\theta\quad\longrightarrow\quad
+      -g\sin\theta=L\frac{d^2\theta}{dt^2}
     }
-    \item For small angles, $\sin\theta\approx\theta$, and we get the ODE for
-      the pendulum:
+
+    For small angles, $\sin\theta\approx\theta$, and we get the ODE for the
+    pendulum:
       
-      \eq{-.2in}{
-        \frac{d^2\theta}{dt^2}+\frac{g}{L}\theta=0
-      }
-    \item This ODE has the same form as the mass-spring system!
-    \end{itemize}
+    \eq{-.25in}{
+      \frac{d^2\theta}{dt^2}+\frac{g}{L}\theta=0
+    }
+    
+    This ODE has the same form as the mass-spring system!
     
     \column{.25\textwidth}
     \begin{tikzpicture}
@@ -422,8 +406,7 @@
 \end{frame}
 
 
-\begin{frame}
-  \frametitle{Ordinary Differential Equation for the Pendulum}
+\begin{frame}{Ordinary Differential Equation for the Pendulum}
   \begin{itemize}
   \item The solution for $\theta(t)$ is very similar to the spring-mass system:
 
@@ -431,7 +414,7 @@
       \boxed{\theta(t)=\theta_\mathrm{max}\sin(\omega t+\phi)}
     }
 
-    \vspace{-0.15in}where angular velocity $\omega$ is given by
+    \vspace{-.15in}where $\omega$ is given by
     
     \eq{-.15in}{
       \boxed{\omega=\sqrt{\frac{g}{L}}}
@@ -445,8 +428,7 @@
 \end{frame}
 
 
-\begin{frame}
-  \frametitle{Pendulum Example Problem}
+\begin{frame}{Pendulum Example Problem}
   \textbf{Example 4:} A simple pendulum consists of a mass $m$ attached to a
   light string of length $l$. If the system is oscillating through small
   angles, which of the following is true
