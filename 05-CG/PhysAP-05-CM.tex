@@ -22,11 +22,11 @@
   per-mode=symbol
 }
 
-\title{Topic 4: Center of Mass}
+\title{Topic 5: Center of Mass}
 \subtitle{Advanced Placement Physics}
 \author[TML]{Dr.\ Timothy Leung}
 \institute{Olympiads School}
-\date{Fall 2018}
+\date{November 30, 2019}
 
 \newcommand{\pic}[2]{\includegraphics[width=#1\textwidth]{#2}}
 \newcommand{\mb}[1]{\ensuremath\mathbf{#1}}
@@ -39,49 +39,34 @@
   \maketitle
 \end{frame}
 
-%\begin{frame}
-%  \frametitle{Files for You to Download}
-%  \framesubtitle{Please download/print the PDF file}
-%  \begin{itemize}
-%  %\item\texttt{00-outline.pdf}--The course outline (slightly updated)
-%  \item\texttt{04-CM-print.pdf}--The ``print version'' of this week's slides.
-%    I recommend that you print 4 slides per page.
-%  \item\texttt{04-Homework.pdf} (Available after Dec.\ 2) This week's homework.
-%    We are taking up questions from Class 3 today, but please hand in Classes 3
-%    \& 4 homework together next week.
-%  \end{itemize}
-%\end{frame}
-%
-%\begin{frame}
-%  \frametitle{Today's Plan}
-%  \begin{enumerate}
-%  \item Go over today's slides on center of mass
-%  \item Take up homework questions from last week's class (do not hand them in
-%    yet; wait another week)
-%  \item Time permitting: take up questions from Class 1 and 2 (calculus)
-%  \end{enumerate}
-%\end{frame}
 
 
-\begin{frame}
-  \frametitle{Center of Mass}
+\begin{frame}{Files to Download}
+  \begin{itemize}
+  \item\texttt{PhysAP-05-CM-print.pdf}--The ``print version'' of this topic.
+  \item\texttt{PhysAP-05-Homework.pdf}
+  \end{itemize}
+\end{frame}
+
+
+
+\begin{frame}{Center of Mass}
   Finding an object's center of mass is important, because
   \begin{itemize}
   \item Newton's laws of motion are formulated by treating an objects as point
     masses (for real-life objects, we let the forces apply to the center of
     mass)
-  \item objects can have \emph{rotational} motion in addition to
+  \item Objects can have \emph{rotational} motion in addition to
     \emph{translational} motion as well (we will examine that a bit more
     next week)
   \end{itemize}
 \end{frame}
 
 
-\begin{frame}
-  \frametitle{Start with a Definition}
-  The \textbf{center of mass} (``CM''), or \textbf{center of gravity} (``CG''),
-  is the \emph{weighted average of the masses in a system.} The ``system'' may
-  be:
+
+\begin{frame}{Start with a Definition}
+  The \textbf{center of mass} (``CM'') is the
+  \emph{weighted average of the masses in a system.} The ``system'' may be:
   \begin{itemize}
   \item A collection of individual particles (use summation to compute CM)
   \item A continuous distribution of mass with constant density (use
@@ -89,12 +74,14 @@
     of the object (\emph{centroid})
   \item A continuous distribution of mass with varying density (use integral to
     compute CM)
+  \item If the objects are inside of a gravitational field, then the CM is
+    also its \textbf{center of gravity} (``CG'')
   \end{itemize}
 \end{frame}
 
 
-\begin{frame}
-  \frametitle{Simple Example}
+
+\begin{frame}{Simple Example}
   We start with a very simple example: there are two equal masses along the
   $x$-axis. What is the center of mass of the system?
     
@@ -116,8 +103,7 @@
 \end{frame}
 
  
-\begin{frame}
-  \frametitle{But Things Aren't Always That Example}
+\begin{frame}{Things Aren't Always That Example}
   \begin{itemize}
   \item What if one of the masses are increased to $2m$?
   \item This is still not a terribly difficult problem; you can still
@@ -143,9 +129,7 @@
 \end{frame}
 
 
-\begin{frame}
-  \frametitle{Complicating Things Further}
-  \framesubtitle{Many Point Masses}
+\begin{frame}{Complicating Things Further}{Many Point Masses}
   If we increase the number of point masses along the $x$-axis, our problem can
   become much more complicated (although still not devastatingly so)
 
@@ -179,52 +163,44 @@
 \end{frame}
 
 
-\begin{frame}
-  \frametitle{An Equation Helps}
+\begin{frame}{An Equation Helps}
   The center of mass is defined as:
-  {\LARGE
-    \begin{displaymath}
-      \boxed{\mb{x}_\mathrm{CM}=\frac{\sum \mb{x}_i m_i}{\sum m_i}}
-    \end{displaymath}
+
+  \eq{-.2in}{
+    \boxed{\mb{x}_{\textrm{CM}}=\frac{\sum \mb{x}_i m_i}{\sum m_i}}
   }
-  
   \begin{center}
-    \begin{tabular}{l|c|l}
+    \begin{tabular}{l|c|c}
       \rowcolor{pink}
       \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
-      Position of center of mass (vector) & $\mb{x}_\mathrm{CM}$ & \si{m} (meters)\\
-      Position of point mass $i$ (vector) & $\mb{x}_i$ & \si{m} (meters)\\
-      Point mass $i$ & $m_i$ & \si{kg} (kilograms)\\
-      Total mass & $\sum m_i$ & \si{kg} (kilograms) \\
+      Position of center of mass (vector) & $\mb{x}_{\textrm{CM}}$ & \si{\metre}\\
+      Position of point mass $i$ (vector) & $\mb{x}_i$ & \si{\metre}\\
+      Point mass $i$ & $m_i$ & \si{\kilo\gram}\\
+      Total mass & $\sum m_i$ & \si{\kilo\gram}
     \end{tabular}
   \end{center}
 \end{frame}
 
 
-\begin{frame}
-  \frametitle{Breaking Down Into Components}
+\begin{frame}{Breaking Down Into Components}
   
-  {\Large
-    \begin{displaymath}
-      \mb{x}_\mathrm{CM}=\frac{\sum \mb{x}_i m_i}{\sum m_i}
-    \end{displaymath}
+  \eq{0in}{
+    \boxed{\mb{x}_{\textrm{CM}}=\frac{\sum \mb{x}_i m_i}{\sum m_i}}
   }
-  \begin{itemize}
-  \item Position vectors have $x$, $y$ and $z$ components: 
-    $\mb{x}=x\hat{\bm{\imath}} + y\hat{\bm{\jmath}} + z\hat{\bm{k}}$
-  \item We can deal with each component individually, i.e.:
 
-    \eq{-.2in}{
-      x_\mathrm{CM}=\frac{\sum x_i m_i}{\sum m_i}\quad\quad
-      y_\mathrm{CM}=\frac{\sum y_i m_i}{\sum m_i}\quad\quad
-      z_\mathrm{CM}=\frac{\sum z_i m_i}{\sum m_i}
-    }
-  \end{itemize}
+  Position vectors have $x$, $y$ and $z$ components:
+  $\mb{x}=x\hat{\bm{\imath}} + y\hat{\bm{\jmath}} + z\hat{\bm{k}}$
+  which we can deal with each component individually, i.e.:
+
+  \eq{-.2in}{
+    x_{\textrm{CM}}=\frac{\sum x_i m_i}{\sum m_i}\quad\quad
+    y_{\textrm{CM}}=\frac{\sum y_i m_i}{\sum m_i}\quad\quad
+    z_{\textrm{CM}}=\frac{\sum z_i m_i}{\sum m_i}
+  }
 \end{frame}
 
 
-\begin{frame}
-  \frametitle{Let's Do An Example}
+\begin{frame}{An Example}
   \textbf{Example 1:} Consider the following masses and their coordinates
   which make up a ``discrete mass'' rigid body''
   \begin{align*}
@@ -234,27 +210,29 @@
   \end{align*}
   What are the coordinates for the center of mass of this system?
 \end{frame}
-\begin{frame}
-  \frametitle{Continuous Mass Distribution}
+
+
+
+\begin{frame}{Continuous Mass Distribution}
   In general, objects are not a discrete collection of point masses, but a
   continuous distribution of mass. Therefore, we take the limit of when the
   number of masses approaches $\infty$:
   
   \eq{-.25in}{
-    \mb{x}_\mathrm{CM}=\lim_{n\rightarrow\infty}
+    \mb{x}_{\textrm{CM}}=\lim_{n\rightarrow\infty}
     \left(\frac{\sum_{i=1}^n \mb{x}_i m_i}{\sum_{i=1}^n m_i}\right)
   }
 
   This gives us an integral form of our equation:
 
   \eq{-.2in}{
-    \boxed{\mb{x}_\mathrm{CM}=\frac{\int\mb{x} dm}{\int dm}}
+    \boxed{\mb{x}_{\textrm{CM}}=\frac{\int\mb{x} dm}{\int dm}}
   }
 \end{frame}
 
 
-\begin{frame}
-  \frametitle{Densities}
+
+\begin{frame}{Densities}
   \begin{itemize}
   \item Linear density (for 1D problems)
     {\Large
@@ -278,8 +256,7 @@
 \end{frame}
 
 
-\begin{frame}
-  \frametitle{An Example with Integrals}
+\begin{frame}{An Example with Integrals}
   \begin{columns}
     \column{.65\textwidth}
     \textbf{Example 2:} A triangular plate is placed in a Cartesian coordinate
@@ -303,8 +280,8 @@
 \end{frame}
 
 
-\begin{frame}
-  \frametitle{A Difficult Example to Try at Home}
+
+\begin{frame}{A Difficult Example to Try at Home}
   Not typically an AP problem, this example shows how we can use integral to
   find the center of mass for something very complicated.
   \begin{columns}
@@ -328,9 +305,9 @@
   \end{columns}
 \end{frame}
 
-\begin{frame}
-  \frametitle{Symmetry}
-  \framesubtitle{There are always shortcuts!}
+
+
+\begin{frame}{Symmetry}{There are always shortcuts!}
   \begin{itemize}
   \item Any plane of symmetry, mirror line, axis of rotation, point of inversion
     \emph{must} contain the center of mass.
@@ -340,15 +317,13 @@
 \end{frame}
 
 
-\begin{frame}
-  \frametitle{``Negative Mass''}
-  \framesubtitle{A mathematical trick for complicated geometries}
+
+\begin{frame}{``Negative Mass''}{A Mathematical Trick}
   \begin{itemize}
   \item Where there is a ``hole'' in the geometry, treat it as having negative
     mass density $-\sigma$ in that region.
   \item Negative masses don't exist, so this is really just a trick.
   \item\textbf{Example:} What is the center of mass of this shape?
-    
     \begin{center}
       \begin{tikzpicture}
         \draw[thick,fill=gray](0,0) circle(2);
@@ -363,11 +338,9 @@
 \end{frame}
 
 
-\begin{frame}
-  \frametitle{Negative Mass Example}
+\begin{frame}{Negative Mass Example}
   \begin{itemize}
   \item This is how we would think of it:
-    
     \begin{center}
       \begin{tikzpicture}[scale=.6]
         \draw[thick,fill=gray](0,0) circle(2);
@@ -384,12 +357,12 @@
       \end{tikzpicture}
     \end{center}
   \item Let the origin of the coordinate system to located at the center of $A$
-  \item Based on symmetry: $x_\mathrm{CM}=0$; only have to find $y$-coordinate.
+  \item Based on symmetry: $x_{\textrm{CM}}=0$; only have to find $y$-coordinate.
   \item Sum our weighted average:
     
     \vspace{-.25in}{\large
       \begin{displaymath}
-        y_\mathrm{CM}
+        y_{\textrm{CM}}
         =\frac{\sum y_i m_i}{\sum m_i}
         =\frac{m_A(0) + m_B (r/2)}{m_A+m_B}
         =\frac{-\sigma\pi\left(r/2\right)^2(r/2)}{\sigma\pi r^2-\sigma\pi\left(r/2\right)^2}
@@ -402,14 +375,13 @@
 \end{frame}
 
 
-\begin{frame}
-  \frametitle{Velocity, Acceleration and Momentum}
 
-  Take time derivative of the equation for $\mb{x}_\mathrm{CM}$ to get the
+\begin{frame}{Velocity, Acceleration and Momentum}
+  Take time derivative of the equation for $\mb{x}_{\textrm{CM}}$ to get the
   velocity of the CM:
     
   \eq{-.35in}{
-    \mb{v}_\mathrm{CM}=\frac{d\mb{x}_\mathrm{CM}}{dt}
+    \mb{v}_{\textrm{CM}}=\frac{d\mb{x}_{\textrm{CM}}}{dt}
     =\frac{1}{m}\frac{d}{dt}\left(\int\mb{x}dm\right)
     =\frac{1}{m}\int\frac{d\mb{x}}{dt}dm
     =\frac{\int \mb{v}dm}{m}
@@ -419,7 +391,7 @@
   the masses in the system ($\mb{p}_\mathrm{net}$) which means that we have
 
   \eq{-.27in}{
-    \mb{p}_\mathrm{net}=m\mb{v}_\mathrm{CM}
+    \mb{p}_\mathrm{net}=m\mb{v}_{\textrm{CM}}
     }
 
   \vspace{-.1in}Taking the derivative of $\mb{p}_\mathrm{net}$ relates force
@@ -427,12 +399,11 @@
     
   \eq{-.2in}{
     \mb{F}_\mathrm{net}=\frac{d\mb{p}_\mathrm{net}}{dt}
-    =m\frac{d\mb{v}_\mathrm{CM}}{dt}=m\mb{a}_\mathrm{CM}
+    =m\frac{d\mb{v}_{\textrm{CM}}}{dt}=m\mb{a}_{\textrm{CM}}
   }\end{frame}
 
 
-%\begin{frame}
-%  \frametitle{What This All Means}
+%\begin{frame}{What This All Means}
 %  \begin{itemize}
 %  \item Newton was right all along by treating all objects as point masses
 %    located at the CM
