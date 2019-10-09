@@ -52,9 +52,10 @@
 
 \begin{frame}{Pre-requisites}
   \begin{itemize}
-  \item\textbf{Physics 11 and 12} As AP Physics is primarily taught at the
-    first-year university level, you will need to be comfortable with the
-    topics covered in high-school physics courses.
+  \item\textbf{Physics 11 and 12} %As AP Physics is primarily taught at the
+    %first-year university level
+    You will need to be comfortable with the topics covered in high-school
+    physics courses.
   \item\textbf{Calculus} The AP Physics C exams are calculus based, and you
     will be required to perform basic differentiation and integration. You
     don't need to be an expert, but basic knowledge is required.
@@ -120,8 +121,8 @@
 \section{Vectors}
 
 \begin{frame}{Notes on  Writing Vectors}
-  In this course, we \emph{print} vectors using a bold face font, while using
-  use the ``arrow on top'' format when \emph{writing}.
+  In this course, vectors are \emph{printed} using a bold face font, while the 
+  ``arrow on top'' notation is used when \emph{writing}.
   \vspace{.1in}
   \begin{columns}
     \column{.43\textwidth}
@@ -140,7 +141,7 @@
     }
   \end{columns}
 
-  When we write the magnitude of these vectors, we have two options:
+  The magnitude of these vectors are expressed in one of two ways:
   \vspace{.1in}
   \begin{columns}
     \column{.5\textwidth}
@@ -151,7 +152,7 @@
       \end{displaymath}
     }
     \column{.42\textwidth}
-    \textbf{Or as a scalar value}
+    \textbf{Or as a scalar}
       \vspace{-.2in}{\LARGE
         \begin{displaymath}
           v\quad F_g\quad p \quad I
@@ -166,9 +167,8 @@
   from the direction, e.g.\ a velocity vector can be written as:
   
   \eq{-.1in}{
-    \mb{v}=\SI{4.5}{m/s}\text{ [N \ang{55} E]}
+    \mb{v}=\SI{4.5}{\metre\per\second}\text{ [N \ang{55} E]}
   }
-
   \begin{itemize}
   \item Intuitive for describing \emph{one} vector in 2D
   \item Complicated to describe direction when extended into 3D
@@ -258,8 +258,7 @@
       }
     \item $\mb{C}$ is perpendicular to both $\mb{A}$ and $\mb{B}$; its direction
       given by the right hand rule
-    \item Cross products are used in extensively in rotational motion and in
-      electromagnetism
+    \item Used in extensively in rotational motion and in electromagnetism
     \end{itemize}
 
     \column{.25\textwidth}
@@ -584,10 +583,10 @@
 
 
 \begin{frame}{Displacement}
-  \textbf{Displacement} is the change in position from $1$ to $2$ (make sure
-  you use the same coordinate system!):
+  \textbf{Displacement} is the change in position from $1$ to $2$:% (make sure
+  %you use the same coordinate system!):
 
-  \eq{-.4in}{
+  \eq{-.3in}{
       \Delta\mb{x}=\mb{x}_2-\mb{x}_1
       =(x_2-x_1)\bm{\hat{\imath}}+
       (y_2-y_1)\bm{\hat{\jmath}}+
@@ -603,17 +602,18 @@
 
 \begin{frame}{Instantaneous Velocity}
   \framesubtitle{Time Derivative of Position}
-  If position $\mb{x}$ can be described for any time $t$, then velocity
-  $\mb{v}$ can be found at any time $t$. The \textbf{instantaneous velocity} of
-  an object is the rate of change of its position:
+  If position $\mb{x}$ is a continuously differentiable function in time $t$,
+  then velocity $\mb{v}$ can be found at any time $t$. The
+  \textbf{instantaneous velocity} of an object is the rate of change of its
+  position vector:
 
-  \eq{-.15in}{
+  \eq{-.23in}{
     \boxed{\mb{v}(t)= \frac{d\mb{x}(t)}{dt}}
   }
   
   Since $\mb{x}$ has $x$, $y$ and $z$ components in the $\bm{\hat{\imath}}$,
   $\bm{\hat{\jmath}}$ and $\bm{\hat{k}}$ directions, we can take the derivative
-  w.r.t.\ time in every component:
+  with respect to time in every component:
 
   \eq{-.25in}{
     \mb{v}(t)= \frac{d\mb{x}}{dt}=
@@ -633,11 +633,11 @@
     \mb{x}(t)=\int\mb{v}(t)dt + \mb{x}_0
   }
   
-  The constant of integral $\mb{x}_0=\mb{x}(0)$ is the \emph{initial position}
-  at $t=0$. As both $\mb{x}$ and $\mb{v}$ are vectors, we integrate each
-  component to get $\mb{x}$:
+  The constant of integration $\mb{x}_0=\mb{x}(0)$ is the
+  \emph{initial position} at $t=0$. As both $\mb{x}$ and $\mb{v}$ are vectors,
+  we integrate each component to get $\mb{x}$:
 
-  \eq{-.2in}{ \mb{x}(t)= \left(
+ \eq{-.2in}{ \mb{x}(t)= \left(
     \int v_x\bm{\hat{\imath}} +
     \int v_y\bm{\hat{\jmath}} +
     \int v_z\bm{\hat{k}}
@@ -647,7 +647,7 @@
 
 
 \begin{frame}{Average Velocity}
-  The \textbf{average velocity} of an object is the the change in position
+  The \textbf{average velocity} of an object is the change in position
   $\Delta\mb{x}$ over a finite time interval $\Delta t$:
 
   \eq{-.3in}{
@@ -679,7 +679,7 @@
 
 
 \begin{frame}{Instantaneous Acceleration}
-  In the same way that velocity is the derivative of position w.r.t.\ time,
+  In the same way that velocity rate of change in position,
   \textbf{acceleration} is the rate of change in velocity:
 
   \eq{-.2in}{
@@ -716,8 +716,8 @@
 
 
 \begin{frame}{Integrating Acceleration to Get Velocity}
-  Velocity $\mb{v}(t)$ is the time integral of acceleration $\mb{a}(t)$ by the
-  fundamental theorem of calculus:
+  Velocity $\mb{v}(t)$ is the time integral of acceleration $\mb{a}(t)$:
+  %by the fundamental theorem of calculus:
     
   \eq{-.2in}{
     \mb{v}(t)=\int\mb{a}(t)dt+\mb{v}_0
@@ -894,15 +894,17 @@
     =\frac{d^4\mb{x}}{dt^4}
   }
   
-  The next two derivatives of snap is called facetiously called \textbf{crackle}
-  and \textbf{pop}, but these higher derivatives of position vector are rarely
-  seen.
+  The next two derivatives of snap is facetiously called \textbf{crackle} and
+  \textbf{pop}, but these higher derivatives of position vector are rarely seen.
 \end{frame}
 
+
+..
 \section{Kinematic Equations}
 
-\begin{frame}
-  \frametitle{Kinematic Equations For Constant Acceleration}
+\begin{frame}{Kinematic Equations For Constant Acceleration}
+  Although kinematic problems in AP Physics often require calculus, these basic
+  kinematic equations are still a very powerful tool.
   \begin{columns}
     \column{.45\textwidth}
 
@@ -915,9 +917,6 @@
     }
     
     \column{.55\textwidth}
-    Although \emph{some} kinematic problems in
-    AP Physics require calculus, these basic kinematic equations are still a
-    very powerful tool.
     \begin{itemize}
     \item The variables of interests are:
 

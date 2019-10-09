@@ -72,7 +72,9 @@
 
 \begin{frame}{Work}
   \textbf{Mechanical work} is performed when a force $\mb{F}$ is used to
-  displace an object by an infinitesimal amount $d\mb{r}$:
+  displace an object by an infinitesimal amount $d\mb{r}$. If a varying force
+  is applied to move an object from $r_1$ to $r_2$ along a path, then the total
+  work done by the force is defined by the integral:
 
   \eq{-.2in}{
     \boxed{W=\int_{r_1}^{r_2}\mb{F}(r)\cdot d\mb{r}}
@@ -92,9 +94,48 @@
 
 
 
+\begin{frame}{Work by Constant Force}
+  If the force is constant, and the object moves along straight path, the
+  integral simplifies to:
+
+  \eq{-.2in}{
+    \boxed{W=\mb{F}\cdot\Delta\mb{r}}
+  }
+
+  Or in a form that is more familiar in Grade 11 and 12 Physics courses:
+
+  \eq{-.2in}{
+    \boxed{W=F\Delta r\cos\theta}
+  }
+
+  where $\theta$ is the angle between the force vector and displacement vector.
+\end{frame}
+
+
+
+\begin{frame}{Definition of Work}
+  \begin{itemize}
+  \item\textbf{Work done by a force}
+    \begin{itemize}
+    \item We can quantify work by calculating the work done by a specific force
+    \item Example: A boy pushes a cart forward. The ``work done by the boy'' is
+      the work done by the applied force.
+    \end{itemize}
+  \item\textbf{Work done on an object}
+    \begin{itemize}
+    \item There may be more than one force acting on an object
+    \item The \emph{sum} of all the work done on the object by each force
+    \item The work done by the net force
+    \item Also called the \textbf{net work} $W_\mathrm{net}$
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+
+
+
 \begin{frame}{Kinetic Energy}
-  When we apply a force on an object to accelerate it, the resulting amount of
-  work done is given by:
+  When a net force on an object accelerates it, the resulting amount of
+  work done on the object (net work $W_{\textrm{net}}$) is given by:
 
   \eq{-.2in}{
     W_{\textrm{net}}=\int\mb{F}_{\textrm{net}}\cdot d\mb{x}=\int m\mb{a}\cdot d\mb{x}
@@ -107,7 +148,7 @@
   switch the order of differentitation, i.e.:
 
   \eq{-.2in}{
-    =m\int\frac{d\mb{x}}{dt}d\cdot\mb{v}=m\int\mb{v}\cdot d\mb{v}
+    =m\int\frac{d\mb{x}}{dt}\cdot d\mb{v}=m\int\mb{v}\cdot d\mb{v}
     =\int_{v_1}^{v_2} mvdv %=\Delta\left(\frac{1}{2}mv^2\right)=\Delta K
   }
 
@@ -150,26 +191,6 @@
 
 
 
-\begin{frame}{Definition of Work}
-  \begin{itemize}
-  \item\textbf{Work done by a force}
-    \begin{itemize}
-    \item We can quantify work by calculating the work done by a specific force
-    \item Example: A boy pushes a cart forward. The ``work done by the boy'' is
-      the work done by the applied force.
-    \end{itemize}
-  \item\textbf{Work done on an object}
-    \begin{itemize}
-    \item There may be more than one force acting on an object
-    \item The \emph{sum} of all the work done on the object by each force
-    \item The work done by the net force
-    \item Also called the \textbf{net work} $W_\mathrm{net}$
-    \end{itemize}
-  \end{itemize}
-\end{frame}
-
-
-
 \begin{frame}{Example}
   \textbf{Example 1:} A force $\mb{F}=4.0x\bm{\hat{\imath}}$ (in newtons) acts
   on an object of mass \SI{2.}{\kilo\gram} as it moves from $x=0$ to
@@ -191,7 +212,7 @@
   
   For objects near the surface of Earth, we assume that
   $\mb{g}=-g\bm{\hat{\jmath}}=-10\bm{\hat{\jmath}}$
-  (in \si{\metre\per\second^2}) is a constant. The work done to raise an object
+  (in \si{\metre\per\second^2}) is a constant. The work done to move an object
   from height $h_1$ to $h_2$ is therefore:
 
   \eq{-.3in}{
