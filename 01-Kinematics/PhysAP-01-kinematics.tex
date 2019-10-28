@@ -2,7 +2,8 @@
 
 \mode<presentation>
 {
-  \usetheme{Singapore}
+  %\usetheme{Singapore}
+  \usetheme{metropolis}
   \setbeamersize{text margin left=.5cm,text margin right=.5cm}
 %  \setbeamertemplate{navigation symbols}{} % suppress nav bar
 %  \setbeamercovered{transparent}
@@ -13,10 +14,13 @@
 %\usepackage{graphicx}
 \usepackage{tikz}
 \usepackage{mathpazo}
-\usepackage[scaled]{helvet}
+%\usepackage[scaled]{helvet}
 \usepackage{bm}
 %\usepackage{xcolor,colortbl}
 %\usepackage{hyperref}
+
+%\setsansfont{Lato-Regular}
+\setmonofont{Ubuntu Mono}
 
 \sisetup{
   number-math-rm=\mathnormal,
@@ -27,13 +31,12 @@
 \subtitle{Advanced Placement Physics}
 \author[TML]{Dr.\ Timothy Leung}
 \institute{Olympiads School}
-%\date{Fall 2018}
 \date{Novemver 2, 2019}
 
 \newcommand{\pic}[2]{\includegraphics[width=#1\textwidth]{#2}}
 \newcommand{\mb}[1]{\ensuremath\mathbf{#1}}
 \newcommand{\eq}[2]{\vspace{#1}{\Large\begin{displaymath}#2\end{displaymath}}}
-\newcommand{\magdir}[2]{#1\textrm{ [#2]}}
+\newcommand{\magdir}[2]{#1\text{ [#2]}}
 
 \begin{document}
 
@@ -47,15 +50,14 @@
 \end{frame}
 
 
-\section{Housekeeping}
-
+%\section{Housekeeping}
 
 \begin{frame}{Pre-requisites}
   \begin{itemize}
   \item\textbf{Physics 11 and 12} %As AP Physics is primarily taught at the
     %first-year university level
     You will need to be comfortable with the topics covered in high-school
-    physics courses.
+    level physics courses.
   \item\textbf{Calculus} The AP Physics C exams are calculus based, and you
     will be required to perform basic differentiation and integration. You
     don't need to be an expert, but basic knowledge is required.
@@ -77,21 +79,22 @@
   \item Physics C--Mechanics
   \item Physics C--Electricity and Magnetism
   \end{itemize}
-  Offered in first or second week of May of each year
+  Offered in first or second week of May of each year. The Physics C exams
+  are calculus based; Physics 1 and 2 exams are algebra based.
 \end{frame}
 
 
 
-\begin{frame}{Classroom Rules}
-  \framesubtitle{Same as in Physics 11 and 12}
-  \begin{itemize}
-  \item Treat each other with respect
-  \item Raise your hands if you have a question. Don't wait too long
-  \item E-mail me at \textbf{\texttt{tleung@olympiadsmail.ca}} for any questions
-    related to physics and math and engineering
-  \item Do \textbf{\emph{not}} try to find me on social media
-  \end{itemize}
-\end{frame}
+%\begin{frame}{Classroom Rules}
+%  \framesubtitle{Same as in Physics 11 and 12}
+%  \begin{itemize}
+%  \item Treat each other with respect
+%  \item Raise your hands if you have a question. Don't wait too long
+%  \item E-mail me at \textbf{\texttt{tleung@olympiadsmail.ca}} for any questions
+%    related to physics and math and engineering
+%  \item Do \textbf{\emph{not}} try to find me on social media
+%  \end{itemize}
+%\end{frame}
 
 
 \begin{frame}
@@ -101,19 +104,18 @@
 \begin{frame}
   \frametitle{Files for You to Download}
   \begin{itemize}
-  \item\texttt{PhysAP-courseOutline.pdf}--The course outline that I am handing
-    to you now.
-  \item\texttt{PhysAP-equationSheet.pdf}--An equation sheet that you will be
-    using during the exams.
-  \item\texttt{PhysAP-01-kinematics.pdf}--The slides that I am using right now.
-  \item\texttt{PhysAP-02-dynamics.pdf}--The slides that I will be using next
-    class.
-  \item\texttt{PhysAP-03-Homework.pdf}--Homework problems for Topics 1 \& 2.
+  \item\texttt{PhysAP-courseOutline.pdf}--The course outline
+  \item\texttt{PhysAP-equationSheet.pdf}--An equation sheet that you use during
+    the exams
+  \item\texttt{PhysAP-01-kinematics.pdf}--These presentation slides
+  %\item\texttt{PhysAP-02-dynamics.pdf}--The presentation slides for the next
+  %  topic
+  \item\texttt{PhysAP-01-Homework.pdf}--Homework problems for Topic 1.
   \end{itemize}
   Please download/print the PDF file for the class slides before each class.
   There is no point copying notes that are already printed out for you.
-  Instead, take notes on things I say that aren't necessarily on the slides.
-  If you wish to print the slides, we recommend printing $4$ slides per page.
+  Instead, take notes on things that aren't necessarily on the slides. If you
+  wish to print the slides, we recommend printing 4 slides per page.
 \end{frame}
 
 
@@ -121,17 +123,19 @@
 \section{Vectors}
 
 \begin{frame}{Notes on  Writing Vectors}
-  In this course, vectors are \emph{printed} using a bold face font, while the 
-  ``arrow on top'' notation is used when \emph{writing}.
+  In this course, vectors are \emph{printed} (e.g.\ on the slides) using a bold
+  face font, while the ``arrow on top'' notation is used when \emph{writing}
+  (e.g.\ on the blackboard)
   \vspace{.1in}
   \begin{columns}
     \column{.43\textwidth}
     \textbf{In print (books, journal papers)}
     \vspace{-.2in}{\LARGE
       \begin{displaymath}
-        \mathbf{v}\quad\mathbf{F}_g\quad\mathbf{p}\quad\mathbf{I}
+        \mb{v}\quad\mb{F}_g\quad\mb{p}\quad\mb{I}
       \end{displaymath}
     }
+    
     \column{.5\textwidth}
     \textbf{Handwritten (used by some books)}
     \vspace{-.2in}{\LARGE
@@ -140,15 +144,14 @@
       \end{displaymath}
     }
   \end{columns}
-
-  The magnitude of these vectors are expressed in one of two ways:
+  Magnitude of vectors are expressed in one of two ways:
   \vspace{.1in}
   \begin{columns}
     \column{.5\textwidth}
     \textbf{With absolute-value sign}
     \vspace{-.2in}{\LARGE
       \begin{displaymath}
-        |\mathbf{v}|\quad|\mathbf{F}_g|\quad|\mathbf{p}|\quad|\mathbf{I}|
+        |\mb{v}|\quad|\mb{F}_g|\quad|\mb{p}|\quad|\mb{I}|
       \end{displaymath}
     }
     \column{.42\textwidth}
@@ -163,23 +166,30 @@
 
 
 \begin{frame}{Writing Vectors}
-  In Physics 11 and 12, vectors are often written by separating the magnitude
-  from the direction, e.g.\ a velocity vector can be written as:
+  In Grades 11 and 12 Physics, vectors are usually written by separating the
+  magnitude from the direction. For example, a velocity vector can be written
+  as:
   
-  \eq{-.1in}{
+  \eq{-.4in}{
     \mb{v}=\SI{4.5}{\metre\per\second}\text{ [N \ang{55} E]}
   }
+  
+  \vspace{-.25in}This method of describing vector is called the
+  \textbf{polar coordinate system}, which is the preferred coordinate system
+  for circular motion. In general, polar coordinate system is
   \begin{itemize}
   \item Intuitive for describing \emph{one} vector in 2D
-  \item Complicated to describe direction when extended into 3D
-  \item Difficult to perform vector arithmetic
+  \item Complicated when extended into 3D; need to extend to
+    \textbf{spherical coordinate system} or the
+    \textbf{cylindrical coordinate system}
+  \item Difficult to perform vector arithmetic for rectilinear motion
   \end{itemize}
 \end{frame}
 
 
 \begin{frame}{IJK Vector Notation}
-  Vectors in 2D/3D Cartesian space are generally written in their $x$,
-  $y$ \& $z$ components using the ``IJK notation'':
+  For rectilinear motion, vectors in 2D/3D Cartesian space are generally
+  written in their $x$, $y$ \& $z$ components using the ``IJK notation'':
 
   \eq{-.2in}{
     \mb{A}=A_x\bm{\hat{\imath}} + A_y\bm{\hat{\jmath}} + A_z\bm{\hat{k}}
@@ -203,7 +213,7 @@
 \begin{frame}{Vector Addition and Subtraction}
   Adding and subtracting vectors is straightforward:
 
-  \eq{-.2in}{
+  \eq{-.3in}{
     \mb{A}\pm\mb{B}=
     (A_x\pm B_x)\bm{\hat{\imath}} +
     (A_y\pm B_y)\bm{\hat{\jmath}} +
@@ -213,17 +223,16 @@
 
 
 \begin{frame}{Dot Product}
-  The \textbf{dot product} is the scalar multiplication of two vectors. It is
-  determined by the magnitude of the two vectors and the cosine of the angle
-  between them:
+  The vector \textbf{dot product} (inner product) is the scalar multiplication
+  of two vectors. It is determined by the magnitude of the two vectors and the
+  cosine of the angle between them:
 
-  \eq{-.22in}{
+  \eq{-.4in}{
     C=\mb{A}\cdot\mb{B}=\mb{B}\cdot\mb{A}=AB\cos\theta
   }
-
-  \vspace{-.22in}
   \begin{itemize}
-  \item You have been using this in the calculation of mechanical work
+  \item\vspace{-.22in}You have been using this in the calculation of mechanical
+    work
   \item $C$ is the \emph{projection} of the vector $\mb{A}$ onto $\mb{B}$, or
     the component of $\mb{A}$ along $\mb{B}$
   \item $\bm{\hat{\imath}}\cdot\bm{\hat{\imath}}=1$,
@@ -232,28 +241,28 @@
   \item For vectors written in IJK notation, and you don't immediately know the
     magnitude or the angle between them, then:
     
-    \eq{-.22in}{
-      \mb{A}\cdot\mb{B}=A_xB_x+A_yB_y+A_zB_z
+    \eq{-.3in}{
+      C=\mb{A}\cdot\mb{B}=A_xB_x+A_yB_y+A_zB_z
     }
   \end{itemize}
 \end{frame}
 
 
 \begin{frame}{Cross Products}
+  \vspace{.3in}
   \begin{columns}
     \column{.75\textwidth}
-    The \textbf{cross product} is the vector multiplication of two vectors:
+    The vector \textbf{cross product} is the vector multiplication of two
+    vectors:
 
-    \eq{-.2in}{
+    \eq{-.4in}{
       \mb{C}=\mb{A}\times\mb{B}
     }
-
-    \vspace{-.2in}
     \begin{itemize}
-    \item The magnitude of the cross product is determined by the magnitude of
-      $\mb{A}$ and $\mb{B}$ and the angle between them:
+    \item\vspace{-.3in}The magnitude of the cross product is determined by the
+      magnitude of $\mb{A}$ and $\mb{B}$ and the angle $\theta$ between them:
 
-      \eq{-.3in}{
+      \eq{-.45in}{
         C=AB\sin\theta
       }
     \item $\mb{C}$ is perpendicular to both $\mb{A}$ and $\mb{B}$; its direction
@@ -271,7 +280,7 @@
   The cross product of any two vectors in 3D space is the determinant of this
   $3\times 3$ matrix:
   
-  \eq{-.2in}{
+  \eq{-.4in}{
     \mb{A}\times\mb{B}=
     \left|
     \begin{matrix}
@@ -285,10 +294,10 @@
 %      (A_zB_y-B_yA_x)\bm{\hat{k}}
   }
   
-  The order of the cross product is important. (This is why you have to get the
-  right hand rule correctly.)
+  \vspace{-.15in}The order of the cross product is important. (This is why you
+  have to get the right hand rule correctly.)
 
-  \eq{-.2in}{
+  \eq{-.4in}{
     \mb{A}\times\mb{B}=-\mb{B}\times\mb{A}
   }
 \end{frame}
@@ -342,7 +351,7 @@
     \item We use it to compute the area under a curve, or
     \item Summation of many small terms
     \item Examples: area under the $\mb{v}$-$t$ graph (displacement), area
-      under the $\mb{F}$-$t$ graph (impulse), area under the $F$-$d$ graph
+      under the $\mb{F}$-$t$ graph (impulse), area under the $\mb{F}$-$d$ graph
       (work)
     \end{itemize}
   \end{itemize}
@@ -358,7 +367,7 @@
   }
 
   The ``limit as $h$ approaches $0$'' is the mathematical way of making $h$
-  a very small number
+  a very small non-zero number
 \end{frame}
 
 
@@ -367,16 +376,16 @@
   The derivative of a constant (``$C$'') w.r.t.\ any variable is zero.
   (Obviously, the slope of any function $f(x)=C$ is zero.)
 
-  \eq{-.2in}{\frac{dC}{dx}=0}
+  \eq{-.3in}{\frac{dC}{dx}=0}
     
-  \vspace{-.1in}A constant multiple of any function $f$ can be factored outside
+  \vspace{-.15in}A constant multiple of any function $f$ can be factored outside
   the derivative:
     
-  \eq{-.2in}{ \frac{d}{dx}(af)=a\frac{df}{dx} }
+  \eq{-.3in}{ \frac{d}{dx}(af)=a\frac{df}{dx} }
 
-  The derivative of a sum is the sum of a derivative:
+  \vspace{-.15in}The derivative of a sum is the sum of a derivative:
   
-  \eq{-.2in}{
+  \eq{-.3in}{
     \frac{d}{dt}\left(f(t)+g(t)\right) = \frac{df}{dt}+\frac{dg}{dt}
   }
 \end{frame}
@@ -391,72 +400,75 @@
     %\quad n\neq 0
   }
 
-  Product Rule:
+  \vspace{-.15in}Product Rule:
 
-  \eq{-.2in}{
+  \eq{-.3in}{
     \frac{d}{dx}\left(f(x)g(x)\right)=f'(x)g(x)+f(x)g'(x)
   }
     
-  Chain Rule:
+  \vspace{-.15in}Chain Rule:
 
-  \eq{-.2in}{
+  \eq{-.3in}{
     \frac{d}{dx}f\left(g(x)\right)=f'(g(x))g'(x)
   }
 \end{frame}
 
-\begin{frame}
-  \frametitle{Time-Saving Rules for Differentiation}
 
+
+\begin{frame}{Time-Saving Rules for Differentiation}
   Quotient Rule:
 
   \eq{-.2in}{
     \frac{d}{dx}\left[\frac{f(x)}{g(x)}\right]=
     \frac{f'(x)g(x)-g'(x)f(x)}{\left(g(x)\right)^2}
   }
+
+  Thankfully you will probably never see this in a physics test in AP or
+  first-year university
 \end{frame}
 
-\begin{frame}
-  \frametitle{Elementary Derivatives}
-  %\vspace{-.1in}(If $n=0$ we really just have a constant.)
-  
-%  \item Try these examples:
-%    \begin{displaymath}
-%      \frac{d}{dt}\left(3t^2\right)=\quad\quad\quad
-%      \frac{d}{dt}\left(t^3 + t + 4\right)=\quad\quad\quad
-%      \frac{d}{dt}\left(\frac{1}{t}\right)=
-%    \end{displaymath}
-%  \end{itemize}
 
+
+\begin{frame}{Elementary Derivatives}
   Note how sines and cosines are related:
   
-  \eq{-.2in}{
+  \eq{-.3in}{
     \frac{d}{dt}\sin t = \cos t \quad\quad\quad
     \frac{d}{dt}\cos t = -\sin t
   }
 
-  And exponential:
+  \vspace{-.15in}And the exponential function:
   
   \eq{-.3in}{
-     \frac{d}{dt}e^t = e^t
+     \frac{d}{dt}e^{at} = ae^{at}
   }
+
+  \vspace{-.15in}When studying \textbf{harmonic motion} and
+  \textbf{circular motion}, trigonometric functions and exponential are often
+  used. We will also find out the relationship between complex exponential
+  functions and sine/cosine functions.
 \end{frame}
 
 
+
 \begin{frame}{Partial Derivatives}
-  For functions with many variables, for example, gravitational potential
-  energy $U_g$ has three variables: masses $m_1$ and $m_2$ and the distance $r$
-  between them:
+  Some functions have many variables (multi-variable function). For example,
+  gravitational potential energy $U_g$ has three variables: masses $m_1$ and
+  $m_2$ and the distance $r$ between them:
 
-  \eq{-.2in}{ U_g(m_1,m_2,r)=-\frac{Gm_1m_2}{r} }
+  \eq{-.3in}{
+    U_g(m_1,m_2,r)=-\frac{Gm_1m_2}{r}
+  }
 
-  %A \textbf{partial derivative} is
-  Differentiating w.r.t.\ one variable while holding others constant gives its
-  \textbf{partial derivative}. (We use the $\partial$ symbol). e.g.\ the partial
-  derivative of $U_g$ w.r.t.\ $r$ is
+  \vspace{-.15in}Differentiating w.r.t.\ one variable while holding others
+  constant gives its \textbf{partial derivative}. (We use the $\partial$
+  symbol). e.g.\ the partial derivative of $U_g$ w.r.t.\ $r$ is
 
-  \eq{-.2in}{ \frac{\partial U_g}{\partial r}=\frac{Gm_1m_2}{r^2}}
+  \eq{-.3in}{
+    \frac{\partial U_g}{\partial r}=\frac{Gm_1m_2}{r^2}
+  }
 
-  (By the way, this is how we relate $U_g$ to $F_g$.)
+  \vspace{-.15in}FYI: this is the relationship between $U_g$ and $\mb{F}_g$.
 \end{frame}
 
 
@@ -504,8 +516,7 @@
 \end{frame}
 
 
-\begin{frame}{Definite vs.\ Indefinite Integral}
-  \framesubtitle{This Should Be a Review}
+\begin{frame}{Definite vs.\ Indefinite Integral}{This Should Be a Review}
   \begin{itemize}
   \item Integral can be either \textbf{indefinite} or \textbf{definite}
   \item An ``indefinite'' integral is another function, e.g.\ position
@@ -523,15 +534,14 @@
 
 
 \begin{frame}{Definite Integrals}
-
-  A \textbf{definite} integral has lower and upper bounds. e.g., given
+  A \textbf{definite integral} has lower and upper bounds. e.g.\ given
   $\mb{v}(t)$, the displacement between $t_1$ and $t_2$ can be found:
 
-  \eq{-.2in}{ \Delta\mb{x}=\int_{t_0}^{t_1} \mb{v}(t)dt }
+  \eq{-.3in}{ \Delta\mb{x}=\int_{t_0}^{t_1} \mb{v}(t)dt }
 
   Once we have computed the integral, we evaluate the limits:
   
-  \eq{-.2in}{
+  \eq{-.3in}{
     \Delta\mb{x} =
     \mb{x}(t)\Big|^{t_1}_{t_0}=
     \mb{x}(t_1)-\mb{x}(t_0)=
@@ -547,8 +557,9 @@
 
 \begin{frame}{Kinematics}
   \begin{itemize}
-  \item Describing the motion of points, bodies (objects), and systems of
-    bodies (groups of objects)
+  \item\textbf{Kinematics} is a discipline with in mechanics for describing the
+    motion of points, bodies (objects), and systems of  bodies (groups of
+    objects)
   \item Relationship between 
     \begin{itemize}
     \item Position
@@ -565,17 +576,16 @@
 
 \begin{frame}{Position}
   \textbf{Position} is a vector describing the location of an object in a
-  coordinate system (usually \emph{Cartesian}; can also be \emph{cylindrical}
-  or \emph{polar}). The origin of the coordinate system is the
-  ``reference point''.
+  coordinate system (usually \emph{Cartesian}; can also be \emph{polar},
+  \emph{cylindrical} or \emph{spherical}). The origin of the coordinate system
+  is called ``reference point''.
 
-  \eq{-.2in}{
+  \eq{-.3in}{
     \mb{x}(t)=x(t)\bm{\hat{\imath}} + y(t)\bm{\hat{\jmath}} + z(t)\bm{\hat{k}}
   }
-
-  \vspace{-.2in}
   \begin{itemize}
-  \item The SI unit for position is a \textbf{meter}, \si{\metre}
+  \item  \vspace{-.2in}The SI unit for position is a \textbf{meter},
+    \si{\metre}
   \item The components $x$, $y$ and $z$ are the coordinates along those axes
   \item The vector is a function of time $t$
   \end{itemize}
@@ -583,10 +593,10 @@
 
 
 \begin{frame}{Displacement}
-  \textbf{Displacement} is the change in position from $1$ to $2$:% (make sure
-  %you use the same coordinate system!):
+  \textbf{Displacement} is the change in position from $1$ to $2$ within the
+  same coordinate system:
 
-  \eq{-.3in}{
+  \eq{-.45in}{
       \Delta\mb{x}=\mb{x}_2-\mb{x}_1
       =(x_2-x_1)\bm{\hat{\imath}}+
       (y_2-y_1)\bm{\hat{\jmath}}+
@@ -594,7 +604,7 @@
   }
   \begin{itemize}
   \item IJK notation makes vector addition and subtraction less prone to errors
-  \item Since reference point $\mb{x}_\mathrm{ref}=\mb{0}$, the position
+  \item Since reference point $\mb{x}_{\textrm{ref}}=\mb{0}$, the position
     $\mb{x}$ is also its displacement from the reference point
   \end{itemize}
 \end{frame}
@@ -605,17 +615,18 @@
   If position $\mb{x}$ is a continuously differentiable function in time $t$,
   then velocity $\mb{v}$ can be found at any time $t$. The
   \textbf{instantaneous velocity} of an object is the rate of change of its
-  position vector:
+  position vector w.r.t.\ time:
 
-  \eq{-.23in}{
+  \eq{-.3in}{
     \boxed{\mb{v}(t)= \frac{d\mb{x}(t)}{dt}}
   }
   
-  Since $\mb{x}$ has $x$, $y$ and $z$ components in the $\bm{\hat{\imath}}$,
-  $\bm{\hat{\jmath}}$ and $\bm{\hat{k}}$ directions, we can take the derivative
-  with respect to time in every component:
+  \vspace{-.15in}Since $\mb{x}$ has $x$, $y$ and $z$ components in the
+  $\bm{\hat{\imath}}$, $\bm{\hat{\jmath}}$ and $\bm{\hat{k}}$ directions that
+  are linearly independent, we can take the derivative with respect to time in
+  every component:
 
-  \eq{-.25in}{
+  \eq{-.4in}{
     \mb{v}(t)= \frac{d\mb{x}}{dt}=
     \frac{dx}{dt}\bm{\hat{\imath}} +
     \frac{dy}{dt}\bm{\hat{\jmath}} + \frac{dz}{dt}\bm{\hat{k}}=
@@ -682,7 +693,7 @@
   In the same way that velocity rate of change in position,
   \textbf{acceleration} is the rate of change in velocity:
 
-  \eq{-.2in}{
+  \eq{-.35in}{
     \boxed{\mb{a}(t)= \frac{d\mb{v}(t)}{dt}=\frac{d^2\mb{x}(t)}{dt^2}}
   }
   
@@ -697,17 +708,17 @@
 
 \begin{frame}{Special Notation When Differentiating With Time}
   Physicists and engineers use a special notation when the derivative is
-  taken with respect to time, by writing a dot above the variable:
+  taken with respect to \emph{time}, by writing a dot above the variable:
   \begin{itemize}
   \item Velocity:
 
-    \eq{-.2in}{
-      \boxed{\mb{v}(t)= \dot{\mb{x}}(t)}
+    \eq{-.35in}{
+      \boxed{\mb{v}(t)= \dot{\mb{x}}}
     }
   \item Acceleration:
 
-    \eq{-.2in}{
-      \boxed{\mb{a}(t)= \dot{\mb{v}}(t)=\ddot{\mb{x}}(t)}
+    \eq{-.35in}{
+      \boxed{\mb{a}(t)= \dot{\mb{v}}=\ddot{\mb{x}}}
     }
   \end{itemize}
 
@@ -717,16 +728,15 @@
 
 \begin{frame}{Integrating Acceleration to Get Velocity}
   Velocity $\mb{v}(t)$ is the time integral of acceleration $\mb{a}(t)$:
-  %by the fundamental theorem of calculus:
     
-  \eq{-.2in}{
+  \eq{-.35in}{
     \mb{v}(t)=\int\mb{a}(t)dt+\mb{v}_0
   }
 
-  Again, since both $\mb{v}$ and $\mb{a}$ are vectors, we need to integrate in
-  each direction:
+  \vspace{-.15in}Again, since both $\mb{v}$ and $\mb{a}$ are vectors, we need
+  to integrate in each direction:
 
-  \eq{-.2in}{ \mb{v}(t)=
+  \eq{-.3in}{ \mb{v}(t)=
     \left(\int a_x\bm{\hat{\imath}} +
     \int a_y\bm{\hat{\jmath}} +
     \int a_z\bm{\hat{k}}\right) dt +\mb{v}_0
@@ -816,9 +826,8 @@
 
 \begin{frame}{Motion Graphs}
   \framesubtitle{Simple Harmonic Motion}
-  For oscillatory motion, or \textbf{simple harmonic motion} (we will study
-  this more in-depth later), neither position, velocity nor acceleration are
-  constant:
+  For oscillatory motion, or \textbf{harmonic motion}, neither position,
+  velocity nor acceleration are constant:
 
   \vspace{-.1in}
   \begin{center}
@@ -882,14 +891,14 @@
   The time derivative of acceleration is called \textbf{jerk}, with a unit
   of \si{\metre\per\second^3}:
 
-  \eq{-.15in}{
+  \eq{-.25in}{
     \mb{j}=\frac{d\mb{a}}{dt}=\frac{d^2\mb{v}}{dt^2}=\frac{d^3\mb{x}}{dt^3}
   }
 
   The time derivative of jerk is \textbf{jounce}, or \textbf{snap}, with a
   unit of \si{\metre\per\second^4}:
   
-  \eq{-.15in}{
+  \eq{-.25in}{
     \mb{s}=\frac{d\mb{j}}{dt}=\frac{d^2\mb{a}}{dt^2}=\frac{d^3\mb{v}}{dt^3}
     =\frac{d^4\mb{x}}{dt^4}
   }
@@ -899,7 +908,7 @@
 \end{frame}
 
 
-..
+
 \section{Kinematic Equations}
 
 \begin{frame}{Kinematic Equations For Constant Acceleration}
@@ -926,6 +935,8 @@
     \item Only applicable for constant acceleration
     \end{itemize}
   \end{columns}
+
+  You will still encounter situations where integration is necessary.
 \end{frame}
 
 
@@ -976,7 +987,7 @@
 
 \begin{frame}{Symmetric Trajectory}
   Trajectory is symmetric if the object lands at the same height as when it
-  started.
+  started. The angle $\theta$ is measured \emph{above the the horizontal}.
   \begin{itemize}
   \item Time of flight
     \eq{-.1in}{t_\mathrm{max}=\frac{2v_i\sin\theta}{g}}
@@ -985,7 +996,6 @@
   \item Maximum height
     \eq{-.1in}{h_\mathrm{max}=\frac{v_i^2\sin^2\theta}{2g}}
   \end{itemize}
-  The angle $\theta$ is measured \textbf{above the the horizontal}
 \end{frame}
 
 
@@ -1032,21 +1042,20 @@
 
 
 
-\begin{frame}{Relative Motion}
-  \framesubtitle{Notation}
+\begin{frame}{Relative Motion}{Notation}
   When expressing relative motion, the first subscript ($A$) represents the
   moving object, and the second subscript ($B$) represents the frame of
   reference:
 
-  \eq{-.25in}{
+  \eq{-.4in}{
     \mb{v}_{AB}
   } 
 
-  \vspace{.15in}If an airplane (``P'') is traveling at
+  \vspace{-.15in}If an airplane (``P'') is traveling at
   \magdir{\SI{251}{\kilo\metre\per\hour}}{N} relative to Earth (``E''), its
   velocity is expressed as:
 
-  \eq{-.2in}{
+  \eq{-.4in}{
     \mb{v}_{PE}=\magdir{\SI{251}{\kilo\metre\per\hour}}{N}
   }
 \end{frame}
@@ -1077,18 +1086,18 @@
     thought to be so obvious that no one bother to give it a name until Einstein
     proved that it was incorrect for speeds close to the speed of light}:
 
-  \eq{-.3in}{
+  \eq{-.45in}{
     \boxed{\mb{v}_{AC}=\mb{v}_{AB}+\mb{v}_{BC}}
   }
 
-  \vspace{-.1in}The velocity of $A$ relative to reference frame $C$ is the
+  \vspace{-.15in}The velocity of $A$ relative to reference frame $C$ is the
   velocity of $A$ relative to reference frame $B$, plus the velocity of $B$
   relative to $C$.
 
-  \vspace{.2in}If we add another frame of reference (``$D$''), the equation
+  \vspace{.1in}If we add another frame of reference (``$D$''), the equation
   becomes:
 
-  \eq{-.2in}{
+  \eq{-.35in}{
     \mb{v}_{AD}=\mb{v}_{AB}+\mb{v}_{BC}+\mb{v}_{CD}
   }
 \end{frame}
