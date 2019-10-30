@@ -17,7 +17,7 @@
 
 \newcommand{\genheader}{
   \pagestyle{fancy}
-  \rhead{Name:\hspace{1.5in}Student Number:\hspace{.75in}}
+  \rhead{Student Name:\hspace{1.5in}}%Student Number:\hspace{.75in}}
   \chead{}
   \lhead{Olympiads School}
   \lfoot{}\cfoot{-\textsf{\textbf{\thepage}}-}
@@ -26,12 +26,11 @@
   %\renewcommand{\footrulewidth}{1pt}
 }
 
-\newcommand{\gentitle}[3]{
+\newcommand{\gentitle}[2]{
   \begin{center}
     \vspace{-.35in}
            {\large
-             \textbf{AP PHYSICS #1: #2\\
-               (Topics #3)}
+             \textbf{AP PHYSICS #1: #2}
            }
   \end{center}
 }

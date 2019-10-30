@@ -2,7 +2,7 @@
 
 \mode<presentation>
 {
-  \usetheme{Singapore}
+  \usetheme{metropolis}%Singapore}
   \setbeamersize{text margin left=.5cm,text margin right=.5cm}
 %  \setbeamertemplate{navigation symbols}{} % suppress nav bar
 %  \setbeamercovered{transparent}
@@ -12,8 +12,10 @@
 \usepackage{siunitx}
 \usepackage{tikz}
 \usepackage{mathpazo}
-\usepackage[scaled]{helvet}
+%\usepackage[scaled]{helvet}
 \usepackage{xcolor,colortbl}
+
+\setmonofont{Liberation Mono}
 
 \sisetup{
   number-math-rm=\mathnormal,
@@ -76,7 +78,7 @@
   is applied to move an object from $r_1$ to $r_2$ along a path, then the total
   work done by the force is defined by the integral:
 
-  \eq{-.2in}{
+  \eq{-.35in}{
     \boxed{W=\int_{r_1}^{r_2}\mb{F}(r)\cdot d\mb{r}}
   }
 
@@ -85,8 +87,6 @@
     (i.e.\ $\mb{F}\cdot d\mb{r}=0$)
   \item No work done if no displacement ($d\mb{r}=\mb{0}$)
   \item Work can be positive or negative depending on the dot product
-    %work done is possible if $\mb{F}$ is opposite direction to
-    %$\mb{r}$ ($\mb{F}\cdot d\mb{r}=0$
   \item When there are multiple forces acting on an object, we can compute the
     work done by each \emph{each} force
   \end{itemize}
@@ -98,17 +98,19 @@
   If the force is constant, and the object moves along straight path, the
   integral simplifies to:
 
-  \eq{-.2in}{
+  \eq{-.4in}{
     \boxed{W=\mb{F}\cdot\Delta\mb{r}}
   }
 
-  Or in a form that is more familiar in Grade 11 and 12 Physics courses:
+  \vspace{-.2in}Or in a form that is more familiar in Grade 11 and 12 Physics
+  courses:
 
-  \eq{-.2in}{
+  \eq{-.4in}{
     \boxed{W=F\Delta r\cos\theta}
   }
 
-  where $\theta$ is the angle between the force vector and displacement vector.
+  \vspace{-.3in}where $\theta$ is the angle between the force vector and
+  displacement vector.
 \end{frame}
 
 
@@ -137,23 +139,21 @@
   When a net force on an object accelerates it, the resulting amount of
   work done on the object (net work $W_{\textrm{net}}$) is given by:
 
-  \eq{-.2in}{
+  \eq{-.3in}{
     W_{\textrm{net}}=\int\mb{F}_{\textrm{net}}\cdot d\mb{x}=\int m\mb{a}\cdot d\mb{x}
     =m\int\frac{d\mb{v}}{dt}\cdot d\mb{x}
-%        
-%      \end{align*}
   }
 
-  Since both $\mb{v}$ and $\mb{x}$ are continuous functions in time, we can
-  switch the order of differentitation, i.e.:
+  \vspace{-.2in}Since both $\mb{v}$ and $\mb{x}$ are continuous functions in
+  time, we can switch the order of differentitation, i.e.:
 
-  \eq{-.2in}{
+  \eq{-.3in}{
     =m\int\frac{d\mb{x}}{dt}\cdot d\mb{v}=m\int\mb{v}\cdot d\mb{v}
     =\int_{v_1}^{v_2} mvdv %=\Delta\left(\frac{1}{2}mv^2\right)=\Delta K
   }
 
-  Since $\mb{v}$ and $d\mb{v}$ must be in the same direction, the dot product
-  is trivial: $\mb{v}\cdot d\mb{v}=vdv$
+  \vspace{-.15in}and since $\mb{v}$ and $d\mb{v}$ must be in the same
+  direction, the dot product is trivial: $\mb{v}\cdot d\mb{v}=vdv$
 \end{frame}
 
 
@@ -166,8 +166,12 @@
     m\int_{v_1}^{v_2} vdv=\frac{1}{2}mv^2\Big|^{v_2}_{v_1}=\Delta K
   }
   
-  where $\displaystyle K=\frac{1}{2}mv^2$ is defined as the
-  \textbf{translational kinetic energy}
+  \vspace{-.15in}where $K$ is defined as the
+  \textbf{translational kinetic energy}:
+
+  \eq{-.3in}{
+    \boxed{K=\frac12mv^2}
+  }
 \end{frame}
 
 
@@ -206,22 +210,26 @@
   \frametitle{Gravitational Force \& Potential Energy}
   The gravitational force (weight) of an object is defined as:
   
-  \eq{-.25in}{
+  \eq{-.4in}{
     \boxed{\mb{F}_g=m\mb{g}}
   }
   
-  For objects near the surface of Earth, we assume that
+  \vspace{-.2in}For objects near the surface of Earth, we assume that
   $\mb{g}=-g\bm{\hat{\jmath}}=-10\bm{\hat{\jmath}}$
   (in \si{\metre\per\second^2}) is a constant. The work done to move an object
   from height $h_1$ to $h_2$ is therefore:
 
-  \eq{-.3in}{
+  \eq{-.4in}{
     W=\int \mb{F}_g\cdot d\mb{h}
     =\int_{h_1}^{h_2} -mg\bm{\hat{\jmath}}\cdot dh\hat{\bm{\jmath}}
     =-mgh\Big|^{h_2}_{h_1}=-\Delta U_g
   }
 
-  where $U_g=mgh$ is the \textbf{gravitational potential energy}
+  \vspace{-.1in}where $U_g$ is the \textbf{gravitational potential energy}:
+
+  \eq{-.35in}{
+    \boxed{U_g=mgh}
+  }
 \end{frame}
 
 
@@ -244,24 +252,28 @@
 
 
 
-\begin{frame}
-  \frametitle{Spring Force \& Elastic Potential Energy}
+\begin{frame}{Spring Force \& Elastic Potential Energy}
   The spring force $\mb{F}_e$ is the force a compressed or stretched spring
   exerts onto objects connected to it. It obeys Hooke's law:
     
-  \eq{-.2in}{
+  \eq{-.4in}{
     \boxed{\mb{F}_e=-k\mb{x}}
   }
 
-  When applied to the work equation, we can find the work done to
-  compress/stretch a spring:
+  \vspace{-.2in}When applied to the work equation, we can find the work done to
+  displace a spring:
 
-  \eq{-.3in}{
+  \eq{-.45in}{
     W=\int\mb{F}_e\cdot d\mb{x}=-k\int xdx=-\frac{1}{2}kx^2\Big|^{x_2}_{x_1}
     =-\Delta U_e
   }
   
-  where $U_e=\frac{1}{2}kx^2$ is the \textbf{elastic potential energy}
+  \vspace{-.2in}where $U_e=\frac{1}{2}kx^2$ is the
+  \textbf{elastic potential energy}:
+
+  \eq{-.3in}{
+    \boxed{U_e=\frac12kx^2}
+  }
 \end{frame}
 
 
@@ -318,12 +330,15 @@
   integrating the work equation, in that work equals to the change in
   \emph{something}, and we called that potential energy.
 
-  \eq{-.2in}{
-    \boxed{W_\mathrm{net}=-\Delta U}
+  \eq{-.3in}{
+    \boxed{W=-\Delta U}
   }
-
-  $\Delta U$ can be positive or negative depending on the direction of the
-  (conservative) force
+  \begin{itemize}
+  \item\vspace{-.15in}$\Delta U$ can be positive or negative depending on the
+    direction of the (conservative) force
+  \item Positive work \emph{decreases} the related potential energy
+  \item Negative work \enph{increases} the related potential energy
+  \end{itemize}
 \end{frame}
 
 
@@ -366,20 +381,18 @@
 
 
 
-\begin{frame}
-  \frametitle{Isolated Systems and the Conservation of Energy}
-  \begin{itemize}
-  \item\textbf{Isolated system:} a system of objects that does not interact with
-    the surrounding
-  \item ``Interaction'' can be in the form of
-    \begin{itemize}
-    \item Friction
-    \item Exchange of heat
-    \item Sound emission
-    \end{itemize}
-  \item Think of an isolated system as a bunch of objects inside an insulated
-    box
-  \end{itemize}
+\begin{frame}{Isolated Systems and the Conservation of Energy}
+  An \textbf{isolated system} is a system of objects that does not interact with
+  the surrounding
+%  \begin{itemize}
+%  \item ``Interaction'' can be in the form of
+%    \begin{itemize}
+%    \item Friction
+%    \item Exchange of heat
+%    \item Sound emission
+%    \end{itemize}
+    Think of an isolated system as a bunch of objects inside an insulated box.
+%  \end{itemize}
   \begin{center}
     \begin{tikzpicture}[scale=.8]
       \fill[pattern=north east lines] (0,0) rectangle(5,4);
@@ -523,20 +536,17 @@
   If there are only conservative forces, mechanical energy (i.e.\ $K+U$) is
   always conserved:
 
-  \eq{-.2in}{
+  \eq{-.4in}{
     \boxed{K +U =K'+U'}
   }
   
-  When there are non-conservative forces, instead of \emph{trying} to isolate
-  the system, we can calculate the work done by them $W_{\textrm{nc}}$ and
-  add it to the total energy of the system
+  \vspace{-.15in}When non-conservative forces are also doing work, instead of
+  \emph{trying} to isolate the system, we can calculate the work done by them
+  $W_{\textrm{nc}}$ and add it to the total energy of the system
     
-  \eq{-.2in}{
+  \eq{-.4in}{
     \boxed{K+U+W_{\textrm{nc}}=K'+U'}
   }
-  
-  %Work done by $W_{\textrm{nc}}$ are usually friction forces,
-  %
 \end{frame}
 
 
@@ -544,14 +554,18 @@
 \begin{frame}{Work By Non-Conservative Force}
   Examples of non-conservative forces include:
   \begin{itemize}
-  \item Kinetic friction
+  \item Work done by these forces are \emph{usually} negative because they
+    oppose the direction of motion
     \begin{itemize}
-    \item $W$ is usually negative
-    \item Converts mechanical energy in the system into sound and heat
+    \item Drag (fluid resistance)
+    \item Kinetic friction
     \end{itemize}
-  \item Applied force
+  \item The work done by these forces may be positive or negative, depending on
+    the problem
     \begin{itemize}
-    \item $W$ may be positive or negative, depending on the problem
+    \item Applied force
+    \item Tension force
+    \item Normal force
     \end{itemize}
   \end{itemize}
   Note that the work-kinetic energy theorem still applies when non-conservative
@@ -559,8 +573,7 @@
 \end{frame}
 
 
-\begin{frame}
-  \frametitle{Example}
+\begin{frame}{Example}
   \textbf{Example 2:} A mass $m$ is dropped from a height of $h$ above the
   equilibrium position of a spring. Set up the equation that determines the
   spring's compression $d$ when the object is instantaneously at rest.
@@ -588,8 +601,7 @@
 %\end{frame}
 
 
-\begin{frame}
-  \frametitle{Energy Diagrams}
+\begin{frame}{Energy Diagrams}
   \begin{itemize}
   \item Plots of potential energy ($U$) vs.\ position for a conservative force
     \begin{center}

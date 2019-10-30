@@ -2,7 +2,7 @@
 
 \mode<presentation>
 {
-  \usetheme{Singapore}
+  \usetheme{metropolis}
   \setbeamersize{text margin left=.5cm,text margin right=.5cm}
 %  \setbeamertemplate{navigation symbols}{} % suppress nav bar
 %  \setbeamercovered{transparent}
@@ -12,7 +12,8 @@
 \usepackage{siunitx}
 \usepackage{tikz}
 \usepackage{mathpazo}
-\usepackage[scaled]{helvet}
+%\usepackage{unicode-math}
+%\usepackage[scaled]{helvet}
 \usepackage{xcolor,colortbl}
 
 \sisetup{
@@ -20,13 +21,13 @@
   per-mode=symbol
 }
 
-\usetikzlibrary{decorations.pathmorphing,patterns}
+%\usetikzlibrary{decorations.pathmorphing,patterns}
 
 
 \title{Topic 4: Momentum, Impulse and Collisions}
 \subtitle{Advanced Placement Physics}
 \author[TML]{Dr.\ Timothy Leung}
-\institute{Olympiads School}
+\institute{Olympiads School, Toronto, ON, Canada}
 \date{Novemver 23, 2019}
 
 \newcommand{\pic}[2]{\includegraphics[width=#1\textwidth]{#2}}
@@ -47,7 +48,7 @@
   its \emph{velocity}. This is the ``quantity of motion'' referred to by
   Newton.
 
-  \eq{-.2in}{
+  \eq{-.4in}{
     \boxed{\mb{p}=m\mb{v}}
   }
   \begin{center}
@@ -71,27 +72,21 @@
   Starting with the familiar form of Newton's second law of motion with constant
   $m$, we can find out how $\Delta\mb{p}$ relates to $\mb{F}$:
  
-  \eq{-.2in}{
+  \eq{-.3in}{
     \sum\mb{F}=m\mb{a}=m\frac{d\mb{v}}{dt}=\frac{d(m\mb{v})}{dt}
     =\frac{d\mb{p}}{dt}
   }
 
-  In fact, this is the general form of Newtons second law of motion:
+
+  \vspace{-.15in}In fact, this is the general form of Newtons second law of
+  motion:
   \textbf{net external force on an object is the rate of change of its momentum}
 
-  \eq{-.2in}{
+  \eq{-.25in}{
     \boxed{\mb{F}_{\textrm{net}}=\frac{d\mb{p}}{dt}}
   }
 
-  $\mb{F}_\mathrm{net}=m\mb{a}$ is just a special case
-%  \item Momentum is conserved (i.e.\ $\sum\mb{p}$ constant) when the net force
-%    on an object or a system of objects is zero.
-%  \item Internal forces do not contribute to net force, in that case:
-%
-%    \eq{-.2in}{
-%      \sum_i\mb{p}_i(t_1)=\sum_i\mb{p}_i(t_2)
-%    }
-%  \end{itemize}
+  \vspace{-.15in}$\mb{F}_{\textrm{net}}=m\mb{a}$ is just a special case
 \end{frame}
 
 
@@ -102,8 +97,8 @@
     \boxed{\mb{F}_{\textrm{net}}=\frac{d\mb{p}}{dt}}
   }
   \begin{itemize}
-  \item Momentum is conserved (i.e.\ $\sum\mb{p}$ constant) when the net force
-    on an object or a system of objects is zero.
+  \item Momentum is conserved (i.e.\ $\sum\mb{p}$ constant) when the net
+    \emph{external} force on an object or a system of objects is zero
   \item Internal forces do not contribute to net force, in that case:
 
     \eq{-.2in}{
@@ -114,17 +109,17 @@
 
 
 \begin{frame}{Impulse}
-  Let's get this by looking at Newton's second law again. If we rearrange the
-  variables:
+  Rearranging the variables in the general form of Newton's second law:
   
-  \eq{-.2in}{
+  \eq{-.35in}{
     \mb{F}_\mathrm{net}=\frac{d\mb{p}}{dt}\;\rightarrow\;
     \mb{F}_\mathrm{net}dt=d\mb{p}
   }
 
-  We can integrate both sides to get the \textbf{impulse-momentum theorem}.
+  \vspace{-.15in}We can integrate both sides to get the
+  \textbf{impulse-momentum theorem}:
  
-  \eq{-.2in}{
+  \eq{-.25in}{
     \boxed{
       \mb{J}_{\textrm{net}}
       =\int_{t_1}^{t_2}\mb{F}_\mathrm{net}dt
@@ -140,31 +135,35 @@
   $\mb{F}$, $\mb{p}$ and $\mb{J}$ are all vectors, so the integral can be
   evaluated in each of the $x$, $y$ and $z$ axis, i.e., for the $x$ direction:
 
-  \eq{-.2in}{
+  \eq{-.3in}{
     J_x=\int_{t_1}^{t_2}F_xdt=\int dp_x=\Delta p_x
   }
 
-  \textbf{Average force} is a ``force'' that gets the same impulse, i.e.
+  \vspace{-.15in}\textbf{Average force} is a ``force'' that gets the same
+  impulse:
 
-  \eq{-.2in}{
+  \eq{-.3in}{
     \overline{\mb{F}}=\frac{\int_{t_1}^{t_2}\mb{F}dt}{t_2-t_1}
     =\frac{\mb{J}}{\Delta t}
   }
 
-  Note that impulse from each individual force does not depend on whether the
-  object moves. The change in momentum only depends on \emph{net} impulse
+  \vspace{-.15in}Note that impulse from each individual force does not depend
+  on whether the object moves. The change in momentum only depends on
+  \emph{net} impulse
 \end{frame}
 
-\begin{frame}
-  \frametitle{Impulse: An Example}
+
+
+\begin{frame}{Impulse: An Example}
   \textbf{Example 4:} Jim pushes a box with mass \SI{1.}{\kilo\gram} with a
   \SI{5.}{\newton} force for \SI{10}{\second} while the box stays on the same
   place. Find the impulse of the pushing force, friction force, the
   gravitational force, and the net force.
 \end{frame}
 
-\begin{frame}
-  \frametitle{Impulse: Another Example}
+
+
+\begin{frame}{Impulse: Another Example}
   \textbf{Example 5:} Two balls of the same mass are dropped from the same
   height onto the floor. The first ball bounces upwards from the floor
   elastically. The second ball sticks to the floor. The first applies an
@@ -178,8 +177,9 @@
   \end{enumerate}
 \end{frame}
 
-\begin{frame}
-  \frametitle{Conservation of Momentum}
+
+
+\begin{frame}{Conservation of Momentum}
   \begin{itemize}
   \item From Newton's third law, we know that the action and reaction forces are
     always equal in magnitude and in opposite direction. Thus, their total
@@ -194,8 +194,9 @@
   \end{itemize}
 \end{frame}
 
-\begin{frame}
-  \frametitle{How to Solve Conservation of Momentum Problem}
+
+
+\begin{frame}{How to Solve Conservation of Momentum Problem}
   \begin{enumerate}
   \item Check whether the condition for the conservation of momentum is
     satisfied.
@@ -204,22 +205,14 @@
     direction).
   \item Solve these equations, find the quantity you need to find.
   \end{enumerate}
-%\end{frame}
-%
-%\begin{frame}
-%  \frametitle{Two Remarks}
-%  \begin{itemize}
-%  \item Sometimes, the external force \emph{does} exist, but are too small, or
-%    the time interval of the external force is very short. In these cases, we
-%    can still regard the total momentum as conserved.
   Remember that momentum is a vector. If there is no external force component
   in some direction, then the momentum component in this direction is still
   conserved.
-%  \end{itemize}
 \end{frame}
 
-\begin{frame}
-  \frametitle{Example}
+
+
+\begin{frame}{Example}
   \textbf{Example 6:} Two blocks A and B, both have mass \SI{1.}{\kilo\gram}.
   Block A has velocity \SI{3.}{\metre\per\second} and block B is at rest. Their
   distance is \SI{1.}{\metre}. The surface is has dynamic friction coefficient
@@ -241,8 +234,9 @@
 %  \end{enumerate}
 %\end{frame}
 %
-\begin{frame}
-  \frametitle{Before We Dive Into Some Exercises}
+
+
+\begin{frame}{Before We Dive Into Some Exercises}
   \begin{itemize}
   \item The most typical applications of momentum conservation are collision
     and explosions
@@ -258,8 +252,9 @@
   \end{itemize}
 \end{frame}
 
-\begin{frame}
-  \frametitle{Collision Problem}
+
+
+\begin{frame}{Collision Problem}
   \textbf{Example 7:} Two objects with equal mass are heading toward each
   other with equal speeds, undergo a head-on collision. Which one of the
   following statement is correct?
@@ -271,8 +266,9 @@
   \end{enumerate}
 \end{frame}
 
-\begin{frame}
-  \frametitle{Conservation of Momentum Example}
+
+
+\begin{frame}{Conservation of Momentum Example}
   \textbf{Example 8:} Two astronauts, each of mass \SI{75}{\kilo\gram}, are
   floating next to each other in space, outside the space shuttle. One of them
   pushes the other through a distance of \SI{1.}{\metre} (about an arm's
@@ -286,9 +282,9 @@
   \end{enumerate}
 \end{frame}
 
-\begin{frame}
-  \frametitle{Continuous Problems in the Application of Momentum}
 
+
+\begin{frame}{Continuous Problems in the Application of Momentum}
 %  \textbf{Example 9:} A water fountain sprays water with a flow of
 %  \SI{30}{L/min}. Suppose the water has no initial velocity, find the impulse
 %  of the pushing force in $1$ hour and estimate the pushing force, assuming the
@@ -309,8 +305,9 @@
   \end{enumerate}
 \end{frame}
 
-\begin{frame}
-  \frametitle{Another Space Example}
+
+
+\begin{frame}{Another Space Example}
   \textbf{Example 11:} A rocket for mining the asteroid belt is designed like a
   large scoop. It is approaching asteroids at a velocity of
   \SI{e4}{\metre\per\second}. The asteroids are much smaller than the rocket.
@@ -327,8 +324,8 @@
 \end{frame}
 
 
-\begin{frame}
-  \frametitle{Example}
+
+\begin{frame}{Example}
   \textbf{Example 12:} A ball is dropped from a height $h$. It hits the ground
   and bounces up with a momentum loss of $10\%$ due to the impact. The maximum
   height it will reach is:
@@ -340,8 +337,9 @@
   \end{enumerate}
 \end{frame}
 
-\begin{frame}
-  \frametitle{Conservation of Energy Example}
+
+
+\begin{frame}{Conservation of Energy Example}
   \textbf{Example 13:} A simple pendulum has a bob of mass \SI{2}{\kilo\gram}
   hanging on a cord of length \SI{1}{\metre}. Suppose the pendulum is raised
   until it is horizontal (and angular displacement of \ang{90}) and then
@@ -353,9 +351,10 @@
   \item\SI{4.43}{\metre\per\second}
   \end{enumerate}
 \end{frame}
- 
-\begin{frame}
-  \frametitle{Conservation of Energy Example}
+
+
+
+\begin{frame}{Conservation of Energy Example}
   \textbf{Example 14:} A toy firing a ball vertically consists of a vertical
   spring which is compressed by \SI{.10}{\metre}. A force of \SI{10.}{\newton}
   is needed to hold the spring at that compression. If a ball of mass
@@ -372,8 +371,7 @@
 
 \section{Elastic Collisions}
 
-\begin{frame}
-  \frametitle{Classifications of Collisions}
+\begin{frame}{Classifications of Collisions}
   \begin{itemize}
   \item Elastic Collision:
     \begin{itemize}
@@ -395,8 +393,9 @@
   \end{itemize}
 \end{frame}
 
-\begin{frame}
-  \frametitle{Elastic Collision}
+
+
+\begin{frame}{Elastic Collision}
   If two objects 1 and 2 of mass $m_1$ and $m_2$ and initial velocities
   $v_{1,i}$ and $v_{2,i}$ collide elastically, their final velocities will be:
   
@@ -411,17 +410,15 @@
   }
 \end{frame}
 
-\begin{frame}
-  \frametitle{Elastic Collision Example}
-
+\begin{frame}{Elastic Collision Example}
   \textbf{Example 15:} Blocks A and B have the same mass; A hits B with a speed
   of \SI{5.}{\metre\per\second} while B is initially at rest. If the collision
   is elastic, what would be the final speed of these two objects?
 \end{frame}
 
 
-\begin{frame}
-  \frametitle{Elastic Collision Example}
+
+\begin{frame}{Elastic Collision Example}
   \textbf{Example 16:} Blocks A and B with the same mass; A has a velocity
   \SI{3.}{\metre\per\second} to the east while B has \SI{2}{\metre\per\second}
   to the west. If the collision is elastic, after the collision, what would the
@@ -429,25 +426,23 @@
 \end{frame}
 
 
-\begin{frame}
-  \frametitle{Elastic Collision Example}
-  
+
+\begin{frame}{Elastic Collision Example}
   \textbf{Example 17:} Throw a ball to a really big wall, when the ball reaches
   the wall, it has a velocity \SI{10}{\metre\per\second} toward the wall. If
   the collision is elastic, what would the final velocity of the ball be?
 \end{frame}
 
 
-\begin{frame}
-  \frametitle{Elastic Collision Example}
+
+\begin{frame}{Elastic Collision Example}
   \textbf{Example 18:} Throw a ball with a velocity \SI{4.}{\metre\per\second}
   toward a train with a velocity \SI{40}{\metre\per\second} toward the ball.
   If the collision is elastic, what would the final velocity of the ball be?
 \end{frame}
 
 
-\begin{frame}
-  \frametitle{Inelastic Collision: Calculating Energy Loss}
+\begin{frame}{Inelastic Collision: Calculating Energy Loss}
   \textbf{Example 19:} Two blocks A and B with mass \SI{2.}{\kilo\gram}, block
   A hits B with velocity \SI{4.}{\metre\per\second} while B is at rest.
   \begin{enumerate}[(a)]

@@ -2,7 +2,7 @@
 
 \mode<presentation>
 {
-  \usetheme{Singapore}
+  \usetheme{metropolis}
   \setbeamersize{text margin left=0.75cm,text margin right=1cm}
 %  \setbeamertemplate{navigation symbols}{} % suppress nav bar
 %  \setbeamercovered{transparent}
@@ -13,9 +13,11 @@
 %\usepackage{graphicx}
 \usepackage{tikz}
 \usepackage{mathpazo}
-\usepackage[scaled]{helvet}
+%\usepackage[scaled]{helvet}
 \usepackage{xcolor,colortbl}
 %\usepackage{hyperref}
+
+\setmonofont{Liberation Mono}
 
 \sisetup{
   number-math-rm=\mathnormal,
@@ -25,7 +27,7 @@
 \title{Topic 5: Center of Mass}
 \subtitle{Advanced Placement Physics}
 \author[TML]{Dr.\ Timothy Leung}
-\institute{Olympiads School}
+\institute{Olympiads School, Toronto, ON, Canada}
 \date{November 30, 2019}
 
 \newcommand{\pic}[2]{\includegraphics[width=#1\textwidth]{#2}}
@@ -132,8 +134,6 @@
 \begin{frame}{Complicating Things Further}{Many Point Masses}
   If we increase the number of point masses along the $x$-axis, our problem can
   become much more complicated (although still not devastatingly so)
-
-  \vspace{.1in}
   \begin{center}
     \begin{tikzpicture}
       \draw[->] (-4,0)--(4,0) node[pos=1,right]{$x$};
@@ -145,11 +145,10 @@
     \end{tikzpicture}
   \end{center}
   
-  Difficulties really arises when there are many masses in the system in 2D or
-  3D:
-    
-  \vspace{-.1in}
+  \vspace{-.1in}Difficulties really arises when there are many masses in the
+  system in 2D or 3D:
   \begin{center}
+    \vspace{-.2in}
     \begin{tikzpicture}
       \draw[->] (-3,0)--(3,0) node[pos=1,right]{$x$};
       \draw[->] (0,-1.5)--(0,1.5) node[pos=1,above]{$y$};
@@ -390,14 +389,14 @@
   \vspace{-.1in}The integral in the numerator is the sum of the momentum of all
   the masses in the system ($\mb{p}_\mathrm{net}$) which means that we have
 
-  \eq{-.27in}{
+  \eq{-.4in}{
     \mb{p}_\mathrm{net}=m\mb{v}_{\textrm{CM}}
     }
 
-  \vspace{-.1in}Taking the derivative of $\mb{p}_\mathrm{net}$ relates force
+  \vspace{-.2in}Taking the derivative of $\mb{p}_\mathrm{net}$ relates force
   and acceleration at the CM as well:
     
-  \eq{-.2in}{
+  \eq{-.3in}{
     \mb{F}_\mathrm{net}=\frac{d\mb{p}_\mathrm{net}}{dt}
     =m\frac{d\mb{v}_{\textrm{CM}}}{dt}=m\mb{a}_{\textrm{CM}}
   }\end{frame}

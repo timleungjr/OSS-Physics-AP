@@ -131,20 +131,20 @@
 \end{frame}
 
 
-\begin{frame}
-  \frametitle{Example Problem}
-  \framesubtitle{A Blast From the Past}
-  This problem can get you started to remember how to do these problems, but it
-  is a bit too easy for AP Physics.
-  
-  \vspace{.2in}\textbf{Example 1:} In old-style television picture tubes and
-  computer monitors (cathode ray tubes), light is produced when fast-moving
-  electrons collide with phosphor molecules on the surface of the screen. The
-  electrons (mass $m=\SI{9.1e-31}{kg}$) are accelerated from rest in the
-  electron ``gun'' at the back of the vacuum tube. Find the velocity of an
-  electron when it exits the gun after experiencing an electric force of
-  \SI{5.8e-15}{N} over a distance of \SI{3.5}{mm}.
-\end{frame}
+%\begin{frame}
+%  \frametitle{Example Problem}
+%  \framesubtitle{A Blast From the Past}
+%  This problem can get you started to remember how to do these problems, but it
+%  is a bit too easy for AP Physics.
+%  
+%  \vspace{.2in}\textbf{Example 1:} In old-style television picture tubes and
+%  computer monitors (cathode ray tubes), light is produced when fast-moving
+%  electrons collide with phosphor molecules on the surface of the screen. The
+%  electrons (mass $m=\SI{9.1e-31}{kg}$) are accelerated from rest in the
+%  electron ``gun'' at the back of the vacuum tube. Find the velocity of an
+%  electron when it exits the gun after experiencing an electric force of
+%  \SI{5.8e-15}{N} over a distance of \SI{3.5}{mm}.
+%\end{frame}
 
 
 
@@ -171,6 +171,7 @@
 
 
 \begin{frame}{Center of Mass}
+  \vspace{.2in}
   \begin{columns}
     \column{.7\textwidth}
     Newton considered all forces acting at a single point of an object called
@@ -226,18 +227,18 @@
     \boxed{\mb{W}=m\mb{g}}
   }
   \begin{itemize}
-  \item\vspace{-.15in}Near surface of Earth, use $g=\SI{9.81}{m/s^2}$ or
-    $g=\SI{10}{m/s^2}$
+  \item\vspace{-.15in}Near surface of Earth, use $g=\SI{9.81}{m/s^2}$ (or
+    $g=\SI{10}{m/s^2}$ for your AP exam)
   \item You may be asked to find the value of $g$ on some ``unknown planet''.
   \item $\mb{W}$ always points \textbf{down} (the direction of $\mb{W}$ is
     how ``down'' is defined)
-  \item Newton's law of universal gravity:
-
-    \eq{-.3in}{
-      \boxed{W=F_G=\frac{Gm_1m_2}{r^2}}\;\;
-      \text{\normalsize where}\;\;
-      G=\SI{6.67e-11}{N.m^2/kg^2}
-    }
+%  \item Newton's law of universal gravity:
+%
+%    \eq{-.3in}{
+%      \boxed{W=F_G=\frac{Gm_1m_2}{r^2}}\;\;
+%      \text{\normalsize where}\;\;
+%      G=\SI{6.67e-11}{N.m^2/kg^2}
+%    }
   \end{itemize}    
 \end{frame}
 
@@ -327,17 +328,19 @@
   \item Always act in a direction that opposes motion or attempted motion
   \item Depends on:
     \begin{itemize}
-    \item The amount of force the two surfaces are pressed against each other,
-      reflected in the normal force $F_N$
-    \item Type of surfaces reflected by ``coefficient of friction''
-      ($\mu_s$ for static, $\mu_k$ for kinetic), which itself depends on
-    \item The material(s) the surfaces are made of, and
-    \item Whether a lubricant is used
+    \item Normal force $N$: The force the two surfaces are pressed against
+      each other
+    \item Coefficient of friction ($\mu_s$ and $\mu_k$): Snmoothness of the
+      surfaces, which itself depends on
+      \begin{itemize}
+      \item The material(s) the surfaces are made of
+      \item The use of lubricants
+      \end{itemize}
     \end{itemize}
   \end{itemize}
   \begin{center}
     \vspace{-.1in}
-    \pic{.5}{graphics/friction.jpg}
+    \pic{.5}{graphics/friction.png}
   \end{center}
 \end{frame}
 
@@ -351,7 +354,7 @@
   \item Maximum when the object is just about to move
   \end{itemize}
 
-  \eq{-.2in}{
+  \eq{-.35in}{
     \boxed{f_s\leq\mu_sN}
   }
   \begin{center}
@@ -369,13 +372,12 @@
 
 \begin{frame}{Kinetic Friction}
   \textbf{Kinetic friction} between two surfaces is when they are moving
-  relative to each other
-  \begin{itemize}
-  \item $f_k$ is constant along the path of movement as long as $\mb{N}$
-    stays constant
-  \end{itemize}
+  relative to each other. $f_k$ is constant along the path of movement as long
+  as $\mb{N}$ stays constant
 
-  \eq{-.3in}{\boxed{f_k = \mu_kN}}
+  \eq{-.3in}{
+    \boxed{f_k = \mu_kN}
+  }
   \begin{center}
     \begin{tabular}{l|c|c}
       \rowcolor{pink}
@@ -393,11 +395,15 @@
   Kinetic friction coefficient is always lower than the static coefficient,
   otherwise nothing will ever move:
     
-  \eq{-.4in}{\mu_k\leq\mu_s}
+  \eq{-.45in}{
+    \mu_k\leq\mu_s
+  }
 
-  Consider a simple case of a box being pulled along a level floor. The
+  \vspace{-.2in}Consider a simple case of a box being pulled along a level floor. The
   free-body diagram is simple (left). How do the magnitudes of the applied
   force $F_a$ and friction $f$ compare?
+
+  \vspace{-.2in}
   \begin{columns}
     \column{.4\textwidth}
     \begin{center}
@@ -425,43 +431,22 @@
 
 
 \begin{frame}{Drag}
-  \begin{itemize}
-  \item The force opposing to the motion of an object moving in a fluid
-  \item Unlike kinetic friction, drag depend on velocity\footnotemark
-  \item Sources of drag:
-    \begin{itemize}
-    \item\textbf{Form drag} is due to the shape of the object
-    \item\textbf{Skin friction} is due to the friction of the fluid against
-      the surface of the object moving through it
-    \item\textbf{Interference drag} is due to when airflow around one part of
-      an object occupying the same space as the airflow around another part
-      (e.g.\ fuselage and wing of an airplane)
-    \end{itemize}
-  \end{itemize}
-  \footnotetext{Some high-school textbooks incorrectly state that
-    ``air resistance is a force of friction''. While drag does includes a
-    friction component, the primary contribution to drag is due to the shape.}
-\end{frame}
+  \textbf{Drag} (or \textbf{fluid resistance}) is the force opposing to the
+  motion of an object moving in a fluid. Unlike kinetic friction, drag depends
+  heavily on velocity. The direction of the drag $\mb{D}$ moving in a fluid is
+  opposite to the velocity vector, and its magnitude is:
 
-
-
-\begin{frame}{Drag}
-  The direction of the drag force $\mb{F}_d$ moving in a fluid is opposite to
-  the velocity vector, and its magnitude is:
-
-  \eq{-.2in}{
-    F_d=\frac{1}{2}\rho V_\infty^2A_\mathrm{ref}C_d
-  }
-  
+  \eq{-.4in}{
+    D=\frac{1}{2}\rho V_\infty^2A_\mathrm{ref}C_d
+  }  
   \begin{center}
-    \begin{tabular}{l|c|l}
+    \begin{tabular}{l|c|c}
       \rowcolor{pink}
       \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
-      Air resistance (Drag) & $F_d$  & \si{\newton} (newtons)\\
-      Density of the fluid & $\rho$ & \si{\kg/\m^3}
-      (kilograms per meters cubed)\\
-      Freestream fluid velocity & $V_\infty$ & \si{\m/\s} (meters per second) \\
-      Reference area   & $A_\mathrm{ref}$ & \si{m^2} (meters squared) \\
+      Magnitude of drag force & $D$  & \si{\newton}\\
+      Density of the fluid & $\rho$ & \si{\kg/\m^3}\\
+      Free-stream fluid velocity & $V_\infty$ & \si{\m/\s}\\
+      Reference area   & $A_\mathrm{ref}$ & \si{m^2}\\
       Drag coefficient & $C_d$ & (no unit)
     \end{tabular}
   \end{center}
@@ -590,7 +575,7 @@
   The spring force $F_e$ is the force a compressed or stretched spring
   exerts onto objects connected to it. It obeys Hooke's Law:
   
-  \eq{-.2in}{
+  \eq{-.4in}{
     \mb{F}_e=-k\mb{x}
   }
   where $\mb{x}$ is the relative displacement of the ends of the spring.
@@ -602,10 +587,11 @@
 
 \begin{frame}{Spring Force}
   \begin{center}
-    \pic{.3}{graphics/spring-example1.png}
+    \pic{.28}{graphics/spring-example1.png}
   \end{center}
   \begin{itemize}
-  \item As the object falls onto the spring, the spring begins to compress
+  \item\vspace{-.15in}As the object falls onto the spring, the spring begins to
+    compress
   \item As the spring compresses, the spring force (pointing up!) increases
     linearly (Hooke's law)
   \item At some point, the spring force balances the weight of the block
@@ -621,10 +607,10 @@
 
 \begin{frame}{Spring Force}
   \begin{center}
-    \pic{.3}{graphics/spring-example1.png}
+    \pic{.28}{graphics/spring-example1.png}
   \end{center}
   \begin{itemize}
-  \item Solving this problem using dynamics is difficult, because:
+  \item\vspace{-.15in}Solving this problem using dynamics is difficult, because:
     \begin{itemize}
     \item Spring force scales linearly with \emph{displacement}, but
     \item Net force scales linearly with \emph{acceleration} (2nd time
@@ -644,7 +630,7 @@
   over the entire surface area $S$ to find the total force $\mb{B}$ the fluid
   exerts on the object.
   \begin{center}
-    \pic{.25}{graphics/rock_fbvectors.jpg}
+    \pic{.25}{graphics/rock_fbvectors.png}
   \end{center}
 \end{frame}
 
