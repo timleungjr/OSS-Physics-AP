@@ -20,6 +20,8 @@
 \setmonofont{Liberation Mono}
 \setlength{\parskip}{0pt}
 \setlength{\itemsep}{0pt}
+\renewcommand{\baselinestretch}{1}
+
 \sisetup{
   number-math-rm=\mathnormal,
   per-mode=symbol
@@ -44,23 +46,19 @@
 
 
 \begin{frame}{Files to Download}
+  Please download the following files from the school website if you have not
+  already done so:
   \begin{itemize}
-  \item\texttt{PhysAP-06-rotMotion-print.pdf}--The ``print version'' of the
-    slides for this topic. If you must print, I recommend printing 4 slides per
-    page.
-  \item\texttt{PhysAP-07-Homework.pdf} Homework problems for Topics 6 and 7.
+  \item\texttt{PhysAP-06-rotMotion-print.pdf}---The ``print version'' of the
+    class slides for this topic.
+  \item\texttt{PhysAP-06-Homework.pdf}---Homework problems for this topic.
   \end{itemize}
+  \vspace{.1in}Please download/print the PDF file for the class slides before
+  each class. There is no point copying notes that are already on the slides.
+  Instead, focus on things that aren't necessarily on the slides. If you wish
+  to print the slides, we recommend printing 4 slides per page.
 \end{frame}
 
-
-%\begin{frame}
-%  \frametitle{Today's Plan}
-%  \begin{enumerate}
-%  \item Take up questions from Classes 3 and 4 homework
-%  \item Go over this week's slides (it will take more than one day)
-%  %\item Time permitting: take up questions from Class 1 and 2 (calculus)
-%  \end{enumerate}
-%\end{frame}
 
 
 \section{Polar Coordinates}
@@ -92,7 +90,7 @@
       \end{itemize}
     \item Cartesian and polar coordinates are related by:
 
-      \vspace{-.45in}{\large
+      \vspace{-.3in}{\large
         \begin{align*}
           x&=r\cos\theta\\
           y&=r\sin\theta
@@ -103,21 +101,31 @@
 \end{frame}
 
 
-%\begin{frame}{Cylindrical Coordinates in 3D}
-%  We can extend the coordinate system into 3D. This is called the
-%  \textbf{cylindrical coordinate system}.
-%  \begin{center}
-%    \begin{tikzpicture}[scale=.5]
-%      \draw[thick,->](0,0)--(-2.5,-2.5)node[pos=1,below]{$x$};
-%      \draw[thick,->](0,0)--(5,0)   node[pos=1,right]{$y$};
-%      \draw[thick,->](0,0)--(0,5)   node[pos=1,above]{$z$};
-%      \draw
-%    \end{tikzpicture}
-%  \end{center}
-%\end{frame}
+\begin{frame}{Cylindrical Coordinates in 3D}
+  \begin{columns}
+    \column{.45\textwidth}
+    \begin{tikzpicture}[scale=.75]
+      \draw[thick,->](0,0)--(-2.5,-2.5)node[pos=1,below]{$x$};
+      \draw[thick,->](0,0)--(5,0)   node[pos=1,right]{$y$};
+      \draw[dashed,fill=green!40,opacity=.4](0,0)--(3,-1.5)
+      node[pos=.6,below left,opacity=1]{$r$}--(3,2.5)
+      node[midway,right,black,opacity=1]{$z$}--(0,4);
+      \fill[black](3,2.5) circle(.1) node[right]{$\mb{P}(r,\theta,z)$};
+      \draw[->] (-1,-1) arc(-110:-45:2) node[midway,below]{$\theta$};
+      \draw[thick,->](0,0)--(0,5) node[pos=1,above]{$z$};
+    \end{tikzpicture}
+
+    \column{.55\textwidth}
+    One way to extend the coordinates coordinate system into 3D. This is called
+    the \textbf{cylindrical coordinate system}. Note that the discussions for
+    this topic focuses on $xy$ plane. Since the $z$-axis is linearly
+    independent of the $xy$ plane, motion along that direction is independent.
+  \end{columns}
+\end{frame}
 
 
 \begin{frame}{Rigid Body Motion}{Angular Position and Angular Velocity}
+  \vspace{.2in}
   \begin{columns}
     \column{.32\textwidth}
     \begin{tikzpicture}[scale=.75]
@@ -136,19 +144,18 @@
     For constant $r$, \textbf{angular position} $\theta$ determines an object's
     position as a function of time:
       
-    \eq{-.3in}{
+    \eq{-.2in}{
       \boxed{\theta=\theta(t)}
     }
     
-    \vspace{-.15in}\textbf{Angular velocity} $\omega$ (or
-    \textbf{angular frequency}) is its time derivative
+    \textbf{Angular velocity} $\omega$ (or \textbf{angular frequency}) is its
+    time derivative
       
-    \eq{-.25in}{
+    \eq{-.2in}{
       \boxed{\omega(t)=\frac{d\theta(t)}{dt}=\dot{\theta}}
     }
 
-    \vspace{-.1in}$\theta$ is measured in \si{radians}, and $\omega$ in
-    \si{rad/\s}
+    $\theta$ is measured in \si{radians}, and $\omega$ in \si{rad/\s}
   \end{columns}
 \end{frame}
 
@@ -156,7 +163,7 @@
 
 \begin{frame}{Rigid Body Motion}{Angular Velocity}
   \begin{columns}
-    \column{.28\textwidth}
+    \column{.35\textwidth}
     \begin{tikzpicture}[scale=.75]
       \draw[->](-3,0)--(3,0) node[pos=1,right]{\footnotesize$x$};
       \draw[->](0,-3)--(0,3) node[pos=1,above]{\footnotesize$y$};
@@ -171,33 +178,66 @@
       \draw(1,0)[->] arc(0:38:1) node[midway,right]{\footnotesize$\theta$};
     \end{tikzpicture}
 
-    \column{.7\textwidth}
+    \column{.65\textwidth}
 
-    Speed $v$ and $\omega$ are related simply by:
+    Velocity $\mb{v}$ and angular velocity $\bm{\omega}$ are related by the
+    cross product with the position vector $\mb{r}$:
 
-    \eq{-.35in}{ \boxed{v=r\omega} }
+    \eq{-.25in}{
+      \boxed{\mb{v}=\bm{\omega}\times\mb{r}}
+    }
+
+    \vspace{-.15in}If you are uncomfortable with the vector notation, the
+    scalar form may be more useful to you:
     
-    \vspace{-.3in}In vector form:
-
-    \eq{-.35in}{ \boxed{\mb{v}=\bm{\omega}\times\mb{r}} }
-    
+    \eq{-.3in}{
+      \boxed{v=r\omega}
+    }    
     \begin{itemize}
-    \item\vspace{-.25in}$\mb{v}$ is always tangent to circle (perpendicular to
-      $\mb{r}$)
-    \item We can also relate $\omega$ to \textbf{frequency} and \textbf{period}
-      of the rotation:
-
-      \eq{-.4in}{
-        \boxed{f=\frac{\omega}{2\pi}}\quad
-        \boxed{T=\frac{2\pi}{\omega}}\quad
-        \boxed{f=\frac{1}{T}}
-      }
-      
-      \vspace{-.15in}$T$ is in seconds (\si{\s}) and $f$ is in hertz
-      (\si{\hertz})
+    \item\vspace{-.25in}$\mb{v}$ is tangent to circle, and
+      perpendicular to $\mb{r}$
+    \item $\bm{\omega}$ is \emph{out of the page} if $\mb{v}$ is
+      counterclockwise, and
+    \item $\bm{\omega}$ is \emph{into the page} if $\mb{v}$ is clockwise
+    \item Visualizing $\bm{\omega}$ will take some practice, but it is
+      mathematically rigorious
     \end{itemize}
   \end{columns}
 \end{frame}
+
+
+
+\begin{frame}{Rigid Body Motion}{Angular Velocity}
+  \begin{columns}
+    \column{.35\textwidth}
+    \begin{tikzpicture}[scale=.75]
+      \draw[->](-3,0)--(3,0) node[pos=1,right]{\footnotesize$x$};
+      \draw[->](0,-3)--(0,3) node[pos=1,above]{\footnotesize$y$};
+      \draw[thick] (0,0) circle(2.5);
+      \begin{scope}[rotate=38]
+        \draw[->] (0,0)--(2.42,0) node[midway,above]{\footnotesize$r$};
+        \draw[fill=red!60] (2.5,0) circle(.08)
+        node[above right]{\footnotesize$(x,y)$};
+        \draw[ultra thick,->](2.5,.08)--(2.5,1.5)
+        node[pos=1,above]{\footnotesize$\mb{v}$};
+      \end{scope}
+      \draw(1,0)[->] arc(0:38:1) node[midway,right]{\footnotesize$\theta$};
+    \end{tikzpicture}
+
+    \column{.65\textwidth}
+    For constant angular velocity $\omega$, the motion is \textbf{periodic}. Its
+    \textbf{frequency} and \textbf{period} are given by:
+
+    \eq{-.3in}{
+      \boxed{f=\frac{\omega}{2\pi}}\quad
+      \boxed{T=\frac{2\pi}{\omega}}\quad
+        \boxed{f=\frac{1}{T}}
+    }
+    
+    $T$ is in seconds (\si{\s}) and $f$ is in hertz (\si{\hertz})
+  \end{columns}
+\end{frame}
+
 
 
 \begin{frame}{Rotating Object Without Slipping}
@@ -232,20 +272,20 @@
   The derivative of $\omega$ with respect to time gives us
   \textbf{angular acceleration}, which has a unit of \si{rad/\second^2}:
 
-  \eq{-.3in}{
-    \boxed{\alpha=\dot{\omega}(t)=\ddot{\theta}}
+  \eq{-.2in}{
+    \boxed{\alpha=\dot{\omega}=\ddot{\theta}}
   }
 
-  \vspace{-.15in}Similar to the relationship between velocity and angular
-  velocity, \textbf{tangential acceleration} $a_\theta$ is related to angular
-  acceleration $\alpha$ by the radius $r$:
+  Similar to the relationship between velocity and angular velocity,
+  \textbf{tangential acceleration} $a_\theta$ is related to angular acceleration
+  $\alpha$ by the radius $r$:
     
-  \eq{-.3in}{
-    \boxed{a_\theta(t)=\dot{v}(t)=r\dot{\omega}(t)=r\alpha}
+  \eq{-.2in}{
+    \boxed{a_\theta(t)=\dot{v}=r\dot{\omega}=r\alpha}
   }
     
-  \vspace{-.2in}For \emph{uniform} circular motion, $\omega$ is constant, and
-  therefore $\alpha=0$
+  For \emph{uniform} circular motion, $\omega$ is constant, and therefore
+  $\alpha_\theta=0$
 \end{frame}
 
 
@@ -352,7 +392,7 @@
 \begin{frame}{Example: Horizontal Motion}
   \begin{columns}
     \column{.4\textwidth}
-    \pic{1}{puck-on-table.jpg}
+    \pic{1}{puck-on-table.png}
     
     \column{.6\textwidth}
     \textbf{Example 2:} In the figure on the left, a mass
@@ -365,7 +405,7 @@
 
 \begin{frame}{Another Example: Exit Ramp}
   \textbf{Example 3:} A car exits a highway on a ramp that is banked at
-  \ang{15} to the horizontal. The exit ramp has a radius of curvature of
+  $15^\circ$ to the horizontal. The exit ramp has a radius of curvature of
   \SI{65}{\metre}. If the conditions are extremely icy and the driver cannot
   depend on any friction to help make the turn, at what speed should the driver
   travel so that the car will not skid off the ramp? What if there is friction?
@@ -519,13 +559,13 @@
   the \textbf{moment arm} $\mb{r}$ and the angle $\phi$ between $\mb{F}_a$ and
   $\mb{r}$:
 
-  \eq{-.3in}{
+  \eq{-.2in}{
     \boxed{\tau=rF_a\sin\phi}
   }
   
-  \vspace{-.1in}In vector form, we use the cross-product:
+  In vector form, we use the cross-product:
 
-  \eq{-.3in}{
+  \eq{-.2in}{
     \boxed{\bm{\tau}=\mb{r}\times\mb{F}_a}
   }
   \begin{center}
@@ -573,19 +613,19 @@
   Just like \textbf{translational equilibrium} is when the force acting on an
   object is zero:
   
-  \eq{-.5in}{
+  \eq{-.3in}{
     \mb{F}=\mb{0}
   }
 
-  \vspace{-.2in}An object is in \textbf{rotational equilibrium} when the
+  An object is in \textbf{rotational equilibrium} when the
   net torque acting on it is zero:
 
-  \eq{-.5in}{
+  \eq{-.3in}{
     \bm{\tau}=\mb{0}
   }
 
-  \vspace{-.2in}Note that it doesn't mean that the object isn't rotating, it
-  just means that the object's rotational state isn't changing, i.e. $\alpha=0$
+  Note that it doesn't mean that the object isn't rotating, it just means that
+  the object's rotational state isn't changing, i.e. $\alpha=0$
 \end{frame}
 
 
@@ -637,20 +677,20 @@
     a distance $r$ from the center (shown on the right). It has an
     \textbf{angular momentum} ($L$) of
     
-    \eq{-.35in}{
+    \eq{-.2in}{
       \boxed{\mb{L}=\mb{r}\times\mb{p}}
     }
     
-    \vspace{-.2in}Expanding the terms in the definition:
+    \vspace{-.1in}Expanding the terms in the definition:
     
-    \eq{-.5in}{
+    \eq{-.4in}{
       \mb{L}=\mb{r}\times(m\mb{v})=m\mb{r}\times(\bm{\omega}\times\mb{r})
       =mr^2\bm{\omega}
     }
     
     \vspace{-.2in}Which gives us:
     
-    \eq{-.4in}{
+    \eq{-.3in}{
       \boxed{\mb{L}=I\bm{\omega}}
     }
     
@@ -672,23 +712,23 @@
 
 
 \begin{frame}{Moment of Inertia}
-  \begin{itemize}
-  \item For a single particle:
-    
-    \eq{-.3in}{
-      \boxed{I=r^2m}
-    }
-  \item A collection of particles:
+  A single particle:
+  
+  \eq{-.2in}{
+    \boxed{I=r^2m}
+  }
 
-    \eq{-.25in}{
-      \boxed{I=\sum r_i^2m_i}
-    }
-  \item Continuous distribution of mass
+  A collection of particles:
 
-    \eq{-.2in}{
-      \boxed{I=\int r^2dm}
-    }
-  \end{itemize}
+  \eq{-.2in}{
+    \boxed{I=\sum r_i^2m_i}
+  }
+
+  Continuous distribution of mass:
+
+  \eq{-.2in}{
+    \boxed{I=\int r^2dm}
+  }
 \end{frame}
 
 
@@ -704,11 +744,11 @@
   \begin{itemize}
   \item Linear and angular momentum have very similar expressions
     
-    \eq{-.25in}{
+    \eq{-.2in}{
       \mb{p}=m\mb{v}\quad\quad\quad \mb{L}=I\bm{\omega}
     }
-  \item Just like $\mb{p}$ describes the overall translational state of a
-    physical system, $\mb{L}$ describes its overall rotational state
+  \item Just as $\mb{p}$ describes the overall \emph{translational} state of a
+    physical system, $\mb{L}$ describes its overall \emph{rotational} state
   \item In that case, momentum of inertia $I$ can be considered an object's
     ``rotational mass''
   \end{itemize}
@@ -718,7 +758,7 @@
 
 \begin{frame}{Conservation of Angular Momentum}
 
-  \eq{-.35in}{
+  \eq{-.1in}{
     \bm{\tau}=\mb{r}\times\mb{F}=\mb{r}\times\frac{d\mb{p}}{dt}
     =\frac{d(\mb{r}\times\mb{p})}{dt}\;\;\longrightarrow\;\;
 %      \tau=rF=rm\frac{dv}{dt}=\frac{d(rmv)}{dt}\quad\longrightarrow\quad
@@ -727,16 +767,16 @@
     \boxed{\bm{\tau} =\frac{d\mb{L}}{dt}}
   }
   \begin{itemize}
-  \item\vspace{-.15in}If the net torque on a system is zero, then the rate of
+  \item If the net torque on a system is zero, then the rate of
     change of angular momentum is zero, and we say that the angular momentum is
     conserved. 
   \item e.g.\ When an ice skater starts to spin and draws his arms inward.
-    Since angular momentum is conserved, a decrease in $r$ means an
-    increase in $\omega$.
+    Since angular momentum is conserved, decreasing $r$ means increasing
+    $\omega$
   \item If moment of inertia $I$ is constant in time, the net torque is given
     by:
 
-    \eq{-.35in}{
+    \eq{-.2in}{
       \boxed{\bm{\tau}=I\bm{\alpha}}
     }
   \end{itemize}
@@ -770,15 +810,14 @@
   of particles, or continuous mass distribution), we sum (or integrate) the
   kinetic energy of the individual particles:
     
-  \vspace{-.4in}{\Large
+  \vspace{-.3in}{\Large
     \begin{align*}
       K&=\sum_i\frac{1}{2}m_iv_i^2=\frac{1}{2}\left(\sum_i m_ir_i^2\right)\omega^2\\
       K&=\int\frac{1}{2}v^2dm=\frac{1}{2}\left(\int r^2dm\right)\omega^2
     \end{align*}
   }
   
-  \vspace{-.1in}It's no surprise that in both case, rotational kinetic energy
-  is given by:
+  It's no surprise that in both case, rotational kinetic energy is given by:
   
   \eq{-.25in}{
     \boxed{K=\frac{1}{2}I\omega^2}
@@ -795,7 +834,7 @@
     \boxed{K=\frac{1}{2}mv_\mathrm{CM}^2+\frac{1}{2}I_\mathrm{CM}\omega^2}
   }
   
-  \vspace{-.1in}In this case, $I_\mathrm{CM}$ is calculated at the center of
+  In this case, $I_\mathrm{CM}$ is calculated at the center of
   mass. For simple problems, we only need to compute rotational kinetic energy
   at the pivot:
 
@@ -803,21 +842,7 @@
     \boxed{K=\frac{1}{2}I_\mathrm{P}\omega^2}
   }
   
-  \vspace{-.1in}In this case, the $I_\mathrm{P}$ is calculated at the pivot.
+  In this case, the $I_\mathrm{P}$ is calculated at the pivot.
   \textbf{IMPORTANT:} $I_\mathrm{CM}\neq I_\mathrm{P}$
 \end{frame}
-%\begin{frame}
-%  \frametitle{Linear vs.\ Angular Motion}
-%  \begin{center}
-%    \begin{tabular}{c|l|l}
-%      & Linear & Angular\\\hline
-%      Equation of Motion &
-%      $\displaystyle \mb{F}_\mathrm{net}=\frac{d\mb{p}}{dt}=m\mb{a}$ &
-%      $\displaystyle \bm{\tau}=\mb{F}\times\mb{r}=\frac{d\mb{L}}{dt}=I\alpha$\\
-%      Momentum & $\mb{p}=m\mb{v}$ & $\mb{L}=m\mb{v}\times\mb{r}$\\
-%      Kinetic Energy & $\displaystyle K=\frac{1}{2}mv^2$ &
-%      $\displaystyle K=\frac{1}{2}I\omega^2$ \\
-%      \end{tabular}
-%  \end{center}
-%\end{frame}
 \end{document}
