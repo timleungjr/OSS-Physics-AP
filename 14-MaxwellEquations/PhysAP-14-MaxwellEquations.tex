@@ -1,48 +1,48 @@
 \documentclass[12pt,aspectratio=169]{beamer}
 
-\mode<presentation>
-{
-  \usetheme{Singapore}
- %\setbeamersize{text margin left=.6cm,text margin right=.6cm}
+\usetheme{metropolis}
+\setbeamersize{text margin left=.6cm,text margin right=.6cm}
 %  \setbeamertemplate{navigation symbols}{} % suppress nav bar
 %  \setbeamercovered{transparent}
-}
+
 \usefonttheme{professionalfonts}
 \usepackage{graphicx}
 \usepackage{tikz}
 \usepackage{amsmath}
 \usepackage{mathpazo}
-\usepackage[scaled]{helvet}
 \usepackage{xcolor,colortbl}
 \usepackage{siunitx}
 \usepackage{hyperref}
 %\usepackage[siunitx]{circuitikz} % to draw circuits!
+
+\setmonofont{Ubuntu Mono}
+\setlength{\parskip}{0pt}
+\renewcommand{\baselinestretch}{1}
 
 \sisetup{
   number-math-rm=\mathnormal,
   per-mode=symbol
 }
 
-\title{Topic 13: Maxwell's Equations}
+\title{Topic 14: Maxwell's Equations}
 \subtitle{Advanced Placement Physics}
-\author[TML]{Dr.\ Timothy Leung}
-\institute{Olympiads School}
-%\date{Summer 2018}
-\date{Winter 2019}
+\author{Dr.\ Timothy Leung}
+\institute{Olympiads School, Toronto, ON, Canada}
+\date{March 2020}
 
 \newcommand{\pic}[2]{\includegraphics[width=#1\textwidth]{#2}}\newcommand{\mb}[1]{\mathbf{#1}}
 \newcommand{\eq}[2]{\vspace{#1}{\Large\begin{displaymath}#2\end{displaymath}}}
-\newcommand{\protip}[1]{
-  \begin{center}
-    \fbox{
-      \begin{minipage}{.95\textwidth}
-        {\footnotesize
-          \textbf{Protip: }#1
-        }
-      \end{minipage}
-    }
-  \end{center}
-}
+%\newcommand{\protip}[1]{
+%  \begin{center}
+%    \fbox{
+%      \begin{minipage}{.95\textwidth}
+%        {\footnotesize
+%          \textbf{Protip: }#1
+%        }
+%      \end{minipage}
+%    }
+%  \end{center}
+%}
 
 \begin{document}
 
@@ -51,28 +51,26 @@
 \end{frame}
 
 
-%\section[Intro]{Introduction}
+\section[Intro]{Introduction}
 
-%\begin{frame}
-%  \frametitle{Files for You to Download}
-%  Download from the school website:
-%  \begin{enumerate}
-%  \item\texttt{16-maxwellsEquations.pdf}---This
-%    presentation. If you want to print the slides on paper, I recommend
-%    printing 4 slides per page.
-%%  \item\texttt{14-Homework.pdf}---Homework assignment for Class 14.
-%%    Please note the new formatting style
-%  \end{enumerate}
-%
-%  \vspace{.2in}Please download/print the PDF file before each class. When you
-%  are taking notes, pay particular attention to things I say that aren't
-%  necessarily on the slides.
-%\end{frame}
+\begin{frame}{Files for You to Download}
+  Download from the school website:
+  \begin{enumerate}
+  \item\texttt{16-maxwellsEquations.pdf}---This
+    presentation. If you want to print the slides on paper, I recommend
+    printing 4 slides per page.
+%  \item\texttt{14-Homework.pdf}---Homework assignment for Class 14.
+%    Please note the new formatting style
+  \end{enumerate}
+
+  \vspace{.2in}Please download/print the PDF file before each class. When you
+  are taking notes, pay particular attention to things I say that aren't
+  necessarily on the slides.
+\end{frame}
 
 
-\begin{frame}
-  \frametitle{Making Amp\`{e}re's Law Better}
 
+\begin{frame}{Making Amp\`{e}re's Law Better}
   Amp\`{e}re's law, as we know it, only applied to \emph{steady} currents:
 
   \eq{-.1in}{
@@ -86,20 +84,20 @@
   \end{itemize}
 \end{frame}
 
-\begin{frame}
-  \frametitle{Modifying Amp\`{e}re's Law for Unsteady Current}
 
+
+\begin{frame}{Modifying Amp\`{e}re's Law for Unsteady Current}
   \begin{center}
-    \pic{.3}{mag_displacement_fig3.jpg}
+    \pic{.3}{mag_displacement_fig3.png}
   \end{center}
-
-  \vspace{-.15in}Four surfaces bounded by the same circular Amperian loop
+  Four surfaces bounded by the same circular Amperian loop
   (think blowing a soap bubble). Surfaces \numlist{1;2;4} have currents
   penetrating through them, but surface \num{3} does not.
 \end{frame}
 
-\begin{frame}
-  \frametitle{Modifying Amp\`{e}re's Law}
+
+
+\begin{frame}{Modifying Amp\`{e}re's Law}
   This might give a better view of what the ``soap bubble'' looks like
   \begin{center}
     \pic{.5}{bubble.png}
@@ -109,8 +107,8 @@
 \end{frame}
 
 
-\begin{frame}
-  \frametitle{Maxwell's Modification to Amp\`{e}re's Law}
+
+\begin{frame}{Maxwell's Modification to Amp\`{e}re's Law}
   James Clerk Maxwell, in 1860, proposed a modification to Amp\`{e}re's Law
   to make it work with unsteady current as well
 
@@ -122,18 +120,18 @@
   }
 
   Maxwell called the correction term
-  $\displaystyle \varepsilon_0\frac{d\Phi_E}{dt}$ ``displacement current''.
+  $\displaystyle \varepsilon_0\frac{d\Phi_E}{dt}$
+  \textbf{displacement current}.
   \begin{itemize}
-  \item The word ``displacement'' has historical roots, but no real physical
-    meaning
+  \item The word ``displacement'' has historical roots, but no physical meaning
   \item However, ``current'' means that the effect of changing the electric
     flux is indistinguishable from real currents in producing magnetic field
   \end{itemize}
 \end{frame}
 
 
-\begin{frame}
-  \frametitle{Maxwell's Equations}
+
+\begin{frame}{Maxwell's Equations}
   \begin{itemize}
   \item Maxwell recognized the relationship between electricity and
     magnetism in \textbf{Gauss's law}, \textbf{Faraday's law} and
@@ -144,8 +142,7 @@
 \end{frame}
 
 
-\begin{frame}
-  \frametitle{Maxwell's Equations in Integral Form}
+\begin{frame}{Maxwell's Equations in Integral Form}
   Maxwell's equations can be expressed in its integral form, which is how we
   have studied the equations in the first place:
 
@@ -166,8 +163,7 @@
 
 
 
-\begin{frame}
-  \frametitle{Maxwell's Equations in Vacuum}
+\begin{frame}{Maxwell's Equations in Vacuum}
   \begin{columns}
     \column{.35\textwidth}
     
@@ -193,8 +189,8 @@
 \end{frame}
 
 
-\begin{frame}
-  \frametitle{Maxwell's Equations in Differential Form}
+
+\begin{frame}{Maxwell's Equations in Differential Form}
   \framesubtitle{For Simplicity, in a Vacuum}
   \begin{columns}
 
@@ -221,12 +217,12 @@
       represent two set of second order partial differential equations (one for
       each field), the solution of which represents a traveling wave
     \end{itemize}
-    
   \end{columns}
 \end{frame}
 
-\begin{frame}
-  \frametitle{Electromagnetic (EM) Wave}
+
+
+\begin{frame}{Electromagnetic (EM) Wave}
   Maxwell's equations show that an ``electromagnetic wave'' must exist. In a
   simple case where electric and magnetic fields only vary in
   $x$ and time $t$ only, i.e.\ $\mb{E}=\mb{E}(x,t)$ and $\mb{B}=\mb{B}(x,t)$,
@@ -251,8 +247,9 @@
   }
 \end{frame}
 
-\begin{frame}
-  \frametitle{Electromagnetic (EM) Wave}
+
+
+\begin{frame}{Electromagnetic (EM) Wave}
   But we already have an expression for $\partial B/\partial x$ from
   Amp\`{e}re's law:
 
@@ -280,8 +277,9 @@
   }
 \end{frame}
 
-\begin{frame}
-  \frametitle{Electromagnetic (EM) Wave}
+
+
+\begin{frame}{Electromagnetic (EM) Wave}
   \begin{itemize}
   \item ``Second-order'' means that the equation deals with second derivatives,
     in this case, in $x$ and in $t$.
@@ -297,8 +295,10 @@
     }
   \end{itemize}
 \end{frame}
-\begin{frame}
-  \frametitle{Electromagnetic (EM) Wave}
+
+
+
+\begin{frame}{Electromagnetic (EM) Wave}
   \begin{itemize}
   \item The wave equation shows that disturbances in electric and magnetic
     fields propagate as an electromagnetic wave with a universal speed
@@ -315,17 +315,20 @@
   \end{itemize}
 \end{frame}
 
-\begin{frame}
-  \frametitle{Electromagnetic (EM) Wave}
 
+
+\begin{frame}{Electromagnetic (EM) Wave}
+  A EM wave is considered to be \textbf{polarized} if both $\mb{E}$
+  (and therefore) $\mb{B}$ of the wave are confined to a single plane. The
+  direction of the polarization is the direction of $\mb{E}$.
   \begin{center}
-    \pic{.5}{em-20field.jpg}
+    \pic{.4}{em-20field.png}
   \end{center}
 \end{frame}
 
 
-\begin{frame}
-  \frametitle{``Failure'' of Maxwell's Equation}
+
+\begin{frame}{``Failure'' of Maxwell's Equation}
   A peculiar feature of Maxwell's equation:
   \begin{itemize}
   \item When applying \emph{Galilean transformation} (our classical equation for
@@ -343,8 +346,8 @@
 \end{frame}
 
 
-\begin{frame}
-  \frametitle{Making The Equations Work Again}
+
+\begin{frame}{Making The Equations Work Again}
   Maxwell's equations didn't ``fail''; it was our understanding of space and
   time that needed to change
   \begin{itemize}
@@ -359,8 +362,8 @@
 \end{frame}
 
 
-\begin{frame}
-  \frametitle{Einstein and the Principle of Relativity}
+
+\begin{frame}{Einstein and the Principle of Relativity}
   Einstein's Postulates of Special Relativity:
   \begin{enumerate}
   \item All laws of physics must apply equally in all inertial frames of

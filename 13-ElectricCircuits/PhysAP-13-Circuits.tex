@@ -1,30 +1,31 @@
 \documentclass[12pt,aspectratio=169]{beamer}
 
-\mode<presentation>
-{
-  \usetheme{Singapore}
- %\setbeamersize{text margin left=.6cm,text margin right=.6cm}
-%  \setbeamertemplate{navigation symbols}{} % suppress nav bar
-%  \setbeamercovered{transparent}
-}
+\usetheme{metropolis}
+
 \usefonttheme{professionalfonts}
 \usepackage{graphicx}
 \usepackage{tikz}
 \usepackage{amsmath}
 \usepackage{mathpazo}
-\usepackage[scaled]{helvet}
 \usepackage{xcolor,colortbl}
 \usepackage{siunitx}
 \usepackage[siunitx]{circuitikz} % to draw circuits!
 
-\sisetup{number-math-rm=\mathnormal}
+\setmonofont{Ubuntu Mono}
+\setlength{\parskip}{0pt}
+\renewcommand{\baselinestretch}{1}
 
-\title{Topic 11: Circuits Analysis}
+\sisetup{
+  detect-all,
+  number-math-rm=\mathnormal,
+  per-mode=symbol
+}
+
+\title{Topic 13: Circuits Analysis}
 \subtitle{Advanced Placement Physics}
 \author[TML]{Dr.\ Timothy Leung}
-\institute{Olympiads School}
-%\date{Summer 2018}
-\date{Winter 2019}
+\institute{Olympiads School, Toronto, ON, Canada}
+\date{February 2020}
 
 
 \newcommand{\pic}[2]{\includegraphics[width=#1\textwidth]{#2}}
@@ -38,45 +39,9 @@
   \maketitle
 \end{frame}
 
-
-\section[Intro]{Introduction}
-
-%\begin{frame}
-%  \frametitle{Notice: Tim Will Be Away Next Week}
-%
-%  \begin{center}
-%    \fbox{
-%      \begin{minipage}{.65\textwidth}
-%        Tim will be away for a concert in Ottawa next Saturday (February 17).
-%        There will be a supply teacher. Please be kind! Tim will return to
-%        Olympiads on Sunday, February 18, and will resume teaching this class
-%        on the 24th (class 14).
-%      \end{minipage}
-%    }
-%  \end{center}
-%\end{frame}
-%
-%\begin{frame}
-%  \frametitle{Files for You to Download}
-%  Download from the school website:
-%  \begin{enumerate}
-%  \item\texttt{12-Circuits\_print.pdf}---The print version of this
-%    presentation. If you want to print on paper, I recommend printing 4 pages
-%    per side.
-%  \item\texttt{13-Homework.pdf}---Homework assignment for this class and next
-%    class. The file will be posted along Class 13 slides.
-%  \end{enumerate}
-%
-%  \vspace{.2in}Please download/print the PDF file before each class. There is
-%  no point copying notes that are already printed out for you. Instead, take
-%  notes on things I say that aren't necessarily on the slides.
-%\end{frame}
-
-
 \section{Current}
 
-\begin{frame}
-  \frametitle{Current}
+\begin{frame}{Current}
   We define conventional current as the rate at which positive charges flows
   through a wire, i.e.:
 
@@ -94,8 +59,8 @@
 \end{frame}
 
 
-\begin{frame}
-  \frametitle{Current}
+
+\begin{frame}{Current}
   \begin{itemize}
   \item We now know that in a wire, instead of positive charges flowing in one
     direction, we have, in fact, electrons (negative charges) flowing in the
@@ -110,35 +75,33 @@
 
 \section{Resistors}
 
-
-\begin{frame}
-  \frametitle{Resistivity}
+\begin{frame}{Resistivity}
   The resistivity of a material is proportional to the electric field and
   current density:
 
   \eq{-.3in}{
     \boxed{\mb{E}=\rho\mb{J}}
-    \quad\quad\text{\large in scalar:}\;
+    \quad\quad\text{\large Scalar:}\quad
     \boxed{\rho=\left|\frac{E}{J}\right|}
   }
-
   \begin{center}
-    \begin{tabular}{l|c|l}
+    \begin{tabular}{l|c|c}
       \rowcolor{pink}
       \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
-      Electric field & $\mb{E}$ & \si{\newton/\coulomb} (newtons per coulomb) \\
-      Charge density & $\mb{J}$ & \si{\ampere/m^2} (amperes per metre square) \\
-      Resistivity & $\rho$ & \si{\ohm/\metre} (ohms per metre)
+      Electric field & $\mb{E}$ & \si{\newton/\coulomb} \\
+      Charge density & $\mb{J}$ & \si{\ampere/m^2} \\
+      Resistivity & $\rho$ & \si{\ohm/\metre}
     \end{tabular}
   \end{center}
 \end{frame}
 
-\begin{frame}
-  \frametitle{Resistivity}
+
+
+\begin{frame}{Resistivity}
 
   \eq{-.05in}{
     \boxed{\mb{E}=\rho\mb{J}}
-    \quad\quad\text{\large in scalar:}\;
+    \quad\quad\text{\large Scalar:}\quad
     \boxed{\rho=\left|\frac{E}{J}\right|}
   }
   \begin{itemize}
@@ -151,32 +114,29 @@
 \end{frame}
 
 
-\begin{frame}
-  \frametitle{Resistance of a Conductor}
+
+\begin{frame}{Resistance of a Conductor}
   The resistance of a conductor is proportional to the resistivity $\rho$ and
   its length $L$, and inversely proportional to the cross-sectional area $A$:
 
   \eq{-.2in}{
     \boxed{R = \rho\frac{L}{A}}
   }
-
   \begin{center}
     \begin{tabular}{l|c|l}
       \rowcolor{pink}
       \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
-      Resistance           & $R$    & \si{\ohm} (ohms) \\
+      Resistance           & $R$    & \si{\ohm} \\
       Resistivity          & $\rho$ & \si{\ohm.\metre} (ohm metres) \\
       Length of conductor  & $L$    & \si{\metre} (metres) \\
-      Cross-sectional area & $A$    & \si{\metre^2} (square metres) \\
+      Cross-sectional area & $A$    & \si{\metre^2} (square metres)
     \end{tabular}
   \end{center}
 \end{frame}
 
 
-\begin{frame}
-  \frametitle{Resistance of a Conductor}
-
-  \eq{-.2in}{
+\begin{frame}{Resistance of a Conductor}
+  \eq{-.01in}{
     \boxed{R = \rho\frac{L}{A}}
   }
 
@@ -199,7 +159,7 @@
       \end{tabular}
     \end{center}
     
-    \column{0.5\textwidth}
+    \column{.5\textwidth}
     \begin{center}
       \begin{tabular}{c|c}
         \rowcolor{blue!50}
@@ -222,9 +182,7 @@
 
 \section{Ohm's Law}
 
-\begin{frame}
-  \frametitle{Ohm's Law}
-
+\begin{frame}{Ohm's Law}
   The electric potential difference $V$ across a ``load'' (resistor) equals the
   product of the current $I$ through the load and the resistance $R$ of the
   load.
@@ -232,62 +190,58 @@
   \eq{-.2in}{
     \boxed{V=IR}
   }
-  
-  \vspace{-.2in}
   \begin{center}
-    \begin{tabular}{l|c|l}
+    \begin{tabular}{l|c|c}
       \rowcolor{pink}
       \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
-      Potential difference & $V$    & \si{\volt} (volt) \\
-      Current              & $I$    & \si{\ampere} (ampere) \\
-      Resistance           & $R$    & \si{\ohm} (ohm) \\
+      Potential difference & $V$    & \si{\volt} \\
+      Current              & $I$    & \si{\ampere}\\
+      Resistance           & $R$    & \si{\ohm}
     \end{tabular}
   \end{center}
-
   A resistor is considered ``ohmic'' if it obeys Ohm's law
 \end{frame}
 
 
-\begin{frame}
-  \frametitle{Power Dissipated by a Resistor}
-
+\begin{frame}{Power Dissipated by a Resistor}
   Power is the rate at which work $W$ is done, and from electrostatics, the
-  change in electric potential energy
-  $\Delta E_q$ (i.e.\ the work done!) is proportional to the amount of charge
-  $q$ and the voltage $V$. This gives a very simple expression for power
-  through a resistor:
+  change in electric potential energy $\Delta E_q$ (i.e.\ the work done!) is
+  proportional to the amount of charge $q$ and the voltage $V$. This gives a
+  very simple expression for power through a resistor:
   
   \eq{-.15in}{
-    P=\frac{dW}{dt}=\frac{d(qV)}{dt}=\left(\frac{dq}{dt}\right)V=\boxed{IV}
+    P=\frac{dW}{dt}=\frac{d(qV)}{dt}=\left(\frac{dq}{dt}\right)V
+    \;\rightarrow\;\boxed{P=IV}
   }
+  
   \begin{center}
-    \begin{tabular}{l|c|l}
+    \begin{tabular}{l|c|c}
       \rowcolor{pink}
       \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
-      Power through a resistor    & $P$ & \si{\watt} (watt) \\
-      Current through a resistor  & $I$ & \si{\ampere} (ampere) \\
-      Voltage across the resistor & $V$ & \si{\volt} (volt) \\
+      Power through a resistor    & $P$ & \si{\watt} \\
+      Current through a resistor  & $I$ & \si{\ampere} \\
+      Voltage across the resistor & $V$ & \si{\volt}
     \end{tabular}
   \end{center}
 \end{frame}
 
-\begin{frame}
-  \frametitle{Other Equations for Power}
+
+
+\begin{frame}{Other Equations for Power}
   When we combine Ohm's Law ($V=IR$) with power equation, we get two additional
   expressions for power through a resistor:
 
   \eq{-.2in}{
     \boxed{P=\frac{V^2}{R}}\quad\boxed{P=I^2R}
   }
-  
   \begin{center}
-    \begin{tabular}{l|c|l}
+    \begin{tabular}{l|c|c}
       \rowcolor{pink}
       \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
-      Power      & $P$ & \si{\watt} (watts) \\
-      Voltage    & $V$ & \si{\volt} (volts) \\
-      Resistance & $R$ & \si{\ohm} (ohms) \\
-      Current    & $I$ & \si{\ampere} (amperes) \\
+      Power      & $P$ & \si{\watt} \\
+      Voltage    & $V$ & \si{\volt} \\
+      Resistance & $R$ & \si{\ohm}  \\
+      Current    & $I$ & \si{\ampere}
     \end{tabular}
   \end{center}
 \end{frame}
@@ -295,8 +249,7 @@
 
 \section{Kirchkoff's Laws}
 
-\begin{frame}
-  \frametitle{Kirchkoff's Current Law}
+\begin{frame}{Kirchkoff's Current Law}
   The electric current that flows into any junction in an electric circuit must
   be equal to the current which flows out.
 
@@ -314,12 +267,15 @@
         \fill[black](1,0) circle(0.03);
       \end{tikzpicture}
     \end{center}
+    
     \column{.7\textwidth}
     e.g.\ if there are 4 paths to the junction at the center, with $I_1$ and
     $I_2$ going into the junction, and $I_3$ and $I_4$ coming out, then the
     current law says that
 
-    \eq{-.3in}{I_1+I_2-I_3-I_4=0}
+    \eq{-.3in}{
+      I_1+I_2-I_3-I_4=0
+    }
   \end{columns}
 
   \vspace{.2in}Basically, it means that there cannot be any accumulation of
@@ -328,9 +284,8 @@
 \end{frame}
 
 
-\begin{frame}
-  \frametitle{Kirchkoff's Voltage Law}
 
+\begin{frame}{Kirchkoff's Voltage Law}
   The voltage changes around any closed loop in the circuit must sum to zero,
   no matter what path you take through an electric circuit.
 
@@ -359,10 +314,10 @@
 \end{frame}
 
 
+
 \section{Resistors in Circuits}
 
-\begin{frame}
-  \frametitle{Resistors in Parallel}
+\begin{frame}{Resistors in Parallel}
   \begin{columns}
     \column{.32\textwidth}
     \begin{tikzpicture}
@@ -393,32 +348,32 @@
 \end{frame}
 
 
-\begin{frame}
-  \frametitle{Resistors in Parallel}
-  \framesubtitle{Equivalent Resistance}
+
+\begin{frame}{Resistors in Parallel}{Equivalent Resistance}
   Through applying Ohm's Law and Kirchkoff's laws, we find the equivalent
-  resistance of a parallel circuit, which we have known since Grade 9:
-  \textbf{The inverse of the equivalent resistance for resistors connected in
-    parallel is the sum of the inverses of the individual resistances.}
+  resistance of a parallel circuit, which we have known since Grade 9: The
+  inverse of the equivalent resistance for resistors connected in parallel is
+  the sum of the inverses of the individual resistances.
 
   \eq{-.2in}{
     \boxed{
-      \frac{1}{R_\mathrm{eq}}
+      \frac{1}{R_p}
       =\frac{1}{R_1}+\frac{1}{R_2}+\cdots+\frac{1}{R_N}
     }
   }
   \begin{center}
-    \begin{tabular}{l|c|l}
+    \begin{tabular}{l|c|c}
       \rowcolor{pink}
       \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
-      Equivalent resistance          & $R_\mathrm{eq}$ & \si{\ohm} (ohm) \\
-      Resistance of individual loads & $R_{1,2,3,\cdots,N}$ & \si{\ohm} (ohm) \\
+      Equivalent resistance in parallel & $R_p$ & \si{\ohm} \\
+      Resistance of individual loads    & $R_{1,2,3,\cdots,N}$ & \si{\ohm}
     \end{tabular}
   \end{center}
 \end{frame}
 
-\begin{frame}
-  \frametitle{Resistors in Series}
+
+
+\begin{frame}{Resistors in Series}
   \begin{center}
     \begin{tikzpicture}
       \draw[thick](0,0) to[R=$R_1$,o-] (2,0) to[R=$R_2$] (4,0)
@@ -433,63 +388,62 @@
 
   \vspace{-.15in}And the total voltage drop across all resistor is therefore:
 
-  \eq{-.4in}{V=V_1+V_2+V_3+\cdot=I(R_1+R_2+R_3+\cdots)}
+  \eq{-.3in}{V=V_1+V_2+V_3+\cdot=I(R_1+R_2+R_3+\cdots)}
 \end{frame}
 
-\begin{frame}
-  \frametitle{Resistors in Series}
-  \frametitle{Equivalent Resistance}
-  Again, through applying Ohm's Law and Kirchkoff's laws, we find that when
-  resistors are connected in series: \textbf{the equivalent resistance of loads
-    is the sum of the resistances of the individual loads.}
 
+
+\begin{frame}{Resistors in Series}{Equivalent Resistance}
+  Again, through applying Ohm's Law and Kirchkoff's laws, we find that when
+  resistors are connected in series: the equivalent resistance of loads is the
+  sum of the resistances of the individual loads.
+  
   \eq{-.2in}{
-    \boxed{R_\mathrm{eq}=R_1 + R_2 + \cdots + R_N}
+    \boxed{R_s=\sum_{i=1}^{N}R_i}
   }
   \begin{center}
-    \begin{tabular}{l|c|l}
+    \begin{tabular}{l|c|c}
       \rowcolor{pink}
       \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
-      Equivalent resistance          & $R_\mathrm{eq}$ & \si{\ohm} (ohm) \\
-      Resistance of individual loads & $R_{1,2,3,\cdots,N}$ & \si{\ohm} (ohm) \\
+      Equivalent resistance in series & $R_s$ & \si{\ohm} \\
+      Resistance of individual loads & $R_{1,2,3,\cdots,N}$ & \si{\ohm}
     \end{tabular}
   \end{center}
 \end{frame}
 
 
-\begin{frame}
-  \frametitle{Example Problem (Simple)}
-  A simple circuit analysis problem will involve one voltage source and
-  resistors connected, some in parallel, and some in series. Below is a typical
-  example:
+%\begin{frame}{Example Problem (Simple)}
+%  A simple circuit analysis problem will involve one voltage source and
+%  resistors connected, some in parallel, and some in series. Below is a typical
+%  example:
+%
+%  \vspace{.2in}
+%  \begin{columns}
+%    \column{.4\textwidth}
+%    \begin{tikzpicture}[scale=.8,american voltages]
+%      \draw(0,0) to[R=2<\ohm>](0,2) to[battery=100<\volt>] (0,4) to[short]
+%      (1,4) to [R=10<\ohm>] (3,4)--(3,4.5) to[R=40<\ohm>] (5,4.5)
+%      to[short] (5,4) to[short] (5.5,4)--(5.5,0)--(0,0);
+%      \draw(3,4)--(3,3.5) to[R,l_=10<\ohm>] (5,3.5)--(5,4);
+%      \draw[dashed] (-1.8,0.25) rectangle(0.6,3.75);
+%    \end{tikzpicture}
+%    \column{.6\textwidth}
+%    Two \SI{10}{\ohm} resistors and a \SI{40}{\ohm} resistor are connected as
+%    shown to a \SI{100}{\volt} emf source with internal resistance
+%    \SI{2}{\ohm}. How much power is dissipated by the \SI{40}{\ohm} resistor?
+%    \begin{enumerate}[(A)]
+%    \item\SI{160}{\watt}
+%    \item\SI{40}{\watt}
+%    \item\SI{400}{\watt}
+%    \item\SI{5}{\watt}
+%    \item\SI{500}{\watt}
+%    \end{enumerate}
+%  \end{columns}
+%\end{frame}
 
-  \vspace{.2in}
-  \begin{columns}
-    \column{.4\textwidth}
-    \begin{tikzpicture}[scale=.8,american voltages]
-      \draw(0,0) to[R=2<\ohm>](0,2) to[battery=100<\volt>] (0,4) to[short]
-      (1,4) to [R=10<\ohm>] (3,4)--(3,4.5) to[R=40<\ohm>] (5,4.5)
-      to[short] (5,4) to[short] (5.5,4)--(5.5,0)--(0,0);
-      \draw(3,4)--(3,3.5) to[R,l_=10<\ohm>] (5,3.5)--(5,4);
-      \draw[dashed] (-1.8,0.25) rectangle(0.6,3.75);
-    \end{tikzpicture}
-    \column{.6\textwidth}
-    Two \SI{10}{\ohm} resistors and a \SI{40}{\ohm} resistor are connected as
-    shown to a \SI{100}{\volt} emf source with internal resistance
-    \SI{2}{\ohm}. How much power is dissipated by the \SI{40}{\ohm} resistor?
-    \begin{enumerate}[(A)]
-    \item\SI{160}{\watt}
-    \item\SI{40}{\watt}
-    \item\SI{400}{\watt}
-    \item\SI{5}{\watt}
-    \item\SI{500}{\watt}
-    \end{enumerate}
-  \end{columns}
-\end{frame}
 
 
-\begin{frame}
-  \frametitle{Tips for Solving ``Simple'' Circuit Problems}
+\begin{frame}{Tips for Solving ``Simple'' Circuit Problems}
   \begin{enumerate}
   \item Identify groups of resistors that are in parallel or in series, and
     find their equivalent resistance.
@@ -500,8 +454,9 @@
   \end{enumerate}
 \end{frame}
 
-\begin{frame}
-  \frametitle{Circuits Aren't Always Simple}
+
+
+\begin{frame}{Circuits Aren't Always Simple}
   Some of these problems require you to solve a system of linear equations.
   The following is a simple example with two voltage sources:
   \begin{center}
@@ -523,8 +478,9 @@
   }
 \end{frame}
 
-\begin{frame}
-  \frametitle{A More Difficult Example}
+
+
+\begin{frame}{A More Difficult Example}
   \begin{columns}
     \column{.4\textwidth}
     
@@ -565,8 +521,7 @@
 \end{frame}
 
 
-\begin{frame}
-  \frametitle{This is As Difficult As It'll Get}
+\begin{frame}{This is As Difficult As It'll Get}
   \framesubtitle{And This Is Your Homework}
   \begin{columns}
     \column{.45\textwidth}
@@ -587,6 +542,8 @@
         node[midway,below]{$I_2$};
       }
     \end{tikzpicture}
+
+    
     \column{.55\textwidth}
     \begin{itemize}
     \item To solve this problem, we define a few ``loops'' around the circuit:
@@ -606,10 +563,9 @@
 
 
 
-
 \section{Capacitors in Circuit}
-\begin{frame}
-  \frametitle{Capacitors in Parallel}
+
+\begin{frame}{Capacitors in Parallel}
   \begin{center}
     \begin{tikzpicture}[scale=1.2]
       \draw[thick](0,1)to[short,o-](1,1) to[C=$C_1$] (1,0)to[short,-o](0,0);
@@ -617,79 +573,69 @@
       \draw[thick](3,1)--(5,1) to[C=$C_3\ldots$] (5,0)--(3,0);
     \end{tikzpicture}
   \end{center}
-
-  \vspace{-.1in}
   From the voltage law, we know that the voltage across all the capacitors are
   the same, i.e.\ $V_1=V_2=V_3-\cdots=V$. We can express the total charge
   $Q_\mathrm{tot}$ stored across all the capacitors in terms
   of capacitance and this
   common voltage $V$: 
 
-  \eq{-.4in}{
+  \eq{-.3in}{
     Q_\mathrm{tot}=Q_1+Q_2+Q_3+\cdots=C_1V+C_2V+C_3V+\cdots
   }
   
-  \vspace{-.2in}Factoring out $V$ from each term gives us the equivalent
+  \vspace{-.1in}Factoring out $V$ from each term gives us the equivalent
   capacitance:
 
-  \eq{-.25in}{\boxed{C_\mathrm{eq}=C_1+C_2+\cdots+C_N}}
+  \eq{-.2in}{
+    \boxed{C_p=\sum_i C_i}
+  }
 \end{frame}
 
 
-\begin{frame}
-  \frametitle{Capacitors in Series}
+\begin{frame}{Capacitors in Series}
   Likewise, we can do a similar analysis to capacitors connected in series.
-
-  \vspace{-.15in}
   \begin{center}
     \begin{tikzpicture}[scale=1.2]
       \draw[thick](0,0) to[C=$C_1$,o-] (1.25,0) to[C=$C_2$] (2.5,0)
       to[C=$C_3$,-o] (3.75,0);
     \end{tikzpicture}
   \end{center}
-
-  \vspace{-.15in}
-  The total voltage across these capacitors are the sum of the
-  voltages across each of them, i.e.\ $V_\mathrm{tot}=V_1+V_2+V_3+\cdots$
+  The total voltage across these capacitors are the sum of the voltages across
+  each of them, i.e.\ $V_\mathrm{tot}=V_1+V_2+V_3+\cdots$
   
   \vspace{.1in}We recognize that the charge stored on all the capacitors must
   be the same! We can then write the total voltage in terms of capacitance and
   charge:
 
-  \eq{-.2in}{
+  \eq{-.25in}{
     V_\mathrm{tot}=\frac{Q}{C_1}+\frac{Q}{C_2}+\frac{Q}{C_3}+\cdots
   }
 \end{frame}
 
-\begin{frame}
-  \frametitle{Capacitors in Series}
-  \framesubtitle{Equivalent Capacitance}
+
+
+
+\begin{frame}{Capacitors in Series}{Equivalent Capacitance}
   The inverse of the equivalent capacitance for $N$ capacitors connected in
   series is the sum of the inverses of the individual capacitance.
 
   \eq{-.2in}{
-    \boxed{
-      \frac{1}{C_\mathrm{eq}}
-      =\frac{1}{C_1}+\frac{1}{C_2}+\cdots+\frac{1}{C_N}
-    }
+    \boxed{ \frac{1}{C_s}=\sum_i\frac{1}{C_i} }
   }
   
   Make sure we don't confuse ourselves with resistors.
 \end{frame}
 
-\begin{frame}
-  \frametitle{How Do We Know That Charges Are The Same?}
-  It's actually quite easy to show that the charges across all the capacitors
-  are the same.
 
-  \vspace{-.2in}
+
+\begin{frame}{How Do We Know That Charges Are The Same?}
+  It's simple to show that the charges across all the capacitors are the same
   \begin{center}
     \begin{tikzpicture}[scale=1.5]
       \draw[thick](0,0) to[C=$C_1$,o-] (1.25,0) to[C=$C_2$,-o] (2.5,0);
       \draw[dashed](0.625,-.75) rectangle (1.875,1.2);
     \end{tikzpicture}
   \end{center}
-
   The capacitor plates and the wire connecting them are really one piece of
   conductor. There is nowhere for the charges to leave the conductor, therefore
   when charges are accumulating on $C_1$, $C_2$ must also have the same charge
@@ -697,15 +643,12 @@
 \end{frame}
 
 
+
 \section{R-C Circuits}
 
-
-\begin{frame}
-  \frametitle{Circuits with Resistors and Capacitors}
+\begin{frame}{Circuits with Resistors and Capacitors}
   Now that we have seen how resistors and capacitors behave in a circuit, we
   can look into combining them in to an ``R-C circuit''.
-
-  \vspace{-.2in}
   \begin{center}
     \begin{tikzpicture}[american voltages]
       \draw[thick](0,0)
@@ -714,7 +657,6 @@
       to[C=$C$] (2,0)--(0,0);
     \end{tikzpicture}
   \end{center}
-
   The simplest form is a resistor and capacitor connected in series, and
   then connect to a voltage source. Because of the nature of capacitors, the
   current through the circuit will not be steady as were the case with only
@@ -722,13 +664,11 @@
 \end{frame}
 
 
-\begin{frame}
-  \frametitle{Discharging a Capacitor}
 
+\begin{frame}{Discharging a Capacitor}
   We start the analysis with something even simpler. There is no voltage source,
   and the capacitor is already charged to $V_c=Q_\mathrm{tot}/C$. What happens
   when the current begin to flow?
-
   \begin{columns}
     \column{.3\textwidth}
     \begin{center}
@@ -736,22 +676,22 @@
         \draw[thick](0,0) to[R=$R$] (0,2)--(2,2) to[C=$C$] (2,0)--(0,0);
       \end{tikzpicture}
     \end{center}
+    
     \column{.7\textwidth}
     As current starts to flow, the charge on the capacitor decrease. Over time
     the current decreases, until the capacitor is fully discharged, and current
     stops flowing.
   \end{columns}
 
-  \vspace{.25in}Apply the voltage law for the circuit, and substitute
+  \vspace{.15in}Apply the voltage law for the circuit, and substitute
   the definition of current $I=dQ/dt$ and the voltage across a capacitor
   $V_c=Q/C$:
 
-  \eq{-.2in}{V_c-IR=0\quad\rightarrow\quad -\frac{Q}{C}-R\frac{dQ}{dt}=0}
+  \eq{-.15in}{V_c-IR=0\quad\rightarrow\quad -\frac{Q}{C}-R\frac{dQ}{dt}=0}
 \end{frame}
 
 
-\begin{frame}
-  \frametitle{Discharging a Capacitor}
+\begin{frame}{Discharging a Capacitor}
   Separating the $Q$ terms on the left side of the equation, and leaving
   everything else on the right side, we get:
 
@@ -761,7 +701,7 @@
 
   which we can now integrate and ``exponentiate'':
 
-  \eq{-.35in}{
+  \eq{-.15in}{
     \int\frac{dQ}{Q}=\int\frac{-dt}{RC}
     \;\rightarrow\;
     \ln Q=\frac{-t}{RC} + K
@@ -769,8 +709,8 @@
     Q=e^Ke^{-t/RC}
   }
 
-  \vspace{-.1in}the constant of integration $K$ is the initial charge on the
-  capacitor $Q_\mathrm{tot}$:
+  The constant of integration $K$ is the initial charge on the capacitor
+  $Q_\mathrm{tot}$:
 
   \eq{-.2in}{
     e^K=Q_\mathrm{tot}
@@ -778,8 +718,8 @@
 \end{frame}
 
 
-\begin{frame}
-  \frametitle{Discharging a Capacitor}
+
+\begin{frame}{Discharging a Capacitor}
   The expression of charge across the capacitor is time-dependent:
 
   \eq{-.15in}{\boxed{Q(t)=Q_0e^{-t/\tau}}}
@@ -788,7 +728,7 @@
   capacitor, and $\tau=RC$ is called the \textbf{time constant}. Taking the
   time derivative of $Q(t)$ gives us the current through the circuit:
 
-  \eq{-.25in}{
+  \eq{-.15in}{
     \boxed{I(t)=\frac{dQ}{dt}=I_0e^{-t/\tau}}
   }
 
@@ -796,11 +736,12 @@
   $I_0=Q_\mathrm{tot}/\tau=Q_\mathrm{tot}/RC$.
 \end{frame}
 
-\begin{frame}
-  \frametitle{Charging a Capacitor}
+
+
+\begin{frame}{Charging a Capacitor}
+  \vspace{.2in}
   \begin{columns}
     \column{.3\textwidth}
-    
     \vspace{-.25in}
     \begin{tikzpicture}[american voltages,scale=1.2]
       \draw[thick](0,0)
@@ -808,19 +749,20 @@
       to[R=$R$] (2,2)
       to[C=$C$] (2,0)--(0,0);
     \end{tikzpicture}
+    
     \column{.7\textwidth}
-    In charging up the capacitor, we go back to our original circuit, and
-    apply the voltage law, then substitute the expression for current and
-    voltage across the capacitor:
+    In charging up the capacitor, we go back to our original circuit, and apply
+    the voltage law, then substitute the expression for current and voltage
+    across the capacitor:
 
     \eq{-.15in}{
       V-R\frac{dQ}{dt}-\frac{Q}{C}=0
     }
   \end{columns}
 
-  \vspace{.2in}Again, separating variables, and integrating, we get:
+  Again, separating variables, and integrating, we get:
 
-  \eq{-.3in}{
+  \eq{-.2in}{
     \int\frac{dQ}{CV-Q}=\int\frac{-dt}{RC}
     \;\;\rightarrow\;\;\ln(CV-Q)=\frac{-t}{RC}+K
   }
@@ -828,30 +770,32 @@
 
 
 
-\begin{frame}
-  \frametitle{Charging a Capacitor}
-
+\begin{frame}{Charging a Capacitor}
   ``Exponentiating'' both sides, we have
   
-  \eq{-.3in}{CV-Q=e^Ke^{-t/RC}}
+  \eq{-.2in}{CV-Q=e^Ke^{-t/RC}}
 
-  \vspace{-.15in}To find the constant of integration $K$, we note that at $t=0$,
-  the charge across the capacitor is $0$, and we get
+  To find the constant of integration $K$, we note that at $t=0$, the charge
+  across the capacitor is $0$, and we get
 
-  \eq{-.25in}{e^K=CV=Q_\mathrm{tot}}
+  \eq{-.2in}{e^K=CV=Q_\mathrm{tot}}
 
-  \vspace{-.15in}which is the charge stored in the capacitor at the end. 
-  Substitute this back into the equation:
+  which is the charge stored in the capacitor at the end. Substitute this back
+  into the equation:
 
-  \eq{-.3in}{\boxed{Q(t)=Q_\mathrm{tot}(1-e^{-t/RC})}}
+  \eq{-.2in}{
+    \boxed{Q(t)=Q_\mathrm{tot}(1-e^{-t/RC})}
+  }
 \end{frame}
 
-\begin{frame}
-  \frametitle{Capacitors}
+
+
+
+\begin{frame}{Capacitors}
 
   \eq{-.15in}{\boxed{Q(t)=Q_\mathrm{tot}(1-e^{-t/\tau})}}
 
-  \vspace{-.15in}Charging a capacitor has the same time constant $\tau=RC$ as
+  \vspace{-.1in}Charging a capacitor has the same time constant $\tau=RC$ as
   during discharge. We can also differentiate to find the current through the
   circuit; it is identical to the equation for discharge:
 
@@ -859,15 +803,14 @@
     \boxed{I(t)=\frac{dQ}{dt}=I_0e^{-t/\tau}}
   }
 
-  \vspace{-.1in}where the initial current is given by
-  $I_o=Q_\mathrm{tot}/\tau=V/R$. This makes sense because $V_C(t=0)=0$, and all
-  of the energy must be dissipated through the resistor. Similarly at
-  $I(t=\infty)=0$.
+  where the initial current is given by $I_o=Q_\mathrm{tot}/\tau=V/R$. This
+  makes sense because $V_C(t=0)=0$, and all of the energy must be dissipated
+  through the resistor. Similarly at $I(t=\infty)=0$.
 \end{frame}
 
 
-\begin{frame}
-  \frametitle{Two Small Notes}
+
+\begin{frame}{Two Small Notes}
   \begin{enumerate}
   \item When a capacitor is uncharged, there is no voltage across the plate,
     it acts like a short circuit.
@@ -876,10 +819,10 @@
   \end{enumerate}
 \end{frame}
 
-\begin{frame}
-  \frametitle{A Slightly More Difficult Problem}
+
+
+\begin{frame}{A Slightly More Difficult Problem}
   \begin{center}
-%    \column{.48\textwidth}
     \begin{tikzpicture}[scale=1.2,american voltages]
       \draw[thick] (0,0) to[battery1=12<\volt>,*-*] (0,2) to[R=4<\ohm>] (2,2)
       to[short,*-](2.46,2.3);
@@ -888,14 +831,128 @@
       \draw[thick] (3,0) to[R=8<\ohm>,*-] (3,2);
     \end{tikzpicture}
   \end{center}
-%    \column{.52\textwidth}
   \textbf{Example:} The capacitor in the circuit is initially uncharged. Find
   the current through the battery
   \begin{enumerate}
   \item Immediately after the switch is closed
   \item A long time after the switch is closed
   \end{enumerate}
-%  \end{columns}
 \end{frame}
 
+
+\section{LR Circuits}
+
+\begin{frame}{Circuits with Inductors}
+  \begin{itemize}
+  \item Coils and solenoids in circuits are known as ``inductors'' and have
+    large self inductance $L$
+  \item Self inductance prevents currents rising and falling instantaneously
+  \item A basic circuit containing a resistor and an inductor is called an
+    \textbf{\emph{LR} circuit}:
+    \begin{center}
+      \begin{tikzpicture}[american voltages,scale=1.2]
+        \draw[thick](0,0) to[battery1=$\mathcal{E}_0$,-*] (0,2)
+        to[short,-*](0.5,2);
+        \draw[thick](0.51,2.3) to[short,*-*](1,2)--(1.5,2) to [R=$R$,-*] (3,2)
+        to [L=$L$,-*] (3,0)--(0,0);
+      \end{tikzpicture}
+    \end{center}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Analyzing LR Circuits}
+  \begin{columns}
+    \column{.35\textwidth}
+    \begin{tikzpicture}[american voltages,scale=1.2]
+      \draw[thick](0,0) to[battery1=$\mathcal{E}_0$,-*] (0,2)
+      to[short,-*](0.5,2);
+      \draw[thick](0.51,2.3) to[short,*-*](1,2)--(1.5,2) to [R=$R$,-*] (3,2)
+      to [L=$L$,-*] (3,0)--(0,0);
+    \end{tikzpicture}
+
+    \column{.65\textwidth}
+    Applying Kirchkoff's voltage law:
+
+    \eq{-.2in}{\mathcal{E}_0-IR-L\frac{dI}{dt}=0}
+
+    \vspace{-.1in}We follow the same procedure as charging a capacitor to find
+    the time dependent current:
+
+    \eq{-.2in}{I=\frac{\mathcal{E}_0}{R}\left(1-e^{-Rt/L}\right)}
+
+    \vspace{-.15in} The time constant for an $LR$ circuit is
+    
+    \eq{-.2in}{\tau=\frac{L}{R}}
+  \end{columns}
+\end{frame}
+
+
+
+
+%\begin{frame}
+%  \frametitle{Magnetic Energy}
+%  Just as a capacitor stores energy in its electric field, an inductor coil
+%  carrying a current $I$ stores energy in its magnetic field, given by:
+%
+%  \eq{-.2in}{
+%    \boxed{U_m=\frac{1}{2}LI^2}
+%  }
+%
+%  We can also define a \textbf{magnetic energy density}:
+%
+%  \eq{-.2in}{
+%    \boxed{\eta_m=\frac{B^2}{2\mu_0}}
+%  }
+%\end{frame}
+
+
+\section{LC Circuit}
+
+\begin{frame}{LC Circuit}
+  The final type of circuit in AP Physics is the LC circuit. In its simplest
+  form, the circuit has an inductor and capacitor connected in series:
+  \begin{center}
+    \begin{tikzpicture}[american voltages,scale=1.2]
+      \draw[thick](0,0) to[L=$L$] (0,2)--(2,2) to[C=$C$] (2,0)--(0,0);
+    \end{tikzpicture}
+  \end{center}
+  We apply the Kirchkoff's voltage law:
+  
+  \eq{-.2in}{
+    -V_L-V_C=0
+    \quad\rightarrow\quad
+    L\frac{dI}{dt}+\frac{Q}{C}=0
+  }
+\end{frame}
+
+\begin{frame}{LC Circuits}
+  Since both terms are continuously differentiable, we can differentiate both
+  sides of the equation, which gives:
+
+  \eq{-.2in}{
+    L\frac{d^2I}{dt^2}+\frac{1}{C}\underbrace{\frac{dQ}{dt}}_I=0
+  }
+
+  In fact, the above equation a second-order ordinary differential equation
+  with constant coefficients. The solution to such an eqauation is the simple
+  harmonic motion.
+
+  \eq{-.2in}{
+    \frac{d^2I}{dt^2}+\frac{1}{LC}I=0
+  }
+
+
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{LC Circuit}
+  The current inside of an LC circuit is given by:
+
+  \eq{-.2in}{
+    I(t)=I_0\sin(\omega t + \varphi)\quad\text{where}\quad
+    \omega=\frac{1}{\sqrt{LC}}
+  }
+\end{frame}
 \end{document}
