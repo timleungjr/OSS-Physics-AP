@@ -185,7 +185,7 @@
     \mb{v}=\SI{4.5}{\metre\per\second}\text{ [N $55^\circ$ E]}
   }
   
-  \vspace{-.15in}This method of describing vector is based on the
+  \vspace{-.15in}This approach is based on using the
   \textbf{polar coordinate system}, which is the preferred coordinate system
   for circular motion. In general, polar coordinate system is
   \begin{itemize}
@@ -193,7 +193,7 @@
   \item Complicated when extended into 3D; need to extend to
     \textbf{spherical coordinate system} or the
     \textbf{cylindrical coordinate system}
-  \item Difficult to perform vector arithmetic for rectilinear motion
+  \item Difficult to perform vector arithmetic for \emph{rectilinear} motion
   \end{itemize}
 \end{frame}
 
@@ -530,7 +530,7 @@
 
 \begin{frame}{Definite vs.\ Indefinite Integral}{This Should Be a Review}
   \begin{itemize}
-  \item Integral can be either \textbf{indefinite} or \textbf{definite}
+  \item Integrals can be either \textbf{indefinite} or \textbf{definite}
   \item An ``indefinite'' integral is another function, e.g.\ position
     $\mb{x}(t)$ as a function of time is found by integrating velocity
     $\mb{v}(t)$:
@@ -538,7 +538,7 @@
     \eq{-.2in}{
       \mb{x}(t)=\int\mb{v}(t)dt=\cdots+\mb{C}
     }
-  \item A \emph{constant of integration} $\mb{C}$ is added to the integral
+  \item A \textbf{constant of integration} $\mb{C}$ is added to the integral
     $\mb{x}(t)$. It is obtained through applying ``initial condition'' to the
     problem.
   \end{itemize}
@@ -588,6 +588,7 @@
 \end{frame}
 
 
+
 \begin{frame}{Position}
   \textbf{Position} is a vector describing the location of an object in a
   coordinate system (usually \emph{Cartesian}; can also be \emph{polar},
@@ -604,6 +605,7 @@
   \item The vector is a function of time $t$
   \end{itemize}
 \end{frame}
+
 
 
 \begin{frame}{Displacement}
@@ -624,12 +626,40 @@
 \end{frame}
 
 
+\begin{frame}{Distance}{Similar to Displacement}
+  \begin{columns}
+    \column{.7\textwidth}
+    \textbf{Distance} $s$ is a quantity that is \emph{related} to displacement.
+    \begin{itemize}
+    \item The length of the path taken when an object moves from $\mb{d}_1$ to
+      $\mb{d}_2$
+    \item A scalar quantity
+    \item Always positive, i.e.\ $s\geq 0$
+    \item Although the magnitude of the displacement vector is also a scalar,
+      it is not necessarily the same as distance
+    \item In general, $s\geq |\Delta\mb{d}|$
+    \end{itemize}
+    
+    \column{.3\textwidth}
+    \begin{tikzpicture}[scale=.5]
+      \draw[->](0,0)--(6,0) node[pos=1,right]{$x$};
+      \draw[->](0,0)--(0,8) node[pos=1,above]{$y$};
+      \draw[->,red,very thick] (0,0)--(4,1) node[midway,above]{$\mb{d}_1$};
+      \draw[->,red,very thick] (0,0)--(2,6) node[midway,left]{$\mb{d}_2$};
+      \draw[->,blue,very thick](4,1)--(2,6) node[midway,right]{$\Delta\mb{d}$};
+      \draw[thick,dash dot,<->] (4,1)..controls (6,5) and (5,7)..(2,6)
+      node[midway,right]{$s$};
+    \end{tikzpicture}
+  \end{columns}
+\end{frame}
+
+
+
 \begin{frame}{Instantaneous Velocity}
   \framesubtitle{Time Derivative of Position}
-  If position $\mb{x}$ is a continuously differentiable function in time $t$,
-  then velocity $\mb{v}$ can be found at any time $t$. The
-  \textbf{instantaneous velocity} of an object is the rate of change of its
-  position vector w.r.t.\ time:
+  If position $\mb{x}$ is a differentiable function in time $t$, then velocity
+  $\mb{v}$ can be found at any time $t$. The \textbf{instantaneous velocity} of
+  an object is the rate of change of its position vector w.r.t.\ time:
 
   \eq{-.2in}{
     \boxed{\mb{v}(t)= \frac{d\mb{x}(t)}{dt}}
@@ -637,7 +667,7 @@
   
   Since $\mb{x}$ has $x$, $y$ and $z$ components in the
   $\bm{\hat{\imath}}$, $\bm{\hat{\jmath}}$ and $\bm{\hat{k}}$ directions that
-  are linearly independent, we can take the derivative with respect to time in
+  are linearly independent, we can take the derivative w.r.t.\ time in
   every component:
 
   \eq{-.3in}{
@@ -651,8 +681,7 @@
 
 \begin{frame}{Integrating Velocity to Get Position/Displacement}
   If instantaneous velocity $\mb{v}$ is the rate of change of position
-  $\mb{x}$ with respect to time $t$, then $\mb{x}$ is the time integral of
-  $\mb{v}$:
+  $\mb{x}$ w.r.t. time $t$, then $\mb{x}$ is the time integral of $\mb{v}$:
   
   \eq{-.2in}{
     \mb{x}(t)=\int\mb{v}(t)dt + \mb{x}_0
@@ -691,6 +720,43 @@
 \end{frame}
 
 
+
+\begin{frame}{Instantaneous Speed}
+  \textbf{Intantaneous speed} the rate of change of \emph{distance} w.r.t.\
+  time:
+
+  \eq{-.2in}{
+    \boxed{
+      v=\frac{ds}{dt}
+    }
+  }
+  \begin{itemize}
+  \item Since distance of any path must always be positive $s>0$, instantaneous
+    speed must also be positive
+  \item Instantaneous speed $v$ is the magnitude of the instantaneous velocity
+    vector $\mb{v}$
+  \end{itemize}
+\end{frame}
+
+
+
+\begin{frame}{Average Speed}
+  Likewise, \textbf{average speed} is similar to average velocity: it is the
+  distance travelled over a finite time interval.
+  
+  \eq{-.2in}{
+    \boxed{
+      \overline{v}=\frac{s}{\Delta t}
+    }
+  }
+
+%  \begin{itemize}
+%
+%  \end{itemize}
+\end{frame}
+
+
+
 \begin{frame}{Path}
   Sometimes instead of explicitly describing the position $x=x(t)$ and $y=y(t)$,
   the path of an object can be given in terms of $x$ coordinate $y=y(x)$, while
@@ -704,8 +770,8 @@
 
 
 \begin{frame}{Instantaneous Acceleration}
-  In the same way that velocity rate of change in position,
-  \textbf{acceleration} is the rate of change in velocity:
+  In the same way that velocity is the rate of change in position w.r.t.\ time,
+  \textbf{acceleration} is the rate of change in velocity w.r.t.\ time:
 
   \eq{-.2in}{
     \boxed{\mb{a}(t)= \frac{d\mb{v}(t)}{dt}=\frac{d^2\mb{x}(t)}{dt^2}}
@@ -722,7 +788,7 @@
 
 \begin{frame}{Special Notation When Differentiating With Time}
   Physicists and engineers use a special notation when the derivative is
-  taken with respect to \emph{time}, by writing a dot above the variable:
+  taken w.r.t.\ \emph{time}, by writing a dot above the variable:
   \begin{itemize}
   \item Velocity:
 
@@ -759,6 +825,27 @@
 \end{frame}
 
 
+\begin{frame}{For Those Who Are Curious}
+  The time derivative of acceleration is called \textbf{jerk}, with a unit
+  of \si{\metre\per\second^3}:
+
+  \eq{-.2in}{
+    \mb{j}=\frac{d\mb{a}}{dt}=\frac{d^2\mb{v}}{dt^2}=\frac{d^3\mb{x}}{dt^3}
+  }
+
+  The time derivative of jerk is \textbf{jounce}, or \textbf{snap}, with a
+  unit of \si{\metre\per\second^4}:
+  
+  \eq{-.2in}{
+    \mb{s}=\frac{d\mb{j}}{dt}=\frac{d^2\mb{a}}{dt^2}=\frac{d^3\mb{v}}{dt^3}
+    =\frac{d^4\mb{x}}{dt^4}
+  }
+  
+  The next two derivatives of snap is facetiously called \textbf{crackle} and
+  \textbf{pop}, but these higher derivatives of position vector are rarely seen.
+  We will not be using these in AP Physics.
+\end{frame}
+
 
 \section{Motion Graphs}
 
@@ -773,8 +860,8 @@
 \end{frame}
 
 
-\begin{frame}{Motion Graphs}
-  \framesubtitle{Uniform Motion (Constant Velocity)}
+
+\begin{frame}{Uniform Motion}
   \begin{center}
     \begin{tikzpicture}[scale=.5]
       \draw[->,thick] (0,0)--(4.5,0) node[pos=1,right]{$t$};
@@ -794,7 +881,6 @@
       \draw[red!80!black,ultra thick](0,0)--(4,0);
     \end{tikzpicture}
   \end{center}
-
   \begin{itemize}
   \item Constant velocity has a straight line in the $d-t$ graph
   \item The slope of the $d-t$ graph is the velocity $v$
@@ -804,14 +890,13 @@
 \end{frame}
 
 
-\begin{frame}{Motion Graphs}
-  \framesubtitle{Uniform (Constant) Acceleration}
+\begin{frame}{Uniform Acceleration}
   \begin{center}
     \begin{tikzpicture}[scale=.5]
       \draw[->,thick] (0,0)--(4.5,0) node[pos=1,right]{$t$};
       \draw[->,thick] (0,-1.5)--(0,4.5) node[pos=1,above]{$d$};
-      \draw[smooth,samples=10,domain=0:4,red!80!black,ultra thick]
-      plot({\x},{.35*(\x-1)*(\x-1)+1});
+      \draw[smooth,samples=20,domain=0:4,red!80!black,ultra thick]
+      plot({\x},{0.35*(\x-1)*(\x-1)+1});
     \end{tikzpicture}
     \hspace{.15in}
     \begin{tikzpicture}[scale=.5]
@@ -839,8 +924,7 @@
 \end{frame}
 
 
-\begin{frame}{Motion Graphs}
-  \framesubtitle{Simple Harmonic Motion}
+\begin{frame}{Simple Harmonic Motion}
   For oscillatory motion, or \textbf{harmonic motion}, neither position,
   velocity nor acceleration are constant:
 
@@ -898,28 +982,6 @@
       displacement is positive
     \end{itemize}
   \end{columns}
-\end{frame}
-
-
-
-\begin{frame}{For Those Who Are Curious}{We are not using these in AP Physics}
-  The time derivative of acceleration is called \textbf{jerk}, with a unit
-  of \si{\metre\per\second^3}:
-
-  \eq{-.2in}{
-    \mb{j}=\frac{d\mb{a}}{dt}=\frac{d^2\mb{v}}{dt^2}=\frac{d^3\mb{x}}{dt^3}
-  }
-
-  The time derivative of jerk is \textbf{jounce}, or \textbf{snap}, with a
-  unit of \si{\metre\per\second^4}:
-  
-  \eq{-.2in}{
-    \mb{s}=\frac{d\mb{j}}{dt}=\frac{d^2\mb{a}}{dt^2}=\frac{d^3\mb{v}}{dt^3}
-    =\frac{d^4\mb{x}}{dt^4}
-  }
-  
-  The next two derivatives of snap is facetiously called \textbf{crackle} and
-  \textbf{pop}, but these higher derivatives of position vector are rarely seen.
 \end{frame}
 
 

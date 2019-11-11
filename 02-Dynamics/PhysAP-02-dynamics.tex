@@ -19,6 +19,7 @@
 \usepackage{bm}
 
 \sisetup{
+  detect-all=true,
   number-math-rm=\mathnormal,
   per-mode=symbol
 }
@@ -54,13 +55,9 @@
 
 \section{Newton's Laws}
 
-\begin{frame}
-  \frametitle{Newton's First Law}
-
-  \begin{exampleblock}{First Law of Motion}
-    \textbf{An object at rest or in uniform motion will remain at rest or
-      in uniform motion unless acted on by a net external force.}
-  \end{exampleblock}
+\begin{frame}{First Law of Motion}
+  \textbf{An object at rest or in uniform motion will remain at rest or
+    in uniform motion unless acted on by a net external force.}
   \begin{itemize}
   \item Uniform motion: constant velocity
   \item An object ``at rest'' is also in uniform motion with $\mb{v}=\mb{0}$
@@ -79,11 +76,9 @@
 \end{frame}
 
 
-\begin{frame}{Newton's Second Law}
-  \begin{exampleblock}{Second Law}
-    \textbf{The sum of the forces acting on an object is proportional to
-      its mass and its acceleration}.
-  \end{exampleblock}
+\begin{frame}{Second Law of Motion}
+  \textbf{The sum of the forces acting on an object is proportional to
+    its mass and its acceleration.}
 
   \eq{-.4in}{
     \boxed{\mb{F}_{\textrm{net}}=\Sigma\mb{F}=m\mb{a}}
@@ -97,28 +92,20 @@
       Acceleration & $\mb{a}$  & \si{m/s^2}
     \end{tabular}
   \end{center}
-
-  \vspace{-.15in}\textcolor{red!80!black}{This equation is also a
-    ``special case'' that assumes that mass is constant}
+  \textcolor{red!80!black}{This equation is also a ``special case'' that
+    assumes that mass is constant}
   %\item Actually, this isn't exactly what Newton said. He wrote that force is
   %  the rate of change of the ``quantity of motion'' (momentum). We will be
   %  looking into that in the next topic.
 \end{frame}
 
 
-\begin{frame}{Newton's Third Law}
-
-  \begin{center}
-    \fbox{
-      \begin{minipage}{.8\textwidth}
-        \textbf{For every action there is an equal and opposite reaction.}
-      \end{minipage}
-    }
-  \end{center}
+\begin{frame}{Third Law of Motion}
+  \textbf{For every action there is an equal and opposite reaction.}
  
-  For every action force on an object (B) due to another object (A), there is a
-  reaction force which is equal in magnitude but opposite in direction, on
-  object (A), due to object (B):
+  \vspace{.1in}For every action force on an object (B) due to another object
+  (A), there is a reaction force which is equal in magnitude but opposite in
+  direction, on object (A), due to object (B):
 
   \eq{-.3in}{
     \boxed{\mb{F}_{\textrm{A on B}} = -\mb{F}_{\textrm{B on A}}}
@@ -224,13 +211,13 @@
   Gravity is the force of attraction between all objects with mass
     
   \eq{-.2in}{
-    \boxed{\mb{W}=m\mb{g}}
+    \boxed{\mb{w}=m\mb{g}}
   }
   \begin{itemize}
   \item\vspace{-.15in}Near surface of Earth, use $g=\SI{9.81}{m/s^2}$ (or
     $g=\SI{10}{m/s^2}$ for your AP exam)
   \item You may be asked to find the value of $g$ on some ``unknown planet''.
-  \item $\mb{W}$ always points \textbf{down} (the direction of $\mb{W}$ is
+  \item $\mb{w}$ always points \textbf{down} (the direction of $\mb{w}$ is
     how ``down'' is defined)
 %  \item Newton's law of universal gravity:
 %
@@ -253,13 +240,13 @@
         \draw [fill=pink,thick] (0,0) rectangle (1.5,1);
         \fill (.75,.5) circle(2pt);
         \draw [->,very thick] (.75,.5)--(.75,-.5)
-        node[pos=1,below]{$\mb{W}$};
+        node[pos=1,below]{$\mb{w}$};
         \draw [->,very thick] (.75,.5)--(.75,1.5)
         node[pos=1,above]{$\mb{N}$};
       \end{tikzpicture}
     \end{center}
     \begin{displaymath}
-      \mb{W}=m\mb{g}=-\mb{N}
+      \mb{w}=m\mb{g}=-\mb{N}
     \end{displaymath}
     
     \column{.75\textwidth}
@@ -268,7 +255,7 @@
     \item Always \textbf{perpendicular} to the contact surface
     \item\textbf{Special case:} When an object is on a horizontal surface
       with no additional applied force, the magnitude of the normal force is
-      equal to the magnitude of the weight of the object, i.e.\ $N=W$
+      equal to the magnitude of the weight of the object, i.e.\ $N=w$
     \end{itemize}
   \end{columns}
 \end{frame}
@@ -289,13 +276,13 @@
           \draw[->](3.5,.5)--(3.5,1) node[pos=1,above]{$y$};
           \draw[thick] (-1,0)--(4,0);
           \draw[fill=pink] (0,0) rectangle (3,2);
-          \fill(1.5,1) circle (2pt) node[right]{\footnotesize\textbf{CG}};
+          \fill(1.5,1) circle (2pt) node[right]{\footnotesize\textbf{CM}};
           \draw [->,thick,dotted,red] (1.5,1)--(1.5,-.5)
-          node[pos=1,right]{$W\cos\theta$};
+          node[pos=1,right]{$w\cos\theta$};
           \draw [->,thick,dotted,red] (1.5,1)--(.45,1)
-          node[pos=1,left]{$W\sin\theta$};
+          node[pos=1,left]{$w\sin\theta$};
           \draw [->,ultra thick,red] (1.5,1)--(.45,-.5)
-          node[pos=1,below]{$\mb{W}$}
+          node[pos=1,below]{$\mb{w}$}
           node[pos=.3,below right]{$\theta$};
         \draw [->,ultra thick] (1.5,1)--(1.5,2.5) node[pos=1,above]{$\mb{N}$};
         \draw [->,ultra thick] (1.5,1)--(2.3,1) node[pos=1,right]{$\mb{f}$};
@@ -305,11 +292,11 @@
     
     \column{.65\textwidth}
     \begin{itemize}
-    \item If on a slope: $N=W\cos\theta$
+    \item If on a slope: $N=w\cos\theta$
       \begin{itemize}
       \item $N$ decreases as ramp angle $\theta$ increases
       \end{itemize}
-    \item $W$ has a component along the ramp $W\sin\theta$ that wants to slide
+    \item $w$ has a component along the ramp $w\sin\theta$ that wants to slide
       the block down.
     \item Friction force $f$ opposes the motion
       \begin{itemize}
@@ -321,8 +308,8 @@
 \end{frame}
 
 
-\begin{frame}
-  \frametitle{Friction}
+
+\begin{frame}{Friction}
   \begin{itemize}
   \item A force that opposes the sliding of two surface against one another
   \item Always act in a direction that opposes motion or attempted motion
@@ -411,7 +398,7 @@
         \draw [very thick] (-1,0)--(2.5,0);
         \draw [fill=pink,thick] (0,0) rectangle (1.5,1);
         \fill (.75,.5) circle(2pt);
-        \draw[->,very thick](.75,.5)--(.75,-.5) node[pos=1,below]{$\mb{F}_g$};
+        \draw[->,very thick](.75,.5)--(.75,-.5) node[pos=1,below]{$\mb{w}$};
         \draw[->,very thick](.75,.5)--(.75,1.5) node[pos=1,above]{$\mb{F}_N$};
         \draw[->,very thick](.75,.5)--(2.,.5) node[pos=1,right]{$\mb{F}_a$};
         \draw[->,very thick](.75,.5)--(.1,.5) node[pos=1,left]{$\mb{f}$};
@@ -432,9 +419,7 @@
 
 \begin{frame}{Drag}
   \textbf{Drag} (or \textbf{fluid resistance}) is the force opposing to the
-  motion of an object moving in a fluid. Unlike kinetic friction, drag depends
-  heavily on velocity. The direction of the drag $\mb{D}$ moving in a fluid is
-  opposite to the velocity vector, and its magnitude is:
+  motion of an object moving in a fluid, with magnitude:
 
   \eq{-.4in}{
     D=\frac{1}{2}\rho V_\infty^2A_\mathrm{ref}C_d
@@ -450,7 +435,6 @@
       Drag coefficient & $C_d$ & (no unit)
     \end{tabular}
   \end{center}
-  
   {\footnotesize Drag coefficient depends on the shape and surface smoothness
     of the object. For blunt objects $A_\mathrm{ref}$ is the frontal area; for
     streamlined objects $A_\mathrm{ref}$ is the planform (top-view) area\par}
@@ -521,8 +505,7 @@
 
 
 
-%\begin{frame}
-%  \frametitle{Example Problem}
+%\begin{frame}{Example Problem}
 %  \textbf{Example 8:} To move a \SI{45}{kg} wooden crate across a wooden floor
 %  ($\mu=0.20$), you tie a rope onto the crate and pull on the rope. While you
 %  are pulling the rope with a force of \SI{115}{N}, it makes an angle of
@@ -535,8 +518,7 @@
 %  \end{center}
 %\end{frame}
 %
-%\begin{frame}
-%  \frametitle{Example Problem}
+%\begin{frame}{Example Problem}
 %  \textbf{Example 9:} You are holding an \SI{85}{kg} trunk at the top of a ramp
 %  that slopes from a moving van to the ground, making an angle of \ang{35} with
 %  the ground. You lose your grip and the trunk begins to slide.
@@ -548,8 +530,7 @@
 %  \end{itemize}
 %\end{frame}
 %
-%\begin{frame}
-%  \frametitle{Example: Vertical Motion}
+%\begin{frame}{Example: Vertical Motion}
 %  \textbf{Example 10:} A \SI{55}{kg} person is standing on a scale in an
 %  elevator. If
 %  the scale is calibrated in \emph{newtons}, what is the reading on the scale
@@ -682,16 +663,14 @@
 
 
 \begin{frame}{Free Body Diagrams}
-
-  \textbf{Step 1:} Draw a ``big dot'' to represent the CG of the
+  \textbf{Step 1:} Draw a ``big dot'' to represent the CM of the
   object (This makes sense, because we assume that all masses are point masses
   anyway)
-
   \begin{center}
       \begin{tikzpicture}[scale=.8]
         \draw [gray!50,thick] (-1,0)--(4,0);
         \draw [gray!50,fill=pink!30,thick] (0,0) rectangle (3,2);
-        \fill[black] (1.5,1) circle(.1) node[above]{\footnotesize CG};
+        \fill[black] (1.5,1) circle(.1) node[above]{\footnotesize CM};
         \uncover<2>{
           \draw[->](3.5,.5)--(4.5,.5) node[pos=1,right]{\tiny $x$};
           \draw[->](3.5,.5)--(3.5,1.5) node[pos=1,above]{\tiny $y$};
@@ -711,6 +690,7 @@
 \end{frame}
 
 
+
 \begin{frame}{Free Body Diagrams}
   \textbf{Step 3:} Identify all the forces are acting on the object
   \begin{itemize}
@@ -724,7 +704,7 @@
       \fill[black] (1.5,1) circle(.1);
         \draw[->](3.5,.5)--(4.5,.5) node[pos=1,right]{\tiny $x$};
         \draw[->](3.5,.5)--(3.5,1.5) node[pos=1,above]{\tiny $y$};
-        \draw [->,very thick] (1.5,1)--(1.5,-.5) node[pos=1,below]{$\mb{W}$};
+        \draw [->,very thick] (1.5,1)--(1.5,-.5) node[pos=1,below]{$\mb{w}$};
         \draw [->,very thick] (1.5,1)--(1.5,2.5) node[pos=1,above]{$\mb{N}$};
         \draw [->,very thick] (1.5,1)--(3.1,1) node[pos=1,below]{$\mb{F}_a$};
         \draw [->,very thick] (1.5,1)--(.75,1) node[pos=1,left]{$\mb{f}$};
@@ -738,7 +718,7 @@
   \textbf{Step 4:} The free-body diagram itself does not require drawing the
   object itself
   \begin{itemize}
-  \item Make sure the arrows representing the forces originate at the CG
+  \item Make sure the arrows representing the forces originate at the CM
   \item It is generally a good practice to approximately scale the lengths of
     the arrows to the magnitude of the forces
   \end{itemize}
@@ -748,7 +728,7 @@
       \fill[black] (1.5,1) circle(.1);
       \draw[->](3.5,.5)--(4.5,.5) node[pos=1,right]{\tiny $x$};
       \draw[->](3.5,.5)--(3.5,1.5) node[pos=1,above]{\tiny $y$};
-      \draw [->,very thick] (1.5,1)--(1.5,-.5) node[pos=1,below]{$\mb{W}$};
+      \draw [->,very thick] (1.5,1)--(1.5,-.5) node[pos=1,below]{$\mb{w}$};
       \draw [->,very thick] (1.5,1)--(1.5,2.5) node[pos=1,above]{$\mb{N}$};
       \draw [->,very thick] (1.5,1)--(3.1,1) node[pos=1,below]{$\mb{F}_a$};
       \draw [->,very thick] (1.5,1)--(.75,1) node[pos=1,left]{$\mb{f}$};
@@ -774,8 +754,7 @@
 \end{frame}
 
 
-%\begin{frame}
-%  \frametitle{Example Problem}
+%\begin{frame}{Example Problem}
 %  A more difficult static problem may involve two surfaces with two different
 %  friction coefficients. For example, a ladder leaning on a wall.
 %
@@ -799,8 +778,7 @@
 
 \section{Multi-Body Problems}
 
-\begin{frame}
-  \frametitle{Applying Newton's Third Law on Connected Bodies}
+\begin{frame}{Applying Newton's Third Law on Connected Bodies}
   \begin{center}
     \pic{.7}{graphics/worldslongestroadtrainwithpowertrailer8.jpg}
   \end{center}
@@ -814,8 +792,7 @@
 
 
 
-\begin{frame}
-  \frametitle{Solving Connected-Bodies Problems}
+\begin{frame}{Solving Connected-Bodies Problems}
   To solve a connected-bodies problem, you can follow these procedures:
   \begin{enumerate}
   \item Draw a FBD on each of the objects
@@ -836,8 +813,7 @@
 
 
 
-\begin{frame}
-  \frametitle{Connected Bodies: Example}
+\begin{frame}{Connected Bodies: Example}
   \textbf{Example:} A tractor-trailer pulling two trailers starts from rest
   and accelerates with an acceleration $a$ on a straight, level road.
   The mass of the truck itself (T) is  %$m_T$, while the masses of the are
@@ -845,14 +821,14 @@
   \SI{5450}{kg}, the
   mass of the first trailer (A) is \SI{31500}{kg}, and the mass of the second
   trailer (B) is \SI{19600}{kg}.
-  \begin{itemize}
+  \begin{enumerate}
   \item What magnitude of force must the truck generate in order to accelerate
     the entire vehicle?
   \item What magnitude of force must each of the trailer hitches withstand
     while the vehicle is accelerating?
-  \end{itemize}
-  For this problem we will assume that frictional forces are negligible in
-  comparison with the forces needed to accelerate the large masses.
+  \end{enumerate}
+  Assume that frictional forces are negligible in comparison with the forces
+  needed to accelerate the large masses.
 \end{frame}
 
 
@@ -889,8 +865,8 @@
 
 
 \section{Pulley Problems}
-\begin{frame}
-  \frametitle{Example Problem: Atwood Machine}
+
+\begin{frame}{Example Problem: Atwood Machine}
   An \textbf{Atwood machine} is made of two objects connected by a rope that
   runs over a pulley. The pulley allows the direction of force and direction
   of motion to change between two objects.
@@ -979,8 +955,7 @@
 %\end{frame}
 
 
-%\begin{frame}
-%  \frametitle{A More Typical Problem}
+%\begin{frame}{A More Typical Problem}
 %  \textbf{Example 14:}
 %  More typically, an Atwood machine problem is one where two objects are
 %  sliding on a surface. These surfaces may have (or may not) have friction.
