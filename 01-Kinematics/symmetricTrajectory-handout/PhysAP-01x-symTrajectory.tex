@@ -1,0 +1,117 @@
+\documentclass{../../../Physics.12/ossphys}
+\usepackage{bm}
+\setlength{\parskip}{1.2em}
+
+\begin{document}
+\headfoot{AP Physics}{Symmetric Trajectory}
+
+\begin{center}
+  \vspace{.3in}{\Large
+    \textbf{Symmetric Projectile Trajectory}
+  }
+\end{center}
+
+A \textbf{symmetric trajectory} is a special case of projectile motion where an
+object is launched at an angle of $\theta$ (between \ang{0} and \ang{90}) above
+the horizontal\footnote{This may be obvious, but any angles \emph{below} the 
+  horizontal will never have a symmetric trajectory.} with an initial speed
+$v_i$, and then lands at the same height, as shown below in Figure~\ref{sym}.
+Examples may include hitting a golf ball towards the hole, or shooting a bullet
+towards ahorizontal target\footnote{Shooting a bullet towards a horizontal
+  target always require an upward angle because of gravity}. The equations for
+symmetric trajectory is \emph{not} included in the AP Exam equation sheet.
+If you need these equations during the exams, you will need to derive them
+during the exam. To derive the equations, we use the $x$-axis for the
+horizontal direction and $y$-axis for the vertical.
+\begin{figure}[ht]
+  \begin{center}
+    \begin{tikzpicture}
+      \draw[->](0,0)--(7,0) node[pos=1,right]{$x$};
+      \draw[->](0,0)--(0,2) node[pos=1,above]{$y$};
+      \draw[dotted,domain=0:6,thick] plot (\x, {1.2*\x-.2*\x*\x});
+      \draw[ultra thick,->](0,0)--(.75,.9)node[pos=1,above]{$v_i$};
+      \draw[very thick,red!80!black,->]
+      (0,0)--(0,.9)node[midway,left]{$\mb{v}_{y0}$};
+      \draw[very thick,blue!80!black,->]
+      (0,0)--(.75,0)node[midway,below]{$\mb{v}_x$};
+      \draw[->](.5,0)arc(0:52:.5) node[midway,right]{$\theta$};
+    \end{tikzpicture}
+  \end{center}
+  \vspace{-.2in}
+  \caption{Symmetric project trajectory}
+  \label{sym}
+\end{figure}
+
+The initial velocity $\mb{v}_i$ can be resolved into its components, also shown
+in Figure~\ref{sym}:
+\begin{align*}
+  \mb{v}_x   &=v_i\cos\theta\hat{\bm{\imath}}\\
+  \mb{v}_{y0}&=v_i\sin\theta\hat{\bm{\jmath}}
+\end{align*}
+$v_x$ remains constant during the motion, as there are no forces acting in the
+$x$ direction, and therefore no acceleration. In the $y$ direction, there is an
+acceleration due to gravity $a_y=-g$.
+
+\textbf{Maximum height} $H$: Apply the kinematic equation in the $y$-direction.
+Recognizing that at maximum height $H=y-y_0$, the vertical component of
+velocity is zero $v_y=0$:
+\begin{align*}
+  v_y^2 &= v_{y0}^2 + 2a_y(y-y_0)\\
+  0  &= (v_i\sin\theta)^2-2gH
+\end{align*}
+Solving for $H$, we get the maximum height equation:
+\begin{equation}
+  \boxed{H=\frac{v_i^2\sin^2\theta}{2g}}
+\end{equation}
+\newpage
+
+\textbf{Total time of flight} $t_\mathrm{max}$: We apply the kinematic equation
+in the $y$ direction. When the object lands at the same height, the final
+velocity is the same in magnitude and opposite in direction as the initial
+velocity, i.e.\  $v_{y2}=-v_{y1}=-v_i\sin\theta$:
+\begin{align*}
+  v_y &=v_{y0}+a_yt\\
+  -v_i\sin\theta &=v_i\sin\theta -g t_\mathrm{max}
+\end{align*}
+Solving for $t_\mathrm{max}$ we have:
+\begin{equation}
+  \boxed{t_\mathrm{max}=\frac{2v_i\sin\theta}{g}}
+  \label{tmax}
+\end{equation}
+
+\textbf{Range} $R$: We substitute the expression for $t_\mathrm{max}$ from
+Eq.~\ref{tmax} into the $t$ term, then apply the kinematic equation in
+the $x$-direction to compute $R=x-x_0$ for any given launch angle and initial
+speed:
+\begin{align*}
+  x&=x_0+v_xt\\
+  R &=v_i\cos\theta\left(\frac{2v_i\sin\theta}{g}\right)
+\end{align*}
+Using the trigonometric identity $\sin(2\theta)=2\sin\theta\cos\theta$, we
+simplify the equation to:
+\begin{equation}
+  \boxed{R=\frac{v_i^2\sin(2\theta)}{g}}
+\end{equation}
+It is obvious that for any given initial speed $v_i$, the maximum range
+$R_\mathrm{max}$ occurs at an angle where $\sin(2\theta)=1$
+(i.e.\ $\theta=\ang{45}$), with a value of
+\begin{equation}
+  \boxed{R_\mathrm{max}=\frac{v_i^2}{g}}
+\end{equation}
+Also, for a known initial speed $v_i$ and range $R$ we can compute the launch
+angle $\theta$:
+\begin{displaymath}
+  \theta_1=\frac{1}{2}\sin^{-1}\left(\frac{gR}{v_i^2}\right)
+\end{displaymath}
+This angle is labelled $\theta_1$ because it is \emph{not} the only angle that
+can reach this range. Recall that for any angle $\ang{0}<\phi<\ang{90}$, there
+is also another angle where the $\sin$ are equal:
+\begin{displaymath}
+  \sin\phi=\sin(\ang{180}-\phi)
+\end{displaymath}
+Which means that for any $\theta_1$, there is also another angle
+$\theta_2$ where $2\theta_2=\ang{180}-2\theta_1$, or quite simply:
+\begin{displaymath}
+  \theta_2=\ang{90}-\theta_1
+\end{displaymath}
+\end{document}
