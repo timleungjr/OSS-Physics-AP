@@ -1,23 +1,20 @@
 \documentclass[12pt,compress,aspectratio=169]{beamer}
 
-\mode<presentation>
-{
-  \usetheme{metropolis}
-  \setbeamersize{text margin left=0.75cm,text margin right=1cm}
-%  \setbeamertemplate{navigation symbols}{} % suppress nav bar
-%  \setbeamercovered{transparent}
-}
+\usetheme{metropolis}
+\setbeamersize{text margin left=.5cm,text margin right=.5cm}
 \usefonttheme{professionalfonts}
+
 \usepackage{amsmath,bm}
 \usepackage{siunitx}
 %\usepackage{graphicx}
 \usepackage{tikz}
 \usepackage{mathpazo}
-%\usepackage[scaled]{helvet}
 \usepackage{xcolor,colortbl}
 %\usepackage{hyperref}
 
-\setmonofont{Liberation Mono}
+\setmonofont{Ubuntu Mono}
+\setlength{\parskip}{0pt}
+\renewcommand{\baselinestretch}{1}
 
 \sisetup{
   number-math-rm=\mathnormal,
@@ -46,8 +43,13 @@
 \begin{frame}{Files to Download}
   \begin{itemize}
   \item\texttt{PhysAP-05-CM-print.pdf}--The ``print version'' of this topic.
-  \item\texttt{PhysAP-05-Homework.pdf}
+  \item\texttt{PhysAP-05-Homework.pdf}--Homework problems for Topics 4 \& 5.
   \end{itemize}
+  
+  \vspace{.1in}Please download/print the PDF file for the class slides before
+  each class. There is no point copying notes that are already on the slides.
+  Instead, focus on things that aren't necessarily on the slides. If you wish
+  to print the slides, we recommend printing 4 slides per page.
 \end{frame}
 
 
@@ -73,11 +75,11 @@
   \item A collection of individual particles (use summation to compute CM)
   \item A continuous distribution of mass with constant density (use
     integration to compute CM); in this case, CM is also the geometric center
-    of the object (\emph{centroid})
+    of the object, called the \textbf{centroid}
   \item A continuous distribution of mass with varying density (use integral to
     compute CM)
-  \item If the objects are inside of a gravitational field, then the CM is
-    also its \textbf{center of gravity} (``CG'')
+  \item If the masses are inside of a gravitational field, then the CM is also
+    its \textbf{center of gravity} (``CG'')
   \end{itemize}
 \end{frame}
 
@@ -217,14 +219,14 @@
   continuous distribution of mass. Therefore, we take the limit of when the
   number of masses approaches $\infty$:
   
-  \eq{-.25in}{
+  \eq{-.15in}{
     \mb{x}_{\textrm{CM}}=\lim_{n\rightarrow\infty}
     \left(\frac{\sum_{i=1}^n \mb{x}_i m_i}{\sum_{i=1}^n m_i}\right)
   }
 
   This gives us an integral form of our equation:
 
-  \eq{-.2in}{
+  \eq{-.15in}{
     \boxed{\mb{x}_{\textrm{CM}}=\frac{\int\mb{x} dm}{\int dm}}
   }
 \end{frame}
@@ -379,27 +381,28 @@
   Take time derivative of the equation for $\mb{x}_{\textrm{CM}}$ to get the
   velocity of the CM:
     
-  \eq{-.35in}{
+  \eq{-.2in}{
     \mb{v}_{\textrm{CM}}=\frac{d\mb{x}_{\textrm{CM}}}{dt}
     =\frac{1}{m}\frac{d}{dt}\left(\int\mb{x}dm\right)
     =\frac{1}{m}\int\frac{d\mb{x}}{dt}dm
     =\frac{\int \mb{v}dm}{m}
   }
   
-  \vspace{-.1in}The integral in the numerator is the sum of the momentum of all
-  the masses in the system ($\mb{p}_\mathrm{net}$) which means that we have
+  The integral in the numerator is the sum of the momentum of all the masses in
+  the system ($\mb{p}_\mathrm{net}$) which means that we have
 
-  \eq{-.4in}{
+  \eq{-.2in}{
     \mb{p}_\mathrm{net}=m\mb{v}_{\textrm{CM}}
     }
 
-  \vspace{-.2in}Taking the derivative of $\mb{p}_\mathrm{net}$ relates force
-  and acceleration at the CM as well:
+  Taking the derivative of $\mb{p}_\mathrm{net}$ relates force and acceleration
+  at the CM as well:
     
-  \eq{-.3in}{
+  \eq{-.2in}{
     \mb{F}_\mathrm{net}=\frac{d\mb{p}_\mathrm{net}}{dt}
     =m\frac{d\mb{v}_{\textrm{CM}}}{dt}=m\mb{a}_{\textrm{CM}}
-  }\end{frame}
+  }
+\end{frame}
 
 
 %\begin{frame}{What This All Means}

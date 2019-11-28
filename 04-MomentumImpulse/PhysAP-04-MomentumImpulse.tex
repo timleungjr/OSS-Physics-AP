@@ -1,22 +1,21 @@
 \documentclass[12pt,compress,aspectratio=169]{beamer}
 
-\mode<presentation>
-{
-  \usetheme{metropolis}
-  \setbeamersize{text margin left=.5cm,text margin right=.5cm}
-%  \setbeamertemplate{navigation symbols}{} % suppress nav bar
-%  \setbeamercovered{transparent}
-}
+\usetheme{metropolis}
+\setbeamersize{text margin left=.5cm,text margin right=.5cm}
 \usefonttheme{professionalfonts}
+
 \usepackage{amsmath,bm}
 \usepackage{siunitx}
 \usepackage{tikz}
 \usepackage{mathpazo}
-%\usepackage{unicode-math}
-%\usepackage[scaled]{helvet}
 \usepackage{xcolor,colortbl}
 
+\setmonofont{Ubuntu Mono}
+\setlength{\parskip}{0pt}
+\renewcommand{\baselinestretch}{1}
+
 \sisetup{
+  detect-all,
   number-math-rm=\mathnormal,
   per-mode=symbol
 }
@@ -44,11 +43,11 @@
 
 
 \begin{frame}{Linear Momentum}
-  \textbf{Linear momentum} is proportional to the object's \emph{mass} and
-  its \emph{velocity}. This is the ``quantity of motion'' referred to by
-  Newton.
+  \textbf{Linear momentum} (or \textbf{translational momentum}, or just
+  \textbf{momentum}) is the ``quantity of motion'' that is proportional to an
+  object's \emph{mass} and its \emph{velocity}.
 
-  \eq{-.4in}{
+  \eq{-.2in}{
     \boxed{\mb{p}=m\mb{v}}
   }
   \begin{center}
@@ -60,38 +59,39 @@
       Velocity  & $\mb{v}$ & \si{\metre\per\second}
     \end{tabular}
   \end{center}
-  \begin{itemize}
-  \item Momentum $\mb{p}$ is a vector in the same direction as velocity
-  \item Like all vectors, $\mb{p}$ obeys the principle of superposition
-  \end{itemize}
+%  \begin{itemize}
+%  \item Momentum $\mb{p}$ is a vector in the same direction as velocity
+%  \item Like all vectors, $\mb{p}$ obeys the principle of superposition
+%  \end{itemize}
+  For rotational motion of a rigid body, there is also \textbf{angular momentum}
+  which will be studied in a later topic.
 \end{frame}
 
 
 
 \begin{frame}{Newton's Second Law}
   Starting with the familiar form of Newton's second law of motion with constant
-  $m$, we can find out how $\Delta\mb{p}$ relates to $\mb{F}$:
+  $m$, we can find out how change in momentum $\mb{p}$ is related to net
+  force $\mb{F}_{\textrm{net}}$:
  
-  \eq{-.3in}{
-    \sum\mb{F}=m\mb{a}=m\frac{d\mb{v}}{dt}=\frac{d(m\mb{v})}{dt}
+  \eq{-.1in}{
+    \mb{F}_{\textrm{net}}=m\mb{a}=m\frac{d\mb{v}}{dt}=\frac{d(m\mb{v})}{dt}
     =\frac{d\mb{p}}{dt}
   }
 
+  In fact, this is the \emph{general} form of Newton's second law of motion that
+  accounts for the effects of changing mass. \textbf{The net external
+    force on an object is the rate of change of its momentum.}
 
-  \vspace{-.15in}In fact, this is the general form of Newtons second law of
-  motion:
-  \textbf{net external force on an object is the rate of change of its momentum}
-
-  \eq{-.25in}{
+  \eq{-.2in}{
     \boxed{\mb{F}_{\textrm{net}}=\frac{d\mb{p}}{dt}}
   }
-
-  \vspace{-.15in}$\mb{F}_{\textrm{net}}=m\mb{a}$ is just a special case
+  %$\mb{F}_{\textrm{net}}=m\mb{a}$ is just a special case
 \end{frame}
 
 
 
-\begin{frame}{Newton's Second Law}
+\begin{frame}{Second Law of Motion \& Conservation of Momentum}
 
   \eq{0in}{
     \boxed{\mb{F}_{\textrm{net}}=\frac{d\mb{p}}{dt}}
@@ -99,11 +99,16 @@
   \begin{itemize}
   \item Momentum is conserved (i.e.\ $\sum\mb{p}$ constant) when the net
     \emph{external} force on an object or a system of objects is zero
-  \item Internal forces do not contribute to net force, in that case:
+  \item Internal forces do not contribute to net force
+  \item In the absence of external forces,  we have
+    \textbf{conservation of momentum} for a collection of objects:
 
-    \eq{-.2in}{
-      \sum_i\mb{p}_i(t_1)=\sum_i\mb{p}_i(t_2)
+    \eq{-.25in}{
+      \sum_i\mb{p}_i=\sum_i\mb{p}_i'
     }
+    
+    We have previously looked at internal forces when solving connected-bodies
+    problems.
   \end{itemize} 
 \end{frame}
 
@@ -111,18 +116,17 @@
 \begin{frame}{Impulse}
   Rearranging the variables in the general form of Newton's second law:
   
-  \eq{-.35in}{
-    \mb{F}_\mathrm{net}=\frac{d\mb{p}}{dt}\;\rightarrow\;
-    \mb{F}_\mathrm{net}dt=d\mb{p}
+  \eq{-.15in}{
+    \mb{F}_{\textrm{net}}=\frac{d\mb{p}}{dt}\;\rightarrow\;
+    \mb{F}_{\textrm{net}}dt=d\mb{p}
   }
 
-  \vspace{-.15in}We can integrate both sides to get the
-  \textbf{impulse-momentum theorem}:
+  Integrating both sides, we get the \textbf{impulse-momentum theorem}:
  
-  \eq{-.25in}{
+  \eq{-.15in}{
     \boxed{
       \mb{J}_{\textrm{net}}
-      =\int_{t_1}^{t_2}\mb{F}_\mathrm{net}dt
+      =\int_{t_1}^{t_2}\mb{F}_{\textrm{net}}dt
       =\int d\mb{p}=\Delta\mb{p}}
   }
   
@@ -135,27 +139,34 @@
   $\mb{F}$, $\mb{p}$ and $\mb{J}$ are all vectors, so the integral can be
   evaluated in each of the $x$, $y$ and $z$ axis, i.e., for the $x$ direction:
 
-  \eq{-.3in}{
+  \eq{-.15in}{
     J_x=\int_{t_1}^{t_2}F_xdt=\int dp_x=\Delta p_x
   }
+  
+  Note that impulse from each individual force does not depend on whether the
+  object moves. The change in momentum only depends on \emph{net} impulse.
+\end{frame}
 
-  \vspace{-.15in}\textbf{Average force} is a ``force'' that gets the same
-  impulse:
 
-  \eq{-.3in}{
-    \overline{\mb{F}}=\frac{\int_{t_1}^{t_2}\mb{F}dt}{t_2-t_1}
-    =\frac{\mb{J}}{\Delta t}
+
+\begin{frame}{Average Force}
+  \textbf{Average force} $\overline{\mb{F}}$ is the time-averaged force vector
+  that gets the same impulse. It is used extensively in introductory physics
+  courses to avoid integration:
+
+%  \eq{-.15in}{
+%    \overline{\mb{F}}=\frac{\int_{t_1}^{t_2}\mb{F}dt}{t_2-t_1}
+%    =\frac{\mb{J}}{\Delta t}
+%  }
+  \eq{-.15in}{
+    \mb{J}=\int_{t_1}^{t_2}\mb{F}dt=\overline{\mb{F}}\Delta t
   }
-
-  \vspace{-.15in}Note that impulse from each individual force does not depend
-  on whether the object moves. The change in momentum only depends on
-  \emph{net} impulse
 \end{frame}
 
 
 
 \begin{frame}{Impulse: An Example}
-  \textbf{Example 4:} Jim pushes a box with mass \SI{1.}{\kilo\gram} with a
+  \textbf{Example 1:} Jim pushes a box with mass \SI{1.}{\kilo\gram} with a
   \SI{5.}{\newton} force for \SI{10}{\second} while the box stays on the same
   place. Find the impulse of the pushing force, friction force, the
   gravitational force, and the net force.
@@ -163,34 +174,93 @@
 
 
 
-\begin{frame}{Impulse: Another Example}
-  \textbf{Example 5:} Two balls of the same mass are dropped from the same
-  height onto the floor. The first ball bounces upwards from the floor
-  elastically. The second ball sticks to the floor. The first applies an
-  impulse to the floor of $I_1$ and the second applies an impulse $I_2$. The
-  two impulses obey:
-  \begin{enumerate}[(a)]
-  \item $I_2=2I_1$
-  \item $I_2=I_1/2$
-  \item $I_2=4I_1$
-  \item $I_2=I_1/4$
+\begin{frame}{Rocket Propulsion Problem}
+  \textbf{Example 2:} A rocket generates a thrust force by ejecting hot gases
+  from an engine. If it takes \SI{1}{\milli\second} to combust
+  \SI{1.}{\kilo\gram} of fuel, ejecting it at a speed of
+  \SI{1000}{\metre\per\second}, what thrust is generated?
+  
+  \vspace{.15in}\begin{enumerate}[A.]
+  \item \SI{1000}{\newton}
+  \item \SI{10000}{\newton}
+  \item \SI{100000}{\newton}
+  \item \SI{1000000}{\newton}
   \end{enumerate}
 \end{frame}
 
 
 
+\begin{frame}{Another Space Example}
+  \textbf{Example 3:} A rocket for mining the asteroid belt is designed like a
+  large scoop. It is approaching asteroids at a velocity of
+  \SI{e4}{\metre\per\second}. The asteroids are much smaller than the rocket.
+  If the rocket scoops asteroids at a rate of \SI{100}{\kilo\gram\per\second},
+  what thrust (force) must the rocket's engine provide in order for the rocket
+  to maintain constant velocity? Ignore any variation in the rocket's mass due
+  to the burning fuel.
+
+  \vspace{.15in}\begin{enumerate}[A.]
+  \item\SI{e3}{\newton}
+  \item\SI{e6}{\newton}
+  \item\SI{e9}{\newton}
+  \item\SI{e12}{\newton}
+  \end{enumerate}
+\end{frame}
+
+
+%\begin{frame}{Impulse: Another Example}
+%  \textbf{Example 5:} Two balls of the same mass are dropped from the same
+%  height onto the floor. The first ball bounces upwards from the floor
+%  elastically. The second ball sticks to the floor. The first applies an
+%  impulse to the floor of $I_1$ and the second applies an impulse $I_2$. The
+%  two impulses obey:
+%  \begin{enumerate}[(a)]
+%  \item $I_2=2I_1$
+%  \item $I_2=I_1/2$
+%  \item $I_2=4I_1$
+%  \item $I_2=I_1/4$
+%  \end{enumerate}
+%\end{frame}
+
+
+\section{Collisions}
+
 \begin{frame}{Conservation of Momentum}
   \begin{itemize}
-  \item From Newton's third law, we know that the action and reaction forces are
-    always equal in magnitude and in opposite direction. Thus, their total
-    impulse would be zero. 
-    
+  \item From Newton's third law of motion, we know that the action and reaction
+    forces are always equal in magnitude and in opposite direction. Thus, their
+    total impulse would be zero.
   \item When there is no external force, the momentum of the total system will
     always be constant. We saw that a few slides ago:
-
+    
     \eq{-.2in}{
-      \sum\mb{p}(t_1)=\sum\mb{p}(t_2)
+      \sum_i\mb{p}=\sum_i\mb{p}'
     }
+  \end{itemize}
+\end{frame}
+
+
+
+\begin{frame}{Classifications of Collisions}
+  \begin{itemize}
+  \item Elastic Collision:
+    \begin{itemize}
+    \item Total kinetic energy is conserved
+    \item<alert@2> Momentum is conserved
+    \end{itemize}
+  \item Inelastic collision:
+    \begin{itemize}
+    \item Kinetic energy is \textbf{not} conserved
+    \item<alert@2> Momentum is conserved
+    \end{itemize}
+  \item Completely inelastic collision:
+    \begin{itemize}
+    \item ``Perfectly inelastic collision''
+    \item A special case of inelastic collision
+    \item The objects move together after the collision
+    \item Kinetic energy is \textbf{not} conserved
+    \item<alert@2> Momentum is conserved
+    \end{itemize}
   \end{itemize}
 \end{frame}
 
@@ -199,10 +269,9 @@
 \begin{frame}{How to Solve Conservation of Momentum Problem}
   \begin{enumerate}
   \item Check whether the condition for the conservation of momentum is
-    satisfied.
+    satisfied (i.e.\ are there any external forces?)
   \item If so, write out expressions for initial momentum and final momentum,
-    and equate the two. You will get $1$ to $3$ equations (one for each
-    direction).
+    and equate the two. You will get 1 to 3 equations (one for each direction).
   \item Solve these equations, find the quantity you need to find.
   \end{enumerate}
   Remember that momentum is a vector. If there is no external force component
@@ -212,11 +281,37 @@
 
 
 
+
+
+
+\begin{frame}{Before We Dive Into Some Exercises}
+  The most typical applications of momentum conservation are collision and
+  explosions
+  \begin{itemize}
+  \item\textbf{Collision: A hits B}
+    \begin{itemize}
+    \item Regardless of whether they move together or not afterwards, momentum
+      is conserved
+    \item Head-on collisions are usually 1D
+    \item Glancing collisions are usually 2D or 3D
+    \end{itemize}
+  \item\textbf{Explosion: A explodes and becomes B and C (and D and E\ldots)}
+    \begin{itemize}
+    \item A perfectly inelastic collision in reverse
+    \item Total momentum of B and C (and D and E\ldots) is the same as A in the
+      beginning
+    \item Usually a 2D or 3D problem
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+
+
+
 \begin{frame}{Example}
-  \textbf{Example 6:} Two blocks A and B, both have mass \SI{1.}{\kilo\gram}.
+  \textbf{Example 4:} Two blocks A and B, both have mass \SI{1.}{\kilo\gram}.
   Block A has velocity \SI{3.}{\metre\per\second} and block B is at rest. Their
   distance is \SI{1.}{\metre}. The surface is has dynamic friction coefficient
-  $0.02$. After they collide, they move together, what would be the final
+  $\mu_k=0.02$. After they collide, they move together, what would be the final
   velocity of these two blocks? How far can they go after the collision?
 \end{frame}
 
@@ -236,29 +331,16 @@
 %
 
 
-\begin{frame}{Before We Dive Into Some Exercises}
-  \begin{itemize}
-  \item The most typical applications of momentum conservation are collision
-    and explosions
-  \item\textbf{Collision: object A hits object B}. Regardless of whether they
-    move together or not afterwards, momentum is conserved.
-    \begin{itemize}
-    \item Head-on collisions are usually 1D
-    \item Glancing collisions are usually 2D or 3D.
-    \end{itemize}
-  \item\textbf{Explosion: A explodes and becomes B and C (and D and E\ldots)}.
-    Total momentum of B and C (and D and E\ldots) is the same as A in the
-    beginning. 
-  \end{itemize}
-\end{frame}
+
 
 
 
 \begin{frame}{Collision Problem}
-  \textbf{Example 7:} Two objects with equal mass are heading toward each
+  \textbf{Example 5:} Two objects with equal mass are heading toward each
   other with equal speeds, undergo a head-on collision. Which one of the
   following statement is correct?
-  \begin{enumerate}[(a)]
+
+  \vspace{.15in}\begin{enumerate}[A.]
   \item Their final velocities are zero
   \item Their final velocities may be zero
   \item Each must have a final velocity equal to the other's initial velocity
@@ -269,12 +351,13 @@
 
 
 \begin{frame}{Conservation of Momentum Example}
-  \textbf{Example 8:} Two astronauts, each of mass \SI{75}{\kilo\gram}, are
+  \textbf{Example 6:} Two astronauts, each of mass \SI{75}{\kilo\gram}, are
   floating next to each other in space, outside the space shuttle. One of them
   pushes the other through a distance of \SI{1.}{\metre} (about an arm's
   length) with a force of \SI{300}{\newton}. What is the final relative
   velocity of the two?
-  \begin{enumerate}[(a)]
+
+  \vspace{.15in}\begin{enumerate}[A.]
   \item \SI{2.}{\metre\per\second}
   \item \SI{2.83}{\metre\per\second}
   \item \SI{4.}{\metre\per\second}
@@ -284,134 +367,238 @@
 
 
 
-\begin{frame}{Continuous Problems in the Application of Momentum}
-%  \textbf{Example 9:} A water fountain sprays water with a flow of
-%  \SI{30}{L/min}. Suppose the water has no initial velocity, find the impulse
-%  of the pushing force in $1$ hour and estimate the pushing force, assuming the
-%  force is constant.
+\begin{frame}{Glancing Collision}
+  \vspace{.3in}\textbf{Example 7:} A billiard ball of mass \SI{.155}{\kilo\gram}
+  (``cue ball'') moves with a velocity of \SI{1.25}{\metre\per\second} towards
+  a stationary billiard ball (``eight ball'') of identical mass and strikes it
+  with a glancing blow. The cue ball moves off at an angle of \ang{29.7}
+  clockwise from its original direction, with a speed of
+  \SI{.956}{\metre\per\second}. What is the final velocity of the eight ball?
+\end{frame}
+
+
+
+%\begin{frame}{Example}
+%  \textbf{Example 12:} A ball is dropped from a height $h$. It hits the ground
+%  and bounces up with a momentum loss of \SI{10}{\percent} due to the impact.
+%  The maximum height it will reach is:
+%  \begin{enumerate}[(a)]
+%  \item\num{.90}$h$
+%  \item\num{.81}$h$
+%  \item\num{.949}$h$
+%  \item\num{.3}$h$
+%  \end{enumerate}
 %\end{frame}
 %
-%\begin{frame}
-%  \frametitle{Example: Rocket Thrust}
-  \textbf{Example 10:} A rocket generates a thrust force by ejecting hot gases
-  from an engine. If it takes \SI{1}{\milli\second} to combust
-  \SI{1.}{\kilo\gram} of fuel, ejecting it at a speed of
-  \SI{1000}{\metre\per\second}, what thrust is generated?
-  \begin{enumerate}[(a)]
-  \item \SI{1000}{\newton}
-  \item \SI{10000}{\newton}
-  \item \SI{100000}{\newton}
-  \item \SI{1000000}{\newton}
-  \end{enumerate}
-\end{frame}
+%
+%
+%\begin{frame}{Conservation of Energy Example}
+%  \textbf{Example 13:} A simple pendulum has a bob of mass \SI{2}{\kilo\gram}
+%  hanging on a cord of length \SI{1}{\metre}. Suppose the pendulum is raised
+%  until it is horizontal (and angular displacement of \ang{90}) and then
+%  released. What is the speed of the bob at the bottom of its swing?
+%  \begin{enumerate}[(a)]
+%  \item\SI{9.91}{\metre\per\second}
+%  \item\SI{19.6}{\metre\per\second}
+%  \item\SI{3.13}{\metre\per\second}
+%  \item\SI{4.43}{\metre\per\second}
+%  \end{enumerate}
+%\end{frame}
+%
+%
+%
+%\begin{frame}{Conservation of Energy Example}
+%  \textbf{Example 14:} A toy firing a ball vertically consists of a vertical
+%  spring which is compressed by \SI{.10}{\metre}. A force of \SI{10.}{\newton}
+%  is needed to hold the spring at that compression. If a ball of mass
+%  \SI{.050}{\kilo\gram} is placed on the compressed spring and the spring is
+%  released, the ball will reach a height (above its initial position) of:
+%  \begin{enumerate}[(a)]
+%  \item \SI{1.}{\metre}
+%  \item \SI{1.2}{\metre}
+%  \item \SI{1.4}{\metre}
+%  \item \SI{1.6}{\metre}
+%  \end{enumerate}
+%\end{frame}
 
-
-
-\begin{frame}{Another Space Example}
-  \textbf{Example 11:} A rocket for mining the asteroid belt is designed like a
-  large scoop. It is approaching asteroids at a velocity of
-  \SI{e4}{\metre\per\second}. The asteroids are much smaller than the rocket.
-  If the rocket scoops asteroids at a rate of \SI{100}{\kilo\gram\per\second},
-  what thrust (force) must the rocket's engine provide in order for the rocket
-  to maintain constant velocity? Ignore any variation in the rocket's mass due
-  to the burning fuel.
-  \begin{enumerate}[(a)]
-  \item \SI{e3}{\newton}
-  \item \SI{e6}{\newton}
-  \item \SI{e9}{\newton}
-  \item \SI{e12}{\newton}
-  \end{enumerate}
-\end{frame}
-
-
-
-\begin{frame}{Example}
-  \textbf{Example 12:} A ball is dropped from a height $h$. It hits the ground
-  and bounces up with a momentum loss of $10\%$ due to the impact. The maximum
-  height it will reach is:
-  \begin{enumerate}[(a)]
-  \item $0.90h$
-  \item $0.81h$
-  \item $0.949h$
-  \item $0.3h$
-  \end{enumerate}
-\end{frame}
-
-
-
-\begin{frame}{Conservation of Energy Example}
-  \textbf{Example 13:} A simple pendulum has a bob of mass \SI{2}{\kilo\gram}
-  hanging on a cord of length \SI{1}{\metre}. Suppose the pendulum is raised
-  until it is horizontal (and angular displacement of \ang{90}) and then
-  released. What is the speed of the bob at the bottom of its swing?
-  \begin{enumerate}[(a)]
-  \item\SI{9.91}{\metre\per\second}
-  \item\SI{19.6}{\metre\per\second}
-  \item\SI{3.13}{\metre\per\second}
-  \item\SI{4.43}{\metre\per\second}
-  \end{enumerate}
-\end{frame}
-
-
-
-\begin{frame}{Conservation of Energy Example}
-  \textbf{Example 14:} A toy firing a ball vertically consists of a vertical
-  spring which is compressed by \SI{.10}{\metre}. A force of \SI{10.}{\newton}
-  is needed to hold the spring at that compression. If a ball of mass
-  \SI{.050}{\kilo\gram} is placed on the compressed spring and the spring is
-  released, the ball will reach a height (above its initial position) of:
-  \begin{enumerate}[(a)]
-  \item \SI{1.}{\metre}
-  \item \SI{1.2}{\metre}
-  \item \SI{1.4}{\metre}
-  \item \SI{1.6}{\metre}
-  \end{enumerate}
-\end{frame}
 
 
 \section{Elastic Collisions}
 
-\begin{frame}{Classifications of Collisions}
-  \begin{itemize}
-  \item Elastic Collision:
-    \begin{itemize}
-    \item Total kinetic energy is conserved
-    \item<alert@2> Momentum is conserved
-    \end{itemize}
-  \item Inelastic collision:
-    \begin{itemize}
-    \item Kinetic energy is \textbf{not} conserved
-    \item<alert@2> Momentum is conserved
-    \end{itemize}
-  \item Completely inelastic collision:
-    \begin{itemize}
-    \item ``Perfectly inelastic collision''
-    \item The objects move together after the collision
-    \item Kinetic energy is \textbf{not} conserved
-    \item<alert@2> Momentum is conserved
-    \end{itemize}
-  \end{itemize}
-\end{frame}
+\begin{frame}{Elastic Collision Problems}
+  In elastic collisions, \emph{both} momentum and kinetic energy is conserved.
+  In a 1D collision, both equations below have to be satisfied:
 
-
-
-\begin{frame}{Elastic Collision}
-  If two objects 1 and 2 of mass $m_1$ and $m_2$ and initial velocities
-  $v_{1,i}$ and $v_{2,i}$ collide elastically, their final velocities will be:
-  
-  {\Large
-    \begin{displaymath}
-      v_{1,f}=\frac{v_{1,i}(m_1-m_2)+2m_2v_{2,i}}{m_1+m_2}
-    \end{displaymath}
-    
-    \begin{displaymath}
-      v_{2,f}=\frac{v_{2,i}(m_2-m_1)+2m_1v_{1,i}}{m_1+m_2}
-    \end{displaymath}
+  \vspace{-.2in}{\Large
+    \begin{align*}
+      \sum m_iv_i&=\sum m_iv_i'\\
+      \sum\frac12 m_iv_i^2&=\sum\frac12 m_iv_i'^2
+    \end{align*}
   }
+
+  \textbf{How kinetic energy is conserved:} In an elastic collision, energy is
+  first converted into a potential energy (e.g.\ elastic potential energy in a
+  spring), and then all the energy is released back as kinetic energy.
 \end{frame}
+
+
+
+\begin{frame}{Conservation of Momentum \& Energy in Elastic Collisions}
+  For collision of two objects, the conservation of momentum equation can be
+  expressed as:
+
+  \vspace{-.15in}{\Large
+    \begin{equation}
+      \boxed{m_1(v_1-v_1')=m_2(v_2'-v_2)}
+    \end{equation}
+  }
+
+  By moving $m_1$ terms to the left, and $m_2$ terms to the right. Likewise,
+  the conservation of energy can also be arranged as:
+
+  \vspace{-.15in}{\Large
+    \begin{equation}
+      \boxed{m_1(v_1^2-v_1'^2)=m_2(v_2'^2-v_2^2)}
+    \end{equation}
+  }
+
+  By multiplying every term by \num{2}, and again, moving $m_1$ terms to the
+  left, and $v_2$ terms to the right.
+\end{frame}
+
+
+
+\begin{frame}{Conservation of Momentum \& Energy in Elastic Collisions}
+  Dividing the equations (2) by (1) from the last slide, we get:
+
+  
+  \eq{-.15in}{
+    \frac{(2)}{(1)}\quad\rightarrow\quad
+    \frac{m_1(v_1^2-v_1'^2)}{m_1(v_1-v_1')}=
+    \frac{m_2(v_2'^2-v_2^2)}{m_2(v_2'-v_2)}
+  }
+
+  $m_1$ and $m_2$ terms cancel out, while the terms in the numerator can be
+  expanded as the difference of two squares which is then simplified:
+
+  \eq{-.15in}{
+    \frac{(v_1+v_1')(v_1-v_1')}{(v_1-v_1')}=
+    \frac{(v_2'+v_2)(v_2'-v_2)}{(v_2'-v_2)}
+  }
+  
+  Leading to the final expression, which is substituted back into (1)
+  
+  \eq{-.25in}{
+    v_1 +v_1'= v_2+v_2'
+  }
+
+\end{frame}
+
+
+
+%\begin{frame}{Solving the Example Problem}
+%  
+%  {\Large
+%    \begin{displaymath}
+%      \boxed{v_A'=\frac{m_A-m_B}{m_A+m_B}v_A}\quad
+%      \boxed{v_B'=\frac{2m_A}{m_A+m_B}v_A}
+%    \end{displaymath}
+%  }
+%
+%  These equations work for \emph{all} elastic impact where object B (in this
+%  example, the truck) is stationary when impact occurs. Substituting values for
+%  $m_A$, $m_B$ and $v_A$, we get:
+%  \begin{displaymath}
+%    v_A'=\frac{m_A-m_B}{m_A+m_B}v_A=\frac{(1000-3000)}{(1000+3000)}\times 20
+%    = \boxed{\SI{-10}{\metre\per\second}}
+%  \end{displaymath}
+%  \begin{displaymath}
+%    v_B'=\frac{2m_A}{m_A+m_B}v_A=\frac{(2\times 1000)}{(1000+3000)}\times 20
+%    = \boxed{\SI{10}{\metre\per\second}}
+%  \end{displaymath}
+%\end{frame}
+
+
+
+
+\begin{frame}{Final Velocities in an Elastic Collision}
+  When two objects \num{1} and \num{2} of mass $m_1$ and $m_2$ and initial
+  velocities $v_1$ and $v_2$ collide elastically, their final velocities will
+  be:
+  
+  \vspace{-.2in}{\Large
+    \begin{align*}
+      v_1'&=\frac{v_1(m_1-m_2)+2m_2v_2}{m_1+m_2}\\
+      v_2'&=\frac{v_2(m_2-m_1)+2m_1v_1}{m_1+m_2}
+    \end{align*}
+  }
+
+  These equations are not provided in the AP exam equation sheet, which means
+  that we are more interested in the behavior qualitatively rather than
+  quantitatively.
+\end{frame}
+
+
+
+
+\begin{frame}{Special Cases}
+  If both objects have equal mass ($m_1=m_2=m$) and the second object is
+  initially at rest ($v_2=0$), then the equations simplifies to
+  
+  \vspace{-.2in}{\Large
+    \begin{align*}
+      v_1'&=\frac{v_1(m-m)+2mv_2}{m+m}=0\\
+      v_2'&=\frac{v_2(m-m)+2mv_1}{m+m}=v_1
+    \end{align*}
+  }
+
+  All the momentum and energy from $m_1$ is transferred to $m_2$. Object 1
+  stops all together, while object 2 continues with the initial momentum and
+  velocity of Object 1.
+\end{frame}
+
+
+
+\begin{frame}{Special Cases}
+  Another special case is when $m_1\gg m_2$ and $v_2=0$ (i.e.\ a large object
+  colliding with a small stationary object) then we can effectively ``ignore''
+  $m_2$:
+  
+  \vspace{-.2in}{\Large
+    \begin{align*}
+      v_1'&=\frac{v_1(m_1-m_2)+2m_2v_2}{m_1+m_2}\approx
+      \frac{m_1v_1}{m_1}=v_1\\
+      v_2'&=\frac{v_2(m_2-m_1)+2m_1v_1}{m_1+m_2}\approx
+      \frac{2m_1v_1}{m_1}=2v_1
+    \end{align*}
+  }
+
+  Object 1 continues to move like nothing happened, but object 2 is pushed to
+  move at \emph{twice} the initial speed of object 1.
+\end{frame}
+
+
+
+\begin{frame}{Special Cases}
+  In the reverse case, if $m_1\ll m_2$, and $v_2=0$ (a small object colliding
+  with a large stationary object), then we can ``ignore'' the $m_1$ term:
+  
+  \vspace{-.2in}{\Large
+    \begin{align*}
+      v_1'&=\frac{v_1(m_1-m_2)+2m_2v_2}{m_1+m_2}\approx
+      \frac{-m_2v_1}{m_2}=-v_1\\
+      v_2'&=\frac{v_2(m_2-m_1)+2m_1v_1}{m_1+m_2}\approx 0
+    \end{align*}
+  }
+
+  Object 1 bounces off object 2, and travels in the opposite direction with the
+  same velocity magnitude, while object 2 does not move.
+\end{frame}
+
+
 
 \begin{frame}{Elastic Collision Example}
-  \textbf{Example 15:} Blocks A and B have the same mass; A hits B with a speed
+  \textbf{Example 8:} Blocks A and B have the same mass; A hits B with a speed
   of \SI{5.}{\metre\per\second} while B is initially at rest. If the collision
   is elastic, what would be the final speed of these two objects?
 \end{frame}
@@ -419,7 +606,7 @@
 
 
 \begin{frame}{Elastic Collision Example}
-  \textbf{Example 16:} Blocks A and B with the same mass; A has a velocity
+  \textbf{Example 9:} Blocks A and B with the same mass; A has a velocity
   \SI{3.}{\metre\per\second} to the east while B has \SI{2}{\metre\per\second}
   to the west. If the collision is elastic, after the collision, what would the
   velocity of the two blocks be?
@@ -428,7 +615,7 @@
 
 
 \begin{frame}{Elastic Collision Example}
-  \textbf{Example 17:} Throw a ball to a really big wall, when the ball reaches
+  \textbf{Example 10:} Throw a ball to a really big wall, when the ball reaches
   the wall, it has a velocity \SI{10}{\metre\per\second} toward the wall. If
   the collision is elastic, what would the final velocity of the ball be?
 \end{frame}
@@ -436,14 +623,14 @@
 
 
 \begin{frame}{Elastic Collision Example}
-  \textbf{Example 18:} Throw a ball with a velocity \SI{4.}{\metre\per\second}
+  \textbf{Example 11:} Throw a ball with a velocity \SI{4.}{\metre\per\second}
   toward a train with a velocity \SI{40}{\metre\per\second} toward the ball.
   If the collision is elastic, what would the final velocity of the ball be?
 \end{frame}
 
 
 \begin{frame}{Inelastic Collision: Calculating Energy Loss}
-  \textbf{Example 19:} Two blocks A and B with mass \SI{2.}{\kilo\gram}, block
+  \textbf{Example 12:} Two blocks A and B with mass \SI{2.}{\kilo\gram}, block
   A hits B with velocity \SI{4.}{\metre\per\second} while B is at rest.
   \begin{enumerate}[(a)]
   \item Suppose the collision is completely inelastic, what would the final

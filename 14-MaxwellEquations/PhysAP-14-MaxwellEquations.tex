@@ -136,8 +136,8 @@
   \item Maxwell recognized the relationship between electricity and
     magnetism in \textbf{Gauss's law}, \textbf{Faraday's law} and
     \textbf{Amp\`{e}re's law}
-  \item combined them into a unified set of equations, now known as
-    \textbf{Maxwell's equations} for electrodynamics.
+  \item Combined them into a unified set of equations, now known as
+    \textbf{Maxwell's equations} for electrodynamics
   \end{itemize}
 \end{frame}
 
@@ -206,7 +206,7 @@
 
     \column{.75\textwidth}
     \begin{itemize}
-    \item Often Maxwell's equations are expressed in \emph{differential} form,
+    \item Maxwell's equations are usually expressed in \emph{differential} form,
       which is obtained using vector calculus. Follow
       [\underline{\href{https://www.wikihow.com/Convert-Maxwell\%27s-Equations-into-Differential-Form}{this link}}]
       to see how it's done.
@@ -228,16 +228,17 @@
   $x$ and time $t$ only, i.e.\ $\mb{E}=\mb{E}(x,t)$ and $\mb{B}=\mb{B}(x,t)$,
   Faraday's and Amp\`{e}re's laws reduce to:
 
-  \eq{-.2in}{
-    \frac{\partial E}{\partial x}=-\frac{\partial B}{dt}
+  \eq{-.1in}{
+    \frac{\partial E}{\partial x}=-\frac{\partial B}{\partial t}
     \quad\quad
-    \frac{\partial B}{\partial x}=-\mu_0\varepsilon_0\frac{\partial E}{dt}
+    \frac{\partial B}{\partial x}=
+    -\mu_0\varepsilon_0\frac{\partial E}{\partial t}
   }
 
   Taking the spatial derivative of $E$ with respect to $x$ on both
   side of Faraday's law, and switch the order of differentiation, we get:
 
-  \eq{-.3in}{
+  \eq{-.2in}{
       \frac{\partial}{\partial x}
       \left(\frac{\partial E}{\partial x}\right)
       =-\frac{\partial}{\partial x}\left(\frac{\partial B}{\partial t}\right)
@@ -255,9 +256,9 @@
 
   \eq{-.2in}{
     \frac{\partial^2E}{\partial x^2}=
-    -\frac{\partial}{\partial t}\left(\frac{\partial B}{dx}\right)
+    -\frac{\partial}{\partial t}\left(\frac{\partial B}{\partial x}\right)
     =-\frac{\partial}{\partial t}\left(
-    -\mu_0\varepsilon_0\frac{\partial E}{dt}
+    -\mu_0\varepsilon_0\frac{\partial E}{\partial t}
     \right)
   }
 
@@ -265,7 +266,7 @@
 
   \eq{-.2in}{
     \frac{\partial^2E}{\partial x^2}=
-    \mu_0\varepsilon_0\frac{\partial^2 E}{dt^2}
+    \mu_0\varepsilon_0\frac{\partial^2 E}{\partial t^2}
   }
   
   This is the standard form of the 1D wave equation (a 2nd-order partial
@@ -273,7 +274,7 @@
 
   \eq{-.2in}{
     \frac{\partial^2\Psi}{\partial x^2}=
-    \frac{1}{v^2}\frac{\partial^2\Psi}{dt^2}
+    \frac{1}{v^2}\frac{\partial^2\Psi}{\partial t^2}
   }
 \end{frame}
 
