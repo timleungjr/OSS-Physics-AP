@@ -438,19 +438,20 @@
 %%(C)
   %%(D)
 
-  \textbf{Questions 186–187}. A small block of mass $m$ slides on a horizontal
-  frictionless surface toward a ramp of mass 3m which is also free to move on
-  the surface. The small block slides up to a height h on the ramp with no
-  friction (Figure I), then they move together (Figure II), and the small block
-  slides back down the ramp to the horizontal surface (Figure III). Both the
-  block and the ramp continue to slide on the horizontal surface after they
-  separate.
+  \textbf{Questions \ref{ramps1}--\ref{ramps2}}. A small block of mass $m$
+  slides on a horizontal frictionless surface toward a ramp of mass $3m$ which
+  is also free to move on the surface. The small block slides up to a height
+  $h$ on the ramp with no friction (Figure I), then they move together (Figure
+  II), and the small block slides back down the ramp to the horizontal surface
+  (Figure III). Both the block and the ramp continue to slide on the horizontal
+  surface after they separate.
   \begin{center}
     \pic{.3}{Figs123.png}
   \end{center}
   \begin{enumerate}[resume,leftmargin=18pt]  
   \item Which of the following is true regarding the conservation laws
     throughout this process?
+    \label{ramps1}
     \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
     \item Kinetic energy is conserved from Figure I to Figure II.
     \item Momentum is conserved from Figure I to Figure III.
@@ -460,6 +461,7 @@
     \end{enumerate}
     
   \item Which of the following is a true statement regarding Figure III?
+    \label{ramps2}
     \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
     \item The small block is moving to the left and the ramp is moving to the
       right.
@@ -596,7 +598,7 @@
     Which of the following statements is true?
     \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
     \item After the collision, the two masses will move with parallel velocities
-    \item After the collision, the masses will move with antiparallel velocities
+    \item After the collision, the masses will move with anti-parallel velocities
     \item After the collision, the masses will both move along the x-axis
     \item After the collision, the $y$-components of the velocities of the two
       particles will sum to zero.
@@ -610,7 +612,15 @@
     length of the spring oscillates. At the instant that the spring is
     maximally extended, the velocity of the first mass is
     \begin{center}
-      \pic{.35}{mass-spring-1.png}
+      \begin{tikzpicture}[scale=.8]
+        \draw[->](1,1.3)--(2,1.3) node[pos=1,right]{$v_0$};
+        \draw(0,0)--(8,0);
+        \draw(1,0) rectangle (2,1) node[midway]{$m_1$};
+        \draw(6,0) rectangle (7,1) node[midway]{$m_2$};
+        \draw[thick,
+          decoration={aspect=.4,segment length=1.5mm, amplitude=2mm,coil},
+          decorate] (6,.5)--(5,.5);
+      \end{tikzpicture}
     \end{center}
     \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
     \item $v_0$
@@ -620,19 +630,19 @@
     \item $m_1v_0/(m_1+m_2)$
     \end{enumerate}
 
-  \item Two blocks of mass $m_A$ and $m_B$ are connected by a string that
-    passes over a light pulley. The mass of $A$ is larger than the mass of $B$.
-    The speed of mass $A$ just before reaching the floor is:
-    \begin{center}
-      \pic{.2}{pulley-a-b.png}
-    \end{center}
-    \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
-    \item $\displaystyle\sqrt{2\frac{m_A-m_B}{m_A+m_B}gD}$
-    \item $\displaystyle\sqrt{2\frac{m_A+m_B}{m_A-m_B}gD}$
-    \item $\displaystyle\sqrt{\frac{m_A}{m_A+m_B}gD}$
-    \item $\displaystyle\sqrt{\frac{m_B}{m_A+m_B}gD}$
-    \item $\displaystyle\sqrt{\frac{m_A}{m_B}gD}$
-    \end{enumerate}
+%  \item Two blocks of mass $m_A$ and $m_B$ are connected by a string that
+%    passes over a light pulley. The mass of $A$ is larger than the mass of $B$.
+%    The speed of mass $A$ just before reaching the floor is:
+%    \begin{center}
+%      \pic{.2}{pulley-a-b.png}
+%    \end{center}
+%    \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
+%    \item $\displaystyle\sqrt{2\frac{m_A-m_B}{m_A+m_B}gD}$
+%    \item $\displaystyle\sqrt{2\frac{m_A+m_B}{m_A-m_B}gD}$
+%    \item $\displaystyle\sqrt{\frac{m_A}{m_A+m_B}gD}$
+%    \item $\displaystyle\sqrt{\frac{m_B}{m_A+m_B}gD}$
+%    \item $\displaystyle\sqrt{\frac{m_A}{m_B}gD}$
+%    \end{enumerate}
   \end{enumerate}
 \end{multicols}
 \newpage
@@ -656,7 +666,7 @@
   \end{enumerate}
   Suppose the projectile experiences an internal explosion at time $t=\SI{4}{s}$
   with an internal force purely in the $y$-direction, causing it to break into
-  \SI{2}{\kg} and a \SI{1}{\kg} fragment.
+  a \SI{2}{\kg} and a \SI{1}{\kg} fragment.
   \begin{enumerate}[noitemsep,resume]
   \item If the \SI{2}{\kg} fragment is \SI{77}{m} above the height of the
     cliff at $t=\SI{5}{s}$, what is the $y$-coordinate of the position of the
@@ -668,7 +678,7 @@
   \end{enumerate}
   \newpage
   
-\item The Ballastic Pendulum. To determine the muzzle speed of a gun, a bullet
+\item The Ballistic Pendulum. To determine the muzzle speed of a gun, a bullet
   is shot into a mass $M$ from a string as shown below, causing $M$ to swing
   upward through a maximum angle of $\theta$.
   \begin{center}
@@ -710,5 +720,60 @@
     left the wall? Compare the compression to the maximum compression calculated
     in part (a) and explain any similarities and differences.
   \end{enumerate}
+  \newpage
+
+\item In the billiards shot shown in the figure below, the initial direction of
+  the cue ball is perpendicular to the line joining the centers of the other
+  two balls, which are touching. The cue ball strikes both balls simultaneously.
+  Use the symmetry of the situation along with the appropriate conservation
+  laws to find the final velocities of all three balls.
+  \begin{center}
+    \begin{tikzpicture}[scale=.8]
+      \tikzstyle{balloon1}=[ball color=yellow!60];
+      \tikzstyle{balloon2}=[ball color=green!60!gray];
+      \tikzstyle{balloon3}=[ball color=gray];
+      \draw[dashed](0,-2.4)--(0,2.4);
+      \draw[dashed](0,0)--(-4,0);
+      \shade[balloon2] (0,.4) circle (.4) node{$m$};
+      \shade[balloon1] (0,-.4) circle (.4) node{$m$};
+      \draw[ultra thick,->,blue!60!black](-4,0)--(-2,0)
+      node[pos=1,right]{$\mb{v}_{ci}$};
+      \shade[balloon3] (-4,0) circle (.4) node{$m$};
+    \end{tikzpicture}
+    \hspace{1in}
+    \begin{tikzpicture}[scale=.8]
+      \tikzstyle{balloon1}=[ball color=yellow!60];
+      \tikzstyle{balloon2}=[ball color=green!60!gray];
+      \tikzstyle{balloon3}=[ball color=gray];
+      \draw[dashed](-4,0)--(4,0);
+      \begin{scope}[rotate=25]
+        \draw[dashed](0,0)--(4,0);
+        \draw[ultra thick,->,blue!60!black](4,0)--(5,0)
+        node[pos=1,right]{$\mb{v}_{1f}$};
+        \shade[balloon2] (4,0) circle (.4) node{$m$};
+      \end{scope}
+      \begin{scope}[rotate=-25]
+        \draw[dashed](0,0)--(4,0);
+        \draw[ultra thick,->,blue!60!black](4,0)--(5,0)
+        node[pos=1,right]{$\mb{v}_{2f}$};
+        \shade[balloon1] (4,0) circle (.4) node{$m$};
+      \end{scope}
+      \draw(1.5,0) arc(0: 25:1.5) node[pos=.6,right]{$\theta_1$};
+      \draw(1.5,0) arc(0:-25:1.5) node[pos=.6,right]{$\theta_2$};
+      \draw[ultra thick,->,blue!60!black](-2,0)--(-3,0)
+      node[pos=1,left]{$\mb{v}_{cf}$};
+      \shade[balloon3] (-2,0) circle (.4) node{$m$};
+    \end{tikzpicture}
+  \end{center}
+  \vspace{\stretch{1}}
+  
+\item A stream of glass beads, each with a mass of \SI{.5}{\gram}, comes out of
+  a horizontal tube at $100$ per second. The beads fall a distance of
+  \SI{.5}{\metre} to a balance pan and bounce back to their original height as
+  shown in the figure below. How much mass must be placed in the other pan of
+  the balance to keep the pointer at zero?
+  
+  \pic{.5}{balance.jpg}
+  \vspace{\stretch{1}}
 \end{enumerate}
 \end{document}
