@@ -479,21 +479,22 @@
 
 
 
-\begin{frame}{Falling To the Center of the Earth}
+\begin{frame}{Falling Toward the Center of the Earth}
   \begin{columns}
     \column{.25\textwidth}
     \pic{1}{eartholsat.png}
 
     \column{.75\textwidth}
-    The gravitational force on this person has the same form as Hooke's law: a
-    force that is proportional to displacement, but in the opposite direction:
+    The gravitational force has the same form as Hooke's law: it is
+    proportional to displacement from the center, but in the opposite
+    direction:
 
-    \eq{-.3in}{
+    \eq{-.2in}{
       F_g(r)=-kr
     }
     
-    \vspace{-.15in}The solution to this person's motion is a simple harmonic
-    motion. He/she will oscillate through Earth with a period of:
+    \vspace{-.15in}The motion is a simple harmonic motion. The traveller will
+    oscillate through Earth with a period of:
 
     \eq{-.2in}{
       T=2\pi\sqrt{\frac{m}{k}}=2\pi\sqrt{\frac{r_\oplus}{g_0}}
@@ -771,16 +772,9 @@
   \eq{-.2in}{
     \Delta v=v_\mathrm{esc}-v_\mathrm{orbit}=(\sqrt{2}-1)v_\mathrm{orbit}
   }
-\end{frame}
-
-
-
-\begin{frame}{What If?}
   \begin{itemize}
-  \item What happens if $v_\mathrm{orbit}<v<v_\mathrm{esc}$? What kind of an orbit
-    does it have?
-  \item What happens if $v<v_\mathrm{orbit}$? It doesn't necessarily mean that
-    the object will crash into the planet.
+  \item What if $v_\mathrm{orbit}<v<v_\mathrm{esc}$?
+  \item What if $v<v_\mathrm{orbit}$?
   \end{itemize}
 \end{frame}
 
@@ -856,7 +850,7 @@
   Johannes Kepler (1571--1630) formulated the \textbf{laws of planetary motion}
   between 1609 to 1619, by interpreting planetary motion data from his teacher,
   Tycho Brahe. It is an improvement over the heliocentric theory of Nicolaus
-  Copernicus.
+  Copernicus. Expressed in modern language:
   \begin{enumerate}
   \item\textbf{Law of ellipses:} The orbit of a planet is an ellipse with the
     Sun at one of the two foci.
@@ -871,10 +865,11 @@
 
 \subsection{Second Law}
 
-\begin{frame}{Kepler's 2nd Law: The Law of Equal Areas}
+\begin{frame}{Kepler's Second Law: The Law of Equal Areas}
   The second law of planetary motion is the easiest to proof using concepts in
   rotational motion. It states that:
-  \begin{center}
+  
+  \vspace{.15in}\begin{center}
     \fbox{
       \begin{minipage}{.9\textwidth}
         \textbf{A line segment joining a planet and the Sun sweeps out equal
@@ -887,7 +882,7 @@
 \end{frame}
 
 
-\begin{frame}{Kepler's 2nd Law: The Law of Equal Areas}
+\begin{frame}{Kepler's Second Law: The Law of Equal Areas}
   \begin{center}
     \fbox{
       \begin{minipage}{.9\textwidth}
@@ -905,12 +900,12 @@
       node[midway,left]{$\mb{r}$} node[pos=.95,right]{$\alpha$};
       \draw[->,thick](2,3)--(3,2.8) node[midway,above]{$d\mb{r}$};
       \draw[dashed](3,2.8)--(0,0);
-      \fill[black](0,0) circle(.07) node[right]{\tiny\textrm{Sun}};
-      \fill[black](2,3) circle(.035)node[above]{\tiny\textrm{Planet}};
+      \fill[black](0,0) circle(.07) node[right]{\tiny\text{Sun}};
+      \fill[black](2,3) circle(.035)node[above]{\tiny\text{Planet}};
     \end{tikzpicture}
     \column{.7\textwidth}
-    The infinitesimal area $d\mb{A}$ swept out by an object as it moves in
-    orbit by an infinitesimal amount $d\mb{r}$ is given by:
+    The infinitesimal area $d\mb{A}$ swept out by an object (such as a planet)
+    as it moves in orbit by an infinitesimal amount $d\mb{r}$ is given by:
     
     \eq{-.4in}{
       dA=\frac{1}{2}rdr\sin\alpha
@@ -918,9 +913,9 @@
       d\mb{A}=\frac{1}{2}\mb{r}\times d\mb{r}
     }
 
-    \vspace{-.15in}The time derivative is called the \textbf{areal velocity}:
+    \vspace{-.15in}Its time derivative is called the \textbf{areal velocity}:
       
-    \eq{-.2in}{
+    \eq{-.15in}{
       \frac{d\mb{A}}{dt}
       =\frac{1}{2}\mb{r}\times\frac{d\mb{r}}{dt}
       =\frac{1}{2}\mb{r}\times\mb{v}
@@ -938,12 +933,11 @@
   \eq{-.15in}{
     \frac{d\mb{A}}{dt}
     =\frac{1}{2}(\mb{r}\times\mb{v})=\frac{\mb{L}}{2m}=
-    \textrm{constant}
+    \text{constant}
   }
 
-  \ldots as predicted by Kepler's second law. The rate a planet sweeps out the
-  area in orbit is one-half of its angular momentum around the sun, divided by
-  its mass.
+  as predicted by Kepler's second law. The rate a planet sweeps out the area in
+  orbit is its angular momentum around the sun divided by twice its mass.
 \end{frame}
 
 
@@ -1012,6 +1006,7 @@
 
 
 \begin{frame}{Kepler's First Law: Law of Ellipses}
+  As $m$ orbits around $M$, there are two velocity components
   \begin{columns}
     \column{.3\textwidth}
     \begin{tikzpicture}[scale=.5]
@@ -1025,9 +1020,9 @@
       node[below right]{\tiny $M$};
       \begin{scope}[rotate around={\angle:({sqrt(\a*\a-\b*\b)},0)}]
         \draw[->]({sqrt(\a*\a-\b*\b)},0)--(8.5,0)
-        node[pos=.45,below]{\tiny$r$}
-        node[pos=1,left]{\tiny $v_r$};
-        \draw[->](7.65,0)--(7.65,.85) node[below]{\tiny $v_\theta$};
+        node[pos=.45,below]{\tiny$\mb{r}$}
+        node[pos=1,left]{\tiny $\mb{v}_r$};
+        \draw[->](7.65,0)--(7.65,.85) node[below]{\tiny $\mb{v}_\theta$};
         \fill (7.65,0) circle(.1) node[above]{\tiny $m$};
       \end{scope}
       \draw[->]({sqrt(\a*\a-\b*\b)+.5},0) arc(0:\angle:.5)
@@ -1035,27 +1030,26 @@
 %      \draw[<->]({sqrt(\a*\a-\b*\b)-.2},0)--({sqrt(\a*\a-\b*\b)-.2},-2.65)
 %      node[midway,left]{\tiny$r_0$};
     \end{tikzpicture}
+    
     \column{.7\textwidth}
-    As $m$ orbits around $M$, there are two velocity components:
     \begin{itemize}
-    \item\textbf{Angular velocity} $\mb{v}_\theta$ in the angular direction.
-      This presence of $\mb{v}_\theta$ means a centripetal acceleration toward
-      $M$:
+    \item\textbf{Angular velocity} $\mb{v}_\theta$. The presence of
+      $\mb{v}_\theta$ means a centripetal acceleration toward $M$:
 
       \eq{-.3in}{
         a=-r\omega^2\hat{\mb{r}}
       }
 
-    \item\vspace{-.25in}\textbf{Radial velocity} $\mb{v}_r$. For circular
-      orbits, $v_r=0$. If this velocity changes with time (necessary for
-      elliptical orbits), then there will be an acceleration, also in the
-      radial direction:
+    \item\vspace{-.25in}\textbf{Radial velocity} $\mb{v}_r$. If this velocity
+      changes with time (i.e.\ elliptical orbits), then there is an
+      acceleration, also in the radial direction:
 
       \eq{-.25in}{
         a=\frac{dr}{dt}\hat{\mb{r}}
       }
     \end{itemize}
   \end{columns}
+  Both components of acceleration are due entirely to gravitational force.
 \end{frame}
 
 
@@ -1074,9 +1068,9 @@
       node[below right]{\tiny $M$};
       \begin{scope}[rotate around={\angle:({sqrt(\a*\a-\b*\b)},0)}]
         \draw[->]({sqrt(\a*\a-\b*\b)},0)--(8.5,0)
-        node[pos=.45,below]{\tiny$r$}
-        node[pos=1,left]{\tiny $v_r$};
-        \draw[->](7.65,0)--(7.65,.85) node[below]{\tiny $v_\theta$};
+        node[pos=.45,below]{\tiny$\mb{r}$}
+        node[pos=1,left]{\tiny $\mb{v}_r$};
+        \draw[->](7.65,0)--(7.65,.85) node[below]{\tiny $\mb{v}_\theta$};
         \fill (7.65,0) circle(.1) node[above]{\tiny $m$};
       \end{scope}
       \draw[->]({sqrt(\a*\a-\b*\b)+.5},0) arc(0:\angle:.5)
@@ -1085,9 +1079,7 @@
 %      node[midway,left]{\tiny$r_0$};
     \end{tikzpicture}
     \column{.7\textwidth}
-    As $m$ orbits around $M$, both components of acceleration are due entirely
-    to gravitational force. Applying Newton's second law of motion gives the
-    differential equation:
+    Applying Newton's second law of motion gives the differential equation:
 
     \eq{-.2in}{
       \frac{d^2r}{dt^2}-r\omega^2=-\frac{GM}{r^2}
@@ -1095,7 +1087,7 @@
     \begin{itemize}
     \item\vspace{-.1in}The ($+$) direction is radially outward from $M$.
     \item In the circular motion case, where $d^2r/dt^2=0$, we are left with
-      the centripetal force.
+      only the centripetal force.
     \end{itemize}
   \end{columns}
 \end{frame}
@@ -1116,9 +1108,9 @@
       node[below right]{\tiny $M$};
       \begin{scope}[rotate around={\angle:({sqrt(\a*\a-\b*\b)},0)}]
         \draw[->]({sqrt(\a*\a-\b*\b)},0)--(8.5,0)
-        node[pos=.45,below]{\tiny$r$}
-        node[pos=1,left]{\tiny $v_r$};
-        \draw[->](7.65,0)--(7.65,.85) node[below]{\tiny $v_\theta$};
+        node[pos=.45,below]{\tiny$\mb{r}$}
+        node[pos=1,left]{\tiny $\mb{v}_r$};
+        \draw[->](7.65,0)--(7.65,.85) node[below]{\tiny $\mb{v}_\theta$};
         \fill (7.65,0) circle(.1) node[above]{\tiny $m$};
       \end{scope}
       \draw[->]({sqrt(\a*\a-\b*\b)+.5},0) arc(0:\angle:.5)
@@ -1130,41 +1122,42 @@
     Substituting angular momentum $L=mr^2\omega$ (which is a constant), the
     differential equation becomes:
 
-    \eq{-.2in}{
+    \eq{-.15in}{
       \frac{d^2r}{dt^2}=-\frac{GM}{r^2}+\frac{L^2}{mr^3}
     }
 
-    This is where ``math magic'' happens. This differential equation is
-    difficult to solve, and the equation for an ellipse depends on $\theta$ but
-    not on $t$.
+    The solution to this differential equation is difficult to obtain, and the
+    equation for an ellipse depends on $\theta$ but not on $t$.
   \end{columns}
 \end{frame}
 
 
 
 \begin{frame}{Kepler's First Law: Law of Ellipses}
-  First, we do a change of variable, and define
+  We define a new variable:
 
   \eq{-.2in}{
     u=\frac{1}{r}
   }
   
-  \vspace{-.1in}Then, we use the fact that angular momentum $L$ is constant
-  to relate derivatives in time $t$ to derivatives in angle $\theta$:
+  Using the fact that angular momentum $L$ is constant to relate derivatives in
+  time $t$ to derivatives in angle $\theta$:
   
-  \eq{-.2in}{
-    L=mr^2\frac{d\theta}{dt}=\frac{m}{u^2}\frac{d\theta}{dt}
-    \;\;\rightarrow\;\;
+  \eq{-.15in}{
+    L
+    =m\textcolor{red}{r^2}\frac{d\theta}{dt}
+    =\frac{m}{\textcolor{red}{u^2}}\frac{d\theta}{dt}
+    \quad\rightarrow\quad
     \frac{d}{d\theta}=\frac{Lu^2}{m}\frac{d}{dt}
   }
 \end{frame}
 
 
 \begin{frame}{Kepler's First Law: Law of Ellipses}
-  With this change, $d^2r/dt^2$ can be expressed in terms of $u$ and $\theta$.
-  The first derivative $dr/dt$:
+  With this change, $\ddot{r}$ can be expressed in terms of $u$ and $\theta$.
+  The first derivative $\dot{r}$:
 
-  \eq{-.2in}{
+  \eq{-.15in}{
     \frac{d\textcolor{red}{r}}{dt}
     =\frac{d}{dt}\left(\textcolor{red}{\frac{1}{u}}\right)
     =-\frac{1}{u^2}\frac{\textcolor{blue}{d}u}{\textcolor{blue}{dt}}
@@ -1174,7 +1167,7 @@
 
   Likewise, the second derivative is:
 
-  \eq{-.2in}{
+  \eq{-.15in}{
     \frac{d^2r}{dt^2}=\frac{d}{dt}\left(\frac{dr}{dt}\right)
     =-\frac{L^2u^2}{m^2}\frac{d^2u}{d\theta^2}
   }
@@ -1185,18 +1178,16 @@
 \begin{frame}{Kepler's First Law: Law of Ellipses}
   The original differential equation, now written in terms of $\rho$ and
   $\theta$, becomes a second-order ordinary differential equation with constant
-  coefficients and a constant forcing function\footnote{
-    This form of differential equation was first encountered in the harmonic
-    motion problem.
-  }:
+  coefficients and a constant forcing function (this form of differential
+  equation was first encountered in the harmonic motion problem):
 
-  \eq{-.3in}{
+  \eq{-.2in}{
     \frac{d^2r}{dt^2}=-\frac{GM}{r^2}+\frac{L^2}{mr^3}
     \quad\rightarrow\quad
     \frac{d^2u}{d\theta^2}+u=\frac{GMm^2}{L^2}
   }
 
-  \vspace{-.1in}The solution to the differential equation is:
+  The solution to the differential equation is:
 
   \eq{-.2in}{
     u=\frac{GMm^2}{L^2}+A\cos\theta
@@ -1208,21 +1199,21 @@
 \begin{frame}{Kepler's First Law: Law of Ellipses}
   Solving for $r$, and factoring terms appropriately,
 
-  \eq{-.3in}{
+  \eq{-.25in}{
     r=\frac{1}{\frac{GMm^2}{L^2}(1+e\cos\theta)}
     =\left(\frac{L^2}{GMm^2}\right)\frac{1}{1+e\cos\theta}
   }
   
-  \vspace{-.1in}where $e$ is a constant:
+  where $e$ is a constant:
 
   \eq{-.3in}{
     e=\frac{AL^2}{GMm^2}
   }
   
-  \vspace{-.1in}The \emph{aphelion} and \emph{perihelion} (points of furthest
+  The \emph{aphelion} and \emph{perihelion} (points of furthest
   and closest distance to the Sun) are given by:
 
-  \eq{-.32in}{
+  \eq{-.25in}{
     r_{\textrm{max}}=\left(\frac{L^2}{GMm^2}\right)\frac{1}{1-e}
     \quad
     r_{\textrm{min}}=\left(\frac{L^2}{GMm^2}\right)\frac{1}{1+e}
@@ -1242,7 +1233,7 @@
   axis $a$ to the numerator in the $r$ expression from the last slide:
 
   \eq{-.2in}{
-    a(1-e^2)=\frac{L^2}{GMm^2}
+    a(1-e^2)=\frac{L^2}{GMm^2}=r(1+e\cos\theta)
   }
 \end{frame}
 
@@ -1279,10 +1270,11 @@
   \eq{-.25in}{
     A=\pi ab=\pi a^2\sqrt{1-e^2}
   }
+
   \vspace{-.1in}Equating two equations above and squaring both sides give this
   expression:
 
-  \eq{-.15in}{
+  \eq{-.35in}{
     T^2=\frac{m^2}{L^2}4\pi^2a^4(1-e^2)
   }
 \end{frame}
