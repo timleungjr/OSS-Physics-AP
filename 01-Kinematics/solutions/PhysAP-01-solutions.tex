@@ -1,0 +1,161 @@
+\documentclass[11pt]{article}
+\usepackage{bm}
+\usepackage[margin=1.7cm,top=2.5cm,bottom=2.5cm,letterpaper]{geometry}
+\usepackage{enumitem}
+\usepackage{tikz,graphicx,wrapfig}
+\usepackage{amsmath}
+%\usepackage{pgfplots}
+\usepackage{times}
+\usepackage[document]{ragged2e}
+\usepackage[none]{hyphenat}
+\usepackage{siunitx}
+\usepackage{multicol}
+\usepackage{fancyhdr}
+
+\newcommand{\mb}[1]{\mathbf{#1}}
+\newcommand{\iii}{\bm{\hat{\imath}}}
+\newcommand{\jjj}{\bm{\hat{\jmath}}}
+
+\setlength{\parskip}{15pt}
+
+\sisetup{
+  %  mode=text,
+  detect-all,
+  %number-math-rm=\mathnormal,
+  %  text-sf=\sffamily,
+  %  text-rm=\sffamily,
+  inter-unit-product =\ensuremath{\cdot{}},
+  per-mode=symbol,
+  group-separator={,},
+}
+
+\pagestyle{fancy}
+  \chead{}
+  \lhead{Olympiads School}
+  \rhead{Solutions to Free Response Questions}
+  \lfoot{Advanced Placement Physics}
+  \cfoot{-\thepage-}
+  \rfoot{}
+
+
+\begin{document}
+
+\fbox{
+  \begin{minipage}{.97\linewidth}
+    \textbf{Free Response Question 4:} A steel ball is dropped from a point with
+    $(x,y)$ coordinate of $(\SI{8}{\metre},\SI{16}{\metre})$. At the same time,
+    another ball is launched from the origin with a speed of
+    \SI{20}{\metre\per\second} at an angle of \ang{30}.
+    \begin{enumerate}[noitemsep,topsep=0pt]
+    \item Find the minimum distance of separation occur of the two balls.
+    \item At what time does this separation occur?
+    \item Give the coordinates of the two balls for the minimum separation.
+    \end{enumerate}
+  \end{minipage}
+}
+
+There are two ways to solve the problem. The first method \emph{looks} easy on
+first glance, but will require a lot of calculus. The second method, on the
+other hand, is a straightforward geometry problem that requires a bit of
+ingenuity.
+
+\textbf{\underline{Method 1 (not recommended)}}
+
+The most straightforward approach is to express the distance between the steel
+balls as a function of time, and then take the derivative with respect to time
+to find out when it occurs $t$ and minimum value of $d$.
+
+Let's call the steel ball being dropped $A$, and the ball that is launched
+$B$. Their respective position in the coordinate system are expressed as
+functions of time using kinematic equations\footnote{For the $x$ direction,
+  $x=v_xt$ and for the $y$ directiom, $y=y_0+v_{y0}t-\frac12gt^2$.}, and using
+$g=\SI{10}{\metre\per\second^2}$ for both cases\footnote{which is acceptable
+  for all AP exams} for simplicity.
+\begin{align}
+  \mb{x}_A &= 8\iii + (16-5t^2)\jjj \\
+  \mb{x}_B &=20\cos\ang{30}t\iii+(20\sin\ang{30}t-5t^2)\jjj
+\end{align}
+The ``displacement'' vector between $A$ and $B$ can be expressed as:
+\begin{equation}
+  \Delta\mb{x}
+  =\mb{x}_A-\mb{x}_B
+  =(8-20\cos\ang{30}t)\iii + (16-20\sin\ang{30}t)\jjj
+  \label{no-g}
+\end{equation}
+Not surprisingly, the gravitational acceleration term $\frac12gt^2=5t^2$ term
+cancels, because both $A$ and $B$ are free-falling objects with the same
+downward acceleration. The square of the \emph{distance} between $A$ and $B$ are
+expressed as:
+\begin{equation}
+  d^2 =(8-20\cos\ang{30}t)^2 + (16-20\sin\ang{30}t)^2
+\end{equation}
+What we will need to do now is to take the time derivative of $d^2$ with
+respect to time, and to find $d$ and $t$. This process is laborious and
+tedius (and prone to error for someone uncomfortable with using chain rule)
+and therefore generally not recommended. We will instead try a completely
+different approach.
+
+\textbf{\underline{Method 2}}
+
+However, we have already noted that in Equation~\ref{no-g}, acceleration due to
+gravity terms cancel, which means that the minimum separation distance $d$ does
+not depend on $g$! We instead consider an observer who is falling alongside
+steel ball $A$ (which is equivalent to effectively treating $g=0$.) In this
+case, the observer sees that $A$ remains stationary while $B$ travels in a
+straight line instead of the parabolic path of a projectile. The observer's
+point of view is shown in Fig.~\ref{falling}. The minimum distance of
+separation occurs at $C$ in this frame of reference, with a value of $d$.
+\begin{figure}[ht]
+  \begin{center}
+    \begin{tikzpicture}[scale=.4]
+      \draw[->](0,0)--(17,0) node[pos=1,right]{$x$};
+      \draw[->](0,0)--(0,17) node[pos=1,above]{$y$};
+      \fill(8,16) circle(.18) node[above]{$A$};
+      \fill(8,4.62) circle(.1) node[above left]{$E$};
+      \fill(8,0) circle(.1) node[below]{$D$};
+      \draw[dashed](8,16)--(8,0);
+      \draw[dashed](12.9,7.46)--(12.9,0) node[below]{$C'$};
+      \draw[->](3,0) arc(0:30:3) node[midway,right]{\ang{30}};
+      \draw[->](8,13) arc(270:300:3) node[midway,below]{\ang{30}};
+      \begin{scope}[rotate=30]
+        \draw[very thick](0,0)--(18,0);
+        \fill(18,0) circle(.18) node[right]{$B$};
+      \end{scope}
+      \draw[dashed](8,16)--(12.9,7.46) node[midway,above right]{$d$};
+      \fill(12.9,7.46) circle(.1) node[below right]{$C$};
+    \end{tikzpicture}
+  \end{center}
+  \caption{Observing the steel balls while free-falling}
+  \label{falling}
+\end{figure}
+ Using basic geometry, we can find distance $DE$ and $AE$:
+ \begin{align*}
+   DE&=8\tan\ang{30}=\SI{4.6}{\metre}\\
+   AE&=16-DE=\SI{11.4}{\metre}
+ \end{align*}
+Using basic trigonometry again, we can now find the minimum distance of
+separation:
+\begin{displaymath}
+  d=AE\cos\ang{30}=\boxed{\SI{9.9}{\metre}}
+\end{displaymath}
+The second part is slightly trickier, because we have (so far) ignored
+acceleration due to gravity. However, there is no acceleration in the $x$
+direction, i.e.\ the horizontal distance that $B$ travels is the same. We
+need to compute $DC'$ which is just
+\begin{displaymath}
+  DC'=d\sin\ang{30}=\SI{4.9}{\metre}
+\end{displaymath}
+which means that in the time to reach minimum separation distance, the steel
+ball $B$ has travelled $8+4.9=\SI{12.9}{\metre}$ horizontally. We can now use
+the kinematic equation in the $x$-direction to compute $t$:
+\begin{displaymath}
+  t=\frac{\Delta x}{v_x}=\frac{12.9}{20\cos\ang{30}}=\boxed{\SI{.75}{\second}}
+\end{displaymath}
+Finally, we substitute $t$ back into the \emph{actual} position of $A$ and $B$
+to compute their \emph{actual} location when the minimum separation occurs:
+\begin{align*}
+  \mb{x}_A &= 8\iii + (16-5t^2)\jjj = \boxed{8\iii+13.2\jjj} \\
+  \mb{x}_B &=20\cos\ang{30}t\iii+(20\sin\ang{30}t-5t^2) \jjj
+  =\boxed{12.9\iii+1.7\jjj}
+\end{align*}
+\end{document}
