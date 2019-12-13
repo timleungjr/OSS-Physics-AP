@@ -15,6 +15,7 @@
 \newcommand{\mb}[1]{\mathbf{#1}}
 \newcommand{\iii}{\bm{\hat{\imath}}}
 \newcommand{\jjj}{\bm{\hat{\jmath}}}
+\newcommand{\pic}[2]{\includegraphics[width=#1\textwidth]{#2}}
 
 \setlength{\parskip}{15pt}
 
@@ -30,12 +31,12 @@
 }
 
 \pagestyle{fancy}
-  \chead{}
-  \lhead{Olympiads School}
-  \rhead{Solutions to Free Response Questions}
-  \lfoot{Advanced Placement Physics}
-  \cfoot{-\thepage-}
-  \rfoot{}
+\chead{}
+\lhead{Olympiads School}
+\rhead{Advanced Placement Physics}
+\lfoot{Solutions to Free Response Questions}
+\cfoot{-\thepage-}
+\rfoot{}
 
 
 \begin{document}
@@ -68,7 +69,7 @@ to find out when it occurs $t$ and minimum value of $d$.
 Let's call the steel ball being dropped $A$, and the ball that is launched
 $B$. Their respective position in the coordinate system are expressed as
 functions of time using kinematic equations\footnote{For the $x$ direction,
-  $x=v_xt$ and for the $y$ directiom, $y=y_0+v_{y0}t-\frac12gt^2$.}, and using
+  $x=v_xt$ and for the $y$ direction, $y=y_0+v_{y0}t-\frac12gt^2$.}, and using
 $g=\SI{10}{\metre\per\second^2}$ for both cases\footnote{which is acceptable
   for all AP exams} for simplicity.
 \begin{align}
@@ -91,7 +92,7 @@ expressed as:
 \end{equation}
 What we will need to do now is to take the time derivative of $d^2$ with
 respect to time, and to find $d$ and $t$. This process is laborious and
-tedius (and prone to error for someone uncomfortable with using chain rule)
+tedious (and prone to error for someone uncomfortable with using chain rule)
 and therefore generally not recommended. We will instead try a completely
 different approach.
 
@@ -158,4 +159,81 @@ to compute their \emph{actual} location when the minimum separation occurs:
   \mb{x}_B &=20\cos\ang{30}t\iii+(20\sin\ang{30}t-5t^2) \jjj
   =\boxed{12.9\iii+1.7\jjj}
 \end{align*}
+\newpage
+
+\fbox{
+  \begin{minipage}{.97\linewidth}
+    \textbf{Free Response Question 6:} A trail bike take off from a ramp with
+    velocity $\mb{v}_0$ at angle $\theta$ to clear a ditch of width $x$ and
+    land on the other side, which is elevated at a height $H$.
+    \begin{center}
+      \pic{.4}{../homework/trail-bike.jpg}
+    \end{center}
+    \begin{enumerate}[noitemsep,topsep=0pt]
+    \item For a given angle $\theta$ and distance $x$, what is the upper limit
+      for $H$ such that the bike has an chance of making the jump?
+    \item For $H$ less than this upper limit, what is the minimum take-off speed
+      $v_0$ necessary for a successful jump?
+    \end{enumerate}
+    Neglect the size of the trail bike, and assume that covering a horizontal
+    distance $x$ and a vertical distance $H$ is sufficient to clear the ditch.
+  \end{minipage}
+}
+
+To solve this problem, we must break down the initial velocity $\mb{v}_0$ into
+its horizontal ($\iii$) and vertical ($\jjj$) directions, i.e.:
+\begin{displaymath}
+  \mb{v}_0=v_o\cos\theta\iii+v_0\sin\theta\jjj
+\end{displaymath}
+Ignoring air resistance, the only acceleration will be due to gravity (which is
+constant), in the $\jjj$ direction. Also assuming that $H$ is the maximum
+height that the dirt bike reaches. We can use the kinematic equations to obtain
+an expression for $H$ in terms of $v_0$ and $\theta$:
+\begin{equation}
+  v_y^2=v_{y0}^2-2gH\quad\longrightarrow\quad
+  0=v_o^2\sin^2\theta-2gH\quad\longrightarrow\quad
+  \boxed{H=\frac{v_o^2\sin^2\theta}{2g}}
+  \label{HH}
+\end{equation}
+Note that this is the same calculation we used to obtain the maximum height
+for a symmetric trajectory projectile motion. The time it takes to reach this
+height is also straightforward to obtain:
+\begin{equation}
+  v_y=v_{y0}-gt\quad\longrightarrow\quad
+  0=v_0\sin\theta-gt\quad\longrightarrow\quad
+  \boxed{t=\frac{v_0\sin\theta}{g}}
+\end{equation}
+Likewise, this the exactly \emph{half} of the value for a symmetric projectile.
+In the $\iii$ direction, there is no acceleration, and the width of the ditch
+$x$ can be related to the initial velocity as:
+\begin{equation}
+  x=v_xt=v_0\cos\theta\left(\frac{v_0\sin\theta}{g}\right)
+  =\boxed{\frac{v_0^2\sin\theta\cos\theta}{g}}
+  \label{halfrange}
+\end{equation}
+For completeness, Eq.~\ref{halfrange} is also \emph{half} the range of a
+symmetric projectile. Substituting the expression for $H$ from Eq.~\ref{HH}
+into Eq.~\ref{halfrange}, and solving for $H$ obtains the answer to the first
+part of the question:
+\begin{equation}
+  x=\frac{2H\cos\theta}{\sin\theta}
+  \quad\longrightarrow\quad
+  \boxed{H=\frac12x\tan\theta}
+  \label{solution1}
+\end{equation}
+For the second part of the question, we assume that the width of the ditch
+$x$ and the angle of the ramp $\theta$ are constant, and that $H$ is the only
+thing that will change. Therefore, we want to express $v_0$ needed to clear $H$
+in terms of $x$ and $\theta$. Then any $v_0$ less than this value will clear a
+height less than $H$. Equating the expression for $H$ in Eq.~\ref{solution1} to
+Eq.~\ref{HH}, and rearranging terms:
+\begin{align}
+  \frac{v_0^2\sin^2\theta}{2g}&=\frac12x\tan\theta
+  =\frac12 x\frac{\sin\theta}{\cos\theta}\\
+  v_0^2&=\frac{gx}{\sin\theta\cos\theta}=\frac{2gx}{\sin(2\theta)}
+\end{align}
+Finally, solving for $v_0$ we have the expression for the velocity to clear
+\begin{equation}
+  \boxed{v_0\geq\sqrt{\frac{2gx}{\sin(2\theta)}}}
+\end{equation}
 \end{document}
