@@ -9,7 +9,6 @@
 %\usepackage{graphicx}
 \usepackage{tikz}
 \usepackage{mathpazo}
-%\usepackage[scaled]{helvet}
 \usepackage{xcolor,colortbl}
 %\usepackage{hyperref}
 
@@ -103,6 +102,7 @@
 \end{frame}
 
 
+
 \begin{frame}{Cylindrical Coordinates in 3D}
   \begin{columns}
     \column{.45\textwidth}
@@ -184,7 +184,6 @@
     \end{tikzpicture}
 
     \column{.65\textwidth}
-
     Velocity $\mb{v}$ and angular velocity $\bm{\omega}$ are related by the
     cross product with the position vector $\mb{r}$:
 
@@ -297,6 +296,7 @@
 \end{frame}
 
 
+
 \begin{frame}{Kinematics in the Angular Direction}
   For constant $\alpha$, the kinematic equations are just like in linear
   motion:
@@ -319,6 +319,7 @@
   \SI{3.}{rad/\s^2}. The radius is \SI{2.}{\metre} and it starts from rest. How
   long does it take for this object to finish a circle?
 \end{frame}
+
 
 
 \begin{frame}{Centripetal Acceleration \& Centripetal Force}
@@ -369,13 +370,16 @@
     \item In general circular motion, there are two components of acceleration:
       \begin{itemize}
       \item\textcolor{red}{\textbf{Centripetal acceleration} $a_r$} depends on
-        radius of curvature $r$ and instantaneous speed $v$
+        radius of curvature $r$ and instantaneous speed $v$. The direction of
+        the acceleration is toward the center of the circle.
       \item \textcolor{blue}{\textbf{Tangential acceleration} $a_\theta$}
-        depends on radius $r$  and angular acceleration $\alpha$
+        depends on radius $r$  and angular acceleration $\alpha$. The direction
+        of the acceleration is tangent to the circle
       \end{itemize}
-    \item Most of the cases in AP Physics are uniform circular motion
     \end{itemize}
   \end{columns}
+
+  \vspace{.2in}Most of the cases in AP Physics are uniform circular motion.
 \end{frame}
 
 
@@ -476,7 +480,7 @@
 
 \begin{frame}{What About a Pendulum?}
   The motion of a pendulum is also like a vertical circular motion problem.
-  There are two forces act on the pendulum: weight $\mb{w=}m\mb{g}$, and
+  There are two forces act on the pendulum: weight $\mb{w}=m\mb{g}$, and
   tension $\mb{T}$
 
   \vspace{.1in}\begin{columns}
@@ -594,8 +598,8 @@
       a_\theta=g\sin\theta
     }
 
-    This is the same acceleration as an object sliding down a ramp at an angle
-    of $\theta$.
+    \vspace{-.1in}This is the same acceleration as an object sliding down a
+    frictionless ramp at an angle of $\theta$.
   \end{columns}
 \end{frame}
 
@@ -645,9 +649,6 @@
 
 
 
-
-
-
 \begin{frame}{Example Problem}
   \textbf{Example 4:} You are playing with a yo-yo with a mass of
   \SI{225}{\gram}. The full length of the string is \SI{1.2}{\metre}. You
@@ -677,6 +678,7 @@
 \end{frame}
 
 
+
 \begin{frame}{Example: Roller Coaster}
   \textbf{Example 6:} A roller coaster car is on a track that forms a circular
   loop, of radius $R$, in the vertical plane. If the car is to maintain contact
@@ -692,6 +694,7 @@
 \end{frame}
 
 
+
 \begin{frame}{Example}
   \textbf{Example 7:} A stone of mass $m$ is attached to a light strong string
   and whirled in a \emph{vertical} circle of radius $r$. At the exact bottom of
@@ -704,6 +707,7 @@
   \item $4gR$
   \end{enumerate}
 \end{frame}
+
 
 
 \section{Torque}
@@ -843,6 +847,7 @@
 \end{frame}
 
 
+
 \begin{frame}{Rotational Equilibrium}
   An object is in \textbf{translational equilibrium} is when the force acting
   it is zero:
@@ -946,6 +951,7 @@
 \end{frame}
 
 
+
 \begin{frame}{Moment of Inertia}
   A single particle:
   
@@ -965,6 +971,7 @@
     \boxed{I=\int r^2dm}
   }
 \end{frame}
+
 
 
 \begin{frame}{Moment of Inertia}
@@ -1026,8 +1033,7 @@
 
   \eq{-.2in}{
     \mb{F}=m\mb{a}\quad\quad \bm{\tau}=I\bm{\alpha}
-  }
-  
+  }  
 \end{frame}
 
 
@@ -1087,6 +1093,7 @@
 \end{frame}
 
 
+
 \section{Rotational Kinetic Energy}
 
 \begin{frame}{Rotational Kinetic Energy}
@@ -1128,5 +1135,22 @@
   
   In this case, the $I_\mathrm{P}$ is calculated at the pivot.
   \textbf{IMPORTANT:} $I_\mathrm{CM}\neq I_\mathrm{P}$
+\end{frame}
+
+
+
+\begin{frame}{Parallel Axis Theorem}
+  \begin{columns}
+    \column{.35\textwidth}
+    \pic{1}{Steiner.png}
+    
+    \column{.65\textwidth}
+    The \textbf{parallel axis theorem} relates the moment of inertia of an
+    object along two different but parallel axis by:
+
+    \eq{-.2in}{
+      \boxed{I=I_{\textrm{CM}}+md^2}
+    }
+  \end{columns}
 \end{frame}
 \end{document}
