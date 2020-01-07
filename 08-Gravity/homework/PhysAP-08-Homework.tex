@@ -3,7 +3,7 @@
 \begin{document}
 \genheader
 
-\gentitle{1 \& C}{UNIVERSAL GRAVITATION}`
+\gentitle{1 \& C}{UNIVERSAL GRAVITATION}
 
 \genmultidirections
 
@@ -207,7 +207,8 @@
     acceleration $a_Y$ of Planet Y?
     \begin{center}
       \begin{tikzpicture}[scale=.7]
-        \draw[fill=gray!60](0,0) circle(.25);
+        \tikzstyle{balloon}=[ball color=gray];
+        \shade[balloon](0,0) circle(.25);
         \draw[dashed](0,0) circle(1);
         \draw[dashed](0,0) circle(3);
         \draw(0,0)--(1,0) node[pos=1,right]{X} node[midway,above]{$R$};
@@ -309,8 +310,8 @@
     \begin{center}
       \begin{tikzpicture}[scale=0.8]
         \tikzstyle{balloon}=[ball color=gray];
-        \draw(0,0) circle(0.25);
-        \draw[dashed](0,0) circle(3) node[below]{$M$};
+        \shade[balloon] circle(.25) node[below]{$M$};
+        \draw[dashed](0,0) circle(3);
         \begin{scope}[rotate=50]
           \draw[->](0.25,0)--(2.8,0) node[midway,right]{$R$};
           \shade[balloon] (3,0) circle (0.2) node[right]{$m$};
