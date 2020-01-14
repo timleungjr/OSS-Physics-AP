@@ -346,6 +346,58 @@ where $e$ is called the eccentricity of the ellipse.
   \frac{d^2r}{dt^2} - r\frac{d\omega}{dt}^2 = -GM\frac{1}{r^2}
   \label{differential}
 \end{equation}
+
+
+\begin{figure}[!ht]
+  \centering
+  \begin{tikzpicture}
+    \def\a{4} % semi-major axis
+    \def\b{3.25} % semi-minor axis
+    \def\angle{150} % angle
+    \draw (0,0) ellipse ({\a} and {\b});% Draw the ellipse
+    \draw ({sqrt(\a*\a-\b*\b)},-2.65)--({sqrt(\a*\a-\b*\b)},2.65);
+    \draw (-\a-.2,0)--(\a+.2,0);
+    \fill[black]({sqrt(\a*\a-\b*\b)},0) circle(.1) node[below right]{$M$};
+    \begin{scope}[rotate around={\angle:({sqrt(\a*\a-\b*\b)},0)}]
+      \draw[->]({sqrt(\a*\a-\b*\b)},0)--(8.5,0)
+      node[pos=.45,below]{$\mb{r}$} node[pos=1,left]{$\mb{v}_r$};
+      \draw[->](7.65,0)--(7.65,.85) node[below]{$\mb{v}_\theta$};
+      \fill (7.65,0) circle(.1) node[above]{$m$};
+    \end{scope}
+    \draw[->]({sqrt(\a*\a-\b*\b)+.5},0) arc(0:\angle:.5)
+    node[pos=.4,above]{$\theta$};
+%      \draw[<->]({sqrt(\a*\a-\b*\b)-.2},0)--({sqrt(\a*\a-\b*\b)-.2},-2.65)
+%      node[midway,left]{\tiny$r_0$};
+  \end{tikzpicture}
+  \caption{Elliptical orbit of a small mass $m$ around a large mass $M$.}
+  \label{eorbit}
+\end{figure}
+
+
+As shown in Fig.~\ref{eorbit}, there are two components of velocity when a
+planet orbits a star:
+\begin{itemize}
+\item\textbf{Angular velocity} $\mb{v}_\theta$. The presence of $\mb{v}_\theta$
+  means a centripetal acceleration toward $M$:
+  \begin{equation}
+    a=-r\omega^2\hat{\mb{r}}
+  \end{equation}
+\item\textbf{Radial velocity} $\mb{v}_r$. If this velocity changes with time
+  (which is the case for elliptical orbits but not circular orbits), then there
+  is an acceleration, also in the radial direction:
+  \begin{equation}
+    a=\frac{dr}{dt}\hat{\mb{r}}
+  \end{equation}
+\end{itemize}
+Both components of acceleration are due entirely to gravitational force.
+Applying Newton's second law of motion gives the differential equation:
+\begin{equation}
+  \frac{d^2r}{dt^2}-r\omega^2=-\frac{GM}{r^2}
+  \label{ode1}
+\end{equation}
+The ($+$) direction is radially outward from $M$. In the circular motion case,
+where $d^2r/dt^2=0$, we are left with only the centripetal force.
+
 The differential equation, in its current form, is difficult to solve, and the
 equation for an ellipse depends on $\theta$ but not on $t$. However, the
 differential equation is easier to solve by making a variable substitution that
@@ -442,6 +494,12 @@ derived Kepler's first law.
 %What happens if e \geq 1e≥1?
 
 \section{Third law: Period of motion}
+\begin{figure}
+  \centering
+  \pic{.5}{../kep8.png}
+  \caption{The pl}
+  \label{3rdlaw}
+\end{figure}
 The total area $A$ swept by the planet through one orbital period is the areal
 velocity (which is constant, as shown in Eq.\ \ref{constant}) integrated by
 time, from $t=0$ to $T$, the orbital period of the planet:
