@@ -25,7 +25,9 @@
 }
 
 \title{Kepler's Laws of Planetary Motion}
-\author{Dr.\ Timothy M.\ Leung}
+\author{Timothy M.\ Leung, Ph.D.\\
+  Meritus Academy\\
+  Toronto, ON, Canada}
 \date{\today}
 
 \newcommand{\pic}[2]{
@@ -45,14 +47,6 @@
 \begin{document}
 \maketitle
 
-%Kepler's laws describe the motion of objects in the presence of a central
-%inverse square force. For simplicity, we'll consider the motion of the planets
-%in our solar system around the Sun, with gravity as the central force. Among
-%other things, Kepler's laws allow one to predict the position and velocity of
-%the planets at any given time, the time for a satellite to collapse into the
-%surface of a planet, and the period of a planet's orbit as a function of its
-%orbits' geometry.
-%
 Although the laws were originally obtained by Kepler after careful analysis of
 empirical data from his teacher Tycho Brahe, the complete mathematical
 understanding was missing until Newton derived each law as pieces of his
@@ -61,16 +55,24 @@ consider the orbit of a planet in the gravity of a massive star. In modern
 form, \textbf{Kepler's laws of planetary motion} state that:
 \begin{enumerate}[leftmargin=18pt]
 \item A planet moves around the Sun in an elliptical path with the Sun as one
-  of the focii.
+  of the foci.
 \item The line segment joining a planet and the Sun sweeps out equal areas
-  during equal intervals of time
+  during equal intervals of time (Fig.~\ref{kep2}).
+  \begin{figure}[t]
+    \centering
+    \pic{.4}{../201532-132212364-3243-planet.png}
+    \caption{The Earth sweeps out the same shaded area (purple) over the
+      same amount of time regardless of where it is in its orbit.}
+    \label{kep2}
+  \end{figure}
 \item The square of the orbital time period of a planet is proportional to the
   cube of the semi-major axis of its orbit, i.e.\ $T^2\propto r^3$.
 \end{enumerate}
-
-Two properties of gravity are crucial to understanding of orbital mechanics.
-These two properties are true regardless of the shape of the orbit, and even
-whether an object is in orbit or not:
+To begin, two properties of gravitational force\footnote{Newton's law of
+  universal gravitation:
+  $\displaystyle \mb{F}_g=-\frac{Gm_1m_2}{r^2}\hat{\mb{r}}$} are crucial to the
+understanding of orbital mechanics. These two properties hold true regardless
+of the shape of the orbit, and whether an object is even in orbit altogether:
 \begin{enumerate}[leftmargin=18pt]
 \item Gravity is a \emph{conservative} force, in that
   \begin{itemize}[leftmargin=15pt]
@@ -83,16 +85,17 @@ whether an object is in orbit or not:
   \end{itemize}
 \item Gravity is a \emph{central} force, in that
   \begin{itemize}[leftmargin=15pt]
-  \item Because gravitational force $\mb{F}_g$ is always in the $-\hat{\mb{r}}$
-    direction, i.e.\ $\mb{F}\times\mb{r}=\mb{0}$,  therefore gravity does not
-    generate any torque
-  \item Angular momentum $\mb{L}$ is constant as a result
+  \item gravitational force $\mb{F}_g$ is always in the $-\hat{\mb{r}}$
+    direction (i.e.\ $\mb{F}\times\mb{r}=\mb{0}$), therefore gravity does not
+    generate any torque, and as such,
+  \item Angular momentum $\mb{L}$ about the sun is constant
   \item The motion of the planet is confined to a two-dimensional plane
   \end{itemize}
 \end{enumerate}
 For the purpose of the analysis, we also assume that the Sun's mass $M_\odot$
-is very large compared to any other object in the solar system, and  its motion
-is essentially unaffected by the gravity from the planets.
+is very large compared to any other object in the solar system (e.g.\ planets,
+comets, asteroids), and its motion is essentially unaffected by the gravity
+from the planets.
 
 
 \section{Second law: Equal area in equal time}
@@ -111,10 +114,10 @@ rotational motion.
       \fill[black](2,3) circle(.035)node[above]{\tiny\textrm{Planet}};
     \end{tikzpicture}
     \end{center}
-  \caption{Infinitesimal area swept by a planet as it moves in orbit.}
+  \caption{Infinitesimal area $d\mb{A}$ swept by a planet as it moves in orbit.}
   \label{fig:dA}
 \end{figure}
-The infinitesimal area $d\mb{A}$ (Figure \ref{fig:dA}) swept out by a planet as
+The infinitesimal area $d\mb{A}$ (Fig.~\ref{fig:dA}) swept out by a planet as
 it moves in orbit by an infinitesimal amount $d\mb{r}$ can be computed by the
 area of the triangle:
 \begin{equation}
@@ -124,17 +127,19 @@ or in vector form:
 \begin{equation}
   d\mb{A}=\frac{1}{2}\mb{r}\times d\mb{r}
 \end{equation}
-The direction of $d\mb{A}$, in this case, points into the page. The time
-derivative of the area is called the \textbf{areal velocity}, which literally
-means how quickly the area is changing:
+The direction of $d\mb{A}$, in this case, points into the page. (The direction
+of the vector is not important in the calculation.) The time derivative of the
+area is called the \textbf{areal velocity}, which literally means how quickly
+the area is changing:
 \begin{equation}
   \frac{d\mb{A}}{dt}
   =\frac{1}{2}\mb{r}\times\frac{d\mb{r}}{dt}
   =\frac{1}{2}\mb{r}\times\mb{v}
 \end{equation}
-We can express $\mb{r}\times\mb{v}$ in terms of angular momentum,
-$\mb{L}=m(\mb{r}\times\mb{v})$. Since gravity is a central force, angular
-momentum is a constant, i.e:
+We can express $\mb{r}\times\mb{v}$ in terms of angular momentum. Since angular
+momentum is defined as $\mb{L}=m(\mb{r}\times\mb{v})$, we have
+$\displaystyle\mb{r}\times\mb{v}=\frac{\mb{L}}{m}$. Since gravity is a
+central force, angular momentum is a constant, i.e:
 \begin{equation}
   \boxed{\frac{d\mb{A}}{dt}
     =\frac{1}{2}(\mb{r}\times\mb{v})=\frac{\mb{L}}{2m}=
@@ -142,8 +147,9 @@ momentum is a constant, i.e:
   }
   \label{constant}
 \end{equation}
-as predicted by Kepler's second law. The rate a planet sweeps out the area in
-orbit is its angular momentum around the sun, divided by twice its mass.
+as predicted by Kepler's second law. The rate that a planet sweeps out the area
+in orbit is its angular momentum around the sun, divided by twice its mass. It
+is constant regardless of its location relative to the sun.
 
 
 %If we had instead multiplied \ddot{x} 
@@ -309,11 +315,31 @@ orbit is its angular momentum around the sun, divided by twice its mass.
 
 \section{First Law: The Law of Ellipses}
 In order to proof Kepler's first law, we must show that all orbital motion must
-agree with the equations of an ellipse, which is in the form:
+agree with the equations of an ellipse.
+
+The longest dimension from the origin is the \textbf{semi-major axis} $a$, while
+the shortest dimension is the \textbf{semi-minor axis} $b$. The two lengths are
+related through the \textbf{eccentricity} of the ellipse $e$:
+\begin{equation}
+  b^2=a^2(1-e^2)\quad\text{where}\quad 0\leq e < 1
+\end{equation}
+The minimum value of eccentricity is $0$, where $a=b=r$ which is a circle. When
+eccentricity is $1$, the shape becomes a parabola, and is no longer an ellipse.
+For all values between $0$ and $1$, the area $A$ of an ellipse is given by:
+\begin{equation}
+  A=\pi ab=\pi a^2\sqrt{1-e^2}
+  \label{A2}
+\end{equation}
+
+\begin{figure}[!h]
+  \centering
+  \caption{An ellipse}
+  \label{ellipse}
+\end{figure}
+
+which is in the form:
 \begin{equation}
   r=\frac{a(1-e^2)}{1+e\cos\theta}
-  \quad\textnormal{\normalsize where}\quad
-  0\leq e < 1
 \end{equation}
 where $e$ is called the eccentricity of the ellipse.
 \begin{equation}
@@ -336,7 +362,7 @@ derivatives in time $t$ to derivatives in angle $\theta$:
   \frac{d}{d\theta}=\frac{Lu^2}{m}\frac{d}{dt}
 \end{equation}
 The derivatives $\dot{r}$ and $\ddot{r}$ can now be expressed in terms of
-derivatives with respect to $\theta$ instead of time:
+derivatives of $\theta$ instead of time $t$:
 \begin{align}
   \frac{dr}{dt} &=\frac{d}{dt}\left(\frac{1}{u}\right)
   =-\frac{1}{u}\frac{du}{dt}\\
@@ -361,10 +387,9 @@ which can be simplified to:
   \label{newdiff}
 \end{equation}
 
-Anyone experienced with calculus should immediately recognize that
-Eq.\ \ref{newdiff} is a second-order ordinary differential equation with
-constant coefficients and a constant forcing function. The solution to this
-type of equation is in the form
+Anyone experienced with calculus can recognize that Eq.\ \ref{newdiff} is a
+second-order ordinary differential equation with constant coefficients and a
+constant forcing function. The solution to this type of equation is in the form
 \begin{equation}
   u =A\cos\theta + \frac{GMm^2}{L^2}
 \end{equation}
@@ -380,7 +405,7 @@ where $e$ is a constant:
 \end{equation}
 From this form of $r$, it is clear that the maximum and a minumum values of
 $r$, in fact represent the \emph{aphelion} and \emph{perihelion} of the
-ellipes (points of furthest and closest distance to the focys):
+ellipes (points of furthest and closest distance to the focus):
 \begin{equation}
   r_{\textrm{max}}=\left(\frac{L^2}{GMm^2}\right)\frac{1}{1-e}
   \quad\quad
@@ -425,11 +450,7 @@ time, from $t=0$ to $T$, the orbital period of the planet:
   \label{A1}
 \end{equation}
 From proofing Kepler's first law in the previous section, we know that this
-area is an ellipse, given by the equation:
-\begin{equation}
-  A=\pi ab=\pi a^2\sqrt{1-e^2}
-  \label{A2}
-\end{equation}
+area is an ellipse, given in Eq.~\ref{A2}.
 where $a$ is the semi-major axis, $b=a\sqrt{1-e^2}$ is the semi-minor axis.
 Equating the expressions for area in Eq.\ \ref{A1} and Eq.\ \ref{A2}, then
 squaring both sides, give this expression:
