@@ -27,7 +27,7 @@
 \title{Kepler's Laws of Planetary Motion}
 \author{Timothy M.\ Leung, Ph.D.\\
   Olympiads School\\ Toronto, Ontario, Canada}
-\date{First Draft: \today}
+\date{\today\\(First Draft)}
 
 \newcommand{\pic}[2]{
   \includegraphics[width=#1\textwidth]{#2}
@@ -45,36 +45,39 @@
 
 \begin{document}
 \maketitle
-Johannes Kepler (1571--1630) formulated his \textbf{laws of planetary motion}
+Johannes Kepler\footnote{1571--1630. German mathematician, astromer and
+  astrologer.} formulated his \textbf{laws of planetary motion}
 between 1609 to 1619, by carefully interpreting the empirical planetary motion
-data from his teacher, Tycho Brahe. It is an improvement over the heliocentric
-theory of Nicolaus Copernicus. It should be noted that the complete mathematical
-understanding was missing until Newton derived each law as pieces of his
-orbital mechanics. In this handout we seek to obtain each law in turn, as we
-consider the orbit of a small planet in the gravitational field of a much
-more massive star. In modern form, Kepler's laws of planetary motion state
-that:
+data from his teacher, Tycho Brahe.\footnote{1546--1601. Danish nobleman and
+  astronomer.} It is an improvement over the heliocentric
+theory of Nicolaus Copernicus\footnote{1473--1543}. It should be noted that the
+complete mathematical understanding was missing until Issac
+Newton\footnote{1642--1726. English mathematician, physicist, astronomer,
+  theologian, and author.} derived each law as pieces using his laws of motion.
+In this handout we seek to obtain each law in turn, as we consider the orbit of
+a small planet in the gravitational field of a much more massive star. In
+modern form, Kepler's laws of planetary motion state that:
 \begin{enumerate}[leftmargin=18pt,noitemsep,topsep=0pt]
 \item A planet moves around the Sun in an elliptical path with the Sun as one
   of the foci.
 \item The line segment joining a planet and the Sun sweeps out equal areas
   during equal intervals of time.
 \item The square of the orbital time period of a planet is proportional to the
-  cube of the semi-major axis of its orbit, i.e.\ $T^2\propto r^3$.
+  cube of the semi-major axis of its orbit.
 \end{enumerate}
 To begin, we recognize that two properties of gravitational force, or Newton's
 \textbf{law of universal gravitation}:
 \begin{equation}
   \mb{F}_g=-\frac{Gm_1m_2}{r^2}\hat{\mb{r}}
 \end{equation}
-are crucial to the
-understanding of orbital mechanics. These two properties hold true regardless
+are crucial to
+understanding orbital mechanics. These two properties hold true regardless
 of the shape of the orbit, and whether an object is even in orbit altogether:
 \begin{enumerate}[leftmargin=18pt,topsep=0pt]
 \item Gravity is a \emph{conservative} force, in that
   \begin{itemize}[leftmargin=15pt,noitemsep,topsep=0pt]
   \item assuming that minor collisions with space dust and other methods of
-    energy dissipation are negligible, then the mechanical energy
+    energy dissipation are negligible, then the total mechanical energy
     $E=K+U_g$ is conserved.
   \item work done \emph{by} gravity (positive work) converts gravitational
     potential energy $U_g$ into kinetic energy $K$, while work \emph{against}
@@ -85,9 +88,8 @@ of the shape of the orbit, and whether an object is even in orbit altogether:
   \item gravitational force $\mb{F}_g$ is always in the $-\hat{\mb{r}}$
     direction (i.e.\ $\mb{F}\times\mb{r}=\mb{0}$), shown in
     Fig.~\ref{central-force}, therefore gravity does not generate any torque,
-    and as such,
-  \item angular momentum $\mb{L}$ about the sun is constant
-  \item the motion of the planet is confined to a two-dimensional plane
+  \item angular momentum $\mb{L}$ about the sun is therefore constant
+  %\item the motion of the planet is confined to a two-dimensional plane
   \end{itemize}
 \end{enumerate}
 \begin{figure}[!ht]
@@ -107,18 +109,18 @@ of the shape of the orbit, and whether an object is even in orbit altogether:
   \caption{A central force such as gravity do not generate a torque (moment).}
   \label{central-force}
 \end{figure}
-For the purpose of the analysis, we also assume that the Sun's mass $M_\odot$
-is very large compared to any other object in the solar system (e.g.\ planets,
-comets, asteroids), and its motion is essentially unaffected by the gravity
-from the planets.
+For the purpose of the analysis, we assume that the Sun's mass $M_\odot$
+is very large compared to any other object in the solar system (planets,
+comets, asteroids, etc.), and its motion is essentially unaffected by the
+gravity from them.
 
 \section{Second law: Equal area in equal time}
 
-The second law of planetary motion, sometimes called the \textbf{law of
-  equal areas}, states (in modern terms) that line segment joining a planet and
-the Sun sweeps out equal areas during equal intervals of time (Fig.~\ref{kep2}).
-The second law of planetary motion is the easiest to proof using concepts in
-rotational motion.
+The second law of planetary motion, called the \textbf{law of equal areas},
+states (in modern terms) that line segment joining a planet and the Sun sweeps
+out equal areas during equal intervals of time (Fig.~\ref{kep2}). The second
+law of planetary motion is the easiest to proof using concepts in rotational
+motion.
 \begin{figure}[!ht]
   \centering
     \pic{.55}{../201532-132212364-3243-planet.png}
@@ -181,7 +183,8 @@ in orbit is its angular momentum around the sun, divided by twice its mass. It
 is constant regardless of its location relative to the sun.
 
 \section{First Law: The Law of Ellipses}
-Kepler's first law is more difficult to proof, an in order to proof the
+Kepler's first law, called the \textbf{law of ellipses}, is more difficult to
+proof. In order to proof the
 law, we must show that all orbital motion must agree with the equations of an
 ellipse. An ellipse is shown in Fig.~\ref{ellipse1} with the origin of the
 coordinate system located at one of the two foci.
@@ -250,7 +253,7 @@ can be expressed using polar coordinates:
 \end{equation}
 
 As shown in Fig.~\ref{eorbit}, there are two components of velocity when a
-planet orbits a star.
+planet orbits a star:
 \begin{figure}[!ht]
   \centering
   \begin{tikzpicture}
@@ -275,7 +278,7 @@ planet orbits a star.
   \caption{Elliptical orbit of a small mass $m$ around a large mass $M$.}
   \label{eorbit}
 \end{figure}
-\begin{itemize}
+\begin{itemize}[leftmargin=15pt]
 \item\textbf{Angular velocity} $\mb{v}_\theta$. The presence of $\mb{v}_\theta$
   means a centripetal acceleration $a_c$ toward $M$. The direction of the
   acceleration is perpendicular to the direction of $\mb{v}_\theta$:
@@ -352,21 +355,24 @@ Anyone experienced with calculus can recognize that Eq.\ \ref{newdiff} is a
 \emph{second-order ordinary differential equation with constant coefficients
   and a constant forcing function}. The solution to this type of equation is in
 the form
-\begin{equation}
-  u =A\cos\theta + \frac{GMm^2}{L^2}
+\begin{equation} 
+  u =B\cos\theta + \frac{GMm^2}{L^2}
 \end{equation}
-where the coefficient $A$ is determined by initial conditions. Solving for
-$r=1/u$, we have
+where the coefficient $B$ is determined by the total energy and total angular
+momentum (both are constants) of the planets. Solving for $r=1/u$, we have
 \begin{equation}
-  r(\theta)=\frac{1}{u}= \frac{1}{A\cos\theta+ \frac{GMm^2}{L^2}}
+  r(\theta)=\frac{1}{u}= \frac{1}{B\cos\theta+ \frac{GMm^2}{L^2}}
   =\left(\frac{L^2}{GMm^2}\right)\frac{1}{1+e\cos\theta}
 \end{equation}
 where $e$ is a constant:
 \begin{equation}
-  e=\dfrac{AL^2}{GMm^2}
+  e=\dfrac{BL^2}{GMm^2}
 \end{equation}
 It should become obvious that this $e$ is, in fact, the eccentricity of the
-elliptical orbit. From this form of $r$, it is clear that the maximum and a
+elliptical orbit previously mentioned. If a planet, or any celestrial object
+has too much total energy when it enters the gravitational field of the sun,
+then $e>1$, and the object will not return.
+From this form of $r$, it is clear that the maximum and a
 minimum values of $r$ represent the \emph{aphelion} and \emph{perihelion} of
 an ellipse (points of furthest and closest distance to the focus):
 \begin{equation}
@@ -399,9 +405,10 @@ derived Kepler's first law.
   law of planetary motion.}
   \label{3rdlaw}
 \end{figure}
-The total area $A$ swept by the planet through one orbital period is the areal
-velocity (which is constant, as shown in Eq.\ \ref{constant}) integrated by
-time, from $t=0$ to $T$, the orbital period of the planet:
+In the third law, called the \textbf{law of periods}, the total area $A$
+swept by the planet through one orbital period is the areal velocity (which is
+constant, as shown in Eq.\ \ref{constant}) integrated by time, from $t=0$ to
+$T$, the orbital period of the planet:
 \begin{equation}
   A=\int dA=\int_0^T\frac{dA}{dt}dt=\frac{L}{2m}\int_0^Tdt=\frac{LT}{2m}
   \label{A1}

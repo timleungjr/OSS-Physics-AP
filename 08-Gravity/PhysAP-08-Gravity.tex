@@ -28,7 +28,7 @@
 \subtitle{Advanced Placement Physics}
 \author{Dr.\ Timothy Leung}
 \institute{Olympiads School, Toronto, ON, Canada}
-\date{December, 2019}
+\date{January, 2019}
 
 \newcommand{\pic}[2]{\includegraphics[width=#1\textwidth]{#2}}
 \newcommand{\mb}[1]{\ensuremath\mathbf{#1}}
@@ -1126,15 +1126,17 @@
       \frac{d^2r}{dt^2}=-\frac{GM}{r^2}+\frac{L^2}{mr^3}
     }
 
-    The solution to this differential equation is difficult to obtain, and the
-    equation for an ellipse depends on $\theta$ but not on $t$.
+    This differential equation is difficult to solve, and the
+    equation for an ellipse (that we've shown a few slides ago) depends on
+    $\theta$ but not on $t$.
   \end{columns}
 \end{frame}
 
 
 
 \begin{frame}{Kepler's First Law: Law of Ellipses}
-  We define a new variable:
+  To make things simpler, We define a new variable (this is \emph{not}
+  obvious):
 
   \eq{-.2in}{
     u=\frac{1}{r}
@@ -1155,7 +1157,7 @@
 
 \begin{frame}{Kepler's First Law: Law of Ellipses}
   With this change, $\ddot{r}$ can be expressed in terms of $u$ and $\theta$.
-  The first derivative $\dot{r}$:
+  First, we find the first derivative $\dot{r}$ in terms of $\theta$:
 
   \eq{-.15in}{
     \frac{d\textcolor{red}{r}}{dt}
@@ -1164,8 +1166,8 @@
     =-\textcolor{blue}{\frac{L}{m}}
     \frac{\textcolor{blue}{d}u}{\textcolor{blue}{d\theta}}
   }
-
-  Likewise, the second derivative is:
+  
+  Then, we find the second derivative:
 
   \eq{-.15in}{
     \frac{d^2r}{dt^2}=\frac{d}{dt}\left(\frac{dr}{dt}\right)
@@ -1176,7 +1178,7 @@
 
     
 \begin{frame}{Kepler's First Law: Law of Ellipses}
-  The original differential equation, now written in terms of $\rho$ and
+  The original differential equation, now written in terms of $u$ and
   $\theta$, becomes a second-order ordinary differential equation with constant
   coefficients and a constant forcing function (this form of differential
   equation was first encountered in the harmonic motion problem):
@@ -1190,7 +1192,7 @@
   The solution to the differential equation is:
 
   \eq{-.2in}{
-    u=\frac{GMm^2}{L^2}+A\cos\theta
+    u(\theta)=\frac{GMm^2}{L^2}+B\cos\theta
   }
 \end{frame}
 
@@ -1207,7 +1209,7 @@
   where $e$ is a constant:
 
   \eq{-.3in}{
-    e=\frac{AL^2}{GMm^2}
+    e=\frac{BL^2}{GMm^2}
   }
   
   The \emph{aphelion} and \emph{perihelion} (points of furthest
