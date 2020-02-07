@@ -20,11 +20,12 @@
 \renewcommand{\baselinestretch}{1}
 
 \sisetup{
+  detect-all,
   number-math-rm=\mathnormal,
   per-mode=symbol
 }
 
-\title{Topic 10: Capacitors}
+\title{Topic 11: Capacitors}
 \subtitle{Advanced Placement Physics}
 \author[TML]{Dr.\ Timothy Leung}
 \institute{Olympiads School, Toronto, ON, Canada}
@@ -47,7 +48,7 @@
   Please download these files from the school website if you have not already
   done so:
   \begin{enumerate}
-  \item\texttt{PhysAP-10-Capacitorss.pdf}---This presentation. If you want to
+  \item\texttt{PhysAP-11-Capacitors.pdf}---This presentation. If you want to
     print on paper, I recommend printing 4 pages per side.
   %\item\texttt{09-10-Homework.pdf}---Homework assignment for Topics 9
   %  (electrostatics) and 10 (Gauss' law).
@@ -62,12 +63,24 @@
 
 \section{Capacitors}
 
+
 \begin{frame}{Electric Field and Electric Potential Difference}
-  Recall the relationship between electric field ($\mb{E}$) and electric
-  potential difference ($V$):
-    
-  \eq{-.2in}{
-    \mb{E}=-\frac{\partial V}{\partial r}\hat{\mb{r}}
+  Recall that the relationship between electrostatic force ($\mb{F}_q$) and
+  electric potential energy ($U_q$) can be expressed using definition of
+  mechanical work and the fundamental theorem of calculus:
+
+  \eq{-.25in}{
+    \Delta U_q=-\int\mb{F}_q\cdot d\mb{r}\quad\quad
+    \mb{F}_q=-\nabla U_q=-\frac{\partial U_q}{\partial r}\hat{\mb{r}}
+  }
+
+  \vspace{-.08in}Dividing both sides of the equations by $q$, we get the
+  relationship between electric field ($\mb{E}$), electric potential ($V$) and
+  electric potential difference ($\Delta V$):
+  
+  \eq{-.3in}{
+    \Delta V=-\int\mb{E}\cdot d\mb{r}\quad\quad
+    \boxed{\mb{E}=-\nabla V=-\frac{\partial V}{\partial r}\hat{\mb{r}}}
   }
 
   This relationship holds regardless of the charge configuration.
@@ -80,11 +93,14 @@
   \begin{center}
     \pic{.5}{elfield-600x205.png}
   \end{center}
-  \vspace{-.15in}In the case of two parallel plates, the electric field is
-  uniform, and the relationship simplifies to:
+  \vspace{-.15in}In the case of two parallel plates (as we have worked out using
+  Gauss's law), the electric field is uniform, and the relationship simplifies
+  to:
 
   \eq{-.2in}{
     \boxed{E=\frac{\Delta V}{d}}
+    \quad\text{or}\quad
+    \boxed{\Delta V=Ed}
   }
   \begin{center}
     \begin{tabular}{l|c|c}
@@ -101,24 +117,26 @@
 
 
 \begin{frame}{Capacitors}
-  \textbf{Capacitors} stores energy in a circuit. The simplest form of a
-  capacitor is a set of closely spaced parallel plates:
+  \textbf{Capacitors} is a device that stores energy in a circuit. The simplest
+  form of a capacitor is a set of closely spaced parallel plates:
   \begin{center}
     \pic{.5}{cap19.png}
   \end{center}
   When the plates are connected to a battery, the battery transfer charges to
-  the plates until the potential difference (voltage) $V$ equals the battery
-  terminals. After that, one plate has charge $+Q$; the other has $-Q$.
+  the plates until the voltage $V$ equals the battery terminals. After that,
+  one plate has charge $+Q$; the other has $-Q$.
 \end{frame}
 
 
 
 \begin{frame}{Parallel-Plate Capacitors}
-  The (uniform) electric field is proportional to the charge density $\sigma$,
-  which is just the charge $Q$ divided by the area of the plates $A$:
+  As we have seen already, the (uniform) electric field between two parallel
+  plates is proportional to the charge density $\sigma$, which is the charge
+  $Q$ divided by the area of the plates $A$:
 
   \eq{-.2in}{
-    E=\frac\sigma\epsilon_0=\frac{Q}{A\epsilon_0}
+    E=\frac{\textcolor{red}{\sigma}}{\epsilon_0}=
+    \frac{\textcolor{red}{Q}}{\textcolor{red}{A}\epsilon_0}
   }
   
   Substituting this into the relationship between the plate voltage $V$ and
@@ -126,7 +144,9 @@
   and the voltage:
 
   \eq{-.2in}{
-    V=Ed=\frac{Qd}{A\epsilon_0}\quad\longrightarrow\quad
+    V=\textcolor{blue}{E}d=
+    \frac{\textcolor{blue}{Q}d}{\textcolor{blue}{A\epsilon_0}}
+    \quad\longrightarrow\quad
     \boxed{Q=\left[\frac{A\epsilon_0}{d}\right]V}
   }
 \end{frame}
@@ -134,10 +154,10 @@
 
 
 \begin{frame}{Parallel-Plate Capacitors}
-  Since area $A$, distance of separation $d$ and the vacuum permittivity are
-  all constant, the ralationshipo between charge $Q$ and voltage $V$ is
-  \emph{linear}. And the constant is called the \textbf{capacitance} $C$,
-  defined as:
+  Since area $A$, distance of separation $d$ and the vacuum permittivity
+  $\epsilon_0$ are all constants, the relationship between charge $Q$ and
+  voltage $V$ is \emph{linear}. And the constant is called the
+  \textbf{capacitance} $C$, defined as:
 
   \eq{-.15in}{
     \boxed{C=\frac{Q}{V}}
@@ -177,13 +197,13 @@
 
 \begin{frame}{Practical Capacitors}
   \begin{columns}
-    \column{.25\textwidth}
-    \pic{1.2}{Figure_20_05_05a.png}
-    \column{.75\textwidth}
+    \column{.3\textwidth}
+    \pic{1.15}{Figure_20_05_05a.png}
+    \column{.7\textwidth}
     \begin{itemize}
     \item Parallel-plate capacitors are very common in electric circuits,
       but the vacuum between the plates is not very effective
-    \item Instead, a non-conductring \textbf{dielectric} material is inserted
+    \item Instead, a non-conducting \textbf{dielectric} material is inserted
       between the plates
     \item When the plates are charged, the electric field of the plates
       polarizes the dielectric.
@@ -304,8 +324,8 @@
       dU=Vdq=\frac{q}{C}dq
     }
   \item The presence of a dielectric \emph{increases} the capacitance; therefore
-    the work (and potential energy stored) to move the charge $dq$ decreases
-    with the dielectrc constant $\kappa$
+    the work (and potential energy stored) to move the charge $dq$
+    \emph{decreases} with the dielectric constant $\kappa$
   \item After the capacitor is charged, removing the dielectric material from
     the capacitor plates will require additional work.
   \end{itemize}
