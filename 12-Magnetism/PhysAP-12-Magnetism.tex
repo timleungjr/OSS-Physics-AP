@@ -10,17 +10,19 @@
 \usepackage{xcolor,colortbl}
 \usepackage{siunitx}
 \usepackage[siunitx]{circuitikz} % to draw circuits!
+\usepackage{mathtools}
 
 \setmonofont{Ubuntu Mono}
 \setlength{\parskip}{0pt}
 \renewcommand{\baselinestretch}{1}
 
 \sisetup{
+  detect-all,
   number-math-rm=\mathnormal,
   per-mode=symbol
 }
 
-\title{Magnetism}
+\title{Topic 12: Magnetism}
 \subtitle{Advanced Placement Physics}
 \author[TML]{Dr.\ Timothy Leung}
 \institute{Olympiads School, Toronto, ON, Canada}
@@ -38,21 +40,21 @@
 \end{frame}
 
 
-%\section[Intro]{Introduction}
-%
-%\begin{frame}
-%  \frametitle{Files for You to Download}
-%  Download from the school website:
-%  \begin{enumerate}
-%  \item\texttt{12-Magnetism.pdf}---This presentation. If you want to print the
-%    slides on paper, I recommend printing 4 slides per page.
-%  \item\texttt{12-Homework.pdf}---Homework assignment for Topics 11 and 12.
-%  \end{enumerate}
-%
-%  \vspace{.2in}Please download/print the PDF file before each class. When you
-%  are taking notes, pay particular attention to things I say that aren't
-%  necessarily on the slides.
-%\end{frame}
+\section{Housekeeping}
+
+\begin{frame}
+  \frametitle{Files for You to Download}
+  Download from the school website:
+  \begin{enumerate}
+  \item\texttt{PhysAP-12-Magnetism.pdf}---This presentation. If you want to
+    print the slides on paper, I recommend printing 4 slides per page.
+  %\item\texttt{12-Homework.pdf}---Homework assignment for Topics 11 and 12.
+  \end{enumerate}
+
+  \vspace{.2in}Please download/print the PDF file before each class. When you
+  are taking notes, pay particular attention to things I say that aren't
+  necessarily on the slides.
+\end{frame}
 
 
 
@@ -133,11 +135,11 @@
       Velocity of the charge          & $\mb{v}$ & \si{m/\second}\\
       Distance from the moving charge & $r$      & \si{\metre}\\
       Radial outward unit vector from the charge & $\hat{\mb{r}}$ & no units\\
-      Permeability of free space & $\mu_0$ & \si{\tesla.\metre\per\ampere}
+      Permeability of free space & $\mu_0$ & \si{\tesla\metre\per\ampere}
     \end{tabular}
   \end{center}
   \textbf{Permeability of free space} (or \textbf{vacuum permeability}) is a
-  constant with a value of $\mu_0=\SI{4\pi e-7}{\tesla.\metre\per\ampere}$. It
+  constant with a value of $\mu_0=\SI{4\pi e-7}{\tesla\metre\per\ampere}$. It
   is a measure of how well a space can become magnetized.
 \end{frame}
 
@@ -246,7 +248,7 @@
     given by:
     
     \eq{-.2in}{
-      \boxed{B=\frac{\mu NI}{L}}
+      \boxed{B=\frac{\mu NI}{\ell}}
     }
     
     Direction of $\mb{B}$ determined by \textbf{right hand rule}
@@ -254,11 +256,11 @@
     \vspace{.1in}\begin{tabular}{l|c|c}
       \rowcolor{pink}
       \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
-      Magnetic field intensity & $B$ & \si{\tesla} \\
-      Number of coils          & $N$ & \\
-      Lenght of the solenoid   & $L$ & \si{\metre}\\
-      Current                  & $I$ & \si{\ampere}\\
-      Effective permeability & $\mu$ & \si{T.m/A}
+      Magnetic field intensity & $B$    & \si{\tesla} \\
+      Number of coils          & $N$    & \\
+      Length of the solenoid   & $\ell$ & \si{\metre}\\
+      Current                  & $I$    & \si{\ampere}\\
+      Effective permeability   & $\mu$  & \si{T.m/A}
     \end{tabular}
   \end{columns}
 \end{frame}
@@ -515,7 +517,7 @@
 
   \vspace{.3in}\textbf{Answer:} Yes, sort of\ldots
 
-  \vspace{.3in}To understand how to \emph{induce} a curent by a magnetic field,
+  \vspace{.3in}To understand how to \emph{induce} a current by a magnetic field,
   we need to look at fluxes again.
 \end{frame}
 
@@ -713,40 +715,41 @@
 
 \begin{frame}{AC Generators}
   \begin{columns}
-    \column{.35\textwidth}
-    \pic{1}{generator.png}
+    \column{.33\textwidth}
+    \pic{1.05}{generator.png}
 
-    \column{.65\textwidth}  
+    \column{.67\textwidth}  
     The electromotive force \emph{emf} produced is therefore the rate of change
     of the magnetic flux:
 
-    \vspace{-.4in}{\Large
+    \vspace{-.3in}{\Large
       \begin{align*}
         \mathcal{E} &=-\frac{d\Phi_M}{dt}\\
-        &=NBA\omega\sin(\omega t+\delta)
+        &=\underbracket{NBA\omega}_{\mathcal{E}_{\textrm{max}}}\sin(\omega t+\delta)
       \end{align*}
     }
   \end{columns}
 \end{frame}
 
 
-\begin{frame}{AC Generators}
-  \begin{columns}
-    \column{.35\textwidth}
-    \pic{1}{generator.png}
 
-    \column{.65\textwidth}
-    We commonly write it this way instead:
-    
-    \eq{-.25in}{\mathcal{E}=\mathcal{E}_{\textrm{max}}\sin(\omega t+\delta)}
-    
-    \vspace{-.2in}where
-
-    \eq{-.25in}{
-      \mathcal{E}_{\textrm{max}}=NBA\omega
-    }
-  \end{columns}
-\end{frame}
+%\begin{frame}{AC Generators}
+%  \begin{columns}
+%    \column{.35\textwidth}
+%    \pic{1}{generator.png}
+%
+%    \column{.65\textwidth}
+%    We commonly write it this way instead:
+%    
+%    \eq{-.25in}{\mathcal{E}=\mathcal{E}_{\textrm{max}}\sin(\omega t+\delta)}
+%    
+%    \vspace{-.2in}where
+%
+%    \eq{-.25in}{
+%      \mathcal{E}_{\textrm{max}}=NBA\omega
+%    }
+%  \end{columns}
+%\end{frame}
 
 
 
@@ -776,17 +779,22 @@
 
 \begin{frame}{Motional EMF}{What happens when I slide the rod to the right?}
   \begin{columns}
-    \column{.25\textwidth}
+    \column{.22\textwidth}
     \begin{tikzpicture}[scale=1.5]
       \draw[thick](1.5,0) to[battery1,l_=$\mathcal{E}$] (1.5,1.5)--(0,1.5)
       to[R,l_=$R$] (0,0)--(1.5,0);
     \end{tikzpicture}
-    \column{.75\textwidth}
+    
+    \column{.78\textwidth}
     \begin{itemize}
     \item An equivalent circuit is shown on the left
-    \item The amount of current can be found using Ohm's law
+    \item The amount of current can be found using Ohm's law: $V=IR$
     \item Note that the ``motional emf'' produced is spread over the entire
       circuit
+      \begin{itemize}
+      \item In constrast, in a voltaic cell (or battery), the \emph{emf} is
+        concentrated between the two terminals.
+      \end{itemize}
     \end{itemize}
   \end{columns}
 \end{frame}
@@ -859,7 +867,8 @@
   \begin{itemize}
   \item Breaking the circuit causes the magnetic flux to change very rapidly
   \item The rapid change of $\Phi_M$ creates a large induced back \emph{emf}
-    that is proportional to $d\Phi_M/dt$
+    that is proportional to the time rate of change of magnetic flux
+    $\Phi_M'(t)$
   \item The back \emph{emf} creates a large voltage drop across the switch
   \item Large voltage across two metal contact produces a very strong electric
     field--strong enough to tear electrons away from air molecules
@@ -871,16 +880,16 @@
 
 
 \begin{frame}{Self Inductance}
-  A solenoid carrying a current generates a magnetic field; its strength given
-  by Biot-Savart law (or Amp\`{e}re's law):
+  A solenoid carrying a current generates a magnetic field $B$; its magnitude at
+  the core is proportional to the current $I$:
 
   \eq{-.2in}{
-    B=\frac{\mu_0NI}{L}
+    B=\left[\frac{\mu_0N}{\ell}\right]I
   }
 
-  Since $\mb{B}\propto I$, the magnetic flux through the solenoid (really
-  $\Phi=NBA$ where $A$ is the cross-sectional area of the solenoid and $N$ is
-  the number of coils) is therefore also proportional to $I$, i.e.
+  Since $\mb{B}\propto I$, the magnetic flux through the core of the solenoid
+  (really $\Phi_M=NBA$, where $A$ is the cross-sectional area of the solenoid
+  and $N$ is the number of coils) is therefore also proportional to $I$, i.e.
 
   \eq{-.2in}{
     \boxed{\Phi_M=LI}
@@ -895,12 +904,21 @@
   For a solenoid, we can see that the self inductance is given by:
 
   \eq{-.2in}{
-    \boxed{L=\frac{\Phi_M}{I}=\mu_0 n^2Al}
+    \boxed{L=\frac{\Phi_M}{I}=\mu_0 n^2A\ell}
   }
 
-  where $\mu_0$ is the magnetic permeability of free space, $n$ is the number of
-  coil turns per unit length, and $A$ and $l$ are the cross-section and length
-  of the solenoid. (i.e. $Al$ is the enclosed volume.)
+  \begin{center}
+    \begin{tabular}{l|c|c}
+      \rowcolor{pink}
+      \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
+      Self inductance                    & $L$     & \si{\henry}\\
+      Vacuum permeability                & $\mu_0$ & \si{T.m/A} \\
+      Number of coils per unit length    & $n$     & \si{\ampere} \\
+      Cross-section area of the solenoid & $A$     & \si{\metre^2} \\
+      Length of the solenoid             & $\ell$  & \si{\metre}
+    \end{tabular}
+  \end{center}
+  Note that $A\ell$ is the \emph{enclosed volume} of the solenoid.
 \end{frame}
 
 
