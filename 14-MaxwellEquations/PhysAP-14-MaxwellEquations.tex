@@ -20,6 +20,7 @@
 \renewcommand{\baselinestretch}{1}
 
 \sisetup{
+  detect-all,
   number-math-rm=\mathnormal,
   per-mode=symbol
 }
@@ -56,7 +57,7 @@
 \begin{frame}{Files for You to Download}
   Download from the school website:
   \begin{enumerate}
-  \item\texttt{16-maxwellsEquations.pdf}---This
+  \item\texttt{PhysAP-14-maxwellsEquations.pdf}---This
     presentation. If you want to print the slides on paper, I recommend
     printing 4 slides per page.
 %  \item\texttt{14-Homework.pdf}---Homework assignment for Class 14.
@@ -71,14 +72,15 @@
 
 
 \begin{frame}{Making Amp\`{e}re's Law Better}
-  Amp\`{e}re's law, as we know it, only applied to \emph{steady} currents:
+  Amp\`{e}re's law, as we know it, only applied to \emph{steady} currents
+  $I_c$:
 
   \eq{-.1in}{
     \oint_C \mb{B}\cdot d\boldsymbol{\ell}=\mu_0 I_c
   }
   However,
   \begin{itemize}
-  \item Current are usually not steady in $RC$ circuits
+  \item Current are usually not steady in RC, RL, LC or RLC circuits
   \item Applying Amp\`{e}re's law at a charging/discharging capacitor gives an
     ambiguous answer
   \end{itemize}
@@ -114,8 +116,8 @@
 
   \eq{-.1in}{
     \boxed{
-      \oint\mb{B}\cdot d\boldsymbol{\ell}=\mu_0 I +
-      \mu_0\varepsilon_0 \frac{d\Phi_E}{dt}
+      \oint\mb{B}\cdot d\boldsymbol{\ell}=\mu_0\left( I +
+      \varepsilon_0 \frac{d\Phi_E}{dt}\right)
     }
   }
 
@@ -152,7 +154,7 @@
       \text{\normalsize (Gauss, for $\mb{E}$)}\\
       \oint\mb{B}\cdot d\mb{A} &= 0 &
       \text{\normalsize (Gauss, for $\mb{B}$)}\\
-      \oint\mb{E}\cdot d\boldsymbol{\ell} &=\frac{d\Phi_B}{dt} &
+      \oint\mb{E}\cdot d\boldsymbol{\ell} &=\frac{d\Phi_M}{dt} &
       \text{\normalsize (Faraday)}\\
       \oint\mb{B}\cdot d\boldsymbol{\ell} &
       =\mu_0I+\mu_0\varepsilon_0\frac{d\Phi_E}{dt} &
@@ -208,8 +210,7 @@
     \begin{itemize}
     \item Maxwell's equations are usually expressed in \emph{differential} form,
       which is obtained using vector calculus. Follow
-      [\underline{\href{https://www.wikihow.com/Convert-Maxwell\%27s-Equations-into-Differential-Form}{this link}}]
-      to see how it's done.
+      [\underline{\href{https://www.wikihow.com/Convert-Maxwell\%27s-Equations-into-Differential-Form}{this link}}] if you want to see how it's done.
     \item The differential form shows how the \emph{time derivatives} of
       $\mb{E}$ and $\mb{B}$ are related to the \emph{spatial derivatives}
       of the other field
@@ -225,7 +226,7 @@
 \begin{frame}{Electromagnetic (EM) Wave}
   Maxwell's equations show that an ``electromagnetic wave'' must exist. In a
   simple case where electric and magnetic fields only vary in
-  $x$ and time $t$ only, i.e.\ $\mb{E}=\mb{E}(x,t)$ and $\mb{B}=\mb{B}(x,t)$,
+  $x$ and time $t$ only, i.e.\ $\mb{E}=E(x,t)$ and $\mb{B}=B(x,t)$,
   Faraday's and Amp\`{e}re's laws reduce to:
 
   \eq{-.1in}{
@@ -308,7 +309,7 @@
       v=c_0=\frac{1}{\sqrt{\mu_0\varepsilon_0}}=\SI{299792458}{m/s}
     }
 
-    generally referred to as the speed of light.
+    generally referred to as the \textbf{speed of light}.
 
   \item Our simple exercise can't show (because we have effectively ignored
     the cross-product) that $\mb{E}$ and $\mb{B}$ are actually perpendicular

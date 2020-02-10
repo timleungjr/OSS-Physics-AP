@@ -1,0 +1,284 @@
+\documentclass[12pt,aspectratio=169]{beamer}
+
+\usetheme{metropolis}
+
+\usefonttheme{professionalfonts}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{amsmath}
+\usepackage{mathpazo}
+\usepackage{xcolor,colortbl}
+\usepackage{siunitx}
+
+
+\setmonofont{Ubuntu Mono}
+\setlength{\parskip}{0pt}
+\renewcommand{\baselinestretch}{1}
+
+\sisetup{
+  detect-all,
+  number-math-rm=\mathnormal,
+  per-mode=symbol
+}
+
+\title{Hall Effect}
+\subtitle{Special CAP/AP Lecture}
+\author{Dr.\ Timothy Leung}
+\institute{Olympiads School, Toronto, ON, Canada}
+\date{November 2019}
+
+\newcommand{\pic}[2]{
+  \includegraphics[width=#1\textwidth]{#2}}\newcommand{\mb}[1]{\mathbf{#1}
+}
+\newcommand{\eq}[2]{
+  \vspace{#1}{\Large\begin{displaymath}#2\end{displaymath}}
+}
+
+\begin{document}
+
+\begin{frame}
+  \maketitle
+\end{frame}
+
+
+
+\begin{frame}{Current Through the Conductor}
+  The current in the conductor is:
+
+  \eq{-.1in}{
+    \boxed{I=\frac{dQ}{dt}=neAv_d}
+  }
+  \begin{center}
+    \begin{tabular}{l|c|c}
+      \rowcolor{pink}
+      \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
+      Current                    & $I$    & \si{\ampere} \\
+      Charge carrier density (carriers per volume) &
+      $n$ & \si{\per\metre^3} \\
+      Elementary charge          & $e$    & \si{\coulomb}\\
+      Cross-section area of the conductor & $A$ & \si{\metre^2}\\
+      Drift velocity of the charge carriers & $v_d$ & \si{\metre\per\second}
+    \end{tabular}
+  \end{center}
+  For simplicity, we \emph{assume} that the charge carriers are positive. While
+  the opposite is true, the behaviour will be identical.
+\end{frame}
+
+
+
+\begin{frame}{Charge Carrier Density}
+  Density of free electrons in a metal involves basic physical data about the
+  metal:
+
+  \eq{-.25in}{
+    \boxed{n=\frac{\rho kN_A}{M}}
+  }
+
+  \begin{center}
+    \begin{tabular}{l|c|c}
+      \rowcolor{pink}
+      \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
+      Charge carrier density   & $n$    & \si{\per\metre^3} \\
+      Density of material      & $\rho$ & \si{\kilo\gram\per\metre^3} \\
+      Number of free electrons per atom & $k$ & \\
+      Avogadro's number        & $N_A$  & \si{/\mol}\\
+      Molar mass               & $M$    & \si{\kilo\gram\per\mol}
+    \end{tabular}
+  \end{center}
+  For copper, $M=\SI{63.54e-3}{\kilo\gram\per\mol}$,
+  $\rho=\SI{9.0e3}{\kilo\gram\per\metre^3}$, $k=1$ and therefore
+  $n=\SI{8.5e28}{\per\metre^3}$.
+\end{frame}
+
+
+
+\begin{frame}{Hall Effect}
+  When a current $I$ flows through a conductor in a magnetic field
+  $\mb{B}$, the magnetic field exerts a transverse force on the moving charges
+  which pushes them toward one side of the conductor. This is called
+  \textbf{Hall effect}.
+  \begin{center}
+    \begin{tikzpicture}
+      \node at (4.5,3.8) {\textcolor{blue!80}{
+          \footnotesize$\mb{B}$ (into the page)}
+      };
+      \foreach \x in {0,.5,...,6}{
+        \foreach \y in {.5,1,...,3.5}{
+          \node at (\x,\y) {\footnotesize\textcolor{blue!80}{$\times$}};
+        }
+      }
+      \fill[brown!40,opacity=.6](.8,1.2) rectangle(5.2,2.8);
+      \draw[thick](.8,1.2) rectangle(5.2,2.8);
+      \draw[ultra thick](-.4,2)--(.8,2);
+      \draw[ultra thick](5.2,2)--(6.4,2);
+
+      \draw[->,ultra thick](2.18,2)--(3.3,2) node[pos=1,right]{$\mb{v}_d$};
+      \draw[->,ultra thick,red](2,2.18)--(2,3) node[pos=1,above]{$\mb{F}_m$};
+      \draw[ultra thick,fill=gray](2,2) circle(.18) node{$+$};
+    \end{tikzpicture}
+  \end{center}
+  This is most evident in a thin flat conductor as illustrated. 
+\end{frame}
+
+
+
+\begin{frame}{Magnetic Force}
+  \begin{center}
+    \begin{tikzpicture}
+      \node at (4.5,3.8) {\textcolor{blue!80}{
+          \footnotesize$\mb{B}_\mathrm{in}$
+        }
+      };
+      \foreach \x in {0,.5,...,6}{
+        \foreach \y in {.5,1,...,3.5}{
+          \node at (\x,\y) {\footnotesize\textcolor{blue!80}{$\times$}};
+        }
+      }
+      \fill[brown!40,opacity=.6](.8,1.2) rectangle(5.2,2.8);
+      \draw[thick](.8,1.2) rectangle(5.2,2.8);
+      \draw[ultra thick](-.4,2)--(.8,2);
+      \draw[ultra thick](5.2,2)--(6.4,2);
+
+      \draw[->,ultra thick](2.18,2)--(3.3,2) node[pos=1,right]{$\mb{v}_d$};
+      \draw[->,ultra thick,red](2,2.18)--(2,3) node[pos=1,above]{$\mb{F}_m$};
+      \draw[ultra thick,fill=gray](2,2) circle(.18) node{$+$};
+    \end{tikzpicture}
+  \end{center}
+  \vspace{-.1in}As the charges enter the magnetic field, they experience a
+  magnetic force directed toward the top:
+  
+  \eq{-.24in}{
+    \mb{F}_m
+    =e\textcolor{red}{\mb{v}_d}\times\mb{B}
+    =\frac{e\textcolor{red}{\mb{I}}\times\mb{B}}{\textcolor{red}{neA}}
+  }
+
+  \vspace{-.1in}leading to a surplus of positive charges on the top, and
+  negative charges on the bottom.
+\end{frame}
+
+
+
+\begin{frame}[t]{Hall Voltage}
+  \begin{center}
+    \begin{tikzpicture}
+      \node at (4.5,3.8) {\textcolor{blue!80}{
+          \footnotesize$\mb{B}_\mathrm{in}$
+        }
+      };
+      \foreach \x in {0,.5,...,6}{
+        \foreach \y in {.5,1,...,3.5}{
+          \node at (\x,\y) {\footnotesize\textcolor{blue!80}{$\times$}};
+        }
+      }
+      \fill[brown!40,opacity=.6](.8,1.2) rectangle(5.2,2.8);
+      \draw[thick](.8,1.2) rectangle(5.2,2.8);
+      \draw[ultra thick](-.4,2)--(.8,2);
+      \draw[ultra thick](5.2,2)--(6.4,2);
+
+      \foreach \x in {1.2,1.7,...,5}{ \node at (\x,1){\textcolor{red}{$-$}};}
+      \foreach \x in {1.2,1.7,...,5}{ \node at (\x,3){\textcolor{red}{$+$}};}
+      \foreach \x in {1,1.5,...,5}{
+        \draw[thick,->,red!60] (\x,2.8)--(\x,1.2);
+      }
+      \node at (4.85,2) {\textcolor{red}{\footnotesize$\mb{E}$}};
+    \end{tikzpicture}
+  \end{center}
+  The charge imbalance caused by the magnetic force on the charge carriers
+  creates an electric field $\mb{E}$, pointing toward the bottom of the page,
+  and therefore a voltage across two sides of the conductor, called the
+  \textbf{Hall voltage}:
+
+  \eq{-.35in}{
+    V_H=|\mb{E}|W
+  }
+\end{frame}
+
+
+
+\begin{frame}{Balancing Electrostatic \& Magnetic Forces}
+  \begin{center}
+    \begin{tikzpicture}
+      \node at (4.5,3.8) {\textcolor{blue!80}{
+          \footnotesize$\mb{B}_\mathrm{in}$
+        }
+      };
+      \foreach \x in {0,.5,...,6}{
+        \foreach \y in {.5,1,...,3.5}{
+          \node at (\x,\y) {\footnotesize\textcolor{blue!80}{$\times$}};
+        }
+      }
+      \fill[brown!40,opacity=.6](.8,1.2) rectangle(5.2,2.8);
+      \draw[thick](.8,1.2) rectangle(5.2,2.8);
+      \draw[ultra thick](-.4,2)--(.8,2);
+      \draw[ultra thick](5.2,2)--(6.4,2);
+
+      \foreach \x in {1,1.5,...,5}{
+        \draw[thick,->,red!60] (\x,2.8)--(\x,1.2);
+      }
+      \node at (4.85,2) {\textcolor{red}{\footnotesize$\mb{E}$}};
+      
+      \draw[->,ultra thick](2.18,2)--(3.3,2) node[pos=1,right]{$\mb{v}_d$};
+      \draw[->,ultra thick,red](2,2.18)--(2,3) node[pos=1,above]{$\mb{F}_m$};
+      \draw[->,ultra thick,red](2,1.82)--(2,1) node[pos=1,below]{$\mb{F}_q$};
+      \draw[ultra thick,fill=gray](2,2) circle(.18) node{$+$};
+    \end{tikzpicture}
+  \end{center}
+  Subsequently, charge carriers entering the magnetic field will experience
+  both a magnetic force and an electrostatic force. At equilibrium, the two
+  forces are balanced, i.e.:
+
+  \eq{-.3in}{
+    \mb{F}_m=-\mb{F}_q
+  }
+\end{frame}
+
+
+
+\begin{frame}{Calculating Hall Voltage}
+  The electrostatic force on the charge carrier can be expressed in terms of
+  the Hall voltage $V_H$ across the two sides of the plate:
+
+  \eq{-.15in}{
+    F_q=eE=\frac{eV_H}{W}
+  }
+  
+  Equating this expression to the magnetic force, we can solve for the Hall
+  voltage:
+
+  \eq{-.2in}{
+    F_m=F_q\quad\rightarrow\quad
+    \frac{IB}{nA}=\frac{eV_H}{W}
+  }
+\end{frame}
+
+
+\begin{frame}{Hall Voltage}
+  Cancelling terms and noting that the thickness of the conductor is
+
+  \eq{-.2in}{
+    d=\frac{A}{W}
+  }
+
+  we find the expression for the Hall voltage $V_H$:
+
+  \eq{-.1in}{
+    \boxed{V_H=\frac{IB}{ned}}
+  }
+\end{frame}
+
+
+
+\begin{frame}{Hall Probe}
+  Large magnetic fields ($\sim$ \SI{1}{\tesla}) is often measured using a
+  \textbf{Hall probe}. A thin film Hall probe is placed in the magnetic field
+  and the transverse voltage (usually measured in on the order of
+  \SI{e-6}{\volt}) is measured.
+
+  \begin{center}
+    \pic{.3}{hallp.png}
+  \end{center}
+  The polarity of the Hall voltage for a copper probe shows that electrons
+  (negative charge) are the charge carriers.
+\end{frame}
+\end{document}
