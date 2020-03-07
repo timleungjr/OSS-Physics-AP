@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{osshomework}[2018/03/04 Olympiads School AP Physics Homework class]
+\ProvidesClass{oss-apphys}[2018/03/04 Olympiads School AP Physics Homework class]
 
 \LoadClass[11pt]{article}
 
@@ -113,5 +113,3 @@
   per-mode=symbol,
   group-separator={,},
 }
-%}
-
