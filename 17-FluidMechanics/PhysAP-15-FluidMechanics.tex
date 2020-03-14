@@ -1,9 +1,7 @@
 \documentclass[12pt,aspectratio=169]{beamer}
 
-\mode<presentation>
-{
-  \usetheme{Singapore}
- %\setbeamersize{text margin left=.6cm,text margin right=.6cm}
+\usetheme{metropolis}
+\setbeamersize{text margin left=.6cm,text margin right=.6cm}
 %  \setbeamertemplate{navigation symbols}{} % suppress nav bar
 %  \setbeamercovered{transparent}
 }
@@ -12,22 +10,24 @@
 \usepackage{tikz}
 \usepackage{amsmath,bm}
 \usepackage{mathpazo}
-\usepackage[scaled]{helvet}
+%\usepackage[scaled]{helvet}
 \usepackage{xcolor,colortbl}
 \usepackage{siunitx}
 %\usepackage{hyperref}
+\setmonofont{Ubuntu Mono}
+\setlength{\parskip}{0pt}
+\renewcommand{\baselinestretch}{1}
 
 \sisetup{
   number-math-rm=\mathnormal,
   per-mode=symbol
 }
 
-\title{Topic 15: Fluid Mechanics}
+\title{Topic 17: Fluid Mechanics}
 \subtitle{Advanced Placement Physics}
 \author[TML]{Dr.\ Timothy Leung}
 \institute{Olympiads School}
-\date{Winter 2019}
-%\date{Summer 2018}
+\date{March 2020}
 
 \newcommand{\pic}[2]{\includegraphics[width=#1\textwidth]{#2}}
 \newcommand{\mb}[1]{\mathbf{#1}}
@@ -52,19 +52,19 @@
 
 
 
-\begin{frame}
-  \frametitle{Files for You to Download}
-  Download from the school website:
-  \begin{enumerate}
-  \item\texttt{15-FluidMech.pdf}---This presentation. If you want to print the
-    slides on paper, I recommend printing 4 slides per page.
-  \item\texttt{15-16-Homework.pdf}---Homework assignment for Topics 15 and 16,
-    which cover Fluid Mechanics and Thermodynamics
-  \end{enumerate}
-%  \vspace{.2in}Please download/print the PDF file before each class. When you
-%  are taking notes, pay particular attention to things I say that aren't
-%  necessarily on the slides.
-\end{frame}
+%\begin{frame}
+%  \frametitle{Files for You to Download}
+%  Download from the school website:
+%  \begin{enumerate}
+%  \item\texttt{15-FluidMech.pdf}---This presentation. If you want to print the
+%    slides on paper, I recommend printing 4 slides per page.
+%  \item\texttt{15-16-Homework.pdf}---Homework assignment for Topics 15 and 16,
+%    which cover Fluid Mechanics and Thermodynamics
+%  \end{enumerate}
+%%  \vspace{.2in}Please download/print the PDF file before each class. When you
+%%  are taking notes, pay particular attention to things I say that aren't
+%%  necessarily on the slides.
+%\end{frame}
 
 
 
@@ -152,10 +152,8 @@
 \end{frame}
 
 
-\begin{frame}
-  \frametitle{Pressure with Different Fluids}
+\begin{frame}{Pressure with Different Fluids}
   \begin{columns}
-
     \column{.3\textwidth}
     \begin{tikzpicture}
       \draw[ultra thick,->](-1,4.5)--(-1,2) node[pos=1,below]{$z$};
@@ -229,7 +227,7 @@
   the lightest weight of a person who could successfully lift the car?
   \begin{center}
     \vspace{-.2in}
-    \pic{.4}{jack.png}
+    \pic{.35}{jack.png}
     
     \vspace{-.2in}{\tiny Believe it or not, there \emph{is} someone who draws
       worse diagrams than Tim!}
@@ -245,10 +243,8 @@
     \textbf{Example 3:} Pressure gauge $B$ is to measure the pressure at point
     $A$ in a water flow, as shown in the figure on the right. If the pressure at
     $B$ is \SI{87}{\kilo\pascal}, estimate the pressure at $A$, in
-    \si{\kilo\pascal}. Assume all fluids are at \SI{20}{\celsius}.
-
-    \vspace{.1in}The densities of water, mercury and SAE 30 oil are,
-    respectively:
+    \si{\kilo\pascal}. Assume all fluids are at \SI{20}{\celsius}. The
+    densities of water, mercury and SAE 30 oil are, respectively:
 
     \vspace{-.3in}
     \begin{align*}
@@ -416,7 +412,7 @@
   \frametitle{How Submarines Work}
   \framesubtitle{Like this?}
   \begin{center}
-    \pic{.7}{EbHMOXk.jpg}
+    \pic{.7}{EbHMOXk.png}
   \end{center}
 \end{frame}
 
@@ -481,11 +477,10 @@
   \frametitle{Example}
 
   \begin{columns}
-
-    \column{.4\textwidth}
+    \column{.38\textwidth}
     \pic{1}{hpa_b.jpg}
 
-    \column{.6\textwidth}
+    \column{.62\textwidth}
     \textbf{Example 5:} A salvage ship tries to raise a sunken miniature
     submarine from the bottom of Lake Superior. The submarine and its contents
     have a mass of \SI{72000}{\kilo\gram} and a volume of \SI{18.9}{\metre^3}.
@@ -738,8 +733,9 @@
     }
   }
   
-  The term $\displaystyle\frac{1}{2}\rho v^2$ is called ``dynamic pressure'',
-  and $\rho gz$ is the ``hydrostatic pressure''
+  The term $\displaystyle\frac{1}{2}\rho v^2$ is called
+  \textbf{dynamic pressure}, while $\rho gz$ is the
+  \textbf{hydrostatic pressure}.
 \end{frame}
 
 
@@ -813,20 +809,18 @@
 
 
 
-\begin{frame}
-  \frametitle{Example}
-
+\begin{frame}{Example}
   \textbf{Example 7:} Find a relation between the nozzle discharge velocity
   $V$ and the tank free-surface height $h$. Assume frictionless flow.
   \begin{center}
-    \pic{.4}{EGL.jpg}
+    \pic{.35}{EGL.jpg}
   \end{center}
 
-  \vspace{-.2in}{
-    \footnotesize (The line labelled ``EGL'' is called the
+  \vspace{-.15in}{
+    \footnotesize The line labelled ``EGL'' is called the
     ``energy grade line'', or the ``Bernoulli head'', given by the equation
     $h_0=z+p/\rho g+v^2/2g$. In the region where Bernoulli equation is valid,
-    EGL is a constant.)\par
+    EGL is a constant.\par
   }
 \end{frame}
 %
