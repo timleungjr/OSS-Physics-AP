@@ -1,18 +1,15 @@
 \documentclass[12pt,aspectratio=169]{beamer}
 
-\mode<presentation>
-{
-  \usetheme{Singapore}
- %\setbeamersize{text margin left=.6cm,text margin right=.6cm}
+\usetheme{metropolis}
+\setbeamersize{text margin left=.6cm,text margin right=.6cm}
 %  \setbeamertemplate{navigation symbols}{} % suppress nav bar
 %  \setbeamercovered{transparent}
-}
+
 \usefonttheme{professionalfonts}
 %\usepackage{graphicx}
 \usepackage{tikz}
 \usepackage{amsmath,bm}
 \usepackage{mathpazo}
-\usepackage[scaled]{helvet}
 \usepackage{xcolor,colortbl}
 \usepackage{siunitx}
 %\usepackage{hyperref}
@@ -22,12 +19,16 @@
   per-mode=symbol
 }
 
-\title{Topic: Thermodynamics}
+\setmonofont{Ubuntu Mono}
+\setlength{\parskip}{0pt}
+\renewcommand{\baselinestretch}{1}
+
+
+\title{Topic 18: Thermodynamics}
 \subtitle{Advanced Placement Physics}
 \author[TML]{Dr.\ Timothy Leung}
-\institute{Olympiads School}
-\date{Winter 2019}
-%\date{April 2018}
+\institute{Olympiads School\\Toronto, ON, Canada}
+\date{March 2020}
 
 \newcommand{\pic}[2]{\includegraphics[width=#1\textwidth]{#2}}
 \newcommand{\mb}[1]{\mathbf{#1}}
@@ -58,7 +59,7 @@
 
 
 
-\begin{frame}{Review: Absolute Temperature (Kelvin) Scale}
+\begin{frame}{Thermodynamic Temperature}
   Relationship between the absolute temperature scale and the Celsius scale is
   a constant:
   
@@ -88,17 +89,16 @@
 
 
 
-\begin{frame}
-  \frametitle{Review: Absolute Temperature Scale}
+\begin{frame}{Thermodynamic Temperature}
   \eq{.01in}{
     \boxed{T = T_C + 273.15}
   }
   \begin{center}
-    \begin{tabular}{l|c|l}
+    \begin{tabular}{l|c|c}
       \rowcolor{pink}
       \textbf{Quantity}     & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
-      Absolute temperature  & $T$            & \si{\kelvin} (kelvin) \\
-      Temperature in degree Celsius & $T_C$  & \si{\celsius} is not an SI unit
+      Absolute temperature  & $T$            & \si{\kelvin} \\
+      Temperature in degree Celsius & $T_C$  & (not SI unit)
     \end{tabular}
   \end{center}
   \begin{itemize}
@@ -112,8 +112,8 @@
 \end{frame}
   
 
-\begin{frame}
-  \frametitle{Relationship Between Temperature and Pressure}
+
+\begin{frame}{Relationship Between Temperature and Pressure}
   The relationship between absolute temperature $T$ and pressure $P$
   of a gas at constant volume is defined using its triple point:
 
@@ -133,74 +133,70 @@
 
 
 
-\begin{frame}
-  \frametitle{Thermal Expansion}
+\begin{frame}{Thermal Expansion}
   When temperature $T$ of an object with length $L$ increases, the object
   \emph{usually} expands. The \emph{thermal strain} ($\Delta L/L$) is
-  proportional the change in temperature:
+  proportional the change in temperature ($\Delta T$) by the \textbf{coefficient
+    of linear thermal expansion} ($\alpha$):
   
-  \eq{-.2in}{
-    \boxed{\frac{\Delta L}{L} =\alpha\Delta T}\quad\text{\normalsize where}\quad
+  \eq{-.15in}{
+    \boxed{\frac{\Delta L}{L} =\alpha\Delta T}\quad
+    \text{\normalsize where}\quad
     \boxed{\alpha=\frac{1}{L}\frac{dL}{dT}}
   }
   \begin{center}
-    \begin{tabular}{l|c|l}
+    \begin{tabular}{l|c|c}
       \rowcolor{pink}
       \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
-      Length      & $L$  & \si{\metre} (meter) \\
-      Temperature & $T$  & \si{\kelvin} (kelvin)\\
-      \textbf{Coefficient of linear expansion} & $\alpha$ &
-      \si{\per\kelvin} (per kelvin)
+      Length      & $L$  & \si{\metre}  \\
+      Temperature & $T$  & \si{\kelvin} \\
+      Coefficient of linear expansion & $\alpha$ & \si{\per\kelvin}
     \end{tabular}
   \end{center}
-
   $\alpha$ is independent of pressure for solids and liquids, but may vary
   with $T$.
 \end{frame}
 
 
-\begin{frame}
-  \frametitle{Thermal Expansion}
+
+\begin{frame}{Thermal Expansion}
   There is also a similar expression for
   \textbf{coefficient of volume expansion}:
   
-  \eq{-.2in}{
+  \eq{-.15in}{
     \boxed{\frac{\Delta V}{V}=\beta\Delta T}
     \quad\text{\normalsize where}\quad
     \boxed{\beta=\frac{1}{V}\frac{dV}{dT}}
   }
 
-  \vspace{-.05in}$\beta$ is also independent of pressure for solids and liquids,
+  $\beta$ is also independent of pressure for solids and liquids,
   but may vary with $T$.
   \begin{center}
-    \begin{tabular}{l|c|l}
+    \begin{tabular}{l|c|c}
       \rowcolor{pink}
       \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
-      Volume      & $V$  & \si{\m^3} (cube meter) \\
-      Temperature & $T$  & \si{\kelvin} (kelvin)\\
-      Coefficient of volume expansion & $\beta$ & \si{\per\kelvin} (per kelvin)
+      Volume      & $V$  & \si{\metre^3} \\
+      Temperature & $T$  & \si{\kelvin} \\
+      Coefficient of volume expansion & $\beta$ & \si{\per\kelvin} \\
     \end{tabular}
   \end{center}
-
   Careful application of calculus will show that for isotropic material (where
   $\alpha$ is the same in all direction)
 
-  \eq{-.45in}{
+  \eq{-.4in}{
     \beta = 3\alpha
   }
 \end{frame}
 
 
 
-\begin{frame}
-  \frametitle{Ideal Gas Law for Low-Density Gases}
-
-  \textbf{Boyle's Law}: Physicist Robert Boyle (1627-1691) discovered that,
+\begin{frame}{Ideal Gas Law for Low-Density Gases}
+  \textbf{Boyle's law}: Physicist Robert Boyle (1627-1691) discovered that,
   when a gas is allowed to expand or compress at \emph{constant temperature},
   the product of pressure $P$ and $V$ remain constant, i.e.:
 
   \eq{-.2in}{
-    PV=\textrm{constant} %\quad\quad\text{\normalsize constant temperature}
+    PV=\text{constant} %\quad\quad\text{\normalsize constant temperature}
   }
 
   \vspace{-.1in}We also know that at \emph{constant volume}, temperature is
@@ -215,16 +211,16 @@
 \end{frame}
 
 
-\begin{frame}
-  \frametitle{Ideal Gas Law}
+
+\begin{frame}{Ideal Gas Law}
   Thought experiment:
   \begin{itemize}
-  \item Two identical containers with volume $V$ with same amount of same kind
-    of gas at same pressure $P$ and temperature $T$.
+  \item Two identical containers with the same volume $V$, same amount of same
+    kind of gas, at same pressure $P$ and same temperature $T$
   \item When the containers are combined and the molecules are free to
-    move, $P$ and $T$ remain the same, but volume is increased by factor of 2.
+    move, $P$ and $T$ remain the same, but volume is increased by factor of
+    $2$
   \end{itemize}
-
   $C$ must scale with the number of molecules of gas $N$, which modifies the
   equation to this, the \textbf{ideal gas law}:
 
@@ -232,39 +228,37 @@
     \boxed{PV=NkT}
   }
 
-  \vspace{-.15in}The constant $k=\SI{1.381e-23}{\joule/\kelvin}$ is called
+  \vspace{-.15in}The constant $k=\SI{1.381e-23}{\joule/\kelvin}$ is called the
   \textbf{Boltzmann's constant}. It is found experimentally to have the same
   value for any kind or amount of gas.
 \end{frame}
 
 
 
-\begin{frame}
-  \frametitle{Ideal Gas Law}
-  The ideal gas law can also be written a more familiar way:
-  %The ideal gas law is more often written in terms of the number of
-  %\emph{moles} of gas $n$ and the \textbf{universal gas constant} $R$:
+\begin{frame}{Ideal Gas Law}
+  The ideal gas law can also be written a more familiar way if you have taken
+  any chemistry courses:
   
-  \eq{-.2in}{
+  \eq{-.25in}{
     \boxed{PV=nRT}
   }
 
-  \vspace{-.25in}where
+  \vspace{-.2in}where:
   \begin{itemize}
   \item $n=N/N_A$ is the number of moles of the gas
-  \item $R=kN_A=\SI{8.314}{\kilo\gram/\mol.\kelvin}$ is the universal gas
-    constant, and
-  \item $N_A=\num{6.022e23}$ is Avagadro's number
+  \item $R=kN_A=\SI{8.314}{\kilo\gram/\mol.\kelvin}$ is the
+    \textbf{universal gas constant}, and
+  \item $N_A=\num{6.022e23}$ is \textbf{Avagadro's number}
   \end{itemize}
 
-  \vspace{.1in}The ideal gas law is an \emph{equation of state}, because it
+  \vspace{.1in}The ideal gas law is an \textbf{equation of state}, because it
   relates all the quantities that define the \emph{state} of a gas: pressure
   $P$, volume $V$ and temperature $T$.
 \end{frame}
 
 
-\begin{frame}
-  \frametitle{Kinetic Theory of Gases}
+
+\begin{frame}{Kinetic Theory of Gases}
   Assumptions for the kinetic theory of gases:
   \begin{enumerate}
   \item The gas consists of a large number of molecules that make
@@ -278,12 +272,12 @@
   \end{enumerate}
 
   \footnotetext[1]{This means that the density of the gas is low, i.e. assume
-    ideal gas behaviour.}
+    ideal gas behavior.}
 \end{frame}
 
 
-\begin{frame}
-  \frametitle{Average Kinetic Energy of a Gas}
+
+\begin{frame}{Average Kinetic Energy of a Gas}
   We note that pressure is force of the gas molecules exerts when colliding
   with the container, given by
 
@@ -298,8 +292,9 @@
   gas law. After some calculus\ldots
 \end{frame}
 
-\begin{frame}
-  \frametitle{Average Kinetic Energy of a Gas}
+
+
+\begin{frame}{Average Kinetic Energy of a Gas}
   We find the average kinetic energy $\langle K \rangle$ of a molecule of gas
   in a container, given by:
   
@@ -307,8 +302,7 @@
     \boxed{\big\langle K\big\rangle=\frac{3}{2}kT}
   }
 
-  \vspace{-.1in}i.e.\ temperature is a measurement of the average kinetic
-  energy.
+  i.e.\ temperature is a measurement of the average kinetic energy.
 
   \vspace{.15in}Often it is advantageous to calculate the root mean square
   (``rms'') velocity of the molecules, which measures the speeds that the
@@ -320,11 +314,10 @@
 \end{frame}
 
 
-\begin{frame}
-  \frametitle{$P$-$V$ Diagram}
+
+\begin{frame}{$P$-$V$ Diagram}
   Thermodynamic processes is usually plotted on a ``$P$-$V$ diagram''.
   \begin{columns}
-
     \column{.35\textwidth}
     \begin{tikzpicture}[scale=.8]
       \draw[->](0,0)--(5,0) node[pos=1,right]{\footnotesize $V$};
@@ -352,8 +345,8 @@
 \end{frame}
 
 
-\begin{frame}
-  \frametitle{Real Gases}
+
+\begin{frame}{Real Gases}
   Most gases behave like ideal gas at most ordinary pressures, but the
   equation breaks down when the density of gas is high and molecules are not
   far apart:
@@ -361,8 +354,8 @@
   \item pressure is sufficiently high
   \item temperature is low
   \end{itemize}
-  In this situation the \textbf{van der Waal equation} provides a more accurate
-  description of the behaviour of real gases:
+  In these situations the \textbf{van der Waal equation} provides a more
+  accurate description of the behaviour of real gases:
 
   \eq{-.2in}{
     \boxed{\left(P+\frac{an^2}{V^2}\right)(V-bn)=nRT}
@@ -377,9 +370,7 @@
 
 
 
-
-\begin{frame}
-  \frametitle{Real Substances}
+\begin{frame}{Real Substances}
   Neither the \textbf{ideal gas law} nor the \textbf{van der Waal equation}
   can capture the exact relationship between pressure and volume, because
   neither can account for phase changes. The $P$-$V$ diagram of a real substance
@@ -390,25 +381,24 @@
 \end{frame}
 
 
-\begin{frame}
-  \frametitle{Phase Diagrams}
+
+\begin{frame}{Phase Diagrams}
   The phase diagram plots pressure against temperature to show when the
   different phases of matter exist. For water:
   \begin{center}
-    \vspace{-.1in}
     \pic{.4}{10-figure-31.png}
   \end{center}
   \begin{itemize}
-  \item\vspace{-.15in} At \textbf{triple point} $B$, all three phases of matter
+  \item\vspace{-.1in} At \textbf{triple point} $B$, all three phases of matter
     can exist in equilibrium
-  \item At \textbf{critical point} $C$, liquid and vapour (gas) are
+  \item At \textbf{critical point} $C$, liquid and vapour phases are
     indistinguishable, and the gas laws can model their behaviour
   \end{itemize}
 \end{frame}
 
 
-\begin{frame}
-  \frametitle{First Law of Thermodynamics}
+
+\begin{frame}{First Law of Thermodynamics}
   \begin{block}{First Law of Thermodynamics}
     The change in the internal energy of a system is the sum of the work and
     heat exchanged between a system and its surroundings. 
@@ -417,32 +407,25 @@
   \eq{-.2in}{
     \boxed{\Delta U=Q-W}
   }
-  %\vspace{.1in}
   \begin{center}
-    \begin{tabular}{l|c|l}
+    \begin{tabular}{l|c|c}
       \rowcolor{pink}
       \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
-      Change in internal energy of a system & $\Delta U$ & \si{J} (joules) \\
-      Work done \emph{by} the system & $W$                 & \si{J} (joules) \\
-      Heat into the system           & $Q$                 & \si{J} (joules)
+      Change in internal energy of a system & $\Delta U$   & \si{\joule} \\
+      Work done \emph{by} the system & $W$                 & \si{\joule} \\
+      Heat into the system           & $Q$                 & \si{\joule}
     \end{tabular}
   \end{center}
-  
-  {\footnotesize
-    \textbf{IMPORTANT NOTE:} Sometimes the equation is written as
-    $\Delta U=Q+W$, where $W$ is the work done \emph{to} the system, rather
-    than \emph{by} the system. Both conventions are commonly use. You have to
-    be very careful.\par
-  }
+  \vspace{.1in}\textbf{IMPORTANT NOTE:} Sometimes the equation is written as
+  $\Delta U=Q+W$, where $W$ is the work done \emph{to} the system, rather
+  than \emph{by} the system. Both conventions are commonly use. You have to
+  be very careful.
 \end{frame}
 
 
-\begin{frame}
-  \frametitle{First Law of Thermodynamics}
-  \vspace{-.2in}{\LARGE
-    \begin{displaymath}
-      \boxed{\Delta U=Q-W}
-    \end{displaymath}
+\begin{frame}{First Law of Thermodynamics}
+  \eq{-.2in}{
+    \boxed{\Delta U=Q-W}
   }
   
   Internal energy $U$ is the sum of kinetic and potential energies, but does
@@ -463,12 +446,9 @@
 
 
 
-\begin{frame}
-  \frametitle{First Law of Thermodynamics}
-  \vspace{-.2in}{\LARGE
-    \begin{displaymath}
-      \boxed{\Delta U=Q-W}
-    \end{displaymath}
+\begin{frame}{First Law of Thermodynamics}
+  \eq{-.2in}{
+    \boxed{\Delta U=Q-W}
   }
 
   \begin{columns}
@@ -491,61 +471,43 @@
 
     \column{.3\textwidth}
     \pic{1}{conduct.png}
-    \end{columns}
+  \end{columns}
 \end{frame}
 
 
 
-\begin{frame}
-  \frametitle{First Law of Thermodynamics}
-  \vspace{-.2in}{\LARGE
-    \begin{displaymath}
-      \boxed{\Delta U=Q-W}
-    \end{displaymath}
+\begin{frame}{First Law of Thermodynamics}
+  \eq{-.2in}{
+    \boxed{\Delta U=Q-W}
   }
 
   \vspace{-.1in}$W$ is the mechanical work done by the system to the surrounding
   \begin{itemize}
   \item $+$ done \emph{by} the system, e.g.\
-    %\begin{itemize}
-    %\item
     using steam pressure to push a piston or shaft
-    %\end{itemize}
   \item $-$ done \emph{to} the system, e.g.\
-    %\begin{itemize}
-    %\item
     pushing a piston to compress gas in an engine
-    %\item Joule's experiment: stirring water to raise its temperature
-    %\end{itemize}
   \end{itemize}
-%\end{frame}
-%
-%
-%
-%\begin{frame}
-%  \frametitle{Work Done To a Gas}
-%  The work done \emph{on} an ideal gas is:
 
-  \eq{-.2in}{
+  \eq{-.15in}{
     \boxed{ W=\int_{P_1}^{P_2} PdV}
   }
   
-  \vspace{-.1in}It's up to you to show that this equation is derived from the
-  definition of work, $W=\int\mb{F}\cdot d\mb{s}$.
+  It's up to you to show that this equation is derived from the definition of
+  mechanical work: $\displaystyle W=\int\mb{F}\cdot d\mb{s}$.
 \end{frame}
 
-\begin{frame}
-  \frametitle{Work Done To a Gas}
+
+
+\begin{frame}{Work Done To a Gas}
   On the $P$-$V$ diagram, $W$ is the area under the curve.
   \begin{itemize}
   \item $W$ is done \emph{by} the system (positive) if the path moves right, and
   \item done \emph{to} the system (negative) if it moves left
   \end{itemize}
-
-  In the example below, the gas is changed from point 1 to 2, but the work done
-  is different.
+  In the example below, the gas is changed from points $1$ to $2$, but the work
+  done is different.
   \begin{center}
-    \vspace{-.1in}
     \begin{tikzpicture}[scale=.75]
       \fill[pink!80!gray!50](1,0) rectangle(4,3.5);
       \draw[dashed](1,0)--(1,3.5);
@@ -582,23 +544,22 @@
 
 
 
-\begin{frame}
-  \frametitle{Quasi-Static Processes}
-
-  
-  In thermodynamics, a \textbf{quasi-static process} is a thermodynamic process
-  that happens slowly enough for the system to remain in internal equilibrium.
-  We are concerned with 4 of these process:
+\begin{frame}{Quasi-Static Processes}
+  A \textbf{quasi-static process} is a thermodynamic process that happens
+  slowly enough for the system to remain in internal equilibrium. We are
+  concerned with $4$ of these process:
   \begin{itemize}
-  \item Isobaric process - constant pressure
-  \item Isochoric process - constant volume
-  \item Isothermal process - constant temperature
-  \item Adiabatic process - ``isolated'', no heat exchanged with surrounding
+  \item\textbf{Isobaric process} - constant pressure
+  \item\textbf{Isochoric process} - constant volume
+  \item\textbf{Isothermal process} - constant temperature
+  \item\textbf{Adiabatic process} - ``isolated'', no heat exchanged with
+    surrounding
   \end{itemize}
 \end{frame}
 
-\begin{frame}
-  \frametitle{Quasi-Static Processes}
+
+
+\begin{frame}{Quasi-Static Processes}
   \begin{center}
     \begin{tikzpicture}[scale=.6]
       \draw(0,0)--(5,0) node[pos=1,right]{\footnotesize $V$}
@@ -640,12 +601,11 @@
 
 
 
-\begin{frame}
-  \frametitle{A Simple Heat Engine Cycle}
+\begin{frame}{A Simple Heat Engine Cycle}
   \begin{columns}
     \column{.8\textwidth}
     \begin{center}
-      \pic{.5}{heat-engine.jpg}
+      \pic{.5}{heat-engine.png}
     \end{center}
     \begin{enumerate}
     \item\vspace{-.15in} Heat is added at constant volume; no work done.
@@ -673,8 +633,8 @@
 \end{frame}
 
 
-\begin{frame}
-  \frametitle{Efficiency of Heat Engine}
+
+\begin{frame}{Efficiency of Heat Engine}
   In a heat engine, the internal energy at the beginning and end of the cycle
   are the same (same point on the $P$-$V$ diagram), so the work done is just
   the difference between heat added and taken out:
@@ -689,16 +649,10 @@
   \eq{-.25in}{
     \boxed{\eta =\frac{W}{Q_\mathrm{in}}=1-\frac{Q_\mathrm{out}}{Q_\mathrm{in}}}
   }
-
-  %So, you \emph{can} have a \SI{100}{\percent} efficient heat engine, but then
-  %the engine will not do any work.
 \end{frame}
 
 
-\begin{frame}
-  \frametitle{Second Law of Thermodynamics}
-
-
+\begin{frame}{Second Law of Thermodynamics}
   \begin{block}{Kelvin-Planck Statement}
     It is impossible for heat engine working in a cycle to produce no other
     effect than that of extracting heat from a reservoir and performing an
@@ -706,11 +660,12 @@
   \end{block}
 \end{frame}
 
-\begin{frame}
-  \frametitle{Carnot Engine}
+
+
+\begin{frame}{Carnot Engine}
   The Carnot engine cycle is the most efficient.
   \begin{center}
-    \pic{.4}{carnot.jpg}
+    \pic{.4}{carnot.png}
   \end{center}
   The efficiency of a Carnot engine is:
   
@@ -718,5 +673,4 @@
     \boxed{\eta_C =1-\frac{Q_\mathrm{out}}{Q_\mathrm{in}}=1-\frac{T_c}{T_h}}
   }
 \end{frame}
-
 \end{document}
