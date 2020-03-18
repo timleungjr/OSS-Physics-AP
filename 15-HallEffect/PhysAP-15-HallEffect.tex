@@ -47,7 +47,28 @@
 
 
 \begin{frame}{Current Through the Conductor}
-  The current in the conductor is:
+  The (instantaneous) electric current through conductor is the rate at which
+  charge carriers pass through a point in the conductor:
+
+  \eq{-.15in}{
+    \boxed{I=\frac{dQ}{dt}}=\frac{dQ}{dt}
+    =\left(\frac{Q}{V}\right)\frac{dV}{dt}
+    =\left[ne\right]\left[Av_d\right]
+  }
+  where
+  \begin{itemize}
+  \item $dQ/dV$ is the total amount of charges \emph{per volume}, which is just
+    the charge carrier density $n$ times the elementary charge $e$
+  \item $dV/dt$ is the rate the volume of charges moves through the conductor,
+    give by the cross-section area of the conductor $A$ times the
+    \textbf{drift velocity} $v_d$ of the charge carrier
+  \end{itemize}
+  For simplicity, we \emph{assume} that the charge carriers are positive. While
+  the opposite is true, the behaviour will be identical.
+\end{frame}
+
+\begin{frame}{Current Through the Conductor}
+  Combining the terms:
 
   \eq{-.1in}{
     \boxed{I=\frac{dQ}{dt}=neAv_d}
@@ -56,24 +77,38 @@
     \begin{tabular}{l|c|c}
       \rowcolor{pink}
       \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
-      Current                    & $I$    & \si{\ampere} \\
+      Current                               & $I$    & \si{\ampere} \\
       Charge carrier density (carriers per volume) &
       $n$ & \si{\per\metre^3} \\
-      Elementary charge          & $e$    & \si{\coulomb}\\
-      Cross-section area of the conductor & $A$ & \si{\metre^2}\\
+      Elementary charge                     & $e$    & \si{\coulomb}\\
+      Cross-section area of the conductor   & $A$ & \si{\metre^2}\\
       Drift velocity of the charge carriers & $v_d$ & \si{\metre\per\second}
     \end{tabular}
   \end{center}
-  For simplicity, we \emph{assume} that the charge carriers are positive. While
-  the opposite is true, the behaviour will be identical.
+  The calculation for the charge carrier density $n$ requires some additional
+  thoughts.
 \end{frame}
 
 
 
 \begin{frame}{Charge Carrier Density}
-  Density of free electrons in a metal involves basic physical data about the
-  metal:
+  The charge carrier density in a \emph{metal} conductor involves some physical
+  information about the metal:
+  \begin{enumerate}
+  \item Divide the metals density $\rho$ by the metal's molar mass $M$ to find
+    the \emph{number of moles of atams per unit volume}
+  \item Multiply by Avagadro's number $N_A$ to find
+    \emph{number of atoms per unit volume}
+  \item Multiply by \emph{the number of free electrons per atom} $k$ for that
+    particular metal
+  \end{enumerate}
+\end{frame}
 
+
+
+\begin{frame}{Charge Carrier Density}
+  Collecting all the terms from the last slide, we have:
+  
   \eq{-.25in}{
     \boxed{n=\frac{\rho kN_A}{M}}
   }
@@ -97,9 +132,9 @@
 
 \begin{frame}{Hall Effect}
   When a current $I$ flows through a conductor in a magnetic field
-  $\mb{B}$, the magnetic field exerts a transverse force on the moving charges
-  which pushes them toward one side of the conductor. This is called
-  \textbf{Hall effect}.
+  $\mb{B}$, the magnetic field exerts a transverse (i.e.\ perpendicular to
+  motion) magnetic force $\mb{F}_m$ on the moving charges which pushes them
+  toward one side of the conductor. This is called \textbf{Hall effect}.
   \begin{center}
     \begin{tikzpicture}
       \node at (4.5,3.8) {\textcolor{blue!80}{
@@ -120,7 +155,7 @@
       \draw[ultra thick,fill=gray](2,2) circle(.18) node{$+$};
     \end{tikzpicture}
   \end{center}
-  This is most evident in a thin flat conductor as illustrated. 
+  This is most evident in a \emph{thin}, \emph{flat} conductor as illustrated. 
 \end{frame}
 
 
@@ -147,17 +182,17 @@
       \draw[ultra thick,fill=gray](2,2) circle(.18) node{$+$};
     \end{tikzpicture}
   \end{center}
-  \vspace{-.1in}As the charges enter the magnetic field, they experience a
-  magnetic force directed toward the top:
+  \vspace{-.1in}As the charges enter the magnetic field, $\mb{F}_m$ is directed
+  toward the top:
   
-  \eq{-.25in}{
+  \eq{-.2in}{
     \mb{F}_m
     =e\textcolor{red}{\mb{v}_d}\times\mb{B}
     =\frac{e\textcolor{red}{\mb{I}}\times\mb{B}}{\textcolor{red}{neA}}
   }
 
-  \vspace{-.1in}leading to a surplus of positive charges on the top, and
-  negative charges on the bottom.
+  leading to a surplus of positive charges on the top edge of
+  the conductor, and negative charges on the bottom.
 \end{frame}
 
 
@@ -187,13 +222,12 @@
       \node at (4.85,2) {\textcolor{red}{\footnotesize$\mb{E}$}};
     \end{tikzpicture}
   \end{center}
-  The charge imbalance caused by the magnetic force on the charge carriers
-  creates an electric field $\mb{E}$, pointing toward the bottom of the page,
-  and therefore a voltage across two sides of the conductor, called the
-  \textbf{Hall voltage}:
+  The charge imbalance on the conductor creates an electric field $\mb{E}$,
+  pointing toward the bottom, and therefore a voltage across two sides of the
+  conductor (width $W$), called the \textbf{Hall voltage}:
 
-  \eq{-.35in}{
-    V_H=|\mb{E}|W
+  \eq{-.25in}{
+    V_H=EW
   }
 \end{frame}
 
@@ -229,10 +263,10 @@
   \end{center}
   Subsequently, charge carriers entering the magnetic field will experience
   both a magnetic force and an electrostatic force. At equilibrium, the two
-  forces are balanced, i.e.:
+  forces are balanced:
 
   \eq{-.3in}{
-    \mb{F}_m=-\mb{F}_q
+    \mb{F}_m+\mb{F}_q=\mb{0}
   }
 \end{frame}
 
@@ -246,8 +280,8 @@
     F_q=eE=\frac{eV_H}{W}
   }
   
-  Equating this expression to the magnetic force, we can solve for the Hall
-  voltage:
+  Equating the magnitudes of electrostatic and magnetic forces, we can solve
+  for the Hall voltage:
 
   \eq{-.2in}{
     F_m=F_q\quad\rightarrow\quad
