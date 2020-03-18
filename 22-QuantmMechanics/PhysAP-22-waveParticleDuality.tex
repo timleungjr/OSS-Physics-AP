@@ -1,23 +1,26 @@
 \documentclass[12pt,compress,aspectratio=169]{beamer}
 
-\mode<presentation>
-{
-%  \usetheme{Warsaw}
-  \usetheme{Singapore}
-%  \setbeamertemplate{navigation symbols}{} % suppress nav bar
-%  \setbeamercovered{transparent}
-}
+\usetheme{metropolis}
+\setbeamersize{text margin left=.5cm,text margin right=.5cm}
+
+
 \usefonttheme{professionalfonts}
 \usepackage{graphicx}
 \usepackage{tikz}
 \usepackage{amsmath}
 \usepackage{mathpazo}
-\usepackage[scaled]{helvet}
+%\usepackage[scaled]{helvet}
 \usepackage{xcolor,colortbl}
 \usepackage{hyperref}
 \usepackage{siunitx}
 
+\setmonofont{Ubuntu Mono}
+\setlength{\parskip}{0pt}
+\renewcommand{\baselinestretch}{1}
+
+
 \sisetup{
+  detect-all,
   number-math-rm=\mathnormal,
   per-mode=symbol
 }
@@ -25,8 +28,8 @@
 \title[Quantum]{Topic 22: Wave-Particle Duality}
 \subtitle{Advanced Placement Physics}
 \author[TML]{Dr.\ Timothy Leung}
-\institute{Olympiads School}
-\date{Winter/Spring 2019}
+\institute{Olympiads School\\Toronto, Ontario, Canada}
+\date{April 2020}
 
 
 \newcommand{\mb}[1]{\mathbf{#1}}
@@ -51,25 +54,66 @@
 \end{frame}
 
 
+
 \begin{frame}{Blackbody Radiation}
   \begin{columns}
     \column{.2\textwidth}
-    \pic{1.2}{Black-body_realization.png}
-
+    \pic{1.3}{Black-body_realization.png}
+     
     \column{.8\textwidth}
     \begin{itemize}
-    \item An idealized physical object that absorbs all incident electromagnetic
-      radiation, regardless of frequency or angle of incidence
-    \item A blackbody is in thermal equilibrium, i.e. all absorbed radiation
-      (energy) is immediately radiated back
-    \item A blackbody at room temperature appears black, as most of the energy
-      it radiates is infrared and cannot be perceived by the human eye
+    \item The concept was coined by Gustav Kirchhoff in 1860
+    \item An idealized object that absorbs all incident EM radiation,
+      regardless of frequency or angle of incidence
+    \item Think of a box (``cavity'') with a mirror inside, and a hole where
+      light (EM radiation) is allowed in
+    \item Some of the light reflects inside the cavity, and some gets absorbed
+      by the blackbody
+    \item Eventually all the light inside the cavity is absorbed
+    \end{itemize}
+    \end{columns}
+\end{frame}
+
+
+\begin{frame}{Blackbody Radiation}
+  \begin{columns}
+    \column{.2\textwidth}
+    \pic{1.3}{Black-body_realization.png}
+    
+    \column{.8\textwidth}
+    \begin{itemize}
+    \item The object is in thermodynamic equilibrium; all of the absorbed
+      energy is then immediately radiated back as EM radiation
+    \item The spectral distribution depends on temperature
+    \item A blackbody at room temperature appears black, as most of the
+      radiative energy is infrared and cannot be perceived by the human eye
     \item Thermal radiation spontaneously emitted by many ordinary objects can
       be approximated as blackbody radiation 
-    \item The concept was coined by Gustav Kirchkoff in 1860.
     \end{itemize}
   \end{columns}
 \end{frame}
+
+%
+%
+%\begin{frame}{Blackbody Radiation}
+%  \begin{columns}
+%    \column{.2\textwidth}
+%    \pic{1.2}{Black-body_realization.png}
+%
+%    \column{.8\textwidth}
+%    \begin{itemize}
+%    \item An idealized physical object that absorbs all incident electromagnetic
+%      radiation, regardless of frequency or angle of incidence
+%    \item A blackbody is in thermal equilibrium, i.e. all absorbed radiation
+%      (energy) is immediately radiated back
+%    \item A blackbody at room temperature appears black, as most of the energy
+%      it radiates is infrared and cannot be perceived by the human eye
+%    \item Thermal radiation spontaneously emitted by many ordinary objects can
+%      be approximated as blackbody radiation 
+%    \item The concept was coined by Gustav Kirchkoff in 1860.
+%    \end{itemize}
+%  \end{columns}
+%\end{frame}
 
 
 
@@ -101,7 +145,7 @@
 
 
 
-\begin{frame}{``Quantization'' of Energy}
+\begin{frame}{Quantization of Energy}
   \begin{columns}
     \column{.3\textwidth}
     \pic{1}{20973-050-F6EEBFF1.jpg}\\
@@ -120,7 +164,6 @@
     \end{itemize}
   \end{columns}
 \end{frame}
-
 
 \begin{frame}{Quantization of Energy}
   \begin{columns}
@@ -173,15 +216,14 @@
 
 
 \begin{frame}{The Spark Gap Experiment}
-  To prove that light is a electromagnetic in nature, German physicist Heinrich
-  Hertz devised a ``spark gap experiment'' to generate frequencies in the range
-  of
+  To prove that light is an EM wave, German physicist Heinrich Hertz devised a
+  ``spark gap experiment'' to generate frequencies in the range of
   \SI{e14}{\hertz}
   \begin{center}
-    \vspace{-.1in}\pic{.5}{Hertz_exp_2.png}
+    \pic{.55}{Hertz_exp_2.png}
   \end{center}
   \begin{itemize}
-  \item\vspace{-.15in}Also showed that light has the same wavelengths as
+  \item\vspace{-.1in}Also showed that light has the same wavelengths as
     predicted by Maxwell's equations
   \item Discovered \textbf{photoelectric effect} that was caused by ultraviolet
     radiation
@@ -192,12 +234,14 @@
 
 \begin{frame}{Photoelectric Effect}
   When electromagnetic waves (e.g. light) hits certain metals, electrons are
-  knocked off the surface
-
-  \pic{1}{73bacc9f2bf571752483a89ef6c61a94f07470f7.png}
+  knocked off the surface.
+  \begin{center}
+    \pic{.9}{73bacc9f2bf571752483a89ef6c61a94f07470f7.png}
+  \end{center}
+  When observing this \textbf{photoelectric effect}, physicists discovered that:
   \begin{itemize}
   \item Increasing intensity of light knocked off more electrons, but doesn't
-    change their kinetic energy, but
+    change the maximum kinetic energy of the electrons, but
   \item Changing the frequency of the light did change $K$ though, although
   \item Below a certain frequency, \emph{no} electrons were emitted
   \end{itemize}
@@ -206,10 +250,12 @@
 
 \begin{frame}
   \frametitle{The Photon: Packets of Energy}
-  Einstein argued that light is not a continuous wave, but a collection of
-  discrete energy packets (photons), each with energy $E=hf$
+  In the 1905 paper \emph{On a Heuristic Viewpoint Concerning the Production and
+    Transformation of Light}, Einstein argued that light is not continuous
+  wave, but a collection of discrete energy packets (photons), each with energy
+  $E=hf$
 
-  \eq{-.2in}{
+  \eq{-.22in}{
     \boxed{K_\mathrm{max}=
       \begin{cases}
         hf-\varphi & \text{if }hf>\varphi\\
@@ -227,8 +273,8 @@
       Work function of the metal  & $\varphi$ & \si{\joule}
     \end{tabular}
   \end{center}
-  Einstein may have been alerted to the fact that the blackbody radiation
-  curve resembles the distribution of energies in a gas.
+  Einstein may have been alerted to the fact that the blackbody radiation curve
+  resembles the distribution of energies in a gas
 \end{frame}
 
 
@@ -338,7 +384,7 @@
     If I perform a double-slit experiment with a beam of electrons, will I get
     an interference pattern?
     \begin{center}
-      \pic{.7}{CNX_Chem_06_03_Electrnin.jpg}
+      \pic{.7}{CNX_Chem_06_03_Electrnin.png}
     \end{center}
 
     \column{.18\textwidth}
@@ -385,18 +431,18 @@
     {\footnotesize $\cos(400x)$}
   \end{center}
   \begin{itemize}
-  \item This wave has a single value of wavelength $\lambda$ (therefore
+  \item This wave/particle has a single wavelength $\lambda$ (therefore
     momentum $p$)
-  \item This wave has no distinguishing features that can tell you its
-    location $x$
+  \item Has no distinguishing features that can tell you its location $x$
   \item When we have precise knowledge of the particle wave's momentum (i.e.\
     its wavelength), then we have no idea where it is.
   \end{itemize} 
 \end{frame}
 
 \begin{frame}{Uncertainty Principle}
-  If a particle is defined as waves with small variations of wavelengths, when
-  we add up the different waves together, we begin to see a \textbf{packet}
+  Howeever, if a particle is defined as waves with small variations of
+  wavelengths, when we add up the different waves together, we begin to see a
+  \textbf{wave packet}:
   \begin{center}
     \begin{tikzpicture}
       \draw[xscale=.3,yscale=.07,thick,red,smooth,samples=400,domain=-20:20]
@@ -413,8 +459,8 @@
       $\cos(380x)+\cos(382.5x)+\cdots+\cos(400x)+
       \cos(402.5x)+\cdots+\cos(420x)$}
   \end{center}
-  In order to know more about the location of the particle, we \emph{must} lose
-  information about its momentum.
+  Bottom line: In order to know more about the location of the particle, we
+  \emph{must} lose information about its momentum.
 \end{frame}
 
 
@@ -432,12 +478,15 @@
       \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
       Uncertainty in momentum & $\sigma_p$ & \si{\kilo\gram.\metre/\second}\\
       Uncertainty in position & $\sigma_x$ & \si{\metre} \\
-      Planck's constant & $h$ & \si{\joule.\second}
+      Planck's constant       & $h$        & \si{\joule\second}
     \end{tabular}
   \end{center}
   The more you know about an object's position, the less you know about its
   momentum, and vice versa.
 \end{frame}
+
+
+
 
 \begin{frame}{Bohr Atomic  Model}
   The ``orbital'' model of electrons does not work, because as the electron
@@ -551,6 +600,7 @@
   \begin{columns}
     \column{.3\textwidth}
     \pic{1}{box.png}
+    
     \column{.7\textwidth}
     A particle in a 1D box has to behave like a standing wave. The resonance
     modes (frequencies where a stable standing wave exists) correspond to the
@@ -573,15 +623,16 @@
   \begin{columns}
     \column{.3\textwidth}
     \pic{1}{box.png}
+    
     \column{.7\textwidth}
     Kinetic energy of the particle can be expressed in terms of momentum:
 
-    \eq{-.25in}{
-      E_n=\frac{1}{2}mv^2=\frac{p^2}{2m}=\frac{n^2h^2}{8mL^2}
+    \eq{-.2in}{
+      K_n=\frac{1}{2}mv^2=\frac{p^2}{2m}=\frac{n^2h^2}{8mL^2}
     }
 
     If a particle is a standing wave, then kinetic energy of the particle can
-    never be zero, as long as it is confined inside the box, therefore
+    never be zero (as long as it is confined inside the box), therefore
     \begin{itemize}
     \item It cannot have zero velocity
     \item The lowest energy level ($n=1$) is called the

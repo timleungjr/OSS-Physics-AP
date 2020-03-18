@@ -1,19 +1,25 @@
 \documentclass[12pt,compress,aspectratio=169]{beamer}
 
-\mode<presentation>{
-  \usetheme{Singapore}
+\usetheme{metropolis}
+\setbeamersize{text margin left=.5cm,text margin right=.5cm}
+
 %  \setbeamertemplate{navigation symbols}{} % suppress nav bar
 %  \setbeamercovered{transparent}
-}
+
 \usefonttheme{professionalfonts}
 \usepackage{graphicx}
 \usepackage{tikz}
 \usepackage{amsmath}
 \usepackage{mathpazo}
-\usepackage[scaled]{helvet}
+%\usepackage[scaled]{helvet}
 \usepackage{xcolor,colortbl}
 \usepackage{hyperref}
 \usepackage{siunitx}
+
+\setmonofont{Ubuntu Mono}
+\setlength{\parskip}{0pt}
+\renewcommand{\baselinestretch}{1}
+
 
 \sisetup{
   number-math-rm=\mathnormal,
@@ -23,10 +29,8 @@
 \title{Topic 21: Special Relativity}
 \subtitle{Advanced Placement Physics}
 \author[TML]{Dr.\ Timothy Leung}
-\institute{Olympiads School}
-%\author{Olympiads School}
-%\date{Summer 2018}
-\date{Winter/Spring 2019}
+\institute{Olympiads School\\Toronto, Ontario, Canada}
+\date{April 2020}
 
 
 
@@ -44,35 +48,35 @@
   \maketitle
 \end{frame}
 
+%
+%
+%\section[Intro]{Introduction}
+%
+%\begin{frame}{Introduction}
+%  These slides for this topic are an expanded version of the slides used for
+%  Grade 12 Physics (with some additional calculus). There are two versions of
+%  the slides; both are downloadable from the school website:
+%  \begin{itemize}
+%  \item The long version
+%    \begin{itemize}
+%    \item More background information (more than needed for the AP 2 Exam) and
+%      derivations and integrations
+%    \item May answer some of your questions about the specifics of the theory
+%    \item \texttt{21-relativity-long.pdf}
+%    \end{itemize}
+%  \item The short version
+%    \begin{itemize}
+%    \item More ``to the point''
+%    \item The version that is used during class
+%    \item \texttt{21-relativity-short.pdf}
+%    \end{itemize}
+%  \end{itemize}
+%  There is also a handout on how to solve and interpret the time dilation
+%  problem
+%\end{frame}
 
 
-\section[Intro]{Introduction}
-
-\begin{frame}{Introduction}
-  These slides for this topic are an expanded version of the slides used for
-  Grade 12 Physics (with some additional calculus). There are two versions of
-  the slides; both are downloadable from the school website:
-  \begin{itemize}
-  \item The long version
-    \begin{itemize}
-    \item More background information (more than needed for the AP 2 Exam) and
-      derivations and integrations
-    \item May answer some of your questions about the specifics of the theory
-    \item \texttt{21-relativity-long.pdf}
-    \end{itemize}
-  \item The short version
-    \begin{itemize}
-    \item More ``to the point''
-    \item The version that is used during class
-    \item \texttt{21-relativity-short.pdf}
-    \end{itemize}
-  \end{itemize}
-  There is also a handout on how to solve and interpret the time dilation
-  problem
-\end{frame}
-
-
-\section[Ref.\ Frame]{Reference Frame}
+\section{Reference Frame}
 
 \begin{frame}{Frame of Reference}
   You can think of a \textbf{frame of reference} (or ``reference frame'', or
@@ -104,8 +108,8 @@
 
 
 \begin{frame}{Inertial Frame of Reference}
-  An \textbf{inertial frame of reference} is one that is moving in uniform
-  motion (i.e.\ constant velocity, zero acceleration)
+  An \textbf{inertial frame of reference} (or a \textbf{rest frame}) is one
+  that is moving in uniform motion
   \begin{itemize}
   \item In an inertial frame, Newton's first and second laws of motion are valid
   \item Since all uniform motion are treated the same way, you may consider
@@ -120,46 +124,47 @@
 
 
 \begin{frame}{Inertial Frame of Reference}
-  Observer A is moving uniformly with the skateboard, while Observer B is
-  standing on the side of the road.
+  Observer A moves uniformly with the skateboard, while Observer B stands on
+  the side of the road. So, when A tosses a ball upward:
   \begin{center}
-    \pic{.65}{graphics/57.jpg}
+    \pic{.55}{graphics/57.png}
   \end{center}
-  When Observer A tosses a ball upward:
   \begin{itemize}
   \item A sees only vertical motion, while
   \item B sees the ball traveling in a parabolic curve, although
-  \item A \& B see different motion, they agree on the \emph{equations} that
-    govern the motion
+  \item A \& B observe different motion, but they agree on the \emph{equations}
+    that govern the motion
   \end{itemize}
 \end{frame}
 
 
 
 \begin{frame}{Inertial Frame of Reference}
-  Observer A sees the same motion (only vertical motion) regardless of
-  whether he is moving uniformly w.r.t.\ B or not\footnote{as long as
-    \emph{neither} are accelerating}.
+  Observer A sees the same motion (only vertical motion) regardless of whether
+  he is moving uniformly w.r.t.\ B or not (as long as \emph{neither} are
+  accelerating)
   \begin{center}
-    \pic{.65}{graphics/57.jpg}
+    \pic{.55}{graphics/57.png}
   \end{center}
   \begin{itemize}
-  \item Valid for A to conclude that he is at rest, but that B is moving
-  \item Likewise, it is also valid for B to think that he is at rest, but that
-    A is moving
+  \item Valid for A to conclude that he is at rest, but that B and the rest of
+    the world are moving
+  \item Likewise, it is also valid for B to think that he is at rest, but it is
+    only A and his skateboard that are moving
   \end{itemize}
 \end{frame}
     
 
 \begin{frame}{Newtonian (Classical) Relativity}
-  When studying kinematics and dynamics, we made some assumptions that are
-  obvious: space and time are \emph{absolute}:
+  When studying kinematics and dynamics, we made some untested assumptions that
+  seemed obvious: space and time are \emph{absolute}
   \begin{itemize}
   \item \SI{1}{m} is \SI{1}{m} no matter where you are, or how you are moving
   \item \SI{1}{s} is \SI{1}{s} no matter where you are, or how you are moving
   \item Measurements of space and time do not depend on motion
   \end{itemize}
-  If space and time are absolute, then \emph{all} velocities are relative
+  \vspace{.1in}If space and time are absolute, then \emph{all} velocities are
+  relative to the observer
   \begin{itemize}
   \item Measured velocities depend on the motion of the observer
   \item Galilean velocity addition rule:
@@ -231,18 +236,18 @@
     the equations are ugly and complex!
   \item Physicists at the time began to theorize that (perhaps) there is an
     actual \emph{preferred} inertial frame of references
-  \item This violate the \emph{principle of relativity}
+  \item This seems to violate the \emph{principle of relativity}
   \end{itemize}
 \end{frame}
 
 
-\begin{frame}{The Illusive Aether}
-  Maxwell's hypothesis: the speed of light $c$ must be relative to a
-  hypothetical subtance called \textbf{luminiferous aether} (or just
-  \textbf{ether}) that permeates the universe. Ether must have some fantastic
-  properties:
+
+\begin{frame}{The Illusive Ether}
+  Maxwell's hypothesis: the speed of light $c_0$ is relative to a hypothetical
+  subtance called \textbf{luminiferous aether} (or just \textbf{ether}) that
+  permeates the universe. Ether must have some fantastic properties:
   \begin{itemize}
-  \item \emph{All} space is filled with aether
+  \item All space is filled with ether
   \item Massless
   \item Zero viscosity
   \item Non-dispersive
@@ -250,10 +255,13 @@
   \item Continuous at a very small (sub-atomic) scale
   \end{itemize}
   It was thought that the preferred inertial reference frame is that of the
-  ether.
+  ether
 \end{frame}
+
+
+
 \begin{frame}{Spoiler Alert}
-  Spoiler alert: Aether doesn't exist.
+  Spoiler alert: Ether doesn't exist.
 \end{frame}
 
 
@@ -262,11 +270,11 @@
   If ether exists, then at different times of the year, the Earth will have a
   different relative velocity with respect to it:
   \begin{center}
-    \pic{.4}{graphics/2000px-AetherWind.png}
+    \pic{.35}{graphics/2000px-AetherWind.png}
   \end{center}
-  And it will cause light to either speed up, or slow down. By measuring and
-  comparing the speed of light at various times of the year, we should be able
-  to determine to flow of ether relative to Earth.
+  And it causes light to speed up or slow down. By measuring and comparing the
+  speed of light at various times of the year, we should be able to determine
+  to flow of ether relative to Earth.
 \end{frame}
 
 
@@ -276,7 +284,7 @@
   and Edward Morley designed an ingenious but very difficult experiment to
   detect ether using an \textbf{interferometer} designed by Michelson
   \begin{center}
-    \pic{.75}{graphics/michelsonmorley.jpg}
+    \pic{.7}{graphics/michelsonmorley.jpg}
   \end{center}
 \end{frame}
 
@@ -286,7 +294,7 @@
   \begin{columns}
     \column{.3\textwidth}
     \begin{center}
-      \pic{1.15}{graphics/313754.jpg}
+      \pic{1.15}{graphics/313754.png}
     \end{center}
 
     \column{.7\textwidth}
@@ -331,61 +339,68 @@
 
 
 
-\begin{frame}{Hendrik Lorentz\footnote{Nobel Prize in Physics, 1902}}
-  \begin{columns}
+\begin{frame}{Hendrik Lorentz}
+%  \begin{columns}
+%    
+%    \column{.17\textwidth}
+%    \begin{center}
+%      \pic{1.2}{graphics/lorentz.jpg}\\
+%          {\footnotesize Hendrik Lorentz}
+%    \end{center}
+%    
+%    \column{.83\textwidth}
+  Dutch physicist Hendrik Antoon Lorentz\footnote{1853--1928, Nobel Prize in
+    Physics, 1902} was one of the first to consider the findings of
+  Michelson-Morley experiment to be significant
+  \begin{itemize}
+  \item Lorentz's hypothesis: objects traveling in the direction of ether must
+    contract in length, nullifying the experimental results
+  \item The length contraction is given by the \textbf{Lorentz factor}:
     
-    \column{.17\textwidth}
-    \begin{center}
-      \pic{1.2}{graphics/lorentz.jpg}\\
-          {\footnotesize Hendrik Lorentz}
-    \end{center}
-    
-    \column{.83\textwidth}
-    \begin{itemize}
-    \item Lorentz considered the findings of Michelson-Morley experiment to be
-      significant
-    \item His hypothesis: objects traveling in the direction of ether must
-      contract in length, nullifying the experimental results
-      
-      \eq{-.2in}{
-        \boxed{\gamma=\lorentz}
-      }
-    \item\emph{No known physical phenomenon} causes an object to contract
-    \end{itemize}
-  \end{columns}
+    \eq{-.2in}{
+      \boxed{\gamma=\lorentz}
+    }
+  \item But \emph{No known physical phenomenon} causes an object to contract
+  \end{itemize}
+%  \end{columns}
 \end{frame}
 
 
 
 \begin{frame}{Strange Behavior in Absolute Space Time}
   French mathematician Henri Poincar\'{e} also hypothesized that ether affects
-  the flow of time the direction of flow. The equation is similar to the
-  hypothesis by Lorentz:
+  the flow of time the direction of motion. His equation is similar to the
+  hypothesis by Lorentz and contains the same factor:
 
   \eq{-.2in}{
     \boxed{t' =\frac{t}{\bigsqrt}}
   }
   
-  But \emph{no known physical phenomenon} can alter the flow of time!
-  
-  \vspace{.1in}Both Poincar\'{e} and Lorentz depended their hypothesis on
-  \begin{itemize}
-  \item Absolute time and space
-  \item Existence of aether
-  \end{itemize}
+  But \emph{no known physical phenomenon} can alter the flow of time either!
+
+  \uncover<2>{
+    \vspace{.15in}Both Poincar\'{e} and Lorentz depended their hypothesis on
+    \begin{itemize}
+    \item Absolute time and space
+    \item Existence of ether
+    \end{itemize}
+  }
 \end{frame}
 
+
+
 \begin{frame}{Making Maxwell's Equations Work}
-  \framesubtitle{Albert Einstein in 1905, Age 26}
   \begin{columns}
     \column{.2\textwidth}
-    \pic{1.1}{graphics/Einstein_patentoffice.jpg}\\
-    {\footnotesize Albert Einstein}
-  
+    \pic{1.1}{graphics/Einstein_patentoffice.png}
+    \begin{center}
+      \vspace{-.15in}{\footnotesize Albert Einstein\\ in 1905\par}
+    \end{center}
+    
     \column{.8\textwidth}
     \begin{itemize}
-    \item Einstein was working as a patent clerk in Switzerland while completing
-      his Ph.D.
+    \item In 1905, at the age of 26, Albert Einstein was working as a patent
+      clerk in Bern, Switzerland while completing his Ph.D.
       \begin{itemize}
       \item Believed in the principle of relativity, and therefore
       \item Rejected the concept of a ``preferred'' frame of reference
@@ -406,8 +421,9 @@
   \begin{itemize}
   \item Submitted on June 30, 1905 and passed for publication by a referee
   \item Einstein's third paper (of four) that year
-  \item Mentions only five other scientists by name: Newton, Maxwell, Hertz,
-    Doppler and Lorentz, but does not contain references to any publications
+  \item Mentions only five other scientists by name: Issac Newton, James
+    Clerk Maxwell, Heinrich Hertz, Christian Doppler and Hendrik Lorentz, but
+    does not contain references to any publications
   \item Ignored by most physicists at first, until Max Planck took interests
   \item Called ``special relativity'' because it describes a ``special case''
     without effects of gravity
@@ -423,56 +439,58 @@
   \end{block}
   \begin{itemize}
   \item Reaffirms the principle in which physics is based on
-  \item Extends the principle to include electrodynamics (Maxwell's equations)
+  \item Extends the principle to include electrodynamics%(Maxwell's equations)
   \end{itemize}
 
   \vspace{.1in}
   \begin{block}{The Principle of Invariant Light Speed}
     As measured in any inertial frame of reference, light always propagates in
-    empty space with a definite velocity $c$, independent of the state of
+    empty space with a definite velocity $c_0$, independent of the state of
     motion of the emitting body.
   \end{block}
   \begin{itemize}
   \item Reaffirms the results from Michelson-Morley experiment
-  \item Discounts the existances of the  hypothetical ether
+  \item Disproves the existence of ether
   \end{itemize}
+%\end{frame}
+%
+%\begin{frame}
+%  \frametitle{Postulates of Special Relativity}
+  \vspace{.1in}The two postulates are unremarkable by themselves, but when
+  combined, the consequences are profound
 \end{frame}
 
-\begin{frame}
-  \frametitle{Postulates of Special Relativity}
-  The two postulates are unremarkable by themselves, but Einstein is able to
-  show that when combined, the consequences are profound
-\end{frame}
 
-\begin{frame}
-  \frametitle{What's so Special About Special Relativity?}
 
+\begin{frame}{What's so Special About Special Relativity?}
   Classical (Newtonian) relativity:
   \begin{itemize}
   \item Space and time are absolute (invariant), therefore
   \item The speed of light must be relative to the observer
   \end{itemize}
 
-  Einstein's special relativity:
+  \vspace{.1in}Einstein's special relativity:
   \begin{itemize}
   \item The speed of light is absolute (invariant), therefore
   \item Space and time must be relative to the observer
   \end{itemize}
 
-  We must modify our traditional concepts:
+  \vspace{.1in}We must modify our traditional concepts:
   \begin{itemize}
-  \item Measurement of space (our concept of the coordinate system)
-  \item Measurement of time (our clocks)
-  \item Concept of simultaneity (whether two events happens at the same time)
+  \item Measurement of \emph{space}
+  \item Measurement of \emph{time}
+  \item Concept of \emph{simultaneity}
   \end{itemize}
 \end{frame}
+
+
 
 \section{Simultaneity}
 
 \begin{frame}{The Relativity of Simultaneity}
   This \emph{thought experiment} is similar to the one that Einstein presented.
-  Suppose lightning bolt strikes the two ends of a high-speed moving train. Did
-  it happen simultaneously?
+  Suppose lightning bolt strikes the two ends of a high-speed moving train.
+  Does it happen simultaneously?
   \begin{center}
     \pic{.4}{graphics/87-1-1024x673.png}
   \end{center}
@@ -493,8 +511,7 @@
   \item He is stationary, but the train is moving
   \item When the lightnings strike, he is at an equal distance from the front
     and the back of the train
-  \item The flash from the two lightning bolts arrive at his eyes at the same
-    time
+  \item Flashes from the two lightning bolts arrive at his eyes at the same time
   \item Since the speed of light is a constant regardless of motion
   \end{itemize}
   Therefore, his conclusions are:
@@ -865,11 +882,11 @@
 %  \end{itemize}
 \end{frame}
 
-  
-\section[Rel.\ Momentum]{Relativistic Momentum}
 
-\begin{frame}
-  \frametitle{Relativistic Momentum}
+
+\section{Relativistic Momentum}
+
+\begin{frame}{Relativistic Momentum}
   In Grade 12 Physics, you were taught that momentum is mass times velocity.
   And in Grade 11 Physics, you were taught that velocity is displacement over
   time. \emph{These definitions have not changed.}
@@ -943,8 +960,7 @@
 \end{frame}
 
 
-\begin{frame}
-  \frametitle{Work and Energy}
+\begin{frame}{Work and Energy}
   For 1D motion (for simplicity), we can rearrange the terms in the integral:
 
   \eq{-.2in}{
@@ -968,8 +984,8 @@
 \end{frame}
 
 
-\begin{frame}
-  \frametitle{Work and Energy}
+
+\begin{frame}{Work and Energy}
   One of the integral is with respect to $\gamma$, so we express $v$ and $dv$
   in terms of $\gamma$ using its definition:
 
@@ -980,8 +996,9 @@
   }
 \end{frame}
 
-\begin{frame}
-  \frametitle{Work and Energy}
+
+
+\begin{frame}{Work and Energy}
   Putting everything together, we have
 
   \eq{-.25in}{
@@ -998,9 +1015,9 @@
   The limit of the integral is from $1$ because at $v=0$, $\gamma=1$
 \end{frame}
 
-\begin{frame}
-  \frametitle{Work and Kinetic Energy}
 
+
+\begin{frame}{Work and Kinetic Energy}
   The integral gives us this expression:
   
   \eq{-.25in}{
@@ -1055,9 +1072,7 @@
 \end{frame}
 
 
-\begin{frame}
-  \frametitle{Relativistic Energy}
-  \framesubtitle{What This All Means}
+\begin{frame}{Relativistic Energy}{What This All Means}
   
   \eq{-.2in}{
     \boxed{E=mc^2}
@@ -1077,16 +1092,15 @@
 
 
 
-\begin{frame}
-  \frametitle{Example Problem}
+\begin{frame}{Example Problem}
   \textbf{Example 3:} An electron has a rest mass of \SI{9.11e-31}{\kilo\gram}.
   In a detector, it behaves as if it has a mass of \SI{12.55e-31}{\kilo\gram}.
   How fast is that electron moving relative to the detector?
 \end{frame}
 
 
-\begin{frame}
-  \frametitle{Energy-Momentum Relation}
+
+\begin{frame}{Energy-Momentum Relation}
   The \textbf{energy-momentum relation} relates an object's rest (intrinsic)
   mass $m$, total energy $E$, and momentum $p$:
 
@@ -1105,8 +1119,9 @@
   \end{center}
 \end{frame}
 
-\begin{frame}
-  \frametitle{Energy-Momentum Relation}
+
+
+\begin{frame}{Energy-Momentum Relation}
   This equation is derived using the expression for relativistic momentum:
 
   \eq{-.2in}{
@@ -1119,8 +1134,9 @@
   }
 \end{frame}
 
-\begin{frame}
-  \frametitle{Energy-Momentum Relation}
+
+
+\begin{frame}{Energy-Momentum Relation}
   Solving for $v^2$ and substituting it back into the Lorentz factor, we
   obtain its alternative form in terms of momentum and mass:
 
@@ -1136,9 +1152,9 @@
   Which is the same equation as in the last slide.
 \end{frame}
 
-\begin{frame}
-  \frametitle{Energy-Momentum Relation}
 
+
+\begin{frame}{Energy-Momentum Relation}
   In the \textbf{stationary frame of reference}, (rest frame,
   center-of-momentum frame) the momentum is zero, so the equation simplifies to
 
@@ -1157,8 +1173,7 @@
 
 
 
-\begin{frame}
-  \frametitle{Kinetic Energy--Classical vs.\ Relativistic}
+\begin{frame}{Kinetic Energy--Classical vs.\ Relativistic}
   \begin{columns}
     \column{.5\textwidth}
     \textbf{Relativistic:}
@@ -1187,8 +1202,9 @@
 \end{frame}
 
 
-\begin{frame}
-  \frametitle{Binomial Series Expansion}
+
+
+\begin{frame}{Binomial Series Expansion}
   The \textbf{binomial series} is the Maclaurin series for the function
   $f(x)=(1+x)^\alpha$, given by:
   
@@ -1210,8 +1226,9 @@
   }
 \end{frame}
 
-\begin{frame}
-  \frametitle{Binomial Series Expansion}
+
+
+\begin{frame}{Binomial Series Expansion}
   Substituting these terms into the equation:
   
   \vspace{-.3in}{\Large
@@ -1228,8 +1245,7 @@
 \end{frame}
 
 
-\begin{frame}
-  \frametitle{Comparing Classical and Relativistic Energy}
+\begin{frame}{Comparing Classical and Relativistic Energy}
   \begin{columns}
     \column{.5\textwidth}
     In classical mechanics:
@@ -1252,8 +1268,9 @@
   The classical expression is accurate for speeds up to $v\approx 0.3c$.
 \end{frame}
 
-\begin{frame}
-  \frametitle{Example Problem}
+
+
+\begin{frame}{Example Problem}
   \textbf{Example 4:} A rocket car with a mass of \SI{2.00e3}{kg} is accelerated
   from rest to \SI{1.00e8}{m/s}. Calculate its kinetic energy:
   \begin{enumerate}
