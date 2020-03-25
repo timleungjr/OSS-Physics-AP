@@ -1,12 +1,10 @@
 \documentclass[12pt,compress,aspectratio=169]{beamer}
 
-\mode<presentation>
-{
-  \usetheme{metropolis}%Singapore}
-  \setbeamersize{text margin left=.5cm,text margin right=.5cm}
+\usetheme{metropolis}
+\setbeamersize{text margin left=.5cm,text margin right=.5cm}
 %  \setbeamertemplate{navigation symbols}{} % suppress nav bar
 %  \setbeamercovered{transparent}
-}
+
 \usefonttheme{professionalfonts}
 \usepackage{amsmath}
 \usepackage{graphicx}
@@ -17,6 +15,10 @@
 \usepackage{hyperref}
 \usepackage{siunitx}
 \usepackage{bm}
+
+\setmonofont{Ubuntu Mono}
+\setlength{\parskip}{0pt}
+\renewcommand{\baselinestretch}{1}
 
 \sisetup{
   detect-all=true,
@@ -165,7 +167,7 @@
     the center of mass (``CM'')
     \begin{itemize}
     \item The center of mass is also called the center of gravity (``CG''), if
-      the entire object is inside of a gravitational field
+      the entire object is inside a uniform gravitational field
     \item If the density of an object is constant, then the CM/CG is also the
       geometric center (centroid) of the object
     \item In a later topic, we will study how to compute the centers of mass of
@@ -217,8 +219,8 @@
   \item\vspace{-.15in}Near surface of Earth, use $g=\SI{9.81}{m/s^2}$ (or
     $g=\SI{10}{m/s^2}$ for your AP exam)
   \item You may be asked to find the value of $g$ on some ``unknown planet''.
-  \item $\mb{w}$ always points \textbf{down} (the direction of $\mb{w}$ is
-    how ``down'' is defined)
+  \item $\mb{w}$ always points \emph{down} (the direction of $\mb{w}$ is how
+    down is defined)
 %  \item Newton's law of universal gravity:
 %
 %    \eq{-.3in}{
@@ -233,7 +235,7 @@
 
 \begin{frame}{Normal Force}
   \begin{columns}
-    \column{.25\textwidth}
+    \column{.22\textwidth}
     \begin{center}
       \begin{tikzpicture}{scale=1.5}
         \draw [very thick] (-1,0)--(2.5,0);
@@ -249,7 +251,7 @@
       \mb{w}=m\mb{g}=-\mb{N}
     \end{displaymath}
     
-    \column{.75\textwidth}
+    \column{.78\textwidth}
     \begin{itemize}
     \item A force a surface exerts on another object that it is in contact with
     \item Always \textbf{perpendicular} to the contact surface
@@ -369,7 +371,7 @@
     \begin{tabular}{l|c|c}
       \rowcolor{pink}
       \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
-      Magnitude of kinetic friction & $F_k$ & \si{\newton} \\
+      Magnitude of kinetic friction & $f_k$ & \si{\newton} \\
       Kinetic friction coefficient  & $\mu_k$ & no units \\
       Magnitude of normal force     & $N$ & \si{\newton}
     \end{tabular}
@@ -421,7 +423,7 @@
   \textbf{Drag} (or \textbf{fluid resistance}) is the force opposing to the
   motion of an object moving in a fluid, with magnitude:
 
-  \eq{-.4in}{
+  \eq{-.2in}{
     D=\frac{1}{2}\rho V_\infty^2A_\mathrm{ref}C_d
   }  
   \begin{center}
@@ -556,7 +558,7 @@
   The spring force $F_e$ is the force a compressed or stretched spring
   exerts onto objects connected to it. It obeys Hooke's Law:
   
-  \eq{-.4in}{
+  \eq{-.2in}{
     \mb{F}_e=-k\mb{x}
   }
   where $\mb{x}$ is the relative displacement of the ends of the spring.

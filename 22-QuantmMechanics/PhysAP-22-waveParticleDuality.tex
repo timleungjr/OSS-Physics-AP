@@ -93,28 +93,6 @@
   \end{columns}
 \end{frame}
 
-%
-%
-%\begin{frame}{Blackbody Radiation}
-%  \begin{columns}
-%    \column{.2\textwidth}
-%    \pic{1.2}{Black-body_realization.png}
-%
-%    \column{.8\textwidth}
-%    \begin{itemize}
-%    \item An idealized physical object that absorbs all incident electromagnetic
-%      radiation, regardless of frequency or angle of incidence
-%    \item A blackbody is in thermal equilibrium, i.e. all absorbed radiation
-%      (energy) is immediately radiated back
-%    \item A blackbody at room temperature appears black, as most of the energy
-%      it radiates is infrared and cannot be perceived by the human eye
-%    \item Thermal radiation spontaneously emitted by many ordinary objects can
-%      be approximated as blackbody radiation 
-%    \item The concept was coined by Gustav Kirchkoff in 1860.
-%    \end{itemize}
-%  \end{columns}
-%\end{frame}
-
 
 
 \begin{frame}{Raleigh-Jeans Law and the Ultraviolet Catastrophe}
@@ -147,43 +125,95 @@
 
 \begin{frame}{Quantization of Energy}
   \begin{columns}
-    \column{.3\textwidth}
+    \column{.2\textwidth}
     \pic{1}{20973-050-F6EEBFF1.jpg}\\
     Max Planck
     
-    \column{.67\textwidth}
+    \column{.8\textwidth}
     \begin{itemize}
     \item Made a strange modification in the classical calculations
     \item Derived a function of $P(\lambda,T)$ that agreed with experimental
       data for all wavelengths
     \item First found an empirical function to fit the data
     \item Then searched for a way to modify the usual calculations
-    \item Energy emitted by blackbody not continuous but discrete
-    \item When energy is emitted from the harmonic oscillator, it drops to the
-      next lower energy level 
     \end{itemize}
   \end{columns}
 \end{frame}
+
 
 \begin{frame}{Quantization of Energy}
   \begin{columns}
-    \column{.5\textwidth}
-    \eq{-.1in}{
-      \boxed{E=hf}
-    }
-
-    \vspace{-.1in}where
+    \column{.2\textwidth}
+    \pic{1}{20973-050-F6EEBFF1.jpg}\\
+    Max Planck
+    
+    \column{.8\textwidth}
     \begin{itemize}
-    \item $h=\SI{6.626e-34}{\joule\second}$ is ``Planck's constant'', and 
-    \item $f$ is the frequency
+    \item Argued that the walls of a blackbody are composed of subatomic
+      electric oscillators (``resonators'')
+      \begin{itemize}
+      \item The nature of these resonators were unknown
+      \item Billions of resonators vibrating at different frequencies, and
+        therefore
+      \item Emitting radiation at those frequencies (remember that for a wave,
+        the frequency of disturbance at the source is the frequency of the
+        wave)
+      \item In classical physics, the resonators can have any value of energy,
+        and change its amplitude continuously
+      \end{itemize}
+    \item In order to agree with experiments, Planck discovered that energy
+      emitted the resonator must be \emph{discrete}
+      \begin{itemize}
+      \item When energy is emitted from the resonator, it drops to the next
+        lower energy level
+      \end{itemize}
     \end{itemize}
-    When a blackbody emits radiation, it has to drop down one or more levels
-    and emit a unit of energy equal to the difference between the allowed
-    energy levels of the oscillator. 
-    \column{.5\textwidth}
-    \pic{1}{quantum.png}
   \end{columns}
 \end{frame}
+
+
+
+\begin{frame}{Quantization of Energy}
+  \begin{columns}
+    \column{.65\textwidth}
+
+    The total energy of \emph{any} harmonic oscillator can only be integral
+    multiples of $hf$:
+    
+    \eq{-.2in}{
+      \boxed{E_{\textrm{res}}=nhf}
+    }
+    \begin{center}
+      \begin{tabular}{l|c|c}
+        \rowcolor{pink}
+        \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
+        Energy of the resonator & $E_{\textrm{res}}$ & \si{\joule}\\
+        Enegy level            & $n$ & (no unit)\\
+        Planck's constant      & $h$ & \si{\joule.\second}\\
+        Frequency of resonator & $f$ & \si{\hertz}
+      \end{tabular}
+    \end{center}
+    \textbf{Planck's constant} is experimentally determined to be
+    $h=\SI{6.626e-34}{\joule\second}$
+
+    \column{.35\textwidth}
+    \begin{tikzpicture}[xscale=.6,yscale=.8]
+      \foreach \y in {0,1,...,4} {
+        \draw[very thick](0,\y)--(4,\y)
+        node[pos=0,left] {\footnotesize $\y$}
+        node[pos=1,right]{\footnotesize $\y hf$};
+      }
+      \foreach \y in {0,1,...,3} {
+        \draw[very thick,red!70!black,<->](\y+.2,\y)--(\y+.2,\y+1);
+      }
+      \draw[very thick,->](4.7,4.5)--(4.7,5.9)
+      node[pos=1,above]{\footnotesize Energy $E$};
+      \draw[very thick,->](-.4,4.5)--(-.4,6)
+      node[pos=1,above]{\footnotesize to $n=\infty$};
+    \end{tikzpicture}
+  \end{columns}
+\end{frame}
+
 
 
 \begin{frame}{Planck's Law}
@@ -194,6 +224,47 @@
       P(\lambda,T)=\frac{2hc^2}{\lambda^5}\frac{1}{e^{\frac{hc}{\lambda k_BT}}-1}
     }
   }
+\end{frame}
+
+
+
+\begin{frame}{Classical vs. Quantum Oscillator}
+  This ``quantum'' behavior exists even for the simple pendulum that we studied
+  in mechanics topics in harmonic motion and circular motion:
+  \begin{columns}
+    \column{.2\textwidth}
+    \begin{tikzpicture}
+      \fill[pattern=north east lines] (-1,0) rectangle (1,0.2);
+      \draw[very thick](-1,0)--(1,0);
+      \begin{scope}[rotate=10]
+        \draw[thick](0,0)--(0,-5) node[midway,right]{$\ell$};
+        \tikzstyle{balloon}=[ball color=red];    
+        \shade[balloon] (0,-5) circle (0.2) node[below right]{$m$};
+      \end{scope}
+      \draw[dashed,thin](0,0)--(0,-5);
+      \draw[->](0,-2) arc(270:280:2) node[pos=0.5,below]{$\theta$};
+    \end{tikzpicture}
+
+    \column{.78\textwidth}
+    The natural frequency for $\ell=\SI{1}{\metre}$
+    \begin{displaymath}
+      \vspace{-.2in}
+      f=\frac{1}{2\pi}\sqrt{\frac{g}{\ell}}\approx\SI{.50}{\hertz}
+    \end{displaymath}
+    \vspace{-.1in}Each energy level
+    \begin{displaymath}
+      \vspace{-.1in}
+      \Delta E=hf\approx\SI{3.3e-34}{\joule}
+    \end{displaymath}
+    
+    For a pendulum with $m=$\SI{100}{\gram} and $\theta=$\ang{10}:
+    \begin{displaymath}
+      \vspace{-.1in}
+      \frac{\Delta E}{E}=\frac{\Delta E}{mg\ell(1-\cos\theta)}
+      \approx\SI{2.2e-32}{\joule}
+    \end{displaymath}
+    No wonder we can't observe it in a marcoscopic level!
+  \end{columns}
 \end{frame}
 
 \begin{frame}{Maxwell's Equations in a Vacuum}
@@ -396,7 +467,7 @@
 
 \begin{frame}
   \frametitle{De Broglie Wavelength}
-  If matter is also a wave, then what would be its wavelength? Solving the
+  If matter is also a wave, then its wavelength can be obtained by solving the
   momentum equation for $\lambda$:
 
   \eq{-.2in}{
@@ -423,7 +494,7 @@
   If a particle is a wave, how do you tell where it is?
   \begin{center}
     \begin{tikzpicture}
-      %\draw[->](0,0)--(10,0);
+
       \draw[xscale=.3,thick,red,smooth,samples=400,domain=-20:20]
       plot({\x},{sin(400*\x)});
     \end{tikzpicture}
@@ -467,22 +538,22 @@
 \begin{frame}{Heisenberg Uncertainty Principle}
   Because of the wave properties of particles, you can never be completely
   certain of the relationship between an object's momentum $p$ and position
-  $x$:
+  $x$. The more you know about an object's position, the less you know about
+  its momentum, and vice versa.
 
   \eq{-.2in}{
-    \boxed{\sigma_p\sigma_x\geq \frac{h}{4\pi}}
+    \boxed{\sigma_p\sigma_x\geq \frac{\hbar}{2}}
   }
   \begin{center}
     \begin{tabular}{l|c|c}
       \rowcolor{pink}
       \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
-      Uncertainty in momentum & $\sigma_p$ & \si{\kilo\gram.\metre/\second}\\
-      Uncertainty in position & $\sigma_x$ & \si{\metre} \\
-      Planck's constant       & $h$        & \si{\joule\second}
+      Uncertainty in momentum  & $\sigma_p$ & \si{\kilo\gram.\metre/\second}\\
+      Uncertainty in position  & $\sigma_x$ & \si{\metre} \\
+      Redued Planck's constant & $\hbar$    & \si{\joule\second}
     \end{tabular}
   \end{center}
-  The more you know about an object's position, the less you know about its
-  momentum, and vice versa.
+  The \textbf{reduced Planck's constant} is just $\hbar=\frac{h}{2\pi}$.
 \end{frame}
 
 
@@ -517,8 +588,7 @@
       Coulomb's constant & $k$ & \si{N.m^2/C^2} \\
       Elementary charge  & $e$ & \si{\coulomb} \\
       Atomic mass        & $m$ & \si{\kilo\gram} \\
-      Reduced Planck's constant & $\hbar$ & \si{\joule.\second}
-      (joule seconds)\\
+      Reduced Planck's constant & $\hbar$ & \si{\joule.\second}\\
       Atomic number      & $Z$ & integer; no units\\
       Energy level       & $n$ & integer; no units
     \end{tabular}

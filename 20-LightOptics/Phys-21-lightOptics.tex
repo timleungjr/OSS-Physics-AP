@@ -1,27 +1,33 @@
 \documentclass[compress,aspectratio=169]{beamer}
 
-\mode<presentation>
-{
-  \usetheme{Singapore}
-%  \setbeamersize{text margin left=.5cm,text margin right=.5cm}
+\usetheme{metropolis}
+\setbeamersize{text margin left=.5cm,text margin right=.5cm}
 %  \setbeamertemplate{navigation symbols}{} % suppress nav bar
 %  \setbeamercovered{transparent}
-}
+
 \usefonttheme{professionalfonts}
 \usepackage{tikz}
 \usepackage{amsmath}
 \usepackage{mathpazo}
-\usepackage[scaled]{helvet}
 \usepackage{xcolor,colortbl}
 \usepackage{siunitx}
+\usepackage{bm}
 
-\sisetup{detect-all}
+\setmonofont{Ubuntu Mono}
+\setlength{\parskip}{0pt}
+\renewcommand{\baselinestretch}{1}
 
-\title{Class 21.\ Light and Optics}
+\sisetup{
+  detect-all,
+  number-math-rm=\mathnormal,
+  per-mode=symbol
+}
+
+\title{Topic 21: Light Waves and Optics}
 \subtitle{Advanced Placement Physics}
 \author[TML]{Dr.\ Timothy Leung}
-\institute{Olympiads School}
-\date{April 2018}
+\institute{Olympiads School\\Toronto, Ontario, Canada}
+\date{April 2020}
 
 \newcommand{\pic}[2]{\includegraphics[width=#1\textwidth]{#2}}
 \newcommand{\mb}[1]{\mathbf{#1}}
@@ -33,40 +39,42 @@
   \maketitle
 \end{frame}
 
-\begin{frame}
-  \frametitle{In This Class}
-  In this unit, we will be discussing some important properties of light:
-  \begin{itemize}
-  \item Light waves passing through a medium
-    \begin{itemize}
-    \item Reflection
-    \item Refraction
-    \item Dispersion
-    \end{itemize}
-  \item Light waves passing through an opening
-    \begin{itemize}
-    \item Diffraction
-    \item Interference
-    \item Optical resolution
-    \end{itemize}
-  \item The nature of light? (What kind of wave is light?)
-    \begin{itemize}
-    \item Electromagnetic waves
-    \item Polarization of light
-    \end{itemize}
-  \item Geometric Optics
-    \begin{itemize}
-    \item Mirrors
-    \item Thin lens equation
-    \end{itemize}
-  \end{itemize}
-  Some of the topics that we are discussing are reviews\ldots but with new
-  insights and more information.
-\end{frame}
+
+%\begin{frame}{In This Class}
+%  In this unit, we will be discussing some important properties of light:
+%  \begin{itemize}
+%  \item Light waves passing through a medium
+%    \begin{itemize}
+%    \item Reflection
+%    \item Refraction
+%    \item Dispersion
+%    \end{itemize}
+%  \item Light waves passing through an opening
+%    \begin{itemize}
+%    \item Diffraction
+%    \item Interference
+%    \item Optical resolution
+%    \end{itemize}
+%  \item The nature of light? (What kind of wave is light?)
+%    \begin{itemize}
+%    \item Electromagnetic waves
+%    \item Polarization of light
+%    \end{itemize}
+%  \item Geometric Optics
+%    \begin{itemize}
+%    \item Mirrors
+%    \item Thin lens equation
+%    \end{itemize}
+%  \end{itemize}
+%  Some of the topics that we are discussing are reviews\ldots but with new
+%  insights and more information.
+%\end{frame}
+
+
 
 \section{Huygens}
-\begin{frame}
-  \frametitle{Huygens' Principle}
+
+\begin{frame}{Huygens' Principle}
   In the 1600's there were two competing theories of light\ldots
   \begin{itemize}
   \item Some, including Issac Newton, believed that  light is a particle
@@ -81,24 +89,20 @@
 
 
 \section{Reflection}
-\begin{frame}
-  \frametitle{Reflection of Light}
-  \textbf{Law of Reflection}
-  
-  The incident ray, the reflected ray, and the normal to the surface of the
-  mirror all lie in the same plane, and the angle of reflection is equal to
-  the angle of incidence.  
+
+\begin{frame}{Reflection of Light}
+  In the \textbf{law of reflection}, the incident ray, the reflected ray, and
+  the normal to the surface of the mirror all lie in the same plane, and the
+  angle of reflection is equal to the angle of incidence
   \begin{center}
-    \pic{0.7}{graphics/Types-of-reflection.jpg}
+    \pic{.7}{graphics/Types-of-reflection.png}
   \end{center}
 \end{frame}
 
 
-\begin{frame}
-  \frametitle{Specular Reflection}
-  \framesubtitle{Example: Lake Reflection}
+\begin{frame}{Specular Reflection Example}
   \begin{center}
-    \pic{0.55}{graphics/Lake-reflection.jpg}
+    \pic{.55}{graphics/Lake-reflection.jpg}
   \end{center}
   This photo of Lake Matheson shows specular reflection in the water of the
   lake with reflected images of Aoraki/Mt Cook (left) and Mt Tasman (right).
@@ -110,8 +114,7 @@
 
 \section{Refraction}
 
-\begin{frame}
-  \frametitle{Refraction of Light Through a Medium}
+\begin{frame}{Refraction of Light Through a Medium}
   \begin{columns}
     \column{0.4\textwidth}
     \begin{itemize}
@@ -129,78 +132,73 @@
 
 
 
-\begin{frame}
-  \frametitle{Refraction of Light Through a Medium}
-    You have probably all seen this diagram of light entering from one medium
-    to another.
-    \begin{center}
-      \pic{0.35}{graphics/snell.png}
-    \end{center}
-    Light could be going in either direction, from top to bottom (1 to 2) or
-    or from bottom to top (2 to 1)
+\begin{frame}{Refraction of Light Through a Medium}
+  Light entering from one medium to another at an angle results in refraction
+  In the diagram, light could be going in either direction, from top to bottom
+  ($n_1$ to $n_2$) or from bottom to top ($n_2$ to $n_1$)
+  \begin{center}
+    \vspace{-.2in}
+    \begin{tikzpicture}[scale=.9]
+      \fill[gray!70](-3,-2) rectangle (3,0);
+      \draw[very thick](-3,0)--(3,0);
+      \draw[red!80,very thick](-2,2)--(0,0)--(1,-2);
+      \draw[dashed,black!70,very thick](0,2)--(0,-2);
+      \draw[->,thick](0,1) arc(90:135:1) node[midway,above]{$\theta_1$};
+      \draw[->,thick](0,-1)arc(270:297:1) node[midway,below]{$\theta_2$};
+      \node at (-2,.3) {$n_1$};
+      \node at (-2,-.3){$n_2$};
+      \node at (2,.3) {$v_1$};
+      \node at (2,-.3){$v_2$};
+    \end{tikzpicture}
+  \end{center}
+  \textbf{Snell's law} relates the refractive indices $n$ of the two media
+  to the directions of propagation in terms of the angles $\theta$ to the
+  normal
+
+  \eq{-.2in}{
+    \boxed{n_1\sin\theta_1=n_2\sin\theta_2}
+  }
 \end{frame}
 
 
-\begin{frame}
-  \frametitle{Refraction and Huygens Principle}
+
+\begin{frame}{Refraction and Huygens Principle}
   \begin{columns}
-    \column{0.5\textwidth}
+    \column{.5\textwidth}
     \pic{1}{graphics/huygen.png}
-    \column{0.47\textwidth}
+    
+    \column{.5\textwidth}
     We can explain the refraction phenomenon using Huygens' Principle
   \end{columns}
 \end{frame}
 
 
-\begin{frame}
-  \frametitle{Snell's Law}
-  Snell's Law relates the indices of refraction $n$ of the two media to the
-  directions of propagation in terms of the angles to the normal. 
+
+\begin{frame}{Index of Refraction}
+  \textbf{Index of refraction} ($n$) (or \textbf{refractive index}, or just
+  \textbf{index}) is the ratio of the speed of light in a vacuum ($c_0$) to the
+  speed of light in the medium ($c$):
 
   \eq{-.2in}{
-    \boxed{n_1\sin\theta_1=n_2\sin\theta_2}
+    \boxed{n=\frac{c_0}{c}=\frac{\lambda_\mathrm{vacuum}}{\lambda}}
   }
-  
-  \vspace{0.1in}
-  \begin{center}
-    \begin{tabular}{l|c|c}
-      \rowcolor{pink}
-      \textbf{Variable} & \textbf{Symbol} & \textbf{SI Unit}\\ \hline
-      Indices of refraction of the media & $n_1$, $n_2$ & (no units)\\
-      Incident angle of light   & $\theta_1$ & (no units)\\
-      Refraction angle of light & $\theta_2$ & (no units)
-    \end{tabular}
-  \end{center}
-\end{frame}
 
-
-\begin{frame}
-  \frametitle{Index of Refraction}
-  Index of refraction ($n$) is defined as the speed of light in vacuum ($c$)
-  divided by the speed of light in the medium ($v$).
-
-  \eq{-.3in}{
-    \boxed{n=\frac{c}{v}}
-  }
-    
-  When light enters a second medium, the \emph{frequency} remains unchanged
-  (i.e.\ the colour doesn't change!) but since the speed changes, the
-  \emph{wavelength} also changes:
+  When light enters a second medium, the \emph{frequency} remains unchanged but
+  since the speed changes, the \emph{wavelength} also changes:
     
   \eq{-.2in}{
     \boxed{\frac{n_1}{n_2}=\frac{\lambda_2}{\lambda_1}}
   }
-  
+
   You can work this out using the univesal wave equation: $v=f\lambda$
 \end{frame}
 
 
-\begin{frame}
-  \frametitle{Index of Refraction of Common Materials}
+\begin{frame}{Index of Refraction of Common Materials}
   \begin{center}
     \begin{tabular}{c|c||c|c}
       \rowcolor{pink}
-      \textbf{Material} & \textbf{n} & \textbf{Material} & \textbf{n}\\ \hline
+      \textbf{Material} & $\bm{n}$ & \textbf{Material} & $\bm{n}$\\ \hline
       Vacuum           & 1        & Ethanol     & 1.362 \\
       Air              & 1.000277 & Glycerine   & 1.473 \\
       Water at \SI{20}{\celsius} & 1.33 & Ice         & 1.31 \\
@@ -209,36 +207,32 @@
       Diamond          & 2.417    & Flint glass & 1.57-1.75\\
     \end{tabular}
   \end{center}
-  
-  \vspace{0.2in}
   The values given are \emph{approximate} and do not account for the small
   variation of index with light wavelength. That's called \textbf{dispersion}.
 \end{frame}
 
 
 
-\begin{frame}
-  \frametitle{Total Internal Reflection}
-  \framesubtitle{From High Index to Low Index}
-  Snell's Law still holds, but something weird can happen:
+\begin{frame}{Total Internal Reflection}
+  \textbf{Total internal reflection} (``TIR'') occurs when light enters from a
+  medium with high index to another medium with low index (i.e.\ $n_1>n_2$).
+  Snell's law still holds, but something weird can happen:
   \begin{center}
-    \pic{0.8}{graphics/660px-RefractionReflextion.png}
+    \pic{.6}{graphics/660px-RefractionReflextion.png}
   \end{center}
-  Critical angle $\theta_c$ for water-air interface is \ang{48.6}. If
-  incident angle is greater $\theta_1>\theta_c$, we have
-  \textbf{total internal reflection}. TIR can only happen going from a higher
-  index to a lower index, $n_1>n_2$.
+  Critical angle $\theta_c$ for water-air interface is \ang{48.6}. TIR occurs
+  when the incident angle is greater $\theta_1>\theta_c$.
 \end{frame}
+
 
 
 \section{Dispersion}
 
-\begin{frame}
-  \frametitle{Colour of Light and Wavelength}
-  Human eyes perceive different frequencies of light as different colours.
-  The visible spectrum of light:
+\begin{frame}{Color of Light and Wavelength}
+  Human eyes perceive different frequencies of light as different colors. The
+  visible spectrum of light:
   \begin{center}
-    \pic{.45}{graphics/visiblespectrum.png}
+    \pic{.4}{graphics/visiblespectrum.png}
   \end{center}
   \begin{itemize}
   \item The \emph{color} of the light depends on its frequency (\& wavelength
@@ -247,8 +241,9 @@
   \end{itemize}
 \end{frame}
 
-\begin{frame}
-  \frametitle{Dispersion of Light Through Refraction}
+
+
+\begin{frame}{Dispersion of Light Through Refraction}
   \begin{columns}
     \column{.4\textwidth}
     \pic{1}{graphics/white-light-split-into-colours-by-a-prism-pasieka.jpg}
@@ -256,7 +251,7 @@
     \column{.55\textwidth}
     \begin{itemize}
     \item When white light passes through a prism it is separated into
-      different colours (spectrum) through refraction.
+      different colors (spectrum) through refraction.
     \item This is because the index of refraction $n$ is slightly different for
       different wavelengths
     \item Otherwise, we will never see a rainbow
@@ -266,8 +261,7 @@
 
 
 
-\begin{frame}
-  \frametitle{Wavelength Dependency of Index of Refraction}
+\begin{frame}{Wavelength Dependency of Index of Refraction}
   \begin{center}
     \pic{.5}{graphics/Dispersion-curve.png}
   \end{center}
@@ -277,15 +271,14 @@
 
 \section{Interference}
 
-\begin{frame}
-  \frametitle{Thomas Young's Double-Slit Experiment}
-  \framesubtitle{First definitive evidence that light is a wave}
+\begin{frame}{Thomas Young's Double-Slit Experiment}
   \begin{columns}
     \column{.45\textwidth}
     \pic{1}{graphics/double-slit1.png}
+    
     \column{.52\textwidth}
     \begin{itemize}
-    \item\textbf{Monochromatic light} light with a single colour (frequency);
+    \item\textbf{Monochromatic light} light with a single color (frequency);
       the light source can be a laser, LED , or gas lamp (most likely what Young
       used)
     \item\textbf{Slit:} an opening; also called an \textbf{aperture}
@@ -298,12 +291,12 @@
   just like any other wave
 \end{frame}
 
-\begin{frame}
-  \frametitle{Thomas Young's Double-Slit Experiment}
+\begin{frame}{Thomas Young's Double-Slit Experiment}
   \begin{columns}
-    \column{0.35\textwidth}
-    \pic{1}{graphics/path1.png}
-    \column{0.62\textwidth}
+    \column{.28\textwidth}
+    \pic{1.15}{graphics/path1.png}
+    
+    \column{.72\textwidth}
     \begin{itemize}
     \item At \textbf{A}, the path from slits $S_1$ and $S_2$ are the same,
       therefore we have \textbf{constructive interference} and the projection
@@ -318,8 +311,9 @@
   \end{columns}
 \end{frame}
 
-\begin{frame}
-  \frametitle{Interference Pattern: Bright and Dark Fringes}
+
+
+\begin{frame}{Interference Pattern: Bright and Dark Fringes}
   \begin{center}
     \pic{.4}{graphics/fringes1.png}
   \end{center}
@@ -328,8 +322,8 @@
 \end{frame}
 
 
-\begin{frame}
-  \frametitle{Let's Work This Out!}
+
+\begin{frame}{Let's Work This Out!}
   \begin{columns}
     \column{0.5\textwidth}
     \begin{tikzpicture}[scale=0.95]
@@ -376,71 +370,74 @@
   \end{columns}
 \end{frame}
 
-\begin{frame}
-  \frametitle{Double-Slit Interference}
-  \framesubtitle{Constructive Interference}
-  A bright fringe (constructive interference) will happen if the path length
-  difference ($d\sin\theta$) is an integer ($n$) multiple of wavelength
-  ($\lambda$), i.e.
+
+
+\begin{frame}{Contructive Interference with Double-Slits}
+  A bright fringe (constructive interference) happens if the path difference
+  ($d\sin\theta$) is an integer ($n$) multiple of wavelength ($\lambda$):
   
   \eq{-.2in}{
-    \boxed{\pm n\lambda = d\sin\theta_n}
+    \boxed{n\lambda = d\sin\theta_n}
   } 
 
-  \vspace{-.1in}where $n=0,1,2,3\ldots$
-  
+  \vspace{-.2in}where $n=0,1,2,3\ldots$
   \begin{center}
-    \begin{tabular}{l|c|l}
+    \begin{tabular}{l|c|c}
       \rowcolor{pink}
       \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
       Integer number of full wavelengths & $n$       & (none)\\
-      Wavelength of light                & $\lambda$ & \si{\metre} (meters)\\
-      Distance between slits             & $d$       & \si{\metre} (meters)\\
-      Angle between slit separation and  & $\theta$  & (unit less)\\
-      line perpendicular to light rays   & &\\
+      Wavelength of light                & $\lambda$ & \si{\metre}\\
+      Distance between slits             & $d$       & \si{\metre}\\
+      Deflection angle                   & $\theta$  & (unit less)
     \end{tabular}
   \end{center}
-\end{frame}
+  The last fringe $n_\mathrm{max}$ can be found by setting $\sin\theta=1$.
+  Therefore the total nubmer of bright fringes $N$:
 
-
-\begin{frame}
-  \frametitle{Double-Slit Interference}
-  \framesubtitle{Destructive Interference}
-  Conversely, a dark fringe (destructive interference) will happen if the path
-  length difference ($d\sin\theta$) is an half-number ($n+\frac{1}{2}$)
-  multiple of wavelength ($\lambda$), i.e.
-  
-  \eq{-0.2in}{
-    \boxed{\pm\left(n+\frac{1}{2}\right)\lambda = d\sin\theta_n}
+  \eq{-.3in}{
+    N=2n_\mathrm{max}+1
   }
-  where $n=0,1,2,3\ldots$
-
 \end{frame}
 
 
-
-\begin{frame}
-  \frametitle{Double-Slit Interference}
-  \begin{center}
-    \pic{0.65}{graphics/path-difference.png}
-  \end{center}
-\end{frame}
-
-
-\begin{frame}
-  \frametitle{Approximation of The Wavelength of Light}
-  We can actually estimate the wavelength of light based on the distances
-  between bright fringes, by applying the \textbf{small-angle approximation}
-  for angles measured in \emph{radians}:
+\begin{frame}{Destructive Interference with Double-Slits}
+  Conversely, dark fringes (destructive interference) occurs when the path
+  difference ($d\sin\theta$) is an half-number ($n+\frac12$) multiple of
+  wavelength ($\lambda$):
   
-  \eq{-.35in}{
+  \eq{-.2in}{
+    \boxed{\left(n+\frac{1}{2}\right)\lambda = d\sin\theta_n}
+  }
+  
+  where $n=0,1,2,3\ldots$. Again, the last dark fringe $n_\mathrm{max}$ can be
+  found by setting $\sin\theta=1$, and the total nubmer of dark fringes $N$:
+
+  \eq{-.25in}{
+    N=2n_\mathrm{max}
+  }
+\end{frame}
+
+
+
+%\begin{frame}
+%  \frametitle{Double-Slit Interference}
+%  \begin{center}
+%    \pic{0.65}{graphics/path-difference.png}
+%  \end{center}
+%\end{frame}
+
+
+\begin{frame}{Approximation of The Wavelength of Light}
+  We can actually estimate the wavelength of light based on the distances
+  between bright fringes, by applying the \textbf{small-angle approximation}:
+  
+  \eq{-.3in}{
     \theta\approx\tan\theta\approx\sin\theta
   }
   
   \vspace{-.15in}We can already relate the distance from slits to the screen
-  ($x$), and the
-  distance of the $n$-th bright fringe from the centre ($y_n$) to $\theta_n$.
-  Applying the approximation, we have:
+  ($x$), and the distance of the $n$-th bright fringe from the centre ($y_n$)
+  to $\theta_n$. Applying the approximation, we have:
 
   \eq{-.2in}{
     \tan\theta_n=\frac{y_n}{x}\approx\sin\theta_n
@@ -455,30 +452,28 @@
   }
 \end{frame}
 
-\begin{frame}
-  \frametitle{Approximation of The Wavelength of Light}
+
+
+\begin{frame}{Approximation of The Wavelength of Light}
   This equation applies equally to dark fringes (nodal lines) as well as bright
   fringes.
   
-  {\LARGE
-    \begin{displaymath}
-      \boxed{\lambda\approx\frac{\Delta y d}{x}}
-    \end{displaymath}
+  \eq{-.2in}{
+    \boxed{\lambda\approx\frac{\Delta y d}{x}}
   }
   \begin{center}
-    \begin{tabular}{l|c|l}
+    \begin{tabular}{l|c|c}
       \rowcolor{pink}
       \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
-      Wavelength                     & $\lambda$  & \si{\metre} (meter) \\
-      Distance between fringes       & $\Delta y$ & \si{\metre} (meter) \\
-      Distance between slits         & $d$        & \si{\metre} (meter) \\
-      Distance from source to screen & $x$        & \si{\metre} (meter) \\
+      Wavelength                     & $\lambda$  & \si{\metre} \\
+      Distance between fringes       & $\Delta y$ & \si{\metre} \\
+      Distance between slits         & $d$        & \si{\metre} \\
+      Distance from source to screen & $x$        & \si{\metre}
     \end{tabular}
   \end{center}
-
-  Since the approximation is based on small angles, we generally apply this
-  to $\Delta y$ close to the centre, where light from both slits are deflected
-  by a small angle.
+  Since the approximation is based on small angles, we must apply this equation
+  to where $\Delta y$ close to the centre, where light from both slits are
+  deflected by a small angle.
 \end{frame}
 
 
@@ -486,7 +481,8 @@
   \frametitle{Important Notes}
   \begin{itemize}
   \item We have applied the double-slit problem specifically to light, but it
-    can be applied to any wave (e.g.\ ocean waves) as well
+    can be applied to any mechanical wave (e.g.\ sound waves, ocean waves) as
+    well
   \item The sources don't actually need to be slits; any point source will do
   \item The projection/screen doesn't need to be a real screen either; it just
     has to be a line where wave intensity can be measured
@@ -497,31 +493,30 @@
 
 \section{Diffraction}
 
-\begin{frame}
-  \frametitle{Diffraction of Waves}
+\begin{frame}{Diffraction of Waves}
   When a wave goes through an small opening, it \textbf{diffracts}. This happens
   with sound waves, ocean waves\ldots and light.
   \begin{center}
-    \pic{0.6}{graphics/alexandria.jpg}
+    \pic{.55}{graphics/alexandria.jpg}
   \end{center}
-  (The photo is from the Port of Alexandria in Egypt. The shape of the entire
-  harbour is created because of diffraction of ocean wave.)
+  The photo is from the Port of Alexandria in Egypt. The shape of the entire
+  harbor is created because of diffraction of ocean wave.
 \end{frame}
 
-\begin{frame}
-  \frametitle{Diffraction of Waves}
+
+
+\begin{frame}{Diffraction of Waves}
   \begin{center}
-    \pic{0.6}{graphics/diffraction1.jpg}
+    \pic{.6}{graphics/diffraction1.jpg}
   \end{center}
   The smaller the opening (compared to the wavelength of the incoming wave)
   the greater the diffraction effects.
 \end{frame}
 
 
-\begin{frame}
-  \frametitle{Equations for Diffraction}
+\begin{frame}{Equations for Diffraction}
   \begin{columns}
-    \column{0.4\textwidth}
+    \column{.4\textwidth}
     \begin{tikzpicture}
       \draw[fill=gray!50](0,3)--(0,1)--(-0.1,1)--(-0.1,3);
       \draw[fill=gray!50](0,-2)--(0,-1)--(-0.1,-1)--(-0.1,-2);
@@ -536,8 +531,8 @@
         \draw[->](-0.02,\yy)--(5,\yy);
       }
     \end{tikzpicture}
-    \column{0.57\textwidth}
-
+    
+    \column{.57\textwidth}
     \begin{itemize}
     \item Similar to the double-slit problem, we apply Huygens' Principle
       again
@@ -554,8 +549,7 @@
 
 
 
-\begin{frame}
-  \frametitle{At Some Other Angle $\theta$}
+\begin{frame}{At Some Other Angle $\theta$}
   \begin{columns}
     \column{0.4\textwidth}
     \begin{tikzpicture} %[scale=0.95]
@@ -600,13 +594,13 @@
 \end{frame}
 
 
-\begin{frame}
-  \frametitle{Dark Fringes: Destructive Interference}
+
+\begin{frame}{Dark Fringes: Destructive Interference}
   Dark fringes exists on the screen at regular, whole-numbered intervals
   ($m=1,2,3\ldots$):
 
   \eq{-.2in}{
-    \boxed{\pm m\lambda=W\sin\theta_m}
+    \boxed{m\lambda=W\sin\theta_m}
   }
   
   \vspace{-.1in}Applying the small-angle approximation equation, we end up with:
@@ -620,8 +614,8 @@
 \end{frame}
 
 
-\begin{frame}
-  \frametitle{At Some Other Angle $\theta$}
+
+\begin{frame}{At Some Other Angle $\theta$}
   \begin{columns}
     \column{0.4\textwidth}
     \begin{tikzpicture}
@@ -662,26 +656,25 @@
 
 
 
-\begin{frame}
-  \frametitle{Bright Fringes: Constructive Interference}
+\begin{frame}{Bright Fringes: Constructive Interference}
   Bright fringes exist on the screen at regular, half-numbered intervals
   ($m=1,2,3\ldots$):
 
   \eq{-.2in}{
-    \boxed{\pm\left(m+\frac{1}{2}\right)\lambda=W\sin\theta_m}
+    \boxed{\left(m+\frac{1}{2}\right)\lambda=W\sin\theta_m}
   }
   
   \vspace{-.1in}Again, similar to the dark fringes, we apply our small-angle
   approximation equation:
 
   \eq{-.2in}{
-    \boxed{y_m=\pm\left(m+\frac{1}{2}\right)\frac{\lambda L}{W}}
+    \boxed{y_m=\left(m+\frac{1}{2}\right)\frac{\lambda L}{W}}
   }
 \end{frame}
 
 
-\begin{frame}
-  \frametitle{Single-Slit Diffraction, A Summary}
+
+\begin{frame}{Single-Slit Diffraction, A Summary}
   \begin{itemize}
   \item Similar to the double-slit interference, single-slit diffraction
     projects a series of alternating bright fringes (``maxima'') and dark
@@ -699,12 +692,13 @@
 
 
 \section{Grating}
-\begin{frame}
-  \frametitle{Diffraction Grating: What if there are more than 2 slits?}
+
+\begin{frame}{Diffraction Grating: What if there are more than 2 slits?}
   \begin{columns}
-    \column{0.35\textwidth}
-    \pic{1.1}{graphics/grating1.jpg}
-    \column{0.66\textwidth}
+    \column{.35\textwidth}
+    \pic{1.1}{graphics/grating1.png}
+    
+    \column{.66\textwidth}
     \begin{itemize}
     \item We can apply the same analysis from double-slit to a diffraction
       grating
@@ -720,41 +714,40 @@
 \end{frame}
 
 
+
 \section{Applications}
 
-\begin{frame}
-  \frametitle{Resolving Power}
+\begin{frame}{Optical Resolution}
   The ability of an optical instrument (e.g.\ the human eye, microscope,
-  camera) to distinguish two distinct objects.
-  %\vspace{0.2in}
+  camera) to distinguish two distinct objects
   \begin{center}
-    \pic{0.322}{graphics/resolve1.png}\hspace{.05in}
-    \pic{0.322}{graphics/resolve2.png}\hspace{.05in}
-    \pic{0.322}{graphics/resolve3.png}\hspace{.05in}
+    \pic{.322}{graphics/resolve1.png}\hspace{.05in}
+    \pic{.322}{graphics/resolve2.png}\hspace{.05in}
+    \pic{.322}{graphics/resolve3.png}\hspace{.05in}
   \end{center}
-  \textbf{WHY?} When light from any object passes through an 
-  ``optical instrument'', it \textbf{diffracts}, therefore ``blurring'' the
-  object.
+  When light from any object passes through an ``optical instrument'', it
+  \textbf{diffracts}, therefore ``blurring'' the object
 \end{frame}
 
-\begin{frame}
-  \frametitle{Resolving Power}
-  \begin{minipage}{.55\textwidth}
-      \pic{.95}{graphics/resolve4.png}
-  \end{minipage}
-  \begin{minipage}{.42\textwidth}
+
+
+\begin{frame}{Optical Resolution}
+  \begin{columns}
+    \column{.4\textwidth}
+    \pic{1}{graphics/resolve4.png}
+
+    \column{.6\textwidth}
     \textbf{Rayleigh limit}: Two objects are resolved if the angle
-    $\theta>\theta_\mathrm{min}$, where $\theta_\mathrm{min}$ is when the first
-    minimum (dark fringe) from object 1 overlaps with the central maximum
-    (bright fringe in the middle) from object 2.
-  \end{minipage}
+      $\theta>\theta_\mathrm{min}$, where $\theta_\mathrm{min}$ is when the first
+      minimum (dark fringe) from object 1 overlaps with the central maximum
+      (bright fringe in the middle) from object 2.
+  \end{columns}
 \end{frame}
-\begin{frame}
-  \frametitle{Resolving Power}
-  In order to resolve two objects, the minimum angle between rays from the two
-  objects passing through a rectangular aperture is the quotient of the
-  wavelength and the width $W$ of the aperture. For a circular aperture, the
-  minimum angle is the quotient of 1.22 times the wavelength and the diameter
+
+
+\begin{frame}{Resolving Power}
+  To resolve two objects, the minimum angle between rays from the two objects
+  passing through an aperture is given by:
   $D$ of the aperture.
   \vspace{0.2in}
   \begin{columns}
@@ -771,79 +764,80 @@
       \boxed{\theta_\mathrm{min}=\frac{1.22\lambda}{D}}
     }
   \end{columns}
-  The angle $\theta_\mathrm{min}$ is measured in \textbf{radians} not degree.
+  where $W$ is the width of the aperture, and $D$ is the diameter of the
+  aperture. The angle $\theta_\mathrm{min}$ is measured in \textbf{radians}.
 \end{frame}
 
 
 
-\section[EM Wave]{Electromagnetic Wave}
-
-\begin{frame}
-  \frametitle{Maxwell's Equations}
-  \framesubtitle{We have already studied them}
-  
-  \vspace{-.3in}{\LARGE
-    \begin{align*}
-      \nabla\cdot\mb{E} &=\frac{\rho}{\varepsilon_0}\\
-      \nabla\cdot\mb{B} &= 0\\
-      \nabla\times\mb{E} &=-\frac{\partial\mb{B}}{\partial t}\\
-      \nabla\times\mb{B} &=-\mu_0\mb{J}+\mu_0\varepsilon_0\frac{\partial\mb{E}}{\partial t}
-    \end{align*}
-  }
-\end{frame}
-
-
-
-\begin{frame}
-  \frametitle{Maxwell's Equations}
-  \framesubtitle{Major Findings}
-  \begin{itemize}
-  \item Electric fields starts/ends at a charge
-  \item Magnetic fields runs in a loop, and has no beginning or ends
-  \item A changing electric field creates a magnetic field
-  \item A changing magnetic field creates an electric field
-  \item Disturbances in the electric and magnetic fields propagate as a wave
-    with speed
-    
-    \eq{-.2in}{
-      \boxed{c=\frac{1}{\sqrt{\varepsilon_o\mu_o}}=\SI{2.998e8}{m/s}}
-    }
-    \ldots the speed of light!
-  \end{itemize}
-\end{frame}
-
-
-
-\begin{frame}
-  \frametitle{Speed of Electromagnetic Radiation}
-  \begin{block}{Electric Permittivity $\varepsilon_0$}
-    The ability of a medium to resist the formation of an electric field within
-    it. The constant is directly related to the Coulomb constant in Coulomb's
-    law. 
-  \end{block}
-  \vspace{0.1in}
-  \begin{block}{Magnetic Permeability $\mu_o$}
-    A measure of the ability of the medium to become magnetized.
-  \end{block}
-
-  \begin{itemize}
-  \item Scientist have previously measured the speed of light to good accuracy
-  \item Maxwell's Equations show that light is (probably) an electromagnetic
-    (``EM'') wave
-  \item $\mb{E}$ and $\mb{B}$ fields of an EM wave are always perpendicular to
-    one another, according to Maxwell's Equations
-  \end{itemize}
-\end{frame}
-
-
-\begin{frame}
-  \frametitle{The Electromagnetic Spectrum}
-  \begin{center}
-    \pic{1}{graphics/electromagneticspectrum-141b490bac872789434.jpg}
-  \end{center}
-\end{frame}
-
-
+%\section[EM Wave]{Electromagnetic Wave}
+%
+%\begin{frame}
+%  \frametitle{Maxwell's Equations}
+%  \framesubtitle{We have already studied them}
+%  
+%  \vspace{-.3in}{\LARGE
+%    \begin{align*}
+%      \nabla\cdot\mb{E} &=\frac{\rho}{\varepsilon_0}\\
+%      \nabla\cdot\mb{B} &= 0\\
+%      \nabla\times\mb{E} &=-\frac{\partial\mb{B}}{\partial t}\\
+%      \nabla\times\mb{B} &=-\mu_0\mb{J}+\mu_0\varepsilon_0\frac{\partial\mb{E}}{\partial t}
+%    \end{align*}
+%  }
+%\end{frame}
+%
+%
+%
+%\begin{frame}
+%  \frametitle{Maxwell's Equations}
+%  \framesubtitle{Major Findings}
+%  \begin{itemize}
+%  \item Electric fields starts/ends at a charge
+%  \item Magnetic fields runs in a loop, and has no beginning or ends
+%  \item A changing electric field creates a magnetic field
+%  \item A changing magnetic field creates an electric field
+%  \item Disturbances in the electric and magnetic fields propagate as a wave
+%    with speed
+%    
+%    \eq{-.2in}{
+%      \boxed{c=\frac{1}{\sqrt{\varepsilon_o\mu_o}}=\SI{2.998e8}{m/s}}
+%    }
+%    \ldots the speed of light!
+%  \end{itemize}
+%\end{frame}
+%
+%
+%
+%\begin{frame}
+%  \frametitle{Speed of Electromagnetic Radiation}
+%  \begin{block}{Electric Permittivity $\varepsilon_0$}
+%    The ability of a medium to resist the formation of an electric field within
+%    it. The constant is directly related to the Coulomb constant in Coulomb's
+%    law. 
+%  \end{block}
+%  \vspace{0.1in}
+%  \begin{block}{Magnetic Permeability $\mu_o$}
+%    A measure of the ability of the medium to become magnetized.
+%  \end{block}
+%
+%  \begin{itemize}
+%  \item Scientist have previously measured the speed of light to good accuracy
+%  \item Maxwell's Equations show that light is (probably) an electromagnetic
+%    (``EM'') wave
+%  \item $\mb{E}$ and $\mb{B}$ fields of an EM wave are always perpendicular to
+%    one another, according to Maxwell's Equations
+%  \end{itemize}
+%\end{frame}
+%
+%
+%\begin{frame}
+%  \frametitle{The Electromagnetic Spectrum}
+%  \begin{center}
+%    \pic{1}{graphics/electromagneticspectrum-141b490bac872789434.jpg}
+%  \end{center}
+%\end{frame}
+%
+%
 %\begin{frame}
 %  \frametitle{On Polarization of Light}
 %  \framesubtitle{Let's Combine Everything We Know}
@@ -863,73 +857,73 @@
 %    \end{itemize}
 %  \end{itemize}
 %\end{frame}
-
-
-\begin{frame}
-  \frametitle{On Polarizaion of Light}
-
-  A charged particle can vibrate in any direction, so the oscillating $\mb{E}$
-  and $\mb{B}$ can look quite chaotic. We can only guarantee that no matter
-  what happen, $\mb{E}$ and $\mb{B}$ are:
-  \begin{itemize}
-  \item Always perpendicular to each other
-  \item Always perpendicular to the direction of wave travel
-  \item This kind of light (or general EM wave) is ``unpolarized''
-  \item Most EM waves you experience in life are this kind
-  \end{itemize}
-  \begin{center}
-    \pic{0.7}{graphics/T1Zlt.png}
-  \end{center}
-\end{frame}
-
-
-\begin{frame}
-  \frametitle{On Polarization of Light}
-  But if we can confine $\mb{E}$ and $\mb{B}$ to one plane, then we have a
-  ``polarized'' light:
-  \begin{center}
-    \pic{0.4}{graphics/em-20field.jpg}
-  \end{center}
-  There are a few ways to do this\ldots
-\end{frame}
-
-\begin{frame}
-  \frametitle{On Polarization of Light}
-  \framesubtitle{Using Polarizer}
-  \begin{itemize}
-  \item A polarizer is really just a grill that only lets in vibration in one
-    direction through:
-    \begin{center}
-      \pic{0.45}{graphics/polarizerfencemodel600.jpg}
-    \end{center}
-  \item The incoming wave can be vibrating in any direction, but outgoing wave
-    only vibrates in one direction.
-  \item Sunglasses with polarizing lens
-  \item Polarizer filters on cameras
-  \end{itemize}
-\end{frame}
-
-\begin{frame}
-  \frametitle{On Polarization of Light}
-  \framesubtitle{Polarization by Reflection}
-  \begin{columns}
-    \column{0.4\textwidth}
-    \pic{1}{graphics/01fig16.jpg}
-    \column{0.57\textwidth}
-    At \textbf{Brewster's angle}, the light reflected off a medium (e.g.\
-    glass, water) is also polarized
-
-    \eq{-.1in}{
-      \theta_B =\tan^{-1}\left(\frac{n_2}{n_1}\right)
-    }
-    \begin{itemize}
-    \item Incident light is non-polarized
-    \item Reflected light is polarized
-    \item Refracted light is partially polarized
-    \item For water ($n=1.33$), $\theta_B=\ang{53}$
-    \item For glass ($n=1.5$), $\theta_B=\ang{56}$
-    \end{itemize}
-  \end{columns}
-\end{frame}
-
+%
+%
+%\begin{frame}
+%  \frametitle{On Polarizaion of Light}
+%
+%  A charged particle can vibrate in any direction, so the oscillating $\mb{E}$
+%  and $\mb{B}$ can look quite chaotic. We can only guarantee that no matter
+%  what happen, $\mb{E}$ and $\mb{B}$ are:
+%  \begin{itemize}
+%  \item Always perpendicular to each other
+%  \item Always perpendicular to the direction of wave travel
+%  \item This kind of light (or general EM wave) is ``unpolarized''
+%  \item Most EM waves you experience in life are this kind
+%  \end{itemize}
+%  \begin{center}
+%    \pic{0.7}{graphics/T1Zlt.png}
+%  \end{center}
+%\end{frame}
+%
+%
+%\begin{frame}
+%  \frametitle{On Polarization of Light}
+%  But if we can confine $\mb{E}$ and $\mb{B}$ to one plane, then we have a
+%  ``polarized'' light:
+%  \begin{center}
+%    \pic{0.4}{graphics/em-20field.jpg}
+%  \end{center}
+%  There are a few ways to do this\ldots
+%\end{frame}
+%
+%\begin{frame}
+%  \frametitle{On Polarization of Light}
+%  \framesubtitle{Using Polarizer}
+%  \begin{itemize}
+%  \item A polarizer is really just a grill that only lets in vibration in one
+%    direction through:
+%    \begin{center}
+%      \pic{0.45}{graphics/polarizerfencemodel600.jpg}
+%    \end{center}
+%  \item The incoming wave can be vibrating in any direction, but outgoing wave
+%    only vibrates in one direction.
+%  \item Sunglasses with polarizing lens
+%  \item Polarizer filters on cameras
+%  \end{itemize}
+%\end{frame}
+%
+%\begin{frame}
+%  \frametitle{On Polarization of Light}
+%  \framesubtitle{Polarization by Reflection}
+%  \begin{columns}
+%    \column{0.4\textwidth}
+%    \pic{1}{graphics/01fig16.jpg}
+%    \column{0.57\textwidth}
+%    At \textbf{Brewster's angle}, the light reflected off a medium (e.g.\
+%    glass, water) is also polarized
+%
+%    \eq{-.1in}{
+%      \theta_B =\tan^{-1}\left(\frac{n_2}{n_1}\right)
+%    }
+%    \begin{itemize}
+%    \item Incident light is non-polarized
+%    \item Reflected light is polarized
+%    \item Refracted light is partially polarized
+%    \item For water ($n=1.33$), $\theta_B=\ang{53}$
+%    \item For glass ($n=1.5$), $\theta_B=\ang{56}$
+%    \end{itemize}
+%  \end{columns}
+%\end{frame}
+%
 \end{document}
