@@ -1,0 +1,797 @@
+\documentclass[compress,aspectratio=169]{beamer}
+
+\usetheme{metropolis}
+\setbeamersize{text margin left=.5cm,text margin right=.5cm}
+\setbeamertemplate{navigation symbols}{} % suppress nav bar
+%  \setbeamercovered{transparent}
+
+\usefonttheme{professionalfonts}
+\usepackage{tikz}
+\usepackage{amsmath}
+\usepackage{mathpazo}
+\usepackage{xcolor,colortbl}
+\usepackage{siunitx}
+\usepackage{bm}
+
+\setmonofont{Ubuntu Mono}
+\setlength{\parskip}{0pt}
+\renewcommand{\baselinestretch}{1}
+
+\sisetup{
+  detect-all,
+  number-math-rm=\mathnormal,
+  per-mode=symbol
+}
+
+\title{Topic 20: Light Waves and Optics}
+\subtitle{Advanced Placement Physics}
+\author[TML]{Dr.\ Timothy Leung}
+\institute{Olympiads School\\Toronto, Ontario, Canada}
+\date{April 2020}
+
+\newcommand{\pic}[2]{\includegraphics[width=#1\textwidth]{#2}}
+\newcommand{\mb}[1]{\mathbf{#1}}
+\newcommand{\eq}[2]{\vspace{#1}{\LARGE\begin{displaymath}#2\end{displaymath}}}
+
+\begin{document}
+
+\begin{frame}
+  \maketitle
+\end{frame}
+
+
+%\section{Huygens}
+%
+%\begin{frame}{Huygens' Principle}
+%  In the 1600's there were two competing theories of light\ldots
+%  \begin{itemize}
+%  \item Some, including Issac Newton, believed that  light is a particle
+%  \item Others, including Christiaan Huygen (Dutch) and Augustin-Jean Fresnel
+%    (French), believed that light is a wave
+%  \end{itemize}
+%  \vspace{0.4in}
+%
+%  Huygen's Princple: all waves are in fact an infinite series of circular
+%  wavelets
+%\end{frame}
+
+
+
+\section{Reflection and Refraction}
+
+\begin{frame}{Reflection and Refraction}
+  %When we consider the \textbf{reflection} and \textbf{refraction} of light,
+  We begin with a model of a beam of light traveling toward the interface
+  between two ``indexed material'':
+  \begin{center}
+    \vspace{-.1in}
+    \begin{tikzpicture}[scale=.9]
+      \fill[gray!70](-3,-2) rectangle (3,0);
+      \draw[very thick](-3,0)--(3,0);
+      \draw[red!80,very thick](-2,2)--(0,0)--(1,-2);
+      \draw[red!80,very thick](0,0)--(2,2);
+      \draw[dashed,black!70,thick](0,2)--(0,-2);
+      \draw[<->,thick](0,1) arc(90:135:1) node[midway,above]{$\theta_1$};
+      \draw[<->,thick](0,1) arc(90:45:1) node[midway,above]{$\theta_r$};
+      \draw[<->,thick](0,-1)arc(270:297:1) node[midway,below]{$\theta_2$};
+      \node at (-2,.3) {$n_1$};
+      \node at (-2,-.3){$n_2$};
+      \node at (2,.3) {$v_1$};
+      \node at (2,-.3){$v_2$};
+    \end{tikzpicture}
+  \end{center}
+  The \textbf{index of refraction} (or \textbf{refractive index},
+  \textbf{index}) of the two media is defined as the ratio of speeds of
+  light in a vaccuum and in the medium:
+
+  \eq{-.2in}{
+    n=\frac{c}{v}
+  }
+
+  The index of a material is always greater than $1$, since $v<c$.
+\end{frame}
+
+\begin{frame}{Reflection of Light}
+  In the \textbf{law of reflection}, the incident ray, the reflected ray, and
+  the normal to the surface of the mirror all lie in the same plane, and the
+  angle of reflection $\theta_r$ is equal to the angle of incidence $\theta_1$:
+
+  \eq{-.25in}{
+    \boxed{\theta_r=\theta_1}
+  }
+  
+  \begin{center}
+    \vspace{-.2in}
+    \pic{.7}{graphics/Types-of-reflection.png}
+  \end{center}
+\end{frame}
+
+
+
+\begin{frame}{Specular Reflection Example}
+  \begin{center}
+    \pic{.55}{graphics/Lake-reflection.jpg}
+  \end{center}
+  This photo of Lake Matheson shows specular reflection in the water of the
+  lake with reflected images of Aoraki/Mt Cook (left) and Mt Tasman (right).
+  The very still lake water provides a perfectly smooth surface for this to
+  occur.
+\end{frame}
+
+
+\begin{frame}{Intensity of Light Reflecting from}
+  In the special case where the incident and reflected angles normal, i.e.
+  $\theta_1=\theta_r=\ang{0}$, the reflected intensity of light $I$ is related
+  to the incident intensity $I_0$ by the indices of the two material ($n_1$ and
+  $n_2$):
+
+  \eq{-.2in}{
+    I=\left(\frac{n_1-n_2}{n_1+n_2}\right)^2 I_0
+  }
+  
+  Remember that the intensity of a wave is the power $P$ over the area $A$ that
+  the wave passes through:
+
+  \eq{-.2in}{
+    I=\frac{P}{A}
+  }
+
+  The reflected intensity is lower than the incident, indicating that some of
+  the energy from the incident wave is transmitted into the second medium.
+\end{frame}
+
+
+%
+%\begin{frame}{Refraction of Light Through a Medium}
+%  \begin{columns}
+%    \column{0.4\textwidth}
+%    \begin{itemize}
+%    \item When a wave enters another medium, the wave speed changes
+%    \item When entering at an angle, the change of speed causes the wave to
+%      change direction (e.g.\ from air to water, air to glass, glass to air etc)
+%    \item The amount of bending depends on the
+%      \textbf{indices of refraction of the two media}
+%    \item Responsible for \textbf{image formation} by lenses and the eye
+%    \end{itemize}
+%    \column{0.6\textwidth}
+%    \pic{1}{graphics/negative_refraction.jpg}
+%  \end{columns}
+%\end{frame}
+
+
+
+\begin{frame}{Refraction of Light Through a Medium}
+  \textbf{Refraction} occurs when light is transmitted from one medium to
+  another at an oblique angle. The wave changes in direction due to the
+  difference in the speed of light in the two media.
+  \begin{center}
+    \begin{tikzpicture}[scale=.9]
+      \fill[gray!70](-3,-2) rectangle (3,0);
+      \draw[very thick](-3,0)--(3,0);
+      \draw[red!80,very thick](-2,2)--(0,0)--(1,-2);
+      \draw[dashed,black!70,very thick](0,2)--(0,-2);
+      \draw[->,thick](0,1) arc(90:135:1) node[midway,above]{$\theta_1$};
+      \draw[->,thick](0,-1)arc(270:297:1) node[midway,below]{$\theta_2$};
+      \node at (-2,.3) {$n_1$};
+      \node at (-2,-.3){$n_2$};
+      \node at (2,.3) {$v_1$};
+      \node at (2,-.3){$v_2$};
+    \end{tikzpicture}
+  \end{center}
+\end{frame}
+
+
+
+\begin{frame}{Law of Refraction}
+  \textbf{Snell's law} (or \textbf{law of refraction}) relates the refractive
+  indices $n$ of the two media to the directions of propagation in terms of the
+  angles $\theta$ to the normal
+
+  \eq{-.2in}{
+    \boxed{n_1\sin\theta_1=n_2\sin\theta_2}
+  }
+
+  This equation holds for the refraction of any kind of wave incident on a
+  boundary surface separating two media (e.g.\ surface ocean wave at two
+  depths)
+\end{frame}
+
+
+
+%\begin{frame}{Refraction and Huygens Principle}
+%  \begin{columns}
+%    \column{.5\textwidth}
+%    \pic{1}{graphics/huygen.png}
+%    
+%    \column{.5\textwidth}
+%    We can explain the refraction phenomenon using Huygens' Principle
+%  \end{columns}
+%\end{frame}
+
+
+
+\begin{frame}{Index of Refraction}
+%  \textbf{Index of refraction} ($n$) (or \textbf{refractive index}, or just
+%  \textbf{index}) is the ratio of the speed of light in a vacuum ($c_0$) to the
+%  speed of light in the medium ($c$):
+%
+%  \eq{-.2in}{
+%    \boxed{n=\frac{c_0}{c}=\frac{\lambda_\mathrm{vacuum}}{\lambda}}
+%  }
+
+  When light enters a new medium, the \emph{frequency} remains the same: the
+  atoms in the new medium would absorb and then radiate the light at the same
+  frequency. However, the \emph{speed} of the radiated wave is different,
+  therefore a different \emph{wavelength} is observed:
+    
+  \eq{-.2in}{
+    \boxed{\frac{n_1}{n_2}=\frac{\lambda_2}{\lambda_1}}
+  }
+
+  You can work this out using the univesal wave equation: $v=f\lambda$
+\end{frame}
+
+
+
+\begin{frame}{Index of Refraction of Common Materials}
+  \begin{center}
+    \begin{tabular}{c|c||c|c}
+      \rowcolor{pink}
+      \textbf{Material} & $\bm{n}$ & \textbf{Material} & $\bm{n}$\\ \hline
+      Vacuum           & 1        & Ethanol     & 1.362 \\
+      Air              & 1.000277 & Glycerine   & 1.473 \\
+      Water at \SI{20}{\celsius} & 1.33 & Ice         & 1.31 \\
+      Carbon disulfide & 1.63     & Polystyrene & 1.59 \\
+      Methylene iodide & 1.74     & Crown glass & 1.50-1.62\\
+      Diamond          & 2.417    & Flint glass & 1.57-1.75\\
+    \end{tabular}
+  \end{center}
+  The values given are \emph{approximate} and do not account for the small
+  variation of index with light wavelength. That's called \textbf{dispersion}.
+\end{frame}
+
+
+
+\begin{frame}{Total Internal Reflection}
+  \textbf{Total internal reflection} (``TIR'') can occur when light enters from
+  a medium with high index to another with low index (i.e.\ $n_1>n_2$).
+  Snell's law still holds, but something weird can happen:
+  \begin{center}
+    \pic{.55}{graphics/660px-RefractionReflextion.png}
+  \end{center}
+  The \textbf{critical angle} can be found for when the refracted angle is
+  \ang{90}:
+
+  \eq{-.2in}{
+    \boxed{\theta_c=\frac{n_2}{n_1}}
+  }
+  For water-air interface, $\theta_c$=\ang{48.6}
+\end{frame}
+
+
+
+\begin{frame}{Color of Light and Wavelength}
+  Human eyes perceive different frequencies of light as different colors. The
+  visible spectrum of light range from about \SI{380}{\nano\metre} (violet) to
+  about \SI{700}{\nano\metre} (red).
+  \begin{center}
+    \pic{.55}{graphics/visible-a.png}
+  \end{center}
+
+  A good question to ask: where is \emph{purple}?
+\end{frame}
+
+
+
+\begin{frame}{Dispersion of Light}
+  The dependence of the index of refraction $n$ on wavelength $\lambda$ is
+  called \textbf{disperson}. The dispersion of light through a prism is why we
+  can see the rainbow colors from a beam of white light:
+  \begin{center}
+    \pic{.3}{graphics/Prism_rainbow_schema.png}
+  \end{center}
+  In glass, the index of refraction for shorter wavelengths is always higher
+  than longer wavelengths.
+\end{frame}
+
+
+
+\begin{frame}{Wavelength Dependency of Index of Refraction}
+  We can see that for different kinds of glass, the index of refraction can vary
+  significantly through the visible spectrum.
+  \begin{center}
+    \pic{.4}{graphics/Dispersion-curve.png}
+  \end{center}
+\end{frame}
+
+
+
+\section{Lenses and Mirrors}
+
+
+
+\section{Interference of Light}
+
+\begin{frame}{Thomas Young's Double-Slit Experiment}
+  \begin{columns}
+    \column{.45\textwidth}
+    \pic{1}{graphics/double-slit1.png}
+    
+    \column{.52\textwidth}
+    \begin{itemize}
+    \item\textbf{Monochromatic light} light with a single color (frequency);
+      the light source can be a laser, LED , or gas lamp (most likely what Young
+      used)
+    \item\textbf{Slit:} an opening; also called an \textbf{aperture}
+    \item The \textbf{screen} far away from the slits is also called the
+      \textbf{projection}
+    \end{itemize}
+  \end{columns}
+
+  \vspace{.15in}Double-slit experiment showed that light causes interference,
+  just like any other wave
+\end{frame}
+
+\begin{frame}{Thomas Young's Double-Slit Experiment}
+  \begin{columns}
+    \column{.28\textwidth}
+    \pic{1.15}{graphics/path1.png}
+    
+    \column{.72\textwidth}
+    \begin{itemize}
+    \item At \textbf{A}, the path from slits $S_1$ and $S_2$ are the same,
+      therefore we have \textbf{constructive interference} and the projection
+      is bright
+    \item At \textbf{B}, the path from $S_1$ and $S_2$ are diffed by half a
+      wavelength, and therefore there is \textbf{destructive interference} and
+      the projection is dark
+    \item At \textbf{C}, the path from $S_1$ and $S_2$ are diffed by one
+      wavelength, and therefore there is \textbf{constructive interference}
+      again, and again, the projection is bright
+    \end{itemize}
+  \end{columns}
+\end{frame}
+
+
+
+\begin{frame}{Interference Pattern: Bright and Dark Fringes}
+  \begin{center}
+    \pic{.4}{graphics/fringes1.png}
+  \end{center}
+  The ``bright fringes'' are from constructive interference; the ``dark
+  fringes'' are from destructive interference.
+\end{frame}
+
+
+
+\begin{frame}{Geometry of the Two-Slit Interference}
+  Two coherent (in phase) sources pass through two narrow slits (that can be
+  treated as point sources). The light from the slits emerge at the screen $P$
+  at a distance $L$ away.
+  \begin{center}
+    \begin{tikzpicture}[scale=.4]
+      % Draw the slits
+      \draw[fill=gray!50](0,3)--(0,1.2)--(-0.2,1.2)--(-0.2,3);
+      \draw[fill=gray!50](0,0.8)--(0,-0.8)--(-0.2,-0.8)--(-0.2,0.8)--cycle;
+      \draw[fill=gray!50](0,-3)--(0,-1.2)--(-0.2,-1.2)--(-0.2,-3);
+      \draw[<->](-0.5,-1)--(-0.5,1) node[midway,left]{\footnotesize $d$};
+      \node at (-.7,1.5) {\footnotesize $S_1$};
+      \node at (-.7,-1.5) {\footnotesize $S_2$};
+      \draw[thin,gray!30] (0,0) circle(2.8);
+      
+      % Draw the screen
+      \fill[gray!60](20,5) rectangle(20.2,-5)
+      node[black,below]{\footnotesize screen};
+
+      % Draw dimension of the problem
+      \draw[<->](0,0)--(20,0) node[midway,below]{\footnotesize $L$};
+      \draw(20.4,0)--(21.3,0);
+      \draw(20.4,3)--(21.3,3);
+      \draw[<->](21,0)--(21,3) node[midway,right]{\footnotesize $y$};
+      % Draw rays to P
+      \draw[red!70!black,thick](0,1)--(20,3);
+      \draw[red!70!black,thick](0,-1)--(20,3);
+      \draw[<->](15,0) arc(0:7.5:15) node[midway,right]{\footnotesize $\theta$};
+      \fill[black](20,3) circle(.15) node[above right]{\footnotesize $P$};
+    \end{tikzpicture}
+  \end{center}
+  The two beams travel a slightly different distance:
+  \begin{itemize}
+  \item\textbf{Constuctive inteference:} path difference is an integer multiple
+    of $\lambda$
+  \item\textbf{Destructive interference:} path difference is a half-integer
+    multiple
+  \end{itemize}
+\end{frame}
+
+
+
+\begin{frame}{Geometry of the Two-Slit Interference}
+  Using basic geometry, we can see that the path difference from the
+  two slit to the projection is $d\sin\theta$.
+  \begin{columns}
+    \column{.35\textwidth}
+    \begin{tikzpicture}[scale=.8]
+      % Draw the slits
+      \draw[fill=gray!50](0,3)--(0,1.2)--(-0.2,1.2)--(-0.2,3);
+      \draw[fill=gray!50](0,0.8)--(0,-0.8)--(-0.2,-0.8)--(-0.2,0.8)--cycle;
+      \draw[fill=gray!50](0,-3)--(0,-1.2)--(-0.2,-1.2)--(-0.2,-3);
+      \draw[<->](-0.5,-1)--(-0.5,1) node[midway,left]{\footnotesize $d$};
+      \node at (-.7,1.5) {\footnotesize $S_1$};
+      \node at (-.7,-1.5) {\footnotesize $S_2$};
+      \draw[dashed](0,-1)--(5,-1);
+      \begin{scope}[rotate around={20:(0,-1)}]
+        \draw[->,thick,red!70!black](0,-1)--(5,-1);
+        \draw(0,-1)--(0,-1.5);
+      \end{scope}
+      \begin{scope}[rotate around={20:(0,1)}]
+        \draw[->,thick,red!70!black](0,1)--(5,1);
+        \draw[dashed](0,1)--(0,-1);
+        \draw(0,-1)--(0,-1.45);
+        \draw[<->](0,-1.25)--(-.7,-1.25)
+        node[midway,below right]{\footnotesize $d\sin\theta$};
+        \draw[<->](0,-.2) arc(270:250:1.2)
+        node[midway,below]{\footnotesize $\theta$};
+      \end{scope}
+      \draw[<->](4.5,-1) arc(0:20:4.5)
+      node[midway,right]{\footnotesize $\theta$};
+    \end{tikzpicture}
+
+    \column{.65\textwidth}
+    \begin{itemize}
+    \item\textbf{Constructive maxima} occur when:
+
+      \eq{-.25in}{
+        \boxed{n\lambda = d\sin\theta_n}
+      }
+
+    \item\vspace{-.2in}Conversely, \textbf{destructive minima} occur when:
+  
+      \eq{-.23in}{
+            \boxed{\left(n+\frac{1}{2}\right)\lambda = d\sin\theta_n}
+      }
+    \item $n=0,1,2,3\ldots n_\mathrm{max}$ is called the \textbf{order number}
+    \item $n_\mathrm{max}$ can be found by setting $\sin\theta=1$
+      \begin{itemize}
+      \item The nubmer of maxima is $2n_\mathrm{max}+1$
+      \item The number of minima is $2n$
+      \end{itemize}
+    \end{itemize}
+  \end{columns}
+\end{frame}
+
+
+\begin{frame}{Approximation of The Wavelength of Light}
+  For small angles, we can apply the \textbf{small-angle approximation} where
+
+  \eq{-.3in}{
+    \theta\approx\tan\theta\approx\sin\theta
+  }
+
+  \vspace{-.15in}to find that the $n$-th bright fringe is located at:
+  (replace $n$ with $n+\frac12$ for dark fringes)
+  
+  \eq{-.2in}{
+    \boxed{y_n=n\frac{\lambda L}{d}}
+  }
+
+  And the distance between frindges is given by:
+
+  \eq{-.2in}{
+    \boxed{\Delta y=\frac{\lambda L}{d}}
+  }
+
+  This equation is used to estimate the wavelength of light based on
+  the distances between bright fringes (or dark fringes).
+\end{frame}
+
+
+
+\begin{frame}{Important Notes}
+  \begin{itemize}
+  \item We usually apply the double-slit problem to light, but the problem can
+    be applied to any wave (e.g.\ EM waves, sound waves, ocean waves) as well
+  \item The sources don't actually need to be slits; any point source will do
+  \item The projection/screen doesn't need to be a real screen either; it just
+    has to be a line where wave intensity can be measured
+  \end{itemize}
+
+  \vspace{.25in}Remember:
+  \begin{itemize}
+  \item integer multiple = constructive maxima
+  \item half-integer multiple = destructive minima
+  \end{itemize}
+\end{frame}
+
+
+
+\begin{frame}{Interference of Multiple Equally Spaced Point sources}
+  When there are multiple equally-spaced point sources (e.g.\ diffraction
+  grating) we can just use the equation for two-slits:
+
+  \eq{-.2in}{
+    n\lambda = d\sin\theta
+  }
+  \begin{center}
+    \begin{tikzpicture}[scale=.4]
+      % Draw the screen
+      \fill[gray!60](20,5) rectangle(20.2,-2) node[black,below]{screen};
+
+      % Draw dimension of the problem
+      \draw[<->](0,0)--(20,0) node[midway,below]{$L$};
+      \draw(20.4,0)--(21.3,0);
+      \draw(20.4,3)--(21.3,3);
+      \draw[<->](21,0)--(21,3) node[midway,right]{$y$};
+      % Draw rays to P
+      \foreach \x in {1,...,5} {
+        \draw[red!70!black,thick](0,3-\x)--(20,3)
+        node[pos=0,left,black]{$S_{\x}$};
+        \fill[black](0,3-\x) circle(.15);
+      }
+      \draw[<->](15,0) arc(0:8.5:15) node[midway,right]{$\theta$};
+      \fill[black](20,3) circle(.15) node[above left]{$P$};
+    \end{tikzpicture}
+  \end{center}
+  The interference pattern gets sharper with increasing number of sources, and
+  the bright fringes are narrower.
+\end{frame}
+
+
+
+
+\section{Diffraction}
+
+\begin{frame}{Diffraction of Waves}
+  When a wave goes through an small opening, it \textbf{diffracts}. This happens
+  with sound waves, ocean waves\ldots and light.
+  \begin{center}
+    \pic{.55}{graphics/alexandria.jpg}
+  \end{center}
+  The photo is from the Port of Alexandria in Egypt. The shape of the entire
+  harbor is created because of diffraction of ocean wave.
+\end{frame}
+
+
+
+%\begin{frame}{Diffraction of Waves}
+%  \begin{center}
+%    \pic{.6}{graphics/diffraction1.jpg}
+%  \end{center}
+%  The smaller the opening (compared to the wavelength of the incoming wave)
+%  the greater the diffraction effects.
+%\end{frame}
+
+
+\begin{frame}{Geometry for Single-Slit Diffraction}
+  To examine the geometry for the single-slit diffraction problem, we treat
+  the wave passing through the slit of width $W$ as an infinite series of point
+  sources at the slit.
+  
+  \vspace{.2in}\begin{columns}
+    \column{.4\textwidth}
+    \begin{tikzpicture}
+      \draw[fill=gray!50](0,2)--(0,1)--(-0.1,1)--(-0.1,2);
+      \draw[fill=gray!50](0,-2)--(0,-1)--(-0.1,-1)--(-0.1,-2);
+      \draw[<->](-0.5,-1)--(-0.5,1) node[midway,left]{\footnotesize $W$};
+      \foreach \y in {1,...,13} {
+        \pgfmathsetmacro\yy{1.05-0.15*\y};
+        \draw[fill=black](-0.02,\yy) circle(0.02);
+      }
+
+      \foreach \y in {1,3,...,13} {
+        \pgfmathsetmacro\yy{1.05-0.15*\y};
+        \draw[->](-0.02,\yy)--(5,\yy);
+      }
+    \end{tikzpicture}
+    
+    \column{.6\textwidth}
+    \begin{itemize}
+    \item Light from the wavelets traveling perpendicular to the aperture do
+      not interfere with one another
+    \item Therfore, there is a bright fringe at the middle, called the
+      \textbf{central diffraction maximum}.
+    \end{itemize}
+  \end{columns}
+\end{frame}
+
+
+
+
+\begin{frame}{Geometry for Single-Slit Diffraction}
+  Using the same analysis from the double-slit problem, we find that the path
+  difference the wavelets at the top and bottom edges is $W\sin\theta$
+
+  \vspace{.2in}\begin{columns}
+    \column{.4\textwidth}
+    \begin{tikzpicture}[scale=.9]
+      \draw[fill=gray!50](0,3)--(0,1)--(-0.1,1)--(-0.1,3);
+      \draw[fill=gray!50](0,-2)--(0,-1)--(-0.1,-1)--(-0.1,-2);
+      \draw[<->](-0.5,-1)--(-0.5,1) node[midway,left]{\footnotesize $W$};
+      \foreach \y in {1,...,20} {
+        \pgfmathsetmacro\yy{1.05-0.1*\y};
+        \draw[fill=black](-0.02,\yy) circle(0.02) node[left]{\Tiny\y};
+        }
+      \foreach \y in {1,11,20} {
+        \pgfmathsetmacro\yy{1.05-0.1*\y};
+        \draw[->,rotate around={25:(-0.02,\yy)}](-0.02,\yy)--(5.5,\yy);
+      }
+      \draw[dashed](0,0)--(6,0);
+      \draw[<->](4,0) arc(0:24.5:4) node[pos=.4,right]{\footnotesize $\theta$};
+      \begin{scope}[rotate around={25:(-0.02,0.95)}]
+        \draw[blue,thick](-0.02,0.95)--(-0.02,-0.78);
+        \draw[blue,thick](-0.02,-0.78)--(-0.8,-0.78)
+        node[pos=.9,right]{\tiny $W\sin\theta$};
+        \draw[blue,thick](-0.02,0.05)--(-0.4,0.05)
+        node[pos=0,below]{\tiny $\frac{W}{2}\sin\theta$};
+      \end{scope}
+
+    \end{tikzpicture}
+    
+    \column{0.57\textwidth}
+    \begin{itemize}
+    \item At some angle $\theta$, the path difference between 1 and 20 will be
+      an
+      integer multiple of the wavelength ($m\lambda$)
+    \item In this case, the path difference between 1 and 11 is
+      a half-number multiple of the wavelength (i.e.\ destructive
+      interference) and they cancel each other
+    \item Similarly, 2 cancels 12, 3 cancels 13\ldots
+    \item \textbf{RESULT: Complete destructive interference}
+    \end{itemize}
+  \end{columns}
+\end{frame}
+
+
+\begin{frame}{Geometry for Single-Slit Diffraction}
+  \begin{columns}
+    \column{.38\textwidth}
+    \begin{tikzpicture}
+      \draw[fill=gray!50](0,3)--(0,1)--(-0.1,1)--(-0.1,3);
+      \draw[fill=gray!50](0,-2)--(0,-1)--(-0.1,-1)--(-0.1,-2);
+      \draw[<->](-0.5,-1)--(-0.5,1) node[midway,left]{\footnotesize $W$};
+      \foreach \y in {1,...,13} {
+        \pgfmathsetmacro\yy{1.05-0.15*\y};
+        \draw[fill=black](-0.02,\yy) circle(0.02) node[left]{\Tiny\y};
+        }
+      \foreach \y in {1,5,9,13} {
+        \pgfmathsetmacro\yy{1.05-0.15*\y};
+        \draw[->,rotate around={30:(-0.02,\yy)}](-0.02,\yy)--(5.5,\yy);
+      }
+      \draw[dashed](0,0)--(5,0);
+      \draw[<->](4,0) arc(0:26.5:4) node[pos=.4,right]{\footnotesize $\theta$};
+      
+      \begin{scope}[rotate around={30:(-0.02,0.9)}]
+        \draw[blue,thick](-0.02,0.88)--(-0.02,-0.66);
+        \draw[blue,thick](-0.02,-0.66)--(-.9,-0.66)
+        node[pos=.9,right]{\tiny $W\sin\theta$};
+      \end{scope}
+    \end{tikzpicture}
+
+    \column{.62\textwidth}
+    \begin{itemize}
+    \item At some other angle $\theta$, the path difference between the top
+      and bottom is $W\sin\theta=\frac32\lambda$
+    \item 1 and 5 differ by $\displaystyle\frac{\lambda}{2}$, so they cancel
+      (as do 2 and 6, 3 and 7, 4 and 8, 9 and 13)
+    \item But some of the beams will not, so we have a ``bright fringe'' at the 
+      projection
+    \item This bright fringe is not as bright as the central one because
+      of the destructive interference
+    \end{itemize}
+  \end{columns}
+\end{frame}
+
+
+
+\begin{frame}{Dark and Bright Fringes}
+  Dark fringes exists on the screen at regular, whole-numbered intervals
+  ($m=1,2,3\ldots$):
+
+  \eq{-.2in}{
+    \boxed{m\lambda=W\sin\theta_m}
+  }
+
+  while bright fringes exist on the screen at regular, half-numbered intervals:
+
+  \eq{-.2in}{
+    \boxed{\left(m+\frac12\right)\lambda=W\sin\theta_m}
+  }
+%  \vspace{-.1in}
+%
+ 
+  The equations look very similar to the double-slit equations for, but with
+  dark and bright fringes in reverse, so be \emph{very} careful when you use
+  them!
+\end{frame}
+
+
+
+\begin{frame}{Bright and Dark Fringes}
+  The location of the bright fringes on the screen is determined by applying
+  the small-angle approximation equation:
+  
+  \eq{-.2in}{
+    \boxed{y_m=\left(m+\frac{1}{2}\right)\frac{\lambda L}{W}}
+  }
+
+  While for the dark fringes, 
+
+  \eq{-.2in}{
+    \boxed{y_m=\frac{m\lambda L}{W}}
+  }
+
+  Again, the equations look to be the reverse of the two-slit problem.
+\end{frame}
+
+
+
+\begin{frame}{Single-Slit Diffraction, A Summary}
+  \begin{itemize}
+  \item Similar to the double-slit interference, single-slit diffraction
+    projects a series of alternating bright fringes (``maxima'') and dark
+    fringes (``minima'') in the far field
+  \item The bright fringe in the middle (``central maximum'') is twice as wide
+    and very bright
+  \item Subsequent bright fringes on either side (``higher-order maxima'') are
+    much dimmer because of the partial destructive interference
+  \end{itemize}
+  \begin{center}
+    \pic{.5}{graphics/Single_Slit_Diffraction.png}
+  \end{center}
+\end{frame}
+
+
+
+\section{Optical Resolution}
+
+\begin{frame}{Optical Resolution}
+  The ability of an optical instrument (e.g.\ the human eye, microscope,
+  camera) to distinguish two distinct objects
+  \begin{center}
+    \pic{.322}{graphics/resolve1.png}\hspace{.05in}
+    \pic{.322}{graphics/resolve2.png}\hspace{.05in}
+    \pic{.322}{graphics/resolve3.png}\hspace{.05in}
+  \end{center}
+  When light from any object passes through an ``optical instrument'', it
+  \emph{diffracts}, therefore ``blurring'' the object
+\end{frame}
+
+
+
+\begin{frame}{Optical Resolution}
+  \begin{columns}
+    \column{.4\textwidth}
+    \pic{1}{graphics/resolve4.png}
+
+    \column{.6\textwidth}
+    \textbf{Rayleigh limit}: Two objects are resolved if the angle
+      $\theta>\theta_\mathrm{min}$, where $\theta_\mathrm{min}$ is when the first
+      minimum (dark fringe) from object 1 overlaps with the central maximum
+      (bright fringe in the middle) from object 2.
+  \end{columns}
+\end{frame}
+
+
+\begin{frame}{Resolving Power}
+  To resolve two objects, the minimum angle between rays from the two objects
+  passing through an aperture is given by:
+  $D$ of the aperture.
+  \vspace{0.2in}
+  \begin{columns}
+    \column{0.5\textwidth}
+    Rectangular aperture:
+
+    \eq{-.2in}{
+      \boxed{\theta_\mathrm{min}=\frac{\lambda}{W}}
+    }
+    \column{0.5\textwidth}
+    Circular aperture:
+
+    \eq{-.2in}{
+      \boxed{\theta_\mathrm{min}=\frac{1.22\lambda}{D}}
+    }
+  \end{columns}
+  where $W$ is the width of the aperture, and $D$ is the diameter of the
+  aperture. The angle $\theta_\mathrm{min}$ is measured in \textbf{radians}.
+\end{frame}
+\end{document}
