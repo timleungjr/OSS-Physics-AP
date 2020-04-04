@@ -2,8 +2,8 @@
 
 \usetheme{metropolis}
 \setbeamersize{text margin left=.5cm,text margin right=.5cm}
-\setbeamertemplate{navigation symbols}{} % suppress nav bar
-%  \setbeamercovered{transparent}
+%\setbeamertemplate{navigation symbols}{} % suppress nav bar
+%\setbeamercovered{transparent}
 
 \usefonttheme{professionalfonts}
 \usepackage{tikz}
@@ -40,27 +40,10 @@
 \end{frame}
 
 
-%\section{Huygens}
-%
-%\begin{frame}{Huygens' Principle}
-%  In the 1600's there were two competing theories of light\ldots
-%  \begin{itemize}
-%  \item Some, including Issac Newton, believed that  light is a particle
-%  \item Others, including Christiaan Huygen (Dutch) and Augustin-Jean Fresnel
-%    (French), believed that light is a wave
-%  \end{itemize}
-%  \vspace{0.4in}
-%
-%  Huygen's Princple: all waves are in fact an infinite series of circular
-%  wavelets
-%\end{frame}
-
-
 
 \section{Reflection and Refraction}
 
 \begin{frame}{Reflection and Refraction}
-  %When we consider the \textbf{reflection} and \textbf{refraction} of light,
   We begin with a model of a beam of light traveling toward the interface
   between two ``indexed material'':
   \begin{center}
@@ -82,7 +65,7 @@
   \end{center}
   The \textbf{index of refraction} (or \textbf{refractive index},
   \textbf{index}) of the two media is defined as the ratio of speeds of
-  light in a vaccuum and in the medium:
+  light in a vacuum and in the medium:
 
   \eq{-.2in}{
     n=\frac{c}{v}
@@ -139,24 +122,6 @@
   The reflected intensity is lower than the incident, indicating that some of
   the energy from the incident wave is transmitted into the second medium.
 \end{frame}
-
-
-%
-%\begin{frame}{Refraction of Light Through a Medium}
-%  \begin{columns}
-%    \column{0.4\textwidth}
-%    \begin{itemize}
-%    \item When a wave enters another medium, the wave speed changes
-%    \item When entering at an angle, the change of speed causes the wave to
-%      change direction (e.g.\ from air to water, air to glass, glass to air etc)
-%    \item The amount of bending depends on the
-%      \textbf{indices of refraction of the two media}
-%    \item Responsible for \textbf{image formation} by lenses and the eye
-%    \end{itemize}
-%    \column{0.6\textwidth}
-%    \pic{1}{graphics/negative_refraction.jpg}
-%  \end{columns}
-%\end{frame}
 
 
 
@@ -228,7 +193,7 @@
     \boxed{\frac{n_1}{n_2}=\frac{\lambda_2}{\lambda_1}}
   }
 
-  You can work this out using the univesal wave equation: $v=f\lambda$
+  You can work this out using the universal wave equation: $v=f\lambda$
 \end{frame}
 
 
@@ -275,9 +240,8 @@
   visible spectrum of light range from about \SI{380}{\nano\metre} (violet) to
   about \SI{700}{\nano\metre} (red).
   \begin{center}
-    \pic{.55}{graphics/visible-a.png}
+    \pic{.75}{graphics/electromagneticspectrum-141b490bac872789434.png}
   \end{center}
-
   A good question to ask: where is \emph{purple}?
 \end{frame}
 
@@ -285,7 +249,7 @@
 
 \begin{frame}{Dispersion of Light}
   The dependence of the index of refraction $n$ on wavelength $\lambda$ is
-  called \textbf{disperson}. The dispersion of light through a prism is why we
+  called \textbf{dispersion}. The dispersion of light through a prism is why we
   can see the rainbow colors from a beam of white light:
   \begin{center}
     \pic{.3}{graphics/Prism_rainbow_schema.png}
@@ -307,6 +271,261 @@
 
 
 \section{Lenses and Mirrors}
+
+\begin{frame}{Spherical Mirror}
+  \begin{columns}
+    \column{.6\textwidth}
+    We can imagine a \textbf{spherical mirror} to be a sphere with smooth
+    light-reflecting surfaces inside and out.
+    \begin{itemize}
+    \item A \textbf{concave mirror} is the surface \emph{inside} the spherical
+      mirror
+    \item A \textbf{convex mirror} is the surface \emph{outside} the spherical
+      mirror
+    \end{itemize}
+    \column{.4\textwidth}
+    \pic{1}{graphics/spherical-mirror.png}
+  \end{columns}
+\end{frame}
+
+
+
+\begin{frame}{Spherical Mirror}
+  The cross-section diagram of the mirror. This could be both a concave or a
+  convex mirror.
+  \begin{center}
+    \begin{tikzpicture}
+      \draw[thick,blue](-3,0)--(5.5,0)
+      node[pos=.85,above]{\footnotesize principal axis};
+      \draw[thick](3,0) arc(0: 30:3);
+      \draw[thick](3,0) arc(0:-30:3) node[pos=1,below]{\footnotesize mirror};
+      \fill(0,0) circle(.05) node[below]{\footnotesize $C$};
+      \fill(3,0) circle(.05) node[below right]{\footnotesize $V$};
+      \draw[rotate=20,->](0,0)--(3,0) node[midway,above]{\footnotesize $R$};
+    \end{tikzpicture}
+  \end{center}
+  \begin{itemize}
+  \item\textbf{Center of curvature} $C$ is the center of the imaginary sphere
+    with the same radius as the mirror
+  \item\textbf{Radius of curvature} $R$ is any straight line from the
+    center of curvature to the curved surface
+  \item\textbf{Vertex} $V$ is the geometric center of the mirror surface
+  \item\textbf{Principal axis} ``PA'' is a straight that passes through $V$ and
+    $C$
+  \end{itemize}
+\end{frame}
+
+
+\begin{frame}{Spherical vs.\ Parabolic Mirror}
+  \begin{itemize}
+  \item Rays that are closed to the PA are called \textbf{paraxial rays}; they
+    converge at a single point called the \textbf{focal point} $F$
+  \item Rays that are far away from the PS are called \textbf{nonparaxial rays};
+    they converge to different points
+  \end{itemize}
+  \begin{center}
+    \pic{.6}{graphics/spherical-vs-parabolic.png}
+  \end{center}
+  In order for all beams of light to converge to the focal point, a
+  \textbf{parabolic mirror} must be used instead.
+\end{frame}
+
+
+
+\begin{frame}{Focal Point and Focal Length}
+  The focal point $F$ is exactly half way between the center of curvature and
+  the mirror, and the distance to the mirror is called the \textbf{focal length}
+  $f$:
+
+  \eq{-.2in}{
+    \boxed{f=\frac12 r}
+  }
+  \begin{center}
+    \begin{tikzpicture}
+      \draw(-3,0)--(3.5,0) node[pos=1,right]{\footnotesize PA};
+      \draw(3,0) arc(0: 30:3);
+      \draw(3,0) arc(0:-30:3) node[pos=1,below]{\footnotesize mirror};
+      \fill(0,0) circle(.05) node[below]{\footnotesize $C$};
+      \fill(3,0) circle(.05) node[below right]{\footnotesize $V$};
+      \fill[red](1.5,0) circle(.05) node[above]{\footnotesize $F$};
+      \draw[red,<->,thick](1.5,0)--(3,0) node[midway,below]{\footnotesize $f$};
+      \draw[rotate=20,->](0,0)--(3,0) node[midway,above]{\footnotesize $R$};
+    \end{tikzpicture}
+  \end{center}
+  
+\end{frame}
+
+
+\begin{frame}{Mirror Equation}
+  In terms of the focal length, the \textbf{mirror equation} is expressed as
+
+  \eq{-.2in}{
+    \boxed{\frac{1}{s}+\frac{1}{s'}=\frac{1}{f}}
+  }
+  \begin{center}
+    \begin{tabular}{l|c|l}
+      \rowcolor{pink}
+      \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
+      Distance to object & $s$  & \si{\metre} (metres)\\
+      Distance to image  & $s'$ & \si{\metre} (metres) \\
+      Focal length       & $f$  & \si{\metre} (metres)
+    \end{tabular}
+  \end{center}
+  This equation is derived mathematically using basic geometry and the
+  small-angle approximation.
+\end{frame}
+
+
+
+\begin{frame}{Sign Convention for the Mirror Equation}
+  When working with the mirror equation, we use the following sign convention:
+  
+  \eq{-.2in}{
+    \boxed{\frac{1}{s}+\frac{1}{s'}=\frac{1}{f}}
+  }
+  \begin{center}
+    \begin{tabular}{ccl}
+      \hline
+      $s$ & $+$ & object is in front of the mirror (real object) \\
+      & $-$ & object is behind the mirror (virtual object)\\\hline
+      $s'$ & $+$ & image is in front of the mirror (real image)\\
+      & $-$ & image is in behind the mirror (virtual image)\\\hline
+      $R$, $f$ & $+$ & center of curvature is in front of the mirror
+      (concave mirror)\\
+      & $-$ & center of curvature is behind the mirror (convex mirror)\\
+      \hline
+    \end{tabular}
+  \end{center}
+\end{frame}
+
+
+
+\begin{frame}{Lateral Magnification}
+  Using the same sign convention as the mirror equation, the
+  \textbf{lateral magnification} of the object is given by:
+
+  \eq{-.2in}{
+    \boxed{m=\frac{h'}{h}=-\frac{s'}{s}}
+  }
+  \begin{center}
+    \begin{tabular}{l|c|l}
+      \rowcolor{pink}
+      \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
+      Magnification factor & $m$ & (no units)\\
+      Object height & $h$  & \si{\metre} (metres)\\
+      Image height  & $h'$ & \si{\metre} (metres)\\
+      Distance to object & $s$  & \si{\metre} (metres) \\
+      Distance to image  & $s'$ & \si{\metre} (metres)
+    \end{tabular}
+  \end{center}
+  \begin{itemize}
+  \item $m>0$ means that image is upright; $m<0$ means that the image is
+    inverted
+  \item $|m|>1$ means that image is enlarged; $|m|<1$ means that the image is
+    reduced
+  \item If both $s$ and $s'$ are positive (on the same side), then the image
+    is inverted
+  \end{itemize}
+\end{frame}
+
+
+
+\begin{frame}{Geometry of Convex Lenses}
+  Here are some defining geometric properties for the \textbf{thin lens}.
+  \begin{center}
+    \pic{.5}{graphics/thin-lens.png}
+  \end{center}
+  The surface that light first passes through has the radius $R_1$ while the
+  second surface has $R_2$.
+\end{frame}
+
+
+
+\begin{frame}{Focal Length of the Thin Lens}
+  The focal length $f$ of a thin lens is defined using the
+  \textbf{lens-makers' equation}:
+
+  \eq{-.2in}{
+    \boxed{\frac1f=(n-1)\left(\frac{1}{R_1}-\frac{1}{R_2}\right)}
+  }
+  \begin{center}
+    \begin{tabular}{l|c|l}
+      \rowcolor{pink}
+      \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
+      Focal length                    & $f$ & (no units)\\
+      Index of refraction of the lens & $n$ & \si{\metre} (metres)\\
+      Radii of curvature              & $R_1$, $R_2$ & \si{\metre} (metres)
+    \end{tabular}
+  \end{center}  
+\end{frame}
+
+
+
+\begin{frame}{Thin Lens Equation}
+  The \textbf{thin-lens equation} is exactly the same as the mirror equation:
+
+  \eq{-.2in}{
+    \boxed{\frac{1}{s}+\frac{1}{s'}=\frac{1}{f}}
+  }
+  \begin{center}
+    \begin{tabular}{l|c|l}
+      \rowcolor{pink}
+      \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
+      Distance to object & $s$  & \si{\metre} (metres) \\
+      Distance to image  & $s'$ & \si{\metre} (metres) \\
+      Focal length       & $f$  & \si{\metre} (metres)
+    \end{tabular}
+  \end{center}
+\end{frame}
+
+
+
+\begin{frame}{Sign Convention for the Thin Lens Equation}
+  When working with the thin-lens equation, we use the following sign
+  convention:
+  
+  \eq{-.2in}{
+    \boxed{\frac{1}{s}+\frac{1}{s'}=\frac{1}{f}}
+  }
+  \begin{center}
+    \begin{tabular}{ccl}
+      \hline
+      $s$ & $+$ & real object: for objects in front of the lens (incident
+      side) \\
+      & $-$ & virtual object: for objects behind the lens (transmission side)
+      \\\hline
+      $s'$ & $+$ & real image: behind the lens (transmission side)\\
+      & $-$ & virtual image: in front of the lens (virtual image)\\\hline
+      $R$, $f$ & $+$ & center of curvature is on the transmission side\\
+      & $-$ & center of curvature on the incident side\\
+      \hline
+    \end{tabular}
+  \end{center}
+\end{frame}
+
+
+
+\begin{frame}{Lateral Magnification}
+  Likewise, the  \textbf{lateral magnification} of the image is given by the
+  same equation as the mirror, but this time using the sign convention for
+  the thin lens:
+
+  \eq{-.2in}{
+    \boxed{m=\frac{h'}{h}=-\frac{s'}{s}}
+  }
+  \begin{center}
+    \begin{tabular}{l|c|l}
+      \rowcolor{pink}
+      \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
+      Magnification factor & $m$ & (no units)\\
+      Object height & $h$  & \si{\metre} (metres)\\
+      Image height  & $h'$ & \si{\metre} (metres)\\
+      Distance to object & $s$  & \si{\metre} (metres) \\
+      Distance to image  & $s'$ & \si{\metre} (metres)
+    \end{tabular}
+  \end{center}
+\end{frame}
+
 
 
 
@@ -397,7 +616,7 @@
   \end{center}
   The two beams travel a slightly different distance:
   \begin{itemize}
-  \item\textbf{Constuctive inteference:} path difference is an integer multiple
+  \item\textbf{Constructive interference:} path difference is an integer multiple
     of $\lambda$
   \item\textbf{Destructive interference:} path difference is a half-integer
     multiple
@@ -453,7 +672,7 @@
     \item $n=0,1,2,3\ldots n_\mathrm{max}$ is called the \textbf{order number}
     \item $n_\mathrm{max}$ can be found by setting $\sin\theta=1$
       \begin{itemize}
-      \item The nubmer of maxima is $2n_\mathrm{max}+1$
+      \item The number of maxima is $2n_\mathrm{max}+1$
       \item The number of minima is $2n$
       \end{itemize}
     \end{itemize}
@@ -475,7 +694,7 @@
     \boxed{y_n=n\frac{\lambda L}{d}}
   }
 
-  And the distance between frindges is given by:
+  And the distance between fringes is given by:
 
   \eq{-.2in}{
     \boxed{\Delta y=\frac{\lambda L}{d}}
@@ -553,13 +772,13 @@
 
 
 
-%\begin{frame}{Diffraction of Waves}
-%  \begin{center}
-%    \pic{.6}{graphics/diffraction1.jpg}
-%  \end{center}
-%  The smaller the opening (compared to the wavelength of the incoming wave)
-%  the greater the diffraction effects.
-%\end{frame}
+\begin{frame}{Diffraction of Waves}
+  \begin{center}
+    \pic{.6}{graphics/diffraction1.jpg}
+  \end{center}
+  The smaller the opening (compared to the wavelength of the incoming wave)
+  the greater the diffraction effects.
+\end{frame}
 
 
 \begin{frame}{Geometry for Single-Slit Diffraction}
@@ -588,7 +807,7 @@
     \begin{itemize}
     \item Light from the wavelets traveling perpendicular to the aperture do
       not interfere with one another
-    \item Therfore, there is a bright fringe at the middle, called the
+    \item Therefore, there is a bright fringe at the middle, called the
       \textbf{central diffraction maximum}.
     \end{itemize}
   \end{columns}
@@ -640,6 +859,7 @@
     \end{itemize}
   \end{columns}
 \end{frame}
+
 
 
 \begin{frame}{Geometry for Single-Slit Diffraction}
@@ -696,9 +916,7 @@
   \eq{-.2in}{
     \boxed{\left(m+\frac12\right)\lambda=W\sin\theta_m}
   }
-%  \vspace{-.1in}
-%
- 
+
   The equations look very similar to the double-slit equations for, but with
   dark and bright fringes in reverse, so be \emph{very} careful when you use
   them!
