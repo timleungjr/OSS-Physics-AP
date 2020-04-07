@@ -258,6 +258,52 @@ $\mb{v}(t)$ is the time integral of instantaneous acceleration $\mb{a}(t)$:
 
 \subsection{Expressing Acceleration as Functions of Position and Velocity}
 
+Since, according to Newton's second law of motion, acceleration is related to
+the net force, therefore there are instances where acceleration is often
+expressed as functions of other motion quantities rather than time. For example,
+\begin{itemize}
+\item\textbf{Spring force} is proportional to displacement, which means that
+  acceleration is best expressed as:
+  \begin{equation*}
+    a(x)=-bx\quad\text{or}\quad \frac{d^2x}{dt^2}=-bx
+  \end{equation*}
+  The solution to this \emph{second-order ordinary differential equation with
+    constant coefficient} is a sinusoidal function, i.e.
+  $x(t)=A\sin(\omega t+\phi)$, and the motion is a \emph{simple harmonic
+    motion} that will be studied in a later topic.
+\item\textbf{Damping force} is usually proportional to velocity, which leads to
+  an expression for acceleration
+  \begin{equation*}
+    a(v)=-cv\quad\text{or}\quad \frac{dv}{dt}=-cv
+  \end{equation*}
+  This time, the equation is a \emph{first-order ordinary differential equation}
+  that can be solved by separating the $dt$ term and $v$ terms and then
+  integrating, and the expression for velocity is an exponential function:
+  \begin{equation*}
+    \frac{dv}{dt}=-cv\quad\rightarrow\quad \int\frac{dv}{v}=-\int cdt
+    \quad\rightarrow\quad \ln(v)=-ct+C
+    \quad\rightarrow\quad v(t)=v_0e^{-ct}
+  \end{equation*}
+  Once the velocity expression is obtained, the expression for $x(t)$ can also
+  easily be obtained by integrating.
+\item\textbf{Aerodynamic forces} such as drag and lift are proportional for the
+  square of the velocity, therefore the acceleration is
+  \begin{equation*}
+    a(v)=-kv^2\quad\text{or}\quad \frac{dv}{dt}=-kv^2
+  \end{equation*}
+  Not surprisingly, the process of solving the problem is similar to that of
+  the damping function, but this time, the solution is a hyperbolic function:
+  \begin{equation*}
+    \frac{dv}{dt}=-kv^2\quad\rightarrow\quad \int\frac{dv}{v^2}=-\int kdt
+    \quad\rightarrow\quad -\frac{1}{v}=-kt+C
+    \quad\rightarrow\quad v(t)=\frac{1}{ct+C}
+  \end{equation*}
+\end{itemize}
+In practice, multiple forces may act on an object, and each of them will be
+functions of other motion quantities, and therefore the solution may require
+solving complex differential equations (although this is highly unlikely in
+AP Physics).
+
 \subsection{Special Notation When Differentiating With Time}
 
 Physicists and engineers often use a special notation when the derivative is
