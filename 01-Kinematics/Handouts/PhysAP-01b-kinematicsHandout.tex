@@ -1,9 +1,10 @@
 \documentclass[11pt]{article}
+%\documentclass[11pt]{scrartcl}
 
 \usepackage[margin=.8in,letterpaper]{geometry}
 \usepackage{amsmath,bm}
 \usepackage{txfonts} % must be loaded after amsmath?
-\usepackage{times}
+%\usepackage{times}
 \usepackage{siunitx}
 \usepackage{enumitem}
 \usepackage{graphicx}
@@ -15,11 +16,11 @@
 \usepackage{wrapfig}
 \usepackage{authblk}
 
-%\newcommand\vertarrowbox[2]{%
-%    \begin{array}[t]{@{}c@{}} #1 \\
-%    \rotatebox{90}{$\xrightarrow{\hphantom{abcdefgh}}$} \\[-1ex]
-%    \mathclap{\scriptstyle\text{#2}}%
-%    \end{array}}
+\newcommand\vertarrowbox[2]{%
+    \begin{array}[t]{@{}c@{}} #1 \\
+    \rotatebox{90}{$\xrightarrow{\hphantom{abcdefgh}}$} \\[-1ex]
+    \mathclap{\scriptstyle\text{#2}}%
+    \end{array}}
 
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{8pt}
@@ -32,7 +33,7 @@
   per-mode=symbol
 }
 
-\title{Review of Basic Kinematics}
+\title{Topic 1: Kinematics}
 \author{Timothy M.\ Leung\thanks{Ph.D., \texttt{tleung@olympiadsmail.ca}}}
 \affil{Olympiads School\\Toronto, Ontario, Canada}
 \date{Revised: \today}
@@ -41,23 +42,14 @@
 \newcommand{\mb}[1]{\ensuremath\mathbf{#1}}
 
 \begin{document}
-
 \maketitle
-
 
 \textbf{Kinematics} is a discipline with in mechanics for describing the
 motion of points, bodies (objects), and systems of  bodies (groups of objects).
 It is the mathematical representation of the relationship between
-\begin{itemize}[noitemsep]
-\item Position
-\item Displacement
-\item Distance 
-\item Velocity
-\item Speed
-\item Acceleration
-\end{itemize}
-However, kinematics does \emph{not} deal with what causes motion.
-
+\emph{position}, \emph{displacement}, \emph{distance}, \emph{velocity},
+\emph{speed} and \emph{acceleration}. Note that kinematics does \emph{not}
+deal with what causes motion.
 
 \section{Kinematic Quantities}
 
@@ -65,24 +57,28 @@ However, kinematics does \emph{not} deal with what causes motion.
 
 \begin{wrapfigure}{r}{.35\textwidth}
   \centering
-  \begin{tikzpicture}[scale=.55]
+  \vspace{-.1in}
+  \begin{tikzpicture}[scale=.5]
     \draw[->](0,0)--(6,0) node[pos=1,right]{$x$};
     \draw[->](0,0)--(0,8) node[pos=1,above]{$y$};
-    \draw[->,red,very thick] (0,0)--(4,1) node[midway,above]{$\mb{d}_1$};
-    \draw[->,red,very thick] (0,0)--(2,6) node[midway,left]{$\mb{d}_2$};
-    \draw[->,blue,very thick](4,1)--(2,6) node[midway,right]{$\Delta\mb{d}$};
+    \draw[->,red,very thick] (0,0)--(4,1) node[midway,above]{$\mb{x}_i$};
+    \draw[->,red,very thick] (0,0)--(2,6) node[midway,left]{$\mb{x}_f$};
+    \draw[->,blue,very thick](4,1)--(2,6) node[midway,right]{$\Delta\mb{x}$};
     \draw[thick,dash dot,<->] (4,1)..controls (6,5) and (5,7)..(2,6)
     node[midway,right]{$s$};
   \end{tikzpicture}
-  \caption{Position, displacement and distance are all related but different
-    quantities.}
+  \caption{Position, displacement and distance in a Cartesian coordinate
+    system.}
   \label{fig:d-vs-d}
 \end{wrapfigure}
 \textbf{Position} is a vector describing the location of an object in a
-coordinate system (usually \emph{Cartesian}; can also be \emph{polar},
-\emph{cylindrical} or \emph{spherical}). The origin of the coordinate system
-is called ``reference point''.  In the IJK notation for rectilinear motion, we
-can express position of an object by its $x$, $y$ and $z$ components:
+coordinate system (usually \emph{Cartesian} for rectilinear motion, but for
+circular motions, the coordinate system can also be \emph{polar} in 2D, or
+\emph{cylindrical} or \emph{spherical} in 3D). The origin of the coordinate
+system is called ``reference point''.  In the IJK notation for rectilinear
+motion, we can express position of an object by its $x$, $y$ and $z$
+components. The SI unit for position (and displacement) is \emph{meters}
+\si{\meter}:
 \begin{equation*}
   \mb{x}(t)=x(t)\bm{\hat{\imath}} + y(t)\bm{\hat{\jmath}} + z(t)\bm{\hat{k}}
 \end{equation*}
@@ -96,13 +92,15 @@ The position vector is a function of time $t$.
 
 \subsection{Displacement}
 
-\textbf{Displacement} is the change in position from $1$ to $2$ within the
-same coordinate system:
+\textbf{Displacement} is the change in position from $\mb{x}_i$ to
+$\mb{x}_f$ within the
+same coordinate system. Like position (and not surprisingly), the SI unit for
+displacement is also \emph{meters} \si{\metre}:
 \begin{equation*}
-  \Delta\mb{x}=\mb{x}_2-\mb{x}_1
-  =(x_2-x_1)\bm{\hat{\imath}}+
-  (y_2-y_1)\bm{\hat{\jmath}}+
-  (z_2-z_1)\bm{\hat{k}}
+  \Delta\mb{x}=\mb{x}_f-\mb{x}_i
+  =(x_f-x_i)\bm{\hat{\imath}}+
+  (y_f-y_i)\bm{\hat{\jmath}}+
+  (z_f-z_i)\bm{\hat{k}}
 \end{equation*}
 It it illustrated in Figure~\ref{fig:d-vs-d}.
 \begin{itemize}
@@ -136,7 +134,9 @@ it is not necessarily the same as distance. In general
 Velocity is a quantity used to describe how \emph{fast} an object is moving. If
 position $\mb{x}(t)$ is differentiable in time $t$, then its
 \textbf{instantaneous velocity} $\mb{v}(t)$ can be found at any time $t$ by
-differentiating $\mb{x}$ with respect to time: % The
+differentiating $\mb{x}$ with respect to time. The SI unit for velocity is
+\emph{meters per second} \si{\metre\per\second}:
+% The
 %\textbf{instantaneous velocity} of an object is the rate of change of its
 %position vector with respect to time:
 \begin{equation}
@@ -196,9 +196,10 @@ average velocity by separating components in each direction:
 %
 %
 \subsection{Instantaneous \& Average Speed}
-\textbf{Intantaneous speed} $v(t)$ is the rate of change of \emph{distance}
-with respect to time\footnote{It is regrettable that both velocity and speed
-  use the symbol $v$, but \emph{c'est la vie}.}:
+\textbf{Instantaneous speed} $v(t)$ is the rate of change of \emph{distance}
+with respect to time.\footnote{It is regrettable that both velocity and speed
+  use the symbol $v$, but \emph{c'est la vie}.} Like velocity, the unit for
+speed is also \si{\metre\per\second}:
 \begin{equation*}
   \boxed{v(t)=\frac{ds}{dt}}
 \end{equation*}
@@ -226,8 +227,9 @@ giving the $x$ (or $y$) coordinate as a function of time.
 
 In the same way that velocity is the rate of change in position with respect
 to time, \textbf{instantaneous acceleration} $\mb{a}(t)$ is the rate of change
-in velocity with respect to time, and the second time derivative of position,
-i.e.:
+in velocity with respect to time, and the second time derivative of position.
+The SI unit for acceleration is \emph{meters per second squared}
+\si{\metre\per\second^2}:
 \begin{equation}
   \boxed{\mb{a}(t)= \frac{d\mb{v}(t)}{dt}=\frac{d^2\mb{x}(t)}{dt^2}}
 \end{equation}
@@ -254,6 +256,7 @@ $\mb{v}(t)$ is the time integral of instantaneous acceleration $\mb{a}(t)$:
     \int a_z\bm{\hat{k}}\right) dt +\mb{v}_0
 \end{equation}
 
+\subsection{Expressing Acceleration as Functions of Position and Velocity}
 
 \subsection{Special Notation When Differentiating With Time}
 
@@ -271,23 +274,21 @@ in this course when it is convenient to do so.
 For those who are curious about higher derivatives, the time derivative of
 acceleration is called \textbf{jerk} $\mb{j}(t)$ with a unit of
 \si{\metre\per\second^3}:
-\begin{equation*}
+\begin{equation}
   \mb{j}(t)=\frac{d\mb{a}}{dt}=\frac{d^2\mb{v}}{dt^2}=\frac{d^3\mb{x}}{dt^3}
-\end{equation*}
- Jerk is used in many sensors, for example, in
-accelerometers in airbags to determine if the acceleration of a car is under
-normal operation (small $j$ value) or if a crash is in progress (high $j$
-value).
-
-The time derivative of jerk is \textbf{jounce}, or \textbf{snap}, with a
-unit of \si{\metre\per\second^4}:
-\begin{equation*}
+\end{equation}
+Jerk is used in many sensors, for example, in accelerometers in airbags to
+determine if the acceleration of a car is under normal operation (small $j$
+value) or if a crash is in progress (high $j$ value). The time derivative of
+jerk is \textbf{jounce}, or \textbf{snap}, with unit of
+\si{\metre\per\second^4}:
+\begin{equation}
   \mb{s}(t)=\frac{d\mb{j}}{dt}=\frac{d^2\mb{a}}{dt^2}=\frac{d^3\mb{v}}{dt^3}
   =\frac{d^4\mb{x}}{dt^4}
-\end{equation*}
+\end{equation}
 The next two derivatives of snap is facetiously called \textbf{crackle} and
 \textbf{pop}\footnote{As in the cartoon mascots for Kellogg's rice crispies},
-but these higher derivatives are rarely used, and will \emph{not}be used in
+but these higher derivatives are rarely used, and will \emph{not} be used in
 in AP Physics.
 
 
@@ -296,31 +297,41 @@ in AP Physics.
 
 Although kinematic problems in AP Physics often require calculus, these basic
 kinematic equations for constant acceleration are still a very powerful tool.
-%  \begin{columns}
-%    \column{.45\textwidth}
-%
+For constant acceleration $\mb{a}$, velocity can be obtained by integrating
+in time:
+\begin{equation}
+  \boxed{\mb{v}(t)=\int \mb{a}dt = \mb{v}_0+ \mb{a}t}
+  \label{eq:big5-1}
+\end{equation}
+where $\mb{v}_0$ is the initial velocity at $t=0$. Integrating again for the
+position vector:
+\begin{equation}
+  \boxed{\mb{x}(t)=\int \mb{v}dt=\mb{x}_0+\mb{v}_0t+\frac12 \mb{a}t^2}
+  \label{eq:big5-2}
+\end{equation}
+where $\mb{x}$ is the initial position at $t=0$. The position vector is
+quadratic in time.
+
+The derivation of the last equation is slightly more laborious. From
+Eqs.~\ref{eq:big5-1} and \ref{eq:big5-2}, if acceleration is constant, then
+both the the velocity and position vectors are continuously differentiable. For
+simplicity, a one-dimensional problem is presented.
 \begin{align*}
-  \mb{x} &= \mb{x}_0+ \mb{v}_0t + \frac{1}{2}\mb{a}t^2\\
-  \mb{v} &=\mb{v}_0+\mb{a}t\\
-  v^2 &= v_0^2+ 2a(x-x_0)
+  \frac{dv}{dt}&=\frac{dv}{dx}\frac{dx}{dt}\\
+  a&=v\frac{dv}{dx}
 \end{align*}
-%    }
-%    
-%    \column{.55\textwidth}
-%    \begin{itemize}
-%    \item The variables of interests are:
-%
-%      \eq{-.4in}{
-%        \mb{x}_0\quad\mb{x}\quad\mb{v}_0 \quad\mb{v}\quad t\quad\mb{a}
-%      }
-%    \item Only applicable for constant acceleration
-%    \end{itemize}
-%  \end{columns}
-%
-If acceleration is nonconsta, differentiation and integration will be necessary.
-%\end{frame}
-%
-%
+Multiplying both sides by $dx$ and integrating, we have:
+\begin{align*}
+  \int_{x_0}^x adx&=\int_{v_0}^v vdv\\
+  a(x-x_0)&=\frac12\left(v^2-v_0^2\right)
+\end{align*}
+or in the more familiar form:
+\begin{equation}
+  \boxed{v^2 = v_0^2+ 2a(x-x_0)}
+  \label{eq:big5-3}
+\end{equation}
+Eqs.~\ref{eq:big5-1}, \ref{eq:big5-2} and \ref{eq:big5-3} are provided in the
+AP Exam equation sheet.
 %\begin{frame}{Solving Typical Kinematics Problems}
 %  
 %  \textbf{One object:} the problem provides $3$ of the $5$ variables, and you
