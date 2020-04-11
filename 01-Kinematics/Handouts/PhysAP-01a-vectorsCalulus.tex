@@ -1,0 +1,374 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=.8in,letterpaper]{geometry}
+\usepackage{amsmath,bm}
+\usepackage{txfonts} % must be loaded after amsmath?
+\usepackage{siunitx}
+%\usepackage{enumitem}
+\usepackage{graphicx}
+%\usepackage{tikz}
+%\usepackage{mathpazo}
+%\usepackage{xcolor,colortbl}
+%\usepackage{hyperref}
+\usepackage{cancel}
+
+%\newcommand\vertarrowbox[2]{%
+%    \begin{array}[t]{@{}c@{}} #1 \\
+%    \rotatebox{90}{$\xrightarrow{\hphantom{abcdefgh}}$} \\[-1ex]
+%    \mathclap{\scriptstyle\text{#2}}%
+%    \end{array}}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{8pt}
+
+%\usetikzlibrary{decorations.pathmorphing,patterns}
+
+\sisetup{
+  detect-all,
+  per-mode=symbol
+}
+
+\title{Vectors and Calculus That You Need to Know}
+\author{Timothy M.\ Leung, Ph.D.\\Olympiads School}
+\date{\today}
+
+\newcommand{\pic}[2]{\includegraphics[width=#1\textwidth]{#2}}
+\newcommand{\mb}[1]{\ensuremath\mathbf{#1}}
+
+\begin{document}
+
+\maketitle
+
+The AP Physics C exams are calculus based, and will use vectors extensively.
+Students should be familiar with the material in this handout, however, it is
+likely that the calculus and vector operations used in the exams will be much
+simpler. If these concepts are difficult, this should be a good time to grab a
+calculus textbook and review them.
+
+\section{Vectors}
+Vectors are used extensively in physics. They are an integral part of a larger
+discipline within mathematics called \textbf{linear algebra}. For the purpose
+of AP Physics, it is sufficient to think of vectors as
+``a number with a direction''.
+
+\subsection{Notation}
+In keeping with the convention used in \emph{most} technical journals and
+university-level textbooks, vectors are \emph{printed} (e.g.\ on the slides and
+handouts) using a bold face font:
+\begin{equation*}
+  \mb{v}\quad\mb{F}_g\quad\mb{p}\quad\mb{I}
+\end{equation*}
+while the ``arrow on top'' notation is used when \emph{writing} (e.g.\ on the
+blackboard)\footnote{Although this format is still used in \emph{some}
+  introductory level physics textbooks in universities}:
+\begin{equation*}
+  \vec{v}\quad\vec{F}_g\quad\vec{p}\quad\vec{I}
+\end{equation*}
+The magnitude of vectors are expressed either with the absolute-value symbol:
+\begin{equation*}
+  |\mb{v}|\quad|\mb{F}_g|\quad|\mb{p}|\quad|\mb{I}|
+\end{equation*}
+or as a scalar quantity (afterall, the magnitude of a vector is indeed a scalar
+with a positive value):
+\begin{equation*}
+  v\quad F_g\quad p \quad I
+\end{equation*}
+
+
+\subsection{Writing Vectors}
+In Grades 11 and 12 Physics, vectors are usually written by separating the
+magnitude from the direction. For example, a velocity vector are usually
+written as:
+\begin{equation*}
+  \mb{v}=\SI{4.5}{\metre\per\second}\text{ [N \ang{55} E]}
+\end{equation*}
+This approach is based on using the \textbf{polar coordinate system}, which is
+the preferred coordinate system for circular motion. In general, polar
+coordinate system is very intuitive for describing \emph{one} vector in
+two dimensions (that's why it is used extensively in high-school level
+physics courses), but it is more complicated when extended into 3D; the
+coordinate system needs to be extended to \textbf{spherical coordinate system}
+or the \textbf{cylindrical coordinate system}. Moreover, it is difficult to
+perform vector arithmetic for \emph{rectilinear} motion.
+
+Intead, for rectilinear motion, vectors in 2D/3D Cartesian space are generally
+written in their $x$, $y$ \& $z$ components using the \textbf{IJK notation}:
+\begin{equation*}
+  \mb{A}=A_x\bm{\hat{\imath}} + A_y\bm{\hat{\jmath}} + A_z\bm{\hat{k}}
+\end{equation*}
+The vectors $\bm{\hat{\imath}}$, $\bm{\hat{\jmath}}$ and $\bm{\hat{k}}$ are
+\textbf{basis vectors} indicating the directions of the $x$, $y$ and $z$ axes.
+Basis vectors are \textbf{unit vectors} (i.e.\ length $1$). Note that the
+IJK notation does not give the magnitude of the vector, which needs to be
+calculated:
+\begin{equation*}
+  A=|\mb{A}|=\sqrt{A_x^2 + A_y^2 + A_z^2}
+\end{equation*}
+
+
+\subsection{Vector Addition and Subtraction}
+
+Adding and subtracting vectors is straightforward:
+\begin{equation*}
+  \mb{A}\pm\mb{B}=
+  (A_x\pm B_x)\bm{\hat{\imath}} +
+  (A_y\pm B_y)\bm{\hat{\jmath}} +
+  (A_z\pm B_z)\bm{\hat{k}}
+\end{equation*}
+
+
+\subsection{Dot Product}
+The vector \textbf{dot product} (or \textbf{inner product} for general vectors)
+is the \emph{scalar} multiplication of two vectors. This is a vector operation
+that have been used throughout Grades 11 and 12 Physics courses (although
+without explicitly using this notation), for example, when calculating
+mechanical work. It is determined by the magnitude of the two vectors and the
+cosine of the angle $\theta$ between them:
+\begin{equation*}
+  C=\mb{A}\cdot\mb{B}=\mb{B}\cdot\mb{A}=|\mb{A}||\mb{B}|\cos\theta
+\end{equation*}
+In the cross product, $C$ is the \emph{projection} of the vector $\mb{A}$ onto
+$\mb{B}$, or the component of $\mb{A}$ along $\mb{B}$.
+Note that $\bm{\hat{\imath}}\cdot\bm{\hat{\imath}}=1$,
+$\bm{\hat{\jmath}}\cdot\bm{\hat{\jmath}}=1$, and
+$\bm{\hat{k}}\cdot\bm{\hat{k}}=1$. For general vectors written in IJK notation,
+where the magnitude and direction of vectors are not immediately known, so
+intead we sum the product of individual components of $\mb{A}$ and $\mb{B}$:
+\begin{equation*}
+  C=\mb{A}\cdot\mb{B}=A_xB_x+A_yB_y+A_zB_z
+\end{equation*}
+
+
+\subsection{Cross Products}
+The vector \textbf{cross product} is the vector multiplication of two vectors:
+\begin{equation*}
+  \mb{C}=\mb{A}\times\mb{B}
+\end{equation*}
+The magnitude of the cross product is determined by the magnitude of $\mb{A}$
+and $\mb{B}$ and the angle $\theta$ between them:
+\begin{equation*}
+  C=AB\sin\theta
+\end{equation*}
+The cross product $\mb{C}$ is perpendicular to \emph{both} $\mb{A}$ and
+$\mb{B}$; its direction given by the right hand rule. Cross products are used
+extensively in rotational motion and in electromagnetism
+\begin{figure}[ht]
+  \centering
+  \pic{.3}{cross-product.png}
+  \caption{Vector cross product.}
+  \label{fig:cross1}
+\end{figure}
+Note that unlike the cross product, the order of the cross product is
+important. (This is why you have to get the right hand rule correctly.)
+\begin{equation*}
+  \mb{A}\times\mb{B}=-\mb{B}\times\mb{A}
+\end{equation*}
+In general, the cross product of any two vectors in 3D space is the determinant
+of this $3\times 3$ matrix:
+\begin{equation*}
+  \mb{A}\times\mb{B}=
+  \left|
+  \begin{matrix}
+    \bm{\hat{\imath}} & \bm{\hat{\jmath}} & \bm{\hat{k}}\\
+    A_x & A_y & A_z\\
+    B_x & B_y & B_z
+  \end{matrix}
+  \right|
+  =(A_yB_z-A_zB_y)\bm{\hat{\imath}} +
+  (A_zB_x-A_xB_z)\bm{\hat{\jmath}} +
+  (A_zB_y-B_yA_x)\bm{\hat{k}}
+\end{equation*}
+although it is extremely rare that such notation will ever be used in any
+Physics C exams. Most cross product applications in AP Physics C are much
+simpler, so we only have to remember the circle shown in
+Figure~\ref{fig:cross2}.
+\begin{figure}[ht]
+  \centering
+  \pic{.12}{cross-product-circle.png}
+  \caption{Cross product circle that you will likely see in Physics C exams}
+  \label{fig:cross2}
+\end{figure}
+
+The direction of the arrow gives the index of the cross product (e.g.\
+$\bm{\hat{\imath}}\times\bm{\hat{\jmath}}=\bm{\hat{k}}$); going against the
+direction of the arrow gives the negative of the next index (e.g.\
+$\bm{\hat{k}}\times\bm{\hat{\jmath}}=-\bm{\hat{\imath}}$)
+
+
+\section{Calculus}
+We cannot learn physics properly without calculus (you got away with it for
+long enough in grades 11 and 12?!)
+%  \item Calculus was ``invented'' so that we can understand motion, especially
+%    non-constant velocities and accelerations
+%  \item You may have already noticed that a lot of the word problems in
+%    calculus are really physics problems
+%  \end{itemize}
+%\end{frame}
+%
+\begin{itemize}
+\item\textbf{Differential Calculus}
+  \begin{itemize}
+  \item How quickly something is changing (``rate of change'' of a quantity)
+  \item Math: slopes of functions
+  \item Physics: how quickly a physical quantity is changing in time and/or
+    space
+  \item Examples: velocity (how quickly position changes with time),
+    acceleration (how quickly velocity changes with time), power (how quickly
+    work is done), electric fields (how electric potential changes in space)
+  \end{itemize}
+\item\textbf{Integral Calculus}
+  \begin{itemize}
+  \item The opposite of differentiation
+  \item We use it to compute the area under a curve, or
+  \item Summation of many small terms
+  \item Examples: area under the $\mb{v}$-$t$ graph (displacement), area
+    under the $\mb{F}$-$t$ graph (impulse), area under the $\mb{F}$-$d$ graph
+    (work)
+  \end{itemize}
+\end{itemize}
+
+
+\subsection{Derivative}
+
+For any arbitrary function $f(x)$, the derivative with respect to $x$ is:
+\begin{equation*}
+  f'(x)=\lim_{h\rightarrow 0}\frac{f(x+h)-f(x)}{h}
+\end{equation*}
+The ``limit as $h$ approaches $0$'' is the mathematical way of making $h$ a
+very small non-zero number.
+
+
+\subsection{Basic Rules for Differentiation}
+
+The derivative of a constant $C$ with respect to any variable is zero. This
+should be obvious, since the slope of any function $f(x)=C$ is zero.
+\begin{equation*}
+  \frac{dC}{dx}=0
+\end{equation*}
+A constant multiple $a$ of any function $f$ can be factored outside the
+derivative:
+\begin{equation*}
+  \frac{d}{dx}(af)=a\frac{df}{dx}
+\end{equation*}
+The derivative of a sum of two functions is the sum of the derivatives of the
+functions:
+\begin{equation*}
+  \frac{d}{dt}\left(f(t)+g(t)\right) = \frac{df}{dt}+\frac{dg}{dt}
+\end{equation*}
+Power Rule:
+\begin{equation*}
+  \frac{d}{dt}\left(t^n\right) = nt^{n-1}\quad\text{for}\quad n\neq 0
+\end{equation*}
+Product Rule:
+\begin{equation*}
+  \frac{d}{dx}\left(f(x)g(x)\right)=f'(x)g(x)+f(x)g'(x)
+\end{equation*}
+Chain Rule:
+\begin{equation*}
+  \frac{d}{dx}f\left(g(x)\right)=f'(g(x))g'(x)
+\end{equation*}
+Quotient Rule is rarely used in physics tests in AP or first-year university,
+but you should remember it anyway:
+\begin{equation*}
+  \frac{d}{dx}\left[\frac{f(x)}{g(x)}\right]=
+  \frac{f'(x)g(x)-g'(x)f(x)}{\left(g(x)\right)^2}
+\end{equation*}
+
+
+
+\subsection{Elementary Derivatives}
+When studying \textbf{harmonic motion} and \textbf{circular motion},
+trigonometric and exponential functions are often used. We will also find out
+the relationship between complex exponential functions and sine/cosine
+functions. %The derivatives of sines and cosines are related:
+\begin{align*}
+    \frac{d}{dt}\sin t &= \cos t \quad\quad\quad\\
+    \frac{d}{dt}\cos t &= -\sin t
+\end{align*}
+And the exponential function:
+\begin{equation*}
+  \frac{d}{dt}e^{at} = ae^{at}
+\end{equation*}
+
+\subsection{Partial Derivatives}
+Some functions have many variables (multi-variable function). For example,
+gravitational potential energy $U_g$ has three variables: masses $m_1$ and
+$m_2$ and the distance $r$ between them:
+\begin{equation*}
+    U_g(m_1,m_2,r)=-\frac{Gm_1m_2}{r}
+\end{equation*}
+Differentiating with respect to one variable while holding others constant
+gives its \textbf{partial derivative}. (We use the $\partial$ symbol). For
+example, the partial derivative of $U_g$ with respect to $r$ is
+\begin{equation*}
+    \frac{\partial U_g}{\partial r}=\frac{Gm_1m_2}{r^2}
+\end{equation*}
+In case you have not noticed: the derivative is the is the relationship between
+gravitational potential energy $U_g$ and the magnitude of the gravitational
+force $F_g$.
+
+
+\subsection{Integration}
+
+If $F(x)$ is the anti-derivative of $f(x)$, they are related this way:
+\begin{equation*}
+  \frac{d}{dx}F(x)=f(x)\quad\longrightarrow\quad F(x)=\int f(x)dx
+\end{equation*}
+The mathematical proof is the \textbf{fundamental theorem of calculus}.
+
+
+\subsection{Common Integrals in Physics}
+Integration, while often necessary, can be very daunting, but integrals in AP
+Physics C  are generally straightforward. These rules should help in most cases.
+
+Power rule in reverse:
+\begin{equation*}
+  \int x^ndx=\frac{1}{n+1}x^{n+1}+C
+\end{equation*}
+Natural logarithm:
+\begin{equation*}
+  \int \frac{1}{x}dx =\ln |x|+C 
+\end{equation*}
+Sines and cosines:
+\begin{align*}
+  \int\cos xdx&=\sin x+C\\
+  \int\sin xdx&=-\cos x+C
+\end{align*}
+%We can ``ignore'' (i.e.\ cancel) the constant of integration $C$ for definite
+%integrals.
+
+
+\subsection{Definite and Indefinite Integrals}
+
+\begin{itemize}
+\item Integrals can be either \textbf{indefinite} or \textbf{definite}
+\item An ``indefinite'' integral is another function, e.g.\ position
+  $\mb{x}(t)$ as a function of time is found by integrating velocity
+  $\mb{v}(t)$:
+
+  \begin{equation*}
+    \mb{x}(t)=\int\mb{v}(t)dt=\cdots+\mb{C}
+  \end{equation*}
+\item A \textbf{constant of integration} $\mb{C}$ is added to the integral
+  $\mb{x}(t)$. It is obtained through applying ``initial condition'' to the
+  problem.
+\end{itemize}
+
+
+\subsection{Definite Integrals}
+
+A \textbf{definite integral} has lower and upper bounds. e.g.\ given
+$\mb{v}(t)$, the displacement between $t_1$ and $t_2$ can be found:
+\begin{equation*}
+  \Delta\mb{x}=\int_{t_0}^{t_1} \mb{v}(t)dt
+\end{equation*}
+Once we have computed the integral, we evaluate the limits:
+\begin{equation*}
+  \Delta\mb{x} =
+  \mb{x}(t)\Big|^{t_1}_{t_0}=
+  \mb{x}(t_1)-\mb{x}(t_0)=
+  \mb{x}_1-\mb{x}_0
+\end{equation*}
+The constant of integration $\mb{C}$ cancels when we evaluate the upper and
+lower bounds.
+\end{document}
