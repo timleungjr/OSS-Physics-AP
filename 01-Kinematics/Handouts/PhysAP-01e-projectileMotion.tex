@@ -1,16 +1,10 @@
-\documentclass[11pt]{article}
-\usepackage[margin=0.8in,letterpaper]{geometry}
+\documentclass{../../oss-handout}
 \usepackage{amsmath,bm}
-\usepackage{txfonts} % must be loaded after amsmath?
+\usepackage{txfonts}  % must be loaded after amsmath?
 \usepackage{enumitem}
-\usepackage{tikz,graphicx,wrapfig}
-%\usepackage{times}
-%\usepackage[document]{ragged2e}
-%\usepackage[none]{hyphenat}
+\usepackage{tikz}
 \usepackage{siunitx}
-%\usepackage{multicol}
-\usepackage{fancyhdr}
-\usepackage{authblk}
+\usepackage{multicol}
 
 \newcommand{\mb}[1]{\mathbf{#1}}
 \newcommand{\iii}{\bm{\hat{\imath}}}
@@ -21,33 +15,29 @@
 
 \sisetup{
   detect-all,
-  %number-math-rm=\mathnormal,
-  %inter-unit-product =\ensuremath{\cdot{}},
   per-mode=symbol,
-  %group-separator={,},
 }
-
-\pagestyle{fancy}
-\chead{}
-\lhead{Olympiads School}
-\rhead{Advanced Placement Physics}
-\lfoot{Projectile Motion}
-\cfoot{-\thepage-}
-\rfoot{}
 
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{8pt}
-
-\title{Projectile Motion}
-\author{Timothy M.\ Leung\thanks{Ph.D., \texttt{tleung@olympiadsmail.ca}}}
-\affil{Olympiads School\\Toronto, Ontario, Canada}
-\date{Revised: \today}
+\setlength{\headheight}{26pt}
 
 
+% Set the page style for the document
+\pagestyle{plain}
+
+% Course & handout information
+\renewcommand{\institution}{Olympiads School, Toronto, ON, Canada}
+\renewcommand{\coursetitle}{Advanced Placement Physics (1 \& C)}
+\renewcommand{\term}{Summer 2020}
+
+\title{Topic 1: Projectile Motion}
+\author{Dr.\ Timothy M.\ Leung}
+\date{\today}
 
 \begin{document}
-\maketitle
-
+\thispagestyle{title}
+\gentitle
 
 \section{Projectile Motion}
 
@@ -55,29 +45,39 @@
 %  \item For 2D problems, resolve the problem into its
 %    horizontal ($x$) and vertical ($y$) directions, and apply kinematic
 %    equations independently
-%  \item For projectile motion, there is no acceleration in the $x$ direction,
-%    i.e.\ $a_x=0$, therefore the kinematic equations reduce to just
-%    
-%    \eq{-.25in}{x=v_xt\bm{\hat{\imath}}}
-%  \item The only acceleration is in the $\bm{\hat{\jmath}}$ direction. In the
-%    standard Cartesian coordinate system, this usually means that
-%    $\bm{\hat{\jmath}}$ direction is \emph{up}:
-%    
-%    \eq{-.25in}{a_y=-g\bm{\hat{\jmath}}}
-%  \item The variable that connects the two directions is time $t$
-%  \end{itemize}
-%\end{frame}
+For projectile motion, there is no acceleration in the horizontal
+($\bm{\hat{\imath}}$) direction, i.e.\ $a_x=0$. Therefore the kinematic
+equations is reduced to a single equation
+\begin{equation}
+  x-x_0=v_xt
+\end{equation}
+It is customary to define the $\bm{\hat{\imath}}$ direction to be the forward
+horizontal direction.
 
-%\begin{center}
-%  \vspace{.3in}{\Large\textbf{Symmetric Projectile Trajectory}}
-%\end{center}
-%
+The only acceleration is due to gravity in the vertical ($\bm{\hat{\jmath}}$)
+direction. In the standard Cartesian coordinate system, $\bm{\hat{\jmath}}$ is
+direction is therefore usually \emph{up}, and the acceleration due to gravity is
+\begin{equation}
+  a_y=-g
+\end{equation}
+%\begin{multicols}{2}
+The kinematic equation are reduced to:
+\begin{align}
+  v_y&=v_{y0}-gt\\
+  y&=y_0+v_{y0}t-\frac12 gt^2\label{eq:needthis}\\
+  v_y^2&=v_{y0}^2-2g(y-y_o)
+\end{align}
+In general, only Eq.~\ref{eq:needthis} is needed to solve projectile motion
+problems.
+%\end{multicols}
+%The variable that connects the two directions is time $t$.
+
 \section{Symmetric Trajectory}
 
 A \textbf{symmetric trajectory} is a special case of projectile motion where an
 object is launched at an angle of $\theta$ (between \ang{0} and \ang{90}) above
 the horizontal\footnote{This may be obvious, but angles \emph{below} the 
-  horizontal will never have a symmetric trajectory.} with an initial speed
+  horizontal will never have a symmetric trajectory.} with an initial velocity
 $\mb{v}_0$, and then lands at the same height, as shown below in Fig.~\ref{sym}.
 Examples may include hitting a golf ball toward the hole, or shooting a bullet
 toward a horizontal target\footnote{Shooting a bullet toward a horizontal

@@ -1,16 +1,27 @@
-\documentclass[11pt]{article}
-
-\usepackage[margin=.8in,letterpaper]{geometry}
+\documentclass{../../oss-handout}
 \usepackage{amsmath,bm}
-\usepackage{txfonts} % must be loaded after amsmath?
+\usepackage{txfonts}  % must be loaded after amsmath?
+\usepackage{enumitem}
+\usepackage{tikz}
 \usepackage{siunitx}
-%\usepackage{enumitem}
-\usepackage{graphicx}
-%\usepackage{tikz}
+%\usepackage{graphicx}
 %\usepackage{mathpazo}
 %\usepackage{xcolor,colortbl}
 %\usepackage{hyperref}
-\usepackage{cancel}
+%\usepackage{cancel}
+
+\sisetup{
+  detect-all,
+  per-mode=symbol
+}
+%\usetikzlibrary{decorations.pathmorphing,patterns}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{8pt}
+\setlength{\headheight}{26pt}
+
+\newcommand{\mb}[1]{\ensuremath\mathbf{#1}}
+\newcommand{\pic}[2]{\includegraphics[width=#1\textwidth]{#2}}
 
 %\newcommand\vertarrowbox[2]{%
 %    \begin{array}[t]{@{}c@{}} #1 \\
@@ -18,28 +29,26 @@
 %    \mathclap{\scriptstyle\text{#2}}%
 %    \end{array}}
 
-\setlength{\parindent}{0pt}
-\setlength{\parskip}{8pt}
 
-%\usetikzlibrary{decorations.pathmorphing,patterns}
+% Set the page style for the document
+\pagestyle{plain}
 
-\sisetup{
-  detect-all,
-  per-mode=symbol
-}
+% Course & handout information
+\renewcommand{\institution}{Olympiads School, Toronto, ON, Canada}
+\renewcommand{\coursetitle}{Advanced Placement Physics (C)}
+\renewcommand{\term}{Winter/Spring/Summer 2020}
 
-\title{Vectors and Calculus That You Need to Know}
-\author{Timothy M.\ Leung, Ph.D.\\Olympiads School}
+\title{Basic Vector and Calculus That You Need to Know}
+\author{Dr.\ Timothy Leung}
 \date{\today}
 
-\newcommand{\pic}[2]{\includegraphics[width=#1\textwidth]{#2}}
-\newcommand{\mb}[1]{\ensuremath\mathbf{#1}}
-
 \begin{document}
+\thispagestyle{title}
+\gentitle
 
-\maketitle
 
-The AP Physics C exams are calculus based, and will use vectors extensively.
+Both AP Physics C exams (Mechanics and Electricity \& Magnetism) are calculus
+based, and will use vectors extensively.
 Students should be familiar with the material in this handout, however, it is
 likely that the calculus and vector operations used in the exams will be much
 simpler. If these concepts are difficult, this should be a good time to grab a
