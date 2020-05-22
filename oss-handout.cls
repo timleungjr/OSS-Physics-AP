@@ -62,7 +62,7 @@
     \fancyfoot[C]{}%
     \fancyhead[R]{\bf\small \term \\ \bf\small Page~\thepage~of~\pageref{LastPage}}%
     \fancyhead[L]{\bf\small \coursetitle \\ \institution} %
-    \fancyfoot[L]{\bf\small By: \@author\ on \today}
+    %\fancyfoot[L]{\bf\small By: \@author\ on \today}
     \renewcommand{\headrulewidth}{0pt}
     \renewcommand{\footrulewidth}{0pt}}
 
@@ -88,7 +88,8 @@
 \newcommand{\gentitle}{
   \hrule
   \begin{center}
-    {\large\bf\thetitle}
+    {\large\bf\thetitle}\\
+    \@author
   \end{center}
   \hrule
   \vspace{.2in}

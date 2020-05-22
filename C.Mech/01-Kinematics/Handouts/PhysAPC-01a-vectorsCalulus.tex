@@ -1,4 +1,4 @@
-\documentclass{../../oss-handout}
+\documentclass{../../../oss-handout}
 \usepackage{amsmath,bm}
 \usepackage{txfonts}  % must be loaded after amsmath?
 \usepackage{enumitem}
@@ -35,8 +35,8 @@
 
 % Course & handout information
 \renewcommand{\institution}{Olympiads School, Toronto, ON, Canada}
-\renewcommand{\coursetitle}{Advanced Placement Physics (C)}
-\renewcommand{\term}{Winter/Spring/Summer 2020}
+\renewcommand{\coursetitle}{Advanced Placement Physics C}
+\renewcommand{\term}{Summer 2020}
 
 \title{Basic Vector and Calculus That You Need to Know}
 \author{Dr.\ Timothy Leung}
@@ -160,15 +160,15 @@ and $\mb{B}$ and the angle $\theta$ between them:
 \end{equation*}
 The cross product $\mb{C}$ is perpendicular to \emph{both} $\mb{A}$ and
 $\mb{B}$; its direction given by the right hand rule. Cross products are used
-extensively in rotational motion and in electromagnetism
+extensively in rotational motion and in electromagnetism.
 \begin{figure}[ht]
   \centering
   \pic{.3}{cross-product.png}
   \caption{Vector cross product.}
   \label{fig:cross1}
 \end{figure}
-Note that unlike the cross product, the order of the cross product is
-important. (This is why you have to get the right hand rule correctly.)
+Note that unlike the dot product, the order of the cross product is important.
+(This is why you have to get the right hand rule correctly.)
 \begin{equation*}
   \mb{A}\times\mb{B}=-\mb{B}\times\mb{A}
 \end{equation*}
@@ -187,10 +187,9 @@ of this $3\times 3$ matrix:
   (A_zB_x-A_xB_z)\bm{\hat{\jmath}} +
   (A_zB_y-B_yA_x)\bm{\hat{k}}
 \end{equation*}
-although it is extremely rare that such notation will ever be used in any
-Physics C exams. Most cross product applications in AP Physics C are much
-simpler, so we only have to remember the circle shown in
-Figure~\ref{fig:cross2}.
+although it is extremely rare that such notation will ever be used in any AP
+exams. Most cross product applications in AP C exams are much simpler, so we
+only have to remember the circle shown in Figure~\ref{fig:cross2}.
 \begin{figure}[ht]
   \centering
   \pic{.12}{cross-product-circle.png}
@@ -206,15 +205,12 @@ $\bm{\hat{k}}\times\bm{\hat{\jmath}}=-\bm{\hat{\imath}}$)
 
 \section{Calculus}
 We cannot learn physics properly without calculus (you got away with it for
-long enough in grades 11 and 12?!)
-%  \item Calculus was ``invented'' so that we can understand motion, especially
-%    non-constant velocities and accelerations
-%  \item You may have already noticed that a lot of the word problems in
-%    calculus are really physics problems
-%  \end{itemize}
-%\end{frame}
-%
-\begin{itemize}
+long enough in grades 11 and 12!). Calculus was a mathematical tool that was
+``invented'' so that we can understand motion, especially non-constant
+velocities and accelerations. Even in your calculus class(es), you may have
+already noticed that a lot of the word problems  are really physics problems.
+In this course, both forms of calculus will be used:
+\begin{itemize}[topsep=0pt]
 \item\textbf{Differential Calculus}
   \begin{itemize}
   \item How quickly something is changing (``rate of change'' of a quantity)
@@ -348,26 +344,17 @@ Sines and cosines:
 
 
 \subsection{Definite and Indefinite Integrals}
-
-\begin{itemize}
-\item Integrals can be either \textbf{indefinite} or \textbf{definite}
-\item An ``indefinite'' integral is another function, e.g.\ position
-  $\mb{x}(t)$ as a function of time is found by integrating velocity
-  $\mb{v}(t)$:
-
-  \begin{equation*}
-    \mb{x}(t)=\int\mb{v}(t)dt=\cdots+\mb{C}
-  \end{equation*}
-\item A \textbf{constant of integration} $\mb{C}$ is added to the integral
-  $\mb{x}(t)$. It is obtained through applying ``initial condition'' to the
-  problem.
-\end{itemize}
-
-
-\subsection{Definite Integrals}
-
-A \textbf{definite integral} has lower and upper bounds. e.g.\ given
-$\mb{v}(t)$, the displacement between $t_1$ and $t_2$ can be found:
+Integrals can be either \textbf{indefinite} or \textbf{definite}. An
+``indefinite'' integral is another function, e.g.\ position $\mb{x}(t)$ as a
+function of time is found by integrating velocity $\mb{v}(t)$:
+\begin{equation*}
+  \mb{x}(t)=\int\mb{v}(t)dt=\cdots+\mb{C}
+\end{equation*}
+A \textbf{constant of integration} $\mb{C}$ is added to the integral
+$\mb{x}(t)$. It is obtained through applying ``initial condition'' to the
+problem. On the other hand, a \textbf{definite integral} has lower and upper
+bounds. For example, given $\mb{v}(t)$, the displacement between $t_1$ and
+$t_2$ can be found by integrating between these limits:
 \begin{equation*}
   \Delta\mb{x}=\int_{t_0}^{t_1} \mb{v}(t)dt
 \end{equation*}
