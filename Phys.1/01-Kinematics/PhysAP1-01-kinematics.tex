@@ -1,0 +1,815 @@
+\documentclass[12pt,compress,aspectratio=169]{beamer}
+
+\usetheme{metropolis}
+\setbeamersize{text margin left=.5cm,text margin right=.5cm}
+\setbeamertemplate{navigation symbols}{} % suppress nav bar
+%\setbeamercovered{transparent}
+
+\usepackage[utf8]{inputenc}
+\usefonttheme{professionalfonts}
+\usepackage{amsmath}
+\usepackage{siunitx}
+%\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{mathpazo}
+%\usepackage[scaled]{helvet}
+\usepackage{bm}
+%\usepackage{xcolor,colortbl}
+\usepackage{hyperref}
+
+\sisetup{
+  number-math-rm=\mathnormal,
+  per-mode=symbol
+}
+
+\setmonofont{Ubuntu Mono}
+\setlength{\parskip}{0pt}
+\renewcommand{\baselinestretch}{1}
+
+
+\title{Topic 1: Kinematics}
+\subtitle{Advanced Placement Physics 1}
+\author[TML]{Dr.\ Timothy Leung}
+\institute{Olympiads School}
+\date{June 29, 2020}
+
+\newcommand{\pic}[2]{\includegraphics[width=#1\textwidth]{#2}}
+\newcommand{\mb}[1]{\ensuremath\mathbf{#1}}
+\newcommand{\eq}[2]{\vspace{#1}{\Large\begin{displaymath}#2\end{displaymath}}}
+\newcommand{\magdir}[2]{#1\text{ [#2]}}
+
+\begin{document}
+
+\begin{frame}{}
+
+  {\LARGE
+    \begin{center}
+      \textbf{WELCOME TO AP PHYSICS 1 \& 2}
+    \end{center}
+  }
+\end{frame}
+
+
+
+\begin{frame}{Pre-requisites}
+  \begin{itemize}
+  \item\textbf{Physics 11 and 12:} You will need to be comfortable with the
+    topics covered in high-school level physics courses.
+  \item\textbf{Vectors:} You need to be comfortable with vector operations,
+    including addition and subtraction, multiplication/division by constants,
+    as well as dot products and cross products.
+  \end{itemize}
+  If you already have a background in both differential and integral calculus,
+  you may consider taking the AP Physics C exams instead.
+\end{frame}
+
+
+
+%\begin{frame}{AP Physics C Exams}
+%  There are 2 AP Physics C exams, which are usually taken together on the same
+%  day, in the first or second week of May of each year.
+%  \begin{itemize}
+%  \item Mechanics
+%  \item Electricity and Magnetism
+%  \end{itemize}
+%  The Physics C exams are calculus based.
+%\end{frame}
+
+
+
+\begin{frame}{Classroom Rules}
+  \begin{itemize}
+  \item Treat each other with respect
+  \item Raise your hands if you have a question. Don't wait too long
+  \item E-mail me at \texttt{tleung@olympiadsmail.ca} for any questions related
+    to physics and math and engineering
+  \item Do \textbf{\emph{not}} try to find me on social media
+  \end{itemize}
+\end{frame}
+
+
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+
+
+%\begin{frame}{Files for You to Download}
+%  \begin{itemize}
+%  \item\texttt{PhysAPC-courseOutline.pdf}--The course outline
+%  \item\texttt{PhysAPC-equationSheet.pdf}--Equation sheet for your exams
+%  \item\texttt{PhysAPC-01-kinematics.pdf}
+%  \item\texttt{PhysAPC-02-dynamics.pdf}
+%  \item\texttt{PhysAPC-01-Homework.pdf}--Homework problems for Topic 1
+%  \item\texttt{PhysAPC-02-Homework.pdf}--Homework problems for Topic 2
+%  \end{itemize}
+%  
+%  \vspace{.1in}Please download/print the PDF file for the class slides before
+%  each class. There is no point copying notes that are already on the slides.
+%  Instead, focus on things that aren't necessarily on the slides. If you wish
+%  to print the slides, we recommend printing \emph{four} slides per page.
+%\end{frame}
+
+
+
+\begin{frame}{Vectors}
+  Please refer to the handout to make sure that you are familiar with basic
+  vector operations. We will be using a slightly more advanced notation method
+  for this course.
+\end{frame}
+
+
+
+\section{Kinematics}
+
+\begin{frame}{Kinematics}
+  \textbf{Kinematics} is a discipline within mechanics concerning the
+  motion of bodies. It describes the relationship between 
+  \begin{itemize}
+  \item<alert@1> Position
+  \item<alert@1> Displacement
+  \item Distance 
+  \item<alert@1> Velocity
+  \item Speed
+  \item<alert@1> Acceleration
+  \end{itemize}
+  Kinematics does not deal with the causes of motion.
+\end{frame}
+
+
+
+\begin{frame}{Position}
+  \textbf{Position} $\mb{x}$ describes the location of an object in a
+  coordinate system. The origin of the coordinate system is called the
+  ``reference point''. The SI unit for position is \textbf{meter}, \si{\metre}.
+  
+  \eq{-.2in}{
+    \mb{x}(t)=x(t)\bm{\hat{\imath}} + y(t)\bm{\hat{\jmath}} + z(t)\bm{\hat{k}}
+  }
+
+  Vectors in 2D/3D Cartesian space are generally using the ``IJK notation''
+  \begin{itemize}
+  \item $\bm{\hat{\imath}}$, $\bm{\hat{\jmath}}$ and $\bm{\hat{k}}$ are
+    \textbf{basis vectors} indicating the directions of the $x$, $y$ and $z$
+    axes. Basis vectors are \textbf{unit vectors} (i.e.\ length $1$)
+  \item The IJK notation does not explicitly give the magnitude or the direction
+    of the vector (needs to be calculated using the Pythagorean theorem)
+  \end{itemize}
+\end{frame}
+
+
+
+\begin{frame}{Displacement}
+  \textbf{Displacement} $\Delta\mb{x}(t)$ is the change in position from the
+  initial position $\mb{x}_0$ within the same coordinate system:
+
+  \eq{-.25in}{
+      \Delta\mb{x}(t)=\mb{x}-\mb{x}_0
+      =(x-x_0)\bm{\hat{\imath}}+
+      (y-y_0)\bm{\hat{\jmath}}+
+      (z-z_0)\bm{\hat{k}}
+  }
+  \begin{itemize}
+  \item IJK notation makes vector addition and subtraction less prone to errors
+  \item Since the reference point $\mb{x}_{\textrm{ref}}=\mb{0}$, the position
+    vector $\mb{x}$ is also its displacement from the reference point
+  \end{itemize}
+\end{frame}
+
+
+
+\begin{frame}{Distance}
+  \textbf{Distance} $s(t)$ is a quantity that is \emph{related} to displacement.
+  \begin{columns}
+    \column{.7\textwidth}
+    \begin{itemize}
+    \item The length of the path taken by an object when it from $\mb{x}_0$ to
+      $\mb{x}$
+    \item A scalar quantity
+    \item Always positive, i.e.\ $s\geq 0$
+    \item Although the magnitude of the displacement vector is also a scalar,
+      it is not necessarily the same as distance
+    \item $s\geq |\Delta\mb{x}|$
+    \end{itemize}
+    
+    \column{.3\textwidth}
+    \begin{tikzpicture}[scale=.5]
+      \draw[->](0,0)--(6,0) node[pos=1,right]{$x$};
+      \draw[->](0,0)--(0,8) node[pos=1,above]{$y$};
+      \draw[->,red,very thick] (0,0)--(4,1) node[midway,above]{$\mb{x}_0$};
+      \draw[->,red,very thick] (0,0)--(2,6) node[midway,left]{$\mb{x}$};
+      \draw[->,blue,very thick](4,1)--(2,6) node[midway,right]{$\Delta\mb{x}$};
+      \draw[thick,dash dot,<->] (4,1)..controls (6,5) and (5,7)..(2,6)
+      node[midway,right]{$s$};
+    \end{tikzpicture}
+  \end{columns}
+\end{frame}
+
+
+
+\begin{frame}{Instantaneous Velocity}
+  If position $\mb{x}$ is differentiable in time $t$, then velocity
+  $\mb{v}$ can be found at any time $t$. The \textbf{instantaneous velocity}
+  $\mb{v}$ of an object is the time rate of change of position:
+
+  \eq{-.2in}{
+    \mb{v}(t)= \frac{d\mb{x}(t)}{dt}
+  }
+  
+  Since $\mb{x}$ has $x$, $y$ and $z$ components in the
+  $\bm{\hat{\imath}}$, $\bm{\hat{\jmath}}$ and $\bm{\hat{k}}$
+  directions\footnote{They are linearly independent!}, we can take the time
+  derivative in every component:
+
+  \eq{-.3in}{
+    \mb{v}(t)= \frac{d\mb{x}}{dt}=
+    \frac{dx}{dt}\bm{\hat{\imath}} +
+    \frac{dy}{dt}\bm{\hat{\jmath}} + \frac{dz}{dt}\bm{\hat{k}}=
+    v_x\bm{\hat{\imath}} + v_y\bm{\hat{\jmath}} + v_z\bm{\hat{k}}
+  }
+\end{frame}
+
+
+
+\begin{frame}{Integrating Velocity to Get Position/Displacement}
+  Conversely, if $\mb{v}(t)$ is the time rate of change of position
+  $\mb{x}(t)$, then $\mb{x}$ is the time integral of $\mb{v}$:
+  
+  \eq{-.2in}{
+    \mb{x}(t)=\int\mb{v}(t)dt + \mb{x}_0
+  }
+  
+  The constant of integration $\mb{x}_0$ is the \emph{initial position} at
+  $t=0$. We can integrate each component to get $\mb{x}$:
+
+ \eq{-.2in}{ \mb{x}(t)= \left(
+    \int v_x\bm{\hat{\imath}} +
+    \int v_y\bm{\hat{\jmath}} +
+    \int v_z\bm{\hat{k}}
+    \right) dt + \mb{x}_0
+  }
+\end{frame}
+
+
+
+\begin{frame}{Average Velocity}
+  \textbf{Average velocity} $\overline{\mb{v}}$ of an object is the finite
+  change in position $\Delta\mb{x}$ over a \emph{finite} time interval
+  $\Delta t$:
+
+  \eq{-.3in}{
+    \overline{\mb{v}}= \frac{\Delta\mb{x}}{\Delta t}
+  }
+  
+  Like instantaneous velocity, we can find the $x$, $y$ and $z$ components of
+  average velocity by separating components in each direction:
+
+  \eq{-.15in}{
+    \overline{\mb{v}}=
+    \frac{\Delta x}{\Delta t}\bm{\hat{\imath}} +
+    \frac{\Delta y}{\Delta t}\bm{\hat{\jmath}} +
+    \frac{\Delta z}{\Delta t}\bm{\hat{k}}
+  }
+\end{frame}
+
+
+
+\begin{frame}{Instantaneous \& Average Speed}
+  \textbf{Instantaneous speed} $v$ is the time rate of change of
+  \emph{distance}:
+
+  \eq{-.2in}{
+    v=\frac{ds}{dt}
+  }
+  \begin{itemize}
+  \item\vspace{-.1in}Since distance of \emph{any} path is always positive
+    $s>0$, instantaneous speed must also be positive
+  \item Instantaneous speed $v$ is the magnitude of the instantaneous velocity
+    vector $\mb{v}$
+  \end{itemize}
+  Likewise, \textbf{average speed} is similar to average velocity: it is the
+  distance travelled over a finite time interval.
+  
+  \eq{-.2in}{
+    \overline{v}=\frac{s}{\Delta t}
+  }
+\end{frame}
+
+
+
+%\begin{frame}{Path}
+%  Sometimes instead of explicitly describing the position $x=x(t)$ and $y=y(t)$,
+%  the path of an object can be given in terms of $x$ coordinate $y=y(x)$, while
+%  giving the $x$ (or $y$) coordinate as a function of time.
+%  \begin{itemize}
+%  \item In this case, substitute the expression for $x(t)$ into $y=y(x)$ to
+%    get an expression of $y=y(t)$
+%  \item Take derivative using chain rule to get $v_y=v_y(t)$
+%  \end{itemize}
+%\end{frame}
+
+
+\begin{frame}{Instantaneous \& Average Acceleration}
+  In the same way that velocity is the time rate of change in position,
+  \textbf{instantaneous acceleration} $\mb{a}(t)$ is the time rate of change in
+  velocity:
+
+  \eq{-.2in}{
+    \mb{a}(t)= \frac{d\mb{v}(t)}{dt}=\frac{d^2\mb{x}(t)}{dt^2}
+  }
+
+  Likewise, \textbf{average acceleration} $\overline{\mb{a}}$ is the finite
+  change in velocity $\Delta\mb{v}$ over a finite time interval $\Delta t$:
+
+  \eq{-.25in}{
+    \overline{\mb{a}} = \frac{\Delta\mb{v}}{\Delta t}
+    =\frac{\mb{v}-\mb{v}_0}{\Delta t}
+  }
+
+  The unit for acceleration is \si{\metre\per\second^2}.
+%  Acceleration is the second derivative of position, i.e.
+%  \begin{enumerate}
+%  \item Take derivative of $\mb{x}(t)$ to get $\mb{v}(t)=\mb{x}'(t)$
+%  \item Take derivative again of $\mb{v}(t)$ to get $\mb{a}(t)=\mb{v}'(t)$
+%  \end{enumerate}
+\end{frame}
+
+
+
+\begin{frame}{Special Notation}{When Differentiating With Time}
+  Physicists and engineers often use a special notation when the derivative is
+  taken with respect to \emph{time}, by writing a dot above the variable:
+  \begin{itemize}
+  \item Velocity:
+
+    \eq{-.25in}{
+      \mb{v}(t)= \dot{\mb{x}}
+    }
+  \item Acceleration:
+
+    \eq{-.25in}{
+      \mb{a}(t)= \dot{\mb{v}}=\ddot{\mb{x}}
+    }
+  \end{itemize}
+  We will use this notation whenever it is convenient
+\end{frame}
+
+
+
+\begin{frame}{Integrating Acceleration to Get Velocity}
+  Velocity $\mb{v}(t)$ is the time integral of acceleration $\mb{a}(t)$:
+    
+  \eq{-.2in}{
+    \mb{v}(t)=\int\mb{a}(t)dt+\mb{v}_0
+  }
+
+  Again, we can integrate each component of the vector independently:
+
+  \eq{-.2in}{
+    \mb{v}(t)=
+    \left(\int a_x\bm{\hat{\imath}} +
+    \int a_y\bm{\hat{\jmath}} +
+    \int a_z\bm{\hat{k}}\right) dt +\mb{v}_0
+  }
+\end{frame}
+
+
+
+\begin{frame}{If You Are Curious}
+  The time derivative of acceleration is called \textbf{jerk}, with a unit
+  of \si{\metre\per\second^3}:
+
+  \eq{-.2in}{
+    \mb{j}=\frac{d\mb{a}}{dt}=\frac{d^2\mb{v}}{dt^2}=\frac{d^3\mb{x}}{dt^3}
+  }
+
+  The time derivative of jerk is \textbf{jounce}, or \textbf{snap}, with a
+  unit of \si{\metre\per\second^4}:
+  
+  \eq{-.2in}{
+    \mb{s}=\frac{d\mb{j}}{dt}=\frac{d^2\mb{a}}{dt^2}=\frac{d^3\mb{v}}{dt^3}
+    =\frac{d^4\mb{x}}{dt^4}
+  }
+  
+  The next two derivatives of snap are called \textbf{crackle} and
+  \textbf{pop}, but these higher derivatives of position vector are rarely used.
+  We will \emph{not} be using them.
+\end{frame}
+
+
+
+\begin{frame}{Acceleration as Functions of Velocity and Position}
+  Acceleration may be expressed as functions of velocity and position rather
+  than of time, if an object's motion is dominated by these forces:
+  \begin{itemize}
+  \item Gravitational or electrostatic forces:
+    $\displaystyle a(x)=\frac{Gm_s}{x^2}\quad a(x)=\frac{kq_s}{x^2}$
+  \item Spring force: $\displaystyle a(x)=-\frac{k}{m}x$
+  \item Damping force: $a(v)=b v^n$ ($b$ is a damping constant)
+  \item Aerodynamic drag:
+    $\displaystyle a(v)=\left[\frac12\rho C_D A_{\textrm{ref}}\right] v^2$
+  \end{itemize}
+  In these cases, solving for the motion quantities $x(t)$, $v(t)$ and $a(t)$
+  requires solving a differential equation (see kinematics handout).
+\end{frame}
+
+
+
+\section{Kinematic Equations}
+
+\begin{frame}{Kinematic Equations}
+  While kinematic problems in AP Physics C exams often require calculus, these
+  basic kinematic equations for \underline{constant acceleration} are still a
+  powerful tool.
+  \begin{columns}
+    \column{.45\textwidth}
+
+    \vspace{-.3in}{\Large
+      \begin{align*}
+        x &= x_0+ v_0t + \frac12at^2\\
+        v &= v_0+at\\
+        v^2 &= v_0^2+ 2a(x-x_0)
+      \end{align*}
+    }
+    
+    \column{.55\textwidth}
+    The variables of interests are:
+    \begin{itemize}
+    \item Initial position: $x_0$
+    \item Position at time $t$: $x$
+    \item Initial velocity: $v_0$
+    \item Velocity at time $t$: $v$
+    \item Acceleration (constant): $a$
+    \end{itemize}
+  \end{columns}
+  Kinematic equations are sometimes called the ``Big-five'' or ``Big-four''
+  equations. Here, you will only be given three equations in your equation
+  sheet. You will still be required to integrate when necessary.
+\end{frame}
+
+
+
+\section{Motion Graphs}
+
+\begin{frame}{Motion Graphs}
+  You should already be familiar with the basic motion graphs for 1D motion:
+  \begin{itemize}
+  \item Position vs.\ time ($x-t$) graph
+  \item Velocity vs.\ time ($v-t$) graph
+  \item Acceleration vs.\ time ($a-t$) graph
+  \end{itemize}
+
+  However, depending on the situation, it may be more useful to plot motion
+  using other quantities as well.
+\end{frame}
+
+
+
+\begin{frame}{Uniform Motion: Constant Velocity}
+  \begin{center}
+    \begin{tikzpicture}[scale=.5]
+      \draw[->,thick] (0,0)--(4.5,0) node[pos=1,right]{$t$};
+      \draw[->,thick] (0,0)--(0,4.5) node[pos=1,above]{$d$};
+      \draw[red!80!black,ultra thick](0,0)--(4,4);
+    \end{tikzpicture}
+    \hspace{.15in}
+    \begin{tikzpicture}[scale=.5]
+      \draw[->,thick] (0,0)--(4.5,0) node[pos=1,right]{$t$};
+      \draw[->,thick] (0,0)--(0,4.5) node[pos=1,above]{$v$};
+      \draw[red!80!black,ultra thick](0,2)--(4,2);
+    \end{tikzpicture}
+    \hspace{.15in}
+    \begin{tikzpicture}[scale=.5]
+      \draw[->,thick] (0,0)--(4.5,0) node[pos=1,right]{$t$};
+      \draw[->,thick] (0,0)--(0,4.5) node[pos=1,above]{$a$};
+      \draw[red!80!black,ultra thick](0,0)--(4,0);
+    \end{tikzpicture}
+  \end{center}
+  \begin{itemize}
+  \item Constant velocity has a straight line in the $d-t$ graph
+  \item The slope of the $d-t$ graph is the velocity $v$, which is constant
+  \item The slope of the $v-t$ graph is the acceleration $a$, which is zero in
+    this case
+  \end{itemize}
+\end{frame}
+
+
+
+\begin{frame}{Uniform Acceleration: Constant Acceleration}
+  \begin{center}
+    \begin{tikzpicture}[scale=.5]
+      \draw[->,thick] (0,0)--(4.5,0) node[pos=1,right]{$t$};
+      \draw[->,thick] (0,-1.5)--(0,4.5) node[pos=1,above]{$d$};
+      \draw[smooth,samples=20,domain=0:4,red!80!black,ultra thick]
+      plot({\x},{0.35*(\x-1)*(\x-1)+1});
+    \end{tikzpicture}
+    \hspace{.15in}
+    \begin{tikzpicture}[scale=.5]
+      \draw[->,thick] (0,0)--(4.5,0) node[pos=1,right]{$t$};
+      \draw[->,thick] (0,-1.5)--(0,4.5) node[pos=1,above]{$v$};
+      \draw[red!80!black,ultra thick](0,-1)--(4,2.5);
+    \end{tikzpicture}
+    \hspace{.15in}
+    \begin{tikzpicture}[scale=.5]
+      \draw[->,thick] (0,0)--(4.5,0) node[pos=1,right]{$t$};
+      \draw[->,thick] (0,-1.5)--(0,4.5) node[pos=1,above]{$a$};
+      \draw[red!80!black,ultra thick](0,1)--(4,1);
+    \end{tikzpicture}
+  \end{center}
+  \begin{itemize}
+  \item The $d-t$ graph for motion with constant acceleration is part of a
+    \emph{parabola}
+    \begin{itemize}
+    \item If the parabola is \emph{convex}, then acceleration is positive
+    \item If the parabola is \emph{concave}, then acceleration is negative
+    \end{itemize}
+  \item The $v-t$ graph is a straight line; its slope (a constant) is the
+    acceleration
+  \end{itemize}
+\end{frame}
+
+
+
+\begin{frame}{Simple Harmonic Motion}
+  For \textbf{harmonic motions}, neither position, velocity nor acceleration
+  are constant:
+
+  \vspace{-.1in}
+  \begin{center}
+    \begin{tikzpicture}[scale=.5]
+      \draw[->,thick] (0,0)--(4.5,0) node[pos=1,right]{$t$};
+      \draw[->,thick] (0,-2.5)--(0,2.5) node[pos=1,above]{$d$};
+      \draw[smooth,samples=50,domain=0:4,red!80!black,ultra thick]
+      plot({\x},{2*sin(150*\x)});
+    \end{tikzpicture}
+    \hspace{.15in}
+    \begin{tikzpicture}[scale=.5]
+      \draw[->,thick] (0,0)--(4.5,0) node[pos=1,right]{$t$};
+      \draw[->,thick] (0,-2.5)--(0,2.5) node[pos=1,above]{$v$};
+      \draw[smooth,samples=50,domain=0:4,red!80!black,ultra thick]
+      plot({\x},{2*cos(150*\x)});
+    \end{tikzpicture}
+    \hspace{.15in}
+    \begin{tikzpicture}[scale=.5]
+      \draw[->,thick] (0,0)--(4.5,0) node[pos=1,right]{$t$};
+      \draw[->,thick] (0,-2.5)--(0,2.5) node[pos=1,above]{$a$};
+      \draw[smooth,samples=50,domain=0:4,red!80!black,ultra thick]
+      plot({\x},{-2*sin(150*\x)});
+    \end{tikzpicture}
+  \end{center}
+  Bottom line: regardless of the type motion,
+  \begin{itemize}
+  \item The $v-t$ graph is the slope of the $d-t$ graph
+  \item The $a-t$ graph is the slope of the $v-t$ graph
+  \end{itemize}
+\end{frame}
+
+
+
+\begin{frame}{Area Under Motion Graphs}
+  \begin{columns}
+    \column{.25\textwidth}
+    \begin{center}
+      \begin{tikzpicture}[scale=.65]
+        \draw[pink!40,fill=pink!40](0,0)--(0,-1)--(1,0)--cycle;
+        \draw[blue!20,fill=blue!20](1,0)--(3.5,0)--(3.5,2.5)--cycle;
+        \draw[red!80!black,ultra thick](0,-1)--(4,3);
+        \draw[->,thick] (0,0)--(4.5,0) node[pos=1,right]{$t$};
+        \draw[->,thick] (0,-1.5)--(0,4.5) node[pos=1,above]{$v$};
+      \end{tikzpicture}
+    \end{center}
+    
+    \column{.75\textwidth}
+    The area under the $v-t$ graph is the displacement $x-x_0$.
+    \begin{itemize}
+    \item Area \textcolor{blue!20}{\emph{above}} the time axis: $+$
+      displacement
+    \item Area \textcolor{red!40}{\emph{below}} the time axis: $-$ displacement
+    \end{itemize}
+    \vspace{.2in}Likewise, the area under the $a-t$ graph is the change in
+    velocity $v-v_0$.
+  \end{columns}
+\end{frame}
+
+
+
+\section{Projectile Motion}
+
+\begin{frame}{Projectile Motion}
+  A \textbf{projectile} is an object that is launched with an initial velocity
+  of $\mb{v}_0$ along a parabolic trajectory and accelerates only due to
+  gravity.
+  \begin{center}
+    \begin{tikzpicture}[scale=1.1]
+      \draw[->](0,0)--(2,0) node[pos=1,right]{$x$};
+      \draw[->](0,0)--(0,2) node[pos=1,above]{$y$};
+      \draw[dotted,domain=0:6.25,thick] plot (\x, {1.2*\x-.2*\x*\x});
+      \draw[ultra thick,->](0,0)--(.75,.9)node[pos=1,above]{$\mb{v}_0$};
+      \draw[very thick,red!80!black,->]
+      (0,0)--(0,.9)node[midway,left]{$v_{y1}$};
+      \draw[very thick,blue!80!black,->]
+      (0,0)--(.75,0)node[midway,below]{$v_x$};
+      \draw[->](.5,0)arc(0:52:.5) node[pos=.6,right]{$\theta$};
+    \end{tikzpicture}
+  \end{center}
+  \begin{itemize}
+  \item $x$-axis is the \emph{horizontal} direction, with the ($+$) direction
+    pointing \emph{forward}
+  \item $y$-axis is the \emph{vertical} direction, with the ($+$) direction
+    pointing \emph{up}
+  \item The reference point is where the projectile is launched
+  \item Consistent with the right-handed Cartesian coordinate system
+  \end{itemize}
+\end{frame}
+
+
+
+\begin{frame}{Horizontal ($x$) Direction}
+  No acceleration (i.e.\ $a_x=0$) in the horizontal direction, therefore
+  horizontal velocity component is constant. The kinematic equations reduce to:
+
+  \eq{-.2in}{
+    x=v_xt=\left[v_0\cos\theta\right] t
+  }
+
+  where $x$ is the horizontal position at time $t$, $v_0$ is the
+  magnitude of the initial velocity, $v_x=v_0\cos\theta$ is its horizontal
+  component.
+\end{frame}
+
+
+
+
+\begin{frame}{Vertical ($y$) Direction}
+  Constant acceleration due to gravity alone in the vertical direction, i.e.\
+  $a_y=-g$. (Acceleration is \emph{negative} due to the way we defined the
+  coordinate system.) The important equation is this one:
+
+  \eq{-.2in}{
+    y = \left[v_0\sin\theta\right]t-\frac12gt^2
+  }
+
+  These two kinematic equations may also be useful:
+
+  \vspace{-.2in}{\Large
+    \begin{align*}
+      v_y &= \left[v_0\sin\theta\right] -gt\\
+      v_y^2&=\left[v_0\sin\theta\right]^2-2gy
+    \end{align*}
+  }
+\end{frame}
+
+
+
+\begin{frame}{Solving Projectile Motion Problems}
+  Horizontal and vertical motions are independent of each other, but there are
+  variables that are shared in both directions, namely:
+  \begin{itemize}
+  \item Time $t$
+  \item Launch angle $\theta$ (above the horizontal)
+  \item Initial speed $v_0$
+  \end{itemize}
+  
+  \vspace{.2in}When solving any projectile motion problems
+  \begin{itemize}
+  \item \emph{Two} equations with \emph{two} unknowns
+  \item If an object lands on an incline, there will be a third equation
+    describing the relationship between $x$ and $y$
+  \end{itemize}
+\end{frame}
+
+
+
+\begin{frame}{Symmetric Trajectory}
+  A projectile's trajectory is symmetric if the object lands at the same height
+  as when it launched.
+  \begin{itemize}
+  \item Time of flight
+    \eq{-.1in}{t_\mathrm{max}=\frac{2v_0\sin\theta}{g}}
+  \item Range
+    \eq{-.1in}{R=\frac{v_0^2\sin(2\theta)}{g}}
+  \item Maximum height
+    \eq{-.1in}{y_\mathrm{max}=\frac{v_0^2\sin^2\theta}{2g}}
+  \end{itemize}
+  The angle $\theta$ is measured above the the horizontal.
+\end{frame}
+
+
+
+\begin{frame}{Maximum Range}
+  \eq{-.1in}{R=\frac{v_0^2\sin(2\theta)}{g}}
+  
+  \begin{itemize}
+  \item Maximum range occurs at $\theta=45^\circ$
+  \item For a given initial speed $v_0$ and range $R$, launch angle $\theta$ is
+    given by:
+    
+    \eq{-.2in}{
+      \theta_1=\frac{1}{2}\sin^{-1}\left(\frac{Rg}{v_0^2}\right)
+    }
+
+    But there is another angle that \emph{gives the same range}!
+
+    \eq{-.2in}{
+      \theta_2=90^\circ-\theta_1
+    }
+  \end{itemize}
+\end{frame}
+
+
+\section{Relative Motion}
+
+%\begin{frame}{Relative Motion}
+%  Reconciling different frame of reference from different observer's
+%  perspectives
+%  \begin{columns} 
+%    \column{.5\textwidth}
+%    Example: sailing
+%      \begin{itemize}
+%      \item Account for current
+%      \item Account for wind
+%      %\item Account for man power on the boat
+%      \end{itemize}
+%      
+%      \column{.5\textwidth}
+%      \pic{1}{images/MJ_Newsletter_16-4-09_Rescue.jpg}
+%  \end{columns}
+%\end{frame}
+
+
+
+\begin{frame}{Relative Motion}{Notation}
+  When expressing relative motion, the first subscript ($A$) represents the
+  moving object, and the second subscript ($B$) represents the frame of
+  reference:
+
+  \eq{-.3in}{
+    \mb{v}_{AB}
+  } 
+
+  \vspace{-.15in}If an airplane (``P'') is traveling at
+  \magdir{\SI{251}{\kilo\metre\per\hour}}{N} relative to Earth (``E''), its
+  velocity is expressed as:
+
+  \eq{-.4in}{
+    \mb{v}_{PE}=\magdir{\SI{251}{\kilo\metre\per\hour}}{N}
+  }
+\end{frame}
+
+
+
+\begin{frame}{Relative Motion}
+  If the airplane flies in windy air (``A'') we must consider the velocity of
+  the airplane relative to air $\mb{v}_{PA}$ and the velocity of the air
+  relative to Earth $\mb{v}_{AE}$. The velocity of the airplane relative to
+  Earth is therefore
+
+  \eq{-.2in}{
+    \mb{v}_{PE}=\mb{v}_{PA}+\mb{v}_{AE}
+  }
+
+  \vspace{-.1in}If an airplane is flying at a constant velocity of
+  \magdir{\SI{253}{km/h}}{S} relative to the air and the air velocity is
+  \magdir{\SI{24}{km/h}}{N}, what is the velocity of the airplane relative to
+  Earth?
+\end{frame}
+
+
+
+\begin{frame}{Relative Motion}
+  In classical mechanics, the equation for relative motion follows the
+  \textbf{Galilean velocity addition rule}:
+
+  \eq{-.25in}{
+    \mb{v}_{AC}=\mb{v}_{AB}+\mb{v}_{BC}
+  }
+
+  \vspace{-.15in}The velocity of $A$ relative to reference frame $C$ is the
+  velocity of $A$ relative to reference frame $B$, plus the velocity of $B$
+  relative to $C$. If we add another frame of reference (``$D$''), the equation
+  becomes:
+
+  \eq{-.25in}{
+    \mb{v}_{AD}=\mb{v}_{AB}+\mb{v}_{BC}+\mb{v}_{CD}
+  }
+\end{frame}
+
+
+\begin{frame}{Typical Problems}
+  In an AP Physics C exam, questions involving kinematics usually appear in the
+  multiple-choice section. The problems themselves are not very different
+  compared to the Grade 12 Physics problems, but:
+  \begin{itemize}
+  \item You have to solve problems faster because of time constraint
+  \item You can use $g=\SI{10}{m/s^2}$ in your calculations to make your lives
+    simpler
+  \item A lot of problems are \emph{symbolic}, which means that they deal with
+    the equations, not actual numbers
+  \item Will be coupled with other types (e.g.\ dynamics and rotational) in
+    the free-response section
+  \item You \emph{will} be given an equation sheet
+  \end{itemize}
+\end{frame}
+
+\end{document}
