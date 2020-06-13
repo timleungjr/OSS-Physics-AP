@@ -1,17 +1,14 @@
-\documentclass[11pt]{article}
-\usepackage{bm}
-\usepackage[margin=2.2cm,top=2.5cm,bottom=2.5cm,letterpaper]{geometry}
+\documentclass{../../../oss-handout}
+\usepackage{amsmath,bm}
+\usepackage{txfonts}  % must be loaded after amsmath?
 \usepackage{enumitem}
-\usepackage{tikz}%,graphicx,wrapfig}
-\usepackage{amsmath}
-\usepackage{mathpazo}
-%\usepackage{pgfplots}
-%\usepackage{times}
-%\usepackage[document]{ragged2e}
-%\usepackage[none]{hyphenat}
-%\usepackage{siunitx}
-%\usepackage{multicol}
-\usepackage{fancyhdr}
+\usepackage{tikz}
+\usepackage{siunitx}
+
+\sisetup{
+  detect-all,
+  per-mode=symbol
+}
 
 %\usetikzlibrary{decorations.pathmorphing,patterns}
 
@@ -21,36 +18,25 @@
 \newcommand{\kkk}{\bm{\hat{k}}}
 \newcommand{\pic}[2]{\includegraphics[width=#1\textwidth]{#2}}
 
-\setlength{\parskip}{10pt}
 \setlength{\parindent}{0pt}
-\setlength{\headheight}{14pt}
+\setlength{\parskip}{8pt}
+\setlength{\headheight}{26pt}
 
-%\sisetup{
-%  detect-all,
-%  %number-math-rm=\mathnormal,
-%  %  text-sf=\sffamily,
-%  %  text-rm=\sffamily,
-%  inter-unit-product =\ensuremath{\cdot{}},
-%  per-mode=symbol,
-%  group-separator={,},
-%}
+% Set the page style for the document
+\pagestyle{plain}
+
+% Course & handout information
+\renewcommand{\institution}{Olympiads School, Toronto, ON, Canada}
+\renewcommand{\coursetitle}{Advanced Placement Physics C}
+\renewcommand{\term}{Summer 2020}
 
 \title{Examples of Rigid-Body Rotational Motion}
 \author{Timothy M.\ Leung, Ph.D.}
 \date{\today}
 
-\pagestyle{fancy}
-\chead{}
-\lhead{Olympiads School}
-\rhead{AP Physics C Mechanics}
-\lfoot{Rotational Motion of Rigid Bodies}
-\cfoot{-\thepage-}
-\rfoot{}
-
-
 \begin{document}
-
-\maketitle
+\thispagestyle{title}
+\gentitle
 
 The case of a rolling sphere is a standard example of combining the dynamics of
 translational and rotational motions of a rigid body. In this handout, two
@@ -99,7 +85,7 @@ forever. So what causes this? Specifically, what is missing in the free-body
 diagram in Fig.~\ref{roll-flat}?
 
 \textbf{Our assumptions aren't quite correct.} There are two major oversights
-in our initial assumptions (perfectly smooth surfaces, rigid bodies).
+in our initial assumptions.
 \begin{enumerate}
 \item\textbf{Nothing is perfectly smooth.} Firstly, our original assumptions
   mean that the contact area is infinitesimal small, and the normal force, by
@@ -310,11 +296,10 @@ the $\kkk$ direction (i.e.\ net torque is counter-clockwise). The consequences
 are that:
 \begin{enumerate}[topsep=0pt]
 \item The net force toward the right causes the sphere to accelerate in the
-  positive $\iii$ direction. Since the kinetic friction is a constant, the
-  acceleration is also constant in time as well (for as long as the sphere
-  slips). At first glance, this may seem counter intuitive. However, we know
-  that a car with its tires spinning on ice will still have a small
-  acceleration.
+  positive $\iii$ direction. Since kinetic friction is constant, the
+  acceleration is also constant as well (for as long as the sphere slips). At
+  first glance, this may seem counter intuitive, but, we know that a car with
+  its tires spinning on ice will still have a small acceleration.
 \item The net torque in the positive $\kkk$ (counter clockwise) direction
   causes the angular velocity $\omega$ to decrease over time.
 \end{enumerate}
