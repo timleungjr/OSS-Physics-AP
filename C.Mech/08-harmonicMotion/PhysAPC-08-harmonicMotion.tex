@@ -19,15 +19,16 @@
 \renewcommand{\baselinestretch}{1}
 
 \sisetup{
-  number-math-rm=\mathnormal,
+  detect-all,
+  %number-math-rm=\mathnormal,
   per-mode=symbol
 }
 
-\title{Topic 7: Harmonic Motion}
-\subtitle{Advanced Placement Physics}
+\title{Topic 8: Harmonic Motion}
+\subtitle{Advanced Placement Physics C Mechanics1}
 \author[TML]{Dr.\ Timothy Leung}
 \institute{Olympiads School, Toronto, ON, Canada}
-\date{December 20, 2019}
+\date{July 2020}
 
 \newcommand{\pic}[2]{\includegraphics[width=#1\textwidth]{#2}}
 \newcommand{\mb}[1]{\ensuremath\mathbf{#1}}
@@ -43,10 +44,10 @@
 \section{Hooke's Law}
 
 \begin{frame}{Hooke's Law}
-  Hooke's law for an ideal spring relates the force exerted by a compressed (or
-  stretched) spring onto another object (\textbf{spring force} $\mb{F}_s$) to
-  the stiffness of the spring (\textbf{spring constant} $k$) and spring
-  displacement $\mb{x}$:
+  Hooke's law for an ideal spring relates the force exerted by a
+  compressed/stretched) spring onto another object (\textbf{spring force}
+  $\mb{F}_s$) to the stiffness of the spring (\textbf{spring constant} $k$) and
+  spring displacement $\mb{x}$:
 
   \eq{-.2in}{
     \boxed{\mb{F}_s=-k\mb{x}}
@@ -174,7 +175,7 @@
     \end{align*}
   }
   
-  \vspace{-.2in}where $\omega$ is the angular frequency, and $A$ is the
+  \vspace{-.2in}where $\omega$ is the \textbf{angular frequency}, $A$ is the
   amplitude of the oscillation and $\phi$ is a \textbf{phase shift} (or
   \textbf{phase constant})% that depends on the initial condition
 \end{frame}
@@ -230,7 +231,8 @@
   function itself, e.g.:
 
   \eq{-.25in}{
-       x(t)=e^{\omega t}\quad\rightarrow\quad x'(t)=\omega e^{\omega t}=\omega x(t)
+    x(t)=e^{\omega t}\quad\rightarrow\quad
+    \frac{dx}{dt}=\omega e^{\omega t}=\omega x(t)
   }
 
   However, the second derivative of $e^{\omega t}$ does not have the negative
@@ -406,10 +408,10 @@
     \item For a \emph{simple} pendulum, there are two forces acting on the
       mass: weight $w=mg$ and tension $T$
     \item It has already been shown in the previous topic on circular motion
-      that when the mass is deflected by an angle $\theta$, the force in the
-      angular direction is $F_\theta=-mg\sin\theta$
-    \item We needn't worry about the radial direction because it doesn't
-      have anything to do with the restoring force
+      that when the mass is deflected by an angle $\alpha$, the force in the
+      angular direction is $F_\theta=-mg\sin\alpha$
+    \item No need to worry about the radial direction because it does not
+      have to do with the restoring force
     \end{itemize}
 
     \column{.25\textwidth}
@@ -421,14 +423,14 @@
         \tikzstyle{balloon}=[ball color=red];    
         \shade[balloon] (0,-5) circle (0.2) node[below right]{$m$};
         \draw[dotted,->,very thick,red](0,-5)--(-0.5,-5)
-        node[pos=1,left]{\footnotesize $mg\sin\theta$};
+        node[pos=1,left]{\footnotesize $mg\sin\alpha$};
         \draw[->,very thick,red](0,-5)--(0,-3)
         node[pos=1,left]{\footnotesize $\mb{T}$};
         \draw[->,very thick,red, rotate around={-10:(0,-5)}](0,-5)--(0,-6.5)
         node[pos=1,below]{\footnotesize $\mb{w}$};
       \end{scope}
       \draw[dashed,thin](0,0)--(0,-5);
-      \draw[->](0,-2) arc(270:280:2) node[pos=0.5,below]{$\theta$};
+      \draw[->](0,-2) arc(270:280:2) node[pos=0.5,below]{$\alpha$};
     \end{tikzpicture}
   \end{columns}
 \end{frame}
@@ -438,24 +440,23 @@
 \begin{frame}{The Simple Pendulum}
   \begin{columns}
     \column{.75\textwidth}
-    Substitute $F_\theta$ into Newton's second law, and cancelling mass term, we
+    Substitute $F_\alpha$ into second law of motion, and cancelling mass term, we
     get:
 
     \eq{-.35in}{
-      F_\theta=ma_\theta\;\;\longrightarrow\;\;
-      -g\sin\theta=L\frac{d^2\theta}{dt^2}
+      F_\alpha=ma_\alpha\;\;\longrightarrow\;\;
+      -g\sin\alpha=L\frac{d^2\alpha}{dt^2}
     }
 
     Solving this ODE in its present form is difficult because of the
-    $\sin\theta$ term. However, the series expansion of the sine function
+    $\sin\alpha$ term. However, the series expansion of the sine function
 
     \eq{-.35in}{
-      \sin(\theta)=\theta-\frac{\theta^3}{3!}+\frac{\theta^5}{5!}-
-      \frac{\theta^7}{7!}+\cdots
+      \sin(\alpha)=\alpha-\frac{\alpha^3}{3!}+\frac{\alpha^5}{5!}-
+      \frac{\alpha^7}{7!}+\cdots
     }
     
-    shows that for small angles ($\theta_\mathrm{max}<15^\circ$),
-    $\sin\theta\approx\theta$
+    shows that for small angles ($\alpha<15^\circ$), $\sin\alpha\approx\alpha$
     
     \column{.25\textwidth}
     \begin{tikzpicture}
@@ -467,7 +468,7 @@
         \shade[balloon] (0,-5) circle (0.2) node[below right]{$m$};
       \end{scope}
       \draw[dashed,thin](0,0)--(0,-5);
-      \draw[->](0,-2) arc(270:280:2) node[pos=0.5,below]{$\theta$};
+      \draw[->](0,-2) arc(270:280:2) node[pos=0.5,below]{$\alpha$};
     \end{tikzpicture}
   \end{columns}
 \end{frame}
@@ -477,11 +478,11 @@
 \begin{frame}{The Simple Pendulum}
   \begin{columns}
     \column{0.75\textwidth}
-    For small angles of $\theta$, the ODE reduces to the same form as the
+    For small angles of $\alpha$, the ODE reduces to the same form as the
     spring-mass system!
 
     \eq{-.1in}{
-      \frac{d^2\theta}{dt^2}+\frac{g}{L}\theta=0
+      \frac{d^2\alpha}{dt^2}+\frac{g}{L}\alpha=0
     }
     
     \column{.25\textwidth}
@@ -494,7 +495,7 @@
         \shade[balloon] (0,-5) circle (0.2) node[below right]{$m$};
       \end{scope}
       \draw[dashed,thin](0,0)--(0,-5);
-      \draw[->](0,-2) arc(270:280:2) node[pos=0.5,below]{$\theta$};
+      \draw[->](0,-2) arc(270:280:2) node[pos=0.5,below]{$\alpha$};
     \end{tikzpicture}
   \end{columns}
 \end{frame}
@@ -502,14 +503,14 @@
 
 
 \begin{frame}{Ordinary Differential Equation for the Pendulum}
-  The solution for $\theta(t)$ is very similar to the spring-mass system:
+  The solution for $\alpha(t)$ is very similar to the spring-mass system:
 
     \eq{-.2in}{
-      \boxed{\theta(t)=\Theta\cos(\omega t-\phi)}
+      \boxed{\alpha(t)=A\cos(\omega t-\phi)}
     }
 
-    where $\Theta$ is the maximum deflection (amplitude of the oscillation),
-    angular frequency of the oscillation $\omega$ is given by:
+    where $A$ is the maximum deflection (amplitude), and angular frequency of
+    the oscillation $\omega$ is given by:
     
     \eq{-.15in}{
       \boxed{\omega=\sqrt{\frac{g}{L}}}
@@ -583,10 +584,10 @@
       \draw[->,thick](7.25,1)--(8,1) node[pos=1,right]{\footnotesize $x$};
       \uncover<2->{
         \draw[fill=blue!20!white] (4.9,.8) rectangle(5.5,1.2);
-        \draw[ultra thick](4.05,1)--(4.9,1);
-        \draw[ultra thick](4.9,.8)--(4.9,1.2);
-        \draw[ultra thick](4.8,1.2)--(5.5,1.2)--(5.5,.8)--(4.8,.8);
-        \draw[ultra thick](5.5,1)--(6.5,1);
+        \draw[very thick](4.05,1)--(4.9,1);
+        \draw[very thick](4.9,.8)--(4.9,1.2);
+        \draw[very thick](4.8,1.2)--(5.5,1.2)--(5.5,.8)--(4.8,.8);
+        \draw[very thick](5.5,1)--(6.5,1);
       }
       \uncover<3->{
         \fill[red] (3.5,1)circle(.075);
@@ -707,7 +708,7 @@
 
 
 \begin{frame}{Energy in a Damped System}
-  The damping force (non-conservative) dissipates energy from the oscillator at
+  The non-conservative damping force dissipates energy from the oscillator at
   a rate of:
 
   \eq{-.3in}{
@@ -752,10 +753,10 @@
       --(6.5,.5)--(0,.5)--(0,2)--cycle;
       \draw[very thick] (0,2)--(0,.5)--(6.5,.5)--(6.5,2);
       \draw[fill=blue!20!white] (4.9,.8) rectangle(5.5,1.2);
-      \draw[ultra thick](4.05,1)--(4.9,1);
-      \draw[ultra thick](4.9,.8)--(4.9,1.2);
-      \draw[ultra thick](4.8,1.2)--(5.5,1.2)--(5.5,.8)--(4.8,.8);
-      \draw[ultra thick](5.5,1)--(6.5,1);
+      \draw[very thick](4.05,1)--(4.9,1);
+      \draw[very thick](4.9,.8)--(4.9,1.2);
+      \draw[very thick](4.8,1.2)--(5.5,1.2)--(5.5,.8)--(4.8,.8);
+      \draw[very thick](5.5,1)--(6.5,1);
       \fill[red] (3.5,1)circle(.075);
       \draw[ultra thick,->,red](3.5,1)--(3.5,0) node[pos=1,below]{$\mb{w}$};
       \draw[ultra thick,->,red](3.5,1)--(3.5,2) node[pos=1,above]{$\mb{N}$};
@@ -771,7 +772,7 @@
 
 \begin{frame}{Forced Harmonic Motion}
   Again, the second-order ordinary differential equation is obtained by
-  applying Newton's second law of motion:
+  applying the second law of motion:
   
   \eq{-.2in}{
     \sum F=-kx-bv+F_0\cos(\omega t)=ma
