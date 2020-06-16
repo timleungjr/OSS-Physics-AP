@@ -21,6 +21,9 @@
 \setlength{\headheight}{26pt}
 
 \newcommand{\mb}[1]{\ensuremath\mathbf{#1}}
+\newcommand{\iii}{\ensuremath\hat{\bm{\imath}}}
+\newcommand{\jjj}{\ensuremath\hat{\bm{\jmath}}}
+\newcommand{\kkk}{\ensuremath\hat{\bm{k}}}
 \newcommand{\pic}[2]{\includegraphics[width=#1\textwidth]{#2}}
 
 %\newcommand\vertarrowbox[2]{%
@@ -63,7 +66,7 @@ of AP Physics, it is sufficient to think of vectors as
 \subsection{Notation}
 In keeping with the convention used in \emph{most} technical journals and
 university-level textbooks, vectors are \emph{printed} (e.g.\ on the slides and
-handouts) using a bold face font:
+handouts) using a bold face font in this course:
 \begin{equation*}
   \mb{v}\quad\mb{F}_g\quad\mb{p}\quad\mb{I}
 \end{equation*}
@@ -91,9 +94,9 @@ written as:
 \begin{equation*}
   \mb{v}=\SI{4.5}{\metre\per\second}\text{ [N \ang{55} E]}
 \end{equation*}
-This approach is based on using the \textbf{polar coordinate system}, which is
-the preferred coordinate system for circular motion. In general, polar
-coordinate system is very intuitive for describing \emph{one} vector in
+This approach is based on the \textbf{polar coordinate system}, which is the
+preferred coordinate system for circular motion. In general, this approach is
+very intuitive for describing \emph{one} vector in
 two dimensions (that's why it is used extensively in high-school level
 physics courses), but it is more complicated when extended into 3D; the
 coordinate system needs to be extended to \textbf{spherical coordinate system}
@@ -124,32 +127,34 @@ Adding and subtracting vectors is straightforward:
   (A_y\pm B_y)\bm{\hat{\jmath}} +
   (A_z\pm B_z)\bm{\hat{k}}
 \end{equation*}
+All that is required is to add or subtract each component of the vector in the
+$\iii$, $\jjj$ and $\kkk$ directions.
 
 
 \subsection{Dot Product}
 The vector \textbf{dot product} (or \textbf{inner product} for general vectors)
-is the \emph{scalar} multiplication of two vectors. This is a vector operation
-that have been used throughout Grades 11 and 12 Physics courses (although
-without explicitly using this notation), for example, when calculating
+is the \emph{scalar} multiplication of two vectors. This vector operation had
+been used throughout Grades 11 and 12 Physics courses (although without
+explicitly referring using this notation), for example, when calculating
 mechanical work. It is determined by the magnitude of the two vectors and the
 cosine of the angle $\theta$ between them:
 \begin{equation*}
   C=\mb{A}\cdot\mb{B}=\mb{B}\cdot\mb{A}=|\mb{A}||\mb{B}|\cos\theta
 \end{equation*}
-In the cross product, $C$ is the \emph{projection} of the vector $\mb{A}$ onto
-$\mb{B}$, or the component of $\mb{A}$ along $\mb{B}$.
-Note that $\bm{\hat{\imath}}\cdot\bm{\hat{\imath}}=1$,
-$\bm{\hat{\jmath}}\cdot\bm{\hat{\jmath}}=1$, and
-$\bm{\hat{k}}\cdot\bm{\hat{k}}=1$. For general vectors written in IJK notation,
-where the magnitude and direction of vectors are not immediately known, so
-intead we sum the product of individual components of $\mb{A}$ and $\mb{B}$:
+In the dot product, $C$ is the \emph{projection} of the vector $\mb{A}$ onto
+$\mb{B}$, or the component of $\mb{A}$ along $\mb{B}$. Note that
+$\iii\cdot\iii=1$, $\jjj\cdot\jjj=1$, and $\kkk\cdot\kkk=1$. For general
+vectors written in IJK notation, where the magnitude and direction of vectors
+are not immediately known, the dot product is the sum of the products of
+individual components of $\mb{A}$ and $\mb{B}$:
 \begin{equation*}
   C=\mb{A}\cdot\mb{B}=A_xB_x+A_yB_y+A_zB_z
 \end{equation*}
 
 
 \subsection{Cross Products}
-The vector \textbf{cross product} is the vector multiplication of two vectors:
+The vector \textbf{cross product} is the \emph{vector multiplication} of two
+vectors:
 \begin{equation*}
   \mb{C}=\mb{A}\times\mb{B}
 \end{equation*}
@@ -187,8 +192,8 @@ of this $3\times 3$ matrix:
   (A_zB_x-A_xB_z)\bm{\hat{\jmath}} +
   (A_zB_y-B_yA_x)\bm{\hat{k}}
 \end{equation*}
-although it is extremely rare that such notation will ever be used in any AP
-exams. Most cross product applications in AP C exams are much simpler, so we
+although such notation is extremely rare in any AP exams. Most cross product
+applications in AP C exams are much simpler, so we
 only have to remember the circle shown in Figure~\ref{fig:cross2}.
 \begin{figure}[ht]
   \centering

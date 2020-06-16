@@ -2,7 +2,7 @@
 
 \usetheme{metropolis}
 \setbeamersize{text margin left=.5cm,text margin right=.5cm}
-\setbeamertemplate{navigation symbols}{} % suppress nav bar
+%\setbeamertemplate{navigation symbols}{} % suppress nav bar
 %\setbeamercovered{transparent}
 
 \usepackage[utf8]{inputenc}
@@ -33,6 +33,9 @@
 \institute{Olympiads School}
 \date{July 6, 2020}
 
+\newcommand{\iii}{\ensuremath\hat{\bm{\imath}}}
+\newcommand{\jjj}{\ensuremath\hat{\bm{\jmath}}}
+\newcommand{\kkk}{\ensuremath\hat{\bm{k}}}
 \newcommand{\pic}[2]{\includegraphics[width=#1\textwidth]{#2}}
 \newcommand{\mb}[1]{\ensuremath\mathbf{#1}}
 \newcommand{\eq}[2]{\vspace{#1}{\Large\begin{displaymath}#2\end{displaymath}}}
@@ -99,16 +102,26 @@
 
 
 \begin{frame}{Files for You to Download}
+  There are a considerable number of files for you to download at the beginning
+  of the course:
   \begin{itemize}
   \item\texttt{PhysAPC-courseOutline.pdf}--The course outline
   \item\texttt{PhysAPC-equationSheet.pdf}--Equation sheet for your exams
   \item\texttt{PhysAPC-01-kinematics.pdf}
+  \item\texttt{PhysAPC-01a-vectorCalculus.pdf}--Vectors and calculus handout
+  \item\texttt{PhysAPC-01b-kinematicsHandout.pdf}--Basic kinematics, expanded
+    version
+  \item\texttt{PhysAPC-01c-motionGraphs.pdf}--Handout on motion graphs
+  %\item\texttt{PhysAPC-01e-projectileMotion.pdf}--Handout on projectile motion
   \item\texttt{PhysAPC-02-dynamics.pdf}
   \item\texttt{PhysAPC-01-Homework.pdf}--Homework problems for Topic 1
   \item\texttt{PhysAPC-02-Homework.pdf}--Homework problems for Topic 2
   \end{itemize}
-  
-  \vspace{.1in}Please download/print the PDF file for the class slides before
+\end{frame}
+
+
+\begin{frame}{File Download}
+  Please download/print the PDF file for the class slides before
   each class. There is no point copying notes that are already on the slides.
   Instead, focus on things that aren't necessarily on the slides. If you wish
   to print the slides, we recommend printing \emph{four} slides per page.
@@ -150,14 +163,14 @@
   The SI unit for position is \textbf{meter}, \si{\metre}.
   
   \eq{-.2in}{
-    \mb{x}(t)=x(t)\bm{\hat{\imath}} + y(t)\bm{\hat{\jmath}} + z(t)\bm{\hat{k}}
+    \mb{x}(t)=x(t)\iii + y(t)\jjj + z(t)\kkk
   }
 
   Vectors in 2D/3D Cartesian space are generally using the ``IJK notation''
   \begin{itemize}
-  \item $\bm{\hat{\imath}}$, $\bm{\hat{\jmath}}$ and $\bm{\hat{k}}$ are
-    \textbf{basis vectors} indicating the directions of the $x$, $y$ and $z$
-    axes. Basis vectors are \textbf{unit vectors} (i.e.\ length $1$)
+  \item $\iii$, $\jjj$ and $\kkk$ are \textbf{basis vectors} indicating the
+    directions of the $x$, $y$ and $z$ axes. Basis vectors are
+    \textbf{unit vectors} (i.e.\ length $1$)
   \item The IJK notation does not explicitly give the magnitude or the direction
     of the vector (needs to be calculated using the Pythagorean theorem)
   \end{itemize}
@@ -171,9 +184,7 @@
 
   \eq{-.25in}{
       \Delta\mb{x}(t)=\mb{x}-\mb{x}_0
-      =(x-x_0)\bm{\hat{\imath}}+
-      (y-y_0)\bm{\hat{\jmath}}+
-      (z-z_0)\bm{\hat{k}}
+      =(x-x_0)\iii + (y-y_0)\jjj + (z-z_0)\kkk
   }
   \begin{itemize}
   \item IJK notation makes vector addition and subtraction less prone to errors
@@ -185,11 +196,12 @@
 
 \begin{frame}{Distance}
   \textbf{Distance} $s(t)$ is a quantity that is \emph{related} to displacement.
+  The unit for distance is also a \emph{meter} (\si{\metre}).
   \begin{columns}
     \column{.7\textwidth}
     \begin{itemize}
-    \item The length of the path taken by an object when it from $\mb{x}_0$ to
-      $\mb{x}$
+    \item The length of the path taken by an object when it travels from
+      $\mb{x}_0$ to $\mb{x}$
     \item A scalar quantity
     \item Always positive, i.e.\ $s\geq 0$
     \item Although the magnitude of the displacement vector is also a scalar,
@@ -215,22 +227,21 @@
 \begin{frame}{Instantaneous Velocity}
   If position $\mb{x}$ is differentiable in time $t$, then velocity
   $\mb{v}$ can be found at any time $t$. The \textbf{instantaneous velocity}
-  $\mb{v}$ of an object is the time rate of change of position:
+  $\mb{v}$ of an object is the time rate of change of position. The unit for
+  velocity is \textbf{meters per second} (\si{\metre\per\second}):
 
   \eq{-.2in}{
     \mb{v}(t)= \frac{d\mb{x}(t)}{dt}
   }
   
-  Since $\mb{x}$ has $x$, $y$ and $z$ components in the
-  $\bm{\hat{\imath}}$, $\bm{\hat{\jmath}}$ and $\bm{\hat{k}}$
-  directions\footnote{They are linearly independent!}, we can take the time
+  Since $\mb{x}$ has $x$, $y$ and $z$ components in the $\iii$, $\jjj$ and
+  $\kkk$ directions (which are all linearly independent), we can take the time
   derivative in every component:
 
   \eq{-.3in}{
     \mb{v}(t)= \frac{d\mb{x}}{dt}=
-    \frac{dx}{dt}\bm{\hat{\imath}} +
-    \frac{dy}{dt}\bm{\hat{\jmath}} + \frac{dz}{dt}\bm{\hat{k}}=
-    v_x\bm{\hat{\imath}} + v_y\bm{\hat{\jmath}} + v_z\bm{\hat{k}}
+    \frac{dx}{dt}\iii + \frac{dy}{dt}\jjj + \frac{dz}{dt}\kkk =
+    v_x\iii + v_y\jjj + v_z\kkk
   }
 \end{frame}
 
@@ -248,10 +259,7 @@
   $t=0$. We can integrate each component to get $\mb{x}$:
 
  \eq{-.2in}{ \mb{x}(t)= \left(
-    \int v_x\bm{\hat{\imath}} +
-    \int v_y\bm{\hat{\jmath}} +
-    \int v_z\bm{\hat{k}}
-    \right) dt + \mb{x}_0
+    \int v_x\iii + \int v_y\jjj + \int v_z\kkk \right) dt + \mb{x}_0
   }
 \end{frame}
 
@@ -271,9 +279,9 @@
 
   \eq{-.15in}{
     \overline{\mb{v}}=
-    \frac{\Delta x}{\Delta t}\bm{\hat{\imath}} +
-    \frac{\Delta y}{\Delta t}\bm{\hat{\jmath}} +
-    \frac{\Delta z}{\Delta t}\bm{\hat{k}}
+    \frac{\Delta x}{\Delta t}\iii+
+    \frac{\Delta y}{\Delta t}\jjj+
+    \frac{\Delta z}{\Delta t}\kkk
   }
 \end{frame}
 
@@ -317,7 +325,8 @@
 \begin{frame}{Instantaneous \& Average Acceleration}
   In the same way that velocity is the time rate of change in position,
   \textbf{instantaneous acceleration} $\mb{a}(t)$ is the time rate of change in
-  velocity:
+  velocity, with a unit of \textbf{meters per unit squared}
+  (\si{\metre\per\second^2}):
 
   \eq{-.2in}{
     \mb{a}(t)= \frac{d\mb{v}(t)}{dt}=\frac{d^2\mb{x}(t)}{dt^2}
@@ -330,19 +339,15 @@
     \overline{\mb{a}} = \frac{\Delta\mb{v}}{\Delta t}
     =\frac{\mb{v}-\mb{v}_0}{\Delta t}
   }
-
-  The unit for acceleration is \si{\metre\per\second^2}.
-%  Acceleration is the second derivative of position, i.e.
-%  \begin{enumerate}
-%  \item Take derivative of $\mb{x}(t)$ to get $\mb{v}(t)=\mb{x}'(t)$
-%  \item Take derivative again of $\mb{v}(t)$ to get $\mb{a}(t)=\mb{v}'(t)$
-%  \end{enumerate}
+  
+  Note that acceleration only requires a \emph{change} in velocity. It does
+  \emph{not} necessarily mean an object has to speed up or slow down.
 \end{frame}
 
 
 
 \begin{frame}{Special Notation}{When Differentiating With Time}
-  Physicists and engineers often use a special notation when the derivative is
+  Physicists and engineers use a special notation when the derivative is
   taken with respect to \emph{time}, by writing a dot above the variable:
   \begin{itemize}
   \item Velocity:
@@ -372,9 +377,7 @@
 
   \eq{-.2in}{
     \mb{v}(t)=
-    \left(\int a_x\bm{\hat{\imath}} +
-    \int a_y\bm{\hat{\jmath}} +
-    \int a_z\bm{\hat{k}}\right) dt +\mb{v}_0
+    \left(\int a_x\iii + \int a_y\jjj + \int a_z\kkk \right) dt +\mb{v}_0
   }
 \end{frame}
 
@@ -408,9 +411,10 @@
   than of time, if an object's motion is dominated by these forces:
   \begin{itemize}
   \item Gravitational or electrostatic forces:
-    $\displaystyle a(x)=\frac{Gm_s}{x^2}\quad a(x)=\frac{kq_s}{x^2}$
+    $\displaystyle a(x)=\frac{Gm_s}{x^2}\quad a(x)=\frac{kq_1q_2}{mx^2}$
   \item Spring force: $\displaystyle a(x)=-\frac{k}{m}x$
-  \item Damping force: $a(v)=b v^n$ ($b$ is a damping constant)
+  \item Damping force: $a(v)=-bv^n$ ($b$ is a damping constant, and $n$ is
+    usually 1)
   \item Aerodynamic drag:
     $\displaystyle a(v)=\left[\frac12\rho C_D A_{\textrm{ref}}\right] v^2$
   \end{itemize}
@@ -443,13 +447,14 @@
     \item Initial position: $x_0$
     \item Position at time $t$: $x$
     \item Initial velocity: $v_0$
-    \item Velocity at time $t$: $v$
+    \item Instantaneous velocity: $v$
     \item Acceleration (constant): $a$
     \end{itemize}
   \end{columns}
   Kinematic equations are sometimes called the ``Big-five'' or ``Big-four''
   equations. Here, you will only be given three equations in your equation
-  sheet. You will still be required to integrate when necessary.
+  sheet. You will still be required to integrate when acceleration is not
+  constant.
 \end{frame}
 
 
@@ -748,64 +753,177 @@
 
 \section{Relative Motion}
 
-%\begin{frame}{Relative Motion}
-%  Reconciling different frame of reference from different observer's
-%  perspectives
-%  \begin{columns} 
-%    \column{.5\textwidth}
-%    Example: sailing
-%      \begin{itemize}
-%      \item Account for current
-%      \item Account for wind
-%      %\item Account for man power on the boat
-%      \end{itemize}
-%      
-%      \column{.5\textwidth}
-%      \pic{1}{images/MJ_Newsletter_16-4-09_Rescue.jpg}
-%  \end{columns}
-%\end{frame}
+\begin{frame}{Relative Motion}
+  \begin{columns}
+    \column{.4\textwidth}
+    \begin{tikzpicture}[scale=1.3]
+      \draw[->](0,0)--(-.5,-.5)
+      node[pos=1,left]{$x$}
+      node[pos=0,above left]{$C$};
+      \draw[->](0,0)--(1,0) node[pos=1,right]{$y$};
+      \draw[->](0,0)--(0,1) node[pos=1,above]{$z$};
 
+      \draw[->](2,3)--(1.5,2.5)
+      node[pos=1,left]{$x'$}
+      node[pos=0,above left]{$B$};
+      \draw[->](2,3)--(3,3) node[pos=1,right]{$y'$};
+      \draw[->](2,3)--(2,4) node[pos=1,above]{$z'$};
 
+      \fill[red!70!black] (3,1) circle(.03) node[below right]{$A$};
+      \draw[very thick,->,blue!70!black](0,0)--(2.98,.998)
+      node[midway,below]{$\mb{x}_{AC}$};
+      \draw[very thick,->,green!80!black](2,3)--(3,1.03)
+      node[midway,right]{$\mb{x}_{AB}$};
+    \end{tikzpicture}
 
-\begin{frame}{Relative Motion}{Notation}
-  When expressing relative motion, the first subscript ($A$) represents the
-  moving object, and the second subscript ($B$) represents the frame of
-  reference:
-
-  \eq{-.3in}{
-    \mb{v}_{AB}
-  } 
-
-  \vspace{-.15in}If an airplane (``P'') is traveling at
-  \magdir{\SI{251}{\kilo\metre\per\hour}}{N} relative to Earth (``E''), its
-  velocity is expressed as:
-
-  \eq{-.4in}{
-    \mb{v}_{PE}=\magdir{\SI{251}{\kilo\metre\per\hour}}{N}
-  }
+    \column{.6\textwidth}
+    \fbox{
+      \begin{minipage}{.9\textwidth}
+        All motion quantities must be measured relative to a frame of
+        reference
+      \end{minipage}
+    }
+    \begin{itemize}
+    \item Two \textbf{frames of reference} (i.e.\ \textbf{coordinate systems})
+      $C(x,y,z)$ and $B(x',y',z')$
+    \item Object $\textcolor{red!80!black}{A}$ can be described by the position
+      vector $\textcolor{blue!70!black}{\mb{x}_{AC}}$ (position of $A$ relative
+      to frame $C$) or $\textcolor{green!80!black}{\mb{x}_{AB}}$ ($A$ relative
+      to frame $B$)
+      \begin{itemize}
+      \item It is clear that $\mb{x}_{AB}$ and $\mb{x}_{AC}$ are different
+      \item If the object moves, then $\mb{x}_{AB}$ and $\mb{x}_{AC}$ are
+        functions of time
+      \end{itemize}
+    \item If position depends on the reference frame, then so do velocity and
+      acceleration
+    \end{itemize}
+  \end{columns}
 \end{frame}
 
 
 
 \begin{frame}{Relative Motion}
-  If the airplane flies in windy air (``A'') we must consider the velocity of
-  the airplane relative to air $\mb{v}_{PA}$ and the velocity of the air
-  relative to Earth $\mb{v}_{AE}$. The velocity of the airplane relative to
-  Earth is therefore
+  \begin{columns}
+    \column{.4\textwidth}
+    \begin{tikzpicture}[scale=1.3]
+      \draw[->](0,0)--(-.5,-.5)
+      node[pos=1,left]{$x$}
+      node[pos=0,above left]{$C$};
+      \draw[->](0,0)--(1,0) node[pos=1,right]{$y$};
+      \draw[->](0,0)--(0,1) node[pos=1,above]{$z$};
+
+      \draw[->](2,3)--(1.5,2.5)
+      node[pos=1,left]{$x'$}
+      node[pos=0,above left]{$B$};
+      \draw[->](2,3)--(3,3) node[pos=1,right]{$y'$};
+      \draw[->](2,3)--(2,4) node[pos=1,above]{$z'$};
+      
+      \draw[very thick,->,purple!80](0,0)--(2,3)
+      node[midway,left]{$\mb{x}_{BC}$};
+      \fill[pink] (3,1) circle(.03) node[below right]{$A$};
+      \draw[very thick,->,blue!30](0,0)--(2.98,.998)
+      node[midway,below]{$\mb{x}_{AC}$};
+      \draw[very thick,->,green!30](2,3)--(3,1.03)
+      node[midway,right]{$\mb{x}_{AB}$};
+      
+    \end{tikzpicture}
+
+    \column{.6\textwidth}
+    \begin{itemize}
+    \item The relative position of the origins of the two frames of reference
+      can is $\mb{x}_{BC}$
+      \begin{itemize}
+      \item The vector pointing from the origin of frame $C$ to the origin of
+        frame $B$
+      \item If the two frames are moving relative to each other, then
+        $\mb{x}_{BC}$ is a function of time
+      \end{itemize}
+    \item Without needing elaborate specific vector notations, it should be
+      obvious that
+
+      \eq{-.3in}{
+        \textcolor{blue!70!black}{\mb{x}_{AC}}=
+        \textcolor{green!80!black}{\mb{x}_{AB}}+
+        \textcolor{purple!80}{\mb{x}_{BC}}
+        }
+    \end{itemize}
+  \end{columns}
+\end{frame}
+
+
+
+\begin{frame}{Relative Motion}
+  \begin{columns}
+    \column{.4\textwidth}
+    \begin{tikzpicture}[scale=1.3]
+      \draw[->](0,0)--(-.5,-.5)
+      node[pos=1,left]{$x$}
+      node[pos=0,above left]{$C$};
+      \draw[->](0,0)--(1,0) node[pos=1,right]{$y$};
+      \draw[->](0,0)--(0,1) node[pos=1,above]{$z$};
+
+      \draw[->](2,3)--(1.5,2.5)
+      node[pos=1,left]{$x'$}
+      node[pos=0,above left]{$B$};
+      \draw[->](2,3)--(3,3) node[pos=1,right]{$y'$};
+      \draw[->](2,3)--(2,4) node[pos=1,above]{$z'$};
+
+      \fill[red!65!black] (3,1) circle(.03) node[below right]{$A$};
+      \draw[very thick,->,blue!70!black](0,0)--(2.98,.998)
+      node[midway,below]{$\mb{x}_{AC}$};
+      \draw[very thick,->,green!80!black](2,3)--(3,1.03)
+      node[midway,right]{$\mb{x}_{AB}$};
+      \draw[very thick,->,purple!80](0,0)--(2,3)
+      node[midway,left]{$\mb{x}_{BC}$};
+    \end{tikzpicture}
+
+    \column{.6\textwidth}
+    Assuming that all the position vectors are differentiable in time, then the
+    time derivative gives the \textbf{relative velocity}:
+
+    \vspace{-.3in}{\Large
+      \begin{align*}
+        \frac{d}{dt}\left(\textcolor{blue!70!black}{\mb{x}_{AC}}\right) &=
+        \frac{d}{dt}\left(\textcolor{green!80!black}{\mb{x}_{AB}}+
+        \textcolor{purple!80}{\mb{x}_{BC}}\right)\\
+        \textcolor{blue!70!black}{\mb{v}_{AC}} &=
+        \textcolor{green!80!black}{\mb{v}_{AB}}+
+        \textcolor{purple!80}{\mb{v}_{BC}}
+      \end{align*}
+    }
+
+    \vspace{-.2in}Differentiating in time again gives the equation for
+    \textbf{relative acceleration}:
+
+    \eq{-.3in}{
+      \textcolor{blue!70!black}{\mb{a}_{AC}}=
+      \textcolor{green!80!black}{\mb{a}_{AB}}+
+      \textcolor{purple!80}{\mb{a}_{BC}}
+    }
+  \end{columns}
+\end{frame}
+
+
+
+\begin{frame}{Relative Velocity Example}
+  If an airplane ($P$) flies in windy air ($A$) we must consider the velocity
+  of the airplane relative to air, i.e.\ $\mb{v}_{PA}$ and the velocity of the
+  air relative to Earth $E$, i.e.\ $\mb{v}_{AE}$. The velocity of the airplane
+  relative to Earth is therefore
 
   \eq{-.2in}{
     \mb{v}_{PE}=\mb{v}_{PA}+\mb{v}_{AE}
   }
 
-  \vspace{-.1in}If an airplane is flying at a constant velocity of
-  \magdir{\SI{253}{km/h}}{S} relative to the air and the air velocity is
-  \magdir{\SI{24}{km/h}}{N}, what is the velocity of the airplane relative to
-  Earth?
+  \textbf{Simple example:} If an airplane is flying at a constant velocity of
+  \SI{253}{km/h} south relative to the air and the air velocity is
+  \SI{24}{km/h} east, what is the velocity of the airplane relative to Earth?
 \end{frame}
 
 
 
-\begin{frame}{Relative Motion}
+\begin{frame}{Relative Velocity}
   In classical mechanics, the equation for relative motion follows the
   \textbf{Galilean velocity addition rule}:
 
@@ -813,10 +931,9 @@
     \mb{v}_{AC}=\mb{v}_{AB}+\mb{v}_{BC}
   }
 
-  \vspace{-.15in}The velocity of $A$ relative to reference frame $C$ is the
+  \vspace{-.1in}The velocity of $A$ relative to reference frame $C$ is the
   velocity of $A$ relative to reference frame $B$, plus the velocity of $B$
-  relative to $C$. If we add another frame of reference (``$D$''), the equation
-  becomes:
+  relative to $C$. If we add another reference frame $D$, the equation becomes:
 
   \eq{-.25in}{
     \mb{v}_{AD}=\mb{v}_{AB}+\mb{v}_{BC}+\mb{v}_{CD}

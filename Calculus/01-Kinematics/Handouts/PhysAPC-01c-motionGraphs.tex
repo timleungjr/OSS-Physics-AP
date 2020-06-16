@@ -1,16 +1,31 @@
-\documentclass[11pt]{article}
-
-\usepackage[margin=1in,letterpaper]{geometry}
-\usepackage{amsmath}%,bm}
-\usepackage{mathtools}
-%\usepackage{siunitx}
+\documentclass{../../../oss-handout}
+\usepackage{amsmath,bm}
+\usepackage{txfonts}  % must be loaded after amsmath?
 \usepackage{enumitem}
-%\usepackage{graphicx}
 \usepackage{tikz}
-\usepackage{mathpazo}
+\usepackage{siunitx}
+\usepackage{mathtools}
+%\usepackage{graphicx}
+%\usepackage{mathpazo}
 %\usepackage{xcolor,colortbl}
 %\usepackage{hyperref}
 \usepackage{cancel}
+
+\sisetup{
+  detect-all,
+  per-mode=symbol
+}
+%\usetikzlibrary{decorations.pathmorphing,patterns}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{8pt}
+\setlength{\headheight}{26pt}
+
+\newcommand{\mb}[1]{\ensuremath\mathbf{#1}}
+\newcommand{\iii}{\ensuremath\hat{\bm{\imath}}}
+\newcommand{\jjj}{\ensuremath\hat{\bm{\jmath}}}
+\newcommand{\kkk}{\ensuremath\hat{\bm{k}}}
+\newcommand{\pic}[2]{\includegraphics[width=#1\textwidth]{#2}}
 
 \newcommand\vertarrowbox[2]{%
     \begin{array}[t]{@{}c@{}} #1 \\
@@ -18,33 +33,21 @@
     \mathclap{\scriptstyle\text{#2}}%
     \end{array}}
 
-\setlength{\parindent}{0pt}
-\setlength{\parskip}{8pt}
+% Set the page style for the document
+\pagestyle{plain}
 
-%\usetikzlibrary{decorations.pathmorphing,patterns}
-
-%\sisetup{
-%  detect-all,
-%  number-math-rm=\mathnormal,
-%  per-mode=symbol
-%}
+% Course & handout information
+\renewcommand{\institution}{Olympiads School, Toronto, ON, Canada}
+\renewcommand{\coursetitle}{Advanced Placement Physics C}
+\renewcommand{\term}{Summer 2020}
 
 \title{One-Dimensional Motion Graphs for Constant Acceleration}
-\author{Timothy M.\ Leung, Ph.D.\\Olympiads School}
+\author{Dr.\ Timothy Leung}
 \date{\today}
 
-%\newcommand{\pic}[2]{
-%  \includegraphics[width=#1\textwidth]{#2}
-%}
-%\newcommand{\mb}[1]{
-%  \ensuremath\mathbf{#1}
-%}
-
 \begin{document}
-\maketitle
-
-\textbf{THIS IS THE FIRST DRAFT OF A LONGER HANDOUT. AT THE MOMENT, THERE ARE
-  STILL SOME INFORMATION MISSING.}
+\thispagestyle{title}
+\gentitle
 
 In analyzing one-dimensional motion, particularly in experiments, we often use
 \textbf{motion graphs} to graphically express how motion quantities (position,
@@ -65,7 +68,7 @@ graph to find displacement ($\int v(t)dt=\Delta x$).
 
 \section{Graphs for Uniform Motion \& Uniform Acceleration}
 For uniform motion (constant velocity), the basic motion graphs are shown in
-Figure~\ref{uniform-motion}. All the graphs are linear. Computing the slopes
+Fig.~\ref{uniform-motion}. All the graphs are linear. Computing the slopes
 (derivatives) and areas (integrals) are straightforward exercises.
 \begin{figure}[!ht]
   \centering
@@ -92,7 +95,7 @@ Figure~\ref{uniform-motion}. All the graphs are linear. Computing the slopes
 \end{figure}
 
 For uniform acceleration, the position graph is a parabola, while velocity and
-acceleration graphs are linear, as shown in Figure~\ref{uniform-acceleration}.
+acceleration graphs are linear, as shown in Fig.~\ref{uniform-acceleration}.
 Computing the area under the velocity and acceleration graphs are still
 straightforward, as is finding the slope of the velocity graph, however,
 finding the acceleration using only the position graph is much more difficult.
@@ -123,7 +126,7 @@ finding the acceleration using only the position graph is much more difficult.
 
 
 \section{Position vs. Time Squared}
-In many cases, the position graph in Figure~\ref{uniform-acceleration} would be
+In many cases, the position graph in Fig.~\ref{uniform-acceleration} would be
 obtained by plotting experimental values of $x$ and $t$. For example, and then making
 curve fit of the data, by making an educated guess that acceleration is
 uniform\footnote{This would have to be done through a thorough analysis of all
@@ -151,7 +154,7 @@ twice slope, i.e.:
   m=\frac12 a\quad\rightarrow\quad a=2m
 \end{equation*}
 The $x$-intercept of both graphs are still the initial position $x_0$. One
-example is shown in Figure~\ref{switch1}. The $x$ vs.\ $t$ and the $x$ vs.\
+example is shown in Fig.~\ref{switch1}. The $x$ vs.\ $t$ and the $x$ vs.\
 $t^2$ graphs both describe the same motion.
 \begin{figure}[!ht]
   \centering

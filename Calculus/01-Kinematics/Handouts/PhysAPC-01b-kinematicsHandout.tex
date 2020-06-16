@@ -35,10 +35,10 @@
 
 % Course & handout information
 \renewcommand{\institution}{Olympiads School, Toronto, ON, Canada}
-\renewcommand{\coursetitle}{Advanced Placement Physics (C)}
+\renewcommand{\coursetitle}{Advanced Placement Physics C}
 \renewcommand{\term}{Summer 2020}
 
-\title{Topic 1: Kinematics of Rectilinear Motion}
+\title{Kinematics of Rectilinear Motion}
 \author{Dr.\ Timothy Leung}
 \date{\today}
 
@@ -81,8 +81,8 @@ is the \emph{cartesian} system.\footnote{For circular motions, we will use
   \emph{cylindrical coordinate system} or \emph{spherical coordinate system} in
   3D}. The origin of the coordinate system is called ``reference point''.  In
 the IJK notation for rectilinear motion, we can express position of an object
-by its $x$, $y$ and $z$ components (i.e.\ their $(x,y,z)$ coordinates). The SI
-unit for position is \emph{meters} (\si{\metre}).
+by its $x$, $y$ and $z$ components (i.e.\ their $x$, $y$ and $z$ coordinates).
+The SI unit for position is \emph{meters} (\si{\metre}).
 \begin{equation*}
   \mb{x}(t)=x(t)\bm{\hat{\imath}} + y(t)\bm{\hat{\jmath}} + z(t)\bm{\hat{k}}
 \end{equation*}
@@ -111,14 +111,14 @@ displacement from the reference point.
 
 \textbf{Distance} $s$ is a quantity that is \emph{similar} (and related) to
 displacement. It is the \emph{length of the path} taken when an object moves
-from position $\mb{d}_1$ to position $\mb{d}_2$, as shown in
+from position $\mb{x}_i$ to position $\mb{x}_f$, as shown in
 Fig.~\ref{fig:d-vs-d}. Unlike displacement, however, distance is a scalar
 quantity that is always positive: $s\geq 0$, i.e.\ you can never walk a
 \emph{negative} distance to the store. Because the path is not always a
 straight line, therefore while the magnitude of the displacement vector is also
 a scalar, it is not necessarily the same as distance:
 \begin{equation*}
-  s\geq |\Delta\mb{d}|
+  s\geq |\Delta\mb{x}|
 \end{equation*}
 
 
@@ -226,13 +226,14 @@ In the same way that velocity is the rate of change in position with respect
 to time, \textbf{instantaneous acceleration} $\mb{a}(t)$ is the rate of change
 in velocity with respect to time, and the second time derivative of position.
 The SI unit for acceleration is \emph{meters per second squared}
-\si{\metre\per\second^2}:
+(\si{\metre\per\second^2}):
 \begin{equation}
   \boxed{\mb{a}(t)= \frac{d\mb{v}(t)}{dt}=\frac{d^2\mb{x}(t)}{dt^2}}
 \end{equation}
-Although in Grades 11 and 12, students deal almost exclusively with constant
-acceleration, in AP Physics, it must be understood that acceleration can also
-vary with time, and that calculus must be used in many cases.
+Although in grades 11 and 12 physics courses, students deal almost exclusively
+with constant ccceleration, in AP Physics, it must be understood that
+acceleration can also vary with time, and that calculus must be used in many
+cases.
 %  \begin{enumerate}
 %  \item Take derivative of $\mb{x}(t)$ to get $\mb{v}(t)=\mb{x}'(t)$
 %  \item Take derivative again of $\mb{v}(t)$ to get $\mb{a}(t)=\mb{v}'(t)$
@@ -250,24 +251,24 @@ where $\mb{v}_0$ is the initial velocity at $t=0$.
 
 \section{Expressing Acceleration as Functions of Position and Velocity}
 
-Since, according to Newton's second law of motion, acceleration is related to
-the net force, therefore there are instances where acceleration is often
-expressed as functions of other motion quantities rather than time. For example:
-%for motion that are driven by:
+Since, according to the second law of motion, acceleration is proportional to
+the net force ($F=ma$), therefore there are instances where acceleration is
+often expressed as functions of other motion quantities rather than time. For
+example:
 \begin{itemize}[leftmargin=15pt]
 \item\textbf{Gravitational force}\footnote{Newton's law of universal
   gravitation: $\displaystyle F_g=\frac{Gm_1m_2}{r^2}$} or
   \textbf{electrostatic force}\footnote{Coulomb's law:
     $\displaystyle F_q=\frac{kq_1q_2}{r^2}$} are both inversely proportional to
-  the square of the distance (called the inverse-square law), and acceleration
-  is best express by this complicated differential equation:
+  the square of the distance (called the inverse-square law), and therefore
+  acceleration is best express by this complicated differential equation:
   \begin{equation*}
     a(x)=\frac{A}{x^2} \quad\text{or}\quad \frac{d^2x}{dt^2}=\frac{A}{x^2}
   \end{equation*}
   The solution will likely require numerical integration.
 \item\textbf{Spring force} is proportional to displacement\footnote{By Hooke's
   law $\mb{F}_s=-k\mb{x}$, where $k$ is the spring constant that describes the
-  stiffness of the spring}, and acceleration is expressed as:
+  stiffness of the spring}, and therefore acceleration is expressed as:
   \begin{equation*}
     a(x)=-bx\quad\text{or}\quad \frac{d^2x}{dt^2}=-bx
   \end{equation*}
@@ -276,7 +277,7 @@ expressed as functions of other motion quantities rather than time. For example:
   $x(t)=A\sin(\omega t+\phi)$, and the motion is a \emph{simple harmonic
     motion} that will be studied in a later topic.
 \item\textbf{Damping force}  is usually proportional to velocity, leading
-  to an expression for acceleration
+  to an expression for acceleration:
   \begin{equation*}
     a(v)=-cv\quad\text{or}\quad \frac{dv}{dt}=-cv
   \end{equation*}
