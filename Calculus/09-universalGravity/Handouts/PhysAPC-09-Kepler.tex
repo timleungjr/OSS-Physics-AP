@@ -1,50 +1,101 @@
-\documentclass[11pt]{article}
-
-\usepackage[margin=1in,letterpaper]{geometry}
+\documentclass{../../../oss-handout}
 \usepackage{amsmath,bm}
-\usepackage{siunitx}
+\usepackage{txfonts}  % must be loaded after amsmath?
 \usepackage{enumitem}
-%\usepackage{times}
-\usepackage{graphicx}
 \usepackage{tikz}
-\usepackage{mathpazo}
-%\usepackage[scaled]{helvet}
+\usepackage{siunitx}
+%\usepackage{graphicx}
+%\usepackage{mathpazo}
 %\usepackage{xcolor,colortbl}
 %\usepackage{hyperref}
 %\usepackage{cancel}
 
-\setlength{\parindent}{0pt}
-\setlength{\parskip}{10pt}
-
-%\usetikzlibrary{decorations.pathmorphing,patterns}
-
 \sisetup{
   detect-all,
-  number-math-rm=\mathnormal,
   per-mode=symbol
 }
+%\usetikzlibrary{decorations.pathmorphing,patterns}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{8pt}
+\setlength{\headheight}{26pt}
+
+\newcommand{\mb}[1]{\ensuremath\mathbf{#1}}
+\newcommand{\iii}{\ensuremath\hat{\bm{\imath}}}
+\newcommand{\jjj}{\ensuremath\hat{\bm{\jmath}}}
+\newcommand{\kkk}{\ensuremath\hat{\bm{k}}}
+\newcommand{\pic}[2]{\includegraphics[width=#1\textwidth]{#2}}
+
+%\newcommand\vertarrowbox[2]{%
+%    \begin{array}[t]{@{}c@{}} #1 \\
+%    \rotatebox{90}{$\xrightarrow{\hphantom{abcdefgh}}$} \\[-1ex]
+%    \mathclap{\scriptstyle\text{#2}}%
+%    \end{array}}
+
+
+% Set the page style for the document
+\pagestyle{plain}
+
+% Course & handout information
+\renewcommand{\institution}{Olympiads School, Toronto, ON, Canada}
+\renewcommand{\coursetitle}{Advanced Placement Physics C}
+\renewcommand{\term}{Summer 2020}
 
 \title{Kepler's Laws of Planetary Motion}
-\author{Timothy M.\ Leung, Ph.D.\\
-  Olympiads School\\ Toronto, Ontario, Canada}
-\date{\today\\(First Draft)}
-
-\newcommand{\pic}[2]{
-  \includegraphics[width=#1\textwidth]{#2}
-}
-\newcommand{\mb}[1]{
-  \ensuremath\mathbf{#1}
-}
-\newcommand{\eq}[2]{
-  \vspace{#1}{\Large
-    \begin{displaymath}
-      #2
-    \end{displaymath}
-  }
-}
+\author{Dr.\ Timothy Leung}
+\date{\today}
 
 \begin{document}
-\maketitle
+\thispagestyle{title}
+\gentitle
+
+%\documentclass[11pt]{article}
+%
+%\usepackage[margin=1in,letterpaper]{geometry}
+%\usepackage{amsmath,bm}
+%\usepackage{siunitx}
+%\usepackage{enumitem}
+%%\usepackage{times}
+%\usepackage{graphicx}
+%\usepackage{tikz}
+%\usepackage{mathpazo}
+%%\usepackage[scaled]{helvet}
+%%\usepackage{xcolor,colortbl}
+%%\usepackage{hyperref}
+%%\usepackage{cancel}
+%
+%\setlength{\parindent}{0pt}
+%\setlength{\parskip}{10pt}
+%
+%%\usetikzlibrary{decorations.pathmorphing,patterns}
+%
+%\sisetup{
+%  detect-all,
+%  number-math-rm=\mathnormal,
+%  per-mode=symbol
+%}
+%
+
+%\author{Timothy M.\ Leung, Ph.D.\\
+%  Olympiads School\\ Toronto, Ontario, Canada}
+%\date{\today\\(First Draft)}
+%
+%\newcommand{\pic}[2]{
+%  \includegraphics[width=#1\textwidth]{#2}
+%}
+%\newcommand{\mb}[1]{
+%  \ensuremath\mathbf{#1}
+%}
+%\newcommand{\eq}[2]{
+%  \vspace{#1}{\Large
+%    \begin{displaymath}
+%      #2
+%    \end{displaymath}
+%  }
+%}
+%
+%\begin{document}
+%\maketitle
 Johannes Kepler\footnote{1571--1630. German mathematician, astromer and
   astrologer.} formulated his \textbf{laws of planetary motion}
 between 1609 to 1619, by carefully interpreting the empirical planetary motion
@@ -123,7 +174,7 @@ law of planetary motion is the easiest to proof using concepts in rotational
 motion.
 \begin{figure}[!ht]
   \centering
-    \pic{.55}{../201532-132212364-3243-planet.png}
+    \pic{.4}{../201532-132212364-3243-planet.png}
     \caption{The Earth sweeps out the same shaded area (purple) over the
       same amount of time regardless of where it is in its orbit.}
     \label{kep2}
@@ -229,11 +280,11 @@ ellipse:
   b^2=a^2(1-e^2)\quad\text{where}\quad 0\leq e < 1
 \end{equation}
 When the eccentricity of a planet's orbit is zero, the orbit is perfectly
-circular, and $a=b=r$. As $e$ approaches one, the orbit is stretched out into
+circular, and $a=b=r$. As $e\rightarrow 1$, the orbit is stretched out into
 more elongated elliptical trajectories.
 %To illustrate this, orbits with different values of $e$ are plotted in
 %Fig.~\ref{eccentricity}.
-When $e=1$, the shape becomes a parabola, and is no longer an ellipse.
+At $e=1$, the shape becomes a parabola, and is no longer an ellipse.
 %\begin{figure}[!ht]
 %  \centering
 %  \caption{Plot of the orbits for increasing eccentricity}
@@ -256,7 +307,7 @@ As shown in Fig.~\ref{eorbit}, there are two components of velocity when a
 planet orbits a star:
 \begin{figure}[!ht]
   \centering
-  \begin{tikzpicture}
+  \begin{tikzpicture}[scale=.8]
     \def\a{4}       % semi-major axis
     \def\b{3.25}    % semi-minor axis
     \def\angle{150} % angle
@@ -272,16 +323,15 @@ planet orbits a star:
     \end{scope}
     \draw[->]({sqrt(\a*\a-\b*\b)+.5},0) arc(0:\angle:.5)
     node[pos=.4,above]{$\theta$};
-%      \draw[<->]({sqrt(\a*\a-\b*\b)-.2},0)--({sqrt(\a*\a-\b*\b)-.2},-2.65)
-%      node[midway,left]{\tiny$r_0$};
   \end{tikzpicture}
   \caption{Elliptical orbit of a small mass $m$ around a large mass $M$.}
   \label{eorbit}
 \end{figure}
 \begin{itemize}[leftmargin=15pt]
 \item\textbf{Angular velocity} $\mb{v}_\theta$. The presence of $\mb{v}_\theta$
-  means a centripetal acceleration $a_c$ toward $M$. The direction of the
-  acceleration is perpendicular to the direction of $\mb{v}_\theta$:
+  means that there is a centripetal acceleration $a_c$ toward $M$. The
+  direction of the acceleration is perpendicular to the direction of
+  $\mb{v}_\theta$, and towards the sun:
   \begin{equation}
     a_c=-r\omega^2\hat{\mb{r}}
   \end{equation}
@@ -294,8 +344,8 @@ planet orbits a star:
   \end{equation}
 \end{itemize}
 Both components of acceleration are due entirely to gravitational force.
-Applying Newton's second law of motion ($\sum F=ma$), and dividing all sides by
-the mass of the planet $m$, we arrive at a differential equation:
+Applying second law of motion ($\sum F=ma$), and dividing all sides by the mass
+of the planet $m$, we arrive at a differential equation:
 \begin{equation}
   \frac{d^2r}{dt^2}-r\omega^2=-\frac{GM}{r^2}
   \label{ode1}

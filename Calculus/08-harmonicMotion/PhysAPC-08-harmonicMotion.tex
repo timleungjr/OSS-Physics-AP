@@ -1,7 +1,7 @@
 \documentclass[12pt,compress,aspectratio=169]{beamer}
 
 \usetheme{metropolis}
-\setbeamersize{text margin left=1cm,text margin right=1cm}
+\setbeamersize{text margin left=.5cm,text margin right=.5cm}
 
 \usefonttheme{professionalfonts}
 \usepackage{amsmath,bm}
@@ -25,10 +25,10 @@
 }
 
 \title{Topic 8: Harmonic Motion}
-\subtitle{Advanced Placement Physics C Mechanics1}
+\subtitle{Advanced Placement Physics C}
 \author[TML]{Dr.\ Timothy Leung}
 \institute{Olympiads School, Toronto, ON, Canada}
-\date{July 2020}
+\date{July 28, 2020}
 
 \newcommand{\pic}[2]{\includegraphics[width=#1\textwidth]{#2}}
 \newcommand{\mb}[1]{\ensuremath\mathbf{#1}}
@@ -44,9 +44,9 @@
 \section{Hooke's Law}
 
 \begin{frame}{Hooke's Law}
-  Hooke's law for an ideal spring relates the force exerted by a
-  compressed/stretched) spring onto another object (\textbf{spring force}
-  $\mb{F}_s$) to the stiffness of the spring (\textbf{spring constant} $k$) and
+  Hooke's law for an ideal spring relates the force exerted by a compressed or
+  stretched spring onto another object (\textbf{spring force} $\mb{F}_s$) to
+  the stiffness of the spring (\textbf{spring constant} $k$) and
   spring displacement $\mb{x}$:
 
   \eq{-.2in}{
@@ -111,9 +111,11 @@
     \end{tikzpicture}
   \end{center}
   $\mb{w}$ and $\mb{N}$ cancel out, so net force is due only to spring force
-  $\mb{F}_s=-k\mb{x}$. This is true both when the spring is in compression or
-  extension. (In the diagram above, the spring is in extension.)
+  $\mb{F}_s=-k\mb{x}$ along the $x$-axis. This is true both when the spring is
+  in compression or extension. (The spring is in extension in the diagram.)
 \end{frame}
+
+
 
 \begin{frame}{Mass on a Spring}
   Applying second law of motion in the $x$-direction:
@@ -136,25 +138,24 @@
 
 
 \begin{frame}{Mass on a Spring}
-  
-  \eq{-.1in}{
+
+  The solution to the equation is a function $x(t)$ where the second time
+  derivative $\ddot{x}$ looks like $x$ but with a negative sign
+
+  \eq{-.2in}{
     \boxed{\frac{d^2x}{dt^2}+\frac{k}{m}x=0}
   }
-  \begin{itemize}
-  \item The solution to the equation is a function $x(t)$ where the second time
-    derivative $\ddot{x}$ looks like $x$ but with a negative sign
-  \item The obvious choices are the trigonometric functions $\sin(t)$ and
-    $\cos(t)$
-  \item Starting with this general form:
-    
-    \eq{-.25in}{
-      x(t)=A\cos(\omega t-\phi)
-    }
 
-    \vspace{-.15in}$\cos$ is usually preferred over $\sin$ because $\cos(0)=1$,
-    and oscillations usually begin at maximum amplitude $A$ at $t=0$.
-    Mathematically, the two functions only differ in $\phi$
-  \end{itemize}
+  The obvious choices are the trigonometric functions $\sin(t)$ and $\cos(t)$.
+  Starting with this general form:
+    
+  \eq{-.25in}{
+    x(t)=A\cos(\omega t-\phi)
+  }
+  
+  \vspace{-.15in}Cosine is usually preferred over sine because $\cos(0)=1$,
+  consistent with the fact that oscillations usually begin at maximum amplitude
+  $A$ at $t=0$. However, mathematically, the two functions only differ in $\phi$
 \end{frame}
 
 
@@ -230,7 +231,7 @@
   the ODE is the exponential function, where its derivatives is related to the
   function itself, e.g.:
 
-  \eq{-.25in}{
+  \eq{-.2in}{
     x(t)=e^{\omega t}\quad\rightarrow\quad
     \frac{dx}{dt}=\omega e^{\omega t}=\omega x(t)
   }
@@ -239,15 +240,15 @@
   sign that is needed to solve the problem. But if the exponential function is
   \emph{imaginary}:
 
-  \eq{-.25in}{
+  \eq{-.2in}{
     x(t)=e^{i\omega t}
   }
 
-  Then\ldots
+  \vspace{-.1in}Then\ldots
 \end{frame}
 
 
-\begin{frame}{Mass on a Spring}{Side Note \#2}
+\begin{frame}{Side Note \#2}
   The 2nd derivative \emph{will} in fact have the negative sign:
 
   \vspace{-.4in}{\Large
@@ -570,7 +571,7 @@
 
 \begin{frame}{It's Never Perfect}
   In reality, there are friction, or drag, or other damping forces present in
-  the spring-mass system, represented schematically like the shock absorber:
+  the spring-mass system, represented schematically by the shock absorber:
   \begin{center}
     \vspace{-.15in}
     \begin{tikzpicture}[scale=1.1]
