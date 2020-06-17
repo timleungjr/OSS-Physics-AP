@@ -1,4 +1,4 @@
-\documentclass[compress,aspectratio=169]{beamer}
+\documentclass[12pt,compress,aspectratio=169]{beamer}
 
 \usetheme{metropolis}
 \setbeamersize{text margin left=.5cm,text margin right=.5cm}
@@ -23,11 +23,11 @@
   per-mode=symbol
 }
 
-\title{Topic 20: Light Waves and Optics}
-\subtitle{Advanced Placement Physics}
+\title{Topic 15: Light Waves and Optics}
+\subtitle{Advanced Placement Physics 2}
 \author[TML]{Dr.\ Timothy Leung}
 \institute{Olympiads School\\Toronto, Ontario, Canada}
-\date{April 2020}
+\date{August 2020}
 
 \newcommand{\pic}[2]{\includegraphics[width=#1\textwidth]{#2}}
 \newcommand{\mb}[1]{\mathbf{#1}}
@@ -44,11 +44,10 @@
 \section{Reflection and Refraction}
 
 \begin{frame}{Reflection and Refraction}
-  We begin with a model of a beam of light traveling toward the interface
+  We begin with a model of a beam of light traveling toward an interface
   between two ``indexed material'':
   \begin{center}
-    \vspace{-.1in}
-    \begin{tikzpicture}[scale=.9]
+    \begin{tikzpicture}[scale=.8]
       \fill[gray!70](-3,-2) rectangle (3,0);
       \draw[very thick](-3,0)--(3,0);
       \draw[red!80,very thick](-2,2)--(0,0)--(1,-2);
@@ -68,10 +67,8 @@
   light in a vacuum and in the medium:
 
   \eq{-.2in}{
-    n=\frac{c}{v}
+    n=\frac{c}{v}\geq 1
   }
-
-  The index of a material is always greater than $1$, since $v<c$.
 \end{frame}
 
 \begin{frame}{Reflection of Light}
@@ -85,7 +82,7 @@
   
   \begin{center}
     \vspace{-.2in}
-    \pic{.7}{graphics/Types-of-reflection.png}
+    \pic{.6}{graphics/Types-of-reflection.png}
   \end{center}
 \end{frame}
 
@@ -103,19 +100,19 @@
 
 
 \begin{frame}{Intensity of Light Reflecting from}
-  In the special case where the incident and reflected angles normal, i.e.
+  When the incident and reflected angles normal, i.e.
   $\theta_1=\theta_r=\ang{0}$, the reflected intensity of light $I$ is related
   to the incident intensity $I_0$ by the indices of the two material ($n_1$ and
   $n_2$):
 
-  \eq{-.2in}{
+  \eq{-.3in}{
     I=\left(\frac{n_1-n_2}{n_1+n_2}\right)^2 I_0
   }
   
-  Remember that the intensity of a wave is the power $P$ over the area $A$ that
-  the wave passes through:
+  The intensity of a wave is the power $P$ over the area $A$ that the wave
+  passes through:
 
-  \eq{-.2in}{
+  \eq{-.3in}{
     I=\frac{P}{A}
   }
 
@@ -127,8 +124,8 @@
 
 \begin{frame}{Refraction of Light Through a Medium}
   \textbf{Refraction} occurs when light is transmitted from one medium to
-  another at an oblique angle. The wave changes in direction due to the
-  difference in the speed of light in the two media.
+  another at an oblique angle. The wave changes direction due to the difference
+  in the speed of light in the two media.
   \begin{center}
     \begin{tikzpicture}[scale=.9]
       \fill[gray!70](-3,-2) rectangle (3,0);
@@ -220,7 +217,6 @@
 \begin{frame}{Total Internal Reflection}
   \textbf{Total internal reflection} (``TIR'') can occur when light enters from
   a medium with high index to another with low index (i.e.\ $n_1>n_2$).
-  Snell's law still holds, but something weird can happen:
   \begin{center}
     \pic{.55}{graphics/660px-RefractionReflextion.png}
   \end{center}
@@ -228,7 +224,7 @@
   \ang{90}:
 
   \eq{-.2in}{
-    \boxed{\theta_c=\frac{n_2}{n_1}}
+    \boxed{\theta_c=\sin^{-1}\left(\frac{n_2}{n_1}\right)}
   }
   For water-air interface, $\theta_c$=\ang{48.6}
 \end{frame}
@@ -240,7 +236,7 @@
   visible spectrum of light range from about \SI{380}{\nano\metre} (violet) to
   about \SI{700}{\nano\metre} (red).
   \begin{center}
-    \pic{.75}{graphics/electromagneticspectrum-141b490bac872789434.png}
+    \pic{.6}{graphics/electromagneticspectrum-141b490bac872789434.png}
   \end{center}
   A good question to ask: where is \emph{purple}?
 \end{frame}
@@ -248,14 +244,15 @@
 
 
 \begin{frame}{Dispersion of Light}
-  The dependence of the index of refraction $n$ on wavelength $\lambda$ is
-  called \textbf{dispersion}. The dispersion of light through a prism is why we
-  can see the rainbow colors from a beam of white light:
+  The index of refraction of a material varies slight depending on wavelength
+  $\lambda$. This is called \textbf{dispersion}. The dispersion of light
+  through a prism is why we can see the rainbow colors from a beam of white
+  light:
   \begin{center}
     \pic{.3}{graphics/Prism_rainbow_schema.png}
   \end{center}
-  In glass, the index of refraction for shorter wavelengths is always higher
-  than longer wavelengths.
+  The index of refraction for shorter wavelengths is always higher than for
+  longer wavelengths.
 \end{frame}
 
 
@@ -291,10 +288,9 @@
 
 
 \begin{frame}{Spherical Mirror}
-  The cross-section diagram of the mirror. This could be both a concave or a
-  convex mirror.
+  The cross-section diagram of the mirror:
   \begin{center}
-    \begin{tikzpicture}
+    \begin{tikzpicture}[scale=.95]
       \draw[thick,blue](-3,0)--(5.5,0)
       node[pos=.85,above]{\footnotesize principal axis};
       \draw[thick](3,0) arc(0: 30:3);
@@ -305,12 +301,12 @@
     \end{tikzpicture}
   \end{center}
   \begin{itemize}
-  \item\textbf{Center of curvature} $C$ is the center of the imaginary sphere
+  \item\textbf{Center of curvature} $C$: center of the imaginary sphere
     with the same radius as the mirror
   \item\textbf{Radius of curvature} $R$ is any straight line from the
     center of curvature to the curved surface
   \item\textbf{Vertex} $V$ is the geometric center of the mirror surface
-  \item\textbf{Principal axis} ``PA'' is a straight that passes through $V$ and
+  \item\textbf{Principal axis} ``PA'': a straight that passes through $V$ and
     $C$
   \end{itemize}
 \end{frame}
@@ -320,14 +316,14 @@
   \begin{itemize}
   \item Rays that are closed to the PA are called \textbf{paraxial rays}; they
     converge at a single point called the \textbf{focal point} $F$
-  \item Rays that are far away from the PS are called \textbf{nonparaxial rays};
+  \item Rays that are far away from the PA are called \textbf{nonparaxial rays};
     they converge to different points
   \end{itemize}
   \begin{center}
     \pic{.6}{graphics/spherical-vs-parabolic.png}
   \end{center}
   In order for all beams of light to converge to the focal point, a
-  \textbf{parabolic mirror} must be used instead.
+  \textbf{parabolic mirror} must be used instead of a spherical mirror.
 \end{frame}
 
 
@@ -401,7 +397,7 @@
 
 
 \begin{frame}{Lateral Magnification}
-  Using the same sign convention as the mirror equation, the
+  Using the sign convention as the mirror equation, the
   \textbf{lateral magnification} of the object is given by:
 
   \eq{-.2in}{
@@ -412,17 +408,13 @@
       \rowcolor{pink}
       \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
       Magnification factor & $m$ & (no units)\\
-      Object height & $h$  & \si{\metre} (metres)\\
-      Image height  & $h'$ & \si{\metre} (metres)\\
-      Distance to object & $s$  & \si{\metre} (metres) \\
-      Distance to image  & $s'$ & \si{\metre} (metres)
+      Object \& image height & $h$, $h'$  & \si{\metre} (metres)\\
+      Distance to object \7 image & $s$, $s'$  & \si{\metre} (metres)
     \end{tabular}
   \end{center}
   \begin{itemize}
-  \item $m>0$ means that image is upright; $m<0$ means that the image is
-    inverted
-  \item $|m|>1$ means that image is enlarged; $|m|<1$ means that the image is
-    reduced
+  \item $m>0$:image is upright; $m<0$: image is inverted
+  \item $|m|>1$: image is enlarged; $|m|<1$: image is reduced
   \item If both $s$ and $s'$ are positive (on the same side), then the image
     is inverted
   \end{itemize}
@@ -588,7 +580,7 @@
   treated as point sources). The light from the slits emerge at the screen $P$
   at a distance $L$ away.
   \begin{center}
-    \begin{tikzpicture}[scale=.4]
+    \begin{tikzpicture}[scale=.37]
       % Draw the slits
       \draw[fill=gray!50](0,3)--(0,1.2)--(-0.2,1.2)--(-0.2,3);
       \draw[fill=gray!50](0,0.8)--(0,-0.8)--(-0.2,-0.8)--(-0.2,0.8)--cycle;
@@ -614,12 +606,12 @@
       \fill[black](20,3) circle(.15) node[above right]{\footnotesize $P$};
     \end{tikzpicture}
   \end{center}
-  The two beams travel a slightly different distance:
+  \vspace{-.1in}The two beams travel a slightly different distance:
   \begin{itemize}
-  \item\textbf{Constructive interference:} path difference is an integer multiple
-    of $\lambda$
+  \item\textbf{Constructive interference:} path difference is an integer
+    multiple  of $\lambda$
   \item\textbf{Destructive interference:} path difference is a half-integer
-    multiple
+    multiple  of $\lambda$
   \end{itemize}
 \end{frame}
 
@@ -629,7 +621,7 @@
   Using basic geometry, we can see that the path difference from the
   two slit to the projection is $d\sin\theta$.
   \begin{columns}
-    \column{.35\textwidth}
+    \column{.3\textwidth}
     \begin{tikzpicture}[scale=.8]
       % Draw the slits
       \draw[fill=gray!50](0,3)--(0,1.2)--(-0.2,1.2)--(-0.2,3);
@@ -656,20 +648,21 @@
       node[midway,right]{\footnotesize $\theta$};
     \end{tikzpicture}
 
-    \column{.65\textwidth}
-    \begin{itemize}
-    \item\textbf{Constructive maxima} occur when:
+    \column{.7\textwidth}
+    \textbf{Constructive maxima} occur when:
 
-      \eq{-.25in}{
-        \boxed{n\lambda = d\sin\theta_n}
-      }
+    \eq{-.3in}{
+      \boxed{n\lambda = d\sin\theta_n}
+    }
 
-    \item\vspace{-.2in}Conversely, \textbf{destructive minima} occur when:
+    \vspace{-.2in}Conversely, \textbf{destructive minima} occur when:
   
-      \eq{-.23in}{
-            \boxed{\left(n+\frac{1}{2}\right)\lambda = d\sin\theta_n}
-      }
-    \item $n=0,1,2,3\ldots n_\mathrm{max}$ is called the \textbf{order number}
+    \eq{-.3in}{
+      \boxed{\left(n+\frac{1}{2}\right)\lambda = d\sin\theta_n}
+    }
+    \begin{itemize}
+    \item\vspace{-.1in}$n=0,1,2,3\ldots n_\mathrm{max}$ is called the
+      \textbf{order number}
     \item $n_\mathrm{max}$ can be found by setting $\sin\theta=1$
       \begin{itemize}
       \item The number of maxima is $2n_\mathrm{max}+1$
@@ -687,16 +680,12 @@
     \theta\approx\tan\theta\approx\sin\theta
   }
 
-  \vspace{-.15in}to find that the $n$-th bright fringe is located at:
-  (replace $n$ with $n+\frac12$ for dark fringes)
+  \vspace{-.15in}to find that the $n$-th bright fringe is located at $y_n$,
+  which allows us to calculate the distance between fringes $\Delta y$:
   
   \eq{-.2in}{
     \boxed{y_n=n\frac{\lambda L}{d}}
-  }
-
-  And the distance between fringes is given by:
-
-  \eq{-.2in}{
+    \quad\rightarrow\quad
     \boxed{\Delta y=\frac{\lambda L}{d}}
   }
 
@@ -849,14 +838,13 @@
     \column{0.57\textwidth}
     \begin{itemize}
     \item At some angle $\theta$, the path difference between 1 and 20 will be
-      an
-      integer multiple of the wavelength ($m\lambda$)
+      an integer multiple of the wavelength ($m\lambda$)
     \item In this case, the path difference between 1 and 11 is
       a half-number multiple of the wavelength (i.e.\ destructive
       interference) and they cancel each other
     \item Similarly, 2 cancels 12, 3 cancels 13\ldots
-    \item \textbf{RESULT: Complete destructive interference}
     \end{itemize}
+    \textbf{RESULT: Complete destructive interference}
   \end{columns}
 \end{frame}
 
@@ -890,7 +878,7 @@
     \column{.62\textwidth}
     \begin{itemize}
     \item At some other angle $\theta$, the path difference between the top
-      and bottom is $W\sin\theta=\frac32\lambda$
+      and bottom is $\displaystyle W\sin\theta=\frac32\lambda$
     \item 1 and 5 differ by $\displaystyle\frac{\lambda}{2}$, so they cancel
       (as do 2 and 6, 3 and 7, 4 and 8, 9 and 13)
     \item But some of the beams will not, so we have a ``bright fringe'' at the 
@@ -904,7 +892,7 @@
 
 
 \begin{frame}{Dark and Bright Fringes}
-  Dark fringes exists on the screen at regular, whole-numbered intervals
+  Destructive mimina exist on the screen at regular, whole-numbered intervals
   ($m=1,2,3\ldots$):
 
   \eq{-.2in}{
@@ -948,8 +936,8 @@
   \item Similar to the double-slit interference, single-slit diffraction
     projects a series of alternating bright fringes (``maxima'') and dark
     fringes (``minima'') in the far field
-  \item The bright fringe in the middle (``central maximum'') is twice as wide
-    and very bright
+  \item The bright fringe in the middle (``central diffraction maximum'') is
+    twice as wide  and very bright
   \item Subsequent bright fringes on either side (``higher-order maxima'') are
     much dimmer because of the partial destructive interference
   \end{itemize}
@@ -1014,7 +1002,7 @@
 \end{frame}
 
 
-\section[Thin Film]{Thin-Film Interference}
+\section{Thin-Film Interference}
 
 \begin{frame}{Thin-Film Interference}
   \textbf{Thin-film interference} occurs when light reflected/refracted at
@@ -1026,11 +1014,12 @@
   \item The film is a few wavelengths in thickness
   \item The thickness determines whether the interference is constructive or
     destructive
-  \item When white light (``broadband'', with multiple wavelengths) is incident
-    on the film, some colours are enhanced (constructive) while others are
-    reduced (destructive)
+  \item When white light is incident on the film, some colours are enhanced
+    while others are reduced
   \end{itemize}
 \end{frame}
+
+
 
 \begin{frame}{Thin-Film Interference}
   \begin{center}
@@ -1046,284 +1035,242 @@
   \end{itemize}
 \end{frame}
 
-\begin{frame}{Calculating Path Length Difference}
+
+
+\begin{frame}{Optical Path Difference}
   \begin{columns}
-    \column{.4\textwidth}
-    \begin{tikzpicture}[scale=.9]
+    \column{.3\textwidth}
+    \begin{tikzpicture}[scale=.8]
       \fill[blue!30](0,0) rectangle(6,3);
       \draw[gray](0,0)--(6,0);
       \draw[gray](0,3)--(6,3);
-      \draw[<->](5.5,0)--(5.5,3) node[midway,left]{$d$};
-      \draw[dashed](2,4.5)--(2,.5);
-      \draw[very thick,red,->](0,5)--(2,3)--(4,5);
-      \draw[->](2,3.5) arc(90:135:.5)
-      node[midway,above]{$\theta_1$};
+      \draw[<->](5.5,0)--(5.5,3) node[midway,left]{$t$};
+      \draw[very thick,red,->](1.6,5)--(2,3)--(2.4,5);
       \draw[very thick,blue!80!black,->]
-      (-.05,5)--
-      (1.95,3) node[pos=1,left]{A}--(3.2,0)--
-      (4.45,3) node[pos=0,below]{B} node[pos=1,right]{C}--(6.45,5);
-      \draw[->](2,2) arc(270:290:1) node[pos=.6,below]{$\theta_2$};
-      \draw[dashed](4.45,3)--(3.2,4.25) node[pos=1,left]{D}
-      node[pos=.2,left]{$\theta_1$};
-      \node at (.25,.25){$n_2$};
+      (1.55,5)--(1.95,3)--(2.1,0)--(2.2,3)--(2.6,5);
+      \node at (.25,1.5 ){$n_2$};
       \node at (.25,3.25){$n_1$};
+      \node at (.25,-.25){$n_3$};
     \end{tikzpicture}
+    
+    \column{.7\textwidth}
+    \begin{itemize}
+    \item Light hits the upper interface:
+      \begin{itemize}
+      \item Some light is reflected into the first medium
+        (\textcolor{red}{red})
+      \item Some light is refracted, then reflected at the lower interface,
+        then refracted into the first medium (\textcolor{blue}{blue})
+      \end{itemize}
+    \item Assuming that the incident and refracted angles are small, then
+      optical path difference $\Gamma$ is just:
 
-    \column{.6\textwidth}
-    Optical path length difference $\Gamma$:
-
-    \eq{-.4in}{
-      \Gamma=n_2(AB+BC)-n_1AD
+    \eq{-.25in}{
+      \Gamma=2t %\frac{2t}{\lambda'}
     }
 
-    From basic geometry and the law of reflection, we know that
-
-    \eq{-.2in}{
-      AB=BC=\frac{d}{\cos\theta_2}
-    }    
+    \vspace{-.15in}Same as single- and double-slits interference problems,
+    $\Gamma$ determines the condition for constructive and destructive
+    interference
+    \end{itemize}
   \end{columns}
 \end{frame}
 
 
 
-\begin{frame}{Calculating Path Length Difference}
-  \begin{columns}
-    \column{.4\textwidth}
-    \begin{tikzpicture}[scale=.9]
-      \fill[blue!30](0,0) rectangle(6,3);
-      \draw[gray](0,0)--(6,0);
-      \draw[gray](0,3)--(6,3);
-      \draw[<->](5.5,0)--(5.5,3) node[midway,left]{$d$};
-      \draw[dashed](2,4.5)--(2,.5);
-      \draw[very thick,red,->](0,5)--(2,3)--(4,5);
-      \draw[->](2,3.5) arc(90:135:.5)
-      node[midway,above]{$\theta_1$};
-      \draw[very thick,blue!80!black,->]
-      (-.05,5)--
-      (1.95,3) node[pos=1,left]{A}--(3.2,0)--
-      (4.45,3) node[pos=0,below]{B} node[pos=1,right]{C}--(6.45,5);
-      \draw[->](2,2) arc(270:290:1) node[pos=.6,below]{$\theta_2$};
-      \draw[dashed](4.45,3)--(3.2,4.25) node[pos=1,left]{D}
-      node[pos=.2,left]{$\theta_1$};
-      \node at (.25,.25){$n_2$};
-      \node at (.25,3.25){$n_1$};
-    \end{tikzpicture}
+\begin{frame}{Optical Path Difference}
+  The wavelength in the second medium $\lambda'$ is related to the incident
+  wavelength $\lambda$ using the universal wave equation:
 
-    \column{.6\textwidth}
-    We can also calculate the length AD, and apply Snell's law:
-
-    \vspace{-.45in}{\Large
-      \begin{align*}
-        n_1AD&=n_1AC\sin\theta_1\\
-        &=(2d\tan\theta_2)(n_2\sin\theta_2)
-      \end{align*}
-    }
-  \end{columns}
+  \eq{-.18in}{
+    \lambda'=\frac{n_1}{n_2}\lambda
+  }
+  
+  If the first medium is air,  use $n_1=1$ for simplicity
 \end{frame}
 
 
-
-\begin{frame}{Calculating Path Length Difference}
-  \begin{columns}
-    \column{.4\textwidth}
-    \begin{tikzpicture}[scale=.9]
-      \fill[blue!30](0,0) rectangle(6,3);
-      \draw[gray](0,0)--(6,0);
-      \draw[gray](0,3)--(6,3);
-      \draw[<->](5.5,0)--(5.5,3) node[midway,left]{$d$};
-      \draw[dashed](2,4.5)--(2,.5);
-      \draw[very thick,red,->](0,5)--(2,3)--(4,5);
-      \draw[->](2,3.5) arc(90:135:.5)
-      node[midway,above]{$\theta_1$};
-      \draw[very thick,blue!80!black,->]
-      (-.05,5)--
-      (1.95,3) node[pos=1,left]{A}--(3.2,0)--
-      (4.45,3) node[pos=0,below]{B} node[pos=1,right]{C}--(6.45,5);
-      \draw[->](2,2) arc(270:290:1) node[pos=.6,below]{$\theta_2$};
-      \draw[dashed](4.45,3)--(3.2,4.25) node[pos=1,left]{D}
-      node[pos=.2,left]{$\theta_1$};
-      \node at (.25,.25){$n_2$};
-      \node at (.25,3.25){$n_1$};
-    \end{tikzpicture}
-
-    \column{.6\textwidth}
-    Collecting terms gives:
-
-    \vspace{-.3in}{\Large
-      \begin{align*}
-        \Gamma&=2dn_2\left[\frac{1}{\cos\theta_2}-\tan\theta_2\sin\theta_2\right]
-        \\
-        &=2dn_2\left[\frac{1-sin^2\theta_2}{\cos\theta_2}\right]\\
-        &=2dn_2\cos\theta_2
-      \end{align*}
-    }
-
-    %\vspace{-.25in}As was the case with light passing through an opening,
-    Path length difference $2dn\cos\theta_2$ determines the condition for
-    constructive and destructive interference.
-    %Similar to double-slit interference problems, the path length
-    %difference of $2dn\cos\theta_2$ is significant.
-  \end{columns}
-\end{frame}
 
 \begin{frame}{Soap Bubble}
   \begin{center}
-    \begin{tikzpicture}[scale=.5]
+    \begin{tikzpicture}[scale=.7]
       \fill[blue!30](0,0) rectangle(6,3);
       \draw[gray](0,0)--(6,0);
       \draw[gray](0,3)--(6,3);
-      \draw[thick,red,->](0,5)--(2,3) node[pos=1,right]{\tiny$\pi$}--(4,5);
-      \draw[thick,blue!80!black,->] (-.05,5)--(1.95,3)--(3.2,0)--(4.45,3)
-      --(6.45,5);
-      \node at (.5,.3){\small $n_\mathrm{soap}$};
-      \node at (.5,3.3){\small $n_\mathrm{air}$};
-      \node at (.5,-.5){\small $n_\mathrm{air}$};
+      \draw[<->](5.5,0)--(5.5,3) node[midway,left]{\small  $t$};
+      \draw[very thick,red,->]
+      (1.6,5)--(2,3) node[pos=1,left]{\small $\bm{\pi}$}--(2.4,5);
+      \draw[very thick,blue!80!black,->]
+      (1.55,5)--(1.95,3)--(2.1,0)--(2.2,3)--(2.6,5);
+      \node at (-.3,1.5 ){\small $n_\mathrm{soap}$};
+      \node at (-.3,3.4){\small $n_\mathrm{air}=1$};
+      \node at (-.3,-.4){\small $n_\mathrm{air}=1$};
     \end{tikzpicture}
   \end{center}
-  Light travels through air ($n_\mathrm{air}=1$) and strikes a soap film
-  ($n_\mathrm{soap}>1$)
+  \vspace{-.1in}Light travels through air and strikes a soap film (with
+  $n_\mathrm{soap}$). On either side of the soap film is air.
   \begin{itemize}
-  \item Light is reflected and transmitted at the air-film boundaries
-  \item At the upper boundary:
-    \begin{itemize}
-    \item Reflected has a phase shift of \ang{180}($\pi$), because
-    \item $n_\mathrm{air}<n_\mathrm{soap}$, light reflects from a fast to slow
-      medium
-    \end{itemize}
-  \item At the lower boundary:
-    \begin{itemize}
-    \item The reflection has no phase shift (slow to fast medium)
-    \end{itemize}
+  \item Upper interface: reflected light has a \ang{180} ($\pi$ radian)
+    phase shift, as $n_\mathrm{air}<n_\mathrm{soap}$, i.e.\ light reflects from a
+    fast to slow medium
+  \item Lower interface: the reflected wave has no phase shift (slow to
+    fast medium)
   \end{itemize}
 \end{frame}
 
-\begin{frame}{Soap Bubble}{Condition for interference for a soap bubble}
-  \emph{Constructive interference} if path length difference is a half-number
-  multiple of wavelength, because of the phase shift:
+
+
+\begin{frame}{Soap Bubble}{Condition for Interference}
+  Because of the phase shift, \emph{constructive maxima} occurs if path
+  difference $\Gamma$ is a half-number multiple of wavelength:
    
-  \eq{-.22in}{\boxed{
-      2dn_\mathrm{soap}\cos\theta_2=\left(m-{\frac{1}{2}}\right)\lambda
+  \eq{-.22in}{
+    \Gamma=2t=\left(m+\frac12\right)\lambda'
+    \quad\rightarrow\quad
+    \boxed{
+      \frac{2n_\mathrm{soap}t}{\lambda}=m+\frac{1}{2}
     }
   }
 
-  \emph{Destructive interference} if the path length difference is a
-  whole-number multiple of wavelength, also because of the phase shift:
-    
-  \eq{-.27in}{
-    \boxed{2dn_\mathrm{soap}\cos\theta_2=m\lambda}
+  while \emph{destructive minima} if $\Gamma$ is a whole-number multiple of
+  wavelength:
+
+  \eq{-.22in}{
+    \boxed{
+      \frac{2n_\mathrm{soap}t}{\lambda}=m
+    }
   }
+
+  where $m=0,1,2\ldots$
 \end{frame}
+
+
 
 \begin{frame}{Soap Bubble}
   \begin{center}
-    \pic{.6}{soap-bubble.jpg}
+    \pic{.45}{soap-bubble.jpg}
   \end{center}
   \begin{itemize}
-  \item When incident light is a white-light, some colours experience
-    constructive interference, while other colours there is destructive
-    interference
-  \item The colour pattern comes from the variations of thickness of the film
+  \item Because the condition for interference depends on the incident
+    wavelength, when incident light is a white-light (broadband), some colours
+    experience constructive interference, while other colours there is
+    destructive interference
+  \item The color pattern comes from the variations of thickness of the film
     (it is not constant!)
   \end{itemize}
 \end{frame}
 
+
+
 \begin{frame}{Oil Film on Water}
   \begin{center}
-    \begin{tikzpicture}[scale=.5]
+    \begin{tikzpicture}[scale=.7]
       \fill[blue!30](0,0) rectangle(6,3);
       \draw[gray](0,0)--(6,0);
       \draw[gray](0,3)--(6,3);
-      \draw[thick,red,->](0,5)--(2,3) node[pos=1,right]{\tiny$\pi$}--(4,5);
-      \draw[thick,blue!80!black,->] (-.05,5)--(1.95,3)--(3.2,0)--(4.45,3)
-      --(6.45,5);
-      \node at (.55,.3){\small $n_\mathrm{oil}$};
-      \node at (.55,3.3){\ $n_\mathrm{air}$};
-      \node at (.5,-.5){\small $n_\mathrm{water}$};
+      \draw[<->](5.5,0)--(5.5,3) node[midway,left]{\small  $t$};
+      \draw[very thick,red,->]
+      (1.6,5)--(2,3) node[pos=1,left]{\small $\bm{\pi}$}--(2.4,5);
+      \draw[very thick,blue!80!black,->]
+      (1.55,5)--(1.95,3)--(2.1,0)--(2.2,3)--(2.6,5);
+      \node at (-.3,1.5 ){\small $n_\mathrm{oil}$};
+      \node at (-.3,3.4){\small $n_\mathrm{air}=1$};
+      \node at (-.3,-.4){\small $n_\mathrm{water}$};
     \end{tikzpicture}
   \end{center}
-  \vspace{-.2in}Light travels through air ($n_\mathrm{air}=1$) and strikes a oil
-  film ($n_\mathrm{oil}>1$). Below the oil film is water, which has a lower
-  refractive index than oil
+  Light travels through air and strikes a oil film (with
+  $n_\mathrm{oil}$). Below the oil film is water, which has a lower refractive
+  index than oil ($n_\mathrm{oil}>n_\mathrm{water}$)
   \begin{itemize}
-  \item Upper boundary: Reflected light has a phase shift of \ang{180} ($\pi$)
+  \item Upper interface: Reflected light has a phase shift of \ang{180} ($\pi$)
     because $n_\mathrm{air}<n_\mathrm{oil}$ (fast to slow medium)
-  \item Lower boundary: Reflected light has no phase shifts (slow to fast
+  \item Lower interface: Reflected light has no phase shifts (slow to fast
     medium)
   \end{itemize}
 \end{frame}
 
+
+
 \begin{frame}{Oil Film on Water}
-  Like the soap bubble, we observe \emph{constructive interference} if path
-  length difference is a half-number multiple of wavelength:
-   
-  \eq{-.2in}{
-    2dn_\mathrm{oil}\cos\theta_2=\left(m-{\frac{1}{2}}\right)\lambda
+  Beause there is only one phase shift, so like the soap bubble,
+  \emph{constructive maxima} occurs if path difference is a half-number
+  multiple of wavelength:
+
+  \eq{-.22in}{
+    \boxed{
+      \frac{2n_\mathrm{oil}t}{\lambda}=m+\frac12
+    }
   }
 
-  And \textbf{destructive interference} if path length difference is a
-  whole-number multiple of wavelength:
-    
-  \eq{-.27in}{
-    2dn_\mathrm{oil}\cos\theta_2=m\lambda
+  while \emph{destructive minima} if $\Gamma$ is a whole-number multiple of
+  wavelength:
+
+  \eq{-.22in}{
+    \boxed{
+      \frac{2n_\mathrm{oil}t}{\lambda}=m
+    }
   }
 
-  Assuming that the refractive index of the oil film is \emph{higher} than
-  water:
-
-  \eq{-.3in}{
-    n_\mathrm{oil}>n_\mathrm{water}
-  }
+  where $m=0,1,2\ldots$, and assuming that the refractive index of the oil
+  film is \emph{higher} than water.
 \end{frame}
 
 
 
 \begin{frame}{Anti-Reflection Coating}
   \begin{center}
-    \begin{tikzpicture}[scale=.5]
+    \begin{tikzpicture}[scale=.7]
       \fill[blue!30](0,0) rectangle(6,3);
       \draw[gray](0,0)--(6,0);
       \draw[gray](0,3)--(6,3);
-      \draw[thick,red,->](0,5)--(2,3) node[pos=1,right]{\tiny$\pi$}--(4,5);
-      \draw[thick,blue!80!black,->] (-.05,5)--(1.95,3)--(3.2,0)
-      node[pos=1,right]{\tiny$\pi$}--(4.45,3)--(6.45,5);
-      \node at (.55,.3){\small $n_\mathrm{coating}$};
-      \node at (.55,3.3){\ $n_\mathrm{air}$};
-      \node at (.5,-.5){\small $n_\mathrm{glass}$};
+      \draw[<->](5.5,0)--(5.5,3) node[midway,left]{\small  $t$};
+      \draw[very thick,red,->]
+      (1.6,5)--(2,3) node[pos=1,left]{\small $\bm{\pi}$}--(2.4,5);
+      \draw[very thick,blue!80!black,->]
+      (1.55,5)--(1.95,3)--(2.1,0) node[pos=1,left]{\small $\bm{\pi}$}--
+      (2.2,3)--(2.6,5);
+      \node at (-.3,1.5 ){\small $n_\mathrm{coating}$};
+      \node at (-.3,3.4){\small $n_\mathrm{air}=1$};
+      \node at (-.3,-.4){\small $n_\mathrm{glass}$};
     \end{tikzpicture}
   \end{center}
   
-  \vspace{-.2in}The anti-reflective coating on eyeglasses and camera lenses
+  \vspace{-.1in}Anti-reflective coating on eyeglasses and camera lenses
   has a refractive index lower than glass (but higher than air), i.e.:
 
-  \eq{-.3in}{
+  \eq{-.33in}{
     n_\mathrm{air}<n_\mathrm{coating}<n_\mathrm{glass}
   }
-  \begin{itemize}
-  \item\vspace{-.2in} Upper boundary: Reflected light has a phase shift of
-    $\pi$, same as the soap bubble and oil film (fast to slow medium)
-  \item Lower boundary: Reflected light also has a phase shifts of $\pi$!
-  \end{itemize}
+
+  \vspace{-.13in}Light reflects with a phase shift of $\pi$ on both the upper
+  and lower interfaces, because in both cases, the light is from fast to
+  slow medium
 \end{frame}
+
+
 
 
 \begin{frame}{Anti-Reflection Coating}
-  The interference conditions for anti-reflection coating is oppposite to the
-  soap bubble and oil film, because the phase shifts occur on both boundaries.
+  The interference conditions for anti-reflection coating is \emph{oppposite}
+  to the soap bubble and oil film, because the phase shifts occur on both
+  boundaries. \emph{Constructive maxima} occurs if path difference is a
+  whole-number multiple of wavelength:
 
-  \begin{itemize}
-  \item\emph{Constructive interference} if path length difference is a
-    whole-number multiple of wavelength:
+  \eq{-.22in}{
+    \boxed{
+      \frac{2n_\mathrm{film}t}{\lambda}=m
+    }
+  }
 
-    \eq{-.25in}{
-      \boxed{2dn_\mathrm{film}\cos\theta_2=m\lambda}
+  while \emph{destructive minima} occurs if path difference is a half-number
+  multiple of wavelength:
+
+  \eq{-.22in}{
+    \boxed{
+      \frac{2n_\mathrm{film}t}{\lambda}=m+\frac{1}{2}
     }
-  \item\emph{Destructive interference} if path length difference is a
-    half-number multiple of wavelength:
-  
-    \eq{-.2in}{
-      \boxed{2dn_\mathrm{film}\cos\theta_2=\left(m-{\frac{1}{2}}\right)\lambda}
-    }
-  \end{itemize}
+  }
+
+  where $m=0,1,2\ldots$
 \end{frame}
-
 \end{document}

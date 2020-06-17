@@ -2,8 +2,8 @@
 
 \usetheme{metropolis}
 \setbeamersize{text margin left=.5cm,text margin right=.5cm}
-\setbeamertemplate{navigation symbols}{} % suppress nav bar
-%  \setbeamercovered{transparent}
+%\setbeamertemplate{navigation symbols}{} % suppress nav bar
+%\setbeamercovered{transparent}
 
 \usefonttheme{professionalfonts}
 \usepackage{graphicx}
@@ -22,11 +22,11 @@
 }
 
 
-\title[Waves]{Topic 19: Mechanical Waves}
-\subtitle{Advanced Placement Physics}
+\title[Waves]{Topic 10: Mechanical Waves \& Sound}
+\subtitle{Advanced Placement Physics 1}
 \author[TML]{Dr.\ Timothy Leung}
 \institute{Olympiads School\\Toronto, Ontario, Canada}
-\date{Winter/Spring 2020}
+\date{August 2020}
 
 \newcommand{\pic}[2]{\includegraphics[width=#1\textwidth]{#2}}
 \newcommand{\eq}[2]{\vspace{#1}{\Large\begin{displaymath}#2\end{displaymath}}}
@@ -385,7 +385,7 @@
 
 
 \begin{frame}{Speed of Sound in a Gas}
-  The equation for the speed of sound in a gas is given by:
+  The speed of an \textbf{acoustic wave} (sound) in a gas is given by:
   
   \eq{-.2in}{
     \boxed{v_s=\sqrt{\frac{\gamma RT}{M}}}
@@ -394,7 +394,7 @@
     \begin{tabular}{l|c|c}
       \rowcolor{pink}
       \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
-      Speed of sound         & $v_s$    & \si{m/s}\\
+      Wave speed             & $v_s$    & \si{m/s}\\
       Temperature            & $T$      & \si{\kelvin}\\
       Universal gas constant & $R$      & \si{J/mol.K}\\
       Molar mass             & $M$      & \si{\kilo\gram/mol}\\
@@ -610,117 +610,9 @@
 
 
 
-%\begin{frame}{Standing Waves On a String Length $L$}
-%  \begin{itemize}
-%  \item A ``vibrating'' string is actually a standing wave on a string
-%  \item Both ends of the string are nodes
-%  \item\textbf{Resonance frequencies} are frequencies where standing waves can
-%    be created. The lowest resonance frequency is called the
-%    \textbf{fundamental frequency} $f_1$, which occurs when $\lambda=2L$:
-%    \begin{center}
-%      \begin{tikzpicture}[scale=1.2]
-%        \draw[thick](0,0) -- (pi,0)
-%        node[midway,below]{\footnotesize Length of string $L$};
-%        \draw[thick](0,-.5) --(0,.5);
-%        \draw[thick](pi,-.5)--(pi,.5);
-%        \draw[smooth,samples=20,domain=0:pi,red,ultra thick]
-%        plot({\x},{0.5*sin(180/pi*\x)});
-%        \draw[smooth,samples=20,domain=pi:2*pi,dashed]
-%        plot({\x},{0.5*sin(180/pi*\x)});
-%        \draw[smooth,samples=20,domain=0:2*pi,dashed]
-%        plot({\x},{-.5*sin(180/pi*\x)});
-%        \draw[<->](0,-.75)--(2*pi,-.75)
-%        node[midway,below]{\footnotesize $\lambda=2L$};
-%      \end{tikzpicture}
-%    \end{center}
-%  \end{itemize}
-%\end{frame}
-%
-%
-%\begin{frame}{Fundamental Frequency of a Wave on a String}
-%  Using the universal wave equation we can relate the fundamental frequency
-%  $f_1$ to the speed of a traveling wave along the string $v_\mathrm{str}$:
-%
-%  \eq{-.2in}{
-%    \boxed{f_1=\frac{v_\mathrm{str}}{\lambda}=\frac{v_\mathrm{str}}{2L}}
-%  }
-%\end{frame}
-%
-%
-%\begin{frame}{Standing Waves On a String Length $L$}
-%  A second resonance frequency occurs when $L=\lambda$:
-%  \vspace{.1in}\begin{columns}
-%    \column{.45\textwidth}
-%    \centering
-%    \begin{tikzpicture}[scale=1.5]
-%      \draw[thick](0,0)--(pi,0)  node[pos=0.5,below]{\footnotesize $L$};
-%      \draw[thick](0,-.5) --(0,.5);
-%      \draw[thick](pi,-.5)--(pi,.5);
-%      \draw[smooth,samples=20,domain=0:pi,red,ultra thick]
-%      plot({\x},{.5*sin(360/pi*\x)});
-%      \draw[smooth,samples=20,domain=0:pi,dashed]
-%      plot({\x},{-.5*sin(360/pi*\x)});
-%    \end{tikzpicture}
-%    
-%    \column{.55\textwidth}
-%    \eq{0in}{
-%        f_2=\frac{v_\mathrm{str}}{\lambda}=\frac{v_\mathrm{str}}{L}=2f_1
-%    }
-%  \end{columns}
-%
-%  \vspace{.3in}A third resonance frequency occurs at
-%  $\displaystyle L=\frac{3}{2}\lambda$:
-%
-%  \vspace{-.1in}\begin{columns}
-%    \column{.45\textwidth}
-%    \centering
-%    \begin{tikzpicture}[scale=1.5]
-%      \draw[thick](0,0) -- (pi,0)  node[pos=0.5,below]{\footnotesize $L$};
-%      \draw[thick](0,-.5) --(0,.5);
-%      \draw[thick](pi,-.5)--(pi,.5);
-%      \draw[smooth,samples=20,domain=0:pi,red,ultra thick]
-%      plot({\x},{.5*sin(540/pi*\x)});
-%      \draw[smooth,samples=20,domain=0:pi,dashed]
-%      plot({\x},{-.5*sin(540/pi*\x)});
-%    \end{tikzpicture}
-%    
-%    \column{.55\textwidth}
-%      
-%    \eq{0in}{
-%      f_3=\frac{3v_\mathrm{str}}{2L}=3f_1
-%    }
-%  \end{columns}
-%\end{frame}
-%
-%
-%
-%\begin{frame}
-%  \frametitle{Standing Waves On a String Length $L$}
-%  The $n$-th resonance frequency of a wave on string is just whole-number
-%  multiples of the fundamental frequency:
-%  
-%  \eq{-.3in}{
-%    \boxed{f_n=nf_1}\quad n=1,2,3,\ldots %\quad
-%    %\text{\normalsize (standing wave on string)}
-%  }
-%
-%  \vspace{-.15in}This equation is \emph{identical} to the harmonic frequencies,
-%  meaning that every harmonic is a resonance frequency. Standing waves on a
-%  string have a \emph{full set of harmonics}.
-%  
-%  \vspace{.25in}The wavelengths corresponding to the resonance frequencies are:
-%
-%  \eq{-.2in}{
-%      \boxed{\lambda=\frac{2L}{n}}\quad n=1,2,3,\ldots
-%    }
-%\end{frame}
-
-
-
 \begin{frame}{Mach Number}
   When dealing with sound waves, it is often useful to express speed in terms
-  of its ratio to the speed of sound. This ratio is called the
-  \textbf{mach number}:
+  of its ratio to the speed of sound, called the \textbf{mach number}:
   
   \eq{-.2in}{
     \boxed{M=\frac{v}{v_s}}
@@ -988,7 +880,7 @@
 
 
 
-\begin{frame}{Duck in Water}{No sonic booms here}
+\begin{frame}{Duck in Water}
   A similar shock behavior is observed when the duck swims in water, because
   the duck swims faster than the speed of the water wave, it also creates a
   cone shape.
