@@ -1,9 +1,9 @@
 \documentclass[12pt,aspectratio=169]{beamer}
 
 \usetheme{metropolis}
-\setbeamersize{text margin left=.6cm,text margin right=.6cm}
-%  \setbeamertemplate{navigation symbols}{} % suppress nav bar
-%  \setbeamercovered{transparent}
+\setbeamersize{text margin left=.5cm,text margin right=.5cm}
+\setbeamertemplate{navigation symbols}{} % suppress nav bar
+%\setbeamercovered{transparent}
 
 \usefonttheme{professionalfonts}
 %\usepackage{graphicx}
@@ -15,6 +15,7 @@
 %\usepackage{hyperref}
 
 \sisetup{
+  detect-all,
   number-math-rm=\mathnormal,
   per-mode=symbol
 }
@@ -24,11 +25,11 @@
 \renewcommand{\baselinestretch}{1}
 
 
-\title{Topic 18: Thermodynamics}
-\subtitle{Advanced Placement Physics}
+\title{Topic 10: Thermodynamics}
+\subtitle{Advanced Placement Physics 2}
 \author[TML]{Dr.\ Timothy Leung}
 \institute{Olympiads School\\Toronto, ON, Canada}
-\date{March 2020}
+\date{August 2020}
 
 \newcommand{\pic}[2]{\includegraphics[width=#1\textwidth]{#2}}
 \newcommand{\mb}[1]{\mathbf{#1}}
@@ -59,19 +60,42 @@
 
 
 
+\begin{frame}{Kinetic Theory of Gases}
+  Assumptions for the kinetic theory of gases:
+  \begin{enumerate}
+  \item The gas consists of a large number of molecules that make
+    \emph{elastic} collisions with each other and with the walls of the
+    container.
+  \item The molecules are separated, on average, by distances that are large
+    compared to their diameters, and they exert no force (gravitational,
+    electrostatic etc) on each other except when they collide.\footnote{This
+      means that the density of the gas is low, i.e.\ assume ideal gas
+      behavior.}
+  \item In the absence of external forces, there is no preferred position for a
+    molecules in the container, and there is no preferred velocity vector.
+  \end{enumerate}
+
+\end{frame}
+
+
+
+\begin{frame}{Properties of a Gas}
+  \begin{itemize}
+  \item\textbf{Volume}
+  \item\textbf{Pressure}
+  \item\textbf{Temperature}
+  \end{itemize}
+\end{frame}
+
+
+\section{Thermodynamic Temperature}
+
 \begin{frame}{Thermodynamic Temperature}
-  Relationship between the absolute temperature scale and the Celsius scale is
-  a constant:
-  
-  \eq{-.4in}{
-    \boxed{T = T_C + 273.15}
-  }
-  
-  \vspace{-.1in}Plotting pressure vs.\ temperature at \emph{constant volume}
-  for gases gives a straight line that appear to intersect the $x$-axis at
-  \SI{-273.15}{\celsius}:
+  William Thomson (Lord Kelvin) and James Joule discovered that when a gas is
+  heated/cooled at \emph{constant volume}, the relationship between pressure and
+  temperatuer is \emph{linear}:
   \begin{center}
-    \begin{tikzpicture}[scale=1.1]
+    \begin{tikzpicture}
       \begin{scope}[rotate=25]
         \draw[thick,red,dashed](0,0)--(1,0);
         \draw[thick,red](1,0)--(5,0);
@@ -85,125 +109,150 @@
       \draw[->](2,0)--(2,2.5) node[pos=1,left]{$P$};
     \end{tikzpicture}
   \end{center}
+  Regardless of the type of gas, amount of gas, or the volume of gas, pressure
+  is always zero at \SI{-273.15}{\celsius}. Since pressure cannot be negative;
+  no temperature can exist below that value.
 \end{frame}
-
-
+%  Relationship between the absolute temperature scale and the Celsius scale is
+%  a constant:
+%  
+%  \eq{-.4in}{
+%    \boxed{T = T_C + 273.15}
+%  }
+%  
+%  \vspace{-.1in}Plotting pressure vs.\ temperature at \emph{constant volume}
+%  for gases gives a straight line that appear to intersect the $x$-axis at
+%
+%
 
 \begin{frame}{Thermodynamic Temperature}
-  \eq{.01in}{
+  The \textbf{thermodynamic temperature} (or \textbf{absolute temperature}) $T$
+  is obtained by shifting the ``null point'' (where temperature is zero) from
+  the Celsius temperature $T_C$. The unit for thermodynamic is a
+  \textbf{kelvin} (\si{\kelvin}). It is one of the 6 base units of the SI
+  system.
+  
+  \eq{-.2in}{
     \boxed{T = T_C + 273.15}
   }
-  \begin{center}
-    \begin{tabular}{l|c|c}
-      \rowcolor{pink}
-      \textbf{Quantity}     & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
-      Absolute temperature  & $T$            & \si{\kelvin} \\
-      Temperature in degree Celsius & $T_C$  & (not SI unit)
-    \end{tabular}
-  \end{center}
+%  \begin{center}
+%    \begin{tabular}{l|c|c}
+%      \rowcolor{pink}
+%      \textbf{Quantity}         & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
+%      Thermodynamic temperature & $T$             & \si{\kelvin} \\
+%      Temperature in degree celsius & $T_C$       & (not SI unit)
+%    \end{tabular}
+%  \end{center}
   \begin{itemize}
-  \item Developed by William Thomson (Lord Kelvin) and James Joule
-  \item Until the 1960's, absolutely temperature used the unit ``degree kelvin''
-  \item The temperature \emph{change} of \SI{1}{\kelvin} is the same as
-    \SI{1}{\celsius}
-  \item The two scales differ in where \emph{zero} is (called the
-    ``null point'')
+  \item\vspace{-.1in}A temperature of \SI{0}{\kelvin} is called
+    \textbf{absolute zero}, but it is impossible to obtain because of
+    quantum-mechanic effects
+  \item This temperature scale is more consistent with the physical and
+    thermodynamic properties of gases
+  \item Note: the temperature \emph{change} of \SI{1}{\kelvin} is the same as
+    \SI{1}{\celsius}, i.e.:
+
+    \eq{-.25in}{
+      \Delta T=\Delta T_C
+    }
   \end{itemize}
 \end{frame}
   
 
 
-\begin{frame}{Relationship Between Temperature and Pressure}
-  The relationship between absolute temperature $T$ and pressure $P$
-  of a gas at constant volume is defined using its triple point:
-
-  \eq{-.1in}{
-    T=\frac{T_\mathrm{tp}}{P_\mathrm{tp}}P
-  }
-
-  \textbf{Triple point} is a combination of pressure and temperature where all
-  phases of a substance (solid, liquid and vapour) may coexist in thermal
-  equilibrium.
-  \begin{itemize}
-  \item The triple point temperature for water is at
-    $T_\mathrm{tp}=\SI{273.16}{\kelvin}$, or $\SI{0.01}{\celsius}$
-  \item Triple point pressure for water is $P_\mathrm{tp}=\SI{611.2}{\pascal}$
-  \end{itemize}
-\end{frame}
-
-
-
-\begin{frame}{Thermal Expansion}
-  When temperature $T$ of an object with length $L$ increases, the object
-  \emph{usually} expands. The \emph{thermal strain} ($\Delta L/L$) is
-  proportional the change in temperature ($\Delta T$) by the \textbf{coefficient
-    of linear thermal expansion} ($\alpha$):
-  
-  \eq{-.15in}{
-    \boxed{\frac{\Delta L}{L} =\alpha\Delta T}\quad
-    \text{\normalsize where}\quad
-    \boxed{\alpha=\frac{1}{L}\frac{dL}{dT}}
-  }
-  \begin{center}
-    \begin{tabular}{l|c|c}
-      \rowcolor{pink}
-      \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
-      Length      & $L$  & \si{\metre}  \\
-      Temperature & $T$  & \si{\kelvin} \\
-      Coefficient of linear expansion & $\alpha$ & \si{\per\kelvin}
-    \end{tabular}
-  \end{center}
-  $\alpha$ is independent of pressure for solids and liquids, but may vary
-  with $T$.
-\end{frame}
+%\begin{frame}{Relationship Between Temperature and Pressure}
+%  The relationship between absolute temperature $T$ and pressure $P$
+%  of a gas at constant volume is defined using its triple point:
+%
+%  \eq{-.1in}{
+%    T=\frac{T_\mathrm{tp}}{P_\mathrm{tp}}P
+%  }
+%
+%  \textbf{Triple point} is a combination of pressure and temperature where all
+%  phases of a substance (solid, liquid and vapour) may coexist in thermal
+%  equilibrium.
+%  \begin{itemize}
+%  \item The triple point temperature for water is at
+%    $T_\mathrm{tp}=\SI{273.16}{\kelvin}$, or $\SI{0.01}{\celsius}$
+%  \item Triple point pressure for water is $P_\mathrm{tp}=\SI{611.2}{\pascal}$
+%  \end{itemize}
+%\end{frame}
 
 
 
-\begin{frame}{Thermal Expansion}
-  There is also a similar expression for
-  \textbf{coefficient of volume expansion}:
-  
-  \eq{-.15in}{
-    \boxed{\frac{\Delta V}{V}=\beta\Delta T}
-    \quad\text{\normalsize where}\quad
-    \boxed{\beta=\frac{1}{V}\frac{dV}{dT}}
-  }
+%\begin{frame}{Thermal Expansion}
+%  When temperature $T$ of an object with length $L$ increases, the object
+%  \emph{usually} expands. The \emph{thermal strain} ($\Delta L/L$) is
+%  proportional the change in temperature ($\Delta T$) by the \textbf{coefficient
+%    of linear thermal expansion} ($\alpha$):
+%  
+%  \eq{-.15in}{
+%    \boxed{\frac{\Delta L}{L} =\alpha\Delta T}%\quad
+%    %\text{\normalsize where}\quad
+%    %\boxed{\alpha=\frac{1}{L}\frac{dL}{dT}}
+%  }
+%  \begin{center}
+%    \begin{tabular}{l|c|c}
+%      \rowcolor{pink}
+%      \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
+%      Length      & $L$  & \si{\metre}  \\
+%      Temperature & $T$  & \si{\kelvin} \\
+%      Coefficient of linear expansion & $\alpha$ & \si{\per\kelvin}
+%    \end{tabular}
+%  \end{center}
+%  $\alpha$ is independent of pressure for solids and liquids, but may vary
+%  with $T$.
+%\end{frame}
+%
+%
+%
+%\begin{frame}{Thermal Expansion}
+%  There is also a similar expression for
+%  \textbf{coefficient of volume expansion}:
+%  
+%  \eq{-.15in}{
+%    \boxed{\frac{\Delta V}{V}=\beta\Delta T}
+%    %\quad\text{\normalsize where}\quad
+%    %\boxed{\beta=\frac{1}{V}\frac{dV}{dT}}
+%  }
+%
+%  $\beta$ is also independent of pressure for solids and liquids,
+%  but may vary with $T$.
+%  \begin{center}
+%    \begin{tabular}{l|c|c}
+%      \rowcolor{pink}
+%      \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
+%      Volume      & $V$  & \si{\metre^3} \\
+%      Temperature & $T$  & \si{\kelvin} \\
+%      Coefficient of volume expansion & $\beta$ & \si{\per\kelvin} \\
+%    \end{tabular}
+%  \end{center}
+%  Careful application of calculus will show that for isotropic material (where
+%  $\alpha$ is the same in all direction)
+%
+%  \eq{-.4in}{
+%    \beta = 3\alpha
+%  }
+%\end{frame}
 
-  $\beta$ is also independent of pressure for solids and liquids,
-  but may vary with $T$.
-  \begin{center}
-    \begin{tabular}{l|c|c}
-      \rowcolor{pink}
-      \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
-      Volume      & $V$  & \si{\metre^3} \\
-      Temperature & $T$  & \si{\kelvin} \\
-      Coefficient of volume expansion & $\beta$ & \si{\per\kelvin} \\
-    \end{tabular}
-  \end{center}
-  Careful application of calculus will show that for isotropic material (where
-  $\alpha$ is the same in all direction)
-
-  \eq{-.4in}{
-    \beta = 3\alpha
-  }
-\end{frame}
 
 
+\section{Ideal Gas Law}
 
 \begin{frame}{Ideal Gas Law for Low-Density Gases}
-  \textbf{Boyle's law}: Physicist Robert Boyle (1627-1691) discovered that,
-  when a gas is allowed to expand or compress at \emph{constant temperature},
-  the product of pressure $P$ and $V$ remain constant, i.e.:
+  Physicist Robert Boyle (1627-1691) discovered that, when a gas is allowed to
+  expand or compress at \emph{constant temperature}, the product of pressure
+  $P$ and $V$ remain constant (\textbf{Boyle's law}), i.e.:
 
   \eq{-.2in}{
     PV=\text{constant} %\quad\quad\text{\normalsize constant temperature}
   }
 
-  \vspace{-.1in}We also know that at \emph{constant volume}, temperature is
-  proportional to pressure. This is how we got the absolute temperature scale
-  discussed earlier, i.e.:
+  \vspace{-.1in}From the previous discussion on temperature scale, we also know
+  that at \emph{constant volume}, (thermdynamic) temperature is proportional to
+  pressure. Combining the two discoveries yields this equation:
 
-  \eq{-.3in}{
+  \eq{-.25in}{
     PV=CT
   }
 
@@ -217,18 +266,18 @@
   \begin{itemize}
   \item Two identical containers with the same volume $V$, same amount of same
     kind of gas, at same pressure $P$ and same temperature $T$
-  \item When the containers are combined and the molecules are free to
-    move, $P$ and $T$ remain the same, but volume is increased by factor of
-    $2$
+  \item When the containers are combined and the molecules are free to move,
+    $P$ and $T$ remain the same, but volume and the number of molecules are
+    both increased by factor of 2
   \end{itemize}
-  $C$ must scale with the number of molecules of gas $N$, which modifies the
-  equation to this, the \textbf{ideal gas law}:
+  Therefore $C$ must scale with the number of molecules of gas $N$, which
+  modifies the equation to this, the \textbf{ideal gas law}:
 
   \eq{-.25in}{
     \boxed{PV=NkT}
   }
 
-  \vspace{-.15in}The constant $k=\SI{1.381e-23}{\joule/\kelvin}$ is called the
+  \vspace{-.15in}The constant $k=\SI{1.381e-23}{\joule/\kelvin}$ is called
   \textbf{Boltzmann's constant}. It is found experimentally to have the same
   value for any kind or amount of gas.
 \end{frame}
@@ -236,9 +285,9 @@
 
 
 \begin{frame}{Ideal Gas Law}
-  The ideal gas law can also be written a more familiar way if you have taken
-  any chemistry courses:
-  
+  The ideal gas law is often expressed in a slightly different form in
+  chemistry courses:  
+
   \eq{-.25in}{
     \boxed{PV=nRT}
   }
@@ -248,31 +297,13 @@
   \item $n=N/N_A$ is the number of moles of the gas
   \item $R=kN_A=\SI{8.314}{\kilo\gram/\mol.\kelvin}$ is the
     \textbf{universal gas constant}, and
-  \item $N_A=\num{6.022e23}$ is \textbf{Avagadro's number}
+  \item $N_A=\num{6.022e23}$ is \textbf{Avagadro's number}, which is the number
+    of molecules in one mole
   \end{itemize}
-
-  \vspace{.1in}The ideal gas law is an \textbf{equation of state}, because it
-  relates all the quantities that define the \emph{state} of a gas: pressure
-  $P$, volume $V$ and temperature $T$.
-\end{frame}
-
-
-
-\begin{frame}{Kinetic Theory of Gases}
-  Assumptions for the kinetic theory of gases:
-  \begin{enumerate}
-  \item The gas consists of a large number of molecules that make
-    \emph{elastic} collisions with each other and with the walls of the
-    container.
-  \item The molecules are separated, on average, by distances that are large
-    compared to their diameters, and they exert no force (gravitational,
-    electrostatic etc) on each other except when they collide.\footnotemark
-  \item In the absence of external forces, there is no preferred position for a
-    molecules in the container, and there is no preferred velocity vector.
-  \end{enumerate}
-
-  \footnotetext[1]{This means that the density of the gas is low, i.e. assume
-    ideal gas behavior.}
+%
+%  \vspace{.1in}The ideal gas law is an \textbf{equation of state}, because it
+%  relates all the quantities that define the \emph{state} of a gas: pressure
+%  $P$, volume $V$ and temperature $T$.
 \end{frame}
 
 
@@ -355,7 +386,7 @@
   \item temperature is low
   \end{itemize}
   In these situations the \textbf{van der Waal equation} provides a more
-  accurate description of the behaviour of real gases:
+  accurate description of the behavior of real gases:
 
   \eq{-.2in}{
     \boxed{\left(P+\frac{an^2}{V^2}\right)(V-bn)=nRT}
@@ -392,17 +423,19 @@
   \item\vspace{-.1in} At \textbf{triple point} $B$, all three phases of matter
     can exist in equilibrium
   \item At \textbf{critical point} $C$, liquid and vapour phases are
-    indistinguishable, and the gas laws can model their behaviour
+    indistinguishable, and the gas laws can model their behavior
   \end{itemize}
 \end{frame}
 
 
 
 \begin{frame}{First Law of Thermodynamics}
-  \begin{block}{First Law of Thermodynamics}
-    The change in the internal energy of a system is the sum of the work and
-    heat exchanged between a system and its surroundings. 
-  \end{block}
+  In the \textbf{first law of thermodynamics}, the change in internal energy of
+  a thermodynamic system ($\Delta U$) is the difference between the heat added
+  into the system and the sum of the work ($W$) \emph{by} the
+  system\footnote{\textbf{VERY IMPORTANT NOTE:} Often the equation is written
+    as $\Delta U=Q+W$, where $W$ is the work done \emph{to} the system. Since
+    both conventions are commonly use, you must be very careful.}:
   
   \eq{-.2in}{
     \boxed{\Delta U=Q-W}
@@ -416,130 +449,157 @@
       Heat into the system           & $Q$                 & \si{\joule}
     \end{tabular}
   \end{center}
-  \vspace{.1in}\textbf{IMPORTANT NOTE:} Sometimes the equation is written as
-  $\Delta U=Q+W$, where $W$ is the work done \emph{to} the system, rather
-  than \emph{by} the system. Both conventions are commonly use. You have to
-  be very careful.
 \end{frame}
 
 
 \begin{frame}{First Law of Thermodynamics}
+  Internal energy $U$ is the total kinetic \& potential energies of the
+  molecules. It is a linear function of temperature.
+
   \eq{-.2in}{
-    \boxed{\Delta U=Q-W}
+    \boxed{\Delta\textcolor{red}{U}=Q-W}
   }
-  
-  Internal energy $U$ is the sum of kinetic and potential energies, but does
-  \emph{not} include
+
+  \vspace{-.1in}For monatomic gases (including an ideal gas): there are 3
+  degrees of translational freedom, therefore the internal energy is
+
+  \eq{-.2in}{
+    U=\frac32NkT
+  }
+
+  For diatomic gases, there are 3 degrees of translational freedom and 2
+  degrees of rotational freedom:
+
+    \eq{-.3in}{
+      U=\frac52NkT
+    }
+\end{frame}
+
+
+
+\begin{frame}{First Law of Thermodynamics}
+  \eq{-.2in}{
+    \boxed{\Delta\textcolor{red}{U}=Q-W}
+  }
+
+  For solids, there are 3 degrees of elastic compression freedom, therefore the
+  internal energy is
+
+  \eq{-.3in}{
+    U=3NkT
+  }
+
+  Note that internal energy does not include:
   \begin{itemize}
   \item The bulk kinetic energy of the system, i.e.\ if the entire container
     of gas moves at speed $v$
-  \item The potential energy inside a force field, e.g.\ gravitational,
-    electrostatic, magnetic
+  \item The potential energies caused by an external force field (e.g.\
+    gravitational, electric, magnetic)
   \end{itemize}
-  For an ideal gas, the internal energy is just the total kinetic energy of the
-  gas:
-
-  \eq{-.2in}{
-    U=K=\frac{3}{2}NkT=\frac{3}{2}nRT
-  }
 \end{frame}
 
 
 
 \begin{frame}{First Law of Thermodynamics}
+  \textbf{Heat} \textcolor{blue}{$Q$} is the spontaneous transfer of energy
+  \emph{into} the system, through conduction, convection and radiation.
+
   \eq{-.2in}{
-    \boxed{\Delta U=Q-W}
+    \boxed{\Delta U=\textcolor{blue}{Q}-W}
   }
-
-  \begin{columns}
-    \column{.7\textwidth}
-    $Q$ is the \emph{thermal energy} (heat) \emph{into} the system, through
-    conduction, convection and radiation.
-    \begin{itemize}
-    \item $+$ if heat is added to the system
-    \item $-$ if heat leaves the system
-    \end{itemize}
-
-    For conduction, the rate of heat transfer $\Delta Q/\Delta t$ (aka ``thermal
-    current'') is given by:
-
-    \eq{-.2in}{
-      \boxed{H=\frac{\Delta Q}{\Delta t}=kA\frac{\Delta T}{\Delta x}}
-    }
-
-    \vspace{-.15in}where $k$ is the thermal conductivity of the material
-
-    \column{.3\textwidth}
-    \pic{1}{conduct.png}
-  \end{columns}
-\end{frame}
-
-
-
-\begin{frame}{First Law of Thermodynamics}
-  \eq{-.2in}{
-    \boxed{\Delta U=Q-W}
-  }
-
-  \vspace{-.1in}$W$ is the mechanical work done by the system to the surrounding
   \begin{itemize}
-  \item $+$ done \emph{by} the system, e.g.\
-    using steam pressure to push a piston or shaft
-  \item $-$ done \emph{to} the system, e.g.\
-    pushing a piston to compress gas in an engine
+  \item\vspace{-.2in} Heat transfer $Q$ is:
+    \begin{itemize}
+    \item $+$ if thermal heat is added to the system
+    \item $-$ if thermal heat leaves the system
+    \end{itemize}
+  \item The net flow of energy is always from the higher temperature to low
+    temperature
+  \item Two objects are in thermal equilibrium if the temperatures are the same
   \end{itemize}
+\end{frame}
+%    For conduction, the rate of heat transfer $\Delta Q/\Delta t$ (aka ``thermal
+%    current'') is given by:
+%
+%    \eq{-.2in}{
+%      \boxed{H=\frac{\Delta Q}{\Delta t}=kA\frac{\Delta T}{\Delta x}}
+%    }
+%
+%    \vspace{-.15in}where $k$ is the thermal conductivity of the material
+%
+ %   \column{.3\textwidth}
+ %   \pic{1}{conduct.png}
+ % \end{columns}
 
-  \eq{-.15in}{
-    \boxed{ W=\int_{P_1}^{P_2} PdV}
+
+
+\begin{frame}{First Law of Thermodynamics}
+  \textcolor{green!80!black}{$W$} is the mechanical work\footnote{The full
+    definition in calculus form is $W=\int PdV$ (i.e.\ pressure times change in
+    volume) which is derived from the definition of mechanical work:
+    $W=\int\mb{F}\cdot d\mb{x}$, i.e.\ force times distance.} done \emph{by}
+  the system to the surrounding.
+
+  \eq{-.2in}{
+    \boxed{
+      \Delta U=Q-\textcolor{green!80!black}{W}
+    }
   }
-  
-  It's up to you to show that this equation is derived from the definition of
-  mechanical work: $\displaystyle W=\int\mb{F}\cdot d\mb{s}$.
+  \begin{itemize}
+  \item Work is done iff\footnote{``if and only if''} the volume changes
+  \item $+$ done \emph{by} the system, e.g.\ using steam pressure to push a
+    piston or shaft
+  \item $-$ done \emph{to} the system, e.g.\ pushing a piston to compress gas
+    in an engine
+  \end{itemize}
 \end{frame}
 
 
 
-\begin{frame}{Work Done To a Gas}
+
+\begin{frame}{Work Done By a Gas}
   On the $P$-$V$ diagram, $W$ is the area under the curve.
   \begin{itemize}
-  \item $W$ is done \emph{by} the system (positive) if the path moves right, and
-  \item done \emph{to} the system (negative) if it moves left
+  \item $W$ is $+$ (\emph{by} the system) if the path moves right
+  \item $W$ is $-$ (\emph{to} the system) if the path moves left
   \end{itemize}
   In the example below, the gas is changed from points $1$ to $2$, but the work
   done is different.
   \begin{center}
-    \begin{tikzpicture}[scale=.75]
+    \begin{tikzpicture}[scale=.65]
       \fill[pink!80!gray!50](1,0) rectangle(4,3.5);
       \draw[dashed](1,0)--(1,3.5);
       \draw[dashed](4,0)--(4,.5);
-      \draw(0,0)--(5,0) node[pos=1,below]{\footnotesize $V$};
+      \draw(0,0)--(5,0) node[pos=1,right]{\footnotesize $V$};
       \draw(0,0)--(0,4) node[pos=1,left]{\footnotesize $P$};
       \draw[very thick,->,red](1,3.5)--(4,3.5)--(4,.6);
       \fill[black](1,3.5) circle(.1) node[above]{\tiny $(P_1,V_1)$};
       \fill[black](4,.5) circle(.1)  node[right]{\tiny $(P_2,V_2)$};
     \end{tikzpicture}
-    \begin{tikzpicture}[scale=.75]
+    \begin{tikzpicture}[scale=.65]
       \fill[pink!80!gray!50](1,0) rectangle(4,.5);
       \draw[dashed](1,0)--(1,3.5);
       \draw[dashed](4,0)--(4,.5);
-      \draw(0,0)--(5,0) node[pos=1,below]{\footnotesize $V$};
+      \draw(0,0)--(5,0) node[pos=1,right]{\footnotesize $V$};
       \draw(0,0)--(0,4) node[pos=1,left]{\footnotesize $P$};
       \draw[very thick,->,red](1,3.5)--(1,.5)--(3.9,.5);
       \fill[black](1,3.5) circle(.1) node[above]{\tiny $(P_1,V_1)$};
       \fill[black](4,.5) circle(.1)  node[right]{\tiny $(P_2,V_2)$};
     \end{tikzpicture}
-    \begin{tikzpicture}[scale=.75]
+    \begin{tikzpicture}[scale=.65]
       \draw[fill=pink!80!gray!50,draw=pink!80!gray!50]
       (1,0)--(1,3.5)..controls(1.5,2) and (3.2,.7)..(4,.5)--(4,0)--cycle;
       \draw[dashed](1,0)--(1,3.5);
       \draw[dashed](4,0)--(4,.5);
-      \draw(0,0)--(5,0) node[pos=1,below]{\footnotesize $V$};
+      \draw(0,0)--(5,0) node[pos=1,right]{\footnotesize $V$};
       \draw(0,0)--(0,4) node[pos=1,left]{\footnotesize $P$};
       \draw[very thick,->,red](1,3.5)..controls(1.5,2) and (3.2,.7)..(3.95,.55);
       \fill[black](1,3.5) circle(.1) node[above]{\tiny $(P_1,V_1)$};
       \fill[black](4,.5) circle(.1)  node[right]{\tiny $(P_2,V_2)$};
     \end{tikzpicture}
   \end{center}
+  The fact that $W$ is \emph{path dependent} means that the pressure force is
+  non-conservative.
 \end{frame}
 
 
@@ -547,7 +607,7 @@
 \begin{frame}{Quasi-Static Processes}
   A \textbf{quasi-static process} is a thermodynamic process that happens
   slowly enough for the system to remain in internal equilibrium. We are
-  concerned with $4$ of these process:
+  concerned with four of these processes:
   \begin{itemize}
   \item\textbf{Isobaric process} - constant pressure
   \item\textbf{Isochoric process} - constant volume
@@ -563,7 +623,7 @@
   \begin{center}
     \begin{tikzpicture}[scale=.6]
       \draw(0,0)--(5,0) node[pos=1,right]{\footnotesize $V$}
-      node[midway,below]{Isobaric (constant pressure)};
+      node[midway,below]{Isobaric};
       \draw(0,0)--(0,4) node[pos=1,left]{\footnotesize $P$};
       \draw[thick](1,2)--(3.95,2);
       \fill[black](1,2) circle(.1);
@@ -571,7 +631,7 @@
     \end{tikzpicture}
     \begin{tikzpicture}[scale=.6]
       \draw(0,0)--(5,0) node[pos=1,right]{\footnotesize $V$}
-      node[midway,below]{Isochoric (constant volume)};
+      node[midway,below]{Isochoric};
       \draw(0,0)--(0,4) node[pos=1,left]{\footnotesize $P$};
       \draw[thick](2,1)--(2,3.5);
       \fill[black](2,1)   circle(.1);
@@ -580,7 +640,7 @@
     
     \begin{tikzpicture}[scale=.6]
       \draw(0,0)--(5,0) node[pos=1,right]{\footnotesize $V$}
-      node[midway,below]{Isothermal (constant temperature)};
+      node[midway,below]{Isothermal};
       \draw(0,0)--(0,4) node[pos=1,left]{\footnotesize $P$};
       \draw[smooth,samples=15,domain=1:3.5,thick] plot({\x},{3/\x});
       \fill[black](1,3)   circle(.1);
@@ -588,7 +648,7 @@
     \end{tikzpicture}
     \begin{tikzpicture}[scale=.6]
       \draw(0,0)--(5,0) node[pos=1,right]{\footnotesize $V$}
-      node[midway,below]{Adiabatic (constant heat)};
+      node[midway,below]{Adiabatic};
       \draw(0,0)--(0,4) node[pos=1,left]{\footnotesize $P$};
       \draw[smooth,samples=15,domain=1:4,thick,gray!70] plot({\x},{4/\x});
       \draw[smooth,samples=15,domain=1:4,thick,gray!70] plot({\x},{2.3/\x});
