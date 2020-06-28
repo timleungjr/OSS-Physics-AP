@@ -47,7 +47,7 @@
 
   {\LARGE
     \begin{center}
-      \textbf{WELCOME TO AP PHYSICS}
+      \textbf{WELCOME TO AP PHYSICS 1 \& 2}
     \end{center}
   }
 \end{frame}
@@ -100,12 +100,12 @@
 
 \begin{frame}{Files for You to Download}
   \begin{itemize}
-%  \item\texttt{PhysAPC-courseOutline.pdf}--The course outline
+  \item\texttt{PhysAP1-courseOutline.pdf}--The course outline
 %  \item\texttt{PhysAPC-equationSheet.pdf}--Equation sheet for your exams
-  \item\texttt{PhysAP1-01-kinematics.pdf}
-  \item\texttt{PhysAPC-02-dynamics.pdf}
-%  \item\texttt{PhysAPC-01-Homework.pdf}--Homework problems for Topic 1
-%  \item\texttt{PhysAPC-02-Homework.pdf}--Homework problems for Topic 2
+  \item\texttt{PhysAP1-01-kinematics.pdf} - Slides on \emph{kinematics} (this set of slides).
+  \item\texttt{PhysAP1-02-dynamics-print.pdf} - Slides for \emph{dynamics}, the next topic
+  \item\texttt{PhysAP1-01-Homework.pdf}--Homework problems for kinematics
+  \item\texttt{PhysAP1-02-Homework.pdf}--Homework problems for dynmaics
   \end{itemize}
   
   \vspace{.1in}Please download/print the PDF file for the class slides before
@@ -138,7 +138,7 @@
   \item Speed
   \item<alert@1> Acceleration
   \end{itemize}
-  Kinematics does not deal with the causes of motion. In Physics 1 exam,
+  Kinematics does not deal with the causes of motion. In the AP Physics 1 exam,
   kinematics account for approximately \SI{10}{\percent} to \SI{16}{\percent} of
   the marks.
 \end{frame}
@@ -154,7 +154,7 @@
     \mb{x}(t)=x(t)\bm{\hat{\imath}} + y(t)\bm{\hat{\jmath}} + z(t)\bm{\hat{k}}
   }
 
-  Vectors in 2D/3D Cartesian space are generally using the ``IJK notation''
+  Vectors in 2D/3D Cartesian space are often expressed using the ``IJK notation''
   \begin{itemize}
   \item $\bm{\hat{\imath}}$, $\bm{\hat{\jmath}}$ and $\bm{\hat{k}}$ are
     \textbf{basis vectors} representing the directions of the $x$, $y$ and $z$
@@ -167,7 +167,7 @@
 
 
 \begin{frame}{Displacement}
-  \textbf{Displacement} $\Delta\mb{x}(t)$ is the change in position from the
+  \textbf{Displacement} $\Delta\mb{x}(t)$ is the vector change in position from the
   initial position $\mb{x}_0$ within the same coordinate system. The unit for
   displacement is also meter.
 
@@ -188,6 +188,7 @@
 
 \begin{frame}{Distance}
   \textbf{Distance} $s(t)$ is a quantity that is \emph{related} to displacement.
+  It is:
   \begin{columns}
     \column{.7\textwidth}
     \begin{itemize}
@@ -211,6 +212,7 @@
       node[midway,right]{$s$};
     \end{tikzpicture}
   \end{columns}
+  \vspace{.15in}Pay close attention to the difference between distance and displacement.
 \end{frame}
 
 
@@ -241,7 +243,7 @@
 
 
 \begin{frame}{Average Velocity}
-  \textbf{Average velocity} $\overline{\mb{v}}$ of an object is the finite
+  \textbf{Average velocity} $\overline{\mb{v}}$ of an object is its
   displacement $\Delta\mb{x}$ over a \emph{finite} time interval $\Delta t$.
   The unit for velocity is \textbf{meters per second} (\si{\metre\per\second}):
 
@@ -252,11 +254,11 @@
   }
   
   Since the $\iii$, $\jjj$ and $\kkk$ directions ($x$, $y$, $z$ axes) are
-  \emph{linearly independent} (what happens in one axis does not affect
-  another), each component of average velocity can be calculated by separating
-  each direction:
+  \emph{linearly independent}\footnote{mathematical way of saying that what happens in
+  one axis does not affect another}, each component of average velocity can be
+  calculated by separating each direction:
 
-  \eq{-.15in}{
+  \eq{-.2in}{
     \boxed{
       \overline{\mb{v}}=
       \frac{\Delta x}{\Delta t}\iii + \frac{\Delta y}{\Delta t}\jjj +
@@ -265,33 +267,36 @@
   }
 
   (Note: A bar is drawn over the symbol if it is averaged over time.)
+  \vspace{.15in}
 \end{frame}
 
 
 
 \begin{frame}{Instantaneous Velocity}
-
-  \eq{0in}{
-    \overline{\mb{v}}= \frac{\Delta\mb{x}}{\Delta t}
+  If displacement $d\mb{x}$ is calculated a very small\footnote{In calculus, a very
+  small change is called \emph{infinitesimally small}} time interval $dt$, then
+  velocity is called the \textbf{instantaneous velocity}:
+  
+  \eq{-.2in}{
+	\overline{\mb{v}}= \frac{\Delta\mb{x}}{\Delta t}\quad\rightarrow\quad
+	\boxed{\mb{v}= \frac{d\mb{x}}{dt}}
   }
   
-  If displacement $\Delta\mb{x}$ is calculated a very small (in calculus, a very
-  small change is called \emph{infinitesimal}) time interval $\Delta t$, then
-  velocity is called the \textbf{instantaneous velocity}. 
+  The instantaneous velocity is the slope of the tangent on the position-time graph.
 \end{frame}
 
 
 
 \begin{frame}{Instantaneous \& Average Speed}
-  \textbf{Average speed} is similar to average velocity: it is the finite
-  distance travelled over a finite time interval. Since distance is always
+  \textbf{Average speed} is similar to average velocity: it is the distance $s$
+  traveled over a finite time interval $\Delta t$. Since distance is always
   positive, so too is the average speed
  
   \eq{-.2in}{
     \boxed{\overline{v}=\frac{s}{\Delta t}}
   }
 
-  Likewise, when the time interval is made extremely small, then the speed is
+  Likewise, when the time interval is made infinitesimally small, then the speed is
   called the \textbf{instantaneous speed} $v$. Instantaneous speed $v$ is the
   magnitude of the instantaneous velocity vector.
 \end{frame}
@@ -311,10 +316,10 @@
 
 
 \begin{frame}{Instantaneous \& Average Acceleration}
-  In the same way that velocity how quickly position changes with time, 
-  \textbf{average acceleration} $\overline{\mb{a}}$ is the finite change in
-  velocity $\Delta\mb{v}$ over a finite time interval $\Delta t$.
-  The unit for acceleration is \si{\metre\per\second^2}.
+  In the same way that velocity descrbes how quickly position changes with time, 
+  \textbf{average acceleration} $\overline{\mb{a}}$ is the change in velocity
+  $\Delta\mb{v}$ over a finite time interval $\Delta t$.The unit for acceleration
+  is \si{\metre\per\second^2}.
 
   \eq{-.2in}{
     \boxed{
@@ -325,18 +330,6 @@
   
   Making the time interval $\Delta t$ infinitesimally small gives the
   \textbf{instantaneous acceleration} $\mb{a}(t)$.
-%
-%  \eq{-.2in}{
-%    \mb{a}(t)= \frac{d\mb{v}(t)}{dt}=\frac{d^2\mb{x}(t)}{dt^2}
-%  }
-%
-%
-%
-%  Acceleration is the second derivative of position, i.e.
-%  \begin{enumerate}
-%  \item Take derivative of $\mb{x}(t)$ to get $\mb{v}(t)=\mb{x}'(t)$
-%  \item Take derivative again of $\mb{v}(t)$ to get $\mb{a}(t)=\mb{v}'(t)$
-%  \end{enumerate}
 \end{frame}
 
 
@@ -403,7 +396,7 @@
 
 
 \begin{frame}{Acceleration as Functions of Velocity and Position}
-  Sometimes, acceleration are expressed as functions of velocity and position
+  Sometimes, acceleration are expressed as a function of velocity or position
   rather than of time, depending on the forces acting on them. For example:
   \begin{itemize}
   \item Gravitational or electrostatic forces: $a(x)=Ax^{-2}$
@@ -420,9 +413,9 @@
 \section{Kinematic Equations}
 
 \begin{frame}{Kinematic Equations}
-  Without calculus, problems in AP Physics 1 only deal with
+  Without calculus, kinematic problems in AP Physics 1 only deal with
   \underline{constant acceleration}. Non-constant acceleration problems are
-  studied in more depth in Physics C. The kinematic equations that will be used
+  studied in depth in Physics C. The 1D kinematic equations that will be used
   in Physics 1 are:
   \begin{columns}
     \column{.45\textwidth}
@@ -444,24 +437,34 @@
     \item Acceleration (constant): $a$
     \end{itemize}
   \end{columns}
-  Kinematic equations are sometimes called the ``Big-five'' or ``Big-four''
-  equations in Grade 11/12 Physics. In AP, you are given only three equations
-  in your equation sheet.
+  These equations are sometimes called the ``Big-five'' or ``Big-four''
+  in Grade 11/12 Physics. In AP, you are given only 3 equations in your
+  equation sheet.
 \end{frame}
 
 
+\begin{frame}{Non-Constant Acceleration}
+  What happens when acceleration is not constant? Our options are:
+  \begin{itemize}
+  \item Give up (bad idea!)
+  \item Use calculus
+  \item Use a numerical iterative method
+  \item<alert@1>Use conservation of energy
+  \end{itemize}
+\end{frame}
 
 \section{Motion Graphs}
 
 \begin{frame}{Motion Graphs}
-  You should already be familiar with \emph{basic} motion graphs from Grade
+  You should already be familiar with the \emph{basic} motion graphs from Grade
   11/12 Physics:
   \begin{itemize}
   \item Position vs.\ time ($x$-$t$) graph
   \item Velocity vs.\ time ($v$-$t$) graph
   \item Acceleration vs.\ time ($a$-$t$) graph
   \end{itemize}
-  Note that these graphs are only valid for 1D motion.
+  Note that these graphs are only valid for 1D motion. Think of them as the
+  graphical representation of the kinematic equations from the previous slide
   %Depending on the situation, it may be more useful to plot motion
   %using other quantities as well.
 \end{frame}
@@ -539,9 +542,8 @@
 
 
 \begin{frame}{Simple Harmonic Motion}
-  For \textbf{simple harmonic motions} (vibrations, oscillations), position,
-  velocity and acceleration are non-constant, and they all change with time as
-  sinusoidal functions.
+  For \textbf{harmonic motions} (vibrations, oscillations), $x$, $v$ and $a$
+  are all non-constant, and they all change with time as sinusoidal functions.
   %Although we cannot use the kinematic equations here, we will be studying
   %this motion in the course.
   \begin{center}
@@ -632,7 +634,7 @@
     pointing \emph{forward}
   \item $y$-axis usually is the \emph{vertical} direction, with $+$ direction
     pointing \emph{up}
-  \item The reference point is where the projectile is launched
+  \item The reference point is usually where the projectile is launched
   \item Consistent with the right-handed Cartesian coordinate system
   \end{itemize}
 \end{frame}
@@ -648,9 +650,8 @@
     \left[v_0\cos\theta\right]\iii + \left[v_0\sin\theta\right]\jjj
   }
 
-  There is no acceleration (i.e.\ $a_x=0$) in the horizontal direction,
-  therefore $v_x$ is constant. The three kinematic equations reduce to a single
-  equation:
+  There is no horizontal acceleration (i.e.\ $a_x=0$), therefore $v_x$ is
+  constant. The kinematic equations reduce to a single equation:
 
   \eq{-.2in}{
     x=v_xt=\left[v_0\cos\theta\right] t
@@ -665,9 +666,9 @@
 
 
 \begin{frame}{Vertical ($y$) Direction}
-  There is constant acceleration due to gravity alone in the vertical
-  direction, i.e.\ $a_y=-g$. (Acceleration is \emph{negative} due to the way we
-  defined the coordinate system.) The important equation is this one:
+  There is constant vertical acceleration due to gravity alone, i.e.\
+  $a_y=-g$. ($a_y$ is \emph{negative} due to the way we defined the
+  coordinate system.) The important equation is this one:
 
   \eq{-.2in}{
     y = \left[v_0\sin\theta\right]t-\frac12gt^2
@@ -698,7 +699,7 @@
   \begin{itemize}
   \item \emph{Two} equations with \emph{two} unknowns
   \item If an object lands on an incline, there will be a third equation
-    describing the relationship between $x$ and $y$
+    relating $x$ and $y$
   \end{itemize}
 \end{frame}
 
@@ -706,7 +707,7 @@
 
 \begin{frame}{Symmetric Trajectory}
   A projectile's trajectory is symmetric if the object lands at the same height
-  as when it launched.
+  as when it launched.   The angle $\theta$ is measured above the the horizontal.
   \begin{itemize}
   \item Time of flight
     \eq{-.1in}{t_\mathrm{max}=\frac{2v_0\sin\theta}{g}}
@@ -715,7 +716,6 @@
   \item Maximum height
     \eq{-.1in}{y_\mathrm{max}=\frac{v_0^2\sin^2\theta}{2g}}
   \end{itemize}
-  The angle $\theta$ is measured above the the horizontal.
 \end{frame}
 
 
@@ -773,18 +773,18 @@
         reference
       \end{minipage}
     }
+	Two \textbf{frames of reference} (i.e.\ \textbf{coordinate systems})
     \begin{itemize}
-    \item Two \textbf{frames of reference} (i.e.\ \textbf{coordinate systems})
-      $C$ with axes $x,y,z$ and $B$ with axes $x',y',z'$
-    \item The position of object $\textcolor{red!80!black}{A}$ can be described
-      by $\textcolor{blue!70!black}{\mb{x}_{AC}}$ ($A$ relative to frame $C$) or
-      $\textcolor{green!80!black}{\mb{x}_{AB}}$ ($A$ relative to frame $B$)
-      \begin{itemize}
-      \item It is clear that $\mb{x}_{AB}$ and $\mb{x}_{AC}$ are different
-        because depending on which frame you measure from
-      \item If the object moves, then $\mb{x}_{AB}$ and $\mb{x}_{AC}$ are
-        functions of time
-      \end{itemize}
+    \item $C$ with axes $x,y,z$
+    \item $B$ with axes $x',y',z'$
+    \end{itemize}
+    The position of $\textcolor{red!80!black}{A}$ can be described
+    by $\textcolor{blue!70!black}{\mb{x}_{AC}}$ ($A$ relative to frame $C$) or
+    $\textcolor{green!80!black}{\mb{x}_{AB}}$ ($A$ relative to $B$)
+    \begin{itemize}
+    \item Obviously $\mb{x}_{AB}$ and $\mb{x}_{AC}$ are different
+    \item If the object moves, then $\mb{x}_{AB}$ and $\mb{x}_{AC}$ are
+      functions of time
     \end{itemize}
   \end{columns}
 \end{frame}
@@ -818,24 +818,22 @@
     \end{tikzpicture}
 
     \column{.6\textwidth}
+	We can relate the positions of the origins of the two frames of reference by
+	$\mb{x}_{BC}$ (origin of frame $B$ relative to frame $C$)
     \begin{itemize}
-    \item We can also relate the positions of the origins of the two frames of
-      reference by $\mb{x}_{BC}$ (origin of frame $B$ relative to frame $C$)
-      \begin{itemize}
-      \item The vector pointing from the origin of frame $C$ to the origin of
-        frame $B$
-      \item If the two frames are moving relative to each other, then
-        $\mb{x}_{BC}$ is a function of time
-      \end{itemize}
-    \item Without needing elaborate specific vector notations, it should be
-      obvious that
+    \item The vector pointing from the origin of frame $C$ to the origin of frame
+    $B$
+    \item If the two frames are moving relative to each other, then
+    $\mb{x}_{BC}$ is a function of time
+    \end{itemize}
+    Without needing elaborate specific vector notations, it should be obvious
+    that
 
       \eq{-.3in}{
         \textcolor{blue!70!black}{\mb{x}_{AC}}=
         \textcolor{green!80!black}{\mb{x}_{AB}}+
         \textcolor{purple!80}{\mb{x}_{BC}}
         }
-    \end{itemize}
   \end{columns}
 \end{frame}
 
@@ -869,7 +867,7 @@
     \column{.6\textwidth}
     Starting from the definition of \textbf{relative position}:
 
-    \eq{-.2in}{
+    \eq{-.3in}{
       \textcolor{blue!70!black}{\mb{x}_{AC}}=
       \textcolor{green!80!black}{\mb{x}_{AB}}+
       \textcolor{purple!80}{\mb{x}_{BC}}
@@ -878,10 +876,12 @@
     \vspace{-.15in}Using the definitions for velocity to get a similar
     equation for \textbf{relative velocity}:
 
-    \eq{-.2in}{
-      \textcolor{blue!70!black}{\mb{v}_{AC}} =
-      \textcolor{green!80!black}{\mb{v}_{AB}}+
-      \textcolor{purple!80}{\mb{v}_{BC}}
+    \eq{-.3in}{
+      \boxed{
+        \textcolor{blue!70!black}{\mb{v}_{AC}} =
+        \textcolor{green!80!black}{\mb{v}_{AB}}+
+        \textcolor{purple!80}{\mb{v}_{BC}}
+      }
     }
 
     \vspace{-.15in}Likewise, \textbf{relative acceleration} has a similar
