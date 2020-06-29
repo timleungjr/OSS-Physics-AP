@@ -91,7 +91,7 @@
 \usepackage{enumitem}
 \usepackage{tikz,graphicx,wrapfig}
 \usepackage{pgfplots}
-\usepackage{times}
+\usepackage{txfonts}
 \usepackage[document]{ragged2e}
 \usepackage[none]{hyphenat}
 \usepackage{siunitx}
