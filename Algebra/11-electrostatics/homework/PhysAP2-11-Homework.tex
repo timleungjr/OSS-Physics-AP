@@ -337,6 +337,7 @@
 
 \begin{enumerate}[leftmargin=15pt]
 
+  % FROM TIPLER
 \item Two identical small spheres of mass $m$ are suspended from a common point
   by threads of length $L$. When each sphere carries a charge $q$, each thread
   makes an angle $\theta$ with the vertical as shown in the figure below.
@@ -363,7 +364,8 @@
     \end{scope}
   \end{tikzpicture}
   \vspace{\stretch{1}}
-  
+
+  % FROM TIPLER
 \item Five equal charges $Q$ are equally spaced on a semicircle or radius $R$
   as shown in the figure below. Find the force on a charge $q$ located at the
   center of the semi-circle. (Hint: Take advantage of symmetry.)
@@ -438,24 +440,67 @@
     \vspace{.1in}Justify your answer.
   \end{enumerate}
   \newpage
-  
-%\item Two positive charges $+q$ are on the $y$ axis at $y=+a$ and $y=-a$.
-%  \begin{enumerate}[leftmargin=15pt]
-%  \item Show that the electric field on the $x$ axis is along the $x$ axis with
-%    $E_x=2kqx(x^2+a^2)^{-3/2}$.
-%  \item Show that near the origin, when $x\ll a$, $E_x\approx 2kqx/a^3$.
-%  \item Show that for $x\gg a$, $E_x\approx 2kq/x^2$.
-%  \item Explain why you should expect the result in (c) even before calculating
-%    it.
-%  \end{enumerate}
-%  A bead of mass $m$ with a negative charge $-q$ slides along a thread that
-%  runs along the $x$ axis.
-%  \begin{enumerate}[start=5,leftmargin=15pt]
-%  \item Show that for small displacements $x\ll a$, the bead experiences a
-%    restoring force that is proportional to $x$ and therefore undergoes
-%    simple harmonic motion.
-%  \item Find the period of the motion.
-%  \end{enumerate}
+
+  % THIS IS TAKEN FROM THE 2005 AP PHYSICS B EXAM FREE-RESPONSE QUESTION #3
+  \begin{center}
+    \begin{tikzpicture}
+      \draw[very thick,->](-5,0)--(5,0)
+      node[pos=1,right]{$x$}
+      node[midway,below left]{$O$};
+      \draw[very thick,->](0,-3)--(0,3) node[pos=1,above]{$y$};
+      \fill(0,-1.5) circle(.1) node[left]{$-a$} node[right]{$+2q$};
+      \fill(0, 1.5) circle(.1) node[left]{$a$}  node[right]{$+q$};
+    \end{tikzpicture}
+  \end{center}
+\item Two point charges are fixed on the y-axis at the locations shown in the
+  figure above. A charge of $+q$ is located at $y=+a$ and a charge of $+2q$ is
+  located at $y=-a$. Express your answers to parts (a) and (b) in terms of $q$,
+  $a$, and fundamental constants.
+  \begin{enumerate}[leftmargin=15pt]
+  \item Determine the magnitude and direction of the electric field at the
+    origin.
+  \item Determine the electric potential at the origin.
+  \end{enumerate}
+  A third charge of $-q$ is first placed at an arbitrary point $A$ ($x=-x_0$) on
+  the $x$-axis as shown in the figure below.
+  \begin{center}
+    \begin{tikzpicture}
+      \draw[very thick,->](-5,0)--(5,0) node[pos=1,right]{$x$};
+      \draw[very thick,->](0,-3)--(0,3) node[pos=1,above]{$y$};
+      \fill(0,-1.5) circle(.1) node[left]{$-a$} node[right]{$+2q$};
+      \fill(0, 1.5) circle(.1) node[left]{$a$}  node[right]{$+q$};
+      \fill(-4,0)   circle(.1) node[below left]{$A$} node[above]{$-q$};
+      \draw[<->](-4,-.3)--(0,-.3) node[midway,below]{$x_0$};
+      \draw(-4,0)--(-4,-.5);
+    \end{tikzpicture}
+  \end{center}
+  \begin{enumerate}[leftmargin=15pt,resume]
+  \item Write expressions in terms of $q$, $a$, $x_0$, and fundamental
+    constants for the magnitudes of the forces on the $-q$ charge at point $A$
+    caused by each of the following.
+    \begin{enumerate}[leftmargin=15pt]
+    \item The $+q$ charge
+    \item The $+2q$ charge
+    \end{enumerate}
+    \newpage
+  \item The $-q$ charge can also be placed at other points on the $x$-axis. At
+    each of the labeled points ($A$, $B$, and $C$) in the following diagram,
+    draw a vector to represent the direction of the net force on the $-q$
+    charge due to the other two charges when it is at those points.
+    \begin{center}
+      \begin{tikzpicture}
+        \draw[dashed,->](-5,0)--(5,0) node[pos=1,right]{$x$};
+        \draw[dashed,->](0,-3)--(0,3) node[pos=1,above]{$y$};
+        \fill(0,-1.5) circle(.1) node[left]{$-a$} node[right]{$+2q$};
+        \fill(0, 1.5) circle(.1) node[left]{$a$}  node[right]{$+q$};
+        \fill(-4,0)   circle(.1) node[below]{$A$};
+        \fill (0,0)   circle(.1) node[below left]{$B$};
+        \fill(2.5,0)  circle(.1) node[below]{$C$};
+      \end{tikzpicture}
+    \end{center}
+  \end{enumerate}
+  \newpage
+
 %  \vspace{\stretch{1}}
 %
 %\item Using Gauss's law, find

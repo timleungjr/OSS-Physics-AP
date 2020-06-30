@@ -66,9 +66,10 @@
   \end{center}
 }
 
-\newcommand{\genfreedirections}[1]{
-  \textbf{Directions:} Answer all questions. The suggested time is about
-  \num{#1} minutes for answering each of the questions. The parts within a
+\newcommand{\genfreedirections}{
+  \textbf{Directions:} Answer all questions. %The suggested time is about
+  %\num{#1} minutes for answering each of the questions.
+  The parts within a
   question may not have equal weight. All final numerical answers should
   include appropriate units. Credit depends on the quality of your solutions
   and explanations, so you should show your work. Credit also depends on
