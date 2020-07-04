@@ -2,7 +2,7 @@
 
 \usetheme{metropolis}
 \setbeamersize{text margin left=.5cm,text margin right=.5cm}
-%\setbeamertemplate{navigation symbols}{} % suppress nav bar
+\setbeamertemplate{navigation symbols}{} % suppress nav bar
 %\setbeamercovered{transparent}
 
 \usefonttheme{professionalfonts}
@@ -31,7 +31,7 @@
 \subtitle{Advanced Placement Physics C}
 \author[TML]{Dr.\ Timothy Leung}
 \institute{Olympiads School}
-\date{July 7, 2020}
+\date{July 5, 2020}
 
 \newcommand{\pic}[2]{\includegraphics[width=#1\textwidth]{#2}}
 \newcommand{\mb}[1]{\ensuremath\mathbf{#1}}
@@ -55,55 +55,86 @@
 
 
 
-\section{Newton's Laws}
+\section{Laws of Motion}
 
 \begin{frame}{First Law of Motion}
-  \textbf{An object at rest or in uniform motion will remain at rest or
-    in uniform motion unless acted on by a net external force.}
+  \textbf{Every body persists in its state of being at rest or moving uniformly
+    straight forward, except insofar as it is compelled to change its state by
+    force impress'd.}\footnote{Lex I: Corpus omne perseverare in statu suo
+    quiescendi vel movendi uniformiter in directum, nisi quatenus a viribus
+    impressis cogitur statum illum mutare.}
+  
   \begin{itemize}
-  \item Uniform motion: constant velocity
-  \item An object ``at rest'' is also in uniform motion with $\mb{v}=\mb{0}$
-  \item \textcolor{red!80!black}{The mass of the object must be constant}
+  \item ``Moving uniformly'' means \emph{uniform motion} with constant velocity
+    \begin{itemize}
+    \item An object ``at rest'' is also in uniform motion with $\mb{v}=\mb{0}$
+    \end{itemize}
   \item As long as an object moves in uniform motion, it must be that
     $\mb{F}_\mathrm{net}=\mb{0}$
   \item Common examples:
     \begin{itemize}
-    \item A spacecraft in ``deep space'' has no forces acting on it
     \item A hockey puck sliding on very smooth ice has gravity and normal
       force, but the net force is zero
-    \item A car travelling on a highway at \SI{100}{\kilo\metre\per\hour}
+    \item A car traveling on a highway at \SI{100}{\kilo\metre\per\hour}
       has many forces acting on it, but the net force is zero 
     \end{itemize}
   \end{itemize}
+  \vspace{.2in}
 \end{frame}
 
 
 \begin{frame}{Second Law of Motion}
-  \textbf{The sum of the forces acting on an object is proportional to
-    its mass and its acceleration.}
+  \textbf{The alteration of motion is ever proportional to the motive force
+    impress'd; and is made in the direction of the right line in which that
+    force is impress'd.}\footnote{Lex II: Mutationem motus proportionalem esse
+    vi motrici impressae, et fieri secundum lineam rectam qua vis illa
+    imprimitur.}
 
-  \eq{-.4in}{
+  \vspace{.2in}The \emph{alteration of motion} means \emph{acceleration}. The
+  first two laws of motion can be summarized in the equation:
+
+  \eq{-.2in}{
     \boxed{\mb{F}_{\textrm{net}}=\Sigma\mb{F}=m\mb{a}}
   }
-  \begin{center}
-    \begin{tabular}{l|c|c}
-      \rowcolor{pink}
-      \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
-      Net force (sum of all forces)  & $\mb{F}_{\textrm{net}}$ & \si{\newton}\\
-      Mass         & $m$       & \si{\kilo\gram} \\
-      Acceleration & $\mb{a}$  & \si{m/s^2}
-    \end{tabular}
-  \end{center}
-  \textcolor{red!80!black}{This equation is also a ``special case'' that
-    assumes that mass is constant}
-  %\item Actually, this isn't exactly what Newton said. He wrote that force is
-  %  the rate of change of the ``quantity of motion'' (momentum). We will be
-  %  looking into that in the next topic.
+%  \begin{center}
+%    \begin{tabular}{l|c|c}
+%      \rowcolor{pink}
+%      \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
+%      Net unbalanced force (sum of all forces)
+%      & $\mb{F}_{\textrm{net}}$ & \si{\newton}\\
+%      Mass         & $m$       & \si{\kilo\gram} \\
+%      Acceleration & $\mb{a}$  & \si{m/s^2}
+%    \end{tabular}
+%  \end{center}
+
+  \vspace{-.15in}\textcolor{red!80!black}{This equation is a ``special case''
+    that assumes a constant mass.} If mass is not constant, the net force is
+  equal to the rate of change of momentum $\mb{p}$.
+
+  \eq{-.2in}{
+    \mb{F}_\mathrm{net}=\frac{d\mb{p}}{dt}
+  }
 \end{frame}
 
 
+\begin{frame}{Mass}
+  What is \textbf{mass} then? It is
+  \begin{itemize}
+    \item the property of an object that relates its acceleration to the force
+      applied to it
+    \item Intrinsic to the object itself (``how much of it'')
+    \item This is explicitly referred to as the object's \textbf{inertial mass}
+  \end{itemize}
+\end{frame}
+
+
+
 \begin{frame}{Third Law of Motion}
-  \textbf{For every action there is an equal and opposite reaction.}
+  \textbf{To every action there is always opposed and equal reaction: the
+    mutual actions of two bodies upon each other are always equal, and directed
+    to contrary parts.}\footnote{Lex III: Actioni contrariam semper et aequalem
+    esse reactionem: sive corporum duorum actiones in se mutuo semper esse
+    aequales et in partes contrarias dirigi.}
  
   \vspace{.1in}For every action force on an object (B) due to another object
   (A), there is a reaction force which is equal in magnitude but opposite in
@@ -114,26 +145,11 @@
   }
   \begin{itemize}
   \item The action and reaction forces act on different objects!
-  \item Third law is the consequence of the first and second law.
+  \item Third law is the natural consequence of the first and second law.
     Action/reaction forces are \emph{internal} forces.
   \end{itemize}
+  \vspace{.2in}
 \end{frame}
-
-
-%\begin{frame}
-%  \frametitle{Example Problem}
-%  \framesubtitle{A Blast From the Past}
-%  This problem can get you started to remember how to do these problems, but it
-%  is a bit too easy for AP Physics.
-%  
-%  \vspace{.2in}\textbf{Example 1:} In old-style television picture tubes and
-%  computer monitors (cathode ray tubes), light is produced when fast-moving
-%  electrons collide with phosphor molecules on the surface of the screen. The
-%  electrons (mass $m=\SI{9.1e-31}{kg}$) are accelerated from rest in the
-%  electron ``gun'' at the back of the vacuum tube. Find the velocity of an
-%  electron when it exits the gun after experiencing an electric force of
-%  \SI{5.8e-15}{N} over a distance of \SI{3.5}{mm}.
-%\end{frame}
 
 
 
@@ -388,9 +404,9 @@
     \mu_k\leq\mu_s
   }
 
-  \vspace{-.2in}Consider a simple case of a box being pulled along a level floor. The
-  free-body diagram is simple (left). How do the magnitudes of the applied
-  force $F_a$ and friction $f$ compare?
+  \vspace{-.2in}Consider a simple case of a box being pulled along a level
+  floor. The free-body diagram is simple (left). How do the magnitudes of the
+  applied force $F_a$ and friction $f$ compare?
 
   \vspace{-.2in}
   \begin{columns}
@@ -466,8 +482,8 @@
     \vspace{-.15in}
     \begin{center}
       \begin{tikzpicture}[scale=.9]
-        \draw[very thick,->](0,0)--(0,-1.5) node[pos=1,below]{$\mb{F}_g$};
-        \draw[very thick,->,white](0,0)--(0,1.5) node[pos=1,above]{$\mb{F}_d$};
+        \draw[very thick,->](0,0)--(0,-1.5) node[pos=1,below]{$\mb{w}$};
+        \draw[very thick,->,white](0,0)--(0,1.5) node[pos=1,above]{$\mb{D}$};
         \fill(0,0) circle(0.07);
       \end{tikzpicture}
     \end{center}
@@ -480,9 +496,9 @@
     \vspace{-.15in}
     \begin{center}
       \begin{tikzpicture}[scale=.9]
-        \draw[very thick,->](0,0)--(0,-1.5) node[pos=1,below]{$\mb{F}_g$};
-        \draw[very thick,->,white](0,0)--(0,1.5) node[pos=1,above]{$\mb{F}_d$};
-        \draw[very thick,->,green](0,0)--(0,.6) node[pos=1,above]{$\mb{F}_d$};
+        \draw[very thick,->](0,0)--(0,-1.5) node[pos=1,below]{$\mb{w}$};
+        \draw[very thick,->,white](0,0)--(0,1.5) node[pos=1,above]{$\mb{D}$};
+        \draw[very thick,->,green](0,0)--(0,.6) node[pos=1,above]{$\mb{D}$};
         \fill(0,0) circle(0.07);
       \end{tikzpicture}
     \end{center}
@@ -495,8 +511,8 @@
     \vspace{-.15in}
     \begin{center}
       \begin{tikzpicture}[scale=.9]
-        \draw[very thick,->](0,0)--(0,-1.5) node[pos=1,below]{$\mb{F}_g$};
-        \draw[very thick,->,red](0,0)--(0,1.5) node[pos=1,above]{$\mb{F}_d$};
+        \draw[very thick,->](0,0)--(0,-1.5) node[pos=1,below]{$\mb{w}$};
+        \draw[very thick,->,red](0,0)--(0,1.5) node[pos=1,above]{$\mb{D}$};
         \fill(0,0) circle(0.07);
       \end{tikzpicture}
     \end{center}
@@ -645,15 +661,14 @@
 
 \section{Free-Body Diagrams}
 
-
-\begin{frame}{Free Body Diagrams}
+\begin{frame}{Free-Body Diagrams}
   \begin{itemize}
   \item Acceleration (if there is going to be any at all) depends
     on net force $\mb{F}_\mathrm{net}$
   \item Without a vector sum of all the forces, we cannot determine the
     magnitude, direction of the acceleration, or how acceleration will evolve
     in time
-  \item We use \textbf{free body diagrams} (FBD) to represent all the forces.
+  \item We use \textbf{free-body diagrams} (FBD) to represent all the forces.
     \begin{itemize}
     \item Very important in solving any dynamics problems
     \item Don't try to save this step, even if the problem does not ask for it
@@ -664,117 +679,79 @@
 
 
 
-\begin{frame}{Free Body Diagrams}
-  \textbf{Step 1:} Draw a ``big dot'' to represent the CM of the
-  object (This makes sense, because we assume that all masses are point masses
-  anyway)
+\begin{frame}{Free-Body Diagrams}
+  In Grade 11/12 Physics, for rectilinear motion (no \emph{rotational motion}),
+  FBDs are usually drawn by assuming that all forces acting at the CM,
+  represented by the ``big dot''. For example:
   \begin{center}
-      \begin{tikzpicture}[scale=.8]
-        \draw [gray!50,thick] (-1,0)--(4,0);
-        \draw [gray!50,fill=pink!30,thick] (0,0) rectangle (3,2);
-        \fill[black] (1.5,1) circle(.1) node[above]{\footnotesize CM};
-        \uncover<2>{
-          \draw[->](3.5,.5)--(4.5,.5) node[pos=1,right]{\tiny $x$};
-          \draw[->](3.5,.5)--(3.5,1.5) node[pos=1,above]{\tiny $y$};
-        }
-      \end{tikzpicture}
-  \end{center}
-
-  \uncover<2>{
-    \textbf{Step 2:} Define a coordinate system ($x$ and $y$ axes)
-    \begin{itemize}
-    \item We can define the axes in any arbitrary direction, \emph{but we want
-      to simplify our problem, not to make it more complicated}, so instead:
-    \item Define them such that the sum of along one axis (usually $y$) is
-      always zero
-    \end{itemize}
-  }
-\end{frame}
-
-
-
-\begin{frame}{Free Body Diagrams}
-  \textbf{Step 3:} Identify all the forces are acting on the object
-  \begin{itemize}
-  \item Make note of the direction of the forces.
-  \item Gravity is a must!
-  \end{itemize}
-  \begin{center}
+    \vspace{-.15in}
     \begin{tikzpicture}[scale=.8]
-      \draw [gray!50,thick] (-1,0)--(4,0);
-      \draw [gray!50,fill=pink!30,thick] (0,0) rectangle (3,2);
-      \fill[black] (1.5,1) circle(.1);
-        \draw[->](3.5,.5)--(4.5,.5) node[pos=1,right]{\tiny $x$};
-        \draw[->](3.5,.5)--(3.5,1.5) node[pos=1,above]{\tiny $y$};
-        \draw [->,very thick] (1.5,1)--(1.5,-.5) node[pos=1,below]{$\mb{w}$};
-        \draw [->,very thick] (1.5,1)--(1.5,2.5) node[pos=1,above]{$\mb{N}$};
-        \draw [->,very thick] (1.5,1)--(3.1,1) node[pos=1,below]{$\mb{F}_a$};
-        \draw [->,very thick] (1.5,1)--(.75,1) node[pos=1,left]{$\mb{f}$};
-    \end{tikzpicture}
-  \end{center}
-\end{frame}
-
-
-
-\begin{frame}{Free Body Diagrams}
-  \textbf{Step 4:} The free-body diagram itself does not require drawing the
-  object itself
-  \begin{itemize}
-  \item Make sure the arrows representing the forces originate at the CM
-  \item It is generally a good practice to approximately scale the lengths of
-    the arrows to the magnitude of the forces
-  \end{itemize}
-
-  \begin{center}
-    \begin{tikzpicture}[scale=.8]
-      \fill[black] (1.5,1) circle(.1);
-      \draw[->](3.5,.5)--(4.5,.5) node[pos=1,right]{\tiny $x$};
-      \draw[->](3.5,.5)--(3.5,1.5) node[pos=1,above]{\tiny $y$};
+      \fill (1.5,1) circle(.1);
       \draw [->,very thick] (1.5,1)--(1.5,-.5) node[pos=1,below]{$\mb{w}$};
       \draw [->,very thick] (1.5,1)--(1.5,2.5) node[pos=1,above]{$\mb{N}$};
-      \draw [->,very thick] (1.5,1)--(3.1,1) node[pos=1,below]{$\mb{F}_a$};
+      \draw [->,very thick] (1.5,1)--(3.1,1) node[pos=1,right]{$\mb{F}_a$};
       \draw [->,very thick] (1.5,1)--(.75,1) node[pos=1,left]{$\mb{f}$};
     \end{tikzpicture}
   \end{center}
-\end{frame}
-
-
-
-\begin{frame}{Solving Force Problem}
+  \vspace{-.1in}We can still use this method for rectilinear motion. However,
+  this is not entirely correct. We notice that:
   \begin{itemize}
-  \item If you have chosen your coordinate system properly, you should have
-    \begin{itemize}
-    \item Normal force along the $\bm{\hat{\jmath}}$ direction
-    \item Friction force along the $\bm{\hat{\imath}}$ axis      
-    \end{itemize}
-  \item Break down the forces into the $x$ and $y$ components
-  \item Sum the forces in the direction that doesn't have a net force (usually
-    $y$ axis)
-  \item Sum the forces in the other axis, and find out what the acceleration is
-  \item Solve the motion of the object
+  \item Gravitational force $\mb{w}$ acts at the CM, but
+  \item Normal force $\mb{N}$, friction $\mb{f}$ and applied force $\mb{F}_a$
+    act at the point of contact
   \end{itemize}
 \end{frame}
 
 
-%\begin{frame}{Example Problem}
-%  A more difficult static problem may involve two surfaces with two different
-%  friction coefficients. For example, a ladder leaning on a wall.
-%
-%  \vspace{.2in}
-%  \begin{columns}
-%    \column{.75\textwidth}
-%    \textbf{Example:} A uniform ladder is $L=\SI{5.}{\metre}$ long and weighs
-%    \SI{400.}{\newton}. The ladder rests against a slippery vertical wall, as
-%    shown in Figure. The inclination angle between the ladder and the rough
-%    floor is $\theta=\ang{53}$. Find the reaction forces from the floor and
-%    from the wall on the ladder and the coefficient of static friction $\mu_s$
-%    at the interface of the ladder with the floor that prevents the ladder from
-%    slipping.
-%
-%    \column{.25\textwidth}
-%    \pic{1}{graphics/ladder.png}
-%  \end{columns}
-%\end{frame}
+
+\begin{frame}{Free-Body Diagrams}
+  Instead, forces should be drawn at the point where they are applied. In the
+  example below, a sphere rolling down a ramp should have weight $\mb{w}$,
+  normal force $\mb{N}$ and static friction $\mb{f}_s$ acting on it:
+  \begin{center}
+    \begin{tikzpicture}[scale=1.3]
+      \begin{scope}[rotate=-30]
+	    \tikzstyle{balloon}=[ball color=gray!50!pink!50];
+	    \shade[balloon](0,0) circle(1);
+	    \draw[thick](-2,-1)--(2,-1);
+	    \draw[thick,->](0,1.2) arc(90:60:1.2) node[pos=.3,right]{$\omega$};
+	    \fill(0,0) circle(.05);
+	    \draw[->,ultra thick,rotate=30](0,0)--(0,-1.5)
+	    node[pos=1,below]{$\mb{w}$};
+	    \draw[->,ultra thick](.0,-1)--(.0,.3)  node[pos=1,above]{$\mb{N}$};
+	    \draw[->,ultra thick](.0,-1)--(-.5,-1) node[pos=1,left]{$\mb{f}_s$};
+	    \draw[->](2,0)--(3,0) node[pos=1,right]{$x$};
+       \draw[->](2,0)--(2,1) node[pos=1,above]{$y$};
+	  \end{scope}
+	\end{tikzpicture}
+  \end{center}
+  Once the FBD is drawn, decide on the axes to help you solve the motion. One of
+  the axes should line up with the direction of motion. This guarantees that the 
+  \emph{other} axis will not have any net force
+\end{frame}
+
+
+
+\begin{frame}{Example Problem}
+  A more difficult static problem may involve two surfaces with two different
+  friction coefficients. For example, a ladder leaning on a wall. This problem
+  cannot be solved without first understanding rotational motion, but we can
+  still draw a FBD.
+  \vspace{.2in}
+  \begin{columns}
+    \column{.75\textwidth}
+    \textbf{Example:} A uniform ladder is \SI{5.}{\metre} long and weighs
+    \SI{400}{\newton}. The ladder rests against a slippery vertical wall, as
+    shown in Figure. The inclination angle between the ladder and the rough
+    floor is \ang{53}. Find the reaction forces from the floor and
+    from the wall on the ladder and the coefficient of static friction $\mu_s$
+    at the interface of the ladder with the floor that prevents the ladder from
+    slipping.
+
+    \column{.25\textwidth}
+    \pic{1}{graphics/ladder.png}
+  \end{columns}
+\end{frame}
 
 
 
@@ -818,9 +795,7 @@
 \begin{frame}{Connected Bodies: Example}
   \textbf{Example:} A tractor-trailer pulling two trailers starts from rest
   and accelerates with an acceleration $a$ on a straight, level road.
-  The mass of the truck itself (T) is  %$m_T$, while the masses of the are
-  %equal
-  \SI{5450}{kg}, the
+  The mass of the truck (T) is \SI{5450}{kg}, the
   mass of the first trailer (A) is \SI{31500}{kg}, and the mass of the second
   trailer (B) is \SI{19600}{kg}.
   \begin{enumerate}
@@ -834,35 +809,29 @@
 \end{frame}
 
 
-\begin{frame}{Connected Bodies}
-  Other type of connected bodies problem may be like this
-
-  \vspace{.2in}
-  \begin{columns}
-    \column{.5\textwidth}
-    Multiple objects pressed against one another:
-    \begin{center}
-      \begin{tikzpicture}[scale=.8]
-        \draw(-1,0)--(5.5,0);
-        \draw(0,0) rectangle(1,1);
-        \draw(1,0) rectangle(3,1.5);
-        \draw(3,0) rectangle(4.5,2);
-        \draw[very thick,->](-1.5,.5)--(0,.5) node[pos=0,left]{$\mb{F}_a$};
-      \end{tikzpicture}
-    \end{center}
-    
-    \column{.5\textwidth}
-    Multiple objects stacked on top of one another:
-    \begin{center}
-      \begin{tikzpicture}[scale=.8]
-        \draw(-1,0)--(5.5,0);
-        \draw(0,0) rectangle(4.5,1);
-        \draw(1,1) rectangle(3.5,1.5);
-        \draw(2,1.5) rectangle(2.5,2);
-        \draw[very thick,->](4.5,.5)--(6,.5) node[pos=1,right]{$\mb{F}_a$};
-      \end{tikzpicture}
-    \end{center}
-  \end{columns}
+\begin{frame}{Different Types of Connected Bodies}
+  Multiple objects pressed against one another. There may not be friction, but
+  there are definitely action/reaction forces between the blocks.
+  \begin{center}
+    \begin{tikzpicture}[scale=.8]
+      \draw(-1,0)--(5.5,0);
+      \draw(0,0) rectangle(1,1) node[midway]{$A$};
+      \draw(1,0) rectangle(3,1.5) node[midway]{$B$};
+      \draw(3,0) rectangle(4.5,2) node[midway]{$C$};
+      \draw[very thick,->](-1.5,.5)--(0,.5) node[pos=0,left]{$\mb{F}_a$};
+    \end{tikzpicture}
+  \end{center}
+  Or multiple objects stacked on top of one another. The contact surface between
+  $A$ and the floor may (or may not) have friction, while the surface between
+  $A$ and $B$ must have a friction coefficient $\mu$.
+  \begin{center}
+    \begin{tikzpicture}[scale=.8]
+      \draw(-1,0)--(5.5,0);
+      \draw(0,0) rectangle(3,1.5) node[midway]{$A$};
+      \draw(.75,1.5) rectangle(2.25,2.5) node[midway]{$B$};
+      \draw[very thick,->](3,.5)--(4.5,.5) node[pos=1,right]{$\mb{F}_a$};
+    \end{tikzpicture}
+  \end{center}
 \end{frame}
 
 
@@ -917,25 +886,25 @@
 %    \pic{1}{graphics/pulley_prob_6.png}
 %  \end{columns}
 %\end{frame}
-
-
-
-\begin{frame}{Multiple Pulleys}
-  When there are multiple pulleys involved, we have to remember that tension
-  force is distributed evenly along the cable.
-
-  \vspace{.2in}
-  \begin{columns}
-    \column{.6\textwidth}
-    \textbf{Example:} A block of mass $m$ is pulled, via two pulleys as shown,
-    at constant velocity along a surface inclined at angle $\theta$. The
-    coefficient of kinetic friction is $\mu_k$, between block and surface.
-    Determine the pulling force $F$. Ignore the mass of the pulleys. 
-    
-    \column{.4\textwidth}
-    \pic{1}{graphics/pulley_prob_7.png}
-  \end{columns}  
-\end{frame}
+%
+%
+%
+%\begin{frame}{Multiple Pulleys}
+%  When there are multiple pulleys involved, we have to remember that tension
+%  force is distributed evenly along the cable.
+%
+%  \vspace{.2in}
+%  \begin{columns}
+%    \column{.6\textwidth}
+%    \textbf{Example:} A block of mass $m$ is pulled, via two pulleys as shown,
+%    at constant velocity along a surface inclined at angle $\theta$. The
+%    coefficient of kinetic friction is $\mu_k$, between block and surface.
+%    Determine the pulling force $F$. Ignore the mass of the pulleys. 
+%    
+%    \column{.4\textwidth}
+%    \pic{1}{graphics/pulley_prob_7.png}
+%  \end{columns}  
+%\end{frame}
 
 
 %\begin{frame}{One More!}

@@ -31,7 +31,7 @@
 \subtitle{Advanced Placement Physics C}
 \author[TML]{Dr.\ Timothy Leung}
 \institute{Olympiads School}
-\date{July 6, 2020}
+\date{July 4, 2020}
 
 \newcommand{\iii}{\ensuremath\hat{\bm{\imath}}}
 \newcommand{\jjj}{\ensuremath\hat{\bm{\jmath}}}
@@ -163,7 +163,7 @@
   The SI unit for position is \textbf{meter}, \si{\metre}.
   
   \eq{-.2in}{
-    \mb{x}(t)=x(t)\iii + y(t)\jjj + z(t)\kkk
+    \boxed{\mb{x}(t)=x(t)\iii + y(t)\jjj + z(t)\kkk}
   }
 
   Vectors in 2D/3D Cartesian space are generally using the ``IJK notation''
@@ -183,8 +183,10 @@
   initial position $\mb{x}_0$ within the same coordinate system:
 
   \eq{-.25in}{
+    \boxed{
       \Delta\mb{x}(t)=\mb{x}-\mb{x}_0
       =(x-x_0)\iii + (y-y_0)\jjj + (z-z_0)\kkk
+    }
   }
   \begin{itemize}
   \item IJK notation makes vector addition and subtraction less prone to errors
@@ -231,17 +233,19 @@
   velocity is \textbf{meters per second} (\si{\metre\per\second}):
 
   \eq{-.2in}{
-    \mb{v}(t)= \frac{d\mb{x}(t)}{dt}
+    \boxed{
+      \mb{v}(t)= \frac{d\mb{x}}{dt}
+    }
   }
   
   Since $\mb{x}$ has $x$, $y$ and $z$ components in the $\iii$, $\jjj$ and
   $\kkk$ directions (which are all linearly independent), we can take the time
   derivative in every component:
 
-  \eq{-.3in}{
+  \eq{-.15in}{
     \mb{v}(t)= \frac{d\mb{x}}{dt}=
     \frac{dx}{dt}\iii + \frac{dy}{dt}\jjj + \frac{dz}{dt}\kkk =
-    v_x\iii + v_y\jjj + v_z\kkk
+    u\iii + v\jjj + w\kkk
   }
 \end{frame}
 
@@ -252,14 +256,16 @@
   $\mb{x}(t)$, then $\mb{x}$ is the time integral of $\mb{v}$:
   
   \eq{-.2in}{
-    \mb{x}(t)=\int\mb{v}(t)dt + \mb{x}_0
+    \boxed{
+      \mb{x}(t)=\int\mb{v}(t)dt + \mb{x}_0
+    }
   }
   
   The constant of integration $\mb{x}_0$ is the \emph{initial position} at
   $t=0$. We can integrate each component to get $\mb{x}$:
 
  \eq{-.2in}{ \mb{x}(t)= \left(
-    \int v_x\iii + \int v_y\jjj + \int v_z\kkk \right) dt + \mb{x}_0
+    \int u\iii + \int v\jjj + \int w\kkk \right) dt + \mb{x}_0
   }
 \end{frame}
 
@@ -271,7 +277,9 @@
   $\Delta t$:
 
   \eq{-.3in}{
-    \overline{\mb{v}}= \frac{\Delta\mb{x}}{\Delta t}
+    \boxed{
+      \overline{\mb{v}}= \frac{\Delta\mb{x}}{\Delta t}
+    }
   }
   
   Like instantaneous velocity, we can find the $x$, $y$ and $z$ components of
@@ -283,6 +291,10 @@
     \frac{\Delta y}{\Delta t}\jjj+
     \frac{\Delta z}{\Delta t}\kkk
   }
+
+  (The notation $\overline{v}$ means that $v$ is averaged over \emph{time},
+  while the notation $\langle v\rangle$ is used if $v$ is the average of
+  many particles (called an \emph{ensemble average})
 \end{frame}
 
 
@@ -292,13 +304,15 @@
   \emph{distance}:
 
   \eq{-.2in}{
-    v=\frac{ds}{dt}
+    \boxed{
+      v=\frac{ds}{dt}
+    }
   }
   \begin{itemize}
-  \item\vspace{-.1in}Since distance of \emph{any} path is always positive
-    $s>0$, instantaneous speed must also be positive
-  \item Instantaneous speed $v$ is the magnitude of the instantaneous velocity
-    vector $\mb{v}$
+  \item\vspace{-.1in}Since %distance of \emph{any} path is always positive
+    $s\geq 0$, instantaneous speed must also be positive $v\geq 0$
+  \item Instantaneous speed is the magnitude of the instantaneous velocity
+    vector, i.e.\ $v=|\mb{v}|$
   \end{itemize}
   Likewise, \textbf{average speed} is similar to average velocity: it is the
   distance travelled over a finite time interval.
@@ -329,7 +343,9 @@
   (\si{\metre\per\second^2}):
 
   \eq{-.2in}{
-    \mb{a}(t)= \frac{d\mb{v}(t)}{dt}=\frac{d^2\mb{x}(t)}{dt^2}
+    \boxed{
+      \mb{a}(t)= \frac{d\mb{v}}{dt}=\frac{d^2\mb{x}}{dt^2}
+    }
   }
 
   Likewise, \textbf{average acceleration} $\overline{\mb{a}}$ is the finite
@@ -370,7 +386,9 @@
   Velocity $\mb{v}(t)$ is the time integral of acceleration $\mb{a}(t)$:
     
   \eq{-.2in}{
-    \mb{v}(t)=\int\mb{a}(t)dt+\mb{v}_0
+    \boxed{
+      \mb{v}(t)=\int\mb{a}(t)dt+\mb{v}_0
+    }
   }
 
   Again, we can integrate each component of the vector independently:
