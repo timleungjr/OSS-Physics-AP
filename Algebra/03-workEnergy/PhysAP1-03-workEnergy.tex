@@ -32,8 +32,12 @@
 \institute{Olympiads School}
 \date{July 13, 2020}
 
+
 \newcommand{\pic}[2]{\includegraphics[width=#1\textwidth]{#2}}
 \newcommand{\mb}[1]{\ensuremath\mathbf{#1}}
+\newcommand{\iii}{\ensuremath\hat{\bm{\imath}}}
+\newcommand{\jjj}{\ensuremath\hat{\bm{\jmath}}}
+\newcommand{\kkk}{\ensuremath\hat{\bm{k}}}
 \newcommand{\eq}[2]{\vspace{#1}{\Large\begin{displaymath}#2\end{displaymath}}}
 
 \begin{document}
@@ -78,20 +82,34 @@
   \eq{-.2in}{
     \boxed{W=\mb{F}\cdot\Delta\mb{x}}
     \quad\text{\normalsize or}\quad
-    \boxed{W=F\Delta x\cos\theta}
+    \boxed{W=|\mb{F}||\mb{\Delta x}|\cos\theta}
   }
 
-  \vspace{-.15in}where $\theta$ is the angle between the two vectors. You should
-  already know that:
+  \vspace{-.15in}where $\theta$ is the angle between the two vectors. When
+  force and displacement vectors are expressed by the IJK notation, work is:
+
+  \eq{-.2in}{
+    W=F_x\Delta x+F_y\Delta y+F_z\Delta z
+  }
+
+  From the definition of a dot product
+\end{frame}
+
+\begin{frame}{Mechanical Work}
+
+  Mechanical work is a scalar quantity:
+  
+  \eq{-.2in}{
+    \boxed{W=\mb{F}\cdot\Delta\mb{x}}
+  }
+  
 %  is applied to move an object from $\mb{x}_1$ to $\mb{x}_2$ along a path, then
 %  the total work done by the force is defined by the integral:
 %
 %  \eq{-.2in}{
 %    W=\int\mb{F}(\mb{x})\cdot d\mb{x}
 %  }
-%
   \begin{itemize}
-  \item Work is a scalar quantity
   \item No work done if no displacement ($\Delta\mb{x}=\mb{0}$)
   \item No work done when $\mb{F}\perp\Delta\mb{x}$, when (i.e.\
     $\mb{F}\cdot\Delta\mb{x}=0$; the force did not cause the displacement)
@@ -142,61 +160,79 @@
 \section{Kinetic Energy}
 
 \begin{frame}{Kinetic Energy}
-  When a net force on an object accelerates it, the resulting amount of
-  work done on the object (net work $W_{\textrm{net}}$) is given by:
+  When a constant net force accelerates an object from $v_0$ to $v_1$, work is
+  being done (can be positive or negative). Combining a kinematic equation with
+  the second law of motion:
 
   \eq{-.2in}{
-    W_{\textrm{net}}=\int\mb{F}_{\textrm{net}}\cdot d\mb{x}=\int m\mb{a}\cdot d\mb{x}
-    =m\int\frac{d\mb{v}}{dt}\cdot d\mb{x}
+      v_1^2 =v_0^2+2\textcolor{red}{a}\Delta x =
+      v_0^2+2\textcolor{red}{\frac{F_\mathrm{net}}{m}}\Delta x
   }
 
-  Since both $\mb{v}$ and $\mb{x}$ are continuous functions in
-  time, we can switch the order of differentiation, i.e.:
+  Re-arranging terms and solving for $F_\mathrm{net}\Delta x$ (the work done by
+  $F_\mathrm{net}$), we get a familiar expression:
 
   \eq{-.2in}{
-    =m\int\frac{d\mb{x}}{dt}\cdot d\mb{v}=m\int\mb{v}\cdot d\mb{v}
-    =m\int_{v_1}^{v_2} vdv %=\Delta\left(\frac{1}{2}mv^2\right)=\Delta K
+    F_\mathrm{net}\Delta x = \frac{1}{2}m(v_1^2-v_0^2)
+    =\frac{1}{2}mv_1^2- \frac{1}{2}mv_0^2
   }
+  
 
-  and since $\mb{v}$ and $d\mb{v}$ must be in the same direction, the dot
-  product is trivial: $\mb{v}\cdot d\mb{v}=vdv$
+  
+%  When a net force on an object accelerates it, the resulting amount of
+%  work done on the object (net work $W_{\textrm{net}}$) is given by:
+%
+%  \eq{-.2in}{
+%    W_{\textrm{net}}=\int\mb{F}_{\textrm{net}}\cdot d\mb{x}=\int m\mb{a}\cdot d\mb{x}
+%    =m\int\frac{d\mb{v}}{dt}\cdot d\mb{x}
+%  }
+%
+%  Since both $\mb{v}$ and $\mb{x}$ are continuous functions in
+%  time, we can switch the order of differentiation, i.e.:
+%
+%  \eq{-.2in}{
+%    =m\int\frac{d\mb{x}}{dt}\cdot d\mb{v}=m\int\mb{v}\cdot d\mb{v}
+%    =m\int_{v_1}^{v_2} vdv %=\Delta\left(\frac{1}{2}mv^2\right)=\Delta K
+%  }
+%
+%  and since $\mb{v}$ and $d\mb{v}$ must be in the same direction, the dot
+%  product is trivial: $\mb{v}\cdot d\mb{v}=vdv$
 \end{frame}
 
 
 
 \begin{frame}{Kinetic Energy}
-  This integral, when integrated from $v_1$ (initial speed) to $v_2$
-  (final speed), becomes:
-
-  \eq{-.2in}{
-    =m\int_{v_1}^{v_2} vdv=\frac{1}{2}mv^2\Big|^{v_2}_{v_1}=\Delta K
-  }
-  
-  where $K$ is defined as the \textbf{translational kinetic energy}:
+  The change in the ``quantity of motion'' caused by the work done is defined
+  as the \textbf{translational kinetic energy} $K$:
 
   \eq{-.1in}{
-    K=\frac12mv^2
+    \boxed{K=\frac12mv^2}
   }
 
   Later in the course we will discuss \emph{rotational} kinetic energy.
+  We arrive at this result using calculus even when $F_\mathrm{net}$ is not
+  constant.
 \end{frame}
 
 
 
 \begin{frame}{Work and Kinetic Energy}
-  In fact, the \emph{definition} of kinetic energy came from this integration,
-  in that work equals to the change in \emph{something}, and we define that as
-  kinetic energy. This is the \textbf{work-energy theorem}:
+  %In fact, the \emph{definition} of kinetic energy came from this integration,
+  %in that work equals to the change in \emph{something}, and we define that as
+  %kinetic energy.
+  The \textbf{work-energy theorem} states that:
 
   \eq{-.15in}{
-    W_\mathrm{net}=\Delta K
+    \boxed{W_\mathrm{net}=\Delta K}
   }
+
+  We don't have to prove this theorem because kinetic energy is defined to
+  fit this theorem.
   \begin{itemize}
-  \item\vspace{-.15in} $\Delta K$ can be positive or negative depending on the
-    dot product
-  \item When multiple forces acting on an object; each force can add or remove
+  \item $\Delta K$ can be positive or negative depending on whether the work
+    done is positive or negative
+  \item When multiple forces acting on an object, each force can add/remove
     kinetic energy from an object
-  \item Therefore we use the ``net'' amount of work done in the above equation
   \end{itemize}
 \end{frame}
 
@@ -223,18 +259,18 @@
     \mb{w}=m\mb{g}
   }
   
-  \vspace{-.1in}Near Earth's surface, we assume that
-  $\mb{g}=-g\bm{\hat{\jmath}}=-9.81\bm{\hat{\jmath}}$ \si{\metre\per\second^2}
-  is constant. The work done to move an object from height $h_1$ to $h_2$ is
-  therefore:
+  \vspace{-.1in}Near Earth's surface, $\mb{g}=-g\kkk=-9.81\kkk$
+  \si{\metre\per\second^2} can be considered to be constant. Using the
+  definition of mechanical work, the work done to move an object from height
+  $h_0$ to $h_1$ is therefore:
 
   \eq{-.2in}{
-    W=\int \mb{w}\cdot d\mb{h}
-    =\int_{h_1}^{h_2} -mg\bm{\hat{\jmath}}\cdot dh\hat{\bm{\jmath}}
-    =-mgh\Big|^{h_2}_{h_1}=-\Delta U_g
+    W=\mb{w}\cdot\Delta\mb{h}
+    =-mg\kkk\cdot\Delta h\kkk
+    =-\left[mgh_1-mgh_0\right]%=-\Delta U_g
   }
 
-  where $U_g$ is defined as the \textbf{gravitational potential energy}:
+  From this, we define the \textbf{gravitational potential energy} $U_g$:
 
   \eq{-.2in}{
     U_g=mgh
@@ -252,14 +288,14 @@
     \mb{F}_e=-k\mb{x}
   }
 
-  \vspace{-.1in}We can find the work done to displace a spring:
+  \vspace{-.1in}We can find the work done to displace a spring using some
+  calculus that is not shown here:
 
   \eq{-.3in}{
-    W=\int\mb{F}_e\cdot d\mb{x}=-k\int xdx=-\frac{1}{2}kx^2\Big|^{x_2}_{x_1}
-    =-\Delta U_e
+    W=\mb{F}_e\cdot\Delta\mb{x}=\frac12kx_1^2-\frac12kx_0^2
   }
   
-  where $U_e$ is defined as the \textbf{elastic potential energy}:
+  From this we define the \textbf{elastic potential energy} $U_e$:
 
   \eq{-.2in}{
     U_e=\frac12kx^2
@@ -269,8 +305,8 @@
 
 
 \begin{frame}{Conservative Forces}
-  Gravitational force, spring force, electrostatic force (later in the
-  course) are called \textbf{conservative forces}
+  Gravitational force, spring force, electrostatic force (studied in Grade 12
+  Physics) are called \textbf{conservative forces}
   \begin{itemize}
   \item The work done by these forces relate to a change of another quantity
     called \emph{potential energy}
@@ -282,26 +318,26 @@
 
 
 \begin{frame}{Conservative Forces}
-%  \begin{itemize}
-%  \item Gravitational force, spring force,  electrostatic force (later in the
-%    course) are called \textbf{conservative forces}
-%  \item Work done by a conservative force is independent of the path taken
-  Expressions for potential energies are obtained by integrating the work done
-  by the conservative forces, these forces are therefore the negative gradient
-  of the potential energies:
+  With a little bit of calculus, a constant conservative forces can be related
+  to the change in potential energy by the expression in one-dimension:
+%  Expressions for potential energies are obtained by integrating the work done
+%  by the conservative forces, these forces are therefore the negative gradient
+%  of the potential energies:
+%
+%  \eq{-.2in}{
+%    \mb{F}=-\nabla U=
+%    -\frac{\partial U}{\partial x}\bm{\hat{\imath}}
+%    -\frac{\partial U}{\partial y}\bm{\hat{\jmath}}
+%    -\frac{\partial U}{\partial z}\hat{\bm{k}}
+%  }
+%
+%  The direction of a conservative force \emph{always} decreases the potential
+%  energy. In 1D:
 
   \eq{-.2in}{
-    \mb{F}=-\nabla U=
-    -\frac{\partial U}{\partial x}\bm{\hat{\imath}}
-    -\frac{\partial U}{\partial y}\bm{\hat{\jmath}}
-    -\frac{\partial U}{\partial z}\hat{\bm{k}}
-  }
-
-  The direction of a conservative force \emph{always} decreases the potential
-  energy. In 1D:
-
-  \eq{-.2in}{
-    \mb{F}=-\frac{dU}{dx}
+    \boxed{
+      F=-\frac{\Delta U}{\Delta x}
+    }
   }
 
   Pay attention to the negative sign. Students often forget it.
@@ -311,18 +347,18 @@
 
 
 \begin{frame}{Work and Potential Energy}
-  The expressions for potential energies also come from integrating the work
-  equation, in that work equals to the change in \emph{something}, and we
-  called that potential energy. Therefore:
+  With conservative forces, \emph{in addition} to changing kinetic energy,
+  work equals to the change in \emph{something}, and we define that
+  as \emph{potential energy}. Therefore:
 
   \eq{-.2in}{
-    W=-\Delta U
+    W_{\textrm{cons.}}=-\Delta U
   }
   \begin{itemize}
-  \item\vspace{-.15in}$\Delta U$ can be positive or negative depending on the
-    direction of the (conservative) force
-  \item Positive work \emph{decreases} the related potential energy
-  \item Negative work \emph{increases} the related potential energy
+  \item\vspace{-.15in}$\Delta U$ can be positive/negative depending on the
+    direction of the conservative force
+  \item Positive work \emph{decreases} potential energy, while
+  \item Negative work \emph{increases} potential energy
   \end{itemize}
 \end{frame}
 
@@ -331,65 +367,72 @@
 \begin{frame}{Conservation of Mechanical Energy}
   Positive work done by conservative forces on an object does two things:
   \begin{enumerate}[1.]
-  \item Decrease its potential energy, while
-  \item Increase its kinetic energy by the same amount
+  \item\emph{Decrease} its potential energy, while
+  \item\emph{Increase} its kinetic energy by the same amount
   \end{enumerate}
-  Mathematically, this shows that mechanical energy must always be conserved
-  when there are only conservative forces:
+  In other words:
 
-  \eq{-.15in}{
-    W=-\Delta U = \Delta K \quad\longrightarrow\quad
-    \Delta K + \Delta U =0
+  \eq{-.25in}{
+    W_\mathrm{cons.}=-\Delta U = \Delta K
   }
 
-  That's why those forces are called conservative forces!
+  \vspace{-.15in}This means that total mechanical energy $E$ must be conserved
+  when only conservative forces are doing work, or that the total \emph{change}
+  in mechanical energy is zero:
+  
+  \eq{-.2in}{
+    \boxed{\Delta E=\Delta K + \Delta U =0}
+  }
+
+  \vspace{-.15in}That's why those forces are called conservative forces!
 \end{frame}
 
 
 
 \section{Conservation of Energy}
 
-\begin{frame}{Isolated Systems and the Conservation of Energy}
-  An \textbf{isolated system} is a system of objects that does not interact with
-  the surrounding. Think of an isolated system as a bunch of objects inside an
-  insulated box.
-  \begin{center}
-    \begin{tikzpicture}[scale=.8]
-      \fill[pattern=north east lines] (0,0) rectangle(5,4);
-      \draw[ultra thick] (0,0) rectangle(5,4);
-      \draw[ultra thick,fill=white](.25,.25) rectangle(4.75,3.75);
-      \draw[thick,
-        decoration={aspect=.3,segment length=2mm, amplitude=2.5mm, coil},
-        decorate] (2.5,3.75)--(2.5,2.25) node[midway,right]{$\;\;k$};
-      \draw[fill=black!40](2,2.25) rectangle(3,1.25) node[midway]{$m$};
-    \end{tikzpicture}
-  \end{center}
-\end{frame}
+%\begin{frame}{Isolated Systems and the Conservation of Energy}
+%  An \textbf{isolated system} is a system of objects that does not interact with
+%  the surrounding. Think of an isolated system as a bunch of objects inside an
+%  insulated box.
+%  \begin{center}
+%    \begin{tikzpicture}[scale=.8]
+%      \fill[pattern=north east lines] (0,0) rectangle(5,4);
+%      \draw[ultra thick] (0,0) rectangle(5,4);
+%      \draw[ultra thick,fill=white](.25,.25) rectangle(4.75,3.75);
+%      \draw[thick,
+%        decoration={aspect=.3,segment length=2mm, amplitude=2.5mm, coil},
+%        decorate] (2.5,3.75)--(2.5,2.25) node[midway,right]{$\;\;k$};
+%      \draw[fill=black!40](2,2.25) rectangle(3,1.25) node[midway]{$m$};
+%    \end{tikzpicture}
+%  \end{center}
+%\end{frame}
+%
+%
+%\begin{frame}{Isolated Systems and Conservation of Energy}
+%  \begin{itemize}
+%  \item Since the system is isolated from the surrounding environment, the
+%    environment can't do any work on it, by definition!
+%  \item Likewise, the energy inside the system cannot escape either
+%  \item Therefore energy of the system is conserved
+%  \item There are \emph{internal} force inside the system that is doing work,
+%    but the work only converts kinetic energy into potential energies, and vice
+%    versa.
+%  \end{itemize}
+%\end{frame}
 
 
-\begin{frame}{Isolated Systems and Conservation of Energy}
-  \begin{itemize}
-  \item Since the system is isolated from the surrounding environment, the
-    environment can't do any work on it, by definition!
-  \item Likewise, the energy inside the system cannot escape either
-  \item Therefore energy of the system is conserved
-  \item There are \emph{internal} force inside the system that is doing work,
-    but the work only converts kinetic energy into potential energies, and vice
-    versa.
-  \end{itemize}
-\end{frame}
 
-
-
-\begin{frame}{Example: Mass sliding on a spring}
+\begin{frame}{Example: Horizontal Spring-Mass System}
+  Total mechanical energy is conserved when there are only conservative forces.
   \begin{itemize}
   \item Assuming that there is no friction in any part of the system
-  \item The isolated system consists of the mass and the spring 
-  \item Energies:
-    \begin{itemize}
-    \item Kinetic energy of the mass
-    \item Elastic potential energy stored in the spring
-    \end{itemize}
+  \item The isolated system consists of the mass and the spring
+  \end{itemize}  
+  Energies:
+  \begin{itemize}
+  \item Kinetic energy of the mass
+  \item Elastic potential energy stored in the spring
   \end{itemize}
   \begin{center}
     \begin{tikzpicture}[scale=1.1]
@@ -407,6 +450,8 @@
 
 
 \begin{frame}{Example: Gravity}
+  Gravity is another example, as an object falls towards Earth's surface,
+  the only force acting on it is its weight, which is conservative:
   \begin{center}
     \begin{tikzpicture}[scale=.8]
       \draw[thick,fill=gray!30] (7.75,0) arc(75:105:30);
@@ -414,15 +459,10 @@
       \draw[ultra thick, red!65,->] (0,4)--(0,3) node[pos=1,below]{$\mb{F}_g$};
     \end{tikzpicture}
   \end{center}
-  
+  Assuming no friction, the total mechanical energy consists of:
   \begin{itemize}
-  \item The isolated system consists of the mass and Earth
-  \item Assuming no friction
-  \item Energies:
-    \begin{itemize}
-    \item Kinetic energy of the mass
-    \item Gravitational potential energy of the mass
-    \end{itemize}
+  \item Kinetic energy of the mass
+  \item Gravitational potential energy of the mass
   \end{itemize}
 \end{frame}
 
@@ -430,7 +470,7 @@
 
 \begin{frame}{Example: Vertical spring-mass system}
   \begin{columns}
-    \column{.17\textwidth}
+    \column{.2\textwidth}
     \begin{tikzpicture}[scale=1.3]
       \node[fill=blue!70,inner sep=3.5mm] (b) at (1,2) {};
       \draw[thick,
@@ -439,20 +479,20 @@
       \fill [pattern=north east lines] (0,5) rectangle (2,5.2);
       \draw[ultra thick] (0,5)--(2,5);
     \end{tikzpicture}
-    \column{.85\textwidth}
+
+    \column{.8\textwidth}
+    In a vertical spring-mass system, the work done on the mass are the
+    spring force and gravity (both are conservative). Therefore the energy
+    stored in the system are:
     \begin{itemize}
-    \item The system consists of a mass, a spring and Earth
-    \item Energies:
-      \begin{itemize}
-      \item Kinetic energy of the mass
-      \item Gravitational potential energy of the mass
-      \item Elastic potential energy stored in the spring
-      \end{itemize}
-    \item The total energy of the system is conserved if there is no friction
+    \item Kinetic energy of the mass
+    \item Gravitational potential energy of the mass
+    \item Elastic potential energy stored in the spring
     \end{itemize}
+    The total mechanical energy of the system is conserved if there is no
+    friction
   \end{columns}
 \end{frame}
-
 
 
 \begin{frame}{What if there is friction?}
@@ -489,20 +529,44 @@
 
 
 \begin{frame}{Conservation of Energy}
-  If \emph{only} conservative forces are doing work, mechanical energy (i.e.\
-  $K+U$) is always conserved:
+  If \emph{only} conservative forces do work, then the total mechanical energy
+  (sum of all the kinetic and potential $K+U$ energies) is conserved:
+
+  \eq{-.1in}{
+    \boxed{\sum K_i +\sum U_i =\sum K_i'+\sum U_i'}
+  }
+
+  (The summation notation is used because there can be multiple particles,
+  each with its kinetic energy, and multiple potential energies being stored).
+  This is consistent with the equation shown in the previous slide:
 
   \eq{-.2in}{
-    \boxed{K +U =K'+U'}
+    \boxed{\Delta E=\Delta K + \Delta U =0}
   }
-  
-  When non-conservative forces are also doing work, instead of
-  \emph{trying} to isolate the system, we can calculate the work done by them
-  $W_{\textrm{nc}}$ and add it to the total energy of the system
+\end{frame}
+
+
+
+\begin{frame}{Conservation of Energy}
+  When non-conservative forces are also doing work, the work done by those
+  forces $W_{\textrm{nc}}$ must be taken into account as well:
+%  instead of
+%  \emph{trying} to isolate the system, we can calculate the work done by them
+%  $W_{\textrm{nc}}$ and add it to the total energy of the system
     
   \eq{-.2in}{
-    \boxed{K+U+W_{\textrm{nc}}=K'+U'}
+    \boxed{\sum K_i +\sum U_i +\sum W_{\textrm{nc}}=\sum K_i'+\sum U_i'}
   }
+
+  Expressed in terms the total mechanical energy (like in the previous slides),
+  the conservation of energy equation becomes:
+  
+  \eq{-.2in}{
+    \boxed{\Delta E=\sum\Delta K_i + \sum\Delta U_i =W_\mathrm{net}}
+  }
+
+  We do not have to distinguish between conservative and non-conservative work
+  in this equation (only non-conservative work contributes to $\Delta E$).
 \end{frame}
 
 
@@ -553,36 +617,39 @@
 %\end{frame}
 
 
-\begin{frame}{Energy Diagrams}
-  \begin{itemize}
-  \item Plots of potential energy ($U$) vs.\ position for a conservative force
-    \begin{center}
-      \pic{.5}{energy-diagram.png}
-    \end{center}
-  \item If more than one conservative force, they can be combined into one graph
-  \item Where slope is zero means no force acting on it: it is in a state of
-    \textbf{equilibrium}
-  \item An object placed at an equilibrium point with $K=0$ will remain there
-  \end{itemize}
-\end{frame}
+%\begin{frame}{Energy Diagrams}
+%  \begin{itemize}
+%  \item Plots of potential energy ($U$) vs.\ position for a conservative force
+%    \begin{center}
+%      \pic{.5}{energy-diagram.png}
+%    \end{center}
+%  \item If more than one conservative force, they can be combined into one graph
+%  \item Where slope is zero means no force acting on it: it is in a state of
+%    \textbf{equilibrium}
+%  \item An object placed at an equilibrium point with $K=0$ will remain there
+%  \end{itemize}
+%\end{frame}
+
 
 
 \section{Power \& Efficiency}
 
 \begin{frame}{Power}
   \textbf{Power} is the \emph{rate} at which work is done, i.e.\ the rate at
-  which energy is being transformed:
+  which energy is being transformed. The average power $\overline{P}$ is work
+  done over a finite time interval $\delta t$. The unit for power is a
+  \textbf{watt} \si{\watt}:
 
-  \eq{-.2in}{
-    \boxed{\bar{P} = \frac{W}{\Delta t}}
+  \eq{-.15in}{
+    \boxed{\overline{P} = \frac{W}{\Delta t}}
   }
   \begin{center}
     \begin{tabular}{l|c|c}
       \rowcolor{pink}
       \textbf{Quantity}  & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
-      Instantaneous and average power & $P$, $\bar{P}$ & \si{\watt} \\
-      Work done          & $W$ & \si{\joule} \\
-      Time interval      & $\Delta t$ & \si{\second}
+      Average power  & $\overline{P}$ & \si{\watt} \\
+      Work done      & $W$            & \si{\joule} \\
+      Time interval  & $\Delta t$     & \si{\second}
     \end{tabular}
   \end{center}
   In engineering, power is often more critical than the actual amount of work
@@ -595,7 +662,7 @@
   If a constant force is used to push an object at a constant velocity, the
   power produced by the force is:
   
-  \eq{-.2in}{
+  \eq{-.1in}{
     P=\frac{W}{\Delta t}=\frac{\mb{F}\cdot\Delta\mb{x}}{\Delta t}
     =\mb{F}\cdot\frac{\Delta\mb{x}}{\Delta t}
     \quad\rightarrow\quad
@@ -615,12 +682,12 @@
 
 
 \begin{frame}{Efficiency}
-  \textbf{Effieiency} is the ratio of useful energy or work output to the total
+  \textbf{Efficiency} is the ratio of useful energy or work output to the total
   energy or work input
 
   \eq{-.2in}{
-    \eta = \frac{E_o}{E_i}\times\SI{100}{\percent}\quad
-    \eta = \frac{W_o}{W_i}\times\SI{100}{\percent}
+    \boxed{\eta = \frac{E_o}{E_i}\times\SI{100}{\percent}}\quad
+    \boxed{\eta = \frac{W_o}{W_i}\times\SI{100}{\percent}}
   }
   \begin{center}
     \begin{tabular}{l|c|c}

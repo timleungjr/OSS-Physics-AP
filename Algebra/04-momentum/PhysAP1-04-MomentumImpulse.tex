@@ -27,7 +27,7 @@
 \subtitle{Advanced Placement Physics 1}
 \author[TML]{Dr.\ Timothy Leung}
 \institute{Olympiads School}
-\date{July 2020}
+\date{July 9, 2020}
 
 \newcommand{\iii}{\ensuremath\hat{\bm{\imath}}}
 \newcommand{\jjj}{\ensuremath\hat{\bm{\jmath}}}
@@ -46,25 +46,15 @@
 
 
 \begin{frame}{Momentum}
-  \textbf{Linear momentum} (or \textbf{translational momentum}, or just
-  \textbf{momentum}) is a quantity of motion simply defined as the product of
-  mass $m$ and velocity $\mb{v}$:
+  \textbf{Linear momentum}\footnote{or \textbf{translational momentum}, or just
+  \textbf{momentum}} is a quantity of motion simply defined as the product of
+  mass $m$ and velocity $\mb{v}$. The unit of momentum is
+  \textbf{kilogram meter per second} (\si{\kilo\gram\metre\per\second}):
 
-  \eq{-.2in}{
+  \eq{-.25in}{
     \boxed{\mb{p}=m\mb{v}}
   }
-%  \begin{center}
-%    \begin{tabular}{l|c|c}
-%      \rowcolor{pink}
-%      \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
-%      Momentum & $\mb{p}$ & \si{\kilo\gram.\metre\per\second} \\
-%      Mass      & $m$    & \si{\kilo\gram} \\
-%      Velocity  & $\mb{v}$ & \si{\metre\per\second}
-%    \end{tabular}
-%  \end{center}
   \begin{itemize}
-  \item  The unit of momentum is \textbf{kilogram meter per second}
-    (\si{\kilo\gram\metre\per\second})
   \item Momentum is a \emph{vector} quantity; direction of $\mb{p}$ is the same
     as $\mb{v}$
   \item For rotational motion of rigid bodies, there is also
@@ -75,46 +65,41 @@
 
 
 \begin{frame}{General Form of Second Law of Motion}
-  Taking the time derivative of the momentum vector (from an inertial frame of
-  reference) using the chain rule:
+  From an inertial frame of reference, for a constant mass $m$, the average
+  rate of change of momentum gives a familiar result:
 
   \eq{-.15in}{
-    \frac{d\mb{p}}{dt}=\frac{d(m\mb{v})}{dt}
-    =m\frac{d\mb{v}}{dt}+\frac{dm}{dt}\mb{v}
-    =m\mb{a}+\dot{m}\mb{v}
+    \frac{\Delta\mb{p}}{\Delta t}=\frac{\Delta(m\mb{v})}{\Delta t}
+    =m\frac{\Delta\mb{v}}{\Delta t}=\boxed{m\mb{a}=\mb{F}_\mathrm{net}}
   }
-
-  For constant mass $m$ (i.e.\ $\dot{m}=0$), this right-hand-side reduces to the
-  familiar form of the second law of motion, $m\mb{a}$. In fact, the
+  
+  which is the familiar form of the second law of motion. In fact, the
   \emph{general} form of the second law of motion is that \textbf{the net
-    external force on an object is the time rate of change of its momentum},
-  i.e.:
+    external force on an object is the time rate of change of its momentum}:
 
   \eq{-.2in}{
-    \mb{F}_{\textrm{net}}=\frac{d\mb{p}}{dt}
+    \boxed{\mb{F}_{\textrm{net}}=\frac{\Delta\mb{p}}{\Delta t}}
   }
 \end{frame}
 
 
 
-\begin{frame}{Second Law of Motion \& Conservation of Momentum}
-
-  \eq{-.2in}{
-    \boxed{\mb{F}_{\textrm{net}}=\frac{d\mb{p}}{dt}}
+\begin{frame}{First Law of Motion \& Conservation of Momentum}
+  \eq{0in}{
+    \boxed{\mb{F}_{\textrm{net}}=\frac{\Delta\mb{p}}{\Delta t}}
   }
-  \begin{itemize}
-  \item Momentum is conserved (i.e.\ $\sum\mb{p}$ constant) when the net
-    \emph{external} force on an object or a system of objects is zero
-  \item Internal forces do not contribute to net force
-  \item In the absence of external forces,  we have
-    \textbf{conservation of momentum} for a collection of objects:
 
+  \textbf{First law of motion:} The momentum state of an object is conserved
+  unless a net unbalanced external force acts on it
+  \begin{itemize}
+  \item Without net external forces, the \textbf{conservation of momentum}
+    states that the initial and final momentum must be constant:
+    
     \eq{-.25in}{
       \sum\mb{p}_i=\sum\mb{p}_i'
     }
     
-  \item We have previously studied internal forces when solving 
-    connected-bodies problems.
+  \item This is applied to collision and explosion problems.
   \end{itemize} 
 \end{frame}
 
@@ -124,8 +109,8 @@
   obtain the \textbf{impulse-momentum theorem}:
   
   \eq{-.15in}{
-    \bar{\mb{F}}_{\text{net}}=\frac{\Delta\mb{p}}{\Delta t}\;\rightarrow\;
-    \boxed{\mb{J}_{\text{net}}=\bar{\mb{F}}_{\text{net}}\Delta t=\Delta\mb{p}}
+    \overline{\mb{F}}_{\text{net}}=\frac{\Delta\mb{p}}{\Delta t}\;\rightarrow\;
+    \boxed{\mb{J}_{\text{net}}=\overline{\mb{F}}_{\text{net}}\Delta t=\Delta\mb{p}}
   }
 
   where $\mb{J}_{\text{net}}$ is called the \textbf{net impulse}. Since
@@ -144,15 +129,16 @@
 
 
 \begin{frame}{Impulse}
-  Any force $\bar{\mb{F}}$ acting on an object over a time $\Delta t$ generates
-  an impulse, regardless of whether or not there is a change in momentum:
+  Any force $\overline{\mb{F}}$ acting on an object over a time $\Delta t$
+  generates an impulse, regardless of whether or not there is a change in
+  momentum:
 
   \eq{-.2in}{
-    \boxed{\mb{J}=\bar{\mb{F}}\Delta t}
+    \boxed{\mb{J}=\overline{\mb{F}}\Delta t}
   }
   
   The change in momentum only depends on \emph{net} impulse $\mb{J}_{\text{net}}$.
-  The force is an \textbf{average force} $\bar{\mb{F}}$ is the
+  The force is an \textbf{time-averaged force} $\overline{\mb{F}}$ is the
   time-averaged vector that generates the same impulse. It is used extensively
   in introductory physics courses to avoid calculus
 
@@ -286,9 +272,6 @@
   in some direction, then the momentum component in this direction is still
   conserved.
 \end{frame}
-
-
-
 
 
 
