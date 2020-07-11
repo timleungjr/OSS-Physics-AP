@@ -15,7 +15,7 @@
 \renewcommand{\baselinestretch}{1}
 
 \sisetup{
-  %detect-all,
+  detect-all,
   number-math-rm=\mathnormal,
   per-mode=symbol
 }
@@ -27,7 +27,7 @@
 \subtitle{Advanced Placement Physics}
 \author[TML]{Dr.\ Timothy Leung}
 \institute{Olympiads School}
-\date{July 14, 2020}
+\date{July 12, 2020}
 
 \newcommand{\pic}[2]{\includegraphics[width=#1\textwidth]{#2}}
 \newcommand{\mb}[1]{\ensuremath\mathbf{#1}}
@@ -81,17 +81,22 @@
   i.e.:
 
   \eq{-.2in}{
-    \mb{F}_{\textrm{net}}=\frac{d\mb{p}}{dt}
+    \boxed{
+      \mb{F}_{\textrm{net}}(t)=\frac{d\mb{p}(t)}{dt}
+    }
   }
 \end{frame}
 
 
 
-\begin{frame}{Second Law of Motion \& Conservation of Momentum}
+\begin{frame}{Laws of Motion \& Conservation of Momentum}
 
   \eq{-.2in}{
     \boxed{\mb{F}_{\textrm{net}}=\frac{d\mb{p}}{dt}}
   }
+  
+  \textbf{First law of motion:} The momentum state of an object is conserved
+  unless a net unbalanced external force acts on it
   \begin{itemize}
   \item Momentum is conserved (i.e.\ $\sum\mb{p}$ constant) when the net
     \emph{external} force on an object or a system of objects is zero
@@ -102,15 +107,12 @@
     \eq{-.25in}{
       \sum\mb{p}_i=\sum\mb{p}_i'
     }
-    
-  \item We have previously studied internal forces when solving 
-    connected-bodies problems.
   \end{itemize} 
 \end{frame}
 
 
 \begin{frame}{Impulse}
-  Rearranging the variables in the general form of Newton's second law:
+  Rearranging the variables in the general form of the second law of motion:
   
   \eq{-.15in}{
     \mb{F}_{\textrm{net}}=\frac{d\mb{p}}{dt}\;\rightarrow\;
@@ -123,7 +125,7 @@
     \boxed{
       \mb{J}_{\textrm{net}}
       =\int_{t_1}^{t_2}\mb{F}_{\textrm{net}}dt
-      =\int d\mb{p}=\Delta\mb{p}}
+      =\int_{p_1}^{p_2} d\mb{p}=\Delta\mb{p}}
   }
   
   The quantity $\mb{J}_{\textrm{net}}$ is called the \textbf{net impulse}.
@@ -223,14 +225,16 @@
 
 \begin{frame}{Conservation of Momentum}
   \begin{itemize}
-  \item From Newton's third law of motion, we know that the action and reaction
+  \item From the third law of motion, we know that the action and reaction
     forces are always equal in magnitude and in opposite direction. Thus, their
     total impulse would be zero.
   \item When there is no external force, the momentum of the total system will
     always be constant. We saw that a few slides ago:
     
     \eq{-.2in}{
-      \sum_i\mb{p}=\sum_i\mb{p}'
+      \boxed{
+        \sum\mb{p}_i=\sum\mb{p}_i'
+      }
     }
   \end{itemize}
 \end{frame}
@@ -303,13 +307,13 @@
 
 
 
-\begin{frame}{Example}
-  \textbf{Example 4:} Two blocks A and B, both have mass \SI{1.}{\kilo\gram}.
-  Block A has velocity \SI{3.}{\metre\per\second} and block B is at rest. Their
-  distance is \SI{1.}{\metre}. The surface is has dynamic friction coefficient
-  $\mu_k=0.02$. After they collide, they move together, what would be the final
-  velocity of these two blocks? How far can they go after the collision?
-\end{frame}
+%\begin{frame}{Example}
+%  \textbf{Example 4:} Two blocks A and B, both have mass \SI{1.}{\kilo\gram}.
+%  Block A has velocity \SI{3.}{\metre\per\second} and block B is at rest. Their
+%  distance is \SI{1.}{\metre}. The surface is has dynamic friction coefficient
+%  $\mu_k=0.02$. After they collide, they move together, what would be the final
+%  velocity of these two blocks? How far can they go after the collision?
+%\end{frame}
 
 %\begin{frame}
 %  \frametitle{More Example}
@@ -518,19 +522,19 @@
 
 
 \begin{frame}{Final Velocities in an Elastic Collision}
-  When two objects \num{1} and \num{2} of mass $m_1$ and $m_2$ and initial
-  velocities $v_1$ and $v_2$ collide elastically, their final velocities will
-  be:
+  When two objects 1 and 2 of mass $m_1$ and $m_2$ and  collide elastically,
+  their final velocities will be determined by the initial velocities $v_1$ and
+  $v_2$:
   
   \vspace{-.2in}{\Large
     \begin{align*}
-      v_1'&=\frac{v_1(m_1-m_2)+2m_2v_2}{m_1+m_2}\\
-      v_2'&=\frac{v_2(m_2-m_1)+2m_1v_1}{m_1+m_2}
+      v_1'&=\frac{m_2-m_1}{m_2+m_1}v_1+\frac{2m_2}{m_2+m_1}v_2\\
+      v_2'&=\frac{2m_2}{m_2+m_1}v_1 + \frac{m_2-m_1}{m_2+m_1}v_2
     \end{align*}
   }
 
-  These equations are not provided in the AP exam equation sheet, which means
-  that we are more interested in the behavior qualitatively rather than
+  These equations are \emph{not} provided in the AP exam equation sheet, which
+  means that we are more interested in the behavior qualitatively rather than
   quantitatively.
 \end{frame}
 

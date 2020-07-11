@@ -2,7 +2,7 @@
 
 \usetheme{metropolis}
 \setbeamersize{text margin left=.5cm,text margin right=.5cm}
-%\setbeamertemplate{navigation symbols}{} % suppress nav bar
+\setbeamertemplate{navigation symbols}{} % suppress nav bar
 %\setbeamercovered{transparent}
 
 \usefonttheme{professionalfonts}
@@ -18,6 +18,7 @@
 \renewcommand{\baselinestretch}{1}
 
 \sisetup{
+  detect-all,
   number-math-rm=\mathnormal,
   per-mode=symbol
 }
@@ -29,7 +30,7 @@
 \subtitle{Advanced Placement Physics C}
 \author[TML]{Dr.\ Timothy Leung}
 \institute{Olympiads School}
-\date{July 13, 2020}
+\date{July 11, 2020}
 
 \newcommand{\pic}[2]{\includegraphics[width=#1\textwidth]{#2}}
 \newcommand{\mb}[1]{\ensuremath\mathbf{#1}}
@@ -98,7 +99,9 @@
   simplifies to just the dot product of the two vectors:
 
   \eq{-.2in}{
-    W=\mb{F}\cdot\Delta\mb{r}
+    \boxed{
+      W=\mb{F}\cdot\Delta\mb{r}
+    }
   }
 
   Or in the scalar form that is more familiar in Grades 11/12 Physics that
@@ -135,31 +138,30 @@
 \section{Kinetic Energy}
 
 \begin{frame}{Kinetic Energy}
-  When a net force on an object accelerates it, the resulting amount of
-  work done on the object (net work $W_{\textrm{net}}$) is given by:
+  When a net force on an object (with constant mass) accelerates it, the
+  resulting amount of work done on the object (net work $W_{\textrm{net}}$) is
+  given by:
 
   \eq{-.2in}{
     W_{\textrm{net}}=\int\mb{F}_{\textrm{net}}\cdot d\mb{x}=\int m\mb{a}\cdot d\mb{x}
     =m\int\frac{d\mb{v}}{dt}\cdot d\mb{x}
   }
 
-  Since both $\mb{v}$ and $\mb{x}$ are continuous functions in
-  time, we can switch the order of differentiation, i.e.:
+  Both $\mb{v}$ and $\mb{x}$ are continuous functions in time, we can switch
+  the order of differentiation. Also, since $\mb{v}$ and $d\mb{v}$ must be in
+  the same direction, the dot product is trivial: $\mb{v}\cdot d\mb{v}=vdv$
 
   \eq{-.2in}{
     =m\int\frac{d\mb{x}}{dt}\cdot d\mb{v}=m\int\mb{v}\cdot d\mb{v}
     =m\int_{v_1}^{v_2} vdv %=\Delta\left(\frac{1}{2}mv^2\right)=\Delta K
   }
-
-  and since $\mb{v}$ and $d\mb{v}$ must be in the same direction, the dot
-  product is trivial: $\mb{v}\cdot d\mb{v}=vdv$
 \end{frame}
 
 
 
 \begin{frame}{Kinetic Energy}
-  This integral, when integrated from $v_1$ (initial speed) to $v_2$
-  (final speed), becomes:
+  This integral, when integrated from $v_1$ (initial \emph{speed}) to $v_2$
+  (final \emph{speed}), becomes:
 
   \eq{-.2in}{
     =m\int_{v_1}^{v_2} vdv=\frac{1}{2}mv^2\Big|^{v_2}_{v_1}=\Delta K
@@ -168,7 +170,9 @@
   where $K$ is defined as the \textbf{translational kinetic energy}:
 
   \eq{-.1in}{
-    K=\frac12mv^2
+    \boxed{
+      K=\frac12mv^2
+    }
   }
 
   Later in the course we will discuss \emph{rotational} kinetic energy.
@@ -182,7 +186,9 @@
   kinetic energy. This is the \textbf{work-energy theorem}:
 
   \eq{-.15in}{
-    W_\mathrm{net}=\Delta K
+    \boxed{
+      W_\mathrm{net}=\Delta K
+    }
   }
   \begin{itemize}
   \item\vspace{-.15in} $\Delta K$ can be positive or negative depending on the
@@ -217,7 +223,7 @@
   }
   
   \vspace{-.1in}Near Earth's surface, we assume that
-  $\mb{g}=-g\bm{\hat{\jmath}}=-9.81\bm{\hat{\jmath}}$ \si{\metre\per\second^2}
+  $\mb{g}=-g\bm{\hat{\jmath}}\approx -10\bm{\hat{\jmath}}$ \si{\metre\per\second^2}
   is constant. The work done to move an object from height $h_1$ to $h_2$ is
   therefore:
 
@@ -230,8 +236,11 @@
   where $U_g$ is defined as the \textbf{gravitational potential energy}:
 
   \eq{-.2in}{
-    U_g=mgh
+    \boxed{U_g=mgh}
   }
+
+  \vspace{-.1in}where $h=0$ (and therefore $U_g=0$) is called the
+  \textbf{reference level}.
 \end{frame}
 
 
@@ -255,7 +264,9 @@
   where $U_e$ is defined as the \textbf{elastic potential energy}:
 
   \eq{-.2in}{
-    U_e=\frac12kx^2
+    \boxed{
+      U_e=\frac12kx^2
+    }
   }
 \end{frame}
 
@@ -279,9 +290,9 @@
 %  \item Gravitational force, spring force,  electrostatic force (later in the
 %    course) are called \textbf{conservative forces}
 %  \item Work done by a conservative force is independent of the path taken
-  Expressions for potential energies are obtained by integrating the work done
-  by the conservative forces, these forces are therefore the negative gradient
-  of the potential energies:
+  Potential energies are obtained by integrating the work done by the
+  conservative forces, so by the fundamental theorem of calculus, these forces
+  are therefore the negative gradient of the potential energies:
 
   \eq{-.2in}{
     \mb{F}=-\nabla U=
@@ -291,10 +302,12 @@
   }
 
   The direction of a conservative force \emph{always} decreases the potential
-  energy. In 1D:
+  energy. In one-dimension:
 
   \eq{-.2in}{
-    \mb{F}=-\frac{dU}{dx}
+    \boxed{
+      F=-\frac{dU}{dx}
+    }
   }
 
   Pay attention to the negative sign. Students often forget it.
@@ -309,7 +322,9 @@
   called that potential energy. Therefore:
 
   \eq{-.2in}{
-    W=-\Delta U
+    \boxed{
+      W_\mathrm{conc.}=-\Delta U
+    }
   }
   \begin{itemize}
   \item\vspace{-.15in}$\Delta U$ can be positive or negative depending on the
@@ -327,11 +342,11 @@
   \item Decrease its potential energy, while
   \item Increase its kinetic energy by the same amount
   \end{enumerate}
-  Mathematically, this shows that mechanical energy must always be conserved
-  when there are only conservative forces:
+  Mathematically, this shows that mechanical energy must \emph{always} be
+  conserved when there are only conservative forces:
 
   \eq{-.15in}{
-    W=-\Delta U = \Delta K \quad\longrightarrow\quad
+    W_\mathrm{conc}=-\Delta U = \Delta K \quad\longrightarrow\quad
     \Delta K + \Delta U =0
   }
 
@@ -421,7 +436,7 @@
 
 
 
-\begin{frame}{Example: Vertical spring-mass system}
+\begin{frame}{Example: Vertical Spring-Mass System}
   \begin{columns}
     \column{.17\textwidth}
     \begin{tikzpicture}[scale=1.3]
@@ -501,13 +516,13 @@
 
 
 \begin{frame}{Work By Non-Conservative Force}
-  Some xamples of non-conservative forces:
+  Some examples of non-conservative forces:
   \begin{itemize}
   \item Work done by these forces are \emph{usually} negative because they
     oppose the direction of motion
     \begin{itemize}
     \item Drag (fluid resistance)
-    \item Kinetic friction
+    \item Friction\footnote{but sometimes it can also do positive work too.}
     \end{itemize}
   \item The work done by these forces may be positive or negative, depending on
     the problem
@@ -519,6 +534,7 @@
   \end{itemize}
   Note that the work-kinetic energy theorem still applies when non-conservative
   forces are present
+  \vspace{.25in}
 \end{frame}
 
 
@@ -570,14 +586,14 @@
   which energy is being transformed:
 
   \eq{-.2in}{
-    \boxed{P = \frac{dW}{dt}}\quad\quad
-    \boxed{\bar{P} = \frac{W}{\Delta t}}
+    \boxed{P(t) = \frac{dW}{dt}}\quad\quad
+    \boxed{\overline{P} = \frac{W}{\Delta t}}
   }
   \begin{center}
     \begin{tabular}{l|c|c}
       \rowcolor{pink}
       \textbf{Quantity}  & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
-      Instantaneous and average power & $P$, $\bar{P}$ & \si{\watt} \\
+      Instantaneous and average power & $P$, $\overline{P}$ & \si{\watt} \\
       Work done          & $W$ & \si{\joule} \\
       Time interval      & $\Delta t$ & \si{\second}
     \end{tabular}
@@ -592,7 +608,7 @@
   If a constant force is used to push an object at a constant velocity, the
   power produced by the force is:
   
-  \eq{-.2in}{
+  \eq{-.1in}{
     P=\frac{dW}{dt}=\frac{\mb{F}\cdot d\mb{x}}{dt}
     =\mb{F}\cdot\frac{d\mb{x}}{dt}
     \quad\rightarrow\quad
@@ -616,8 +632,8 @@
   energy or work input
 
   \eq{-.2in}{
-    \eta = \frac{E_o}{E_i}\times\SI{100}{\percent}\quad
-    \eta = \frac{W_o}{W_i}\times\SI{100}{\percent}
+    \boxed{ \eta = \frac{E_o}{E_i}\times\SI{100}{\percent} }\quad
+    \boxed{ \eta = \frac{W_o}{W_i}\times\SI{100}{\percent} }
   }
   \begin{center}
     \begin{tabular}{l|c|c}
