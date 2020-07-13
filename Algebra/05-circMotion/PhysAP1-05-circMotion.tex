@@ -29,7 +29,7 @@
 \subtitle{Advanced Placement Physics 1}
 \author[TML]{Dr.\ Timothy Leung}
 \institute{Olympiads School}
-\date{July 2020}
+\date{July 13, 2020}
 
 \newcommand{\pic}[2]{\includegraphics[width=#1\textwidth]{#2}}
 \newcommand{\mb}[1]{\ensuremath\mathbf{#1}}
@@ -47,7 +47,7 @@
   Please download the following files from the school website if you have not
   already done so:
   \begin{itemize}
-  \item\texttt{PhysAP1-05-circMotion-print.pdf}---The ``print version'' of the
+  \item\texttt{PhysAP1-05-circMotion.pdf}---The ``print version'' of the
     class slides for this topic.
   \item\texttt{PhysAP1-05-Homework.pdf}---Homework problems for this topic.
   \end{itemize}
@@ -165,20 +165,21 @@
     
     \column{.68\textwidth}
     For constant radius $r$, the \textbf{angular position} $\theta$ fully
-    describes an object's position:
+    describes an object's position. It is generally measured in radians (rad):
       
     \eq{-.25in}{
       \boxed{\theta=\theta(t)}
     }
     
-    \textbf{Average angular velocity} $\omega$ (or \textbf{angular frequency})
-    is the rate of change in angular position over a finite time interval:
-      
+    \textbf{Average angular velocity} $\overline{\omega}$ (or
+    \textbf{angular frequency})
+    is the rate of change in angular position over a finite time interval.
+    It is measured in \si{rad\per\second}
+    
     \eq{-.2in}{
-      \boxed{\omega(t)=\frac{\Delta\theta}{\Delta t}}
+      \boxed{\overline{\omega}=\frac{\Delta\theta}{\Delta t}}
     }
 
-    $\omega$ is measured in \si{rad\per\second}
   \end{columns}
 \end{frame}
 
@@ -286,16 +287,19 @@
   \textbf{average angular acceleration}, which has a unit of \si{rad/\second^2}:
 
   \eq{-.2in}{
-    \boxed{\bar{\alpha}=\frac{\Delta\omega}{\Delta t}}
+    \boxed{\overline{\alpha}=\frac{\Delta\omega}{\Delta t}}
   }
 
   Similar to the relationship between velocity and angular velocity,
-  \textbf{tangential acceleration} $a_\theta$ is related to angular acceleration
-  $\alpha$ by the radius $r$:
+  \textbf{average tangential acceleration} $a_\theta$ is related to average
+  angular acceleratio $\overline{\alpha}$ by the radius $r$:
     
-  \eq{-.2in}{
-    \bar{a}_\theta=
-    \frac{\Delta v}{\Delta t}=\frac{r\Delta\omega}{\Delta t}=r\bar{\alpha}
+  \eq{-.3in}{
+    \boxed{\overline{a}_\theta
+      =\frac{\Delta v}{\Delta t}
+      =\frac{r\Delta\omega}{\Delta t}
+      =r\overline{\alpha}
+    }
   }
     
   For \emph{uniform} circular motion, $\omega$ is constant, therefore
@@ -312,7 +316,7 @@
   \vspace{-.3in}{\Large
     \begin{align*}
       \theta&=\theta_0 + \omega_0 t + \frac{1}{2}\alpha t^2\\
-      \theta&=\theta_0+ \frac{\omega_0+\omega}{2} t\\
+      \theta&=\theta_0+ \alpha t\\
       \omega^2& = \omega_0^2+ 2\alpha(\theta-\theta_0)
     \end{align*}
   }
@@ -336,14 +340,14 @@
   \textbf{centripetal acceleration} $a_r$:
 
   \eq{-.15in}{
-    \boxed{a_r=-\frac{v^2}{r}=\omega^2r}
+    \boxed{a_r=\frac{v^2}{r}=\omega^2r}
   }
 
   The force that causes the centripetal acceleration is called the
   \textbf{centripetal force}, also toward the center of rotation:
 
   \eq{-.15in}{
-    \boxed{\mb{F}_r=ma_r=-\frac{mv^2}{r}}
+    \boxed{\mb{F}_r=ma_r=\frac{mv^2}{r}}
   }
 \end{frame}
 
@@ -449,19 +453,21 @@
     \end{tikzpicture}
 
     \column{.65\textwidth}
-    No motion in the $y$ direction, i.e.\ no net force:
+    No motion in the $y$ direction, therefore $\sum F_y=0$:
 
-    \eq{-.35in}{
-      \sum F_y=N\cos\theta-f\sin\theta-w=0
+    \eq{-.25in}{
+      N\cos\theta-f\sin\theta-w=0
     }
 
-    Net force in the $x$ direction is the centripetal force:
+    Net force in the $x$ direction is the centripetal force,
+    i.e.\ $\sum F_x=ma_c$
 
-    \eq{-.35in}{
-      \sum F_x=N\sin\theta +f\cos\theta = \frac{mv^2}{r}
+    \eq{-.25in}{
+      N\sin\theta +f\cos\theta = \frac{mv^2}{r}
     }
 
-    Friction force $\mb{f}$ may be static or kinetic.
+    Friction force $\mb{f}$ may be static or kinetic, depending on the
+    situation.
   \end{columns}
 \end{frame}
 
@@ -526,12 +532,12 @@
     The \emph{maximum} velocity $v_{\text{max}}$ can be expressed as:
 
     \eq{-.25in}{
-      \boxed{v_{\text{max}}=
+      \boxed{v_{\textrm{max}}=
         \sqrt{rg\frac{\sin\theta+\mu\cos\theta}{\cos\theta-\mu\sin\theta}}
       }
     }
 
-    Note that $v_{\text{max}}$ does not depend on mass.
+    Note that $v_{\textrm{max}}$ does not depend on mass.
   \end{columns}
 \end{frame}
 

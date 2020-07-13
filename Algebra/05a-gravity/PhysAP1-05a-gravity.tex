@@ -29,7 +29,7 @@
 \subtitle{Advanced Placement Physics 1}
 \author{Dr.\ Timothy Leung}
 \institute{Olympiads School\\Toronto, Ontario, Canada}
-\date{July 2020}
+\date{July 13, 2020}
 
 \newcommand{\pic}[2]{\includegraphics[width=#1\textwidth]{#2}}
 \newcommand{\mb}[1]{\ensuremath\mathbf{#1}}
@@ -44,8 +44,6 @@
 \end{frame}
 
 
-\section[Intro]{Introduction}
-
 %\begin{frame}{Files to Download}
 %  If you have not done so already, please download the following files.
 %  \begin{itemize}
@@ -54,6 +52,7 @@
 %  \item\texttt{PhysAP-08-Homework.pdf}---Homework questions for this topic.
 %  \end{itemize}
 %\end{frame}
+
 \begin{frame}{Disclaimer}
   The section on circular motion and gravity only accounts for a small portion
   of the marks for Physics 1, but we spend more time on circular motion because
@@ -81,7 +80,7 @@
   \end{center}
 
   In classical mechanics, \textbf{gravity} is a mutually attractive force
-  between all massive objects, determined by the law of universal gravitation:
+  between massive objects, determined by the law of universal gravitation:
 
   \eq{-.2in}{
     \boxed{
@@ -210,7 +209,7 @@
   We generally describe the gravitational force (weight) as:
   
   \eq{-.2in}{
-    \boxed{\mb{F}_g=m\mb{g}}
+    \boxed{\mb{w}=\mb{F}_g=m\mb{g}}
   }
 
   To find $\mb{g}$, we group the variables in the law of universal gravitation:
@@ -553,7 +552,7 @@
 
 
 
-\section{Orbits}
+\section{Orbital Motion}
 %\begin{frame}{Orbital Mechanics \& Kepler's Laws of Planetary Motion}
 %  In Physics 12, you studied briefly at the orbits of satellites around Earth,
 %  or the orbit of Earth and other planets around the Sun.
@@ -655,21 +654,22 @@
     \boxed{v_{\text{esc}}=\sqrt{\frac{2GM}{r_i}}}
   }
 
-  where $r_i$ is the initial distance from the center of the planet/star.
+  where $r_i$ is the initial distance from the center of the planet/star, and
+  it does not have to be on the surface.
 \end{frame}
 
 
 
-\begin{frame}{Example Problem}
-  \textbf{Example:} Determine the escape velocity and energy for a
-  \SI{1.60e4}{\kilo\gram} rocket leaving the surface of Earth.
-
-  \uncover<2>{
-    \vspace{.5in}Note: The equation for the escape speed is based on the object
-    have a \emph{constant} mass, which is \emph{not} the case for a rocket
-    going into space.
-  }
-\end{frame}
+%\begin{frame}{Example Problem}
+%  \textbf{Example:} Determine the escape velocity and energy for a
+%  \SI{1.60e4}{\kilo\gram} rocket leaving the surface of Earth.
+%
+%  \uncover<2>{
+%    \vspace{.5in}Note: The equation for the escape speed is based on the object
+%    have a \emph{constant} mass, which is \emph{not} the case for a rocket
+%    going into space.
+%  }
+%\end{frame}
 
 
 
@@ -708,11 +708,11 @@
 
 
 
-\begin{frame}{Non-Circular Orbits}
-  \begin{center}
-    \pic{.6}{newton-cannon-orbital-types-Seeds.jpg}
-  \end{center}
-\end{frame}
+%\begin{frame}{Non-Circular Orbits}
+%  \begin{center}
+%    \pic{.6}{newton-cannon-orbital-types-Seeds.jpg}
+%  \end{center}
+%\end{frame}
 
 
 
@@ -756,77 +756,77 @@
 
 
 
-\section{Orbital Mechanics}
-
-\begin{frame}{Orbital Mechanics}
-  \textbf{The following slides for orbital mechanics are only presented as a
-    reference. Understanding this material require you to first learn about
-    angular momentum, which is the next topic in the course.}
-\end{frame}
-
-
-
-\begin{frame}{Properties of Gravitational Force}
-  Two properties of gravity are crucial to understanding of orbital mechanics:
-  \begin{enumerate}
-  \item Gravity is a \emph{conservative force}, in that
-    \begin{itemize}
-    \item The total mechanical energy of objects under gravity is constant
-    \item Work done by gravity converts gravitational potential energy $U_g$
-      into kinetic energy $K$; work against gravity converts $K$ into $U_g$
-    \end{itemize}
-  \item Gravity is a \emph{central force}, in that
-    \begin{itemize}
-    \item Gravitational force $\mb{F}_g$ is always in the $-\hat{\mb{r}}$
-      direction, i.e.\ $\mb{F}\times\mb{r}=\mb{0}$
-    \item Therefore gravity doesn't generate any torque
-    \item And therefore angular momentum $\mb{L}$ is constant
-    \end{itemize}
-  \end{enumerate}
-  These two properties are true regardless of the shape of the orbit, and even
-  for objects that are not in orbit at all.
-\end{frame}
-
-
-\begin{frame}{Kepler's Laws of Planetary Motion}
-  Johannes Kepler (1571--1630) formulated the \textbf{laws of planetary motion}
-  between 1609 to 1619, by interpreting planetary motion data from his teacher,
-  Tycho Brahe. It is an improvement over the heliocentric theory of Nicolaus
-  Copernicus. Expressed in modern language:
-  \begin{enumerate}
-  \item\textbf{Law of ellipses:} The orbit of a planet is an ellipse with the
-    Sun at one of the two foci.
-  \item\textbf{Law of equal areas:} A line segment joining a planet and the Sun
-    sweeps out equal areas during equal intervals of time
-  \item \textbf{Law of periods:} The square of the orbital period of a planet
-    is proportional to the cube of the semi-major axis of its orbit.
-  \end{enumerate}
-  (For anyone who is interested, there is a handout with the proofs of Kepler's
-  laws using Newton's laws of motion.)
-\end{frame}
-
-
-
-\subsection{Second Law}
-
-\begin{frame}{Kepler's Second Law: Law of Equal Areas}
-  \begin{center}
-    \fbox{
-      \begin{minipage}{.97\textwidth}
-        \textbf{Law of Equal Areas: A line segment joining a planet and the Sun
-          sweeps out equal areas during equal intervals of time}
-      \end{minipage}
-    }
-
-    \pic{.4}{201532-132212364-3243-planet.png}
-  \end{center}
-  The second law of planetary motion is the easiest to proof, by applying the
-  conservation of angular momentum $\mb{L}=m(\mb{r}\times\mb{v})$ (gravity is a
-  central force).
-\end{frame}
-
-
-
+%\section{Orbital Mechanics}
+%
+%\begin{frame}{Orbital Mechanics}
+%  \textbf{The following slides for orbital mechanics are only presented as a
+%    reference. Understanding this material require you to first learn about
+%    angular momentum, which is the next topic in the course.}
+%\end{frame}
+%
+%
+%
+%\begin{frame}{Properties of Gravitational Force}
+%  Two properties of gravity are crucial to understanding of orbital mechanics:
+%  \begin{enumerate}
+%  \item Gravity is a \emph{conservative force}, in that
+%    \begin{itemize}
+%    \item The total mechanical energy of objects under gravity is constant
+%    \item Work done by gravity converts gravitational potential energy $U_g$
+%      into kinetic energy $K$; work against gravity converts $K$ into $U_g$
+%    \end{itemize}
+%  \item Gravity is a \emph{central force}, in that
+%    \begin{itemize}
+%    \item Gravitational force $\mb{F}_g$ is always in the $-\hat{\mb{r}}$
+%      direction, i.e.\ $\mb{F}\times\mb{r}=\mb{0}$
+%    \item Therefore gravity doesn't generate any torque
+%    \item And therefore angular momentum $\mb{L}$ is constant
+%    \end{itemize}
+%  \end{enumerate}
+%  These two properties are true regardless of the shape of the orbit, and even
+%  for objects that are not in orbit at all.
+%\end{frame}
+%
+%
+%\begin{frame}{Kepler's Laws of Planetary Motion}
+%  Johannes Kepler (1571--1630) formulated the \textbf{laws of planetary motion}
+%  between 1609 to 1619, by interpreting planetary motion data from his teacher,
+%  Tycho Brahe. It is an improvement over the heliocentric theory of Nicolaus
+%  Copernicus. Expressed in modern language:
+%  \begin{enumerate}
+%  \item\textbf{Law of ellipses:} The orbit of a planet is an ellipse with the
+%    Sun at one of the two foci.
+%  \item\textbf{Law of equal areas:} A line segment joining a planet and the Sun
+%    sweeps out equal areas during equal intervals of time
+%  \item \textbf{Law of periods:} The square of the orbital period of a planet
+%    is proportional to the cube of the semi-major axis of its orbit.
+%  \end{enumerate}
+%  (For anyone who is interested, there is a handout with the proofs of Kepler's
+%  laws using Newton's laws of motion.)
+%\end{frame}
+%
+%
+%
+%\subsection{Second Law}
+%
+%\begin{frame}{Kepler's Second Law: Law of Equal Areas}
+%  \begin{center}
+%    \fbox{
+%      \begin{minipage}{.97\textwidth}
+%        \textbf{Law of Equal Areas: A line segment joining a planet and the Sun
+%          sweeps out equal areas during equal intervals of time}
+%      \end{minipage}
+%    }
+%
+%    \pic{.4}{201532-132212364-3243-planet.png}
+%  \end{center}
+%  The second law of planetary motion is the easiest to proof, by applying the
+%  conservation of angular momentum $\mb{L}=m(\mb{r}\times\mb{v})$ (gravity is a
+%  central force).
+%\end{frame}
+%
+%
+%
 %\begin{frame}{Kepler's Second Law: Law of Equal Areas}
 %  \begin{center}
 %    \fbox{
@@ -870,214 +870,214 @@
 %
 %
 %
-\begin{frame}{Kepler's Second Law: Law of Equal Areas}
-%  We can express $\mb{r}\times\mb{v}$ in terms of angular momentum,
-%  $\mb{L}=m(\mb{r}\times\mb{v})$. But in motion under any central force (such
-%  as gravity), angular momentum is a constant, and therefore: 
-  The rate of change of the area ($dA/dt$) swept out by a planet (called the
-  \textbf{areal velocity}) is given by:
-
-  \eq{-.15in}{
-    \frac{dA}{dt}
-    =\frac{L}{2m}=\text{constant}
-  }
-
-  The rate a planet sweeps out the area in orbit is its angular momentum around
-  the sun divided by twice its mass.
-\end{frame}
-
-
-
-\subsection{First Law}
-
-\begin{frame}{Kepler's First Law: Law of Ellipses}
-  Proofing Kepler's first law requires some understanding the ellipse. If
-  the law is true, then orbital motion must agree with the equations of an
-  ellipse.
-  \begin{columns}
-    \column{.3\textwidth}
-    \begin{center}
-      \pic{1.25}{elliporb.png}
-    \end{center}
-
-    \column{.7\textwidth}
-    \begin{itemize}
-    \item $r' + r =2a$
-    \item The area of the ellipse is $A=\pi ab$
-    \item The relationship between $r$ and $\theta$ given by:
-
-      \eq{-.35in}{
-        r=\frac{a(1-e^2)}{1+e\cos\theta}
-        \quad\textnormal{\normalsize where}\quad
-        0\leq e < 1
-      }
-    \item when $e=0$ it's a circle: $a=b=r$
-    \item When $e=1$ it's no longer an ellipse
-    \end{itemize}
-  \end{columns}
-\end{frame}
-
-
-
-\begin{frame}{Kepler's First Law: Law of Ellipses}
-  \begin{columns}
-    \column{.6\textwidth}
-    Most planets in the solar system have very small eccentricity, so their
-    orbits are fairly close to being circular, but comets are much more
-    eccentric
-    \begin{center}
-      \pic{.65}{kep5.png}
-    \end{center}
-    
-    \column{.4\textwidth}
-    \begin{tabular}{l|l}
-      \rowcolor{pink}
-      \textbf{Object} & $e$ \\ \hline
-      Mercury	& \num{.206} \\
-      Venus	& \num{.0068} \\
-      Earth	& \num{.0167} \\
-      Mars	& \num{.0934} \\
-      Jupiter	& \num{.0485} \\
-      Saturn	& \num{.0556} \\
-      Uranus	& \num{.0472} \\
-      Neptune	& \num{.0086} \\
-      Pluto	& \num{.25} \\ \hline
-      Halley's Comet   & \num{.9671} \\
-      Comet Hale-Bopp  & \num{.9951} \\
-      Comet Ikeya-Seki & \num{.9999}
-    \end{tabular}
-  \end{columns}
-\end{frame}
-
-
-
-\begin{frame}{Kepler's First Law: Law of Ellipses}
-  As $m$ orbits around $M$, there are two velocity components:
-  \textbf{radial velocity} $\mb{v}_r$ and \textbf{angular velocity}
-  $\mb{v}_\theta$.
-  \begin{columns}
-    \column{.3\textwidth}
-    \begin{tikzpicture}[scale=.55]
-      \def\a{4} % semi-major axis
-      \def\b{3.25} % semi-minor axis
-      \def\angle{150} % angle
-      \draw (0,0) ellipse ({\a} and {\b});% Draw the ellipse
-      \draw ({sqrt(\a*\a-\b*\b)},-2.65)--({sqrt(\a*\a-\b*\b)},2.65);
-      \draw (-\a-.2,0)--(\a+.2,0);
-      \fill[black]({sqrt(\a*\a-\b*\b)},0) circle(.1)
-      node[below right]{\tiny $M$};
-      \begin{scope}[rotate around={\angle:({sqrt(\a*\a-\b*\b)},0)}]
-        \draw[->]({sqrt(\a*\a-\b*\b)},0)--(8.5,0)
-        node[pos=.45,below]{\tiny$\mb{r}$}
-        node[pos=1,left]{\tiny $\mb{v}_r$};
-        \draw[->](7.65,0)--(7.65,.85) node[below]{\tiny $\mb{v}_\theta$};
-        \fill (7.65,0) circle(.1) node[above]{\tiny $m$};
-      \end{scope}
-      \draw[->]({sqrt(\a*\a-\b*\b)+.5},0) arc(0:\angle:.5)
-      node[pos=.4,above]{\tiny$\theta$};
-%      \draw[<->]({sqrt(\a*\a-\b*\b)-.2},0)--({sqrt(\a*\a-\b*\b)-.2},-2.65)
-%      node[midway,left]{\tiny$r_0$};
-    \end{tikzpicture}
-    
-    \column{.7\textwidth}
-    \begin{itemize}
-    \item $\mb{v}_\theta$ means a centripetal acceleration toward $M$
-    \item Changes in $\mb{v}_r$ (i.e.\ accceleration in the radial direction)
-      also means a force along $\hat{\bm{r}}$
-    \item Both components of acceleration are due entirely to gravitational
-      force toward $M$
-    \item Applying second law of motion gives a complicated (at least for
-      students new to the concept) ordinary differential equation.
-    \end{itemize}
-  \end{columns}
-  \vspace{.1in}A full description for solving the differential equation is
-  presented in the accompanied handout for anyone interested.
-\end{frame}
-
-
-
-\begin{frame}{Kepler's First Law: Law of Ellipses}
-  The solution to the ODE is the expression for $r(\theta)$, with eccentricity
-  $e$ determined by a constant $B$ based on initial condition (how the planet
-  is formed):
-
-  \eq{-.2in}{
-    r%=\frac{1}{\frac{GMm^2}{L^2}(1+e\cos\theta)}
-    =\left[\frac{L^2}{GMm^2}\right]\frac{1}{1+e\cos\theta}
-    \quad\text{where}\quad  e=\frac{BL^2}{GMm^2}
-  }
-
-  The semi-major axis is the average value between the minimum and maximum
-  values of $r$:
-  
-  \eq{-.25in}{
-    a=\frac12(r_{\textrm{min}} + r_{\textrm{max}})
-    =\left[\frac{L^2}{GMm^2}\right]\frac{1}{1-e^2}
-  }
-
-  We can rearrange the terms to see that this is the equation for an ellipse.
-\end{frame}
-
-
-
-\subsection{Third Law}
-
-\begin{frame}{Kepler's Third Law: The Law of Periods}
-  \begin{center}
-    \fbox{
-      \begin{minipage}{.97\textwidth}
-        \textbf{Law of Periods: The square of the orbital period of a planet
-          is proportional to the cube of the semi-major axis of its orbit.}
-      \end{minipage}
-    }
-
-    \vspace{.2in}\pic{.45}{kep8.png}
-  \end{center}
-\end{frame}
-
-
-
-\begin{frame}{Kepler's Third Law: The Law of Periods}
-  The area swept by the planet through one orbital period is the areal velocity
-  (constant!) integrated by time, from $t=0$ to $t=T$:
-
-  \eq{-.2in}{
-    A=\int dA=\int_0^T\frac{dA}{dt}dt=\frac{L}{2m}\int_0^Tdt=\frac{L}{2m}T
-  }
-  
-  But this area is an ellipse, given by the equation based on $a$ (semi-major
-  axis), $b=a\sqrt{1-e^2}$ (semi-minor axis):
-
-  \eq{-.25in}{
-    A=\pi ab=\pi a^2\sqrt{1-e^2}
-  }
-
-  \vspace{-.1in}Equating two equations above and squaring both sides give this
-  expression:
-
-  \eq{-.2in}{
-    T^2=\frac{m^2}{L^2}4\pi^2a^4(1-e^2)
-  }
-\end{frame}
-
-
-
-\begin{frame}{Kepler's Third Law: The Law of Periods}
-  But we also (from proving the first law) have:
-
-  \eq{-.2in}{
-    a(1-e^2)=\frac{L^2}{GMm^2}
-  }
-
-  Substituting this expression into the equation for the period, and after
-  some simple algebra, we end up with this expression:
-
-  \eq{-.2in}{
-    \boxed{T^2=\left[\frac{4\pi^2}{GM}\right] a^3}
-  }
-\end{frame}
-
-
+%\begin{frame}{Kepler's Second Law: Law of Equal Areas}
+%%  We can express $\mb{r}\times\mb{v}$ in terms of angular momentum,
+%%  $\mb{L}=m(\mb{r}\times\mb{v})$. But in motion under any central force (such
+%%  as gravity), angular momentum is a constant, and therefore: 
+%  The rate of change of the area ($dA/dt$) swept out by a planet (called the
+%  \textbf{areal velocity}) is given by:
+%
+%  \eq{-.15in}{
+%    \frac{dA}{dt}
+%    =\frac{L}{2m}=\text{constant}
+%  }
+%
+%  The rate a planet sweeps out the area in orbit is its angular momentum around
+%  the sun divided by twice its mass.
+%\end{frame}
+%
+%
+%
+%\subsection{First Law}
+%
+%\begin{frame}{Kepler's First Law: Law of Ellipses}
+%  Proofing Kepler's first law requires some understanding the ellipse. If
+%  the law is true, then orbital motion must agree with the equations of an
+%  ellipse.
+%  \begin{columns}
+%    \column{.3\textwidth}
+%    \begin{center}
+%      \pic{1.25}{elliporb.png}
+%    \end{center}
+%
+%    \column{.7\textwidth}
+%    \begin{itemize}
+%    \item $r' + r =2a$
+%    \item The area of the ellipse is $A=\pi ab$
+%    \item The relationship between $r$ and $\theta$ given by:
+%
+%      \eq{-.35in}{
+%        r=\frac{a(1-e^2)}{1+e\cos\theta}
+%        \quad\textnormal{\normalsize where}\quad
+%        0\leq e < 1
+%      }
+%    \item when $e=0$ it's a circle: $a=b=r$
+%    \item When $e=1$ it's no longer an ellipse
+%    \end{itemize}
+%  \end{columns}
+%\end{frame}
+%
+%
+%
+%\begin{frame}{Kepler's First Law: Law of Ellipses}
+%  \begin{columns}
+%    \column{.6\textwidth}
+%    Most planets in the solar system have very small eccentricity, so their
+%    orbits are fairly close to being circular, but comets are much more
+%    eccentric
+%    \begin{center}
+%      \pic{.65}{kep5.png}
+%    \end{center}
+%    
+%    \column{.4\textwidth}
+%    \begin{tabular}{l|l}
+%      \rowcolor{pink}
+%      \textbf{Object} & $e$ \\ \hline
+%      Mercury	& \num{.206} \\
+%      Venus	& \num{.0068} \\
+%      Earth	& \num{.0167} \\
+%      Mars	& \num{.0934} \\
+%      Jupiter	& \num{.0485} \\
+%      Saturn	& \num{.0556} \\
+%      Uranus	& \num{.0472} \\
+%      Neptune	& \num{.0086} \\
+%      Pluto	& \num{.25} \\ \hline
+%      Halley's Comet   & \num{.9671} \\
+%      Comet Hale-Bopp  & \num{.9951} \\
+%      Comet Ikeya-Seki & \num{.9999}
+%    \end{tabular}
+%  \end{columns}
+%\end{frame}
+%
+%
+%
+%\begin{frame}{Kepler's First Law: Law of Ellipses}
+%  As $m$ orbits around $M$, there are two velocity components:
+%  \textbf{radial velocity} $\mb{v}_r$ and \textbf{angular velocity}
+%  $\mb{v}_\theta$.
+%  \begin{columns}
+%    \column{.3\textwidth}
+%    \begin{tikzpicture}[scale=.55]
+%      \def\a{4} % semi-major axis
+%      \def\b{3.25} % semi-minor axis
+%      \def\angle{150} % angle
+%      \draw (0,0) ellipse ({\a} and {\b});% Draw the ellipse
+%      \draw ({sqrt(\a*\a-\b*\b)},-2.65)--({sqrt(\a*\a-\b*\b)},2.65);
+%      \draw (-\a-.2,0)--(\a+.2,0);
+%      \fill[black]({sqrt(\a*\a-\b*\b)},0) circle(.1)
+%      node[below right]{\tiny $M$};
+%      \begin{scope}[rotate around={\angle:({sqrt(\a*\a-\b*\b)},0)}]
+%        \draw[->]({sqrt(\a*\a-\b*\b)},0)--(8.5,0)
+%        node[pos=.45,below]{\tiny$\mb{r}$}
+%        node[pos=1,left]{\tiny $\mb{v}_r$};
+%        \draw[->](7.65,0)--(7.65,.85) node[below]{\tiny $\mb{v}_\theta$};
+%        \fill (7.65,0) circle(.1) node[above]{\tiny $m$};
+%      \end{scope}
+%      \draw[->]({sqrt(\a*\a-\b*\b)+.5},0) arc(0:\angle:.5)
+%      node[pos=.4,above]{\tiny$\theta$};
+%%      \draw[<->]({sqrt(\a*\a-\b*\b)-.2},0)--({sqrt(\a*\a-\b*\b)-.2},-2.65)
+%%      node[midway,left]{\tiny$r_0$};
+%    \end{tikzpicture}
+%    
+%    \column{.7\textwidth}
+%    \begin{itemize}
+%    \item $\mb{v}_\theta$ means a centripetal acceleration toward $M$
+%    \item Changes in $\mb{v}_r$ (i.e.\ accceleration in the radial direction)
+%      also means a force along $\hat{\bm{r}}$
+%    \item Both components of acceleration are due entirely to gravitational
+%      force toward $M$
+%    \item Applying second law of motion gives a complicated (at least for
+%      students new to the concept) ordinary differential equation.
+%    \end{itemize}
+%  \end{columns}
+%  \vspace{.1in}A full description for solving the differential equation is
+%  presented in the accompanied handout for anyone interested.
+%\end{frame}
+%
+%
+%
+%\begin{frame}{Kepler's First Law: Law of Ellipses}
+%  The solution to the ODE is the expression for $r(\theta)$, with eccentricity
+%  $e$ determined by a constant $B$ based on initial condition (how the planet
+%  is formed):
+%
+%  \eq{-.2in}{
+%    r%=\frac{1}{\frac{GMm^2}{L^2}(1+e\cos\theta)}
+%    =\left[\frac{L^2}{GMm^2}\right]\frac{1}{1+e\cos\theta}
+%    \quad\text{where}\quad  e=\frac{BL^2}{GMm^2}
+%  }
+%
+%  The semi-major axis is the average value between the minimum and maximum
+%  values of $r$:
+%  
+%  \eq{-.25in}{
+%    a=\frac12(r_{\textrm{min}} + r_{\textrm{max}})
+%    =\left[\frac{L^2}{GMm^2}\right]\frac{1}{1-e^2}
+%  }
+%
+%  We can rearrange the terms to see that this is the equation for an ellipse.
+%\end{frame}
+%
+%
+%
+%\subsection{Third Law}
+%
+%\begin{frame}{Kepler's Third Law: The Law of Periods}
+%  \begin{center}
+%    \fbox{
+%      \begin{minipage}{.97\textwidth}
+%        \textbf{Law of Periods: The square of the orbital period of a planet
+%          is proportional to the cube of the semi-major axis of its orbit.}
+%      \end{minipage}
+%    }
+%
+%    \vspace{.2in}\pic{.45}{kep8.png}
+%  \end{center}
+%\end{frame}
+%
+%
+%
+%\begin{frame}{Kepler's Third Law: The Law of Periods}
+%  The area swept by the planet through one orbital period is the areal velocity
+%  (constant!) integrated by time, from $t=0$ to $t=T$:
+%
+%  \eq{-.2in}{
+%    A=\int dA=\int_0^T\frac{dA}{dt}dt=\frac{L}{2m}\int_0^Tdt=\frac{L}{2m}T
+%  }
+%  
+%  But this area is an ellipse, given by the equation based on $a$ (semi-major
+%  axis), $b=a\sqrt{1-e^2}$ (semi-minor axis):
+%
+%  \eq{-.25in}{
+%    A=\pi ab=\pi a^2\sqrt{1-e^2}
+%  }
+%
+%  \vspace{-.1in}Equating two equations above and squaring both sides give this
+%  expression:
+%
+%  \eq{-.2in}{
+%    T^2=\frac{m^2}{L^2}4\pi^2a^4(1-e^2)
+%  }
+%\end{frame}
+%
+%
+%
+%\begin{frame}{Kepler's Third Law: The Law of Periods}
+%  But we also (from proving the first law) have:
+%
+%  \eq{-.2in}{
+%    a(1-e^2)=\frac{L^2}{GMm^2}
+%  }
+%
+%  Substituting this expression into the equation for the period, and after
+%  some simple algebra, we end up with this expression:
+%
+%  \eq{-.2in}{
+%    \boxed{T^2=\left[\frac{4\pi^2}{GM}\right] a^3}
+%  }
+%\end{frame}
+%
+%
 %\begin{frame}{Orbital Speed}
 %  \eq{.0in}{
 %    \boxed{v_\mathrm{orbit}=\sqrt{\frac{GM}{r}}}
@@ -1097,32 +1097,32 @@
 %    center of mass between $M$ and $m$.
 %  \end{itemize}
 %\end{frame}
-
-
-
-\subsection{Clarifications}
-
-\begin{frame}{Reality of Orbital Motion}
-  As always, nothing is as simple as is first seems
-  \begin{itemize}
-  \item Most AP Problems will be circular instead of elliptical, but you must
-    know the nature of gravitational force (conservative, central)
-  \item The analysis on the slides shown assumes a small mass $m$ orbiting
-    around a large mass $M$. In reality:
-    \begin{itemize}
-    \item Just as planets experience a gravitational force by the Sun, the Sun
-      experiences a gravitational force from the planets
-    \item The smaller mass $m$ does not actually orbit about the center of $M$,
-      but rather, the \emph{center of mass between $M$ and $m$}
-    \item Especially important when the two objects orbiting each other has
-      similar masses (e.g.\ a binary star system)
-    \end{itemize}
-  \end{itemize}
-\end{frame}
-
-
-
-
+%
+%
+%
+%\subsection{Clarifications}
+%
+%\begin{frame}{Reality of Orbital Motion}
+%  As always, nothing is as simple as is first seems
+%  \begin{itemize}
+%  \item Most AP Problems will be circular instead of elliptical, but you must
+%    know the nature of gravitational force (conservative, central)
+%  \item The analysis on the slides shown assumes a small mass $m$ orbiting
+%    around a large mass $M$. In reality:
+%    \begin{itemize}
+%    \item Just as planets experience a gravitational force by the Sun, the Sun
+%      experiences a gravitational force from the planets
+%    \item The smaller mass $m$ does not actually orbit about the center of $M$,
+%      but rather, the \emph{center of mass between $M$ and $m$}
+%    \item Especially important when the two objects orbiting each other has
+%      similar masses (e.g.\ a binary star system)
+%    \end{itemize}
+%  \end{itemize}
+%\end{frame}
+%
+%
+%
+%
 %\begin{frame}{Reduced Mass}
 %  When two objects are orbiting each other, the center of mass of the system is
 %  along the line between them:
