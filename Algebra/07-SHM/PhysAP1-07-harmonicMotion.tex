@@ -4,13 +4,9 @@
 \setbeamersize{text margin left=.5cm,text margin right=.5cm}
 
 \usefonttheme{professionalfonts}
-\usepackage{amsmath,bm}
 \usepackage{siunitx}
-%\usepackage{graphicx}
 \usepackage{tikz}
 \usepackage{mathpazo}
-\usepackage{xcolor,colortbl}
-%\usepackage{hyperref}
 
 \usetikzlibrary{decorations.pathmorphing,patterns}
 
@@ -20,7 +16,6 @@
 
 \sisetup{
   detect-all,
-  %number-math-rm=\mathnormal,
   per-mode=symbol
 }
 
@@ -28,7 +23,7 @@
 \subtitle{Advanced Placement Physics 1}
 \author[TML]{Dr.\ Timothy Leung}
 \institute{Olympiads School\\Toronto, ON, Canada}
-\date{July 2020}
+\date{July 20, 2020}
 
 \newcommand{\pic}[2]{\includegraphics[width=#1\textwidth]{#2}}
 \newcommand{\mb}[1]{\ensuremath\mathbf{#1}}
@@ -52,15 +47,7 @@
   \eq{-.1in}{
     \boxed{\mb{F}_s=-k\mb{x}}
   }
-  %\begin{center}
-  %  \begin{tabular}{l|c|c}
-  %    \rowcolor{pink}
-  %    \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
-  %    Spring force                    & $\mb{F}_s$ & \si{\newton}\\
-  %    Spring constant                 & $k$ & \si{\newton\per\metre}\\
-  %    Amount of extension/compression & $\mb{x}$ & \si{\metre}
-  %  \end{tabular}
-  %\end{center}
+
   \begin{itemize}
   \item\vspace{-.1in}The unit for $k$ is \textbf{newton per meter}
     (\si{\newton\per\metre})
@@ -74,7 +61,6 @@
 
 
 \begin{frame}{Elastic Potential Energy}
-
   Applying Hooke's law to the  definition of work ($W=F\Delta x$), and after a
   bit of calculus (which we will not be showing here), we can find that a
   compressed or stretched spring stores the \textbf{elastic potential energy}:
@@ -84,46 +70,41 @@
   }
 
   The spring force is a conservative force.
-%  \item Since acceleration related to springs is not constant, we cannot rely
-%    on kinematic equations, so we often have to use conservation of energy
-%    instead
 \end{frame}
 
 
 
-\section{Spring-Mass}
+\section{Spring-Mass Systems}
 
 \begin{frame}{Mass on a Spring}
   Consider the forces acting on a mass connected horizontally to a spring
 
   \begin{center}
     \begin{tikzpicture}[scale=1.1]
-      \node[fill=blue!70,inner sep=4.5mm,white] (a) at (5.5,1) {$m$};
+      \draw[fill=blue!70] (4.95,.5) rectangle (6.05,1.5); %{$m$};
       \draw[thick,draw=black!70,
-        decoration={aspect=0.3,segment length=2mm, amplitude=2.5mm, coil},
+        decoration={aspect=.3,segment length=2mm, amplitude=2.5mm, coil},
         decorate] (0,1)--(4.95,1);
-      \fill [pattern=north east lines] (6.5,0.5)--(6.5,0.3)--(-0.2,0.3)
-      --(-0.2,2)--(0,2)--(0,0.5)--cycle;
-      \draw[very thick] (0,0.5)--(6.5,0.5);
-      \draw[very thick] (0,0.5)--(0,2);
+      \fill [pattern=north east lines] (6.5,.5)--(6.5,.3)--(-0.2,.3)
+      --(-.2,2)--(0,2)--(0,.5)--cycle;
+      \draw[very thick] (0,.5)--(6.5,.5);
+      \draw[very thick] (0,.5)--(0,2);
       \draw[->,thick](7,1)--(7.8,1) node[pos=1,right]{\footnotesize $x$};
-      \uncover<2>{
-        \fill[red!80!black] (5.5,1) circle(.08);
-        \draw[ultra thick,->,red!80!black](5.5,1)--(5.5,0)
-        node[pos=1,below]{\footnotesize $\mb{w}$};
-        \draw[ultra thick,->,red!80!black](5.5,1)--(5.5,2)
-        node[pos=1,above]{\footnotesize $\mb{N}$};
-        \draw[ultra thick,->,red!80!black](5.5,1)--(4.5,1)
-        node[pos=1,above]{\footnotesize $\mb{F}_s$};
-      }
+      
+      \fill[red!80!black] (5.5,1) circle(.08);
+      \draw[ultra thick,->,red!80!black](5.5,1)--(5.5,0)
+      node[pos=1,below]{\footnotesize $\mb{w}$};
+      \draw[ultra thick,->,red!80!black](5.5,1)--(5.5,2)
+      node[pos=1,above]{\footnotesize $\mb{N}$};
+      \draw[ultra thick,->,red!80!black](5.5,1)--(4.5,1)
+      node[pos=1,above]{\footnotesize $\mb{F}_s$};
     \end{tikzpicture}
   \end{center}
-  \uncover<2>{
-    \vspace{-.1in}
-    $\mb{w}$ and $\mb{N}$ cancel out, so net force is due only to spring force
-    $\mb{F}_s=-k\mb{x}$ along the $x$-axis. This is true both when the spring is
-    in compression or extension. (The spring is in extension in the diagram.)
-  }
+
+  \vspace{-.1in}$\mb{w}$ and $\mb{N}$ cancel out, so net force is due only to
+  spring force $\mb{F}_s=-k\mb{x}$ along the $x$-axis. This is true both when
+  the spring is in compression or extension. (The spring is in extension in the
+  diagram.)
 \end{frame}
 
 
@@ -144,21 +125,13 @@
   So the left \& right hand side of this equation are actually related. In
   calculus, we call this a
   \emph{second-order ordinary differential equation with constant coefficients}.
-%  It is generally written in the standard form
-%
-%  \eq{-.15in}{
-%    \boxed{\frac{d^2x}{dt^2}+\frac{k}{m}x=0}
-%  }
-%  
-%
 \end{frame}
 
 
 
 \begin{frame}{Mass on a Spring}
-  Solving this ``2nd-order ODE'' is something  every calculus student have to
-  learn at an early stage. The general form of the solution is the cosine
-  (or sine) function:
+  Solving this equation is something  every calculus student have to learn. The
+  general form of the solution is the cosine (or sine) function:
 
   \eq{-.25in}{
     x(t)=A\cos(\omega t-\phi)
@@ -169,10 +142,10 @@
   \textbf{phase constant}) that depends on the initial condition
   
   \vspace{.25in}\footnotesize{
-    ($\cos$ is usually preferred over $\sin$ because $\cos(0)=1$,
-    consistent with the fact that oscillations usually begin at maximum
-    amplitude $A$ at $t=0$ and we can set $\phi=0$. Mathematically, the two
-    functions only differ in $\phi=\pi/2$)
+    ($\cos$ is preferred over $\sin$ because $\cos(0)=1$, consistent with the
+    fact that oscillations usually begin at maximum amplitude $A$ at $t=0$ and
+    we can set $\phi=0$. Mathematically, the two functions only differ in
+    $\phi=\pi/2$)
   }
 \end{frame}
 
@@ -194,7 +167,7 @@
 
 
 
-\begin{frame}{Mass on a Spring}{Angular Frequency}
+\begin{frame}{Angular Frequency}
   Comparing these two expressions
 
   \eq{-.2in}{
@@ -216,11 +189,12 @@
   The period $T$ and frequency $f$ of the simple harmonic motion are given by:
 
   \eq{-.1in}{
-    f=\frac{\omega}{2\pi}=\frac1{2\pi}\sqrt{\frac{k}{m}}\quad\quad
-    T=\frac1f=2\pi\sqrt{\frac{m}{k}}
+    \boxed{f=\frac{\omega}{2\pi}=\frac1{2\pi}\sqrt{\frac{k}{m}}}
+    \quad\quad
+    \boxed{T=\frac1f=2\pi\sqrt{\frac{m}{k}}}
   }
   
-  Angular frequency $\omega$, frequency $f$ and period $T$ are all independent
+  Angular frequency $\omega$, frequency $f$ and period $T$ are independent
   of amplitude $A$
 \end{frame}
 
@@ -231,10 +205,10 @@
   \begin{columns}
     \column{.2\textwidth}
     \begin{tikzpicture}[scale=1.3]
-      \node[fill=blue!70,inner sep=3.5mm] (b) at (1,2) {};
+      \draw[fill=blue!60] (.75,1.75) rectangle (1.25,2.25);
       \draw[thick,
-        decoration={aspect=0.3,segment length=2mm, amplitude=2.5mm, coil},
-        decorate] (1,5)--(b); 
+        decoration={aspect=.4,segment length=2.2mm, amplitude=2.5mm, coil},
+        decorate] (1,5)--(1,2.25); 
       \fill [pattern=north east lines] (0,5) rectangle (2,5.2);
       \draw[ultra thick] (0,5)--(2,5);
       \draw[->](1.75,3)--(1.75,2) node[pos=1,below]{$x$};
@@ -242,11 +216,12 @@
       node[pos=1,right]{\footnotesize $\mb{w}$};
       \draw[very thick,->,red](1,1)--(1,3)
       node[pos=1,right]{\footnotesize $\mb{F}_s$};
+      \fill[red](1,2) circle(.05);
     \end{tikzpicture}
 
     \column{.8\textwidth}
     For a vertical spring-mass system, we must consider the weight $\mb{w}$
-    of the mass as well.But since $\mb{w}=m\mb{g}$ is constant, the only change
+    of the mass as well. But since $\mb{w}=m\mb{g}$ is constant, the only change
     is the addition of a constant $B$ in the expression of $x(t)$:
     
     \vspace{-.4in}{\Large
@@ -267,10 +242,10 @@
   \begin{columns}
     \column{.2\textwidth}
     \begin{tikzpicture}[scale=1.3]
-      \node[fill=blue!70,inner sep=3.5mm] (b) at (1,2) {};
+      \draw[fill=blue!60] (.75,1.75) rectangle (1.25,2.25);
       \draw[thick,
-        decoration={aspect=0.3,segment length=2mm, amplitude=2.5mm, coil},
-        decorate] (1,5)--(b); 
+        decoration={aspect=.4,segment length=2.2mm, amplitude=2.5mm, coil},
+        decorate] (1,5)--(1,2.25); 
       \fill [pattern=north east lines] (0,5) rectangle (2,5.2);
       \draw[ultra thick] (0,5)--(2,5);
       \draw[->](1.75,3)--(1.75,2) node[pos=1,below]{$x$};
@@ -278,20 +253,20 @@
       node[pos=1,right]{\footnotesize $\mb{w}$};
       \draw[very thick,->,red](1,1)--(1,3)
       node[pos=1,right]{\footnotesize $\mb{F}_s$};
+      \fill[red](1,2) circle(.05);
     \end{tikzpicture}
 
     \column{.8\textwidth}
     The constant $B$ is the amount that the equilibrium position is stretched
     downwards, and is the stretching of the spring due to its weight:
     
-    \eq{-.2in}{
+    \eq{-.23in}{
       B=\frac{mg}{k}
     }
 
-    Angular frequency (i.e.\ natural frequency) remains the same as the
-    horizontal case:
+    Angular frequency (natural frequency) is the same as the horizontal case:
 
-    \eq{-.2in}{
+    \eq{-.23in}{
       \omega=\sqrt{\frac{k}{m}}
     }
   \end{columns}
@@ -301,7 +276,7 @@
 
 \begin{frame}{Conservation of Energy in a Spring-Mass System}
 
-  In spring-mass systems, if there are no frictional losses, then the only
+  In spring-mass systems, assumingif no frictional losses, then the only
   forces doing work are the spring force (horizontal and vertical) and gravity
   (vertical). Both forces are \emph{conservative}, therefore total mechanical
   energy is conserved:
@@ -314,7 +289,7 @@
   oscillator is:
     
   \eq{-.2in}{
-    \boxed{E_T=\frac{1}{2}kA^2}
+    \boxed{E_T=\frac12kA^2}
   }
 \end{frame}
 
@@ -347,7 +322,7 @@
   \item\SI{0.75}{\centi\metre}
   \item\SI{1.50}{\centi\metre}
   \item\SI{3.13}{\centi\metre}
-  \item\SI{6.20}{\centi\metre}
+  \item\SI{6.21}{\centi\metre}
   \end{enumerate}
 \end{frame}
 
@@ -377,7 +352,7 @@
       \begin{scope}[rotate=10]
         \draw[thick](0,0)--(0,-5);
         \tikzstyle{balloon}=[ball color=red];
-        \shade[balloon] (0,-5) circle (0.2) node[below right]{$m$};
+        \shade[balloon] (0,-5) circle (.2) node[below right]{$m$};
         \draw[dotted,->,very thick,red](0,-5)--(-0.5,-5)
         node[pos=1,left]{\footnotesize $mg\sin\beta$};
         \draw[->,very thick,red](0,-5)--(0,-3)
@@ -444,7 +419,8 @@
 
     \vspace{-.1in}Instead of position $x$ and acceleration $a$, we have
     \emph{angular} position $\beta$ and \emph{angular} acceleration $\alpha$.
-       
+    This expression is similar to the spring-mass case.
+    
     \column{.25\textwidth}
     \begin{tikzpicture}
       \fill[pattern=north east lines] (-1,0) rectangle (1,0.2);
@@ -463,33 +439,20 @@
 
 
 \begin{frame}{Solution for Deflection}
-  The solution for $\beta(t)$ is very similar to the spring-mass system:
+  The solution for $\beta(t)$, as well as its derivatives, are similar to the
+  spring-mass system:
 
-    \eq{-.2in}{
-      \boxed{\beta(t)=A\cos(\omega t-\phi)}
-    }
-
-    where amplitude $A$ is the maximum deflection of the pendulum (less than
-    \ang{15}), and angular frequency of the oscillation $\omega$ is given by:
+  \eq{-.2in}{
+    \boxed{\beta(t)=A\cos(\omega t-\phi) +B}
+  }
     
-    \eq{-.15in}{
-      \boxed{\omega=\sqrt{\frac{g}{L}}}
-    }
+  where amplitude $A$ is the maximum deflection of the pendulum (less than
+  \ang{15}), and angular frequency of the oscillation $\omega$ is given by:
+  
+  \eq{-.15in}{
+    \boxed{\omega=\sqrt{\frac{g}{L}}}
+  }
 \end{frame}
-
-
-
-%\begin{frame}{Pendulum Example Problem}
-%  \textbf{Example 4:} A simple pendulum consists of a mass $m$ attached to a
-%  light string of length $l$. If the system is oscillating through small
-%  angles, which of the following is true
-%  \begin{enumerate}[(a)]
-%  \item The frequency is independent of the acceleration due to gravity, $g$.
-%  \item The period depends on the amplitude of the oscillation.
-%  \item The period is independent of the mass $m$.
-%  \item The period is independent of the length $l$.
-%  \end{enumerate}
-%\end{frame}
 
 
 
@@ -510,7 +473,7 @@
 \begin{frame}{Think About $g$}
   \textbf{Example:} A little girl is playing with a toy pendulum while riding
   in an elevator. Being an astute and educated young lass, she notes that the 
-  period of the pendulum is $T=\SI{.5}{\second}$. Suddenly the cables
+  period of the pendulum is \SI{.5}{\second}. Suddenly the cables
   supporting the elevator break and all  of the brakes and safety features fail
   simultaneously. The elevator plunges into free fall. The young girl is
   astonished to discover that the pendulum has:
@@ -531,7 +494,8 @@
   spring-mass system that takes away energy, represented by a shock absorber:
   \begin{center}
     \begin{tikzpicture}
-      \node[fill=blue!40!white,inner sep=4.5mm,white] (a) at (3.5,1) {$m$};
+      \draw[fill=blue!20!white] (2.95,.5) rectangle(4.05,1.5)
+      node[midway]{$m$};
       \draw[thick,draw=black!50,
         decoration={aspect=0.3,segment length=2mm, amplitude=2.5mm, coil},
         decorate] (0,1)--(2.95,1);
@@ -541,7 +505,7 @@
       \draw[->,thick](7.25,1)--(8,1) node[pos=1,right]{\footnotesize $x$};
 
       %shock absorber
-      \draw[fill=blue!20!white] (4.9,.8) rectangle(5.5,1.2);
+      \draw[fill=red!20!white] (4.9,.8) rectangle(5.5,1.2);
       \draw[very thick](4.05,1)--(4.9,1);
       \draw[very thick](4.9,.8)--(4.9,1.2);
       \draw[very thick](4.8,1.2)--(5.5,1.2)--(5.5,.8)--(4.8,.8);
@@ -575,25 +539,27 @@
 
 
 \begin{frame}{Damped Oscillator}
-  The solution this equation is a standard (but difficult) problem in calculus.
-  The motion of the mass has both an exponential decay and a sinusoidal term:
+  The solution this equation is a standard (albeit more difficult) calculus
+  problem. The motion of the mass has both an exponential decay and a
+  sinusoidal term:
 
   \eq{-.2in}{
    x(t)=A_0e^{-\frac{b}{2m}t}\cos(\omega't+\phi)
   }
 
-  \vspace{-.15in}where $A_0$ is the initial amplitude, and angular frequency
-  $\omega'$ is now:
+  \vspace{-.1in}where $A_0$ is the initial amplitude, and angular frequency
+  $\omega'$ is now shifted from the natural frequency:
 
-  \eq{-.2in}{
+  \eq{-.15in}{
     \omega'=\sqrt{\omega_0^2-\left(\frac{b}{2m}\right)^2}
     \quad{\text{\normalsize where}}\quad
     \omega_0=\sqrt{\frac{k}{m}}
   }
   
-  \vspace{-.1in}Angular frequency $\omega'$ of the damped oscillator differs
+  Angular frequency $\omega'$ of the damped oscillator differs
   from the undamped case $\omega_0$ depending on the damping factor $b$.
 \end{frame}
+
 
 
 \begin{frame}{Critical Damping}
@@ -647,7 +613,7 @@
   To keep a damped system going, energy must be added into the system.
   \begin{center}
     \begin{tikzpicture}
-      \node[fill=blue!40!white,inner sep=3.5mm,white] (a) at (3.5,1) {$m$};
+      \draw[fill=blue!20!white] (2.95,.5) rectangle(4.05,1.5);
       \draw[thick,draw=black!50,
         decoration={aspect=0.3,segment length=2mm, amplitude=2.5mm, coil},
         decorate] (0,1)--(2.95,1);
@@ -685,26 +651,9 @@
   \eq{-.2in}{
     -kx-bv+F_0\cos(\omega t)=ma
   }
-%
-%  Rearranging the terms gives a similar ODE to the damped case, but with the
-%  additional external force term on the right-hand side:
-%
-%  \eq{-.2in}{
-%    m\frac{d^2x}{dt^2}+b\frac{dx}{dt}+kx=F_0\cos(\omega t)
-%  }
-%
-%\end{frame}
-%
-%
-%
-%\begin{frame}{Forced Harmonic Motion}
-%  \eq{-.02in}{
-%    m\frac{d^2x}{dt^2}+b\frac{dx}{dt}+kx=F_0\cos(\omega t)
-%  }
-%  
 
-  This is a difficult problem (even for calculus students), but its solution
-  is well known. It has:
+  This is a difficult problem (even for calculus students), but its solution is
+  well known. It has:
   \begin{itemize}
   \item A \textbf{transient solution} identical to the damped oscillator
     \begin{itemize}

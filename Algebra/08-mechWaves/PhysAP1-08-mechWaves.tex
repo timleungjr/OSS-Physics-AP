@@ -2,8 +2,6 @@
 
 \usetheme{metropolis}
 \setbeamersize{text margin left=.5cm,text margin right=.5cm}
-\setbeamertemplate{navigation symbols}{} % suppress nav bar
-%\setbeamercovered{transparent}
 
 \usefonttheme{professionalfonts}
 \usepackage{graphicx}
@@ -17,16 +15,17 @@
 \renewcommand{\baselinestretch}{1}
 
 \sisetup{
-  number-math-rm=\mathnormal,
+  detect-all,
+  %number-math-rm=\mathnormal,
   per-mode=symbol
 }
 
 
-\title[Waves]{Topic 8: Mechanical Waves \& Sound}
+\title{Topic 8: Mechanical Waves \& Sound}
 \subtitle{Advanced Placement Physics 1}
 \author[TML]{Dr.\ Timothy Leung}
 \institute{Olympiads School\\Toronto, Ontario, Canada}
-\date{July 2020}
+\date{July 23, 2020}
 
 \newcommand{\pic}[2]{\includegraphics[width=#1\textwidth]{#2}}
 \newcommand{\eq}[2]{\vspace{#1}{\Large\begin{displaymath}#2\end{displaymath}}}
@@ -101,19 +100,19 @@
 
 \section{Wave Equation}
 
-\begin{frame}{The Wave Equation}
-  The mechanical wave as we know it is the solution to a second-order partial
-  differential equation: %\footnote{The equation is \emph{second order} because
-  %it contains second derivatives, and \emph{partial} because it involves
-  %partial derivatives with respect to both space $x$ and time $t$.}:
-  
-  \eq{-.2in}{
-    \frac{\partial^2 u}{\partial t^2}=
-    v^2\frac{\partial^2 u}{\partial x^2}
-  }
-
-  subject to initial condition.
-\end{frame}
+%\begin{frame}{The Wave Equation}
+%  The mechanical wave as we know it is the solution to a second-order partial
+%  differential equation: %\footnote{The equation is \emph{second order} because
+%  %it contains second derivatives, and \emph{partial} because it involves
+%  %partial derivatives with respect to both space $x$ and time $t$.}:
+%  
+%  \eq{-.2in}{
+%    \frac{\partial^2 u}{\partial t^2}=
+%    v^2\frac{\partial^2 u}{\partial x^2}
+%  }
+%
+%  subject to initial condition.
+%\end{frame}
 
 
 \begin{frame}{Equation of a Traveling Wave}
@@ -133,13 +132,15 @@
       Wave number                 & $k$ & \si{\per\metre} \\
       Distance from the source    & $x$ & \si{\metre} \\
       Time                        & $t$ & \si{\second} \\
-      Angular frequency           & $\omega$ & \si{rad\per\second}
+      Angular frequency           & $\omega$ & \si{\per\second}
     \end{tabular}
   \end{center}
 \end{frame}
 
 
-\begin{frame}{Equation of the Wave}
+
+
+\begin{frame}{Equation of a Traveling Wave}
   \eq{-.1in}{
     \boxed{u(x,t)=A\sin(kx-\omega t)}
   }
@@ -158,6 +159,31 @@
     k=\frac{2\pi}{\lambda}
   }
 \end{frame}
+
+
+
+\begin{frame}{Universal Wave Equation}
+  The \textbf{universal wave equation} relates the speed of a mechanical wave
+  to its wavelength, period and frequency of the disturbance:
+
+  \eq{-.15in}{
+    \boxed{v = f\lambda =\frac{\lambda}{T}}
+  }
+  \begin{center}
+    \begin{tabular}{l|c|c}
+      \rowcolor{pink}
+      \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
+      Speed         & $v$       & \si{\metre\per\second} \\
+      Frequency     & $f$       & \si{\hertz} \\
+      Wavelength    & $\lambda$ & \si{\metre} \\
+      Period        & $T$       & \si{\metre} 
+    \end{tabular}
+  \end{center}
+  The universal wave equation applies to \emph{all} waves. %For sound waves,
+  %$v=v_\mathrm{sound}$; for electromagnetic waves $v=c$.
+\end{frame}
+
+
 
 
 \begin{frame}{Speed of a Wave}
@@ -289,78 +315,55 @@
 \end{frame}
 
 
-%\begin{frame}{Fourier Series and Harmonic Frequencies}
-%  \begin{center}
-%    \vspace{-.3in}
-%    \begin{tikzpicture}[scale=.9]
-%      \draw[->,thick](0,0) --(3,0);
-%      \draw[->](1,1.3)--(1.5,1.3) node[midway,above]{\footnotesize $v$};
-%      \draw[thick,blue,smooth,samples=80,domain=0:2.8] plot({\x},{sin(200*\x)});
-%    \end{tikzpicture}
-%    \hspace{.15in}
-%    \begin{tikzpicture}[scale=.9]
-%      \draw[->,thick](0,0) --(3,0);
-%      \draw[->](1,1.3)--(1.5,1.3) node[midway,above]{\footnotesize $v$};
-%      \draw[thick,red,smooth,samples=80,domain=0:2.8] plot({\x},{sin(400*\x)});
-%    \end{tikzpicture}
-%    \hspace{.15in}
-%    \begin{tikzpicture}[scale=.9]
-%      \draw[->,thick](0,0) --(3,0);
-%      \draw[->](1,1.3)--(1.5,1.3) node[midway,above]{\footnotesize $v$};
-%      \draw[thick,green,smooth,samples=80,domain=0:2.8]
-%      plot({\x},{sin(600*\x)});
-%    \end{tikzpicture}
-%  \end{center}
-%
-%  \vspace{-.2in}
-%  \begin{itemize}
-%  \item The first wave---with the longest wavelength and lowest
-%    frequency---is called the \textbf{fundamental frequency}, or
-%    \textbf{first harmonic}
-%  \item The second term has half the wavelength and twice the frequency. It's
-%    called the \textbf{second harmonic}, the \textbf{first overtone}
-%  \item Also, third, fourth, fifth\ldots harmonics
-%  \end{itemize}
-%\end{frame}
-%
-%
-%
-%\begin{frame}{Harmonic Frequencies}
-%    Every whole-number multiples of the fundamental frequency $f_1$ is its
-%    harmonic frequency, i.e.\ the $n$-th harmonic is:
-%
-%    \eq{-.25in}{
-%      \boxed{f_n=nf_1}\quad n=1,2,3,\ldots
-%    }
-%    For sound waves, when a musical instrument produces a sound that has, the
-%    frequency that is ``heard'' is the fundamental frequency
-%\end{frame}
-
-
-\section{Wave Speed}
-
-\begin{frame}{Universal Wave Equation}
-  The \textbf{universal wave equation} relates the speed of a mechanical wave
-  to its wavelength, period and frequency of the disturbance:
-
-  \eq{-.15in}{
-    \boxed{v = f\lambda =\frac{\lambda}{T}}
-  }
+\begin{frame}{Fourier Series and Harmonic Frequencies}
   \begin{center}
-    \begin{tabular}{l|c|c}
-      \rowcolor{pink}
-      \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
-      Speed         & $v$       & \si{\metre\per\second} \\
-      Frequency     & $f$       & \si{\hertz} \\
-      Wavelength    & $\lambda$ & \si{\metre} \\
-      Period        & $T$       & \si{\metre} 
-    \end{tabular}
+    \vspace{-.3in}
+    \begin{tikzpicture}[scale=.9]
+      \draw[->,thick](0,0) --(3,0);
+      \draw[->](1,1.3)--(1.5,1.3) node[midway,above]{\footnotesize $v$};
+      \draw[thick,blue,smooth,samples=80,domain=0:2.8] plot({\x},{sin(200*\x)});
+    \end{tikzpicture}
+    \hspace{.15in}
+    \begin{tikzpicture}[scale=.9]
+      \draw[->,thick](0,0) --(3,0);
+      \draw[->](1,1.3)--(1.5,1.3) node[midway,above]{\footnotesize $v$};
+      \draw[thick,red,smooth,samples=80,domain=0:2.8] plot({\x},{sin(400*\x)});
+    \end{tikzpicture}
+    \hspace{.15in}
+    \begin{tikzpicture}[scale=.9]
+      \draw[->,thick](0,0) --(3,0);
+      \draw[->](1,1.3)--(1.5,1.3) node[midway,above]{\footnotesize $v$};
+      \draw[thick,green,smooth,samples=80,domain=0:2.8]
+      plot({\x},{sin(600*\x)});
+    \end{tikzpicture}
   \end{center}
-  The universal wave equation applies to \emph{all} waves. %For sound waves,
-  %$v=v_\mathrm{sound}$; for electromagnetic waves $v=c$.
+
+  \vspace{-.2in}
+  \begin{itemize}
+  \item The first wave---with the longest wavelength and lowest
+    frequency---is called the \textbf{fundamental frequency}, or
+    \textbf{first harmonic}
+  \item The second term has half the wavelength and twice the frequency. It's
+    called the \textbf{second harmonic}, the \textbf{first overtone}
+  \item Also, third, fourth, fifth\ldots harmonics
+  \end{itemize}
 \end{frame}
 
 
+
+\begin{frame}{Harmonic Frequencies}
+    Every whole-number multiples of the fundamental frequency $f_1$ is its
+    harmonic frequency, i.e.\ the $n$-th harmonic is:
+
+    \eq{-.25in}{
+      \boxed{f_n=nf_1}\quad n=1,2,3,\ldots
+    }
+    For sound waves, when a musical instrument produces a sound that has, the
+    frequency that is ``heard'' is the fundamental frequency
+\end{frame}
+
+
+\section{Wave Speed}
 
 \begin{frame}{Frequency and Speed of A Wave}
   Frequency ($f$):
@@ -385,7 +388,7 @@
 
 
 \begin{frame}{Speed of Sound in a Gas}
-  The speed of an \textbf{acoustic wave} (sound) in a gas is given by:
+  The speed of an \textbf{acoustic wave} (sound wave) in a gas is given by:
   
   \eq{-.2in}{
     \boxed{v_s=\sqrt{\frac{\gamma RT}{M}}}
@@ -423,7 +426,9 @@
     \eq{-.2in}{
       v = \sqrt{\frac{E}{\rho}}
     }
-    In general, sound travels fastest in solids, then liquids, then gasses.
+
+    \vspace{-.1in}In general, sound travels fastest in solids, then liquids,
+    then gasses.
     
     \column{.4\textwidth}
     \begin{tabular}{l|c}
@@ -498,23 +503,24 @@
 
 
 
-%\begin{frame}{Wave Simulation}
-%  A helpful simulation can be found on the PhET website at University of
-%  Colorado.
-%  \begin{center}
-%    \textbf{Click for external link:}\\
-%    \href{https://phet.colorado.edu/sims/html/wave-on-a-string/latest/wave-on-a-string_en.html}
-%         {wave on a string simulation}
-%  \end{center}
-%\end{frame}
+\begin{frame}{Wave Simulation}
+  A helpful simulation can be found on the PhET website at University of
+  Colorado.
+  \begin{center}
+    \textbf{Click for external link:}\\
+    \href{https://phet.colorado.edu/sims/html/wave-on-a-string/latest/wave-on-a-string_en.html}
+         {wave on a string simulation}
+  \end{center}
+\end{frame}
 
 
 
 \begin{frame}{Power Transmitted by a Harmonic Wave}
-  The total power $\bar{P}$ transmitted by a harmonic wave is given by:
+  The total power $\overline{P}$ transmitted by a harmonic wave on a string is
+  given by:
 
   \eq{-.2in}{
-    \boxed{\bar{P}=\frac{1}{2}\mu\omega^2A^2v}
+    \boxed{\overline{P}=\frac12\mu\omega^2A^2v}
   }
   \begin{center}
     \begin{tabular}{l|c|c}
@@ -537,11 +543,11 @@
   power transmitted by its \textbf{intensity} $I$:
 
   \eq{-.25in}{
-    \boxed{I=\frac{\bar{P}}{A}} %\propto\frac{1}{r^2}}
+    \boxed{I=\frac{\overline{P}}{S}} %\propto\frac{1}{r^2}}
   }
 
   For a spherical wave (e.g.\ sound emitted from a stationary source), the
-  area that the wavefront passes through is $A=4\pi r^2$, where $r$ is the
+  area that the wavefront passes through is $S=4\pi r^2$, where $r$ is the
   distance from the source.
 \end{frame}
 
@@ -588,7 +594,6 @@
   
   \eq{-.2in}{
     \boxed{\beta=10\log_{10}\left[\frac{I}{I_0}\right]}
-    %\quad\text{\normalsize where}\quad I_0=\SI{e-12}{\watt/\metre^2}
   }
   \begin{center}
     \begin{tabular}{l|c|c}
@@ -751,8 +756,8 @@
       Speed of observer & $v_{\textrm{ob}}$ & \si{\metre\per\second}
     \end{tabular}
   \end{center}
-  Te $+$ sign is used if the source and observer are approaching each other,
-  while $-$ is when they are receding
+  The $+$ sign is used if the source and observer are approaching each other,
+  and $-$ is when they are receding
 \end{frame}
 
 
@@ -1262,330 +1267,333 @@
 \end{frame}
 
 
-%
-%
-%
-%\section[Pipes]{Standing Waves in Pipes}
-%
-%\begin{frame}{Standing Waves in a Closed Pipe}
-%  We have already studied standing-wave patterns on a``vibrating string''.
-%  Standing-wave patterns of sound waves can be found on pipes that have both
-%  ends closed:
-%  \begin{center}
-%    \begin{tikzpicture}[scale=1.3,yscale=.4]
-%      \draw[thick](0,-1) rectangle(pi,1);
-%      \draw[smooth,samples=20,domain=0:pi,red,ultra thick]
-%      plot({\x},{sin(180/pi*\x)});
-%      \draw[smooth,samples=20,domain=0:pi] plot({\x},{-1*sin(180/pi*\x)});
-%    \end{tikzpicture}
-%    \begin{tikzpicture}[scale=1.3,yscale=.4]
-%      \draw[thick](0,-1) rectangle(pi,1);
-%      \draw[smooth,samples=20,domain=0:pi,red,ultra thick]
-%      plot({\x},{sin(360/pi*\x)});
-%      \draw[smooth,samples=20,domain=0:pi] plot({\x},{-1*sin(360/pi*\x)});
-%    \end{tikzpicture}\\
-%    \begin{tikzpicture}[scale=1.3,yscale=.4]
-%      \draw[thick](0,-1) rectangle(pi,1);
-%      \draw[smooth,samples=20,domain=0:pi,red,ultra thick]
-%      plot({\x},{sin(540/pi*\x)});
-%      \draw[smooth,samples=20,domain=0:pi] plot({\x},{-1*sin(540/pi*\x)});
-%    \end{tikzpicture}
-%    \begin{tikzpicture}[scale=1.3,yscale=.4]
-%      \draw[thick](0,-1) rectangle(pi,1);
-%      \draw[smooth,samples=20,domain=0:pi,red,ultra thick]
-%      plot({\x},{sin(720/pi*\x)});
-%      \draw[smooth,samples=20,domain=0:pi] plot({\x},{-1*sin(720/pi*\x)});
-%    \end{tikzpicture}
-%  \end{center}
-%  The air molecules at the end of the pipe cannot vibrate along the direction of
-%  wave motion, therefore they have to be nodes. This pattern is identical to
-%  that of the vibrating string.
-%\end{frame}
-%
-%
-%\begin{frame}{Standing Waves in Closed Pipes}
-%  Like strings, pipes that are \emph{closed at both ends} have resonance
-%  frequencies that are whole-number multiple of the fundamental frequency $f_1$:
-%  
-%  \eq{-.2in}{
-%    \boxed{f_n=nf_1=n\frac{v_s}{2L}}\quad n=1,2,3,\ldots
-%  }
-%  
-%  And the wavelengths corresponding to the resonance frequencies are:
-%
-%  \eq{-.2in}{
-%    \boxed{\lambda=\frac{2L}{n}}\quad n=1,2,3,\ldots
-%  }
-%
-%  The difference between a closed pipe and a string is that the wave speed is
-%  now the speed of sound $v_s$ inside the pipe.
-%\end{frame}
-%
-%
-%
-%\begin{frame}{Standing Waves in Open Pipes}
-%  Many types of organ pipes, as well as the flute, can be modelled as pipes
-%  that are open on both ends. The standing-wave patterns for open pipes are
-%  similar to strings and closed pipes, but with nodes and anti-nodes reversed:
-%  \begin{center}
-%    \begin{tikzpicture}[scale=1.5]
-%      \draw[thick](0,-.5)--(pi,-.5);
-%      \draw[thick](0,0.5)--(pi,0.5);
-%      \draw[smooth,samples=20,domain=0:pi,red,ultra thick]
-%         plot({\x},{0.5*sin(180/pi*\x+90)});
-%      \draw[smooth,samples=20,domain=0:pi]
-%        plot({\x},{-.5*sin(180/pi*\x+90)});
-%    \end{tikzpicture}
-%    \begin{tikzpicture}[scale=1.5]
-%      \draw[thick](0,-.5)--(pi,-.5);
-%      \draw[thick](0,0.5)--(pi,0.5);
-%      \draw[smooth,samples=20,domain=0:pi,red,ultra thick]
-%        plot({\x},{0.5*sin(360/pi*\x+90)});
-%      \draw[smooth,samples=20,domain=0:pi]
-%        plot({\x},{-.5*sin(360/pi*\x+90)});
-%    \end{tikzpicture}\\
-%    \begin{tikzpicture}[scale=1.5]
-%      \draw[thick](0,-.5)--(pi,-.5);
-%      \draw[thick](0,0.5)--(pi,0.5);
-%      \draw[smooth,samples=20,domain=0:pi,red,ultra thick]
-%      plot({\x},{0.5*sin(540/pi*\x+90)});
-%      \draw[smooth,samples=20,domain=0:pi]
-%      plot({\x},{-.5*sin(540/pi*\x+90)});
-%    \end{tikzpicture}
-%    \begin{tikzpicture}[scale=1.5]
-%      \draw[thick](0,-.5)--(pi,-.5);
-%      \draw[thick](0,0.5)--(pi,0.5);
-%      \draw[smooth,samples=20,domain=0:pi,red,ultra thick]
-%      plot({\x},{0.5*sin(720/pi*\x+90)});
-%      \draw[smooth,samples=20,domain=0:pi]
-%      plot({\x},{-.5*sin(720/pi*\x+90)});
-%    \end{tikzpicture}
-%  \end{center}
-%  The air molecules at the ends of the pipe have maximum vibrations, and are
-%  anti-nodes in the standing wave.
-%%  \begin{columns}
-%%    \column{.5\textwidth}
-%%    First resonance at $\lambda=2L$
-%%    \begin{displaymath}
-%%      f_1=\frac{v_s}{\lambda}=\frac{v_s}{2L}
-%%    \end{displaymath}
-%%    \column{.5\textwidth}
-%%    Second resonance at $\lambda=L$
-%%    \begin{displaymath}
-%%      f_2=\frac{v_s}{\lambda}=\frac{v_s}{L}=2f_1
-%%    \end{displaymath}
-%%  \end{columns}
-%\end{frame}
-%
-%
-%
-%\begin{frame}{Standing Waves in Open Pipes}
-%  Not surprisingly, like strings and closed pipes, open pipes have resonance
-%  frequencies that are whole-number multiple of the fundamental frequency $f_1$:
-%  
-%  \eq{-.2in}{
-%    \boxed{f_n=nf_1=n\frac{v_s}{2L}}\quad n=1,2,3,\ldots
-%  }
-%  
-%  And the wavelengths corresponding to the resonance frequencies are also
-%  identical to that of the closed pipes.
-%
-%  \eq{-.2in}{
-%    \boxed{\lambda=\frac{2L}{n}}\quad n=1,2,3,\ldots
-%  }
-%  Strings, closed pipes and open pipes are all said to have
-%  ``full set of harmonics'' because every harmonic frequency is also a
-%  resonance frequency.
-%\end{frame}
-%
-%
-%\begin{frame}{Standing Waves in Semi-Open Pipes}
-%  %\framesubtitle{This is when things get a bit more interesting\ldots}
-%  However, most organ pipes, woodwind and brass instruments are in fact
-%  modelled as pipes that are \emph{closed at one end and open at the other}
-%%  \begin{itemize}
-%%  \item Examples: Most organ pipes, clarinet, oboes, brass instruments
-%%  \end{itemize}
-%  \begin{center}
-%    \begin{tikzpicture}[scale=1.5]
-%      \draw[thick](pi,-.5)--(0,-.5)--(0,.5)--(pi,.5);
-%      \draw[smooth,samples=20,domain=0:pi,red,ultra thick]
-%         plot({\x},{0.5*sin(90/pi*\x)});
-%      \draw[smooth,samples=20,domain=0:pi]
-%        plot({\x},{-.5*sin(90/pi*\x)});
-%    \end{tikzpicture}
-%    \begin{tikzpicture}[scale=1.5]
-%      \draw[thick](pi,-.5)--(0,-.5)--(0,.5)--(pi,.5);
-%      \draw[smooth,samples=20,domain=0:pi,red,ultra thick]
-%        plot({\x},{0.5*sin(270/pi*\x)});
-%      \draw[smooth,samples=20,domain=0:pi]
-%        plot({\x},{-.5*sin(270/pi*\x)});
-%    \end{tikzpicture}\\
-%    \begin{tikzpicture}[scale=1.5]
-%      \draw[thick](pi,-.5)--(0,-.5)--(0,.5)--(pi,.5);
-%      \draw[smooth,samples=20,domain=0:pi,red,ultra thick]
-%      plot({\x},{0.5*sin(450/pi*\x)});
-%      \draw[smooth,samples=20,domain=0:pi]
-%      plot({\x},{-.5*sin(450/pi*\x)});
-%    \end{tikzpicture}
-%    \begin{tikzpicture}[scale=1.5]
-%      \draw[thick](pi,-.5)--(0,-.5)--(0,.5)--(pi,.5);
-%      \draw[smooth,samples=20,domain=0:pi,red,ultra thick]
-%      plot({\x},{0.5*sin(630/pi*\x)});
-%      \draw[smooth,samples=20,domain=0:pi]
-%      plot({\x},{-.5*sin(630/pi*\x)});
-%    \end{tikzpicture}
-%  \end{center}
-%  The closed end is a node (like in the closed pipes), while the open end is
-%  an anti-node (like in the open pipes).
-%
-%\end{frame}
-%
-%\begin{frame}
-%  \frametitle{Standing Waves in Semi-Open Pipes}
-%  Again starting with the fundamental frequency (lowest frequency where a
-%  standing wave can form inside the pipe). This occurs at $\lambda=4L$:
-%
-%  \vspace{-.1in}
-%  \begin{center}
-%    \begin{tikzpicture}[xscale=1.1,yscale=.8]
-%      \draw[thick](pi,-1)--(0,-1)--(0,1)--(pi,1);
-%      \draw[smooth,samples=20,domain=0:pi,red,ultra thick]
-%      plot({\x},{sin(90/pi*\x)});
-%      \draw[smooth,samples=20,domain=pi:4*pi,dashed]
-%      plot({\x},{sin(90/pi*\x)});
-%      \draw[smooth,samples=80,domain=0:4*pi,dashed]
-%      plot({\x},{-1*sin(90/pi*\x)});
-%      \draw[<->](0,1.2)--(pi,1.2)
-%      node[midway,above]{\footnotesize $L$};
-%      \draw[<->](0,-1.2)--(4*pi,-1.2)
-%      node[midway,below]{\footnotesize $\lambda$};
-%    \end{tikzpicture}
-%  \end{center}
-%  
-%  Fundamental frequency $f_1$ differs from the open-pipe and closed-pipe
-%  configurations by a factor of 2:
-%
-%  \eq{-.2in}{
-%    \boxed{f_1=\frac{v_s}{\lambda}=\frac{v_s}{4L}}
-%  }
-%
-%\end{frame}
-%
-%\begin{frame}
-%  \frametitle{Standing Waves in Semi-Open Pipes}
-%  Likewise, second resonance can be found at
-%  $\displaystyle \lambda=\frac{4}{3}L$:
+
+\section[Pipes]{Standing Waves in Pipes}
+
+\begin{frame}{Standing Waves in a Closed Pipe}
+  Standing-wave patterns of sound waves can be found on pipes that have both
+  ends closed:
+  \begin{center}
+    \begin{tikzpicture}[scale=2,yscale=.4]
+      \draw(0,-1) rectangle(pi,1);
+      \draw[smooth,samples=20,domain=0:pi,red,ultra thick]
+      plot({\x},{sin(180/pi*\x)});
+      \draw[smooth,samples=20,domain=0:pi] plot({\x},{-1*sin(180/pi*\x)});
+    \end{tikzpicture}
+    \begin{tikzpicture}[scale=2,yscale=.4]
+      \draw(0,-1) rectangle(pi,1);
+      \draw[smooth,samples=20,domain=0:pi,red,ultra thick]
+      plot({\x},{sin(360/pi*\x)});
+      \draw[smooth,samples=20,domain=0:pi] plot({\x},{-1*sin(360/pi*\x)});
+    \end{tikzpicture}\\
+    \begin{tikzpicture}[scale=2,yscale=.4]
+      \draw(0,-1) rectangle(pi,1);
+      \draw[smooth,samples=20,domain=0:pi,red,ultra thick]
+      plot({\x},{sin(540/pi*\x)});
+      \draw[smooth,samples=20,domain=0:pi] plot({\x},{-1*sin(540/pi*\x)});
+    \end{tikzpicture}
+    \begin{tikzpicture}[scale=2,yscale=.4]
+      \draw(0,-1) rectangle(pi,1);
+      \draw[smooth,samples=20,domain=0:pi,red,ultra thick]
+      plot({\x},{sin(720/pi*\x)});
+      \draw[smooth,samples=20,domain=0:pi] plot({\x},{-1*sin(720/pi*\x)});
+    \end{tikzpicture}
+  \end{center}
+  The air molecules at the end of the pipe cannot vibrate along the direction of
+  wave motion, therefore they have to be nodes. This pattern is identical to
+  that of the vibrating string.
+\end{frame}
+
+
+\begin{frame}{Standing Waves in Closed Pipes}
+  Like strings, pipes that are \emph{closed at both ends} have resonance
+  frequencies that are whole-number multiple of the fundamental frequency $f_1$:
+  
+  \eq{-.2in}{
+    \boxed{f_n=nf_1=n\frac{v_s}{2L}}\quad n=1,2,3,\ldots
+  }
+  
+  And the wavelengths corresponding to the resonance frequencies are:
+
+  \eq{-.2in}{
+    \boxed{\lambda=\frac{2L}{n}}\quad n=1,2,3,\ldots
+  }
+
+  The difference between a closed pipe and a string is that the wave speed is
+  now the speed of sound $v_s$ inside the pipe.
+\end{frame}
+
+
+
+\begin{frame}{Standing Waves in Open Pipes}
+  Many types of organ pipes, as well as the flute, can be modelled as pipes
+  that are open on both ends. The standing-wave patterns for open pipes are
+  similar to strings and closed pipes, but with nodes and anti-nodes reversed:
+  \begin{center}
+    \begin{tikzpicture}[scale=1.5]
+      \draw(0,-.5)--(pi,-.5);
+      \draw(0,0.5)--(pi,0.5);
+      \draw[smooth,samples=20,domain=0:pi,red,ultra thick]
+         plot({\x},{0.5*sin(180/pi*\x+90)});
+      \draw[smooth,samples=20,domain=0:pi]
+        plot({\x},{-.5*sin(180/pi*\x+90)});
+    \end{tikzpicture}
+    \begin{tikzpicture}[scale=1.5]
+      \draw(0,-.5)--(pi,-.5);
+      \draw(0,0.5)--(pi,0.5);
+      \draw[smooth,samples=20,domain=0:pi,red,ultra thick]
+        plot({\x},{0.5*sin(360/pi*\x+90)});
+      \draw[smooth,samples=20,domain=0:pi]
+        plot({\x},{-.5*sin(360/pi*\x+90)});
+    \end{tikzpicture}\\
+    \begin{tikzpicture}[scale=1.5]
+      \draw(0,-.5)--(pi,-.5);
+      \draw(0,0.5)--(pi,0.5);
+      \draw[smooth,samples=20,domain=0:pi,red,ultra thick]
+      plot({\x},{0.5*sin(540/pi*\x+90)});
+      \draw[smooth,samples=20,domain=0:pi]
+      plot({\x},{-.5*sin(540/pi*\x+90)});
+    \end{tikzpicture}
+    \begin{tikzpicture}[scale=1.5]
+      \draw(0,-.5)--(pi,-.5);
+      \draw(0,0.5)--(pi,0.5);
+      \draw[smooth,samples=20,domain=0:pi,red,ultra thick]
+      plot({\x},{0.5*sin(720/pi*\x+90)});
+      \draw[smooth,samples=20,domain=0:pi]
+      plot({\x},{-.5*sin(720/pi*\x+90)});
+    \end{tikzpicture}
+  \end{center}
+  The air molecules at the ends of the pipe have maximum vibrations, and are
+  anti-nodes in the standing wave.
 %  \begin{columns}
-%    \column{.45\textwidth}
-%    \centering
-%    \begin{tikzpicture}[xscale=1.1,yscale=.8]
-%      \draw[thick](pi,-1)--(0,-1)--(0,1)--(pi,1);
-%      \draw[smooth,samples=20,domain=0:pi,red,ultra thick]
-%      plot({\x},{sin(270/pi*\x)});
-%      \draw[smooth,samples=20,domain=0:pi] plot({\x},{-1*sin(270/pi*\x)});
-%    \end{tikzpicture}
-%    
-%    \column{.55\textwidth}
-%
-%    \eq{-.4in}{
-%      f_{\mathrm{res},2}=\frac{v_s}{\lambda}=\frac{3v_s}{4L}=3f_1
-%    }
+%    \column{.5\textwidth}
+%    First resonance at $\lambda=2L$
+%    \begin{displaymath}
+%      f_1=\frac{v_s}{\lambda}=\frac{v_s}{2L}
+%    \end{displaymath}
+%    \column{.5\textwidth}
+%    Second resonance at $\lambda=L$
+%    \begin{displaymath}
+%      f_2=\frac{v_s}{\lambda}=\frac{v_s}{L}=2f_1
+%    \end{displaymath}
 %  \end{columns}
-%  And then, third resonance at $\displaystyle \lambda=\frac{4}{5}L$:
-%  \begin{columns}
-%
-%    \column{.45\textwidth}
-%    \centering
-%    \begin{tikzpicture}[xscale=1.1,yscale=.8]
-%      \draw[thick](pi,-1)--(0,-1)--(0,1)--(pi,1);
-%      \draw[smooth,samples=20,domain=0:pi,red,ultra thick]
-%      plot({\x},{sin(450/pi*\x)});
-%      \draw[smooth,samples=20,domain=0:pi] plot({\x},{-1*sin(450/pi*\x)});
-%    \end{tikzpicture}
-%
-%    \column{.55\textwidth}
-%    \eq{-.2in}{
-%      f_{\mathrm{res},3}=\frac{v_s}{\lambda}=\frac{5v_s}{4L}=5f_1
-%    }
-%  \end{columns}
+\end{frame}
+
+
+
+\begin{frame}{Standing Waves in Open Pipes}
+  Not surprisingly, like strings and closed pipes, open pipes have resonance
+  frequencies that are whole-number multiple of the fundamental frequency $f_1$:
+  
+  \eq{-.2in}{
+    \boxed{f_n=nf_1=n\frac{v_s}{2L}}\quad n=1,2,3,\ldots
+  }
+  
+  And the wavelengths corresponding to the resonance frequencies are also
+  identical to that of the closed pipes.
+
+  \eq{-.2in}{
+    \boxed{\lambda=\frac{2L}{n}}\quad n=1,2,3,\ldots
+  }
+  Strings, closed pipes and open pipes are all said to have
+  ``full set of harmonics'' because every harmonic frequency is also a
+  resonance frequency.
+\end{frame}
+
+
+\begin{frame}{Standing Waves in Semi-Open Pipes}
+  However, most organ pipes, woodwind and brass instruments are in fact
+  modelled as pipes that are \emph{closed at one end and open at the other}
+  \begin{center}
+    \begin{tikzpicture}[scale=1.5]
+      \draw(pi,-.5)--(0,-.5)--(0,.5)--(pi,.5);
+      \draw[smooth,samples=20,domain=0:pi,red,ultra thick]
+         plot({\x},{0.5*sin(90/pi*\x)});
+      \draw[smooth,samples=20,domain=0:pi]
+        plot({\x},{-.5*sin(90/pi*\x)});
+    \end{tikzpicture}
+    \begin{tikzpicture}[scale=1.5]
+      \draw(pi,-.5)--(0,-.5)--(0,.5)--(pi,.5);
+      \draw[smooth,samples=20,domain=0:pi,red,ultra thick]
+        plot({\x},{0.5*sin(270/pi*\x)});
+      \draw[smooth,samples=20,domain=0:pi]
+        plot({\x},{-.5*sin(270/pi*\x)});
+    \end{tikzpicture}\\
+    \begin{tikzpicture}[scale=1.5]
+      \draw(pi,-.5)--(0,-.5)--(0,.5)--(pi,.5);
+      \draw[smooth,samples=20,domain=0:pi,red,ultra thick]
+      plot({\x},{0.5*sin(450/pi*\x)});
+      \draw[smooth,samples=20,domain=0:pi]
+      plot({\x},{-.5*sin(450/pi*\x)});
+    \end{tikzpicture}
+    \begin{tikzpicture}[scale=1.5]
+      \draw(pi,-.5)--(0,-.5)--(0,.5)--(pi,.5);
+      \draw[smooth,samples=20,domain=0:pi,red,ultra thick]
+      plot({\x},{0.5*sin(630/pi*\x)});
+      \draw[smooth,samples=20,domain=0:pi]
+      plot({\x},{-.5*sin(630/pi*\x)});
+    \end{tikzpicture}
+  \end{center}
+  The closed end is a node (like in the closed pipes), while the open end is
+  an anti-node (like in the open pipes).
+\end{frame}
+
+\begin{frame}
+  \frametitle{Standing Waves in Semi-Open Pipes}
+  Again starting with the fundamental frequency (lowest frequency where a
+  standing wave can form inside the pipe). This occurs at $\lambda=4L$:
+
+  \vspace{-.1in}
+  \begin{center}
+    \begin{tikzpicture}[xscale=1.1,yscale=.8]
+      \draw(pi,-1)--(0,-1)--(0,1)--(pi,1);
+      \draw[smooth,samples=20,domain=0:pi,red,ultra thick]
+      plot({\x},{sin(90/pi*\x)});
+      \draw[smooth,samples=20,domain=pi:4*pi,dashed]
+      plot({\x},{sin(90/pi*\x)});
+      \draw[smooth,samples=80,domain=0:4*pi,dashed]
+      plot({\x},{-1*sin(90/pi*\x)});
+      \draw[<->](0,1.2)--(pi,1.2)
+      node[midway,above]{\footnotesize $L$};
+      \draw[<->](0,-1.2)--(4*pi,-1.2)
+      node[midway,below]{\footnotesize $\lambda$};
+    \end{tikzpicture}
+  \end{center}
+  
+  Fundamental frequency $f_1$ is lower than the open-pipe and closed-pipe of
+  the same length by a factor of 2:
+
+  \eq{-.2in}{
+    \boxed{f_1=\frac{v_s}{\lambda}=\frac{v_s}{4L}}
+  }
+\end{frame}
+
+
+
+\begin{frame}{Standing Waves in Semi-Open Pipes}
+  Likewise, second resonance can be found at $\displaystyle\lambda=\frac43L$:
+  \begin{columns}
+    \column{.45\textwidth}
+    \centering
+    \begin{tikzpicture}[xscale=1.5,yscale=.8]
+      \draw(pi,-1)--(0,-1)--(0,1)--(pi,1);
+      \draw[smooth,samples=20,domain=0:pi,red,ultra thick]
+      plot({\x},{sin(270/pi*\x)});
+      \draw[smooth,samples=20,domain=0:pi] plot({\x},{-1*sin(270/pi*\x)});
+    \end{tikzpicture}
+    
+    \column{.55\textwidth}
+
+    \eq{-.4in}{
+      f_{\mathrm{res},2}=\frac{v_s}{\lambda}=\frac{3v_s}{4L}=3f_1
+    }
+  \end{columns}
+  And then, third resonance at $\displaystyle\lambda=\frac45L$:
+  \begin{columns}
+
+    \column{.45\textwidth}
+    \centering
+    \begin{tikzpicture}[xscale=1.5,yscale=.8]
+      \draw(pi,-1)--(0,-1)--(0,1)--(pi,1);
+      \draw[smooth,samples=20,domain=0:pi,red,ultra thick]
+      plot({\x},{sin(450/pi*\x)});
+      \draw[smooth,samples=20,domain=0:pi] plot({\x},{-1*sin(450/pi*\x)});
+    \end{tikzpicture}
+
+    \column{.55\textwidth}
+    \eq{-.2in}{
+      f_{\mathrm{res},3}=\frac{v_s}{\lambda}=\frac{5v_s}{4L}=5f_1
+    }
+  \end{columns}
+\end{frame}
+
+
+
+\begin{frame}{Standing Waves in Semi-Open Pipes}
+  Only \textbf{odd-number multiples} of the fundamental frequency are resonance
+  frequencies in a semi-open pipe.  We say that semi-open pipes have an
+  \emph{odd} set of harmonics.
+
+  \eq{-.25in}{
+    \boxed{f_n = (2n-1)f_1=\frac{(2n-1)v_s}{4L}}\quad n=1,2,3,\ldots
+  }
+  
+  Because fundamental frequency $f_1$ is lower than the open-pipe configuration
+  by a factor of 2 for the same length $L$, it has advantages when designing an
+  organ pipe.
+\end{frame}
+
+
+%\begin{frame}
+%  \frametitle{Resonance \emph{Length} in a Semi-Open Pipe}
+%  \begin{itemize}
+%  \item Now that we have looked at resonance \emph{frequencies}, we'll look
+%    at resonance \emph{lengths}
+%  \item We produce a single frequency in the pipe, and vary the length of the
+%    pipe until we have resonance
+%  \end{itemize}
 %\end{frame}
 %
 %\begin{frame}
-%  \frametitle{Standing Waves in Semi-Open Pipes}
-%  Only \textbf{odd-number multiples} of the fundamental frequency are resonance
-%  frequencies in a semi-open pipe.  We say that semi-open pipes have an
-%  \emph{odd} set of harmonics.
+%  \frametitle{Resonance Length in a Semi-Open Pipe}
+%  Let's submerge a part of this pipe in water\ldots
+%  \begin{center}
+%    \pic{.7}{res-length-closed.png}
+%  \end{center}
+%\end{frame}
+%
+%\begin{frame}
+%  \frametitle{Resonance Length in a Semi-Open Pipe}
+%  The resonance lengths are \textbf{odd whole-number multiples} of the first
+%  resonance length $L_1$: %($\displaystyle\frac{\lambda}{4}$):
+%  
+%  \eq{-.2in}{
+%    \boxed{L_{\mathrm{res},n} = (2n-1)L_1}
+%    \quad\text{\normalsize where}\quad
+%    \boxed{L_1 = \frac{\lambda}{4}}
+%  }
+%\end{frame}
+%
+%
+%
+%\begin{frame}
+%  \frametitle{Resonance in an Open Pipe}
+%  We can also repeat this with pipes that are open on both ends.
+%  \begin{center}
+%    \pic{.75}{res-length-open.png}
+%  \end{center}
+%\end{frame}
+%
+%
+%
+%\begin{frame}
+%  \frametitle{Resonance in an Open Pipe}
+%  Resonance lengths of an open pipe are \textbf{whole-number multiples} of the
+%  first resonance length $L_1$:
 %
 %  \eq{-.25in}{
-%    \boxed{f_n = (2n-1)f_1=\frac{(2n-1)v_s}{4L}}\quad n=1,2,3,\ldots
+%    \boxed{L_{\mathrm{res},n}=nL_1}
+%    \quad\text{\normalsize (open pipe)}
 %  }
 %  
-%  Because fundamental frequency $f_1$ is lower than the open-pipe configuration
-%  by a factor of 2 for the same length $L$, it has advantages when designing an
-%  organ pipe.
+%  \vspace{-.1in}where first resonance length is given by:
+%  
+%  \eq{-.2in}{
+%    \boxed{L_1=\frac{\lambda}{2}}
+%  }
+%  
+%  Be careful! This equation looks a lot like the resonance frequency equation!
 %\end{frame}
-%
-%
-%%\begin{frame}
-%%  \frametitle{Resonance \emph{Length} in a Semi-Open Pipe}
-%%  \begin{itemize}
-%%  \item Now that we have looked at resonance \emph{frequencies}, we'll look
-%%    at resonance \emph{lengths}
-%%  \item We produce a single frequency in the pipe, and vary the length of the
-%%    pipe until we have resonance
-%%  \end{itemize}
-%%\end{frame}
-%%
-%%\begin{frame}
-%%  \frametitle{Resonance Length in a Semi-Open Pipe}
-%%  Let's submerge a part of this pipe in water\ldots
-%%  \begin{center}
-%%    \pic{.7}{res-length-closed.png}
-%%  \end{center}
-%%\end{frame}
-%%
-%%\begin{frame}
-%%  \frametitle{Resonance Length in a Semi-Open Pipe}
-%%  The resonance lengths are \textbf{odd whole-number multiples} of the first
-%%  resonance length $L_1$: %($\displaystyle\frac{\lambda}{4}$):
-%%  
-%%  \eq{-.2in}{
-%%    \boxed{L_{\mathrm{res},n} = (2n-1)L_1}
-%%    \quad\text{\normalsize where}\quad
-%%    \boxed{L_1 = \frac{\lambda}{4}}
-%%  }
-%%\end{frame}
-%%
-%%
-%%
-%%\begin{frame}
-%%  \frametitle{Resonance in an Open Pipe}
-%%  We can also repeat this with pipes that are open on both ends.
-%%  \begin{center}
-%%    \pic{.75}{res-length-open.png}
-%%  \end{center}
-%%\end{frame}
-%%
-%%
-%%
-%%\begin{frame}
-%%  \frametitle{Resonance in an Open Pipe}
-%%  Resonance lengths of an open pipe are \textbf{whole-number multiples} of the
-%%  first resonance length $L_1$:
-%%
-%%  \eq{-.25in}{
-%%    \boxed{L_{\mathrm{res},n}=nL_1}
-%%    \quad\text{\normalsize (open pipe)}
-%%  }
-%%  
-%%  \vspace{-.1in}where first resonance length is given by:
-%%  
-%%  \eq{-.2in}{
-%%    \boxed{L_1=\frac{\lambda}{2}}
-%%  }
-%%  
-%%  Be careful! This equation looks a lot like the resonance frequency equation!
-%%\end{frame}
-%%
+
+\begin{frame}{Your Piano is \textbf{Always} Out of Tune!}
+  \begin{itemize}
+  \item The concept of harmonic frequencies is the reason why some musical
+    instruments will never play well in harmony (e.g.\ pianos, modern organs).
+  \item \textbf{Example:} Find all the harmonics of a fundamental frequency of
+    \SI{110}{\hertz} and then compare them to the values on the table.
+  \end{itemize}
+  \begin{center}
+    \pic{.6}{fundamental_freqs.png}
+  \end{center}
+\end{frame}
 \end{document}
