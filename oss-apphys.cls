@@ -92,6 +92,7 @@
 \usepackage{enumitem}
 \usepackage{tikz,graphicx,wrapfig}
 \usepackage{pgfplots}
+\usepackage{amsmath}
 \usepackage{txfonts}
 \usepackage[document]{ragged2e}
 \usepackage[none]{hyphenat}

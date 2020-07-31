@@ -43,11 +43,11 @@
     according to the equation $x = 6 \cos(4t)$. The period of oscillation of the
     object is
     \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
-    \item $1/4$ \si{\second}
-    \item\SI{4}{\second}
-    \item\SI{\pi/4}{\second}
-    \item\SI{\pi/2}{\second}
-    \item\SI{4\pi}{\second}
+    \item $1/4$ s
+    \item 4 s
+    \item$\pi/4$ s
+    \item$\pi/2$ s
+    \item$4\pi$ s
     \end{enumerate}
     \columnbreak
     
@@ -238,9 +238,7 @@
 
 \genfreetitle{C}{SIMPLE HARMONIC MOTION}{6}
 
-\genfreedirections{10}
-
-\begin{enumerate}[leftmargin=15pt]
+\genfreedirections
 
 %\item A mass $m$ oscillates on an ideal spring of spring constant $k$ on a
 %  frictionless horizontal surface. The mass is pulled aside to a distance $A$
@@ -278,10 +276,55 @@
 %  \end{enumerate}
 %  \newpage
 
+% QUESTION TAKEN FROM 2010 AP PHYSICS C FREE-RESPONSE QUESTION MECH 3
+\begin{center}
+    \pic{.3}{skier}
+  \end{center}
+\begin{enumerate}[leftmargin=15pt]
+\item A skier of mass $m$ will be pulled up a hill by a rope, as shown above.
+  The magnitude of the acceleration of the skier as a function of time $t$ can
+  be modeled by the equations
+  \begin{align*}
+    a &=a_{\text{max}}\sin\left(\frac{\pi t}{T}\right)  &(0<t<T)&\\
+    &=0 & (t\geq T)&
+  \end{align*}
+  where $a_{\text{max}}$ and $T$ are constants. The hill is inclined at an angle
+  $\theta$ above the horizontal, and friction between the skis and the snow is
+  negligible. Express your answers in terms of given quantities and fundamental
+  constants.
+  \begin{enumerate}[leftmargin=15pt]
+  \item  Derive an expression for the velocity of the skier as a function of
+    time during the acceleration. Assume the skier starts from rest.
+    \vspace{1.2in}
+  \item Derive an expression for the work done by the net force on the skier
+    from rest until terminal speed is reached.
+    \vspace{1.2in}
+  \item Determine the magnitude of the force exerted by the rope on the skier
+    at terminal speed.
+    \vspace{1.2in}
+  \item Derive an expression for the total impulse imparted to the skier during
+    the acceleration.
+    \vspace{1.2in}
+  \item Suppose that the magnitude of the acceleration is instead modeled as
+    $a=a_{\text{max}}e^{-\pi t/2T}$ for all $t > 0$, where $a_{\text{max}}$ and $T$
+    are the same as in the original model. On the axes below, sketch the graphs
+    of the force exerted by the rope on the skier for the two models, from
+    $t=0$ to a time $t>T$. Label the original model $F_1$ and the new model
+    $F_2$.
+    \begin{center}
+      \begin{tikzpicture}[scale=.85]
+        \draw[->,thick](0,0)--(10,0)node[pos=1,right]{$t$};
+        \draw[->,thick](0,0)--(0,6) node[pos=1,above]{$F$};
+        \draw[thick](-.2,1.5)--(.2,1.5)node[pos=0,left]{$mg\sin\theta$};
+        \draw[thick](5.5,-.2)--(5.5,.2)node[pos=0,below]{$T$};
+      \end{tikzpicture}
+    \end{center}
+  \end{enumerate}
+  
 \item In heavy seas, the bow of a battle ship undergoes a simple harmonic
   vertical pitching motion with a period of \SI{8.}{\second} and an amplitude
   of \SI{2.}{\metre}.
-  \begin{enumerate}[itemsep=.8in,topsep=0pt,leftmargin=15pt]
+  \begin{enumerate}[leftmargin=15pt]
   \item What is the maximum vertical velocity of the battle ship's bow?
   \item What is its maximum acceleration?
   \item An \SI{80}{\kilo\gram} sailor is standing on the scale in the bunk room
@@ -289,7 +332,8 @@
     newtons?
     \vspace{.8in}
   \end{enumerate}
-
+  \newpage
+  
 \item Show that for the situations in the figures below, the object of mass
   $m$ oscillates with a frequency of
   $\displaystyle f=\frac{1}{2\pi}\sqrt{\frac{k_\mathrm{eff}}{m}}$
@@ -321,7 +365,7 @@
     \fill[black](6,.75) circle(.15);
     \draw[very thick](0,3)--(0,0)--(12.75,0);
   \end{tikzpicture}
-  \vspace{3in}
+  \vspace{\stretch{1}}
   
 \item A simple pendulum of length $L$ is released from rest from an angle of
   $\theta_0$.
@@ -334,6 +378,7 @@
   \item Find the difference in your results for $\theta_0=\SI{.20}{rad}$ and
     $L=\SI{1}{\metre}$.
   \end{enumerate}
+  \vspace{\stretch{1}}
   \newpage
 
   \begin{center}
