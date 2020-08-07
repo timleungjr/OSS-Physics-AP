@@ -1,4 +1,4 @@
-\documentclass{../../oss-apphys}
+\documentclass{../../../oss-apphys}
 
 \usepackage[siunitx]{circuitikz} % to draw circuits!
 
@@ -6,7 +6,7 @@
 \begin{document}
 \genheader
 
-\gentitle{2 \& C}{ELECTROSTATICS \& CAPACITORS}
+\gentitle{C}{ELECTROSTATICS \& CAPACITORS}
 
 \genmultidirections
 
@@ -284,9 +284,9 @@
     \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
     \item $1/3\;ar^{-3}$
     \item $2ar^{-1}$
-    \item $ar^{−2}$
-    \item $−a(\ln r)$
-    \item $−ar^{-2}$
+    \item $ar^{-2}$
+    \item $-a(\ln r)$
+    \item $-ar^{-2}$
     \end{enumerate}
 %  \vspace{-0.5in}
 %  \begin{center}
@@ -331,55 +331,187 @@
 \end{multicols}
 \newpage
 
-\genfreetitle{2}{ELECTROSTATICS \& CAPACITORS}{9}
+\genfreetitle{C}{ELECTROSTATICS \& CAPACITORS}{6}
 
-\genfreedirections{10}
+\genfreedirections
 
+% TAKEN FROM 2007 AP PHYSICS C EXAM FREE-RESPONSE QUESTION E&M 2
+\begin{center}
+  \pic{.3}{charges}
+\end{center}
 \begin{enumerate}[leftmargin=15pt]
-
-\item Two identical small spheres of mass $m$ are suspended from a common point
-  by threads of length $L$. When each sphere carries a charge $q$, each thread
-  makes an angle $\theta$ with the vertical as shown in the figure below.
-  \begin{enumerate}
-  \item Express charge $q$ in terms of $\theta$, $m$, $L$ and any other relevant
-    constants, and
-  \item Compute $q$ if $m=\SI{10}{\gram}$, $L=\SI{50}{\centi\metre}$ and
-    $\theta=\ang{10}$.
+\item In the figure above, a nonconducting solid sphere of radius a with charge
+  $+Q$ uniformly distributed throughout its volume is concentric with a
+  nonconducting spherical shell of inner radius $2a$ and outer radius $3a$ that
+  has a charge $-Q$ uniformly distributed throughout its volume. Express all
+  answers in terms of the given quantities and fundamental constants.
+  \begin{enumerate}[leftmargin=15pt]
+  \item Using Gauss's law, derive expressions for the magnitude of the
+    electric field as a function of radius $r$ in the following regions.
+    \begin{enumerate}[leftmargin=15pt]
+    \item Within the solid sphere ($r<a$)
+    \item Between the solid sphere and the spherical shell ($a<r<2a$)
+    \item Within the spherical shell ($2a<r<3a$)
+    \item Outside the spherical shell ($r>3a$)
+    \end{enumerate}
+  \item What is the electric potential at the outer surface of the spherical
+    shell ($r=3a$)? Explain your reasoning.
+  \item Derive an expression for the electric potential difference $V_X-V_Y$
+    between points $X$ and $Y$ shown in the figure.
   \end{enumerate}
-  \begin{tikzpicture}[scale=1.3]
-    \tikzstyle{balloon}=[ball color=red!60];
-    \fill[yellow!85!gray](-1.5,0) rectangle(1.5,0.15);
-    \draw[very thick,yellow](-1.5,0)--(1.5,0);
-    \draw[dashed,very thick,blue!80!gray](0,0)--(0,-4);
-    \draw[<->](0,-2.5) arc (270:285:2.5) node[midway,below]{$\theta$};
-    \draw[<->](0,-2.5) arc (270:255:2.5) node[midway,below]{$\theta$};
-    \begin{scope}[rotate=15]
-      \draw(0,0)--(0,-3.5) node[midway,right]{$L$};
-      \shade[balloon] (0,-3.5) circle (0.25) node[below]{$q$};
-    \end{scope}
-    \begin{scope}[rotate=-15]
-      \draw(0,0)--(0,-3.5) node[midway,left]{$L$};
-      \shade[balloon] (0,-3.5) circle (.25) node[below]{$q$};
-    \end{scope}
-  \end{tikzpicture}
-  \vspace{\stretch{1}}
-  
-\item Five equal charges $Q$ are equally spaced on a semicircle or radius $R$
-  as shown in the figure below. Find the force on a charge $q$ located at the
-  center of the semi-circle. (Hint: Take advantage of symmetry.)
-  
-  \begin{tikzpicture}[scale=1.2]
-    \tikzstyle{balloon}=[ball color=yellow!40];
-    \draw(0,-1.75)--(0,3) node[pos=1,above]{$y$};
-    \draw(0,0)--(2.75,0) node[pos=1,right]{$x$};
-    \draw[->,rotate=120](0,0)--(1.75,0) node[midway,above right]{$R$};
-    \draw(0,1.75) arc (90:270:1.75);
-    \foreach \x in {0,45,...,180}
-    \shade[balloon,rotate=\x] (0,1.75) circle (0.2) node[left]{$Q\;\;$};
-    \shade[balloon] (0,0) circle(0.12) node[right]{$\;q$};
-  \end{tikzpicture}
-  \vspace{\stretch{1}}
   \newpage
+
+  % TAKEN FROM 2010 AP PHYSICS C EXAM FREE-RESPONSE QUESTION E&M 1
+  \begin{center}
+    \pic{.28}{circle}
+  \end{center}
+\item A charge $+Q$ is uniformly distributed over a quarter circle of radius
+  $R$, as shown above. Points $A$, $B$, and $C$ are located as shown, with $A$
+  and $C$ located symmetrically relative to the $x$-axis. Express all algebraic
+  answers in terms of the given quantities and fundamental constants.
+  \begin{enumerate}[leftmargin=15pt]
+  \item Rank the magnitude of the electric potential at points $A$, $B$, and $C$
+    from greatest to least, with number 1 being greatest. If two points have
+    the same potential, give them the same ranking.
+
+    \vspace{.1in}
+    \underline{\hspace{.3in} } $V_A$ \hspace{.3in}
+    \underline{\hspace{.3in} } $V_B$ \hspace{.3in}
+    \underline{\hspace{.3in} } $V_C$
+    
+    \vspace{.1in}Justify your rankings.
+  \end{enumerate}
+  \vspace{.14in}
+  Point $P$ is at the origin, as shown below, and is the center of curvature of
+  the charge distribution.
+  \begin{center}
+    \pic{.28}{circle2}
+  \end{center}
+  \begin{enumerate}[leftmargin=15pt,resume]
+  \item Determine an expression for the electric potential at point $P$ due to
+    the charge $Q$.
+    \vspace{\stretch{1}}
+    
+  \item A positive point charge $q$ with mass $m$ is placed at point $P$ and
+    released from rest. Derive an expression for the speed of the point charge
+    when it is very far from the origin.
+    \vspace{\stretch{1}}
+    \newpage
+    
+  \item On the dot representing point $P$ below, indicate the direction of the
+    electric field at point P due to the charge $Q$.
+    \begin{center}
+      \begin{tikzpicture}[scale=1.2]
+        \draw[dashed,->](-1,0)--(1,0) node[pos=1,right]{$x$};
+        \draw[dashed,->](0,-1)--(0,1) node[pos=1,above]{$y$};
+        \fill(0,0) circle(.1);
+      \end{tikzpicture}
+    \end{center}
+  \item Derive an expression for the magnitude of the electric field at point
+    $P$.
+  \end{enumerate}
+  \vspace{2in}
+  
+\item In the Bohr model of the hydrogen atom, the electron moves in a circular
+  orbit of radius $r$ around the proton.
+  \begin{enumerate}[leftmargin=15pt]
+  \item Find an expression for the kinetic energy of the electron as a function
+    of $r$. Show that at any distance $r$ the kinetic energy is half the
+    potential energy.
+  \item Evaluate kinetic energy $K$, potential energy $U$ and the total
+    energy $W=K+U$ in electron volts for\\ $r=\SI{0.529e-10}{\metre}$, the
+    radius of the electron's orbit in hydrogen. (The energy $|W|$ that must be
+    supplied to the hydrogen atom to remove the electron is called the
+    ionization energy.)
+  \end{enumerate}
+  \newpage
+
+  % TAKEN FROM 2016 AP PHYSICS C EXAM FREE-RESPONSE QUESTION E&M 1
+  \begin{center}
+    \pic{.9}{potentials}
+  \end{center}
+\item Two point charges, $q_1$ and $q_2$, are fixed in place on the $x$-axis at
+  positions $x_1=\SI{-1.00}{\metre}$ and $x_1=+\SI{0.50}{\metre}$,
+  respectively. Charge $q_2$ has a value of $+2.0$ nC. Values of electric
+  potential are illustrated by the given equipotentials in the diagram shown
+  above, which is drawn to scale.
+  \begin{enumerate}[leftmargin=15pt]
+  \item Calculate the value of $q_1$.
+  \item At point $C$ on the diagram, draw a vector representing the direction
+    of the electric field at that point.
+  \item Calculate the approximate magnitude of the electric field strength at
+    point $D$ on the diagram.
+  \item The equipotential labeled 0 V is the cross section of a nearly
+    spherical surface. Calculate the electric flux for this surface.
+    \newpage
+    
+  \item A proton is placed at point $A$ and then released from rest.
+    \begin{enumerate}[leftmargin=15pt]
+    \item Calculate the work done by the electric field on the proton as it
+      moves from point $A$ to point $E$.
+    \item Calculate the speed of the proton when it reaches point $E$.
+    \end{enumerate}
+  \item An electron is released from rest at point $B$. Which of the following
+    indicates the direction of the initial acceleration, if any, of the
+    electron?
+
+    \vspace{.1in}
+    \underline{\hspace{.3in}} Up\hspace{.3in}
+    \underline{\hspace{.3in}} Down\hspace{.3in}
+    \underline{\hspace{.3in}} Left\hspace{.3in}
+    \underline{\hspace{.3in}} Right\hspace{.3in}
+    \underline{\hspace{.3in}} Into the page\hspace{.3in}
+    \underline{\hspace{.3in}} Out of the page
+
+    \vspace{.1in}\underline{\hspace{.3in}} The direction is undefined since the
+    acceleration is zero.
+
+    \vspace{.1in}Justify your answer.
+  \end{enumerate}
+  
+%\item Two identical small spheres of mass $m$ are suspended from a common point
+%  by threads of length $L$. When each sphere carries a charge $q$, each thread
+%  makes an angle $\theta$ with the vertical as shown in the figure below.
+%  \begin{enumerate}
+%  \item Express charge $q$ in terms of $\theta$, $m$, $L$ and any other relevant
+%    constants, and
+%  \item Compute $q$ if $m=\SI{10}{\gram}$, $L=\SI{50}{\centi\metre}$ and
+%    $\theta=\ang{10}$.
+%  \end{enumerate}
+%  \begin{tikzpicture}[scale=1.3]
+%    \tikzstyle{balloon}=[ball color=red!60];
+%    \fill[yellow!85!gray](-1.5,0) rectangle(1.5,0.15);
+%    \draw[very thick,yellow](-1.5,0)--(1.5,0);
+%    \draw[dashed,very thick,blue!80!gray](0,0)--(0,-4);
+%    \draw[<->](0,-2.5) arc (270:285:2.5) node[midway,below]{$\theta$};
+%    \draw[<->](0,-2.5) arc (270:255:2.5) node[midway,below]{$\theta$};
+%    \begin{scope}[rotate=15]
+%      \draw(0,0)--(0,-3.5) node[midway,right]{$L$};
+%      \shade[balloon] (0,-3.5) circle (0.25) node[below]{$q$};
+%    \end{scope}
+%    \begin{scope}[rotate=-15]
+%      \draw(0,0)--(0,-3.5) node[midway,left]{$L$};
+%      \shade[balloon] (0,-3.5) circle (.25) node[below]{$q$};
+%    \end{scope}
+%  \end{tikzpicture}
+%  \vspace{\stretch{1}}
+   
+%\item Five equal charges $Q$ are equally spaced on a semicircle or radius $R$
+%  as shown in the figure below. Find the force on a charge $q$ located at the
+%  center of the semi-circle. (Hint: Take advantage of symmetry.)
+%  
+%  \begin{tikzpicture}[scale=1.2]
+%    \tikzstyle{balloon}=[ball color=yellow!40];
+%    \draw(0,-1.75)--(0,3) node[pos=1,above]{$y$};
+%    \draw(0,0)--(2.75,0) node[pos=1,right]{$x$};
+%    \draw[->,rotate=120](0,0)--(1.75,0) node[midway,above right]{$R$};
+%    \draw(0,1.75) arc (90:270:1.75);
+%    \foreach \x in {0,45,...,180}
+%    \shade[balloon,rotate=\x] (0,1.75) circle (0.2) node[left]{$Q\;\;$};
+%    \shade[balloon] (0,0) circle(0.12) node[right]{$\;q$};
+%  \end{tikzpicture}
+%  \vspace{\stretch{1}}
+%  \newpage
   
 \item Two positive charges $+q$ are on the $y$ axis at $y=+a$ and $y=-a$.
   \begin{enumerate}[leftmargin=15pt]
@@ -400,36 +532,36 @@
   \end{enumerate}
   \vspace{\stretch{1}}
 
-\item Using Gauss's law, find
-  \begin{enumerate}[leftmargin=15pt]
-  \item the electric field strength inside and outside of a uniformly charged
-    hollow sphere of radius $R$ and surface charge density $\sigma$ (charge
-    per unit area).
-
-  \item the electric field inside and outside an infinitely long cyclindrical
-    shell of charge of radius $R$ with charge discibution $\sigma$ (charge
-    per unit area).
-  \item the electric field strength inside and outside a infinitely long solid
-    cylinder of radius $R$ carrying a linear uniform charge density $\rho$
-    (charge per unit volume).
-  \end{enumerate}
-  %Hint: In all cases, think about where to put the Gaussian surface. Take
-  %advantage of symmetry.
-  \vspace{\stretch{1}}
-  \newpage
-
-\item For the circuit shown below, find
-  \begin{enumerate}[noitemsep]
-  \item The total equivalent capacitance between the terminals
-  \item The charge stored on each capacitor
-  \item the total stored charge
-  \end{enumerate}
-  \begin{tikzpicture}[scale=1.2,american voltages]
-    \draw[thick] (0,2) to[C=0.30<\micro\farad>,*-] (3,2)
-    to[C=1.0<\micro\farad>] (3,0) to[short,-*](0,0);
-    \draw[thick] (3,2)--(5,2) to[C=0.25<\micro\farad>,] (5,0)--(3,0);
-  \end{tikzpicture}
-  \vspace{\stretch{1}}
+%\item Using Gauss's law, find
+%  \begin{enumerate}[leftmargin=15pt]
+%  \item the electric field strength inside and outside of a uniformly charged
+%    hollow sphere of radius $R$ and surface charge density $\sigma$ (charge
+%    per unit area).
+%
+%  \item the electric field inside and outside an infinitely long cyclindrical
+%    shell of charge of radius $R$ with charge discibution $\sigma$ (charge
+%    per unit area).
+%  \item the electric field strength inside and outside a infinitely long solid
+%    cylinder of radius $R$ carrying a linear uniform charge density $\rho$
+%    (charge per unit volume).
+%  \end{enumerate}
+%  %Hint: In all cases, think about where to put the Gaussian surface. Take
+%  %advantage of symmetry.
+%  \vspace{\stretch{1}}
+%  \newpage
+%
+%\item For the circuit shown below, find
+%  \begin{enumerate}[noitemsep]
+%  \item The total equivalent capacitance between the terminals
+%  \item The charge stored on each capacitor
+%  \item the total stored charge
+%  \end{enumerate}
+%  \begin{tikzpicture}[scale=1.2,american voltages]
+%    \draw[thick] (0,2) to[C=0.30<\micro\farad>,*-] (3,2)
+%    to[C=1.0<\micro\farad>] (3,0) to[short,-*](0,0);
+%    \draw[thick] (3,2)--(5,2) to[C=0.25<\micro\farad>,] (5,0)--(3,0);
+%  \end{tikzpicture}
+%  \vspace{\stretch{1}}
   
 \item A parallel-plate capacitor has a capacitance $C_0$ and plate separation
   of $d$. To dielectric slabs of constants $\kappa_1$ and $\kappa_2$, each of
@@ -446,43 +578,28 @@
   \vspace{\stretch{1}}
   \newpage
 
-\item Several point charges produce the equipotential lines shown.
-  \begin{enumerate}[noitemsep]
-  \item At which point on the diagram is the magnitude of the electric field
-    greatest? Explain.
-  \item Points C and D are approximately \SI{.02}{\metre} apart. Point F is
-    halfway between points C and D. What is the electric field at point F?
-  \item A \SI{5.}{\micro\coulomb} point charge is moved from point C to point
-    E, then to point D by an external force. Determine the work done by the
-    external force.
-  \end{enumerate}
-  \pic{.45}{equipotentials.png}
-  \vspace{\stretch{1}}
+%\item Several point charges produce the equipotential lines shown.
+%  \begin{enumerate}[noitemsep]
+%  \item At which point on the diagram is the magnitude of the electric field
+%    greatest? Explain.
+%  \item Points C and D are approximately \SI{.02}{\metre} apart. Point F is
+%    halfway between points C and D. What is the electric field at point F?
+%  \item A \SI{5.}{\micro\coulomb} point charge is moved from point C to point
+%    E, then to point D by an external force. Determine the work done by the
+%    external force.
+%  \end{enumerate}
+%  \pic{.45}{equipotentials.png}
+%  \vspace{\stretch{1}}
 
-\item In the Bohr model of the hydrogen atom, the electron moves in a circular
-  orbit of radius $r$ around the proton.
-  \begin{enumerate}[noitemsep]
-  \item Find an expression for the kinetic energy of the electron as a function
-    of $r$. Show that at any distance $r$ the kinetic energy is half the
-    potential energy.
-  \item Evaluate kinetic energy $K$, potential energy $U$ and the total
-    energy $W=K+U$ in electron volts for\\ $r=\SI{0.529e-10}{\metre}$, the
-    radius of the electron's orbit in hydrogen. (The energy $|W|$ that must be
-    supplied to the hydrogen atom to remove the electron is called the
-    ionization energy.)
-  \end{enumerate}
-  \vspace{\stretch{1}}
-  \newpage
-
-\item A potential is given by
-  \begin{displaymath}
-    V(x,y,z)=\frac{kQ}{\sqrt{(x-a)^2+y^2+z^2}}
-  \end{displaymath}
-  \begin{enumerate}[noitemsep]
-  \item Find the components $E_x$, $E_y$ and $E_z$ of the electric field by
-    differentiating this potential function.
-  \item What simple charge distribution might be responsible for this potential?
-  \end{enumerate}
-  \vspace{\stretch{1}}
+%\item A potential is given by
+%  \begin{displaymath}
+%    V(x,y,z)=\frac{kQ}{\sqrt{(x-a)^2+y^2+z^2}}
+%  \end{displaymath}
+%  \begin{enumerate}[noitemsep]
+%  \item Find the components $E_x$, $E_y$ and $E_z$ of the electric field by
+%    differentiating this potential function.
+%  \item What simple charge distribution might be responsible for this potential?
+%  \end{enumerate}
+%  \vspace{\stretch{1}}
 \end{enumerate}
 \end{document}
