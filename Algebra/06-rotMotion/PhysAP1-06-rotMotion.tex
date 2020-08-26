@@ -21,10 +21,8 @@
 
 \sisetup{
   detect-all,
-  detect-display-math=true,%  <== NEWLY ADDED
-  detect-inline-family=math,% <== NEWLY ADDED
-  detect-inline-weight=math,% <== NEWLY ADDED
-  number-math-rm=\mathnormal,
+  math-sf=\textsf,
+  number-math-rm=\textsf,
   per-mode=symbol
 }
 
@@ -67,20 +65,20 @@
 
 \section{Torque}
 
-\begin{frame}{Torque and Rotational Equilibrium}
-  Let's consider this question:
-  \begin{center}
-    \fbox{
-      \begin{minipage}{.7\textwidth}
-        Two people stand on a board of uniform density. One person has a mass of
-        \SI{50}{\kilo\gram} and stands \SI{10}{\metre} away from the fulcrum
-        (pivot). The second person has a mass of \SI{65}{\kilo\gram}. How far
-        away from the fulcrum would the second person have to stand for the
-        system to have to be in equilibrium?
-      \end{minipage}
-    }
-  \end{center}
-\end{frame}
+%\begin{frame}{Torque and Rotational Equilibrium}
+%  Let's consider this question:
+%  \begin{center}
+%    \fbox{
+%      \begin{minipage}{.7\textwidth}
+%        Two people stand on a board of uniform density. One person has a mass of
+%        \SI{50}{\kilo\gram} and stands \SI{10}{\metre} away from the fulcrum
+%        (pivot). The second person has a mass of \SI{65}{\kilo\gram}. How far
+%        away from the fulcrum would the second person have to stand for the
+%        system to have to be in equilibrium?
+%      \end{minipage}
+%    }
+%  \end{center}
+%\end{frame}
 
 
 
@@ -171,31 +169,31 @@
 
 
 
-\begin{frame}{Torque}
-  Going back to the example question:
-  \begin{center}
-    \begin{tikzpicture}
-      \fill[black!75,draw=black!75] (-5,-.05) rectangle (5,.05);
-      \fill (0,0) circle (.1);
-      \draw[ultra thick](0,0)--(.5,-1.5)--(-.5,-1.5)--(0,0);
-      \uncover<2->{
-        \draw[ultra thick,red!75,->](0,0)--(-4.8,0) node[pos=.5,below]{$d_1$};
-        \draw[ultra thick,red!75,->](-4.8,0)--(-4.8,-1)node[pos=1,below]{$F_1$};
-      }
-      \uncover<3->{
-        \draw[ultra thick,blue!60,->](0,0)--(4,0) node[pos=.5,below]{$d_2$};
-        \draw[ultra thick,blue!60,->](4,0)--(4,-1.2) node[pos=1,below]{$F_2$};
-      }
-    \end{tikzpicture}
-  \end{center}
-  \begin{itemize}
-  \item<2->$F_1$ will rotate the board counter clockwise
-  \item<3->$F_2$ will rotate the board clockwise
-  \item<4->The beam will remain static (in equilibrium) if
-
-    \eq{-.2in}{ F_1d_1=F_2d_2 }
-  \end{itemize}
-\end{frame}
+%\begin{frame}{Torque}
+%  Going back to the example question:
+%  \begin{center}
+%    \begin{tikzpicture}
+%      \fill[black!75,draw=black!75] (-5,-.05) rectangle (5,.05);
+%      \fill (0,0) circle (.1);
+%      \draw[ultra thick](0,0)--(.5,-1.5)--(-.5,-1.5)--(0,0);
+%      \uncover<2->{
+%        \draw[ultra thick,red!75,->](0,0)--(-4.8,0) node[pos=.5,below]{$d_1$};
+%        \draw[ultra thick,red!75,->](-4.8,0)--(-4.8,-1)node[pos=1,below]{$F_1$};
+%      }
+%      \uncover<3->{
+%        \draw[ultra thick,blue!60,->](0,0)--(4,0) node[pos=.5,below]{$d_2$};
+%        \draw[ultra thick,blue!60,->](4,0)--(4,-1.2) node[pos=1,below]{$F_2$};
+%      }
+%    \end{tikzpicture}
+%  \end{center}
+%  \begin{itemize}
+%  \item<2->$F_1$ will rotate the board counter clockwise
+%  \item<3->$F_2$ will rotate the board clockwise
+%  \item<4->The beam will remain static (in equilibrium) if
+%
+%    \eq{-.2in}{ F_1d_1=F_2d_2 }
+%  \end{itemize}
+%\end{frame}
 
 
 
@@ -204,7 +202,7 @@
   force acting it is zero:
   
   \eq{-.2in}{
-    \mb{F}=\mb{0}
+    \mb{F}_\mathrm{net}=\mb{0}
   }
 
   Having no net force does \emph{not} mean that the object has no translational
@@ -220,52 +218,52 @@
   acting on it is zero:
 
   \eq{-.3in}{
-    \bm{\tau}=\mb{0}
+    \bm{\tau}_\mathrm{net}=\mb{0}
   }
   
   Having no net torque does \emph{not} mean that the object has no rotational
   motion; it just means that the object's overall \emph{rotational state} is
-  not changing, i.e.\ $\alpha=\mb{0}$, or that the
+  not changing, i.e.\ $\bm{\alpha}=\mb{0}$, or that the
   \textbf{angular momentum} $\mb{L}$ is constant.
 \end{frame}
 
 
 
 
-\begin{frame}{Example Problem}
-  \textbf{Example 8a:} Find the net torque on point C.
-
-  \vspace{-.2in}
-  \begin{center}
-    \begin{tikzpicture}[scale=2.5]
-      \fill[blue!40!white,draw=black,thick] (-1.65,-.15) rectangle (1.65,.15);
-      \draw[thick,<->](-1.5,-.5)--(1.5,-.5) node[midway,below]{\SI{3.}{m}};
-      \draw[thick,<->](-1.5,.5)--(0,.5) node[midway,below]{\SI{1.5}{m}};
-      \draw[dashed,thick](-2.5,0)--(2.5,0);
-      \draw[dashed,thick](0,.5)--(0,-.5);
-      \draw[ultra thick,orange,->](0,0)--(1,1)node[pos=1,right]{\SI{30}{N}};
-      \draw[thick,->](0,.4)arc(90:45:.4)
-      node[pos=.7,above]{\footnotesize\ang{45}};
-      \draw[ultra thick,orange,->](-1.5,0)--(-2.3,-.46)
-      node[pos=1,left]{\SI{20}{\newton}};
-      \draw[thick,->](-1.9,0) arc(180:210:.4)
-      node[midway,left]{\footnotesize\ang{30}};
-      \draw[ultra thick,orange,->](1.5,0)--(2,-.29)
-      node[pos=1,right]{\SI{10}{\newton}};
-      \draw[thick,->](1.9,0) arc(0:-30:.4)
-      node[midway,right]{\footnotesize\ang{30}};
-      \fill[black,draw=black,thick] (-1.5,0) circle(.1);
-      \fill[black,draw=black,thick] (   0,0) circle(.1);
-      \fill[black,draw=black,thick] ( 1.5,0) circle(.1);
-      \node(A) at (-1.5,0) {\color{white}\textbf{A}};
-      \node(B) at (0,0) {\color{white}\textbf{B}};
-      \node(C) at (1.5,0) {\color{white}\textbf{C}};
-    \end{tikzpicture}
-  \end{center}
-  \uncover<2->{
-    \textbf{Example 8b:} Now find the net torque on A.
-  }
-\end{frame}
+%\begin{frame}{Example Problem}
+%  \textbf{Example 8a:} Find the net torque on point C.
+%
+%  \vspace{-.2in}
+%  \begin{center}
+%    \begin{tikzpicture}[scale=2.5]
+%      \fill[blue!40!white,draw=black,thick] (-1.65,-.15) rectangle (1.65,.15);
+%      \draw[thick,<->](-1.5,-.5)--(1.5,-.5) node[midway,below]{\SI{3.}{m}};
+%      \draw[thick,<->](-1.5,.5)--(0,.5) node[midway,below]{\SI{1.5}{m}};
+%      \draw[dashed,thick](-2.5,0)--(2.5,0);
+%      \draw[dashed,thick](0,.5)--(0,-.5);
+%      \draw[ultra thick,orange,->](0,0)--(1,1)node[pos=1,right]{\SI{30}{N}};
+%      \draw[thick,->](0,.4)arc(90:45:.4)
+%      node[pos=.7,above]{\footnotesize\ang{45}};
+%      \draw[ultra thick,orange,->](-1.5,0)--(-2.3,-.46)
+%      node[pos=1,left]{\SI{20}{\newton}};
+%      \draw[thick,->](-1.9,0) arc(180:210:.4)
+%      node[midway,left]{\footnotesize\ang{30}};
+%      \draw[ultra thick,orange,->](1.5,0)--(2,-.29)
+%      node[pos=1,right]{\SI{10}{\newton}};
+%      \draw[thick,->](1.9,0) arc(0:-30:.4)
+%      node[midway,right]{\footnotesize\ang{30}};
+%      \fill[black,draw=black,thick] (-1.5,0) circle(.1);
+%      \fill[black,draw=black,thick] (   0,0) circle(.1);
+%      \fill[black,draw=black,thick] ( 1.5,0) circle(.1);
+%      \node(A) at (-1.5,0) {\color{white}\textbf{A}};
+%      \node(B) at (0,0) {\color{white}\textbf{B}};
+%      \node(C) at (1.5,0) {\color{white}\textbf{C}};
+%    \end{tikzpicture}
+%  \end{center}
+%  \uncover<2->{
+%    \textbf{Example 8b:} Now find the net torque on A.
+%  }
+%\end{frame}
 
 
 
@@ -374,12 +372,10 @@
   interval:
 
   \eq{-.35in}{
-    \bar{\bm{\tau}}=\mb{r}\times\mb{F}=\mb{r}\times\frac{\Delta\mb{p}}{\Delta t}
+    \overline{\bm{\tau}}=\mb{r}\times\mb{F}
+    =\mb{r}\times\frac{\Delta\mb{p}}{\Delta t}
     =\frac{\Delta(\mb{r}\times\mb{p})}{\Delta t}\;\;\longrightarrow\;\;
-%      \tau=rF=rm\frac{dv}{dt}=\frac{d(rmv)}{dt}\quad\longrightarrow\quad
-%    \end{displaymath}
-%    \begin{displaymath}
-    \boxed{\bar{\bm{\tau}}=\frac{\Delta\mb{L}}{\Delta t}}
+    \boxed{\overline{\bm{\tau}}=\frac{\Delta\mb{L}}{\Delta t}}
   }
   \begin{itemize}
   \item If the net torque on a system is zero, then the rate of change
@@ -398,8 +394,8 @@
   translational motion:
 
   \eq{-.2in}{
-    \bar{\mb{F}}=\frac{\Delta\mb{p}}{\Delta t}\quad\quad
-    \bar{\bm{\tau}}=\frac{\Delta\mb{L}}{\Delta t}
+    \overline{\mb{F}}=\frac{\Delta\mb{p}}{\Delta t}\quad\quad
+    \overline{\bm{\tau}}=\frac{\Delta\mb{L}}{\Delta t}
   }
 
   For objects with constant mass (for translational motion) or constant moment

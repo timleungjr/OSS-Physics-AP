@@ -4,7 +4,7 @@
 \setbeamersize{text margin left=.5cm,text margin right=.5cm}
 
 \usefonttheme{professionalfonts}
-\usepackage{amsmath,bm}
+\usepackage{amsmath}%,bm}
 \usepackage{siunitx}
 %\usepackage{graphicx}
 \usepackage{tikz}
@@ -15,13 +15,16 @@
 
 \usetikzlibrary{decorations.pathmorphing,patterns}
 
+\setsansfont{Roboto Light}
 \setmonofont{Ubuntu Mono}
 \setlength{\parskip}{0pt}
+\setlength{\itemsep}{0pt}
 \renewcommand{\baselinestretch}{1}
 
 \sisetup{
   detect-all,
-  number-math-rm=\mathnormal,
+  %number-math-sf=\textsf,
+  %number-math-rm=\mathnormal,
   per-mode=symbol
 }
 
@@ -67,61 +70,61 @@
 \begin{frame}{Law of Universal Gravitation}
   \begin{center}
     \begin{tikzpicture}[scale=.65]
-      \draw[->,very thick,red](0,0)--(2,0) node[pos=1,right]{$\mb{F}_{21}$};
-      \draw[->,very thick,blue](8,0)--(6,0) node[pos=1,left]{$\mb{F}_{12}$};
+      \draw[->,very thick,red](0,0)--(2,0) node[pos=1,right]{$\mb{F}_g$};
+      \draw[->,very thick,blue](8,0)--(6,0) node[pos=1,left]{$\mb{F}_g$};
       \tikzstyle{balloon1}=[ball color=red];
       \tikzstyle{balloon2}=[ball color=blue];
       \shade[balloon1] (0,0) circle(.7) node[white]{$m_1$};
       \shade[balloon2] (8,0) circle(1) node[white]{$m_2$};
       \draw[dashed] (0,0)--(0,-1.5);
       \draw[dashed] (8,0)--(8,-1.5);
-      \draw[->,thick](0,-1.3)--(8,-1.3) node[midway,below]{$\mb{r}_{12}$};
+      \draw[<->,thick](0,-1.3)--(8,-1.3) node[midway,below]{$r$};
     \end{tikzpicture}
   \end{center}
 
   In classical mechanics, \textbf{gravity} is a mutually attractive force
-  between massive objects, determined by the law of universal gravitation:
+  between massive objects, with a magnitude $F_g$ determined by the law of
+  universal gravitation:
 
   \eq{-.2in}{
     \boxed{
-      \mb{F}_{12}=-G\frac{m_1m_2}{|\mb{r}_{12}|^2}\hat{\mb{r}}_{12}}
+      F_g=G\frac{m_1m_2}{r^2}
+    }
   }
 
-  where $G=\SI{6.674e-11}{N.m^2/kg^2}$ is the \textbf{gravitation constant},
-  $r=|\mb{r}_{12}|$ is the distance between the centers of the masses, and
-  $\hat{\mb{r}}_{12}=\mb{r}_{12}/|\mb{r}_{12}|$ is the unit vector pointing in
-  the direction from $m_1$ to $m_2$.
+  where $G=\SI{6.674e-11}{\newton\metre\squared\per\kilo\gram\squared}$ is the \textbf{universal gravitation
+    constant}, and $r$ is the distance between the centers of the masses.
+  $m_1$ and $m_2$ are \emph{point masses} that do not occupy any space
 \end{frame}
 
 
 
-\begin{frame}{Law of Universal Gravitation}
-  \begin{center}
-    \begin{tikzpicture}[scale=.5]
-      \draw[->,very thick,red](0,0)--(2,0) node[pos=1,right]{$\mb{F}_{21}$};
-      \draw[->,very thick,blue](8,0)--(6,0) node[pos=1,left]{$\mb{F}_{12}$};
-      \tikzstyle{balloon1}=[ball color=red];
-      \tikzstyle{balloon2}=[ball color=blue];
-      \shade[balloon1] (0,0) circle(.7) node[white]{$m_1$};
-      \shade[balloon2] (8,0) circle(1) node[white]{$m_2$};
-      \draw[dashed] (0,0)--(0,-1.5);
-      \draw[dashed] (8,0)--(8,-1.5);
-      \draw[->,thick](0,-1.3)--(8,-1.3) node[midway,below]{$\mb{r}_{12}$};
-    \end{tikzpicture}
-  \end{center}
-  \begin{itemize}
-  \item If $m_1$ exerts a gravitational force $\mb{F}_{12}$ on
-    $m_2$, then $m_2$ likewise also exerts a force of $\mb{F}_{21}=-\mb{F}_{12}$
-    on $m_1$. The two forces are equal in magnitude and opposite in direction
-    (third law of motion).
-  \item $m_1$ and $m_2$ are \emph{point masses} that do not occupy any space
-  \item The (more familiar) scalar form is often used as well:
-
-    \eq{-.2in}{
-      \boxed{F_g=G\frac{m_1m_2}{r^2}}
-    }
-  \end{itemize}
-\end{frame}
+%\begin{frame}{Law of Universal Gravitation}
+%  \begin{center}
+%    \begin{tikzpicture}[scale=.5]
+%      \draw[->,very thick,red](0,0)--(2,0) node[pos=1,right]{$\mb{F}_{21}$};
+%      \draw[->,very thick,blue](8,0)--(6,0) node[pos=1,left]{$\mb{F}_{12}$};
+%      \tikzstyle{balloon1}=[ball color=red];
+%      \tikzstyle{balloon2}=[ball color=blue];
+%      \shade[balloon1] (0,0) circle(.7) node[white]{$m_1$};
+%      \shade[balloon2] (8,0) circle(1) node[white]{$m_2$};
+%      \draw[dashed] (0,0)--(0,-1.5);
+%      \draw[dashed] (8,0)--(8,-1.5);
+%      \draw[->,thick](0,-1.3)--(8,-1.3) node[midway,below]{$\mb{r}_{12}$};
+%    \end{tikzpicture}
+%  \end{center}
+%  \begin{itemize}
+%  \item If $m_1$ exerts a gravitational force $\mb{F}_{12}$ on
+%    $m_2$, then $m_2$ likewise also exerts a force of $\mb{F}_{21}=-\mb{F}_{12}$
+%    on $m_1$. The two forces are equal in magnitude and opposite in direction
+%    (third law of motion).
+%  \item The (more familiar) scalar form is often used as well:
+%
+%    \eq{-.2in}{
+%      \boxed{F_g=G\frac{m_1m_2}{r^2}}
+%    }
+%  \end{itemize}
+%\end{frame}
 
 
 
@@ -228,12 +231,12 @@
 
 
 \begin{frame}{Gravitational Field}
-  On/near the surface of Earth, we can use
+  On/near the surface of Earth, we can use Earth's mass and radius
 
   \vspace{-.4in}{\Large
     \begin{align*}
-      m_1&=m_\oplus=\SI{5.972e24}{\kilo\gram}\\
-      r&=r_\oplus=\SI{6.371e6}{\metre}
+      m_1&=\SI{5.972e24}{\kilo\gram}\\
+      r&=\SI{6.371e6}{\metre}
     \end{align*}
   }
   
@@ -597,13 +600,15 @@
   }
 
   \vspace{-.1in}This equation is only applicable for perfectly circular orbits.
+  (The orbital velocity equation is not part of the equation sheet, but it may
+  be very easy to derive.)
 \end{frame}
 
 
 
-\subsection{Escape Speed}
+\subsection{Escape Velocity}
 
-\begin{frame}{Escape Speed}
+\begin{frame}{Escape Velocity}
   An object can leave the surface of Earth at any speed. But when all the
   kinetic energy of that object is converted to gravitational potential energy,
   it will return back to the surface of the earth. There is, however, a
@@ -613,8 +618,8 @@
 
 
 
-\begin{frame}{Escape Speed}
-  The calculation for escape is a simple exercise in conservation of energy,
+\begin{frame}{Escape Velocity}
+  The calculation for escape velocity is an exercise in conservation of energy,
   since gravity is a conservative force, i.e.:
 
   \eq{-.2in}{
@@ -626,8 +631,8 @@
     \eq{-.15in}{
       U_g=-\frac{GMm}{r_i}
     }
-  \item The final gravitational potential energy is at the other side of the
-    universe ($r_f=\infty$), where $U_g'=0$. At this point, the object has
+  \item Final gravitational potential energy is at the other side of the
+    universe ($r=\infty$), where $U_g'=0$. At this point, the object has
     \emph{escaped} the gravitational pull of the planet/star
   \item The minimum kinetic energy at $r=\infty$ is $K'=0$
 %  \item The work against gravity converts kinetic energy into gravitational
@@ -640,7 +645,7 @@
 
 
 
-\begin{frame}{Escape Speed from Circular Orbits}
+\begin{frame}{Escape Velocity from Circular Orbits}
   Set $K$ to equal to $-U_g$:
 
   \eq{-.25in}{
@@ -723,7 +728,7 @@
   orbit by using the orbital speed in our expression of kinetic energy:
 
   \eq{-.2in}{
-    K_\mathrm{orbit}=\frac12mv_\mathrm{orbit}^2=\frac12m
+    K_{\text{orb}}=\frac12mv_{\text{orb}}^2=\frac12m
     \left(\sqrt{\frac{GM}{r}}\right)^2=\boxed{\frac{GMm}{2r}}
   }
 
@@ -740,13 +745,13 @@
   \vspace{-.1in}The \textbf{total orbital energy} is the sum of $K$ and $U_g$:
 
   \eq{-.15in}{
-    E_T=K_\mathrm{orbit}+U_g=-\frac{GMm}{2r}=-K_\mathrm{orbit}
+    E_T=K_{\text{orb}}+U_g=-\frac{GMm}{2r}=-K_{\text{orb}}
   }
 
   Note the relationship:
 
   \eq{-.2in}{
-    K=\frac12U_g=-E_T
+    K=-\frac12U_g=-E_T
   }
 
   You are unlikely to encounter this in an AP exam, but this relationship, when

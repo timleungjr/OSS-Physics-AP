@@ -7,21 +7,23 @@
 
 \usefonttheme{professionalfonts}
 \usepackage{amsmath}
-\usepackage{graphicx}
+%\usepackage{graphicx}
 \usepackage{tikz}
 \usepackage{mathpazo}
 %\usepackage[scaled]{helvet}
 \usepackage{xcolor,colortbl}
-\usepackage{hyperref}
+%\usepackage{hyperref}
 \usepackage{siunitx}
-\usepackage{bm}
+%\usepackage{bm}
 
+\setsansfont{Roboto Light}
 \setmonofont{Ubuntu Mono}
 \setlength{\parskip}{0pt}
 \renewcommand{\baselinestretch}{1}
 
 \sisetup{
-  detect-all=true,
+  detect-all,
+  math-sf=\textsf,
   number-math-rm=\mathnormal,
   per-mode=symbol
 }
@@ -31,11 +33,11 @@
 \subtitle{Advanced Placement Physics C}
 \author[TML]{Dr.\ Timothy Leung}
 \institute{Olympiads School}
-\date{July 5, 2020}
+\date{\today}
 
 \newcommand{\pic}[2]{\includegraphics[width=#1\textwidth]{#2}}
 \newcommand{\mb}[1]{\ensuremath\mathbf{#1}}
-\newcommand{\magdir}[2]{#1\textrm{ [#2]}}
+%\newcommand{\magdir}[2]{#1\textrm{ [#2]}}
 \newcommand{\eq}[2]{\vspace{#1}{\Large\begin{displaymath}#2\end{displaymath}}}
 
 \begin{document}
@@ -232,8 +234,9 @@
     \boxed{\mb{w}=m\mb{g}}
   }
   \begin{itemize}
-  \item\vspace{-.15in}Near surface of Earth, use $g=\SI{9.81}{m/s^2}$ (or
-    $g=\SI{10}{m/s^2}$ for your AP exam)
+  \item\vspace{-.15in}Near surface of Earth, use
+    $g=\SI{9.81}{\metre/\second\squared}$ (or
+    $g=\SI{10}{\metre/\second\squared}$ for your AP exam)
   \item You may be asked to find the value of $g$ on some ``unknown planet''.
   \item $\mb{w}$ always points \emph{down} (the direction of $\mb{w}$ is how
     down is defined)

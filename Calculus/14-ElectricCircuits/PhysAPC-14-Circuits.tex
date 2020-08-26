@@ -1,6 +1,7 @@
 \documentclass[12pt,aspectratio=169]{beamer}
 
 \usetheme{metropolis}
+\setbeamersize{text margin left=.5cm,text margin right=.6cm}
 
 \usefonttheme{professionalfonts}
 \usepackage{graphicx}
@@ -25,7 +26,7 @@
 \subtitle{Advanced Placement Physics}
 \author[TML]{Dr.\ Timothy Leung}
 \institute{Olympiads School, Toronto, ON, Canada}
-\date{February 2020}
+\date{August 2020}
 
 
 \newcommand{\pic}[2]{\includegraphics[width=#1\textwidth]{#2}}
@@ -39,18 +40,18 @@
   \maketitle
 \end{frame}
 
-\section{Current}
+\section{Electric Current}
 
 \begin{frame}{Current}
   We define conventional current as the rate at which positive charges flows
   through a wire, i.e.:
 
-  \eq{-.3in}{\boxed{I=\frac{dQ}{dt}}}
+  \eq{-.3in}{\boxed{I(t)=\frac{dQ}{dt}}}
 
   We can also think of the current as the flux of ``charge density'' flowing
   past a surface, i.e.:
   
-  \eq{-.3in}{\boxed{I=\int\mb{J}\cdot d\mb{A}}}
+  \eq{-.3in}{\boxed{I(t)=\int\mb{J}(t)\cdot d\mb{A}}}
 
   $d\mb{A}$ is defined the same way as fluxes: its magnitude is the
   infinitesimal area $dA$ and the direction is the outward normal from the
@@ -65,8 +66,8 @@
   \item We now know that in a wire, instead of positive charges flowing in one
     direction, we have, in fact, electrons (negative charges) flowing in the
     opposite direction
-  \item We are treating current as a scalar quantity, but later we will have to
-    treat it as a vector
+  %\item We are treating current as a scalar quantity, but later we will have to
+  %  treat it as a vector
   \item As charges move through a conductor, they will lose potential energy
   \item How much energy it loses depends on the resistance of the material
   \end{itemize}
@@ -742,7 +743,7 @@
   \vspace{.2in}
   \begin{columns}
     \column{.3\textwidth}
-    \vspace{-.25in}
+    \vspace{-.35in}
     \begin{tikzpicture}[american voltages,scale=1.2]
       \draw[thick](0,0)
       to[battery=$V$] (0,2)
@@ -824,11 +825,12 @@
 \begin{frame}{A Slightly More Difficult Problem}
   \begin{center}
     \begin{tikzpicture}[scale=1.2,american voltages]
-      \draw[thick] (0,0) to[battery1=12<\volt>,*-*] (0,2) to[R=4<\ohm>] (2,2)
-      to[short,*-](2.46,2.3);
-      \draw[thick](2.5,2) to[short,*-*] (3,2) to[short,-*] (4,2)
-      to[C=6<\micro\farad>,-*] (4,0)--(0,0);
-      \draw[thick] (3,0) to[R=8<\ohm>,*-] (3,2);
+      \draw[thick] (0,0) to[battery1=\SI{12}{\volt}] (0,2)
+      to[R=\SI{4}{\ohm}] (2,2)
+      to[short](2.46,2.3);
+      \draw[thick](2.5,2) to[short,*-] (3,2) to[short] (4,2)
+      to[C=\SI{6}{\micro\farad}] (4,0)--(0,0);
+      \draw[thick] (3,0) to[R=\SI{8}{\ohm}] (3,2);
     \end{tikzpicture}
   \end{center}
   \textbf{Example:} The capacitor in the circuit is initially uncharged. Find
@@ -851,10 +853,10 @@
     \textbf{\emph{LR} circuit}:
     \begin{center}
       \begin{tikzpicture}[american voltages,scale=1.2]
-        \draw[thick](0,0) to[battery1=$\mathcal{E}_0$,-*] (0,2)
+        \draw[thick](0,0) to[battery1=$\mathcal{E}_0$] (0,2)
         to[short,-*](0.5,2);
-        \draw[thick](0.51,2.3) to[short,*-*](1,2)--(1.5,2) to [R=$R$,-*] (3,2)
-        to [L=$L$,-*] (3,0)--(0,0);
+        \draw[thick](0.51,2.3) to[short,*-*](1,2)--(1.5,2) to [R=$R$] (3,2)
+        to [L=$L$] (3,0)--(0,0);
       \end{tikzpicture}
     \end{center}
   \end{itemize}
@@ -865,10 +867,10 @@
   \begin{columns}
     \column{.35\textwidth}
     \begin{tikzpicture}[american voltages,scale=1.2]
-      \draw[thick](0,0) to[battery1=$\mathcal{E}_0$,-*] (0,2)
+      \draw[thick](0,0) to[battery1=$\mathcal{E}_0$] (0,2)
       to[short,-*](0.5,2);
-      \draw[thick](0.51,2.3) to[short,*-*](1,2)--(1.5,2) to [R=$R$,-*] (3,2)
-      to [L=$L$,-*] (3,0)--(0,0);
+      \draw[thick](0.51,2.3) to[short,*-*](1,2)--(1.5,2) to [R=$R$] (3,2)
+      to [L=$L$] (3,0)--(0,0);
     \end{tikzpicture}
 
     \column{.65\textwidth}

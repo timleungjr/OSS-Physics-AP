@@ -16,6 +16,8 @@
 \setlength{\parskip}{0pt}
 \renewcommand{\baselinestretch}{1}
 
+%\usetikzlibrary{circuits.ee.IEC}
+
 \sisetup{
   detect-all,
   number-math-rm=\mathnormal,
@@ -76,7 +78,7 @@
     \boxed{I=\frac{Q}{\Delta t}}
   }
 
-  It is also defined as the product of \textbf{charge density} $J$ flowing past
+  It is also defined as the product of \textbf{current density} $J$ flowing past
   a surface $A$:
   
   \eq{-.2in}{
@@ -85,11 +87,98 @@
 
   \vspace{-.2in}where
   \begin{itemize}
+  \item The unit for $J$ is \textbf{ampere per meter squared} (\si{A/m^2})
   \item $n$ is the number of charge carriers per unit volume
-  \item $v$ is the average \textbf{drift velocity} of the charge carriers
-  \item $q$ is the charge of each particle
+  \item $v_d$ is the average \textbf{drift velocity} of the charge carriers
+  \item $e$ is the (elementary) charge of each particle
   \end{itemize}
   Basic algebra will show that these equations are consistent with one another.
+\end{frame}
+
+
+
+\begin{frame}{Current Through the Conductor}
+  The electric current through conductor is the rate at which charge carriers
+  pass through a point in the conductor:
+
+  \eq{-.15in}{
+    \boxed{I=\frac{\Delta Q}{\Delta t}}
+    =\left(\frac{Q}{V}\right)\frac{\Delta V}{\Delta t}
+    =\left[ne\right]\left[Av_d\right]
+  }
+  where
+  \begin{itemize}
+  \item $Q/V$ is the amount of charges \emph{per volume}, which is just
+    the charge carrier density $n$ times the elementary charge $e$
+  \item $\Delta V/\Delta t$ is the rate the volume of charges moves through the
+    conductor, give by the cross-section area of the conductor $A$ times the
+    \textbf{drift velocity} $v_d$ of the charge carrier
+  \end{itemize}
+  For simplicity, we \emph{assume} that charge carriers are positive. While the
+  opposite is true, the behavior will be \emph{almost} identical.
+\end{frame}
+
+
+
+\begin{frame}{Current Through the Conductor}
+  Combining the terms:
+
+  \eq{-.1in}{
+    \boxed{I=\frac{\Delta Q}{\Delta t}=neAv_d}
+  }
+  \begin{center}
+    \begin{tabular}{l|c|c}
+      \rowcolor{pink}
+      \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
+      Current                               & $I$    & \si{\ampere} \\
+      Charge carrier density (carriers per volume) &
+      $n$ & \si{\per\metre^3} \\
+      Elementary charge                     & $e$    & \si{\coulomb}\\
+      Cross-section area of the conductor   & $A$ & \si{\metre^2}\\
+      Drift velocity of the charge carriers & $v_d$ & \si{\metre\per\second}
+    \end{tabular}
+  \end{center}
+  The calculation for the charge carrier density $n$ requires some additional
+  thoughts.
+\end{frame}
+
+
+
+\begin{frame}{Charge Carrier Density}
+  The charge carrier density in a \emph{metal} conductor involves some physical
+  information about the metal:
+  \begin{enumerate}
+  \item Divide the metals density $\rho$ by the metal's molar mass $M$ to find
+    the \emph{number of moles of atams per unit volume}
+  \item Multiply by Avagadro's number $N_A$ to find
+    \emph{number of atoms per unit volume}
+  \item Multiply by \emph{the number of free electrons per atom} $k$ for that
+    particular metal
+  \end{enumerate}
+\end{frame}
+
+
+
+\begin{frame}{Charge Carrier Density}
+  Collecting all the terms from the last slide, we have:
+  
+  \eq{-.15in}{
+    \boxed{n=\frac{\rho kN_A}{M}}
+  }
+  \begin{center}
+    \begin{tabular}{l|c|c}
+      \rowcolor{pink}
+      \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
+      Charge carrier density   & $n$    & \si{\per\metre^3} \\
+      Density of material      & $\rho$ & \si{\kilo\gram\per\metre^3} \\
+      Number of free electrons per atom & $k$ & \\
+      Avogadro's number        & $N_A$  & \si{/\mol}\\
+      Molar mass               & $M$    & \si{\kilo\gram\per\mol}
+    \end{tabular}
+  \end{center}
+  For copper, $M=\SI{63.54e-3}{\kilo\gram\per\mol}$,
+  $\rho=\SI{9.0e3}{\kilo\gram\per\metre^3}$, $k=1$ and therefore
+  $n=\SI{8.5e28}{\per\metre^3}$.
 \end{frame}
 
 
@@ -171,7 +260,7 @@
 
 \begin{frame}{Resistivity}
   The resistivity of a material is the ratio between strength of the electric
-  field $E$ inside the material and the charge density $J$:
+  field $E$ inside the material and the current density $J$:
 
   \eq{-.2in}{
     \boxed{\rho=\frac{E}{J}}
@@ -200,8 +289,8 @@
   \begin{itemize}
   \item Conductor: the electrons are free to move, therefore the electric
     field tend to be very small, and the resistivity is low.
-  \item Dielectric (non conducting material): electrons cannot move
-    easily--they can only polarize themselves--the electric field are generally
+  \item Insulators and dielectric: electrons cannot move easily (dielectric:
+    they can only polarize themselves) the electric field are generally
     strong, and the resistivity is higher.
   \end{itemize}
 \end{frame}
@@ -281,13 +370,16 @@
 
 
 \begin{frame}{Power Dissipated by a Resistor}
-  Power is the rate at which work $W$ is done, and from electrostatics, the
+  Average power $P$ is the rate at which work $W$ is done, and from
+  electrostatics, the
   change in electric potential energy $\Delta E_q$ (i.e.\ the work done!) is
   proportional to the amount of charge $q$ and the voltage $V$. This gives a
   very simple expression for power through a resistor:
   
   \eq{-.15in}{
-    P=\frac{dW}{dt}=\frac{d(qV)}{dt}=\left(\frac{dq}{dt}\right)V
+    P
+    =\frac{\Delta W}{\Delta t}=\frac{\Delta (qV)}{\Delta t}
+    =\left(\frac{\Delta q}{\Delta t}\right)V
     \;\rightarrow\;\boxed{P=IV}
   }
   
@@ -308,7 +400,7 @@
   When we combine Ohm's Law ($V=IR$) with power equation, we get two additional
   expressions for power through a resistor:
 
-  \eq{-.2in}{
+  \eq{-.15in}{
     \boxed{P=\frac{V^2}{R}}\quad\boxed{P=I^2R}
   }
   \begin{center}
@@ -321,12 +413,13 @@
       Current    & $I$ & \si{\ampere}
     \end{tabular}
   \end{center}
+  Not surprisingly, these equations will only apply to ohmic devices.
 \end{frame}
 
 
-\section{Kirchkoff's Laws}
+\section{Kirchhoff's Laws}
 
-\begin{frame}{Kirchkoff's Current Law}
+\begin{frame}{Current Law}
   The electric current that flows into any junction in an electric circuit must
   be equal to the current which flows out.
 
@@ -362,7 +455,7 @@
 
 
 
-\begin{frame}{Kirchkoff's Voltage Law}
+\begin{frame}{Voltage Law}
   The voltage changes around any closed loop in the circuit must sum to zero,
   no matter what path you take through an electric circuit.
 
@@ -426,9 +519,9 @@
 
 
 
-\begin{frame}{Equivalent Resistance of Resistors in Parallel}
-  Through applying Ohm's Law and Kirchkoff's laws, we find the equivalent
-  resistance of a parallel circuit: The inverse of the equivalent resistance
+\begin{frame}{Equivalent Resistance in Parallel}
+  Applying applying Ohm's law and Kirchhoff's laws gives the equivalent
+  resistance of a parallel circuit: the inverse of the equivalent resistance
   for resistors connected in parallel is the sum of the inverses of the
   individual resistances.
 
@@ -470,7 +563,7 @@
 
 
 
-\begin{frame}{Equivalent Resistance of Resistors in Series}
+\begin{frame}{Equivalent Resistance in Series}
   Again, through applying Ohm's Law and Kirchkoff's laws, we find that when
   resistors are connected in series: the equivalent resistance of loads is the
   sum of the resistances of the individual loads.
@@ -607,7 +700,7 @@
       to[battery1=\SI{42}{\volt},*-](2,4)
       to[R=\SI{3}{\ohm}] (4,4) to[short,*-](4,2)
       to[R=\SI{3}{\ohm},*-](4,0) to[short,*-](2,0)
-      to[battery1=\SI{6}{\volt},*-](2,2)
+      to[battery1,v=\SI{6}{\volt},*-](2,2)
       to[R,l_=\SI{4}{\ohm},*-](0,2);
       \draw[thick](0,0) to[R,l_=\SI{6}{\ohm}](2,0);
       \draw[thick](2,2) to[R,l_=\SI{6}{\ohm}](4,2);
@@ -743,57 +836,57 @@
 
 
 
-\begin{frame}{Discharging a Capacitor}
-  We start the analysis with something even simpler. There is no voltage source,
-  and the capacitor is already charged to $V_c=Q_\mathrm{tot}/C$. What happens
-  when the current begin to flow?
-  \begin{columns}
-    \column{.3\textwidth}
-    \begin{center}
-      \begin{tikzpicture}
-        \draw[thick](0,0) to[R=$R$] (0,2)--(2,2) to[C=$C$] (2,0)--(0,0);
-      \end{tikzpicture}
-    \end{center}
-    
-    \column{.7\textwidth}
-    As current starts to flow, the charge on the capacitor decrease. Over time
-    the current decreases, until the capacitor is fully discharged, and current
-    stops flowing.
-  \end{columns}
-
-  \vspace{.15in}Apply the voltage law for the circuit, and substitute
-  the definition of current $I=dQ/dt$ and the voltage across a capacitor
-  $V_c=Q/C$:
-
-  \eq{-.15in}{V_c-IR=0\quad\rightarrow\quad -\frac{Q}{C}-R\frac{dQ}{dt}=0}
-\end{frame}
-
-
-\begin{frame}{Discharging a Capacitor}
-  Separating the $Q$ terms on the left side of the equation, and leaving
-  everything else on the right side, we get:
-
-  \eq{-.2in}{
-    \frac{dQ}{Q}=\frac{-dt}{RC}
-  }
-
-  which we can now integrate and ``exponentiate'':
-
-  \eq{-.15in}{
-    \int\frac{dQ}{Q}=\int\frac{-dt}{RC}
-    \;\rightarrow\;
-    \ln Q=\frac{-t}{RC} + K
-    \;\rightarrow\;
-    Q=e^Ke^{-t/RC}
-  }
-
-  The constant of integration $K$ is the initial charge on the capacitor
-  $Q_\mathrm{tot}$:
-
-  \eq{-.2in}{
-    e^K=Q_\mathrm{tot}
-  }
-\end{frame}
+%\begin{frame}{Discharging a Capacitor}
+%  We start the analysis with something even simpler. There is no voltage source,
+%  and the capacitor is already charged to $V_c=Q_\mathrm{tot}/C$. What happens
+%  when the current begin to flow?
+%  \begin{columns}
+%    \column{.3\textwidth}
+%    \begin{center}
+%      \begin{tikzpicture}
+%        \draw[thick](0,0) to[R=$R$] (0,2)--(2,2) to[C=$C$] (2,0)--(0,0);
+%      \end{tikzpicture}
+%    \end{center}
+%    
+%    \column{.7\textwidth}
+%    As current starts to flow, the charge on the capacitor decrease. Over time
+%    the current decreases, until the capacitor is fully discharged, and current
+%    stops flowing.
+%  \end{columns}
+%
+%  \vspace{.15in}Apply the voltage law for the circuit, and substitute
+%  the definition of current $I=dQ/dt$ and the voltage across a capacitor
+%  $V_c=Q/C$:
+%
+%  \eq{-.15in}{V_c-IR=0\quad\rightarrow\quad -\frac{Q}{C}-R\frac{dQ}{dt}=0}
+%\end{frame}
+%
+%
+%\begin{frame}{Discharging a Capacitor}
+%  Separating the $Q$ terms on the left side of the equation, and leaving
+%  everything else on the right side, we get:
+%
+%  \eq{-.2in}{
+%    \frac{dQ}{Q}=\frac{-dt}{RC}
+%  }
+%
+%  which we can now integrate and ``exponentiate'':
+%
+%  \eq{-.15in}{
+%    \int\frac{dQ}{Q}=\int\frac{-dt}{RC}
+%    \;\rightarrow\;
+%    \ln Q=\frac{-t}{RC} + K
+%    \;\rightarrow\;
+%    Q=e^Ke^{-t/RC}
+%  }
+%
+%  The constant of integration $K$ is the initial charge on the capacitor
+%  $Q_\mathrm{tot}$:
+%
+%  \eq{-.2in}{
+%    e^K=Q_\mathrm{tot}
+%  }
+%\end{frame}
 
 
 

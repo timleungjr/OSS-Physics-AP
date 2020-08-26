@@ -10,26 +10,26 @@
 \usepackage{mathpazo}
 \usepackage{xcolor,colortbl}
 \usepackage{siunitx}
-\usepackage{hyperref}
+%\usepackage{hyperref}
 %\usepackage[siunitx]{circuitikz} % to draw circuits!
-
 
 \setlength{\parskip}{0pt}
 \renewcommand{\baselinestretch}{1}
 
+\setsansfont{Roboto Light}
 \setmonofont{Ubuntu Mono}
 
 \sisetup{
   detect-all,
-  number-math-rm=\mathnormal,
+  number-math-rm=\textsf,
   per-mode=symbol
 }
 
 \title{Hall Effect}
-\subtitle{Advanced Placement Physics}
+\subtitle{Advanced Placement Physics C}
 \author{Dr.\ Timothy Leung}
 \institute{Olympiads School, Toronto, ON, Canada}
-\date{March 7, 2020}
+\date{\today}
 
 \newcommand{\pic}[2]{
   \includegraphics[width=#1\textwidth]{#2}}\newcommand{\mb}[1]{\mathbf{#1}
@@ -47,12 +47,11 @@
 
 
 \begin{frame}{Current Through the Conductor}
-  The (instantaneous) electric current through conductor is the rate at which
+  The electric current through conductor is the rate at which
   charge carriers pass through a point in the conductor:
 
   \eq{-.15in}{
-    \boxed{I=\frac{dQ}{dt}}=\frac{dQ}{dt}
-    =\left(\frac{Q}{V}\right)\frac{dV}{dt}
+    \boxed{I=\frac{dQ}{dt}} = \left(\frac{Q}{V}\right)\frac{dV}{dt}
     =\left[ne\right]\left[Av_d\right]
   }
   where
@@ -64,7 +63,7 @@
     \textbf{drift velocity} $v_d$ of the charge carrier
   \end{itemize}
   For simplicity, we \emph{assume} that charge carriers are positive. While the
-  opposite is true, the behavior will be \empph{almost} identical.
+  opposite is true, the behavior will be \emph{almost} identical.
 \end{frame}
 
 
@@ -94,8 +93,8 @@
 
 
 \begin{frame}{Charge Carrier Density}
-  The charge carrier density in a \emph{metal} conductor involves some physical
-  information about the metal:
+  Finding the charge carrier density in a \emph{conductor} involves some
+  physical information about the material:
   \begin{enumerate}
   \item Divide the metals density $\rho$ by the metal's molar mass $M$ to find
     the \emph{number of moles of atams per unit volume}
@@ -136,7 +135,7 @@
   When a current $I$ flows through a conductor in a magnetic field
   $\mb{B}$, the magnetic field exerts a transverse (i.e.\ perpendicular to
   motion) magnetic force $\mb{F}_m$ on the moving charges which pushes them
-  toward one side of the conductor. This is called \textbf{Hall effect}.
+  toward one side of the conductor. %This is called \textbf{Hall effect}.
   \begin{center}
     \begin{tikzpicture}
       \node at (4.5,3.8) {\textcolor{blue!80}{
