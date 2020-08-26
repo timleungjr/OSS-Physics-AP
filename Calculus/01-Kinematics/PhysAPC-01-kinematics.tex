@@ -2,10 +2,8 @@
 
 \usetheme{metropolis}
 \setbeamersize{text margin left=.5cm,text margin right=.5cm}
-%\setbeamertemplate{navigation symbols}{} % suppress nav bar
-%\setbeamercovered{transparent}
 
-\usepackage[utf8]{inputenc}
+%\usepackage[utf8]{inputenc}
 \usefonttheme{professionalfonts}
 \usepackage{amsmath}
 \usepackage{siunitx}
@@ -15,13 +13,15 @@
 %\usepackage[scaled]{helvet}
 \usepackage{bm}
 %\usepackage{xcolor,colortbl}
-\usepackage{hyperref}
+%\usepackage{hyperref}
 
 \sisetup{
-  number-math-rm=\mathnormal,
+  detect-all,
+  math-sf=\textsf,
   per-mode=symbol
 }
 
+\setsansfont{Roboto Light}
 \setmonofont{Ubuntu Mono}
 \setlength{\parskip}{0pt}
 \renewcommand{\baselinestretch}{1}
@@ -31,7 +31,8 @@
 \subtitle{Advanced Placement Physics C}
 \author[TML]{Dr.\ Timothy Leung}
 \institute{Olympiads School}
-\date{July 4, 2020}
+\date{\today}
+
 
 \newcommand{\iii}{\ensuremath\hat{\bm{\imath}}}
 \newcommand{\jjj}{\ensuremath\hat{\bm{\jmath}}}
@@ -72,13 +73,12 @@
 
 
 \begin{frame}{AP Physics C Exams}
-  There are 2 AP Physics C exams, which are usually taken together on the same
-  day, in the first or second week of May of each year.
+  There are calculus-based 2 AP Physics C exams, which are usually taken
+  together on the same day, in the first or second week of May of each year.
   \begin{itemize}
   \item Mechanics
   \item Electricity and Magnetism
   \end{itemize}
-  The Physics C exams are calculus based.
 \end{frame}
 
 
@@ -113,9 +113,9 @@
     version
   \item\texttt{PhysAPC-01c-motionGraphs.pdf}--Handout on motion graphs
   %\item\texttt{PhysAPC-01e-projectileMotion.pdf}--Handout on projectile motion
-  \item\texttt{PhysAPC-02-dynamics.pdf}
+  %\item\texttt{PhysAPC-02-dynamics.pdf}
   \item\texttt{PhysAPC-01-Homework.pdf}--Homework problems for Topic 1
-  \item\texttt{PhysAPC-02-Homework.pdf}--Homework problems for Topic 2
+  %\item\texttt{PhysAPC-02-Homework.pdf}--Homework problems for Topic 2
   \end{itemize}
 \end{frame}
 
@@ -166,7 +166,8 @@
     \boxed{\mb{x}(t)=x(t)\iii + y(t)\jjj + z(t)\kkk}
   }
 
-  Vectors in 2D/3D Cartesian space are generally using the ``IJK notation''
+  Vectors in 2D/3D Cartesian space are generally using the
+  \textbf{IJK notation}
   \begin{itemize}
   \item $\iii$, $\jjj$ and $\kkk$ are \textbf{basis vectors} indicating the
     directions of the $x$, $y$ and $z$ axes. Basis vectors are
@@ -184,7 +185,7 @@
 
   \eq{-.25in}{
     \boxed{
-      \Delta\mb{x}(t)=\mb{x}-\mb{x}_0
+      \Delta\mb{x}(t)=\mb{x}(t)-\mb{x}_0
       =(x-x_0)\iii + (y-y_0)\jjj + (z-z_0)\kkk
     }
   }
@@ -198,7 +199,7 @@
 
 \begin{frame}{Distance}
   \textbf{Distance} $s(t)$ is a quantity that is \emph{related} to displacement.
-  The unit for distance is also a \emph{meter} (\si{\metre}).
+  The unit for distance is also a meter (\si{\metre}).
   \begin{columns}
     \column{.7\textwidth}
     \begin{itemize}
@@ -228,8 +229,8 @@
 
 \begin{frame}{Instantaneous Velocity}
   If position $\mb{x}$ is differentiable in time $t$, then velocity
-  $\mb{v}$ can be found at any time $t$. The \textbf{instantaneous velocity}
-  $\mb{v}$ of an object is the time rate of change of position. The unit for
+  can be found at any time $t$. The \textbf{instantaneous velocity}
+  $\mb{v}(t)$ of an object is the time rate of change of position. The unit for
   velocity is \textbf{meters per second} (\si{\metre\per\second}):
 
   \eq{-.2in}{
@@ -238,9 +239,9 @@
     }
   }
   
-  Since $\mb{x}$ has $x$, $y$ and $z$ components in the $\iii$, $\jjj$ and
-  $\kkk$ directions (which are all linearly independent), we can take the time
-  derivative in every component:
+  Since $\mb{x}$ has $x$, $y$ and $z$ components along the $\iii$, $\jjj$ and
+  $\kkk$ directions (linearly independent), we can take the time derivative in
+  every component:
 
   \eq{-.15in}{
     \mb{v}(t)= \frac{d\mb{x}}{dt}=
@@ -253,7 +254,7 @@
 
 \begin{frame}{Integrating Velocity to Get Position/Displacement}
   Conversely, if $\mb{v}(t)$ is the time rate of change of position
-  $\mb{x}(t)$, then $\mb{x}$ is the time integral of $\mb{v}$:
+  $\mb{x}(t)$, then $\mb{x}(t)$ is the time integral of $\mb{v}(t)$:
   
   \eq{-.2in}{
     \boxed{
@@ -262,7 +263,7 @@
   }
   
   The constant of integration $\mb{x}_0$ is the \emph{initial position} at
-  $t=0$. We can integrate each component to get $\mb{x}$:
+  $t=\num{0}$. We can integrate each component to get $\mb{x}$:
 
  \eq{-.2in}{ \mb{x}(t)= \left(
     \int u\iii + \int v\jjj + \int w\kkk \right) dt + \mb{x}_0
@@ -318,7 +319,9 @@
   distance travelled over a finite time interval.
   
   \eq{-.2in}{
-    \overline{v}=\frac{s}{\Delta t}
+    \boxed{
+      \overline{v}=\frac{s}{\Delta t}
+    }
   }
 \end{frame}
 
@@ -431,13 +434,12 @@
   \item Gravitational or electrostatic forces:
     $\displaystyle a(x)=\frac{Gm_s}{x^2}\quad a(x)=\frac{kq_1q_2}{mx^2}$
   \item Spring force: $\displaystyle a(x)=-\frac{k}{m}x$
-  \item Damping force: $a(v)=-bv^n$ ($b$ is a damping constant, and $n$ is
-    usually 1)
+  \item Damping force: $a(v)=-bv$
   \item Aerodynamic drag:
     $\displaystyle a(v)=\left[\frac12\rho C_D A_{\textrm{ref}}\right] v^2$
   \end{itemize}
-  In these cases, solving for the motion quantities $x(t)$, $v(t)$ and $a(t)$
-  requires solving a differential equation (see kinematics handout).
+  In these cases, solving for $x(t)$, $v(t)$ and $a(t)$ will require solving a
+  differential equation (see handout).
 \end{frame}
 
 
@@ -655,7 +657,7 @@
     \begin{tikzpicture}[scale=1.1]
       \draw[->](0,0)--(2,0) node[pos=1,right]{$x$};
       \draw[->](0,0)--(0,2) node[pos=1,above]{$y$};
-      \draw[dotted,domain=0:6.25,thick] plot (\x, {1.2*\x-.2*\x*\x});
+      \draw[dotted,domain=0:4,thick] plot (\x, {1.2*\x-.2*\x*\x});
       \draw[ultra thick,->](0,0)--(.75,.9)node[pos=1,above]{$\mb{v}_0$};
       \draw[very thick,red!80!black,->]
       (0,0)--(0,.9)node[midway,left]{$v_{y1}$};
@@ -677,7 +679,7 @@
 
 
 \begin{frame}{Horizontal ($x$) Direction}
-  No acceleration (i.e.\ $a_x=0$) in the horizontal direction, therefore
+  No acceleration (i.e.\ $a_x=\num{0}$) in the horizontal direction, therefore
   horizontal velocity component is constant. The kinematic equations reduce to:
 
   \eq{-.2in}{
@@ -752,7 +754,7 @@
   \eq{-.1in}{R=\frac{v_0^2\sin(2\theta)}{g}}
   
   \begin{itemize}
-  \item Maximum range occurs at $\theta=45^\circ$
+  \item Maximum range occurs at $\theta=\ang{45}$
   \item For a given initial speed $v_0$ and range $R$, launch angle $\theta$ is
     given by:
     
@@ -763,7 +765,7 @@
     But there is another angle that \emph{gives the same range}!
 
     \eq{-.2in}{
-      \theta_2=90^\circ-\theta_1
+      \theta_2=\ang{90}-\theta_1
     }
   \end{itemize}
 \end{frame}
@@ -964,8 +966,8 @@
   compared to the Grade 12 Physics problems, but:
   \begin{itemize}
   \item You have to solve problems faster because of time constraint
-  \item You can use $g=\SI{10}{m/s^2}$ in your calculations to make your lives
-    simpler
+  \item You can use $g=\SI{10}{\metre/\second\squared}$
+    in your calculations to make your lives    simpler
   \item A lot of problems are \emph{symbolic}, which means that they deal with
     the equations, not actual numbers
   \item Will be coupled with other types (e.g.\ dynamics and rotational) in

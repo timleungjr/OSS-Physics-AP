@@ -1,7 +1,7 @@
 \documentclass[12pt,compress,aspectratio=169]{beamer}
 
 \usetheme{metropolis}
-\setbeamersize{text margin left=.8cm,text margin right=.8cm}
+\setbeamersize{text margin left=.5cm,text margin right=.5cm}
 
 \usefonttheme{professionalfonts}
 \usepackage{amsmath}%,bm}
@@ -14,6 +14,7 @@
 
 \usetikzlibrary{patterns}
 
+\setsansfont{Roboto Light}
 \setmonofont{Ubuntu Mono}
 \setlength{\parskip}{0pt}
 \setlength{\itemsep}{0pt}
@@ -60,8 +61,8 @@
 
 
 \begin{frame}{Review of Circular Motion}
-  In a \textbf{circular motion}, an object of mass $m$ moves in a circular path
-  about a fixed center. In Grade 12 Physics, you should have studied
+  In \textbf{circular motion}, an object of mass $m$ moves in a circular path
+  about a fixed center. In Grade 12 Physics, you were introduced to
   \emph{uniform} circular motion, where:
   \begin{itemize}
   \item the object's speed (magnitude of velocity) is constant
@@ -72,77 +73,77 @@
 
 
 
-\section{Polar Coordinates}
-
-\begin{frame}{Polar Coordinate System in 2D}
-  \begin{columns}
-    \column{.32\textwidth}
-    \begin{tikzpicture}[scale=.75]
-      \draw[->](-3,0)--(3,0) node[pos=1,right]{\footnotesize$x$};
-      \draw[->](0,-3)--(0,3) node[pos=1,above]{\footnotesize$y$};
-      \draw (0,0) circle(2.5);
-      \begin{scope}[rotate=38]
-        \draw[->] (0,0)--(2.45,0) node[midway,above]{\footnotesize$r$};
-        \draw[fill=red!60] (2.5,0) circle(.1);
-      \end{scope}
-      \draw(1.5,0)[->] arc(0:38:1.5) node[pos=.55,right]{\footnotesize$\theta$};
-    \end{tikzpicture}
-
-    \column{.68\textwidth}
-    In the Cartesian coordinate system for rectilinear motion, an object's
-    position is described by its $x$ and $y$ coordinates:
-
-    \eq{-.25in}{
-      \mb{x}(x,y)
-      }
-
-    \vspace{-.15in}For circular motion, the \textbf{polar coordinate system} is
-    preferred. The position of an object can also be described by:
-
-    \eq{-.25in}{
-      \mb{r}(r,\theta)
-    }
-
-    \vspace{-.1in}Where $r$ is distance from the origin, and $\theta$ is the
-    standard angle, measured counterclockwise from the $x$ axis in
-    \emph{radians}
-  \end{columns}
-\end{frame}
-
-
-
-\begin{frame}{Polar Coordinate System in 2D}
-  \begin{columns}
-    \column{.3\textwidth}
-    \begin{tikzpicture}[scale=.75]
-      \draw[->](-3,0)--(3,0) node[pos=1,right]{\footnotesize$x$};
-      \draw[->](0,-3)--(0,3) node[pos=1,above]{\footnotesize$y$};
-      \draw (0,0) circle(2.5);
-      \begin{scope}[rotate=38]
-        \draw[->] (0,0)--(2.45,0) node[midway,above]{\footnotesize$r$};
-        \draw[fill=red!60] (2.5,0) circle(.1);
-      \end{scope}
-      \draw(1.5,0)[->] arc(0:38:1.5) node[pos=.55,right]{\footnotesize$\theta$};
-    \end{tikzpicture}
-
-    \column{.7\textwidth}
-    \begin{itemize}
-    \item This is consistent with how position vectors are expressed in
-      Grade 11/12 Physics: magnitude ($r$) and direction ($\theta$)
-    \item Cartesian coordinates can be obtained from the polar coordinates:
-      
-      \eq{-.3in}{
-        x=r\cos\theta\quad y=r\sin\theta
-      }
-    \item While polar coordinates can be obtained from Cartesian coordinates:
-
-      \eq{-.25in}{
-        r=\sqrt{x^2+y^2}\quad\text{\normalsize and}\quad\tan\theta=\frac{y}{x}
-      }
-      
-    \end{itemize}
-  \end{columns}
-\end{frame}
+%\section{Polar Coordinates}
+%
+%\begin{frame}{Polar Coordinate System in 2D}
+%  \begin{columns}
+%    \column{.32\textwidth}
+%    \begin{tikzpicture}[scale=.75]
+%      \draw[->](-3,0)--(3,0) node[pos=1,right]{\footnotesize$x$};
+%      \draw[->](0,-3)--(0,3) node[pos=1,above]{\footnotesize$y$};
+%      \draw (0,0) circle(2.5);
+%      \begin{scope}[rotate=38]
+%        \draw[->] (0,0)--(2.45,0) node[midway,above]{\footnotesize$r$};
+%        \draw[fill=red!60] (2.5,0) circle(.1);
+%      \end{scope}
+%      \draw(1.5,0)[->] arc(0:38:1.5) node[pos=.55,right]{\footnotesize$\theta$};
+%    \end{tikzpicture}
+%
+%    \column{.68\textwidth}
+%    In the Cartesian coordinate system for rectilinear motion, an object's
+%    position is described by its $x$ and $y$ coordinates:
+%
+%    \eq{-.25in}{
+%      \mb{x}(x,y)
+%      }
+%
+%    \vspace{-.15in}For circular motion, the \textbf{polar coordinate system} is
+%    preferred. The position of an object can also be described by:
+%
+%    \eq{-.25in}{
+%      \mb{r}(r,\theta)
+%    }
+%
+%    \vspace{-.1in}Where $r$ is distance from the origin, and $\theta$ is the
+%    standard angle, measured counterclockwise from the $x$ axis in
+%    \emph{radians}
+%  \end{columns}
+%\end{frame}
+%
+%
+%
+%\begin{frame}{Polar Coordinate System in 2D}
+%  \begin{columns}
+%    \column{.3\textwidth}
+%    \begin{tikzpicture}[scale=.75]
+%      \draw[->](-3,0)--(3,0) node[pos=1,right]{\footnotesize$x$};
+%      \draw[->](0,-3)--(0,3) node[pos=1,above]{\footnotesize$y$};
+%      \draw (0,0) circle(2.5);
+%      \begin{scope}[rotate=38]
+%        \draw[->] (0,0)--(2.45,0) node[midway,above]{\footnotesize$r$};
+%        \draw[fill=red!60] (2.5,0) circle(.1);
+%      \end{scope}
+%      \draw(1.5,0)[->] arc(0:38:1.5) node[pos=.55,right]{\footnotesize$\theta$};
+%    \end{tikzpicture}
+%
+%    \column{.7\textwidth}
+%    \begin{itemize}
+%    \item This is consistent with how position vectors are expressed in
+%      Grade 11/12 Physics: magnitude ($r$) and direction ($\theta$)
+%    \item Cartesian coordinates can be obtained from the polar coordinates:
+%      
+%      \eq{-.3in}{
+%        x=r\cos\theta\quad y=r\sin\theta
+%      }
+%    \item While polar coordinates can be obtained from Cartesian coordinates:
+%
+%      \eq{-.25in}{
+%        r=\sqrt{x^2+y^2}\quad\text{\normalsize and}\quad\tan\theta=\frac{y}{x}
+%      }
+%      
+%    \end{itemize}
+%  \end{columns}
+%\end{frame}
 
 
 
@@ -164,17 +165,17 @@
     \end{tikzpicture}
     
     \column{.68\textwidth}
-    For constant radius $r$, the \textbf{angular position} $\theta$ fully
-    describes an object's position. It is generally measured in radians (rad):
+    For circular motion with constant radius $r$, the \textbf{angular position}
+    $\theta$ can fully describes an object's position. It is generally measured
+    in radians (rad):
       
     \eq{-.25in}{
       \boxed{\theta=\theta(t)}
     }
     
     \textbf{Average angular velocity} $\overline{\omega}$ (or
-    \textbf{angular frequency})
-    is the rate of change in angular position over a finite time interval.
-    It is measured in \si{rad\per\second}
+    \textbf{angular frequency}) is the change in angular position over a finite
+    time interval. It is measured in \si{rad\per\second}.
     
     \eq{-.2in}{
       \boxed{\overline{\omega}=\frac{\Delta\theta}{\Delta t}}
@@ -236,54 +237,54 @@
     \end{tikzpicture}
 
     \column{.7\textwidth}
-    For constant $\omega$ (uniform circular motion), the motion is periodic,
-    with its \textbf{frequency} $f$ and \textbf{period} $T$ given by:
+    For a constant $\omega$ (uniform circular motion), the motion is strictly
+    periodic, with its \textbf{frequency} $f$ and \textbf{period} $T$ given by:
 
     \eq{-.15in}{
-      f=\frac{\omega}{2\pi}\quad
-      T=\frac{2\pi}{\omega}\quad
+      \boxed{f=\frac{\omega}{2\pi}}\quad
+      \boxed{T=\frac{2\pi}{\omega}}\quad
       f=\frac1T
     }
     
     $T$ is measured in \textbf{seconds} (\si{\s}) and $f$ in \textbf{hertz}
-    (\si{\hertz})
+    (\si{\hertz}). Period and frequency are reciprocals of each other.
   \end{columns}
 \end{frame}
 
 
 
-\begin{frame}{Rotating Object Without Slipping}
-  A tire with radius $r$ rolls along the road with an angular velocity $\omega$
-  \emph{without slipping}. (This is a very common case for analysis.)  What
-  is its velocity $v$
-  \begin{enumerate}[a.]
-  \item at the contact between the ground and the tire?
-  \item at the center?
-  \item at the top of the tire?
-  \end{enumerate}
-
-  \vspace{-.4in}
-  \begin{center}
-    \hspace{1in}
-    \begin{tikzpicture}[scale=.7]
-      \draw[fill=black](0,0) circle(3);
-      \draw[fill=white](0,0) circle(2.2);
-      \draw[ultra thick](-6,-3)--(6,-3);
-      \draw[ultra thick,blue!70,->](-.707,-.707) arc(225:135:1)
-      node[midway,left]{$\omega$};
-      \draw[fill=blue!70,blue!70](0,-3) circle(.1) node[below right]{$v_a$};
-      \draw[fill=blue!70,blue!70](0,0) circle(.1);
-      \draw[ultra thick,blue!70,->](0,0)--(1,0) node[pos=1,right]{$v_b$};
-      \draw[fill=blue!70,blue!70](0,3) circle(.1);
-      \draw[ultra thick,blue!70,->](0,3)--(2,3) node[pos=1,right]{$v_c$};
-    \end{tikzpicture}
-  \end{center}
-\end{frame}
+%\begin{frame}{Rotating Object Without Slipping}
+%  A tire with radius $r$ rolls along the road with an angular velocity $\omega$
+%  \emph{without slipping}. (This is a very common case for analysis.)  What
+%  is its velocity $v$
+%  \begin{enumerate}[a.]
+%  \item at the contact between the ground and the tire?
+%  \item at the center?
+%  \item at the top of the tire?
+%  \end{enumerate}
+%
+%  \vspace{-.4in}
+%  \begin{center}
+%    \hspace{1in}
+%    \begin{tikzpicture}[scale=.7]
+%      \draw[fill=black](0,0) circle(3);
+%      \draw[fill=white](0,0) circle(2.2);
+%      \draw[ultra thick](-6,-3)--(6,-3);
+%      \draw[ultra thick,blue!70,->](-.707,-.707) arc(225:135:1)
+%      node[midway,left]{$\omega$};
+%      \draw[fill=blue!70,blue!70](0,-3) circle(.1) node[below right]{$v_a$};
+%      \draw[fill=blue!70,blue!70](0,0) circle(.1);
+%      \draw[ultra thick,blue!70,->](0,0)--(1,0) node[pos=1,right]{$v_b$};
+%      \draw[fill=blue!70,blue!70](0,3) circle(.1);
+%      \draw[ultra thick,blue!70,->](0,3)--(2,3) node[pos=1,right]{$v_c$};
+%    \end{tikzpicture}
+%  \end{center}
+%\end{frame}
 
 
 
 \begin{frame}{Angular Acceleration}
-  The change in $\omega$ over a finite time $\Delta t$ is
+  The change in $\omega$ over a finite time interval $\Delta t$ is
   \textbf{average angular acceleration}, which has a unit of \si{rad/\second^2}:
 
   \eq{-.2in}{
@@ -292,7 +293,7 @@
 
   Similar to the relationship between velocity and angular velocity,
   \textbf{average tangential acceleration} $a_\theta$ is related to average
-  angular acceleratio $\overline{\alpha}$ by the radius $r$:
+  angular acceleration $\overline{\alpha}$ by the radius $r$:
     
   \eq{-.3in}{
     \boxed{\overline{a}_\theta
@@ -303,7 +304,7 @@
   }
     
   For \emph{uniform} circular motion, $\omega$ is constant, therefore
-  $\alpha_\theta=0$
+  $\alpha=0$ and $a_\theta=0$
 \end{frame}
 
 
@@ -354,8 +355,8 @@
 
 
 \begin{frame}{Centripetal Acceleration for Uniform Circular Motion}
-  In uniform circular motion ($\alpha=0$) problems where the period or
-  frequency are known, the speed of the object is:
+  In uniform circular motion ($\alpha=0$, constant $\omega$) problems where the
+  period or frequency are known, the speed of the object is:
 
   \eq{-.15in}{
     v=\frac{2\pi r}{T}=2\pi rf
@@ -364,7 +365,7 @@
   Centripetal acceleration can therefore be expressed based on $T$ or $f$:
 
   \eq{-.2in}{
-    a_r=-\frac{v^2}{r^2}\quad\rightarrow\quad
+    a_r=\frac{v^2}{r^2}\quad\rightarrow\quad
     \boxed{
       a_r=\frac{4\pi^2r}{T^2}=4\pi^2rf^2
     }
@@ -606,9 +607,8 @@
     \item Speed of the pendulum at any height is found using conservation
       of energy
       \begin{itemize}
-      \item Tension $\mb{T}$ is always $\perp$ to motion, therefore it does not
-        do any work
-      \item Work is done by gravity (a conservative force) alone
+      \item $\mb{T}$ is $\perp$ to motion, therefore it does not do work
+      \item Work is done by gravity (conservative!) alone
       \end{itemize}
     \item Tangential and centripetal accelerations are based on the net force
       along the angular and radial directions
@@ -691,7 +691,7 @@
 
     \column{.5\textwidth}
     In the radial direction , there is still a net force of $mg\sin\theta$,
-    therefore, there is a tengential acceleration along that direction, with a
+    therefore, there is a tangential acceleration along that direction, with a
     magnitude of:
 
     \eq{-.25in}{
@@ -750,10 +750,10 @@
 
 
 \begin{frame}{Example Problem}
-  \textbf{Example 4:} You are playing with a yo-yo with a mass of
-  \SI{225}{\gram}. The full length of the string is \SI{1.2}{\metre}. You
-  decide to see how slowly you can swing it in a vertical circle while keeping
-  the string fully extended, even when the yo-yo is at the top of its swing.
+  \textbf{Example 4:} You are playing with a yo-yo with a mass $M$. The full
+  length of the string is $R$. You decide to see how slowly you can swing it in
+  a vertical circle while keeping the string fully extended, even when it is
+  at the top of its swing.
   \begin{enumerate}[A.]
   \item Calculate the minimum speed at which you can swing the yo-yo while
     keeping it on a circular path.
@@ -795,16 +795,16 @@
 
 
 
-\begin{frame}{Example}
-  \textbf{Example 6:} A stone of mass $m$ is attached to a light strong string
-  and whirled in a \emph{vertical} circle of radius $r$. At the exact bottom of
-  the path, the tension of the string is three times the weight of the stone.
-  The stone's speed at that point is given by:
-  \begin{enumerate}[(a)]
-  \item $2\sqrt{gR}$
-  \item $\sqrt{2gR}$
-  \item $\sqrt{3gR}$
-  \item $4gR$
-  \end{enumerate}
-\end{frame}
+%\begin{frame}{Example}
+%  \textbf{Example 6:} A stone of mass $m$ is attached to a light strong string
+%  and whirled in a \emph{vertical} circle of radius $r$. At the exact bottom of
+%  the path, the tension of the string is three times the weight of the stone.
+%  The stone's speed at that point is given by:
+%  \begin{enumerate}[(a)]
+%  \item $2\sqrt{gR}$
+%  \item $\sqrt{2gR}$
+%  \item $\sqrt{3gR}$
+%  \item $4gR$
+%  \end{enumerate}
+%\end{frame}
 \end{document}

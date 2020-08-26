@@ -2,28 +2,28 @@
 
 \usetheme{metropolis}
 \setbeamersize{text margin left=.5cm,text margin right=.5cm}
-\setbeamertemplate{navigation symbols}{} % suppress nav bar
-%\setbeamercovered{transparent}
 
-\usepackage[utf8]{inputenc}
+%\usepackage[utf8]{inputenc}
 \usefonttheme{professionalfonts}
 \usepackage{amsmath}
 \usepackage{siunitx}
-%\usepackage{graphicx}
 \usepackage{tikz}
 \usepackage{mathpazo}
-%\usepackage[scaled]{helvet}
 \usepackage{bm}
-%\usepackage{xcolor,colortbl}
-\usepackage{hyperref}
+%\usepackage{hyperref}
+\usepackage{mathtools}
 
 \sisetup{
-  number-math-rm=\mathnormal,
+  detect-all,
+  math-sf=\textsf,
+  number-math-rm=\textnormal,
   per-mode=symbol
 }
 
+\setsansfont{Roboto Light}
 \setmonofont{Ubuntu Mono}
 \setlength{\parskip}{0pt}
+\setlength{\itemsep}{0pt}
 \renewcommand{\baselinestretch}{1}
 
 
@@ -31,7 +31,7 @@
 \subtitle{Advanced Placement Physics 1}
 \author[TML]{Dr.\ Timothy Leung}
 \institute{Olympiads School}
-\date{June 29, 2020}
+\date{\today}
 
 \newcommand{\iii}{\ensuremath\hat{\bm{\imath}}}
 \newcommand{\jjj}{\ensuremath\hat{\bm{\jmath}}}
@@ -102,25 +102,25 @@
   \begin{itemize}
   \item\texttt{PhysAP1-courseOutline.pdf}--The course outline
 %  \item\texttt{PhysAPC-equationSheet.pdf}--Equation sheet for your exams
-  \item\texttt{PhysAP1-01-kinematics.pdf} - Slides on \emph{kinematics} (this set of slides).
-  \item\texttt{PhysAP1-02-dynamics.pdf} - Slides for \emph{dynamics}, the next topic
+  \item\texttt{PhysAP1-01-kinematics.pdf}--This set of slides
+  %\item\texttt{PhysAP1-02-dynamics.pdf}--Slides for \emph{dynamics}, the next topic
   \item\texttt{PhysAP1-01-Homework.pdf}--Homework problems for kinematics
-  \item\texttt{PhysAP1-02-Homework.pdf}--Homework problems for dynmaics
+  %\item\texttt{PhysAP1-02-Homework.pdf}--Homework problems for dynamics
   \end{itemize}
-  
-  \vspace{.1in}Please download/print the PDF file for the class slides before
-  each class. There is no point copying notes that are already on the slides.
-  Instead, focus on things that aren't necessarily on the slides. If you wish
-  to print the slides, we recommend printing \emph{four} slides per page.
+%  
+%  \vspace{.1in}Please download/print the PDF file for the class slides before
+%  each class. There is no point copying notes that are already on the slides.
+%  Instead, focus on things that aren't necessarily on the slides. If you wish
+%  to print the slides, we recommend printing \emph{four} slides per page.
 \end{frame}
 
 
 
-\begin{frame}{Vectors}
-  Please refer to the handout to make sure that you are familiar with basic
-  vector operations. We will be using a slightly more advanced notation method
-  for this course.
-\end{frame}
+%\begin{frame}{Vectors}
+%  Please refer to the handout to make sure that you are familiar with basic
+%  vector operations. We will be using a slightly more advanced notation method
+%  for this course.
+%\end{frame}
 
 
 
@@ -146,19 +146,21 @@
 
 
 \begin{frame}{Position}
-  \textbf{Position} $\mb{x}$ describes the location of an object in a
-  coordinate system. The origin of the coordinate system is called the
-  ``reference point''. The SI unit for position is \textbf{meter}, \si{\metre}.
+  \textbf{Position} ($\mb{x}$) describes the location of an object within a
+  coordinate system. %The origin of the coordinate system is called the
+  %``reference point''.
+  The SI unit for position is \textbf{meter}, \si{\metre}.
   
   \eq{-.2in}{
-    \mb{x}(t)=x(t)\bm{\hat{\imath}} + y(t)\bm{\hat{\jmath}} + z(t)\bm{\hat{k}}
+    \mb{x}(t)=x(t)\iii + y(t)\jjj + z(t)\kkk
   }
 
-  Vectors in 2D/3D Cartesian space are often expressed using the ``IJK notation''
+  Vectors in 2D/3D Cartesian space are often expressed using the
+  \textbf{IJK notation}
   \begin{itemize}
-  \item $\bm{\hat{\imath}}$, $\bm{\hat{\jmath}}$ and $\bm{\hat{k}}$ are
-    \textbf{basis vectors} representing the directions of the $x$, $y$ and $z$
-    axes. Basis vectors are \textbf{unit vectors} (i.e.\ length $1$)
+  \item $\iii$, $\jjj$ and $\kkk$ are \textbf{basis vectors} representing the
+    directions of the $x$, $y$ and $z$ axes. Basis vectors are \textbf{unit
+      vectors} (i.e.\ length 1)
   \item The IJK notation does not explicitly give the magnitude or the direction
     of the vector (needs to be calculated using the Pythagorean theorem)
   \end{itemize}
@@ -167,19 +169,17 @@
 
 
 \begin{frame}{Displacement}
-  \textbf{Displacement} $\Delta\mb{x}(t)$ is the vector change in position from the
-  initial position $\mb{x}_0$ within the same coordinate system. The unit for
-  displacement is also meter.
+  \textbf{Displacement} ($\Delta\mb{x}$) is the vector change in position from
+  the initial position $\mb{x}_0$ within the same coordinate system. The unit
+  for displacement is also meter.
 
   \eq{-.25in}{
-      \Delta\mb{x}(t)=\mb{x}-\mb{x}_0
-      =(x-x_0)\bm{\hat{\imath}}+
-      (y-y_0)\bm{\hat{\jmath}}+
-      (z-z_0)\bm{\hat{k}}
+      \Delta\mb{x}(t)=\mb{x}(t)-\mb{x}_0
+      =(x-x_0)\iii + (y-y_0)\jjj + (z-z_0)\kkk
   }
   \begin{itemize}
   \item IJK notation makes vector addition and subtraction less prone to errors
-  \item Since the reference point $\mb{x}_{\textrm{ref}}=\mb{0}$, the position
+  \item Since the reference point $\mb{x}_{\text{ref}}=\mb{0}$, the position
     vector $\mb{x}$ is also its displacement from the reference point
   \end{itemize}
 \end{frame}
@@ -187,7 +187,7 @@
 
 
 \begin{frame}{Distance}
-  \textbf{Distance} $s(t)$ is a quantity that is \emph{related} to displacement.
+  \textbf{Distance} $s$ is a quantity that is \emph{related} to displacement.
   It is:
   \begin{columns}
     \column{.7\textwidth}
@@ -273,9 +273,9 @@
 
 
 \begin{frame}{Instantaneous Velocity}
-  If displacement $d\mb{x}$ is calculated a very small\footnote{In calculus, a very
-  small change is called \emph{infinitesimally small}} time interval $dt$, then
-  velocity is called the \textbf{instantaneous velocity}:
+  If displacement $d\mb{x}$ is calculated a very small\footnote{In
+    calculus, a very small change is called \emph{infinitesimally small}} time
+  interval $dt$, then velocity is called the \textbf{instantaneous velocity}:
   
   \eq{-.2in}{
 	\overline{\mb{v}}= \frac{\Delta\mb{x}}{\Delta t}\quad\rightarrow\quad
@@ -316,19 +316,19 @@
 
 
 \begin{frame}{Instantaneous \& Average Acceleration}
-  In the same way that velocity descrbes how quickly position changes with time, 
+  In the same way that velocity describes how quickly position changes with time, 
   \textbf{average acceleration} $\overline{\mb{a}}$ is the change in velocity
-  $\Delta\mb{v}$ over a finite time interval $\Delta t$.The unit for acceleration
-  is \si{\metre\per\second^2}.
+  $\Delta\mb{v}$ over a finite time interval $\Delta t$. The unit for
+  acceleration is \textbf{meters per second squared} \si{\metre\per\second^2}.
 
-  \eq{-.2in}{
+  \eq{-.1in}{
     \boxed{
       \overline{\mb{a}} = \frac{\Delta\mb{v}}{\Delta t}
-      =\frac{\mb{v}-\mb{v}_0}{\Delta t}
+      =\frac{\mb{v}(t)-\mb{v}(t_0)}{t-t_0}
     }
   }
   
-  Making the time interval $\Delta t$ infinitesimally small gives the
+  Making the time interval $\Delta t=t-t_0$ infinitesimally small gives the
   \textbf{instantaneous acceleration} $\mb{a}(t)$.
 \end{frame}
 
@@ -373,24 +373,23 @@
 
 
 
-\begin{frame}{If You Are Curious}
-  For the curious minds (i.e.\ we don't need it for AP Physics), the change in
-  acceleration in time is called \textbf{jerk}, with a unit of
-  \si{\metre\per\second^3}:
+\begin{frame}{If You Are Curious (Not Part of AP Physics)}
+  For the curious minds, the time rate of change of acceleration is called
+  \textbf{jerk}, with a unit of \si{\metre\per\second^3}:
 
-  \eq{-.2in}{
+  \eq{-.25in}{
     \overline{\mb{j}}= \frac{\Delta\mb{a}}{\Delta t}
   }
 
-  The change in jerk in time is called \textbf{jounce} or \textbf{snap}, with a
-  unit of \si{\metre\per\second^4}:
+  The time rate of change in jerk is called \textbf{jounce} or \textbf{snap},
+  with a unit of \si{\metre\per\second^4}:
   
-  \eq{-.2in}{
+  \eq{-.1in}{
     \overline{\mb{s}}=\frac{\Delta\mb{j}}{\Delta t}
   }
   
   The next motion quantities are are called \textbf{crackle} and \textbf{pop},
-  but these quantities are almost never used.
+  but these quantities are almost never used.\vspace{.3in}
 \end{frame}
 
 
@@ -405,7 +404,8 @@
   \item Aerodynamic drag: $a(v)=Dv^2$
   \end{itemize}
   In these cases, solving for the motion quantities $x(t)$, $v(t)$ and $a(t)$
-  requires calculus or numerical iterative methods.
+  may require calculus, numerical integration methods, or the conservation of
+  energy.
 \end{frame}
 
 
@@ -414,9 +414,9 @@
 
 \begin{frame}{Kinematic Equations}
   Without calculus, kinematic problems in AP Physics 1 only deal with
-  \underline{constant acceleration}. Non-constant acceleration problems are
-  studied in depth in Physics C. The 1D kinematic equations that will be used
-  in Physics 1 are:
+  \underline{constant acceleration}.
+  %Non-constant acceleration problems are studied in depth in Physics C.
+  The 1D kinematic equations that will be used in Physics 1 are:
   \begin{columns}
     \column{.45\textwidth}
 
@@ -443,28 +443,29 @@
 \end{frame}
 
 
-\begin{frame}{Non-Constant Acceleration}
-  What happens when acceleration is not constant? Our options are:
-  \begin{itemize}
-  \item Give up (bad idea!)
-  \item Use calculus
-  \item Use a numerical iterative method
-  \item<alert@1>Use conservation of energy
-  \end{itemize}
-\end{frame}
+%\begin{frame}{Non-Constant Acceleration}
+%  What happens when acceleration is not constant? Our options are:
+%  \begin{itemize}
+%  \item Give up (bad idea!)
+%  \item Use calculus
+%  \item Use a numerical iterative method
+%  \item<alert@1>Use conservation of energy
+%  \end{itemize}
+%\end{frame}
 
 \section{Motion Graphs}
 
 \begin{frame}{Motion Graphs}
-  You should already be familiar with the \emph{basic} motion graphs from Grade
-  11/12 Physics:
+  You should already be familiar with the \emph{basic} 1D motion graphs.
+  These are still used in AP Physics.
   \begin{itemize}
   \item Position vs.\ time ($x$-$t$) graph
   \item Velocity vs.\ time ($v$-$t$) graph
   \item Acceleration vs.\ time ($a$-$t$) graph
   \end{itemize}
-  Note that these graphs are only valid for 1D motion. Think of them as the
-  graphical representation of the kinematic equations from the previous slide
+  %Note that these graphs are only valid for 1D motion. Think of them as
+  They are the graphical representation of the kinematic equations from the
+  previous slide.
   %Depending on the situation, it may be more useful to plot motion
   %using other quantities as well.
 \end{frame}
@@ -472,9 +473,8 @@
 
 
 \begin{frame}{Uniform Motion}
-  \textbf{Uniform motion} is when an object moves with constant velocity
-  (neither magnitude nor direction changes) and therefore no acceleration. In
-  1D, the motion graphs are:
+  An object moves with constant velocity
+  (neither magnitude nor direction changes) and therefore no acceleration.
   \begin{center}
     \begin{tikzpicture}[scale=.5]
       \draw[->,thick] (0,0)--(4.5,0) node[pos=1,right]{$t$};
@@ -505,8 +505,7 @@
 
 
 \begin{frame}{Uniform Acceleration}
-  \textbf{Uniform acceleration} means that an object moves with a constant
-  non-zero acceleration.
+  An object moves with a constant non-zero acceleration:
   \begin{center}
     \begin{tikzpicture}[scale=.5]
       \draw[->,thick] (0,0)--(4.5,0) node[pos=1,right]{$t$};
@@ -610,6 +609,45 @@
 
 
 
+\begin{frame}{Velocity Squared vs.\ Displacement}
+  If velocity information is given as a function of position\footnote{Depends
+    on experimental set up} then a motion graph can be plotted using this
+  kinematic equation:
+
+  \eq{-.2in}{
+    \underbracket{v^2}_y=\underbracket{v_0^2}_b+\underbracket{2a}_m
+    \underbracket{(x-x_0)}_x
+  }
+
+  by plotting $v^2$ on the $y$-axis and displacement $\Delta x=x-x_0$ on the
+  $x$-axis. The slope of the graph is $m=2a$. The square of the initial
+  velocity ($v_0^2$) is the $y$-intercept.
+\end{frame}
+
+
+
+\begin{frame}{Graphing ``Linear'' Functions}
+  This concept extends to graphing other physical quantities not relating to
+  motion:
+  \begin{itemize}
+  \item To find the index of refraction of a material using Snell's law, plot
+    $\sin\theta_i$ vs.\ $\sin\theta_2$ (rather than $\theta_1$ vs.\ $\theta_2$).
+    The slope is the index $n$:
+
+    \eq{-.25in}{
+      \underbracket{\sin\theta_1}_y=\underbracket{n}_m
+      \underbracket{\sin\theta_2}_x
+    }
+  \item To relate the period of oscillation of a simple pendulum to the length
+    of the pendulum, plot $T$ vs.\ $\sqrt{L}$:
+
+    \eq{-.2in}{
+      \underbracket{T}_y=\underbracket{\frac{2\pi}{\sqrt{g}}}_m
+      \underbracket{\sqrt{L}}_x
+    }
+  \end{itemize}
+\end{frame}
+
 \section{Projectile Motion}
 
 \begin{frame}{Projectile Motion}
@@ -620,37 +658,36 @@
     \begin{tikzpicture}[scale=1.1]
       \draw[->](0,0)--(2,0) node[pos=1,right]{$x$};
       \draw[->](0,0)--(0,2) node[pos=1,above]{$y$};
-      \draw[dotted,domain=0:6.25,thick] plot (\x, {1.2*\x-.2*\x*\x});
+      \draw[dotted,domain=0:4,thick] plot (\x, {1.2*\x-.2*\x*\x});
       \draw[ultra thick,->](0,0)--(.75,.9)node[pos=1,above]{$\mb{v}_0$};
       \draw[very thick,red!80!black,->]
-      (0,0)--(0,.9)node[midway,left]{$v_{y1}$};
+      (0,0)--(0,.9)node[midway,left]{$v_y$};
       \draw[very thick,blue!80!black,->]
       (0,0)--(.75,0)node[midway,below]{$v_x$};
       \draw[->](.5,0)arc(0:52:.5) node[pos=.6,right]{$\theta$};
     \end{tikzpicture}
   \end{center}
   \begin{itemize}
-  \item $x$-axis usually is the \emph{horizontal} direction, with $+$ direction
-    pointing \emph{forward}
-  \item $y$-axis usually is the \emph{vertical} direction, with $+$ direction
-    pointing \emph{up}
-  \item The reference point is usually where the projectile is launched
-  \item Consistent with the right-handed Cartesian coordinate system
+  \item $x$-axis: \emph{horizontal}, pointing \emph{forward}
+  \item $y$-axis: \emph{vertical}, pointing \emph{up}
+  \item Angle $\theta$ measured \emph{above} the horizontal
+  \item The origin is usually where the projectile is launched
+  %\item Consistent with the right-handed Cartesian coordinate system
   \end{itemize}
 \end{frame}
 
 
 
-\begin{frame}{Horizontal ($x$) Direction}
+\begin{frame}{Horizontal Direction}
   The initial velocity $\mb{v}_0$ can be decomposed into its $x$ and $y$
   components using the launch angle $\theta$:
 
   \eq{-.2in}{
-    \mb{v}_0=v_x\iii + v_{y0}\jjj =
+    \mb{v}_0=v_x\iii + v_y\jjj =
     \left[v_0\cos\theta\right]\iii + \left[v_0\sin\theta\right]\jjj
   }
 
-  There is no horizontal acceleration (i.e.\ $a_x=0$), therefore $v_x$ is
+  There is no horizontal acceleration (i.e.\ $a_x=\num{0}$), therefore $v_x$ is
   constant. The kinematic equations reduce to a single equation:
 
   \eq{-.2in}{
@@ -665,7 +702,7 @@
 
 
 
-\begin{frame}{Vertical ($y$) Direction}
+\begin{frame}{Vertical Direction}
   There is constant vertical acceleration due to gravity alone, i.e.\
   $a_y=-g$. ($a_y$ is \emph{negative} due to the way we defined the
   coordinate system.) The important equation is this one:
@@ -676,7 +713,7 @@
 
   These two kinematic equations may also be useful:
 
-  \vspace{-.2in}{\Large
+  \vspace{-.3in}{\Large
     \begin{align*}
       v_y &= \left[v_0\sin\theta\right] -gt\\
       v_y^2&=\left[v_0^2\sin^2\theta\right]-2gy
@@ -687,15 +724,15 @@
 
 
 \begin{frame}{Solving Projectile Motion Problems}
-  Horizontal and vertical motions are independent of each other, but there are
-  variables that are shared in both directions, namely:
+  Horizontal and vertical motions are linearly independent, but variables are
+  shared in both directions:
   \begin{itemize}
   \item Time $t$
   \item Launch angle $\theta$ (above the horizontal)
   \item Initial speed $v_0$
   \end{itemize}
   
-  \vspace{.2in}When solving any projectile motion problems
+  \vspace{.25in}When solving any projectile motion problems
   \begin{itemize}
   \item \emph{Two} equations with \emph{two} unknowns
   \item If an object lands on an incline, there will be a third equation
@@ -706,8 +743,9 @@
 
 
 \begin{frame}{Symmetric Trajectory}
-  A projectile's trajectory is symmetric if the object lands at the same height
-  as when it launched.   The angle $\theta$ is measured above the the horizontal.
+  A projectile's trajectory is \emph{symmetric} if the object lands at the same
+  height as when it launched.   The angle $\theta$ is measured above the the
+  horizontal.
   \begin{itemize}
   \item Time of flight
     \eq{-.1in}{t_\mathrm{max}=\frac{2v_0\sin\theta}{g}}
@@ -724,7 +762,7 @@
   \eq{-.1in}{R=\frac{v_0^2\sin(2\theta)}{g}}
   
   \begin{itemize}
-  \item Maximum range occurs at $\theta=45^\circ$
+  \item Maximum range occurs at $\theta=\ang{45}$
   \item For a given initial speed $v_0$ and range $R$, launch angle $\theta$ is
     given by:
     
@@ -735,7 +773,7 @@
     But there is another angle that \emph{gives the same range}!
 
     \eq{-.2in}{
-      \theta_2=90^\circ-\theta_1
+      \theta_2=\ang{90}-\theta_1
     }
   \end{itemize}
 \end{frame}
@@ -744,20 +782,73 @@
 \section{Relative Motion}
 
 \begin{frame}{Relative Motion}
+  
+  \begin{block}{}
+    \textbf{All motion quantities must be measured relative to a frame of
+      reference}
+  \end{block}
+
+  \vspace{.2in}
+  \begin{itemize}
+  \item A frame of reference is the coordinate system from which all physical
+    measurements are made.
+  \item In \emph{classical} mechanics, the coordinate system is the
+    Cartesian system
+  \item There is no absolute motion/rest: all motions are relative
+  \item All laws of physics are equal in all inertial (non-accelerating) frames
+    of reference (principle of relativity)
+  \end{itemize}
+\end{frame}  
+
+
+
+\begin{frame}{Relative Motion}
   \begin{columns}
     \column{.4\textwidth}
     \begin{tikzpicture}[scale=1.3]
-      \draw[->](0,0)--(-.5,-.5)
-      node[pos=1,left]{$x$}
+      \draw[->](0,0)--(-.5,-.5) node[pos=1,left]{$x'$}
       node[pos=0,above left]{$C$};
-      \draw[->](0,0)--(1,0) node[pos=1,right]{$y$};
-      \draw[->](0,0)--(0,1) node[pos=1,above]{$z$};
+      \draw[->](0,0)--(1,0)     node[pos=1,right]{$y'$};
+      \draw[->](0,0)--(0,1)     node[pos=1,above]{$z'$};
 
-      \draw[->](2,3)--(1.5,2.5)
-      node[pos=1,left]{$x'$}
+      \draw[->](2,3)--(1.5,2.5) node[pos=1,left]{$x$}
       node[pos=0,above left]{$B$};
-      \draw[->](2,3)--(3,3) node[pos=1,right]{$y'$};
-      \draw[->](2,3)--(2,4) node[pos=1,above]{$z'$};
+      \draw[->](2,3)--(3,3)     node[pos=1,right]{$y$};
+      \draw[->](2,3)--(2,4)     node[pos=1,above]{$z$};
+
+      \fill[red!70!black] (3,1) circle(.03) node[below right]{$A$};
+      %\draw[very thick,->,blue!70!black](0,0)--(2.98,.998)
+      %node[midway,below]{$\mb{x}_{AC}$};
+      %\draw[very thick,->,green!80!black](2,3)--(3,1.03)
+      %node[midway,right]{$\mb{x}_{AB}$};
+    \end{tikzpicture}
+
+    \column{.6\textwidth}
+    Two frames of reference
+    \begin{itemize}
+    \item $B$ with axes $x,y,z$
+    \item $C$ with axes $x',y',z'$
+    \end{itemize}
+    The two reference frames may (or may not) be moving relative to each other.
+    The motion of the two reference frames affect how motion of
+    $\textcolor{red!70!black}{A}$ is calculated.
+  \end{columns}
+\end{frame}
+
+
+\begin{frame}{Relative Motion}
+  \begin{columns}
+    \column{.4\textwidth}
+    \begin{tikzpicture}[scale=1.3]
+      \draw[->](0,0)--(-.5,-.5) node[pos=1,left]{$x'$}
+      node[pos=0,above left]{$C$};
+      \draw[->](0,0)--(1,0)     node[pos=1,right]{$y'$};
+      \draw[->](0,0)--(0,1)     node[pos=1,above]{$z'$};
+
+      \draw[->](2,3)--(1.5,2.5) node[pos=1,left]{$x$}
+      node[pos=0,above left]{$B$};
+      \draw[->](2,3)--(3,3)     node[pos=1,right]{$y$};
+      \draw[->](2,3)--(2,4)     node[pos=1,above]{$z$};
 
       \fill[red!70!black] (3,1) circle(.03) node[below right]{$A$};
       \draw[very thick,->,blue!70!black](0,0)--(2.98,.998)
@@ -767,25 +858,15 @@
     \end{tikzpicture}
 
     \column{.6\textwidth}
-    \fbox{
-      \begin{minipage}{.9\textwidth}
-        All motion quantities must be measured relative to a frame of
-        reference
-      \end{minipage}
-    }
-	Two \textbf{frames of reference} (i.e.\ \textbf{coordinate systems})
+    The position of $\textcolor{red!70!black}{A(t)}$ (as a function of time)
+    can be described by
     \begin{itemize}
-    \item $C$ with axes $x,y,z$
-    \item $B$ with axes $x',y',z'$
+    \item $\textcolor{green!80!black}{\mb{x}_{AB}(t)}$ (relative to frame $B$)
+    \item $\textcolor{blue!70!black}{\mb{x}_{AC}(t)}$ (relative to frame $C$)
     \end{itemize}
-    The position of $\textcolor{red!80!black}{A}$ can be described
-    by $\textcolor{blue!70!black}{\mb{x}_{AC}}$ ($A$ relative to frame $C$) or
-    $\textcolor{green!80!black}{\mb{x}_{AB}}$ ($A$ relative to $B$)
-    \begin{itemize}
-    \item Obviously $\mb{x}_{AB}$ and $\mb{x}_{AC}$ are different
-    \item If the object moves, then $\mb{x}_{AB}$ and $\mb{x}_{AC}$ are
-      functions of time
-    \end{itemize}
+    Without needing mathematically rigorous vector notation, it is obvious
+    that $\textcolor{green!80!black}{\mb{x}_{AB}(t)}$ and
+    $\textcolor{blue!70!black}{\mb{x}_{AC}(t)}$ are different vectors
   \end{columns}
 \end{frame}
 
@@ -795,17 +876,15 @@
   \begin{columns}
     \column{.4\textwidth}
     \begin{tikzpicture}[scale=1.3]
-      \draw[->](0,0)--(-.5,-.5)
-      node[pos=1,left]{$x$}
+      \draw[->](0,0)--(-.5,-.5) node[pos=1,left]{$x'$}
       node[pos=0,above left]{$C$};
-      \draw[->](0,0)--(1,0) node[pos=1,right]{$y$};
-      \draw[->](0,0)--(0,1) node[pos=1,above]{$z$};
+      \draw[->](0,0)--(1,0)     node[pos=1,right]{$y'$};
+      \draw[->](0,0)--(0,1)     node[pos=1,above]{$z'$};
 
-      \draw[->](2,3)--(1.5,2.5)
-      node[pos=1,left]{$x'$}
+      \draw[->](2,3)--(1.5,2.5) node[pos=1,left]{$x$}
       node[pos=0,above left]{$B$};
-      \draw[->](2,3)--(3,3) node[pos=1,right]{$y'$};
-      \draw[->](2,3)--(2,4) node[pos=1,above]{$z'$};
+      \draw[->](2,3)--(3,3)     node[pos=1,right]{$y$};
+      \draw[->](2,3)--(2,4)     node[pos=1,above]{$z$};
       
       \draw[very thick,->,purple!80](0,0)--(2,3)
       node[midway,left]{$\mb{x}_{BC}$};
@@ -814,26 +893,27 @@
       node[midway,below]{$\mb{x}_{AC}$};
       \draw[very thick,->,green!30](2,3)--(3,1.03)
       node[midway,right]{$\mb{x}_{AB}$};
-      
     \end{tikzpicture}
 
     \column{.6\textwidth}
-	We can relate the positions of the origins of the two frames of reference by
-	$\mb{x}_{BC}$ (origin of frame $B$ relative to frame $C$)
+    The position vector of the origins of the two reference frames is given by
+    $\textcolor{purple!80}{\mb{x}_{BC}}$
     \begin{itemize}
-    \item The vector pointing from the origin of frame $C$ to the origin of frame
-    $B$
+    \item The vector pointing from the origin of frame $C$ to the origin of
+      frame $B$
     \item If the two frames are moving relative to each other, then
-    $\mb{x}_{BC}$ is a function of time
+    $\textcolor{purple!80}{\mb{x}_{BC}}$ is also a function of time
     \end{itemize}
-    Without needing elaborate specific vector notations, it should be obvious
-    that
+    Without using vector notations, the relationship between the
+    vectors is obvious:
 
-      \eq{-.3in}{
+    \eq{-.3in}{
+      \boxed{
         \textcolor{blue!70!black}{\mb{x}_{AC}}=
         \textcolor{green!80!black}{\mb{x}_{AB}}+
         \textcolor{purple!80}{\mb{x}_{BC}}
-        }
+      }
+    }
   \end{columns}
 \end{frame}
 
@@ -843,17 +923,16 @@
   \begin{columns}
     \column{.4\textwidth}
     \begin{tikzpicture}[scale=1.3]
-      \draw[->](0,0)--(-.5,-.5)
-      node[pos=1,left]{$x$}
+      \draw[->](0,0)--(-.5,-.5)  node[pos=1,left]{$x'$}
       node[pos=0,above left]{$C$};
-      \draw[->](0,0)--(1,0) node[pos=1,right]{$y$};
-      \draw[->](0,0)--(0,1) node[pos=1,above]{$z$};
+      \draw[->](0,0)--(1,0) node[pos=1,right]{$y'$};
+      \draw[->](0,0)--(0,1) node[pos=1,above]{$z'$};
 
       \draw[->](2,3)--(1.5,2.5)
-      node[pos=1,left]{$x'$}
+      node[pos=1,left]{$x$}
       node[pos=0,above left]{$B$};
-      \draw[->](2,3)--(3,3) node[pos=1,right]{$y'$};
-      \draw[->](2,3)--(2,4) node[pos=1,above]{$z'$};
+      \draw[->](2,3)--(3,3) node[pos=1,right]{$y$};
+      \draw[->](2,3)--(2,4) node[pos=1,above]{$z$};
 
       \fill[red!65!black] (3,1) circle(.03) node[below right]{$A$};
       \draw[very thick,->,blue!70!black](0,0)--(2.98,.998)
@@ -867,16 +946,18 @@
     \column{.6\textwidth}
     Starting from the definition of \textbf{relative position}:
 
-    \eq{-.3in}{
-      \textcolor{blue!70!black}{\mb{x}_{AC}}=
-      \textcolor{green!80!black}{\mb{x}_{AB}}+
-      \textcolor{purple!80}{\mb{x}_{BC}}
+    \eq{-.33in}{
+      \boxed{
+        \textcolor{blue!70!black}{\mb{x}_{AC}}=
+        \textcolor{green!80!black}{\mb{x}_{AB}}+
+        \textcolor{purple!80}{\mb{x}_{BC}}
+      }
     }
     
-    \vspace{-.15in}Using the definitions for velocity to get a similar
+    \vspace{-.1in}Using the definitions for velocity to get a similar
     equation for \textbf{relative velocity}:
 
-    \eq{-.3in}{
+    \eq{-.25in}{
       \boxed{
         \textcolor{blue!70!black}{\mb{v}_{AC}} =
         \textcolor{green!80!black}{\mb{v}_{AB}}+
@@ -884,47 +965,49 @@
       }
     }
 
-    \vspace{-.15in}Likewise, \textbf{relative acceleration} has a similar
-    expression:
+    \vspace{-.1in}and \textbf{relative acceleration}:
 
-    \eq{-.3in}{
-      \textcolor{blue!70!black}{\mb{a}_{AC}}=
-      \textcolor{green!80!black}{\mb{a}_{AB}}+
-      \textcolor{purple!80}{\mb{a}_{BC}}
+    \eq{-.25in}{
+      \boxed{
+        \textcolor{blue!70!black}{\mb{a}_{AC}}=
+        \textcolor{green!80!black}{\mb{a}_{AB}}+
+        \textcolor{purple!80}{\mb{a}_{BC}}
+      }
     }
   \end{columns}
 \end{frame}
 
 
 
-\begin{frame}{Relative Velocity Example}
-  If an airplane ($P$) flies in windy air ($A$) we must consider the velocity
-  of the airplane relative to air, i.e.\ $\mb{v}_{PA}$ and the velocity of the
-  air relative to Earth $E$, i.e.\ $\mb{v}_{AE}$. The velocity of the airplane
-  relative to Earth is therefore
-
-  \eq{-.2in}{
-    \mb{v}_{PE}=\mb{v}_{PA}+\mb{v}_{AE}
-  }
-
-  \textbf{Simple example:} If an airplane is flying at a constant velocity of
-  \SI{253}{km/h} south relative to the air and the air velocity is
-  \SI{24}{km/h} east, what is the velocity of the airplane relative to Earth?
-\end{frame}
+%\begin{frame}{Relative Velocity Example}
+%  If an airplane ($P$) flies in windy air ($A$) we must consider the velocity
+%  of the airplane relative to air, i.e.\ $\mb{v}_{PA}$ and the velocity of the
+%  air relative to Earth $E$, i.e.\ $\mb{v}_{AE}$. The velocity of the airplane
+%  relative to Earth is therefore
+%
+%  \eq{-.2in}{
+%    \mb{v}_{PE}=\mb{v}_{PA}+\mb{v}_{AE}
+%  }
+%
+%  \textbf{Simple example:} If an airplane is flying at a constant velocity of
+%  \SI{253}{km/h} south relative to the air and the air velocity is
+%  \SI{24}{km/h} east, what is the velocity of the airplane relative to Earth?
+%\end{frame}
 
 
 
 \begin{frame}{Relative Velocity}
-  In classical mechanics, the equation for relative motion follows the
-  \textbf{Galilean velocity addition rule}:
+  In classical mechanics, the equation for relative velocities follows the
+  \textbf{Galilean velocity addition rule}, which applies to speeds much less
+  than the speed of light:
 
   \eq{-.25in}{
     \mb{v}_{AC}=\mb{v}_{AB}+\mb{v}_{BC}
   }
 
-  \vspace{-.1in}The velocity of $A$ relative to reference frame $C$ is the
-  velocity of $A$ relative to reference frame $B$, plus the velocity of $B$
-  relative to $C$. If we add another reference frame $D$, the equation becomes:
+  The velocity of $A$ relative to reference frame $C$ is the velocity of $A$
+  relative to reference frame $B$, plus the velocity of $B$ relative to $C$. If
+  we add another reference frame $D$, the equation becomes:
 
   \eq{-.25in}{
     \mb{v}_{AD}=\mb{v}_{AB}+\mb{v}_{BC}+\mb{v}_{CD}
@@ -933,20 +1016,18 @@
 
 
 \begin{frame}{Typical Problems}
-  In the AP Physics 1 exam, questions involving kinematics usually appear in the
-  multiple-choice section. The problems themselves are not necessarily very
-  different from Grade 11/12 Physics problems, but:
+  In the AP Physics 1 exam, kinematics questions appear in
+  both multiple-choice and free-response sections. The problems themselves
+  are not necessarily very different from Grade 11/12 Physics problems, but:
   \begin{itemize}
   \item You have to solve problems faster because of time constraint
-  \item You can use $g=\SI{10}{m/s^2}$ in your calculations to make your lives
-    simpler
-  \item A lot of problems are \emph{symbolic}, which means that they deal with
+  \item You can use $g=\SI{10}{\metre/\second\squared}$ in your calculations to
+    make your lives simpler
+  \item Many problems are \emph{symbolic}, which means that they deal with
     the algebraic expressions, not actual numbers
-  \item Will be coupled with other types (e.g.\ dynamics and rotational) in
+  \item Often coupled with other types (e.g.\ dynamics and rotational) in
     the free-response section
   \item You \emph{will} be given an equation sheet
   \end{itemize}
 \end{frame}
-
-
 \end{document}
