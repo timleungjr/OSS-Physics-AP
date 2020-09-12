@@ -12,26 +12,30 @@
 \newcommand{\cpic}[2]{\begin{center}
     \includegraphics[width=#1\textwidth]{#2}
   \end{center}}
-\newcommand{\magdir}[2]{#1 \text{[#2]}}
+%\newcommand{\magdir}[2]{#1 \text{[#2]}}
 \newcommand{\mb}[1]{\mathbf{#1}}
 
+%\newcommand{\genheader}{
+%  \pagestyle{fancy}
+%  \rhead{Student Name:\hspace{1.5in}}%Student Number:\hspace{.75in}}
+%  \chead{}
+%  \lhead{Olympiads School}
+%  \lfoot{}
+%  \cfoot{-\textsf{\textbf{\thepage}}-}
+%  \rfoot{\textsf{\textbf{GO ON TO THE NEXT PAGE.}}}
+%  %\renewcommand{\headrulewidth}{2pt}
+%  %\renewcommand{\footrulewidth}{1pt}
+%}
+
 \newcommand{\genheader}{
-  \pagestyle{fancy}
-  \rhead{Student Name:\hspace{1.5in}}%Student Number:\hspace{.75in}}
-  \chead{}
-  \lhead{Olympiads School}
-  \lfoot{}\cfoot{-\textsf{\textbf{\thepage}}-}
-  \rfoot{\textsf{\textbf{GO ON TO THE NEXT PAGE.}}}
-  %\renewcommand{\headrulewidth}{2pt}
-  %\renewcommand{\footrulewidth}{1pt}
+  Student \#: \underline{\hspace{2in}}\hfill
+  Student Name: \underline{\hspace{2.5in}}
 }
 
 \newcommand{\gentitle}[2]{
   \begin{center}
-    \vspace{-.35in}
-           {\large
-             \textbf{AP PHYSICS #1: #2}
-           }
+    %\vspace{-.35in}
+    {\large\textbf{AP PHYSICS #1: #2}}
   \end{center}
 }
 
@@ -88,12 +92,11 @@
 \setlength{\parindent}{0pt}
 \setlength{\headheight}{14pt}
 
-\usepackage[margin=1.7cm,top=2.5cm,bottom=2.5cm,letterpaper]{geometry}
+\usepackage[margin=1.7cm,top=1.5cm,bottom=2.5cm,letterpaper]{geometry}
 \usepackage{enumitem}
 \usepackage{tikz,graphicx,wrapfig}
 \usepackage{pgfplots}
 \usepackage{amsmath}
-%\usepackage{txfonts}
 \usepackage{newtxtext,newtxmath}
 \usepackage[document]{ragged2e}
 \usepackage[none]{hyphenat}
@@ -107,12 +110,13 @@
 %\sisetup{
 %}
 \sisetup{
-  %  mode=text,
   detect-all,
   %number-math-rm=\mathnormal,
 %  text-sf=\sffamily,
 %  text-rm=\sffamily,
   inter-unit-product =\ensuremath{\cdot{}},
   per-mode=symbol,
-  group-separator={,},
+  %group-separator={,},
 }
+
+\pagestyle{empty}

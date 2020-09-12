@@ -14,7 +14,7 @@
 \usepackage{bm}
 
 \setsansfont{Roboto Light}
-\setmonofont{Ubuntu Mono}
+%\setmonofont{Ubuntu Mono}
 \setlength{\parskip}{0pt}
 \renewcommand{\baselinestretch}{1}
 
@@ -45,9 +45,8 @@
   While we use \textbf{kinematics} to describe the motion of any object
   mathematically, we use \textbf{dynamics} to describe \emph{what} causes
   motion (or more precisely, \emph{what causes motion to change?})
-  \begin{itemize}
-  \item Newton's three laws of motion
-  \end{itemize}
+
+  \vspace{.4in}In other words, Newton's three laws of motion
 \end{frame}
 
 
@@ -63,21 +62,41 @@
   
   \begin{itemize}
   \item ``Moving uniformly'' means \emph{uniform motion} with constant velocity
-    \begin{itemize}
-    \item An object ``at rest'' is also in uniform motion with $\mb{v}=\mb{0}$
-    \end{itemize}
+  \item An object ``at rest'' is also in uniform motion with $\mb{v}=\mb{0}$
   \item As long as an object moves in uniform motion, it must be that
     $\mb{F}_\mathrm{net}=\mb{0}$
-  \item Common examples:
-    \begin{itemize}
-    \item A hockey puck sliding on very smooth ice has gravity and normal
-      force, but the net force is zero
-    \item A car traveling on a highway at \SI{100}{\kilo\metre\per\hour}
-      has many forces acting on it, but the net force is zero 
-    \end{itemize}
+  \item The object is in a state of \textbf{equilibrium}
   \end{itemize}
-  \vspace{.2in}
 \end{frame}
+
+
+
+\begin{frame}{First Law of Motion}
+  Common examples:
+  \begin{itemize}
+  \item A spacecraft traveling in deep space has no forces acting on it
+    and therefore in uniform motion
+  \item A hockey puck sliding on very smooth ice has gravity and normal
+    force acting on it, but the net force is zero
+  \item A car traveling on a highway at \SI{100}{\kilo\metre\per\hour}
+    has many forces acting on it, but the net force is zero 
+  \end{itemize}
+\end{frame}
+
+
+
+\begin{frame}{Static \& Dynamic (Translational) Equilibrium}
+  If the net force on an object is zero ($\Sigma\mb{F}=\mb{0}$) then the
+  object is in a \emph{state of translational equilibrium}\footnote{For
+    rotational motion, the state of \emph{rotational} equilibrium is when the
+    net torque on an object is zero. We will discuss that later in the course.}
+  \begin{itemize}
+  \item Dynamic equilibrium: the object is moving relative to us
+  \item Static equilibrium: the object is not moving relative to us
+  \end{itemize}
+  Caveat: measurements of forces made from inertial frames of reference
+\end{frame}
+
 
 
 \begin{frame}{Second Law of Motion}
@@ -88,7 +107,7 @@
     imprimitur.}
 
   \vspace{.2in}The \emph{alteration of motion} means \emph{acceleration}. The
-  first two laws of motion can be summarized in the equation:
+  first two laws of motion can be summarized in the well-known equation:
 
   \eq{-.2in}{
     \boxed{\mb{F}_{\textrm{net}}=\Sigma\mb{F}=m\mb{a}}
@@ -127,7 +146,7 @@
   \item ``Contrary parts'' means the action and reaction forces act on
     different objects
   \item Third law is the natural consequence of the first and second law.
-    Action/reaction forces are \emph{internal} forces.
+    Action and reaction pair of forces are \emph{internal} forces.
   \end{itemize}
   \vspace{.2in}
 \end{frame}
@@ -190,16 +209,6 @@
   \end{columns}
 \end{frame}
 
-\begin{frame}{Static \& Dynamic Equilibrium}
-  If the net force on an object is zero ($\Sigma\mb{F}=\mb{0}$) then the
-  object is in a \emph{state of equilibrium}
-  \begin{itemize}
-  \item Dynamic equilibrium: the object is moving relative to us
-  \item Static equilibrium: the object is not moving relative to us
-  \end{itemize}
-\end{frame}
-
-
 \section{Common Forces}
 
 \begin{frame}{Common Forces}
@@ -210,11 +219,11 @@
   \item Friction (static $\mb{f}_s$ and kinetic $\mb{f}_k$)
   \item Tension $\mb{T}$
   \item Applied force $\mb{F}_a$
-  \item Spring force $\mb{F}_e$
+  \item Spring force $\mb{F}_s$
   \item Drag $\mb{D}$ (fluid resistance, then again in fluid mechanics)
   \item Buoyant force $\mb{B}$ (discussed in fluid mechanics)
-  \item Electrostatic force $\mb{F}_E$ (discussed in E \& M exam)
-  \item Magnetic force $\mb{F}_M$ (discussed E \& M exam)
+  \item Electrostatic force $\mb{F}_e$
+  \item Magnetic force $\mb{F}_m$
   \end{itemize}
 \end{frame}
 
@@ -562,11 +571,11 @@
 
 
 \begin{frame}{Spring Force}
-  The spring force $F_e$ is the force a compressed or stretched spring
-  exerts onto objects connected to it. It obeys Hooke's Law:
+  The \textbf{spring force} $F_s$ is the force a compressed or stretched spring
+  exerts onto objects connected to it. It obeys Hooke's law:
   
   \eq{-.2in}{
-    \mb{F}_e=-k\mb{x}
+    \mb{F}_s=-k\mb{x}
   }
   where $\mb{x}$ is the relative displacement of the ends of the spring.
   \begin{center}
@@ -575,57 +584,56 @@
 \end{frame}
 
 
-\begin{frame}{Spring Force}
-  \begin{center}
-    \pic{.28}{graphics/spring-example1.png}
-  \end{center}
-  \begin{itemize}
-  \item\vspace{-.15in}As the object falls onto the spring, the spring begins to
-    compress
-  \item As the spring compresses, the spring force (pointing up!) increases
-    linearly (Hooke's law)
-  \item At some point, the spring force balances the weight of the block
-    \begin{itemize}
-    \item At this point, the \emph{acceleration} is zero
-    \item But the velocity continues to be downward
-    \end{itemize}
-  \item The spring continues to compress until velocity is zero
-  \end{itemize}
-\end{frame}
+%\begin{frame}{Spring Force}
+%  \begin{center}
+%    \pic{.28}{graphics/spring-example1.png}
+%  \end{center}
+%  \begin{itemize}
+%  \item\vspace{-.15in}As the object falls onto the spring, the spring begins to
+%    compress
+%  \item As the spring compresses, the spring force (pointing up!) increases
+%    linearly (Hooke's law)
+%  \item At some point, the spring force balances the weight of the block
+%    \begin{itemize}
+%    \item At this point, the \emph{acceleration} is zero
+%    \item But the velocity continues to be downward
+%    \end{itemize}
+%  \item The spring continues to compress until velocity is zero
+%  \end{itemize}
+%\end{frame}
 
 
 
-\begin{frame}{Spring Force}
-  \begin{center}
-    \pic{.28}{graphics/spring-example1.png}
-  \end{center}
-  \begin{itemize}
-  \item\vspace{-.15in}Solving this problem using dynamics is difficult, because:
-    \begin{itemize}
-    \item Spring force scales linearly with \emph{displacement}, but
-    \item Net force scales linearly with \emph{acceleration}
-    \end{itemize}
-  \item The block continues to \emph{increase} velocity even after
-    it starts to compress the spring.
-  \item Acceleration is zero only after the spring has compressed some amount
-  \end{itemize}
-\end{frame}
+%\begin{frame}{Spring Force}
+%  \begin{center}
+%    \pic{.28}{graphics/spring-example1.png}
+%  \end{center}
+%  \begin{itemize}
+%  \item\vspace{-.15in}Solving this problem using dynamics is difficult, because:
+%    \begin{itemize}
+%    \item Spring force scales linearly with \emph{displacement}, but
+%    \item Net force scales linearly with \emph{acceleration}
+%    \end{itemize}
+%  \item The block continues to \emph{increase} velocity even after
+%    it starts to compress the spring.
+%  \item Acceleration is zero only after the spring has compressed some amount
+%  \end{itemize}
+%\end{frame}
 
 
 
-\begin{frame}{Buoyancy}{Everything Floats a Little}
+\begin{frame}{Buoyancy}
   When an object is submerged inside a fluid (e.g.\ water, air, etc), the fluid
   exerts a pressure at the surface of the object. We can find the total buoyant 
   force $\mb{B}$ the fluid exerts on the object.
   \begin{center}
-    \pic{.25}{graphics/rock_fbvectors.png}
+    \pic{.4}{graphics/rock_fbvectors.png}
   \end{center}
 \end{frame}
 
 
 
 \begin{frame}{Buoyancy}
-  \framesubtitle{Everything Floats a Little}
   The buoyant force is given by:
   
   \eq{-.1in}{
@@ -667,11 +675,10 @@
 
 
 \begin{frame}{Free Body Diagrams}
-  In Grade 11/12 Physics, for rectilinear motion (no \emph{rotational motion}),
+  In Physics 11/12, for rectilinear motion (no \emph{rotational} motion),
   FBDs are usually drawn by assuming that all forces acting at the CM,
-  represented by the ``big dot''. For example:
+  represented by the ``big dot'':
   \begin{center}
-    \vspace{-.15in}
     \begin{tikzpicture}[scale=.8]
       \fill (1.5,1) circle(.1);
       \draw [->,very thick] (1.5,1)--(1.5,-.5) node[pos=1,below]{$\mb{w}$};
@@ -780,54 +787,57 @@
 
 
 
-\begin{frame}{Connected Bodies: Example}
-  \textbf{Example:} A tractor-trailer pulling two trailers starts from rest
-  and accelerates with an acceleration $a$ on a straight, level road.
-  The mass of the truck itself (T) is  %$m_T$, while the masses of the are
-  %equal
-  \SI{5450}{kg}, the
-  mass of the first trailer (A) is \SI{31500}{kg}, and the mass of the second
-  trailer (B) is \SI{19600}{kg}.
-  \begin{enumerate}
-  \item What magnitude of force must the truck generate in order to accelerate
-    the entire vehicle?
-  \item What magnitude of force must each of the trailer hitches withstand
-    while the vehicle is accelerating?
-  \end{enumerate}
-  Assume that frictional forces are negligible in comparison with the forces
-  needed to accelerate the large masses.
-\end{frame}
+%\begin{frame}{Connected Bodies: Example}
+%  \textbf{Example:} A tractor-trailer pulling two trailers starts from rest
+%  and accelerates with an acceleration $a$ on a straight, level road.
+%  The mass of the truck (T) is \SI{5450}{kg}, the
+%  mass of the first trailer (A) is \SI{31500}{kg}, and the mass of the second
+%  trailer (B) is \SI{19600}{kg}.
+%  \begin{enumerate}
+%  \item What magnitude of force must the truck generate in order to accelerate
+%    the entire vehicle?
+%  \item What magnitude of force must each of the trailer hitches withstand
+%    while the vehicle is accelerating?
+%  \end{enumerate}
+%  Assume that frictional forces are negligible in comparison with the forces
+%  needed to accelerate the large masses.
+%\end{frame}
+
 
 
 \begin{frame}{Connected Bodies}
-  Other type of connected bodies problem may be like this
+  \textbf{Example:} Types of connected bodies problem may involve objects
+  pressed against each other:
+%  \vspace{.2in}
+%  \begin{columns}
+%    \column{.5\textwidth}
+%    Multiple objects pressed against one another:
+  \begin{center}
+    \begin{tikzpicture}
+      \draw[thick](-2,0)--(4,0);
+      \draw[thick](0,0) rectangle(1,1) node[midway]{$m_1$};
+      \draw[thick](1,0) rectangle(3,1.75)  node[midway]{$m_2$};
+%      \draw[thick](3,0) rectangle(4.5,2);
+      \draw[very thick,->](-1,.5)--(0,.5) node[pos=0,left]{$\mb{F}_a$};
+    \end{tikzpicture}
+  \end{center}
+\end{frame}
 
-  \vspace{.2in}
-  \begin{columns}
-    \column{.5\textwidth}
-    Multiple objects pressed against one another:
-    \begin{center}
-      \begin{tikzpicture}[scale=.8]
-        \draw(-1,0)--(5.5,0);
-        \draw(0,0) rectangle(1,1);
-        \draw(1,0) rectangle(3,1.5);
-        \draw(3,0) rectangle(4.5,2);
-        \draw[very thick,->](-1.5,.5)--(0,.5) node[pos=0,left]{$\mb{F}_a$};
-      \end{tikzpicture}
-    \end{center}
-    
-    \column{.5\textwidth}
-    Multiple objects stacked on top of one another:
-    \begin{center}
-      \begin{tikzpicture}[scale=.8]
-        \draw(-1,0)--(5.5,0);
-        \draw(0,0) rectangle(4.5,1);
-        \draw(1,1) rectangle(3.5,1.5);
-        \draw(2,1.5) rectangle(2.5,2);
-        \draw[very thick,->](4.5,.5)--(6,.5) node[pos=1,right]{$\mb{F}_a$};
-      \end{tikzpicture}
-    \end{center}
-  \end{columns}
+
+
+\begin{frame}{Connected Bodies}
+%    \column{.5\textwidth}
+  \textbf{Example:} Multiple objects stacked on top of one another:
+  \begin{center}
+    \begin{tikzpicture}
+      \draw[thick](-1,0)--(5.5,0);
+      \draw[thick](0,0) rectangle(3,1) node[midway]{$m_1$};
+      \draw[thick](.75,1) rectangle(2.25,1.75) node[midway]{$m_2$};
+      %\draw(2,1.5) rectangle(2.5,2);
+      \draw[very thick,->](3,.5)--(4.5,.5) node[pos=1,right]{$\mb{F}_a$};
+    \end{tikzpicture}
+  \end{center}
+%  \end{columns}
 \end{frame}
 
 
@@ -853,21 +863,21 @@
 \end{frame}
 
 
-\begin{frame}{A Slightly More Difficult Problem}
-  \begin{columns}
-    \column{.35\textwidth}
-    \pic{1}{graphics/pulley_prob_5.png}
-    
-    \column{.65\textwidth}
-    Two blocks of mass $m$ and $M$ are connected via pulley with a
-    configuration as shown on the left. The coefficient of static friction is
-    $\mu_s$, between blocks and surface. What is the maximum mass $m$ so that
-    no sliding occurs?
-  \end{columns}
-\end{frame}
-
-
-
+%\begin{frame}{A Slightly More Difficult Problem}
+%  \begin{columns}
+%    \column{.35\textwidth}
+%    \pic{1}{graphics/pulley_prob_5.png}
+%    
+%    \column{.65\textwidth}
+%    Two blocks of mass $m$ and $M$ are connected via pulley with a
+%    configuration as shown on the left. The coefficient of static friction is
+%    $\mu_s$, between blocks and surface. What is the maximum mass $m$ so that
+%    no sliding occurs?
+%  \end{columns}
+%\end{frame}
+%
+%
+%
 %\begin{frame}{A Difficult Problem!}
 %  \begin{columns}
 %    \column{.6\textwidth}
@@ -922,38 +932,38 @@
 %\end{frame}
 
 
-%\begin{frame}{A More Typical Problem}
-%  \textbf{Example 14:}
-%  More typically, an Atwood machine problem is one where two objects are
-%  sliding on a surface. These surfaces may have (or may not) have friction.
-%  In this example, two blocks are connected by a mass-less string over a
-%  friction-less pulley as shown in the diagram.
-%  \begin{columns}
-%    \column{.45\textwidth}
-%    \begin{tikzpicture}[scale=.8]
-%      \draw[thick](0,0)--(-4,0) node[midway,below]{\tiny $\mu_k=0.14$};
-%      \draw(-1.75,0) rectangle(-3,.75) node[midway]{\tiny\SI{0.80}{\kg}};
-%      \draw(-1.75,.44)--(.1,.44);
-%      \begin{scope}[rotate=-30]
-%        \draw[thick](0,0)--(5,0) node[midway,left]{\tiny $\mu_k=0.14$};
-%        \draw(3,0) rectangle(4.25,.75) node[midway]{\tiny\SI{2.}{\kg}};
-%        \draw(3,.44)--(-.05,.44);
-%      \end{scope}
-%      \begin{scope}[rotate=-15]
-%        \draw (0,0)--(0,.3);
-%        \draw (0,.3) circle(.15);
-%      \end{scope}
-%      \draw[gray!50](0,0)--(0,-2);
-%      \draw[->](0,-.5)arc(270:330:.5)node[midway,right]{\tiny\ang{60}};
-%    \end{tikzpicture}
-%    \column{.55\textwidth}
-%
-%    \begin{enumerate}[(a)]
-%    \item Determine the acceleration of the blocks.
-%    \item Calculate the tension in the string.
-%    \item If the string broke, for what minimum value of the coefficient of
-%      static friction would the \SI{2.}{kg} block not begin to slide?
-%    \end{enumerate}
-%  \end{columns}
-%\end{frame}
+\begin{frame}{A More Typical Problem}
+  More typically, an Atwood machine problem is one where two objects are
+  sliding on a surface. These surfaces may (or may not) have friction.
+
+  \vspace{.1in}\textbf{Example:} Two blocks are connected by a massless string
+  over a frictionless pulley as shown in the diagram.
+  \begin{columns}
+    \column{.45\textwidth}
+    \begin{tikzpicture}[scale=.8]
+      \draw[thick](0,0)--(-4,0) node[midway,below]{\tiny $\mu_k=0.14$};
+      \draw(-1.75,0) rectangle(-3,.75) node[midway]{\tiny\SI{0.80}{\kg}};
+      \draw(-1.75,.44)--(.1,.44);
+      \begin{scope}[rotate=-30]
+        \draw[thick](0,0)--(5,0) node[midway,left]{\tiny $\mu_k=0.14$};
+        \draw(3,0) rectangle(4.25,.75) node[midway]{\tiny\SI{2.}{\kg}};
+        \draw(3,.44)--(-.05,.44);
+      \end{scope}
+      \begin{scope}[rotate=-15]
+        \draw (0,0)--(0,.3);
+        \draw (0,.3) circle(.15);
+      \end{scope}
+      \draw[gray!50](0,0)--(0,-2);
+      \draw[->](0,-.5)arc(270:330:.5)node[midway,below right]{\tiny\ang{60}};
+    \end{tikzpicture}
+    \column{.55\textwidth}
+
+    \begin{enumerate}[(a)]
+    \item Determine the acceleration of the blocks.
+    \item Calculate the tension in the string.
+    \item If the string broke, for what minimum value of the coefficient of
+      static friction would the \SI{2}{kg} block not begin to slide?
+    \end{enumerate}
+  \end{columns}
+\end{frame}
 \end{document}
