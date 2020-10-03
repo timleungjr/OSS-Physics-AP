@@ -12,7 +12,6 @@
 \newcommand{\cpic}[2]{\begin{center}
     \includegraphics[width=#1\textwidth]{#2}
   \end{center}}
-%\newcommand{\magdir}[2]{#1 \text{[#2]}}
 \newcommand{\mb}[1]{\mathbf{#1}}
 
 %\newcommand{\genheader}{
@@ -114,7 +113,7 @@
   %number-math-rm=\mathnormal,
 %  text-sf=\sffamily,
 %  text-rm=\sffamily,
-  inter-unit-product =\ensuremath{\cdot{}},
+%  inter-unit-product =\ensuremath{\cdot{}},
   per-mode=symbol,
   %group-separator={,},
 }

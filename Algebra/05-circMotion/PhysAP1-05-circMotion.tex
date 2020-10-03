@@ -30,7 +30,7 @@
 \subtitle{Advanced Placement Physics 1}
 \author[TML]{Dr.\ Timothy Leung}
 \institute{Olympiads School}
-\date{July 13, 2020}
+\date{\today}
 
 \newcommand{\pic}[2]{\includegraphics[width=#1\textwidth]{#2}}
 \newcommand{\mb}[1]{\ensuremath\mathbf{#1}}
@@ -166,7 +166,7 @@
     
     \column{.68\textwidth}
     For circular motion with constant radius $r$, the \textbf{angular position}
-    $\theta$ can fully describes an object's position. It is generally measured
+    $\theta(t)$ fully describes an object's position. It is generally measured
     in radians (rad):
       
     \eq{-.25in}{
@@ -207,7 +207,7 @@
     angular velocity by:
 
     \eq{-.3in}{
-      v=r\omega
+      v(t)=r\omega(t)
     }    
 
     \begin{itemize}
@@ -246,8 +246,8 @@
       f=\frac1T
     }
     
-    $T$ is measured in \textbf{seconds} (\si{\s}) and $f$ in \textbf{hertz}
-    (\si{\hertz}). Period and frequency are reciprocals of each other.
+    $T$ is measured in seconds (\si{\s}) and $f$ in hertz (\si{\hertz}). Period
+    and frequency are reciprocals of each other.
   \end{columns}
 \end{frame}
 
@@ -285,33 +285,34 @@
 
 \begin{frame}{Angular Acceleration}
   The change in $\omega$ over a finite time interval $\Delta t$ is
-  \textbf{average angular acceleration}, which has a unit of \si{rad/\second^2}:
+  \textbf{average angular acceleration}, with a unit of
+  \si{rad\per\second\squared}:
 
-  \eq{-.2in}{
+  \eq{-.25in}{
     \boxed{\overline{\alpha}=\frac{\Delta\omega}{\Delta t}}
   }
 
   Similar to the relationship between velocity and angular velocity,
-  \textbf{average tangential acceleration} $a_\theta$ is related to average
+  \textbf{average tangential acceleration} $\overline{a}_t$ is related to
   angular acceleration $\overline{\alpha}$ by the radius $r$:
     
-  \eq{-.3in}{
-    \boxed{\overline{a}_\theta
+  \eq{-.2in}{
+    \boxed{\overline{a}_t
       =\frac{\Delta v}{\Delta t}
       =\frac{r\Delta\omega}{\Delta t}
       =r\overline{\alpha}
     }
   }
     
-  For \emph{uniform} circular motion, $\omega$ is constant, therefore
-  $\alpha=0$ and $a_\theta=0$
+  For \emph{uniform} circular motion (constant $\omega$), $\alpha=0$ and
+  $a_\theta=0$
 \end{frame}
 
 
 
 \begin{frame}{Kinematics in the Angular Direction}
-  For constant angular acceleration $\alpha$, the kinematic equations are just
-  like in rectilinear motion, but with the $\theta$ replaces $x$, $\omega$
+  For constant angular acceleration $\alpha$, the kinematic equations are the
+  same in rectilinear motion, but with $\theta$ replaces $x$, $\omega$
   replaces $v$, and $\alpha$ replaces $a$:
 
   \vspace{-.3in}{\Large
@@ -322,7 +323,7 @@
     \end{align*}
   }
   
-  If $\alpha$ is \emph{not} constant, calculus will be required.
+  Calculus is required for non-constant $\alpha$.
 \end{frame}
 
 
@@ -336,19 +337,19 @@
 
 
 \begin{frame}{Centripetal Acceleration \& Centripetal Force}
-  From Grade 12 Physics, you should know that there is also a component of
+  In Grade 12 Physics, you should know that there is also a component of
   acceleration toward the center of the rotation, called the
-  \textbf{centripetal acceleration} $a_r$:
+  \textbf{centripetal acceleration} $a_c$:
 
   \eq{-.15in}{
-    \boxed{a_r=\frac{v^2}{r}=\omega^2r}
+    \boxed{a_c=\frac{v^2}{r}=\omega^2r}
   }
 
   The force that causes the centripetal acceleration is called the
   \textbf{centripetal force}, also toward the center of rotation:
 
   \eq{-.15in}{
-    \boxed{\mb{F}_r=ma_r=\frac{mv^2}{r}}
+    \boxed{\mb{F}_c=ma_c=\frac{mv^2}{r}}
   }
 \end{frame}
 
@@ -365,9 +366,9 @@
   Centripetal acceleration can therefore be expressed based on $T$ or $f$:
 
   \eq{-.2in}{
-    a_r=\frac{v^2}{r^2}\quad\rightarrow\quad
+    a_c=\frac{v^2}{r^2}\quad\rightarrow\quad
     \boxed{
-      a_r=\frac{4\pi^2r}{T^2}=4\pi^2rf^2
+      a_c=\frac{4\pi^2r}{T^2}=4\pi^2rf^2
     }
   }
 \end{frame}
@@ -380,9 +381,9 @@
     \begin{tikzpicture}[scale=4.3]
       \draw[dashed] (.866,-.5) arc(-30:30:1);
       \draw[ultra thick, red,->] (1,0)--(.5,0)
-      node[pos=0.5,below]{\footnotesize $a_r=\frac{v^2}{r}$};
+      node[pos=0.5,below]{\footnotesize $a_c=\frac{v^2}{r}$};
       \draw[ultra thick, blue,->] (1,0)--(1,.3)
-      node[pos=1,above right]{\footnotesize $a_\theta=r\alpha$};
+      node[pos=1,above right]{\footnotesize $a_t=r\alpha$};
       \fill (1,0) circle(.02);
     \end{tikzpicture}
     
@@ -390,10 +391,10 @@
     \begin{itemize}
     \item In general circular motion, there are two components of acceleration:
       \begin{itemize}
-      \item\textcolor{red}{\textbf{Centripetal acceleration} $a_r$} depends on
+      \item\textcolor{red}{\textbf{Centripetal acceleration} $a_c$} depends on
         radius of curvature $r$ and instantaneous speed $v$. The direction of
         the acceleration is toward the center of the circle.
-      \item \textcolor{blue}{\textbf{Tangential acceleration} $a_\theta$}
+      \item \textcolor{blue}{\textbf{Tangential acceleration} $a_t$}
         depends on radius $r$  and angular acceleration $\alpha$. The direction
         of the acceleration is tangent to the circle
       \end{itemize}
@@ -649,7 +650,7 @@
     Centripetal acceleration is also zero:
 
     \eq{-.2in}{
-      a_r=\frac{v^2}{r}=0
+      a_c=\frac{v^2}{r}=0
     }
 
     and therefore the net force along the radial direction is zero. The tension
@@ -690,12 +691,12 @@
     \end{tikzpicture}
 
     \column{.5\textwidth}
-    In the radial direction , there is still a net force of $mg\sin\theta$,
-    therefore, there is a tangential acceleration along that direction, with a
+    In the tangential direction , there is a net force of $mg\sin\theta$,
+    therefore, a tangential acceleration along that direction, with a
     magnitude of:
 
     \eq{-.25in}{
-      a_\theta=g\sin\theta
+      a_t=g\sin\theta
     }
 
     \vspace{-.1in}This is the same acceleration as an object sliding down a
@@ -731,17 +732,17 @@
     \item Maximum centripetal acceleration:
 
       \eq{-.25in}{
-        a_r=\frac{v^2}{r}
+        a_c=\frac{v^2}{r}
       }
     \item No tangential acceleration:
 
       \eq{-.25in}{
-        a_\theta=0
+        a_t=0
       }
     \item At the lowest point, tension is the highest:
 
       \eq{-.3in}{
-        T=w+F_r=m\left(g+\frac{v^2}{r}\right)
+        T=w+F_c=m\left(g+\frac{v^2}{r}\right)
       }
     \end{itemize}
   \end{columns}

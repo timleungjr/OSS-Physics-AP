@@ -19,7 +19,7 @@
     \SI{2}{\metre\per\second} and collides with a \SI{4}{\kilo\gram} train
     car rolling to the right at \SI{1}{\metre\per\second}. The two cars stick
     together. The velocity of the cars after the collision is
-    \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
+    \begin{enumerate}[nosep,leftmargin=18pt,label=(\Alph*)]
     \item $2/7$ \si{\metre\per\second} to the left
     \item $2/7$ \si{\metre\per\second} to the right
     \item $4/7$ \si{\metre\per\second} to the left
@@ -31,12 +31,24 @@
   \textbf{Questions \ref{impulse1}--\ref{impulse2}}. A force acts on a 2.0 kg
   mass during a time interval as shown in the graph.
   \begin{center}
-    \pic{.25}{impulse-curve}
+    \begin{tikzpicture}[scale=.65]
+      \draw[thick,->](0,0)--(7,0) node[pos=1,right]{$t$ (s)};
+      \foreach \y in {1,...,4}{
+        \draw(-.1,\y)--(.1,\y) node[pos=0,left]{\footnotesize\y};
+      }
+      \draw[thick,->](0,0)--(0,5) node[pos=1,above]{$F$ (N)};
+      \foreach \x in {2,4,6}{
+        \draw(\x,-.1)--(\x,.1) node[pos=0,below]{\footnotesize\x};
+      }
+      \draw[thick](0,0)--(2,4)--(4,4)--(6,0);
+      \fill(2,4) circle(.08);
+      \fill(4,4) circle(.08);
+    \end{tikzpicture}
   \end{center}
   \begin{enumerate}[leftmargin=18pt,resume]
   \item The impulse given to the mass from $t=0$ to $t=\SI{6}{\second}$ is
     \label{impulse1}
-    \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
+    \begin{enumerate}[nosep,leftmargin=18pt,label=(\Alph*)]
     \item\SI{4 }{\newton\second}
     \item\SI{8 }{\newton\second}
     \item\SI{12}{\newton\second}
@@ -44,10 +56,10 @@
     \item\SI{24}{\newton\second}
     \end{enumerate}
     
-  \item If the initial speed of the mass is 2 m/s at $t=0$, what is its speed
-    at the end of 6 s?
+  \item If the initial speed of the mass is \SI{2}{\metre\per\second} at $t=0$,
+    what is its speed at the end of 6 s?
     \label{impulse2}
-    \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
+    \begin{enumerate}[nosep,leftmargin=18pt,label=(\Alph*)]
     \item 4 m/s
     \item 6 m/s
     \item 8 m/s
@@ -59,34 +71,44 @@
   \item Two steel balls, one of mass $m$ and the other of mass $2m$, collide and
     rebound in a perfectly elastic collision. Which of the following is
     conserved in this elastic collision?
-    \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
+    \begin{enumerate}[nosep,leftmargin=18pt,label=(\Alph*)]
     \item velocity only
     \item momentum only
     \item momentum and kinetic energy only
     \item momentum, velocity, and kinetic energy
     \item kinetic energy only
     \end{enumerate}
+    \vspace{.8in}
     
   \item A rubber ball of mass $m$ strikes a wall with a speed $v$ at an angle
     $\theta$ below the normal line and rebounds from the wall at the same speed
-    and angle above the normal line as shown. The change in momentum
-    of the ball is
+    and angle above the normal line as shown. The magnitude of the change in
+    momentum of the ball is
     \begin{center}
-      \pic{.25}{ball-bounce-wall.png}
+      \begin{tikzpicture}
+        \fill[gray!60](-.2,2) rectangle(0,-2);
+        \draw[very thick](0,-2)--(0,2);
+        \draw[dashed](0,0)--(2,0) node[right]{\small Normal};
+        \draw[->,rotate=35, thick](0,0)--(2,0) node[right]{$v$};
+        \draw[<-,rotate=-35,thick](0,0)--(2,0) node[right]{$v$};
+        \draw[thick](1,0)  arc(0:-35:1)  node[midway,right]{\small$\theta$};
+        \draw[thick](1.2,0)arc(0: 35:1.2)node[midway,right]{\small$\theta$};
+      \end{tikzpicture}
     \end{center}
-    \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
+    \begin{enumerate}[nosep,leftmargin=18pt,label=(\Alph*)]
     \item $mv$
     \item $2mv$
     \item $mv\cos\theta$
     \item $2mv\cos\theta$
     \item  zero
     \end{enumerate}
+    \columnbreak
     
   \item Two blocks are connected by a compressed spring and rest on a
     frictionless surface. The blocks are released from rest and pushed apart
     by the compressed spring. If one mass is twice the mass of the other,
     which of the following is the same for both blocks?
-    \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
+    \begin{enumerate}[nosep,leftmargin=18pt,label=(\Alph*)]
     \item magnitude of momentum
     \item acceleration
     \item speed
@@ -102,7 +124,7 @@
     \begin{center}
       \pic{.23}{railroad-car-sand.png}
     \end{center}
-    \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
+    \begin{enumerate}[nosep,leftmargin=18pt,label=(\Alph*)]
     \item\SI{500 }{\kilo\gram}
     \item\SI{1000}{\kilo\gram}
     \item\SI{2000}{\kilo\gram}
@@ -117,9 +139,16 @@
     \SI{.4}{\kilo\gram} ball is \SI{2}{\metre\per\second} downward.
     The $y$-component of the velocity of the \SI{.2}{\kilo\gram} ball must be
     \begin{center}
-      \pic{.23}{big-small-billiard-balls.png}
+      \begin{tikzpicture}[scale=.5]
+        \draw[dashed](-3,0)--(4,0) node[right]{\small$x$};
+        \draw[dashed](0,-2)--(0,4) node[above]{\small$y$};
+        \draw(.3,.3) circle(.3) node[above]{\small\;\;\;\SI{.2}{\kilo\gram}};
+        \draw[->](.6,.3)--(1.6,.3) node[right]{\small$v_2$};
+        \draw(-2.3,-.5) circle(.5) node[below left]{\small\SI{.4}{kg}\;\;};
+        \draw[->](-1.8,-.5)--(-1,-.5) node[right]{\small$v_1$};
+      \end{tikzpicture}
     \end{center}
-    \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
+    \begin{enumerate}[nosep,leftmargin=18pt,label=(\Alph*)]
     \item \SI{1}{\metre\per\second} upward
     \item \SI{2}{\metre\per\second} upward
     \item \SI{1}{\metre\per\second} downward
@@ -128,29 +157,30 @@
     \end{enumerate}
 
     
-%%Questions 159–160. Two balls are on a horizontal billiard table. A 1.0 kg
-%%billiard ball moves downward along the y-axis with a speed of 16 m/s toward
-%%a 2.0 kg ball that is at rest. The balls collide at an angle, and move along the
-%%lines shown. After the collision, the 1.0 kg ball moves at 9 m/s along the +x-
-%%axis. The table below shows the x and y components of the momentum in kg
-%%m/s of the two balls before and after the collision.
-%%159. Which of the following statements is true?
-%%(A) Momentum is conserved only in the x-direction in this collision.
-%%(B) Momentum is conserved only in the y-direction in this collision.
-%%(C) Momentum is conserved in both the x- and y-directions in this
-%%collision
-%%(D) The momentum of the 1.0 kg ball increases after the collision.
-%%(E) The momentum of the 2.0 kg ball decreases after the collision.160. What is the speed of the 2.0 kg ball after the collision?
-%%(A) 16.0 m/s
-%%(B) 9.2 m/s
-%%(C) 7.5 m/s
-%%(D) 6.0 m/s
-%%(E) 5.0 m/s
+%Questions 159–160. Two balls are on a horizontal billiard table. A 1.0 kg
+%billiard ball moves downward along the y-axis with a speed of 16 m/s toward
+%a 2.0 kg ball that is at rest. The balls collide at an angle, and move along the
+%lines shown. After the collision, the 1.0 kg ball moves at 9 m/s along the +x-
+%axis. The table below shows the x and y components of the momentum in kg
+%m/s of the two balls before and after the collision.
+%159. Which of the following statements is true?
+%(A) Momentum is conserved only in the x-direction in this collision.
+%(B) Momentum is conserved only in the y-direction in this collision.
+%(C) Momentum is conserved in both the x- and y-directions in this
+%collision
+%(D) The momentum of the 1.0 kg ball increases after the collision.
+%(E) The momentum of the 2.0 kg ball decreases after the collision.160. What is the speed of the 2.0 kg ball after the collision?
+%(A) 16.0 m/s
+%(B) 9.2 m/s
+%(C) 7.5 m/s
+%(D) 6.0 m/s
+%(E) 5.0 m/s
+
   \item A \SI{.3}{\kilo\gram} baseball at rest on a tee is struck by a bat. The
     ball leaves the at with a speed of \SI{20}{\metre\per\second} at an angle
     of \ang{45} above the horizontal. The magnitude of the impulse imparted to
     the baseball by the bat is most nearly
-    \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
+    \begin{enumerate}[nosep,leftmargin=18pt,label=(\Alph*)]
     \item\SI{2}{\newton\second}
     \item\SI{6}{\newton\second}
     \item\SI{12}{\newton\second}
@@ -161,40 +191,42 @@
   \item Two ice skaters, a large man and a small woman, are initially at rest
     and holding each other's hands. They push away horizontally. Afterward,
     which of the following statements is true?
-    \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
+    \begin{enumerate}[nosep,leftmargin=18pt,label=(\Alph*)]
     \item They have equal and opposite kinetic energies.
     \item The have equal and opposite momenta.
     \item The large man applies a greater force to the small woman.
     \item The small woman applies a greater force to the large man.
     \item They recoil with equal and opposite velocities.
     \end{enumerate}
+    \vspace{.8in}
     
-  \item A small mass $m$ is moving with a speed $v$ toward a stationary mass
-    $M$. The speed of the center of mass of the system is
-    \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
-    \item $\displaystyle\left(\frac{m}{m+M}\right)v$
-    \item $\displaystyle\left(\frac{m+M}{m}\right)v$
-    \item $\displaystyle\left(\frac{m}{M}\right)v$
-    \item $\displaystyle\left(1+\frac{m}{M}\right)v$
-    \item $\displaystyle\left(1+\frac{M}{3m}\right)v$
-    \end{enumerate}
+%  \item A small mass $m$ is moving with a speed $v$ toward a stationary mass
+%    $M$. The speed of the center of mass of the system is
+%    \begin{enumerate}[nosep,leftmargin=18pt,label=(\Alph*)]
+%    \item $\displaystyle\left(\frac{m}{m+M}\right)v$
+%    \item $\displaystyle\left(\frac{m+M}{m}\right)v$
+%    \item $\displaystyle\left(\frac{m}{M}\right)v$
+%    \item $\displaystyle\left(1+\frac{m}{M}\right)v$
+%    \item $\displaystyle\left(1+\frac{M}{3m}\right)v$
+%    \end{enumerate}
 
   \item A known net force $F$ acts on an unknown mass for a known time
     $\Delta t$. From this information, you could determine the
-    \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
+    \begin{enumerate}[nosep,leftmargin=18pt,label=(\Alph*)]
     \item change in kinetic energy of the object
     \item change in velocity of the object
     \item acceleration of the object
     \item mass of the object
     \item change in momentum of the object
     \end{enumerate}
-
+    \vspace{.8in}
+    
   \item A \SI{100}{\kilo\gram} cannon sits at rest with a \SI{1}{\kilo\gram}
     cannonball in the barrel. The cannonball is fired with a speed of
     \SI{50}{\metre\per\second} to the right, causing the cannon to recoil with
     a speed of \SI{.5}{\metre\per\second} to the left. The velocity of the
     center of mass of the cannon-cannonball system is
-    \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
+    \begin{enumerate}[nosep,leftmargin=18pt,label=(\Alph*)]
     \item zero
     \item\SI{5}{\metre\per\second} to the right
     \item\SI{5}{\metre\per\second} to the left
@@ -209,13 +241,21 @@
   pieces of mass $m$ move off at right angles to each other with the same
   momentum $mv$, as shown.
   \begin{center}
-    \pic{.25}{3-piece-bomb.png}
+    \begin{tikzpicture}[scale=.6]
+      \draw[thick,dashed](-1.5,0)--(3,0);
+      \draw[thick,dashed](0,-1.5)--(0,3);
+      \draw[thick](0,0) circle(.5);
+      \fill[thick](-1.5,0) circle(.15) node[above]{\small $m$};
+      \fill[thick](0,-1.5) circle(.15) node[right]{\small $m$};
+      \draw[very thick,->](-1.5,0)--(-3,0)node[left]{\small$mv$};
+      \draw[very thick,->](0,-1.5)--(0,-3)node[below]{\small$mv$};
+    \end{tikzpicture}
   \end{center}
   
   \begin{enumerate}[leftmargin=18pt,resume]
   \item The speed of mass $2m$ after the explosion is
     \label{explode1}
-    \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
+    \begin{enumerate}[nosep,leftmargin=18pt,label=(\Alph*)]
     \item $2v$
     \item $\displaystyle\sqrt{2}v$
     \item $\displaystyle\frac{\sqrt{2}}{2}v$
@@ -225,7 +265,7 @@
     
   \item The direction of velocity of mass $2m$ is
     \label{explode2}
-    \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
+    \begin{enumerate}[nosep,leftmargin=18pt,label=(\Alph*)]
     \item $\rightarrow$
     \item $\swarrow$
     \item $\downarrow$
@@ -264,7 +304,7 @@
     causes the block to break into two pieces, each of which moves in the
     horizontal direction. One piece of mass $m/4$ moves to the left with a
     speed of $2v_0$. What is the velocity of the other piece?
-    \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
+    \begin{enumerate}[nosep,leftmargin=18pt,label=(\Alph*)]
     \item$2v_0$ to the right
     \item$v_0$ to the right
     \item$3⁄4 v_0$ to the right
@@ -280,12 +320,19 @@
   are initially at rest. The first and second mass collide elastically, and
   then the second and third masses collide inelastically.
   \begin{center}
-    \pic{.4}{3-masses.png}
+    \begin{tikzpicture}
+      \fill[gray!50](0,0) rectangle(7,-.2);
+      \draw[thick](0,0)--(7,0);
+      \draw[thick](.8,0) rectangle(1.8,1);
+      \draw[thick](2.5,0) rectangle(3.5,1);
+      \draw[thick](5,0) rectangle(6,1);
+      \draw[very thick,->](5,.5)--(4,.5) node[midway,above]{\SI{3}{m/s}};
+    \end{tikzpicture}
   \end{center}
   \begin{enumerate}[leftmargin=18pt,resume]
   \item The speed of the second mass after the collision is
     \label{3masses1}
-    \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
+    \begin{enumerate}[nosep,leftmargin=18pt,label=(\Alph*)]
     \item zero
     \item\SI{1.5}{\metre\per\second}
     \item\SI{3.}{\metre\per\second}
@@ -296,7 +343,7 @@
   \item The speed of the second and third masses after they collide
     inelastically is
     \label{3masses2}
-    \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
+    \begin{enumerate}[nosep,leftmargin=18pt,label=(\Alph*)]
     \item zero
     \item\SI{1.5}{\metre\per\second}
     \item\SI{3.0}{\metre\per\second}
@@ -352,7 +399,7 @@
   \begin{enumerate}[resume,leftmargin=18pt]
   \item The speed of the boy and sled after he jumps on it is
     \label{boy1}
-    \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
+    \begin{enumerate}[nosep,leftmargin=18pt,label=(\Alph*)]
     \item\SI{0.5}{\metre\per\second}
     \item\SI{0.8}{\metre\per\second}
     \item\SI{1.0}{\metre\per\second}
@@ -364,14 +411,15 @@
     such a way the boy is at rest, and the sled continues to move forward.
     The speed of the sled after the boy jumps off is
     \label{boy2}
-    \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
+    \begin{enumerate}[nosep,leftmargin=18pt,label=(\Alph*)]
     \item\SI{1.5}{\metre\per\second}
     \item\SI{2.0}{\metre\per\second}
     \item\SI{3.0}{\metre\per\second}
     \item\SI{4.5}{\metre\per\second}
     \item\SI{6.0}{\metre\per\second}
     \end{enumerate}
-
+    \columnbreak
+    
 %%Questions 182–183
 %%A cart of mass m 1 is initially moving with a speed of 4.0 m/s on a track
 %%toward a stationary cart of mass m 2 = 2 kg. After the collision, mass m 1
@@ -399,7 +447,7 @@
     ramp and collides with another block of mass 1.5 kg at rest at the
     bottom of the ramp. The two blocks stick together and move with a
     speed of 5 m/s. The height $h$ from which the 1.0 kg block began is
-    \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
+    \begin{enumerate}[nosep,leftmargin=18pt,label=(\Alph*)]
     \item 0.8 m
     \item 1.2 m
     \item 1.8 m
@@ -411,7 +459,7 @@
     from a string. The dart and block then rise to a maximum height $h$. An
     expression for the initial speed v o of the dart before striking the block
     is
-    \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
+    \begin{enumerate}[nosep,leftmargin=18pt,label=(\Alph*)]
     \item$\sqrt{gh}$
     \item$\sqrt{2gh}$
     \item$\sqrt{50gh}$
@@ -428,14 +476,14 @@
       \begin{tikzpicture}[scale=.8]
         \draw[->](1,1.3)--(2,1.3) node[pos=1,right]{$v_0$};
         \draw(0,0)--(8,0);
-        \draw(1,0) rectangle (2,1) node[midway]{$m_1$};
-        \draw(6,0) rectangle (7,1) node[midway]{$m_2$};
+        \draw[thick](1,0) rectangle (2,1) node[midway]{$m_1$};
+        \draw[thick](6,0) rectangle (7,1) node[midway]{$m_2$};
         \draw[thick,
           decoration={aspect=.4,segment length=1.5mm, amplitude=2mm,coil},
           decorate] (6,.5)--(5,.5);
       \end{tikzpicture}
     \end{center}
-    \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
+    \begin{enumerate}[nosep,leftmargin=18pt,label=(\Alph*)]
     \item $v_0$
     \item $m_1^2v_0/(m_1+m_2)^2$
     \item $m_2v_0/m_1$
@@ -459,17 +507,18 @@
   \item Which of the following is true regarding the conservation laws
     throughout this process?
     \label{ramps1}
-    \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
+    \begin{enumerate}[nosep,leftmargin=18pt,label=(\Alph*)]
     \item Kinetic energy is conserved from Figure I to Figure II.
     \item Momentum is conserved from Figure I to Figure III.
     \item Kinetic energy is conserved from Figure II to Figure III.
     \item Potential energy is conserved from Figure I to Figure II.
     \item Potential energy is conserved from Figure II to Figure III.
     \end{enumerate}
+    \vspace{.8in}
     
   \item Which of the following is a true statement regarding Figure III?
     \label{ramps2}
-    \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
+    \begin{enumerate}[nosep,leftmargin=18pt,label=(\Alph*)]
     \item The small block is moving to the left and the ramp is moving to the
       right.
     \item The small block is moving to the right and the ramp is moving to the
@@ -481,22 +530,22 @@
     \item The small block and the large block are moving with the same velocity.
     \end{enumerate}
     
-%%Questions 188–189. A rubber ball of mass m is released from rest from a
-%%height h onto a fixed inclined plane angled at 45° to the horizontal. The ball
-%%collides with the surface elastically.
-%%188. Which of the following diagrams best indicates the direction of the
-%%impulse vector J as it strikes the plane and the velocity vector v just
-%%after it strikes the plane?
-%%(A)
-%%(B)
-%%(C)
-%%(D)
-%%(E)
-%%189. The speed of the ball just after striking the surface is(A)
-%%(B)
-%%(C)
-%%(D)
-%%(E)
+%Questions 188–189. A rubber ball of mass m is released from rest from a
+%height h onto a fixed inclined plane angled at 45° to the horizontal. The ball
+%collides with the surface elastically.
+%188. Which of the following diagrams best indicates the direction of the
+%impulse vector J as it strikes the plane and the velocity vector v just
+%after it strikes the plane?
+%(A)
+%(B)
+%(C)
+%(D)
+%(E)
+%189. The speed of the ball just after striking the surface is(A)
+%(B)
+%(C)
+%(D)
+%(E)
     \columnbreak
     
   \item Two masses moving along the coordinates axes as shown collide at the
@@ -506,15 +555,15 @@
       \begin{tikzpicture}[scale=.7]
         \draw(-4,0)--(4,0);
         \draw(0,-3)--(0,3);
-        \draw[thick,->](-2.5,0)--(-1,0)node[midway,below]{\tiny$\mb{v}_1$};
-        \draw[thick,->](0,-2)--(0,-1)  node[midway,right]{\tiny$\mb{v}_2$};
-        \draw[thick,->](0,0)--(1.3,1.3)node[pos=1,right]{\tiny$\mb{v}_f$};
-        \draw[fill=gray](-2.5,0) circle(.2) node[above]{\tiny$m_1$};
-        \draw[fill=gray](0,-2) circle(.2) node[right]{\tiny$m_2$};
-        \draw[<->] (.75,0) arc(0:45:.75) node[pos=.6,right]{\tiny$\theta$};
+        \draw[very thick,->](-2.5,0)--(-1,0)node[midway,below]{\small$\mb{v}_1$};
+        \draw[very thick,->](0,-2)--(0,-1)  node[midway,right]{\small$\mb{v}_2$};
+        \draw[very thick,->](0,0)--(1.3,1.3)node[pos=1,right]{\small$\mb{v}_f$};
+        \draw[fill=gray](-2.5,0) circle(.2) node[above]{\small$m_1$};
+        \draw[fill=gray](0,-2) circle(.2) node[right]{\small$m_2$};
+        \draw[<->] (.75,0) arc(0:45:.75) node[pos=.6,right]{\small$\theta$};
       \end{tikzpicture}
     \end{center}
-    \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
+    \begin{enumerate}[nosep,leftmargin=18pt,label=(\Alph*)]
     \item $\tan^{-1}(v_2/v_1)$
     \item $\tan^{-1}[m_1v_1/(m_1+m_2)]$
     \item $\tan^{-1}(m_1v_2/m_2v_1)$
@@ -525,7 +574,7 @@
     
   \item A mass traveling in the $+x$ direction collides with a mass at rest.
     Which of the following statements is true?
-    \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
+    \begin{enumerate}[nosep,leftmargin=18pt,label=(\Alph*)]
     \item After the collision, the two masses will move with parallel velocities
     \item After the collision, the masses will move with anti-parallel
       velocities
@@ -539,9 +588,9 @@
 \newpage
 
 
-\genfreetitle{1 \& C}{MOMENTUM, IMPULSE, COLLISIONS, AND CENTER OF MASS}{5}
+\genfreetitle{1 \& C}{MOMENTUM, IMPULSE, COLLISIONS, AND CENTER OF MASS}{4}
 
-\genfreedirections{10}
+\genfreedirections
 
 \begin{enumerate}[leftmargin=15pt]
   
@@ -676,9 +725,9 @@
   %  \vspace{\stretch{1}}
   
 \item An 800.0-kg car is traveling along a wet road at a velocity of
-  25.5 m/s. A \num{1000.}-kg car is traveling along the same road in the same
-  direction at 34.7 m/s. The two cars collide and lock together. Answer the
-  following questions.
+  \SI{25.5}{\metre\per\second}. A \num{1000.}-kg car is traveling along the
+  same road in the same direction at \SI{34.7}{\metre\per\second}. The two cars
+  collide and lock together. Answer the following questions.
   \begin{enumerate}[leftmargin=18pt]
   \item The two interlocked cars proceed at what velocity after the collision?
   \item Compare the kinetic energy of the two-car system immediately before
