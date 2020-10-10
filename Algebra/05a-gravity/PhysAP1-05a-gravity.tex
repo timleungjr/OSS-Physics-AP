@@ -31,8 +31,8 @@
 \title{Topic 5a: Gravity}
 \subtitle{Advanced Placement Physics 1}
 \author{Dr.\ Timothy Leung}
-\institute{Olympiads School\\Toronto, Ontario, Canada}
-\date{July 13, 2020}
+\institute{Olympiads School}
+\date{\today}
 
 \newcommand{\pic}[2]{\includegraphics[width=#1\textwidth]{#2}}
 \newcommand{\mb}[1]{\ensuremath\mathbf{#1}}
@@ -47,14 +47,6 @@
 \end{frame}
 
 
-%\begin{frame}{Files to Download}
-%  If you have not done so already, please download the following files.
-%  \begin{itemize}
-%  \item\texttt{PhysAP-08-Gravity-print.pdf}---The presentation slides for this
-%    topic.
-%  \item\texttt{PhysAP-08-Homework.pdf}---Homework questions for this topic.
-%  \end{itemize}
-%\end{frame}
 
 \begin{frame}{Disclaimer}
   The section on circular motion and gravity only accounts for a small portion
@@ -70,8 +62,8 @@
 \begin{frame}{Law of Universal Gravitation}
   \begin{center}
     \begin{tikzpicture}[scale=.65]
-      \draw[->,very thick,red](0,0)--(2,0) node[pos=1,right]{$\mb{F}_g$};
-      \draw[->,very thick,blue](8,0)--(6,0) node[pos=1,left]{$\mb{F}_g$};
+      \draw[->,very thick,red] (0,0)--(2,0) node[pos=1,right]{$\mb{F}_g$};
+      \draw[->,very thick,blue](8,0)--(6,0) node[pos=1,left] {$\mb{F}_g$};
       \tikzstyle{balloon1}=[ball color=red];
       \tikzstyle{balloon2}=[ball color=blue];
       \shade[balloon1] (0,0) circle(.7) node[white]{$m_1$};
@@ -83,7 +75,7 @@
   \end{center}
 
   In classical mechanics, \textbf{gravity} is a mutually attractive force
-  between massive objects, with a magnitude $F_g$ determined by the law of
+  between massive objects; the magnitude $F_g$ is determined by the law of
   universal gravitation:
 
   \eq{-.2in}{
@@ -92,9 +84,10 @@
     }
   }
 
-  where $G=\SI{6.674e-11}{\newton\metre\squared\per\kilo\gram\squared}$ is the \textbf{universal gravitation
-    constant}, and $r$ is the distance between the centers of the masses.
-  $m_1$ and $m_2$ are \emph{point masses} that do not occupy any space
+  where $G=\SI{6.674e-11}{\newton\metre\squared\per\kilo\gram\squared}$ is the
+  \textbf{universal gravitation constant}, and $r$ is the distance between the
+  centers of the masses. $m_1$ and $m_2$ are \emph{point masses} that do not
+  occupy any space.
 \end{frame}
 
 
@@ -209,7 +202,8 @@
 \section{Gravitational Field}
 
 \begin{frame}{Gravitational Field}
-  We generally describe the gravitational force (weight) as:
+  We generally describe the gravitational force $\mb{F}_g$ (or weight $\mb{w}$)
+  as:
   
   \eq{-.2in}{
     \boxed{\mb{w}=\mb{F}_g=m\mb{g}}
@@ -326,7 +320,7 @@
     \end{tikzpicture}
 
     \column{.7\textwidth}
-    It can be shown mathematically theatthe gravitational field \emph{inside} a
+    It can be shown mathematically that the gravitational field \emph{inside} a
     spherical hollow shell is zero:
       
     \eq{-.2in}{
@@ -596,10 +590,10 @@
   orbit:
 
   \eq{-.15in}{
-    \boxed{v_{\text{orb}}=\sqrt{\frac{GM}{r}}}
+    \boxed{v_\text{orb}=\sqrt{\frac{GM}{r}}}
   }
 
-  \vspace{-.1in}This equation is only applicable for perfectly circular orbits.
+  This equation is only applicable for perfectly circular orbits.
   (The orbital velocity equation is not part of the equation sheet, but it may
   be very easy to derive.)
 \end{frame}
@@ -648,15 +642,15 @@
 \begin{frame}{Escape Velocity from Circular Orbits}
   Set $K$ to equal to $-U_g$:
 
-  \eq{-.25in}{
+  \eq{-.2in}{
     \frac12mv_i^2=\frac{GMm}{r_i}
   }
 
-  We can then solve for the initial speed $v_i=v_{\text{esc}}$ (called the
+  We can then solve for the initial speed $v_i=v_\text{esc}$ (called the
   \textbf{escape velocity}):
 
   \eq{-.2in}{
-    \boxed{v_{\text{esc}}=\sqrt{\frac{2GM}{r_i}}}
+    \boxed{v_\text{esc}=\sqrt{\frac{2GM}{r_i}}}
   }
 
   where $r_i$ is the initial distance from the center of the planet/star, and
@@ -699,11 +693,11 @@
 %    \end{tikzpicture}
 %  \end{center}
 %  The difference is that the object in orbit (left) already has orbital speed
-%  $v_\mathrm{orbit}$, so escaping from that orbit requires only an additional
+%  $v_\text{orbit}$, so escaping from that orbit requires only an additional
 %  speed of
 %  
 %  \eq{-.2in}{
-%    \Delta v=v_\mathrm{esc}-v_\mathrm{orbit}=(\sqrt{2}-1)v_\mathrm{orbit}
+%    \Delta v=v_\text{esc}-v_\text{orbit}=(\sqrt{2}-1)v_\text{orbit}
 %  }
 %  \begin{itemize}
 %  \item What if $v_\mathrm{orbit}<v<v_\mathrm{esc}$?
@@ -728,14 +722,14 @@
   orbit by using the orbital speed in our expression of kinetic energy:
 
   \eq{-.2in}{
-    K_{\text{orb}}=\frac12mv_{\text{orb}}^2=\frac12m
+    K_\text{orbit}=\frac12mv_\text{orbit}^2=\frac12m
     \left(\sqrt{\frac{GM}{r}}\right)^2=\boxed{\frac{GMm}{2r}}
   }
 
   We already have an expression for gravitational potential energy:
 
   \eq{-.15in}{
-    U_g=-\frac{GMm}{r}=-2K_\mathrm{orbit}
+    U_g=-\frac{GMm}{r}=-2K_\text{orbit}
   }
 \end{frame}
 

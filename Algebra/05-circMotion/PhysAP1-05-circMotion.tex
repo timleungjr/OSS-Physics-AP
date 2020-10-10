@@ -4,13 +4,10 @@
 \setbeamersize{text margin left=.5cm,text margin right=.5cm}
 
 \usefonttheme{professionalfonts}
-\usepackage{amsmath}%,bm}
+\usepackage{amsmath}
 \usepackage{siunitx}
-%\usepackage{graphicx}
 \usepackage{tikz}
 \usepackage{mathpazo}
-%\usepackage{xcolor,colortbl}
-%\usepackage{hyperref}
 
 \usetikzlibrary{patterns}
 
@@ -22,6 +19,7 @@
 
 \sisetup{
   detect-all,
+  math-sf=\textsf,
   number-math-rm=\mathnormal,
   per-mode=symbol
 }
@@ -238,16 +236,16 @@
 
     \column{.7\textwidth}
     For a constant $\omega$ (uniform circular motion), the motion is strictly
-    periodic, with its \textbf{frequency} $f$ and \textbf{period} $T$ given by:
+    periodic; its \textbf{frequency} $f$ and \textbf{period} $T$ given by:
 
     \eq{-.15in}{
       \boxed{f=\frac{\omega}{2\pi}}\quad
       \boxed{T=\frac{2\pi}{\omega}}\quad
-      f=\frac1T
+      \boxed{f=\frac1T}
     }
     
-    $T$ is measured in seconds (\si{\s}) and $f$ in hertz (\si{\hertz}). Period
-    and frequency are reciprocals of each other.
+    $T$ is measured in seconds (\si{\second}) and $f$ in hertz (\si{\hertz}).
+    Period and frequency are reciprocals of each other.
   \end{columns}
 \end{frame}
 
@@ -284,11 +282,11 @@
 
 
 \begin{frame}{Angular Acceleration}
-  The change in $\omega$ over a finite time interval $\Delta t$ is
-  \textbf{average angular acceleration}, with a unit of
-  \si{rad\per\second\squared}:
+  The change in anguler velocity $\Delta \omega$ over a finite time interval
+  $\Delta t$ is \textbf{average angular acceleration} $\overline{\alpha}$, with
+  a unit of \si{rad\per\second\squared}:
 
-  \eq{-.25in}{
+  \eq{-.2in}{
     \boxed{\overline{\alpha}=\frac{\Delta\omega}{\Delta t}}
   }
 
@@ -305,7 +303,7 @@
   }
     
   For \emph{uniform} circular motion (constant $\omega$), $\alpha=0$ and
-  $a_\theta=0$
+  $a_t=0$
 \end{frame}
 
 
@@ -322,8 +320,7 @@
       \omega^2& = \omega_0^2+ 2\alpha(\theta-\theta_0)
     \end{align*}
   }
-  
-  Calculus is required for non-constant $\alpha$.
+  %Calculus is required for non-constant $\alpha$.
 \end{frame}
 
 
@@ -337,9 +334,8 @@
 
 
 \begin{frame}{Centripetal Acceleration \& Centripetal Force}
-  In Grade 12 Physics, you should know that there is also a component of
-  acceleration toward the center of the rotation, called the
-  \textbf{centripetal acceleration} $a_c$:
+  There is also a component of acceleration toward the center of the rotation,
+  called the \textbf{centripetal acceleration} $a_c$:
 
   \eq{-.15in}{
     \boxed{a_c=\frac{v^2}{r}=\omega^2r}
@@ -349,15 +345,55 @@
   \textbf{centripetal force}, also toward the center of rotation:
 
   \eq{-.15in}{
-    \boxed{\mb{F}_c=ma_c=\frac{mv^2}{r}}
+    \boxed{F_c=ma_c=\frac{mv^2}{r}}
   }
 \end{frame}
 
 
 
+%\begin{frame}{Centripetal Acceleration}
+%  \begin{columns}
+%    \column{.35\textwidth}
+%    \begin{tikzpicture}[scale=.75]
+%      \draw[->](-3,0)--(3,0) node[pos=1,right]{\footnotesize$x$};
+%      \draw[->](0,-3)--(0,3) node[pos=1,above]{\footnotesize$y$};
+%      \draw (0,0) circle(2.5);
+%      \begin{scope}[rotate=50]
+%        \draw(0,0)--(2.44,0) node[midway,below]{\footnotesize$r$};
+%        \draw[fill=red!60] (2.5,0) circle(.1);
+%        \draw[very thick,->](2.5,.08)--(2.5,1.5)
+%        node[pos=1,above]{\footnotesize$\mb{v}_1$};
+%      \end{scope}
+%      \begin{scope}[rotate=120]
+%        \draw (0,0)--(2.44,0);
+%        \draw[fill=red!60] (2.5,0) circle(.1);
+%        \draw[very thick,->](2.5,.08)--(2.5,1.5)
+%        node[pos=1,above]{\footnotesize$\mb{v}_2$};
+%      \end{scope}
+%      \draw(1,0)[->] arc(0:50:1) node[midway,right]{\footnotesize$\theta$};
+%      \draw(1,0)[->,rotate=50] arc(0:70:1) node[midway,right]{\footnotesize$\theta$};
+%    \end{tikzpicture}
+%
+%    \column{.65\textwidth}
+%    The actual velocity of an object in circular motion is related to the
+%    angular velocity by:
+%
+%    \eq{-.3in}{
+%      v(t)=r\omega(t)
+%    }    
+%
+%    \begin{itemize}
+%    \item\vspace{-.25in} The direction of $\mb{v}$ is tangent to circle
+%    \item If $\omega>0$, the motion is counter-clockwise
+%    \item If $\omega<0$, the motion is clockwise
+%    \end{itemize}
+%  \end{columns}
+%\end{frame}
+
+
 \begin{frame}{Centripetal Acceleration for Uniform Circular Motion}
-  In uniform circular motion ($\alpha=0$, constant $\omega$) problems where the
-  period or frequency are known, the speed of the object is:
+  In uniform circular motion ($\alpha=0$, constant $\omega$) problems
+  where the period or frequency are known, the speed of the object is:
 
   \eq{-.15in}{
     v=\frac{2\pi r}{T}=2\pi rf
@@ -376,28 +412,30 @@
 
 
 \begin{frame}{Acceleration: The General Case}
+  In general circular motion, there are two components of acceleration:
+  \vspace{.2in}
   \begin{columns}
-    \column{.2\textwidth}
+    \column{.25\textwidth}
     \begin{tikzpicture}[scale=4.3]
       \draw[dashed] (.866,-.5) arc(-30:30:1);
       \draw[ultra thick, red,->] (1,0)--(.5,0)
-      node[pos=0.5,below]{\footnotesize $a_c=\frac{v^2}{r}$};
+      node[midway,below]{\footnotesize $a_c=\frac{v^2}{r}$};
       \draw[ultra thick, blue,->] (1,0)--(1,.3)
       node[pos=1,above right]{\footnotesize $a_t=r\alpha$};
       \fill (1,0) circle(.02);
     \end{tikzpicture}
     
-    \column{.8\textwidth}
+    \column{.75\textwidth}
+    \textcolor{red}{\textbf{Centripetal acceleration} $a_c$}
     \begin{itemize}
-    \item In general circular motion, there are two components of acceleration:
-      \begin{itemize}
-      \item\textcolor{red}{\textbf{Centripetal acceleration} $a_c$} depends on
-        radius of curvature $r$ and instantaneous speed $v$. The direction of
-        the acceleration is toward the center of the circle.
-      \item \textcolor{blue}{\textbf{Tangential acceleration} $a_t$}
-        depends on radius $r$  and angular acceleration $\alpha$. The direction
-        of the acceleration is tangent to the circle
-      \end{itemize}
+    \item Depends on radius of curvature $r$ and instantaneous speed $v$.
+    \item The direction of $a_c$ is toward the center of the circle.
+    \end{itemize}
+    \textcolor{blue}{\textbf{Tangential acceleration} $a_t$}
+    \begin{itemize}
+    \item Depends on radius $r$  and angular acceleration $\alpha$.
+    \item The direction of the acceleration is tangent to the circle, which
+      is the same as the velocity vector $\mb{v}$.
     \end{itemize}
   \end{columns}
 \end{frame}
@@ -446,7 +484,7 @@
     \begin{tikzpicture}
       \fill[black](0,0) circle(.08);
       \draw[thick,->,rotate=-30](0,0)--(0,1)node[pos=1,above]{$\mb{N}$};
-      \draw[thick,->](0,0)--(0,-1)node[pos=1,below]{$\mb{w}$};
+      \draw[thick,->](0,0)--(0,-1)node[pos=1,below]{$m\mb{g}$};
       \draw[thick,->,rotate=60](0,0)--(0,-1)node[pos=1,right]{$\mb{f}$};
     \end{tikzpicture}
     \begin{tikzpicture}
@@ -483,7 +521,7 @@
     \begin{tikzpicture}
       \fill[black](0,0) circle(.08);
       \draw[thick,->,rotate=-30](0,0)--(0,1)node[pos=1,above]{$\mb{N}$};
-      \draw[thick,->](0,0)--(0,-1)node[pos=1,below]{$\mb{w}$};
+      \draw[thick,->](0,0)--(0,-1)node[pos=1,below]{$m\mb{g}$};
       \draw[thick,->,rotate=60](0,0)--(0,-1)node[pos=1,right]{$\mb{f}$};
     \end{tikzpicture}
     \begin{tikzpicture}
@@ -494,7 +532,7 @@
     \column{.65\textwidth}
     For analysis, use the simplified equation for friction $f=\mu N$ (i.e.\
     assume either kinetic friction or maximum static friction), and weight
-    $w=mg$, the equations on the previous slides can be arranged as:
+    $m\nb{g}$, the equations on the previous slides can be arranged as:
 
     \vspace{-.4in}{\Large
       \begin{align*}
@@ -515,7 +553,7 @@
     \begin{tikzpicture}
       \fill[black](0,0) circle(.08);
       \draw[thick,->,rotate=-30](0,0)--(0,1)node[pos=1,above]{$\mb{N}$};
-      \draw[thick,->](0,0)--(0,-1)node[pos=1,below]{$\mb{w}$};
+      \draw[thick,->](0,0)--(0,-1)node[pos=1,below]{$m\mb{g}$};
       \draw[thick,->,rotate=60](0,0)--(0,-1)node[pos=1,right]{$\mb{f}$};
     \end{tikzpicture}
     \begin{tikzpicture}
@@ -533,13 +571,13 @@
 
     The \emph{maximum} velocity $v_{\text{max}}$ can be expressed as:
 
-    \eq{-.25in}{
-      \boxed{v_{\textrm{max}}=
+    \eq{-.2in}{
+      \boxed{v_\text{max}=
         \sqrt{rg\frac{\sin\theta+\mu\cos\theta}{\cos\theta-\mu\sin\theta}}
       }
     }
 
-    Note that $v_{\textrm{max}}$ does not depend on mass.
+    Note that $v_\text{max}$ does not depend on mass.
   \end{columns}
 \end{frame}
 
@@ -549,14 +587,14 @@
   In the limit of $\mu=0$ (frictionless case), the equation reduces to:
 
   \eq{-.1in}{
-    \boxed{ v_{\text{max}}=\sqrt{rg\tan\theta} }
+    \boxed{ v_\text{max}=\sqrt{rg\tan\theta} }
   }
 
   And in the limit of a flat roadway with no banking ($\theta=0$,
   $\sin\theta=0$ and $\cos\theta=1$), the equation reduces to:
 
   \eq{-.2in}{
-    \boxed{ v_{\text{max}}=\sqrt{\mu rg} }
+    \boxed{ v_\text{max}=\sqrt{\mu rg} }
   }
 \end{frame}
 
@@ -572,8 +610,8 @@
   \item Instead, use conservation of energy to solve for speed $v$
   \item Then use the equation for centripetal force to find other forces
   \end{itemize}
-  If it is impossible to get the required centripetal force, then it could not
-  continue the circular motion
+  %If it is impossible to get the required centripetal force, then it could not
+  %continue the circular motion
 \end{frame}
 
 
@@ -589,21 +627,21 @@
       \begin{scope}[rotate=20]
         \draw[thick](0,0)--(0,-5);
         \tikzstyle{balloon}=[ball color=red!70!black];
-        \shade[balloon] (0,-5) circle (0.2) node[below right]{$m$};
+        \shade[balloon] (0,-5) circle (.2);% node[below right]{$m$};
         \draw[->,very thick,red!70!black](0,-5)--(0,-3.3)
         node[pos=1,left]{\footnotesize $\mb{T}$};
         \draw[->,very thick,red!70!black,rotate around={-20:(0,-5)}]
         (0,-5)--(0,-6.5)
-        node[pos=1,below]{\footnotesize $\mb{w}$};
+        node[pos=1,below]{\footnotesize $m\mb{g}$};
       \end{scope}
       \draw[dashed,thin](0,0)--(0,-5);
       \draw[dashed,thin](3.54,-3.54) arc(315:225:5);
-      \draw[->](0,-2) arc(270:290:2) node[pos=0.5,below]{$\theta$};
+      \draw[->](0,-2) arc(270:290:2) node[midway,below]{$\theta$};
     \end{tikzpicture}
 
     \column{.65\textwidth}
     \begin{itemize}
-    \item There are two forces act on the pendulum: weight $\mb{w}=m\mb{g}$, and
+    \item There are two forces act on the pendulum: weight $m\mb{g}$, and
     tension $\mb{T}$
     \item Speed of the pendulum at any height is found using conservation
       of energy
@@ -630,7 +668,7 @@
       \begin{scope}[rotate=45]
         \draw[thick](0,0)--(0,-5);
         \tikzstyle{balloon}=[ball color=red!70!black];    
-        \shade[balloon] (0,-5) circle (0.2) node[below right]{$m$};
+        \shade[balloon] (0,-5) circle (.2);% node[below right]{$m$};
         \draw[dotted,->,very thick,red!70!black](0,-5)--(-1.1,-5)
         node[pos=1,left]{\footnotesize $mg\sin\theta$};
         \draw[dotted,->,very thick,red!70!black](0,-5)--(0,-6.1)
@@ -639,7 +677,7 @@
         node[pos=1,left]{\footnotesize $\mb{T}$};
         \draw[->,very thick,red!70!black,rotate around={-45:(0,-5)}]
         (0,-5)--(0,-6.5)
-        node[pos=1,below]{\footnotesize $\mb{w}=m\mb{g}$};
+        node[pos=1,below]{\footnotesize $m\mb{g}$};
       \end{scope}
       \draw[dashed,thin](0,0)--(0,-5);
       \draw[dashed,thin](3.54,-3.54) arc(315:225:5);
@@ -674,7 +712,7 @@
       \begin{scope}[rotate=45]
         \draw[thick](0,0)--(0,-5);
         \tikzstyle{balloon}=[ball color=red!70!black];    
-        \shade[balloon] (0,-5) circle (0.2) node[below right]{$m$};
+        \shade[balloon] (0,-5) circle (.2); % node[below right]{$m$};
         \draw[dotted,->,very thick,red!70!black](0,-5)--(-1.1,-5)
         node[pos=1,left]{\footnotesize $mg\sin\theta$};
         \draw[dotted,->,very thick,red!70!black](0,-5)--(0,-6.1)
@@ -683,7 +721,7 @@
         node[pos=1,left]{\footnotesize $\mb{T}$};
         \draw[->,very thick,red!70!black,rotate around={-45:(0,-5)}]
         (0,-5)--(0,-6.5)
-        node[pos=1,below]{\footnotesize $\mb{F}_g=m\mb{g}$};
+        node[pos=1,below]{\footnotesize $m\mb{g}$};
       \end{scope}
       \draw[dashed,thin](0,0)--(0,-5);
       \draw[dashed,thin](3.54,-3.54) arc(315:225:5);
@@ -717,11 +755,11 @@
 
       \draw[thick](0,0)--(0,-5);
       \tikzstyle{balloon}=[ball color=red!70!black];    
-      \shade[balloon] (0,-5) circle (0.2) node[below right]{$m$};
+      \shade[balloon] (0,-5) circle (.2); %node[below right]{$m$};
       \draw[->,very thick,red!70!black](0,-5)--(0,-2.5)
       node[pos=1,right]{\footnotesize $\mb{T}$};
       \draw[->,very thick,red!70!black](0,-5)--(0,-6.5)
-      node[pos=1,below]{\footnotesize $\mb{w}=m\mb{g}$};
+      node[pos=1,below]{\footnotesize $m\mb{g}$};
 
       \draw[dashed,thin](0,0)--(0,-5);
       \draw[dashed,thin](3.54,-3.54) arc(315:225:5);
@@ -751,11 +789,11 @@
 
 
 \begin{frame}{Example Problem}
-  \textbf{Example 4:} You are playing with a yo-yo with a mass $M$. The full
-  length of the string is $R$. You decide to see how slowly you can swing it in
-  a vertical circle while keeping the string fully extended, even when it is
-  at the top of its swing.
-  \begin{enumerate}[A.]
+  \textbf{Example 4:} You are playing with a yo-yo with a mass $M$. The length
+  of the string is $R$. You decide to see how slowly you can swing it in a
+  vertical circle while keeping the string fully extended, even when it is at
+  the top of its swing.
+  \begin{enumerate}[a.]
   \item Calculate the minimum speed at which you can swing the yo-yo while
     keeping it on a circular path.
   \item Find the tension in the string when the yo-yo is at the side and at the
@@ -786,7 +824,7 @@
   with the track at the top of the loop (generally considered to be a good
   thing), what is the minimum speed that the car must have at the bottom of the
   loop. Ignore air resistance and rolling friction.
-  \begin{enumerate}[(a)]
+  \begin{enumerate}[A.]
   \item $\sqrt{2gR}$
   \item $\sqrt{3gR}$
   \item $\sqrt{4gR}$
