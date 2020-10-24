@@ -109,7 +109,7 @@
 %\sisetup{
 %}
 \sisetup{
-  detect-all,
+  %detect-all,
   %number-math-rm=\mathnormal,
 %  text-sf=\sffamily,
 %  text-rm=\sffamily,
