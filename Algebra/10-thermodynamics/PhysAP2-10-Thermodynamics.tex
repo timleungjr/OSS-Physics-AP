@@ -2,25 +2,20 @@
 
 \usetheme{metropolis}
 \setbeamersize{text margin left=.5cm,text margin right=.5cm}
-\setbeamertemplate{navigation symbols}{} % suppress nav bar
-%\setbeamercovered{transparent}
 
 \usefonttheme{professionalfonts}
-%\usepackage{graphicx}
+\usepackage{carlito}
 \usepackage{tikz}
-\usepackage{amsmath,bm}
+\usepackage{bm}
 \usepackage{mathpazo}
 \usepackage{xcolor,colortbl}
 \usepackage{siunitx}
-%\usepackage{hyperref}
 
 \sisetup{
-  detect-all,
-  %number-math-rm=\mathnormal,
+  %detect-all,
   per-mode=symbol
 }
 
-\setmonofont{Ubuntu Mono}
 \setlength{\parskip}{0pt}
 \renewcommand{\baselinestretch}{1}
 
@@ -29,9 +24,13 @@
 \subtitle{Advanced Placement Physics 2}
 \author[TML]{Dr.\ Timothy Leung}
 \institute{Olympiads School\\Toronto, ON, Canada}
-\date{August 2020}
+\date{\today}
 
-\newcommand{\pic}[2]{\includegraphics[width=#1\textwidth]{#2}}
+\newcommand{\pic}[2]{
+  \begin{center}
+    \includegraphics[width=#1\textwidth]{#2}
+  \end{center}
+}
 \newcommand{\mb}[1]{\mathbf{#1}}
 \newcommand{\eq}[2]{\vspace{#1}{\Large\begin{displaymath}#2\end{displaymath}}}
 
@@ -245,7 +244,7 @@
   remain constant (\textbf{Boyle's law}):
 
   \eq{-.2in}{
-    PV=\text{constant} %\quad\quad\text{\normalsize constant temperature}
+    PV=\text{constant}
  }
 
   \vspace{-.1in}From the previous discussion on temperature scale, we also know
@@ -345,7 +344,7 @@
       Molecular mass            & $m$        & \si{\kilo\gram} \\
       Particle speed            & $v$        & \si{\metre\per\second} \\
       Thermodynamic temperature & $T$        & \si{\kelvin} \\
-      Boltzmann's constant      & $k_B$      & \si{\joule/\kelvin}
+      Boltzmann's constant      & $k_B$      & \si{\joule\per\kelvin}
     \end{tabular}
   \end{center}
   AP Physics 2 is not too concerned with the (difficult) mathematics,
@@ -357,8 +356,7 @@
 \begin{frame}{Maxwell-Boltzmann Distribution}
   \vspace{.15in}\begin{columns}
     \column{.45\textwidth}
-    \centering
-    \pic{1.05}{maxwell-boltzmann.png}
+    \pic{1.05}{maxwell-boltzmann}
     
     \column{.55\textwidth}
     \begin{itemize}
@@ -379,8 +377,7 @@
 \begin{frame}{Maxwell-Boltzmann Distribution}
   \vspace{.15in}\begin{columns}
     \column{.48\textwidth}
-    \centering
-    \pic{1}{speed-distribution.png}
+    \pic{1}{speed-distribution}
     
     \column{.52\textwidth}
     The \textbf{most probable speed} $v_\mathrm{prob}$ is the peak of the
@@ -409,8 +406,7 @@
   \end{displaymath}
   \begin{columns}
     \column{.48\textwidth}
-    \centering
-    \pic{1}{speed-distribution.png}
+    \pic{1}{speed-distribution}
     
     \column{.52\textwidth}
     This average speed is found to be:
@@ -543,9 +539,7 @@
   Neither the ideal gas law nor the van der Waal equation capture the exact
   relationship between pressure and volume, because neither accounts for phase
   changes. The $P$-$V$ diagram of a real substance is like this:
-  \begin{center}
-    \pic{.35}{realsubstance.png}
-  \end{center}
+  \pic{.35}{realsubstance}
 \end{frame}
 
 
@@ -553,9 +547,7 @@
 \begin{frame}{Phase Diagrams}
   The phase diagram plots pressure against temperature to show when the
   different phases of matter exist. For water:
-  \begin{center}
-    \pic{.4}{10-figure-31.png}
-  \end{center}
+  \pic{.4}{10-figure-31}
   \begin{itemize}
   \item\vspace{-.1in} At \textbf{triple point} $B$, all three phases of matter
     can exist in equilibrium
@@ -601,14 +593,14 @@
   translational freedom, therefore the internal energy is the total kinetic
   energy, shown a few slides ago:
 
-  \eq{-.33in}{
+  \eq{-.25in}{
     U=\frac32Nk_BT
   }
 
   For diatomic gases, there are 3 degrees of translational freedom and 2
   degrees of rotational freedom:
 
-    \eq{-.3in}{
+    \eq{-.32in}{
       U=\frac52Nk_BT
     }
 \end{frame}
@@ -666,7 +658,7 @@
 %    \vspace{-.15in}where $k$ is the thermal conductivity of the material
 %
  %   \column{.3\textwidth}
- %   \pic{1}{conduct.png}
+ %   \pic{1}{conduct}
  % \end{columns}
 
 
@@ -867,9 +859,7 @@
 \begin{frame}{A Simple Heat Engine Cycle}
   \begin{columns}
     \column{.8\textwidth}
-    \begin{center}
-      \pic{.5}{heat-engine.png}
-    \end{center}
+    \pic{.5}{heat-engine}
     \begin{enumerate}
     \item\vspace{-.15in} Heat is added at constant volume; no work done.
     \item Heat is added as gas expands at constant pressure; work is done by
@@ -927,9 +917,7 @@
 
 \begin{frame}{Carnot Engine}
   The Carnot engine cycle is the most efficient.
-  \begin{center}
-    \pic{.4}{carnot.png}
-  \end{center}
+  \pic{.4}{carnot}
   The efficiency of a Carnot engine is:
   
   \eq{-.25in}{

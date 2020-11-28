@@ -3,25 +3,20 @@
 \usetheme{metropolis}
 \setbeamersize{text margin left=.5cm,text margin right=.5cm}
 
-%\usepackage[utf8]{inputenc}
 \usefonttheme{professionalfonts}
-\usepackage{amsmath}
+\usepackage{carlito}
 \usepackage{siunitx}
-%\usepackage{graphicx}
 \usepackage{tikz}
 \usepackage{mathpazo}
-%\usepackage[scaled]{helvet}
 \usepackage{bm}
-%\usepackage{xcolor,colortbl}
-%\usepackage{hyperref}
+\usepackage{mathtools}
 
 \sisetup{
-  detect-all,
-  math-sf=\textsf,
+  number-math-rm=\mathnormal,
   per-mode=symbol
 }
+\tikzset{>=latex}
 
-\setsansfont{Roboto Light}
 \setmonofont{Ubuntu Mono}
 \setlength{\parskip}{0pt}
 \renewcommand{\baselinestretch}{1}
@@ -33,14 +28,13 @@
 \institute{Olympiads School}
 \date{\today}
 
-
 \newcommand{\iii}{\ensuremath\hat{\bm{\imath}}}
 \newcommand{\jjj}{\ensuremath\hat{\bm{\jmath}}}
 \newcommand{\kkk}{\ensuremath\hat{\bm{k}}}
-\newcommand{\pic}[2]{\includegraphics[width=#1\textwidth]{#2}}
 \newcommand{\mb}[1]{\ensuremath\mathbf{#1}}
 \newcommand{\eq}[2]{\vspace{#1}{\Large\begin{displaymath}#2\end{displaymath}}}
-\newcommand{\magdir}[2]{#1\text{ [#2]}}
+
+
 
 \begin{document}
 
@@ -73,7 +67,7 @@
 
 
 \begin{frame}{AP Physics C Exams}
-  There are calculus-based 2 AP Physics C exams, which are usually taken
+  There are two calculus-based AP Physics C exams, which are usually taken
   together on the same day, in the first or second week of May of each year.
   \begin{itemize}
   \item Mechanics
@@ -156,10 +150,10 @@
 
 \begin{frame}{Position}
   \textbf{Position} $\mb{x}$ describes the location of an object in a
-  coordinate system.%\footnote{The coordinate system is usually
+  coordinate system. The origin of%\footnote{The coordinate system is usually
   %\emph{Cartesian}, but it can also be \emph{polar}, \emph{cylindrical} or
   %\emph{spherical}}.
-  The origin of the coordinate system is called the ``reference point''.
+  the coordinate system is called the ``reference point''.
   The SI unit for position is \textbf{meter}, \si{\metre}.
   
   \eq{-.2in}{
@@ -214,8 +208,8 @@
     
     \column{.3\textwidth}
     \begin{tikzpicture}[scale=.5]
-      \draw[->](0,0)--(6,0) node[pos=1,right]{$x$};
-      \draw[->](0,0)--(0,8) node[pos=1,above]{$y$};
+      \draw[->](0,0)--(6,0) node[right]{$x$};
+      \draw[->](0,0)--(0,8) node[above]{$y$};
       \draw[->,red,very thick] (0,0)--(4,1) node[midway,above]{$\mb{x}_0$};
       \draw[->,red,very thick] (0,0)--(2,6) node[midway,left]{$\mb{x}$};
       \draw[->,blue,very thick](4,1)--(2,6) node[midway,right]{$\Delta\mb{x}$};
@@ -228,11 +222,12 @@
 
 
 \begin{frame}{Instantaneous Velocity}
-  If position $\mb{x}$ is differentiable in time $t$, then velocity
-  can be found at any time $t$. The \textbf{instantaneous velocity}
-  $\mb{v}(t)$ of an object is the time rate of change of position. The unit for
-  velocity is \textbf{meters per second} (\si{\metre\per\second}):
+  Since position $\mb{x}$ is differentiable in time $t$, then the
+  \textbf{instantaneous velocity} can be found at any time by differentiating
+  $\mb{x}$ with respect to $t$. The unit for velocity is
+  \textbf{meters per second} (\si{\metre\per\second}):
 
+  
   \eq{-.2in}{
     \boxed{
       \mb{v}(t)= \frac{d\mb{x}}{dt}
@@ -240,8 +235,8 @@
   }
   
   Since $\mb{x}$ has $x$, $y$ and $z$ components along the $\iii$, $\jjj$ and
-  $\kkk$ directions (linearly independent), we can take the time derivative in
-  every component:
+  $\kkk$ directions that are linearly independent, we can take the time
+  derivative in every component:
 
   \eq{-.15in}{
     \mb{v}(t)= \frac{d\mb{x}}{dt}=
@@ -253,8 +248,8 @@
 
 
 \begin{frame}{Integrating Velocity to Get Position/Displacement}
-  Conversely, if $\mb{v}(t)$ is the time rate of change of position
-  $\mb{x}(t)$, then $\mb{x}(t)$ is the time integral of $\mb{v}(t)$:
+  Conversely, if instantaneous velocity $\mb{v}(t)$ is the time rate of change
+  of position $\mb{x}(t)$, then $\mb{x}(t)$ is the time integral of $\mb{v}(t)$:
   
   \eq{-.2in}{
     \boxed{
@@ -273,9 +268,9 @@
 
 
 \begin{frame}{Average Velocity}
-  \textbf{Average velocity} $\overline{\mb{v}}$ of an object is the finite
-  change in position $\Delta\mb{x}$ over a \emph{finite} time interval
-  $\Delta t$:
+  \textbf{Average velocity} $\overline{\mb{v}}$ of an object is the
+  \emph{finite} change in position $\Delta\mb{x}$ over a \emph{finite} time
+  interval $\Delta t$:
 
   \eq{-.3in}{
     \boxed{
@@ -295,7 +290,7 @@
     \frac{\Delta z}{\Delta t}\kkk
   }
 
-  (The notation $\overline{v}$ means that $v$ is averaged over \emph{time},
+  The notation $\overline{v}$ means that $v$ is averaged over \emph{time},
   while the notation $\langle v\rangle$ is used if $v$ is the average of
   many particles (called an \emph{ensemble average})
 \end{frame}
@@ -499,21 +494,21 @@
 \begin{frame}{Uniform Motion: Constant Velocity}
   \begin{center}
     \begin{tikzpicture}[scale=.5]
-      \draw[->,thick] (0,0)--(4.5,0) node[pos=1,right]{$t$};
-      \draw[->,thick] (0,0)--(0,4.5) node[pos=1,above]{$d$};
-      \draw[red!80!black,ultra thick](0,0)--(4,4);
+      \draw[->,thick] (0,0)--(4.5,0) node[right]{$t$};
+      \draw[->,thick] (0,0)--(0,4.5) node[above]{$d$};
+      \draw[red!80!black,very thick](0,0)--(4,4);
     \end{tikzpicture}
     \hspace{.15in}
     \begin{tikzpicture}[scale=.5]
-      \draw[->,thick] (0,0)--(4.5,0) node[pos=1,right]{$t$};
-      \draw[->,thick] (0,0)--(0,4.5) node[pos=1,above]{$v$};
-      \draw[red!80!black,ultra thick](0,2)--(4,2);
+      \draw[->,thick] (0,0)--(4.5,0) node[right]{$t$};
+      \draw[->,thick] (0,0)--(0,4.5) node[above]{$v$};
+      \draw[red!80!black,very thick](0,2)--(4,2);
     \end{tikzpicture}
     \hspace{.15in}
     \begin{tikzpicture}[scale=.5]
-      \draw[->,thick] (0,0)--(4.5,0) node[pos=1,right]{$t$};
-      \draw[->,thick] (0,0)--(0,4.5) node[pos=1,above]{$a$};
-      \draw[red!80!black,ultra thick](0,0)--(4,0);
+      \draw[->,thick] (0,0)--(4.5,0) node[right]{$t$};
+      \draw[->,thick] (0,0)--(0,4.5) node[above]{$a$};
+      \draw[red!80!black,very thick](0,0)--(4,0);
     \end{tikzpicture}
   \end{center}
   \begin{itemize}
@@ -529,22 +524,22 @@
 \begin{frame}{Uniform Acceleration: Constant Acceleration}
   \begin{center}
     \begin{tikzpicture}[scale=.5]
-      \draw[->,thick] (0,0)--(4.5,0) node[pos=1,right]{$t$};
-      \draw[->,thick] (0,-1.5)--(0,4.5) node[pos=1,above]{$d$};
-      \draw[smooth,samples=20,domain=0:4,red!80!black,ultra thick]
+      \draw[->,thick] (0,0)--(4.5,0) node[right]{$t$};
+      \draw[->,thick] (0,-1.5)--(0,4.5) node[above]{$d$};
+      \draw[smooth,samples=20,domain=0:4,red!80!black,very thick]
       plot({\x},{0.35*(\x-1)*(\x-1)+1});
     \end{tikzpicture}
     \hspace{.15in}
     \begin{tikzpicture}[scale=.5]
-      \draw[->,thick] (0,0)--(4.5,0) node[pos=1,right]{$t$};
-      \draw[->,thick] (0,-1.5)--(0,4.5) node[pos=1,above]{$v$};
-      \draw[red!80!black,ultra thick](0,-1)--(4,2.5);
+      \draw[->,thick] (0,0)--(4.5,0) node[right]{$t$};
+      \draw[->,thick] (0,-1.5)--(0,4.5) node[above]{$v$};
+      \draw[red!80!black,very thick](0,-1)--(4,2.5);
     \end{tikzpicture}
     \hspace{.15in}
     \begin{tikzpicture}[scale=.5]
-      \draw[->,thick] (0,0)--(4.5,0) node[pos=1,right]{$t$};
-      \draw[->,thick] (0,-1.5)--(0,4.5) node[pos=1,above]{$a$};
-      \draw[red!80!black,ultra thick](0,1)--(4,1);
+      \draw[->,thick] (0,0)--(4.5,0) node[right]{$t$};
+      \draw[->,thick] (0,-1.5)--(0,4.5) node[above]{$a$};
+      \draw[red!80!black,very thick](0,1)--(4,1);
     \end{tikzpicture}
   \end{center}
   \begin{itemize}
@@ -568,23 +563,23 @@
   \vspace{-.1in}
   \begin{center}
     \begin{tikzpicture}[scale=.5]
-      \draw[->,thick] (0,0)--(4.5,0) node[pos=1,right]{$t$};
-      \draw[->,thick] (0,-2.5)--(0,2.5) node[pos=1,above]{$d$};
-      \draw[smooth,samples=50,domain=0:4,red!80!black,ultra thick]
+      \draw[->,thick] (0,0)--(4.5,0) node[right]{$t$};
+      \draw[->,thick] (0,-2.5)--(0,2.5) node[above]{$d$};
+      \draw[smooth,samples=50,domain=0:4,red!80!black,very thick]
       plot({\x},{2*sin(150*\x)});
     \end{tikzpicture}
     \hspace{.15in}
     \begin{tikzpicture}[scale=.5]
-      \draw[->,thick] (0,0)--(4.5,0) node[pos=1,right]{$t$};
-      \draw[->,thick] (0,-2.5)--(0,2.5) node[pos=1,above]{$v$};
-      \draw[smooth,samples=50,domain=0:4,red!80!black,ultra thick]
+      \draw[->,thick] (0,0)--(4.5,0) node[right]{$t$};
+      \draw[->,thick] (0,-2.5)--(0,2.5) node[above]{$v$};
+      \draw[smooth,samples=50,domain=0:4,red!80!black,very thick]
       plot({\x},{2*cos(150*\x)});
     \end{tikzpicture}
     \hspace{.15in}
     \begin{tikzpicture}[scale=.5]
-      \draw[->,thick] (0,0)--(4.5,0) node[pos=1,right]{$t$};
-      \draw[->,thick] (0,-2.5)--(0,2.5) node[pos=1,above]{$a$};
-      \draw[smooth,samples=50,domain=0:4,red!80!black,ultra thick]
+      \draw[->,thick] (0,0)--(4.5,0) node[right]{$t$};
+      \draw[->,thick] (0,-2.5)--(0,2.5) node[above]{$a$};
+      \draw[smooth,samples=50,domain=0:4,red!80!black,very thick]
       plot({\x},{-2*sin(150*\x)});
     \end{tikzpicture}
   \end{center}
@@ -604,9 +599,9 @@
       \begin{tikzpicture}[scale=.65]
         \draw[pink!40,fill=pink!40](0,0)--(0,-1)--(1,0)--cycle;
         \draw[blue!20,fill=blue!20](1,0)--(3.5,0)--(3.5,2.5)--cycle;
-        \draw[red!80!black,ultra thick](0,-1)--(4,3);
-        \draw[->,thick] (0,0)--(4.5,0) node[pos=1,right]{$t$};
-        \draw[->,thick] (0,-1.5)--(0,4.5) node[pos=1,above]{$v$};
+        \draw[red!80!black,very thick](0,-1)--(4,3);
+        \draw[->,thick] (0,0)--(4.5,0) node[right]{$t$};
+        \draw[->,thick] (0,-1.5)--(0,4.5) node[above]{$v$};
       \end{tikzpicture}
     \end{center}
     
@@ -624,28 +619,44 @@
 
 
 
-%\begin{frame}{Solving Typical Kinematics Problems}
-%  
-%  \textbf{One object:} the problem provides $3$ of the $5$ variables, and you
-%  are asked to find a $4$th one.
-%  \begin{itemize}
-%  \item Define the positive direction (usually very obvious)
-%  \item Apply the correct kinematic equation and solve the problem!
-%  \end{itemize}
-%
-%  \vspace{.2in}\textbf{Two objects:} two objects are in motion. Usually one of
-%  them is moving at constant velocity while the other is accelerating.
-%  \begin{itemize}
-%  \item Time interval $\Delta t$ and displacement $\Delta\mb{x}$ of the two
-%    objects are related
-%  \item Examples:
-%    \begin{itemize}
-%    \item Police car chasing a speeder
-%    \item Two football players running towards each other
-%    \item A person trying to catch the bus
-%    \end{itemize}
-%  \end{itemize}
-%\end{frame}
+\begin{frame}{Velocity Squared vs.\ Displacement}
+  If velocity information is given as a function of position\footnote{Depends
+    on experimental set up} then a motion graph can be plotted using this
+  kinematic equation:
+
+  \eq{-.2in}{
+    \underbracket{v^2}_y=\underbracket{v_0^2}_b+\underbracket{2a}_m
+    \underbracket{(x-x_0)}_x
+  }
+
+  by plotting $v^2$ on the $y$-axis and displacement $\Delta x=x-x_0$ on the
+  $x$-axis. The slope of the graph is $m=2a$. The square of the initial
+  velocity ($v_0^2$) is the $y$-intercept.
+\end{frame}
+
+
+
+\begin{frame}{Graphing ``Linear'' Functions}
+  This concept extends to graphing other physical quantities not relating to
+  motion:
+  \begin{itemize}
+  \item To find the index of refraction of a material using Snell's law, plot
+    $\sin\theta_i$ vs.\ $\sin\theta_2$ (rather than $\theta_1$ vs.\ $\theta_2$).
+    The slope is the index $n$:
+
+    \eq{-.25in}{
+      \underbracket{\sin\theta_1}_y=\underbracket{n}_m
+      \underbracket{\sin\theta_2}_x
+    }
+  \item To relate the period of oscillation of a simple pendulum to the length
+    of the pendulum, plot $T$ vs.\ $\sqrt{L}$:
+
+    \eq{-.2in}{
+      \underbracket{T}_y=\underbracket{\frac{2\pi}{\sqrt{g}}}_m
+      \underbracket{\sqrt{L}}_x
+    }
+  \end{itemize}
+\end{frame}
 
 
 \section{Projectile Motion}
@@ -656,10 +667,10 @@
   gravity.
   \begin{center}
     \begin{tikzpicture}[scale=1.1]
-      \draw[->](0,0)--(2,0) node[pos=1,right]{$x$};
-      \draw[->](0,0)--(0,2) node[pos=1,above]{$y$};
+      \draw[->](0,0)--(2,0) node[right]{$x$};
+      \draw[->](0,0)--(0,2) node[above]{$y$};
       \draw[dotted,domain=0:4,thick] plot (\x, {1.2*\x-.2*\x*\x});
-      \draw[ultra thick,->](0,0)--(.75,.9)node[pos=1,above]{$\mb{v}_0$};
+      \draw[very thick,->](0,0)--(.75,.9)node[above]{$\mb{v}_0$};
       \draw[very thick,red!80!black,->]
       (0,0)--(0,.9)node[midway,left]{$v_{y1}$};
       \draw[very thick,blue!80!black,->]
@@ -737,7 +748,9 @@
 
 \begin{frame}{Symmetric Trajectory}
   A projectile's trajectory is symmetric if the object lands at the same height
-  as when it launched.
+  as when it launched. These equations are \emph{not} provided in the AP Exam
+  equation sheet, but it can save you a lot of time if you can use them, instead
+  of deriving them during the exam.
   \begin{itemize}
   \item Time of flight
     \eq{-.1in}{t_\mathrm{max}=\frac{2v_0\sin\theta}{g}}
@@ -772,23 +785,73 @@
 \end{frame}
 
 
+
 \section{Relative Motion}
+
+\begin{frame}{Relative Motion}
+  
+  \begin{block}{}
+    \textbf{All motion quantities must be measured relative to a frame of
+      reference}
+  \end{block}
+
+  \vspace{.2in}
+  \begin{itemize}
+  \item A frame of reference is the coordinate system from which all physical
+    measurements are made.
+  \item In \emph{classical} mechanics, the coordinate system is the
+    Cartesian system
+  \item There is no absolute motion/rest: all motions are relative
+  \item All laws of physics are equal in all inertial (non-accelerating) frames
+    of reference (principle of relativity)
+  \end{itemize}
+\end{frame}  
+
+
 
 \begin{frame}{Relative Motion}
   \begin{columns}
     \column{.4\textwidth}
     \begin{tikzpicture}[scale=1.3]
-      \draw[->](0,0)--(-.5,-.5)
-      node[pos=1,left]{$x$}
+      \draw[->](0,0)--(-.5,-.5) node[left]{$x'$}
       node[pos=0,above left]{$C$};
-      \draw[->](0,0)--(1,0) node[pos=1,right]{$y$};
-      \draw[->](0,0)--(0,1) node[pos=1,above]{$z$};
+      \draw[->](0,0)--(1,0)     node[right]{$y'$};
+      \draw[->](0,0)--(0,1)     node[above]{$z'$};
 
-      \draw[->](2,3)--(1.5,2.5)
-      node[pos=1,left]{$x'$}
+      \draw[->](2,3)--(1.5,2.5) node[left]{$x$}
       node[pos=0,above left]{$B$};
-      \draw[->](2,3)--(3,3) node[pos=1,right]{$y'$};
-      \draw[->](2,3)--(2,4) node[pos=1,above]{$z'$};
+      \draw[->](2,3)--(3,3)     node[right]{$y$};
+      \draw[->](2,3)--(2,4)     node[above]{$z$};
+
+      \fill[red!70!black] (3,1) circle(.03) node[below right]{$A$};
+    \end{tikzpicture}
+
+    \column{.6\textwidth}
+    Two frames of reference
+    \begin{itemize}
+    \item $B$ with axes $x,y,z$
+    \item $C$ with axes $x',y',z'$
+    \end{itemize}
+    The two reference frames may (or may not) be moving relative to each other.
+    The motion of the two reference frames affect how motion of
+    $\textcolor{red!70!black}{A}$ is calculated.
+  \end{columns}
+\end{frame}
+
+
+\begin{frame}{Relative Motion}
+  \begin{columns}
+    \column{.4\textwidth}
+    \begin{tikzpicture}[scale=1.3]
+      \draw[->](0,0)--(-.5,-.5) node[left]{$x'$}
+      node[pos=0,above left]{$C$};
+      \draw[->](0,0)--(1,0)     node[right]{$y'$};
+      \draw[->](0,0)--(0,1)     node[above]{$z'$};
+
+      \draw[->](2,3)--(1.5,2.5) node[left]{$x$}
+      node[pos=0,above left]{$B$};
+      \draw[->](2,3)--(3,3)     node[right]{$y$};
+      \draw[->](2,3)--(2,4)     node[above]{$z$};
 
       \fill[red!70!black] (3,1) circle(.03) node[below right]{$A$};
       \draw[very thick,->,blue!70!black](0,0)--(2.98,.998)
@@ -798,27 +861,13 @@
     \end{tikzpicture}
 
     \column{.6\textwidth}
-    \fbox{
-      \begin{minipage}{.9\textwidth}
-        All motion quantities must be measured relative to a frame of
-        reference
-      \end{minipage}
-    }
+    The position of $\textcolor{red!70!black}{A}$ can be described by
     \begin{itemize}
-    \item Two \textbf{frames of reference} (i.e.\ \textbf{coordinate systems})
-      $C(x,y,z)$ and $B(x',y',z')$
-    \item Object $\textcolor{red!80!black}{A}$ can be described by the position
-      vector $\textcolor{blue!70!black}{\mb{x}_{AC}}$ (position of $A$ relative
-      to frame $C$) or $\textcolor{green!80!black}{\mb{x}_{AB}}$ ($A$ relative
-      to frame $B$)
-      \begin{itemize}
-      \item It is clear that $\mb{x}_{AB}$ and $\mb{x}_{AC}$ are different
-      \item If the object moves, then $\mb{x}_{AB}$ and $\mb{x}_{AC}$ are
-        functions of time
-      \end{itemize}
-    \item If position depends on the reference frame, then so do velocity and
-      acceleration
+    \item $\textcolor{green!80!black}{\mb{x}_{AB}(t)}$ (relative to frame $B$)
+    \item $\textcolor{blue!70!black}{\mb{x}_{AC}(t)}$ (relative to frame $C$)
     \end{itemize}
+    It is obvious that $\textcolor{green!80!black}{\mb{x}_{AB}(t)}$ and
+    $\textcolor{blue!70!black}{\mb{x}_{AC}(t)}$ are different vectors
   \end{columns}
 \end{frame}
 
@@ -828,17 +877,15 @@
   \begin{columns}
     \column{.4\textwidth}
     \begin{tikzpicture}[scale=1.3]
-      \draw[->](0,0)--(-.5,-.5)
-      node[pos=1,left]{$x$}
+      \draw[->](0,0)--(-.5,-.5) node[left]{$x'$}
       node[pos=0,above left]{$C$};
-      \draw[->](0,0)--(1,0) node[pos=1,right]{$y$};
-      \draw[->](0,0)--(0,1) node[pos=1,above]{$z$};
+      \draw[->](0,0)--(1,0)     node[right]{$y'$};
+      \draw[->](0,0)--(0,1)     node[above]{$z'$};
 
-      \draw[->](2,3)--(1.5,2.5)
-      node[pos=1,left]{$x'$}
+      \draw[->](2,3)--(1.5,2.5) node[left]{$x$}
       node[pos=0,above left]{$B$};
-      \draw[->](2,3)--(3,3) node[pos=1,right]{$y'$};
-      \draw[->](2,3)--(2,4) node[pos=1,above]{$z'$};
+      \draw[->](2,3)--(3,3)     node[right]{$y$};
+      \draw[->](2,3)--(2,4)     node[above]{$z$};
       
       \draw[very thick,->,purple!80](0,0)--(2,3)
       node[midway,left]{$\mb{x}_{BC}$};
@@ -847,27 +894,27 @@
       node[midway,below]{$\mb{x}_{AC}$};
       \draw[very thick,->,green!30](2,3)--(3,1.03)
       node[midway,right]{$\mb{x}_{AB}$};
-      
     \end{tikzpicture}
 
     \column{.6\textwidth}
+    The position vector of the origins of the two reference frames is given by
+    $\textcolor{purple!80}{\mb{x}_{BC}}$
     \begin{itemize}
-    \item The relative position of the origins of the two frames of reference
-      can is $\mb{x}_{BC}$
-      \begin{itemize}
-      \item The vector pointing from the origin of frame $C$ to the origin of
-        frame $B$
-      \item If the two frames are moving relative to each other, then
-        $\mb{x}_{BC}$ is a function of time
-      \end{itemize}
-    \item Without needing vector notations, it should be obvious that
+    \item The vector pointing from the origin of frame $C$ to the origin of
+      frame $B$
+    \item If the two frames are moving relative to each other, then
+    $\textcolor{purple!80}{\mb{x}_{BC}}$ is also a function of time
+    \end{itemize}
+    Without using vector notations, the relationship between the
+    vectors is obvious:
 
-      \eq{-.3in}{
+    \eq{-.3in}{
+      \boxed{
         \textcolor{blue!70!black}{\mb{x}_{AC}}=
         \textcolor{green!80!black}{\mb{x}_{AB}}+
         \textcolor{purple!80}{\mb{x}_{BC}}
-        }
-    \end{itemize}
+      }
+    }
   \end{columns}
 \end{frame}
 
@@ -877,17 +924,16 @@
   \begin{columns}
     \column{.4\textwidth}
     \begin{tikzpicture}[scale=1.3]
-      \draw[->](0,0)--(-.5,-.5)
-      node[pos=1,left]{$x$}
+      \draw[->](0,0)--(-.5,-.5)  node[left]{$x'$}
       node[pos=0,above left]{$C$};
-      \draw[->](0,0)--(1,0) node[pos=1,right]{$y$};
-      \draw[->](0,0)--(0,1) node[pos=1,above]{$z$};
+      \draw[->](0,0)--(1,0) node[right]{$y'$};
+      \draw[->](0,0)--(0,1) node[above]{$z'$};
 
       \draw[->](2,3)--(1.5,2.5)
-      node[pos=1,left]{$x'$}
+      node[left]{$x$}
       node[pos=0,above left]{$B$};
-      \draw[->](2,3)--(3,3) node[pos=1,right]{$y'$};
-      \draw[->](2,3)--(2,4) node[pos=1,above]{$z'$};
+      \draw[->](2,3)--(3,3) node[right]{$y$};
+      \draw[->](2,3)--(2,4) node[above]{$z$};
 
       \fill[red!65!black] (3,1) circle(.03) node[below right]{$A$};
       \draw[very thick,->,blue!70!black](0,0)--(2.98,.998)
@@ -899,66 +945,60 @@
     \end{tikzpicture}
 
     \column{.6\textwidth}
-    Assuming that all the position vectors are differentiable in time, then the
-    time derivative gives the \textbf{relative velocity}:
+    Starting from the definition of \textbf{relative position}:
 
-    \vspace{-.3in}{\Large
-      \begin{align*}
-        \frac{d}{dt}\left(\textcolor{blue!70!black}{\mb{x}_{AC}}\right) &=
-        \frac{d}{dt}\left(\textcolor{green!80!black}{\mb{x}_{AB}}+
-        \textcolor{purple!80}{\mb{x}_{BC}}\right)\\
-        \textcolor{blue!70!black}{\mb{v}_{AC}} &=
+    \eq{-.33in}{
+      \boxed{
+        \textcolor{blue!70!black}{\mb{x}_{AC}}=
+        \textcolor{green!80!black}{\mb{x}_{AB}}+
+        \textcolor{purple!80}{\mb{x}_{BC}}
+      }
+    }
+    
+    \vspace{-.1in}Differentiating all terms with respect with time, we get the
+    equation for \textbf{relative velocity}:
+
+    \eq{-.25in}{
+      \boxed{
+        \textcolor{blue!70!black}{\mb{v}_{AC}} =
         \textcolor{green!80!black}{\mb{v}_{AB}}+
         \textcolor{purple!80}{\mb{v}_{BC}}
-      \end{align*}
+      }
     }
 
-    \vspace{-.2in}Differentiating in time again gives the equation for
+    \vspace{-.1in}Differentiating again, and we obtain the equation for
     \textbf{relative acceleration}:
 
-    \eq{-.3in}{
-      \textcolor{blue!70!black}{\mb{a}_{AC}}=
-      \textcolor{green!80!black}{\mb{a}_{AB}}+
-      \textcolor{purple!80}{\mb{a}_{BC}}
+    \eq{-.25in}{
+      \boxed{
+        \textcolor{blue!70!black}{\mb{a}_{AC}}=
+        \textcolor{green!80!black}{\mb{a}_{AB}}+
+        \textcolor{purple!80}{\mb{a}_{BC}}
+      }
     }
   \end{columns}
 \end{frame}
 
 
 
-\begin{frame}{Relative Velocity Example}
-  If an airplane ($P$) flies in windy air ($A$) we must consider the velocity
-  of the airplane relative to air, i.e.\ $\mb{v}_{PA}$ and the velocity of the
-  air relative to Earth $E$, i.e.\ $\mb{v}_{AE}$. The velocity of the airplane
-  relative to Earth is therefore
-
-  \eq{-.2in}{
-    \mb{v}_{PE}=\mb{v}_{PA}+\mb{v}_{AE}
-  }
-
-  \textbf{Simple example:} If an airplane is flying at a constant velocity of
-  \SI{253}{km/h} south relative to the air and the air velocity is
-  \SI{24}{km/h} east, what is the velocity of the airplane relative to Earth?
-\end{frame}
-
-
-
 \begin{frame}{Relative Velocity}
-  In classical mechanics, the equation for relative motion follows the
-  \textbf{Galilean velocity addition rule}:
+  In classical mechanics, the equation for relative velocities follows the
+  \textbf{Galilean velocity addition rule}, which applies to speeds much less
+  than the speed of light:
 
   \eq{-.25in}{
     \mb{v}_{AC}=\mb{v}_{AB}+\mb{v}_{BC}
   }
 
-  \vspace{-.1in}The velocity of $A$ relative to reference frame $C$ is the
-  velocity of $A$ relative to reference frame $B$, plus the velocity of $B$
-  relative to $C$. If we add another reference frame $D$, the equation becomes:
+  The velocity of $A$ relative to reference frame $C$ is the velocity of $A$
+  relative to reference frame $B$, plus the velocity of $B$ relative to $C$. If
+  we add another reference frame $D$, the equation becomes:
 
   \eq{-.25in}{
     \mb{v}_{AD}=\mb{v}_{AB}+\mb{v}_{BC}+\mb{v}_{CD}
   }
 \end{frame}
+
 
 
 \begin{frame}{Typical Problems}
@@ -968,7 +1008,7 @@
   \begin{itemize}
   \item You have to solve problems faster because of time constraint
   \item You can use $g=\SI{10}{\metre/\second\squared}$
-    in your calculations to make your lives    simpler
+    in your calculations to make your lives simpler
   \item A lot of problems are \emph{symbolic}, which means that they deal with
     the equations, not actual numbers
   \item Will be coupled with other types (e.g.\ dynamics and rotational) in
