@@ -107,7 +107,7 @@ problems.
     instant shown in Figure 2?
     \begin{enumerate}[nosep,leftmargin=18pt,label=(\Alph*)]
     \item$\left(F_\mathrm{up}=F_\mathrm{down}\right)>m_Yg$
-    \item$\left(F_\mathrm{up}=m_Y\right)>F_\mathrm{down}$
+    \item$\left(F_\mathrm{up}=m_Yg\right)>F_\mathrm{down}$
     \item$m_Yg > F_\mathrm{up} > F_\mathrm{down}$
     \item$F_\mathrm{up}=F_\mathrm{down}=m_Yg$
     \end{enumerate}
@@ -222,7 +222,7 @@ problems.
   \item Three forces at on an object. If the object is in translational
     equilibrium, which of the following must be true?
     \begin{enumerate}[nosep,leftmargin=18pt,label={\Roman*.}]
-    \item The vector sum of the three forces must be equal
+    \item The vector sum of the three forces must be equal to zero
     \item The magnitudes of the three forces must be equal
     \item All three forces must be parallel
     \end{enumerate}
@@ -297,7 +297,18 @@ problems.
     \columnbreak
     
     \begin{center}
-      \pic{.1}{push}
+      \begin{tikzpicture}[scale=1.3]
+        \draw[thick](0,0) rectangle(1,1);
+        \draw[thick,->](.5,-.75)--(.5,0)
+        node[pos=0,below]{
+          \begin{minipage}{.4\linewidth}
+            \centering
+            {\footnotesize
+              Force Exerted by Person
+            }
+          \end{minipage}
+        };
+      \end{tikzpicture}
     \end{center}
   \item A person exerts an upward force on a box, as shown above. The box may be
     moving upward, downward, or not at all while the person exerts the upward
@@ -448,7 +459,19 @@ problems.
     \vspace{.7in}
     
     \begin{center}
-      \pic{.25}{rim}
+      \begin{tikzpicture}[scale=1.7]
+        \draw[thick](0,0) circle(1);
+        \draw[thick](-1,0)--(1,0);
+        \draw[thick,fill=gray](-1,0) circle(.05) node[left]{$m$};
+        \draw[thick,fill=gray]( 1,0) circle(.05) node[right]{$2M$};
+        \draw[thick,rotate=60](-1,0)--(1,0);
+        \begin{scope}[rotate=-60]
+          \draw[thick](-1,0)--(1,0) node[pos=.25,above right]{$R$};
+          \draw[thick,fill=gray](-1,0) circle(.05) node[above left]{$M$};
+        \end{scope}
+        \draw[<->,thick](-.35,0) arc(180:120:.35) node[midway,left]{\ang{60}};
+        \draw[thick,fill=white](0,0) circle(.06);
+      \end{tikzpicture}
     \end{center}
   \item A wheel of radius $R$ and negligible mass is mounted on a horizontal
     frictionless axle so that the wheel is in a vertical plane. Three small
@@ -522,15 +545,15 @@ problems.
     \item The maximum velocity occurs when the displacement is a maximum.
     \end{enumerate}
     \vspace{.7in}
-%  \end{enumerate}
-%\end{multicols}
-%
+  \end{enumerate}
+\end{multicols}
+\newpage
 %\vspace{.7in}
-%\begin{center}
-%  \pic{.3}{disks}
-%  
-%  \begin{minipage}{.6\textwidth}
-%    \begin{enumerate}[leftmargin=18pt,start=31]
+\begin{center}
+  \pic{.3}{disks}
+  
+  \begin{minipage}{.6\textwidth}
+    \begin{enumerate}[leftmargin=18pt,start=30]
   \item Cylindrical disk $A$ is rotating freely about an axis when an
     identical disk $B$ that is not rotating is dropped directly on top of disk
     $A$. If the two disks stick together, how does the total angular momentum
@@ -546,17 +569,17 @@ problems.
       (D) & $\frac12$ its original value & $\frac14$ its original value
     \end{tabular}
   \end{enumerate}
-%  \end{minipage}
-\end{multicols}
-%\vspace{\stretch{1}}
-%\begin{center}
-%  \textbf{\LARGE S T O P}
-%  
-%  \vspace{.3in}END OF SECTION I
-%
-%  \vspace{.3in}IF YOU FINISH BEFORE TIME IS CALLED, YOU MAY\\
-%  CHECK YOUR WORK ON THIS SECTION
-%
-%  \vspace{.3in}DO NOT GO ON TO SECTION II UNTIL YOU ARE TOLD TO DO SO
-%\end{center}
+  \end{minipage}
+\end{center}
+\vspace{\stretch{1}}
+\begin{center}
+  \textbf{\LARGE S T O P}
+  
+  \vspace{.3in}END OF SECTION I
+
+  \vspace{.3in}IF YOU FINISH BEFORE TIME IS CALLED, YOU MAY\\
+  CHECK YOUR WORK ON THIS SECTION
+
+  \vspace{.3in}DO NOT GO ON TO SECTION II UNTIL YOU ARE TOLD TO DO SO
+\end{center}
 \end{document}
