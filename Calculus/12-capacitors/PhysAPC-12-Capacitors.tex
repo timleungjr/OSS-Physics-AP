@@ -2,18 +2,12 @@
 
 \usetheme{metropolis}
 \setbeamersize{text margin left=.5cm,text margin right=.5cm}
-%\setbeamertemplate{navigation symbols}{} % suppress nav bar
-%\setbeamercovered{transparent}
-
-\usefonttheme{professionalfonts}
-\usepackage{graphicx}
+\usepackage[lf]{carlito}
 \usepackage{tikz}
-\usepackage{amsmath}
 \usepackage{mathpazo}
 \usepackage{xcolor,colortbl}
 \usepackage{siunitx}
 
-\setmonofont{Ubuntu Mono}
 \setlength{\parskip}{0pt}
 \renewcommand{\baselinestretch}{1}
 
@@ -22,12 +16,13 @@
   number-math-rm=\mathnormal,
   per-mode=symbol
 }
+\tikzset{>=latex}
 
 \title{Topic 12: Capacitors}
 \subtitle{Advanced Placement Physics C}
 \author[TML]{Dr.\ Timothy Leung}
 \institute{Olympiads School\\Toronto, ON, Canada}
-\date{August 2020}
+\date{\today}
 
 \newcommand{\pic}[2]{\includegraphics[width=#1\textwidth]{#2}}
 \newcommand{\mb}[1]{\mathbf{#1}}
@@ -41,20 +36,20 @@
 \end{frame}
 
 
-\begin{frame}{Files for You to Download}
-  Please download these files from the school website if you have not already
-  done so:
-  \begin{enumerate}
-  \item\texttt{PhysAPC-12-Capacitors.pdf}---This presentation. If you want to
-    print on paper, I recommend printing 4 pages per side.
-  %\item\texttt{09-10-Homework.pdf}---Homework assignment for Topics 9
-  %  (electrostatics) and 10 (Gauss' law).
-  \end{enumerate}
-
-  \vspace{.2in}Please download/print the PDF file \emph{before} each class.
-  There is no point copying notes that are already printed out for you.
-  Instead, take notes on things I say that aren't necessarily on the slides.
-\end{frame}
+%\begin{frame}{Files for You to Download}
+%  Please download these files from the school website if you have not already
+%  done so:
+%  \begin{enumerate}
+%  \item\texttt{PhysAPC-12-Capacitors.pdf}---This presentation. If you want to
+%    print on paper, I recommend printing 4 pages per side.
+%  %\item\texttt{09-10-Homework.pdf}---Homework assignment for Topics 9
+%  %  (electrostatics) and 10 (Gauss' law).
+%  \end{enumerate}
+%
+%  \vspace{.2in}Please download/print the PDF file \emph{before} each class.
+%  There is no point copying notes that are already printed out for you.
+%  Instead, take notes on things I say that aren't necessarily on the slides.
+%\end{frame}
 
 
 
@@ -88,7 +83,7 @@
 
 \begin{frame}{Electric Field and Electric Potential Difference}
   \begin{center}
-    \pic{.5}{elfield-600x205.png}
+    \pic{.5}{elfield-600x205}
   \end{center}
   \vspace{-.15in}In the case of two parallel plates (as we have worked out using
   Gauss's law), the electric field is uniform, and the relationship simplifies
@@ -117,7 +112,7 @@
   \textbf{Capacitors} is a device that stores energy in a circuit. The simplest
   form of a capacitor is a set of closely spaced parallel plates:
   \begin{center}
-    \pic{.5}{cap19.png}
+    \pic{.5}{cap19}
   \end{center}
   When the plates are connected to a battery, the battery transfer charges to
   the plates until the voltage $V$ equals the battery terminals. After that,
@@ -195,7 +190,7 @@
 \begin{frame}{Practical Capacitors}
   \begin{columns}
     \column{.3\textwidth}
-    \pic{1.15}{Figure_20_05_05a.png}
+    \pic{1.15}{Figure_20_05_05a}
     \column{.7\textwidth}
     \begin{itemize}
     \item Parallel-plate capacitors are very common in electric circuits,
@@ -248,7 +243,7 @@
       Bakelite    & \num{4.9} \\
       Pyrex glass & \num{5.6} \\
       Neoprene    & \num{6.9} \\
-      Plexiglas  & \num{3.4} \\
+      Plexiglas   & \num{3.4} \\
       Polystyrene & \num{2.55} \\
       Water (\SI{20}{\celsius}) & \num{80} 
     \end{tabular}
@@ -258,7 +253,7 @@
 
 \begin{frame}{Storage of Electrical Energy}
   \begin{center}
-    \pic{.45}{slide14.png}
+    \pic{.45}{slide14}
   \end{center}
   \begin{itemize}
   \item When charging up a capacitor, imagine positive charges moving from the
@@ -273,7 +268,7 @@
 
 \begin{frame}{Storage of Electrical Energy}
   \begin{center}
-    \pic{.35}{slide14.png}
+    \pic{.35}{slide14}
   \end{center}
   In the beginning---when the plates aren't charged---moving an infinitesimal
   charge $dq$ across the plates, the infinitesimal work done $dU$ is related to
@@ -297,15 +292,10 @@
   }
 
   The work done is stored as a potential energy inside the capacitor.
-%\end{frame}
-%
-%
-%
-%\begin{frame}{Storage of Electrical Energy}
   There are different ways to express $U_c$ using definition of capacitance:
 
   \eq{-.15in}{
-    \boxed{U_c=\frac{1}{2}\frac{Q^2}{C}=\frac{1}{2}QV=\frac{1}{2}CV^2}
+    \boxed{U_c=\frac12\frac{Q^2}{C}=\frac12QV=\frac12CV^2}
   }
 \end{frame}
 

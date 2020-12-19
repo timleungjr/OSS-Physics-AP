@@ -2,34 +2,31 @@
 
 \usetheme{metropolis}
 \setbeamersize{text margin left=.5cm,text margin right=.5cm}
-
-\usefonttheme{professionalfonts}
-\usepackage{amsmath,bm}
+%\usefonttheme{professionalfonts}
+\usepackage[lf]{carlito}
 \usepackage{siunitx}
 %\usepackage{graphicx}
 \usepackage{tikz}
 \usepackage{mathpazo}
 \usepackage{xcolor,colortbl}
-%\usepackage{hyperref}
-\usepackage{cancel}
 
 \usetikzlibrary{decorations.pathmorphing,patterns}
 
-\setmonofont{Ubuntu Mono}
 \setlength{\parskip}{0pt}
 \renewcommand{\baselinestretch}{1}
 
 \sisetup{
   detect-all,
-  number-math-rm=\mathnormal,
+  %number-math-rm=\mathnormal,
   per-mode=symbol
 }
+\tikzset{>=latex}
 
 \title{Topic 9: Universal Gravitation}
 \subtitle{Advanced Placement Physics C}
 \author{Dr.\ Timothy Leung}
 \institute{Olympiads School\\Toronto, Ontario, Canada}
-\date{January, 2020}
+\date{\today}
 
 \newcommand{\pic}[2]{\includegraphics[width=#1\textwidth]{#2}}
 \newcommand{\mb}[1]{\ensuremath\mathbf{#1}}
@@ -44,16 +41,16 @@
 \end{frame}
 
 
-\section[Intro]{Introduction}
-
-\begin{frame}{Files to Download}
-  If you have not done so already, please download the following files.
-  \begin{itemize}
-  \item\texttt{PhysAP-08-Gravity-print.pdf}---The presentation slides for this
-    topic.
-  \item\texttt{PhysAP-08-Homework.pdf}---Homework questions for this topic.
-  \end{itemize}
-\end{frame}
+%\section[Intro]{Introduction}
+%
+%\begin{frame}{Files to Download}
+%  If you have not done so already, please download the following files.
+%  \begin{itemize}
+%  \item\texttt{PhysAP-08-Gravity-print.pdf}---The presentation slides for this
+%    topic.
+%  \item\texttt{PhysAP-08-Homework.pdf}---Homework questions for this topic.
+%  \end{itemize}
+%\end{frame}
 
 
 
@@ -63,8 +60,8 @@
 \begin{frame}{Law of Universal Gravitation}
   \begin{center}
     \begin{tikzpicture}[scale=.65]
-      \draw[->,very thick,red](0,0)--(2,0) node[pos=1,right]{$\mb{F}_{21}$};
-      \draw[->,very thick,blue](8,0)--(6,0) node[pos=1,left]{$\mb{F}_{12}$};
+      \draw[->,very thick,red](0,0)--(2,0) node[right]{$\mb{F}_{21}$};
+      \draw[->,very thick,blue](8,0)--(6,0) node[left]{$\mb{F}_{12}$};
       \tikzstyle{balloon1}=[ball color=red];
       \tikzstyle{balloon2}=[ball color=blue];
       \shade[balloon1] (0,0) circle(.7) node[white]{$m_1$};
@@ -84,8 +81,9 @@
       \mb{F}_{12}=-G\frac{m_1m_2}{|\mb{r}_{12}|^2}\hat{\mb{r}}_{12}}
   }
 
-  where $G=\SI{6.674e-11}{N.m^2/kg^2}$ is the \textbf{gravitation constant},
-  $r=|\mb{r}_{12}|$ is the distance between the centers of the masses, and
+  where $G=\SI{6.674e-11}{N.m^2/kg^2}$ is the
+  \textbf{universal gravitational constant}, $r=|\mb{r}_{12}|$ is the distance
+  between the centers of the masses, and
   $\hat{\mb{r}}_{12}=\mb{r}_{12}/|\mb{r}_{12}|$ is the unit vector pointing in
   the direction from $m_1$ to $m_2$.
 \end{frame}
@@ -95,8 +93,8 @@
 \begin{frame}{Law of Universal Gravitation}
   \begin{center}
     \begin{tikzpicture}[scale=.5]
-      \draw[->,very thick,red](0,0)--(2,0) node[pos=1,right]{$\mb{F}_{21}$};
-      \draw[->,very thick,blue](8,0)--(6,0) node[pos=1,left]{$\mb{F}_{12}$};
+      \draw[->,very thick,red](0,0)--(2,0) node[right]{$\mb{F}_{21}$};
+      \draw[->,very thick,blue](8,0)--(6,0) node[left]{$\mb{F}_{12}$};
       \tikzstyle{balloon1}=[ball color=red];
       \tikzstyle{balloon2}=[ball color=blue];
       \shade[balloon1] (0,0) circle(.7) node[white]{$m_1$};
@@ -133,33 +131,33 @@
       \tikzstyle{balloon5}=[ball color=purple];
       \shade[balloon1] (0,0) circle(.72) node[white]{$M$};
       \begin{scope}[rotate=45]
-        \draw[->,very thick,blue](.72,0)--(2.5,0) node[pos=1,right]{$\mb{F}_1$};
+        \draw[->,very thick,blue](.72,0)--(2.5,0) node[right]{$\mb{F}_1$};
         \shade[balloon2] (7,0) circle(1) node[white]{$m_1$};
       \end{scope}
       \uncover<2->{
         \begin{scope}[rotate=105]
           \draw[->,very thick,green](.72,0)--(2,0)
-          node[pos=1,right]{$\mb{F}_2$};
+          node[right]{$\mb{F}_2$};
           \shade[balloon3] (4,0) circle(.65) node[white]{$m_2$};
         \end{scope}
       }
       \uncover<3->{
         \begin{scope}[rotate=190]
           \draw[->,very thick,yellow](.7,0)--(3.5,0)
-          node[pos=1,above]{$\mb{F}_3$};
+          node[above]{$\mb{F}_3$};
           \shade[balloon4] (6,0) circle(1.1) node[white]{$m_3$};
         \end{scope}
       }
       \uncover<4->{
         \begin{scope}[rotate=260]
           \draw[->,very thick,purple](.72,0)--(1.4,0)
-          node[pos=1,right]{$\mb{F}_4$};
+          node[right]{$\mb{F}_4$};
           \shade[balloon5] (9,0) circle(.8) node[white]{$m_4$};
         \end{scope}
       }
       \uncover<5>{
         \begin{scope}[rotate=125]
-          \draw[->,ultra thick](.72,0)--(3.5,0) node[pos=1,left]{$\mb{F}$};
+          \draw[->,ultra thick](.72,0)--(3.5,0) node[left]{$\mb{F}$};
         \end{scope}
       }
     \end{tikzpicture}
@@ -264,11 +262,11 @@
       & $G$ & \si{\newton\metre^2/\kilo\gram^2} \\
       Source mass               & $m$ & \si{\kilo\gram} \\
       Distance from source mass & $|\mb{r}|$ & \si{\metre}\\
-      Outward radial unit vector from source mass  & $\hat{\mb{r}}$ & N/A
+      Outward radial unit vector from source & $\hat{\mb{r}}$ & N/A
     \end{tabular}
   \end{center}
-  The \emph{direction} of the gravitational field is toward $m$ (that's what the
-  negative sign is for)
+  The negative sign indicates that \emph{direction} of the gravitational field
+  is toward $m$.
 \end{frame}
 
 
@@ -368,7 +366,7 @@
     \end{tikzpicture}
 
     \column{.7\textwidth}
-    That $\mb{g}_{\textrm{inside}}=\mb{0}$ can be calculated by:
+    That $\mb{g}_{inside}=\mb{0}$ can be calculated by:
     \begin{itemize}
     \item Integrating the fields created by infinitesimal mass elements $dm$ at
       any point inside the shell, or
@@ -376,7 +374,7 @@
       electric field inside a charged conducting sphere:
       
       \eq{-.2in}{
-        \oint\mb{g}\cdot d\mb{A}=-4\pi GM_{\textrm{encl}}
+        \oint\mb{g}\cdot d\mb{A}=-4\pi GM_{encl}
       }
     \end{itemize}
   \end{columns}
@@ -480,18 +478,18 @@
     proportional to displacement from the center, but in the opposite
     direction:
 
-    \eq{-.2in}{
+    \eq{-.3in}{
       F_g(r)=-kr
     }
     
-    \vspace{-.15in}The motion is a simple harmonic motion. The traveller will
+    \vspace{-.15in}The motion is a simple harmonic motion. The traveler will
     oscillate through Earth with a period of:
 
     \eq{-.2in}{
       T=2\pi\sqrt{\frac{m}{k}}=2\pi\sqrt{\frac{r_\oplus}{g_0}}
     }
 
-    For Earth, $T=\SI{5068}{\second}$. The traveller would pop up on the
+    For Earth, $T=\SI{5068}{\second}$. The traveler would pop up on the
     opposite side every \SI{42}{min}.
   \end{columns}
 \end{frame}
@@ -507,8 +505,8 @@
     \column{.75\textwidth}
     Since simple harmonic motion is a projection of a uniform circular motion,
     if a satellite is in a circular orbit just above the surface, and passes
-    overhead just above the traveller as he/she popped up out of the hole. The
-    period of such an orbit would be the same as oscillating traveller.
+    overhead just above the traveler as he/she popped up out of the hole. The
+    period of such an orbit would be the same as oscillating traveler.
   \end{columns}
 \end{frame}
 
@@ -555,7 +553,7 @@
   \vspace{-.25in}{\Large
     \begin{align*}
       W&=\int \mb{F}_g\cdot d\mb{r}=
-      -\int_{r_1}^{r_2}\frac{Gm_1m_2}{r^2}\mb{\hat{r}}\cdot d\mb{r}\\
+      -\int_{r_1}^{r_2}\frac{Gm_1m_2}{r^2}\hat{\mb{r}}\cdot d\mb{r}\\
       &=-\int_{r_1}^{r_2}\frac{Gm_1m_2}{r^2}dr=\frac{Gm_1m_2}{r}\Big|^{r_2}_{r_1}
       =-\Delta U_g
     \end{align*}
@@ -655,12 +653,11 @@
     F_g=F_c\quad\longrightarrow\quad \frac{GMm}{r^2}=\frac{mv^2}{r}
   }
 
-  \vspace{-.1in}Solving for $v$, we obtain the \textbf{orbital speed}
-  $v_\mathrm{orbit}$ (usually known as \textbf{orbital velocity}), which does
-  not depend on the mass of the small object in orbit:
+  \vspace{-.1in}Solving for $v$, we obtain the \textbf{orbital velocity}
+  $v_{orbit}$, which does not depend on the mass of the small object in orbit:
 
   \eq{-.15in}{
-    \boxed{v_\mathrm{orbit}=\sqrt{\frac{GM}{r}}}
+    \boxed{v_{orbit}=\sqrt{\frac{GM}{r}}}
   }
 
   \vspace{-.1in}This equation is only applicable for perfectly circular orbits.
@@ -714,18 +711,18 @@
     \frac12mv_i^2=\frac{GMm}{r_i}
   }
 
-  We can then solve for the initial speed $v_i=v_\mathrm{esc}$
+  We can then solve for the initial speed $v_i=v_{esc}$
   (\textbf{escape speed} or \textbf{escape velocity}):
 
-  \eq{-.32in}{
-    \boxed{v_\mathrm{esc}=\sqrt{\frac{2GM}{r_i}}}
+  \eq{-.2in}{
+    \boxed{v_{esc}=\sqrt{\frac{2GM}{r_i}}}
   }
 
   where $r_i$ is the initial distance from the center of the planet/star.
   There is a simple relationship between orbital speed and escape speed:
 
   \eq{-.25in}{
-    v_\mathrm{esc}=\sqrt{2} v_\mathrm{orbit}
+    v_{esc}=\sqrt{2} v_{orbit}
   }
 \end{frame}
 
@@ -765,15 +762,15 @@
     \end{tikzpicture}
   \end{center}
   The difference is that the object in orbit (left) already has orbital speed
-  $v_\mathrm{orbit}$, so escaping from that orbit requires only an additional
+  $v_{orbit}$, so escaping from that orbit requires only an additional
   speed of
   
   \eq{-.2in}{
-    \Delta v=v_\mathrm{esc}-v_\mathrm{orbit}=(\sqrt{2}-1)v_\mathrm{orbit}
+    \Delta v=v_{esc}-v_{orbit}=(\sqrt2-1)v_{orbit}
   }
   \begin{itemize}
-  \item What if $v_\mathrm{orbit}<v<v_\mathrm{esc}$?
-  \item What if $v<v_\mathrm{orbit}$?
+  \item What if $v_{orbit}<v<v_{esc}$?
+  \item What if $v<v_{orbit}$?
   \end{itemize}
 \end{frame}
 
@@ -794,7 +791,7 @@
   orbit by using the orbital speed in our expression of kinetic energy:
 
   \eq{-.3in}{
-    K_\mathrm{orbit}=\frac{1}{2}mv_\mathrm{orbit}^2=\frac{1}{2}m
+    K_{orbit}=\frac12mv_{orbit}^2=\frac{1}{2}m
     \left(\sqrt{\frac{GM}{r}}\right)^2=\boxed{\frac{GMm}{2r}}
   }
 
@@ -802,13 +799,13 @@
   \textbf{gravitational potential energy}:
 
   \eq{-.15in}{
-    U_g=-\frac{GMm}{r}=-2K_\mathrm{orbit}
+    U_g=-\frac{GMm}{r}=-2K_{orbit}
   }
   
   \vspace{-.1in}The \textbf{total orbital energy} is the sum of $K$ and $U_g$:
 
   \eq{-.15in}{
-    E_T=K_\mathrm{orbit}+U_g=-\frac{GMm}{2r}=-K_\mathrm{orbit}
+    E_T=K_{orbit}+U_g=-\frac{GMm}{2r}=-K_{orbit}
   }
 \end{frame}
 
@@ -1027,7 +1024,7 @@
       \begin{scope}[rotate around={\angle:({sqrt(\a*\a-\b*\b)},0)}]
         \draw[->]({sqrt(\a*\a-\b*\b)},0)--(8.5,0)
         node[pos=.45,below]{\tiny$\mb{r}$}
-        node[pos=1,left]{\tiny $\mb{v}_r$};
+        node[left]{\tiny $\mb{v}_r$};
         \draw[->](7.65,0)--(7.65,.85) node[below]{\tiny $\mb{v}_\theta$};
         \fill (7.65,0) circle(.1) node[above]{\tiny $m$};
       \end{scope}
@@ -1041,7 +1038,7 @@
     \begin{itemize}
     \item $\mb{v}_\theta$ means a centripetal acceleration toward $M$
     \item Changes in $\mb{v}_r$ (i.e.\ accceleration in the radial direction)
-      also means a force along $\hat{\bm{r}}$
+      also means a force along $\hat{\mb{r}}$
     \item Both components of acceleration are due entirely to gravitational
       force toward $M$
     \item Applying second law of motion gives a complicated (at least for
@@ -1069,7 +1066,7 @@
   values of $r$:
   
   \eq{-.25in}{
-    a=\frac12(r_{\textrm{min}} + r_{\textrm{max}})
+    a=\frac12(r_{min} + r_{max})
     =\left[\frac{L^2}{GMm^2}\right]\frac{1}{1-e^2}
   }
 
@@ -1241,7 +1238,7 @@
 %      \begin{scope}[rotate=23]
 %        \draw[very thick,->](0,0)--(4.8,0) node[midway,below]{$\mb{r}$};
 %        \draw[very thick,->,red!70!black](4.87,0)--(4.5,1)
-%        node[pos=1,above]{$\mb{v}$};
+%        node[above]{$\mb{v}$};
 %        \fill[red!70!black] (0,0) circle(.15) node[below]{$M$};
 %        \fill[black] (4.87,0) circle(.07) node[right]{$\mu$};
 %      \end{scope}
@@ -1262,9 +1259,9 @@
       \shade[balloon1] ( 4,0) circle(1)  node[white]{\footnotesize $m_1$};
       \shade[balloon2] (-8,0) circle(.7) node[white]{\footnotesize $m_2$};
       \draw[very thick,->,blue!80!black](-7.3,0)--(-5.3,0)
-      node[pos=1,above]{\footnotesize $\mb{F}_g$};
+      node[above]{\footnotesize $\mb{F}_g$};
       \draw[very thick,->,red!80!black](3,0)--(1,0)
-      node[pos=1,above]{\footnotesize $\mb{F}_g$};
+      node[above]{\footnotesize $\mb{F}_g$};
     \end{tikzpicture}
 
     \column{.55\textwidth}

@@ -2,31 +2,31 @@
 
 \usetheme{metropolis}
 \setbeamersize{text margin left=.5cm,text margin right=.6cm}
-
-\usefonttheme{professionalfonts}
-\usepackage{graphicx}
+\usepackage[lf]{carlito}
 \usepackage{tikz}
-\usepackage{amsmath}
 \usepackage{mathpazo}
 \usepackage{xcolor,colortbl}
 \usepackage{siunitx}
 \usepackage[siunitx]{circuitikz} % to draw circuits!
 
-\setmonofont{Ubuntu Mono}
 \setlength{\parskip}{0pt}
 \renewcommand{\baselinestretch}{1}
 
 \sisetup{
   detect-all,
-  number-math-rm=\mathnormal,
+  %number-math-rm=\mathnormal,
   per-mode=symbol
+}
+\tikzset{
+  >=latex,
+  voltage dir=RP
 }
 
 \title{Topic 13: Circuit Analysis}
 \subtitle{Advanced Placement Physics}
 \author[TML]{Dr.\ Timothy Leung}
-\institute{Olympiads School, Toronto, ON, Canada}
-\date{August 2020}
+\institute{Olympiads School\\Toronto, ON, Canada}
+\date{\today}
 
 
 \newcommand{\pic}[2]{\includegraphics[width=#1\textwidth]{#2}}
@@ -43,9 +43,9 @@
 \section{Electric Current}
 
 \begin{frame}{Current}
-  We define conventional current as the rate at which positive charges flows
-  through a wire, i.e.:
-
+  We define conventional current as the rate at which charge carriers pass
+  through a point in a circuit:
+  
   \eq{-.3in}{\boxed{I(t)=\frac{dQ}{dt}}}
 
   We can also think of the current as the flux of ``charge density'' flowing

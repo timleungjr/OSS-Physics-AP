@@ -1,17 +1,17 @@
 \documentclass[11pt]{article}
 
 %\usepackage[margin=1.2cm,top=2cm,bottom=2cm,letterpaper]{geometry}
-\usepackage[margin=1.2cm,top=2cm,bottom=2cm,papersize={8.5in,17in}]{geometry}
+\usepackage[margin=1cm,top=1.5cm,bottom=1.5cm,papersize={8.5in,17in}]{geometry}
 \usepackage{enumitem}
-\usepackage{tikz,graphicx,wrapfig}
-\usepackage{pgfplots}
-\usepackage{amsmath}
+\usepackage{tikz}
 \usepackage{newtxtext,newtxmath}
 \usepackage[document]{ragged2e}
 \usepackage[none]{hyphenat}
 \usepackage{siunitx}
 \usepackage{multicol}
 \usepackage{fancyhdr}
+
+\usetikzlibrary{patterns}
 
 \renewcommand{\headrulewidth}{0pt}
 
@@ -28,19 +28,19 @@
 \newcommand{\pic}[2]{\includegraphics[width=#1\textwidth]{#2}}
 \newcommand{\mb}[1]{\ensuremath\mathbf{#1}}
 \sisetup{
-  %detect-all,
   inter-unit-product =\ensuremath{\cdot{}},
-  per-mode=symbol,
-  group-separator={,},
+  per-mode=symbol
 }
-\tikzset{>=latex}
+\tikzset{
+  >=latex
+}
 
 \begin{document}
 \begin{center}
   \textbf{PHYSICS 1\\
     Section I\\
-    Time--45 minutes\\%1 hour 30 minutes\\
-    30 Questions %50 Questions
+    Time--50 minutes\\%1 hour 30 minutes\\
+    29 Questions %50 Questions
   }
 \end{center}
 
@@ -49,18 +49,17 @@ followed by five suggested answers or completions. Select the one that is best
 in each case and place the letter of your choice in the corresponding box on
 the student answer sheet.
 
-\vspace{10pt}
-\textbf{Note:} To simplify calculations, you may use $g=\SI{10}{m/s^2}$ in all
-problems.
+\vspace{10pt}\textbf{Note:} To simplify calculations, you may use
+$g=\SI{10}{\metre\per\second\squared}$ in all problems.
 
 \raggedcolumns
 \begin{multicols}{2}
   \textbf{Questions \ref{proj1}--\ref{proj2}} A 10 kg projectile is launched at
-  a \ang{60} angle to the ground with a velocity of 200 m/s. Neglect air
-  resistance.
+  a \ang{60} angle to the ground with a velocity of
+  \SI{200}{\metre\per\second}. Neglect air resistance.
   \begin{enumerate}[leftmargin=18pt]
   \item Compare this projectile with a 5 kg projectile launched under the same
-    conditions but at a \ang{30} angle. The 5-kg projectile will
+    conditions but at a \ang{30} angle. The 5 kg projectile will
     \label{proj1}
     \begin{enumerate}[nosep,leftmargin=18pt,label=(\Alph*)]
     \item go higher up and farther along the ground
@@ -85,14 +84,14 @@ problems.
       \pic{.3}{IMG_20200810_093039201}
     \end{center}
   \item A car with a 500 N driver goes over a hill that has a radius of 50
-    meters as shown in the figure above. The velocity of the car is 20 m/s.
-    What are the approximate force and direction that the car exerts on the
-    driver?
+    meters as shown in the figure above. The velocity of the car is
+    \SI{20}{\metre\per\second}. What are the approximate force and direction
+    that the car exerts on the driver?
     \begin{enumerate}[nosep,leftmargin=18pt,label=(\Alph*)]
-    \item 900 N, up
-    \item 400 N, down
-    \item 100 N, up
-    \item 500 N, up
+    \item\SI{900}{\newton}, up
+    \item\SI{400}{\newton}, down
+    \item\SI{100}{\newton}, up
+    \item\SI{500}{\newton}, up
     \end{enumerate}
     
     \begin{center}
@@ -106,12 +105,13 @@ problems.
     correctly relates $F_\text{up}$, $F_\text{down}$, and $m_Yg$ at the
     instant shown in Figure 2?
     \begin{enumerate}[nosep,leftmargin=18pt,label=(\Alph*)]
-    \item$\left(F_\mathrm{up}=F_\mathrm{down}\right)>m_Yg$
-    \item$\left(F_\mathrm{up}=m_Yg\right)>F_\mathrm{down}$
-    \item$m_Yg > F_\mathrm{up} > F_\mathrm{down}$
-    \item$F_\mathrm{up}=F_\mathrm{down}=m_Yg$
+    \item$\left(F_\text{up}=F_\text{down}\right)>m_Yg$
+    \item$\left(F_\text{up}=m_Yg\right)>F_\text{down}$
+    \item$m_Yg > F_\text{up} > F_\text{down}$
+    \item$F_\text{up}=F_\text{down}=m_Yg$
     \end{enumerate}
-    \vspace{.7in}
+    %\vspace{.7in}
+    \columnbreak
     
     \begin{center}
       \pic{.35}{downpour}
@@ -182,7 +182,15 @@ problems.
     \vspace{.7in}
     
     \begin{center}
-      \pic{.3}{fixed-end}
+      \begin{tikzpicture}
+        \draw[very thick,smooth,samples=200,domain=-2:2.7]
+        plot({\x},{.5*exp(-\x*\x/.15)});
+        \draw[thick,->](-.5,.8)--(.5,.8);
+        \draw[very thick](2.7,1.2)--(2.7,-1.2);
+        \fill [pattern=north east lines] (2.7,1.2) rectangle(2.9,-1.2);
+        %\draw[->,thick](2,2) to[out=180,in=270](0,0);
+        %\node at (3.8,2) {\footnotesize The particle is here!};
+      \end{tikzpicture}
     \end{center}
   \item One end of a horizontal string is fixed to a wall. A transverse wave
     pulse is generated at the other end, moves toward the wall as shown above,
@@ -243,8 +251,8 @@ problems.
   block of mass 0.20 kg on a track in the shape of a circular arc. The block is
   released from rest at a height $H$ above the floor, as shown in Figure 1. The
   block slides along the track with negligible friction and leaves it at a
-  height of 0.40 m above the floor and a speed of 3.0 m/s at a \ang{30} angle,
-  as shown in Figure 2.
+  height of 0.40 m above the floor and a speed of \SI{3.}{\metre\per\second} at
+  a \ang{30} angle, as shown in Figure 2.
 
   \begin{enumerate}[leftmargin=18pt,resume]
   \item The height $H$ is most nearly
@@ -273,9 +281,9 @@ problems.
     reaches the highest point of its motion?
     \begin{enumerate}[nosep,leftmargin=18pt,label=(\Alph*)]
     \item 0
-    \item 1.5 m/s
-    \item 2.6 m/s
-    \item 3.0 m/s
+    \item\SI{1.5}{\metre\per\second} 
+    \item\SI{2.6}{\metre\per\second}
+    \item\SI{3.0}{\metre\per\second}
     \end{enumerate}
     \label{last}
     \vspace{.7in}
@@ -289,29 +297,27 @@ problems.
     \begin{tabular}{ccc}
       & Force & Speed\\
       \hline
-      (A)  & $F_1 > F_2$ & $v_1 > v_2$ \\
-      (B)  & $F_1 > F_2$ & $v_2 > v_1$ \\
-      (C)  & $F_2 > F_1$ & $v_1 > v_2$ \\
-      (D)  & $F_2 > F_1$ & $v_2 > v_1$
+      (A) & $F_1>F_2$ & $v_1>v_2$ \\
+      (B) & $F_1>F_2$ & $v_2>v_1$ \\
+      (C) & $F_2>F_1$ & $v_1>v_2$ \\
+      (D) & $F_2>F_1$ & $v_2>v_1$
     \end{tabular}    
     \columnbreak
     
     \begin{center}
       \begin{tikzpicture}[scale=1.3]
         \draw[thick](0,0) rectangle(1,1);
-        \draw[thick,->](.5,-.75)--(.5,0)
-        node[pos=0,below]{
-          \begin{minipage}{.4\linewidth}
+        \draw[thick,->](.5,-.75)--(.5,0) node[pos=0,below]{
+          \begin{minipage}{.3\linewidth}
             \centering
-            {\footnotesize
-              Force Exerted by Person
-            }
+            \footnotesize Force Exerted\\by Person\par
           \end{minipage}
         };
       \end{tikzpicture}
     \end{center}
-  \item A person exerts an upward force on a box, as shown above. The box may be
-    moving upward, downward, or not at all while the person exerts the upward
+  \item\vspace{-.18in}A person exerts an upward force on a box, as shown above.
+    The box may be moving upward, downward, or not at all while the person
+    exerts the upward
     force. For which of the following motions of the box is the work done by the
     person on the box correctly indicated?
 
@@ -319,7 +325,7 @@ problems.
       & Motion of Box & Work Done by\\
       &               & Person on Box \\
       \hline
-      (A) & No motion                      & Positive \\
+      (A) & No motion                  & Positive \\
       (B) & Upward, decreasing speed   & Negative \\
       (C) & Downward, constant speed   & Zero     \\
       (D) & Downward, increasing speed & Negative
@@ -327,9 +333,10 @@ problems.
     \vspace{.7in}
     
     \begin{center}
-      \pic{.48}{car-collision}
+      \pic{.47}{car-collision}
     \end{center}
-  \item In the setup shown above, a student uses motion detector 1 to measure
+  \item\vspace{-.15in}In the setup shown above, a student uses motion detector
+    1 to measure
     the speed $v_i$ of a cart with mass m before it collides with and sticks to
     a stationary cart with mass $M$. Motion detector 2 measures the speed $v_f$
     of the carts after the collision. The student repeats the experiment
@@ -343,11 +350,21 @@ problems.
     \end{enumerate}
     
     \begin{center}
-      \pic{.45}{standing-wave}
+      \begin{tikzpicture}[xscale=1.7]
+        \draw[very thick,->](0,0)--(3.3,0)
+        node[pos=0,below left]{$O$} node[right]{$x$ (m)};
+        \draw[very thick,->](0,0)--(0,1.8) node[above]{$A$ (m)};
+        \foreach \x in {.5,1.5,2.5} \draw(\x,.1)--(\x,-.1);
+        \foreach \x in {1,2,3} \draw(\x,.1)--(\x,-.1) node[below]{\x};
+        \draw(.1,1.2)--(-.1,1.2) node[left]{.003};
+        \draw[very thick,smooth,samples=200,domain=0:3]
+        plot({\x},{1.25*abs(sin(180*\x))});
+      \end{tikzpicture}
     \end{center}
-  \item A standing wave is produced on a horizontal string of length 3 m that
-    is fixed at both ends. The graph above shows the amplitude A of the
-    vertical oscillations of points on the string as a function of the distance
+  \item\vspace{-.18in}A standing wave is produced on a horizontal string of
+    length \SI{3}{\metre} that is fixed at both ends. The graph above shows the
+    amplitude $A$ of the vertical oscillations of points on the string as a
+    function of the distance
     $x$ from one end of the string. For any point on the string, the amplitude
     is the absolute value of the maximum displacement of that point from its
     equilibrium position. The wavelength of the standing wave is
@@ -357,16 +374,16 @@ problems.
     \item 2.0 m
     \item 3.0 m
     \end{enumerate}
-    \columnbreak
-    
+ 
     \begin{center}
-      \pic{.25}{two-masses}
+      \pic{.24}{two-masses}
     \end{center}
-  \item A block of mass 3.0 kg is hung from a spring, causing it to stretch 12
-    cm at equilibrium, as shown above. The 3.0 block is then replaced by a 4.0
-    kg block, and the new block is released from the positive shown above, at
-    which the spring is unstretched. How far will the 4.0 kg block fall before
-    its direction is reversed?
+  \item\vspace{-.2in} A block of mass \SI{3.}{\kilo\gram} is hung from a
+    spring, causing it to stretch \SI{12}{\centi\metre} at equilibrium, as
+    shown above. The \SI{3.}{\kilo\gram} block is then replaced by a
+    \SI{4.}{\kilo\gram} block, and the new block is released from the positive
+    shown above, at which the spring is unstretched. How far will the
+    \SI{4.}{\kilo\gram} block fall before its direction is reversed?
     \begin{enumerate}[nosep,leftmargin=18pt,label=(\Alph*)]
     \item 9 cm
     \item 18 cm
@@ -375,22 +392,22 @@ problems.
     \item 48 cm
     \end{enumerate}
     
-  \item Which of the following statements about a satellite in an elliptical
-    orbit around Earth are correct? Select two answers.
-    \begin{enumerate}[nosep,leftmargin=18pt,label=(\Alph*)]
-    \item The satellite's kinetic energy is constant throughout the orbit.
-    \item The satellite's angular momentum about the center of mass of the
-      satellite-Earth system is constant throughout the orbit.
-    \item The magnitude of the satellite's linear momentum is constant
-      throughout the orbit.
-    \item The gravitational potential energy of the Earth-satellite system is
-      greatest at the satellite's farthest point from Earth.
-    \end{enumerate}
-    \vspace{.7in}
+%  \item Which of the following statements about a satellite in an elliptical
+%    orbit around Earth are correct? Select two answers.
+%    \begin{enumerate}[nosep,leftmargin=18pt,label=(\Alph*)]
+%    \item The satellite's kinetic energy is constant throughout the orbit.
+%    \item The satellite's angular momentum about the center of mass of the
+%      satellite-Earth system is constant throughout the orbit.
+%    \item The magnitude of the satellite's linear momentum is constant
+%      throughout the orbit.
+%    \item The gravitational potential energy of the Earth-satellite system is
+%      greatest at the satellite's farthest point from Earth.
+%    \end{enumerate}
+%    \vspace{.7in}
     
   \item Which of the following can be used as evidence for the claim that the
     energy carried by a mechanical wave increases with the amplitude of the
-    wave? Select two answers.
+    wave?
     \begin{enumerate}[nosep,leftmargin=18pt,label=(\Alph*)]
     \item A person does not move when a small ocean wave passes by but is pushed
       over by a higher wave.
@@ -404,13 +421,25 @@ problems.
     \vspace{.7in}
     
     \begin{center}
-      \pic{.35}{rod}
+      \begin{tikzpicture}
+        \fill(0,0) circle(.07);
+        \draw[thick](-.15,-.15) rectangle(5,.15);
+        \draw[thick](0,.4)--(0,.8);
+        \draw[thick](5,.4)--(5,.8);
+        \draw[thick,<->](0,.6)--(5,.6) node[midway,above]{$L$};
+        \draw[ultra thick,->](4,-1.15)--(5,-.15)
+        node[pos=.8,below right]{$\mb{F}$};
+        \draw(4.3,-.15) arc(180:225:.7) node[midway,left]{$\theta$};
+        \draw[thick,->] (-.8,-.2)..controls(-.8,-.6) and (-.4,-.6)..(0,-.2)
+        node[pos=0,above]{Axis};
+      \end{tikzpicture}\\
+      View from Above
     \end{center}
   \item A rod on a horizontal tabletop is pivoted at one end and is free to
     rotate without friction about a vertical axis, as shown above. A force
     $\mb{F}$ is applied at the other end, at an angle $\theta$ to the rod. If
-    $\mb{F}$ were to be applied for the rod, at what distance from the axis
-    should it be applied in order to produce the same torque?
+    $\mb{F}$ were to be applied perpendicular to the rod, at what distance from
+    the axis should it be applied in order to produce the same torque?
     \begin{enumerate}[nosep,leftmargin=18pt,label=(\Alph*)]
     \item$L\sin\theta$
     \item$L\cos\theta$
@@ -418,10 +447,9 @@ problems.
     \item$L\tan\theta$
     \item$\sqrt{2}L$
     \end{enumerate}
-    \columnbreak
     
     \begin{center}
-      \begin{tikzpicture}[scale=2]
+      \begin{tikzpicture}[scale=1.8]
         \draw[thick,->](0,0)--(0,1)node[midway,left]{$mV$};
         \draw[thick,->](0,0)--(1,0)node[midway,below]{$mV$};
       \end{tikzpicture}
@@ -485,12 +513,11 @@ problems.
     \item$2M$
     \item$\displaystyle\frac{5M}{2}$
     \end{enumerate}
-    \columnbreak
     
   \item A 2 kg object moves in a circle of radius 4 m at a constant speed of
-    3 m/s. A net force of 4.5 N acts on the object. What is the angular
-    momentum of the object with respect to an axis perpendicular the circle
-    and through its center?
+    \SI{3}{\metre\per\second}. A net force of 4.5 N acts on the object. What is
+    the angular momentum of the object with respect to an axis perpendicular
+    the circle and through its center?
     \begin{enumerate}[nosep,leftmargin=18pt,label=(\Alph*)]
     \item\SI{9}{N.m/kg}
     \item\SI{12}{m^2/s}
@@ -503,16 +530,15 @@ problems.
     \begin{center}
       \begin{tikzpicture}
         \fill(-5,0) circle(.08);
-        \draw(-5.1,-.1) rectangle (.1,.1)
-        node[midway,below]{10 kg};
+        \draw[thick](-5.18,-.18) rectangle (.1,.15) node[midway,below]{10 kg};
         \draw[very thick,->,rotate=-30](0,0)--(-3,0)
         node[midway,below]{\ang{30}\;\;}
-        node[pos=1,right]{\;\;$F=\SI{200}{\newton}$};
+        node[right]{\;\;$F=\SI{200}{\newton}$};
       \end{tikzpicture}
     \end{center}
     
-  \item What is the net torque acting on the pivot supporting a 10 kg beam 2
-    meters long as shown above?
+  \item What is the net torque acting on the pivot supporting a
+    \SI{10}{\kilo\gram} beam 2 meters long as shown above?
     \begin{enumerate}[nosep,leftmargin=18pt,label=(\Alph*)]
     \item\SI{198}{\newton.\metre}
     \item\SI{-198}{\newton.\metre}
@@ -520,9 +546,11 @@ problems.
     \item\SI{102}{\newton.\metre}
     \end{enumerate}
   \end{enumerate}
+  \columnbreak
   
-  \textbf{Question \ref{mass1}--\ref{mass2}} A 0.4 kg mass is oscillating on a
-  spring that has a force constant of $k=\SI{1000}{\newton\per\metre}$.
+  \textbf{Questions \ref{mass1}--\ref{mass2}} A \SI{.4}{\kilo\gram} mass is
+  oscillating on a spring that has a force constant of
+  $k=\SI{1000}{\newton\per\metre}$.
   \begin{enumerate}[leftmargin=18pt,resume]
   \item Which of the following measurements would allow you to determine the
     maximum velocity experienced by the mass?
@@ -545,15 +573,10 @@ problems.
     \item The maximum velocity occurs when the displacement is a maximum.
     \end{enumerate}
     \vspace{.7in}
-  \end{enumerate}
-\end{multicols}
-\newpage
-%\vspace{.7in}
-\begin{center}
-  \pic{.3}{disks}
-  
-  \begin{minipage}{.6\textwidth}
-    \begin{enumerate}[leftmargin=18pt,start=30]
+
+    \begin{center}
+      \pic{.21}{disks}
+    \end{center}
   \item Cylindrical disk $A$ is rotating freely about an axis when an
     identical disk $B$ that is not rotating is dropped directly on top of disk
     $A$. If the two disks stick together, how does the total angular momentum
@@ -569,8 +592,8 @@ problems.
       (D) & $\frac12$ its original value & $\frac14$ its original value
     \end{tabular}
   \end{enumerate}
-  \end{minipage}
-\end{center}
+\end{multicols}
+
 \vspace{\stretch{1}}
 \begin{center}
   \textbf{\LARGE S T O P}

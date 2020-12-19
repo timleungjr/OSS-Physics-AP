@@ -2,11 +2,10 @@
 
 \usetheme{metropolis}
 \setbeamersize{text margin left=.6cm,text margin right=.6cm}
-
-\usefonttheme{professionalfonts}
-\usepackage{amsmath,bm}
+%\usefonttheme{professionalfonts}
+\usepackage[lf]{carlito}
+\usepackage{bm}
 \usepackage{siunitx}
-%\usepackage{graphicx}
 \usepackage{tikz}
 \usepackage{mathpazo}
 \usepackage{xcolor,colortbl}
@@ -14,31 +13,32 @@
 
 \usetikzlibrary{patterns}
 
-\setmonofont{Liberation Mono}
+%\setmonofont{Liberation Mono}
 \setlength{\parskip}{0pt}
 \setlength{\itemsep}{0pt}
 \renewcommand{\baselinestretch}{1}
 
 \sisetup{
   detect-all,
-  detect-display-math=true,%  <== NEWLY ADDED
-  detect-inline-family=math,% <== NEWLY ADDED
-  detect-inline-weight=math,% <== NEWLY ADDED
-  number-math-rm=\mathnormal,
+  %detect-display-math=true,%  <== NEWLY ADDED
+  %detect-inline-family=math,% <== NEWLY ADDED
+  %detect-inline-weight=math,% <== NEWLY ADDED
+  %number-math-rm=\mathnormal,
   per-mode=symbol
 }
+\tikzset{>=latex}
 
 \title{Topic 7: Rotational Motion of a Rigid Body}
 \subtitle{Advanced Placement Physics C}
 \author[TML]{Dr.\ Timothy Leung}
 \institute{Olympiads School}
-\date{July 19, 2020}
+\date{\today}
 
 \newcommand{\pic}[2]{\includegraphics[width=#1\textwidth]{#2}}
 \newcommand{\mb}[1]{\ensuremath\mathbf{#1}}
 \newcommand{\iii}{\bm{\hat{\imath}}}
 \newcommand{\jjj}{\bm{\hat{\jmath}}}
-\newcommand{\kkk}{\bm{\hat{k}}}
+\newcommand{\kkk}{\hat{\mb{k}}}
 \newcommand{\eq}[2]{\vspace{#1}{\Large\begin{displaymath}#2\end{displaymath}}}
 
 
@@ -88,11 +88,11 @@
   Recall the second law of motion for objects with constant mass:
     
   \eq{-.2in}{
-    \mb{F}_\mathrm{net}=m\mb{a}
+    \mb{F}_{net}=m\mb{a}
   }
 
   \vspace{-.1in}Is it also true for \emph{rotational} motion? If a net force
-  $\mb{F}_\mathrm{net}$ causes the center of mass to accelerate (linearly), what
+  $\mb{F}_{net}$ causes the center of mass to accelerate (linearly), what
   causes a mass to rotate?
 
   \vspace{.3in}To answer this, we need to introduce a few concepts first\ldots
@@ -110,7 +110,7 @@
       \draw[ultra thick,red,->]( 1.8, .7)--( 1.8, .15) node[pos=0,above]{$F$};
     \end{tikzpicture}
   \end{center}
-  $\mb{F}_\mathrm{net}=\mb{0}$, therefore $\mb{a}=\mb{0}$. But (obviously) it
+  $\mb{F}_{net}=\mb{0}$, therefore $\mb{a}=\mb{0}$. But (obviously) it
   won't stay still either!
 \end{frame}
 
@@ -180,11 +180,11 @@
       \draw[ultra thick](0,0)--(.5,-1.5)--(-.5,-1.5)--(0,0);
       \uncover<2->{
         \draw[ultra thick,red!75,->](0,0)--(-4.8,0) node[pos=.5,below]{$d_1$};
-        \draw[ultra thick,red!75,->](-4.8,0)--(-4.8,-1)node[pos=1,below]{$F_1$};
+        \draw[ultra thick,red!75,->](-4.8,0)--(-4.8,-1)node[below]{$F_1$};
       }
       \uncover<3->{
         \draw[ultra thick,blue!60,->](0,0)--(4,0) node[pos=.5,below]{$d_2$};
-        \draw[ultra thick,blue!60,->](4,0)--(4,-1.2) node[pos=1,below]{$F_2$};
+        \draw[ultra thick,blue!60,->](4,0)--(4,-1.2) node[below]{$F_2$};
       }
     \end{tikzpicture}
   \end{center}
@@ -243,15 +243,15 @@
       \draw[thick,<->](-1.5,.5)--(0,.5) node[midway,below]{\SI{1.5}{m}};
       \draw[dashed,thick](-2.5,0)--(2.5,0);
       \draw[dashed,thick](0,.5)--(0,-.5);
-      \draw[ultra thick,orange,->](0,0)--(1,1)node[pos=1,right]{\SI{30}{N}};
+      \draw[ultra thick,orange,->](0,0)--(1,1)node[right]{\SI{30}{N}};
       \draw[thick,->](0,.4)arc(90:45:.4)
       node[pos=.7,above]{\footnotesize\ang{45}};
       \draw[ultra thick,orange,->](-1.5,0)--(-2.3,-.46)
-      node[pos=1,left]{\SI{20}{\newton}};
+      node[left]{\SI{20}{\newton}};
       \draw[thick,->](-1.9,0) arc(180:210:.4)
       node[midway,left]{\footnotesize\ang{30}};
       \draw[ultra thick,orange,->](1.5,0)--(2,-.29)
-      node[pos=1,right]{\SI{10}{\newton}};
+      node[right]{\SI{10}{\newton}};
       \draw[thick,->](1.9,0) arc(0:-30:.4)
       node[midway,right]{\footnotesize\ang{30}};
       \fill[black,draw=black,thick] (-1.5,0) circle(.1);
@@ -308,7 +308,7 @@
         \node(M) at (2,-.2) {$m$};
         \fill[black] (0,0) circle (.05);
         \draw[ultra thick,red,->](0,0)--(2,0)node[pos=.5,right]{$\mb{r}$};
-        \draw[ultra thick,->](2,0)--(2,.5)node[pos=1,above]{$\mb{v}$};
+        \draw[ultra thick,->](2,0)--(2,.5)node[above]{$\mb{v}$};
       \end{scope}
     \end{tikzpicture}
   \end{columns}
@@ -410,7 +410,7 @@
     \begin{tikzpicture}
       \draw[dashed](-5,0)--(5,0);
       \draw[very thick,red!70!black,->](-5,0)--(-3,0)
-      node[pos=1,below]{$\mb{v}$};
+      node[below]{$\mb{v}$};
       \tikzstyle{balloon}=[ball color=red!70!black];
       \shade[balloon] (-5,0) circle(.2) node[above left,red!70!black]{$m$};
       \fill[black] (0,-2) circle(.05) node[below]{$P$};
@@ -418,12 +418,12 @@
       node[midway,below left]{$\mb{r}$};
       \uncover<2->{
         \draw[dotted](0,0) circle(.2) node[above left]{$m$};
-        \draw[thick,red!50,->](.2,0)--(2,0)node[pos=1,right]{$\mb{v}$};
+        \draw[thick,red!50,->](.2,0)--(2,0)node[right]{$\mb{v}$};
         \draw[thick,blue!50,->](0,-2)--(0,0) node[midway,left]{$\mb{r}$};
       }
       \uncover<3->{
         \draw[dotted](4,0) circle(.2) node[above left]{$m$};
-        \draw[thick,red!50,->](4.2,0)--(6,0)node[pos=1,right]{$\mb{v}$};
+        \draw[thick,red!50,->](4.2,0)--(6,0)node[right]{$\mb{v}$};
         \draw[thick,blue!50,->](0,-2)--(4,0)node[midway,above left]{$\mb{r}$};
       }
     \end{tikzpicture}
@@ -546,19 +546,19 @@
   and rotational kinetic energies at its center of mass:
 
   \eq{-.2in}{
-    \boxed{K=\frac{1}{2}mv_\mathrm{CM}^2+\frac{1}{2}I_\mathrm{CM}\omega^2}
+    \boxed{K=\frac{1}{2}mv_{CM}^2+\frac{1}{2}I_{CM}\omega^2}
   }
   
-  In this case, $I_\mathrm{CM}$ is calculated at the center of
+  In this case, $I_{CM}$ is calculated at the center of
   mass. For simple problems, we only need to compute rotational kinetic energy
   at the pivot:
 
   \eq{-.2in}{
-    \boxed{K=\frac{1}{2}I_\mathrm{P}\omega^2}
+    \boxed{K=\frac{1}{2}I_P\omega^2}
   }
   
-  In this case, the $I_\mathrm{P}$ is calculated at the pivot.
-  \textbf{IMPORTANT:} $I_\mathrm{CM}\neq I_\mathrm{P}$
+  In this case, the $I_P$ is calculated at the pivot.
+  \textbf{IMPORTANT:} $I_{CM}\neq I_P$
 \end{frame}
 
 
@@ -573,7 +573,7 @@
     object along two different but parallel axis by:
 
     \eq{-.2in}{
-      \boxed{I=I_{\textrm{CM}}+md^2}
+      \boxed{I=I_{CM}+md^2}
     }
   \end{columns}
 \end{frame}

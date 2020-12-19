@@ -3,32 +3,31 @@
 \usetheme{metropolis}
 \setbeamersize{text margin left=.5cm,text margin right=.5cm}
 
-\usefonttheme{professionalfonts}
-\usepackage{graphicx}
+\usepackage[lf]{carlito}
 \usepackage{tikz}
-\usepackage{amsmath}
 \usepackage{mathpazo}
 \usepackage{xcolor,colortbl}
 \usepackage{siunitx}
 \usepackage[siunitx]{circuitikz} % to draw circuits!
 
-\setmonofont{Ubuntu Mono}
 \setlength{\parskip}{0pt}
 \renewcommand{\baselinestretch}{1}
 
-%\usetikzlibrary{circuits.ee.IEC}
-
 \sisetup{
   detect-all,
-  number-math-rm=\mathnormal,
+  %number-math-rm=\mathnormal,
   per-mode=symbol
+}
+\tikzset{
+  >=latex,
+  voltage dir=RP
 }
 
 \title{Topic 12: DC Circuit Analysis}
 \subtitle{Advanced Placement Physics 1 \& 2}
 \author[TML]{Dr.\ Timothy Leung}
 \institute{Olympiads School, Toronto, ON, Canada}
-\date{August 2020}
+\date{\today}
 
 
 \newcommand{\pic}[2]{\includegraphics[width=#1\textwidth]{#2}}
@@ -48,8 +47,9 @@
 \begin{frame}{Basic DC Circuit}
   \begin{columns}
     \column{.3\textwidth}
+    \centering
     \begin{tikzpicture}[scale=1.8,american voltages]
-      \draw[thick](0,0) to[battery=$V$]
+      \draw[thick](0,0) to[battery,l=$V$]
       (0,1.5)--(1.5,1.5) to[R=$R$](1.5,0)--(0,0);
     \end{tikzpicture}
     
@@ -71,51 +71,44 @@
 \section{Current}
 
 \begin{frame}{Current}
-  \textbf{Electric current} is the amount of \emph{positive} chargess $Q$ that
-  flows through a wire in during a time interval $\Delta t$:
+  The \textbf{electric current} $I$ through conductor is the amount of charge
+  carriers $Q$ that passes through a point during a time interval $t$:
 
   \eq{-.25in}{
-    \boxed{I=\frac{Q}{\Delta t}}
+    \boxed{I=\frac{Q}{t}}
   }
-
-  It is also defined as the product of \textbf{current density} $J$ flowing past
-  a surface $A$:
-  
-  \eq{-.2in}{
-    \boxed{I=JA=nvqA}
-  }
-
-  \vspace{-.2in}where
-  \begin{itemize}
-  \item The unit for $J$ is \textbf{ampere per meter squared} (\si{A/m^2})
-  \item $n$ is the number of charge carriers per unit volume
-  \item $v_d$ is the average \textbf{drift velocity} of the charge carriers
-  \item $e$ is the (elementary) charge of each particle
-  \end{itemize}
-  Basic algebra will show that these equations are consistent with one another.
+%  a surface $A$:
+%  
+%  \vspace{-.2in}where
+%  \begin{itemize}
+%  \item The unit for $J$ is \textbf{ampere per meter squared} (\si{A/m^2})
+%  \item $n$ is the number of charge carriers per unit volume
+%  \item $v_d$ is the average \textbf{drift velocity} of the charge carriers
+%  \item $e$ is the (elementary) charge of each particle
+%  \end{itemize}
+%  Basic algebra will show that these equations are consistent with one another.
 \end{frame}
 
 
 
 \begin{frame}{Current Through the Conductor}
-  The electric current through conductor is the rate at which charge carriers
-  pass through a point in the conductor:
 
+Expanding the expression:
   \eq{-.15in}{
-    \boxed{I=\frac{\Delta Q}{\Delta t}}
-    =\left(\frac{Q}{V}\right)\frac{\Delta V}{\Delta t}
+    I=\frac{Q}{t}=\left(\frac{Q}{V}\right)\frac{V}{t}
     =\left[ne\right]\left[Av_d\right]
   }
   where
   \begin{itemize}
-  \item $Q/V$ is the amount of charges \emph{per volume}, which is just
-    the charge carrier density $n$ times the elementary charge $e$
-  \item $\Delta V/\Delta t$ is the rate the volume of charges moves through the
+  \item $Q/V$ is the amount of charge carriers \emph{per volume}, which is just
+    the \textbf{charge carrier density} (number of charge carriers per volume)
+    $n$ times the \textbf{elementary charge} $e$
+  \item $V/t$ is the rate the volume of charges moves through the
     conductor, give by the cross-section area of the conductor $A$ times the
     \textbf{drift velocity} $v_d$ of the charge carrier
   \end{itemize}
-  For simplicity, we \emph{assume} that charge carriers are positive. While the
-  opposite is true, the behavior will be \emph{almost} identical.
+%  For simplicity, we \emph{assume} that charge carriers are positive. While the
+%  opposite is true, the behavior will be \emph{almost} identical.
 \end{frame}
 
 
@@ -124,17 +117,16 @@
   Combining the terms:
 
   \eq{-.1in}{
-    \boxed{I=\frac{\Delta Q}{\Delta t}=neAv_d}
+    \boxed{I=\frac{Q}{t}=neAv_d}
   }
   \begin{center}
     \begin{tabular}{l|c|c}
       \rowcolor{pink}
       \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
-      Current                               & $I$    & \si{\ampere} \\
-      Charge carrier density (carriers per volume) &
-      $n$ & \si{\per\metre^3} \\
-      Elementary charge                     & $e$    & \si{\coulomb}\\
-      Cross-section area of the conductor   & $A$ & \si{\metre^2}\\
+      Current                               & $I$ & \si{\ampere} \\
+      Charge carrier density                & $n$ & \si{\per\metre\cubed} \\
+      Elementary charge                     & $e$ & \si{\coulomb}\\
+      Cross-section area of the conductor   & $A$ & \si{\metre\squared}\\
       Drift velocity of the charge carriers & $v_d$ & \si{\metre\per\second}
     \end{tabular}
   \end{center}
@@ -145,14 +137,14 @@
 
 
 \begin{frame}{Charge Carrier Density}
-  The charge carrier density in a \emph{metal} conductor involves some physical
-  information about the metal:
+  Calculating the charge carrier density in a \emph{metal} conductor involves
+  some physical information about the metal:
   \begin{enumerate}
-  \item Divide the metals density $\rho$ by the metal's molar mass $M$ to find
-    the \emph{number of moles of atams per unit volume}
-  \item Multiply by Avagadro's number $N_A$ to find
+  \item Divide the metal's density $\rho$ by its molar mass $M$ to find the
+    \emph{number of moles of atoms per unit volume}
+  \item Multiply by Avagadro's number $N_A=\SI{6.0221e23}{\per mol}$ to find
     \emph{number of atoms per unit volume}
-  \item Multiply by \emph{the number of free electrons per atom} $k$ for that
+  \item Multiply by the number of free electrons per atom $k$ for that
     particular metal
   \end{enumerate}
 \end{frame}
@@ -169,18 +161,36 @@
     \begin{tabular}{l|c|c}
       \rowcolor{pink}
       \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
-      Charge carrier density   & $n$    & \si{\per\metre^3} \\
-      Density of material      & $\rho$ & \si{\kilo\gram\per\metre^3} \\
-      Number of free electrons per atom & $k$ & \\
-      Avogadro's number        & $N_A$  & \si{/\mol}\\
+      Charge carrier density   & $n$    & \si{\per\metre\cubed} \\
+      Density of material      & $\rho$ & \si{\kilo\gram\per\metre\cubed} \\
+      Free electrons per atom  & $k$    & \\
+      Avogadro's number        & $N_A$  & \si{\per\mol}\\
       Molar mass               & $M$    & \si{\kilo\gram\per\mol}
     \end{tabular}
   \end{center}
   For copper, $M=\SI{63.54e-3}{\kilo\gram\per\mol}$,
-  $\rho=\SI{9.0e3}{\kilo\gram\per\metre^3}$, $k=1$ and therefore
-  $n=\SI{8.5e28}{\per\metre^3}$.
+  $\rho=\SI{8.96e3}{\kilo\gram\per\metre\cubed}$, $k=1$ and therefore
+  $n=\SI{8.5e28}{\per\metre\cubed}$.
 \end{frame}
 
+
+\begin{frame}{Current}
+  Another alternate description of the electric current is to express it in
+  terms of the current density $J$, with a unit of of \emph{amp\`{e}re per
+    meters squared} (\si{\ampere\per\meter\squared}).
+
+  \eq{-.2in}{
+    \boxed{I=JA}
+  }
+
+  It is obvious from the previous expression that the current density is the
+  product of the charge carrier density, elementary charge, and the drift
+  velocity:
+
+  \eq{-.2in}{
+    \boxed{J=nev_d}
+  }
+\end{frame}
 
 
 \begin{frame}{Conventional Current vs.\ Electron Flow}
@@ -251,7 +261,7 @@
       Resistance           & $R$    & \si{\ohm} \\
       Resistivity          & $\rho$ & \si{\ohm.\metre}\\
       Length of conductor  & $L$    & \si{\metre}\\
-      Cross-sectional area & $A$    & \si{\metre^2}
+      Cross-sectional area & $A$    & \si{\metre\squared}
     \end{tabular}
   \end{center}
   The resistivity $\rho$ is determined by the material.
@@ -271,7 +281,7 @@
 %      \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
 %      Magnitude of electric field in the material &
 %      $\mb{E}$ & \si{\newton/\coulomb} \\
-%      Density of charge carrier & $\mb{J}$ & \si{\ampere/m^2} \\
+%      Density of charge carrier & $\mb{J}$ & \si{\ampere\per\metre\squared} \\
 %      Resistivity & $\rho$ & \si{\ohm/\metre}
 %    \end{tabular}
 %  \end{center}
@@ -378,7 +388,7 @@
   
   \eq{-.15in}{
     P
-    =\frac{\Delta W}{\Delta t}=\frac{\Delta (qV)}{\Delta t}
+    =\frac{W}{\Delta t}=\frac{\Delta (qV)}{\Delta t}
     =\left(\frac{\Delta q}{\Delta t}\right)V
     \;\rightarrow\;\boxed{P=IV}
   }
@@ -397,7 +407,7 @@
 
 
 \begin{frame}{Other Equations for Power}
-  When we combine Ohm's Law ($V=IR$) with power equation, we get two additional
+  When we combine Ohm's law ($V=IR$) with power equation, we get two additional
   expressions for power through a resistor:
 
   \eq{-.15in}{
@@ -464,7 +474,9 @@
     \column{.3\textwidth}
     \begin{center}
       \begin{tikzpicture}[scale=1.8,american voltages]
-        \draw[thick](0,0) to[battery=$V$] (0,1.5)--(1,1.5) to[R=$R$] (1,0)--(0,0);
+        \draw[thick](0,0)
+        to[battery,l=$V$] (0,1.5)--(1,1.5)
+        to[R=$R$] (1,0)--(0,0);
       \end{tikzpicture}
     \end{center}
     \column{.7\textwidth}
@@ -501,18 +513,15 @@
     current through all the resistors, which we can rewrite in terms of voltage
     and resistance using Ohm's law:
 
-    \vspace{-.3in}{\large
-      \begin{displaymath}
-        I=I_1+I_2+I_3\cdots=\frac{V_1}{R_1}+\frac{V_2}{R_2}+\frac{V_3}{R_3}\cdots
-      \end{displaymath}
+    \eq{-.3in}{
+      I=I_1+I_2+I_3\cdots=\frac{V_1}{R_1}+\frac{V_2}{R_2}+\frac{V_3}{R_3}\cdots
     }
     
-    \vspace{-.2in}But since we also know that $V_1=V_2=V_3=\cdots=V$ from the
+    \vspace{-.1in}But since we also know that $V_1=V_2=V_3=\cdots=V$ from the
     voltage law, we can re-write as
 
     \eq{-.3in}{
-      I=\frac{V}{R_\mathrm{eq}}=V\left(\frac{1}{R_1}+\frac{1}{R_2}+\frac{1}{R_3}
-      \cdots\right)
+      I=\frac{V}{R_p}=V\left(\frac1{R_1}+\frac1{R_2}+\frac1{R_3}\cdots\right)
     }
   \end{columns}
 \end{frame}
@@ -527,8 +536,7 @@
 
   \eq{-.2in}{
     \boxed{
-      \frac{1}{R_p}=\sum_i^N\frac{1}{R_i}
-      %=\frac{1}{R_1}+\frac{1}{R_2}+\cdots+\frac{1}{R_N}
+      \frac1{R_p}=\sum_i^N\frac1{R_i}
     }
   }
   \begin{center}
@@ -556,15 +564,15 @@
 
   \eq{-.2in}{I_1=I_2=I_3=\cdots=I}
 
-  \vspace{-.15in}And the total voltage drop across all resistor is therefore:
+  \vspace{-.1in}And the total voltage drop across all resistor is therefore:
 
-  \eq{-.3in}{V=V_1+V_2+V_3+\cdots=I(R_1+R_2+R_3+\cdots)}
+  \eq{-.2in}{V=V_1+V_2+V_3+\cdots=I(\underbrace{R_1+R_2+R_3+\cdots}_{R_s})}
 \end{frame}
 
 
 
 \begin{frame}{Equivalent Resistance in Series}
-  Again, through applying Ohm's Law and Kirchkoff's laws, we find that when
+  Again, through applying Ohm's law and Kirchkoff's laws, we find that when
   resistors are connected in series: the equivalent resistance of loads is the
   sum of the resistances of the individual loads.
   
@@ -691,17 +699,17 @@
 %\end{frame}
 
 
-\begin{frame}{A Very Difficult Example}
+\begin{frame}{Multi-Loop Circuits}
   \begin{columns}
     \column{.43\textwidth}
     \begin{tikzpicture}[american voltages,scale=1.2]
-      \draw[thick](0,0) to[short,*-](0,2)
-      to[R=\SI{3}{\ohm},*-] (0,4)
-      to[battery1=\SI{42}{\volt},*-](2,4)
-      to[R=\SI{3}{\ohm}] (4,4) to[short,*-](4,2)
-      to[R=\SI{3}{\ohm},*-](4,0) to[short,*-](2,0)
-      to[battery1,v=\SI{6}{\volt},*-](2,2)
-      to[R,l_=\SI{4}{\ohm},*-](0,2);
+      \draw[thick](0,0) to[short](0,2)
+      to[R=\SI{3}{\ohm}] (0,4)
+      to[battery1,l=\SI{42}{\volt}](2,4)
+      to[R=\SI{3}{\ohm}](4,4) to[short](4,2)
+      to[R=\SI{3}{\ohm}](4,0) to[short](2,0)
+      to[battery1,l=\SI{6}{\volt}](2,2)
+      to[R,l_=\SI{4}{\ohm}](0,2);
       \draw[thick](0,0) to[R,l_=\SI{6}{\ohm}](2,0);
       \draw[thick](2,2) to[R,l_=\SI{6}{\ohm}](4,2);
       \uncover<2->{
@@ -745,13 +753,13 @@
     \end{tikzpicture}
   \end{center}
   From the voltage law, we know that the voltage across all the capacitors are
-  the same, i.e.\ $V_1=V_2=V_3-\cdots=V$. We can express the total charge
-  $Q_\mathrm{tot}$ stored across all the capacitors in terms
+  the same, i.e.\ $V_1=V_2=V_3=\cdots=V$. We can express the total charge
+  $Q_{tot}$ stored across all the capacitors in terms
   of capacitance and this
   common voltage $V$: 
 
   \eq{-.3in}{
-    Q_\mathrm{tot}=Q_1+Q_2+Q_3+\cdots=C_1V+C_2V+C_3V+\cdots
+    Q_{tot}=Q_1+Q_2+Q_3+\cdots=C_1V+C_2V+C_3V+\cdots
   }
   
   \vspace{-.1in}Factoring out $V$ from each term gives us the equivalent
@@ -772,14 +780,14 @@
     \end{tikzpicture}
   \end{center}
   The total voltage across these capacitors are the sum of the voltages across
-  each of them, i.e.\ $V_\mathrm{tot}=V_1+V_2+V_3+\cdots$
+  each of them, i.e.\ $V_{tot}=V_1+V_2+V_3+\cdots$
   
   \vspace{.1in}We recognize that the charge stored on all the capacitors must
   be the same! We can then write the total voltage in terms of capacitance and
   charge:
 
   \eq{-.25in}{
-    V_\mathrm{tot}=\frac{Q}{C_1}+\frac{Q}{C_2}+\frac{Q}{C_3}+\cdots
+    V_{tot}=\frac{Q}{C_1}+\frac{Q}{C_2}+\frac{Q}{C_3}+\cdots
   }
 \end{frame}
 
@@ -791,7 +799,7 @@
   series is the sum of the inverses of the individual capacitance.
 
   \eq{-.2in}{
-    \boxed{ \frac{1}{C_s}=\sum_i\frac{1}{C_i} }
+    \boxed{ \frac1{C_s}=\sum_i\frac1{C_i} }
   }
   
   Make sure we don't confuse ourselves with resistors.
@@ -823,7 +831,7 @@
   \begin{center}
     \begin{tikzpicture}[american voltages]
       \draw[thick](0,0)
-      to[battery=$V$] (0,2)
+      to[battery,l=$V$] (0,2)
       to[R=$R$] (2,2)
       to[C=$C$] (2,0)--(0,0);
     \end{tikzpicture}
@@ -838,7 +846,7 @@
 
 %\begin{frame}{Discharging a Capacitor}
 %  We start the analysis with something even simpler. There is no voltage source,
-%  and the capacitor is already charged to $V_c=Q_\mathrm{tot}/C$. What happens
+%  and the capacitor is already charged to $V_c=Q_{tot}/C$. What happens
 %  when the current begin to flow?
 %  \begin{columns}
 %    \column{.3\textwidth}
@@ -881,10 +889,10 @@
 %  }
 %
 %  The constant of integration $K$ is the initial charge on the capacitor
-%  $Q_\mathrm{tot}$:
+%  $Q_{tot}$:
 %
 %  \eq{-.2in}{
-%    e^K=Q_\mathrm{tot}
+%    e^K=Q_{tot}
 %  }
 %\end{frame}
 
@@ -895,68 +903,49 @@
 
   \eq{-.15in}{\boxed{Q(t)=Q_0e^{-t/\tau}}}
 
-  \vspace{-.1in}where $Q_0=Q_\mathrm{tot}$ is the initial charge on the
-  capacitor, and $\tau=RC$ is called the \textbf{time constant}. Taking the
-  time derivative of $Q(t)$ gives us the current through the circuit:
+  \vspace{-.1in}where $Q_0=Q_{tot}$ is the initial charge on the
+  capacitor, and $\tau=RC$ is called the \textbf{time constant}. Using a bit of
+  basic calculus gives the current through the circuit:
 
   \eq{-.15in}{
     \boxed{I(t)=I_0e^{-t/\tau}}
   }
 
-  where the initially current at $t=0$ is given by
-  $I_0=Q_\mathrm{tot}/\tau=Q_\mathrm{tot}/RC$.
+  where the initially current is given by
+  $\displaystyle I_0=I(0)=\frac{Q_{tot}}{\tau}$.
 \end{frame}
 
 
 
 \begin{frame}{Charging a Capacitor}
-  \begin{columns}
-    \column{.3\textwidth}
+  When charging the capacitor, the charge across the capacitor is given by:
+  
+  \eq{-.22in}{
+    \boxed{Q(t)=Q_{tot}(1-e^{-t/RC})}
+  }
+
+  \vspace{-.1in}the time constant $\tau=RC$ is the same as the discharging case
+
+  \vspace{.1in}\begin{columns}
+    \column{.27\textwidth}
     \vspace{-.25in}
     \begin{tikzpicture}[american voltages,scale=1.2]
       \draw[thick](0,0)
-      to[battery=$V$] (0,2)
+      to[battery,l=$V$] (0,2)
       to[R=$R$] (2,2)
       to[C=$C$] (2,0)--(0,0);
     \end{tikzpicture}
     
-    \column{.7\textwidth}
-    When charging the capacitor, when we apply the voltage law, and do some
-    calculus, we find that the charge across the capacitor is:
-
-    \eq{-.2in}{
-      \boxed{Q(t)=Q_\mathrm{tot}(1-e^{-t/RC})}
-    }
+    \column{.73\textwidth}
+    The current $I$ through the circuit is the same as the discharging case:
     
-    where the time constant $\tau=RC$ is the same as the discharging case
-  \end{columns}
- \end{frame}
-
-
-\begin{frame}{Charging a Capacitor}
-  \begin{columns}
-    \column{.3\textwidth}
-    \vspace{-.25in}
-    \begin{tikzpicture}[american voltages,scale=1.2]
-      \draw[thick](0,0)
-      to[battery=$V$] (0,2)
-      to[R=$R$] (2,2)
-      to[C=$C$] (2,0)--(0,0);
-    \end{tikzpicture}
-    
-    \column{.7\textwidth}
-    The current through the capacitor is:
-    
-    \eq{-.2in}{
+    \eq{-.22in}{
       \boxed{I_c(t)=I_0e^{-t/\tau}}
     }
 
-    where the initial current $I_0=Q_\mathrm{tot}/\tau=V/R$. This makes sense
-    because $V_C=0$ at $t=0$, and all of the energy must be dissipated
-    through the resistor.
-    \begin{itemize}
-    \item At $t=\infty$, current through the capcitor is $I_c=0$
-    \end{itemize}
+    The initial current $I_0=Q_{tot}/\tau=V/R$. This makes sense because
+    $V_C=0$ at $t=0$, and all of the energy must be dissipated through the
+    resistor. At $t=\infty$, current through the capcitor is $I_c=0$
   \end{columns}
 \end{frame}
 
@@ -969,7 +958,7 @@
 %  To find the constant of integration $K$, we note that at $t=0$, the charge
 %  across the capacitor is $0$, and we get
 %
-%  \eq{-.2in}{e^K=CV=Q_\mathrm{tot}}
+%  \eq{-.2in}{e^K=CV=Q_{tot}}
 %
 %  which is the charge stored in the capacitor at the end. Substitute this back
 %  into the equation:
@@ -982,7 +971,7 @@
 %
 %\begin{frame}{Capacitors}
 %
-%  \eq{-.15in}{\boxed{Q(t)=Q_\mathrm{tot}(1-e^{-t/\tau})}}
+%  \eq{-.15in}{\boxed{Q(t)=Q_{tot}(1-e^{-t/\tau})}}
 %
 %  \vspace{-.1in}Charging a capacitor has the same time constant $\tau=RC$ as
 %  during discharge. We can also differentiate to find the current through the
@@ -1008,12 +997,12 @@
   \begin{center}
     \begin{tikzpicture}[scale=1.2,american voltages]
       \draw[thick] (0,0)
-      to[battery1=\SI{12}{\volt},*-*] (0,2)
+      to[battery,l=\SI{12}{\volt}] (0,2)
       to[R=\SI{4}{\ohm}](2,2)
-      to[short,*-](2.46,2.3);
-      \draw[thick](2.5,2) to[short,*-*] (3,2) to[short,-*] (4,2)
-      to[C=\SI{6}{\micro\farad},-*] (4,0)--(0,0);
-      \draw[thick] (3,0) to[R=\SI{8}{\ohm},*-] (3,2);
+      to[short,-*](2.46,2.3);
+      \draw[thick](2.5,2) to[short,*-] (3,2) to[short] (4,2)
+      to[C=\SI{6}{\micro\farad}] (4,0)--(0,0);
+      \draw[thick] (3,0) to[R=\SI{8}{\ohm}] (3,2);
     \end{tikzpicture}
   \end{center}
   \textbf{Example:} The capacitor in the circuit is initially uncharged. Find
@@ -1023,121 +1012,4 @@
   \item A long time after the switch is closed
   \end{enumerate}
 \end{frame}
-
-
-%\section{LR Circuits}
-%
-%\begin{frame}{Circuits with Inductors}
-%  \begin{itemize}
-%  \item Coils and solenoids in circuits are known as ``inductors'' and have
-%    large self inductance $L$
-%  \item Self inductance prevents currents rising and falling instantaneously
-%  \item A basic circuit containing a resistor and an inductor is called an
-%    \textbf{\emph{LR} circuit}:
-%    \begin{center}
-%      \begin{tikzpicture}[american voltages,scale=1.2]
-%        \draw[thick](0,0) to[battery1=$\mathcal{E}_0$,-*] (0,2)
-%        to[short,-*](0.5,2);
-%        \draw[thick](0.51,2.3) to[short,*-*](1,2)--(1.5,2) to [R=$R$,-*] (3,2)
-%        to [L=$L$,-*] (3,0)--(0,0);
-%      \end{tikzpicture}
-%    \end{center}
-%  \end{itemize}
-%\end{frame}
-%
-%\begin{frame}
-%  \frametitle{Analyzing LR Circuits}
-%  \begin{columns}
-%    \column{.35\textwidth}
-%    \begin{tikzpicture}[american voltages,scale=1.2]
-%      \draw[thick](0,0) to[battery1=$\mathcal{E}_0$,-*] (0,2)
-%      to[short,-*](0.5,2);
-%      \draw[thick](0.51,2.3) to[short,*-*](1,2)--(1.5,2) to [R=$R$,-*] (3,2)
-%      to [L=$L$,-*] (3,0)--(0,0);
-%    \end{tikzpicture}
-%
-%    \column{.65\textwidth}
-%    Applying Kirchkoff's voltage law:
-%
-%    \eq{-.2in}{\mathcal{E}_0-IR-L\frac{dI}{dt}=0}
-%
-%    \vspace{-.1in}We follow the same procedure as charging a capacitor to find
-%    the time dependent current:
-%
-%    \eq{-.2in}{I=\frac{\mathcal{E}_0}{R}\left(1-e^{-Rt/L}\right)}
-%
-%    \vspace{-.15in} The time constant for an $LR$ circuit is
-%    
-%    \eq{-.2in}{\tau=\frac{L}{R}}
-%  \end{columns}
-%\end{frame}
-%
-%
-%
-%
-%\begin{frame}
-%  \frametitle{Magnetic Energy}
-%  Just as a capacitor stores energy in its electric field, an inductor coil
-%  carrying a current $I$ stores energy in its magnetic field, given by:
-%
-%  \eq{-.2in}{
-%    \boxed{U_m=\frac{1}{2}LI^2}
-%  }
-%
-%  We can also define a \textbf{magnetic energy density}:
-%
-%  \eq{-.2in}{
-%    \boxed{\eta_m=\frac{B^2}{2\mu_0}}
-%  }
-%\end{frame}
-%
-%
-%\section{LC Circuit}
-%
-%\begin{frame}{LC Circuit}
-%  The final type of circuit in AP Physics is the LC circuit. In its simplest
-%  form, the circuit has an inductor and capacitor connected in series:
-%  \begin{center}
-%    \begin{tikzpicture}[american voltages,scale=1.2]
-%      \draw[thick](0,0) to[L=$L$] (0,2)--(2,2) to[C=$C$] (2,0)--(0,0);
-%    \end{tikzpicture}
-%  \end{center}
-%  We apply the Kirchkoff's voltage law:
-%  
-%  \eq{-.2in}{
-%    -V_L-V_C=0
-%    \quad\rightarrow\quad
-%    L\frac{dI}{dt}+\frac{Q}{C}=0
-%  }
-%\end{frame}
-%
-%\begin{frame}{LC Circuits}
-%  Since both terms are continuously differentiable, we can differentiate both
-%  sides of the equation, which gives:
-%
-%  \eq{-.2in}{
-%    L\frac{d^2I}{dt^2}+\frac{1}{C}\underbrace{\frac{dQ}{dt}}_I=0
-%  }
-%
-%  In fact, the above equation a second-order ordinary differential equation
-%  with constant coefficients. The solution to such an eqauation is the simple
-%  harmonic motion.
-%
-%  \eq{-.2in}{
-%    \frac{d^2I}{dt^2}+\frac{1}{LC}I=0
-%  }
-%
-%
-%\end{frame}
-%
-%
-%\begin{frame}
-%  \frametitle{LC Circuit}
-%  The current inside of an LC circuit is given by:
-%
-%  \eq{-.2in}{
-%    I(t)=I_0\sin(\omega t + \varphi)\quad\text{where}\quad
-%    \omega=\frac{1}{\sqrt{LC}}
-%  }
-%\end{frame}
 \end{document}

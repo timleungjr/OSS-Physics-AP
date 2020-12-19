@@ -3,10 +3,11 @@
 \usetheme{metropolis}
 \setbeamersize{text margin left=.5cm,text margin right=.5cm}
 
-\usefonttheme{professionalfonts}
-\usepackage{amsmath,bm}
+%\usefonttheme{professionalfonts}
+\usepackage[lf]{carlito}
+\usepackage{bm}
 \usepackage{siunitx}
-%\usepackage{graphicx}
+\usepackage{graphicx}
 \usepackage{tikz}
 \usepackage{mathpazo}
 \usepackage{xcolor,colortbl}
@@ -14,7 +15,6 @@
 
 \usetikzlibrary{decorations.pathmorphing,patterns}
 
-\setmonofont{Ubuntu Mono}
 \setlength{\parskip}{0pt}
 \renewcommand{\baselinestretch}{1}
 
@@ -23,12 +23,13 @@
   %number-math-rm=\mathnormal,
   per-mode=symbol
 }
+\tikzset{>=latex}
 
 \title{Topic 8: Harmonic Motion}
 \subtitle{Advanced Placement Physics C}
 \author[TML]{Dr.\ Timothy Leung}
 \institute{Olympiads School, Toronto, ON, Canada}
-\date{July 28, 2020}
+\date{\today}
 
 \newcommand{\pic}[2]{\includegraphics[width=#1\textwidth]{#2}}
 \newcommand{\mb}[1]{\ensuremath\mathbf{#1}}
@@ -74,13 +75,13 @@
 
   \eq{-.25in}{
     W=\int^{x_2}_{x_1}\mb{F}_e\cdot d\mb{x}=-\int^{x_2}_{x_1}kxdx
-    =-\frac{1}{2}kx^2\Big|^{x_2}_{x_1}=-\Delta U_e
+    =-\frac12kx^2\Big|^{x_2}_{x_1}=-\Delta U_e
   }
 
   where elastic potential energy is defined as
 
   \eq{-.2in}{
-    \boxed{U_e=\frac{1}{2}kx^2}
+    \boxed{U_e=\frac12kx^2}
   }
 \end{frame}
 
@@ -93,24 +94,21 @@
 
   \begin{center}
     \begin{tikzpicture}[scale=1.1]
-      \node[fill=blue!70,inner sep=4.5mm,white] (a) at (5.5,1) {$m$};
+      \node[fill=blue!70,inner sep=4.5mm] (a) at (5.5,1) {$m$};
       \draw[thick,draw=black!70,
-        decoration={aspect=0.3,segment length=2mm, amplitude=2.5mm, coil},
+        decoration={aspect=.3,segment length=2mm, amplitude=2.5mm, coil},
         decorate] (0,1)--(4.95,1);
-      \fill [pattern=north east lines] (6.5,0.5)--(6.5,0.3)--(-0.2,0.3)
-      --(-0.2,2)--(0,2)--(0,0.5)--cycle;
-      \draw[very thick] (0,0.5)--(6.5,0.5);
-      \draw[very thick] (0,0.5)--(0,2);
-      \draw[ultra thick,->,red](a)--(5.5,0)
-      node[pos=1,right]{\footnotesize $\mb{w}$};
-      \draw[ultra thick,->,red](a)--(5.5,2)
-      node[pos=1,right]{\footnotesize $\mb{N}$};
-      \draw[ultra thick,->,red](a)--(4.5,1)
-      node[pos=1,above]{\footnotesize $\mb{F}_s$};
-      \draw[->,thick](7,1)--(7.8,1) node[pos=1,right]{\footnotesize $x$};
+      \fill [pattern=north east lines] (6.5,.5)--(6.5,.3)--(-.2,.3)
+      --(-.2,2)--(0,2)--(0,.5)--cycle;
+      \draw[thick] (0,0.5)--(6.5,0.5);
+      \draw[thick] (0,0.5)--(0,2);
+      \draw[ultra thick,->,red](a)--(5.5,0) node[right]{$m\mb{g}$};
+      \draw[ultra thick,->,red](a)--(5.5,2) node[right]{$\mb{N}$};
+      \draw[ultra thick,->,red](a)--(4.5,1) node[above]{$\mb{F}_s$};
+      \draw[->,thick](7,1)--(7.8,1) node[right]{$x$};
     \end{tikzpicture}
   \end{center}
-  $\mb{w}$ and $\mb{N}$ cancel out, so net force is due only to spring force
+  $m\mb{g}$ and $\mb{N}$ cancel out, so net force is due only to spring force
   $\mb{F}_s=-k\mb{x}$ along the $x$-axis. This is true both when the spring is
   in compression or extension. (The spring is in extension in the diagram.)
 \end{frame}
@@ -212,7 +210,8 @@
 
 
 \begin{frame}{Side Note \#1}
-  \textbf{Side Note \#1:} The solution to any ODE is the linear combination of
+  \textbf{Side Note \#1:} For anyone who has more experiences with calculus,
+  you will know that the solution to any ODE is the linear combination of
   \emph{all} possible solutions, i.e.:
 
   \eq{-.2in}{
@@ -220,8 +219,8 @@
   }
 
   Where $c_1$ and $c_2$ are constant coefficients based on the initial
-  conditions. Trigonometric identities can be used to show that the solution
-  form shown in previous slides is identical.
+  conditions (position and velocity). Trigonometric identities can be used to
+  show that the solution form shown in previous slides is identical.
 \end{frame}
 
 
@@ -229,16 +228,15 @@
 \begin{frame}{Side Note \#2}
   \textbf{Side Note \#2:} Another function that can be tried as a solution to
   the ODE is the exponential function, where its derivatives is related to the
-  function itself, e.g.:
+  function itself. However, the second derivative of $e^{\omega t}$ does not have
+  the negative sign that is needed to solve the problem.
 
   \eq{-.2in}{
     x(t)=e^{\omega t}\quad\rightarrow\quad
-    \frac{dx}{dt}=\omega e^{\omega t}=\omega x(t)
+    \frac{d^2x}{dt^2}=\omega^2 e^{\omega t}=\omega^2 x(t)
   }
 
-  However, the second derivative of $e^{\omega t}$ does not have the negative
-  sign that is needed to solve the problem. But if the exponential function is
-  \emph{imaginary}:
+  But if the exponential function is \emph{imaginary}:
 
   \eq{-.2in}{
     x(t)=e^{i\omega t}
@@ -277,12 +275,10 @@
         decoration={aspect=0.3,segment length=2mm, amplitude=2.5mm, coil},
         decorate] (1,5)--(b); 
       \fill [pattern=north east lines] (0,5) rectangle (2,5.2);
-      \draw[ultra thick] (0,5)--(2,5);
-      \draw[->](1.75,3)--(1.75,2) node[pos=1,below]{$x$};
-      \draw[very thick,->,red](1,2)--(1,1)
-      node[pos=1,right]{\footnotesize $\mb{w}$};
-      \draw[very thick,->,red](1,1)--(1,3)
-      node[pos=1,right]{\footnotesize $\mb{F}_s$};
+      \draw[thick] (0,5)--(2,5);
+      \draw[->](1.75,3)--(1.75,2) node[below]{$x$};
+      \draw[very thick,->,red](1,2)--(1,1) node[below]{$m\mb{g}$};
+      \draw[very thick,->,red](1,2)--(1,3) node[right]{$\mb{F}_s$};
     \end{tikzpicture}
 
     \column{.85\textwidth}
@@ -293,8 +289,8 @@
       mg-kx=m\frac{d^2x}{dt^2}
     }
 
-    But since $\mb{w}=m\mb{g}$ is a constant, the only change is the addition
-    of a constant $B$ in the expression of $x(t)$:
+    But since $mg$ is a constant, the only change is the addition of a constant
+    $B$ in the expression of $x(t)$:
     
     \vspace{-.4in}{\Large
       \begin{align*}
@@ -318,12 +314,10 @@
         decoration={aspect=0.3,segment length=2mm, amplitude=2.5mm, coil},
         decorate] (1,5)--(b); 
       \fill [pattern=north east lines] (0,5) rectangle (2,5.2);
-      \draw[ultra thick] (0,5)--(2,5);
-      \draw[->](1.75,3)--(1.75,2) node[pos=1,below]{$x$};
-      \draw[very thick,->,red](1,2)--(1,1)
-      node[pos=1,right]{\footnotesize $\mb{w}$};
-      \draw[very thick,->,red](1,1)--(1,3)
-      node[pos=1,right]{\footnotesize $\mb{F}_s$};
+      \draw[thick] (0,5)--(2,5);
+      \draw[->](1.75,3)--(1.75,2) node[below]{$x$};
+      \draw[very thick,->,red](1,2)--(1,1) node[below]{$m\mb{g}$};
+      \draw[very thick,->,red](1,2)--(1,3) node[right]{$\mb{F}_s$};
     \end{tikzpicture}
 
     \column{.85\textwidth}
@@ -360,7 +354,7 @@
   oscillator is:
     
   \eq{-.2in}{
-    \boxed{E_T=\frac{1}{2}kA^2}
+    \boxed{E_T=\frac12kA^2}
   }
 \end{frame}
 
@@ -409,8 +403,8 @@
     \item For a \emph{simple} pendulum, there are two forces acting on the
       mass: weight $w=mg$ and tension $T$
     \item It has already been shown in the previous topic on circular motion
-      that when the mass is deflected by an angle $\alpha$, the force in the
-      angular direction is $F_\theta=-mg\sin\alpha$
+      that when the mass is deflected by an angle $\theta$, the force in the
+      angular direction is $F_\theta=-mg\sin\theta$
     \item No need to worry about the radial direction because it does not
       have to do with the restoring force
     \end{itemize}
@@ -418,20 +412,20 @@
     \column{.25\textwidth}
     \begin{tikzpicture}
       \fill[pattern=north east lines] (-1,0) rectangle (1,0.2);
-      \draw[very thick](-1,0)--(1,0);
+      \draw[thick](-1,0)--(1,0);
       \begin{scope}[rotate=10]
         \draw[thick](0,0)--(0,-5);
         \tikzstyle{balloon}=[ball color=red];    
-        \shade[balloon] (0,-5) circle (0.2) node[below right]{$m$};
+        \shade[balloon] (0,-5) circle(.2) node[below right]{$m$};
         \draw[dotted,->,very thick,red](0,-5)--(-0.5,-5)
-        node[pos=1,left]{\footnotesize $mg\sin\alpha$};
+        node[left]{$mg\sin\theta$};
         \draw[->,very thick,red](0,-5)--(0,-3)
-        node[pos=1,left]{\footnotesize $\mb{T}$};
+        node[left]{$\mb{T}$};
         \draw[->,very thick,red, rotate around={-10:(0,-5)}](0,-5)--(0,-6.5)
-        node[pos=1,below]{\footnotesize $\mb{w}$};
+        node[below]{$m\mb{g}$};
       \end{scope}
       \draw[dashed,thin](0,0)--(0,-5);
-      \draw[->](0,-2) arc(270:280:2) node[pos=0.5,below]{$\alpha$};
+      \draw[->](0,-2) arc(270:280:2) node[pos=.5,below]{$\theta$};
     \end{tikzpicture}
   \end{columns}
 \end{frame}
@@ -441,35 +435,34 @@
 \begin{frame}{The Simple Pendulum}
   \begin{columns}
     \column{.75\textwidth}
-    Substitute $F_\alpha$ into second law of motion, and cancelling mass term, we
+    Substitute $F_\theta$ into second law of motion, and cancelling mass term, we
     get:
 
-    \eq{-.35in}{
-      F_\alpha=ma_\alpha\;\;\longrightarrow\;\;
-      -g\sin\alpha=L\frac{d^2\alpha}{dt^2}
+    \eq{-.2in}{
+      F_\theta=ma_\theta\;\;\rightarrow\;\; -g\sin\theta=L\frac{d^2\theta}{dt^2}
     }
 
     Solving this ODE in its present form is difficult because of the
-    $\sin\alpha$ term. However, the series expansion of the sine function
+    $\sin\theta$ term. However, the series expansion of the sine function
 
-    \eq{-.35in}{
-      \sin(\alpha)=\alpha-\frac{\alpha^3}{3!}+\frac{\alpha^5}{5!}-
-      \frac{\alpha^7}{7!}+\cdots
+    \eq{-.2in}{
+      \sin(\theta)=\theta-\frac{\theta^3}{3!}+\frac{\theta^5}{5!}-
+      \frac{\theta^7}{7!}+\cdots
     }
     
-    shows that for small angles ($\alpha<15^\circ$), $\sin\alpha\approx\alpha$
+    shows that for small angles ($\theta<\ang{10}$), $\sin\theta\approx\theta$
     
     \column{.25\textwidth}
     \begin{tikzpicture}
       \fill[pattern=north east lines] (-1,0) rectangle (1,0.2);
-      \draw[very thick](-1,0)--(1,0);
+      \draw[thick](-1,0)--(1,0);
       \begin{scope}[rotate=10]
         \draw[thick](0,0)--(0,-5);
         \tikzstyle{balloon}=[ball color=red];    
         \shade[balloon] (0,-5) circle (0.2) node[below right]{$m$};
       \end{scope}
       \draw[dashed,thin](0,0)--(0,-5);
-      \draw[->](0,-2) arc(270:280:2) node[pos=0.5,below]{$\alpha$};
+      \draw[->](0,-2) arc(270:280:2) node[pos=.5,below]{$\theta$};
     \end{tikzpicture}
   \end{columns}
 \end{frame}
@@ -478,8 +471,8 @@
 
 \begin{frame}{The Simple Pendulum}
   \begin{columns}
-    \column{0.75\textwidth}
-    For small angles of $\alpha$, the ODE reduces to the same form as the
+    \column{.75\textwidth}
+    For small angles of $\theta$, the ODE reduces to the same form as the
     spring-mass system!
 
     \eq{-.1in}{
@@ -489,14 +482,14 @@
     \column{.25\textwidth}
     \begin{tikzpicture}
       \fill[pattern=north east lines] (-1,0) rectangle (1,0.2);
-      \draw[very thick](-1,0)--(1,0);
+      \draw[thick](-1,0)--(1,0);
       \begin{scope}[rotate=10]
         \draw[thick](0,0)--(0,-5);
         \tikzstyle{balloon}=[ball color=red];    
-        \shade[balloon] (0,-5) circle (0.2) node[below right]{$m$};
+        \shade[balloon] (0,-5) circle (.2) node[below right]{$m$};
       \end{scope}
       \draw[dashed,thin](0,0)--(0,-5);
-      \draw[->](0,-2) arc(270:280:2) node[pos=0.5,below]{$\alpha$};
+      \draw[->](0,-2) arc(270:280:2) node[pos=0.5,below]{$\theta$};
     \end{tikzpicture}
   \end{columns}
 \end{frame}
@@ -504,14 +497,14 @@
 
 
 \begin{frame}{Ordinary Differential Equation for the Pendulum}
-  The solution for $\alpha(t)$ is very similar to the spring-mass system:
+  The solution for $\theta(t)$ is very similar to the spring-mass system:
 
     \eq{-.2in}{
-      \boxed{\alpha(t)=A\cos(\omega t-\phi)}
+      \boxed{\theta(t)=\theta_{max}\cos(\omega t-\phi)}
     }
 
-    where $A$ is the maximum deflection (amplitude), and angular frequency of
-    the oscillation $\omega$ is given by:
+    where $\theta_{max}$ is the maximum deflection (amplitude), and angular
+    frequency of the oscillation $\omega$ is given by:
     
     \eq{-.15in}{
       \boxed{\omega=\sqrt{\frac{g}{L}}}
@@ -575,14 +568,14 @@
   \begin{center}
     \vspace{-.15in}
     \begin{tikzpicture}[scale=1.1]
-      \node[fill=blue!40!white,inner sep=4.5mm,white] (a) at (3.5,1) {$m$};
+      \node[fill=blue!40!white,inner sep=4.5mm] (a) at (3.5,1) {$m$};
       \draw[thick,draw=black!50,
         decoration={aspect=0.3,segment length=2mm, amplitude=2.5mm, coil},
         decorate] (0,1)--(2.95,1);
       \fill[pattern=north east lines](-.5,2)--(-.5,0)--(7,0)--(7,2)--(6.5,2)
       --(6.5,.5)--(0,.5)--(0,2)--cycle;
-      \draw[very thick] (0,2)--(0,.5)--(6.5,.5)--(6.5,2);
-      \draw[->,thick](7.25,1)--(8,1) node[pos=1,right]{\footnotesize $x$};
+      \draw[thick] (0,2)--(0,.5)--(6.5,.5)--(6.5,2);
+      \draw[->,thick](7.25,1)--(8,1) node[right]{$x$};
       \uncover<2->{
         \draw[fill=blue!20!white] (4.9,.8) rectangle(5.5,1.2);
         \draw[very thick](4.05,1)--(4.9,1);
@@ -592,10 +585,10 @@
       }
       \uncover<3->{
         \fill[red] (3.5,1)circle(.075);
-        \draw[ultra thick,->,red](3.5,1)--(3.5,0) node[pos=1,below]{$\mb{w}$};
-        \draw[ultra thick,->,red](3.5,1)--(3.5,2) node[pos=1,above]{$\mb{N}$};
-        \draw[ultra thick,->,red](3.5,1)--(2.5,1) node[pos=1,above]{$\mb{F}_s$};
-        \draw[ultra thick,->,red](3.5,1)--(4.5,1) node[pos=1,below]{$\mb{F}_D$};
+        \draw[ultra thick,->,red](3.5,1)--(3.5,0) node[below]{$m\mb{g}$};
+        \draw[ultra thick,->,red](3.5,1)--(3.5,2) node[above]{$\mb{N}$};
+        \draw[ultra thick,->,red](3.5,1)--(2.5,1) node[above]{$\mb{F}_s$};
+        \draw[ultra thick,->,red](3.5,1)--(4.5,1) node[below]{$\mb{F}_D$};
       }
     \end{tikzpicture}
   \end{center}
@@ -630,10 +623,10 @@
 %      \draw[ultra thick](4.8,1.2)--(5.5,1.2)--(5.5,.8)--(4.8,.8);
 %      \draw[ultra thick](5.5,1)--(6.5,1);
 %      \fill[red] (3.5,1)circle(.075);
-%      \draw[ultra thick,->,red](3.5,1)--(3.5,0) node[pos=1,below]{$\mb{F}_g$};
-%      \draw[ultra thick,->,red](3.5,1)--(3.5,2) node[pos=1,above]{$\mb{F}_N$};
-%      \draw[ultra thick,->,red](3.5,1)--(2.5,1) node[pos=1,above]{$\mb{F}_s$};
-%      \draw[ultra thick,->,red](3.5,1)--(4.5,1) node[pos=1,below]{$\mb{F}_D$};
+%      \draw[ultra thick,->,red](3.5,1)--(3.5,0) node[below]{$\mb{F}_g$};
+%      \draw[ultra thick,->,red](3.5,1)--(3.5,2) node[above]{$\mb{F}_N$};
+%      \draw[ultra thick,->,red](3.5,1)--(2.5,1) node[above]{$\mb{F}_s$};
+%      \draw[ultra thick,->,red](3.5,1)--(4.5,1) node[below]{$\mb{F}_D$};
 %    \end{tikzpicture}
 %  \end{center}
 %  \vspace{-.15in}
@@ -712,11 +705,11 @@
   The non-conservative damping force dissipates energy from the oscillator at
   a rate of:
 
-  \eq{-.3in}{
+  \eq{-.2in}{
     P=\frac{dE}{dt}=\mb{F}_D\cdot\mb{v}=-bv^2
   }
 
-  \vspace{-.1in}As velocity relate to energy by: $(v_{\textrm{av}})^2=E/m$, power
+  As velocity relate to energy by: $(v_{av})^2=E/m$, power
   dissipation is a first-order linear ODE:
 
   \eq{-.25in}{
@@ -742,29 +735,28 @@
   with a driving frequency $\omega$:
 
   \eq{-.2in}{
-    F_{\textrm{ext}}=F_0\cos(\omega t)
+    F_{ext}=F_0\cos(\omega t)
   }
   \begin{center}
     \begin{tikzpicture}
-      \node[fill=blue!40!white,inner sep=3.5mm,white] (a) at (3.5,1) {$m$};
+      \node[fill=blue!40!white,inner sep=3.5mm] (a) at (3.5,1) {$m$};
       \draw[thick,draw=black!50,
         decoration={aspect=0.3,segment length=2mm, amplitude=2.5mm, coil},
         decorate] (0,1)--(2.95,1);
       \fill[pattern=north east lines](-.5,2)--(-.5,0)--(7,0)--(7,2)--(6.5,2)
       --(6.5,.5)--(0,.5)--(0,2)--cycle;
-      \draw[very thick] (0,2)--(0,.5)--(6.5,.5)--(6.5,2);
+      \draw[thick] (0,2)--(0,.5)--(6.5,.5)--(6.5,2);
       \draw[fill=blue!20!white] (4.9,.8) rectangle(5.5,1.2);
       \draw[very thick](4.05,1)--(4.9,1);
       \draw[very thick](4.9,.8)--(4.9,1.2);
       \draw[very thick](4.8,1.2)--(5.5,1.2)--(5.5,.8)--(4.8,.8);
       \draw[very thick](5.5,1)--(6.5,1);
       \fill[red] (3.5,1)circle(.075);
-      \draw[ultra thick,->,red](3.5,1)--(3.5,0) node[pos=1,below]{$\mb{w}$};
-      \draw[ultra thick,->,red](3.5,1)--(3.5,2) node[pos=1,above]{$\mb{N}$};
-      \draw[ultra thick,->,red](3.5,1)--(2.5,1) node[pos=1,above]{$\mb{F}_s$};
-      \draw[ultra thick,->,red](3.5,.9)--(2,.9)
-      node[pos=1,below]{$\mb{F}_{\textrm{ext}}$};
-      \draw[ultra thick,->,red](3.5,1)--(4.5,1) node[pos=1,below]{$\mb{F}_D$};
+      \draw[ultra thick,->,red](3.5,1)--(3.5,0) node[below]{$m\mb{g}$};
+      \draw[ultra thick,->,red](3.5,1)--(3.5,2) node[above]{$\mb{N}$};
+      \draw[ultra thick,->,red](3.5,1)--(2.5,1) node[above]{$\mb{F}_s$};
+      \draw[ultra thick,->,red](3.5,.9)--(2,.9) node[below]{$\mb{F}_{ext}$};
+      \draw[ultra thick,->,red](3.5,1)--(4.5,1) node[below]{$\mb{F}_D$};
     \end{tikzpicture}
   \end{center}
 \end{frame}
@@ -780,10 +772,12 @@
   }
 
   Rearranging the terms gives a similar ODE to the damped case, but with the
-  additional external force term on the right-hand side:
+  \textcolor{green!80!black}{additional external force term} on the right-hand
+  side:
 
   \eq{-.2in}{
-    m\frac{d^2x}{dt^2}+b\frac{dx}{dt}+kx=F_0\cos(\omega t)
+    m\frac{d^2x}{dt^2}+b\frac{dx}{dt}+kx=
+    \textcolor{green!80!black}{F_0\cos(\omega t)}
   }
 
 \end{frame}
@@ -813,8 +807,9 @@
 
 \begin{frame}{Forced Harmonic Motion}
   Solving for the steady-state solution will be left as a difficult calculus
-  exercise, but it can be shown that the solution is a harmonic motion at
-  the driving frequency $\omega$ of the external force:
+  exercise (usually taught in 2nd-year university level ODE course), but it can
+  be shown that the solution is a harmonic motion at the driving frequency
+  $\omega$ of the external force:
 
   \eq{-.2in}{
     \boxed{x(t)=A\cos(\omega t-\phi)}
@@ -859,7 +854,7 @@
   equal to the natural frequency $\omega_0$, with a maximum value of:
   
   \eq{-.2in}{
-    A_{\textrm{max}}=\frac{F_0}{b\omega}
+    A_{max}=\frac{F_0}{b\omega}
   }
 \end{frame}
 
@@ -900,7 +895,7 @@
   $\phi=\pi/2$:
   
   \eq{-.3in}{
-    v(t)=\dot{x}=-A\omega\sin(\omega t-\frac{\pi}{2})=A\omega\cos(\omega t)
+    v(t)=\dot{x}=-A\omega\sin(\omega t-\frac{\pi}2)=A\omega\cos(\omega t)
   }
 \end{frame}
 
@@ -913,7 +908,7 @@
   \vspace{-.4in}{\Large
     \begin{align*}
       v(t)&=A\omega\cos(\omega t)\\
-      F_{\textrm{ext}}(t)&=F_0\cos(\omega t)
+      F_{ext}(t)&=F_0\cos(\omega t)
     \end{align*}
   }
 \end{frame}

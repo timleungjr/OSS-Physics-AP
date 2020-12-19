@@ -2,14 +2,15 @@
 
 \usetheme{metropolis}
 \setbeamersize{text margin left=.6cm,text margin right=.6cm}
-
-\usefonttheme{professionalfonts}
+%\usefonttheme{professionalfonts}
+\usepackage[lf]{carlito}
 \usepackage{graphicx}
 \usepackage{tikz}
-\usepackage{amsmath}
+%\usepackage{amsmath}
 \usepackage{mathpazo}
 \usepackage{xcolor,colortbl}
 \usepackage{siunitx}
+
 
 \setmonofont{Ubuntu Mono}
 \setlength{\parskip}{0pt}
@@ -17,17 +18,18 @@
 
 
 \sisetup{
-  detect-all,
-  number-math-rm=\mathnormal,
+  %detect-all,
+  %number-math-rm=\mathnormal,
   per-mode=symbol,
-  group-separator={,},
+  %group-separator={,},
 }
+\tikzset{>=latex}
 
 \title{Topic 11: Electrostatics}
 \subtitle{Advanced Placement Physics C}
 \author[TML]{Dr.\ Timothy Leung}
-\institute{Olympiads School\\Toronto, ON, Canada}
-\date{August, 2020}
+\institute{Olympiads School, Toronto, ON, Canada}
+\date{\today}
 
 \newcommand{\pic}[2]{\includegraphics[width=#1\textwidth]{#2}}
 \newcommand{\mb}[1]{\mathbf{#1}}
@@ -45,16 +47,16 @@
 
 \section[Intro]{Introduction}
 
-\begin{frame}{Files for You to Download}
-  The discussion on electrostatics will be given as a pre-recorded session.
-  The files for this class can be download from the school website:
-  \begin{enumerate}
-  \item\texttt{PhysAPC-11-electrostatics.pdf}---This presentation.
-  \end{enumerate}
-  Please download/print the PDF file before each class. There is no point
-  copying notes that are already printed out for you. Instead, take notes on
-  things I say that aren't necessarily on the slides.
-\end{frame}
+%\begin{frame}{Files for You to Download}
+%  The discussion on electrostatics will be given as a pre-recorded session.
+%  The files for this class can be download from the school website:
+%  \begin{enumerate}
+%  \item\texttt{PhysAPC-11-electrostatics.pdf}---This presentation.
+%  \end{enumerate}
+%  Please download/print the PDF file before each class. There is no point
+%  copying notes that are already printed out for you. Instead, take notes on
+%  things I say that aren't necessarily on the slides.
+%\end{frame}
 
 
 \section{Electrostatic Force}
@@ -95,7 +97,7 @@
   $q_1$ exerts on $q_2$ is given by \textbf{Coulomb's law}:
 
   \eq{-.2in}{
-    \boxed{\mb{F}_{12}=\frac{kq_1q_2}{|\mb{r}_{12}|^2}\mb{\hat{r}}_{12}}
+    \boxed{\mb{F}_{12}=\frac{kq_1q_2}{|\mb{r}_{12}|^2}\hat{\mb{r}}_{12}}
   }
 \end{frame}
 
@@ -103,7 +105,7 @@
 
 \begin{frame}{Coulomb's Law for Electrostatic Force}
   \eq{-.2in}{
-    \boxed{\mb{F}_{12}=\frac{kq_1q_2}{|\mb{r}_{12}|^2}\mb{\hat{r}}_{12}}
+    \boxed{\mb{F}_{12}=\frac{kq_1q_2}{|\mb{r}_{12}|^2}\hat{\mb{r}}_{12}}
   }
   \begin{center}
     \begin{tabular}{l|c|c}
@@ -113,7 +115,7 @@
       Coulomb's constant (electrostatic constant) & $k$ & \si{N.m^2/C^2} \\
       Point charges 1 and 2  & $q_1$, $q_2$ &  \si{\coulomb} \\
       Distance between point charges & $|\mb{r}_{12}|$ & \si{\metre} \\
-      Unit vector of direction between point charges & $\mb{\hat{r}}_{12}$ &
+      Unit vector of direction between point charges & $\hat{\mb{r}}_{12}$ &
     \end{tabular}
   \end{center}
 
@@ -255,7 +257,7 @@
   The electric field a distance $r$ away from a point charge $q$ is given by:
 
   \eq{-.2in}{
-    \boxed{\mb{E}(q,\mb{r})=\frac{kq}{|\mb{r}|^2}\mb{\hat{r}}}
+    \boxed{\mb{E}(q,\mb{r})=\frac{kq}{|\mb{r}|^2}\hat{\mb{r}}}
   }
   \begin{center}
     \begin{tabular}{l|c|c}
@@ -265,7 +267,7 @@
       Coulomb's constant          & $k$   & \si{N.m^2/C^2} \\
       Source charge               & $q$   & \si{\coulomb} \\
       Distance from source charge & $|\mb{r}|$   & \si{\metre} \\
-      Outward unit vector from point source & $\mb{\hat{r}}$ &
+      Outward unit vector from point source & $\hat{\mb{r}}$ &
     \end{tabular}
   \end{center}
   The direction of $\mb{E}$ is radially outward from a positive point charge
