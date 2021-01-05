@@ -1,0 +1,743 @@
+\documentclass[12pt,compress,aspectratio=169]{beamer}
+
+\usetheme{metropolis}
+\setbeamersize{text margin left=.5cm,text margin right=.5cm}
+%\setbeamertemplate{navigation symbols}{} % suppress nav bar
+\usefonttheme{professionalfonts}
+\usepackage[lf]{carlito}
+\usepackage{mathpazo}
+\usepackage{xcolor,colortbl}
+\usepackage{siunitx}
+\usepackage{mhchem}
+
+\setmonofont{Ubuntu Mono}
+\setlength{\parskip}{0pt}
+\renewcommand{\baselinestretch}{1}
+
+\sisetup{
+  %detect-all,
+  number-math-rm=\mathnormal,
+  inter-unit-product={\ensuremath{\cdot}},
+  per-mode=symbol
+}
+
+\title{Topic 17: Nuclear Physics}
+\subtitle{AP Physics 2}
+\author{Dr.\ Timothy Leung}
+\institute{Olympiads School, Toronto, ON, Canada}
+\date{January 2021}
+
+
+\newcommand{\pic}[2]{\includegraphics[width=#1\textwidth]{#2}}
+\newcommand{\eq}[2]{
+  \vspace{#1}{\Large\begin{displaymath}#2\end{displaymath}}
+}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+
+
+\section{Nucleus of the Atom}
+
+%\begin{frame}{The Atomic Model}
+%  To begin our discussion on nuclear physics, we start with a model of the atom.
+%  The \textbf{Rutherford-Bohr atomic model} looks like this:
+%  \begin{center}
+%    \pic{.5}{graphics/bohr-model-for-aluminium-clipart}
+%  \end{center}
+%\end{frame}
+%
+
+
+\begin{frame}{The Rutherford-Bohr Model}
+  In the \textbf{Rutherford-Bohr atomic model}, an atom consists of
+  \begin{itemize}
+  \item A dense positively-charged nucleus
+  \item Negatively-charged electrons ``orbiting'' the nucleus in predefined
+    energy levels
+  \item Most of the atom is empty space
+  \end{itemize}
+  Most of the atom is empty space, although almost all the mass is concentrated
+  at the nucleus
+\end{frame}
+
+
+
+\begin{frame}{Nucleus of an Atom}
+  The nucleus---where most of the mass of the atom is concentrated---are made
+  up of \textbf{nucleons} which are:
+  \begin{itemize}
+  \item Positively charged \textbf{protons}, and 
+  \item Electrically neutral \textbf{neutrons}
+  \end{itemize}
+\end{frame}
+
+
+
+\begin{frame}{Balancing Fundamental Forces}
+  \begin{center}
+    \pic{.25}{graphics/Radioact}
+  \end{center}
+  The nucleus of an atom is held together by balancing two fundamental forces:
+  \begin{itemize}
+  \item\textbf{Electromagnetic force}: the repulsive force between protons
+    \begin{itemize}
+    \item The force drop off as the square of the distance (inverse square law)
+    \end{itemize}
+  \item\textbf{Nuclear strong force}: short-distance force
+    holding nucleons together
+    \begin{itemize}
+    \item Attractive between nucleons at about $\SI1{\femto\metre}$
+      (\SI{e-15}{\metre})
+    \item Insignificant at distances beyond \SI{2.5}{\femto\metre}
+    \item  Repulsive at distances below \SI{.7}{\femto\metre}
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+
+
+  
+
+
+\begin{frame}{Atomic Properties}
+  The nucleus of an atom is identified by two numbers:
+  \begin{center}
+    \pic{.45}{graphics/helium-notation}
+  \end{center}
+  \begin{itemize}
+  \item\textbf{Atomic number} ($Z$): the number of protons
+    \begin{itemize}
+    \item Determines what element it is, and 
+    \item its chemical properties
+    \end{itemize}
+  \item\textbf{Mass number} ($A$): number of nucleons
+  \item The number of neutrons ($N$) is therefore $N=A-Z$
+  \end{itemize}
+\end{frame}
+
+
+
+\begin{frame}{Isotopes}
+  Carbon has three common \textbf{isotopes}, all with the same atomic numbers,
+  but different number of neutrons (called ``carbon-12'', ``carbon-13'' and
+  ``carbon-14'' respectively). The atomic number is sometimes omitted.
+  
+  \vspace{-.3in}{\Huge
+    \begin{displaymath}
+      \ce{^{12}C}\quad\ce{^{13}C}\quad\ce{^{14}C}
+    \end{displaymath}
+  }
+
+  Hydrogen also has three common isotopes (hydrogen, deuterium and tritium)
+  
+  \vspace{-.3in}{\Huge
+    \begin{displaymath}
+      \ce{^1H}\quad\ce{^2H}\quad\ce{^3H}
+    \end{displaymath}
+  }
+
+  On average, there are \num{2.6} isotopes for each element.
+\end{frame}
+
+
+\begin{frame}{Mass of the Nucleus}
+  The \textbf{unified atomic mass unit} (\si{u})\footnote{It replaces the
+    ``atomic mass unit'' (\si{amu}) which is no longer used. The atomic mass
+    value in the periodic table is a weighted average across all isotopes.} is
+  defined as $1/12$ of the rest mass of a carbon-12 atom in its nuclear ground
+  state:
+  
+  \eq{-.2in}{
+    \SI1{u}=\frac1{12}m(\ce{^{12}C})\approx\SI{1.66054e-27}{\kilo\gram}
+  }
+
+  The rest mass of the elementary particles can be expressed in this unit:
+  \begin{center}
+    \begin{tabular}{l|l|l}
+      \rowcolor{pink}
+      \textbf{Particle} & \textbf{Mass} (\si{u}) & \textbf{Mass} (\si{kg})\\
+      \hline
+      Proton   & \num{1.007276} & \num{1.672614e-27} \\
+      Neutron  & \num{1.008665} & \num{1.674920e-27} \\\hline
+      Electron & \num{0.000549} & \num{9.10956e-31}
+    \end{tabular}
+  \end{center}
+  \vspace{.3in}
+\end{frame}
+
+
+
+\section{Mass Defect \& Nuclear Binding Energy}
+
+\begin{frame}{Mass-Energy Equivalence}
+  One of the discoveries in special relativity\footnote{Einstein, A., ``Does
+    the Inertia of a Body Depend Upon Its Energy Content?'', \emph{Annelen der
+    Physik}, 18(13):639-641, 21 November, 1905.} is the fundamental equivalence
+  of mass and energy. While the derivation is based on \emph{relativistic
+    kinematics}, it also applies to \emph{quantum mechanics}, from which
+  nuclear physics is based on.
+  
+  \eq{-.2in}{
+    \boxed{E=mc^2}
+  }
+  \begin{center}
+    \begin{tabular}{l|c|c}
+      \rowcolor{pink}
+      \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
+      Energy                  & $E$ & \si{\joule}\\
+      Rest mass of a particle & $m$ & \si{\kilo\gram}\\
+      Speed of light          & $c$ & \si{\metre\per\second}
+    \end{tabular}
+  \end{center}
+  The speed of light is a universal constant:
+  $c=\SI{2.998e8}{\metre\per\second}$.
+  \vspace{.2in}
+\end{frame}
+
+
+
+
+\begin{frame}{Mass-Energy Equivalence}
+  Any change in energy is \emph{always} accompanied by a change in mass, and
+  vice versa.
+  
+  \eq{-.2in}{
+    E=mc^2\quad\longrightarrow\quad\Delta E=\Delta mc^2
+  }
+
+  \begin{itemize}
+  \item\vspace{-.15in}The concept is difficult to visualize in everyday life.
+    Example: A baseball moving at \SI{160}{\kilo\metre\per\hour} is more
+    massive than a baseball travelling at \SI{20}{\kilo\metre\per\hour}, but
+    the $\Delta m$s is too small to measure.
+  \item But in cases when
+    \begin{itemize}
+      \item speeds approaches the speed of light ($v>0.3c$), or when
+      \item the masses are small (e.g.\ electrons, protons, neutrons)
+    \end{itemize}
+    the difference significant
+  \end{itemize}
+\end{frame}
+
+
+
+\begin{frame}{Mass Defect}
+  %When comparing the sum of the mass of the nucleons with the actual mass of
+  %the nucleus, we find that
+  The sum of the masses of the nucleons are always higher than the mass of the
+  nucleus itself. \textbf{Example:} the mass of the alpha particle (helium
+  nucleus) is lower than 2 protons plus 2 neutrons:
+  \begin{center}
+    \pic{.45}{graphics/nucbind}
+  \end{center}
+
+\end{frame}
+
+
+
+%  We can express the mass of elementary particles in unified atomic mass unit:
+%
+%\end{frame}
+%  The total mass of an atom is \emph{always} lower than the sum of the masses of
+%  the proton and neutrons.
+%  This discrepancy is called the \textbf{mass defect}.
+%  The additional energy stored in the atom is exhibited as a change in mass.
+%\end{frame}
+
+
+
+\begin{frame}{Mass Defect}
+  This difference in mass is called the \textbf{mass defect} $\Delta m$, which
+  can be calculated with a simple equation:
+  
+  \eq{-.2in}{
+    \boxed{
+      \Delta m=\left[Zm_P+(A-Z)m_N\right]-m_A
+    }
+  }
+  \begin{center}
+    \begin{tabular}{l|c|c}
+      \rowcolor{pink}
+      \textbf{Quantity}        & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
+      Mass defect              & $\Delta m$ & \si{\kilo\gram}\\
+      Atomic number and mass numbers & $Z$, $A$ & \\
+      Rest mass of a proton and neutron & $m_P$, $m_N$ & \si{\kilo\gram}\\
+      Rest mass of the nucleus & $m_A$ & \si{\kilo\gram}\\
+    \end{tabular}
+  \end{center}
+\end{frame}
+
+
+
+\begin{frame}{Mass Defect}
+  Mass defect exists in any atoms because the nucleus of an atom is always
+  \emph{in a lower energy state} than the individual nucleons alone
+  
+  \vspace{.25in}Similar examples:
+  \begin{itemize}
+  \item The total energy of a planet orbiting the Sun is lower than the two
+    objects individually
+  \item An electron orbiting the nucleus is at a lower energy state also
+  \end{itemize}
+\end{frame}
+
+
+
+\begin{frame}{Nuclear Binding Energy}
+  The amount of energy that is equivalent to the mass defect is called the
+  \textbf{nuclear binding energy} $E_b$, defined as:
+
+  \eq{-.2in}{
+    \boxed{E_b=(\Delta m)c^2}
+  }
+  \begin{center}
+    \begin{tabular}{l|c|c}
+      \rowcolor{pink}
+      \textbf{Quantity}      & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
+      Nuclear binding energy & $E_b$      & \si{\joule}\\
+      Mass defect            & $\Delta m$ & \si{\kilo\gram}\\
+      Speed of light         & $c$        & \si{\metre\per\second}
+    \end{tabular}
+  \end{center}
+  \begin{itemize}
+  \item The energy required to break up the nucleus into its individual
+    nucleons
+  \item Generally expressed in \emph{electron volts} (\si{\electronvolt})
+    where $\SI1{\electronvolt}=\SI{1.602e-19}{\joule}$, rather than in joules
+  \end{itemize}
+\end{frame}
+
+
+
+\begin{frame}{Nuclear Binding Energy}
+  The nuclear binding energy is the amount of work required to separate the
+  nucleons
+  \begin{center}
+    \pic{.5}{graphics/CNX_UPhysics_43_02_BindEnergy}
+  \end{center}
+  The higher the binding energy, the more \emph{tightly bound} a nucleus is.
+\end{frame}
+
+
+
+\begin{frame}{Nuclear Binding Energy \& Stability of the Nucleus}
+  The nuclear binding energy is highest for iron-56
+  ($E_b=\SI{492.275}{\mega\electronvolt}$, or \SI{8.7906}{\mega\electronvolt}
+  per nucleon)
+
+  \vspace{.1in}
+  \begin{columns}
+    \column{.5\textwidth}
+    \pic{1}{graphics/Binding-energy-curve}
+ 
+    \column{.5\textwidth}
+    It means that the nucleus
+    \begin{itemize}
+    \item requires the most energy to separate the nucleons
+    \item most tightly bound
+    \item most stable
+    \end{itemize}
+    To achieve greater stability in the nucleus
+    \begin{itemize}
+    \item Heavier atoms can split into lighter nuclei, while
+    \item Lighter atoms can combine into heavier nuclei
+    \end{itemize}
+  \end{columns}
+\end{frame}
+
+
+
+%\begin{frame}{Mass Defect \& Nuclear Binding Energy}
+%  \textbf{Example:} Given that the mass of a lithium-7 atom is
+%  $m=\SI{7.01600}{u}$, determine its mass defect and binding energy.
+%\end{frame}
+
+
+
+\section{Radioactivity}
+
+%\begin{frame}{Radioactive Decay}
+%  \begin{itemize}
+%  \item Heavier elements: protons are further apart, and
+%    the strong nuclear force is weakened by their distance
+%  \item The nucleus can spontaneously disintegrate and releases energy
+%  \end{itemize}
+%\end{frame}
+
+
+
+\begin{frame}{Radioactive Decay}
+  \textbf{Radioactivity}\footnote{Or \textbf{radioactive decay}} is the
+  spontaneously disintegration of a nucleus. There are \emph{three} types of
+  radioactive decay:
+  \begin{itemize}
+  \item\textbf{Alpha decay}, or $\alpha$-decay
+  \item\textbf{Beta decay}, or $\beta$-decay
+  \item\textbf{Gamma decay}, or $\gamma$-decay
+  \end{itemize}
+\end{frame}
+
+
+
+\begin{frame}{Alpha Decay}
+  In $\alpha$-decay, an \textbf{alpha particle} (a helium-4 nucleus, with $2$
+  protons and $2$ neutrons), is spontaneously emitted from the nucleus. Example:
+  plutonium-240 nucleus decays into a uranium-236 nucleus, emitting an alpha
+  particle
+  \begin{center}
+    \pic{.5}{graphics/alpha-decay}
+  \end{center}
+
+  \eq{-.3in}{
+    \boxed{\ce{^{240}_{94}Pu -> ^{236}_{92}U + ^4_2He}}
+  }
+  
+\end{frame}
+
+
+
+\begin{frame}{General Formula for Alpha Decay}
+  The general formula for an $\alpha$-decay is shown by the equation:
+  
+  \eq{-.15in}{
+    \boxed{\ce{^A_ZX -> ^{A-4}_{Z-2}Y + ^4_2He}}
+  }
+  
+  The \textbf{parent atom} ($X$) is the reactant, and the
+  \textbf{daughter atom} ($Y$) is the product. This nuclear reaction is
+  called a \textbf{transmutation}, because the atomic number changes during the
+  decay, and a new element is formed.
+  \begin{itemize}
+  \item The nuclear binding energy of the daughter atom and the alpha
+    particle are \emph{higher} than the parent atom.
+  \item The combined mass of the daughter atom plus the alpha particle is
+    \emph{less} than the parent atom, meaning that energy is released
+  \end{itemize}
+\end{frame}
+
+
+
+\begin{frame}{Beta-Negative Decay}
+  Beta decays involve the emission/capture of a \textbf{beta particle}
+  (electron or a positron). In beta-negative decay ($\beta^-$-decay), a neutron
+  spontaneously decays into a proton and an electron, and the electron is
+  ejected from the nucleus. For example, the $\beta^-$-decay of a
+  tritium%\footnote{Hydrogen atom with two neutrons}
+  atom is:
+  \begin{center}
+    \pic{.6}{graphics/beta-negative}
+  \end{center}
+
+  \eq{-.3in}{
+    \boxed{\ce{^3_1H -> ^3_2He + ^0_-1e}}
+  }
+\end{frame}
+
+
+
+\begin{frame}{Beta-Negative Decay}
+  The general form for $\beta^-$-decay is given by:
+  
+  \eq{-.15in}{
+    \boxed{\ce{^A_ZX -> ^A_{Z+1}Y + ^0_{-1}e}}
+  }
+
+  The daughter atom has a higher nuclear binding energy than the parent atom.
+\end{frame} 
+
+
+
+\begin{frame}{Beta-Positive Decay}
+  In beta-positive decay ($\beta^+$-decay), a proton spontaneously decays into
+  a neutron and a positron. Example: decay of carbon-11 into boron-11:
+
+  \begin{center}
+    \pic{.65}{graphics/beta-positive1}
+  \end{center}
+
+  \eq{-.35in}{
+    \boxed{\ce{^{11}_6C -> ^{11}_5B + ^0_{+1}e}}
+  }
+\end{frame}
+
+
+
+\begin{frame}{Beta-Positive Decay}
+  The general equation for $\beta^+$-decay is given by:
+  
+  \eq{-.15in}{
+    \boxed{\ce{^A_ZX -> ^A_{Z-1}Y + ^0_{+1}e}}
+  }
+
+  The positron released in the decay will be immediately annihilated by an
+  electron, releasing a pair of gamma particles, each with an energy of
+  \SI{.511}{\mega\electronvolt}, moving in opposite directions:
+
+  \eq{-.15in}{
+    \boxed{\ce{^0_{+1}e + ^0_{-1}e -> 2(^0_0$\gamma$)}}
+  }
+\end{frame}
+
+
+
+\begin{frame}{Electron Capture}
+  \textbf{Electron capture} is a form of beta decay where an electron is
+  absorbed by a nucleus and combines with a proton to form a neutron.
+  For example:
+
+  \begin{center}
+    \pic{.55}{graphics/electron-capture}
+  \end{center}
+
+  \eq{-.35in}{
+    \boxed{\ce{^{56}_{28}Ni + ^0_{-1}e -> ^{56}_{27}Co }}
+  }
+\end{frame}
+
+
+
+\begin{frame}{Electron Capture}
+  The general equation for electron capture is given by:
+  
+  \eq{-.15in}{
+    \boxed{\ce{^A_ZX + ^0_{-1}e -> ^A_{Z-1}Y}}
+  }
+  
+  The electron that is absorbed usually comes from the lowest energy shell
+  ($n=1$, or K-shell) that is closest to the nucleus, so it is often called
+  \emph{K-capture}.
+\end{frame}
+
+
+
+\begin{frame}{Gamma Radiation}
+  \textbf{Gamma decay} ($\gamma$-decay) occurs after a nuclear reaction
+  (e.g.\ $\alpha$ or $\beta$ decay)
+  \begin{itemize}
+  \item The daughter nucleus is in a high-energy (excited) state
+  \item The nucleus spontaneously releases energy in a \textbf{gamma particle}
+    to return to a lower (therefore more stable) energy state.
+  \item A gamma particle:
+    \begin{itemize}
+    \item is a highly energetic form of electromagnetic radiation that is
+      emitted as a \textbf{photon}
+    \item Has zero mass
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+
+
+\begin{frame}{Gamma Radiation}
+  As an example, the $\gamma$-decay of a helium-3 atom is given by:
+  \begin{center}
+    \pic{.65}{graphics/gamma-decay}
+  \end{center}
+
+  \eq{-.25in}{
+    \boxed{\ce{^3_2He^* -> ^3_2He + ^0_0$\gamma$}}
+  }
+\end{frame}
+
+
+
+\begin{frame}{Gamma Radiation}
+  The general equation for $\gamma$-decay is:
+
+  \eq{-.15in}{
+    \boxed{\ce{^A_ZX^* -> ^A_ZX + ^0_0$\gamma$}}
+  }
+  \begin{itemize}
+  \item The parent and daughter nuclei are identical
+  \item Only the energy level of the nucleus has changed
+    \begin{itemize}
+    \item The asterisk indicates that the parent an excited state
+    \end{itemize}
+  \item Notice that the mass number and atomic number of a gamma ray
+    (\ce{^0_0$\gamma$}) are both zero.
+  \end{itemize}
+\end{frame}
+
+
+
+\begin{frame}{Energies of Radiation}
+  Radioactive particles post danger to living tissues, because
+  \begin{itemize}
+  \item they can ionize (or strip the electrons from) atoms
+  \item $\alpha$ particles have strongest ionizing ability, but can only travel
+    a relatively short distance before becoming absorbed
+  \item $\beta$ particles and $\gamma$ rays have a greater penetrating range in
+    air and must be shielded against
+  \end{itemize}
+  \begin{tabular}{l|l|c|l}
+    \rowcolor{pink}
+    \textbf{Type} & \textbf{Radiation} & \textbf{Charge} &
+    \textbf{Penetrating Ability}\\ \hline
+    $\alpha$-decay   & Alpha particle (He-4 nucleus) & $+2$ & Skin or paper\\
+    $\beta^-$-decay  & Beta particle (electron)          & $-1$ &
+    thin sheet of aluminum\\
+    $\beta^+$-decay  & Beta particle (positron)          & $+1$ &
+    thin sheet of aluminum\\
+    $e^-$ capture & None                              & N/A  & N/A \\
+    $\gamma$-decay   & Gamma particle (photon)           & $0$  &
+    Few centimetres of lead
+  \end{tabular}
+\end{frame}
+
+
+
+\begin{frame}{Half-Life}
+  While the radioactive decay of a single atom seems to be \emph{random}, when
+  there are a large number of atoms, the overall rate of decay is very
+  predictable.
+  
+  \eq{-.2in}{
+    \boxed{N=N_0\left(\frac12\right)^{\frac{t}\tau}}
+  }
+  \begin{center}
+    \begin{tabular}{l|c|c}
+      \rowcolor{pink}
+      \textbf{Quantity}      & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
+      Amount of radioactive material & $N$  & \si{\kilogram}\\
+      Initial sample amount          & $N_0$ & \si{\kilo\gram}\\
+      Time                           & $t$  & \si{\second} \\
+      Half-life                      & $\tau$ & \si{\second}
+    \end{tabular}
+  \end{center}
+  \textbf{Half-life} is the time it requires for a radioactive amount to decay
+  to half of its original value.
+\end{frame}
+
+
+
+\begin{frame}{Half-Life of Radioactive Isotopes}
+  The half-life of radioactive substance can vary from a fraction of
+  a second to billions of years.
+  \begin{center}
+    \begin{tabular}{l|c}
+      \rowcolor{pink}
+      \textbf{Substance} & \textbf{Half-Life} ($t_0$) \\ \hline
+      Polonium-215 & \SI{.0018}{\second} \\
+      Bismuth-212  & \SI{60.5}{\second} \\
+      Sodium-24    & \SI{15}{\hour} \\
+      Iodine-131   & \SI{8.07}{\day} \\
+      Cobalt-60    & \SI{5.26}{yr} \\ 
+      Radium-226   & \SI{1600}{yr} \\
+      Uranium-238  & \SI{4.5e9}{yr}
+    \end{tabular}
+  \end{center}
+\end{frame}
+
+
+
+\section{Nuclear Fission}
+
+\begin{frame}{Nuclear Fission}
+  The release of energy in a nuclear reaction primarily comes from fission,
+  where a heavier atomic is split into lighter atoms. For example, the fission
+  reaction of uranium-235 splitting into krypton-92 and barium-141 atoms:
+  \begin{center}
+    \pic{.75}{graphics/fission1}
+  \end{center}
+
+  \eq{-.3in}{
+    \boxed{\ce{^{235}_{92}U + ^1_0n -> ^{92}_{36}Kr + ^{141}_{56}Ba + 3(^1_0n) +
+    energy}}
+  }
+\end{frame}
+
+
+\begin{frame}{Nuclear Fission}
+  \begin{center}
+    \pic{.5}{graphics/fission1}
+  \end{center}
+  \begin{itemize}
+  \item\vspace{-.25in}Fission reaction begins with the uranium nucleus
+    capturing a neutron
+  \item The additional neutron creates instability in the nucleus, causing it
+    to split
+  \item In splitting the atom, 3 neutrons are released from the nucleus
+  \item The neutrons may be captured by other uranium-235 atoms, causing further
+    reaction
+%    \begin{itemize}
+%    \item Generally the neutrons are too fast to be captured, so in a nuclear
+%      reactor, they are slowed down by heavy water (water mulecules with
+%      deuterium)
+%    \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Example Problem}
+  \textbf{Example:} What is the energy yield of the following fission reaction?
+
+  \eq{-.2in}{
+    \ce{^{235}_{92}U + ^1_0n -> ^{140}_{55}Cs + ^{93}_{37}Rb + 3(^1_0n)}
+  }
+
+  \begin{align*}
+    m(\text{U-235})  &= \SI{235.044}{u}\\
+    m(\text{Cs-140}) &= \SI{139.909}{u}\\
+    m(\text{Rb-93})  &= \SI{92.922}{u}\\
+    m(\text{n})      &= \SI{1.009}{u}
+  \end{align*}
+\end{frame}
+
+
+
+\begin{frame}{Chain Reaction}
+  A \textbf{chain reaction} is a series of reactions that can repeat over
+  several cycles
+  \begin{itemize}
+  \item Reactions occur without requiring any material being added to the
+    system %; the products of one reaction produce subsequent reactions
+  \item The amount of fuel required to cause a chain reaction is called
+    \textbf{critical mass}
+  \end{itemize}
+  \begin{center}
+    \pic{.6}{graphics/chain-reaction}
+  \end{center}
+\end{frame}
+
+
+
+\section{Nuclear Fusion}
+
+\begin{frame}{Proton-Proton Reaction}
+  \begin{columns}
+    \column{.7\textwidth}
+    The simplest fusion reaction occurs under high temperature about
+    \SI{4e7}{\kelvin} is the proton-proton chain. In most the basic form, it is
+    written as:
+
+    \eq{-.35in}{
+      \ce{4(^1_1H) -> ^4_2He + 2(^0_{+1}e) + \text{energy}}
+    }
+    
+    \vspace{-.2in}In each p-p reaction, \SI{26.732}{\mega\electronvolt} is
+    released. The exact mechanism for the p-p chain is shown in the right.
+    
+    \column{.3\textwidth}
+    \pic{1}{graphics/Fusion_in_the_Sun}
+  \end{columns}
+\end{frame}
+
+
+
+\begin{frame}{CNO Cycle}
+  \begin{columns}
+    \column{.6\textwidth}
+    A fusion reaction that occurs in even higher temperatures (between 1.5 to
+    \SI{1.7e7}{\kelvin}) is the carbon-nitrogen-oxygen (CNO) cycle. The total
+    energy released in one cycle is \SI{26.73}{\mega\electronvolt}.
+    \begin{itemize}
+    \item The core temperature of the sun is about \SI{1.56e7}{\kelvin}, so
+      only 1.7\% of helium-4 nuclei produced in the Sun are from this process
+    \end{itemize}
+    \column{.4\textwidth}
+    \pic{1.1}{graphics/CNO-Cycle}
+  \end{columns}
+\end{frame}
+\end{document}
