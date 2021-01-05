@@ -1,35 +1,26 @@
 \documentclass[12pt,aspectratio=169]{beamer}
-
 \usetheme{metropolis}
+
 \setbeamersize{text margin left=.6cm,text margin right=.6cm}
-%\usefonttheme{professionalfonts}
 \usepackage[lf]{carlito}
-\usepackage{graphicx}
 \usepackage{tikz}
-%\usepackage{amsmath}
 \usepackage{mathpazo}
 \usepackage{xcolor,colortbl}
 \usepackage{siunitx}
 
-
-\setmonofont{Ubuntu Mono}
 \setlength{\parskip}{0pt}
 \renewcommand{\baselinestretch}{1}
 
-
 \sisetup{
-  %detect-all,
-  %number-math-rm=\mathnormal,
   per-mode=symbol,
-  %group-separator={,},
 }
 \tikzset{>=latex}
 
 \title{Topic 11: Electrostatics}
-\subtitle{Advanced Placement Physics C}
+\subtitle{Advanced Placement Physics 1 \& 2}
 \author[TML]{Dr.\ Timothy Leung}
 \institute{Olympiads School, Toronto, ON, Canada}
-\date{\today}
+\date{Last Updated: \today}
 
 \newcommand{\pic}[2]{\includegraphics[width=#1\textwidth]{#2}}
 \newcommand{\mb}[1]{\mathbf{#1}}
@@ -45,8 +36,8 @@
 \end{frame}
 
 
-\section[Intro]{Introduction}
-
+%\section[Intro]{Introduction}
+%
 %\begin{frame}{Files for You to Download}
 %  The discussion on electrostatics will be given as a pre-recorded session.
 %  The files for this class can be download from the school website:
@@ -81,8 +72,8 @@
 \begin{frame}{Coulomb's Law for Electrostatic Force}
   \begin{center}
     \begin{tikzpicture}[scale=.65]
-      \draw[->,very thick,red](0,0)--(2,0) node[pos=1,right]{$\mb{F}_{21}$};
-      \draw[->,very thick,blue](8,0)--(6,0) node[pos=1,left]{$\mb{F}_{12}$};
+      \draw[->,very thick,red](0,0)--(2,0)  node[right]{$\mb{F}_{21}$};
+      \draw[->,very thick,blue](8,0)--(6,0) node[left]{$\mb{F}_{12}$};
       \tikzstyle{balloon1}=[ball color=red];
       \tikzstyle{balloon2}=[ball color=blue];
       \shade[balloon1] (0,0) circle(.2) node[above]{$q_1$};
@@ -130,8 +121,8 @@
 \begin{frame}{Coulomb's Law for Electrostatic Force}
   \begin{center}
     \begin{tikzpicture}[scale=.5]
-      \draw[->,very thick,red](0,0)--(2,0) node[pos=1,right]{$\mb{F}_{12}$};
-      \draw[->,very thick,blue](8,0)--(6,0) node[pos=1,left]{$\mb{F}_{21}$};
+      \draw[->,very thick,red](0,0)--(2,0)  node[right]{$\mb{F}_{12}$};
+      \draw[->,very thick,blue](8,0)--(6,0) node[left]{$\mb{F}_{21}$};
       \tikzstyle{balloon1}=[ball color=red];
       \tikzstyle{balloon2}=[ball color=blue];
       \shade[balloon1] (0,0) circle(.2) node[above]{$q_1$};
@@ -169,33 +160,33 @@
       \tikzstyle{balloon5}=[ball color=purple];
       \shade[balloon1] (0,0) circle(.72) node[white]{$Q$};
       \begin{scope}[rotate=45]
-        \draw[->,very thick,blue](.72,0)--(2.5,0) node[pos=1,right]{$\mb{F}_1$};
+        \draw[->,very thick,blue](.72,0)--(2.5,0) node[right]{$\mb{F}_1$};
         \shade[balloon2] (7,0) circle(1) node[white]{$q_1$};
       \end{scope}
       \uncover<2->{
         \begin{scope}[rotate=105]
           \draw[->,very thick,green](.72,0)--(2,0)
-          node[pos=1,right]{$\mb{F}_2$};
+          node[right]{$\mb{F}_2$};
           \shade[balloon3] (4,0) circle(.65) node[white]{$q_2$};
         \end{scope}
       }
       \uncover<3->{
         \begin{scope}[rotate=190]
           \draw[->,very thick,yellow](.7,0)--(3.5,0)
-          node[pos=1,above]{$\mb{F}_3$};
+          node[above]{$\mb{F}_3$};
           \shade[balloon4] (6,0) circle(1.1) node[white]{$q_3$};
         \end{scope}
       }
       \uncover<4->{
         \begin{scope}[rotate=260]
           \draw[->,very thick,purple](.72,0)--(1.4,0)
-          node[pos=1,right]{$\mb{F}_4$};
+          node[right]{$\mb{F}_4$};
           \shade[balloon5] (9,0) circle(.8) node[white]{$q_4$};
         \end{scope}
       }
       \uncover<5>{
         \begin{scope}[rotate=125]
-          \draw[->,ultra thick](.72,0)--(3.5,0) node[pos=1,left]{$\mb{F}$};
+          \draw[->,ultra thick](.72,0)--(3.5,0) node[left]{$\mb{F}$};
         \end{scope}
       }
     \end{tikzpicture}
@@ -315,7 +306,7 @@
   the electric field is generated:
 
   \eq{-.3in}{
-    \boxed{\mb{F}_q=\mb{E}q}
+    \boxed{\mb{F}_q=q\mb{E}}
   }
 
   \vspace{-.15in}A positive charge in the electric field experiences a
@@ -526,7 +517,7 @@
 %        \draw[red!65!black,thick,rotate=30*\x,->](0,0)--(0,1);
 %      }
 %      \draw[thick,->](0,1.5)--(0,2)
-%      node[pos=1,above]{\footnotesize$\hat{\mb{n}}$};
+%      node[above]{\footnotesize$\hat{\mb{n}}$};
 %      \node[red!65!black] at (1.1,0) (E) {\footnotesize$\mb{E}$};
 %    \end{tikzpicture}
 %    
@@ -556,7 +547,8 @@
 \section{Electric Potential \& Potential Energy}
 
 \begin{frame}{Electrical Potential Energy}
-  The work done by the electrostatic force is given by:
+  If you know calculus, you can easily find that the work done \emph{by} the
+  electrostatic force is given by this integral:
   
   \eq{-.3in}{
     W=\int\mb{F}_q\cdot d\mb{r}
@@ -564,7 +556,8 @@
     =-\frac{kq_1q_2}{r}\Big|^{r_2}_{r_1}=-\Delta U_q
   }
 
-  where $Q_q$ is defined as the \textbf{electric potential energy}:
+  And if you don't know calculus, all you need to know is the result: $Q_q$ is
+  defined as the \textbf{electric potential energy}:
     
   \eq{-.2in}{
     \boxed{U_q=\frac{kq_1q_2}{r}}
@@ -601,56 +594,71 @@
 
   \vspace{.2in}
   \begin{itemize}
-  \item $U_q>0$ means positive work is done to bring two charges together from
+  \item $U_q>0$: positive work is done to bring two charges together from
    $r=\infty$ to $r$ (both charges of the same sign)
-  \item $U_q<0$ means negative work (the charges are opposite signs)
-  \item For gravitational potential $U_g$ is always $<0$
+  \item $U_q<0$: work is done to pull the objects from $r$ to  $r=\infty$
+  \item In comparison, gravitational potential $U_g$ is always $<0$
   \end{itemize}
 \end{frame}
 
 
 
 \begin{frame}{Electric Potential}
-  When I move an object of mass $m$ against a gravitational force from one
-  point to another, the work that I do is directly proportional to $m$, i.e.\
-  there is a ``constant'' in that scales with \emph{any} mass, as long as they
-  move between those same two points:
+  \textbf{Using gravity as an example:} An object at a specific location inside
+  a gravitational field has a gravitational potential energy that is
+  proportional to its mass, i.e.\
 
-  \eq{-.2in}{
-    W=\Delta U_g=Km
+  \eq{-.25in}{
+    U_g=V_gm
   }
 
-  In the trivial case (small changes in height, no change in $g$), this
-  constant is just
+  \vspace{-.1in}This ``constant'' $V_g$ is called the \textbf{gravitational
+    potential}, which is the \emph{gravitational potential energy per unit
+    mass}. In the trivial case with a uniform $\mb{g}$:
 
   \eq{-.2in}{
-    \frac{\Delta U_g}{m}=g\Delta h
+    V_g=\frac{U_g}m=g\Delta h
   }
+
+  This also applies to the general case of the gravitational
+  potential energy:
+  
+  \eq{-.2in}{
+    V_g=\frac{U_g}m=-\frac{GM}r
+  }
+  
 \end{frame}
 
 
 
 \begin{frame}{Electric Potential}
-  This is also true for moving a charged particle $q$ against an electric
-  electric field created by $q_s$, and the ``constant'' is called the
+  This is also true for charged particle $q$ in an electric electric field
+  created by $q_s$, and the ``constant'' is called the
   \textbf{electric potential}. For a point charge, it is defined as:
 
   \eq{-.2in}{
-    \boxed{V=\frac{U_q}{q}=\frac{kq_s}{r}}
+    \boxed{V=\frac{U_q}q=\frac{kq_s}r}
   }
 
-  The unit for electric potential is a \emph{volt} which is
-  \emph{one joule per coulomb}:
+  The unit for electric potential is a \emph{volt}\footnote{Named after Italian
+    physicist Alessandro Volta} which is \emph{one joule per coulomb}:
+
+  \eq{-.25in}{
+    \SI1{\volt}=\SI1{\joule\per\coulomb}
+  }
+
+  \vspace{-.2in}The relationship between  $V$ and $\mb{E}$ is given by:
 
   \eq{-.2in}{
-    \SI{1}{\volt}=\SI{1}{\joule\per\coulomb}
+    \boxed{
+      |\mb{E}|\approx\frac{\Delta V}{\Delta r}
+    }
   }
-
-  \vspace{-.2in}We can easily the relationship between $V$ and $\mb{E}$:
-  
-  \eq{-.2in}{
-    \boxed{\Delta V=\int\mb{E}\cdot d\mb{r}}
-  }
+%  \vspace{-.2in}We can easily the relationship between $V$ and $\mb{E}$:
+%  
+%  \eq{-.2in}{
+%    \boxed{\Delta V=\int\mb{E}\cdot d\mb{r}}
+%  }
 \end{frame}
 
 
@@ -661,8 +669,8 @@
   \textbf{electric potential difference} or \textbf{voltage}:
 
   \eq{-.2in}{
-    \boxed{\Delta V=\frac{\Delta U_q}{q}}\quad\textsf{\normalsize and}\quad
-    \boxed{dV=\frac{dU_q}{q}}
+    \boxed{\Delta V=\frac{\Delta U_q}{q}}%\quad\textsf{\normalsize and}\quad
+    %\boxed{dV=\frac{dU_q}{q}}
   }
 
   Here, we can relate $\Delta V$ to an equation that we knew from Grade 11
@@ -684,42 +692,42 @@
   \begin{itemize}
   \item Electric potential energy:
     \begin{displaymath}
-      U=\frac{kq_1q_2}{r}
+      U_q=\frac{kq_1q_2}r
     \end{displaymath}
   \item Electric potential:
     \begin{displaymath}
-      V=\frac{kq}{r}
+      V=\frac{kq}r
     \end{displaymath}
   \item Electric potential difference (voltage):
     \begin{displaymath}
-      \Delta V=\frac{\Delta U_q}{q}
+      \Delta V=\frac{\Delta U_q}q
     \end{displaymath}
   \end{itemize}
 \end{frame}
 
 
-\begin{frame}{Relating $U_q$, $\mb{F}_q$ and $\mb{E}$}{Our Integrals In Reverse}
-  From the fundamental theorem calculus, we can relate electrostatic force
-  ($\mb{F}_q$) to electric potential energy ($U_q$) by the gradient operator,
-  and electric field ($\mb{E}$) to the electric potential ($V$) the same way:
-
-  \eq{-.2in}{
-    \mb{F}_q=-\nabla U_q=-\frac{\partial U_q}{\partial r}\hat{\mb{r}}
-    \quad\;\;
-    \mb{E}=-\nabla V=-\frac{\partial V}{\partial r}\hat{\mb{r}}
-  }
-  \begin{itemize}  
-  \item Electrostatic force $\mb{F}_q$ always points from high to
-    low potential energy (steepest descent direction)
-  \item Electric field can also be expressed as the change of electric
-    potential per unit distance, which has the unit
-    
-    \eq{-.2in}{
-      \SI{1}{\newton\per\coulomb}=\SI{1}{\volt\per\metre}
-    }
-  \item Electric field is also called ``potential gradient''
-  \end{itemize}
-\end{frame}
+%\begin{frame}{Relating $U_q$, $\mb{F}_q$ and $\mb{E}$}{Our Integrals In Reverse}
+%  From the fundamental theorem calculus, we can relate electrostatic force
+%  ($\mb{F}_q$) to electric potential energy ($U_q$) by the gradient operator,
+%  and electric field ($\mb{E}$) to the electric potential ($V$) the same way:
+%
+%  \eq{-.2in}{
+%    \mb{F}_q=-\nabla U_q=-\frac{\partial U_q}{\partial r}\hat{\mb{r}}
+%    \quad\;\;
+%    \mb{E}=-\nabla V=-\frac{\partial V}{\partial r}\hat{\mb{r}}
+%  }
+%  \begin{itemize}  
+%  \item Electrostatic force $\mb{F}_q$ always points from high to
+%    low potential energy (steepest descent direction)
+%  \item Electric field can also be expressed as the change of electric
+%    potential per unit distance, which has the unit
+%    
+%    \eq{-.2in}{
+%      \SI{1}{\newton\per\coulomb}=\SI{1}{\volt\per\metre}
+%    }
+%  \item Electric field is also called ``potential gradient''
+%  \end{itemize}
+%\end{frame}
 
 
 
@@ -784,8 +792,28 @@
 
 \begin{frame}{Electric Field Between Parallel Charged Plates}
   \begin{center}
-    \pic{.5}{elfield-600x205.png}
+    \begin{tikzpicture}[xscale=.8]
+      \draw[thick](0,0) rectangle (8,.2);
+      \draw[thick](0,1.4) rectangle (8,1.6);
+      \foreach\x in {.4,.8,1.2,...,7.6}{
+        \draw[->,thick](\x,1.4)--(\x,.7);
+        \draw[thick](\x,1.4)--(\x,.2);
+      }
+      \foreach\x in {.8,1.6,2.4,...,7.2}{
+        \node at (\x,1.78) {\scriptsize $+$};
+        \node at (\x,-.28) {\scriptsize $-$};
+      }
+      
+      \draw[->,thick](0,1.5)..controls(-.15,1.2)..(-.2,.7);
+      \draw[thick](-.2,.8)..controls(-.15,.4)..(0,.1);
+
+      \draw[->,thick](8,1.5)..controls(8.15,1.2)..(8.2,.7);
+      \draw[thick](8.2,.8)..controls(8.15,.4)..(8,.1);
+    \end{tikzpicture}
   \end{center}
+%  \begin{center}
+%    \pic{.5}{elfield-600x205.png}
+%  \end{center}
   \begin{itemize}
   \item\vspace{-.15in}Two plates, each producing an electric field pointing in
     the same direction
@@ -819,8 +847,28 @@
 
 \begin{frame}{Electric Field and Electric Potential Difference}
   \begin{center}
-    \pic{.4}{elfield-600x205.png}
+    \begin{tikzpicture}[xscale=.6,yscale=.8]
+      \draw[thick](0,0) rectangle (8,.2);
+      \draw[thick](0,1.4) rectangle (8,1.6);
+      \foreach\x in {.4,.8,1.2,...,7.6}{
+        \draw[->,thick](\x,1.4)--(\x,.7);
+        \draw[thick](\x,1.4)--(\x,.2);
+      }
+      \foreach\x in {.8,1.6,2.4,...,7.2}{
+        \node at (\x,1.78) {\scriptsize $+$};
+        \node at (\x,-.28) {\scriptsize $-$};
+      }
+      
+      \draw[->,thick](0,1.5)..controls(-.15,1.2)..(-.2,.7);
+      \draw[thick](-.2,.8)..controls(-.15,.4)..(0,.1);
+
+      \draw[->,thick](8,1.5)..controls(8.15,1.2)..(8.2,.7);
+      \draw[thick](8.2,.8)..controls(8.15,.4)..(8,.1);
+    \end{tikzpicture}
   \end{center}
+%  \begin{center}
+%    \pic{.4}{elfield-600x205.png}
+%  \end{center}
   \vspace{-.1in}In the case of two parallel plates, the electric field is
   uniform, and the relationship simplifies to:
 

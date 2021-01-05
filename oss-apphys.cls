@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{oss-apphys}[2018/03/04 Olympiads School AP Physics Homework class]
+\ProvidesClass{oss-apphys}[2018/03/04 Olympiads School AP Phys Homework class]
 
 \LoadClass[11pt]{article}
 
@@ -14,22 +14,22 @@
   \end{center}}
 \newcommand{\mb}[1]{\mathbf{#1}}
 
-%\newcommand{\genheader}{
-%  \pagestyle{fancy}
-%  \rhead{Student Name:\hspace{1.5in}}%Student Number:\hspace{.75in}}
-%  \chead{}
-%  \lhead{Olympiads School}
-%  \lfoot{}
-%  \cfoot{-\textsf{\textbf{\thepage}}-}
-%  \rfoot{\textsf{\textbf{GO ON TO THE NEXT PAGE.}}}
-%  %\renewcommand{\headrulewidth}{2pt}
-%  %\renewcommand{\footrulewidth}{1pt}
-%}
-
 \newcommand{\genheader}{
-  Student \#: \underline{\hspace{2in}}\hfill
-  Student Name: \underline{\hspace{2.5in}}
+  \pagestyle{fancy}
+  \rhead{Student Name:\hspace{1.5in}}%Student Number:\hspace{.75in}}
+  \chead{}
+  \lhead{Olympiads School}
+  \lfoot{}
+  \cfoot{-\textsf{\textbf{\thepage}}-}
+  \rfoot{\textsf{\textbf{GO ON TO THE NEXT PAGE.}}}
+  %\renewcommand{\headrulewidth}{2pt}
+  %\renewcommand{\footrulewidth}{1pt}
 }
+
+%\newcommand{\genheader}{
+%  Student \#: \underline{\hspace{2in}}\hfill
+%  Student Name: \underline{\hspace{2.5in}}
+%}
 
 \newcommand{\gentitle}[2]{
   \begin{center}
@@ -117,5 +117,5 @@
   per-mode=symbol,
   %group-separator={,},
 }
-
+\tikzset{>=latex}
 \pagestyle{empty}

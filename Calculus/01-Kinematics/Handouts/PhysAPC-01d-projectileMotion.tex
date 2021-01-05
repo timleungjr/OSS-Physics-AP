@@ -1,25 +1,17 @@
 \documentclass{../../../oss-handout}
 \usepackage{amsmath,bm}
-\usepackage{txfonts}  % must be loaded after amsmath?
+%\usepackage{txfonts}  % must be loaded after amsmath?
 \usepackage{enumitem}
 \usepackage{tikz}
 \usepackage{siunitx}
-\usepackage{multicol}
 
 \newcommand{\mb}[1]{\mathbf{#1}}
 \newcommand{\iii}{\bm{\hat{\imath}}}
 \newcommand{\jjj}{\bm{\hat{\jmath}}}
-\newcommand{\pic}[2]{\includegraphics[width=#1\textwidth]{#2}}
 
-\setlength{\parskip}{15pt}
-
-\sisetup{
-  detect-all,
-  per-mode=symbol,
-}
-
+\tikzset{>=latex}
 \setlength{\parindent}{0pt}
-\setlength{\parskip}{8pt}
+\setlength{\parskip}{6pt}
 \setlength{\headheight}{26pt}
 
 
@@ -39,84 +31,111 @@
 \thispagestyle{title}
 \gentitle
 
-\section{Projectile Motion}
-
-%  \begin{itemize}
-%  \item For 2D problems, resolve the problem into its
-%    horizontal ($x$) and vertical ($y$) directions, and apply kinematic
-%    equations independently
-For projectile motion, there is no acceleration in the horizontal
-($\bm{\hat{\imath}}$) direction, i.e.\ $a_x=0$. Therefore the kinematic
-equations is reduced to a single equation
-\begin{equation}
-  x-x_0=v_xt
-\end{equation}
-It is customary to define the $\bm{\hat{\imath}}$ direction to be the forward
-horizontal direction.
-
-The only acceleration is due to gravity in the vertical ($\bm{\hat{\jmath}}$)
-direction. In the standard Cartesian coordinate system, $\bm{\hat{\jmath}}$ is
-direction is therefore usually \emph{up}, and the acceleration due to gravity is
-\begin{equation}
-  a_y=-g
-\end{equation}
-%\begin{multicols}{2}
-The kinematic equation are reduced to:
-\begin{align}
-  v_y&=v_{y0}-gt\\
-  y&=y_0+v_{y0}t-\frac12 gt^2\label{eq:needthis}\\
-  v_y^2&=v_{y0}^2-2g(y-y_o)
-\end{align}
-In general, only Eq.~\ref{eq:needthis} is needed to solve projectile motion
-problems.
-%\end{multicols}
-%The variable that connects the two directions is time $t$.
-
-\section{Symmetric Trajectory}
-
-A \textbf{symmetric trajectory} is a special case of projectile motion where an
-object is launched at an angle of $\theta$ (between \ang{0} and \ang{90}) above
-the horizontal\footnote{This may be obvious, but angles \emph{below} the 
-  horizontal will never have a symmetric trajectory.} with an initial velocity
-$\mb{v}_0$, and then lands at the same height, as shown below in Fig.~\ref{sym}.
-Examples may include hitting a golf ball toward the hole, or shooting a bullet
-toward a horizontal target\footnote{Shooting a bullet toward a horizontal
-  target always require an upward angle because of gravity.}. The equations for
-symmetric trajectory are \emph{not} included in the AP Exam equation sheet; if
-you need these equations during the exams, you will need to derive them
-yourself. Thankfully, the derivation is quite striaght forward. To derive the
-equations, we use the $x$-axis for the horizontal direction and $y$-axis for
-the vertical.
+\section{General Projectile Motion}
+A \textbf{projectile} is an object that is launched with an initial velocity
+of $\mb{v}_0$ at an angle $\theta$ above the horizontal. It travels along a
+parabolic trajectory and accelerates only due to gravity, as shown in
+Figure~\ref{fig:projectile}. 
 \begin{figure}[ht]
-  \begin{center}
-    \begin{tikzpicture}
-      \draw[->](0,0)--(7,0) node[pos=1,right]{$x$};
-      \draw[->](0,0)--(0,2) node[pos=1,above]{$y$};
-      \draw[dotted,domain=0:6,thick] plot (\x, {1.2*\x-.2*\x*\x});
-      \draw[ultra thick,->](0,0)--(.75,.9)node[pos=1,above]{$\mb{v}_0$};
-      \draw[very thick,red!80!black,->]
-      (0,0)--(0,.9)node[midway,left]{$\mb{v}_{y0}$};
-      \draw[very thick,blue!80!black,->]
-      (0,0)--(.75,0)node[midway,below]{$\mb{v}_x$};
-      \draw[->](.5,0)arc(0:52:.5) node[pos=.6,right]{$\theta$};
-    \end{tikzpicture}
-  \end{center}
-  \vspace{-.2in}
-  \caption{Symmetric project trajectory}
-  \label{sym}
+  \centering
+  \begin{tikzpicture}[scale=1.1]
+    \draw[->](0,0)--(2,0) node[right]{$x$};
+    \draw[->](0,0)--(0,2) node[above]{$y$};
+    \draw[dotted,domain=0:6.2,thick] plot (\x, {1.2*\x-.2*\x*\x});
+    \draw[very thick,->](0,0)--(.75,.9)node[above]{$\mb{v}_0$};
+    \draw[very thick,red!80!black,->](0,0)--(0,.9)node[left]{$v_{y0}$};
+    \draw[very thick,blue!80!black,->](0,0)--(.75,0)node[below]{$v_x$};
+    \draw[->](.5,0)arc(0:52:.5) node[pos=.65,right]{$\theta$};
+  \end{tikzpicture}
+  \caption{The parameters defining the motion of a projectile.}
+  \label{fig:projectile}
 \end{figure}
 
+In general, when solving a projectile motion project, the $x$-axis is defined
+as the \emph{horizontal} direction, with the ($+$) direction pointing forward,
+while the $y$-axis is the \emph{vertical} direction, with the ($+$) direction
+pointing upwards. For simplicity, the origin of the coordinate system is usually
+the position where the projectile is launched. This method is consistent with
+the standard right-handed Cartesian coordinate system.
+
 The initial velocity $\mb{v}_0$ can be resolved into its $\iii$ and $\jjj$
-components, also shown in Fig.~\ref{sym}:
+components, along the $x$ and $y$ axes:%, also shown in Fig.~\ref{sym}:
 \begin{equation}
   \mb{v}_0
   =v_x\iii+v_{y0}\jjj
   =v_0\cos\theta\iii + v_0\sin\theta\jjj
 \end{equation}
-The $x$ component of velocity $\mb{v}_x$ remains constant during the motion, as
-there are no forces acting in the $x$ direction (as long as air resistance can
-be ignored), and therefore no acceleration. In the $y$ direction, acceleration
-is due to gravity alone, $a_y=-g$.
+There is no acceleration (i.e.\ $a_x=0$) along $\iii$ direction, therefore
+horizontal velocity $v_x$ is constant, and the kinematic equations are reduce
+to a single equation:
+\begin{equation}
+  x=v_xt=\left[v_0\cos\theta\right] t
+  \label{eq:x}
+\end{equation}
+where $x$ is the horizontal position at time $t$, $v_0=|\mb{v}_0|$ is the
+magnitude of the initial velocity, $v_x=v_0\cos\theta$ is its horizontal
+component.
+
+There is a constant acceleration due to gravity alone along the $\jjj$
+direction, i.e.\ $a_y=-g$. (Acceleration is \emph{negative} due to the fact that
+the positive $y$-axis points upwards.) The kinematic equations along the
+vertical direction are therefore:
+\begin{align}
+  y &= \left[v_0\sin\theta\right]t-\frac12gt^2\label{eq:y}\\
+  v_y &= \left[v_0\sin\theta\right] -gt\\
+  v_y^2&=\left[v_0\sin\theta\right]^2-2gy
+\end{align}
+For most projectile motion problems, Equations~\ref{eq:x} and \ref{eq:y} are
+the most important ones, and also most likely to be used for problem solving.
+
+Because $\iii$ and $\jjj$ are perpendicular\footnote{i.e.\ they are linearly
+  independent}, horizontal and vertical motions are completely independent of
+each other. However, there are variables that are shared in both directions,
+namely:
+\begin{itemize}[nosep]
+\item Time $t$
+\item Launch angle $\theta$, measured above the horizontal\footnote{It should
+  be obvious that If the projectile is launched below horizontal, then
+  $\theta<0$}
+\item Initial speed $v_0$
+\end{itemize}
+When solving any projectile motion problems, there will be two unknowns that
+need to be solved (although you may not be explicitly told what one of them
+is), requiring two equations (the $x$ and $y$ kinematic equations). In some
+rare cases, if an object lands on an incline, there will be a third equation
+describing the relationship between $x$ and $y$ of the incline.
+
+\section{Symmetric Trajectory}
+A \textbf{symmetric trajectory} is a special case of projectile motion where an
+object is launched at an angle of $\theta$ (between \ang{0} and \ang{90}) above
+the horizontal\footnote{This may be obvious, but angles \emph{below} the 
+  horizontal will never have a symmetric trajectory.} and then lands at the
+same height. Examples may include hitting a golf ball toward the hole, or
+shooting a bullet toward a horizontal target\footnote{Shooting a bullet toward
+  a horizontal target always require an upward angle because of gravity.}. The
+equations for symmetric trajectory are \emph{not} included in the AP Exam
+equation sheet; if you need these equations during the exams, you will need to
+derive them yourself. Thankfully, the derivation is quite striaghtforward.
+
+\textbf{Total time of flight} $t_\text{max}$: We apply the kinematic equation
+first in the $y$ direction. When the object lands at the same height, the final
+velocity is the same in magnitude and opposite in direction as the initial
+velocity, i.e.\  $v_y=-v_{y0}=-v_0\sin\theta$:
+\begin{align*}
+  v_y &=v_{y0}+a_yt\\
+  -v_0\sin\theta &=v_0\sin\theta -g t_\text{max}
+\end{align*}
+Solving for $t_\text{max}$ we have:
+\begin{equation}
+  \boxed{
+    t_\text{max}=\frac{2v_0\sin\theta}g
+  }
+  \label{tmax}
+\end{equation}
+Not surprisingly, a projectile will stay in the air the longest when it is
+launched at $\displaystyle\theta=\frac{\pi}2$, or \ang{90}. (As a fun exercise,
+for a known initial speed $v_0$, you can plot $t$ vs.\ $\sin\theta$ to find the
+acceleration due to gravity $g$!)
 
 \textbf{Maximum height} $H$: Apply the kinematic equation in the $y$-direction.
 Recognizing that at maximum height $H=y-y_0$, the vertical component of
@@ -129,39 +148,27 @@ Solving for $H$, we get the maximum height equation:
 \begin{equation}
   \boxed{H=\frac{v_0^2\sin^2\theta}{2g}}
 \end{equation}
+The maximum height also (not surprisingly) has a maximum value at
+$\displaystyle\theta=\frac{\pi}2$.
 
-\textbf{Total time of flight} $t_\mathrm{max}$: We apply the kinematic equation
-in the $y$ direction. When the object lands at the same height, the final
-velocity is the same in magnitude and opposite in direction as the initial
-velocity, i.e.\  $v_{y2}=-v_{y1}=-v_0\sin\theta$:
-\begin{align*}
-  v_y &=v_{y0}+a_yt\\
-  -v_0\sin\theta &=v_0\sin\theta -g t_\mathrm{max}
-\end{align*}
-Solving for $t_{\text{max}}$ we have:
-\begin{equation}
-  \boxed{t_{\text{max}}=\frac{2v_0\sin\theta}{g}}
-  \label{tmax}
-\end{equation}
-
-\textbf{Range} $R$: We substitute the expression for $t_{\text{max}}$ from
-Eq.~\ref{tmax} into the $t$ term, then apply the kinematic equation in
+\textbf{Range} $R$: We substitute the expression for $t_\text{max}$ from
+Equation~\ref{tmax} into the $t$ term, then apply the kinematic equation in
 the $x$-direction to compute $R=x-x_0$ for any given launch angle and initial
 speed:
-\begin{align*}
-  x&=x_0+v_xt\\
-  R &=v_0\cos\theta\left(\frac{2v_0\sin\theta}{g}\right)
-\end{align*}
-Using the trigonometric identity $\sin(2\theta)=2\sin\theta\cos\theta$, we
-simplify the equation to:
 \begin{equation}
-  \boxed{R=\frac{v_0^2\sin(2\theta)}{g}}
+  R=(x-x_0)=v_xt=v_0\cos\theta\left(\frac{2v_0\sin\theta}{g}\right)
+  \label{step1}
+\end{equation}
+Using the trigonometric identity $\sin(2\theta)=2\sin\theta\cos\theta$, we
+simplify Equation~\ref{step1} to:
+\begin{equation}
+  \boxed{R=\frac{v_0^2\sin(2\theta)}g}
 \end{equation}
 It is obvious that for any given initial speed $v_0$, the maximum range
-$R_{\text{max}}$ occurs at an angle where $\sin(2\theta)=1$
-(i.e.\ $\theta=\pi/4$), with a value of
+$R_\text{max}$ occurs at an angle where $\sin(2\theta)=1$
+(i.e.\ $\theta=\pi/4$, or \ang{45}), with a value of
 \begin{equation}
-  \boxed{R_\mathrm{max}=\frac{v_0^2}{g}}
+  \boxed{R_\text{max}=\frac{v_0^2}g}
 \end{equation}
 Also, for a known initial speed $v_0$ and range $R$ we can compute the launch
 angle $\theta$:
@@ -170,7 +177,7 @@ angle $\theta$:
 \end{displaymath}
 This angle is labelled $\theta_1$ because it is \emph{not} the only angle that
 can reach this range. Recall that for any angle $0<\phi<\pi/2$, there
-is also another angle $\phi_2$ where $\sin(\phi)$ value is the same:
+is also another angle $\phi_2$ where $\sin(\phi)$ is the same:
 \begin{displaymath}
   \sin\phi=\sin(\pi-\phi)
 \end{displaymath}
@@ -179,4 +186,114 @@ $\theta_2$ where $2\theta_2=\pi-2\theta_1$, or quite simply:
 \begin{displaymath}
   \theta_2=\frac{\pi}{2}-\theta_1
 \end{displaymath}
+
+%These equations are \emph{not} provided in the AP Exam
+%  equation sheet, but it can save you a lot of time if you can use them, instead
+%  of deriving them during the exam.
+%  \begin{itemize}
+%  \item Time of flight
+%    \eq{-.1in}{t_\text{max}=\frac{2v_0\sin\theta}{g}}
+%  \item Range
+%    \eq{-.1in}{R=\frac{v_0^2\sin(2\theta)}{g}}
+%  \item Maximum height
+%    \eq{-.1in}{y_\text{max}=\frac{v_0^2\sin^2\theta}{2g}}
+%  \end{itemize}
+%  The angle $\theta$ is measured above the the horizontal.
+%\end{frame}
+%
+%
+%
+%\begin{frame}{Maximum Range}
+%  \eq{-.1in}{
+%    R=\frac{v_0^2\sin(2\theta)}g
+%  }
+%  
+%  \begin{itemize}
+%  \item Maximum range occurs at $\displaystyle\theta=\ang{45}$
+%  \item For a given initial speed $v_0$ and range $R$, launch angle $\theta$ is
+%    given by:
+%    
+%    \eq{-.2in}{
+%      \theta_1=\frac{1}{2}\sin^{-1}\left(\frac{Rg}{v_0^2}\right)
+%    }
+%
+%    But there is another angle that \emph{gives the same range}!
+%
+%    \eq{-.2in}{
+%      \theta_2=\ang{90}-\theta_1
+%    }
+%  \end{itemize}
+%\end{frame}
+
+
+
+
+
+
+
+
+
+
+
+%%  \begin{itemize}
+%%  \item For 2D problems, resolve the problem into its
+%%    horizontal ($x$) and vertical ($y$) directions, and apply kinematic
+%%    equations independently
+%For projectile motion, there is no acceleration in the horizontal
+%($\bm{\hat{\imath}}$) direction, i.e.\ $a_x=0$. Therefore the kinematic
+%equations is reduced to a single equation
+%\begin{equation}
+%  x-x_0=v_xt
+%\end{equation}
+%It is customary to define the $\bm{\hat{\imath}}$ direction to be the forward
+%horizontal direction.
+%
+%The only acceleration is due to gravity in the vertical ($\bm{\hat{\jmath}}$)
+%direction. In the standard Cartesian coordinate system, $\bm{\hat{\jmath}}$ is
+%direction is therefore usually \emph{up}, and the acceleration due to gravity is
+%\begin{equation}
+%  a_y=-g
+%\end{equation}
+%%\begin{multicols}{2}
+%The kinematic equation are reduced to:
+%\begin{align}
+%  v_y&=v_{y0}-gt\\
+%  y&=y_0+v_{y0}t-\frac12 gt^2\label{eq:needthis}\\
+%  v_y^2&=v_{y0}^2-2g(y-y_o)
+%\end{align}
+%In general, only Eq.~\ref{eq:needthis} is needed to solve projectile motion
+%problems.
+%%\end{multicols}
+%%The variable that connects the two directions is time $t$.
+%
+%\section{Symmetric Trajectory}
+%
+
+%equations, we use the $x$-axis for the horizontal direction and $y$-axis for
+%the vertical.
+%\begin{figure}[ht]
+%  \begin{center}
+%    \begin{tikzpicture}
+%      \draw[->](0,0)--(7,0) node[pos=1,right]{$x$};
+%      \draw[->](0,0)--(0,2) node[pos=1,above]{$y$};
+%      \draw[dotted,domain=0:6,thick] plot (\x, {1.2*\x-.2*\x*\x});
+%      \draw[ultra thick,->](0,0)--(.75,.9)node[pos=1,above]{$\mb{v}_0$};
+%      \draw[very thick,red!80!black,->]
+%      (0,0)--(0,.9)node[midway,left]{$\mb{v}_{y0}$};
+%      \draw[very thick,blue!80!black,->]
+%      (0,0)--(.75,0)node[midway,below]{$\mb{v}_x$};
+%      \draw[->](.5,0)arc(0:52:.5) node[pos=.6,right]{$\theta$};
+%    \end{tikzpicture}
+%  \end{center}
+%  \vspace{-.2in}
+%  \caption{Symmetric project trajectory}
+%  \label{sym}
+%\end{figure}
+%
+%The $x$ component of velocity $\mb{v}_x$ remains constant during the motion, as
+%there are no forces acting in the $x$ direction (as long as air resistance can
+%be ignored), and therefore no acceleration. In the $y$ direction, acceleration
+%is due to gravity alone, $a_y=-g$.
+%
+
 \end{document}

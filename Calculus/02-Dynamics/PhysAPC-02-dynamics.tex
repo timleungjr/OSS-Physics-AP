@@ -1,8 +1,6 @@
 \documentclass[12pt,compress,aspectratio=169]{beamer}
-
 \usetheme{metropolis}
 \setbeamersize{text margin left=.5cm,text margin right=.5cm}
-
 \usepackage[lf]{carlito}
 \usepackage{tikz}
 \usepackage{mathpazo}
@@ -14,7 +12,7 @@
 \renewcommand{\baselinestretch}{1}
 
 \sisetup{
-  number-math-rm=\mathnormal,
+  %number-math-rm=\mathnormal,
   per-mode=symbol
 }
 \tikzset{>=latex}
@@ -23,7 +21,7 @@
 \subtitle{Advanced Placement Physics C}
 \author[TML]{Dr.\ Timothy Leung}
 \institute{Olympiads School}
-\date{\today}
+\date{Last Updated: \today}
 
 \newcommand{\pic}[2]{\includegraphics[width=#1\textwidth]{#2}}
 \newcommand{\mb}[1]{\ensuremath\mathbf{#1}}
@@ -41,9 +39,9 @@
   While we use \textbf{kinematics} to describe the motion of any object
   mathematically, we use \textbf{dynamics} to describe \emph{what} causes
   motion (or more precisely, \emph{what causes motion to change?})
-  \begin{itemize}
-  \item Newton's three laws of motion
-  \end{itemize}
+%  \begin{itemize}
+%  \item Newton's three laws of motion
+%  \end{itemize}
 \end{frame}
 
 
@@ -51,19 +49,22 @@
 \section{Laws of Motion}
 
 \begin{frame}{First Law of Motion}
-  \textbf{Every body persists in its state of being at rest or moving uniformly
-    straight forward, except insofar as it is compelled to change its state by
-    force impress'd.}\footnote{Lex I: Corpus omne perseverare in statu suo
-    quiescendi vel movendi uniformiter in directum, nisi quatenus a viribus
-    impressis cogitur statum illum mutare.}
-  
+  \begin{center}
+    \fbox{
+      \begin{minipage}{.66\textwidth}
+        \textbf{First Law: Every object will remain in its state of rest or
+          uniform motion, until a net external force is applied to it.}
+  %\footnote{Lex I: Corpus omne
+  %  perseverare in statu suo quiescendi vel movendi uniformiter in directum,
+  %  nisi quatenus a viribus impressis cogitur statum illum mutare.}
+      \end{minipage}
+    }
+  \end{center}
   \begin{itemize}
-  \item ``Moving uniformly'' means \emph{uniform motion} with constant velocity
-    \begin{itemize}
-    \item An object ``at rest'' is also in uniform motion with $\mb{v}=\mb{0}$
-    \end{itemize}
+  \item Uniform motion means constant velocity; an object ``at rest'' is also
+    in uniform motion with $\mb{v}=\mb{0}$
   \item As long as an object moves in uniform motion, it must be that
-    $\mb{F}_\mathrm{net}=\mb{0}$
+    $\mb{F}_\text{net}=\mb{0}$
   \item Common examples:
     \begin{itemize}
     \item A hockey puck sliding on very smooth ice has gravity and normal
@@ -71,25 +72,43 @@
     \item A car traveling on a highway at \SI{100}{\kilo\metre\per\hour}
       has many forces acting on it, but the net force is zero 
     \end{itemize}
+  \item\textcolor{red!80!black}{This is a special case that assumes a constant
+    mass.}
   \end{itemize}
-  \vspace{.2in}
+\end{frame}
+
+
+\begin{frame}{Translational Equilibrium}
+  If the net force on an object is zero ($\Sigma\mb{F}=\mb{0}$) then the
+  object is in a \emph{state of translational equilibrium}
+  \begin{itemize}
+  \item Dynamic equilibrium: the object is moving relative to us
+  \item Static equilibrium: the object is not moving relative to us
+  \end{itemize}
 \end{frame}
 
 
 
 \begin{frame}{Second Law of Motion}
-  \textbf{The alteration of motion is ever proportional to the motive force
-    impress'd; and is made in the direction of the right line in which that
-    force is impress'd.}\footnote{Lex II: Mutationem motus proportionalem esse
-    vi motrici impressae, et fieri secundum lineam rectam qua vis illa
-    imprimitur.}
+  \begin{center}
+    \fbox{
+      \begin{minipage}{.68\textwidth}
+        \textbf{Second Law: The acceleration of an object is proportional to,
+          and along the direction of, the net external force.}
+        %\footnote{Lex II: Mutationem
+          %motus proportionalem esse vi motrici impressae, et fieri secundum
+          %lineam rectam qua vis illa imprimitur.}
+      \end{minipage}
+    }
+  \end{center}
+  \begin{itemize}
+  \item\textcolor{red!80!black}{Like the first law, this is also a
+    ``special case'' that assumes a constant mass.}
+  \item The first two laws of motion can be summarized in the equation:
 
-  \vspace{.2in}The \emph{alteration of motion} means \emph{acceleration}. The
-  first two laws of motion can be summarized in the equation:
-
-  \eq{-.2in}{
-    \boxed{\mb{F}_\mathrm{net}=\Sigma\mb{F}=m\mb{a}}
-  }
+    \eq{-.2in}{
+      \boxed{\mb{F}_\text{net}=\Sigma\mb{F}=m\mb{a}}
+    }
 %  \begin{center}
 %    \begin{tabular}{l|c|c}
 %      \rowcolor{pink}
@@ -100,14 +119,17 @@
 %      Acceleration & $\mb{a}$  & \si{m/s^2}
 %    \end{tabular}
 %  \end{center}
+  \item For non-constant mass, net force is the rate of change of momentum
+    $\mb{p}$:
 
-  \vspace{-.15in}\textcolor{red!80!black}{This equation is a ``special case''
-    that assumes a constant mass.} If mass is not constant, the net force is
-  equal to the rate of change of momentum $\mb{p}$.
+    \eq{-.2in}{
+      \boxed{
+        \mb{F}_\text{net}=\frac{d\mb{p}}{dt}
+      }
+    }
 
-  \eq{-.2in}{
-    \mb{F}_\mathrm{net}=\frac{d\mb{p}}{dt}
-  }
+    \vspace{-.1in}(More on this in a later topic!)
+  \end{itemize}
 \end{frame}
 
 
@@ -115,8 +137,12 @@
   What is \textbf{mass} then? It is
   \begin{itemize}
     \item the property of an object that relates its acceleration to the force
-      applied to it
-    \item Intrinsic to the object itself (``how much of it'')
+      applied to it. Literally, it means:
+
+      \eq{-.2in}{
+        m\equiv\frac{F_\text{net}}{a}
+      }
+    \item Intrinsic to the object itself
     \item This is explicitly referred to as the object's \textbf{inertial mass}
   \end{itemize}
 \end{frame}
@@ -124,13 +150,19 @@
 
 
 \begin{frame}{Third Law of Motion}
-  \textbf{To every action there is always opposed and equal reaction: the
-    mutual actions of two bodies upon each other are always equal, and directed
-    to contrary parts.}\footnote{Lex III: Actioni contrariam semper et aequalem
-    esse reactionem: sive corporum duorum actiones in se mutuo semper esse
-    aequales et in partes contrarias dirigi.}
- 
-  \vspace{.1in}For every action force on an object (B) due to another object
+  \begin{center}
+    \fbox{
+      \begin{minipage}{.83\textwidth}
+        \textbf{For every action there is always opposed and equal reaction: the
+          mutual actions of two objects on each other are always equal, and
+          directed to other object.}
+        %\footnote{Lex III: Actioni contrariam semper et aequalem
+    %esse reactionem: sive corporum duorum actiones in se mutuo semper esse
+    %aequales et in partes contrarias dirigi.}
+      \end{minipage}
+    }
+  \end{center}
+  For every action force on an object (B) due to another object
   (A), there is a reaction force which is equal in magnitude but opposite in
   direction, on object (A), due to object (B):
 
@@ -187,15 +219,6 @@
     \column{.3\textwidth}
     \pic{1}{graphics/cofm}
   \end{columns}
-\end{frame}
-
-\begin{frame}{Static \& Dynamic Equilibrium}
-  If the net force on an object is zero ($\Sigma\mb{F}=\mb{0}$) then the
-  object is in a \emph{state of equilibrium}
-  \begin{itemize}
-  \item Dynamic equilibrium: the object is moving relative to us
-  \item Static equilibrium: the object is not moving relative to us
-  \end{itemize}
 \end{frame}
 
 
@@ -255,11 +278,11 @@
         \draw [->,very thick] (.75,.5)--(.75,-.5)
         node[below]{$m\mb{g}$};
         \draw [->,very thick] (.75,.5)--(.75,1.5)
-        node[above]{$m\mb{g}$};
+        node[above]{$\mb{N}$};
       \end{tikzpicture}
     \end{center}
     \begin{displaymath}
-      \mb{w}=m\mb{g}=-\mb{N}
+      m\mb{g}=-\mb{N}
     \end{displaymath}
     
     \column{.78\textwidth}
@@ -288,12 +311,12 @@
           \draw[->](3.5,.5)--(4,.5) node[right]{$x$};
           \draw[->](3.5,.5)--(3.5,1) node[above]{$y$};
           \draw[thick] (-1,0)--(4,0);
-          \draw[fill=pink] (0,0) rectangle (3,2);
+          \draw[fill=pink,thick] (0,0) rectangle (3,2);
           \fill(1.5,1) circle (2pt);
           \draw [->,thick,dotted,red] (1.5,1)--(1.5,-.5)
-          node[right]{$w\cos\theta$};
+          node[right]{$mg\cos\theta$};
           \draw [->,thick,dotted,red] (1.5,1)--(.45,1)
-          node[left]{$w\sin\theta$};
+          node[left]{$mg\sin\theta$};
           \draw [->,ultra thick,red] (1.5,1)--(.45,-.5)
           node[below]{$m\mb{g}$}
           node[pos=.3,below right]{$\theta$};
@@ -305,12 +328,12 @@
     
     \column{.65\textwidth}
     \begin{itemize}
-    \item If on a slope: $N=w\cos\theta$
+    \item If on a slope: $N=mg\cos\theta$
       \begin{itemize}
       \item $N$ decreases as ramp angle $\theta$ increases
       \end{itemize}
-    \item $w$ has a component along the ramp $w\sin\theta$ that wants to slide
-      the block down.
+    \item Weight $mg$ has a component along the ramp $w\sin\theta$ that wants
+      to slide the block down.
     \item Friction force $f$ opposes the motion
       \begin{itemize}
       \item Be careful: if the block is moving \emph{up} the ramp with an
@@ -435,7 +458,7 @@
   motion of an object moving in a fluid, with magnitude:
 
   \eq{-.2in}{
-    D=\frac12\rho V_\infty^2A_\mathrm{ref}C_d
+    D=\frac12\rho V_\infty^2A_\text{ref}C_d
   }  
   \begin{center}
     \begin{tabular}{l|c|c}
@@ -444,13 +467,14 @@
       Magnitude of drag force & $D$  & \si{\newton}\\
       Density of the fluid & $\rho$ & \si{\kilo\gram\per\metre\cubed}\\
       Free-stream fluid velocity & $V_\infty$ & \si{\metre\per\second}\\
-      Reference area   & $A_\mathrm{ref}$ & \si{\metre\squared}\\
+      Reference area   & $A_\text{ref}$ & \si{\metre\squared}\\
       Drag coefficient & $C_d$ & (no unit)
     \end{tabular}
   \end{center}
-  {\footnotesize Drag coefficient depends on the shape and surface smoothness
-    of the object. For blunt objects $A_\mathrm{ref}$ is the frontal area; for
-    streamlined objects $A_\mathrm{ref}$ is the planform (top-view) area\par}
+
+  Drag coefficient depends on the shape and surface smoothness of the object.
+  For blunt objects (``bluff bodies'') $A_\text{ref}$ is the frontal area; for
+  streamlined objects $A_\text{ref}$ is the planform (top-view) area
 \end{frame}
 
 
@@ -637,15 +661,15 @@
 %  
 %  \eq{-.1in}{
 %    \mb{B}
-%    =\rho_\mathrm{fluid}g\bm{\hat{k}}\iiint dV
-%    =\rho_\mathrm{fluid}gV\bm{\hat{k}}
+%    =\rho_\text{fluid}g\bm{\hat{k}}\iiint dV
+%    =\rho_\text{fluid}gV\bm{\hat{k}}
 %  }
 %  \begin{center}
 %    \begin{tabular}{l|c|c}
 %      \rowcolor{pink}
 %      \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
 %      Buoyant force & $\mb{B}$  & \si{\newton} \\
-%      Density of the fluid & $\rho_\mathrm{fluid}$ & \si{\kg/\m^3}\\
+%      Density of the fluid & $\rho_\text{fluid}$ & \si{\kg/\m^3}\\
 %      Volume of the object & $V$ & \si{\metre^3}
 %    \end{tabular}
 %  \end{center}
@@ -660,7 +684,7 @@
 \begin{frame}{Free-Body Diagrams}
   \begin{itemize}
   \item Acceleration (if there is going to be any at all) depends
-    on net force $\mb{F}_\mathrm{net}$
+    on net force $\mb{F}_\text{net}$
   \item Without a vector sum of all the forces, we cannot determine the
     magnitude, direction of the acceleration, or how acceleration will evolve
     in time

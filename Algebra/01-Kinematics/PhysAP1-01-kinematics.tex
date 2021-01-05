@@ -1,26 +1,18 @@
 \documentclass[12pt,compress,aspectratio=169]{beamer}
-
 \usetheme{metropolis}
 \setbeamersize{text margin left=.5cm,text margin right=.5cm}
-
-%\usepackage[utf8]{inputenc}
-\usefonttheme{professionalfonts}
-\usepackage{amsmath}
+\usepackage[lf]{carlito}
 \usepackage{siunitx}
 \usepackage{tikz}
 \usepackage{mathpazo}
 \usepackage{bm}
-%\usepackage{hyperref}
 \usepackage{mathtools}
 
 \sisetup{
-  detect-all,
-  math-sf=\textsf,
-  %number-math-rm=\textnormal,
   per-mode=symbol
 }
+\tikzset{>=latex}
 
-\setsansfont{Roboto Light}
 \setmonofont{Ubuntu Mono}
 \setlength{\parskip}{0pt}
 \setlength{\itemsep}{0pt}
@@ -31,7 +23,7 @@
 \subtitle{Advanced Placement Physics 1}
 \author[TML]{Dr.\ Timothy Leung}
 \institute{Olympiads School}
-\date{\today}
+\date{Last Updated: \today}
 
 \newcommand{\iii}{\ensuremath\hat{\bm{\imath}}}
 \newcommand{\jjj}{\ensuremath\hat{\bm{\jmath}}}
@@ -54,7 +46,7 @@
 
 
 
-\begin{frame}{Pre-requisites}
+\begin{frame}{Prerequisites}
   \begin{itemize}
   \item\textbf{Physics 11 and 12:} You will need to be comfortable with the
     topics covered in high-school level physics courses.
@@ -101,13 +93,11 @@
 \begin{frame}{Files for You to Download}
   \begin{itemize}
   \item\texttt{PhysAP1-courseOutline.pdf}--The course outline
-%  \item\texttt{PhysAPC-equationSheet.pdf}--Equation sheet for your exams
+  \item\texttt{PhysAP1-equationSheet.pdf}--Equation sheet for your exams
   \item\texttt{PhysAP1-01-kinematics.pdf}--This set of slides
-  %\item\texttt{PhysAP1-02-dynamics.pdf}--Slides for \emph{dynamics}, the next topic
   \item\texttt{PhysAP1-01-Homework.pdf}--Homework problems for kinematics
-  %\item\texttt{PhysAP1-02-Homework.pdf}--Homework problems for dynamics
   \end{itemize}
-%  
+
 %  \vspace{.1in}Please download/print the PDF file for the class slides before
 %  each class. There is no point copying notes that are already on the slides.
 %  Instead, focus on things that aren't necessarily on the slides. If you wish
@@ -174,7 +164,7 @@
   for displacement is also meter.
 
   \eq{-.25in}{
-      \Delta\mb{x}(t)=\mb{x}(t)-\mb{x}_0
+      \Delta\mb{x}=\mb{x}-\mb{x}_0
       =(x-x_0)\iii + (y-y_0)\jjj + (z-z_0)\kkk
   }
 
@@ -192,8 +182,8 @@
   \begin{columns}
     \column{.7\textwidth}
     \begin{itemize}
-    \item The length of the path taken by an object when it from $\mb{x}_0$ to
-      $\mb{x}$
+    \item The length of the path taken by an object when it moves from
+      $\mb{x}_0$ to $\mb{x}$
     \item A scalar quantity
     \item Always positive, i.e.\ $s\geq 0$
     \item Although the magnitude of the displacement vector is also a scalar,
@@ -203,8 +193,8 @@
     
     \column{.3\textwidth}
     \begin{tikzpicture}[scale=.5]
-      \draw[->](0,0)--(6,0) node[pos=1,right]{$x$};
-      \draw[->](0,0)--(0,8) node[pos=1,above]{$y$};
+      \draw[->](0,0)--(6,0) node[right]{$x$};
+      \draw[->](0,0)--(0,8) node[above]{$y$};
       \draw[->,red,very thick] (0,0)--(4,1) node[midway,above]{$\mb{x}_0$};
       \draw[->,red,very thick] (0,0)--(2,6) node[midway,left]{$\mb{x}$};
       \draw[->,blue,very thick](4,1)--(2,6) node[midway,right]{$\Delta\mb{x}$};
@@ -478,20 +468,20 @@
   (neither magnitude nor direction changes) and therefore no acceleration.
   \begin{center}
     \begin{tikzpicture}[scale=.5]
-      \draw[->,thick] (0,0)--(4.5,0) node[pos=1,right]{$t$};
-      \draw[->,thick] (0,0)--(0,4.5) node[pos=1,above]{$x$};
+      \draw[->,thick] (0,0)--(4.5,0) node[right]{$t$};
+      \draw[->,thick] (0,0)--(0,4.5) node[above]{$x$};
       \draw[red!80!black,ultra thick](0,0)--(4,4);
     \end{tikzpicture}
     \hspace{.15in}
     \begin{tikzpicture}[scale=.5]
-      \draw[->,thick] (0,0)--(4.5,0) node[pos=1,right]{$t$};
-      \draw[->,thick] (0,0)--(0,4.5) node[pos=1,above]{$v$};
+      \draw[->,thick] (0,0)--(4.5,0) node[right]{$t$};
+      \draw[->,thick] (0,0)--(0,4.5) node[above]{$v$};
       \draw[red!80!black,ultra thick](0,2)--(4,2);
     \end{tikzpicture}
     \hspace{.15in}
     \begin{tikzpicture}[scale=.5]
-      \draw[->,thick] (0,0)--(4.5,0) node[pos=1,right]{$t$};
-      \draw[->,thick] (0,0)--(0,4.5) node[pos=1,above]{$a$};
+      \draw[->,thick] (0,0)--(4.5,0) node[right]{$t$};
+      \draw[->,thick] (0,0)--(0,4.5) node[above]{$a$};
       \draw[red!80!black,ultra thick](0,0)--(4,0);
     \end{tikzpicture}
   \end{center}
@@ -509,21 +499,21 @@
   An object moves with a constant non-zero acceleration:
   \begin{center}
     \begin{tikzpicture}[scale=.5]
-      \draw[->,thick] (0,0)--(4.5,0) node[pos=1,right]{$t$};
-      \draw[->,thick] (0,-1.5)--(0,4.5) node[pos=1,above]{$x$};
+      \draw[->,thick] (0,0)--(4.5,0) node[right]{$t$};
+      \draw[->,thick] (0,-1.5)--(0,4.5) node[above]{$x$};
       \draw[smooth,samples=20,domain=0:4,red!80!black,ultra thick]
       plot({\x},{0.35*(\x-1)*(\x-1)+1});
     \end{tikzpicture}
     \hspace{.15in}
     \begin{tikzpicture}[scale=.5]
-      \draw[->,thick] (0,0)--(4.5,0) node[pos=1,right]{$t$};
-      \draw[->,thick] (0,-1.5)--(0,4.5) node[pos=1,above]{$v$};
+      \draw[->,thick] (0,0)--(4.5,0) node[right]{$t$};
+      \draw[->,thick] (0,-1.5)--(0,4.5) node[above]{$v$};
       \draw[red!80!black,ultra thick](0,-1)--(4,2.5);
     \end{tikzpicture}
     \hspace{.15in}
     \begin{tikzpicture}[scale=.5]
-      \draw[->,thick] (0,0)--(4.5,0) node[pos=1,right]{$t$};
-      \draw[->,thick] (0,-1.5)--(0,4.5) node[pos=1,above]{$a$};
+      \draw[->,thick] (0,0)--(4.5,0) node[right]{$t$};
+      \draw[->,thick] (0,-1.5)--(0,4.5) node[above]{$a$};
       \draw[red!80!black,ultra thick](0,1)--(4,1);
     \end{tikzpicture}
   \end{center}
@@ -548,22 +538,22 @@
   %this motion in the course.
   \begin{center}
     \begin{tikzpicture}[scale=.5]
-      \draw[->,thick] (0,0)--(4.5,0) node[pos=1,right]{$t$};
-      \draw[->,thick] (0,-2.5)--(0,2.5) node[pos=1,above]{$x$};
+      \draw[->,thick] (0,0)--(4.5,0) node[right]{$t$};
+      \draw[->,thick] (0,-2.5)--(0,2.5) node[above]{$x$};
       \draw[smooth,samples=50,domain=0:4,red!80!black,ultra thick]
       plot({\x},{2*sin(150*\x)});
     \end{tikzpicture}
     \hspace{.15in}
     \begin{tikzpicture}[scale=.5]
-      \draw[->,thick] (0,0)--(4.5,0) node[pos=1,right]{$t$};
-      \draw[->,thick] (0,-2.5)--(0,2.5) node[pos=1,above]{$v$};
+      \draw[->,thick] (0,0)--(4.5,0) node[right]{$t$};
+      \draw[->,thick] (0,-2.5)--(0,2.5) node[above]{$v$};
       \draw[smooth,samples=50,domain=0:4,red!80!black,ultra thick]
       plot({\x},{2*cos(150*\x)});
     \end{tikzpicture}
     \hspace{.15in}
     \begin{tikzpicture}[scale=.5]
-      \draw[->,thick] (0,0)--(4.5,0) node[pos=1,right]{$t$};
-      \draw[->,thick] (0,-2.5)--(0,2.5) node[pos=1,above]{$a$};
+      \draw[->,thick] (0,0)--(4.5,0) node[right]{$t$};
+      \draw[->,thick] (0,-2.5)--(0,2.5) node[above]{$a$};
       \draw[smooth,samples=50,domain=0:4,red!80!black,ultra thick]
       plot({\x},{-2*sin(150*\x)});
     \end{tikzpicture}
@@ -585,8 +575,8 @@
         \draw[pink!40,fill=pink!40](0,0)--(0,-1)--(1,0)--cycle;
         \draw[blue!20,fill=blue!20](1,0)--(3.5,0)--(3.5,2.5)--cycle;
         \draw[red!80!black,ultra thick](0,-1)--(4,3);
-        \draw[->,thick] (0,0)--(4.5,0) node[pos=1,right]{$t$};
-        \draw[->,thick] (0,-1.5)--(0,4.5) node[pos=1,above]{$v$};
+        \draw[->,thick] (0,0)--(4.5,0) node[right]{$t$};
+        \draw[->,thick] (0,-1.5)--(0,4.5) node[above]{$v$};
       \end{tikzpicture}
     \end{center}
     
@@ -657,14 +647,14 @@
   gravity.
   \begin{center}
     \begin{tikzpicture}[scale=1.1]
-      \draw[->](0,0)--(2,0) node[pos=1,right]{$x$};
-      \draw[->](0,0)--(0,2) node[pos=1,above]{$y$};
+      \draw[->](0,0)--(2,0) node[right]{$x$};
+      \draw[->](0,0)--(0,2) node[above]{$y$};
       \draw[dotted,domain=0:4,thick] plot (\x, {1.2*\x-.2*\x*\x});
-      \draw[ultra thick,->](0,0)--(.75,.9)node[pos=1,above]{$\mb{v}_0$};
+      \draw[ultra thick,->](0,0)--(.75,.9)node[above]{$\mb{v}_0$};
       \draw[very thick,red!80!black,->]
-      (0,0)--(0,.9)node[midway,left]{$v_y$};
+      (0,0)--(0,.9)node[left]{$v_y$};
       \draw[very thick,blue!80!black,->]
-      (0,0)--(.75,0)node[midway,below]{$v_x$};
+      (0,0)--(.75,0)node[below]{$v_x$};
       \draw[->](.5,0)arc(0:52:.5) node[pos=.6,right]{$\theta$};
     \end{tikzpicture}
   \end{center}
@@ -745,22 +735,22 @@
 
 \begin{frame}{Symmetric Trajectory}
   A projectile's trajectory is \emph{symmetric} if the object lands at the same
-  height as when it launched.   The angle $\theta$ is measured above the the
+  height as when it launched. The angle $\theta$ is measured above the
   horizontal.
   \begin{itemize}
   \item Time of flight
-    \eq{-.1in}{t_\mathrm{max}=\frac{2v_0\sin\theta}{g}}
+    \eq{-.1in}{t_\text{max}=\frac{2v_0\sin\theta}{g}}
   \item Range
     \eq{-.1in}{R=\frac{v_0^2\sin(2\theta)}{g}}
   \item Maximum height
-    \eq{-.1in}{y_\mathrm{max}=\frac{v_0^2\sin^2\theta}{2g}}
+    \eq{-.1in}{y_\text{max}=\frac{v_0^2\sin^2\theta}{2g}}
   \end{itemize}
 \end{frame}
 
 
 
 \begin{frame}{Maximum Range}
-  \eq{-.1in}{R=\frac{v_0^2\sin(2\theta)}{g}}
+  \eq{-.1in}{R=\frac{v_0^2\sin(2\theta)}g}
   
   \begin{itemize}
   \item Maximum range occurs at $\theta=\ang{45}$
@@ -807,21 +797,15 @@
   \begin{columns}
     \column{.4\textwidth}
     \begin{tikzpicture}[scale=1.3]
-      \draw[->](0,0)--(-.5,-.5) node[pos=1,left]{$x'$}
-      node[pos=0,above left]{$C$};
-      \draw[->](0,0)--(1,0)     node[pos=1,right]{$y'$};
-      \draw[->](0,0)--(0,1)     node[pos=1,above]{$z'$};
+      \draw[->](0,0)--(-.5,-.5) node[left]{$x'$} node[pos=0,above left]{$C$};
+      \draw[->](0,0)--(1,0) node[right]{$y'$};
+      \draw[->](0,0)--(0,1) node[above]{$z'$};
 
-      \draw[->](2,3)--(1.5,2.5) node[pos=1,left]{$x$}
-      node[pos=0,above left]{$B$};
-      \draw[->](2,3)--(3,3)     node[pos=1,right]{$y$};
-      \draw[->](2,3)--(2,4)     node[pos=1,above]{$z$};
+      \draw[->](2,3)--(1.5,2.5) node[left]{$x$} node[pos=0,above left]{$B$};
+      \draw[->](2,3)--(3,3) node[right]{$y$};
+      \draw[->](2,3)--(2,4) node[above]{$z$};
 
       \fill[red!70!black] (3,1) circle(.03) node[below right]{$A$};
-      %\draw[very thick,->,blue!70!black](0,0)--(2.98,.998)
-      %node[midway,below]{$\mb{x}_{AC}$};
-      %\draw[very thick,->,green!80!black](2,3)--(3,1.03)
-      %node[midway,right]{$\mb{x}_{AB}$};
     \end{tikzpicture}
 
     \column{.6\textwidth}
@@ -841,15 +825,13 @@
   \begin{columns}
     \column{.4\textwidth}
     \begin{tikzpicture}[scale=1.3]
-      \draw[->](0,0)--(-.5,-.5) node[pos=1,left]{$x'$}
-      node[pos=0,above left]{$C$};
-      \draw[->](0,0)--(1,0)     node[pos=1,right]{$y'$};
-      \draw[->](0,0)--(0,1)     node[pos=1,above]{$z'$};
+      \draw[->](0,0)--(-.5,-.5) node[left]{$x'$} node[pos=0,above left]{$C$};
+      \draw[->](0,0)--(1,0) node[right]{$y'$};
+      \draw[->](0,0)--(0,1) node[above]{$z'$};
 
-      \draw[->](2,3)--(1.5,2.5) node[pos=1,left]{$x$}
-      node[pos=0,above left]{$B$};
-      \draw[->](2,3)--(3,3)     node[pos=1,right]{$y$};
-      \draw[->](2,3)--(2,4)     node[pos=1,above]{$z$};
+      \draw[->](2,3)--(1.5,2.5) node[left]{$x$} node[pos=0,above left]{$B$};
+      \draw[->](2,3)--(3,3) node[right]{$y$};
+      \draw[->](2,3)--(2,4) node[above]{$z$};
 
       \fill[red!70!black] (3,1) circle(.03) node[below right]{$A$};
       \draw[very thick,->,blue!70!black](0,0)--(2.98,.998)
@@ -877,15 +859,13 @@
   \begin{columns}
     \column{.4\textwidth}
     \begin{tikzpicture}[scale=1.3]
-      \draw[->](0,0)--(-.5,-.5) node[pos=1,left]{$x'$}
-      node[pos=0,above left]{$C$};
-      \draw[->](0,0)--(1,0)     node[pos=1,right]{$y'$};
-      \draw[->](0,0)--(0,1)     node[pos=1,above]{$z'$};
+      \draw[->](0,0)--(-.5,-.5) node[left]{$x'$} node[pos=0,above left]{$C$};
+      \draw[->](0,0)--(1,0) node[right]{$y'$};
+      \draw[->](0,0)--(0,1) node[above]{$z'$};
 
-      \draw[->](2,3)--(1.5,2.5) node[pos=1,left]{$x$}
-      node[pos=0,above left]{$B$};
-      \draw[->](2,3)--(3,3)     node[pos=1,right]{$y$};
-      \draw[->](2,3)--(2,4)     node[pos=1,above]{$z$};
+      \draw[->](2,3)--(1.5,2.5) node[left]{$x$} node[pos=0,above left]{$B$};
+      \draw[->](2,3)--(3,3) node[right]{$y$};
+      \draw[->](2,3)--(2,4) node[above]{$z$};
       
       \draw[very thick,->,purple!80](0,0)--(2,3)
       node[midway,left]{$\mb{x}_{BC}$};
@@ -924,16 +904,13 @@
   \begin{columns}
     \column{.4\textwidth}
     \begin{tikzpicture}[scale=1.3]
-      \draw[->](0,0)--(-.5,-.5)  node[pos=1,left]{$x'$}
-      node[pos=0,above left]{$C$};
-      \draw[->](0,0)--(1,0) node[pos=1,right]{$y'$};
-      \draw[->](0,0)--(0,1) node[pos=1,above]{$z'$};
+      \draw[->](0,0)--(-.5,-.5) node[left]{$x'$} node[pos=0,above left]{$C$};
+      \draw[->](0,0)--(1,0) node[right]{$y'$};
+      \draw[->](0,0)--(0,1) node[above]{$z'$};
 
-      \draw[->](2,3)--(1.5,2.5)
-      node[pos=1,left]{$x$}
-      node[pos=0,above left]{$B$};
-      \draw[->](2,3)--(3,3) node[pos=1,right]{$y$};
-      \draw[->](2,3)--(2,4) node[pos=1,above]{$z$};
+      \draw[->](2,3)--(1.5,2.5) node[left]{$x$} node[pos=0,above left]{$B$};
+      \draw[->](2,3)--(3,3) node[right]{$y$};
+      \draw[->](2,3)--(2,4) node[above]{$z$};
 
       \fill[red!65!black] (3,1) circle(.03) node[below right]{$A$};
       \draw[very thick,->,blue!70!black](0,0)--(2.98,.998)

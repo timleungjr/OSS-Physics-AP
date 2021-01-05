@@ -3,7 +3,6 @@
 \usetheme{metropolis}
 \setbeamersize{text margin left=.5cm,text margin right=.5cm}
 
-%\usefonttheme{professionalfonts}
 \usepackage[lf]{carlito}
 \usepackage{siunitx}
 \usepackage{tikz}
@@ -12,7 +11,7 @@
 \usepackage{mathtools}
 
 \sisetup{
-  number-math-rm=\mathnormal,
+  %number-math-rm=\mathnormal,
   per-mode=symbol
 }
 \tikzset{>=latex}
@@ -26,7 +25,7 @@
 \subtitle{Advanced Placement Physics C}
 \author[TML]{Dr.\ Timothy Leung}
 \institute{Olympiads School}
-\date{\today}
+\date{Updated: \today}
 
 \newcommand{\iii}{\ensuremath\hat{\bm{\imath}}}
 \newcommand{\jjj}{\ensuremath\hat{\bm{\jmath}}}
@@ -49,7 +48,7 @@
 
 
 
-\begin{frame}{Pre-requisites}
+\begin{frame}{Prerequisites}
   \begin{itemize}
   \item\textbf{Physics 11 and 12:} You will need to be comfortable with the
     topics covered in high-school level physics courses.
@@ -105,8 +104,8 @@
   \item\texttt{PhysAPC-01a-vectorCalculus.pdf}--Vectors and calculus handout
   \item\texttt{PhysAPC-01b-kinematicsHandout.pdf}--Basic kinematics, expanded
     version
-  \item\texttt{PhysAPC-01c-motionGraphs.pdf}--Handout on motion graphs
-  %\item\texttt{PhysAPC-01e-projectileMotion.pdf}--Handout on projectile motion
+  %\item\texttt{PhysAPC-01c-motionGraphs.pdf}--Handout on motion graphs
+  \item\texttt{PhysAPC-01d-projectileMotion.pdf}--Handout on projectile motion
   %\item\texttt{PhysAPC-02-dynamics.pdf}
   \item\texttt{PhysAPC-01-Homework.pdf}--Homework problems for Topic 1
   %\item\texttt{PhysAPC-02-Homework.pdf}--Homework problems for Topic 2
@@ -134,7 +133,7 @@
 
 \begin{frame}{Kinematics}
   \textbf{Kinematics} is a discipline within mechanics concerning the
-  motion of bodies. It describes the relationship between 
+  motion of bodies. It describes the mathematical relationship between 
   \begin{itemize}
   \item<alert@1> Position
   \item<alert@1> Displacement
@@ -143,7 +142,8 @@
   \item Speed
   \item<alert@1> Acceleration
   \end{itemize}
-  Kinematics does not deal with the causes of motion.
+  Kinematics does not deal with the causes of motion. The quantities that are
+  highlighted are vectors.
 \end{frame}
 
 
@@ -185,7 +185,7 @@
   }
   \begin{itemize}
   \item IJK notation makes vector addition and subtraction less prone to errors
-  \item Since the reference point $\mb{x}_{\textrm{ref}}=\mb{0}$, the position
+  \item Since the reference point $\mb{x}_\text{ref}=\mb{0}$, the position
     vector $\mb{x}$ is also its displacement from the reference point
   \end{itemize}
 \end{frame}
@@ -222,7 +222,7 @@
 
 
 \begin{frame}{Instantaneous Velocity}
-  Since position $\mb{x}$ is differentiable in time $t$, then the
+  Since position $\mb{x}$ is continuously differentiable in time $t$, the
   \textbf{instantaneous velocity} can be found at any time by differentiating
   $\mb{x}$ with respect to $t$. The unit for velocity is
   \textbf{meters per second} (\si{\metre\per\second}):
@@ -276,7 +276,8 @@
     \boxed{
       \overline{\mb{v}}=
       \frac{\Delta\mb{x}}{\Delta t}=
-      \frac{\int\mb{v}dt}{\Delta t}
+      \frac{\mb{x}-\mb{x}_0}{t-t_0}=
+      \frac{\int_{t_0}^t\mb{v}dt}{t-t_0}
     }
   }
   
@@ -289,10 +290,9 @@
     \frac{\Delta y}{\Delta t}\jjj+
     \frac{\Delta z}{\Delta t}\kkk
   }
-
-  The notation $\overline{v}$ means that $v$ is averaged over \emph{time},
-  while the notation $\langle v\rangle$ is used if $v$ is the average of
-  many particles (called an \emph{ensemble average})
+%  The notation $\overline{v}$ means that $v$ is averaged over \emph{time},
+%  while the notation $\langle v\rangle$ is used if $v$ is the average of
+%  many particles (called an \emph{ensemble average})
 \end{frame}
 
 
@@ -307,9 +307,9 @@
     }
   }
   \begin{itemize}
-  \item\vspace{-.1in}Since %distance of \emph{any} path is always positive
-    $s\geq 0$, instantaneous speed must also be positive $v\geq 0$
-  \item Instantaneous speed is the magnitude of the instantaneous velocity
+  \item\vspace{-.1in}Since $s\geq 0$, instantaneous speed must also be
+    positive, i.e.\ $v\geq 0$
+  \item Instantaneous speed is also the magnitude of the instantaneous velocity
     vector, i.e.\ $v=|\mb{v}|$
   \end{itemize}
   Likewise, \textbf{average speed} is similar to average velocity: it is the
@@ -317,7 +317,7 @@
   
   \eq{-.2in}{
     \boxed{
-      \overline{v}=\frac{s}{\Delta t}=\frac{\int vdt}{\Delta t}
+      \overline{v}=\frac{s}{\Delta t}=\frac{\int_{t_0}^t vdt}{t-t_0}
     }
   }
   
@@ -344,7 +344,7 @@
   velocity, with a unit of \textbf{meters per second squared}
   (\si{\metre\per\second\squared}):
 
-  \eq{-.2in}{
+  \eq{-.25in}{
     \boxed{
       \mb{a}(t)= \frac{d\mb{v}}{dt}=\frac{d^2\mb{x}}{dt^2}
     }
@@ -353,11 +353,15 @@
   Likewise, \textbf{average acceleration} $\overline{\mb{a}}$ is the finite
   change in velocity $\Delta\mb{v}$ over a finite time interval $\Delta t$:
 
-  \eq{-.25in}{
-    \overline{\mb{a}} = \frac{\Delta\mb{v}}{\Delta t}
-    =\frac{\mb{v}-\mb{v}_0}{\Delta t}
+  \eq{-.27in}{
+    \boxed{
+      \overline{\mb{a}}=
+      \frac{\Delta\mb{v}}{\Delta t}
+      =\frac{\mb{v}-\mb{v}_0}{t-t_0}
+      =\frac{\int_{t_0}^t\mb{a}dt}{t-t_0}
+    }
   }
-  
+
   Note that acceleration only requires a \emph{change} in velocity. It does
   \emph{not} necessarily mean an object has to speed up or slow down.
 \end{frame}
@@ -432,8 +436,9 @@
   \item Spring force: $\displaystyle a(x)=-\frac{k}{m}x$
   \item Damping force: $a(v)=-bv$
   \item Aerodynamic drag:
-    $\displaystyle a(v)=\left[\frac12\rho C_D A_{\textrm{ref}}\right] v^2$
+    $\displaystyle a(v)=\left[\frac{\rho C_D A_\text{ref}}{2m}\right] v^2$
   \end{itemize}
+
   In these cases, solving for $x(t)$, $v(t)$ and $a(t)$ will require solving a
   differential equation (see handout).
 \end{frame}
@@ -691,8 +696,8 @@
 
 
 \begin{frame}{Horizontal ($x$) Direction}
-  No acceleration (i.e.\ $a_x=\num{0}$) in the horizontal direction, therefore
-  horizontal velocity component is constant. The kinematic equations reduce to:
+  No acceleration (i.e.\ $a_x=\num{0}$) along the horizontal direction,
+  therefore horizontal velocity is constant. The kinematic equations reduce to:
 
   \eq{-.2in}{
     x=v_xt=\left[v_0\cos\theta\right] t
@@ -707,7 +712,7 @@
 
 
 \begin{frame}{Vertical ($y$) Direction}
-  Constant acceleration due to gravity alone in the vertical direction, i.e.\
+  Constant acceleration due to gravity alone along the vertical direction, i.e.\
   $a_y=-g$. (Acceleration is \emph{negative} due to the way we defined the
   coordinate system.) The important equation is this one:
 
@@ -753,11 +758,11 @@
   of deriving them during the exam.
   \begin{itemize}
   \item Time of flight
-    \eq{-.1in}{t_\mathrm{max}=\frac{2v_0\sin\theta}{g}}
+    \eq{-.1in}{t_\text{max}=\frac{2v_0\sin\theta}{g}}
   \item Range
     \eq{-.1in}{R=\frac{v_0^2\sin(2\theta)}{g}}
   \item Maximum height
-    \eq{-.1in}{y_\mathrm{max}=\frac{v_0^2\sin^2\theta}{2g}}
+    \eq{-.1in}{y_\text{max}=\frac{v_0^2\sin^2\theta}{2g}}
   \end{itemize}
   The angle $\theta$ is measured above the the horizontal.
 \end{frame}
@@ -765,10 +770,12 @@
 
 
 \begin{frame}{Maximum Range}
-  \eq{-.1in}{R=\frac{v_0^2\sin(2\theta)}{g}}
+  \eq{-.1in}{
+    R=\frac{v_0^2\sin(2\theta)}g
+  }
   
   \begin{itemize}
-  \item Maximum range occurs at $\displaystyle\theta=\frac\pi 2$
+  \item Maximum range occurs at $\displaystyle\theta=\ang{45}$
   \item For a given initial speed $v_0$ and range $R$, launch angle $\theta$ is
     given by:
     
@@ -791,19 +798,19 @@
 \begin{frame}{Relative Motion}
   
   \begin{block}{}
-    \textbf{All motion quantities must be measured relative to a frame of
-      reference}
+    \textbf{All motion quantities must be measured relative to a
+      \emph{frame of reference}}
   \end{block}
 
   \vspace{.2in}
   \begin{itemize}
-  \item A frame of reference is the coordinate system from which all physical
-    measurements are made.
+  \item\textbf{Frame of reference:} the \emph{coordinate system} from which all
+    physical measurements are made.
   \item In \emph{classical} mechanics, the coordinate system is the
     Cartesian system
   \item There is no absolute motion/rest: all motions are relative
-  \item All laws of physics are equal in all inertial (non-accelerating) frames
-    of reference (principle of relativity)
+  \item\textbf{Principle of Relativity:} All laws of physics are equal in all
+    inertial (non-accelerating) frames of reference
   \end{itemize}
 \end{frame}  
 
@@ -905,8 +912,8 @@
     \item If the two frames are moving relative to each other, then
     $\textcolor{purple!80}{\mb{x}_{BC}}$ is also a function of time
     \end{itemize}
-    Without using vector notations, the relationship between the
-    vectors is obvious:
+    Even without using vector notations, the relationship between the vectors
+    is obvious:
 
     \eq{-.3in}{
       \boxed{
@@ -955,7 +962,7 @@
       }
     }
     
-    \vspace{-.1in}Differentiating all terms with respect with time, we get the
+    \vspace{-.1in}Differentiating all terms with respect to time, we get the
     equation for \textbf{relative velocity}:
 
     \eq{-.25in}{

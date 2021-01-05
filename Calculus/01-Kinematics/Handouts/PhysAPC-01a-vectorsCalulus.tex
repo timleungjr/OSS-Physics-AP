@@ -1,6 +1,6 @@
 \documentclass{../../../oss-handout}
 \usepackage{amsmath,bm}
-\usepackage{txfonts}  % must be loaded after amsmath?
+%\usepackage{txfonts}  % must be loaded after amsmath?
 \usepackage{enumitem}
 \usepackage{tikz}
 \usepackage{siunitx}
@@ -11,7 +11,7 @@
 %\usepackage{cancel}
 
 \sisetup{
-  detect-all,
+  %detect-all,
   per-mode=symbol
 }
 %\usetikzlibrary{decorations.pathmorphing,patterns}
@@ -89,7 +89,7 @@ with a positive value):
 
 \subsection{Writing Vectors}
 In Grades 11 and 12 Physics, vectors are usually written by separating the
-magnitude from the direction. For example, a velocity vector are usually
+magnitude from the direction. For example, a velocity vector would usually
 written as:
 \begin{equation*}
   \mb{v}=\SI{4.5}{\metre\per\second}\text{ [N \ang{55} E]}
@@ -103,8 +103,8 @@ coordinate system needs to be extended to \textbf{spherical coordinate system}
 or the \textbf{cylindrical coordinate system}. Moreover, it is difficult to
 perform vector arithmetic for \emph{rectilinear} motion.
 
-Intead, for rectilinear motion, vectors in 2D/3D Cartesian space are generally
-written in their $x$, $y$ \& $z$ components using the \textbf{IJK notation}:
+Instead, for rectilinear motion, vectors in 2D/3D Cartesian space are generally
+written in their $x$, $y$ and $z$ components using the \textbf{IJK notation}:
 \begin{equation*}
   \mb{A}=A_x\bm{\hat{\imath}} + A_y\bm{\hat{\jmath}} + A_z\bm{\hat{k}}
 \end{equation*}
@@ -112,7 +112,7 @@ The vectors $\bm{\hat{\imath}}$, $\bm{\hat{\jmath}}$ and $\bm{\hat{k}}$ are
 \textbf{basis vectors} indicating the directions of the $x$, $y$ and $z$ axes.
 Basis vectors are \textbf{unit vectors} (i.e.\ length $1$). Note that the
 IJK notation does not give the magnitude of the vector, which needs to be
-calculated:
+calculated using the general form of the pythagorean theorem:
 \begin{equation*}
   A=|\mb{A}|=\sqrt{A_x^2 + A_y^2 + A_z^2}
 \end{equation*}
@@ -215,17 +215,14 @@ long enough in grades 11 and 12!). Calculus was a mathematical tool that was
 velocities and accelerations. Even in your calculus class(es), you may have
 already noticed that a lot of the word problems  are really physics problems.
 In this course, both forms of calculus will be used:
-\begin{itemize}[topsep=0pt]
-\item\textbf{Differential Calculus}
-  \begin{itemize}
-  \item How quickly something is changing (``rate of change'' of a quantity)
-  \item Math: slopes of functions
-  \item Physics: how quickly a physical quantity is changing in time and/or
-    space
-  \item Examples: velocity (how quickly position changes with time),
-    acceleration (how quickly velocity changes with time), power (how quickly
-    work is done), electric fields (how electric potential changes in space)
-  \end{itemize}
+\begin{itemize}[nosep]
+\item\textbf{Differential calculus} concerns how quickly something is changing
+  (the \emph{rate of change} of a physical quantity). In mathematics, this is
+  represented by the slopes of functions; in physics, it is how quickly a
+  physical quantity is changing in time and/or space. Example includes
+  \emph{velocity} (how quickly position changes with time), \emph{acceleration}
+  (how quickly velocity changes with time), \emph{power} (how quickly work is
+  done), \emph{electric fields} (how electric potential changes in space)
 \item\textbf{Integral Calculus}
   \begin{itemize}
   \item The opposite of differentiation
@@ -358,15 +355,15 @@ function of time is found by integrating velocity $\mb{v}(t)$:
 A \textbf{constant of integration} $\mb{C}$ is added to the integral
 $\mb{x}(t)$. It is obtained through applying ``initial condition'' to the
 problem. On the other hand, a \textbf{definite integral} has lower and upper
-bounds. For example, given $\mb{v}(t)$, the displacement between $t_1$ and
-$t_2$ can be found by integrating between these limits:
+bounds. For example, given $\mb{v}(t)$, the displacement between $t_0$ and
+$t_1$ can be found by integrating between these limits:
 \begin{equation*}
   \Delta\mb{x}=\int_{t_0}^{t_1} \mb{v}(t)dt
 \end{equation*}
 Once we have computed the integral, we evaluate the limits:
 \begin{equation*}
   \Delta\mb{x} =
-  \mb{x}(t)\Big|^{t_1}_{t_0}=
+  \mb{x}(t_1)\Big|^t_{t_0}=
   \mb{x}(t_1)-\mb{x}(t_0)=
   \mb{x}_1-\mb{x}_0
 \end{equation*}

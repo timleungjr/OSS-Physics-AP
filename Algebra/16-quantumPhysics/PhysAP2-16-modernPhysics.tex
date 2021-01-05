@@ -2,34 +2,32 @@
 
 \usetheme{metropolis}
 \setbeamersize{text margin left=.5cm,text margin right=.5cm}
-
-
-\usefonttheme{professionalfonts}
-\usepackage{graphicx}
+\usepackage[lf]{carlito}
 \usepackage{tikz}
-\usepackage{amsmath}
 \usepackage{mathpazo}
-%\usepackage[scaled]{helvet}
 \usepackage{xcolor,colortbl}
-\usepackage{hyperref}
+%\usepackage{hyperref}
 \usepackage{siunitx}
 
-\setmonofont{Ubuntu Mono}
+%\setmonofont{Ubuntu Mono}
 \setlength{\parskip}{0pt}
 \renewcommand{\baselinestretch}{1}
 
+\usetikzlibrary{patterns}
 
 \sisetup{
-  detect-all,
-  number-math-rm=\mathnormal,
+  %detect-all,
+  %number-math-rm=\mathnormal,
+  inter-unit-product=\cdot,
   per-mode=symbol
 }
+\tikzset{>=latex}
 
 \title[Quantum]{Topic 22: Wave-Particle Duality}
 \subtitle{Advanced Placement Physics}
 \author[TML]{Dr.\ Timothy Leung}
 \institute{Olympiads School\\Toronto, Ontario, Canada}
-\date{April 2020}
+\date{\today}
 
 
 \newcommand{\mb}[1]{\mathbf{#1}}
@@ -58,7 +56,7 @@
 \begin{frame}{Blackbody Radiation}
   \begin{columns}
     \column{.2\textwidth}
-    \pic{1.3}{Black-body_realization.png}
+    \pic{1.3}{Black-body_realization}
      
     \column{.8\textwidth}
     \begin{itemize}
@@ -78,7 +76,7 @@
 \begin{frame}{Blackbody Radiation}
   \begin{columns}
     \column{.2\textwidth}
-    \pic{1.3}{Black-body_realization.png}
+    \pic{1.3}{Black-body_realization}
     
     \column{.8\textwidth}
     \begin{itemize}
@@ -117,7 +115,7 @@
     \end{itemize}
 
     \column{.45\textwidth}
-    \pic{1}{1280px-Black_body.png}
+    \pic{1}{1280px-Black_body}
   \end{columns}
 \end{frame}
 
@@ -181,15 +179,15 @@
     multiples of $hf$:
     
     \eq{-.2in}{
-      \boxed{E_{\textrm{res}}=nhf}
+      \boxed{E_\text{res}=nhf}
     }
     \begin{center}
       \begin{tabular}{l|c|c}
         \rowcolor{pink}
         \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
-        Energy of the resonator & $E_{\textrm{res}}$ & \si{\joule}\\
+        Energy of the resonator & $E_\text{res}$ & \si{\joule}\\
         Enegy level            & $n$ & (no unit)\\
-        Planck's constant      & $h$ & \si{\joule.\second}\\
+        Planck's constant      & $h$ & \si{\joule\second}\\
         Frequency of resonator & $f$ & \si{\hertz}
       \end{tabular}
     \end{center}
@@ -291,7 +289,7 @@
   ``spark gap experiment'' to generate frequencies in the range of
   \SI{e14}{\hertz}
   \begin{center}
-    \pic{.55}{Hertz_exp_2.png}
+    \pic{.55}{Hertz_exp_2}
   \end{center}
   \begin{itemize}
   \item\vspace{-.1in}Also showed that light has the same wavelengths as
@@ -307,7 +305,7 @@
   When electromagnetic waves (e.g. light) hits certain metals, electrons are
   knocked off the surface.
   \begin{center}
-    \pic{.9}{73bacc9f2bf571752483a89ef6c61a94f07470f7.png}
+    \pic{.9}{73bacc9f2bf571752483a89ef6c61a94f07470f7}
   \end{center}
   When observing this \textbf{photoelectric effect}, physicists discovered that:
   \begin{itemize}
@@ -327,7 +325,7 @@
   $E=hf$
 
   \eq{-.22in}{
-    \boxed{K_\mathrm{max}=
+    \boxed{K_\text{max}=
       \begin{cases}
         hf-\varphi & \text{if }hf>\varphi\\
         0          & \text{otherwise}
@@ -338,7 +336,7 @@
     \begin{tabular}{l|c|c}
       \rowcolor{pink}
       \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
-      Maximum kinetic energy of   & $K_\mathrm{max}$ & \si{\joule}\\
+      Maximum kinetic energy of   & $K_\text{max}$ & \si{\joule}\\
       Planck's constant           & $h$   & \si{\joule.\second}\\
       Frequency of the EM wave    & $f$   & \si{\hertz}\\
       Work function of the metal  & $\varphi$ & \si{\joule}
@@ -353,7 +351,7 @@
 \begin{frame}{Work Function}
   \begin{columns}
   \column{.5\textwidth}
-  \pic{1}{550px-Photoelectric_effect_diagram.png}
+  \pic{1}{550px-Photoelectric_effect_diagram}
   
   \column{.5\textwidth}
   \textbf{Work function} the minimum energy required to remove an electron
@@ -371,7 +369,7 @@
   The work function $\varphi$ depends on the metal. They are generally presented
   in electron volts.
   \begin{center}
-    \pic{.35}{work-function.png}
+    \pic{.35}{work-function}
   \end{center}
 \end{frame}
 
@@ -396,7 +394,7 @@
 \begin{frame}
   \frametitle{Compton Scattering}
   \begin{center}
-    \pic{.5}{compton2.png}
+    \pic{.5}{compton2}
   \end{center}
   If we treat the x-ray as a photon with momentum $p=h/\lambda$ then we can
   use Newton's laws of motion to predict both the recoil electron and scattered
@@ -427,7 +425,7 @@
 %\begin{frame}
 %  \frametitle{Example Problem}
 %  \textbf{Example 1}: Calculate the momentum of a photon of light that has
-%  frequency of $5.09\e{14}\mathrm{Hz}$.
+%  frequency of \SI{5.09e14}{\hertz}.
 %\end{frame}
 
 
@@ -455,7 +453,7 @@
     If I perform a double-slit experiment with a beam of electrons, will I get
     an interference pattern?
     \begin{center}
-      \pic{.7}{CNX_Chem_06_03_Electrnin.png}
+      \pic{.7}{CNX_Chem_06_03_Electrnin}
     \end{center}
 
     \column{.18\textwidth}
@@ -633,7 +631,7 @@
     \end{itemize}
 
     \column{.4\textwidth}
-    \pic{1}{400px-Hydrogen_transitions.png}
+    \pic{1}{400px-Hydrogen_transitions}
   \end{columns}
 \end{frame}
 
@@ -642,7 +640,7 @@
   \frametitle{Standing Wave on a String}
   \begin{columns}
     \column{.3\textwidth}
-    \pic{1}{strhar.png}
+    \pic{1}{strhar}
 
     \column{.7\textwidth}
     \begin{itemize}
@@ -658,7 +656,7 @@
 \begin{frame}
   \frametitle{Circular Standing Wave}
   \begin{center}
-    \pic{.7}{oo1wp.png}
+    \pic{.7}{oo1wp}
   \end{center}
   Electron resonance states $n=3,4,5,6$
 \end{frame}
@@ -669,7 +667,7 @@
   \frametitle{Particle in a Box}
   \begin{columns}
     \column{.3\textwidth}
-    \pic{1}{box.png}
+    \pic{1}{box}
     
     \column{.7\textwidth}
     A particle in a 1D box has to behave like a standing wave. The resonance
@@ -692,13 +690,13 @@
 \begin{frame}{Particle in a Box}
   \begin{columns}
     \column{.3\textwidth}
-    \pic{1}{box.png}
+    \pic{1}{box}
     
     \column{.7\textwidth}
     Kinetic energy of the particle can be expressed in terms of momentum:
 
     \eq{-.2in}{
-      K_n=\frac{1}{2}mv^2=\frac{p^2}{2m}=\frac{n^2h^2}{8mL^2}
+      K_n=\frac12mv^2=\frac{p^2}{2m}=\frac{n^2h^2}{8mL^2}
     }
 
     If a particle is a standing wave, then kinetic energy of the particle can

@@ -1,8 +1,6 @@
 \documentclass[12pt,aspectratio=169]{beamer}
-
 \usetheme{metropolis}
 \setbeamersize{text margin left=.5cm,text margin right=.5cm}
-
 \usepackage[lf]{carlito}
 \usepackage{tikz}
 \usepackage{mathpazo}
@@ -14,8 +12,6 @@
 \renewcommand{\baselinestretch}{1}
 
 \sisetup{
-  detect-all,
-  %number-math-rm=\mathnormal,
   per-mode=symbol
 }
 \tikzset{
@@ -26,12 +22,9 @@
 \title{Topic 12: DC Circuit Analysis}
 \subtitle{Advanced Placement Physics 1 \& 2}
 \author[TML]{Dr.\ Timothy Leung}
-\institute{Olympiads School, Toronto, ON, Canada}
-\date{\today}
+\institute{Olympiads School}
+\date{Last Updated: \today}
 
-
-\newcommand{\pic}[2]{\includegraphics[width=#1\textwidth]{#2}}
-\newcommand{\mb}[1]{\mathbf{#1}}
 \newcommand{\eq}[2]{\vspace{#1}{\Large\begin{displaymath}#2\end{displaymath}}}
 
 
@@ -74,19 +67,9 @@
   The \textbf{electric current} $I$ through conductor is the amount of charge
   carriers $Q$ that passes through a point during a time interval $t$:
 
-  \eq{-.25in}{
-    \boxed{I=\frac{Q}{t}}
+  \eq{-.2in}{
+    \boxed{I=\frac{Q}t}
   }
-%  a surface $A$:
-%  
-%  \vspace{-.2in}where
-%  \begin{itemize}
-%  \item The unit for $J$ is \textbf{ampere per meter squared} (\si{A/m^2})
-%  \item $n$ is the number of charge carriers per unit volume
-%  \item $v_d$ is the average \textbf{drift velocity} of the charge carriers
-%  \item $e$ is the (elementary) charge of each particle
-%  \end{itemize}
-%  Basic algebra will show that these equations are consistent with one another.
 \end{frame}
 
 
@@ -142,7 +125,7 @@ Expanding the expression:
   \begin{enumerate}
   \item Divide the metal's density $\rho$ by its molar mass $M$ to find the
     \emph{number of moles of atoms per unit volume}
-  \item Multiply by Avagadro's number $N_A=\SI{6.0221e23}{\per mol}$ to find
+  \item Multiply by Avogadro's number $N_A=\SI{6.0221e23}{\per mol}$ to find
     \emph{number of atoms per unit volume}
   \item Multiply by the number of free electrons per atom $k$ for that
     particular metal
@@ -273,29 +256,8 @@ Expanding the expression:
   field $E$ inside the material and the current density $J$:
 
   \eq{-.2in}{
-    \boxed{\rho=\frac{E}{J}}
+    \boxed{\rho=\frac{E}J}
   }
-%  \begin{center}
-%    \begin{tabular}{l|c|c}
-%      \rowcolor{pink}
-%      \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
-%      Magnitude of electric field in the material &
-%      $\mb{E}$ & \si{\newton/\coulomb} \\
-%      Density of charge carrier & $\mb{J}$ & \si{\ampere\per\metre\squared} \\
-%      Resistivity & $\rho$ & \si{\ohm/\metre}
-%    \end{tabular}
-%  \end{center}
-%\end{frame}
-%
-%
-%
-%\begin{frame}{Resistivity}
-%
-%  \eq{-.05in}{
-%    \boxed{\mb{E}=\rho\mb{J}}
-%    \quad\quad\text{\large Scalar:}\quad
-%    \boxed{\rho=\left|\frac{E}{J}\right|}
-%  }
   \begin{itemize}
   \item Conductor: the electrons are free to move, therefore the electric
     field tend to be very small, and the resistivity is low.
@@ -307,17 +269,13 @@ Expanding the expression:
 
 
 
-
-
-
-
 \begin{frame}{Resistance of a Conductor}
   \eq{-.01in}{
-    \boxed{R = \rho\frac{L}{A}}
+    \boxed{R=\rho\frac{L}A}
   }
 
   \begin{columns}
-    \column{0.5\textwidth}
+    \column{.5\textwidth}
     \begin{center}
       \begin{tabular}{c|c|c}
         \rowcolor{blue!50}
@@ -326,7 +284,7 @@ Expanding the expression:
         {\color{white}$R/L$} \\
         \rowcolor{blue!50}
         & {\color{white}(\si{mm})} & 
-        {\color{white}(\SI{e-3}{\ohm/m})}\\ \hline
+        {\color{white}(\SI{e-3}{\ohm\per\metre})}\\ \hline
         0  & \num{9.35} & \num{0.31} \\
         10 & \num{2.59} & \num{2.20} \\
         14 & \num{1.63} & \num{8.54} \\
@@ -340,14 +298,14 @@ Expanding the expression:
       \begin{tabular}{c|c}
         \rowcolor{blue!50}
         {\color{white} Material} & 
-        {\color{white} Resistivity $\rho$ (\si{\ohm.m})}\\ \hline
+        {\color{white} Resistivity $\rho$ (\si{\ohm\metre})}\\ \hline
         silver    & \num{1.6e-8} \\
         copper    & \num{1.7e-8} \\
         aluminum  & \num{2.7e-8} \\
         tungsten  & \num{5.6e-8} \\
         Nichrome  & \num{100e-8} \\
         carbon    & \num{3500e-8}\\
-        germanium & \num{0.46} \\
+        germanium & \num{.46} \\
         glass     & \num{e10} to \num{e14}\\
       \end{tabular}
     \end{center}
@@ -381,10 +339,9 @@ Expanding the expression:
 
 \begin{frame}{Power Dissipated by a Resistor}
   Average power $P$ is the rate at which work $W$ is done, and from
-  electrostatics, the
-  change in electric potential energy $\Delta E_q$ (i.e.\ the work done!) is
-  proportional to the amount of charge $q$ and the voltage $V$. This gives a
-  very simple expression for power through a resistor:
+  electrostatics, the change in electric potential energy $\Delta E_q$ (i.e.\
+  the work done!) is proportional to the amount of charge $q$ and the voltage
+  $V$. This gives a very simple expression for power through a resistor:
   
   \eq{-.15in}{
     P
@@ -392,7 +349,6 @@ Expanding the expression:
     =\left(\frac{\Delta q}{\Delta t}\right)V
     \;\rightarrow\;\boxed{P=IV}
   }
-  
   \begin{center}
     \begin{tabular}{l|c|c}
       \rowcolor{pink}
@@ -411,7 +367,7 @@ Expanding the expression:
   expressions for power through a resistor:
 
   \eq{-.15in}{
-    \boxed{P=\frac{V^2}{R}}\quad\boxed{P=I^2R}
+    \boxed{P=\frac{V^2}R}\quad\boxed{P=I^2R}
   }
   \begin{center}
     \begin{tabular}{l|c|c}
@@ -474,8 +430,7 @@ Expanding the expression:
     \column{.3\textwidth}
     \begin{center}
       \begin{tikzpicture}[scale=1.8,american voltages]
-        \draw[thick](0,0)
-        to[battery,l=$V$] (0,1.5)--(1,1.5)
+        \draw[thick](0,0) to[battery,l=$V$] (0,1.5)--(1,1.5)
         to[R=$R$] (1,0)--(0,0);
       \end{tikzpicture}
     \end{center}
@@ -503,11 +458,12 @@ Expanding the expression:
   \begin{columns}
     \column{.32\textwidth}
     \begin{tikzpicture}
-     \draw[thick] (0,2) to[short,o-] (1,2) to[R=$R_1$] (1,0) to[short,-o] (0,0);
+     \draw[thick](0,2)  to[short,o-] (1,2)to[R=$R_1$] (1,0) to[short,-o] (0,0);
      \draw[thick](1,2)  to[short] (2.25,2)to[R=$R_2$] (2.25,0)to[short] (1,0);
      \draw[thick](2.25,2)to[short](3.5,2) to[R=$R_3\ldots$] (3.5,0)
      to[short] (2.25,0);
     \end{tikzpicture}
+    
     \column{.68\textwidth}
     From the current law, we know that the total current is the
     current through all the resistors, which we can rewrite in terms of voltage
@@ -562,17 +518,21 @@ Expanding the expression:
   \vspace{.1in}The analysis for resistors in series is similar (but easier).
   From the current law, the current through each resistor is the same:
 
-  \eq{-.2in}{I_1=I_2=I_3=\cdots=I}
+  \eq{-.2in}{
+    I_1=I_2=I_3=\cdots=I
+  }
 
   \vspace{-.1in}And the total voltage drop across all resistor is therefore:
 
-  \eq{-.2in}{V=V_1+V_2+V_3+\cdots=I(\underbrace{R_1+R_2+R_3+\cdots}_{R_s})}
+  \eq{-.2in}{
+    V=V_1+V_2+V_3+\cdots=I(\underbrace{R_1+R_2+R_3+\cdots}_{R_s})
+  }
 \end{frame}
 
 
 
 \begin{frame}{Equivalent Resistance in Series}
-  Again, through applying Ohm's law and Kirchkoff's laws, we find that when
+  Again, through applying Ohm's law and Kirchhoff's laws, we find that when
   resistors are connected in series: the equivalent resistance of loads is the
   sum of the resistances of the individual loads.
   
@@ -590,36 +550,6 @@ Expanding the expression:
 \end{frame}
 
 
-%\begin{frame}{Example Problem (Simple)}
-%  A simple circuit analysis problem will involve one voltage source and
-%  resistors connected, some in parallel, and some in series. Below is a typical
-%  example:
-%
-%  \vspace{.2in}
-%  \begin{columns}
-%    \column{.4\textwidth}
-%    \begin{tikzpicture}[scale=.8,american voltages]
-%      \draw(0,0) to[R=2<\ohm>](0,2) to[battery=100<\volt>] (0,4) to[short]
-%      (1,4) to [R=10<\ohm>] (3,4)--(3,4.5) to[R=40<\ohm>] (5,4.5)
-%      to[short] (5,4) to[short] (5.5,4)--(5.5,0)--(0,0);
-%      \draw(3,4)--(3,3.5) to[R,l_=10<\ohm>] (5,3.5)--(5,4);
-%      \draw[dashed] (-1.8,0.25) rectangle(0.6,3.75);
-%    \end{tikzpicture}
-%    \column{.6\textwidth}
-%    Two \SI{10}{\ohm} resistors and a \SI{40}{\ohm} resistor are connected as
-%    shown to a \SI{100}{\volt} emf source with internal resistance
-%    \SI{2}{\ohm}. How much power is dissipated by the \SI{40}{\ohm} resistor?
-%    \begin{enumerate}[(A)]
-%    \item\SI{160}{\watt}
-%    \item\SI{40}{\watt}
-%    \item\SI{400}{\watt}
-%    \item\SI{5}{\watt}
-%    \item\SI{500}{\watt}
-%    \end{enumerate}
-%  \end{columns}
-%\end{frame}
-
-
 
 \begin{frame}{Tips for Solving ``Simple'' Circuit Problems}
   \begin{enumerate}
@@ -628,75 +558,10 @@ Expanding the expression:
   \item Gradually reduce the entire circuit to one voltage source and one
     resistor.
   \item Using Ohm's law, find the current out of the battery.
-  \item Using Kirchkoff's laws, find the current through each of the resistors.
+  \item Using Kirchhoff's laws, find the current through each of the resistors.
   \end{enumerate}
 \end{frame}
 
-
-
-%\begin{frame}{Circuits Aren't Always Simple}
-%  Some of these problems require you to solve a system of linear equations.
-%  The following is a simple example with two voltage sources:
-%  \begin{center}
-%    \begin{tikzpicture}[american voltages]
-%      \draw(0,0) to[battery=$V_1$](0,2) to[R=$R_1$](2,2) to[R=$R_3$](2,0)--(0,0);
-%      \draw(2,0)--(4,0) to[battery,l_=$V_2$](4,2) to[R,l_=$R_2$](2,2);
-%      \uncover<2->{
-%        \draw[very thick,red,->](2,0.4)--(2,0)
-%        node[midway,right]{\tiny $I_1+I_2$};
-%        \draw[very thick,red,->] (0.6,0.4)..controls (0,2) and (2,2)..(1.6,.4)
-%        node[midway,below]{\tiny $I_1$};
-%        \draw[very thick,red,->] (3.4,0.4)..controls (4,2) and (2,2)..(2.4,.4)
-%        node[midway,below]{\tiny $I_2$};
-%      }
-%    \end{tikzpicture}
-%  \end{center}
-%  \uncover<2->{
-%    In this case, we have to draw two loops of current.
-%  }
-%\end{frame}
-%
-%
-%
-%\begin{frame}{A Veyr Difficult Example}
-%  \begin{columns}
-%    \column{.4\textwidth}
-%    
-%    \vspace{-.3in}
-%    \begin{tikzpicture}[american voltages]
-%      \draw(0,0) to[battery=$V_1$](0,2) to[R=$R_1$](2,2)to[R=$R_3$](2,0)--(0,0);
-%      \draw(2,0)--(4,0) to[battery,l_=$V_2$](4,2) to[R,l_=$R_2$](2,2);
-%      \draw[very thick,red,->](2,0.4)--(2,0)
-%      node[midway,right]{\tiny $I_1+I_2$};
-%      \draw[very thick,red,->] (0.6,0.4)..controls (0,2) and (2,2)..(1.6,.4)
-%      node[midway,below]{\tiny $I_1$};
-%      \draw[very thick,red,->] (3.4,0.4)..controls (4,2) and (2,2)..(2.4,.4)
-%      node[midway,below]{\tiny $I_2$};
-%    \end{tikzpicture}
-%    \column{.6\textwidth}
-%    We split the circuit into two loops, and apply Kirchkoff's voltage in both:
-%
-%    \vspace{-.4in}{\Large
-%      \begin{align*}
-%        V_1-I_1R_1-(I_1+I_2)R_3&=0\\
-%        V_2-I_2R_2-(I_1+I_2)R_3&=0
-%      \end{align*}
-%    }
-%  \end{columns}
-%
-%  \vspace{-.1in}Two equations, two unknowns ($I_1$ and $I_2$). We can subtract
-%  (2) from (1), then solve for $I_1$ and $I_2$:
-%
-%  \eq{-.4in}{
-%    I_1=\frac{V_1-I_2R_3}{R_1+R_3}
-%    \quad\quad
-%    I_2=
-%    \frac{\left[V_2-\frac{(V_1-V_2)R_3}{R_1}\right]}
-%         {\left[R_2+\frac{(R_1+R_2)R_3}{R_1}\right]}
-%  }
-%
-%  (Try this at home as an exercise.)
-%\end{frame}
 
 
 \begin{frame}{Multi-Loop Circuits}
@@ -830,9 +695,7 @@ Expanding the expression:
   can look into combining them in to an ``R-C circuit''.
   \begin{center}
     \begin{tikzpicture}[american voltages]
-      \draw[thick](0,0)
-      to[battery,l=$V$] (0,2)
-      to[R=$R$] (2,2)
+      \draw[thick](0,0) to[battery,l=$V$] (0,2) to[R=$R$] (2,2)
       to[C=$C$] (2,0)--(0,0);
     \end{tikzpicture}
   \end{center}
@@ -841,60 +704,6 @@ Expanding the expression:
   current through the circuit will not be steady as were the case with only
   resistors.
 \end{frame}
-
-
-
-%\begin{frame}{Discharging a Capacitor}
-%  We start the analysis with something even simpler. There is no voltage source,
-%  and the capacitor is already charged to $V_c=Q_{tot}/C$. What happens
-%  when the current begin to flow?
-%  \begin{columns}
-%    \column{.3\textwidth}
-%    \begin{center}
-%      \begin{tikzpicture}
-%        \draw[thick](0,0) to[R=$R$] (0,2)--(2,2) to[C=$C$] (2,0)--(0,0);
-%      \end{tikzpicture}
-%    \end{center}
-%    
-%    \column{.7\textwidth}
-%    As current starts to flow, the charge on the capacitor decrease. Over time
-%    the current decreases, until the capacitor is fully discharged, and current
-%    stops flowing.
-%  \end{columns}
-%
-%  \vspace{.15in}Apply the voltage law for the circuit, and substitute
-%  the definition of current $I=dQ/dt$ and the voltage across a capacitor
-%  $V_c=Q/C$:
-%
-%  \eq{-.15in}{V_c-IR=0\quad\rightarrow\quad -\frac{Q}{C}-R\frac{dQ}{dt}=0}
-%\end{frame}
-%
-%
-%\begin{frame}{Discharging a Capacitor}
-%  Separating the $Q$ terms on the left side of the equation, and leaving
-%  everything else on the right side, we get:
-%
-%  \eq{-.2in}{
-%    \frac{dQ}{Q}=\frac{-dt}{RC}
-%  }
-%
-%  which we can now integrate and ``exponentiate'':
-%
-%  \eq{-.15in}{
-%    \int\frac{dQ}{Q}=\int\frac{-dt}{RC}
-%    \;\rightarrow\;
-%    \ln Q=\frac{-t}{RC} + K
-%    \;\rightarrow\;
-%    Q=e^Ke^{-t/RC}
-%  }
-%
-%  The constant of integration $K$ is the initial charge on the capacitor
-%  $Q_{tot}$:
-%
-%  \eq{-.2in}{
-%    e^K=Q_{tot}
-%  }
-%\end{frame}
 
 
 
@@ -945,40 +754,9 @@ Expanding the expression:
 
     The initial current $I_0=Q_{tot}/\tau=V/R$. This makes sense because
     $V_C=0$ at $t=0$, and all of the energy must be dissipated through the
-    resistor. At $t=\infty$, current through the capcitor is $I_c=0$
+    resistor. At $t=\infty$, current through the capacitor is $I_c=0$
   \end{columns}
 \end{frame}
-
-
-%\begin{frame}{Charging a Capacitor}
-%  ``Exponentiating'' both sides, we have
-%  
-%  \eq{-.2in}{CV-Q=e^Ke^{-t/RC}}
-%
-%  To find the constant of integration $K$, we note that at $t=0$, the charge
-%  across the capacitor is $0$, and we get
-%
-%  \eq{-.2in}{e^K=CV=Q_{tot}}
-%
-%  which is the charge stored in the capacitor at the end. Substitute this back
-%  into the equation:
-%
-%
-%\end{frame}
-%
-%
-%
-%
-%\begin{frame}{Capacitors}
-%
-%  \eq{-.15in}{\boxed{Q(t)=Q_{tot}(1-e^{-t/\tau})}}
-%
-%  \vspace{-.1in}Charging a capacitor has the same time constant $\tau=RC$ as
-%  during discharge. We can also differentiate to find the current through the
-%  circuit; it is identical to the equation for discharge:
-%
-%
-%\end{frame}
 
 
 

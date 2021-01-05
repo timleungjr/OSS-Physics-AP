@@ -1,10 +1,8 @@
 \documentclass[12pt,aspectratio=169]{beamer}
-
 \usetheme{metropolis}
 \setbeamersize{text margin left=.5cm,text margin right=.5cm}
-
-\usefonttheme{professionalfonts}
-\usepackage{carlito}
+%\usefonttheme{professionalfonts}
+\usepackage[lf]{carlito}
 \usepackage{tikz}
 \usepackage{bm}
 \usepackage{mathpazo}
@@ -13,8 +11,10 @@
 
 \sisetup{
   %detect-all,
+  inter-unit-product=\cdot,
   per-mode=symbol
 }
+\tikzset{>=latex}
 
 \setlength{\parskip}{0pt}
 \renewcommand{\baselinestretch}{1}
@@ -27,9 +27,7 @@
 \date{\today}
 
 \newcommand{\pic}[2]{
-  \begin{center}
-    \includegraphics[width=#1\textwidth]{#2}
-  \end{center}
+  \begin{center}\includegraphics[width=#1\textwidth]{#2}\end{center}
 }
 \newcommand{\mb}[1]{\mathbf{#1}}
 \newcommand{\eq}[2]{\vspace{#1}{\Large\begin{displaymath}#2\end{displaymath}}}
@@ -84,10 +82,10 @@
   \item\textbf{Volume} is the space occupied by the gas, with a unit of
     \textbf{cubic meter} (\si{\metre^3})
   \item\textbf{Pressure} is the force $F$ that a gas exerts on the container,
-    divided by the surface area of the container $A$ whenthe molecules collide
+    divided by the surface area of the container $A$ when the molecules collide
     with it:
     \begin{displaymath}
-        P=\frac{F}{A}
+        P=\frac{F}A
     \end{displaymath}
     \begin{itemize}
     \item\vspace{-.2in}Unit of pressure: \textbf{pascal} (\si{\pascal})
@@ -119,9 +117,9 @@
         \draw[thick,blue,dashed](0,0)--(1,0);
         \draw[thick,blue](1,0)--(5.2,0);
       \end{scope}
-      \draw[->](0,0)--(5,0) node[pos=1,right]{$T_C$};
+      \draw[->](0,0)--(5,0) node[right]{$T_C$};
       \draw(0,0)--(0,.15) node[pos=0,below]{\scriptsize\SI{-273.15}{\celsius}};
-      \draw[->](2,0)--(2,2.5) node[pos=1,left]{$P$};
+      \draw[->](2,0)--(2,2.5) node[left]{$P$};
     \end{tikzpicture}
   \end{center}
   Regardless of the type of gas, amount of gas, or the volume of gas, pressure
@@ -135,8 +133,7 @@
   The \textbf{thermodynamic temperature}\footnote{or \textbf{absolute
       temperature}} $T$
   is obtained by shifting the ``null point'' (where temperature is zero) from
-  the Celsius temperature $T_C$. %The unit for thermodynamic temperature is
-  %\textbf{kelvin} (\si{\kelvin}).
+  the Celsius temperature $T_C$.
   
   \eq{-.2in}{
     \boxed{T = T_C + 273.15}
@@ -164,7 +161,7 @@
 %  of a gas at constant volume is defined using its triple point:
 %
 %  \eq{-.1in}{
-%    T=\frac{T_\mathrm{tp}}{P_\mathrm{tp}}P
+%    T=\frac{T_\text{tp}}{P_\text{tp}}P
 %  }
 %
 %  \textbf{Triple point} is a combination of pressure and temperature where all
@@ -172,8 +169,8 @@
 %  equilibrium.
 %  \begin{itemize}
 %  \item The triple point temperature for water is at
-%    $T_\mathrm{tp}=\SI{273.16}{\kelvin}$, or $\SI{0.01}{\celsius}$
-%  \item Triple point pressure for water is $P_\mathrm{tp}=\SI{611.2}{\pascal}$
+%    $T_\text{tp}=\SI{273.16}{\kelvin}$, or $\SI{0.01}{\celsius}$
+%  \item Triple point pressure for water is $P_\text{tp}=\SI{611.2}{\pascal}$
 %  \end{itemize}
 %\end{frame}
 
@@ -332,7 +329,7 @@
   \textbf{Maxwell-Boltzmann distribution}:
 
   \eq{-.2in}{
-    f(v)=4\pi\left[\frac{m}{2\pi k_BT}\right]^{\frac{3}{2}}v^2
+    f(v)=4\pi\left[\frac{m}{2\pi k_BT}\right]^{\frac32}v^2
     \exp\left[-\frac{mv^2}{2k_BT}\right]
   }
 
@@ -363,13 +360,13 @@
     \item The area under the distribution curve is 1 (all probabilites sums to
       \SI{100}{\percent})
     \item The peak of the distribution shifts to higher speeds as $T$ increases
-    \item The peak, which represents the most-probable speed $v_\mathrm{prob}$,
+    \item The peak, which represents the most-probable speed $v_\text{prob}$,
       is lower at higher temperatures.
     \end{itemize}
   \end{columns}
   \vspace{.2in}There are three particles speeds that are important: the
-  most-probable speed $v_\mathrm{prob}$, the mean (average) speed
-  $\langle v \rangle$ and the root-mean-square speed $v_\mathrm{rms}$.
+  most-probable speed $v_\text{prob}$, the mean (average) speed
+  $\langle v \rangle$ and the root-mean-square speed $v_\text{rms}$.
 \end{frame}
 
 
@@ -380,12 +377,12 @@
     \pic{1}{speed-distribution}
     
     \column{.52\textwidth}
-    The \textbf{most probable speed} $v_\mathrm{prob}$ is the peak of the
+    The \textbf{most probable speed} $v_\text{prob}$ is the peak of the
     distribution function, where the speed is maximum (i.e.\ the mode of the
     function):
 
       \eq{-.2in}{
-        v_\mathrm{prob}=\sqrt{\frac{2k_BT}{m}}
+        v_\text{prob}=\sqrt{\frac{2k_BT}m}
       }
   \end{columns}
   \vspace{.2in}It is obtained through using basic (albeit not necessarily
@@ -402,7 +399,7 @@
   particles\footnote{The proper calculus notation is the integral
     $\int_0^\infty vf(v)dv$}:
   \begin{displaymath}
-    \langle v\rangle =\frac{v_1+v_2+\cdots+v_N}{N}
+    \langle v\rangle =\frac{v_1+v_2+\cdots+v_N}N
   \end{displaymath}
   \begin{columns}
     \column{.48\textwidth}
@@ -428,43 +425,26 @@
   \begin{displaymath}
     \langle K\rangle=\frac{\frac12mv_1+\cdots+\frac12mv_N^2}{N}
     =\frac12m
-    \underbrace{\left[\frac{v_1^2+v_2^2+\cdots+v_N^2}{N}\right]}_{v_\mathrm{rms}^2}
+    \underbrace{\left[\frac{v_1^2+v_2^2+\cdots+v_N^2}N\right]}_{v_\text{rms}^2}
   \end{displaymath}
   The speed that gives the average kinetic energy is called the \textbf{root
-    mean square speed} $v_\mathrm{rms}$:
+    mean square speed} $v_\text{rms}$:
 
   \eq{-.3in}{
-    v_\mathrm{rms}=\sqrt{\frac{3k_BT}{m}}
+    v_\text{rms}=\sqrt{\frac{3k_BT}{m}}
   }
   \vspace{.2in}
 \end{frame}
 
 
 
-%\begin{frame}{Average Kinetic Energy of a Gas}
-%  We note that pressure is force of the gas molecules exerts when colliding
-%  with the container, given by
-%
-%  \eq{-.3in}{ P=\frac{F}{A} }
-%
-%  By Newton's second law of motion: the collision changes the momentum of the
-%  gases
-%
-%  \eq{-.3in}{ \mb{F}=\frac{d\mb{p}}{dt} }
-%
-%  We can then relate the change momentum, to force to pressure and to the ideal
-%  gas law. After some calculus\ldots
-%\end{frame}
-%
-%
-%
 \begin{frame}{Average Kinetic Energy of a Gas}
-  From the expression of $v_\mathrm{rms}$, and relating to the average kinetic
+  From the expression of $v_\text{rms}$, and relating to the average kinetic
   energy, it is easy to show that:
   
   \eq{-.2in}{
-    \langle K \rangle=\frac12v_\mathrm{rms}^2=
-    \frac12\left(\sqrt{\frac{3k_BT}{m}}\right)^2
+    \langle K \rangle=\frac12v_\text{rms}^2=
+    \frac12\left(\sqrt{\frac{3k_BT}m}\right)^2
     \quad\rightarrow\quad
     \boxed{\langle K\rangle=\frac32k_BT}
   }
@@ -485,8 +465,8 @@
   \begin{columns}
     \column{.35\textwidth}
     \begin{tikzpicture}[scale=.8]
-      \draw[->](0,0)--(5,0) node[pos=1,right]{\footnotesize $V$};
-      \draw[->](0,0)--(0,5) node[pos=1,left]{\footnotesize $P$};
+      \draw[->](0,0)--(5,0) node[right]{\footnotesize $V$};
+      \draw[->](0,0)--(0,5) node[left]{\footnotesize $P$};
       \draw[smooth,samples=15,domain=1:4,very thick] plot({\x},{1.75/\x});
       \draw[smooth,samples=15,domain=1:4,very thick] plot({\x},{3/\x});
       \draw[smooth,samples=15,domain=1:4,very thick] plot({\x},{4.5/\x});
@@ -573,9 +553,9 @@
     \begin{tabular}{l|c|c}
       \rowcolor{pink}
       \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
-      Change in internal energy of a system & $\Delta U$   & \si{\joule} \\
-      Work done \emph{by} the system & $W$                 & \si{\joule} \\
-      Heat into the system           & $Q$                 & \si{\joule}
+      Change in internal energy of a system & $\Delta U$ & \si{\joule} \\
+      Work done \emph{by} the system & $W$               & \si{\joule} \\
+      Heat into the system           & $Q$               & \si{\joule}
     \end{tabular}
   \end{center}
 \end{frame}
@@ -765,8 +745,8 @@
       \fill[pink!80!gray!50](1,0) rectangle(4,3.5);
       \draw[dashed](1,0)--(1,3.5);
       \draw[dashed](4,0)--(4,.5);
-      \draw(0,0)--(5,0) node[pos=1,right]{\footnotesize $V$};
-      \draw(0,0)--(0,4) node[pos=1,left]{\footnotesize $P$};
+      \draw(0,0)--(5,0) node[right]{\footnotesize $V$};
+      \draw(0,0)--(0,4) node[left]{\footnotesize $P$};
       \draw[very thick,->,red](1,3.5)--(4,3.5)--(4,.6);
       \fill[black](1,3.5) circle(.1) node[above]{\tiny $(P_1,V_1)$};
       \fill[black](4,.5) circle(.1)  node[right]{\tiny $(P_2,V_2)$};
@@ -775,8 +755,8 @@
       \fill[pink!80!gray!50](1,0) rectangle(4,.5);
       \draw[dashed](1,0)--(1,3.5);
       \draw[dashed](4,0)--(4,.5);
-      \draw(0,0)--(5,0) node[pos=1,right]{\footnotesize $V$};
-      \draw(0,0)--(0,4) node[pos=1,left]{\footnotesize $P$};
+      \draw(0,0)--(5,0) node[right]{\footnotesize $V$};
+      \draw(0,0)--(0,4) node[left]{\footnotesize $P$};
       \draw[very thick,->,red](1,3.5)--(1,.5)--(3.9,.5);
       \fill[black](1,3.5) circle(.1) node[above]{\tiny $(P_1,V_1)$};
       \fill[black](4,.5) circle(.1)  node[right]{\tiny $(P_2,V_2)$};
@@ -786,8 +766,8 @@
       (1,0)--(1,3.5)..controls(1.5,2) and (3.2,.7)..(4,.5)--(4,0)--cycle;
       \draw[dashed](1,0)--(1,3.5);
       \draw[dashed](4,0)--(4,.5);
-      \draw(0,0)--(5,0) node[pos=1,right]{\footnotesize $V$};
-      \draw(0,0)--(0,4) node[pos=1,left]{\footnotesize $P$};
+      \draw(0,0)--(5,0) node[right]{\footnotesize $V$};
+      \draw(0,0)--(0,4) node[left]{\footnotesize $P$};
       \draw[very thick,->,red](1,3.5)..controls(1.5,2) and (3.2,.7)..(3.95,.55);
       \fill[black](1,3.5) circle(.1) node[above]{\tiny $(P_1,V_1)$};
       \fill[black](4,.5) circle(.1)  node[right]{\tiny $(P_2,V_2)$};
@@ -817,34 +797,34 @@
 \begin{frame}{Quasi-Static Processes}
   \begin{center}
     \begin{tikzpicture}[scale=.6]
-      \draw(0,0)--(5,0) node[pos=1,right]{\footnotesize $V$}
+      \draw(0,0)--(5,0) node[right]{\footnotesize $V$}
       node[midway,below]{Isobaric};
-      \draw(0,0)--(0,4) node[pos=1,left]{\footnotesize $P$};
+      \draw(0,0)--(0,4) node[left]{\footnotesize $P$};
       \draw[thick](1,2)--(3.95,2);
       \fill[black](1,2) circle(.1);
       \fill[black](4,2) circle(.1);
     \end{tikzpicture}
     \begin{tikzpicture}[scale=.6]
-      \draw(0,0)--(5,0) node[pos=1,right]{\footnotesize $V$}
+      \draw(0,0)--(5,0) node[right]{\footnotesize $V$}
       node[midway,below]{Isochoric};
-      \draw(0,0)--(0,4) node[pos=1,left]{\footnotesize $P$};
+      \draw(0,0)--(0,4) node[left]{\footnotesize $P$};
       \draw[thick](2,1)--(2,3.5);
       \fill[black](2,1)   circle(.1);
       \fill[black](2,3.5) circle(.1);
     \end{tikzpicture}
     
     \begin{tikzpicture}[scale=.6]
-      \draw(0,0)--(5,0) node[pos=1,right]{\footnotesize $V$}
+      \draw(0,0)--(5,0) node[right]{\footnotesize $V$}
       node[midway,below]{Isothermal};
-      \draw(0,0)--(0,4) node[pos=1,left]{\footnotesize $P$};
+      \draw(0,0)--(0,4) node[left]{\footnotesize $P$};
       \draw[smooth,samples=15,domain=1:3.5,thick] plot({\x},{3/\x});
       \fill[black](1,3)   circle(.1);
       \fill[black](3.5,.85) circle(.1);
     \end{tikzpicture}
     \begin{tikzpicture}[scale=.6]
-      \draw(0,0)--(5,0) node[pos=1,right]{\footnotesize $V$}
+      \draw(0,0)--(5,0) node[right]{\footnotesize $V$}
       node[midway,below]{Adiabatic};
-      \draw(0,0)--(0,4) node[pos=1,left]{\footnotesize $P$};
+      \draw(0,0)--(0,4) node[left]{\footnotesize $P$};
       \draw[smooth,samples=15,domain=1:4,thick,gray!70] plot({\x},{4/\x});
       \draw[smooth,samples=15,domain=1:4,thick,gray!70] plot({\x},{2.3/\x});
       \draw[smooth,samples=15,domain=1:4,thick] plot({\x},{4*((\x)^(-1.4))});
@@ -871,8 +851,8 @@
     \column{.2\textwidth}
     \begin{tikzpicture}[scale=.5]
       \fill[pink!80!gray!50](1,1) rectangle(4,3.5);
-      \draw(0,0)--(5,0) node[pos=1,below]{\footnotesize $V$};
-      \draw(0,0)--(0,4) node[pos=1,left]{\footnotesize $P$};
+      \draw(0,0)--(5,0) node[below]{\footnotesize $V$};
+      \draw(0,0)--(0,4) node[left]{\footnotesize $P$};
       \draw[thick,->](1,1)--(1,3.5)--(4,3.5)--(4,1)--(1,1);
       \fill[black](1,1) circle(.08) node[left]{\footnotesize$a$};
       \fill[black](1,3.5) circle(.08) node[left]{\footnotesize$b$};
@@ -893,14 +873,14 @@
   the difference between heat added and taken out:
   
   \eq{-.25in}{
-    W = Q_\mathrm{in}-Q_\mathrm{out}
+    W = Q_\text{in}-Q_\text{out}
   }
   
   \vspace{-.15in}Efficiency is defined as the ratio between work done and heat
   added:
 
   \eq{-.25in}{
-    \boxed{\eta =\frac{W}{Q_\mathrm{in}}=1-\frac{Q_\mathrm{out}}{Q_\mathrm{in}}}
+    \boxed{\eta =\frac{W}{Q_\text{in}}=1-\frac{Q_\text{out}}{Q_\text{in}}}
   }
 \end{frame}
 
@@ -921,7 +901,7 @@
   The efficiency of a Carnot engine is:
   
   \eq{-.25in}{
-    \boxed{\eta_C =1-\frac{Q_\mathrm{out}}{Q_\mathrm{in}}=1-\frac{T_c}{T_h}}
+    \boxed{\eta_C =1-\frac{Q_\text{out}}{Q_\text{in}}=1-\frac{T_c}{T_h}}
   }
 \end{frame}
 \end{document}

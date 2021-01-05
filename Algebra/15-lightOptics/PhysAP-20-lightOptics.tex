@@ -4,10 +4,10 @@
 \setbeamersize{text margin left=.5cm,text margin right=.5cm}
 \setbeamertemplate{navigation symbols}{} % suppress nav bar
 %\setbeamercovered{transparent}
-
-\usefonttheme{professionalfonts}
+%\usefonttheme{professionalfonts}
+\usepackage[lf]{carlito}
 \usepackage{tikz}
-\usepackage{amsmath}
+%\usepackage{amsmath}
 \usepackage{mathpazo}
 \usepackage{xcolor,colortbl}
 \usepackage{siunitx}
@@ -18,16 +18,17 @@
 \renewcommand{\baselinestretch}{1}
 
 \sisetup{
-  detect-all,
-  number-math-rm=\mathnormal,
+  %detect-all,
+  %number-math-rm=\mathnormal,
   per-mode=symbol
 }
+\tikzset{>=latex}
 
 \title{Topic 15: Light Waves and Optics}
 \subtitle{Advanced Placement Physics 2}
 \author[TML]{Dr.\ Timothy Leung}
 \institute{Olympiads School\\Toronto, Ontario, Canada}
-\date{August 2020}
+\date{\today}
 
 \newcommand{\pic}[2]{\includegraphics[width=#1\textwidth]{#2}}
 \newcommand{\mb}[1]{\mathbf{#1}}
@@ -55,7 +56,7 @@
       \draw[dashed,black!70,thick](0,2)--(0,-2);
       \draw[<->,thick](0,1) arc(90:135:1) node[midway,above]{$\theta_1$};
       \draw[<->,thick](0,1) arc(90:45:1) node[midway,above]{$\theta_r$};
-      \draw[<->,thick](0,-1)arc(270:297:1) node[midway,below]{$\theta_2$};
+      \draw[<->,thick](0,-1.5)arc(270:297:1.5) node[midway,below]{$\theta_2$};
       \node at (-2,.3) {$n_1$};
       \node at (-2,-.3){$n_2$};
       \node at (2,.3) {$v_1$};
@@ -82,7 +83,7 @@
   
   \begin{center}
     \vspace{-.2in}
-    \pic{.6}{graphics/Types-of-reflection.png}
+    \pic{.6}{graphics/Types-of-reflection}
   \end{center}
 \end{frame}
 
@@ -163,7 +164,7 @@
 %\begin{frame}{Refraction and Huygens Principle}
 %  \begin{columns}
 %    \column{.5\textwidth}
-%    \pic{1}{graphics/huygen.png}
+%    \pic{1}{graphics/huygen}
 %    
 %    \column{.5\textwidth}
 %    We can explain the refraction phenomenon using Huygens' Principle
@@ -178,7 +179,7 @@
 %  speed of light in the medium ($c$):
 %
 %  \eq{-.2in}{
-%    \boxed{n=\frac{c_0}{c}=\frac{\lambda_\mathrm{vacuum}}{\lambda}}
+%    \boxed{n=\frac{c_0}{c}=\frac{\lambda_\text{vacuum}}{\lambda}}
 %  }
 
   When light enters a new medium, the \emph{frequency} remains the same: the
@@ -218,7 +219,7 @@
   \textbf{Total internal reflection} (``TIR'') can occur when light enters from
   a medium with high index to another with low index (i.e.\ $n_1>n_2$).
   \begin{center}
-    \pic{.55}{graphics/660px-RefractionReflextion.png}
+    \pic{.55}{graphics/660px-RefractionReflextion}
   \end{center}
   The \textbf{critical angle} can be found for when the refracted angle is
   \ang{90}:
@@ -236,7 +237,7 @@
   visible spectrum of light range from about \SI{380}{\nano\metre} (violet) to
   about \SI{700}{\nano\metre} (red).
   \begin{center}
-    \pic{.6}{graphics/electromagneticspectrum-141b490bac872789434.png}
+    \pic{.6}{graphics/electromagneticspectrum-141b490bac872789434}
   \end{center}
   A good question to ask: where is \emph{purple}?
 \end{frame}
@@ -249,7 +250,7 @@
   through a prism is why we can see the rainbow colors from a beam of white
   light:
   \begin{center}
-    \pic{.3}{graphics/Prism_rainbow_schema.png}
+    \pic{.3}{graphics/Prism_rainbow_schema}
   \end{center}
   The index of refraction for shorter wavelengths is always higher than for
   longer wavelengths.
@@ -261,7 +262,7 @@
   We can see that for different kinds of glass, the index of refraction can vary
   significantly through the visible spectrum.
   \begin{center}
-    \pic{.4}{graphics/Dispersion-curve.png}
+    \pic{.4}{graphics/Dispersion-curve}
   \end{center}
 \end{frame}
 
@@ -281,7 +282,7 @@
       mirror
     \end{itemize}
     \column{.4\textwidth}
-    \pic{1}{graphics/spherical-mirror.png}
+    \pic{1}{graphics/spherical-mirror}
   \end{columns}
 \end{frame}
 
@@ -294,7 +295,7 @@
       \draw[thick,blue](-3,0)--(5.5,0)
       node[pos=.85,above]{\footnotesize principal axis};
       \draw[thick](3,0) arc(0: 30:3);
-      \draw[thick](3,0) arc(0:-30:3) node[pos=1,below]{\footnotesize mirror};
+      \draw[thick](3,0) arc(0:-30:3) node[below]{\footnotesize mirror};
       \fill(0,0) circle(.05) node[below]{\footnotesize $C$};
       \fill(3,0) circle(.05) node[below right]{\footnotesize $V$};
       \draw[rotate=20,->](0,0)--(3,0) node[midway,above]{\footnotesize $R$};
@@ -320,7 +321,7 @@
     they converge to different points
   \end{itemize}
   \begin{center}
-    \pic{.6}{graphics/spherical-vs-parabolic.png}
+    \pic{.6}{graphics/spherical-vs-parabolic}
   \end{center}
   In order for all beams of light to converge to the focal point, a
   \textbf{parabolic mirror} must be used instead of a spherical mirror.
@@ -338,9 +339,9 @@
   }
   \begin{center}
     \begin{tikzpicture}
-      \draw(-3,0)--(3.5,0) node[pos=1,right]{\footnotesize PA};
+      \draw(-3,0)--(3.5,0) node[right]{\footnotesize PA};
       \draw(3,0) arc(0: 30:3);
-      \draw(3,0) arc(0:-30:3) node[pos=1,below]{\footnotesize mirror};
+      \draw(3,0) arc(0:-30:3) node[below]{\footnotesize mirror};
       \fill(0,0) circle(.05) node[below]{\footnotesize $C$};
       \fill(3,0) circle(.05) node[below right]{\footnotesize $V$};
       \fill[red](1.5,0) circle(.05) node[above]{\footnotesize $F$};
@@ -409,7 +410,7 @@
       \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
       Magnification factor & $m$ & (no units)\\
       Object \& image height & $h$, $h'$  & \si{\metre} (metres)\\
-      Distance to object \7 image & $s$, $s'$  & \si{\metre} (metres)
+      Distance to object \& image & $s$, $s'$  & \si{\metre} (metres)
     \end{tabular}
   \end{center}
   \begin{itemize}
@@ -425,7 +426,7 @@
 \begin{frame}{Geometry of Convex Lenses}
   Here are some defining geometric properties for the \textbf{thin lens}.
   \begin{center}
-    \pic{.5}{graphics/thin-lens.png}
+    \pic{.5}{graphics/thin-lens}
   \end{center}
   The surface that light first passes through has the radius $R_1$ while the
   second surface has $R_2$.
@@ -526,7 +527,7 @@
 \begin{frame}{Thomas Young's Double-Slit Experiment}
   \begin{columns}
     \column{.45\textwidth}
-    \pic{1}{graphics/double-slit1.png}
+    \pic{1}{graphics/double-slit1}
     
     \column{.52\textwidth}
     \begin{itemize}
@@ -546,7 +547,7 @@
 \begin{frame}{Thomas Young's Double-Slit Experiment}
   \begin{columns}
     \column{.28\textwidth}
-    \pic{1.15}{graphics/path1.png}
+    \pic{1.15}{graphics/path1}
     
     \column{.72\textwidth}
     \begin{itemize}
@@ -567,7 +568,7 @@
 
 \begin{frame}{Interference Pattern: Bright and Dark Fringes}
   \begin{center}
-    \pic{.4}{graphics/fringes1.png}
+    \pic{.4}{graphics/fringes1}
   \end{center}
   The ``bright fringes'' are from constructive interference; the ``dark
   fringes'' are from destructive interference.
@@ -642,7 +643,7 @@
         \draw[<->](0,-1.25)--(-.7,-1.25)
         node[midway,below right]{\footnotesize $d\sin\theta$};
         \draw[<->](0,-.2) arc(270:250:1.2)
-        node[midway,below]{\footnotesize $\theta$};
+        node[pos=0,right]{\footnotesize $\theta$};
       \end{scope}
       \draw[<->](4.5,-1) arc(0:20:4.5)
       node[midway,right]{\footnotesize $\theta$};
@@ -661,13 +662,10 @@
       \boxed{\left(n+\frac{1}{2}\right)\lambda = d\sin\theta_n}
     }
     \begin{itemize}
-    \item\vspace{-.1in}$n=0,1,2,3\ldots n_\mathrm{max}$ is called the
+    \item\vspace{-.1in}$n=0,1,2,3\ldots n_\text{max}$ is called the
       \textbf{order number}
-    \item $n_\mathrm{max}$ can be found by setting $\sin\theta=1$
-      \begin{itemize}
-      \item The number of maxima is $2n_\mathrm{max}+1$
-      \item The number of minima is $2n$
-      \end{itemize}
+    \item $n_\text{max}$ can be found by setting $\sin\theta=1$
+    \item The number of maxima is $2n_\text{max}+1$
     \end{itemize}
   \end{columns}
 \end{frame}
@@ -942,7 +940,7 @@
     much dimmer because of the partial destructive interference
   \end{itemize}
   \begin{center}
-    \pic{.5}{graphics/Single_Slit_Diffraction.png}
+    \pic{.5}{graphics/Single_Slit_Diffraction}
   \end{center}
 \end{frame}
 
@@ -954,9 +952,9 @@
   The ability of an optical instrument (e.g.\ the human eye, microscope,
   camera) to distinguish two distinct objects
   \begin{center}
-    \pic{.322}{graphics/resolve1.png}\hspace{.05in}
-    \pic{.322}{graphics/resolve2.png}\hspace{.05in}
-    \pic{.322}{graphics/resolve3.png}\hspace{.05in}
+    \pic{.322}{graphics/resolve1}\hspace{.05in}
+    \pic{.322}{graphics/resolve2}\hspace{.05in}
+    \pic{.322}{graphics/resolve3}\hspace{.05in}
   \end{center}
   When light from any object passes through an ``optical instrument'', it
   \emph{diffracts}, therefore ``blurring'' the object
@@ -967,11 +965,11 @@
 \begin{frame}{Optical Resolution}
   \begin{columns}
     \column{.4\textwidth}
-    \pic{1}{graphics/resolve4.png}
+    \pic{1}{graphics/resolve4}
 
     \column{.6\textwidth}
     \textbf{Rayleigh limit}: Two objects are resolved if the angle
-      $\theta>\theta_\mathrm{min}$, where $\theta_\mathrm{min}$ is when the first
+      $\theta>\theta_\text{min}$, where $\theta_\text{min}$ is when the first
       minimum (dark fringe) from object 1 overlaps with the central maximum
       (bright fringe in the middle) from object 2.
   \end{columns}
@@ -988,17 +986,17 @@
     Rectangular aperture:
 
     \eq{-.2in}{
-      \boxed{\theta_\mathrm{min}=\frac{\lambda}{W}}
+      \boxed{\theta_\text{min}=\frac{\lambda}{W}}
     }
     \column{0.5\textwidth}
     Circular aperture:
 
     \eq{-.2in}{
-      \boxed{\theta_\mathrm{min}=\frac{1.22\lambda}{D}}
+      \boxed{\theta_\text{min}=\frac{1.22\lambda}{D}}
     }
   \end{columns}
   where $W$ is the width of the aperture, and $D$ is the diameter of the
-  aperture. The angle $\theta_\mathrm{min}$ is measured in \textbf{radians}.
+  aperture. The angle $\theta_\text{min}$ is measured in \textbf{radians}.
 \end{frame}
 
 
@@ -1099,19 +1097,19 @@
       \draw[gray](0,3)--(6,3);
       \draw[<->](5.5,0)--(5.5,3) node[midway,left]{\small  $t$};
       \draw[very thick,red,->]
-      (1.6,5)--(2,3) node[pos=1,left]{\small $\bm{\pi}$}--(2.4,5);
+      (1.6,5)--(2,3) node[left]{\small $\bm{\pi}$}--(2.4,5);
       \draw[very thick,blue!80!black,->]
       (1.55,5)--(1.95,3)--(2.1,0)--(2.2,3)--(2.6,5);
-      \node at (-.3,1.5 ){\small $n_\mathrm{soap}$};
-      \node at (-.3,3.4){\small $n_\mathrm{air}=1$};
-      \node at (-.3,-.4){\small $n_\mathrm{air}=1$};
+      \node at (-.3,1.5 ){\small $n_\text{soap}$};
+      \node at (-.3,3.4){\small $n_\text{air}=1$};
+      \node at (-.3,-.4){\small $n_\text{air}=1$};
     \end{tikzpicture}
   \end{center}
   \vspace{-.1in}Light travels through air and strikes a soap film (with
-  $n_\mathrm{soap}$). On either side of the soap film is air.
+  $n_\text{soap}$). On either side of the soap film is air.
   \begin{itemize}
   \item Upper interface: reflected light has a \ang{180} ($\pi$ radian)
-    phase shift, as $n_\mathrm{air}<n_\mathrm{soap}$, i.e.\ light reflects from a
+    phase shift, as $n_\text{air}<n_\text{soap}$, i.e.\ light reflects from a
     fast to slow medium
   \item Lower interface: the reflected wave has no phase shift (slow to
     fast medium)
@@ -1128,7 +1126,7 @@
     \Gamma=2t=\left(m+\frac12\right)\lambda'
     \quad\rightarrow\quad
     \boxed{
-      \frac{2n_\mathrm{soap}t}{\lambda}=m+\frac{1}{2}
+      \frac{2n_\text{soap}t}{\lambda}=m+\frac{1}{2}
     }
   }
 
@@ -1137,7 +1135,7 @@
 
   \eq{-.22in}{
     \boxed{
-      \frac{2n_\mathrm{soap}t}{\lambda}=m
+      \frac{2n_\text{soap}t}{\lambda}=m
     }
   }
 
@@ -1170,20 +1168,20 @@
       \draw[gray](0,3)--(6,3);
       \draw[<->](5.5,0)--(5.5,3) node[midway,left]{\small  $t$};
       \draw[very thick,red,->]
-      (1.6,5)--(2,3) node[pos=1,left]{\small $\bm{\pi}$}--(2.4,5);
+      (1.6,5)--(2,3) node[left]{\small $\bm{\pi}$}--(2.4,5);
       \draw[very thick,blue!80!black,->]
       (1.55,5)--(1.95,3)--(2.1,0)--(2.2,3)--(2.6,5);
-      \node at (-.3,1.5 ){\small $n_\mathrm{oil}$};
-      \node at (-.3,3.4){\small $n_\mathrm{air}=1$};
-      \node at (-.3,-.4){\small $n_\mathrm{water}$};
+      \node at (-.3,1.5 ){\small $n_\text{oil}$};
+      \node at (-.3,3.4){\small $n_\text{air}=1$};
+      \node at (-.3,-.4){\small $n_\text{water}$};
     \end{tikzpicture}
   \end{center}
   Light travels through air and strikes a oil film (with
-  $n_\mathrm{oil}$). Below the oil film is water, which has a lower refractive
-  index than oil ($n_\mathrm{oil}>n_\mathrm{water}$)
+  $n_\text{oil}$). Below the oil film is water, which has a lower refractive
+  index than oil ($n_\text{oil}>n_\text{water}$)
   \begin{itemize}
   \item Upper interface: Reflected light has a phase shift of \ang{180} ($\pi$)
-    because $n_\mathrm{air}<n_\mathrm{oil}$ (fast to slow medium)
+    because $n_\text{air}<n_\text{oil}$ (fast to slow medium)
   \item Lower interface: Reflected light has no phase shifts (slow to fast
     medium)
   \end{itemize}
@@ -1198,7 +1196,7 @@
 
   \eq{-.22in}{
     \boxed{
-      \frac{2n_\mathrm{oil}t}{\lambda}=m+\frac12
+      \frac{2n_\text{oil}t}{\lambda}=m+\frac12
     }
   }
 
@@ -1207,7 +1205,7 @@
 
   \eq{-.22in}{
     \boxed{
-      \frac{2n_\mathrm{oil}t}{\lambda}=m
+      \frac{2n_\text{oil}t}{\lambda}=m
     }
   }
 
@@ -1223,15 +1221,15 @@
       \fill[blue!30](0,0) rectangle(6,3);
       \draw[gray](0,0)--(6,0);
       \draw[gray](0,3)--(6,3);
-      \draw[<->](5.5,0)--(5.5,3) node[midway,left]{\small  $t$};
+      \draw[<->](5.5,0)--(5.5,3) node[midway,left]{\small$t$};
       \draw[very thick,red,->]
-      (1.6,5)--(2,3) node[pos=1,left]{\small $\bm{\pi}$}--(2.4,5);
+      (1.6,5)--(2,3) node[left]{\small $\bm{\pi}$}--(2.4,5);
       \draw[very thick,blue!80!black,->]
-      (1.55,5)--(1.95,3)--(2.1,0) node[pos=1,left]{\small $\bm{\pi}$}--
+      (1.55,5)--(1.95,3)--(2.1,0) node[left]{\small $\bm{\pi}$}--
       (2.2,3)--(2.6,5);
-      \node at (-.3,1.5 ){\small $n_\mathrm{coating}$};
-      \node at (-.3,3.4){\small $n_\mathrm{air}=1$};
-      \node at (-.3,-.4){\small $n_\mathrm{glass}$};
+      \node at (-.3,1.5 ){\small $n_\text{coating}$};
+      \node at (-.3,3.4){\small $n_\text{air}=1$};
+      \node at (-.3,-.4){\small $n_\text{glass}$};
     \end{tikzpicture}
   \end{center}
   
@@ -1239,7 +1237,7 @@
   has a refractive index lower than glass (but higher than air), i.e.:
 
   \eq{-.33in}{
-    n_\mathrm{air}<n_\mathrm{coating}<n_\mathrm{glass}
+    n_\text{air}<n_\text{coating}<n_\text{glass}
   }
 
   \vspace{-.13in}Light reflects with a phase shift of $\pi$ on both the upper
@@ -1258,7 +1256,7 @@
 
   \eq{-.22in}{
     \boxed{
-      \frac{2n_\mathrm{film}t}{\lambda}=m
+      \frac{2n_\text{film}t}{\lambda}=m
     }
   }
 
@@ -1267,7 +1265,7 @@
 
   \eq{-.22in}{
     \boxed{
-      \frac{2n_\mathrm{film}t}{\lambda}=m+\frac{1}{2}
+      \frac{2n_\text{film}t}{\lambda}=m+\frac12
     }
   }
 
