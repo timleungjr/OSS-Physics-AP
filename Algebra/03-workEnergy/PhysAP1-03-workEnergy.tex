@@ -1,29 +1,21 @@
 \documentclass[12pt,compress,aspectratio=169]{beamer}
-
 \usetheme{metropolis}
 \setbeamersize{text margin left=.5cm,text margin right=.5cm}
-\setbeamertemplate{navigation symbols}{} % suppress nav bar
-%\setbeamercovered{transparent}
-
-\usefonttheme{professionalfonts}
-\usepackage{amsmath,bm}
+\usepackage[lf]{carlito}
 \usepackage{siunitx}
 \usepackage{tikz}
 \usepackage{mathpazo}
-%\usepackage[scaled]{helvet}
+\usepackage{bm}
 \usepackage{xcolor,colortbl}
-
-\setsansfont{Roboto Light}
-\setmonofont{Ubuntu Mono}
+%\setmonofont{Ubuntu Mono}
 \setlength{\parskip}{0pt}
 \renewcommand{\baselinestretch}{1}
 
 \sisetup{
-  detect-all,
-  math-sf=\textsf,
-  number-math-rm=\mathnormal,
+  inter-unit-product=\cdot,
   per-mode=symbol
 }
+\tikzset{>=latex}
 
 \usetikzlibrary{decorations.pathmorphing,patterns}
 
@@ -32,7 +24,7 @@
 \subtitle{Advanced Placement Physics 1}
 \author[TML]{Dr.\ Timothy Leung}
 \institute{Olympiads School}
-\date{\today}
+\date{Last Upated: \today}
 
 
 \newcommand{\pic}[2]{\includegraphics[width=#1\textwidth]{#2}}
@@ -46,19 +38,19 @@
   \maketitle
 \end{frame}
 
-\begin{frame}{Files for You to Download}
-  These are the slides and homework questions for this week.
-  \begin{itemize}
-  \item\texttt{PhysAP1-03-workEnergy.pdf}--Slides on work and energy
-  \item\texttt{PhysAP1-04-momentum.pdf}--Slides on momentum, impulse and
-    general collisions
-  %\item\texttt{PhysAP1-03-Homework.pdf}--Homework problems for this topic.
-  \end{itemize}
-  Please download/print the PDF file before class. There is no advantage to
-  copying notes that are already printed out for you. Instead, focus on details
-  that aren't necessarily on the slides. If you want to print the slides, we
-  recommend that you print 4 slides per page to save paper.
-\end{frame}
+%\begin{frame}{Files for You to Download}
+%  These are the slides and homework questions for this week.
+%  \begin{itemize}
+%  \item\texttt{PhysAP1-03-workEnergy.pdf}--Slides on work and energy
+%  \item\texttt{PhysAP1-04-momentum.pdf}--Slides on momentum, impulse and
+%    general collisions
+%  %\item\texttt{PhysAP1-03-Homework.pdf}--Homework problems for this topic.
+%  \end{itemize}
+%  Please download/print the PDF file before class. There is no advantage to
+%  copying notes that are already printed out for you. Instead, focus on details
+%  that aren't necessarily on the slides. If you want to print the slides, we
+%  recommend that you print 4 slides per page to save paper.
+%\end{frame}
 
 
 
@@ -82,7 +74,7 @@
   \eq{-.2in}{
     \boxed{W=\mb{F}\cdot\Delta\mb{x}}
     \quad\text{\normalsize or}\quad
-    \boxed{W=|\mb{F}||\mb{\Delta x}|\cos\theta}
+    \boxed{W=|\mb{F}||\Delta\mb{x}|\cos\theta}
   }
 
   \vspace{-.15in}where $\theta$ is the angle between the two vectors. When
@@ -151,7 +143,7 @@
   \item There may be more than one force acting on an object
   \item The \emph{sum} of all the work done on the object by each force
   \item The work done by the net force
-  \item Also called the \textbf{net work} $W_\mathrm{net}$
+  \item Also called the \textbf{net work} $W_\text{net}$
   \end{itemize}
 \end{frame}
 
@@ -166,14 +158,14 @@
 
   \eq{-.2in}{
       v_1^2 =v_0^2+2\textcolor{red}{a}\Delta x =
-      v_0^2+2\textcolor{red}{\frac{F_\mathrm{net}}{m}}\Delta x
+      v_0^2+2\textcolor{red}{\frac{F_\text{net}}{m}}\Delta x
   }
 
-  Re-arranging terms and solving for $F_\mathrm{net}\Delta x$ (the work done by
-  $F_\mathrm{net}$), we get a familiar expression:
+  Re-arranging terms and solving for $F_\text{net}\Delta x$ (the work done by
+  $F_\text{net}$), we get a familiar expression:
 
   \eq{-.2in}{
-    F_\mathrm{net}\Delta x = \frac{1}{2}m(v_1^2-v_0^2)
+    F_\text{net}\Delta x = \frac{1}{2}m(v_1^2-v_0^2)
     =\frac{1}{2}mv_1^2- \frac{1}{2}mv_0^2
   }
   
@@ -210,7 +202,7 @@
   }
 
   Later in the course we will discuss \emph{rotational} kinetic energy.
-  We arrive at this result using calculus even when $F_\mathrm{net}$ is not
+  We arrive at this result using calculus even when $F_\text{net}$ is not
   constant.
 \end{frame}
 
@@ -223,7 +215,7 @@
   The \textbf{work-energy theorem} states that:
 
   \eq{-.15in}{
-    \boxed{W_\mathrm{net}=\Delta K}
+    \boxed{W_\text{net}=\Delta K}
   }
 
   We don't have to prove this theorem because kinetic energy is defined to
@@ -351,7 +343,7 @@
   as \emph{potential energy}. Therefore:
 
   \eq{-.2in}{
-    W_{\textrm{cons.}}=-\Delta U
+    W_\text{con}=-\Delta U
   }
   \begin{itemize}
   \item\vspace{-.15in}$\Delta U$ can be positive/negative depending on the
@@ -372,7 +364,7 @@
   In other words:
 
   \eq{-.25in}{
-    W_\mathrm{cons.}=-\Delta U = \Delta K
+    W_\text{con}=-\Delta U = \Delta K
   }
 
   \vspace{-.15in}This means that total mechanical energy $E$ must be conserved
@@ -448,6 +440,7 @@
 \end{frame}
 
 
+
 \begin{frame}{Example: Gravity}
   Gravity is another example, as an object falls towards Earth's surface,
   the only force acting on it is its weight, which is conservative:
@@ -455,7 +448,7 @@
     \begin{tikzpicture}[scale=.8]
       \draw[thick,fill=gray!30] (7.75,0) arc(75:105:30);
       \draw[fill=blue!50] (0,4) circle(.2) node[right]{$\;m$};
-      \draw[ultra thick, red!65,->] (0,4)--(0,3) node[pos=1,below]{$\mb{F}_g$};
+      \draw[ultra thick, red!65,->] (0,4)--(0,3) node[below]{$\mb{F}_g$};
     \end{tikzpicture}
   \end{center}
   Assuming no friction, the total mechanical energy consists of:
@@ -548,20 +541,20 @@
 
 \begin{frame}{Conservation of Energy}
   When non-conservative forces are also doing work, the work done by those
-  forces $W_{\textrm{nc}}$ must be taken into account as well:
+  forces $W_\text{nc}$ must be taken into account as well:
 %  instead of
 %  \emph{trying} to isolate the system, we can calculate the work done by them
 %  $W_{\textrm{nc}}$ and add it to the total energy of the system
     
   \eq{-.2in}{
-    \boxed{\sum K_i +\sum U_i +\sum W_{\textrm{nc}}=\sum K_i'+\sum U_i'}
+    \boxed{\sum K_i +\sum U_i +\sum W_\text{nc}=\sum K_i'+\sum U_i'}
   }
 
   Expressed in terms the total mechanical energy (like in the previous slides),
   the conservation of energy equation becomes:
   
   \eq{-.2in}{
-    \boxed{\Delta E=\sum\Delta K_i + \sum\Delta U_i =W_\mathrm{net}}
+    \boxed{\Delta E=\sum\Delta K_i + \sum\Delta U_i =W_\text{net}}
   }
 
   We do not have to distinguish between conservative and non-conservative work
@@ -594,7 +587,7 @@
   equilibrium position of a spring. Set up the equation that determines the
   spring's compression $d$ when the object is instantaneously at rest.
   \begin{center}
-    \pic{.35}{spring-example1.png}
+    \pic{.35}{spring-example1}
   \end{center}
 \end{frame}
 
@@ -611,24 +604,9 @@
 %  \item What is the work done by the tension force?
 %  \item What is the net work?
 %  \item What is the change in total mechanical energy?
-%  \item Show that $\Delta E_\mathrm{mech}=W_\mathrm{non-conservative}$.
+%  \item Show that $\Delta E_\text{mech}=W_\text{non-conservative}$.
 %  \end{enumerate}
 %\end{frame}
-
-
-%\begin{frame}{Energy Diagrams}
-%  \begin{itemize}
-%  \item Plots of potential energy ($U$) vs.\ position for a conservative force
-%    \begin{center}
-%      \pic{.5}{energy-diagram.png}
-%    \end{center}
-%  \item If more than one conservative force, they can be combined into one graph
-%  \item Where slope is zero means no force acting on it: it is in a state of
-%    \textbf{equilibrium}
-%  \item An object placed at an equilibrium point with $K=0$ will remain there
-%  \end{itemize}
-%\end{frame}
-
 
 
 \section{Power \& Efficiency}

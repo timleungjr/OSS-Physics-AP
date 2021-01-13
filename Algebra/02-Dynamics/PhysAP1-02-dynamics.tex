@@ -1,29 +1,19 @@
 \documentclass[12pt,compress,aspectratio=169]{beamer}
-
 \usetheme{metropolis}
 \setbeamersize{text margin left=.5cm,text margin right=.5cm}
-
-\usefonttheme{professionalfonts}
-\usepackage{amsmath}
-\usepackage{graphicx}
+\usepackage[lf]{carlito}
 \usepackage{tikz}
 \usepackage{mathpazo}
 \usepackage{xcolor,colortbl}
-%\usepackage{hyperref}
 \usepackage{siunitx}
 \usepackage{bm}
-
-\setsansfont{Roboto Light}
-%\setmonofont{Ubuntu Mono}
 \setlength{\parskip}{0pt}
 \renewcommand{\baselinestretch}{1}
 
 \sisetup{
-  detect-all=true,
-  %number-math-rm=\mathnormal,
   per-mode=symbol
 }
-
+\tikzset{>=latex}
 
 \title{Topic 2: Dynamics}
 \subtitle{Advanced Placement Physics 1}
@@ -45,8 +35,7 @@
   While we use \textbf{kinematics} to describe the motion of any object
   mathematically, we use \textbf{dynamics} to describe \emph{what} causes
   motion (or more precisely, \emph{what causes motion to change?})
-
-  \vspace{.4in}In other words, Newton's three laws of motion
+  %\vspace{.4in}In other words, Newton's three laws of motion
 \end{frame}
 
 
@@ -54,17 +43,19 @@
 \section{Laws of Motion}
 
 \begin{frame}{First Law of Motion}
-  \textbf{Every body persists in its state of being at rest or moving uniformly
-    straight forward, except insofar as it is compelled to change its state by
-    force impress'd.}\footnote{Lex I: Corpus omne perseverare in statu suo
-    quiescendi vel movendi uniformiter in directum, nisi quatenus a viribus
-    impressis cogitur statum illum mutare.}
-  
+  \begin{center}
+    \fbox{
+      \begin{minipage}{.59\textwidth}
+        \textbf{First Law: Every object remains at rest or in uniform motion,
+          until a net external net force acts on it.}
+      \end{minipage}
+    }
+  \end{center}
   \begin{itemize}
-  \item ``Moving uniformly'' means \emph{uniform motion} with constant velocity
+  \item \emph{Uniform motion} means constant velocity
   \item An object ``at rest'' is also in uniform motion with $\mb{v}=\mb{0}$
   \item As long as an object moves in uniform motion, it must be that
-    $\mb{F}_\mathrm{net}=\mb{0}$
+    $\mb{F}_\text{net}=\mb{0}$
   \item The object is in a state of \textbf{equilibrium}
   \end{itemize}
 \end{frame}
@@ -94,30 +85,32 @@
   \item Dynamic equilibrium: the object is moving relative to us
   \item Static equilibrium: the object is not moving relative to us
   \end{itemize}
-  Caveat: measurements of forces made from inertial frames of reference
+  Caveat: measurements of forces made from \emph{inertial} frames of reference
 \end{frame}
 
 
 
 \begin{frame}{Second Law of Motion}
-  \textbf{The alteration of motion is ever proportional to the motive force
-    impress'd; and is made in the direction of the right line in which that
-    force is impress'd.}\footnote{Lex II: Mutationem motus proportionalem esse
-    vi motrici impressae, et fieri secundum lineam rectam qua vis illa
-    imprimitur.}
-
-  \vspace{.2in}The \emph{alteration of motion} means \emph{acceleration}. The
-  first two laws of motion can be summarized in the well-known equation:
+  \begin{center}
+    \fbox{
+      \begin{minipage}{.67\textwidth}
+        \textbf{Second Law: The acceleration of an object is proportional, and
+          in the direction of, the net external force acting on it.}
+      \end{minipage}
+    }
+  \end{center}
+  \vspace{.3in}The first two laws of motion can be summarized in the well-known
+  equation:
 
   \eq{-.2in}{
-    \boxed{\mb{F}_{\textrm{net}}=\Sigma\mb{F}=m\mb{a}}
+    \boxed{\mb{F}_\text{net}=\Sigma\mb{F}=m\mb{a}}
   }
 %  \begin{center}
 %    \begin{tabular}{l|c|c}
 %      \rowcolor{pink}
 %      \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
 %      Net unbalanced force (sum of all forces)
-%      & $\mb{F}_{\textrm{net}}$ & \si{\newton}\\
+%      & $\mb{F}_{\text{net}}$ & \si{\newton}\\
 %      Mass         & $m$       & \si{\kilo\gram} \\
 %      Acceleration & $\mb{a}$  & \si{m/s^2}
 %    \end{tabular}
@@ -129,12 +122,15 @@
 
 
 \begin{frame}{Third Law of Motion}
-  \textbf{To every action there is always opposed an equal reaction: the
-    mutual actions of two bodies upon each other are always equal, and directed
-    to contrary parts.}\footnote{Lex III: Actioni contrariam semper et aequalem
-    esse reactionem: sive corporum duorum actiones in se mutuo semper esse
-    aequales et in partes contrarias dirigi.}
- 
+  \begin{center}
+    \fbox{
+      \begin{minipage}{.63\textwidth}
+        \textbf{Third Law: To every action there is always opposed an equal
+          reaction; the fores of two bodies acting on each other are always
+          equal, and directed to contrary parts.}
+      \end{minipage}
+    }
+  \end{center}
   %\vspace{.1in}For every action force on an object (B) due to another object
   %(A), there is a reaction force which is equal in magnitude but opposite in
   %direction, on object (A), due to object (B):
@@ -205,7 +201,7 @@
     \end{itemize}
 
     \column{.3\textwidth}
-    \pic{1}{graphics/cofm.png}
+    \pic{1}{graphics/cofm}
   \end{columns}
 \end{frame}
 
@@ -220,7 +216,7 @@
   \item Tension $\mb{T}$
   \item Applied force $\mb{F}_a$
   \item Spring force $\mb{F}_s$
-  \item Drag $\mb{D}$ (fluid resistance, then again in fluid mechanics)
+  \item Drag $\mb{D}$ (fluid resistance, discussed in fluid mechanics)
   \item Buoyant force $\mb{B}$ (discussed in fluid mechanics)
   \item Electrostatic force $\mb{F}_e$
   \item Magnetic force $\mb{F}_m$
@@ -238,7 +234,7 @@
   \begin{itemize}
   \item\vspace{-.15in}Near surface of Earth, use $g=\SI{9.81}{m/s^2}$ (or
     $g=\SI{10}{m/s^2}$ for your AP exam)
-  \item You may be asked to find the value of $g$ on some ``unknown planet''.
+  %\item You may be asked to find the value of $g$ on some ``unknown planet''.
   \item $\mb{w}$ always points \emph{down} (the direction of $\mb{w}$ is how
     down is defined)
 %  \item Newton's law of universal gravity:
@@ -258,17 +254,17 @@
     \column{.22\textwidth}
     \begin{center}
       \begin{tikzpicture}{scale=1.5}
-        \draw [very thick] (-1,0)--(2.5,0);
-        \draw [fill=pink,thick] (0,0) rectangle (1.5,1);
-        \fill (.75,.5) circle(2pt);
-        \draw [->,very thick] (.75,.5)--(.75,-.5)
-        node[pos=1,below]{$\mb{w}$};
-        \draw [->,very thick] (.75,.5)--(.75,1.5)
-        node[pos=1,above]{$\mb{N}$};
+        \draw[thick] (-1,0)--(2.5,0);
+        \draw[fill=pink,thick] (0,0) rectangle (1.5,1);
+        \fill(.75,.5) circle(2pt);
+        \draw[->,very thick] (.75,.5)--(.75,-.5)
+        node[below]{$m\mb{g}$};
+        \draw[->,very thick] (.75,.5)--(.75,1.5)
+        node[above]{$\mb{N}$};
       \end{tikzpicture}
     \end{center}
     \begin{displaymath}
-      \mb{w}=m\mb{g}=-\mb{N}
+      m\mb{g}=-\mb{N}
     \end{displaymath}
     
     \column{.78\textwidth}
@@ -294,20 +290,20 @@
         \draw[thick] (-1,0)--(3,0);
         \draw[thick,->](0,0) arc(0:37:1) node[midway,right] {$\theta$};
         \begin{scope}[rotate around={37:(-1,0)}]
-          \draw[->](3.5,.5)--(4,.5) node[pos=1,right]{$x$};
-          \draw[->](3.5,.5)--(3.5,1) node[pos=1,above]{$y$};
+          \draw[->](3.5,.5)--(4,.5) node[right]{$x$};
+          \draw[->](3.5,.5)--(3.5,1) node[above]{$y$};
           \draw[thick] (-1,0)--(4,0);
-          \draw[fill=pink] (0,0) rectangle (3,2);
+          \draw[fill=pink,thick] (0,0) rectangle (3,2);
           \fill(1.5,1) circle (2pt) node[right]{\footnotesize CM};
           \draw [->,thick,dotted,red] (1.5,1)--(1.5,-.5)
-          node[pos=1,right]{$w\cos\theta$};
+          node[right]{$mg\cos\theta$};
           \draw [->,thick,dotted,red] (1.5,1)--(.45,1)
-          node[pos=1,left]{$w\sin\theta$};
+          node[left]{$mg\sin\theta$};
           \draw [->,ultra thick,red] (1.5,1)--(.45,-.5)
-          node[pos=1,below]{$\mb{w}$}
+          node[below]{$m\mb{g}$}
           node[pos=.3,below right]{$\theta$};
-        \draw [->,ultra thick] (1.5,1)--(1.5,2.5) node[pos=1,above]{$\mb{N}$};
-        \draw [->,ultra thick] (1.5,1)--(2.3,1) node[pos=1,right]{$\mb{f}$};
+        \draw [->,ultra thick] (1.5,1)--(1.5,2.5) node[above]{$\mb{N}$};
+        \draw [->,ultra thick] (1.5,1)--(2.3,1) node[right]{$\mb{f}$};
         \end{scope}
       \end{tikzpicture}
     \end{center}
@@ -345,7 +341,7 @@
     \end{itemize}
   \end{itemize}
   \begin{center}
-    \pic{.6}{graphics/friction.png}
+    \pic{.6}{graphics/friction}
   \end{center}
 \end{frame}
 
@@ -404,30 +400,30 @@
     \mu_k\leq\mu_s
   }
 
-  \vspace{-.2in}Consider a simple case of a box being pulled along a level floor. The
-  free-body diagram is simple (left). How do the magnitudes of the applied
-  force $F_a$ and friction $f$ compare?
+  \vspace{-.2in}Consider a simple case of a box being pulled along a level
+  floor. The free-body diagram is simple (left). How do the magnitudes of the
+  applied force $F_a$ and friction $f$ compare?
 
   \vspace{-.2in}
   \begin{columns}
     \column{.4\textwidth}
     \begin{center}
       \begin{tikzpicture}
-        \draw [very thick] (-1,0)--(2.5,0);
+        \draw [thick] (-1,0)--(2.5,0);
         \draw [fill=pink,thick] (0,0) rectangle (1.5,1);
         \fill (.75,.5) circle(2pt);
-        \draw[->,very thick](.75,.5)--(.75,-.5) node[pos=1,below]{$\mb{w}$};
-        \draw[->,very thick](.75,.5)--(.75,1.5) node[pos=1,above]{$\mb{F}_N$};
-        \draw[->,very thick](.75,.5)--(2.,.5) node[pos=1,right]{$\mb{F}_a$};
-        \draw[->,very thick](.75,.5)--(.1,.5) node[pos=1,left]{$\mb{f}$};
+        \draw[->,very thick](.75,.5)--(.75,-.5) node[below]{$m\mb{g}$};
+        \draw[->,very thick](.75,.5)--(.75,1.5) node[above]{$\mb{N}$};
+        \draw[->,very thick](.75,.5)--(2.,.5) node[right]{$\mb{F}_a$};
+        \draw[->,very thick](.75,.5)--(.1,.5) node[left]{$\mb{f}$};
       \end{tikzpicture}
     \end{center}
 
     \column{.6\textwidth}
     \begin{center}
       \begin{tikzpicture}[scale=.5]
-        \draw[very thick,->](0,0)--(10,0) node[pos=1,right]{$F_a$};
-        \draw[very thick,->](0,0)--(0,5) node[pos=1,left]{$f$};
+        \draw[very thick,->](0,0)--(10,0) node[right]{$F_a$};
+        \draw[very thick,->](0,0)--(0,5) node[left]{$f$};
       \end{tikzpicture}
     \end{center}
   \end{columns}
@@ -440,7 +436,7 @@
   motion of an object moving in a fluid, with a magnitude of:
 
   \eq{-.2in}{
-    D=\frac{1}{2}\rho V_\infty^2A_\mathrm{ref}C_d
+    D=\frac{1}{2}\rho V_\infty^2A_\text{ref}C_d
   }  
   \begin{center}
     \begin{tabular}{l|c|c}
@@ -449,13 +445,13 @@
       Magnitude of drag force & $D$  & \si{\newton}\\
       Density of the fluid & $\rho$ & \si{\kg/\m^3}\\
       Free-stream fluid velocity & $V_\infty$ & \si{\m/\s}\\
-      Reference area   & $A_\mathrm{ref}$ & \si{m^2}\\
+      Reference area   & $A_\text{ref}$ & \si{m^2}\\
       Drag coefficient & $C_d$ & (no unit)
     \end{tabular}
   \end{center}
   Drag coefficient depends on the shape and surface smoothness
-  of the object. For blunt objects $A_\mathrm{ref}$ is the frontal area; for
-  streamlined objects $A_\mathrm{ref}$ is the planform (top-view) area.
+  of the object. For blunt objects $A_\text{ref}$ is the frontal area; for
+  streamlined objects $A_\text{ref}$ is the planform (top-view) area.
 \end{frame}
 
 
@@ -482,9 +478,9 @@
     \vspace{-.15in}
     \begin{center}
       \begin{tikzpicture}[scale=.9]
-        \draw[very thick,->](0,0)--(0,-1.5) node[pos=1,below]{$\mb{w}$};
-        \draw[very thick,->,white](0,0)--(0,1.5) node[pos=1,above]{$\mb{D}$};
-        \fill(0,0) circle(0.07);
+        \draw[very thick,->](0,0)--(0,-1.5) node[below]{$m\mb{g}$};
+        \draw[very thick,->,white](0,0)--(0,1.5) node[above]{$\mb{D}$};
+        \fill(0,0) circle(.07);
       \end{tikzpicture}
     \end{center}
     
@@ -496,10 +492,10 @@
     \vspace{-.15in}
     \begin{center}
       \begin{tikzpicture}[scale=.9]
-        \draw[very thick,->](0,0)--(0,-1.5) node[pos=1,below]{$\mb{w}$};
-        \draw[very thick,->,white](0,0)--(0,1.5) node[pos=1,above]{$\mb{F}_d$};
-        \draw[very thick,->,green](0,0)--(0,.6) node[pos=1,above]{$\mb{D}$};
-        \fill(0,0) circle(0.07);
+        \draw[very thick,->](0,0)--(0,-1.5) node[below]{$m\mb{g}$};
+        \draw[very thick,->,white](0,0)--(0,1.5) node[above]{$\mb{D}$};
+        \draw[very thick,->,green](0,0)--(0,.6) node[above]{$\mb{D}$};
+        \fill(0,0) circle(.07);
       \end{tikzpicture}
     \end{center}
     
@@ -511,9 +507,9 @@
     \vspace{-.15in}
     \begin{center}
       \begin{tikzpicture}[scale=.9]
-        \draw[very thick,->](0,0)--(0,-1.5) node[pos=1,below]{$\mb{w}$};
-        \draw[very thick,->,red](0,0)--(0,1.5) node[pos=1,above]{$\mb{D}$};
-        \fill(0,0) circle(0.07);
+        \draw[very thick,->](0,0)--(0,-1.5) node[below]{$m\mb{g}$};
+        \draw[very thick,->,red](0,0)--(0,1.5) node[above]{$\mb{D}$};
+        \fill(0,0) circle(.07);
       \end{tikzpicture}
     \end{center}
         
@@ -532,7 +528,7 @@
 %  crate just starts to move and the time at which you are pulling it with a
 %  velocity of \SI{1.4}{m/s}?
 %  \begin{center}
-%    \pic{.5}{graphics/pull-box.png}
+%    \pic{.5}{graphics/pull-box}
 %  \end{center}
 %\end{frame}
 %
@@ -579,14 +575,14 @@
   }
   where $\mb{x}$ is the relative displacement of the ends of the spring.
   \begin{center}
-    \pic{.35}{graphics/spring-example1.png}
+    \pic{.35}{graphics/spring-example1}
   \end{center}
 \end{frame}
 
 
 %\begin{frame}{Spring Force}
 %  \begin{center}
-%    \pic{.28}{graphics/spring-example1.png}
+%    \pic{.28}{graphics/spring-example1}
 %  \end{center}
 %  \begin{itemize}
 %  \item\vspace{-.15in}As the object falls onto the spring, the spring begins to
@@ -606,7 +602,7 @@
 
 %\begin{frame}{Spring Force}
 %  \begin{center}
-%    \pic{.28}{graphics/spring-example1.png}
+%    \pic{.28}{graphics/spring-example1}
 %  \end{center}
 %  \begin{itemize}
 %  \item\vspace{-.15in}Solving this problem using dynamics is difficult, because:
@@ -627,7 +623,7 @@
   exerts a pressure at the surface of the object. We can find the total buoyant 
   force $\mb{B}$ the fluid exerts on the object.
   \begin{center}
-    \pic{.4}{graphics/rock_fbvectors.png}
+    \pic{.4}{graphics/rock_fbvectors}
   \end{center}
 \end{frame}
 
@@ -637,15 +633,15 @@
   The buoyant force is given by:
   
   \eq{-.1in}{
-    \boxed{\mb{B}=\rho_\mathrm{fluid}gV\bm{\hat{k}}}
+    \boxed{\mb{B}=\rho_\text{fluid}gV\bm{\hat{k}}}
   }
   \begin{center}
     \begin{tabular}{l|c|c}
       \rowcolor{pink}
       \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
       Buoyant force & $\mb{B}$  & \si{\newton} \\
-      Density of the fluid & $\rho_\mathrm{fluid}$ & \si{\kg/\m^3}\\
-      Volume of the object & $V$ & \si{\metre^3}
+      Density of the fluid & $\rho_\text{fluid}$ & \si{\kg/\m\cubed}\\
+      Volume of the object & $V$ & \si{\metre\cubed}
     \end{tabular}
   \end{center}
   We will discuss this later in the course, when we deal with fluid mechanics.
@@ -659,7 +655,7 @@
 \begin{frame}{Free Body Diagrams}
   \begin{itemize}
   \item Acceleration (if there is going to be any at all) depends
-    on net force $\mb{F}_\mathrm{net}$
+    on net force $\mb{F}_\text{net}$
   \item Without a vector sum of all the forces, we cannot determine the
     magnitude, direction of the acceleration, or how acceleration will evolve
     in time
@@ -681,16 +677,16 @@
   \begin{center}
     \begin{tikzpicture}[scale=.8]
       \fill (1.5,1) circle(.1);
-      \draw [->,very thick] (1.5,1)--(1.5,-.5) node[pos=1,below]{$\mb{w}$};
-      \draw [->,very thick] (1.5,1)--(1.5,2.5) node[pos=1,above]{$\mb{N}$};
-      \draw [->,very thick] (1.5,1)--(3.1,1) node[pos=1,below]{$\mb{F}_a$};
-      \draw [->,very thick] (1.5,1)--(.75,1) node[pos=1,left]{$\mb{f}$};
+      \draw [->,very thick] (1.5,1)--(1.5,-.5) node[below]{$m\mb{g}$};
+      \draw [->,very thick] (1.5,1)--(1.5,2.5) node[above]{$\mb{N}$};
+      \draw [->,very thick] (1.5,1)--(3.1,1) node[right]{$\mb{F}_a$};
+      \draw [->,very thick] (1.5,1)--(.75,1) node[left]{$\mb{f}$};
     \end{tikzpicture}
   \end{center}
   \vspace{-.1in}We can still use this method for rectilinear motion. However,
   this is not entirely correct. We notice that:
   \begin{itemize}
-  \item Gravitational force $\mb{w}$ acts at the CM, but
+  \item Gravitational force $m\mb{g}$ acts at the CM, but
   \item Normal force $\mb{N}$, friction $\mb{f}$ and applied force $\mb{F}_a$
     act at the point of contact
   \end{itemize}
@@ -708,15 +704,14 @@
 	    \tikzstyle{balloon}=[ball color=gray!50!pink!50];
 	    \shade[balloon](0,0) circle(1);
 	    \draw[thick](-2,-1)--(2,-1);
-	    %\draw[->,rotate=30](0,0)--(-1,0) node[pos=1,left]{$R$};
 	    \draw[thick,->](0,1.2) arc(90:60:1.2) node[pos=.3,right]{$\omega$};
-	    \fill(0,0) circle(.05); % node[right]{\small CM};
+	    \fill(0,0) circle(.05);
 	    \draw[->,ultra thick,rotate=30](0,0)--(0,-1.5)
-	    node[pos=1,below]{$\mb{w}$};
-	    \draw[->,ultra thick](.0,-1)--(.0,.3)  node[pos=1,above]{$\mb{N}$};
-	    \draw[->,ultra thick](.0,-1)--(-.5,-1) node[pos=1,left]{$\mb{f}_s$};
-	    \draw[->](2,0)--(3,0) node[pos=1,right]{$x$};
-       \draw[->](2,0)--(2,1) node[pos=1,above]{$y$};
+	    node[below]{$m\mb{g}$};
+	    \draw[->,ultra thick](.0,-1)--(.0,.3)  node[above]{$\mb{N}$};
+	    \draw[->,ultra thick](.0,-1)--(-.5,-1) node[left]{$\mb{f}_s$};
+	    \draw[->](2,0)--(3,0) node[right]{$x$};
+       \draw[->](2,0)--(2,1) node[above]{$y$};
 	  \end{scope}
 	\end{tikzpicture}
   \end{center}
@@ -744,7 +739,7 @@
     slipping.
 
     \column{.25\textwidth}
-    \pic{1}{graphics/ladder.png}
+    \pic{1}{graphics/ladder}
   \end{columns}
 \end{frame}
 
@@ -776,7 +771,7 @@
     \item All internal forces should cancel and do not figure into the
       acceleration of the system
     \end{itemize}
-  \item Compute the acceleration of the entire system using Newton's second law
+  \item Compute the acceleration of the entire system using second law of motion
     \begin{itemize}
     \item Remember that (usually) every object has the same acceleration!
     \end{itemize}
@@ -808,17 +803,12 @@
 \begin{frame}{Connected Bodies}
   \textbf{Example:} Types of connected bodies problem may involve objects
   pressed against each other:
-%  \vspace{.2in}
-%  \begin{columns}
-%    \column{.5\textwidth}
-%    Multiple objects pressed against one another:
   \begin{center}
     \begin{tikzpicture}
       \draw[thick](-2,0)--(4,0);
-      \draw[thick](0,0) rectangle(1,1) node[midway]{$m_1$};
-      \draw[thick](1,0) rectangle(3,1.75)  node[midway]{$m_2$};
-%      \draw[thick](3,0) rectangle(4.5,2);
-      \draw[very thick,->](-1,.5)--(0,.5) node[pos=0,left]{$\mb{F}_a$};
+      \draw[thick](0,0) rectangle(1,1) node[midway]{$m$};
+      \draw[thick](1,0) rectangle(3,1.75) node[midway]{$M$};
+      \draw[very thick,<-](0,.5)--(-1,.5) node[left]{$\mb{F}_a$};
     \end{tikzpicture}
   \end{center}
 \end{frame}
@@ -826,18 +816,15 @@
 
 
 \begin{frame}{Connected Bodies}
-%    \column{.5\textwidth}
   \textbf{Example:} Multiple objects stacked on top of one another:
   \begin{center}
     \begin{tikzpicture}
       \draw[thick](-1,0)--(5.5,0);
-      \draw[thick](0,0) rectangle(3,1) node[midway]{$m_1$};
-      \draw[thick](.75,1) rectangle(2.25,1.75) node[midway]{$m_2$};
-      %\draw(2,1.5) rectangle(2.5,2);
-      \draw[very thick,->](3,.5)--(4.5,.5) node[pos=1,right]{$\mb{F}_a$};
+      \draw[thick](0,0) rectangle(3,1) node[midway]{$M$};
+      \draw[thick](.75,1) rectangle(2.25,1.75) node[midway]{$m$};
+      \draw[very thick,->](3,.5)--(4.5,.5) node[right]{$\mb{F}_a$};
     \end{tikzpicture}
   \end{center}
-%  \end{columns}
 \end{frame}
 
 
@@ -850,7 +837,7 @@
   \begin{columns}
     \column{.35\textwidth}
     \begin{center}
-      \pic{1}{graphics/pulley_prob_2.png}
+      \pic{1}{graphics/pulley_prob_2}
     \end{center}
     \column{.65\textwidth}
     \textbf{Example:} The object on the left has a mass of $M$ and the object
@@ -866,7 +853,7 @@
 %\begin{frame}{A Slightly More Difficult Problem}
 %  \begin{columns}
 %    \column{.35\textwidth}
-%    \pic{1}{graphics/pulley_prob_5.png}
+%    \pic{1}{graphics/pulley_prob_5}
 %    
 %    \column{.65\textwidth}
 %    Two blocks of mass $m$ and $M$ are connected via pulley with a
@@ -889,7 +876,7 @@
 %    sliding occurs. There may be more than one inequality. 
 %    
 %    \column{.4\textwidth}
-%    \pic{1}{graphics/pulley_prob_6.png}
+%    \pic{1}{graphics/pulley_prob_6}
 %  \end{columns}
 %\end{frame}
 
@@ -908,7 +895,7 @@
 %    Determine the pulling force $F$. Ignore the mass of the pulleys. 
 %    
 %    \column{.4\textwidth}
-%    \pic{1}{graphics/pulley_prob_7.png}
+%    \pic{1}{graphics/pulley_prob_7}
 %  \end{columns}  
 %\end{frame}
 %
@@ -927,7 +914,7 @@
 %    }
 %    
 %    \column{.25\textwidth}
-%    \pic{1}{graphics/pulley_prob_9.png}
+%    \pic{1}{graphics/pulley_prob_9}
 %  \end{columns}
 %\end{frame}
 
@@ -941,12 +928,12 @@
   \begin{columns}
     \column{.45\textwidth}
     \begin{tikzpicture}[scale=.8]
-      \draw[thick](0,0)--(-4,0) node[midway,below]{\tiny $\mu_k=0.14$};
-      \draw(-1.75,0) rectangle(-3,.75) node[midway]{\tiny\SI{0.80}{\kg}};
+      \draw[thick](0,0)--(-4,0) node[midway,below]{$\mu$};
+      \draw[thick,fill=blue!50!gray!60](-1.75,0)rectangle(-3,1)node[midway]{$m$};
       \draw(-1.75,.44)--(.1,.44);
       \begin{scope}[rotate=-30]
-        \draw[thick](0,0)--(5,0) node[midway,left]{\tiny $\mu_k=0.14$};
-        \draw(3,0) rectangle(4.25,.75) node[midway]{\tiny\SI{2.}{\kg}};
+        \draw[thick](0,0)--(5.5,0) node[midway,below left]{$\mu$};
+        \draw[thick,fill=pink!80!gray](3,0) rectangle(5,1) node[midway]{$M$};
         \draw(3,.44)--(-.05,.44);
       \end{scope}
       \begin{scope}[rotate=-15]
@@ -954,7 +941,7 @@
         \draw (0,.3) circle(.15);
       \end{scope}
       \draw[gray!50](0,0)--(0,-2);
-      \draw[->](0,-.5)arc(270:330:.5)node[midway,below right]{\tiny\ang{60}};
+      \draw[->](0,-1)arc(270:330:1)node[midway,below]{$\theta$};
     \end{tikzpicture}
     \column{.55\textwidth}
 
@@ -962,7 +949,7 @@
     \item Determine the acceleration of the blocks.
     \item Calculate the tension in the string.
     \item If the string broke, for what minimum value of the coefficient of
-      static friction would the \SI{2}{kg} block not begin to slide?
+      static friction would the mass $M$ not begin to slide?
     \end{enumerate}
   \end{columns}
 \end{frame}

@@ -6,27 +6,22 @@
 \usepackage{tikz}
 \usepackage{mathpazo}
 \usepackage{xcolor,colortbl}
-%\usepackage{hyperref}
 \usepackage{siunitx}
-
-%\setmonofont{Ubuntu Mono}
 \setlength{\parskip}{0pt}
 \renewcommand{\baselinestretch}{1}
 
 \usetikzlibrary{patterns}
 
 \sisetup{
-  %detect-all,
-  %number-math-rm=\mathnormal,
   inter-unit-product=\cdot,
   per-mode=symbol
 }
 \tikzset{>=latex}
 
-\title[Quantum]{Topic 22: Wave-Particle Duality}
+\title{Topic 16: Wave-Particle Duality}
 \subtitle{Advanced Placement Physics}
 \author[TML]{Dr.\ Timothy Leung}
-\institute{Olympiads School\\Toronto, Ontario, Canada}
+\institute{Olympiads School}
 \date{\today}
 
 
@@ -199,15 +194,15 @@
       \foreach \y in {0,1,...,4} {
         \draw[very thick](0,\y)--(4,\y)
         node[pos=0,left] {\footnotesize $\y$}
-        node[pos=1,right]{\footnotesize $\y hf$};
+        node[right]{\footnotesize $\y hf$};
       }
       \foreach \y in {0,1,...,3} {
         \draw[very thick,red!70!black,<->](\y+.2,\y)--(\y+.2,\y+1);
       }
       \draw[very thick,->](4.7,4.5)--(4.7,5.9)
-      node[pos=1,above]{\footnotesize Energy $E$};
+      node[above]{\footnotesize Energy $E$};
       \draw[very thick,->](-.4,4.5)--(-.4,6)
-      node[pos=1,above]{\footnotesize to $n=\infty$};
+      node[above]{\footnotesize to $n=\infty$};
     \end{tikzpicture}
   \end{columns}
 \end{frame}
@@ -252,21 +247,20 @@
     \vspace{-.1in}Each energy level
     \begin{displaymath}
       \vspace{-.1in}
-      \Delta E=hf\approx\SI{3.3e-34}{\joule}
+      \Delta E=hf\approx\SI{3.31e-34}{\joule}
     \end{displaymath}
     
     For a pendulum with $m=$\SI{100}{\gram} and $\theta=$\ang{10}:
     \begin{displaymath}
       \vspace{-.1in}
-      \frac{\Delta E}{E}=\frac{\Delta E}{mg\ell(1-\cos\theta)}
-      \approx\SI{2.2e-32}{\joule}
+      \frac{\Delta E}{E}=\frac{\Delta E}{mg\ell(1-\cos\theta)}=\num{2.2e-32}
     \end{displaymath}
     No wonder we can't observe it in a marcoscopic level!
   \end{columns}
 \end{frame}
 
 \begin{frame}{Maxwell's Equations in a Vacuum}
-  \vspace{-.1in}{\Large
+  \vspace{-.3in}{\Large
     \begin{align*}
       \nabla\cdot\mb{E} &= 0\\
       \nabla\cdot\mb{B} &= 0\\
@@ -275,11 +269,11 @@
     \end{align*}
   }
   
-  \vspace{-.15in}Disturbances in $\mb{E}$ and $\mb{B}$ travel as an
-  ``electromagnetic wave'', with a speed:
+  Disturbances in $\mb{E}$ and $\mb{B}$ travel as an ``electromagnetic wave'',
+  with a speed:
 
   \eq{-.25in}{
-    c=\frac{1}{\sqrt{\varepsilon_0\mu_0}}=\SI{299792458}{m/s}
+    c=\frac1{\sqrt{\varepsilon_0\mu_0}}=\SI{299792458}{m/s}
   }
 \end{frame}
 
@@ -317,12 +311,11 @@
 \end{frame}
 
 
-\begin{frame}
-  \frametitle{The Photon: Packets of Energy}
-  In the 1905 paper \emph{On a Heuristic Viewpoint Concerning the Production and
-    Transformation of Light}, Einstein argued that light is not continuous
-  wave, but a collection of discrete energy packets (photons), each with energy
-  $E=hf$
+\begin{frame}{The Photon: Packets of Energy}
+  In a 1905 paper\footnote{\emph{On a Heuristic Viewpoint Concerning the
+      Production and Transformation of Light}}, Einstein argued that light is
+  not continuous wave, but a collection of discrete energy packets (photons),
+  each with energy $E=hf$
 
   \eq{-.22in}{
     \boxed{K_\text{max}=
@@ -342,6 +335,18 @@
       Work function of the metal  & $\varphi$ & \si{\joule}
     \end{tabular}
   \end{center}
+\end{frame}
+
+
+
+\begin{frame}{Photon: Particle of Light}
+  In Einstein's view:
+  \begin{itemize}
+  \item Classical wave theory and laws of electrodynamics cannot explain the
+    photoelectric effect
+  \item When a photon collides with an electron, it is absorbed into the
+    electron entirely, and without delay
+  \end{itemize}
   Einstein may have been alerted to the fact that the blackbody radiation curve
   resembles the distribution of energies in a gas
 \end{frame}
@@ -367,15 +372,14 @@
 
 \begin{frame}{Work Functions of Different Materials}
   The work function $\varphi$ depends on the metal. They are generally presented
-  in electron volts.
+  in electron volts ($\SI1{\electronvolt}=\SI{1.609e-19}{\joule}$)
   \begin{center}
     \pic{.35}{work-function}
   \end{center}
 \end{frame}
 
 
-\begin{frame}
-  \frametitle{Compton Scattering}
+\begin{frame}{Compton Scattering}
   American physicist Arthur Holly Compton studied x-ray scattering by free
   electrons
   \begin{itemize}
@@ -391,8 +395,7 @@
   }
 \end{frame}
 
-\begin{frame}
-  \frametitle{Compton Scattering}
+\begin{frame}{Compton Scattering}
   \begin{center}
     \pic{.5}{compton2}
   \end{center}
@@ -401,8 +404,9 @@
   x-ray!
 \end{frame}
 
-\begin{frame}
-  \frametitle{Momentum of a Photon}
+
+
+\begin{frame}{Momentum of a Photon}
   The momentum of a photon is proportional to Planck's constant and 
   inversely proportional to its wavelength.
 
@@ -446,8 +450,7 @@
 
 
 
-\begin{frame}
-  \frametitle{Electron Interference}
+\begin{frame}{Electron Interference}
   \begin{columns}
     \column{.82\textwidth}
     If I perform a double-slit experiment with a beam of electrons, will I get
@@ -463,8 +466,7 @@
 
 
 
-\begin{frame}
-  \frametitle{De Broglie Wavelength}
+\begin{frame}{De Broglie Wavelength}
   If matter is also a wave, then its wavelength can be obtained by solving the
   momentum equation for $\lambda$:
 
@@ -488,59 +490,87 @@
 
 
 
-\begin{frame}{Uncertainty Principle}
-  If a particle is a wave, how do you tell where it is?
-  \begin{center}
-    \begin{tikzpicture}
 
-      \draw[xscale=.3,thick,red,smooth,samples=400,domain=-20:20]
-      plot({\x},{sin(400*\x)});
+\begin{frame}{Well-Defined Momentum = Poorly-Defined Position}
+  Consider the wave below. At any time $t$, the wave/particle can be described
+  as the wave function $\Psi(x,t)$.
+  \begin{center}
+    {\footnotesize $\Psi(x,t)=\cos(\omega t-kx)$}\\
+    \begin{tikzpicture}
+      \draw[xscale=.3,thick,red,smooth,samples=300,domain=-20:20]
+      plot({\x},{sin(300*\x)});
     \end{tikzpicture}
-    
-    {\footnotesize $\cos(400x)$}
   \end{center}
   \begin{itemize}
-  \item This wave/particle has a single wavelength $\lambda$ (therefore
-    momentum $p$)
-  \item Has no distinguishing features that can tell you its location $x$
-  \item When we have precise knowledge of the particle wave's momentum (i.e.\
-    its wavelength), then we have no idea where it is.
+  \item $\Psi$ has a single wavelength of $\lambda$ (therefore a single
+    value of momentum $p$)
+  \item Has no distinguishing features that can tell you the particle's
+    position $x$
   \end{itemize} 
+  \textbf{When we have precise knowledge of a particle wave's \emph{momentum},
+    we have \emph{no} knowledge of \emph{where} it is.}
 \end{frame}
 
-\begin{frame}{Uncertainty Principle}
-  Howeever, if a particle is defined as waves with small variations of
-  wavelengths, when we add up the different waves together, we begin to see a
-  \textbf{wave packet}:
+
+
+\begin{frame}{Well-Defined Position = Poorly-Defined Momentum}
+  On the other extreme, consider a particle/wave defined as a delta function:
   \begin{center}
     \begin{tikzpicture}
-      \draw[xscale=.3,yscale=.07,thick,red,smooth,samples=400,domain=-20:20]
-      plot({\x},{
-        sin(400*\x)+
-        sin(402.5*\x)+ sin(405*\x)+ sin(407.5*\x)+ sin(410*\x)+
-        sin(412.5*\x)+ sin(415*\x)+ sin(417.5*\x)+ sin(420*\x)+
-        sin(380*\x)+ sin(382.5*\x)+ sin(385*\x)+ sin(387.5*\x)+
-        sin(390*\x)+ sin(392.5*\x)+ sin(395*\x)+ sin(397.5*\x)
-      });
+      \draw[thick,red,smooth,samples=300,domain=-5:5]
+      plot({\x},{3.2*exp(-\x*\x/0.01)});
+      \draw[->,thick](2,2) to[out=180,in=270](0,0);
+      \node at (3.8,2) {\footnotesize The particle is here!};
     \end{tikzpicture}
-
-    {\footnotesize
-      $\cos(380x)+\cos(382.5x)+\cdots+\cos(400x)+
-      \cos(402.5x)+\cdots+\cos(420x)$}
   \end{center}
-  Bottom line: In order to know more about the location of the particle, we
-  \emph{must} lose information about its momentum.
+  \begin{itemize}
+  \item\vspace{-.4in}The particle's position $x$ is well-defined
+  \item But its wavelength $\lambda$ (and therefore momentum $p$) is undefined:
+    it provides no information about the particle's velocity
+  \end{itemize} 
+  \textbf{When we have precise knowledge of a particle wave's \emph{position},
+    we have \emph{no} knowledge of \emph{where} it is going.}
 \end{frame}
 
 
-\begin{frame}{Heisenberg Uncertainty Principle}
+
+\begin{frame}{Uncertainty Principle}
+  If a moving particle has small variations/uncertainties in its momentum $p$
+  (by its wavelength $\lambda$), when we add up the different waves together, we
+  begin to see a \textbf{packet} forming:
+  \begin{center}
+    {\footnotesize
+      $\cos(280x-\omega t)+\cos(381x-\omega t)+\cdots+\cos(300x-\omega t)+
+      \cdots+\cos(319x-\omega t)+\cos(320x-\omega t)$}\\
+    \begin{tikzpicture}
+      \draw[xscale=.3,yscale=.07,thick,red,smooth,samples=300,domain=-20:20]
+      plot({\x},{0.5*(
+        sin(300*\x)+
+        sin(301*\x)+ sin(302*\x)+ sin(303*\x)+sin(304*\x)+sin(305*\x)+
+        sin(306*\x)+ sin(307*\x)+ sin(308*\x)+sin(309*\x)+sin(310*\x)+
+        sin(311*\x)+ sin(312*\x)+ sin(313*\x)+sin(314*\x)+sin(315*\x)+
+        sin(316*\x)+ sin(317*\x)+ sin(318*\x)+sin(319*\x)+sin(320*\x)+
+        sin(280*\x)+ sin(281*\x)+ sin(282*\x)+sin(283*\x)+sin(284*\x)+
+        sin(285*\x)+ sin(286*\x)+ sin(287*\x)+sin(288*\x)+sin(289*\x)+
+        sin(290*\x)+ sin(291*\x)+ sin(292*\x)+sin(293*\x)+sin(294*\x)+
+        sin(295*\x)+ sin(296*\x)+ sin(297*\x)+sin(298*\x)+sin(299*\x)
+      )});
+    \end{tikzpicture}
+  \end{center}
+  \textbf{To gain knowledge about the \emph{location} of a particle, we must
+    give up knowledge about its \emph{momentum}, and vice versa.}
+\end{frame}
+
+
+
+\begin{frame}{Uncertainty Principle}
   Because of the wave properties of particles, you can never be completely
   certain of the relationship between an object's momentum $p$ and position
   $x$. The more you know about an object's position, the less you know about
   its momentum, and vice versa.
 
   \eq{-.2in}{
-    \boxed{\sigma_p\sigma_x\geq \frac{\hbar}{2}}
+    \boxed{\sigma_p\sigma_x\geq \frac{\hbar}2}
   }
   \begin{center}
     \begin{tabular}{l|c|c}
@@ -636,8 +666,7 @@
 \end{frame}
 
 
-\begin{frame}
-  \frametitle{Standing Wave on a String}
+\begin{frame}{Standing Wave on a String}
   \begin{columns}
     \column{.3\textwidth}
     \pic{1}{strhar}
@@ -653,8 +682,7 @@
 \end{frame}
 
 
-\begin{frame}
-  \frametitle{Circular Standing Wave}
+\begin{frame}{Circular Standing Wave}
   \begin{center}
     \pic{.7}{oo1wp}
   \end{center}
@@ -663,19 +691,34 @@
 
 
 
-\begin{frame}
-  \frametitle{Particle in a Box}
+\begin{frame}{Particle in a Box}
+  A particle in a 1D box (e.g.\ a billiard ball confined to a pool table and
+  can only roll forward and backward) must behave a standing wave in order to
+  exist.
   \begin{columns}
     \column{.3\textwidth}
-    \pic{1}{box}
+    \begin{tikzpicture}[xscale=1.15]
+      \centering
+      \foreach \y in {1,...,5}{
+        \draw[dashed](0,\y-.5)--(3,\y-.5) node[pos=0,left]{\tiny$n=\y$};
+        \draw[very thick,green!60!black,smooth,samples=70,domain=0.01:2.99]
+        plot({\x},{.4*sin(60*\y*\x)+\y-.5});
+      }
+      \fill[gray!40](-.1,5)rectangle(0,0);
+      \fill[gray!40](-.1,0)rectangle(3.1,-.1);
+      \fill[gray!40](3,-.1)rectangle(3.1,5);
+      \draw[thick](0,5)--(0,0)
+      node[pos=0,above]{\tiny$\psi(x)$}
+      node[below]{0}--(3,0)node[below]{$L$}--(3,5);
+    \end{tikzpicture}
     
     \column{.7\textwidth}
-    A particle in a 1D box has to behave like a standing wave. The resonance
-    modes (frequencies where a stable standing wave exists) correspond to the
-    wavelengths:
+    The resonance modes (frequencies where stable standing waves exist)
+    correspond to the wavelengths in the same way that was discussed earlier in
+    the course:
     
     \eq{-.2in}{
-      \lambda=\frac{2L}{n}\quad n=1,2,3,4,\ldots
+      \lambda=\frac{2L}n\quad n=1,2,3,4,\ldots
     }
     and the momentum of the particle is:
 
@@ -690,7 +733,19 @@
 \begin{frame}{Particle in a Box}
   \begin{columns}
     \column{.3\textwidth}
-    \pic{1}{box}
+    \begin{tikzpicture}[xscale=1.2]
+      \foreach \y in {1,...,5}{
+        \draw[dashed](0,\y-.5)--(3,\y-.5) node[pos=0,left]{\tiny$n=\y$};
+        \draw[very thick,green!60!black,smooth,samples=70,domain=0.01:2.99]
+        plot({\x},{.4*sin(60*\y*\x)+\y-.5});
+      }
+      \fill[gray!40](-.1,5)rectangle(0,0);
+      \fill[gray!40](-.1,0)rectangle(3.1,-.1);
+      \fill[gray!40](3,-.1)rectangle(3.1,5);
+      \draw[thick](0,5)--(0,0)
+      node[pos=0,above]{\tiny$\psi(x)$}
+      node[below]{0}--(3,0) node[below]{$L$}--(3,5);
+    \end{tikzpicture}
     
     \column{.7\textwidth}
     Kinetic energy of the particle can be expressed in terms of momentum:
@@ -699,8 +754,8 @@
       K_n=\frac12mv^2=\frac{p^2}{2m}=\frac{n^2h^2}{8mL^2}
     }
 
-    If a particle is a standing wave, then kinetic energy of the particle can
-    never be zero (as long as it is confined inside the box), therefore
+    If a particle is a standing wave, then the kinetic energy of the particle
+    can never be zero (as long as it is confined inside the box), therefore
     \begin{itemize}
     \item It cannot have zero velocity
     \item The lowest energy level ($n=1$) is called the

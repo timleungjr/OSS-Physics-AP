@@ -28,30 +28,33 @@
     \item The small block exerts a force on the large block, but the large
       block does not exert a force on the small block.
     \end{enumerate}
-    
-%  \item Which of the following position vs. time graphs shows an example of
-%    the law of inertia?
-%    \pic{.2}{law-of-inertia.png}
+    \vspace{.6in}
   \end{enumerate}
-%  \columnbreak
   
-  \textbf{Questions \ref{q:2blocks1}-\ref{q:2blocks2}}
+  \textbf{Questions \ref{q:2blocks1}--\ref{q:2blocks2}}
 
   Two blocks, 4 kg and 2 kg, are connected by a string. An applied force $F$ of
   magnitude 18 N pulls the blocks to the left.
   \begin{center}
-    \pic{.35}{connect1.png}
+    \begin{tikzpicture}[scale=.95]
+      \fill[pattern=north east lines] (2.5,0) rectangle(9,-.3);
+      \begin{scope}[thick]
+        \draw (2.5,0)--(9,0);
+        \draw (7,0) rectangle(8,1) node[midway]{2 kg};
+        \draw (4,0) rectangle(6,1) node[midway]{4 kg};
+        \draw (6,.5)--(7,.5);
+        \draw[->] (4,.5)--(3,.5) node[midway,above]{\SI{18}{\newton}};
+      \end{scope}
+    \end{tikzpicture}
   \end{center}
-  
-  \begin{enumerate}[resume,leftmargin=18pt]
-    
+  \begin{enumerate}[resume,leftmargin=18pt]    
   \item The acceleration of the 4-kg block is
-    \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
-    \item\SI{2}{m/s^2}
-    \item\SI{3}{m/s^2}
-    \item\SI{4}{m/s^2}
-    \item\SI{4.5}{m/s^2}
-    \item\SI{6}{m/s^2}
+    \begin{enumerate}[nosep,leftmargin=18pt,label=(\Alph*)]
+    \item\SI2{\metre\per\second\squared}
+    \item\SI3{\metre\per\second\squared}
+    \item\SI4{\metre\per\second\squared}
+    \item\SI{4.5}{\metre\per\second\squared}
+    \item\SI6{\metre\per\second\squared}
     \end{enumerate}
     \label{q:2blocks1}
     
@@ -73,7 +76,19 @@
   \SI{1}{\kilo\gram}. The blocks are connected by a string of negligible mass
   and hung over a light pulley, and then released from rest.
   \begin{center}
-    \pic{.2}{pulley1.png}
+    \begin{tikzpicture}[scale=.8]
+      \begin{scope}[thick]
+        \draw(0,0) circle(1);
+        \fill(0,0) circle(.08);
+        \draw(1,0)--(1,-2.5);
+        \draw(.5,-2.5) rectangle(1.5,-3.3) node[midway]{\SI1{\kilo\gram}};
+        \draw(-1,0)--(-1,-1.5);
+        \draw(-1.7,-1.5) rectangle(-.3,-2.5) node[midway]{\SI2{\kilo\gram}};
+        \draw(-.2,-3.3)--(.2,-3.3);
+        \draw(-.2,-5.5)--(.2,-5.5);
+        \draw[<->](0,-3.3)--(0,-5.5) node[midway,right]{$D$};
+      \end{scope}
+    \end{tikzpicture}
   \end{center}
   \begin{enumerate}[resume,leftmargin=18pt]
   \item The acceleration of the \SI{2}{\kilo\gram} block is most nearly
@@ -105,11 +120,23 @@
   horizontal and one slanted at an angle of \ang{60} from the horizontal, as
   shown.
   \begin{center}
-    \pic{.27}{hang1.png}
+    \begin{tikzpicture}[scale=.85]
+      \fill[pattern=north east lines] (0,0)--(5,0)--(5,.2)--(-.2,.2)--
+      (-.2,-3)--(0,-3)--cycle;
+      \begin{scope}[thick]
+        \draw (0,-3)--(0,0)--(5,0);
+        \draw (0,-1.5)--(1.5,-1.5)--(1.5,-2.5);
+        \draw[dashed](1.5,0)--(1.5,-1.5)--(5,-1.5);
+        \fill(1.5,-1.5) circle(.1);
+        \draw(1.25,-2.5) rectangle(1.75,-3) node[midway]{$W$};
+        \draw(1.5,-1.5)--(4.5,0);
+        \draw[<->](3,-1.5) arc(0:27:1.5) node[midway,right]{\ang{60}};
+      \end{scope}
+    \end{tikzpicture}
   \end{center}
   \begin{enumerate}[resume,leftmargin=18pt]
   \item Which of the following statements is true?
-    \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
+    \begin{enumerate}[nosep,leftmargin=18pt,label=(\Alph*)]
     \item The tension in the horizontal cord must be greater than the tension
       in the slanted cord.
     \item The tension in the slanted cord must be greater than the tension in
@@ -119,9 +146,10 @@
     \item The tension in the slanted cord equals the weight $W$.
     \end{enumerate}
     \label{q:2cords1}
+    \vspace{.7in}
     
   \item The tension in the horizontal cord is
-    \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
+    \begin{enumerate}[nosep,leftmargin=18pt,label=(\Alph*)]
     \item equal to the tension in the slanted cord
     \item one-third as much as the tension in the slanted cord
     \item one-half as much as the tension in the slanted cord
@@ -188,22 +216,31 @@
   \SI{1}{\kilo\gram} are pushed along a horizontal frictionless plane by a
   force of \SI{24}{\newton} to the right, as shown.
   \begin{center}
-    \pic{.27}{push-blocks.png}
+    \begin{tikzpicture}[scale=.9]
+      \fill[pattern=north east lines] (0,0) rectangle(8,-.3);
+      \begin{scope}[thick]
+        \draw (0,0)--(8,0);
+        \draw (2,0) rectangle(4,1.5) node[midway]{3 kg};
+        \draw (4,0) rectangle(5.5,1.3) node[midway]{2 kg};
+        \draw (5.5,0) rectangle(6.5,1.1) node[midway]{1 kg};
+        \draw[->](0,.75)--(2,.75) node[midway,above]{24 N};
+      \end{scope}
+    \end{tikzpicture}
   \end{center}
   \begin{enumerate}[resume,leftmargin=18pt]
   \item The acceleration of the \SI{2}{\kilo\gram} block is
-    \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
-    \item\SI{144}{\metre\per\second^2}
-    \item\SI{72 }{\metre\per\second^2}
-    \item\SI{12 }{\metre\per\second^2}
-    \item\SI{6  }{\metre\per\second^2}
-    \item\SI{4  }{\metre\per\second^2}
+    \begin{enumerate}[nosep,leftmargin=18pt,label=(\Alph*)]
+    \item\SI{144}{\metre\per\second\squared}
+    \item\SI{72}{\metre\per\second\squared}
+    \item\SI{12}{\metre\per\second\squared}
+    \item\SI{6}{\metre\per\second\squared}
+    \item\SI{4}{\metre\per\second\squared}
     \end{enumerate}
     \label{3blks1}
     
   \item The force that the \SI{2}{\kilo\gram} block exerts on the
     \SI{1}{\kilo\gram} block is
-    \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
+    \begin{enumerate}[nosep,leftmargin=18pt,label=(\Alph*)]
     \item \SI{2}{\newton}
     \item \SI{4}{\newton}
     \item \SI{6}{\newton}
@@ -238,14 +275,24 @@
     \ang{30}. The coefficient of friction acting between the block and incline
     is most nearly
     \begin{center}
-      \pic{.25}{block-slide.png}
+      \begin{tikzpicture}
+        \begin{scope}[thick]
+          \draw(0,0)--(-3.46,0)--(-3.46,2)--cycle;
+          \draw[thick](-1,0) arc(180:150:1) node[midway,left]{\ang{30}};
+        \begin{scope}[rotate=-30]
+          \draw(-2,0) rectangle(-2.8,.8);
+          \fill(-2.4,.4) circle(.05);
+          \draw[->](-2.4,.4)--(-1.,.4)node[right]{$v$};
+        \end{scope}
+      \end{scope}
+      \end{tikzpicture}
     \end{center}
-    \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
-    \item $0.1$
-    \item $0.2$
-    \item $0.3$
-    \item $0.4$
-    \item $0.6$
+    \begin{enumerate}[nosep,leftmargin=18pt,label=(\Alph*)]
+    \item 0.1
+    \item 0.2
+    \item 0.3
+    \item 0.4
+    \item 0.6
     \end{enumerate}
 
 %  \item An object of mass \SI{3}{\kilo\gram} moves along a straight line on the
@@ -261,7 +308,7 @@
 
   \item A ball is thrown straight up into the air, encountering air resistance
     as it rises. What forces, if any, act on the ball as it rises?
-    \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
+    \begin{enumerate}[nosep,leftmargin=18pt,label=(\Alph*)]
     \item A decreasing gravitational force and an increasing force of air
       resistance
     \item An increasing gravitational force and an increasing force of air
@@ -273,6 +320,7 @@
     \item A constant gravitational force and a decreasing force of air
       resistance
     \end{enumerate}
+    \vspace{.65in}
     
   \item A weight $w$ is hung from two threads, $A$ and $B$, as shown below. The
     magnitudes of the tensions in each string are $F_A$ and $F_B$, respectively.
@@ -281,118 +329,169 @@
     \begin{center}
       \pic{.25}{hang-weight.png}
     \end{center}
-    \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
+    \begin{enumerate}[nosep,leftmargin=18pt,label=(\Alph*)]
     \item $F_A=F_B=W$
     \item $F_A=F_B$
     \item $F_A<F_B$
     \item $F_A>F_B$
     \item $F_A+F_B=W$
     \end{enumerate}
-  \end{enumerate}
-  \columnbreak
+%  \end{enumerate}
   
-  \textbf{Questions \ref{elevator1}--\ref{elevator2}}
-
-  An \SI{800}{\kilo\gram} elevator is supported by a vertical cable.
-  \cpic{.1}{elevator.png}
-  \begin{enumerate}[resume,leftmargin=18pt]
-  \item The cable has a tension of \SI{10000}{\newton} as it accelerates the
-    elevator upward from rest to a height of 10 m. The acceleration of the
-    elevator is most nearly
-    \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
-    \item\SI{1.0}{\metre\per\second^2}
-    \item\SI{2.0}{\metre\per\second^2}
-    \item\SI{2.5}{\metre\per\second^2}
-    \item\SI{3.5}{\metre\per\second^2}
-    \item\SI{4.0}{\metre\per\second^2}
-    \end{enumerate}
-    \label{elevator1}
-    
-  \item The elevator passes the 10 m height on the way up, stops, then begins
-    its descent downward, having an initial velocity as it passes the 10 m
-    height again on the way down. If the tension in the cable is now
-    \SI{12000}{\newton}, and it comes to rest just before reaching the ground,
-    the initial velocity at the 10 m height must have been most nearly
-    \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
-    \item\SI{2.5}{m/s}
-    \item\SI{3.5}{m/s}
-    \item\SI{14.5}{m/s}
-    \item\SI{10}{m/s}
-    \item\SI{100}{m/s}
-    \end{enumerate}
-    \label{elevator2}
+%  \textbf{Questions \ref{elevator1}--\ref{elevator2}}
+%
+%  An \SI{800}{\kilo\gram} elevator is supported by a vertical cable.
+%  \cpic{.1}{elevator.png}
+%  \begin{enumerate}[resume,leftmargin=18pt]
+%  \item The cable has a tension of \SI{10000}{\newton} as it accelerates the
+%    elevator upward from rest to a height of 10 m. The acceleration of the
+%    elevator is most nearly
+%    \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
+%    \item\SI{1.0}{\metre\per\second^2}
+%    \item\SI{2.0}{\metre\per\second^2}
+%    \item\SI{2.5}{\metre\per\second^2}
+%    \item\SI{3.5}{\metre\per\second^2}
+%    \item\SI{4.0}{\metre\per\second^2}
+%    \end{enumerate}
+%    \label{elevator1}
+%    
+%  \item The elevator passes the 10 m height on the way up, stops, then begins
+%    its descent downward, having an initial velocity as it passes the 10 m
+%    height again on the way down. If the tension in the cable is now
+%    \SI{12000}{\newton}, and it comes to rest just before reaching the ground,
+%    the initial velocity at the 10 m height must have been most nearly
+%    \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
+%    \item\SI{2.5}{m/s}
+%    \item\SI{3.5}{m/s}
+%    \item\SI{14.5}{m/s}
+%    \item\SI{10}{m/s}
+%    \item\SI{100}{m/s}
+%    \end{enumerate}
+%    \label{elevator2}
 
   \item A force of magnitude $F$ pulls up at an angle $\theta$ to the
     horizontal on a block of mass $m$. The mass remains in contact with the
     level floor and the coefficient of friction between the block and the floor
     is $\mu$. The frictional force between the floor and the block is
     \begin{center}
-      \pic{.2}{angle1.png}
+      \begin{tikzpicture}[scale=.7]
+        \fill[pattern=north east lines] (0,0) rectangle(8,-.3);
+        \draw[thick] (0,0)--(8,0);
+        \draw[thick](3,0) rectangle(5,1.5);
+        \fill[black] (4,.75) circle(.1);
+        \draw[dash dot] (4,.75)--(7,.75);
+        \draw[thick,->] (4,.75)--(6,2.75) node[right]{$\mb{F}$};
+        \draw[<->](5.5,.75) arc(0:45:1.5) node[midway,right]{$\theta$};
+      \end{tikzpicture}
     \end{center}
-    \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
+    \begin{enumerate}[nosep,leftmargin=18pt,label=(\Alph*)]
     \item$\mu mg$
     \item$\mu (mg-F\sin\theta)$
     \item$\mu (mg+F\sin\theta)$
     \item$\mu (mg-F\cos\theta)$
     \item$\mu (mg+F\cos\theta)$
     \end{enumerate}    
+
+  \item Two blocks are pulled by a force of magnitude $F$ along a level surface
+    with negligible friction as shown. The tension in the string between the
+    blocks is
+    \begin{center}
+      \begin{tikzpicture}[scale=.95]
+        \fill[pattern=north east lines] (1.5,0) rectangle(9,-.3);
+        \begin{scope}[thick]
+          \draw (1.5,0)--(9,0);
+          \draw (7,0) rectangle(8,1) node[midway]{\SI{2}{\kilo\gram}};
+          \draw (4,0) rectangle(5,1) node[midway]{\SI{4}{\kilo\gram}};
+          \draw (5,.5)--(7,.5);
+          \draw[->](4,.5)--(2.5,.5) node[left]{$\mb{F}$};
+        \end{scope}
+      \end{tikzpicture}
+    \end{center}
+    \begin{enumerate}[nosep,leftmargin=18pt,label=(\Alph*)]
+    \item $F/4$
+    \item $F/2$
+    \item $F/3$
+    \item $F$
+    \item $2F$
+    \end{enumerate}
+
+  \item A stone falls through the air toward the Earth's surface. The resistive
+    force the air applies to the stone as it falls is given by the equation
+    $F=cv$, where $c$ is a positive constant and $v$ is the speed of the stone.
+    The acceleration of the ball is given by the equation
+    \begin{enumerate}[nosep,leftmargin=18pt,label=(\Alph*)]
+    \item $c-g$
+    \item $gcv/m$
+    \item $g+cv$
+    \item $g-cv/m$
+    \item $cv/m$
+    \end{enumerate}
   \end{enumerate}
   \columnbreak
   
   \textbf{Questions \ref{fbds}--\ref{fk}}
 
   A 1-kg block is sliding up a rough \ang{30} incline and is
-  slowing down with an acceleration of \SI{-6}{m/s^2}. The mass has a weight
-  $\mb{w}$, and encounters a frictional force $\mb{f}$ and a normal force
-  $\mb{N}$. The direction up the ramp is positive.
+  slowing down with an acceleration of \SI{-6}{\metre\per\second\squared}. The
+  mass has a weight $\mb{w}$, and encounters a frictional force $\mb{f}$ and a
+  normal force $\mb{N}$. The direction up the ramp is positive.
   \begin{center}
-    \pic{.25}{ramp2.png}
+    \begin{tikzpicture}[scale=1.2]
+      \begin{scope}[thick]
+        \draw(0,0)--(-3.46,0)--(-3.46,2)--cycle;
+        \draw[thick](-1,0) arc(180:150:1) node[midway,left]{\ang{30}};
+        \begin{scope}[rotate=-30]
+          \draw(-2,0) rectangle(-2.8,.8);
+          \draw[->](-2,1)--(-2.8,1)node[left]{$v$};
+        \end{scope}
+      \end{scope}
+    \end{tikzpicture}
   \end{center}
   \begin{enumerate}[resume,leftmargin=18pt]
   \item Which of the following free body diagrams best represents the forces
     acting on the block as it slides up the plane?
-    \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
+    \begin{enumerate}[nosep,leftmargin=18pt,label=(\Alph*)]
     \item\begin{tikzpicture}[scale=.7]
       \fill[black](0,0) circle(.08);
-      \draw[thick,->](0,0)--(0,1)node[pos=1,above]{$\mb{N}$};
-      \draw[thick,->](0,0)--(0,-1)node[pos=1,below]{$\mb{w}$};
-      \draw[thick,->,rotate=60](0,0)--(0,1)node[pos=1,left]{$\mb{f}$};
+      \draw[thick,->](0,0)--(0,1) node[above]{$\mb{N}$};
+      \draw[thick,->](0,0)--(0,-1)node[below]{$\mb{w}$};
+      \draw[thick,->,rotate=60](0,0)--(0,1)node[left]{$\mb{f}$};
     \end{tikzpicture}
     \item\begin{tikzpicture}[scale=.7]
         \fill[black](0,0) circle(.08);
-        \draw[thick,->,rotate=-30](0,0)--(0,1)node[pos=1,above]{$\mb{N}$};
-        \draw[thick,->,rotate=-30](0,0)--(0,-1)node[pos=1,below]{$\mb{w}$};
-        \draw[thick,->,rotate=60](0,0)--(0,1)node[pos=1,left]{$\mb{f}$};
+        \draw[thick,->,rotate=-30](0,0)--(0,1)node[above]{$\mb{N}$};
+        \draw[thick,->,rotate=-30](0,0)--(0,-1)node[below]{$\mb{w}$};
+        \draw[thick,->,rotate=60](0,0)--(0,1)node[left]{$\mb{f}$};
     \end{tikzpicture}
     \item\begin{tikzpicture}[scale=.7]
       \fill[black](0,0) circle(.08);
-      \draw[thick,->,rotate=-30](0,0)--(0,1)node[pos=1,above]{$\mb{N}$};
-      \draw[thick,->](0,0)--(0,-1)node[pos=1,below]{$\mb{w}$};
-      \draw[thick,->,rotate=60](0,0)--(0,-1)node[pos=1,right]{$\mb{f}$};
+      \draw[thick,->,rotate=-30](0,0)--(0,1)node[above]{$\mb{N}$};
+      \draw[thick,->](0,0)--(0,-1)node[below]{$\mb{w}$};
+      \draw[thick,->,rotate=60](0,0)--(0,-1)node[right]{$\mb{f}$};
     \end{tikzpicture}
     \item\begin{tikzpicture}[scale=.7]
       \fill[black](0,0) circle(.08);
-      \draw[thick,->](0,0)--(0,1)node[pos=1,above]{$\mb{N}$};
-      \draw[thick,->](0,0)--(0,-1)node[pos=1,below]{$\mb{w}$};
-      \draw[thick,->,rotate=60](0,0)--(0,-1)node[pos=1,right]{$\mb{f}$};
+      \draw[thick,->](0,0)--(0,1)node[above]{$\mb{N}$};
+      \draw[thick,->](0,0)--(0,-1)node[below]{$\mb{w}$};
+      \draw[thick,->,rotate=60](0,0)--(0,-1)node[right]{$\mb{f}$};
     \end{tikzpicture}
     \item\begin{tikzpicture}[scale=.7]
       \fill[black](0,0) circle(.08);
-      \draw[thick,->,rotate=120](0,0)--(0,1)node[pos=1,left]{$\mb{N}$};
-      \draw[thick,->](0,0)--(0,-1)node[pos=1,below]{$\mb{w}$};
-      \draw[thick,->,rotate=60](0,0)--(0,-1)node[pos=1,right]{$\mb{f}$};
+      \draw[thick,->,rotate=120](0,0)--(0,1)node[left]{$\mb{N}$};
+      \draw[thick,->](0,0)--(0,-1)node[below]{$\mb{w}$};
+      \draw[thick,->,rotate=60](0,0)--(0,-1)node[right]{$\mb{f}$};
     \end{tikzpicture}
     \end{enumerate}
     \label{fbds}
     
   \item The magnitude of the frictional force $f$ between the block and the
     plane is most nearly
-    \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
-    \item\SI{1}{\newton}
-    \item\SI{2}{\newton}
-    \item\SI{3}{\newton}
-    \item\SI{4}{\newton}
-    \item\SI{5}{\newton}
+    \begin{enumerate}[nosep,leftmargin=18pt,label=(\Alph*)]
+    \item\SI1{\newton}
+    \item\SI2{\newton}
+    \item\SI3{\newton}
+    \item\SI4{\newton}
+    \item\SI5{\newton}
     \end{enumerate}
     \label{fk}
     \columnbreak
@@ -408,46 +507,20 @@
 %    \item\SI{6}{\metre\per\second^2}
 %    \end{enumerate}
 
-  \item Two blocks are pulled by a force of magnitude $F$ along a level surface
-    with negligible friction as shown. The tension in the string between the
-    blocks is
-    \begin{center}
-      \vspace{-.1in}\pic{.3}{connect2.png}
-    \end{center}
-    \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
-    \item $F/4$
-    \item $F/2$
-    \item $F/3$
-    \item $F$
-    \item $2F$
-    \end{enumerate}
-    
-  \item A block weighing \SI{60}{\newton} hangs from three ropes as shown.
-    Which of the following statements is true?
-    \begin{center}
-      \vspace{-.1in}\pic{.3}{hanging.png}
-    \end{center}
-    \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]    
-    \item Each rope has a tension of \SI{60}{\newton}.
-    \item The tension in each rope is higher in the lower part than in the
-      upper part of the rope.
-    \item The tension in each rope is higher in the upper part than in the
-      lower part of the rope.
-    \item The rope in the center has a higher tension than the othertwo ropes.
-    \item Each rope has a tension of \SI{20}{\newton}.
-    \end{enumerate}
-    
-  \item A stone falls through the air toward the Earth's surface. The resistive
-    force the air applies to the stone as it falls is given by the equation
-    $F=cv$, where $c$ is a positive constant and $v$ is the speed of the stone.
-    The acceleration of the ball is given by the equation
-    \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
-    \item $c-g$
-    \item $gcv/m$
-    \item $g+cv$
-    \item $g-cv/m$
-    \item $cv/m$
-    \end{enumerate}
+%  \item A block weighing \SI{60}{\newton} hangs from three ropes as shown.
+%    Which of the following statements is true?
+%    \begin{center}
+%      \vspace{-.1in}\pic{.3}{hanging.png}
+%    \end{center}
+%    \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]    
+%    \item Each rope has a tension of \SI{60}{\newton}.
+%    \item The tension in each rope is higher in the lower part than in the
+%      upper part of the rope.
+%    \item The tension in each rope is higher in the upper part than in the
+%      lower part of the rope.
+%    \item The rope in the center has a higher tension than the othertwo ropes.
+%    \item Each rope has a tension of \SI{20}{\newton}.
+%    \end{enumerate}
     \columnbreak
     
   \item A block of mass $4m$ can move without friction on a horizontal surface.
@@ -455,7 +528,7 @@
     is passed over a light pulley. The acceleration of the system is
 
     \vspace{-.1in}\cpic{.25}{atwood1.png}
-    \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
+    \begin{enumerate}[nosep,leftmargin=18pt,label=(\Alph*)]
     \item $g/5$
     \item $g/2$
     \item $2g/3$
@@ -477,8 +550,19 @@
   \item Three strings are attached to a ring in the center of a force table. The
     top view of the force table is shown. For the ring to remain in the
     center of the table, which of the following must be true?
-    \cpic{.18}{3strings.png}
-    \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
+    \begin{center}
+      \begin{tikzpicture}[scale=.5]
+        \begin{scope}[thick]
+          \draw(0,0) circle(.7);
+          \draw(0,0) circle(3);
+          \fill(0,0) circle(.15);
+          \draw[rotate=10](.7,0)--(3,0);
+          \draw[rotate=105](.7,0)--(3,0);
+          \draw[rotate=250](.7,0)--(3,0);
+        \end{scope}
+      \end{tikzpicture}
+    \end{center}
+    \begin{enumerate}[nosep,leftmargin=18pt,label=(\Alph*)]
     \item The vector sum of the three forces must equal zero.
     \item The lengths of the strings must be equal.
     \item The strings must form an angle of \ang{90} relative to each other.
@@ -495,7 +579,17 @@
   right triangle of sides \SI{3}{\metre}, \SI{4}{\metre}, and \SI{5}{\metre},
   as shown. The block is allowed to slide down the plane with negligible
   friction.
-  \vspace{-.2in}\cpic{.25}{ramp3.png}
+  \begin{center}
+    \begin{tikzpicture}[scale=.85]
+      \begin{scope}[thick]
+        \draw(0,0)--(4,0) node[midway,below]{\SI{4}{\metre}}
+        --(0,3) node[midway,above right]{\SI{5}{\metre}}
+        --(0,0) node[midway,left]{\SI{3}{\metre}};
+        \draw[rotate around={-37:(0,3)}](0,3) rectangle(.8,3.8)
+        node[above right]{\SI{10}{\newton}};
+      \end{scope}
+    \end{tikzpicture}
+  \end{center}
   
   \begin{enumerate}[resume,leftmargin=18pt]
   \item The acceleration of the block is most nearly
@@ -509,7 +603,7 @@
     \label{plane1}
     
   \item The normal force exerted on the block by the plane is most nearly
-    \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
+    \begin{enumerate}[nosep,leftmargin=18pt,label=(\Alph*)]
     \item\SI{2}{\newton}
     \item\SI{4}{\newton}
     \item\SI{6}{\newton}
@@ -525,7 +619,7 @@
   $x=2t^2-3t^3$, where $x$ is in meters and $t$ is in seconds.
   \begin{enumerate}[resume,leftmargin=18pt]
   \item The net force acting on the object at a time of \SI{1}{s} is
-    \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
+    \begin{enumerate}[nosep,leftmargin=18pt,label=(\Alph*)]
     \item\SI{-4}{\newton}
     \item\SI{-8}{\newton}
     \item\SI{-14}{\newton}
@@ -536,7 +630,7 @@
     
   \item The net force acting on the object is positive from $t=0$ until a time
     of
-    \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
+    \begin{enumerate}[nosep,leftmargin=18pt,label=(\Alph*)]
     \item\SI{.11}{\second}
     \item\SI{.22}{\second}
     \item\SI{.44}{\second}
@@ -570,19 +664,20 @@
 %    \item\SI{84}{\newton}
 %    \item\SI{104}{\newton}
 %    \end{enumerate}
-%    \columnbreak
+    \columnbreak
    
   \item A constant force acts on a particle in such a way that the direction of
     the force is always perpendicular to its velocity. Which of the
     following is true of the particle's motion?
-    \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
+    \begin{enumerate}[nosep,leftmargin=18pt,label=(\Alph*)]
     \item The acceleration of the particle is increasing
     \item The acceleration of the particle is decreasing.
     \item The speed of the particle is increasing.
     \item The speed of the particle is constant.
     \item The speed of the particle is decreasing.
     \end{enumerate}
-
+    \vspace{.7in}
+    
   %\item A coffee filter is released from rest at a height of $3$ meters above
   %  the floor. Which of the following graphs best describes the speed of the
   %  falling coffee filter as a function of time?
@@ -594,7 +689,6 @@
   %  \item
   %  \end{enumerate}
   \end{enumerate}
-  \columnbreak
   
   \textbf{Questions \ref{stacked1}--\ref{stacked2}}
 
@@ -603,7 +697,15 @@
   the surface between the two blocks is not frictionless. The coefficient of
   friction between the two blocks is $0.2$. A horizontal force $\mb{F}$ is
   applied to the \SI{4}{\kilo\gram} mass.
-  \cpic{.38}{stacked.png}
+  \begin{center}
+      \begin{tikzpicture}[scale=.95]
+        \fill[pattern=north east lines] (3,0) rectangle(9,-.3);
+        \draw[thick] (3,0)--(9,0);
+        \draw[thick](5,1) rectangle(6,2) node[midway]{\SI2{\kilo\gram}};
+        \draw[thick](4,0) rectangle(7,1) node[midway]{\SI4{\kilo\gram}};
+        \draw[thick,->](7,.5)--(8,.5) node[right]{$\mb{F}$};
+      \end{tikzpicture}
+    \end{center}
   \begin{enumerate}[resume,leftmargin=18pt]
   \item What is the maximum force that can be applied such that there is no
     relative motion between the two blocks?
@@ -617,13 +719,13 @@
     \label{stacked1}
     
   \item What is the acceleration of the 2-kg block relative to the 4-kg block
-    if a force is applied to the 4-kg block that causes the \SI{4}{\kilo\gram}
-    block to accelerate at \SI{3}{m/s^2} to the right?
-    \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
-    \item\SI{1}{m/s^2} to the right
-    \item\SI{1}{m/s^2} to the left
-    \item\SI{2}{m/s^2} to the right
-    \item\SI{2}{m/s^2} to the left
+    if a force is applied to the 4-kg block that causes the \SI4{\kilo\gram}
+    block to accelerate at \SI3{\metre\per\second\squared} to the right?
+    \begin{enumerate}[nosep,leftmargin=18pt,label=(\Alph*)]
+    \item\SI1{\metre\per\second\squared} to the right
+    \item\SI1{\metre\per\second\squared} to the left
+    \item\SI2{\metre\per\second\squared} to the right
+    \item\SI2{\metre\per\second\squared} to the left
     \item zero
     \end{enumerate}
     \label{stacked2}
@@ -703,48 +805,48 @@
 %\end{center}
 %\newpage
 
-\genfreetitle{C}{DYNAMICS}{6}
+\genfreetitle{C}{DYNAMICS}{5}
 
-\genfreedirections{10}
+\genfreedirections
 
-\begin{enumerate}[leftmargin=15pt]
-  % THIS QUESTIONS SHOULD BE REMOVED AFTER SUMMER 2020 SESSION
-\item Two balls are thrown with equal speeds $v_0$ from the top of a cliff of
-  height $H$. One ball is thrown upward at an angle $\alpha$ above the
-  horizontal; the other ball is thrown downward at an angle of $\beta$ below
-  the horizontal. Show that each ball strikes the ground with the same speed,
-  and find that speed in terms of $H$ and the initial speed $v_0$.
-  \vspace{2in}
-  \newpage
+\begin{enumerate}
+%  % THIS QUESTIONS SHOULD BE REMOVED AFTER SUMMER 2020 SESSION
+%\item Two balls are thrown with equal speeds $v_0$ from the top of a cliff of
+%  height $H$. One ball is thrown upward at an angle $\alpha$ above the
+%  horizontal; the other ball is thrown downward at an angle of $\beta$ below
+%  the horizontal. Show that each ball strikes the ground with the same speed,
+%  and find that speed in terms of $H$ and the initial speed $v_0$.
+%  \vspace{2in}
+%  \newpage
   
-  % THIS QUESTION IS TAKEN FROM THE 2000 AP PHYSICS B EXAM, QUESTION 2
-  % THIS QUESTION IS TO BE REMOVED AFTER SUMMER 2020 SESSION
-  \begin{center}
-    \pic{.5}{ramp1.png}
-  \end{center}
-\item Blocks 1 and 2 of masses $m_1$ and $m_2$, respectively, are connected by a
-  light string, as shown above. These blocks are further connected to a block of
-  mass $M$ by another light string that passes over a pulley of negligible mass
-  and friction. Blocks 1 and 2 move with a constant velocity $v$ down the
-  inclined plane, which makes and angle $\theta$ with the horizontal. The
-  kinetic friction force on block 1 is $f$ and that on block 2 is $2f$.
-  \begin{enumerate}[leftmargin=18pt,topsep=0pt,noitemsep]
-  \item On the figure below, draw and label all the forces on block $m_1$.
-    \begin{center}
-      \pic{.35}{ramp-2.png}
-    \end{center}
-  \end{enumerate}
-  Express your answers to each of the following in terms of $m_1$, $m_2$, $g$,
-  $\theta$ and $f$.
-  \begin{enumerate}[leftmargin=18pt,topsep=0pt,noitemsep,resume]
-  \item Determine the coefficient of kinetic friction between the incline plane
-    and block 1.
-  \item Determine the value of teh suspended mass $M$ that allows blocks 1 and 2
-    to move with constant velocity down the plane.
-  \item The string between blocks 1 and 2 is now cut. Determine the
-    acceleration of block 1 while it is on the inclined plane.
-  \end{enumerate}
-  \newpage
+%  % THIS QUESTION IS TAKEN FROM THE 2000 AP PHYSICS B EXAM, QUESTION 2
+%  % THIS QUESTION IS TO BE REMOVED AFTER SUMMER 2020 SESSION
+%  \begin{center}
+%    \pic{.5}{ramp1}
+%  \end{center}
+%\item Blocks 1 and 2 of masses $m_1$ and $m_2$, respectively, are connected by a
+%  light string, as shown above. These blocks are further connected to a block of
+%  mass $M$ by another light string that passes over a pulley of negligible mass
+%  and friction. Blocks 1 and 2 move with a constant velocity $v$ down the
+%  inclined plane, which makes and angle $\theta$ with the horizontal. The
+%  kinetic friction force on block 1 is $f$ and that on block 2 is $2f$.
+%  \begin{enumerate}[leftmargin=18pt,topsep=0pt,noitemsep]
+%  \item On the figure below, draw and label all the forces on block $m_1$.
+%    \begin{center}
+%      \pic{.35}{ramp-2}
+%    \end{center}
+%  \end{enumerate}
+%  Express your answers to each of the following in terms of $m_1$, $m_2$, $g$,
+%  $\theta$ and $f$.
+%  \begin{enumerate}
+%  \item Determine the coefficient of kinetic friction between the incline plane
+%    and block 1.
+%  \item Determine the value of teh suspended mass $M$ that allows blocks 1 and 2
+%    to move with constant velocity down the plane.
+%  \item The string between blocks 1 and 2 is now cut. Determine the
+%    acceleration of block 1 while it is on the inclined plane.
+%  \end{enumerate}
+%  \newpage
 
 \item A \SI{2.}{\kilo\gram} block sits on a \SI{4.}{\kilo\gram} that is resting
   on a frictionless table, as shown below. The coefficient of friction between
@@ -764,20 +866,21 @@
     \draw[fill=yellow!50](2.5,1.5)rectangle(3.5,2.2)
     node[midway,black]{\SI{2.}{kg}};
     \draw[ultra thick,red!80!black,->](4.2,.75)--(6.2,.75)
-    node[pos=1,right]{$\mb{F}$};
+    node[right]{$\mb{F}$};
   \end{tikzpicture}
   \vspace{2.25in}
+  \newpage
   
 \item A \SI{2.}{\kilo\gram} body rests on a smooth wedge that has an inclination
   of \ang{60} and an acceleration $\mb{a}$ to the right such that the mass
   remains stationary relative to the wedge.
-  \begin{enumerate}[noitemsep,topsep=0pt]
+  \begin{enumerate}
   \item Find acceleration $\mb{a}$.
   \item What would happen if the wedge were given a greater acceleration?
   \end{enumerate}
   \begin{tikzpicture}[scale=2.1]
     \draw[ultra thick,green!40!black,->](.5,.6)--(1.7,.6)
-    node[pos=1,right,black]{$\mb{a}$};
+    node[right,black]{$\mb{a}$};
     \draw(-1,0)--(2,0);
     \draw[fill=blue!50!gray!50](0,0)--(0,1.7)--(1,0)--cycle;
     \draw[->](.7,0) arc(180:120:.3) node[midway,left]{\ang{60}};
@@ -799,16 +902,16 @@
   \vspace{2in}
   \newpage
 
-  % THIS QUESTION IS TO BE REMOVED AFTER SUMMER 2020 SESSION
-\item A bucket with mass $m_2$ and a block with mass $m_1$ are hung on a pulley
-  system. Find the magnitude of the acceleration with which the bucket and the
-  block are moving and the magnitude of the tension force $T$ by which the rope
-  is stressed. Ignore the masses of the pulley system and the rope. The bucket
-  moves up and the block moves down.
-  \begin{center}
-    \pic{.18}{pulley-system.png}
-  \end{center}
-  \newpage
+%  % THIS QUESTION IS TO BE REMOVED AFTER SUMMER 2020 SESSION
+%\item A bucket with mass $m_2$ and a block with mass $m_1$ are hung on a pulley
+%  system. Find the magnitude of the acceleration with which the bucket and the
+%  block are moving and the magnitude of the tension force $T$ by which the rope
+%  is stressed. Ignore the masses of the pulley system and the rope. The bucket
+%  moves up and the block moves down.
+%  \begin{center}
+%    \pic{.18}{pulley-system.png}
+%  \end{center}
+%  \newpage
 
   % THIS IS TAKEN FROM THE 2013 AP PHYSICS C FREE-RESPONSE QUESTION MECH 2
   \begin{center}
@@ -849,12 +952,13 @@
     \begin{center}
       \begin{tikzpicture}
         \draw[very thick,->](0,0)--(4,0)
-        node[pos=0,left]{$O$} node[pos=1,right]{$t$};
-        \draw[very thick,->](0,-3)--(0,3)node[pos=1,above]{$v$};
+        node[pos=0,left]{$O$} node[right]{$t$};
+        \draw[very thick,->](0,-3)--(0,3)node[above]{$v$};
       \end{tikzpicture}
     \end{center}
   \end{enumerate}
   \vspace{.3in}
+  \newpage
   
   % THIS IS TAKEN FROM THE 2011 AP PHYSICS C FREE-RESPONSE QUESTION MECH 2
   \begin{center}
@@ -877,22 +981,23 @@
         \draw[rotate=35,dashed,very thick](0,2)--(0,-2);
       \end{tikzpicture}
     \end{center}
-    \newpage
     
   \item In terms of $\theta$ and the magnitudes of the forces drawn in part
     (a), determine an expression for the magnitude of the centripetal force
     acting on the compartment at point $C$. If you need to draw anything
     besides what you have shown in part (a) to assist in your solution, use the
     space below. Do NOT add anything to the figure in part (a).
-    \vspace{1in}
+    \vspace{\stretch1}
+    
   \item Derive an expression for the speed $v_D$ of the passenger compartment
     as it reaches point $D$ in terms of $M$, $R$, and fundamental constants, as
     appropriate.
-    \vspace{1in}
+    \vspace{\stretch1}
   \end{enumerate}
+  \newpage
   A force acts on the compartment between points $D$ and $E$ and brings it to
   rest at point $E$.
-  \begin{enumerate}[leftmargin=15pt,resume]
+  \begin{enumerate}[resume]
   \item If the compartment is brought to rest by friction, calculate the
     numerical value of the coefficient of friction $\mu$ between the
     compartment and the track.
@@ -903,9 +1008,11 @@
     velocity of the compartment. Express all algebraic answers to the following
     in terms of $M$, $R$, $k$, $v_D$, and fundamental constants, as
     appropriate.
-    \begin{enumerate}[leftmargin=15pt]
-    \item Write, but do NOT solve, the differential equation for $v(t)$ .
+    \begin{enumerate}
+    \item Write, but do NOT solve, the differential equation for $v(t)$.
+      \vspace{\stretch1}
     \item Solve the differential equation you wrote in part i.
+      \vspace{\stretch1}
     \item On the axes below, sketch a graph of the magnitude of the
       acceleration of the compartment as a function of time. On the axes,
       explicitly label any intercepts, asymptotes, maxima, or minima with
@@ -913,7 +1020,7 @@
       \begin{center}
         \begin{tikzpicture}
         \draw[very thick,->](0,0)--(7,0) node[midway,below]{Time};
-        \draw[very thick,->](0,0)--(0,3) node[pos=1,above]
+        \draw[very thick,->](0,0)--(0,3) node[above]
              {Magnitude of Acceleration};
         \end{tikzpicture}
       \end{center}

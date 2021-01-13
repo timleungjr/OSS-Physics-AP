@@ -6,6 +6,7 @@
 \usefonttheme{professionalfonts}
 \usepackage[lf]{carlito}
 \usepackage{mathpazo}
+\usepackage{mathabx}
 \usepackage{xcolor,colortbl}
 \usepackage{siunitx}
 \usepackage{mhchem}
@@ -15,7 +16,6 @@
 \renewcommand{\baselinestretch}{1}
 
 \sisetup{
-  %detect-all,
   number-math-rm=\mathnormal,
   inter-unit-product={\ensuremath{\cdot}},
   per-mode=symbol
@@ -177,9 +177,9 @@
   One of the discoveries in special relativity\footnote{Einstein, A., ``Does
     the Inertia of a Body Depend Upon Its Energy Content?'', \emph{Annelen der
     Physik}, 18(13):639-641, 21 November, 1905.} is the fundamental equivalence
-  of mass and energy. While the derivation is based on \emph{relativistic
-    kinematics}, it also applies to \emph{quantum mechanics}, from which
-  nuclear physics is based on.
+  of mass and energy. While it is based on \emph{relativistic kinematics}, it
+  also applies to \emph{quantum mechanics}, from which nuclear physics is based
+  on.
   
   \eq{-.2in}{
     \boxed{E=mc^2}
@@ -274,13 +274,13 @@
 
 
 \begin{frame}{Mass Defect}
-  Mass defect exists in any atoms because the nucleus of an atom is always
+  Mass defect exists in all nuclei because the nucleus of an atom is always
   \emph{in a lower energy state} than the individual nucleons alone
   
   \vspace{.25in}Similar examples:
   \begin{itemize}
-  \item The total energy of a planet orbiting the Sun is lower than the two
-    objects individually
+  \item The total energy of a planet orbiting the Sun is lower than the plant
+    and the Sun individually
   \item An electron orbiting the nucleus is at a lower energy state also
   \end{itemize}
 \end{frame}
@@ -319,7 +319,8 @@
   \begin{center}
     \pic{.5}{graphics/CNX_UPhysics_43_02_BindEnergy}
   \end{center}
-  The higher the binding energy, the more \emph{tightly bound} a nucleus is.
+  The higher the binding energy, the more \emph{tightly bound} a nucleus is,
+  therefore more work is required to separate the nucleons
 \end{frame}
 
 
@@ -384,18 +385,19 @@
 
 
 \begin{frame}{Alpha Decay}
-  In $\alpha$-decay, an \textbf{alpha particle} (a helium-4 nucleus, with $2$
-  protons and $2$ neutrons), is spontaneously emitted from the nucleus. Example:
+  In $\alpha$-decay, an \textbf{alpha particle} (a helium-4 nucleus, with 2
+  protons and 2 neutrons), is spontaneously emitted from the nucleus. Example:
   plutonium-240 nucleus decays into a uranium-236 nucleus, emitting an alpha
   particle
   \begin{center}
-    \pic{.5}{graphics/alpha-decay}
+    \pic{.45}{graphics/alpha-decay}
   \end{center}
 
   \eq{-.3in}{
     \boxed{\ce{^{240}_{94}Pu -> ^{236}_{92}U + ^4_2He}}
   }
-  
+
+  Note the binding energy in the helium-4 nucleus in previous slides
 \end{frame}
 
 
@@ -407,29 +409,38 @@
     \boxed{\ce{^A_ZX -> ^{A-4}_{Z-2}Y + ^4_2He}}
   }
   
-  The \textbf{parent atom} ($X$) is the reactant, and the
-  \textbf{daughter atom} ($Y$) is the product. This nuclear reaction is
-  called a \textbf{transmutation}, because the atomic number changes during the
-  decay, and a new element is formed.
+  The \textbf{parent atom} ($X$) is the ``reactant'', and the
+  \textbf{daughter atom} ($Y$) is the ``product''. This reaction is called a
+  \textbf{transmutation}, because a new element is formed.
   \begin{itemize}
   \item The nuclear binding energy of the daughter atom and the alpha
     particle are \emph{higher} than the parent atom.
   \item The combined mass of the daughter atom plus the alpha particle is
-    \emph{less} than the parent atom, meaning that energy is released
+    \emph{lower} than the parent atom, meaning that energy is released
   \end{itemize}
 \end{frame}
 
 
 
+\begin{frame}{Beta Decays}
+  \textbf{Beta decays} involve the emission/capture of a \textbf{beta particle}
+  (electron or a positron). There are three types of beta decays:
+  \begin{itemize}
+  \item Beta-negative decay (emission of an electron)
+  \item Beta-positive decay (emission of an positron)
+  \item Electron capture
+  \end{itemize}
+  Beta decays generally occur in smaller (less massive) nuclei
+\end{frame}
+
+
+
 \begin{frame}{Beta-Negative Decay}
-  Beta decays involve the emission/capture of a \textbf{beta particle}
-  (electron or a positron). In beta-negative decay ($\beta^-$-decay), a neutron
-  spontaneously decays into a proton and an electron, and the electron is
-  ejected from the nucleus. For example, the $\beta^-$-decay of a
-  tritium%\footnote{Hydrogen atom with two neutrons}
-  atom is:
+  In a \textbf{beta-negative decay} ($\beta^-$-decay), a neutron spontaneously
+  decays into a proton and an electron, and the electron is ejected from the
+  nucleus. For example, the $\beta^-$-decay of a tritium atom is:
   \begin{center}
-    \pic{.6}{graphics/beta-negative}
+    \pic{.5}{graphics/beta-negative}
   \end{center}
 
   \eq{-.3in}{
@@ -447,21 +458,25 @@
   }
 
   The daughter atom has a higher nuclear binding energy than the parent atom.
+  This decay is also a transmutation because a new element is formed.
 \end{frame} 
 
 
 
 \begin{frame}{Beta-Positive Decay}
-  In beta-positive decay ($\beta^+$-decay), a proton spontaneously decays into
-  a neutron and a positron. Example: decay of carbon-11 into boron-11:
-
+  In \textbf{beta-positive decay} ($\beta^+$-decay), a proton spontaneously
+  decays into a neutron and a positron. Example: decay of carbon-11 into
+  boron-11:
   \begin{center}
-    \pic{.65}{graphics/beta-positive1}
+    \pic{.5}{graphics/beta-positive1}
   \end{center}
 
   \eq{-.35in}{
     \boxed{\ce{^{11}_6C -> ^{11}_5B + ^0_{+1}e}}
   }
+
+  A positron has the same mass as an electron, but with a \emph{positive}
+  elementary charge. It is not a stable particle.
 \end{frame}
 
 
@@ -473,9 +488,20 @@
     \boxed{\ce{^A_ZX -> ^A_{Z-1}Y + ^0_{+1}e}}
   }
 
-  The positron released in the decay will be immediately annihilated by an
-  electron, releasing a pair of gamma particles, each with an energy of
-  \SI{.511}{\mega\electronvolt}, moving in opposite directions:
+  Similar to a $\beta^-$ decay, the daughter nucleus has a higher nuclear
+  binding energy than the parent nucleus (i.e.\ lower energy state). This decay
+  is also a transmutation because a new element is formed.
+\end{frame}
+
+
+
+\begin{frame}{Electron-Positron Annihilation}
+  The positron released in the decay will be (almost) immediately
+  \emph{annihilated}\footnote{It means that the two particles collide, and all
+    of their masses are converted into energy} by another electron, releasing a
+  pair of gamma particle (photons with no mass), each with an energy of
+  \SI{.511}{\mega\electronvolt}, moving in opposite directions at the speed of
+  light:
 
   \eq{-.15in}{
     \boxed{\ce{^0_{+1}e + ^0_{-1}e -> 2(^0_0$\gamma$)}}
@@ -485,10 +511,10 @@
 
 
 \begin{frame}{Electron Capture}
-  \textbf{Electron capture} is a form of beta decay where an electron is
-  absorbed by a nucleus and combines with a proton to form a neutron.
-  For example:
-
+  \textbf{Electron capture} is a rarer form of beta decay where an electron is
+  absorbed by a nucleus and combines with a proton to form a neutron. For
+  example, a nickel-56 nucleus can capture an electron to form a cobalt-56
+  nucleus:
   \begin{center}
     \pic{.55}{graphics/electron-capture}
   \end{center}
@@ -508,7 +534,7 @@
   }
   
   The electron that is absorbed usually comes from the lowest energy shell
-  ($n=1$, or K-shell) that is closest to the nucleus, so it is often called
+  ($n=1$, or ``K-shell'') that is closest to the nucleus, so it is often called
   \emph{K-capture}.
 \end{frame}
 
@@ -590,25 +616,25 @@
 
 
 \begin{frame}{Half-Life}
-  While the radioactive decay of a single atom seems to be \emph{random}, when
-  there are a large number of atoms, the overall rate of decay is very
-  predictable.
+  While the radioactive decay of a single atom is \emph{random} (like all
+  quantum mechanics, radioactivity is driven by probability), when there are a
+  large number of atoms, the overall rate of decay is very predictable.
   
   \eq{-.2in}{
-    \boxed{N=N_0\left(\frac12\right)^{\frac{t}\tau}}
+    \boxed{N(t)=N_0\left(\frac12\right)^{\frac{t}\tau}}
   }
   \begin{center}
     \begin{tabular}{l|c|c}
       \rowcolor{pink}
       \textbf{Quantity}      & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
-      Amount of radioactive material & $N$  & \si{\kilogram}\\
-      Initial sample amount          & $N_0$ & \si{\kilo\gram}\\
-      Time                           & $t$  & \si{\second} \\
-      Half-life                      & $\tau$ & \si{\second}
+      Amount of radioactive material & $N(t)$  & \si{\kilogram}\\
+      Initial sample amount          & $N_0$   & \si{\kilo\gram}\\
+      Time                           & $t$     & \si{\second} \\
+      Half-life                      & $\tau$  & \si{\second}
     \end{tabular}
   \end{center}
-  \textbf{Half-life} is the time it requires for a radioactive amount to decay
-  to half of its original value.
+  \textbf{Half-life:} the time it requires for a radioactive material to decay
+  to half of its original amount.
 \end{frame}
 
 
@@ -636,9 +662,10 @@
 \section{Nuclear Fission}
 
 \begin{frame}{Nuclear Fission}
-  The release of energy in a nuclear reaction primarily comes from fission,
-  where a heavier atomic is split into lighter atoms. For example, the fission
-  reaction of uranium-235 splitting into krypton-92 and barium-141 atoms:
+  The release of energy in a nuclear reaction primarily comes from
+  \textbf{nuclear fission}, where a heavier atomic is split into lighter atoms.
+  For example, the fission reaction of uranium-235 splitting into krypton-92
+  and barium-141 atoms:
   \begin{center}
     \pic{.75}{graphics/fission1}
   \end{center}
@@ -657,9 +684,11 @@
   \begin{itemize}
   \item\vspace{-.25in}Fission reaction begins with the uranium nucleus
     capturing a neutron
-  \item The additional neutron creates instability in the nucleus, causing it
-    to split
-  \item In splitting the atom, 3 neutrons are released from the nucleus
+  \item The addition of hte neutron deforms the nucleus into a double-loped
+    ``drop'' shape
+  \item The attractive nuclear strong force can no longer hold the two fragments
+    together, and they electrically repel each other away
+  \item In splitting the atom, several neutrons are released from the nucleus
   \item The neutrons may be captured by other uranium-235 atoms, causing further
     reaction
 %    \begin{itemize}
@@ -669,6 +698,26 @@
 %    \end{itemize}
   \end{itemize}
 \end{frame}
+
+
+
+\begin{frame}{Nuclear Fission}
+  \begin{itemize}
+  \item By probability, a nuclear fission is usually \emph{binary} (two
+    daughter nuclei in the process)
+  \item Nuclear fuels can be
+    \begin{itemize}
+    \item\textbf{Fissile:} the capture of any neutron will be sufficicient to
+      cause fission, e.g.\ \ce{^{235}U} or \ce{^{239}Pu}
+    \item\textbf{Fissionable:} requires additional energy from a fast-moving
+      neutron to cause fission to begin, e.g.\ \ce{^{238}U}
+    \end{itemize}
+  \item Fission products usually cluster masses of $95\pm\SI{15}{u}$ and
+    $135\pm\SI{15}{u}$
+  \end{itemize}
+\end{frame}
+
+
 
 \begin{frame}{Example Problem}
   \textbf{Example:} What is the energy yield of the following fission reaction?
@@ -693,11 +742,20 @@
   \begin{itemize}
   \item Reactions occur without requiring any material being added to the
     system %; the products of one reaction produce subsequent reactions
-  \item The amount of fuel required to cause a chain reaction is called
-    \textbf{critical mass}
   \end{itemize}
   \begin{center}
     \pic{.6}{graphics/chain-reaction}
+  \end{center}
+\end{frame}
+
+
+
+
+\begin{frame}{Critical Mass}
+  The amount of fuel required to sustain a chain reaction is called
+  \textbf{critical mass}
+  \begin{center}
+    \pic{.5}{graphics/7bvc9c9}
   \end{center}
 \end{frame}
 

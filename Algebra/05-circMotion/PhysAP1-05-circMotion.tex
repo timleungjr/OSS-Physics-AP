@@ -2,33 +2,31 @@
 
 \usetheme{metropolis}
 \setbeamersize{text margin left=.5cm,text margin right=.5cm}
-
-\usefonttheme{professionalfonts}
-\usepackage{amsmath}
+%\usefonttheme{professionalfonts}
+\usepackage[lf]{carlito}
+%\usepackage{amsmath}
 \usepackage{siunitx}
 \usepackage{tikz}
 \usepackage{mathpazo}
 
 \usetikzlibrary{patterns}
 
-\setsansfont{Roboto Light}
+%\setsansfont{Roboto Light}
 \setmonofont{Ubuntu Mono}
 \setlength{\parskip}{0pt}
 \setlength{\itemsep}{0pt}
 \renewcommand{\baselinestretch}{1}
 
 \sisetup{
-  detect-all,
-  math-sf=\textsf,
-  number-math-rm=\mathnormal,
   per-mode=symbol
 }
+\tikzset{>=latex}
 
 \title{Topic 5: Circular Motion}
 \subtitle{Advanced Placement Physics 1}
 \author[TML]{Dr.\ Timothy Leung}
 \institute{Olympiads School}
-\date{\today}
+\date{Last Updated: \today}
 
 \newcommand{\pic}[2]{\includegraphics[width=#1\textwidth]{#2}}
 \newcommand{\mb}[1]{\ensuremath\mathbf{#1}}
@@ -442,23 +440,39 @@
 
 
 
+%\begin{frame}{How to Solve Circular Motion Problems}
+%  \begin{enumerate}
+%  \item Is there any circular motion?
+%  \item If so, the condition for circular motion is:
+%
+%    \eq{-.2in}{
+%      \mb{F}_\mathrm{provided}=\mb{F}_\mathrm{required}
+%    }
+%    \begin{itemize}
+%    \item\vspace{-.2in}The \emph{provided} force comes from FBD
+%    \item The \emph{required} force comes from the centripetal force equation 
+%    \end{itemize}
+%  \item If the net force also has a tangential component, then there is also
+%    a change in angular velocity
+%  \end{enumerate}
+%\end{frame}
 \begin{frame}{How to Solve Circular Motion Problems}
-  \begin{enumerate}
-  \item Is there any circular motion?
-  \item If so, the condition for circular motion is:
+  The condition for circular motion is the second law of motion:
 
-    \eq{-.2in}{
-      \mb{F}_\mathrm{provided}=\mb{F}_\mathrm{required}
-    }
-    \begin{itemize}
-    \item\vspace{-.2in}The \emph{provided} force comes from FBD
-    \item The \emph{required} force comes from the centripetal force equation 
-    \end{itemize}
-  \item If the net force also has a tangential component, then there is also
-    a change in angular velocity
-  \end{enumerate}
+  \eq{-.2in}{
+    \mb{F}_c=\sum\mb{F}=m\mb{a}_c
+  }
+  
+  The forces that generate the centripetal force comes from the free-body
+  diagram. It may include:
+  \begin{itemize}
+  \item Gravity
+  \item Friction
+  \item Normal force
+  \item Tension
+  \item Etc.
+  \end{itemize}
 \end{frame}
-
 
 
 \begin{frame}{Example: Horizontal Motion}
@@ -532,7 +546,7 @@
     \column{.65\textwidth}
     For analysis, use the simplified equation for friction $f=\mu N$ (i.e.\
     assume either kinetic friction or maximum static friction), and weight
-    $m\nb{g}$, the equations on the previous slides can be arranged as:
+    $m\mb{g}$, the equations on the previous slides can be arranged as:
 
     \vspace{-.4in}{\Large
       \begin{align*}

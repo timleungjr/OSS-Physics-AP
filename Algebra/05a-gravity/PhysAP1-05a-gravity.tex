@@ -2,31 +2,23 @@
 
 \usetheme{metropolis}
 \setbeamersize{text margin left=.5cm,text margin right=.5cm}
-
-\usefonttheme{professionalfonts}
-\usepackage{amsmath}%,bm}
+\usepackage[lf]{carlito}
 \usepackage{siunitx}
-%\usepackage{graphicx}
 \usepackage{tikz}
 \usepackage{mathpazo}
 \usepackage{xcolor,colortbl}
-%\usepackage{hyperref}
-%\usepackage{cancel}
 
 \usetikzlibrary{decorations.pathmorphing,patterns}
 
-\setsansfont{Roboto Light}
 \setmonofont{Ubuntu Mono}
 \setlength{\parskip}{0pt}
 \setlength{\itemsep}{0pt}
 \renewcommand{\baselinestretch}{1}
 
 \sisetup{
-  detect-all,
-  %number-math-sf=\textsf,
-  %number-math-rm=\mathnormal,
   per-mode=symbol
 }
+\tikzset{>=latex}
 
 \title{Topic 5a: Gravity}
 \subtitle{Advanced Placement Physics 1}
@@ -62,8 +54,8 @@
 \begin{frame}{Law of Universal Gravitation}
   \begin{center}
     \begin{tikzpicture}[scale=.65]
-      \draw[->,very thick,red] (0,0)--(2,0) node[pos=1,right]{$\mb{F}_g$};
-      \draw[->,very thick,blue](8,0)--(6,0) node[pos=1,left] {$\mb{F}_g$};
+      \draw[->,very thick,red] (0,0)--(2,0) node[right]{$\mb{F}_g$};
+      \draw[->,very thick,blue](8,0)--(6,0) node[left] {$\mb{F}_g$};
       \tikzstyle{balloon1}=[ball color=red];
       \tikzstyle{balloon2}=[ball color=blue];
       \shade[balloon1] (0,0) circle(.7) node[white]{$m_1$};
@@ -95,8 +87,8 @@
 %\begin{frame}{Law of Universal Gravitation}
 %  \begin{center}
 %    \begin{tikzpicture}[scale=.5]
-%      \draw[->,very thick,red](0,0)--(2,0) node[pos=1,right]{$\mb{F}_{21}$};
-%      \draw[->,very thick,blue](8,0)--(6,0) node[pos=1,left]{$\mb{F}_{12}$};
+%      \draw[->,very thick,red](0,0)--(2,0) node[right]{$\mb{F}_{21}$};
+%      \draw[->,very thick,blue](8,0)--(6,0) node[left]{$\mb{F}_{12}$};
 %      \tikzstyle{balloon1}=[ball color=red];
 %      \tikzstyle{balloon2}=[ball color=blue];
 %      \shade[balloon1] (0,0) circle(.7) node[white]{$m_1$};
@@ -132,33 +124,33 @@
       \tikzstyle{balloon5}=[ball color=purple];
       \shade[balloon1] (0,0) circle(.72) node[white]{$M$};
       \begin{scope}[rotate=45]
-        \draw[->,very thick,blue](.72,0)--(2.5,0) node[pos=1,right]{$\mb{F}_1$};
+        \draw[->,very thick,blue](.72,0)--(2.5,0) node[right]{$\mb{F}_1$};
         \shade[balloon2] (7,0) circle(1) node[white]{$m_1$};
       \end{scope}
       \uncover<2->{
         \begin{scope}[rotate=105]
           \draw[->,very thick,green](.72,0)--(2,0)
-          node[pos=1,right]{$\mb{F}_2$};
+          node[right]{$\mb{F}_2$};
           \shade[balloon3] (4,0) circle(.65) node[white]{$m_2$};
         \end{scope}
       }
       \uncover<3->{
         \begin{scope}[rotate=190]
           \draw[->,very thick,yellow](.7,0)--(3.5,0)
-          node[pos=1,above]{$\mb{F}_3$};
+          node[above]{$\mb{F}_3$};
           \shade[balloon4] (6,0) circle(1.1) node[white]{$m_3$};
         \end{scope}
       }
       \uncover<4->{
         \begin{scope}[rotate=260]
           \draw[->,very thick,purple](.72,0)--(1.4,0)
-          node[pos=1,right]{$\mb{F}_4$};
+          node[right]{$\mb{F}_4$};
           \shade[balloon5] (9,0) circle(.8) node[white]{$m_4$};
         \end{scope}
       }
       \uncover<5>{
         \begin{scope}[rotate=125]
-          \draw[->,ultra thick](.72,0)--(3.5,0) node[pos=1,left]{$\mb{F}$};
+          \draw[->,ultra thick](.72,0)--(3.5,0) node[left]{$\mb{F}$};
         \end{scope}
       }
     \end{tikzpicture}
@@ -308,35 +300,36 @@
 
 
 
-\begin{frame}{Inside A Spherical Shell?}
-  \begin{columns}
-    \column{.3\textwidth}
+%\begin{frame}{Inside A Spherical Shell?}
+%  \begin{columns}
+%    \column{.3\textwidth}
+%
+%    \begin{tikzpicture}[scale=.45]
+%      \draw[thick,fill=gray](0,0) circle(5) node[above]{$m_1$};
+%      \draw[thick,fill=white](0,0) circle(4.9) node[above]{$m_s$};
+%      \draw[thick,->,rotate=30](0,0)--(4.9,0) node[midway,below]{$R$};
+%      \draw[fill=red!65](1,-1) circle(.2) node[below]{$m$};
+%    \end{tikzpicture}
+%
+%    \column{.7\textwidth}
+%    It can be shown mathematically that the gravitational field \emph{inside} a
+%    spherical hollow shell is zero:
+%      
+%    \eq{-.2in}{
+%      \boxed{
+%        \mb{g}=
+%        \begin{cases}
+%          \mb{0} & \text{if}\;\;r<R\\
+%          -Gm_s/r^2\hat{\mb{r}} & \text{otherwise}
+%        \end{cases}
+%      }
+%    }
+%    
+%    A mass $m$ \emph{inside} the shell experiences no gravitational force from
+%    the shell.
+%  \end{columns}
+%\end{frame}
 
-    \begin{tikzpicture}[scale=.45]
-      \draw[thick,fill=gray](0,0) circle(5) node[above]{$m_1$};
-      \draw[thick,fill=white](0,0) circle(4.9) node[above]{$m_s$};
-      \draw[thick,->,rotate=30](0,0)--(4.9,0) node[midway,below]{$R$};
-      \draw[fill=red!65](1,-1) circle(.2) node[below]{$m$};
-    \end{tikzpicture}
-
-    \column{.7\textwidth}
-    It can be shown mathematically that the gravitational field \emph{inside} a
-    spherical hollow shell is zero:
-      
-    \eq{-.2in}{
-      \boxed{
-        \mb{g}=
-        \begin{cases}
-          \mb{0} & \text{if}\;\;r<R\\
-          -Gm_s/r^2\hat{\mb{r}} & \text{otherwise}
-        \end{cases}
-      }
-    }
-    
-    A mass $m$ \emph{inside} the shell experiences no gravitational force from
-    the shell.
-  \end{columns}
-\end{frame}
 
 
 %\begin{frame}{What If You Are Inside Another Mass?}{Uniform Mass of Radius $R$}
@@ -365,7 +358,7 @@
 %\begin{frame}{Falling Toward the Center of Earth}
 %  \begin{columns}
 %    \column{.3\textwidth}
-%    \pic{1}{eartholeg.png}
+%    \pic{1}{eartholeg}
 %
 %    \column{.7\textwidth}
 %    As you fall through Earth, we can separate the part of Earth that is
@@ -404,7 +397,7 @@
 %  \vspace{.2in}
 %  \begin{columns}
 %    \column{.25\textwidth}
-%    \pic{1.2}{eartholeg.png}
+%    \pic{1.2}{eartholeg}
 %
 %    \column{.75\textwidth}
 %    The gravitational field strength inside this hypothetical Earth is a
@@ -428,7 +421,7 @@
 %\begin{frame}{Falling Toward the Center of Earth}
 %  \begin{columns}
 %    \column{.25\textwidth}
-%    \pic{1}{eartholsat.png}
+%    \pic{1}{eartholsat}
 %
 %    \column{.75\textwidth}
 %    The gravitational force has the same form as Hooke's law: it is
@@ -457,7 +450,7 @@
 %\begin{frame}{Falling Toward the Center of Earth}
 %  \begin{columns}
 %    \column{.25\textwidth}
-%    \pic{1}{eartholsat.png}
+%    \pic{1}{eartholsat}
 %
 %    \column{.75\textwidth}
 %    Since simple harmonic motion is a projection of a uniform circular motion,
@@ -492,7 +485,7 @@
   When there are multiple masses, the total gravitational field (dotted line)
   is the vector sum of all the individual fields.
   \begin{center}
-    \pic{.4}{grav-fields.png}
+    \pic{.4}{grav-fields}
   \end{center}
   The solid lines are called \textbf{equipotential lines}, where the potential
   energy is constant. Equipotential lines are perpendicular to
@@ -566,7 +559,7 @@
   In \emph{Treatise of the System of the World}, the third book in
   \emph{Principia}, Newton presented this thought experiment:
   \begin{center}
-    \pic{.8}{figure-5.png}
+    \pic{.8}{figure-5}
   \end{center}
   \begin{itemize}
   \item How fast does the cannonball have to travel before it goes around Earth
@@ -817,7 +810,7 @@
 %      \end{minipage}
 %    }
 %
-%    \pic{.4}{201532-132212364-3243-planet.png}
+%    \pic{.4}{201532-132212364-3243-planet}
 %  \end{center}
 %  The second law of planetary motion is the easiest to proof, by applying the
 %  conservation of angular momentum $\mb{L}=m(\mb{r}\times\mb{v})$ (gravity is a
@@ -896,7 +889,7 @@
 %  \begin{columns}
 %    \column{.3\textwidth}
 %    \begin{center}
-%      \pic{1.25}{elliporb.png}
+%      \pic{1.25}{elliporb}
 %    \end{center}
 %
 %    \column{.7\textwidth}
@@ -925,7 +918,7 @@
 %    orbits are fairly close to being circular, but comets are much more
 %    eccentric
 %    \begin{center}
-%      \pic{.65}{kep5.png}
+%      \pic{.65}{kep5}
 %    \end{center}
 %    
 %    \column{.4\textwidth}
@@ -968,7 +961,7 @@
 %      \begin{scope}[rotate around={\angle:({sqrt(\a*\a-\b*\b)},0)}]
 %        \draw[->]({sqrt(\a*\a-\b*\b)},0)--(8.5,0)
 %        node[pos=.45,below]{\tiny$\mb{r}$}
-%        node[pos=1,left]{\tiny $\mb{v}_r$};
+%        node[left]{\tiny $\mb{v}_r$};
 %        \draw[->](7.65,0)--(7.65,.85) node[below]{\tiny $\mb{v}_\theta$};
 %        \fill (7.65,0) circle(.1) node[above]{\tiny $m$};
 %      \end{scope}
@@ -1030,7 +1023,7 @@
 %      \end{minipage}
 %    }
 %
-%    \vspace{.2in}\pic{.45}{kep8.png}
+%    \vspace{.2in}\pic{.45}{kep8}
 %  \end{center}
 %\end{frame}
 %
@@ -1182,7 +1175,7 @@
 %      \begin{scope}[rotate=23]
 %        \draw[very thick,->](0,0)--(4.8,0) node[midway,below]{$\mb{r}$};
 %        \draw[very thick,->,red!70!black](4.87,0)--(4.5,1)
-%        node[pos=1,above]{$\mb{v}$};
+%        node[above]{$\mb{v}$};
 %        \fill[red!70!black] (0,0) circle(.15) node[below]{$M$};
 %        \fill[black] (4.87,0) circle(.07) node[right]{$\mu$};
 %      \end{scope}
@@ -1203,9 +1196,9 @@
       \shade[balloon1] ( 4,0) circle(1)  node[white]{\footnotesize $m_1$};
       \shade[balloon2] (-8,0) circle(.7) node[white]{\footnotesize $m_2$};
       \draw[very thick,->,blue!80!black](-7.3,0)--(-5.3,0)
-      node[pos=1,above]{\footnotesize $\mb{F}_g$};
+      node[above]{\footnotesize $\mb{F}_g$};
       \draw[very thick,->,red!80!black](3,0)--(1,0)
-      node[pos=1,above]{\footnotesize $\mb{F}_g$};
+      node[above]{\footnotesize $\mb{F}_g$};
     \end{tikzpicture}
 
     \column{.55\textwidth}
