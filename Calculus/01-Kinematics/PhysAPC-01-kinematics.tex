@@ -1,8 +1,6 @@
 \documentclass[12pt,compress,aspectratio=169]{beamer}
-
 \usetheme{metropolis}
 \setbeamersize{text margin left=.5cm,text margin right=.5cm}
-
 \usepackage[lf]{carlito}
 \usepackage{siunitx}
 \usepackage{tikz}
@@ -500,7 +498,7 @@
   \begin{center}
     \begin{tikzpicture}[scale=.5]
       \draw[->,thick] (0,0)--(4.5,0) node[right]{$t$};
-      \draw[->,thick] (0,0)--(0,4.5) node[above]{$d$};
+      \draw[->,thick] (0,0)--(0,4.5) node[above]{$x$};
       \draw[red!80!black,very thick](0,0)--(4,4);
     \end{tikzpicture}
     \hspace{.15in}
@@ -517,8 +515,8 @@
     \end{tikzpicture}
   \end{center}
   \begin{itemize}
-  \item Constant velocity has a straight line in the $d-t$ graph
-  \item The slope of the $d-t$ graph is the velocity $v$, which is constant
+  \item Constant velocity has a straight line in the $x-t$ graph
+  \item The slope of the $x-t$ graph is the velocity $v$, which is constant
   \item The slope of the $v-t$ graph is the acceleration $a$, which is zero in
     this case
   \end{itemize}
@@ -530,7 +528,7 @@
   \begin{center}
     \begin{tikzpicture}[scale=.5]
       \draw[->,thick] (0,0)--(4.5,0) node[right]{$t$};
-      \draw[->,thick] (0,-1.5)--(0,4.5) node[above]{$d$};
+      \draw[->,thick] (0,-1.5)--(0,4.5) node[above]{$x$};
       \draw[smooth,samples=20,domain=0:4,red!80!black,very thick]
       plot({\x},{0.35*(\x-1)*(\x-1)+1});
     \end{tikzpicture}
@@ -548,11 +546,11 @@
     \end{tikzpicture}
   \end{center}
   \begin{itemize}
-  \item The $d-t$ graph for motion with constant acceleration is part of a
+  \item The $x-t$ graph for motion with constant acceleration is part of a
     \emph{parabola}
     \begin{itemize}
-    \item If the parabola is \emph{convex}, then acceleration is positive
-    \item If the parabola is \emph{concave}, then acceleration is negative
+    \item If the parabola opens up, then acceleration is positive
+    \item If the parabola opens down, then acceleration is negative
     \end{itemize}
   \item The $v-t$ graph is a straight line; its slope (a constant) is the
     acceleration
@@ -569,7 +567,7 @@
   \begin{center}
     \begin{tikzpicture}[scale=.5]
       \draw[->,thick] (0,0)--(4.5,0) node[right]{$t$};
-      \draw[->,thick] (0,-2.5)--(0,2.5) node[above]{$d$};
+      \draw[->,thick] (0,-2.5)--(0,2.5) node[above]{$x$};
       \draw[smooth,samples=50,domain=0:4,red!80!black,very thick]
       plot({\x},{2*sin(150*\x)});
     \end{tikzpicture}
@@ -590,7 +588,7 @@
   \end{center}
   Bottom line: regardless of the type motion,
   \begin{itemize}
-  \item The $v-t$ graph is the slope of the $d-t$ graph
+  \item The $v-t$ graph is the slope of the $x-t$ graph
   \item The $a-t$ graph is the slope of the $v-t$ graph
   \end{itemize}
 \end{frame}

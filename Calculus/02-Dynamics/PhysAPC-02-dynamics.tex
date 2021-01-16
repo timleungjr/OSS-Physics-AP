@@ -13,6 +13,7 @@
 
 \sisetup{
   %number-math-rm=\mathnormal,
+  inter-unit-product=\cdot,
   per-mode=symbol
 }
 \tikzset{>=latex}
@@ -201,25 +202,25 @@
 
 
 
-\begin{frame}{Center of Mass}
-  \vspace{.2in}
-  \begin{columns}
-    \column{.7\textwidth}
-    Newton considered all forces acting at a single point of an object called
-    the center of mass (``CM'')
-    \begin{itemize}
-    \item The center of mass is also called the center of gravity (``CG''), if
-      the entire object is inside a uniform gravitational field
-    \item If the density of an object is constant, then the CM/CG is also the
-      geometric center (centroid) of the object
-    \item In a later topic, we will study how to compute the centers of mass of
-      different objects
-    \end{itemize}
-
-    \column{.3\textwidth}
-    \pic{1}{graphics/cofm}
-  \end{columns}
-\end{frame}
+%\begin{frame}{Center of Mass}
+%  \vspace{.2in}
+%  \begin{columns}
+%    \column{.7\textwidth}
+%    Newton considered all forces acting at a single point of an object called
+%    the center of mass (``CM'')
+%    \begin{itemize}
+%    \item The center of mass is also called the center of gravity (``CG''), if
+%      the entire object is inside a uniform gravitational field
+%    \item If the density of an object is constant, then the CM/CG is also the
+%      geometric center (centroid) of the object
+%    \item In a later topic, we will study how to compute the centers of mass of
+%      different objects
+%    \end{itemize}
+%
+%    \column{.3\textwidth}
+%    \pic{1}{graphics/cofm}
+%  \end{columns}
+%\end{frame}
 
 
 \section{Common Forces}
@@ -255,13 +256,13 @@
   \item You may be asked to find the value of $g$ on some ``unknown planet''.
   \item $\mb{w}$ always points \emph{down} (the direction of $\mb{w}$ is how
     down is defined)
-%  \item Newton's law of universal gravity:
-%
-%    \eq{-.3in}{
-%      \boxed{W=F_G=\frac{Gm_1m_2}{r^2}}\;\;
-%      \text{\normalsize where}\;\;
-%      G=\SI{6.67e-11}{N.m^2/kg^2}
-%    }
+  \item Based on the law of universal gravitation:
+
+    \eq{-.3in}{
+      \boxed{F_g=\frac{Gm_1m_2}{r^2}}\;\;
+      \text{\normalsize where}\;\;
+      G=\SI{6.674e-11}{\newton\metre\squared\per\kilo\gram\squared}
+    }
   \end{itemize}    
 \end{frame}
 
@@ -270,20 +271,18 @@
 \begin{frame}{Normal Force}
   \begin{columns}
     \column{.22\textwidth}
-    \begin{center}
-      \begin{tikzpicture}{scale=1.5}
-        \draw [very thick] (-1,0)--(2.5,0);
-        \draw [fill=pink,thick] (0,0) rectangle (1.5,1);
-        \fill (.75,.5) circle(2pt);
-        \draw [->,very thick] (.75,.5)--(.75,-.5)
-        node[below]{$m\mb{g}$};
-        \draw [->,very thick] (.75,.5)--(.75,1.5)
-        node[above]{$\mb{N}$};
-      \end{tikzpicture}
-    \end{center}
-    \begin{displaymath}
-      m\mb{g}=-\mb{N}
-    \end{displaymath}
+    \centering
+    \begin{tikzpicture}{scale=1.5}
+      \draw [thick] (-1,0)--(2.5,0);
+      \draw [fill=pink,thick] (0,0) rectangle (1.5,1);
+      \fill (.75,.5) circle(2pt);
+      \draw [->,very thick] (.75,.5)--(.75,-.5)
+      node[below]{$m\mb{g}$};
+      \draw [->,very thick] (.75,.5)--(.75,1.5)
+      node[above]{$\mb{N}$};
+    \end{tikzpicture}
+    
+    $m\mb{g}=-\mb{N}$\\(special case)
     
     \column{.78\textwidth}
     \begin{itemize}
@@ -291,54 +290,54 @@
     \item Always \textbf{perpendicular} to the contact surface
     \item\textbf{Special case:} When an object is on a horizontal surface
       with no additional applied force, the magnitude of the normal force is
-      equal to the magnitude of the weight of the object, i.e.\ $N=w$
+      equal to the magnitude of the weight of the object, i.e.\ $N=mg$
     \end{itemize}
   \end{columns}
 \end{frame}
 
 
 
-\begin{frame}{Normal Force on a Slope}
-  For this case, we label the $x$-axis to be along the slope, and $y$-axis to
+\begin{frame}{Normal Force on a Stationary Slope}
+  For this case, we define the $x$-axis to be along the slope, and $y$-axis to
   be perpendicular to the slope.
   \begin{columns}
     \column{.35\textwidth}
     \begin{center}
       \begin{tikzpicture}[scale=.9]
         \draw[thick] (-1,0)--(3,0);
-        \draw[thick,->](0,0) arc(0:37:1) node[midway,right] {$\theta$};
+        \draw[thick,->](.1,0) arc(0:37:1.1) node[pos=0,below]{$\theta$};
         \begin{scope}[rotate around={37:(-1,0)}]
-          \draw[->](3.5,.5)--(4,.5) node[right]{$x$};
+          \draw[->](3.5,.5)--(4,.5)  node[right]{$x$};
           \draw[->](3.5,.5)--(3.5,1) node[above]{$y$};
           \draw[thick] (-1,0)--(4,0);
           \draw[fill=pink,thick] (0,0) rectangle (3,2);
           \fill(1.5,1) circle (2pt);
-          \draw [->,thick,dotted,red] (1.5,1)--(1.5,-.5)
+          \draw [->,very thick,dotted,red] (1.5,1)--(1.5,-.5)
           node[right]{$mg\cos\theta$};
-          \draw [->,thick,dotted,red] (1.5,1)--(.45,1)
+          \draw [->,very thick,dotted,red] (1.5,1)--(.45,1)
           node[left]{$mg\sin\theta$};
-          \draw [->,ultra thick,red] (1.5,1)--(.45,-.5)
-          node[below]{$m\mb{g}$}
-          node[pos=.3,below right]{$\theta$};
-        \draw [->,ultra thick] (1.5,1)--(1.5,2.5) node[above]{$\mb{N}$};
-        \draw [->,ultra thick] (1.5,1)--(2.3,1) node[right]{$\mb{f}$};
+          \draw [->,very thick,red] (1.5,1)--(.45,-.5)
+          node[below]{$m\mb{g}$};
+          %node[pos=.3,below right]{$\theta$};
+        \draw [->,very thick] (1.5,1)--(1.5,2.5) node[above]{$\mb{N}$};
+        %\draw [->,very thick] (1.5,1)--(2.3,1) node[right]{$\mb{f}$};
         \end{scope}
       \end{tikzpicture}
     \end{center}
     
     \column{.65\textwidth}
     \begin{itemize}
-    \item If on a slope: $N=mg\cos\theta$
+    \item On a stationary slope: $N=mg\cos\theta$
       \begin{itemize}
       \item $N$ decreases as ramp angle $\theta$ increases
       \end{itemize}
-    \item Weight $mg$ has a component along the ramp $w\sin\theta$ that wants
+    \item Weight has a component along the ramp ($mg\sin\theta$) that wants
       to slide the block down.
-    \item Friction force $f$ opposes the motion
-      \begin{itemize}
-      \item Be careful: if the block is moving \emph{up} the ramp with an
-        applied force, then $f$ will point \emph{down} the ramp
-      \end{itemize}
+%    \item Friction $f$ opposes the motion
+%      \begin{itemize}
+%      \item Be careful: if the block is moving \emph{up} the ramp with an
+%        applied force, then $f$ will point \emph{down} the ramp
+%      \end{itemize}
     \end{itemize}
   \end{columns}
 \end{frame}
@@ -431,7 +430,7 @@
     \column{.4\textwidth}
     \begin{center}
       \begin{tikzpicture}
-        \draw [very thick] (-1,0)--(2.5,0);
+        \draw [thick] (-1,0)--(2.5,0);
         \draw [fill=pink,thick] (0,0) rectangle (1.5,1);
         \fill (.75,.5) circle(2pt);
         \draw[->,very thick](.75,.5)--(.75,-.5) node[below]{$m\mb{g}$};
@@ -504,7 +503,7 @@
       \begin{tikzpicture}[scale=.9]
         \draw[very thick,->](0,0)--(0,-1.5) node[below]{$m\mb{g}$};
         \draw[very thick,->,white](0,0)--(0,1.5) node[above]{$\mb{D}$};
-        \fill(0,0) circle(0.07);
+        \fill(0,0) circle(.07);
       \end{tikzpicture}
     \end{center}
     
@@ -604,42 +603,42 @@
 \end{frame}
 
 
-\begin{frame}{Spring Force}
-  \begin{center}
-    \pic{.28}{graphics/spring-example1}
-  \end{center}
-  \begin{itemize}
-  \item\vspace{-.15in}As the object falls onto the spring, the spring begins to
-    compress
-  \item As the spring compresses, the spring force (pointing up!) increases
-    linearly (Hooke's law)
-  \item At some point, the spring force balances the weight of the block
-    \begin{itemize}
-    \item At this point, the \emph{acceleration} is zero
-    \item But the velocity continues to be downward
-    \end{itemize}
-  \item The spring continues to compress until velocity is zero
-  \end{itemize}
-\end{frame}
-
-
-
-\begin{frame}{Spring Force}
-  \begin{center}
-    \pic{.28}{graphics/spring-example1}
-  \end{center}
-  \begin{itemize}
-  \item\vspace{-.15in}Solving this problem using dynamics is difficult, because:
-    \begin{itemize}
-    \item Spring force scales linearly with \emph{displacement}, but
-    \item Net force scales linearly with \emph{acceleration} (2nd time
-      derivative of displacement)
-    \end{itemize}
-  \item Note that the block continues to \emph{increase} velocity even after
-    it starts to compress the spring.
-  \item Acceleration is zero only after the spring has compressed some amount
-  \end{itemize}
-\end{frame}
+%\begin{frame}{Spring Force}
+%  \begin{center}
+%    \pic{.28}{graphics/spring-example1}
+%  \end{center}
+%  \begin{itemize}
+%  \item\vspace{-.15in}As the object falls onto the spring, the spring begins to
+%    compress
+%  \item As the spring compresses, the spring force (pointing up!) increases
+%    linearly (Hooke's law)
+%  \item At some point, the spring force balances the weight of the block
+%    \begin{itemize}
+%    \item At this point, the \emph{acceleration} is zero
+%    \item But the velocity continues to be downward
+%    \end{itemize}
+%  \item The spring continues to compress until velocity is zero
+%  \end{itemize}
+%\end{frame}
+%
+%
+%
+%\begin{frame}{Spring Force}
+%  \begin{center}
+%    \pic{.28}{graphics/spring-example1}
+%  \end{center}
+%  \begin{itemize}
+%  \item\vspace{-.15in}Solving this problem using dynamics is difficult, because:
+%    \begin{itemize}
+%    \item Spring force scales linearly with \emph{displacement}, but
+%    \item Net force scales linearly with \emph{acceleration} (2nd time
+%      derivative of displacement)
+%    \end{itemize}
+%  \item Note that the block continues to \emph{increase} velocity even after
+%    it starts to compress the spring.
+%  \item Acceleration is zero only after the spring has compressed some amount
+%  \end{itemize}
+%\end{frame}
 
 
 
@@ -736,12 +735,12 @@
 	    \draw[thick](-2,-1)--(2,-1);
 	    \draw[thick,->](0,1.2) arc(90:60:1.2) node[pos=.3,right]{$\omega$};
 	    \fill(0,0) circle(.05);
-	    \draw[->,ultra thick,rotate=30](0,0)--(0,-1.5)
+	    \draw[->,very thick,rotate=30](0,0)--(0,-1.5)
 	    node[below]{$m\mb{g}$};
-	    \draw[->,ultra thick](0,-1)--(0,.3)  node[above]{$\mb{N}$};
-	    \draw[->,ultra thick](0,-1)--(-.5,-1) node[left]{$\mb{f}_s$};
-	    \draw[->](2,0)--(3,0) node[right]{$x$};
-            \draw[->](2,0)--(2,1) node[above]{$y$};
+	    \draw[->,very thick](0,-1)--(0,.3)  node[above]{$\mb{N}$};
+	    \draw[->,very thick](0,-1)--(-.5,-1) node[left]{$\mb{f}_s$};
+	    \draw[->](2,0)--(2.5,0) node[right]{$x$};
+            \draw[->](2,0)--(2,.5) node[above]{$y$};
 	  \end{scope}
 	\end{tikzpicture}
   \end{center}
@@ -777,7 +776,7 @@
 
 \section{Multi-Body Problems}
 
-\begin{frame}{Applying Newton's Third Law on Connected Bodies}
+\begin{frame}{ApplyingThird Law on Connected Bodies}
   \begin{center}
     \pic{.7}{graphics/worldslongestroadtrainwithpowertrailer8}
   \end{center}
@@ -801,7 +800,7 @@
     \item All internal forces should cancel and do not figure into the
       acceleration of the system
     \end{itemize}
-  \item Compute the acceleration of the entire system using Newton's second law
+  \item Compute the acceleration of the entire system using second law of motion
     \begin{itemize}
     \item Remember that (usually) every object has the same acceleration!
     \end{itemize}
@@ -812,21 +811,21 @@
 
 
 
-\begin{frame}{Connected Bodies: Example}
-  \textbf{Example:} A tractor-trailer pulling two trailers starts from rest
-  and accelerates with an acceleration $a$ on a straight, level road. The mass
-  of the truck (T) is \SI{5450}{\kilo\gram}, the mass of the first trailer (A)
-  is \SI{31500}{\kilo\gram}, and the mass of the second trailer (B) is
-  \SI{19600}{\kilo\gram}.
-  \begin{enumerate}
-  \item What magnitude of force must the truck generate in order to accelerate
-    the entire vehicle?
-  \item What magnitude of force must each of the trailer hitches withstand
-    while the vehicle is accelerating?
-  \end{enumerate}
-  Assume that frictional forces are negligible in comparison with the forces
-  needed to accelerate the large masses.
-\end{frame}
+%\begin{frame}{Connected Bodies: Example}
+%  \textbf{Example:} A tractor-trailer pulling two trailers starts from rest
+%  and accelerates with an acceleration $a$ on a straight, level road. The mass
+%  of the truck (T) is \SI{5450}{\kilo\gram}, the mass of the first trailer (A)
+%  is \SI{31500}{\kilo\gram}, and the mass of the second trailer (B) is
+%  \SI{19600}{\kilo\gram}.
+%  \begin{enumerate}
+%  \item What magnitude of force must the truck generate in order to accelerate
+%    the entire vehicle?
+%  \item What magnitude of force must each of the trailer hitches withstand
+%    while the vehicle is accelerating?
+%  \end{enumerate}
+%  Assume that frictional forces are negligible in comparison with the forces
+%  needed to accelerate the large masses.
+%\end{frame}
 
 
 \begin{frame}{Different Types of Connected Bodies}
@@ -834,21 +833,24 @@
   there are definitely action/reaction forces between the blocks.
   \begin{center}
     \begin{tikzpicture}[scale=.8]
-      \draw(-1,0)--(5.5,0);
-      \draw(0,0) rectangle(1,1)   node[midway]{$A$};
-      \draw(1,0) rectangle(3,1.5) node[midway]{$B$};
-      \draw(3,0) rectangle(4.5,2) node[midway]{$C$};
+      \begin{scope}[thick]
+        \draw(-3,0)--(4,0);
+        \draw(0,0) rectangle(1,1)   node[midway]{$m$};
+        \draw(1,0) rectangle(3,1.5) node[midway]{$M$};
+      \end{scope}
       \draw[very thick,->](-1.5,.5)--(0,.5) node[pos=0,left]{$\mb{F}_a$};
     \end{tikzpicture}
   \end{center}
   Or multiple objects stacked on top of one another. The contact surface between
-  $A$ and the floor may (or may not) have friction, while the surface between
-  $A$ and $B$ must have a friction coefficient $\mu$.
+  $M$ and the floor may (or may not) have friction, while the surface between
+  $M$ and $m$ must have a friction coefficient $\mu$.
   \begin{center}
     \begin{tikzpicture}[scale=.8]
-      \draw(-1,0)--(5.5,0);
-      \draw(0,0) rectangle(3,1.5)          node[midway]{$A$};
-      \draw(.75,1.5) rectangle(2.25,2.5)   node[midway]{$B$};
+      \begin{scope}[thick]
+        \draw(-1,0)--(5.5,0);
+        \draw(0,0) rectangle(3,1.5) node[midway]{$M$};
+        \draw(.75,1.5) rectangle(2.25,2.5) node[midway]{$m$};
+      \end{scope}
       \draw[very thick,->](3,.5)--(4.5,.5) node[right]{$\mb{F}_a$};
     \end{tikzpicture}
   \end{center}
@@ -875,21 +877,6 @@
     \end{itemize}
   \end{columns}
 \end{frame}
-
-
-\begin{frame}{A Slightly More Difficult Problem}
-  \begin{columns}
-    \column{.35\textwidth}
-    \pic{1}{graphics/pulley_prob_5}
-    
-    \column{.65\textwidth}
-    Two blocks of mass $m$ and $M$ are connected via pulley with a
-    configuration as shown on the left. The coefficient of static friction is
-    $\mu_s$, between blocks and surface. What is the maximum mass $m$ so that
-    no sliding occurs?
-  \end{columns}
-\end{frame}
-
 
 
 %\begin{frame}{A Difficult Problem!}
@@ -946,38 +933,54 @@
 %\end{frame}
 
 
-%\begin{frame}{A More Typical Problem}
-%  \textbf{Example 14:}
-%  More typically, an Atwood machine problem is one where two objects are
-%  sliding on a surface. These surfaces may have (or may not) have friction.
-%  In this example, two blocks are connected by a mass-less string over a
-%  friction-less pulley as shown in the diagram.
-%  \begin{columns}
-%    \column{.45\textwidth}
-%    \begin{tikzpicture}[scale=.8]
-%      \draw[thick](0,0)--(-4,0) node[midway,below]{\tiny $\mu_k=0.14$};
-%      \draw(-1.75,0) rectangle(-3,.75) node[midway]{\tiny\SI{0.80}{\kg}};
-%      \draw(-1.75,.44)--(.1,.44);
-%      \begin{scope}[rotate=-30]
-%        \draw[thick](0,0)--(5,0) node[midway,left]{\tiny $\mu_k=0.14$};
-%        \draw(3,0) rectangle(4.25,.75) node[midway]{\tiny\SI{2.}{\kg}};
-%        \draw(3,.44)--(-.05,.44);
-%      \end{scope}
-%      \begin{scope}[rotate=-15]
-%        \draw (0,0)--(0,.3);
-%        \draw (0,.3) circle(.15);
-%      \end{scope}
-%      \draw[gray!50](0,0)--(0,-2);
-%      \draw[->](0,-.5)arc(270:330:.5)node[midway,right]{\tiny\ang{60}};
-%    \end{tikzpicture}
-%    \column{.55\textwidth}
-%
-%    \begin{enumerate}[(a)]
-%    \item Determine the acceleration of the blocks.
-%    \item Calculate the tension in the string.
+\begin{frame}{A More Typical Problem}
+  More typically, an Atwood machine problem is one where two objects are
+  sliding on a surface. These surfaces may have (or may not) have friction. In
+  this example, two blocks are connected by a massless string over a
+  frictionless pulley as shown in the diagram.
+  \begin{center}
+    \begin{tikzpicture}[scale=1.2]
+      \draw[thick,brown](-4,.4)--(.1,.4);
+      \draw[thick](0,0)--(-5.5,0) node[midway,below]{\scriptsize$\mu$};
+      \draw[thick,fill=red!70!gray!50](-4,0) rectangle(-5,.75)
+      node[midway]{\scriptsize$m$};
+      \begin{scope}[rotate=-30]
+        \draw[thick,brown](1,.4)--(-.05,.4);
+        \draw[thick](0,0)--(3,0) node[midway,below left] {\scriptsize$\mu$};
+        \draw[thick,fill=blue!50!gray!50](1,0) rectangle(2.5,1)
+        node[midway]{\scriptsize$M$};
+      \end{scope}
+      \begin{scope}[rotate=-15]
+        \draw[thick,fill=gray] (0,.3) circle(.15);
+        \draw[thick,fill=gray!50] (0,.3) circle(.1);
+        \draw[ultra thick] (0,0)--(0,.3);
+        \fill (0,.3) circle(.04);
+      \end{scope}
+      \draw[thick,gray!70](0,0)--(0,-1.5);
+      \draw[thick,->](0,-.5)arc(270:330:.5)
+      node[midway,below]{\scriptsize$\phi$};
+    \end{tikzpicture}
+  \end{center}
+  \vspace{-.2in}\begin{enumerate}[(a)]
+  \item Determine the acceleration of the blocks.
+  \item Calculate the tension in the string.
 %    \item If the string broke, for what minimum value of the coefficient of
 %      static friction would the \SI{2.}{kg} block not begin to slide?
-%    \end{enumerate}
-%  \end{columns}
-%\end{frame}
+  \end{enumerate}
+\end{frame}
+
+
+\begin{frame}{A Slightly More Difficult Problem}
+  \begin{columns}
+    \column{.35\textwidth}
+    \pic1{graphics/pulley_prob_5}
+   
+    \column{.65\textwidth}
+    Two blocks of mass $m$ and $M$ are connected via pulley with a
+    configuration as shown on the left. The coefficient of static friction is
+    $\mu_s$, between blocks and surface. What is the maximum mass $m$ so that
+    no sliding occurs?
+  \end{columns}
+\end{frame}
+
 \end{document}
