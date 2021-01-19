@@ -75,12 +75,17 @@
 \usepackage{siunitx}
 \usepackage{multicol}
 \usepackage{fancyhdr}
+\usepackage{circuitikz}
 
 \usetikzlibrary{decorations.pathmorphing,patterns}
 
 \sisetup{
+  inter-unit-product=\cdot,
   per-mode=symbol,
 }
-\tikzset{>=latex}
+\tikzset{
+  voltage dir=RP,
+  >=latex
+}
 
 \pagestyle{empty}

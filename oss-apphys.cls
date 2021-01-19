@@ -91,7 +91,7 @@
 \setlength{\parindent}{0pt}
 \setlength{\headheight}{14pt}
 
-\usepackage[margin=1.7cm,top=1.5cm,bottom=2.5cm,letterpaper]{geometry}
+\usepackage[margin=1.7cm,top=2cm,bottom=2.5cm,letterpaper]{geometry}
 \usepackage{enumitem}
 \usepackage{tikz,graphicx,wrapfig}
 \usepackage{pgfplots}
