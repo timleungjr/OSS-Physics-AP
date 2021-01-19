@@ -64,7 +64,7 @@
 \setlength{\parindent}{0pt}
 \setlength{\headheight}{14pt}
 
-\usepackage[margin=.5in,papersize={8.5in,17in}]{geometry}
+\usepackage[margin=.7in,papersize={8.5in,17in}]{geometry}
 \usepackage{enumitem}
 \usepackage{tikz,graphicx,wrapfig}
 \usepackage{pgfplots}
