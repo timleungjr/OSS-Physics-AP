@@ -1,13 +1,8 @@
 \documentclass[12pt,compress,aspectratio=169]{beamer}
-
 \usetheme{metropolis}
 \setbeamersize{text margin left=.5cm,text margin right=.5cm}
-\setbeamertemplate{navigation symbols}{} % suppress nav bar
-%\setbeamercovered{transparent}
-%\usefonttheme{professionalfonts}
 \usepackage[lf]{carlito}
 \usepackage{tikz}
-%\usepackage{amsmath}
 \usepackage{mathpazo}
 \usepackage{xcolor,colortbl}
 \usepackage{siunitx}
@@ -18,8 +13,7 @@
 \renewcommand{\baselinestretch}{1}
 
 \sisetup{
-  %detect-all,
-  %number-math-rm=\mathnormal,
+  inter-unit-product=\cdot,
   per-mode=symbol
 }
 \tikzset{>=latex}
@@ -27,7 +21,7 @@
 \title{Topic 15: Light Waves and Optics}
 \subtitle{Advanced Placement Physics 2}
 \author[TML]{Dr.\ Timothy Leung}
-\institute{Olympiads School\\Toronto, Ontario, Canada}
+\institute{Olympiads School}
 \date{\today}
 
 \newcommand{\pic}[2]{\includegraphics[width=#1\textwidth]{#2}}
@@ -49,14 +43,20 @@
   between two ``indexed material'':
   \begin{center}
     \begin{tikzpicture}[scale=.8]
-      \fill[gray!70](-3,-2) rectangle (3,0);
+      \fill[gray!50](-3,-2) rectangle (3,0);
       \draw[very thick](-3,0)--(3,0);
-      \draw[red!80,very thick](-2,2)--(0,0)--(1,-2);
-      \draw[red!80,very thick](0,0)--(2,2);
+      \draw[rotate=45,->,red!80,very thick](0,2.5)--(0,1);
+      \draw[rotate=45,red!80,very thick](0,2)--(0,0);
+      \draw[rotate=-45,red!80,very thick](0,0)--(0,2.5)
+      node[right]{\footnotesize Reflection};
+      \draw[rotate=-45,->,red!80,very thick](0,0)--(0,1.75);
+      \draw[rotate=30,red!80,very thick](0,0)--(0,-2.3)
+      node[above right]{\footnotesize Refraction};
+      \draw[rotate=30,->,red!80,very thick](0,0)--(0,-1);
       \draw[dashed,black!70,thick](0,2)--(0,-2);
-      \draw[<->,thick](0,1) arc(90:135:1) node[midway,above]{$\theta_1$};
-      \draw[<->,thick](0,1) arc(90:45:1) node[midway,above]{$\theta_r$};
-      \draw[<->,thick](0,-1.5)arc(270:297:1.5) node[midway,below]{$\theta_2$};
+      \draw[->,thick](0,1.5) arc(90:135:1.5) node[midway,above]{$\theta_1$};
+      \draw[->,thick](0,1.2) arc(90:45:1.2) node[midway,above]{$\theta_r$};
+      \draw[->,thick](0,-1.5)arc(270:300:1.5) node[pos=0,left]{$\theta_2$};
       \node at (-2,.3) {$n_1$};
       \node at (-2,-.3){$n_2$};
       \node at (2,.3) {$v_1$};
@@ -68,7 +68,7 @@
   light in a vacuum and in the medium:
 
   \eq{-.2in}{
-    n=\frac{c}{v}\geq 1
+    n=\frac{c}v\geq 1
   }
 \end{frame}
 
@@ -91,7 +91,7 @@
 
 \begin{frame}{Specular Reflection Example}
   \begin{center}
-    \pic{.55}{graphics/Lake-reflection.jpg}
+    \pic{.55}{graphics/Lake-reflection}
   \end{center}
   This photo of Lake Matheson shows specular reflection in the water of the
   lake with reflected images of Aoraki/Mt Cook (left) and Mt Tasman (right).
@@ -114,7 +114,7 @@
   passes through:
 
   \eq{-.3in}{
-    I=\frac{P}{A}
+    I=\frac{P}A
   }
 
   The reflected intensity is lower than the incident, indicating that some of
@@ -174,14 +174,6 @@
 
 
 \begin{frame}{Index of Refraction}
-%  \textbf{Index of refraction} ($n$) (or \textbf{refractive index}, or just
-%  \textbf{index}) is the ratio of the speed of light in a vacuum ($c_0$) to the
-%  speed of light in the medium ($c$):
-%
-%  \eq{-.2in}{
-%    \boxed{n=\frac{c_0}{c}=\frac{\lambda_\text{vacuum}}{\lambda}}
-%  }
-
   When light enters a new medium, the \emph{frequency} remains the same: the
   atoms in the new medium would absorb and then radiate the light at the same
   frequency. However, the \emph{speed} of the radiated wave is different,
@@ -357,15 +349,15 @@
   In terms of the focal length, the \textbf{mirror equation} is expressed as
 
   \eq{-.2in}{
-    \boxed{\frac{1}{s}+\frac{1}{s'}=\frac{1}{f}}
+    \boxed{\frac1s+\frac1{s'}=\frac1f}
   }
   \begin{center}
-    \begin{tabular}{l|c|l}
+    \begin{tabular}{l|c|c}
       \rowcolor{pink}
       \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
-      Distance to object & $s$  & \si{\metre} (metres)\\
-      Distance to image  & $s'$ & \si{\metre} (metres) \\
-      Focal length       & $f$  & \si{\metre} (metres)
+      Distance to object & $s$  & \si{\metre} \\
+      Distance to image  & $s'$ & \si{\metre} \\
+      Focal length       & $f$  & \si{\metre} 
     \end{tabular}
   \end{center}
   This equation is derived mathematically using basic geometry and the
@@ -378,7 +370,7 @@
   When working with the mirror equation, we use the following sign convention:
   
   \eq{-.2in}{
-    \boxed{\frac{1}{s}+\frac{1}{s'}=\frac{1}{f}}
+    \boxed{\frac1s+\frac1{s'}=\frac1f}
   }
   \begin{center}
     \begin{tabular}{ccl}
@@ -402,7 +394,7 @@
   \textbf{lateral magnification} of the object is given by:
 
   \eq{-.2in}{
-    \boxed{m=\frac{h'}{h}=-\frac{s'}{s}}
+    \boxed{m=\frac{h'}h=-\frac{s'}s}
   }
   \begin{center}
     \begin{tabular}{l|c|l}
@@ -439,15 +431,15 @@
   \textbf{lens-makers' equation}:
 
   \eq{-.2in}{
-    \boxed{\frac1f=(n-1)\left(\frac{1}{R_1}-\frac{1}{R_2}\right)}
+    \boxed{\frac1f=(n-1)\left(\frac1{R_1}-\frac1{R_2}\right)}
   }
   \begin{center}
-    \begin{tabular}{l|c|l}
+    \begin{tabular}{l|c|c}
       \rowcolor{pink}
       \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
       Focal length                    & $f$ & (no units)\\
-      Index of refraction of the lens & $n$ & \si{\metre} (metres)\\
-      Radii of curvature              & $R_1$, $R_2$ & \si{\metre} (metres)
+      Index of refraction of the lens & $n$ & \si{\metre} \\
+      Radii of curvature              & $R_1$, $R_2$ & \si{\metre}
     \end{tabular}
   \end{center}  
 \end{frame}
@@ -458,15 +450,15 @@
   The \textbf{thin-lens equation} is exactly the same as the mirror equation:
 
   \eq{-.2in}{
-    \boxed{\frac{1}{s}+\frac{1}{s'}=\frac{1}{f}}
+    \boxed{\frac1s+\frac1{s'}=\frac1f}
   }
   \begin{center}
-    \begin{tabular}{l|c|l}
+    \begin{tabular}{l|c|c}
       \rowcolor{pink}
       \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
-      Distance to object & $s$  & \si{\metre} (metres) \\
-      Distance to image  & $s'$ & \si{\metre} (metres) \\
-      Focal length       & $f$  & \si{\metre} (metres)
+      Distance to object & $s$  & \si{\metre} \\
+      Distance to image  & $s'$ & \si{\metre} \\
+      Focal length       & $f$  & \si{\metre}
     \end{tabular}
   \end{center}
 \end{frame}
@@ -478,7 +470,7 @@
   convention:
   
   \eq{-.2in}{
-    \boxed{\frac{1}{s}+\frac{1}{s'}=\frac{1}{f}}
+    \boxed{\frac1s+\frac1{s'}=\frac1f}
   }
   \begin{center}
     \begin{tabular}{ccl}
@@ -504,17 +496,17 @@
   the thin lens:
 
   \eq{-.2in}{
-    \boxed{m=\frac{h'}{h}=-\frac{s'}{s}}
+    \boxed{m=\frac{h'}h=-\frac{s'}s}
   }
   \begin{center}
-    \begin{tabular}{l|c|l}
+    \begin{tabular}{l|c|c}
       \rowcolor{pink}
       \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
       Magnification factor & $m$ & (no units)\\
-      Object height & $h$  & \si{\metre} (metres)\\
-      Image height  & $h'$ & \si{\metre} (metres)\\
-      Distance to object & $s$  & \si{\metre} (metres) \\
-      Distance to image  & $s'$ & \si{\metre} (metres)
+      Object height & $h$  & \si{\metre} \\
+      Image height  & $h'$ & \si{\metre} \\
+      Distance to object & $s$  & \si{\metre} \\
+      Distance to image  & $s'$ & \si{\metre}
     \end{tabular}
   \end{center}
 \end{frame}
@@ -656,10 +648,10 @@
       \boxed{n\lambda = d\sin\theta_n}
     }
 
-    \vspace{-.2in}Conversely, \textbf{destructive minima} occur when:
+    \vspace{-.2in}\textbf{Destructive minima} occur when:
   
     \eq{-.3in}{
-      \boxed{\left(n+\frac{1}{2}\right)\lambda = d\sin\theta_n}
+      \boxed{\left(n+\frac12\right)\lambda = d\sin\theta_n}
     }
     \begin{itemize}
     \item\vspace{-.1in}$n=0,1,2,3\ldots n_\text{max}$ is called the
@@ -682,9 +674,9 @@
   which allows us to calculate the distance between fringes $\Delta y$:
   
   \eq{-.2in}{
-    \boxed{y_n=n\frac{\lambda L}{d}}
+    \boxed{y_n=n\frac{\lambda L}d}
     \quad\rightarrow\quad
-    \boxed{\Delta y=\frac{\lambda L}{d}}
+    \boxed{\Delta y=\frac{\lambda L}d}
   }
 
   This equation is used to estimate the wavelength of light based on
@@ -751,7 +743,7 @@
   When a wave goes through an small opening, it \textbf{diffracts}. This happens
   with sound waves, ocean waves\ldots and light.
   \begin{center}
-    \pic{.55}{graphics/alexandria.jpg}
+    \pic{.55}{graphics/alexandria}
   \end{center}
   The photo is from the Port of Alexandria in Egypt. The shape of the entire
   harbor is created because of diffraction of ocean wave.
@@ -761,7 +753,7 @@
 
 \begin{frame}{Diffraction of Waves}
   \begin{center}
-    \pic{.6}{graphics/diffraction1.jpg}
+    \pic{.6}{graphics/diffraction1}
   \end{center}
   The smaller the opening (compared to the wavelength of the incoming wave)
   the greater the diffraction effects.
@@ -828,7 +820,7 @@
         \draw[blue,thick](-0.02,-0.78)--(-0.8,-0.78)
         node[pos=.9,right]{\tiny $W\sin\theta$};
         \draw[blue,thick](-0.02,0.05)--(-0.4,0.05)
-        node[pos=0,below]{\tiny $\frac{W}{2}\sin\theta$};
+        node[pos=0,below]{\tiny $\frac{W}2\sin\theta$};
       \end{scope}
 
     \end{tikzpicture}
@@ -877,7 +869,7 @@
     \begin{itemize}
     \item At some other angle $\theta$, the path difference between the top
       and bottom is $\displaystyle W\sin\theta=\frac32\lambda$
-    \item 1 and 5 differ by $\displaystyle\frac{\lambda}{2}$, so they cancel
+    \item 1 and 5 differ by $\displaystyle\frac{\lambda}2$, so they cancel
       (as do 2 and 6, 3 and 7, 4 and 8, 9 and 13)
     \item But some of the beams will not, so we have a ``bright fringe'' at the 
       projection
@@ -915,13 +907,13 @@
   the small-angle approximation equation:
   
   \eq{-.2in}{
-    \boxed{y_m=\left(m+\frac{1}{2}\right)\frac{\lambda L}{W}}
+    \boxed{y_m=\left(m+\frac12\right)\frac{\lambda L}W}
   }
 
   While for the dark fringes, 
 
   \eq{-.2in}{
-    \boxed{y_m=\frac{m\lambda L}{W}}
+    \boxed{y_m=\frac{m\lambda L}W}
   }
 
   Again, the equations look to be the reverse of the two-slit problem.
@@ -986,13 +978,13 @@
     Rectangular aperture:
 
     \eq{-.2in}{
-      \boxed{\theta_\text{min}=\frac{\lambda}{W}}
+      \boxed{\theta_\text{min}=\frac{\lambda}W}
     }
     \column{0.5\textwidth}
     Circular aperture:
 
     \eq{-.2in}{
-      \boxed{\theta_\text{min}=\frac{1.22\lambda}{D}}
+      \boxed{\theta_\text{min}=\frac{1.22\lambda}D}
     }
   \end{columns}
   where $W$ is the width of the aperture, and $D$ is the diameter of the
@@ -1021,9 +1013,9 @@
 
 \begin{frame}{Thin-Film Interference}
   \begin{center}
-    \pic{.4}{soap-bubble.jpg}\hspace{.01in}
-    \pic{.277}{oil-film.jpg}\hspace{.01in}
-    \pic{.2265}{camera-lens.jpg}
+    \pic{.4}{soap-bubble}\hspace{.01in}
+    \pic{.277}{oil-film}\hspace{.01in}
+    \pic{.2265}{camera-lens}
   \end{center}
   Examples:
   \begin{itemize}
@@ -1064,7 +1056,7 @@
       optical path difference $\Gamma$ is just:
 
     \eq{-.25in}{
-      \Gamma=2t %\frac{2t}{\lambda'}
+      \Gamma=2t
     }
 
     \vspace{-.15in}Same as single- and double-slits interference problems,
@@ -1126,7 +1118,7 @@
     \Gamma=2t=\left(m+\frac12\right)\lambda'
     \quad\rightarrow\quad
     \boxed{
-      \frac{2n_\text{soap}t}{\lambda}=m+\frac{1}{2}
+      \frac{2n_\text{soap}t}{\lambda}=m+\frac12
     }
   }
 
@@ -1146,7 +1138,7 @@
 
 \begin{frame}{Soap Bubble}
   \begin{center}
-    \pic{.45}{soap-bubble.jpg}
+    \pic{.45}{soap-bubble}
   \end{center}
   \begin{itemize}
   \item Because the condition for interference depends on the incident
@@ -1205,7 +1197,7 @@
 
   \eq{-.22in}{
     \boxed{
-      \frac{2n_\text{oil}t}{\lambda}=m
+      \frac{2n_\text{oil}t}\lambda=m
     }
   }
 
@@ -1256,7 +1248,7 @@
 
   \eq{-.22in}{
     \boxed{
-      \frac{2n_\text{film}t}{\lambda}=m
+      \frac{2n_\text{film}t}\lambda=m
     }
   }
 
@@ -1265,7 +1257,7 @@
 
   \eq{-.22in}{
     \boxed{
-      \frac{2n_\text{film}t}{\lambda}=m+\frac12
+      \frac{2n_\text{film}t}\lambda=m+\frac12
     }
   }
 

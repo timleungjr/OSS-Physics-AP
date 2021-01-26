@@ -24,8 +24,8 @@
 
 \newcommand{\mb}[1]{\mathbf{#1}}
 \newcommand{\pic}[2]{\includegraphics[width=#1\textwidth]{#2}}
-\newcommand{\bigsqrt}{\ensuremath\sqrt{1-\left(\frac{v}{c}\right)^2}}
-\newcommand{\lorentz}{\ensuremath\frac{1}{\bigsqrt}}
+\newcommand{\bigsqrt}{\ensuremath\sqrt{1-\left(\frac{v}c\right)^2}}
+\newcommand{\lorentz}{\ensuremath\frac1\bigsqrt}
 \newcommand{\eq}[2]{\vspace{#1}{\Large\begin{displaymath}#2\end{displaymath}}}
 
 
@@ -186,8 +186,8 @@
     \begin{tabular}{l|c|c}
       \rowcolor{pink}
       \textbf{Variable} & \textbf{Symbol} & \textbf{SI Unit}\\ \hline
-      Proper time (ordinary time)  & $t$  & \si{\second} \\
-      Dilated time (expanded time) & $t'$ & \si{\second} \\
+      Proper time (ordinary time)  & $t$  & \si\second \\
+      Dilated time (expanded time) & $t'$ & \si\second \\
       Speed           & $v$ & \si{\metre\per\second}\\
       Speed of light  & $c$ & \si{\metre\per\second}
     \end{tabular}
@@ -204,20 +204,19 @@
 
 \begin{frame}{Example Problem}
   \textbf{Example 1a:} Kim is riding a rocket that speeds past an asteroid at
-  $v=0.600c$. If Kim sees \SI{10.}{\second} pass on her watch, how long would
+  $v=0.600c$. If Kim sees \SI{10.}\second pass on her watch, how long would
   that time interval be as seen by Jim, an observer on the asteroid?
 
-  \uncover<2>{
+  \uncover<2->{
     \begin{displaymath}
-      t' =\frac{t}\bigsqrt=\frac{10.}{\sqrt{1-0.600^2}}=\SI{16.7}{\second}
+      t' =\frac{t}\bigsqrt=\frac{10.0}{\sqrt{1-0.600^2}}=\SI{16.7}\second
     \end{displaymath}
   }
   
   \uncover<3>{
     \begin{itemize}
     \item Jim observes that in the time it took Kim's clock to run
-      \SI{10.}{\second}, his watch has already gone \SI{16.7}{\second},
-      therefore
+      \SI{10.}\second, his watch has already gone \SI{16.7}\second, therefore
     \item Jim concludes that Kim's watch must be running slow
     \end{itemize}
 
@@ -229,19 +228,17 @@
 
 \begin{frame}{Example Problem}
   \textbf{Example 1b:} Kim is riding a rocket that speeds past an asteroid at
-  $0.600c$. If Jim, an observer in the \emph{asteroid}, sees \SI{10.}{\second}
+  $0.600c$. If Jim, an observer in the \emph{asteroid}, sees \SI{10.}\second
   pass on his watch, how long would that time interval be as seen by Kim?
 
   \uncover<2>{
     \begin{displaymath}
-      t' =\frac{t}\bigsqrt=\frac{10.}{\sqrt{1-0.600^2}}=\SI{16.7}{\second}
+      t' =\frac{t}\bigsqrt=\frac{10.}{\sqrt{1-0.600^2}}=\SI{16.7}\second
     \end{displaymath}
-    
     \begin{itemize}
     \item This problem is exactly the same as the last one!
     \item Kim observes that in the time it took Jim's clock to run
-      \SI{10.}{\second}, her watch has already gone \SI{16.7}{\second},
-      therefore
+      \SI{10.}\second, her watch has already gone \SI{16.7}\second, therefore
     \item Kim concludes that Jim's watch must be running slow
     \end{itemize}
   }
@@ -258,13 +255,13 @@
   asteroid and on the rocket are \emph{not} synchronized.
   \begin{itemize}
   \item In example 1a, when Kim (on the rocket) starts measuring a
-    \SI{10.}{\second} time interval, in order for Jim to compare that interval
+    \SI{10.}\second time interval, in order for Jim to compare that interval
     to \emph{his} watch, he has to start and end at the same time
     (simultaeously!) as Kim.
   \item But simultaneity is only relative. In Kim's reference frame, Jim never
     got the timing right!
   \item This problem reverses itself when Kim tries to synchronize her watch to
-    Jim's \SI{10.}{\second} interval.
+    Jim's \SI{10.}\second interval.
   \end{itemize}
 \end{frame}
 
@@ -275,7 +272,7 @@
   Captain Quick is a comic book hero who can run at nearly the speed of light.
   In his hand, he is carrying a bomb set to explode in \SI{1.5}{\micro\second}.
   The bomb must be placed into its bracket before this happens. The distance
-  ($L$) between the flare and the bracket is \SI{402}{\metre}.
+  ($L$) between the flare and the bracket is \SI{402}\metre.
   \begin{center}
     \pic{.7}{graphics/captain-quick}
   \end{center}
@@ -286,8 +283,8 @@
   Suppose Captain Quick runs at \SI{2.00e8}{\metre\per\second}, according to
   classical mechanics, he will not make it in time:
   \begin{displaymath}
-    t= \frac{L}{v}=\frac{\SI{402}{\metre}}{\SI{2.00e8}{\metre\per\second}}
-    =\SI{2.01e-6}{\second}=\SI{2.01}{\micro\second}
+    t= \frac{L}v=\frac{\SI{402}\metre}{\SI{2.00e8}{\metre\per\second}}
+    =\SI{2.01e-6}\second=\SI{2.01}{\micro\second}
   \end{displaymath}
   But according to relativistic mechanics, he makes it just in time\ldots
 \end{frame}
@@ -297,9 +294,9 @@
   To a stationary observer, the time on the flare is slowed:
   \begin{displaymath}
     t'
-    = \frac{t}{\bigsqrt}
+    = \frac{t}\bigsqrt
     = \frac{\num{1.5e-6}}{\sqrt{1-\left(\frac{2.00}{3.00}\right)^2}}
-    = \SI{2.01e-6}{\second}
+    = \SI{2.01e-6}\second
   \end{displaymath}
   The stationary observer sees a passage of time of
   $t'=\SI{2.01}{\micro\second}$, but Captain Quick, who is in the same
@@ -323,7 +320,7 @@
   \end{itemize}
   For this example:
   \begin{displaymath}
-    L'=L\bigsqrt=402\sqrt{1-\left(\frac{2.00}{3.00}\right)^2}=\SI{300}{\metre}
+    L'=L\bigsqrt=402\sqrt{1-\left(\frac{2.00}{3.00}\right)^2}=\SI{300}\metre
   \end{displaymath}
 \end{frame}
 
@@ -341,7 +338,7 @@
 \begin{frame}{Example Problem}
   \textbf{Example 2:} A spacecraft passes Earth at a speed of \SI{2.00e8}{m/s}.
   If observers on Earth measure the length of the spacecraft to be
-  \SI{554}{\metre}, how long would it be according to its passengers?
+  \SI{554}\metre, how long would it be according to its passengers?
 \end{frame}
 
 
@@ -358,7 +355,7 @@
   Then time dilation and length contraction can be written simply as:
   
   \eq{-.1in}{
-    \boxed{t' = \gamma t}\quad\boxed{L' = \frac{L}{\gamma}}
+    \boxed{t'=\gamma t}\quad\boxed{L'=\frac{L}\gamma}
   }
 \end{frame}
 
