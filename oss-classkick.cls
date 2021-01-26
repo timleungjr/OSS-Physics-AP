@@ -39,7 +39,7 @@
 
 \newcommand{\gengravity}{
   \vspace{10pt}\textbf{Note:} To simplify calculations, you may use
-  $g=\SI{10}{m/s^2}$ in all problems.
+  $g=\SI{10}{\metre\per\second\squared}$ in all problems.
 }
 
 \newcommand{\genanswersheet}[2]{
@@ -64,7 +64,7 @@
 \setlength{\parindent}{0pt}
 \setlength{\headheight}{14pt}
 
-\usepackage[margin=.7in,papersize={8.5in,17in}]{geometry}
+\usepackage[margin=.5in,papersize={8.5in,17in}]{geometry}
 \usepackage{enumitem}
 \usepackage{tikz,graphicx,wrapfig}
 \usepackage{pgfplots}
