@@ -1,31 +1,30 @@
 \documentclass[12pt,compress,aspectratio=169]{beamer}
-
 \usetheme{metropolis}
 \setbeamersize{text margin left=.5cm,text margin right=.5cm}
-
-\usefonttheme{professionalfonts}
+\usepackage[lf]{carlito}
 \usepackage{siunitx}
 \usepackage{tikz}
 \usepackage{mathpazo}
 
 \usetikzlibrary{decorations.pathmorphing,patterns}
 
-\setsansfont{Roboto Light}
-\setmonofont{Ubuntu Mono}
 \setlength{\parskip}{0pt}
 \setlength{\itemsep}{0pt}
 \renewcommand{\baselinestretch}{1}
 
 \sisetup{
-  detect-all,
+  inter-unit-product=\cdot,
   per-mode=symbol
+}
+\tikzset{
+  >=latex,
 }
 
 \title{Topic 8: Simple Harmonic Motion}
 \subtitle{Advanced Placement Physics 1}
 \author[TML]{Dr.\ Timothy Leung}
-\institute{Olympiads School\\Toronto, ON, Canada}
-\date{July 20, 2020}
+\institute{Olympiads School}
+\date{\today}
 
 \newcommand{\pic}[2]{\includegraphics[width=#1\textwidth]{#2}}
 \newcommand{\mb}[1]{\ensuremath\mathbf{#1}}
@@ -87,19 +86,17 @@
       \draw[thick,draw=black!70,
         decoration={aspect=.3,segment length=2mm, amplitude=2.5mm, coil},
         decorate] (0,1)--(4.95,1);
-      \fill [pattern=north east lines] (6.5,.5)--(6.5,.3)--(-0.2,.3)
+      \fill[pattern=north east lines] (6.5,.5)--(6.5,.3)--(-0.2,.3)
       --(-.2,2)--(0,2)--(0,.5)--cycle;
-      \draw[very thick] (0,.5)--(6.5,.5);
-      \draw[very thick] (0,.5)--(0,2);
-      \draw[->,thick](7,1)--(7.8,1) node[pos=1,right]{\footnotesize $x$};
+      \draw[thick] (6.5,.5)--(0,.5)--(0,2);
+      \draw[->,thick](7,1)--(7.8,1) node[right]{\footnotesize $x$};
       
       \fill[red!80!black] (5.5,1) circle(.08);
-      \draw[ultra thick,->,red!80!black](5.5,1)--(5.5,0)
-      node[pos=1,below]{\footnotesize $m\mb{g}$};
-      \draw[ultra thick,->,red!80!black](5.5,1)--(5.5,2)
-      node[pos=1,above]{\footnotesize $\mb{N}$};
-      \draw[ultra thick,->,red!80!black](5.5,1)--(4.5,1)
-      node[pos=1,above]{\footnotesize $\mb{F}_s$};
+      \begin{scope}[very thick,->,red!80!black]
+        \draw (5.5,1)--(5.5,0) node[below]{\footnotesize $m\mb{g}$};
+        \draw (5.5,1)--(5.5,2) node[above]{\footnotesize $\mb{N}$};
+        \draw (5.5,1)--(4.5,1) node[above]{\footnotesize $\mb{F}_s$};
+      \end{scope}
     \end{tikzpicture}
   \end{center}
 
@@ -116,7 +113,7 @@
   containing both displacement and acceleration:
 
   \eq{-.2in}{
-    \sum F=F_s=ma\quad\rightarrow\quad-\frac{k}{m}x=a
+    \sum F=F_s=ma\quad\rightarrow\quad-\frac{k}mx=a
   }
 
   We know that:
@@ -179,7 +176,7 @@
   harmonic oscillator is called the \textbf{natural frequency}:
 
   \eq{-.15in}{
-    \boxed{\omega=\sqrt{\frac{k}{m}}}
+    \boxed{\omega=\sqrt{\frac{k}m}}
   }
 \end{frame}
 
@@ -189,9 +186,9 @@
   The period $T$ and frequency $f$ of the simple harmonic motion are given by:
 
   \eq{-.1in}{
-    \boxed{f=\frac{\omega}{2\pi}=\frac1{2\pi}\sqrt{\frac{k}{m}}}
+    \boxed{f=\frac{\omega}{2\pi}=\frac1{2\pi}\sqrt{\frac{k}m}}
     \quad\quad
-    \boxed{T=\frac1f=2\pi\sqrt{\frac{m}{k}}}
+    \boxed{T=\frac1f=2\pi\sqrt{\frac{m}k}}
   }
   
   Angular frequency $\omega$, frequency $f$ and period $T$ are independent
@@ -210,12 +207,12 @@
         decoration={aspect=.4,segment length=2.2mm, amplitude=2.5mm, coil},
         decorate] (1,5)--(1,2.25); 
       \fill [pattern=north east lines] (0,5) rectangle (2,5.2);
-      \draw[ultra thick] (0,5)--(2,5);
-      \draw[->](1.75,3)--(1.75,2) node[pos=1,below]{$x$};
-      \draw[very thick,->,red](1,2)--(1,1)
-      node[pos=1,right]{\footnotesize $m\mb{g}$};
-      \draw[very thick,->,red](1,1)--(1,3)
-      node[pos=1,right]{\footnotesize $\mb{F}_s$};
+      \draw[thick] (0,5)--(2,5);
+      \draw[->](1.75,3)--(1.75,2) node[below]{$x$};
+      \begin{scope}[very thick,->,red!80!black]
+        \draw(1,2)--(1,1)node[right]{\footnotesize $m\mb{g}$};
+        \draw(1,1)--(1,3)node[right]{\footnotesize $\mb{F}_s$};
+      \end{scope}
       \fill[red](1,2) circle(.05);
     \end{tikzpicture}
 
@@ -248,11 +245,11 @@
         decorate] (1,5)--(1,2.25); 
       \fill [pattern=north east lines] (0,5) rectangle (2,5.2);
       \draw[ultra thick] (0,5)--(2,5);
-      \draw[->](1.75,3)--(1.75,2) node[pos=1,below]{$x$};
-      \draw[very thick,->,red](1,2)--(1,1)
-      node[pos=1,right]{\footnotesize $\mb{w}$};
-      \draw[very thick,->,red](1,1)--(1,3)
-      node[pos=1,right]{\footnotesize $\mb{F}_s$};
+      \draw[->](1.75,3)--(1.75,2) node[below]{$x$};
+      \begin{scope}[very thick,->,red!80!black]
+        \draw(1,2)--(1,1) node[right]{\footnotesize $\mb{w}$};
+        \draw(1,1)--(1,3) node[right]{\footnotesize $\mb{F}_s$};
+      \end{scope}
       \fill[red](1,2) circle(.05);
     \end{tikzpicture}
 
@@ -261,13 +258,13 @@
     downwards, and is the stretching of the spring due to its weight:
     
     \eq{-.23in}{
-      B=\frac{mg}{k}
+      B=\frac{mg}k
     }
 
     Angular frequency (natural frequency) is the same as the horizontal case:
 
     \eq{-.23in}{
-      \omega=\sqrt{\frac{k}{m}}
+      \omega=\sqrt{\frac{k}m}
     }
   \end{columns}
 \end{frame}
@@ -315,8 +312,8 @@
 
 
 \begin{frame}{Another Example}
-  \textbf{Example 3:} An object of mass \SI{5}{\kilo\gram} hangs from a spring
-  and oscillates with a period of \SI{.5}{\second}. By how much will the
+  \textbf{Example 3:} An object of mass \SI5{\kilo\gram} hangs from a spring
+  and oscillates with a period of \SI{.5}\second. By how much will the
   equilibrium length of the spring be shortened when the object is removed.
   \begin{enumerate}[(a)]
   \item\SI{0.75}{\centi\metre}
@@ -348,17 +345,17 @@
     \column{.25\textwidth}
     \begin{tikzpicture}
       \fill[pattern=north east lines] (-1,0) rectangle (1,0.2);
-      \draw[very thick](-1,0)--(1,0);
+      \draw[thick](-1,0)--(1,0);
       \begin{scope}[rotate=10]
         \draw[thick](0,0)--(0,-5);
         \tikzstyle{balloon}=[ball color=red];
         \shade[balloon] (0,-5) circle (.2) node[below right]{$m$};
-        \draw[dotted,->,very thick,red](0,-5)--(-0.5,-5)
-        node[pos=1,left]{\footnotesize $mg\sin\beta$};
-        \draw[->,very thick,red](0,-5)--(0,-3)
-        node[pos=1,left]{\footnotesize $\mb{T}$};
-        \draw[->,very thick,red, rotate around={-10:(0,-5)}](0,-5)--(0,-6.5)
-        node[pos=1,below]{\footnotesize $\mb{w}$};
+        \begin{scope}[very thick,->,red!80!black]
+          \draw[dotted](0,-5)--(-0.5,-5)node[left]{\footnotesize $mg\sin\beta$};
+          \draw (0,-5)--(0,-3) node[left]{\footnotesize $\mb{T}$};
+          \draw[rotate around={-10:(0,-5)}](0,-5)--(0,-6.5)
+          node[below]{\footnotesize $m\mb{g}$};
+        \end{scope}
       \end{scope}
       \draw[dashed,thin](0,0)--(0,-5);
       \draw[->](0,-2) arc(270:280:2) node[midway,below]{$\beta$};
@@ -383,12 +380,12 @@
     angular acceleration $\alpha$. Solving this ODE is difficult because of the
     $\sin\beta$ term. However, using the series expansion of the sine function
 
-    \eq{-.35in}{
+    \eq{-.2in}{
       \sin\beta=\beta-\frac{\beta^3}{3!}+\frac{\beta^5}{5!}-
       \frac{\beta^7}{7!}+\cdots
     }
     
-    shows that for small angles ($\beta<15^\circ$), $\sin\beta\approx\beta$
+    shows that for small angles ($\beta<\ang{10}$), $\sin\beta\approx\beta$
     
     \column{.25\textwidth}
     \begin{tikzpicture}
@@ -447,10 +444,10 @@
   }
     
   where amplitude $A$ is the maximum deflection of the pendulum (less than
-  \ang{15}), and angular frequency of the oscillation $\omega$ is given by:
+  \ang{10}), and angular frequency of the oscillation $\omega$ is given by:
   
   \eq{-.15in}{
-    \boxed{\omega=\sqrt{\frac{g}{L}}}
+    \boxed{\omega=\sqrt{\frac{g}L}}
   }
 \end{frame}
 
@@ -473,12 +470,12 @@
 \begin{frame}{Think About $g$}
   \textbf{Example:} A little girl is playing with a toy pendulum while riding
   in an elevator. Being an astute and educated young lass, she notes that the 
-  period of the pendulum is \SI{.5}{\second}. Suddenly the cables
+  period of the pendulum is \SI{.5}\second. Suddenly the cables
   supporting the elevator break and all  of the brakes and safety features fail
   simultaneously. The elevator plunges into free fall. The young girl is
   astonished to discover that the pendulum has:
   \begin{enumerate}[(a)]
-  \item continued oscillating with a period of \SI{.5}{\second}.
+  \item continued oscillating with a period of \SI{.5}\second.
   \item stopped oscillating entirely.
   \item decreased its rate of oscillation to have a longer period.
   \item increased its rate of oscillation to have a lesser period.
@@ -501,22 +498,26 @@
         decorate] (0,1)--(2.95,1);
       \fill[pattern=north east lines](-.5,2)--(-.5,0)--(7,0)--(7,2)--(6.5,2)
       --(6.5,.5)--(0,.5)--(0,2)--cycle;
-      \draw[very thick] (0,2)--(0,.5)--(6.5,.5)--(6.5,2);
-      \draw[->,thick](7.25,1)--(8,1) node[pos=1,right]{\footnotesize $x$};
+      \draw[thick] (0,2)--(0,.5)--(6.5,.5)--(6.5,2);
+      \draw[->,thick](7.25,1)--(8,1) node[right]{\footnotesize $x$};
 
       %shock absorber
       \draw[fill=red!20!white] (4.9,.8) rectangle(5.5,1.2);
-      \draw[very thick](4.05,1)--(4.9,1);
-      \draw[very thick](4.9,.8)--(4.9,1.2);
-      \draw[very thick](4.8,1.2)--(5.5,1.2)--(5.5,.8)--(4.8,.8);
-      \draw[very thick](5.5,1)--(6.5,1);
-
+      \begin{scope}[very thick]
+        \draw(4.05,1)--(4.9,1);
+        \draw(4.9,.8)--(4.9,1.2);
+        \draw(4.8,1.2)--(5.5,1.2)--(5.5,.8)--(4.8,.8);
+        \draw(5.5,1)--(6.5,1);
+      \end{scope}
+      
       \uncover<2->{
         \fill[red] (3.5,1)circle(.075);
-        \draw[ultra thick,->,red](3.5,1)--(3.5,0) node[pos=1,below]{$m\mb{g}$};
-        \draw[ultra thick,->,red](3.5,1)--(3.5,2) node[pos=1,above]{$\mb{N}$};
-        \draw[ultra thick,->,red](3.5,1)--(2.5,1) node[pos=1,above]{$\mb{F}_s$};
-        \draw[ultra thick,->,red](3.5,1)--(4.5,1) node[pos=1,below]{$\mb{F}_D$};
+        \begin{scope}[very thick,->,red!80!black]
+          \draw(3.5,1)--(3.5,0) node[below]{$m\mb{g}$};
+          \draw(3.5,1)--(3.5,2) node[above]{$\mb{N}$};
+          \draw(3.5,1)--(2.5,1) node[above]{$\mb{F}_s$};
+          \draw(3.5,1)--(4.5,1) node[below]{$\mb{F}_D$};
+        \end{scope}
       }
     \end{tikzpicture}
   \end{center}
@@ -553,7 +554,7 @@
   \eq{-.15in}{
     \omega'=\sqrt{\omega_0^2-\left(\frac{b}{2m}\right)^2}
     \quad{\text{\normalsize where}}\quad
-    \omega_0=\sqrt{\frac{k}{m}}
+    \omega_0=\sqrt{\frac{k}m}
   }
   
   Angular frequency $\omega'$ of the damped oscillator differs
@@ -588,7 +589,7 @@
 
 \begin{frame}{Comparing Damped System}
   \begin{center}
-    \pic{.5}{oscda8.png}
+    \pic{.5}{oscda8}
   \end{center}
   The motion of the damped oscillator is not strictly periodic.
 \end{frame}
@@ -600,7 +601,7 @@
   Therefore the total amount of energy decreases exponentially with time:
 
   \eq{-.2in}{
-    E(t)=E_0e^{-\frac{b}{m}t}
+    E(t)=E_0e^{-\frac{b}mt}
     }
 \end{frame}
 
@@ -619,19 +620,22 @@
         decorate] (0,1)--(2.95,1);
       \fill[pattern=north east lines](-.5,2)--(-.5,0)--(7,0)--(7,2)--(6.5,2)
       --(6.5,.5)--(0,.5)--(0,2)--cycle;
-      \draw[very thick] (0,2)--(0,.5)--(6.5,.5)--(6.5,2);
+      \draw[thick] (0,2)--(0,.5)--(6.5,.5)--(6.5,2);
       \draw[fill=blue!20!white] (4.9,.8) rectangle(5.5,1.2);
-      \draw[very thick](4.05,1)--(4.9,1);
-      \draw[very thick](4.9,.8)--(4.9,1.2);
-      \draw[very thick](4.8,1.2)--(5.5,1.2)--(5.5,.8)--(4.8,.8);
-      \draw[very thick](5.5,1)--(6.5,1);
+      \begin{scope}[very thick]
+        \draw(4.05,1)--(4.9,1);
+        \draw(4.9,.8)--(4.9,1.2);
+        \draw(4.8,1.2)--(5.5,1.2)--(5.5,.8)--(4.8,.8);
+        \draw(5.5,1)--(6.5,1);
+      \end{scope}
       \fill[red] (3.5,1)circle(.075);
-      \draw[ultra thick,->,red](3.5,1)--(3.5,0) node[pos=1,below]{$m\mb{g}$};
-      \draw[ultra thick,->,red](3.5,1)--(3.5,2) node[pos=1,above]{$\mb{N}$};
-      \draw[ultra thick,->,red](3.5,1)--(2.5,1) node[pos=1,above]{$\mb{F}_s$};
-      \draw[ultra thick,->,red](3.5,.9)--(2,.9)
-      node[pos=1,below]{$\mb{F}_\text{ext}$};
-      \draw[ultra thick,->,red](3.5,1)--(4.5,1) node[pos=1,below]{$\mb{F}_D$};
+      \begin{scope}[very thick,->,red!80!black]
+        \draw (3.5,1)--(3.5,0) node[below]{$m\mb{g}$};
+        \draw (3.5,1)--(3.5,2) node[above]{$\mb{N}$};
+        \draw (3.5,1)--(2.5,1) node[above]{$\mb{F}_s$};
+        \draw (3.5,.9)--(2,.9) node[below]{$\mb{F}_\text{ext}$};
+        \draw (3.5,1)--(4.5,1) node[below]{$\mb{F}_D$};
+      \end{scope}
     \end{tikzpicture}
   \end{center}
   Assume that the system is subjected to an external force that is sinusoidal
@@ -697,7 +701,7 @@
     the oscillator
 
     \eq{-.2in}{
-      \omega=\omega_0=\sqrt{\frac{k}{m}}
+      \omega=\omega_0=\sqrt{\frac{k}m}
     }
   \item The driving force follows the motion of the oscillator.
   \end{itemize}
@@ -725,7 +729,7 @@
 \begin{frame}{Resonance}
   \begin{columns}
     \column{.4\textwidth}
-    \pic{1}{resonance-fig2.png}
+    \pic1{resonance-fig2}
     
     \column{.6\textwidth}
     Plotting amplitude $A$ as a function of driving frequency $\omega$ shows
@@ -752,7 +756,7 @@
   $\phi=\pi/2$. Using the expression for $v(t)$, and substituting $\phi=\pi/2$:
   
   \eq{-.2in}{
-    v(t)=-A\omega\sin(\omega t-\frac{\pi}{2})=A\omega\cos(\omega t)
+    v(t)=-A\omega\sin(\omega t-\frac{\pi}2)=A\omega\cos(\omega t)
   }
 \end{frame}
 
@@ -764,7 +768,7 @@
   \vspace{-.4in}{\Large
     \begin{align*}
       v(t)&=A\omega\cos(\omega t)\\
-      F_{\textrm{ext}}(t)&=F_0\cos(\omega t)
+      F_\text{ext}(t)&=F_0\cos(\omega t)
     \end{align*}
   }
 \end{frame}

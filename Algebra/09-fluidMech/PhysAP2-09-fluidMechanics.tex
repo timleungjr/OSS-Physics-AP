@@ -1,24 +1,22 @@
 \documentclass[12pt,aspectratio=169]{beamer}
-
 \usetheme{metropolis}
 \setbeamersize{text margin left=.5cm,text margin right=.5cm}
-
-\usefonttheme{professionalfonts}
-\usepackage{carlito}
+\usepackage[lf]{carlito}
 \usepackage{tikz}
 \usepackage{bm}
 \usepackage{mathpazo}
 \usepackage{xcolor,colortbl}
 \usepackage{siunitx}
-
-\setmonofont{Ubuntu Mono}
 \setlength{\parskip}{0pt}
 \renewcommand{\baselinestretch}{1}
 
 \sisetup{
-  %detect-all,
-  number-math-rm=\mathnormal,
+  inter-unit-product=\cdotp,
+  %number-math-rm=\mathnormal,
   per-mode=symbol
+}
+\tikzset{
+  >=latex
 }
 
 \title{Topic 9: Fluid Mechanics}
@@ -39,8 +37,7 @@
 
 
 
-%\begin{frame}
-%  \frametitle{Files for You to Download}
+%\begin{frame}{Files for You to Download}
 %  Please download the following files from the school website:
 %  \begin{enumerate}
 %  \item\texttt{PhysAP2-09-fluidMech.pdf}---The slides for this presentation. If
@@ -85,10 +82,10 @@
 
 \begin{frame}{Density of a Fluid}
   The \textbf{density} $\rho$ of a fluid is defined as the mass of the fluid
-  $m_\mathrm{fluid}$ per unit volume $V_\mathrm{fluid}$ that it occupies:
+  $m_\text{fluid}$ per unit volume $V_\text{fluid}$ that it occupies:
   
   \eq{-.2in}{
-    \boxed{\rho=\frac{m_\mathrm{fluid}}{V_\mathrm{fluid}}}
+    \boxed{\rho=\frac{m_\text{fluid}}{V_\text{fluid}}}
   }
   \begin{itemize}
   \item Unit for density is \textbf{kilograms per meter cubed}
@@ -112,7 +109,7 @@
   \begin{itemize}
   \item e.g.\ honey is more viscous than water.
   \item Shear stress is defined as $\tau=F/A$, with a unit of \textbf{pascal}
-    (\si{\pascal}), which is the same as for pressure
+    (\si\pascal), which is the same as for pressure
   \item In AP Physics 2, we will mostly ignore viscous effects, as important as
     they are
   \end{itemize}
@@ -124,10 +121,10 @@
   \frametitle{Hydrostatics}
   The fluid \textbf{pressure} on its density and depth:
 
-  \eq{-.2in}{ \boxed{p=p_0+\rho_\mathrm{fluid}gz} }
+  \eq{-.2in}{ \boxed{p=p_0+\rho_\text{fluid}gz} }
   
   where $g$ is the acceleration due to gravity, $z$ is the depth below the
-  surface, and $p_0=\SI{1.01e5}{\pascal}$ is the atmospheric pressure at the
+  surface, and $p_0=\SI{1.01e5}\pascal$ is the atmospheric pressure at the
   surface.
   \begin{itemize}
   \item Pressure is the same in all directions
@@ -135,7 +132,7 @@
     \textbf{pascal}:
 
     \eq{-.2in}{
-      \boxed{p=\frac{F}{A}}\quad\quad \SI{1}{\pascal}=\SI{1}{\newton/\metre^2}
+      \boxed{p=\frac{F}A}\quad\quad\SI1\pascal=\SI1{\newton\per\metre\squared}
     }
   \end{itemize}
 \end{frame}
@@ -201,14 +198,14 @@
     \column{.7\textwidth}
     \textbf{Example 1:} An aquarium is filled with water. The lateral wall of
     the aquarium is \SI{40}{\centi\metre} long and \SI{30}{\centi\metre} high.
-    Using \SI{10}{\metre\per\second^2} for the acceleration due to gravity,
-    and \SI{1}{\gram\per\centi\metre^3} for density of water, the force on the
-    lateral wall of the aquarium is:
+    Using \SI{10}{\metre\per\second\squared} for the acceleration due to
+    gravity, and \SI1{\gram\per\centi\metre\squared} for density of water, the
+    force on the lateral wall of the aquarium is:
     \begin{enumerate}[(a)]
-    \item\SI{36}{\newton}
-    \item\SI{90}{\newton}
-    \item\SI{180}{\newton}
-    \item\SI{1500}{\newton}
+    \item\SI{36}\newton
+    \item\SI{90}\newton
+    \item\SI{180}\newton
+    \item\SI{1500}\newton
     \end{enumerate}
 
     \column{.3\textwidth}
@@ -223,11 +220,12 @@
   stands on a piston that pushes down on a thin cylinder full of water. The
   cylinder is connected via pipes to a wide platform on top of which rests a
   1-ton (\SI{1000}{\kilo\gram}) car. The area of the platform under the car is
-  \SI{25}{\metre^2}; the person stands on a \SI{.3}{\metre^2} piston. What is
-  the lightest weight of a person who could successfully lift the car?
+  \SI{25}{\metre\squared}; the person stands on a \SI{.3}{\metre\squared}
+  piston. What is the lightest weight of a person who could successfully lift
+  the car?
   \begin{center}
     \vspace{-.2in}
-    \pic{.35}{jack.png}
+    \pic{.35}{jack}
     
     \vspace{-.2in}{\tiny Believe it or not, there \emph{is} someone who draws
       worse diagrams than Tim!}
@@ -242,14 +240,14 @@
     \textbf{Example 3:} Pressure gauge $B$ is to measure the pressure at point
     $A$ in a water flow, as shown in the figure on the right. If the pressure at
     $B$ is \SI{87}{\kilo\pascal}, estimate the pressure at $A$, in
-    \si{\kilo\pascal}. Assume all fluids are at \SI{20}{\celsius}. The
-    densities of water, mercury and SAE 30 oil are, respectively:
+    \si{\kilo\pascal}. Assume all fluids are at \SI{20}\celsius. The densities
+    of water, mercury and SAE 30 oil are, respectively:
 
     \vspace{-.3in}
     \begin{align*}
-      \rho_\mathrm{water}&=\SI{1000}{\kilo\gram\per\metre^3}\\
-      \rho_\mathrm{Hg}&=\SI{13600}{\kilo\gram\per\metre^3}\\
-      \rho_\mathrm{oil}&=\SI{890}{\kilo\gram\per\metre^3}
+      \rho_\text{water}&=\SI{1000}{\kilo\gram\per\metre^3}\\
+      \rho_\text{Hg}&=\SI{13600}{\kilo\gram\per\metre^3}\\
+      \rho_\text{oil}&=\SI{890}{\kilo\gram\per\metre^3}
     \end{align*}
     
     \column{.45\textwidth}
@@ -300,11 +298,11 @@
   fluid exerts on the object. The expression is surprisingly simple:
   
   \eq{-.1in}{
-    \boxed{\mb{B} = \rho_\mathrm{fluid}gV\bm{\hat{k}}=
-      m_\mathrm{fluid}g\bm{\hat{k}}}
+    \boxed{\mb{B} = \rho_\text{fluid}gV\bm{\hat{k}}=
+      m_\text{fluid}g\bm{\hat{k}}}
   }
   
-  where $\rho_\mathrm{fluid}$ is the density of the displaced fluid, and
+  where $\rho_\text{fluid}$ is the density of the displaced fluid, and
   $V$ is the volume displaced. The direction of the force is upward. This
   equation is known as \textbf{Archimedes' principle}.
   
@@ -317,8 +315,8 @@
 \begin{frame}{Buoyancy}
 
   \eq{0in}{
-    \boxed{\mb{B} = \rho_\mathrm{fluid}gV\bm{\hat{k}}=
-      m_\mathrm{fluid}g\bm{\hat{k}}}
+    \boxed{\mb{B} = \rho_\text{fluid}gV\bm{\hat{k}}=
+      m_\text{fluid}g\bm{\hat{k}}}
   }
 
   Buoyancy does not depend on:
@@ -331,10 +329,10 @@
   $\mb{W}'$ that is reduced by the buoyance force:
 
   \eq{-.2in}{
-    \mb{W}' = \mb{W}-\mb{B}=\rho'\mb{g}V
+    \mb{W}'=\mb{W}-\mb{B}=\rho'\mb{g}V
   }
   
-  where $\rho'=\rho_{\textrm{obj}}-\rho_{\textrm{fluid}}$ is the relative density
+  where $\rho'=\rho_\text{obj}-\rho_\text{fluid}$ is the relative density
 \end{frame}
 
 
@@ -342,7 +340,7 @@
 \begin{frame}{How Submarines Work}
   Like this:
   \begin{center}
-    \pic{.7}{EbHMOXk.png}
+    \pic{.7}{EbHMOXk}
   \end{center}
 \end{frame}
 
@@ -383,19 +381,20 @@
 \begin{frame}{Example}
   \begin{columns}
     \column{.38\textwidth}
-    \pic{1}{hpa_b.jpg}
+    \pic{1}{hpa_b}
 
     \column{.62\textwidth}
     \textbf{Example 5:} A salvage ship tries to raise a sunken miniature
     submarine from the bottom of Lake Superior. The submarine and its contents
-    have a mass of \SI{72000}{\kilo\gram} and a volume of \SI{18.9}{\metre^3}.
+    have a mass of \SI{72000}{\kilo\gram} and a volume of
+    \SI{18.9}{\metre\cubed}.
     What upward force must be applied to raise the submarine? The density of
-    water is \SI{1000}{\kilo\gram\per\metre^3}.
+    water is \SI{1000}{\kilo\gram\per\metre\cubed}.
     \begin{enumerate}[(a)]
-    \item\SI{1.8e5}{\newton}
-    \item\SI{2.0e5}{\newton}
-    \item\SI{4.8e5}{\newton}
-    \item\SI{5.2e5}{\newton}
+    \item\SI{1.8e5}\newton
+    \item\SI{2.0e5}\newton
+    \item\SI{4.8e5}\newton
+    \item\SI{5.2e5}\newton
     \end{enumerate}
   \end{columns}
 \end{frame}
@@ -462,7 +461,9 @@
 
   \eq{-.15in}{
     \frac{\partial(\rho\mb{v})}{\partial t} +
-    \nabla(\rho\mb{v}\otimes\mb{v}) = -\nabla p +\mb{f}+\mu\nabla^2\mb{v}
+    \nabla(\rho\mb{v}\otimes\mb{v}) = -\nabla p +\nabla\cdot\bm{\tau}
+    +\rho\mb{g}
+    %+\mu\nabla^2\mb{v}
   }
 
   \textbf{Meaning:} The increase in the total momentum of a fluid in a fixed
@@ -478,9 +479,8 @@
   the work-kinetic energy theorem applied to fluids:
   
   \eq{-.2in}{
-    \frac{\partial e}{\partial t} + \nabla\cdotp(e\mb{v})=
-    -\nabla\cdotp p +\frac{1}{Re\; Pr}\nabla q +
-    \frac{1}{Re}\nabla\cdotp(\tau\cdotp\mb{v})
+    \rho\frac{\partial e}{\partial t} + p(\nabla\cdotp\mb{v})=
+    \nabla\cdotp(k\nabla T)+\Phi
   }
 
   \textbf{Meaning:} The increase in the internal energy of the fluid (i.e.\ the
@@ -548,7 +548,7 @@
 %  }
 %\end{frame}
 %  \eq{-.15in}{
-%    \boxed{\Phi_\mathrm{V}=\int\mb{V}\cdot d\mb{A}}
+%    \boxed{\Phi_\text{V}=\int\mb{V}\cdot d\mb{A}}
 %  }
 %    
 %  \vspace{-.1in}where $\mb{V}$ is the velocity (vector field) at the surface,
@@ -557,7 +557,7 @@
 %  $\hat{\mb{n}}$:
 %
 %  \eq{-.15in}{
-%    \boxed{\Phi_\mathrm{V}=\int\mb{V}\cdot\hat{\mb{n}}dA}
+%    \boxed{\Phi_\text{V}=\int\mb{V}\cdot\hat{\mb{n}}dA}
 %  }
 %\end{frame}
 %
@@ -680,4 +680,4 @@
 %  When air flows past a wing, a force is generated
 %\end{frame}
 %
-%\end{document}
+\end{document}

@@ -1,34 +1,29 @@
 \documentclass[12pt,aspectratio=169]{beamer}
-
 \usetheme{metropolis}
 \setbeamersize{text margin left=.5cm,text margin right=.5cm}
-
-\usefonttheme{professionalfonts}
-\usepackage{graphicx}
+\usepackage[lf]{carlito}
 \usepackage{tikz}
 \usepackage{mathpazo}
 \usepackage{xcolor,colortbl}
-%\usepackage{hyperref}
+\usepackage{hyperref}
 \usepackage{siunitx}
-
-
-\setsansfont{Roboto Light}
 \setlength{\itemsep}{0pt}
 \setlength{\parskip}{0pt}
 \renewcommand{\baselinestretch}{1}
 
 \sisetup{
-  detect-all,
-  %number-math-rm=\mathnormal,
+  inter-unit-product=\cdot,
   per-mode=symbol
 }
-
+\tikzset{
+  >=latex
+}
 
 \title{Topic 8: Mechanical Waves \& Sound}
 \subtitle{Advanced Placement Physics 1}
 \author[TML]{Dr.\ Timothy Leung}
-\institute{Olympiads School\\Toronto, Ontario, Canada}
-\date{\today}
+\institute{Olympiads School}
+\date{Updated: \today}
 
 \newcommand{\pic}[2]{\includegraphics[width=#1\textwidth]{#2}}
 \newcommand{\eq}[2]{\vspace{#1}{\Large\begin{displaymath}#2\end{displaymath}}}
@@ -66,7 +61,7 @@
 
 \begin{frame}{Two Kinds of Waves}
   \begin{center}
-    \pic{.6}{main-qimg.png}
+    \pic{.6}{main-qimg}
   \end{center}
   \begin{enumerate}[a.]
   \item\textbf{Longitudinal wave}
@@ -95,27 +90,44 @@
     points in the medium that are in phase. The easiest way to measure
     wavelength is from crest to crest, or from trough to trough.
   \end{itemize}
-  \begin{center}
-    \pic{.8}{sine-wave1.png}
-  \end{center}
+\begin{center}
+    \vspace{-.2in}
+    \begin{tikzpicture}[yscale=1.3]
+      \draw[thick](0,0)--(12,0);
+      \draw[very thick,red!80!black,smooth,samples=100,domain=0:12]
+      plot({\x},{sin(60*(\x-1))});
+      \draw[->,very thick,red!80!black](5,.6)--(6,.6)
+      node[midway,above,black]{\footnotesize direction of wave travel};
+      \draw[<->](2.5,1)--(2.5,0) node[midway,left] {\footnotesize Amplitude};
+      \draw[<->](5.5,-1)--(5.5,0)node[midway,right]{\footnotesize Amplitude};
+      \draw[<->](2.5,1.5)--(8.5,1.5)
+      node[midway,above]{\footnotesize Wavelength ($\lambda$)};
+      \draw[very thin](2.5,1.7)--(2.5,1) node[above]{\footnotesize Crest};
+      \draw[very thin](8.5,1.7)--(8.5,1) node[above]{\footnotesize Crest};
+      \draw[<->](5.5,-1.5)--(11.5,-1.5)
+      node[midway,above]{\footnotesize Wavelength ($\lambda$)};
+      \draw[very thin](5.5,-1.7)--(5.5,-1)   node[below]{\footnotesize Trough};
+      \draw[very thin](11.5,-1.7)--(11.5,-1) node[below]{\footnotesize Trough};
+    \end{tikzpicture}
+\end{center}
 \end{frame}
 
 
 \section{Wave Equation}
 
-%\begin{frame}{The Wave Equation}
-%  The mechanical wave as we know it is the solution to a second-order partial
-%  differential equation: %\footnote{The equation is \emph{second order} because
-%  %it contains second derivatives, and \emph{partial} because it involves
-%  %partial derivatives with respect to both space $x$ and time $t$.}:
-%  
-%  \eq{-.2in}{
-%    \frac{\partial^2 u}{\partial t^2}=
-%    v^2\frac{\partial^2 u}{\partial x^2}
-%  }
-%
-%  subject to initial condition.
-%\end{frame}
+\begin{frame}{The Wave Equation}
+  The mechanical wave as we know it is the solution to a second-order partial
+  differential equation: %\footnote{The equation is \emph{second order} because
+  %it contains second derivatives, and \emph{partial} because it involves
+  %partial derivatives with respect to both space $x$ and time $t$.}:
+  
+  \eq{-.2in}{
+    \frac{\partial^2 u}{\partial t^2} = v^2\frac{\partial^2 u}{\partial x^2}
+  }
+
+  subject to initial condition.
+\end{frame}
+
 
 
 \begin{frame}{Equation of a Traveling Wave}
@@ -130,11 +142,11 @@
     \begin{tabular}{l|c|c}
       \rowcolor{pink}
       \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
-      Displacement of the medium  & $u$ & \si{\metre} \\
-      Amplitude of the wave       & $A$ & \si{\metre} \\
+      Displacement of the medium  & $u$ & \si\metre \\
+      Amplitude of the wave       & $A$ & \si\metre \\
       Wave number                 & $k$ & \si{\per\metre} \\
-      Distance from the source    & $x$ & \si{\metre} \\
-      Time                        & $t$ & \si{\second} \\
+      Distance from the source    & $x$ & \si\metre \\
+      Time                        & $t$ & \si\second \\
       Angular frequency           & $\omega$ & \si{\per\second}
     \end{tabular}
   \end{center}
@@ -152,14 +164,14 @@
   frequency $f$ and period $T$ of the wave by:
 
   \eq{-.35in}{
-    \omega=\frac{2\pi}{T}=2\pi f
+    \omega=\frac{2\pi}T=2\pi f
   }
 
   The \textbf{wave number} $k$ can be thought of as a the ``spatial frequency''
   of the wave, and is related to the wavelength $\lambda$ by:
   
   \eq{-.2in}{
-    k=\frac{2\pi}{\lambda}
+    k=\frac{2\pi}\lambda
   }
 \end{frame}
 
@@ -170,20 +182,20 @@
   to its wavelength, period and frequency of the disturbance:
 
   \eq{-.15in}{
-    \boxed{v = f\lambda =\frac{\lambda}{T}}
+    \boxed{v = f\lambda =\frac{\lambda}T}
   }
   \begin{center}
     \begin{tabular}{l|c|c}
       \rowcolor{pink}
       \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
       Speed         & $v$       & \si{\metre\per\second} \\
-      Frequency     & $f$       & \si{\hertz} \\
-      Wavelength    & $\lambda$ & \si{\metre} \\
-      Period        & $T$       & \si{\metre} 
+      Frequency     & $f$       & \si\hertz \\
+      Wavelength    & $\lambda$ & \si\metre \\
+      Period        & $T$       & \si\metre 
     \end{tabular}
   \end{center}
   The universal wave equation applies to \emph{all} waves. %For sound waves,
-  %$v=v_\mathrm{sound}$; for electromagnetic waves $v=c$.
+  %$v=v_\text{sound}$; for electromagnetic waves $v=c$.
 \end{frame}
 
 
@@ -194,7 +206,7 @@
   related to the wave number and angular frequency by:
 
   \eq{-.2in}{
-    v=\frac{\lambda}{T}=\frac{2\pi/k}{2\pi/\omega}=\frac{\omega}{k}
+    v=\frac{\lambda}T=\frac{2\pi/k}{2\pi/\omega}=\frac{\omega}k
   }
 \end{frame}
 
@@ -224,7 +236,7 @@
     \column{.6\textwidth}
     \centering
     \begin{tikzpicture}[xscale=.013,yscale=2.3]
-      \draw[->](0,0)--(380,0) node[pos=1,right]{$x$};
+      \draw[->](0,0)--(380,0) node[right]{$x$};
       \uncover<1>{
         \draw[samples=60,domain=0:360,red,very thick]plot({\x},{sin(\x)});
       }
@@ -282,35 +294,35 @@
     \column{.35\textwidth}
     \uncover<1->{
       \begin{tikzpicture}[xscale=.006,yscale=.5]
-        \draw(0,0)--(380,0) node[pos=1,right]{\color{red}$f_1=\sin(x)$};
+        \draw(0,0)--(380,0) node[right]{\color{red}$f_1=\sin(x)$};
         \draw[samples=60,domain=0:360,red,very thick] plot({\x},{sin(\x)});
       \end{tikzpicture}
     }
     \uncover<2->{
       \begin{tikzpicture}[xscale=.006,yscale=.5]
-        \draw(0,0)--(380,0) node[pos=1,right]
-             {\color{orange}$f_3=\frac{1}{3}\sin(3x)$};
+        \draw(0,0)--(380,0) node[right]
+             {\color{orange}$f_3=\frac13\sin(3x)$};
         \draw[samples=60,domain=0:360,orange,very thick] plot({\x},{sin(3*\x)});
       \end{tikzpicture}
     }
     \uncover<3->{
       \begin{tikzpicture}[xscale=.006,yscale=.5]
-        \draw(0,0)--(380,0) node[pos=1,right]
-             {\color{yellow}$f_5=\frac{1}{5}\sin(5x)$};
+        \draw(0,0)--(380,0) node[right]
+             {\color{yellow}$f_5=\frac15\sin(5x)$};
         \draw[samples=80,domain=0:360,yellow,very thick] plot({\x},{sin(5*\x)});
       \end{tikzpicture}
     }
     \uncover<4->{
       \begin{tikzpicture}[xscale=.006,yscale=.5]
-        \draw(0,0)--(380,0) node[pos=1,right]
-             {\color{green}$f_7=\frac{1}{7}\sin(7x)$};
+        \draw(0,0)--(380,0) node[right]
+             {\color{green}$f_7=\frac17\sin(7x)$};
         \draw[samples=200,domain=0:360,green,very thick] plot({\x},{sin(7*\x)});
       \end{tikzpicture}
     }
     \uncover<5->{
       \begin{tikzpicture}[xscale=.006,yscale=.5]
-        \draw(0,0)--(380,0) node[pos=1,right]
-             {\color{blue}$f_9=\frac{1}{9}\sin(9x)$};
+        \draw(0,0)--(380,0) node[right]
+             {\color{blue}$f_9=\frac19\sin(9x)$};
         \draw[samples=200,domain=0:360,blue,very thick] plot({\x},{sin(9*\x)});
       \end{tikzpicture}
     }
@@ -343,9 +355,8 @@
 
   \vspace{-.2in}
   \begin{itemize}
-  \item The first wave---with the longest wavelength and lowest
-    frequency---is called the \textbf{fundamental frequency}, or
-    \textbf{first harmonic}
+  \item The first wave (longest wavelength and lowest frequency) is called the
+    \textbf{fundamental frequency}, or \textbf{first harmonic}
   \item The second term has half the wavelength and twice the frequency. It's
     called the \textbf{second harmonic}, the \textbf{first overtone}
   \item Also, third, fourth, fifth\ldots harmonics
@@ -394,15 +405,15 @@
   The speed of an \textbf{acoustic wave} (sound wave) in a gas is given by:
   
   \eq{-.2in}{
-    \boxed{v_s=\sqrt{\frac{\gamma RT}{M}}}
+    \boxed{v_s=\sqrt{\frac{\gamma RT}M}}
   }
   \begin{center}
     \begin{tabular}{l|c|c}
       \rowcolor{pink}
       \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
-      Wave speed             & $v_s$    & \si{m/s}\\
+      Wave speed             & $v_s$    & \si{\metre\per\second}\\
       Temperature            & $T$      & \si{\kelvin}\\
-      Universal gas constant & $R$      & \si{J/mol.K}\\
+      Universal gas constant & $R$      & \si{\joule/mol.\kelvin}\\
       Molar mass             & $M$      & \si{\kilo\gram/mol}\\
       Adiabatic constant     & $\gamma$ & (no units)
     \end{tabular}
@@ -421,13 +432,15 @@
     Speed of sound in a liquid depends on the ``bulk modulus'' $K$ and density
     $\rho$ of the liquid:
       
-    \eq{-.2in}{ v = \sqrt{\frac{K}{\rho}} }
+    \eq{-.2in}{
+      v=\sqrt{\frac{K}\rho}
+    }
    
     Speed of sound in a solid depends on the ``Young's modulus'' $E$ of the
     solid and density $\rho$
 
     \eq{-.2in}{
-      v = \sqrt{\frac{E}{\rho}}
+      v=\sqrt{\frac{E}\rho}
     }
 
     \vspace{-.1in}In general, sound travels fastest in solids, then liquids,
@@ -436,20 +449,20 @@
     \column{.4\textwidth}
     \begin{tabular}{l|c}
       \rowcolor{blue!30}
-      \textbf{Material} & \textbf{Speed} (\si{m/s}) \\
+      \textbf{Material} & \textbf{Speed} (\si{\metre\per\second}) \\
       \rowcolor{pink!70}
-      \multicolumn{2}{c}{Gases (\SI{0}{\celsius}, \SI{101}{\kilo\pascal})} \\
+      \multicolumn2c{Gases (\SI0\celsius, \SI{101}{\kilo\pascal})} \\
       Carbon dioxide & 259 \\
       Oxygen         & 316 \\
       Air            & 331 \\
       Helium         & 965 \\
       \rowcolor{pink!70}
-      \multicolumn{2}{c}{Liquids (\SI{20}{\celsius})} \\
+      \multicolumn2c{Liquids (\SI{20}\celsius)} \\
       Ethanol        & 1162 \\
       Fresh water    & 1482 \\
       Seawater       & 1440-1500 \\
       \rowcolor{pink!70}
-      \multicolumn{2}{c}{Solids} \\
+      \multicolumn2c{Solids} \\
       Copper         & 5010 \\
       Glass          & 5640 \\
       Steel          & 5960
@@ -465,17 +478,17 @@
   \eq{-.2in}{
     \boxed{v=\sqrt{\frac{F_T}{\mu}}}
     \quad\text{\normalsize where}\quad
-    \boxed{\mu=\frac{m}{L}}
+    \boxed{\mu=\frac{m}L}
   }
   \begin{center}
     \begin{tabular}{l|c|c}
       \rowcolor{pink}
       \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
       Wave speed           & $v$   & \si{\metre\per\second} \\
-      Tension              & $F_T$ & \si{\newton} \\
-      Linear mass density  & $\mu$ & \si{\kilo\gram/\metre} \\
+      Tension              & $F_T$ & \si\newton \\
+      Linear mass density  & $\mu$ & \si{\kilo\gram\per\metre} \\
       Mass of the string   & $m$   & \si{\kilo\gram} \\
-      Length of the string & $L$   & \si{\metre}
+      Length of the string & $L$   & \si\metre
     \end{tabular}
   \end{center}
 \end{frame}
@@ -493,8 +506,8 @@
       \rowcolor{pink}
       \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
       Wave speed           & $v$       & \si{\metre\per\second} \\
-      Wavelength           & $\lambda$ & \si{\metre} \\
-      Acceleration due to gravity & $g$ & \si{\metre\per\second^2}
+      Wavelength           & $\lambda$ & \si\metre \\
+      Acceleration due to gravity & $g$ & \si{\metre\per\second\squared}
     \end{tabular}
   \end{center}
   In this case, in an ocean wave, the higher frequency (shorter wavelength)
@@ -529,10 +542,10 @@
     \begin{tabular}{l|c|c}
       \rowcolor{pink}
       \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
-      Averge power        & $\bar{P}$ & \si{\watt} \\
+      Averge power        & $\bar{P}$ & \si\watt \\
       Linear mass density & $\mu$     & \si{\kilo\gram\per\metre}\\
       Angular frequency   & $\omega$  & \si{rad\per\second}\\
-      Wave amplitude      & $A$       & \si{\metre} \\
+      Wave amplitude      & $A$       & \si\metre \\
       Wave speed          & $v$       & \si{\metre\per\second}
     \end{tabular}
   \end{center}  
@@ -546,54 +559,20 @@
   power transmitted by its \textbf{intensity} $I$:
 
   \eq{-.25in}{
-    \boxed{I=\frac{\overline{P}}{S}} %\propto\frac{1}{r^2}}
+    \boxed{I=\frac{\overline{P}}S}
   }
 
-  For a spherical wave (e.g.\ sound emitted from a stationary source), the
-  area that the wavefront passes through is $S=4\pi r^2$, where $r$ is the
-  distance from the source.
+  For a spherical wave (e.g.\ sound emitted from a stationary source), the area
+  that the wavefront passes through is $S=4\pi r^2$, where $r$ is the distance
+  from the source.
 \end{frame}
-
-
-
-
-
-%\begin{frame}{Threshold of Hearing}
-%  The smallest detectable sound intensity is called the
-%  \textbf{threshold of hearing} $I_0$, defined as:
-%
-%  \eq{-.2in}{
-%    I_0=\SI{1e-12}{\watt\per\metre^2}
-%  }
-%
-%  While the sound intensity at the \textbf{threshold of pain} can damage a human
-%  ear:
-%
-%  \eq{-.2in}{
-%    I_p=\SI{1}{\watt\per\metre^2}
-%  }
-%\end{frame}
-%
-%
-%
-%\begin{frame}{Threshold of Hearing}
-%  \begin{center}
-%    \pic{.6}{earcrv2.png}
-%  \end{center}
-%  \begin{itemize}
-%  \item\vspace{-.15in}The threshold of hearing is actually experimentally
-%    determined to be about \SI{4e-12}{\watt\per\metre^2} at \SI{1000}{\hertz}.
-%  \item Maximum sensitivity to sound is \num{3500} to \SI{4000}{\hertz},
-%    corresponding to the resonance of the auditory canal.
-%  \end{itemize}
-%\end{frame}
 
 
 
 \begin{frame}{The Decibel}
   The \textbf{decibel} is defined as by the intensity of sound $I$ compared to
   the \textbf{threshold of hearing} $I_o$ (defined as
-  \SI{1e-12}{\watt\per\metre^2}):
+  \SI{1e-12}{\watt\per\metre\squared}):
   
   \eq{-.2in}{
     \boxed{\beta=10\log_{10}\left[\frac{I}{I_0}\right]}
@@ -603,16 +582,16 @@
       \rowcolor{pink}
       \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
       Decibel              & $\beta$ & \si{dB}\\
-      Sound intensity      & $I$     & \si{\watt\per\metre^2}\\
-      Threshold of hearing & $I_0$   &  \si{\watt\per\metre^2}
+      Sound intensity      & $I$     & \si{\watt\per\metre\squared}\\
+      Threshold of hearing & $I_0$   & \si{\watt\per\metre\squared}
     \end{tabular}
   \end{center}  
   
   \begin{itemize}
-  \item The threshold of hearing is \SI{0}{dB}, while the
+  \item The threshold of hearing is \SI0{dB}, while the
     \textbf{threshold of pain} is \SI{120}{dB}.
   \item Humans perceive a doubling of loudness when intensity is increases by a
-    factor of \num{10} (an increase of \SI{10}{dB})
+    factor of 10 (an increase of \SI{10}{dB})
   \end{itemize}
 \end{frame}
 
@@ -679,11 +658,11 @@
   \begin{columns}
     \column{.3\textwidth}
     \begin{tikzpicture}[scale=.5]
-      \fill ( 0,0) circle(.075) node[below]{\footnotesize $1$};
-      \uncover<2->{ \fill (.8,0) circle(.075) node[below]{\footnotesize $2$}; }
-      \uncover<3->{ \fill(1.6,0) circle(.075) node[below]{\footnotesize $3$}; }
-      \uncover<4->{ \fill(2.4,0) circle(.075) node[below]{\footnotesize $4$}; }
-      \draw[thick,->](0,0)--(3,0) node[pos=1,right]{\footnotesize $v$};
+      \fill ( 0,0) circle(.075) node[below]{\footnotesize 1};
+      \uncover<2->{ \fill (.8,0) circle(.075) node[below]{\footnotesize 2}; }
+      \uncover<3->{ \fill(1.6,0) circle(.075) node[below]{\footnotesize 3}; }
+      \uncover<4->{ \fill(2.4,0) circle(.075) node[below]{\footnotesize 4}; }
+      \draw[thick,->](0,0)--(3,0) node[right]{\footnotesize $v$};
       \begin{scope}[very thick]
         \uncover<2>{
           \draw[red!80](0,0) circle(1);
@@ -733,7 +712,7 @@
   We all experience Doppler effect every time an ambulance speeds by us with
   its sirens on.
   \begin{center}
-    \pic{.6}{toronto-ambulance.jpg}
+    \pic{.6}{toronto-ambulance}
   \end{center}
   When it is moving toward us, the pitch of the siren is high, but the moment
   it passes us, the pitch decreases.
@@ -742,21 +721,21 @@
 
 
 \begin{frame}{Doppler Effect}
-  When a wave source is moving at a speed $v_{\textrm{src}}$ and an observing is
-  moving at observer $v_{\textrm{ob}}$, the perceived frequency is shifted:
+  When a wave source is moving at a speed $v_\text{src}$ and an observing is
+  moving at observer $v_\text{ob}$, the perceived frequency is shifted:
 
   \eq{-.2in}{
-    \boxed{f'=\frac{v_s\pm v_{\textrm{ob}}}{v_s\mp v_{\textrm{src}}}f}
+    \boxed{f'=\frac{v_s\pm v_\text{ob}}{v_s\mp v_\text{src}}f}
   }
   \begin{center}
     \begin{tabular}{l|c|c}
       \rowcolor{pink}
       \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
-      Apparent frequency  & $f'$   & \si{\hertz} \\
-      Actual frequency    & $f$    & \si{\hertz} \\
+      Apparent frequency  & $f'$   & \si\hertz \\
+      Actual frequency    & $f$    & \si\hertz \\
       Speed of sound      & $v_s$ & \si{\metre\per\second}\\
-      Speed of source & $v_{\textrm{src}}$ & \si{\metre\per\second}\\
-      Speed of observer & $v_{\textrm{ob}}$ & \si{\metre\per\second}
+      Speed of source & $v_\text{src}$ & \si{\metre\per\second}\\
+      Speed of observer & $v_\text{ob}$ & \si{\metre\per\second}
     \end{tabular}
   \end{center}
   The $+$ sign is used if the source and observer are approaching each other,
@@ -773,7 +752,7 @@
   \begin{columns}
     \column{.32\textwidth}
     \begin{tikzpicture}[scale=.5]
-      \draw[->,thick](0,0)--(4.5,0) node[pos=1,right]{\footnotesize $v=v_s$};
+      \draw[->,thick](0,0)--(4.5,0) node[right]{\footnotesize $v=v_s$};
       \fill(0,0) circle(.075) node[below]{\footnotesize $1$};
       \uncover<2->{ \fill(1,0) circle(.075) node[below]{\footnotesize $2$}; }
       \uncover<3->{ \fill(2,0) circle(.075) node[below]{\footnotesize $3$}; }
@@ -824,7 +803,7 @@
     \column{.47\textwidth}
     \begin{tikzpicture}[scale=.5]
       
-      \draw[->](-3.5,0)--(9,0) node[pos=1,above left]{\footnotesize $v>v_s$};
+      \draw[->](-3.5,0)--(9,0) node[above left]{\footnotesize $v>v_s$};
       \uncover<5>{
         \draw[rotate around={213.8:(7.2,0)}](7.2,0)--(15.5,0);
         \draw[rotate around={146.3:(7.2,0)}](7.2,0)--(17.5,0);
@@ -864,7 +843,7 @@
       \textbf{Mach angle}) given by:
       
       \eq{-.1in}{
-        \gamma=\sin^{-1}\left(\frac{1}{M}\right)
+        \gamma=\sin^{-1}\left(\frac1M\right)
       }
 
       An observer does not hear the sound source until it has gone past!
@@ -879,7 +858,7 @@
   moving through air creates a pressure disturbance. Below is a NATO bullet in
   supersonic flight:
   \begin{center}
-    \pic{.35}{bullet2.jpg}
+    \pic{.35}{bullet2}
   \end{center}
   The flow around this bullet is taken inside a \emph{shock tube} that
   generates a short burst of supersonic flow. A high-speed camera is used to
@@ -893,7 +872,7 @@
   the duck swims faster than the speed of the water wave, it also creates a
   cone shape.
   \begin{center}
-    \pic{.5}{duck.jpg}
+    \pic{.5}{duck}
   \end{center}
 
 \end{frame}
@@ -922,7 +901,7 @@
     \end{itemize}
     
     \column{.5\textwidth}
-    \pic{1}{22.png}
+    \pic1{22}
   \end{columns}
 \end{frame}
 
@@ -947,7 +926,7 @@
     \end{itemize}
     
     \column{.4\textwidth}
-    \pic{1}{23.png}
+    \pic1{23}
   \end{columns}
 \end{frame}
 
@@ -972,7 +951,7 @@
     \end{itemize}
     
     \column{.4\textwidth}
-    \pic{1}{24.png}
+    \pic1{24}
   \end{columns}
   Note that the transmitted wave is \emph{always} upright.
 \end{frame}
@@ -983,7 +962,7 @@
 
 \begin{frame}{Superposition of Waves}
   \begin{center}
-    \pic{.6}{omkAt.png}
+    \pic{.6}{omkAt}
   \end{center}
   \begin{itemize}
   \item\textbf{Principle of Superposition:} When multiple waves pass through
@@ -1015,7 +994,7 @@
     \end{itemize}
     
     \column{.4\textwidth}
-    \pic{1}{constructive.png}
+    \pic1{constructive}
   \end{columns}
 \end{frame}
 
@@ -1033,7 +1012,7 @@
     \end{itemize}
         
     \column{.35\textwidth}
-    \pic{1}{destructive.png}
+    \pic1{destructive}
   \end{columns}
 \end{frame}
 
@@ -1050,8 +1029,8 @@
   \begin{center}
     \vspace{-.1in}
     \begin{tikzpicture}[scale=.8]
-      \draw[->,thick](0,0) --(11,0) node[pos=1,right] {$x$};
-      \draw[->,thick](0,-2)-- (0,2) node[pos=1,above] {$y$};
+      \draw[->,thick](0,0) --(11,0) node[right] {$x$};
+      \draw[->,thick](0,-2)-- (0,2) node[above] {$y$};
       \draw[->](4,2)--(5,2) node[midway,above]{\footnotesize Direction of wave};
       \uncover<1,3->{
         \draw[blue,smooth,samples=200,domain=0:10] plot({\x},{sin(700*\x)});
@@ -1080,15 +1059,15 @@
   the two component waves:
 
   \eq{-.2in}{
-    \boxed{f_\mathrm{beat}=|f_1-f_2|}
+    \boxed{f_\text{beat}=|f_1-f_2|}
   }
   \begin{center}
     \begin{tabular}{l|c|l}
       \rowcolor{pink}
       \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
-      Beat frequency     & $f_\mathrm{beat}$   & \si{\hertz} \\
-      Frequency of 1st component wave & $f_1$ & \si{\hertz} \\
-      Frequency of 2nd component wave & $f_2$ & \si{\hertz}
+      Beat frequency     & $f_\text{beat}$    & \si\hertz \\
+      Frequency of 1st component wave & $f_1$ & \si\hertz \\
+      Frequency of 2nd component wave & $f_2$ & \si\hertz
     \end{tabular}
   \end{center}
   For sound waves, they sound like a pulsating ``whoomf''. Musicians often use
@@ -1100,7 +1079,7 @@
 
 \begin{frame}{Standing Waves}
   \begin{center}
-    \pic{.6}{standing-wave-3.png}
+    \pic{.6}{standing-wave-3}
   \end{center}
   If two waves of the same frequency meet up under the right conditions, they
   may appear to be ``standing still''. This is called a standing wave
@@ -1190,12 +1169,12 @@
   \end{center}
   
   \vspace{-.1in}The fundamental frequency is based on the speed of the
-  traveling wave along the string $v_\mathrm{str}$:
+  traveling wave along the string $v_\text{str}$:
 
   \eq{-.3in}{
     \boxed{
       f_{r,1}
-      =\frac{v_\mathrm{str}}{\lambda}=\frac{v_\mathrm{str}}{2L}}
+      =\frac{v_\text{str}}\lambda=\frac{v_\text{str}}{2L}}
   }
 \end{frame}
 
@@ -1221,12 +1200,11 @@
     
     \eq{-.01in}{
       f_{r,2}=
-      \frac{v_\mathrm{str}}{\lambda}=\frac{v_\mathrm{str}}{L}=2f_{r,1}
+      \frac{v_\text{str}}\lambda=\frac{v_\text{str}}{L}=2f_{r,1}
     }
   \end{columns}
 
-  And a third resonance frequency occurs at
-  $\displaystyle L=\frac{3}{2}\lambda$:
+  And a third resonance frequency occurs at $\displaystyle L=\frac32\lambda$:
 
   \vspace{-.2in}
   \begin{columns}
@@ -1245,7 +1223,7 @@
     \column{.55\textwidth}
       
     \eq{-.01in}{
-      f_{r,3}=\frac{3v_\mathrm{str}}{2L}=3f_{r,1}
+      f_{r,3}=\frac{3v_\text{str}}{2L}=3f_{r,1}
     }
   \end{columns}
 \end{frame}
@@ -1258,7 +1236,7 @@
   \eq{-.15in}{
     \boxed{f_n=nf_1}\quad
     \text{\normalsize where}\quad
-    \boxed{f_1=\frac{v_{\textrm{str}}}{2L}}
+    \boxed{f_1=\frac{v_\text{str}}{2L}}
   }
   \begin{itemize}
   \item $n$ is a whole-number multiple
@@ -1319,7 +1297,7 @@
   And the wavelengths corresponding to the resonance frequencies are:
 
   \eq{-.2in}{
-    \boxed{\lambda=\frac{2L}{n}}\quad n=1,2,3,\ldots
+    \boxed{\lambda=\frac{2L}n}\quad n=1,2,3,\ldots
   }
 
   The difference between a closed pipe and a string is that the wave speed is
@@ -1396,7 +1374,7 @@
   identical to that of the closed pipes.
 
   \eq{-.2in}{
-    \boxed{\lambda=\frac{2L}{n}}\quad n=1,2,3,\ldots
+    \boxed{\lambda=\frac{2L}n}\quad n=1,2,3,\ldots
   }
   Strings, closed pipes and open pipes are all said to have
   ``full set of harmonics'' because every harmonic frequency is also a
@@ -1488,7 +1466,7 @@
     \column{.55\textwidth}
 
     \eq{-.4in}{
-      f_{\mathrm{res},2}=\frac{v_s}{\lambda}=\frac{3v_s}{4L}=3f_1
+      f_{\text{res},2}=\frac{v_s}{\lambda}=\frac{3v_s}{4L}=3f_1
     }
   \end{columns}
   And then, third resonance at $\displaystyle\lambda=\frac45L$:
@@ -1505,7 +1483,7 @@
 
     \column{.55\textwidth}
     \eq{-.2in}{
-      f_{\mathrm{res},3}=\frac{v_s}{\lambda}=\frac{5v_s}{4L}=5f_1
+      f_{\text{res},3}=\frac{v_s}{\lambda}=\frac{5v_s}{4L}=5f_1
     }
   \end{columns}
 \end{frame}
@@ -1541,7 +1519,7 @@
 %  \frametitle{Resonance Length in a Semi-Open Pipe}
 %  Let's submerge a part of this pipe in water\ldots
 %  \begin{center}
-%    \pic{.7}{res-length-closed.png}
+%    \pic{.7}{res-length-closed}
 %  \end{center}
 %\end{frame}
 %
@@ -1551,7 +1529,7 @@
 %  resonance length $L_1$: %($\displaystyle\frac{\lambda}{4}$):
 %  
 %  \eq{-.2in}{
-%    \boxed{L_{\mathrm{res},n} = (2n-1)L_1}
+%    \boxed{L_{\text{res},n} = (2n-1)L_1}
 %    \quad\text{\normalsize where}\quad
 %    \boxed{L_1 = \frac{\lambda}{4}}
 %  }
@@ -1563,7 +1541,7 @@
 %  \frametitle{Resonance in an Open Pipe}
 %  We can also repeat this with pipes that are open on both ends.
 %  \begin{center}
-%    \pic{.75}{res-length-open.png}
+%    \pic{.75}{res-length-open}
 %  \end{center}
 %\end{frame}
 %
@@ -1575,7 +1553,7 @@
 %  first resonance length $L_1$:
 %
 %  \eq{-.25in}{
-%    \boxed{L_{\mathrm{res},n}=nL_1}
+%    \boxed{L_{\text{res},n}=nL_1}
 %    \quad\text{\normalsize (open pipe)}
 %  }
 %  
@@ -1593,10 +1571,10 @@
   \item The concept of harmonic frequencies is the reason why some musical
     instruments will never play well in harmony (e.g.\ pianos, modern organs).
   \item \textbf{Example:} Find all the harmonics of a fundamental frequency of
-    \SI{110}{\hertz} and then compare them to the values on the table.
+    \SI{110}\hertz and then compare them to the values on the table.
   \end{itemize}
   \begin{center}
-    \pic{.6}{fundamental_freqs.png}
+    \pic{.6}{fundamental_freqs}
   \end{center}
 \end{frame}
 \end{document}
