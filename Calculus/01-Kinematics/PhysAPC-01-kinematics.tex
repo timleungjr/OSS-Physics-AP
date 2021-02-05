@@ -147,7 +147,7 @@
 
 
 \begin{frame}{Position}
-  \textbf{Position} $\mb{x}$ describes the location of an object in a
+  \textbf{Position} ($\bm{x}$) describes the location of an object in a
   coordinate system. The origin of%\footnote{The coordinate system is usually
   %\emph{Cartesian}, but it can also be \emph{polar}, \emph{cylindrical} or
   %\emph{spherical}}.
@@ -155,7 +155,7 @@
   The SI unit for position is \textbf{meter}, \si{\metre}.
   
   \eq{-.2in}{
-    \boxed{\mb{x}(t)=x(t)\iii + y(t)\jjj + z(t)\kkk}
+    \boxed{\bm{x}(t)=x(t)\iii + y(t)\jjj + z(t)\kkk}
   }
 
   Vectors in 2D/3D Cartesian space are generally using the
@@ -172,19 +172,19 @@
 
 
 \begin{frame}{Displacement}
-  \textbf{Displacement} $\Delta\mb{x}(t)$ is the change in position from the
-  initial position $\mb{x}_0$ within the same coordinate system:
+  \textbf{Displacement} $\Delta\bm{x}(t)$ is the change in position from the
+  initial position $\bm{x}_0$ within the same coordinate system:
 
   \eq{-.25in}{
     \boxed{
-      \Delta\mb{x}(t)=\mb{x}(t)-\mb{x}_0
+      \Delta\bm{x}(t)=\bm{x}(t)-\bm{x}_0
       =(x-x_0)\iii + (y-y_0)\jjj + (z-z_0)\kkk
     }
   }
   \begin{itemize}
   \item IJK notation makes vector addition and subtraction less prone to errors
-  \item Since the reference point $\mb{x}_\text{ref}=\mb{0}$, the position
-    vector $\mb{x}$ is also its displacement from the reference point
+  \item Since the reference point $\bm{x}_\text{ref}=\bm{0}$, the position
+    vector $\bm{x}$ is also its displacement from the reference point
   \end{itemize}
 \end{frame}
 
@@ -196,21 +196,21 @@
     \column{.7\textwidth}
     \begin{itemize}
     \item The length of the path taken by an object when it travels from
-      $\mb{x}_0$ to $\mb{x}$
+      $\bm{x}_0$ to $\bm{x}$
     \item A scalar quantity
     \item Always positive, i.e.\ $s\geq 0$
     \item Although the magnitude of the displacement vector is also a scalar,
       it is not necessarily the same as distance
-    \item $s\geq |\Delta\mb{x}|$
+    \item $s\geq |\Delta\bm{x}|$
     \end{itemize}
     
     \column{.3\textwidth}
     \begin{tikzpicture}[scale=.5]
       \draw[->](0,0)--(6,0) node[right]{$x$};
       \draw[->](0,0)--(0,8) node[above]{$y$};
-      \draw[->,red,very thick] (0,0)--(4,1) node[midway,above]{$\mb{x}_0$};
-      \draw[->,red,very thick] (0,0)--(2,6) node[midway,left]{$\mb{x}$};
-      \draw[->,blue,very thick](4,1)--(2,6) node[midway,right]{$\Delta\mb{x}$};
+      \draw[->,red,very thick] (0,0)--(4,1) node[midway,above]{$\bm{x}_0$};
+      \draw[->,red,very thick] (0,0)--(2,6) node[midway,left]{$\bm{x}$};
+      \draw[->,blue,very thick](4,1)--(2,6) node[midway,right]{$\Delta\bm{x}$};
       \draw[thick,dash dot,<->] (4,1)..controls (6,5) and (5,7)..(2,6)
       node[midway,right]{$s$};
     \end{tikzpicture}
@@ -220,24 +220,24 @@
 
 
 \begin{frame}{Instantaneous Velocity}
-  Since position $\mb{x}$ is continuously differentiable in time $t$, the
+  Since position $\bm{x}$ is continuously differentiable in time $t$, the
   \textbf{instantaneous velocity} can be found at any time by differentiating
-  $\mb{x}$ with respect to $t$. The unit for velocity is
+  $\bm{x}$ with respect to $t$. The unit for velocity is
   \textbf{meters per second} (\si{\metre\per\second}):
 
   
   \eq{-.2in}{
     \boxed{
-      \mb{v}(t)= \frac{d\mb{x}}{dt}
+      \bm{v}(t)= \frac{d\bm{x}}{dt}
     }
   }
   
-  Since $\mb{x}$ has $x$, $y$ and $z$ components along the $\iii$, $\jjj$ and
+  Since $\bm{x}$ has $x$, $y$ and $z$ components along the $\iii$, $\jjj$ and
   $\kkk$ directions that are linearly independent, we can take the time
   derivative in every component:
 
   \eq{-.15in}{
-    \mb{v}(t)= \frac{d\mb{x}}{dt}=
+    \bm{v}(t)= \frac{d\bm{x}}{dt}=
     \frac{dx}{dt}\iii + \frac{dy}{dt}\jjj + \frac{dz}{dt}\kkk =
     u\iii + v\jjj + w\kkk
   }
@@ -246,36 +246,36 @@
 
 
 \begin{frame}{Integrating Velocity to Get Position/Displacement}
-  Conversely, if instantaneous velocity $\mb{v}(t)$ is the time rate of change
-  of position $\mb{x}(t)$, then $\mb{x}(t)$ is the time integral of $\mb{v}(t)$:
+  Conversely, if instantaneous velocity $\bm{v}(t)$ is the time rate of change
+  of position $\bm{x}(t)$, then $\bm{x}(t)$ is the time integral of $\bm{v}(t)$:
   
   \eq{-.2in}{
     \boxed{
-      \mb{x}(t)=\int\mb{v}(t)dt + \mb{x}_0
+      \bm{x}(t)=\int\bm{v}(t)dt + \bm{x}_0
     }
   }
   
-  The constant of integration $\mb{x}_0$ is the \emph{initial position} at
-  $t=\num{0}$. We can integrate each component to get $\mb{x}$:
+  The constant of integration $\bm{x}_0$ is the \emph{initial position} at
+  $t=\num{0}$. We can integrate each component to get $\bm{x}$:
 
- \eq{-.2in}{ \mb{x}(t)= \left(
-    \int u\iii + \int v\jjj + \int w\kkk \right) dt + \mb{x}_0
+ \eq{-.2in}{ \bm{x}(t)= \left(
+    \int u\iii + \int v\jjj + \int w\kkk \right) dt + \bm{x}_0
   }
 \end{frame}
 
 
 
 \begin{frame}{Average Velocity}
-  \textbf{Average velocity} $\overline{\mb{v}}$ of an object is the
-  \emph{finite} change in position $\Delta\mb{x}$ over a \emph{finite} time
+  \textbf{Average velocity} $\overline{\bm{v}}$ of an object is the
+  \emph{finite} change in position $\Delta\bm{x}$ over a \emph{finite} time
   interval $\Delta t$:
 
   \eq{-.3in}{
     \boxed{
-      \overline{\mb{v}}=
-      \frac{\Delta\mb{x}}{\Delta t}=
-      \frac{\mb{x}-\mb{x}_0}{t-t_0}=
-      \frac{\int_{t_0}^t\mb{v}dt}{t-t_0}
+      \overline{\bm{v}}=
+      \frac{\Delta\bm{x}}{\Delta t}=
+      \frac{\bm{x}-\bm{x}_0}{t-t_0}=
+      \frac{\int_{t_0}^t\bm{v}dt}{t-t_0}
     }
   }
   
@@ -283,7 +283,7 @@
   average velocity by separating components in each direction:
 
   \eq{-.15in}{
-    \overline{\mb{v}}=
+    \overline{\bm{v}}=
     \frac{\Delta x}{\Delta t}\iii+
     \frac{\Delta y}{\Delta t}\jjj+
     \frac{\Delta z}{\Delta t}\kkk
@@ -308,7 +308,7 @@
   \item\vspace{-.1in}Since $s\geq 0$, instantaneous speed must also be
     positive, i.e.\ $v\geq 0$
   \item Instantaneous speed is also the magnitude of the instantaneous velocity
-    vector, i.e.\ $v=|\mb{v}|$
+    vector, i.e.\ $v=|\bm{v}|$
   \end{itemize}
   Likewise, \textbf{average speed} is similar to average velocity: it is the
   distance travelled over a finite time interval.
@@ -338,25 +338,25 @@
 
 \begin{frame}{Instantaneous \& Average Acceleration}
   In the same way that velocity is the time rate of change in position,
-  \textbf{instantaneous acceleration} $\mb{a}(t)$ is the time rate of change in
+  \textbf{instantaneous acceleration} $\bm{a}(t)$ is the time rate of change in
   velocity, with a unit of \textbf{meters per second squared}
   (\si{\metre\per\second\squared}):
 
   \eq{-.25in}{
     \boxed{
-      \mb{a}(t)= \frac{d\mb{v}}{dt}=\frac{d^2\mb{x}}{dt^2}
+      \bm{a}(t)= \frac{d\bm{v}}{dt}=\frac{d^2\bm{x}}{dt^2}
     }
   }
 
-  Likewise, \textbf{average acceleration} $\overline{\mb{a}}$ is the finite
-  change in velocity $\Delta\mb{v}$ over a finite time interval $\Delta t$:
+  Likewise, \textbf{average acceleration} $\overline{\bm{a}}$ is the finite
+  change in velocity $\Delta\bm{v}$ over a finite time interval $\Delta t$:
 
   \eq{-.27in}{
     \boxed{
-      \overline{\mb{a}}=
-      \frac{\Delta\mb{v}}{\Delta t}
-      =\frac{\mb{v}-\mb{v}_0}{t-t_0}
-      =\frac{\int_{t_0}^t\mb{a}dt}{t-t_0}
+      \overline{\bm{a}}=
+      \frac{\Delta\bm{v}}{\Delta t}
+      =\frac{\bm{v}-\bm{v}_0}{t-t_0}
+      =\frac{\int_{t_0}^t\bm{a}dt}{t-t_0}
     }
   }
 
@@ -373,8 +373,8 @@
 
   \vspace{-.3in}{\Large
     \begin{align*}
-      \mb{v} &= \dot{\mb{x}}\\
-      \mb{a} &= \dot{\mb{v}}=\ddot{\mb{x}}
+      \bm{v} &= \dot{\bm{x}}\\
+      \bm{a} &= \dot{\bm{v}}=\ddot{\bm{x}}
     \end{align*}
   }
 
@@ -384,19 +384,19 @@
 
 
 \begin{frame}{Integrating Acceleration to Get Velocity}
-  Velocity $\mb{v}(t)$ is the time integral of acceleration $\mb{a}(t)$:
+  Velocity $\bm{v}(t)$ is the time integral of acceleration $\bm{a}(t)$:
     
   \eq{-.2in}{
     \boxed{
-      \mb{v}(t)=\int\mb{a}(t)dt+\mb{v}_0
+      \bm{v}(t)=\int\bm{a}(t)dt+\bm{v}_0
     }
   }
 
   Again, we can integrate each component of the vector independently:
 
   \eq{-.2in}{
-    \mb{v}(t)=
-    \left(\int a_x\iii + \int a_y\jjj + \int a_z\kkk \right) dt +\mb{v}_0
+    \bm{v}(t)=
+    \left(\int a_x\iii + \int a_y\jjj + \int a_z\kkk \right) dt +\bm{v}_0
   }
 \end{frame}
 
@@ -407,15 +407,15 @@
   of \si{\metre\per\second\cubed}:
 
   \eq{-.15in}{
-    \mb{j}=\frac{d\mb{a}}{dt}=\frac{d^2\mb{v}}{dt^2}=\frac{d^3\mb{x}}{dt^3}
+    \bm{j}=\frac{d\bm{a}}{dt}=\frac{d^2\bm{v}}{dt^2}=\frac{d^3\bm{x}}{dt^3}
   }
 
   The time derivative of jerk is \textbf{jounce}, or \textbf{snap}, with a
   unit of \si{\metre\per\second^4}:
   
   \eq{-.15in}{
-    \mb{s}=\frac{d\mb{j}}{dt}=\frac{d^2\mb{a}}{dt^2}=\frac{d^3\mb{v}}{dt^3}
-    =\frac{d^4\mb{x}}{dt^4}
+    \bm{s}=\frac{d\bm{j}}{dt}=\frac{d^2\bm{a}}{dt^2}=\frac{d^3\bm{v}}{dt^3}
+    =\frac{d^4\bm{x}}{dt^4}
   }
   
   The next two derivatives of snap are called \textbf{crackle} and
@@ -666,14 +666,14 @@
 
 \begin{frame}{Projectile Motion}
   A \textbf{projectile} is an object that is launched with an initial velocity
-  of $\mb{v}_0$ along a parabolic trajectory and accelerates only due to
+  of $\bm{v}_0$ along a parabolic trajectory and accelerates only due to
   gravity.
   \begin{center}
     \begin{tikzpicture}[scale=1.1]
       \draw[->](0,0)--(2,0) node[right]{$x$};
       \draw[->](0,0)--(0,2) node[above]{$y$};
       \draw[dotted,domain=0:4,thick] plot (\x, {1.2*\x-.2*\x*\x});
-      \draw[very thick,->](0,0)--(.75,.9)node[above]{$\mb{v}_0$};
+      \draw[very thick,->](0,0)--(.75,.9)node[above]{$\bm{v}_0$};
       \draw[very thick,red!80!black,->]
       (0,0)--(0,.9)node[midway,left]{$v_{y1}$};
       \draw[very thick,blue!80!black,->]
@@ -860,19 +860,19 @@
 
       \fill[red!70!black] (3,1) circle(.03) node[below right]{$A$};
       \draw[very thick,->,blue!70!black](0,0)--(2.98,.998)
-      node[midway,below]{$\mb{x}_{AC}$};
+      node[midway,below]{$\bm{x}_{AC}$};
       \draw[very thick,->,green!80!black](2,3)--(3,1.03)
-      node[midway,right]{$\mb{x}_{AB}$};
+      node[midway,right]{$\bm{x}_{AB}$};
     \end{tikzpicture}
 
     \column{.6\textwidth}
     The position of $\textcolor{red!70!black}{A}$ can be described by
     \begin{itemize}
-    \item $\textcolor{green!80!black}{\mb{x}_{AB}(t)}$ (relative to frame $B$)
-    \item $\textcolor{blue!70!black}{\mb{x}_{AC}(t)}$ (relative to frame $C$)
+    \item $\textcolor{green!80!black}{\bm{x}_{AB}(t)}$ (relative to frame $B$)
+    \item $\textcolor{blue!70!black}{\bm{x}_{AC}(t)}$ (relative to frame $C$)
     \end{itemize}
-    It is obvious that $\textcolor{green!80!black}{\mb{x}_{AB}(t)}$ and
-    $\textcolor{blue!70!black}{\mb{x}_{AC}(t)}$ are different vectors
+    It is obvious that $\textcolor{green!80!black}{\bm{x}_{AB}(t)}$ and
+    $\textcolor{blue!70!black}{\bm{x}_{AC}(t)}$ are different vectors
   \end{columns}
 \end{frame}
 
@@ -893,31 +893,31 @@
       \draw[->](2,3)--(2,4)     node[above]{$z$};
       
       \draw[very thick,->,purple!80](0,0)--(2,3)
-      node[midway,left]{$\mb{x}_{BC}$};
+      node[midway,left]{$\bm{x}_{BC}$};
       \fill[pink] (3,1) circle(.03) node[below right]{$A$};
       \draw[very thick,->,blue!30](0,0)--(2.98,.998)
-      node[midway,below]{$\mb{x}_{AC}$};
+      node[midway,below]{$\bm{x}_{AC}$};
       \draw[very thick,->,green!30](2,3)--(3,1.03)
-      node[midway,right]{$\mb{x}_{AB}$};
+      node[midway,right]{$\bm{x}_{AB}$};
     \end{tikzpicture}
 
     \column{.6\textwidth}
     The position vector of the origins of the two reference frames is given by
-    $\textcolor{purple!80}{\mb{x}_{BC}}$
+    $\textcolor{purple!80}{\bm{x}_{BC}}$
     \begin{itemize}
     \item The vector pointing from the origin of frame $C$ to the origin of
       frame $B$
     \item If the two frames are moving relative to each other, then
-    $\textcolor{purple!80}{\mb{x}_{BC}}$ is also a function of time
+    $\textcolor{purple!80}{\bm{x}_{BC}}$ is also a function of time
     \end{itemize}
     Even without using vector notations, the relationship between the vectors
     is obvious:
 
     \eq{-.3in}{
       \boxed{
-        \textcolor{blue!70!black}{\mb{x}_{AC}}=
-        \textcolor{green!80!black}{\mb{x}_{AB}}+
-        \textcolor{purple!80}{\mb{x}_{BC}}
+        \textcolor{blue!70!black}{\bm{x}_{AC}}=
+        \textcolor{green!80!black}{\bm{x}_{AB}}+
+        \textcolor{purple!80}{\bm{x}_{BC}}
       }
     }
   \end{columns}
@@ -942,11 +942,11 @@
 
       \fill[red!65!black] (3,1) circle(.03) node[below right]{$A$};
       \draw[very thick,->,blue!70!black](0,0)--(2.98,.998)
-      node[midway,below]{$\mb{x}_{AC}$};
+      node[midway,below]{$\bm{x}_{AC}$};
       \draw[very thick,->,green!80!black](2,3)--(3,1.03)
-      node[midway,right]{$\mb{x}_{AB}$};
+      node[midway,right]{$\bm{x}_{AB}$};
       \draw[very thick,->,purple!80](0,0)--(2,3)
-      node[midway,left]{$\mb{x}_{BC}$};
+      node[midway,left]{$\bm{x}_{BC}$};
     \end{tikzpicture}
 
     \column{.6\textwidth}
@@ -954,9 +954,9 @@
 
     \eq{-.33in}{
       \boxed{
-        \textcolor{blue!70!black}{\mb{x}_{AC}}=
-        \textcolor{green!80!black}{\mb{x}_{AB}}+
-        \textcolor{purple!80}{\mb{x}_{BC}}
+        \textcolor{blue!70!black}{\bm{x}_{AC}}=
+        \textcolor{green!80!black}{\bm{x}_{AB}}+
+        \textcolor{purple!80}{\bm{x}_{BC}}
       }
     }
     
@@ -965,9 +965,9 @@
 
     \eq{-.25in}{
       \boxed{
-        \textcolor{blue!70!black}{\mb{v}_{AC}} =
-        \textcolor{green!80!black}{\mb{v}_{AB}}+
-        \textcolor{purple!80}{\mb{v}_{BC}}
+        \textcolor{blue!70!black}{\bm{v}_{AC}} =
+        \textcolor{green!80!black}{\bm{v}_{AB}}+
+        \textcolor{purple!80}{\bm{v}_{BC}}
       }
     }
 
@@ -976,9 +976,9 @@
 
     \eq{-.25in}{
       \boxed{
-        \textcolor{blue!70!black}{\mb{a}_{AC}}=
-        \textcolor{green!80!black}{\mb{a}_{AB}}+
-        \textcolor{purple!80}{\mb{a}_{BC}}
+        \textcolor{blue!70!black}{\bm{a}_{AC}}=
+        \textcolor{green!80!black}{\bm{a}_{AB}}+
+        \textcolor{purple!80}{\bm{a}_{BC}}
       }
     }
   \end{columns}
@@ -992,7 +992,7 @@
   than the speed of light:
 
   \eq{-.25in}{
-    \mb{v}_{AC}=\mb{v}_{AB}+\mb{v}_{BC}
+    \bm{v}_{AC}=\bm{v}_{AB}+\bm{v}_{BC}
   }
 
   The velocity of $A$ relative to reference frame $C$ is the velocity of $A$
@@ -1000,7 +1000,7 @@
   we add another reference frame $D$, the equation becomes:
 
   \eq{-.25in}{
-    \mb{v}_{AD}=\mb{v}_{AB}+\mb{v}_{BC}+\mb{v}_{CD}
+    \bm{v}_{AD}=\bm{v}_{AB}+\bm{v}_{BC}+\bm{v}_{CD}
   }
 \end{frame}
 

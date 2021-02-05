@@ -1,0 +1,19 @@
+TERM=Winter-2021
+DESTINATION=$(HOME)/Nextcloud/Physics-APC-$(TERM)-Web
+
+export DESTINATION
+
+all:
+	cd 04-momentumCollisions ; make
+	cd 05-centerOfMas ; make
+
+clean:
+	rm -rf *.*~ *~ *.log
+	cd 04-momentumCollisions ; make clean
+	cd 05-centerOfMas ; make clean
+
+public:
+	mkdir -p $(DESTINATION)
+	cd 04-momentumCollisions ; make public
+	cd 05-centerOfMas ; make public
+

@@ -1,5 +1,4 @@
 \documentclass{../../../oss-apphys}
-\usepackage{bm}
 
 \begin{document}
 \genheader
@@ -19,7 +18,7 @@
     \SI{2}{\metre\per\second} and collides with a \SI{4}{\kilo\gram} train
     car rolling to the right at \SI{1}{\metre\per\second}. The two cars stick
     together. The velocity of the cars after the collision is
-    \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
+    \begin{enumerate}[nosep,leftmargin=18pt,label=(\Alph*)]
     \item $2/7$ \si{\metre\per\second} to the left
     \item $2/7$ \si{\metre\per\second} to the right
     \item $4/7$ \si{\metre\per\second} to the left
@@ -27,10 +26,10 @@
     \item $9/7$ \si{\metre\per\second} to the right
     \end{enumerate}
     
-  \item Two steel balls, one of mass m and the other of mass 2m, collide and
+  \item Two steel balls, one of mass $m$ and the other of mass $2m$, collide and
     rebound in a perfectly elastic collision. Which of the following is
     conserved in this elastic collision?
-    \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
+    \begin{enumerate}[nosep,leftmargin=18pt,label=(\Alph*)]
     \item velocity only
     \item momentum only
     \item momentum and kinetic energy only
@@ -40,25 +39,32 @@
     
   \item A rubber ball of mass $m$ strikes a wall with a speed $v$ at an angle
     $\theta$ below the normal line and rebounds from the wall at the same speed
-    and angle above the normal line as shown. The change in momentum
-    of the ball is
+    and angle above the normal line as shown. The magnitude of the change in
+    momentum of the ball is
     \begin{center}
-      \pic{.25}{ball-bounce-wall.png}
+      \begin{tikzpicture}
+        \fill[gray!60](-.2,2) rectangle(0,-2);
+        \draw[very thick](0,-2)--(0,2);
+        \draw[dashed](0,0)--(2,0) node[right]{\small Normal};
+        \draw[->,rotate=35, thick](0,0)--(2,0) node[right]{$v$};
+        \draw[<-,rotate=-35,thick](0,0)--(2,0) node[right]{$v$};
+        \draw[thick](1,0)  arc(0:-35:1)  node[midway,right]{\small$\theta$};
+        \draw[thick](1.2,0)arc(0: 35:1.2)node[midway,right]{\small$\theta$};
+      \end{tikzpicture}
     \end{center}
-    \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
+    \begin{enumerate}[nosep,leftmargin=18pt,label=(\Alph*)]
     \item $mv$
     \item $2mv$
     \item $mv\cos\theta$
     \item $2mv\cos\theta$
-    \item  zero
+    \item zero
     \end{enumerate}
-    \columnbreak
     
   \item Two blocks are connected by a compressed spring and rest on a
     frictionless surface. The blocks are released from rest and pushed apart
     by the compressed spring. If one mass is twice the mass of the other,
     which of the following is the same for both blocks?
-    \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
+    \begin{enumerate}[nosep,leftmargin=18pt,label=(\Alph*)]
     \item magnitude of momentum
     \item acceleration
     \item speed
@@ -74,7 +80,7 @@
     \begin{center}
       \pic{.23}{railroad-car-sand.png}
     \end{center}
-    \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
+    \begin{enumerate}[nosep,leftmargin=18pt,label=(\Alph*)]
     \item\SI{500 }{\kilo\gram}
     \item\SI{1000}{\kilo\gram}
     \item\SI{2000}{\kilo\gram}
@@ -90,9 +96,16 @@
     \SI{.4}{\kilo\gram} ball is \SI{2}{\metre\per\second} downward.
     The $y$-component of the velocity of the \SI{.2}{\kilo\gram} ball must be
     \begin{center}
-      \pic{.23}{big-small-billiard-balls.png}
+      \begin{tikzpicture}[scale=.5]
+        \draw[dashed](-3,0)--(4,0) node[right]{\small$x$};
+        \draw[dashed](0,-2)--(0,4) node[above]{\small$y$};
+        \draw(.3,.3) circle(.3) node[above]{\small\;\;\;\SI{.2}{\kilo\gram}};
+        \draw[->](.6,.3)--(1.6,.3) node[right]{\small$v_2$};
+        \draw(-2.3,-.5) circle(.5) node[below left]{\small\SI{.4}{kg}\;\;};
+        \draw[->](-1.8,-.5)--(-1,-.5) node[right]{\small$v_1$};
+      \end{tikzpicture}
     \end{center}
-    \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
+    \begin{enumerate}[nosep,leftmargin=18pt,label=(\Alph*)]
     \item \SI{1}{\metre\per\second} upward
     \item \SI{2}{\metre\per\second} upward
     \item \SI{1}{\metre\per\second} downward
@@ -111,7 +124,7 @@
   \begin{enumerate}[leftmargin=18pt,resume]
   \item Which of the following statements is true?
     \label{bfa1}
-    \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]    
+    \begin{enumerate}[nosep,leftmargin=18pt,label=(\Alph*)]    
     \item Momentum is conserved only in the $x$-direction in this collision.
     \item Momentum is conserved only in the $y$-direction in this collision.
     \item Momentum is conserved in both the $x$- and $y$-directions in this
@@ -119,22 +132,23 @@
     \item The momentum of the 1.0 kg ball increases after the collision.
     \item The momentum of the 2.0 kg ball decreases after the collision.
     \end{enumerate}
-
+    
   \item What is the speed of the 2.0 kg ball after the collision?
     \label{bfa2}
-    \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
+    \begin{enumerate}[nosep,leftmargin=18pt,label=(\Alph*)]
     \item 16.0 m/s
     \item 9.2 m/s
     \item 7.5 m/s
     \item 6.0 m/s
     \item 5.0 m/s
     \end{enumerate}
+    \columnbreak
     
   \item A \SI{.3}{\kilo\gram} baseball at rest on a tee is struck by a bat. The
     ball leaves the at with a speed of \SI{20}{\metre\per\second} at an angle
     of \ang{45} above the horizontal. The magnitude of the impulse imparted to
     the baseball by the bat is most nearly
-    \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
+    \begin{enumerate}[nosep,leftmargin=18pt,label=(\Alph*)]
     \item\SI{2}{\newton\second}
     \item\SI{6}{\newton\second}
     \item\SI{12}{\newton\second}
@@ -145,17 +159,17 @@
   \item Two ice skaters, a large man and a small woman, are initially at rest
     and holding each other's hands. They push away horizontally. Afterward,
     which of the following statements is true?
-    \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
+    \begin{enumerate}[nosep,leftmargin=18pt,label=(\Alph*)]
     \item They have equal and opposite kinetic energies.
     \item The have equal and opposite momenta.
     \item The large man applies a greater force to the small woman.
     \item The small woman applies a greater force to the large man.
     \item They recoil with equal and opposite velocities.
     \end{enumerate}
-
+    
   \item A small mass $m$ is moving with a speed $v$ toward a stationary mass
     $M$. The speed of the center of mass of the system is
-    \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
+    \begin{enumerate}[nosep,leftmargin=18pt,label=(\Alph*)]
     \item $\displaystyle\left(\frac{m}{m+M}\right)v$
     \item $\displaystyle\left(\frac{m+M}{m}\right)v$
     \item $\displaystyle\left(\frac{m}{M}\right)v$
@@ -165,7 +179,7 @@
 
   \item A known net force $F$ acts on an unknown mass for a known time
     $\Delta t$. From this information, you could determine the
-    \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
+    \begin{enumerate}[nosep,leftmargin=18pt,label=(\Alph*)]
     \item change in kinetic energy of the object
     \item change in velocity of the object
     \item acceleration of the object
@@ -180,12 +194,20 @@
   pieces of mass $m$ move off at right angles to each other with the same
   momentum $mv$, as shown.
   \begin{center}
-    \pic{.25}{3-piece-bomb.png}
+    \begin{tikzpicture}[scale=.6]
+      \draw[thick,dashed](-1.5,0)--(3,0);
+      \draw[thick,dashed](0,-1.5)--(0,3);
+      \draw[thick](0,0) circle(.5);
+      \fill[thick](-1.5,0) circle(.15) node[above]{\small $m$};
+      \fill[thick](0,-1.5) circle(.15) node[right]{\small $m$};
+      \draw[very thick,->](-1.5,0)--(-3,0)node[left]{\small$mv$};
+      \draw[very thick,->](0,-1.5)--(0,-3)node[below]{\small$mv$};
+    \end{tikzpicture}
   \end{center}
   \begin{enumerate}[leftmargin=18pt,resume]
   \item The speed of mass $2m$ after the explosion is
     \label{explode1}
-    \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
+    \begin{enumerate}[nosep,leftmargin=18pt,label=(\Alph*)]
     \item $2v$
     \item $\displaystyle\sqrt{2}v$
     \item $\displaystyle\frac{\sqrt{2}}{2}v$
@@ -195,7 +217,7 @@
     
   \item The direction of velocity of mass $2m$ is
     \label{explode2}
-    \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
+    \begin{enumerate}[nosep,leftmargin=18pt,label=(\Alph*)]
     \item $\rightarrow$
     \item $\swarrow$
     \item $\downarrow$
@@ -208,7 +230,7 @@
     \SI{50}{\metre\per\second} to the right, causing the cannon to recoil with
     a speed of \SI{.5}{\metre\per\second} to the left. The velocity of the
     center of mass of the cannon-cannonball system is
-    \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
+    \begin{enumerate}[nosep,leftmargin=18pt,label=(\Alph*)]
     \item zero
     \item\SI{5}{\metre\per\second} to the right
     \item\SI{5}{\metre\per\second} to the left
@@ -222,25 +244,24 @@
   to the level ground as shown. At the top of the trajectory at point $P$, the
   projectile explodes into two pieces of mass $2m$ and $m$.
   \begin{center}
-    \pic{.25}{exploding-projectile.png}
+    \pic{.25}{exploding-projectile}
   \end{center}
   \begin{enumerate}[leftmargin=18pt,resume]
   \item Which of the following arrows best represents the direction of the
     velocity of the center of mass of the projectile at point $P$ after the
     explosion?
     \label{cm1}
-    \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
-    \item $\leftarrow$
-    \item $\swarrow$
-    \item $\searrow$
-    \item $\rightarrow$
-    \item $\nearrow$
+    \begin{enumerate}[itemsep=3pt,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
+    \item{\LARGE$\leftarrow$}
+    \item{\LARGE$\swarrow$}
+    \item{\LARGE$\searrow$}
+    \item{\LARGE$\rightarrow$}
+    \item{\LARGE$\nearrow$}
     \end{enumerate}
-
   \item Which of the following statements is true of the center of mass of the
     projectile after the explosion?
     \label{cm2}
-    \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
+    \begin{enumerate}[nosep,leftmargin=18pt,label=(\Alph*)]
     \item The center of mass will continue on a parabolic path and land on
       the ground at the place where it would have landed had it not exploded.
     \item The center of mass will alter its parabolic path and land on the
@@ -255,21 +276,20 @@
     \end{enumerate}
     \columnbreak
     
-    \begin{center}
-      \pic{.15}{pulleys}
-    \end{center}
+    \cpic{.15}{pulleys}
   \item A system consists of two blocks having masses of 2 kg and 1 kg. The
     blocks are connected by a string of negligible mass and hung over a light
     pulley, and then released from rest. When the speed of each block is $v$,
     the momentum of the center of mass of the system is
-    \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
+    \begin{enumerate}[nosep,leftmargin=18pt,label=(\Alph*)]
     \item$(\SI{2}{kg} + \SI{1}{kg})v$
     \item$(\SI{2}{kg} - \SI{1}{kg})v$
     \item$1/3 (\SI{2}{kg} +\SI{1}{kg})v$
     \item$1⁄2 (\SI{2}{kg} -\SI{1}{kg})v$
     \item$(\SI{2}{kg})v$
     \end{enumerate}
-    
+  \end{enumerate}
+  
 %Questions 168–169. Two pieces of clay of equal mass m moving with equal
 %speeds v o each traveling at an angle of 30° collide and stick together at the
 %origin O as shown.
@@ -284,9 +304,7 @@
 %(A) v o
 %(B) 1⁄2 v o
 %(C) 1⁄4 v o(D)
-    %    %(E)
-   
-  \end{enumerate}
+    %    %(E)   
   
   \textbf{Questions \ref{3masses1}--\ref{3masses2}}. Three identical masses can
   slide freely on a horizontal surface as shown. The first mass moves with a
@@ -294,12 +312,19 @@
   are initially at rest. The first and second mass collide elastically, and
   then the second and third masses collide inelastically.
   \begin{center}
-    \pic{.4}{3-masses.png}
+    \begin{tikzpicture}
+      \fill[gray!50](0,0) rectangle(7,-.2);
+      \draw[thick](0,0)--(7,0);
+      \draw[thick](.8,0) rectangle(1.8,1);
+      \draw[thick](2.5,0) rectangle(3.5,1);
+      \draw[thick](5,0) rectangle(6,1);
+      \draw[very thick,->](5,.5)--(4,.5) node[midway,above]{\SI{3}{m/s}};
+    \end{tikzpicture}
   \end{center}
   \begin{enumerate}[leftmargin=18pt,resume]
   \item The speed of the second mass after the collision is
     \label{3masses1}
-    \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
+    \begin{enumerate}[nosep,leftmargin=18pt,label=(\Alph*)]
     \item zero
     \item\SI{1.5}{\metre\per\second}
     \item\SI{3.}{\metre\per\second}
@@ -310,7 +335,7 @@
   \item The speed of the second and third masses after they collide
     inelastically is
     \label{3masses2}
-    \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
+    \begin{enumerate}[nosep,leftmargin=18pt,label=(\Alph*)]
     \item zero
     \item\SI{1.5}{\metre\per\second}
     \item\SI{3.0}{\metre\per\second}
@@ -382,7 +407,7 @@
   \begin{enumerate}[resume,leftmargin=18pt]
   \item The speed of the boy and sled after he jumps on it is
     \label{boy1}
-    \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
+    \begin{enumerate}[nosep,leftmargin=18pt,label=(\Alph*)]
     \item\SI{0.5}{\metre\per\second}
     \item\SI{0.8}{\metre\per\second}
     \item\SI{1.0}{\metre\per\second}
@@ -394,7 +419,7 @@
     such a way the boy is at rest, and the sled continues to move forward.
     The speed of the sled after the boy jumps off is
     \label{boy2}
-    \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
+    \begin{enumerate}[nosep,leftmargin=18pt,label=(\Alph*)]
     \item\SI{1.5}{\metre\per\second}
     \item\SI{2.0}{\metre\per\second}
     \item\SI{3.0}{\metre\per\second}
@@ -409,9 +434,9 @@
     a function of time is $m(t)=60t^2$. The velocity of the car at a time of
     \SI{4.}{\second} is most nearly
     \begin{center}
-      \pic{.25}{railroad-car-sand.png}
+      \pic{.25}{railroad-car-sand}
     \end{center}
-    \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
+    \begin{enumerate}[nosep,leftmargin=18pt,label=(\Alph*)]
     \item\SI{1}{\metre\per\second}
     \item\SI{2}{\metre\per\second}
     \item\SI{3}{\metre\per\second}
@@ -467,14 +492,12 @@
   II), and the small block slides back down the ramp to the horizontal surface
   (Figure III). Both the block and the ramp continue to slide on the horizontal
   surface after they separate.
-  \begin{center}
-    \pic{.3}{Figs123.png}
-  \end{center}
+  \cpic{.3}{Figs123}
   \begin{enumerate}[resume,leftmargin=18pt]  
   \item Which of the following is true regarding the conservation laws
     throughout this process?
     \label{ramps1}
-    \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
+    \begin{enumerate}[nosep,leftmargin=18pt,label=(\Alph*)]
     \item Kinetic energy is conserved from Figure I to Figure II.
     \item Momentum is conserved from Figure I to Figure III.
     \item Kinetic energy is conserved from Figure II to Figure III.
@@ -484,7 +507,7 @@
     
   \item Which of the following is a true statement regarding Figure III?
     \label{ramps2}
-    \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
+    \begin{enumerate}[nosep,leftmargin=18pt,label=(\Alph*)]
     \item The small block is moving to the left and the ramp is moving to the
       right.
     \item The small block is moving to the right and the ramp is moving to the
@@ -495,7 +518,6 @@
       left.
     \item The small block and the large block are moving with the same velocity.
     \end{enumerate}
-    \columnbreak
     
 %%Questions 188–189. A rubber ball of mass m is released from rest from a
 %%height h onto a fixed inclined plane angled at 45° to the horizontal. The ball
@@ -514,6 +536,7 @@
 %%(D)
 %%(E)
   \end{enumerate}
+  \columnbreak
   
   \textbf{Questions \ref{remote1}--\ref{remote2}}. A remote controlled stunt
   car of mass \SI{800}{\kilo\gram} initially moving at
@@ -525,7 +548,7 @@
   \item By considering the fact that the crash occurs at time $t=0$, determine
     the mass $m$ of the rail car.
     \label{remote1}
-    \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
+    \begin{enumerate}[nosep,leftmargin=18pt,label=(\Alph*)]
     \item\SI{288}{\kilo\gram}
     \item\SI{445}{\kilo\gram}
     \item\SI{533}{\kilo\gram}
@@ -536,7 +559,7 @@
   \item The magnitude of the resisting force acting on the cars as a function of
     time after the collision is
     \label{remote2}
-    \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
+    \begin{enumerate}[nosep,leftmargin=18pt,label=(\Alph*)]
     \item $\displaystyle \frac{6m}{t+1}$
     \item $6m(t+1)$
     \item $6m(t+1)^2$
@@ -566,14 +589,18 @@
 %%(C) y-intercept of the graph
 %%(D) x-intercept of the graph
 %%(E) change in slope of the graph
-%%196. A moving object is changing its momentum during a time interval. If a
-%%graph of momentum vs. time is plotted, the net force acting on the mass
-%%at any time can be determined by finding the
-%%(A) slope of line tangent to the graph at that time
-%%(B) area under the graph
-%%(C) y-intercept of the graph
-%%(D) x-intercept of the graph
-%%(E) change in slope of the graph from beginning to end
+    
+  \item A moving object is changing its momentum during a time interval. If a
+    graph of momentum vs.\ time is plotted, the net force acting on the mass
+    at any time can be determined by finding the
+    \begin{enumerate}[nosep,leftmargin=18pt,label=(\Alph*)]
+    \item slope of line tangent to the graph at that time
+    \item area under the graph
+    \item $y$-intercept of the graph
+    \item $x$-intercept of the graph
+    \item change in slope of the graph from beginning to end
+    \end{enumerate}
+    \columnbreak
     
   \item Two masses moving along the coordinates axes as shown collide at the
     origin and stick to each other. What is the angle $\theta$ that the final
@@ -590,18 +617,17 @@
         \draw[<->] (.75,0) arc(0:45:.75) node[pos=.6,right]{\tiny$\theta$};
       \end{tikzpicture}
     \end{center}
-    \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
+    \begin{enumerate}[nosep,leftmargin=18pt,label=(\Alph*)]
     \item $\tan^{-1}(v_2/v_1)$
     \item $\tan^{-1}[m_1v_1/(m_1+m_2)]$
     \item $\tan^{-1}(m_1v_2/m_2v_1)$
     \item $\tan^{-1}(m_2v_2^2/m_1v_1^1)$
     \item $\tan^{-1}(m_2v_2/m_1v_1)$
     \end{enumerate}
-    \columnbreak
     
   \item A mass traveling in the $+x$ direction collides with a mass at rest.
     Which of the following statements is true?
-    \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
+    \begin{enumerate}[nosep,leftmargin=18pt,label=(\Alph*)]
     \item After the collision, the two masses will move with parallel velocities
     \item After the collision, the masses will move with anti-parallel
       velocities
@@ -628,7 +654,7 @@
           decorate] (6,.5)--(5,.5);
       \end{tikzpicture}
     \end{center}
-    \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
+    \begin{enumerate}[nosep,leftmargin=18pt,label=(\Alph*)]
     \item $v_0$
     \item $m_1^2v_0/(m_1+m_2)^2$
     \item $m_2v_0/m_1$
@@ -642,7 +668,7 @@
 %    \begin{center}
 %      \pic{.2}{pulley-a-b.png}
 %    \end{center}
-%    \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
+%    \begin{enumerate}[nosep,leftmargin=18pt,label=(\Alph*)]
 %    \item $\displaystyle\sqrt{2\frac{m_A-m_B}{m_A+m_B}gD}$
 %    \item $\displaystyle\sqrt{2\frac{m_A+m_B}{m_A-m_B}gD}$
 %    \item $\displaystyle\sqrt{\frac{m_A}{m_A+m_B}gD}$
@@ -656,28 +682,25 @@
 
 \genfreetitle{C}{MOMENTUM, IMPULSE, COLLISIONS, AND CENTER OF MASS}{5}
 
-\genfreedirections{10}
+\genfreedirections
 
-\begin{enumerate}[leftmargin=15pt]
+\begin{enumerate}
 \item A projectile is fired from the edge of a cliff \SI{100}{\metre} high with
   an initial speed of \SI{60}{\metre\per\second} at an angle of elevation of
   \ang{45}.
-  \begin{enumerate}[noitemsep]
+  \begin{enumerate}
   \item Write equation for $x(t)$, $y(t)$, $v_x$ and $v_y$. Choose the origin of
     your coordinate system at the particle's original location.
-    \vspace{1.25in}
   \item Calculate the location and velocity of the particle at time
     $t=\SI{5}{s}$.
-    \vspace{1.25in}
   \end{enumerate}
   Suppose the projectile experiences an internal explosion at time $t=\SI{4}{s}$
   with an internal force purely in the $y$-direction, causing it to break into
   a \SI{2}{\kg} and a \SI{1}{\kg} fragment.
-  \begin{enumerate}[noitemsep,resume]
+  \begin{enumerate}[resume]
   \item If the \SI{2}{\kg} fragment is \SI{77}{m} above the height of the
     cliff at $t=\SI{5}{s}$, what is the $y$-coordinate of the position of the
     \SI{1}{\kg} piece?
-    \vspace{1.25in}
   \item If the speed of the \SI{2}{kg} fragment is \SI{46}{m/s} and the
     fragment is falling at $t=\SI{5}{s}$, what is the $y$-component of the
     velocity of the \SI{1}{kg} fragment?
@@ -688,13 +711,11 @@
   is shot into a mass $M$ from a string as shown below, causing $M$ to swing
   upward through a maximum angle of $\theta$.
   \begin{center}
-    \pic{.4}{ballastic.png}
+    \pic{.4}{ballastic}
   \end{center}
-  \begin{enumerate}[noitemsep]
+  \begin{enumerate}
   \item What is the speed of $M$ the instant after the bullet lodges in it?
-    \vspace{1.25in}
   \item What is the speed of the bullet before it hits $M$?
-    \vspace{1.25in}
   \item What is the tension in the string at the highest point of the pendulum's
     swing (when the string makes an angle of $\theta$ with the vertical as
     shown)?
@@ -704,74 +725,68 @@
   frictionless horizontal surface as shown. The right mass is initially in
   contact with a wall. A brief blow to the left block leaves it with an initial
   velocity $v_0$ to the right.
-  \begin{enumerate}[leftmargin=18pt]
+  \begin{enumerate}
   \item What is the maximum compression of the spring as the left block moves
     to the right?
-    \vspace{1in}
   \end{enumerate}
   After the spring is maximally compressed, it eventually moves to the left,
   away from wall. As it moves away from the wall, it continues oscillating.
-  \begin{center}
-    \pic{.45}{mass-spring-2.png}
-  \end{center}
-  \begin{enumerate}[leftmargin=18pt,resume]
+  \cpic{.45}{mass-spring-2}
+  \begin{enumerate}[resume]
   \item What is the net momentum of the two masses after they leave the wall?
-    \vspace{1in}
   \item What is the total mechanical energy of the oscillating spring system?
-    \vspace{1in}
   \item What is the relative velocity of the two masses when the spring is
     maximally compressed?
-    \vspace{1in}
   \item What is the maximum compression of the spring after the two masses have
     left the wall? Compare the compression to the maximum compression calculated
     in part (a) and explain any similarities and differences.
   \end{enumerate}
   \newpage
 
-\item In the billiards shot shown in the figure below, the initial direction of
-  the cue ball is perpendicular to the line joining the centers of the other
-  two balls, which are touching. The cue ball strikes both balls simultaneously.
-  Use the symmetry of the situation along with the appropriate conservation
-  laws to find the final velocities of all three balls.
-  \begin{center}
-    \begin{tikzpicture}[scale=.8]
-      \tikzstyle{balloon1}=[ball color=yellow!60];
-      \tikzstyle{balloon2}=[ball color=green!60!gray];
-      \tikzstyle{balloon3}=[ball color=gray];
-      \draw[dashed](0,-2.4)--(0,2.4);
-      \draw[dashed](0,0)--(-4,0);
-      \shade[balloon2] (0,.4) circle (.4) node{$m$};
-      \shade[balloon1] (0,-.4) circle (.4) node{$m$};
-      \draw[ultra thick,->,blue!60!black](-4,0)--(-2,0)
-      node[pos=1,right]{$\mb{v}_{ci}$};
-      \shade[balloon3] (-4,0) circle (.4) node{$m$};
-    \end{tikzpicture}
-    \hspace{1in}
-    \begin{tikzpicture}[scale=.8]
-      \tikzstyle{balloon1}=[ball color=yellow!60];
-      \tikzstyle{balloon2}=[ball color=green!60!gray];
-      \tikzstyle{balloon3}=[ball color=gray];
-      \draw[dashed](-4,0)--(4,0);
-      \begin{scope}[rotate=25]
-        \draw[dashed](0,0)--(4,0);
-        \draw[ultra thick,->,blue!60!black](4,0)--(5,0)
-        node[pos=1,right]{$\mb{v}_{1f}$};
-        \shade[balloon2] (4,0) circle (.4) node{$m$};
-      \end{scope}
-      \begin{scope}[rotate=-25]
-        \draw[dashed](0,0)--(4,0);
-        \draw[ultra thick,->,blue!60!black](4,0)--(5,0)
-        node[pos=1,right]{$\mb{v}_{2f}$};
-        \shade[balloon1] (4,0) circle (.4) node{$m$};
-      \end{scope}
-      \draw(1.5,0) arc(0: 25:1.5) node[pos=.6,right]{$\theta_1$};
-      \draw(1.5,0) arc(0:-25:1.5) node[pos=.6,right]{$\theta_2$};
-      \draw[ultra thick,->,blue!60!black](-2,0)--(-3,0)
-      node[pos=1,left]{$\mb{v}_{cf}$};
-      \shade[balloon3] (-2,0) circle (.4) node{$m$};
-    \end{tikzpicture}
-  \end{center}
-  \vspace{\stretch{1}}
+%\item In the billiards shot shown in the figure below, the initial direction of
+%  the cue ball is perpendicular to the line joining the centers of the other
+%  two balls, which are touching. The cue ball strikes both balls simultaneously.
+%  Use the symmetry of the situation along with the appropriate conservation
+%  laws to find the final velocities of all three balls.
+%  \begin{center}
+%    \begin{tikzpicture}[scale=.8]
+%      \tikzstyle{balloon1}=[ball color=yellow!60];
+%      \tikzstyle{balloon2}=[ball color=green!60!gray];
+%      \tikzstyle{balloon3}=[ball color=gray];
+%      \draw[dashed](0,-2.4)--(0,2.4);
+%      \draw[dashed](0,0)--(-4,0);
+%      \shade[balloon2] (0,.4) circle (.4) node{$m$};
+%      \shade[balloon1] (0,-.4) circle (.4) node{$m$};
+%      \draw[ultra thick,->,blue!60!black](-4,0)--(-2,0)
+%      node[pos=1,right]{$\mb{v}_{ci}$};
+%      \shade[balloon3] (-4,0) circle (.4) node{$m$};
+%    \end{tikzpicture}
+%    \hspace{1in}
+%    \begin{tikzpicture}[scale=.8]
+%      \tikzstyle{balloon1}=[ball color=yellow!60];
+%      \tikzstyle{balloon2}=[ball color=green!60!gray];
+%      \tikzstyle{balloon3}=[ball color=gray];
+%      \draw[dashed](-4,0)--(4,0);
+%      \begin{scope}[rotate=25]
+%        \draw[dashed](0,0)--(4,0);
+%        \draw[ultra thick,->,blue!60!black](4,0)--(5,0)
+%        node[pos=1,right]{$\mb{v}_{1f}$};
+%        \shade[balloon2] (4,0) circle (.4) node{$m$};
+%      \end{scope}
+%      \begin{scope}[rotate=-25]
+%        \draw[dashed](0,0)--(4,0);
+%        \draw[ultra thick,->,blue!60!black](4,0)--(5,0)
+%        node[pos=1,right]{$\mb{v}_{2f}$};
+%        \shade[balloon1] (4,0) circle (.4) node{$m$};
+%      \end{scope}
+%      \draw(1.5,0) arc(0: 25:1.5) node[pos=.6,right]{$\theta_1$};
+%      \draw(1.5,0) arc(0:-25:1.5) node[pos=.6,right]{$\theta_2$};
+%      \draw[ultra thick,->,blue!60!black](-2,0)--(-3,0)
+%      node[pos=1,left]{$\mb{v}_{cf}$};
+%      \shade[balloon3] (-2,0) circle (.4) node{$m$};
+%    \end{tikzpicture}
+%  \end{center}
+%  \vspace{\stretch{1}}
   
 \item A stream of glass beads, each with a mass of \SI{.5}{\gram}, comes out of
   a horizontal tube at $100$ per second. The beads fall a distance of
@@ -779,21 +794,18 @@
   shown in the figure below. How much mass must be placed in the other pan of
   the balance to keep the pointer at zero?
   
-  \pic{.5}{balance.jpg}
-  \vspace{\stretch{1}}
+  \cpic{.5}{balance}
   \newpage
 
   % THIS IS TAKEN FROM THE 2011 AP PHYSICS C FREE-RESPONSE QUESTION MECH 1
-  \begin{center}
-    \pic{.25}{projectile}
-  \end{center}
+  \cpic{.25}{projectile}
 \item A projectile is fired horizontally from a launching device, exiting with
   a speed $v_x$. While the projectile is in the launching device, the impulse
-  imparted to it is $J_p$, and the average force on it is $F_{avg}$. Assume the
-  force becomes zero just as the projectile reaches the end of the launching
+  imparted to it is $J_p$, and the average force on it is $F_\text{avg}$. Assume
+  the force becomes zero just as the projectile reaches the end of the launching
   device. Express your answers to parts (a) and (b) in terms of $v_x$, $J_p$,
-  $F_{avg}$, and fundamental constants, as appropriate.
-  \begin{enumerate}[leftmargin=18pt]
+  $F_\text{avg}$, and fundamental constants, as appropriate.
+  \begin{enumerate}
   \item Determine an expression for the time required for the projectile to
     travel the length of the launching device.
   \item Determine an expression for the mass of the projectile.
@@ -802,7 +814,7 @@
   a tabletop so that it cannot move. The projectile travels a distance $d$ into
   the block before it stops. Express all algebraic answers to the following in
   terms of $d$ and the given quantities previously indicated, as appropriate.
-  \begin{enumerate}[leftmargin=18pt,resume]
+  \begin{enumerate}[resume]
   \item Derive an expression for the work done in stopping the projectile.
   \item Derive an expression for the average force $F_b$ exerted on the
     projectile as it comes to rest in the block.
@@ -816,7 +828,7 @@
   the average force of friction between the table and the block is $f_T$, and
   the collision is instantaneous so the frictional force is negligible
   during the collision.
-  \begin{enumerate}[leftmargin=18pt,resume]
+  \begin{enumerate}[resume]
   \item Derive an expression for $d_n$ in terms of $d$, $D$, $f_T$, and $F_b$,
     as appropriate.
   \item Derive an expression for $d_n$ in terms of $d$, the mass $m$ of the
