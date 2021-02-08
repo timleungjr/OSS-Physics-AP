@@ -1,28 +1,23 @@
 \documentclass[12pt,compress,aspectratio=169]{beamer}
-
 \usetheme{metropolis}
 \setbeamersize{text margin left=.5cm,text margin right=.5cm}
 %\usefonttheme{professionalfonts}
 \usepackage[lf]{carlito}
-\usepackage{bm}
 \usepackage{siunitx}
-%\usepackage{graphicx}
 \usepackage{tikz}
 \usepackage{mathpazo}
-\usepackage{xcolor,colortbl}
-%\usepackage{hyperref}
+\usepackage{bm}
+%\usepackage{xcolor,colortbl}
 
 \usetikzlibrary{patterns}
 
-%\setsansfont{Roboto Light}
-\setmonofont{Ubuntu Mono}
+%\setmonofont{Ubuntu Mono}
 \setlength{\parskip}{0pt}
 \setlength{\itemsep}{0pt}
 \renewcommand{\baselinestretch}{1}
 
 \sisetup{
-  detect-all,
-  %number-math-rm=\mathnormal,
+  inter-unit-product=\cdotp,
   per-mode=symbol
 }
 \tikzset{>=latex}
@@ -34,7 +29,6 @@
 \date{\today}
 
 \newcommand{\pic}[2]{\includegraphics[width=#1\textwidth]{#2}}
-\newcommand{\mb}[1]{\ensuremath\mathbf{#1}}
 \newcommand{\eq}[2]{\vspace{#1}{\Large\begin{displaymath}#2\end{displaymath}}}
 
 
@@ -45,19 +39,19 @@
 \end{frame}
 
 
-\begin{frame}{Files to Download}
-  Please download the following files from the school website if you have not
-  already done so:
-  \begin{itemize}
-  \item\texttt{PhysAPC-06-circMotion.pdf}---The ``print version'' of the
-    class slides for this topic.
-  \item\texttt{PhysAPC-06-Homework.pdf}---Homework problems for this topic.
-  \end{itemize}
-  \vspace{.1in}Please download/print the PDF file for the class slides before
-  each class. There is no point copying notes that are already on the slides.
-  Instead, focus on things that aren't necessarily on the slides. If you wish
-  to print the slides, we recommend printing 4 slides per page.
-\end{frame}
+%\begin{frame}{Files to Download}
+%  Please download the following files from the school website if you have not
+%  already done so:
+%  \begin{itemize}
+%  \item\texttt{PhysAPC-06-circMotion.pdf}---The ``print version'' of the
+%    class slides for this topic.
+%  \item\texttt{PhysAPC-06-Homework.pdf}---Homework problems for this topic.
+%  \end{itemize}
+%  \vspace{.1in}Please download/print the PDF file for the class slides before
+%  each class. There is no point copying notes that are already on the slides.
+%  Instead, focus on things that aren't necessarily on the slides. If you wish
+%  to print the slides, we recommend printing 4 slides per page.
+%\end{frame}
 
 
 
@@ -80,20 +74,23 @@
   \begin{columns}
     \column{.32\textwidth}
     \begin{tikzpicture}[scale=.75]
-      \draw[->](-3,0)--(3,0) node[right]{\footnotesize$x$};
-      \draw[->](0,-3)--(0,3) node[above]{\footnotesize$y$};
-      \draw[very thick,->](0,0)--(1,0)
-      node[below]{\footnotesize$\bm{\hat{\imath}}$};
-      \draw[very thick,->](0,0)--(0,1)
-      node[left]{\footnotesize$\bm{\hat{\jmath}}$};
+      \begin{scope}[->]
+        \draw(-3,0)--(3,0) node[right]{\footnotesize$x$};
+        \draw(0,-3)--(0,3) node[above]{\footnotesize$y$};
+      \end{scope}
+      \begin{scope}[very thick,->]
+        \draw(0,0)--(1,0) node[below]{\footnotesize$\bm{\hat{\imath}}$};
+        \draw(0,0)--(0,1) node[left]{\footnotesize$\bm{\hat{\jmath}}$};
+      \end{scope}
       \draw (0,0) circle(2.5);
       \begin{scope}[rotate=38]
         \draw[->] (0,0)--(2.45,0) node[midway,above]{\footnotesize$r$};
         \draw[fill=red!60] (2.5,0) circle(.1);
-        \draw[very thick,->](2.55,0)--(3.55,0)
-        node[right]{\footnotesize$\hat{\bm{r}}$};
-        \draw[very thick,->](2.5,.05)--(2.5,1.05)
-        node[above]{\footnotesize$\hat{\bm{\theta}}$};        
+        \begin{scope}[very thick,->]
+          \draw(2.55,0)--(3.55,0) node[right]{\footnotesize$\hat{\bm{r}}$};
+          \draw(2.5,.05)--(2.5,1.05)
+          node[above]{\footnotesize$\hat{\bm{\theta}}$};
+          \end{scope}
       \end{scope}
       \draw(1.5,0)[->] arc(0:38:1.5) node[pos=.55,right]{\footnotesize$\theta$};
     \end{tikzpicture}
@@ -103,7 +100,7 @@
     its $x$ and $y$ coordinates:
 
     \eq{-.25in}{
-      \mb{x}(t)=x(t)\bm{\hat{\imath}} + y(t) \bm{\hat{\jmath}}
+      \bm{x}(t)=x(t)\bm{\hat{\imath}} + y(t) \bm{\hat{\jmath}}
       }
 
     \vspace{-.15in}For circular motion or general rotational motion, the
@@ -111,7 +108,7 @@
     is described by:
 
     \eq{-.2in}{
-      \mb{r}(t)=r(t)\hat{\bm{r}} + \theta(t)\hat{\bm{\theta}}
+      \bm{r}(t)=r(t)\hat{\bm{r}} + \theta(t)\hat{\bm{\theta}}
     }
     \begin{itemize}
     \item\vspace{-.15in}$r$ is distance from the origin
@@ -177,7 +174,7 @@
       \draw[dashed,fill=green!40,opacity=.4](0,0)--(3,-1.5)
       node[pos=.6,below left,opacity=1]{$r$}--(3,2.5)
       node[midway,right,black,opacity=1]{$z$}--(0,4);
-      \fill[black](3,2.5) circle(.1) node[right]{$\mb{r}(r,\theta,z)$};
+      \fill[black](3,2.5) circle(.1) node[right]{$\bm{r}(r,\theta,z)$};
       \draw[->] (-1,-1) arc(-110:-45:2) node[midway,below]{$\theta$};
       \draw[thick,->](0,0)--(0,5) node[above]{$z$};
     \end{tikzpicture}
@@ -241,7 +238,7 @@
         \draw[->] (0,0)--(2.44,0) node[midway,above]{\footnotesize$r$};
         \draw[fill=red!60] (2.5,0) circle(.1);
         \draw[very thick,->](2.5,.08)--(2.5,1.5)
-        node[above]{\footnotesize$\mb{v}$};
+        node[above]{\footnotesize$\bm{v}$};
       \end{scope}
       \draw(1,0)[->] arc(0:38:1) node[midway,right]{\footnotesize$\theta$};
     \end{tikzpicture}
@@ -255,7 +252,7 @@
     }    
 
     \begin{itemize}
-    \item\vspace{-.25in} The direction of $\mb{v}$ is tangent to circle, along
+    \item\vspace{-.25in} The direction of $\bm{v}$ is tangent to circle, along
       $\hat{\bm{\theta}}$, and therefore $\perp$ to $\hat{\bm{r}}$
     \item If $\omega>0$, the motion is counter-clockwise
     \item If $\omega<0$, the motion is clockwise
@@ -276,7 +273,7 @@
         \draw[->] (0,0)--(2.44,0) node[midway,above]{\footnotesize$r$};
         \draw[fill=red!60] (2.5,0) circle(.1);
         \draw[very thick,->](2.5,.08)--(2.5,1.5)
-        node[above]{\footnotesize$\mb{v}$};
+        node[above]{\footnotesize$\bm{v}$};
       \end{scope}
       \draw(1,0)[->] arc(0:38:1) node[midway,right]{\footnotesize$\theta$};
     \end{tikzpicture}
@@ -286,7 +283,7 @@
     the angular velocity using this vector cross product:
 
     \eq{-.25in}{
-      \mb{v}=\bm{\omega}\times\mb{r}
+      \bm{v}=\bm{\omega}\times\bm{r}
     }
 
     \begin{itemize}
@@ -312,7 +309,7 @@
         \draw[->] (0,0)--(2.44,0) node[midway,above]{\footnotesize$r$};
         \draw[fill=red!60] (2.5,0) circle(.1);
         \draw[very thick,->](2.5,.08)--(2.5,1.5)
-        node[above]{\footnotesize$\mb{v}$};
+        node[above]{\footnotesize$\bm{v}$};
       \end{scope}
       \draw(1,0)[->] arc(0:38:1) node[midway,right]{\footnotesize$\theta$};
     \end{tikzpicture}
@@ -434,18 +431,18 @@
 
 \begin{frame}{Centripetal Acceleration \& Centripetal Force}
   There is also a component of acceleration toward the center of the motion,
-  called the \textbf{centripetal acceleration} $a_r$:
+  called the \textbf{centripetal acceleration} $a_c$:
 
   \eq{-.15in}{
-    \boxed{\mb{a}_r=-\frac{v^2}{r}\hat{\mb{r}}=-\omega^2r\hat{\mb{r}}}
+    \boxed{\bm{a}_c=-\frac{v^2}{r}\hat{\bm{r}}=-(\omega^2r)\hat{\bm{r}}}
   }
 
-  (The negative sign is because $\hat{\mb{r}}$ is radially outward from the
+  (The negative sign is because $\hat{\bm{r}}$ is radially outward from the
   center.) The force that causes the centripetal acceleration is called the
   \textbf{centripetal force}:
 
   \eq{-.15in}{
-    \boxed{\mb{F}_r=m\mb{a}_r=-\frac{mv^2}{r}\hat{\bm{r}}}
+    \boxed{\bm{F}_c=m\bm{a}_c=-\frac{mv^2}{r}\hat{\bm{r}}}
   }
 \end{frame}
 
@@ -456,15 +453,16 @@
   frequency are known, the speed of the object is:
 
   \eq{-.15in}{
-    v=\frac{2\pi r}{T}=2\pi rf
+    %v=\frac{2\pi r}{T}=2\pi rf
+    v=\omega r = 2\pi rf = \frac{2\pi r}T
   }
 
   Centripetal acceleration can therefore be expressed based on $T$ or $f$:
 
   \eq{-.2in}{
-    \mb{a}_r=-\frac{v^2}{r^2}\hat{\bm{r}}\quad\rightarrow\quad
+    \bm{a}_c=-\frac{v^2}{r}\hat{\bm{r}}\quad\rightarrow\quad
     \boxed{
-      \mb{a}_r=-\frac{4\pi^2r}{T^2}\hat{\bm{r}}=-4\pi^2rf^2\hat{\bm{r}}
+      \bm{a}_c=-\frac{4\pi^2r}{T^2}\hat{\bm{r}}=-4\pi^2rf^2\hat{\bm{r}}
     }
   }
 \end{frame}
@@ -473,27 +471,25 @@
 
 \begin{frame}{Acceleration: The General Case}
   \begin{columns}
-    \column{.2\textwidth}
-    \begin{tikzpicture}[scale=4.3]
+    \column{.25\textwidth}
+    \begin{tikzpicture}[scale=4.2]
       \draw[dashed] (.866,-.5) arc(-30:30:1);
-      \draw[ultra thick, red,->] (1,0)--(.5,0)
-      node[pos=0.5,below]{\footnotesize $a_r=\omega^2r$};
+      \draw[ultra thick,red,->] (1,0)--(.5,0)
+      node[midway,below]{\footnotesize $a_c=\omega^2r$};
       \draw[ultra thick, blue,->] (1,0)--(1,.3)
       node[above right]{\footnotesize $a_t=r\alpha$};
       \fill (1,0) circle(.02);
     \end{tikzpicture}
     
-    \column{.8\textwidth}
+    \column{.75\textwidth}
+    In general circular motion, there are two components of acceleration:
     \begin{itemize}
-    \item In general circular motion, there are two components of acceleration:
-      \begin{itemize}
-      \item\textcolor{red}{\textbf{Centripetal acceleration} $a_r$} depends on
-        radius of curvature $r$ and instantaneous speed $v$. The direction of
-        the acceleration is toward the center of the circle.
-      \item \textcolor{blue}{\textbf{Tangential acceleration} $a_\theta$}
-        depends on radius $r$  and angular acceleration $\alpha$. The direction
-        of the acceleration is tangent to the circle
-      \end{itemize}
+    \item\textcolor{red}{\textbf{Centripetal acceleration} $a_c$} depends on
+      radius of curvature $r$ and instantaneous speed $v$. The direction of
+      the acceleration is toward the center of the circle.
+    \item \textcolor{blue}{\textbf{Tangential acceleration} $a_t$}
+      depends on radius $r$  and angular acceleration $\alpha$. The direction
+      of the acceleration is tangent to the circle
     \end{itemize}
   \end{columns}
 
@@ -503,20 +499,21 @@
 
 
 \begin{frame}{How to Solve Circular Motion Problems}
-  \begin{enumerate}
-  \item Is there any circular motion?
-  \item If so, the condition for circular motion is:
+  The condition for circular motion is the second law of motion:
 
-    \eq{-.2in}{
-      \mb{F}_\mathrm{provided}=\mb{F}_\mathrm{required}
-    }
-    \begin{itemize}
-    \item\vspace{-.2in}The \emph{provided} force comes from FBD
-    \item The \emph{required} force comes from the centripetal force equation 
-    \end{itemize}
-  \item If the net force also has a tangential component, then there is also
-    a change in angular velocity
-  \end{enumerate}
+  \eq{-.2in}{
+    \bm{F}_c=\sum\bm{F}=m\bm{a}_c
+  }
+  
+  The forces that generate the centripetal force comes from the free-body
+  diagram. It may include:
+  \begin{itemize}
+  \item Gravity
+  \item Friction
+  \item Normal force
+  \item Tension
+  \item Etc.
+  \end{itemize}
 \end{frame}
 
 
@@ -543,9 +540,9 @@
     \pic{.8}{banked-turn-acceleration.png}\\
     \begin{tikzpicture}
       \fill[black](0,0) circle(.08);
-      \draw[thick,->,rotate=-30](0,0)--(0,1)node[above]{$\mb{N}$};
-      \draw[thick,->](0,0)--(0,-1)node[below]{$m\mb{g}$};
-      \draw[thick,->,rotate=60](0,0)--(0,-1)node[right]{$\mb{f}$};
+      \draw[thick,->,rotate=-30](0,0)--(0,1)node[above]{$\bm{N}$};
+      \draw[thick,->](0,0)--(0,-1)node[below]{$m\bm{g}$};
+      \draw[thick,->,rotate=60](0,0)--(0,-1)node[right]{$\bm{f}$};
     \end{tikzpicture}
     \begin{tikzpicture}
       \draw[->](0,0)--(1,0) node[right]{$x$};
@@ -565,7 +562,7 @@
       \sum F_x=N\sin\theta +f\cos\theta = \frac{mv^2}{r}
     }
 
-    Friction force $\mb{f}$ may be static or kinetic.
+    Friction force $\bm{f}$ may be static or kinetic.
   \end{columns}
 \end{frame}
 
@@ -578,9 +575,9 @@
     \pic{.8}{banked-turn-acceleration.png}\\
     \begin{tikzpicture}
       \fill[black](0,0) circle(.08);
-      \draw[thick,->,rotate=-30](0,0)--(0,1)node[above]{$\mb{N}$};
-      \draw[thick,->](0,0)--(0,-1)node[below]{$\mb{w}$};
-      \draw[thick,->,rotate=60](0,0)--(0,-1)node[right]{$\mb{f}$};
+      \draw[thick,->,rotate=-30](0,0)--(0,1)node[above]{$\bm{N}$};
+      \draw[thick,->](0,0)--(0,-1)node[below]{$\bm{w}$};
+      \draw[thick,->,rotate=60](0,0)--(0,-1)node[right]{$\bm{f}$};
     \end{tikzpicture}
     \begin{tikzpicture}
       \draw[->](0,0)--(1,0) node[right]{$x$};
@@ -609,9 +606,9 @@
     \pic{.8}{banked-turn-acceleration.png}\\
     \begin{tikzpicture}
       \fill[black](0,0) circle(.08);
-      \draw[thick,->,rotate=-30](0,0)--(0,1)node[above]{$\mb{N}$};
-      \draw[thick,->](0,0)--(0,-1)node[below]{$m\mb{g}$};
-      \draw[thick,->,rotate=60](0,0)--(0,-1)node[right]{$\mb{f}$};
+      \draw[thick,->,rotate=-30](0,0)--(0,1)node[above]{$\bm{N}$};
+      \draw[thick,->](0,0)--(0,-1)node[below]{$m\bm{g}$};
+      \draw[thick,->,rotate=60](0,0)--(0,-1)node[right]{$\bm{f}$};
     \end{tikzpicture}
     \begin{tikzpicture}
       \draw[->](0,0)--(1,0) node[right]{$x$};
@@ -626,15 +623,15 @@
       =\frac{v^2}{rg}
     }
 
-    The \emph{maximum} velocity $v_{\textrm{max}}$ can be expressed as:
+    The \emph{maximum} velocity $v_\text{max}$ can be expressed as:
 
     \eq{-.25in}{
-      \boxed{v_{\textrm{max}}=
+      \boxed{v_\text{max}=
         \sqrt{rg\frac{\sin\theta+\mu\cos\theta}{\cos\theta-\mu\sin\theta}}
       }
     }
 
-    Note that $v_\mathrm{max}$ does not depend on mass.
+    Note that $v_\text{max}$ does not depend on mass.
   \end{columns}
 \end{frame}
 
@@ -644,7 +641,7 @@
   In the limit of $\mu=0$ (frictionless case), the equation reduces to:
 
   \eq{-.1in}{
-    \boxed{ v_{\textrm{max}}=\sqrt{rg\tan\theta} }
+    \boxed{ v_{\text{max}}=\sqrt{rg\tan\theta} }
   }
 
   And in the limit of a flat roadway with no banking ($\theta=0$,
@@ -652,7 +649,7 @@
 
   \eq{-.2in}{
     \boxed{
-      v_{\textrm{max}}=\sqrt{\mu rg}
+      v_{\text{max}}=\sqrt{\mu rg}
     }
   }
 \end{frame}
@@ -678,7 +675,7 @@
   vertical motion:
   \begin{itemize}
   \item Generally difficult to solve by dynamics and kinematics
-  \item Instead, use conservation of energy to solve for $\mb{v}$
+  \item Instead, use conservation of energy to solve for $\bm{v}$
   \item Then use the equation for centripetal force to find other forces
   \end{itemize}
 
@@ -700,24 +697,25 @@
         \draw[thick](0,0)--(0,-5);
         \tikzstyle{balloon}=[ball color=red!70!black];
         \shade[balloon] (0,-5) circle (0.2) node[below right]{$m$};
-        \draw[->,very thick,red!70!black](0,-5)--(0,-3.3)
-        node[left]{\footnotesize $\mb{T}$};
-        \draw[->,very thick,red!70!black,rotate around={-20:(0,-5)}](0,-5)--(0,-6.5)
-        node[below]{\footnotesize $m\mb{g}$};
+        \begin{scope}[->,very thick,red!70!black]
+          \draw(0,-5)--(0,-3.3) node[left]{\footnotesize $\bm{T}$};
+          \draw[rotate around={-20:(0,-5)}](0,-5)--(0,-6.5)
+          node[below]{\footnotesize $m\bm{g}$};
+        \end{scope}
       \end{scope}
       \draw[dashed,thin](0,0)--(0,-5);
       \draw[dashed,thin](3.54,-3.54) arc(315:225:5);
-      \draw[->](0,-2) arc(270:290:2) node[pos=0.5,below]{$\theta$};
+      \draw[->](0,-2) arc(270:290:2) node[midway,below]{$\theta$};
     \end{tikzpicture}
 
     \column{.65\textwidth}
     \begin{itemize}
-    \item There are two forces act on the pendulum: weight $\mb{w}=m\mb{g}$, and
-    tension $\mb{T}$
+    \item There are two forces act on the pendulum: weight $\bm{w}=m\bm{g}$, and
+    tension $\bm{T}$
     \item Speed of the pendulum at any height is found using conservation
       of energy
       \begin{itemize}
-      \item Tension $\mb{T}$ is always $\perp$ to motion, therefore it doesn't
+      \item Tension $\bm{T}$ is always $\perp$ to motion, therefore it doesn't
         do any work
       \item Work is done by gravity (a conservative force) alone
       \end{itemize}
@@ -742,14 +740,13 @@
         \draw[thick](0,0)--(0,-5);
         \tikzstyle{balloon}=[ball color=red!70!black];    
         \shade[balloon] (0,-5) circle (0.2) node[below right]{$m$};
-        \draw[dotted,->,very thick,red!70!black](0,-5)--(-1.1,-5)
-        node[left]{\footnotesize $mg\sin\theta$};
-        \draw[dotted,->,very thick,red!70!black](0,-5)--(0,-6.1)
-        node[right]{\footnotesize $mg\cos\theta$};
-        \draw[->,very thick,red!70!black](0,-5)--(0,-3.9)
-        node[left]{\footnotesize $\mb{T}$};
-        \draw[->,very thick,red!70!black,rotate around={-45:(0,-5)}](0,-5)--(0,-6.5)
-        node[below]{\footnotesize $m\mb{g}$};
+        \begin{scope}[->,very thick,red!70!black]
+          \draw[dotted](0,-5)--(-1.1,-5)node[left]{\footnotesize$mg\sin\theta$};
+          \draw[dotted](0,-5)--(0,-6.1)node[right]{\footnotesize$mg\cos\theta$};
+          \draw(0,-5)--(0,-3.9) node[left]{\footnotesize $\bm{T}$};
+          \draw[rotate around={-45:(0,-5)}](0,-5)--(0,-6.5)
+          node[below]{\footnotesize $m\bm{g}$};
+        \end{scope}
       \end{scope}
       \draw[dashed,thin](0,0)--(0,-5);
       \draw[dashed,thin](3.54,-3.54) arc(315:225:5);
@@ -760,7 +757,7 @@
     Centripetal acceleration is also zero:
 
     \eq{-.2in}{
-      a_r=\frac{v^2}{r}=0
+      a_c=\frac{v^2}{r}=0
     }
 
     and therefore the net force along the radial direction $\hat{\bm{r}}$ is
@@ -792,9 +789,9 @@
         \draw[dotted,->,very thick,red!70!black](0,-5)--(0,-6.1)
         node[right]{\footnotesize $mg\cos\theta$};
         \draw[->,very thick,red!70!black](0,-5)--(0,-3.9)
-        node[left]{\footnotesize $\mb{T}$};
-        \draw[->,very thick,red!70!black,rotate around={-45:(0,-5)}](0,-5)--(0,-6.5)
-        node[below]{\footnotesize $m\mb{g}$};
+        node[left]{\footnotesize $\bm{T}$};
+        \draw[->,very thick,red!70!black,rotate around={-45:(0,-5)}]
+        (0,-5)--(0,-6.5) node[below]{\footnotesize $m\bm{g}$};
       \end{scope}
       \draw[dashed,thin](0,0)--(0,-5);
       \draw[dashed,thin](3.54,-3.54) arc(315:225:5);
@@ -806,7 +803,7 @@
     magnitude of:
 
     \eq{-.25in}{
-      a_\theta=g\sin\theta
+      a_t=g\sin\theta
     }
 
     \vspace{-.1in}This is the same acceleration as an object sliding down a
@@ -828,11 +825,10 @@
       \draw[thick](0,0)--(0,-5);
       \tikzstyle{balloon}=[ball color=red!70!black];    
       \shade[balloon] (0,-5) circle (0.2) node[below right]{$m$};
-      \draw[->,very thick,red!70!black](0,-5)--(0,-2.5)
-      node[right]{\footnotesize $\mb{T}$};
-      \draw[->,very thick,red!70!black](0,-5)--(0,-6.5)
-      node[below]{\footnotesize $m\mb{g}$};
-
+      \begin{scope}[->,very thick,red!70!black]
+        \draw (0,-5)--(0,-2.5) node[right]{\footnotesize $\bm{T}$};
+        \draw (0,-5)--(0,-6.5) node[below]{\footnotesize $m\bm{g}$};
+      \end{scope}
       \draw[dashed,thin](0,0)--(0,-5);
       \draw[dashed,thin](3.54,-3.54) arc(315:225:5);
     \end{tikzpicture}
@@ -842,17 +838,17 @@
     \item Maximum centripetal acceleration:
 
       \eq{-.25in}{
-        a_r=\frac{v^2}{r}
+        a_c=\frac{v^2}r
       }
     \item No tangential acceleration:
 
       \eq{-.25in}{
-        a_\theta=0
+        a_t=0
       }
     \item At the lowest point, tension is the highest:
 
       \eq{-.3in}{
-        T=w+F_r=m\left(g+\frac{v^2}{r}\right)
+        T=w+F_c=m\left(g+\frac{v^2}{r}\right)
       }
     \end{itemize}
   \end{columns}
@@ -918,451 +914,4 @@
   \item $4gR$
   \end{enumerate}
 \end{frame}
-
-
-
-%\section{Torque}
-%
-%\begin{frame}{Torque and Rotational Equilibrium}
-%  Let's consider this question:
-%  \begin{center}
-%    \fbox{
-%      \begin{minipage}{.7\textwidth}
-%        Two people stand on a board of uniform density. One person has a mass of
-%        \SI{50}{\kilo\gram} and stands \SI{10}{\metre} away from the fulcrum
-%        (pivot). The second person has a mass of \SI{65}{\kilo\gram}. How far
-%        away from the fulcrum would the second person have to stand for the
-%        system to have to be in equilibrium?
-%      \end{minipage}
-%    }
-%  \end{center}
-%\end{frame}
-%
-%
-%
-%\begin{frame}{Equation of Motion}{Newton's Second Law}
-%  Recall Newton's second law of motion for objects with constant mass:
-%    
-%  \eq{-.2in}{
-%    \mb{F}_\mathrm{net}=m\mb{a}
-%  }
-%  \begin{itemize}
-%  \item Is it also true for \emph{circular} motion?
-%  \item If a net force $\mb{F}_\mathrm{net}$ causes a mass to accelerate
-%    (linearly), what causes a mass to go into circular motion?
-%  \end{itemize}
-%
-%  \uncover<2->{
-%    \vspace{.3in}
-%    \textbf{Answer:} We need to introduce a few concepts first\ldots
-%  }
-%\end{frame}
-%
-%
-%
-%\begin{frame}{Torque}
-%  I have a rod on a table, and with my fingers, I push the two ends of the rod
-%  with equal force $\textcolor{red}{F}$. \textbf{What happens?}
-%  \begin{center}
-%    \begin{tikzpicture}[scale=1.5]
-%      \fill[black!75,draw=black,thick] (-2,-.15) rectangle (2,.15);
-%      \draw[ultra thick,red,->](-1.8,-.7)--(-1.8,-.15) node[pos=0,below]{$F$};
-%      \draw[ultra thick,red,->]( 1.8, .7)--( 1.8, .15) node[pos=0,above]{$F$};
-%    \end{tikzpicture}
-%  \end{center}
-%  $\mb{F}_\mathrm{net}=\mb{0}$, therefore $\mb{a}=\mb{0}$. But (obviously) it
-%  won't stay still either!
-%\end{frame}
-%
-%
-%
-%\begin{frame}{What is Torque?}
-%  \textbf{Torque} (or \textbf{moment}) is the tendency for a force to change
-%  the rotational motion of a body.
-%  
-%  \begin{itemize}
-%  \item A force $\mb{F}_a$ acting at a point some distance $\mb{r}$ (called the
-%    \textbf{moment arm}) from a \textbf{fulcrum} (or \textbf{pivot}) at an angle
-%    $\phi$ between $\mb{F}_a$ and $\mb{r}$
-%  \item e.g.\ the force to twist a screw
-%%  \item In the example below, an applied force $\mb{F}_a$ is applied away from
-%%    the pivot at an angle $\phi$. This generates a torque around the pivot.
-%  \end{itemize}
-%  \begin{center}
-%    \begin{tikzpicture}[scale=2.5]
-%      \fill[black!75,draw=black!75] (0,-.1) rectangle (2,.1);
-%      \fill[black!75,draw=black,thick] (0,0) circle (.2);
-%      \fill[black] (0,0) circle (.03);
-%      \draw[ultra thick,red,->](0,0)--(1.8,0) node[midway,below]{$\mb{r}$};
-%      \draw[ultra thick,blue,->](1.2,-.7)--(1.8,0)node[pos=0,below]{$\mb{F}_a$};
-%      \draw[ultra thick,->] (1.4,0) arc(180:229:.4)
-%      node[midway,left]{$\phi$};
-%    \end{tikzpicture}
-%  \end{center}
-%\end{frame}
-%
-%
-%
-%\begin{frame}{Torque}
-%  In scalar form, we can express torque $\bm{\tau}$ as the force $\mb{F}_a$,
-%  the \textbf{moment arm} $\mb{r}$ and the angle $\phi$ between $\mb{F}_a$ and
-%  $\mb{r}$:
-%
-%  \eq{-.2in}{
-%    \boxed{\tau=rF_a\sin\phi}
-%  }
-%  
-%  In vector form, we use the cross-product:
-%
-%  \eq{-.2in}{
-%    \boxed{\bm{\tau}=\mb{r}\times\mb{F}_a}
-%  }
-%  \begin{center}
-%    \begin{tabular}{l|c|c}
-%      \rowcolor{pink}
-%      \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
-%      Torque        & $\bm{\tau}$ & \si{\newton\metre} \\
-%      Applied force & $\mb{F}_a$  & \si{\newton} \\
-%      Moment arm (from fulcrum to force) & $\mb{r}$ & \si{\metre}\\
-%      Angle between force and moment arm & $\phi$ & (no units)
-%    \end{tabular}
-%  \end{center}
-%\end{frame}
-%
-%
-%
-%\begin{frame}{Torque}
-%  Going back to the example question:
-%  \begin{center}
-%    \begin{tikzpicture}
-%      \fill[black!75,draw=black!75] (-5,-.05) rectangle (5,.05);
-%      \fill (0,0) circle (.1);
-%      \draw[ultra thick](0,0)--(.5,-1.5)--(-.5,-1.5)--(0,0);
-%      \uncover<2->{
-%        \draw[ultra thick,red!75,->](0,0)--(-4.8,0) node[pos=.5,below]{$d_1$};
-%        \draw[ultra thick,red!75,->](-4.8,0)--(-4.8,-1)node[below]{$F_1$};
-%      }
-%      \uncover<3->{
-%        \draw[ultra thick,blue!60,->](0,0)--(4,0) node[pos=.5,below]{$d_2$};
-%        \draw[ultra thick,blue!60,->](4,0)--(4,-1.2) node[below]{$F_2$};
-%      }
-%    \end{tikzpicture}
-%  \end{center}
-%  \begin{itemize}
-%  \item<2->$F_1$ will rotate the board counter clockwise
-%  \item<3->$F_2$ will rotate the board clockwise
-%  \item<4->The beam will remain static (in equilibrium) if
-%
-%    \eq{-.2in}{ F_1d_1=F_2d_2 }
-%  \end{itemize}
-%\end{frame}
-%
-%
-%
-%\begin{frame}{Rotational Equilibrium}
-%  An object is in \textbf{translational equilibrium} is when the force acting
-%  it is zero, and therefore the acceleration of its center of mass is zero:
-%  
-%  \eq{-.2in}{
-%    \mb{F}=\mb{0}
-%  }
-%
-%  \vspace{-.15in}Likewise, an object is in \textbf{rotational equilibrium} when
-%  the net torque acting on it is zero, which means that the angular momentum at
-%  its center of mass is constant:
-%
-%  \eq{-.3in}{
-%    \bm{\tau}=\mb{0}
-%  }
-%
-%  \vspace{-.1in}Note that it does \emph{not} mean that the object has no
-%  rotational motion; it just means that the object's overall
-%  \emph{rotational state} is not changing, i.e.\ $\alpha=0$
-%\end{frame}
-%
-%
-%
-%\begin{frame}{Example Problem}
-%  \textbf{Example 8a:} Find the net torque on point C.
-%
-%  \vspace{-.2in}
-%  \begin{center}
-%    \begin{tikzpicture}[scale=2.5]
-%      \fill[blue!40!white,draw=black,thick] (-1.65,-.15) rectangle (1.65,.15);
-%      \draw[thick,<->](-1.5,-.5)--(1.5,-.5) node[midway,below]{\SI{3.}{m}};
-%      \draw[thick,<->](-1.5,.5)--(0,.5) node[midway,below]{\SI{1.5}{m}};
-%      \draw[dashed,thick](-2.5,0)--(2.5,0);
-%      \draw[dashed,thick](0,.5)--(0,-.5);
-%      \draw[ultra thick,orange,->](0,0)--(1,1)node[right]{\SI{30}{N}};
-%      \draw[thick,->](0,.4)arc(90:45:.4)
-%      node[pos=.7,above]{\footnotesize\ang{45}};
-%      \draw[ultra thick,orange,->](-1.5,0)--(-2.3,-.46)
-%      node[left]{\SI{20}{\newton}};
-%      \draw[thick,->](-1.9,0) arc(180:210:.4)
-%      node[midway,left]{\footnotesize\ang{30}};
-%      \draw[ultra thick,orange,->](1.5,0)--(2,-.29)
-%      node[right]{\SI{10}{\newton}};
-%      \draw[thick,->](1.9,0) arc(0:-30:.4)
-%      node[midway,right]{\footnotesize\ang{30}};
-%      \fill[black,draw=black,thick] (-1.5,0) circle(.1);
-%      \fill[black,draw=black,thick] (   0,0) circle(.1);
-%      \fill[black,draw=black,thick] ( 1.5,0) circle(.1);
-%      \node(A) at (-1.5,0) {\color{white}\textbf{A}};
-%      \node(B) at (0,0) {\color{white}\textbf{B}};
-%      \node(C) at (1.5,0) {\color{white}\textbf{C}};
-%    \end{tikzpicture}
-%  \end{center}
-%  \uncover<2->{
-%    \textbf{Example 8b:} Now find the net torque on A.
-%  }
-%\end{frame}
-%
-%
-%
-%\section{Angular Momentum}
-%
-%\begin{frame}{Angular Momentum}
-%  \vspace{.15in}
-%  \begin{columns}
-%    \column{.77\textwidth}
-%    Consider a mass $m$ connected to a massless beam rotates with speed $v$ at
-%    a distance $r$ from the center (shown on the right). It has an
-%    \textbf{angular momentum} ($L$) of
-%    
-%    \eq{-.2in}{
-%      \boxed{\mb{L}=\mb{r}\times\mb{p}}
-%    }
-%    
-%    \vspace{-.1in}Expanding the terms in the definition:
-%    
-%    \eq{-.4in}{
-%      \mb{L}=\mb{r}\times(m\mb{v})=m\mb{r}\times(\bm{\omega}\times\mb{r})
-%      =mr^2\bm{\omega}
-%    }
-%    
-%    \vspace{-.2in}Which gives us:
-%    
-%    \eq{-.3in}{
-%      \boxed{\mb{L}=I\bm{\omega}}
-%    }
-%    
-%    \vspace{-.2in}The quantity $I$ is called the \textbf{moment of inertia}.
-%    
-%    \column{.23\textwidth}
-%    \begin{tikzpicture}[scale=2.5]
-%      \begin{scope}[rotate=70]
-%        \fill[black!75,draw=black!75] (0,-.02) rectangle (2,.02);
-%        \fill[blue!75,draw=blue,thick] (2,0) circle(.05);
-%        \node(M) at (2,-.2) {$m$};
-%        \fill[black] (0,0) circle (.05);
-%        \draw[ultra thick,red,->](0,0)--(2,0)node[pos=.5,right]{$\mb{r}$};
-%        \draw[ultra thick,->](2,0)--(2,.5)node[above]{$\mb{v}$};
-%      \end{scope}
-%    \end{tikzpicture}
-%  \end{columns}
-%\end{frame}
-%
-%
-%
-%\begin{frame}{Moment of Inertia}
-%  A single particle:
-%  
-%  \eq{-.2in}{
-%    \boxed{I=r^2m}
-%  }
-%
-%  A collection of particles:
-%
-%  \eq{-.2in}{
-%    \boxed{I=\sum r_i^2m_i}
-%  }
-%
-%  Continuous distribution of mass:
-%
-%  \eq{-.2in}{
-%    \boxed{I=\int r^2dm}
-%  }
-%\end{frame}
-%
-%
-%
-%\begin{frame}{Moment of Inertia}
-%  \begin{center}
-%    \pic{.7}{mic.png}
-%  \end{center}
-%\end{frame}
-%
-%
-%
-%\begin{frame}{Angular Momentum and Moment of Inertia}
-%  \begin{itemize}
-%  \item Linear and angular momentum have very similar expressions
-%    
-%    \eq{-.2in}{
-%      \mb{p}=m\mb{v}\quad\quad\quad \mb{L}=I\bm{\omega}
-%    }
-%  \item Just as $\mb{p}$ describes the overall \emph{translational} state of a
-%    physical system, $\mb{L}$ describes its overall \emph{rotational} state
-%  \item Momentum of inertia $I$ can be considered to be an object's
-%    ``rotational mass''
-%  \end{itemize}
-%\end{frame}
-%
-%
-%
-%\begin{frame}{Newton's Second Law of Motion}{For Rotational Motion}
-%  \eq{-.35in}{
-%    \bm{\tau}=\mb{r}\times\mb{F}=\mb{r}\times\frac{d\mb{p}}{dt}
-%    =\frac{d(\mb{r}\times\mb{p})}{dt}\;\;\longrightarrow\;\;
-%%      \tau=rF=rm\frac{dv}{dt}=\frac{d(rmv)}{dt}\quad\longrightarrow\quad
-%%    \end{displaymath}
-%%    \begin{displaymath}
-%    \boxed{\bm{\tau} =\frac{d\mb{L}}{dt}}
-%  }
-%  \begin{itemize}
-%  \item If the net torque on a system is zero, then the rate of change
-%    of angular momentum is zero, and we say that the angular momentum is
-%    conserved. 
-%  \item e.g.\ When an ice skater starts to spin and draws his arms inward.
-%    Since angular momentum is conserved, a decrease in $r$ means an
-%    increase in $\omega$.
-%  \end{itemize}
-%\end{frame}
-%
-%
-%
-%\begin{frame}{Newton's Second Law of Motion}
-%  {Comparing Translational and Rotational Motion}
-%  Newton's second law of motion for rotational motion has a very similar
-%  form to translational motion:
-%
-%  \eq{-.2in}{
-%    \mb{F}=\frac{d\mb{p}}{dt}\quad\quad\bm{\tau}=\frac{d\mb{L}}{dt}
-%  }
-%
-%  For objects with constant mass (translational motion) or constant moment of
-%  inertia (rotational motion), Newton's second law reduces to:
-%
-%  \eq{-.2in}{
-%    \mb{F}=m\mb{a}\quad\quad \bm{\tau}=I\bm{\alpha}
-%  }  
-%\end{frame}
-%
-%
-%
-%\begin{frame}{But there is no rotational motion, is there?}
-%  Even when there is no apparent rotational motion, it does not mean that
-%  angular momentum is zero! In this case, mass $m$ travels along a straight
-%  path at constant velocity (uniform motion), but the angular momentum around
-%  point $P$ is not zero:
-%  \begin{center}
-%    \begin{tikzpicture}
-%      \draw[dashed](-5,0)--(5,0);
-%      \draw[very thick,red!70!black,->](-5,0)--(-3,0)
-%      node[below]{$\mb{v}$};
-%      \tikzstyle{balloon}=[ball color=red!70!black];
-%      \shade[balloon] (-5,0) circle(.2) node[above left,red!70!black]{$m$};
-%      \fill[black] (0,-2) circle(.05) node[below]{$P$};
-%      \draw[very thick,blue!70!black,->](0,-2)--(-5,0)
-%      node[midway,below left]{$\mb{r}$};
-%      \uncover<2->{
-%        \draw[dotted](0,0) circle(.2) node[above left]{$m$};
-%        \draw[thick,red!50,->](.2,0)--(2,0)node[right]{$\mb{v}$};
-%        \draw[thick,blue!50,->](0,-2)--(0,0) node[midway,left]{$\mb{r}$};
-%      }
-%      \uncover<3->{
-%        \draw[dotted](4,0) circle(.2) node[above left]{$m$};
-%        \draw[thick,red!50,->](4.2,0)--(6,0)node[right]{$\mb{v}$};
-%        \draw[thick,blue!50,->](0,-2)--(4,0)node[midway,above left]{$\mb{r}$};
-%      }
-%    \end{tikzpicture}
-%  \end{center}
-%  \uncover<4>{
-%    Since there is no force and no torque acting on the object, both the linear
-%    momentum ($\mb{p}=m\mb{v}$) and angular momentum
-%    ($\mb{L}=\mb{r}\times\mb{v}$) are constant.
-%  }
-%\end{frame}
-%
-%
-%
-%\begin{frame}{Example Problem}
-%  \textbf{Example 9:} A skater extends her arms (both arms!), holding a
-%  \SI{2.}{\kilo\gram} mass in each hand. She is rotating about a vertical axis
-%  at a given rate. She brings her arms inward toward her body in such a way that
-%  the distance of each mass from the axis changes from \SI{1.}{\metre} to
-%  \SI{.50}{\metre}. Her rate of rotation (neglecting her own mass) will?
-%\end{frame}
-%
-%
-%
-%\begin{frame}{Last Example}
-%  \textbf{Example 10:} A \SI{1.}{\kilo\gram} mass swings in a vertical circle
-%  after having been released from a horizontal position with zero initial
-%  velocity. The mass is attached to a massless rigid rod of length
-%  \SI{1.5}{\metre}. What is the angular momentum of the mass, when it is in its
-%  lowest position?
-%\end{frame}
-%
-%
-%
-%\section{Rotational Kinetic Energy}
-%
-%\begin{frame}{Rotational Kinetic Energy}
-%  To find the kinetic energy of a rotating system of particles (discrete number
-%  of particles, or continuous mass distribution), we sum (or integrate) the
-%  kinetic energy of the individual particles:
-%    
-%  \vspace{-.3in}{\Large
-%    \begin{align*}
-%      K&=\sum_i\frac{1}{2}m_iv_i^2=\frac{1}{2}\left(\sum_i m_ir_i^2\right)\omega^2\\
-%      K&=\int\frac{1}{2}v^2dm=\frac{1}{2}\left(\int r^2dm\right)\omega^2
-%    \end{align*}
-%  }
-%  
-%  It's no surprise that in both case, rotational kinetic energy is given by:
-%  
-%  \eq{-.25in}{
-%    \boxed{K=\frac{1}{2}I\omega^2}
-%  }
-%\end{frame}
-%
-%
-%
-%\begin{frame}{Kinetic Energy of a Rotating System}
-%  The total kinetic energy of a rotating system is the sum of its translational
-%  and rotational kinetic energies at its center of mass:
-%
-%  \eq{-.2in}{
-%    \boxed{K=\frac{1}{2}mv_\mathrm{CM}^2+\frac{1}{2}I_\mathrm{CM}\omega^2}
-%  }
-%  
-%  In this case, $I_\mathrm{CM}$ is calculated at the center of
-%  mass. For simple problems, we only need to compute rotational kinetic energy
-%  at the pivot:
-%
-%  \eq{-.2in}{
-%    \boxed{K=\frac{1}{2}I_\mathrm{P}\omega^2}
-%  }
-%  
-%  In this case, the $I_\mathrm{P}$ is calculated at the pivot.
-%  \textbf{IMPORTANT:} $I_\mathrm{CM}\neq I_\mathrm{P}$
-%\end{frame}
-%
-%
-%
-%\begin{frame}{Parallel Axis Theorem}
-%  \begin{columns}
-%    \column{.35\textwidth}
-%    \pic{1}{Steiner.png}
-%    
-%    \column{.65\textwidth}
-%    The \textbf{parallel axis theorem} relates the moment of inertia of an
-%    object along two different but parallel axis by:
-%
-%    \eq{-.2in}{
-%      \boxed{I=I_{\textrm{CM}}+md^2}
-%    }
-%  \end{columns}
-%\end{frame}
 \end{document}

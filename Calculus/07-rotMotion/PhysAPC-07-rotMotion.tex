@@ -1,13 +1,12 @@
 \documentclass[12pt,compress,aspectratio=169]{beamer}
-
 \usetheme{metropolis}
 \setbeamersize{text margin left=.6cm,text margin right=.6cm}
 %\usefonttheme{professionalfonts}
 \usepackage[lf]{carlito}
-\usepackage{bm}
 \usepackage{siunitx}
 \usepackage{tikz}
 \usepackage{mathpazo}
+\usepackage{bm}
 \usepackage{xcolor,colortbl}
 %\usepackage{hyperref}
 
@@ -19,11 +18,7 @@
 \renewcommand{\baselinestretch}{1}
 
 \sisetup{
-  detect-all,
-  %detect-display-math=true,%  <== NEWLY ADDED
-  %detect-inline-family=math,% <== NEWLY ADDED
-  %detect-inline-weight=math,% <== NEWLY ADDED
-  %number-math-rm=\mathnormal,
+  inter-product-unit=\cdotp,
   per-mode=symbol
 }
 \tikzset{>=latex}
@@ -35,10 +30,9 @@
 \date{\today}
 
 \newcommand{\pic}[2]{\includegraphics[width=#1\textwidth]{#2}}
-\newcommand{\mb}[1]{\ensuremath\mathbf{#1}}
 \newcommand{\iii}{\bm{\hat{\imath}}}
 \newcommand{\jjj}{\bm{\hat{\jmath}}}
-\newcommand{\kkk}{\hat{\mb{k}}}
+\newcommand{\kkk}{\hat{\bm{k}}}
 \newcommand{\eq}[2]{\vspace{#1}{\Large\begin{displaymath}#2\end{displaymath}}}
 
 
@@ -88,11 +82,11 @@
   Recall the second law of motion for objects with constant mass:
     
   \eq{-.2in}{
-    \mb{F}_{net}=m\mb{a}
+    \bm{F}_{net}=m\bm{a}
   }
 
   \vspace{-.1in}Is it also true for \emph{rotational} motion? If a net force
-  $\mb{F}_{net}$ causes the center of mass to accelerate (linearly), what
+  $\bm{F}_{net}$ causes the center of mass to accelerate (linearly), what
   causes a mass to rotate?
 
   \vspace{.3in}To answer this, we need to introduce a few concepts first\ldots
@@ -110,7 +104,7 @@
       \draw[ultra thick,red,->]( 1.8, .7)--( 1.8, .15) node[pos=0,above]{$F$};
     \end{tikzpicture}
   \end{center}
-  $\mb{F}_{net}=\mb{0}$, therefore $\mb{a}=\mb{0}$. But (obviously) it
+  $\bm{F}_{net}=\bm{0}$, therefore $\bm{a}=\bm{0}$. But (obviously) it
   won't stay still either!
 \end{frame}
 
@@ -121,11 +115,11 @@
   the rotational motion of a body.
   
   \begin{itemize}
-  \item A force $\mb{F}_a$ acting at a point some distance $\mb{r}$ (called the
+  \item A force $\bm{F}_a$ acting at a point some distance $\bm{r}$ (called the
     \textbf{moment arm}) from a \textbf{fulcrum} (or \textbf{pivot}) at an angle
-    $\phi$ between $\mb{F}_a$ and $\mb{r}$
+    $\phi$ between $\bm{F}_a$ and $\bm{r}$
   \item e.g.\ the force to twist a screw
-%  \item In the example below, an applied force $\mb{F}_a$ is applied away from
+%  \item In the example below, an applied force $\bm{F}_a$ is applied away from
 %    the pivot at an angle $\phi$. This generates a torque around the pivot.
   \end{itemize}
   \begin{center}
@@ -133,8 +127,8 @@
       \fill[black!75,draw=black!75] (0,-.1) rectangle (2,.1);
       \fill[black!75,draw=black,thick] (0,0) circle (.2);
       \fill[black] (0,0) circle (.03);
-      \draw[ultra thick,red,->](0,0)--(1.8,0) node[midway,below]{$\mb{r}$};
-      \draw[ultra thick,blue,->](1.2,-.7)--(1.8,0)node[pos=0,below]{$\mb{F}_a$};
+      \draw[ultra thick,red,->](0,0)--(1.8,0) node[midway,below]{$\bm{r}$};
+      \draw[ultra thick,blue,->](1.2,-.7)--(1.8,0)node[pos=0,below]{$\bm{F}_a$};
       \draw[ultra thick,->] (1.4,0) arc(180:229:.4)
       node[midway,left]{$\phi$};
     \end{tikzpicture}
@@ -144,9 +138,9 @@
 
 
 \begin{frame}{Torque}
-  In scalar form, we can express torque $\bm{\tau}$ as the force $\mb{F}_a$,
-  the \textbf{moment arm} $\mb{r}$ and the angle $\phi$ between $\mb{F}_a$ and
-  $\mb{r}$:
+  In scalar form, we can express torque $\bm{\tau}$ as the force $\bm{F}_a$,
+  the \textbf{moment arm} $\bm{r}$ and the angle $\phi$ between $\bm{F}_a$ and
+  $\bm{r}$:
 
   \eq{-.2in}{
     \boxed{\tau=rF_a\sin\phi}
@@ -155,15 +149,15 @@
   In vector form, we use the cross-product:
 
   \eq{-.2in}{
-    \boxed{\bm{\tau}=\mb{r}\times\mb{F}_a}
+    \boxed{\bm{\tau}=\bm{r}\times\bm{F}_a}
   }
   \begin{center}
     \begin{tabular}{l|c|c}
       \rowcolor{pink}
       \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
       Torque        & $\bm{\tau}$ & \si{\newton\metre} \\
-      Applied force & $\mb{F}_a$  & \si{\newton} \\
-      Moment arm (from fulcrum to force) & $\mb{r}$ & \si{\metre}\\
+      Applied force & $\bm{F}_a$  & \si{\newton} \\
+      Moment arm (from fulcrum to force) & $\bm{r}$ & \si{\metre}\\
       Angle between force and moment arm & $\phi$ & (no units)
     \end{tabular}
   \end{center}
@@ -205,12 +199,12 @@
   discussed in Topic 5) is zero:
   
   \eq{-.2in}{
-    \mb{F}=\mb{0}
+    \bm{F}=\bm{0}
   }
 
   Having no net force does \emph{not} mean that the object has no translational
   motion; it just means that the object's overall \emph{transtational state} is
-  not changing, i.e.\ the translational momentum $\mb{p}$ is constant.
+  not changing, i.e.\ the translational momentum $\bm{p}$ is constant.
 \end{frame}  
 
 
@@ -220,13 +214,13 @@
   acting on it is zero:
 
   \eq{-.3in}{
-    \bm{\tau}=\mb{0}
+    \bm{\tau}=\bm{0}
   }
   
   Having no net torque does \emph{not} mean that the object has no rotational
   motion; it just means that the object's overall \emph{rotational state} is
-  not changing, i.e.\ $\alpha=\mb{0}$, or that the
-  \textbf{angular momentum} $\mb{L}$ is constant.
+  not changing, i.e.\ $\alpha=\bm{0}$, or that the
+  \textbf{angular momentum} $\bm{L}$ is constant.
 \end{frame}
 
 
@@ -274,28 +268,28 @@
 \begin{frame}{Angular Momentum}
   Consider a mass $m$ connected to a massless beam rotates with speed $v$ at
   a distance $r$ from the center (shown on the right). It has an
-  \textbf{angular momentum} ($\mb{L}$), defined as:
+  \textbf{angular momentum} ($\bm{L}$), defined as:
   \begin{columns}
     \column{.77\textwidth}
     
     \eq{-.35in}{
-      \boxed{\mb{L}=\mb{r}\times\mb{p}=m(\mb{r}\times\mb{v})}
+      \boxed{\bm{L}=\bm{r}\times\bm{p}=m(\bm{r}\times\bm{v})}
       \quad\text{\normalsize or}\quad
       \boxed{L=rmv}
     }
     
-    \vspace{-.15in}The direction of $\mb{L}$ depends on the direction of
+    \vspace{-.15in}The direction of $\bm{L}$ depends on the direction of
     rotation. Expanding the terms:
     
     \eq{-.45in}{
-      \mb{L}=\mb{r}\times(m\mb{v})=m\mb{r}\times(\bm{\omega}\times\mb{r})
+      \bm{L}=\bm{r}\times(m\bm{v})=m\bm{r}\times(\bm{\omega}\times\bm{r})
       =mr^2\bm{\omega}
     }
     
     \vspace{-.2in}Which gives us:
     
     \eq{-.3in}{
-      \boxed{\mb{L}=I\bm{\omega}}
+      \boxed{\bm{L}=I\bm{\omega}}
     }
     
     \vspace{-.2in}The quantity $I$ is called the \textbf{moment of inertia}.
@@ -307,8 +301,8 @@
         \fill[blue!75,draw=blue,thick] (2,0) circle(.05);
         \node(M) at (2,-.2) {$m$};
         \fill[black] (0,0) circle (.05);
-        \draw[ultra thick,red,->](0,0)--(2,0)node[pos=.5,right]{$\mb{r}$};
-        \draw[ultra thick,->](2,0)--(2,.5)node[above]{$\mb{v}$};
+        \draw[ultra thick,red,->](0,0)--(2,0)node[pos=.5,right]{$\bm{r}$};
+        \draw[ultra thick,->](2,0)--(2,.5)node[above]{$\bm{v}$};
       \end{scope}
     \end{tikzpicture}
   \end{columns}
@@ -350,11 +344,11 @@
   Linear and angular momentum have very similar expressions
     
   \eq{-.2in}{
-    \mb{p}=m\mb{v}\quad\quad\quad \mb{L}=I\bm{\omega}
+    \bm{p}=m\bm{v}\quad\quad\quad \bm{L}=I\bm{\omega}
   }
   \begin{itemize}
-  \item Just as $\mb{p}$ describes the overall \emph{translational} state of a
-    physical system, $\mb{L}$ describes its overall \emph{rotational} state
+  \item Just as $\bm{p}$ describes the overall \emph{translational} state of a
+    physical system, $\bm{L}$ describes its overall \emph{rotational} state
   \item Momentum of inertia $I$ can be considered to be an object's
     ``rotational mass''
   \end{itemize}
@@ -364,12 +358,12 @@
 
 \begin{frame}{Second Law of Motion for Rotational Motion}
   \eq{-.35in}{
-    \bm{\tau}=\mb{r}\times\mb{F}=\mb{r}\times\frac{d\mb{p}}{dt}
-    =\frac{d(\mb{r}\times\mb{p})}{dt}\;\;\longrightarrow\;\;
+    \bm{\tau}=\bm{r}\times\bm{F}=\bm{r}\times\frac{d\bm{p}}{dt}
+    =\frac{d(\bm{r}\times\bm{p})}{dt}\;\;\longrightarrow\;\;
 %      \tau=rF=rm\frac{dv}{dt}=\frac{d(rmv)}{dt}\quad\longrightarrow\quad
 %    \end{displaymath}
 %    \begin{displaymath}
-    \boxed{\bm{\tau} =\frac{d\mb{L}}{dt}}
+    \boxed{\bm{\tau} =\frac{d\bm{L}}{dt}}
   }
   \begin{itemize}
   \item If the net torque on a system is zero, then the rate of change
@@ -388,14 +382,14 @@
   translational motion:
 
   \eq{-.2in}{
-    \mb{F}=\frac{d\mb{p}}{dt}\quad\quad\bm{\tau}=\frac{d\mb{L}}{dt}
+    \bm{F}=\frac{d\bm{p}}{dt}\quad\quad\bm{\tau}=\frac{d\bm{L}}{dt}
   }
 
   For objects with constant mass (translational motion) or constant moment of
   inertia (rotational motion), the second law reduces to:
 
   \eq{-.2in}{
-    \mb{F}=m\mb{a}\quad\quad \bm{\tau}=I\bm{\alpha}
+    \bm{F}=m\bm{a}\quad\quad \bm{\tau}=I\bm{\alpha}
   }  
 \end{frame}
 
@@ -410,28 +404,28 @@
     \begin{tikzpicture}
       \draw[dashed](-5,0)--(5,0);
       \draw[very thick,red!70!black,->](-5,0)--(-3,0)
-      node[below]{$\mb{v}$};
+      node[below]{$\bm{v}$};
       \tikzstyle{balloon}=[ball color=red!70!black];
       \shade[balloon] (-5,0) circle(.2) node[above left,red!70!black]{$m$};
       \fill[black] (0,-2) circle(.05) node[below]{$P$};
       \draw[very thick,blue!70!black,->](0,-2)--(-5,0)
-      node[midway,below left]{$\mb{r}$};
+      node[midway,below left]{$\bm{r}$};
       \uncover<2->{
         \draw[dotted](0,0) circle(.2) node[above left]{$m$};
-        \draw[thick,red!50,->](.2,0)--(2,0)node[right]{$\mb{v}$};
-        \draw[thick,blue!50,->](0,-2)--(0,0) node[midway,left]{$\mb{r}$};
+        \draw[thick,red!50,->](.2,0)--(2,0)node[right]{$\bm{v}$};
+        \draw[thick,blue!50,->](0,-2)--(0,0) node[midway,left]{$\bm{r}$};
       }
       \uncover<3->{
         \draw[dotted](4,0) circle(.2) node[above left]{$m$};
-        \draw[thick,red!50,->](4.2,0)--(6,0)node[right]{$\mb{v}$};
-        \draw[thick,blue!50,->](0,-2)--(4,0)node[midway,above left]{$\mb{r}$};
+        \draw[thick,red!50,->](4.2,0)--(6,0)node[right]{$\bm{v}$};
+        \draw[thick,blue!50,->](0,-2)--(4,0)node[midway,above left]{$\bm{r}$};
       }
     \end{tikzpicture}
   \end{center}
   \uncover<4>{
     Since there is no force and no torque acting on the object, both the linear
-    momentum ($\mb{p}=m\mb{v}$) and angular momentum
-    ($\mb{L}=\mb{r}\times\mb{v}$) are constant.
+    momentum ($\bm{p}=m\bm{v}$) and angular momentum
+    ($\bm{L}=\bm{r}\times\bm{v}$) are constant.
   }
 \end{frame}
 
