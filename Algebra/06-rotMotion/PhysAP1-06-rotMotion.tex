@@ -2,21 +2,21 @@
 \usetheme{metropolis}
 \setbeamersize{text margin left=.5cm,text margin right=.5cm}
 \usepackage[lf]{carlito}
-\usepackage{amsmath,bm}
 \usepackage{siunitx}
 \usepackage{tikz}
 \usepackage{mathpazo}
 \usepackage{xcolor,colortbl}
+\usepackage{bm}
 
 \usetikzlibrary{patterns}
 
-\setmonofont{Liberation Mono}
+%\setmonofont{Liberation Mono}
 \setlength{\parskip}{0pt}
 \setlength{\itemsep}{0pt}
-\renewcommand{\baselinestretch}1
+\renewcommand{\baselinestretch}{1}
 
 \sisetup{
-  inter-unit-product=\cdot,
+  inter-unit-product=\cdotp,
   per-mode=symbol
 }
 \tikzset{>=latex}
@@ -28,10 +28,9 @@
 \date{Last Updated: \today}
 
 \newcommand{\pic}[2]{\includegraphics[width=#1\textwidth]{#2}}
-\newcommand{\mb}[1]{\ensuremath\mathbf{#1}}
-\newcommand{\iii}{\bm{\hat\imath}}
-\newcommand{\jjj}{\bm{\hat\jmath}}
-\newcommand{\kkk}{\hat{\mb{\mathit{k}}}}
+\newcommand{\iii}{\hat{\bm\imath}}
+\newcommand{\jjj}{\hat{\bm\jmath}}
+\newcommand{\kkk}{\hat{\bm{k}}}
 \newcommand{\eq}[2]{\vspace{#1}{\Large\begin{displaymath}#2\end{displaymath}}}
 
 
@@ -60,32 +59,15 @@
 
 \section{Torque}
 
-%\begin{frame}{Torque}
-%  Let's consider this question:
-%  \begin{center}
-%    \fbox{
-%      \begin{minipage}{.7\textwidth}
-%        Two people stand on a board of uniform density. One person has a mass of
-%        \SI{50}{\kilo\gram} and stands \SI{10}{\metre} away from the fulcrum
-%        (pivot). The second person has a mass of \SI{65}{\kilo\gram}. How far
-%        away from the fulcrum would the second person have to stand for the
-%        system to have to be in equilibrium?
-%      \end{minipage}
-%    }
-%  \end{center}
-%\end{frame}
-
-
-
 \begin{frame}{Torque}
   Recall the second law of motion for objects with constant mass:
     
   \eq{-.2in}{
-    \mb{F}_\text{net}=m\mb{a}
+    \bm{F}_\text{net}=m\bm{a}
   }
 
   \vspace{-.1in}Is it also true for \emph{rotational} motion? If a net force
-  $\mb{F}_\text{net}$ causes the center of mass of an object to begin to
+  $\bm{F}_\text{net}$ causes the center of mass of an object to begin to
   accelerate, what causes a mass to rotate?
 \end{frame}
 
@@ -103,7 +85,7 @@
       \end{scope}
     \end{tikzpicture}
   \end{center}
-  $\mb{F}_\text{net}=\mb{0}$, therefore $\mb{a}=\mb{0}$ at the center of mass.
+  $\bm{F}_\text{net}=\bm{0}$, therefore $\bm{a}=\bm{0}$ at the center of mass.
   But it is obvious that the rod would \emph{rotate} instead.
 \end{frame}
 
@@ -114,11 +96,11 @@
   the rotational motion of a body. The unit for torque is a
   \textbf{newton meter} (\si{\newton\metre}).
   \begin{itemize}
-  \item A force $\mb{F}_a$ acting at a point some distance $\mb{r}$ (called the
+  \item A force $\bm{F}_a$ acting at a point some distance $\bm{r}$ (called the
     \textbf{moment arm}) from a \textbf{fulcrum} (or \textbf{pivot}) at an angle
-    $\phi$ between $\mb{F}_a$ and $\mb{r}$
+    $\phi$ between $\bm{F}_a$ and $\bm{r}$
   \item e.g.\ the force to twist a screw
-  \item In the example below, a force $\mb{F}$ is applied $\mb{r}$ away from
+  \item In the example below, a force $\bm{F}$ is applied $\bm{r}$ away from
     the pivot at an angle $\phi$. This generates a torque around the pivot.
   \end{itemize}
   \begin{center}
@@ -129,8 +111,8 @@
       \end{scope}
       \fill (0,0) circle (.03);
       \begin{scope}[very thick]
-        \draw[red!70!black,->](0,0)--(1.8,0) node[midway,below]{$\mb{r}$};
-        \draw[blue!70!black,->](1.2,-.7)--(1.8,0) node[pos=0,below]{$\mb{F}$};
+        \draw[red!70!black,->](0,0)--(1.8,0) node[midway,below]{$\bm{r}$};
+        \draw[blue!70!black,->](1.2,-.7)--(1.8,0) node[pos=0,below]{$\bm{F}$};
         \draw[<->] (1.4,0) arc(180:229:.4)node[midway,left]{$\phi$};
       \end{scope}
     \end{tikzpicture}
@@ -141,7 +123,7 @@
 
 \begin{frame}{Torque}
   In scalar form, we can express torque $\tau$ in terms of the force $F$,
-  the \textbf{moment arm} $r$ and the angle $\phi$ between $\mb{F}$ an $\mb{r}$:
+  the \textbf{moment arm} $r$ and the angle $\phi$ between $\bm{F}$ an $\bm{r}$:
 
   \eq{-.2in}{
     \boxed{\tau=rF\sin\phi}
@@ -150,15 +132,15 @@
   In vector form, we use the cross-product:
 
   \eq{-.2in}{
-    \boxed{\bm{\tau}=\mb{r}\times\mb{F}_a}
+    \boxed{\bm{\tau}=\bm{r}\times\bm{F}_a}
   }
   \begin{center}
     \begin{tabular}{l|c|c}
       \rowcolor{pink}
       \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
       Torque        & $\bm{\tau}$ & \si{\newton\metre} \\
-      Applied force & $\mb{F}_a$  & \si\newton \\
-      Moment arm (from fulcrum to force) & $\mb{r}$ & \si\metre \\
+      Applied force & $\bm{F}_a$  & \si\newton \\
+      Moment arm (from fulcrum to force) & $\bm{r}$ & \si\metre \\
       Angle between force and moment arm & $\phi$ & (no units)
     \end{tabular}
   \end{center}
@@ -175,7 +157,7 @@
       \draw[thick,<->](-1.5,.25)--(0,.25) node[midway,above]{\SI{1.5}\metre};
       \draw[dashed,thick](-2.2,0)--(2.2,0);
       \draw[dashed,thick](0,0)--(0,.5);
-      \begin{scope}[orange, ultra thick,->]
+      \begin{scope}[orange,ultra thick,->]
         \draw[rotate=-45](0,0)--(0,1.5)node[right]{\SI{30}\newton};
         \draw[rotate around={30:(-1.5,0)}](-1.5,0)--(-2.5,0)
         node[left]{\SI{20}\newton};
@@ -237,12 +219,12 @@
 \begin{frame}{Angular Momentum}
   Consider a mass $m$ connected to a massless beam rotates with speed $v$ at
   a distance $r$ from the center (shown on the right). It has an
-  \textbf{angular momentum} ($\mb{L}$), defined as:
+  \textbf{angular momentum} ($\bm{L}$), defined as:
   \begin{columns}
     \column{.77\textwidth}
     
     \eq{-.3in}{
-      \boxed{\mb{L}=\mb{r}\times\mb{p}=m(\mb{r}\times\mb{v})=mr^2\bm\omega}
+      \boxed{\bm{L}=\bm{r}\times\bm{p}=m(\bm{r}\times\bm{v})=mr^2\bm\omega}
     }
       
     Or in scalar form:
@@ -261,10 +243,10 @@
         \fill[black!75,draw=black!75] (0,-.02) rectangle (2,.02);
         \fill[blue!75,draw=blue,thick] (2,0) circle(.05);
         \node(M) at (2,-.2) {$m$};
-        \fill[black] (0,0) circle (.05);
+        \fill (0,0) circle (.05);
         \begin{scope}[very thick,->]
-          \draw[red!70!black](0,0)--(2,0)node[pos=.5,right]{$\mb{r}$};
-          \draw (2,0)--(2,.5)node[left]{$\mb{v}$};
+          \draw[red!70!black](0,0)--(2,0)node[midway,right]{$\bm{r}$};
+          \draw (2,0)--(2,.5)node[left]{$\bm{v}$};
         \end{scope}
       \end{scope}
     \end{tikzpicture}
@@ -272,12 +254,13 @@
 \end{frame}
 
 
+
 \begin{frame}{Moment of Inertia}
   Look again at the definition of angular momentum:
     
   \eq{-.2in}{
-    \mb{L}=\mb{r}\times\mb{p}=\mb{r}\times(m\mb{v})
-    =m\mb{r}\times(\bm{\omega}\times\mb{r})
+    \bm{L}=\bm{r}\times\bm{p}=\bm{r}\times(m\bm{v})
+    =m\bm{r}\times(\bm{\omega}\times\bm{r})
     =\underbrace{mr^2}_{I}\bm\omega
   }
     
@@ -285,7 +268,7 @@
   \textbf{kilogram meter squared} (\si{\kilo\gram\metre\squared}), and 
 
   \eq{-.2in}{
-    \boxed{\mb{L}=I\bm\omega}
+    \boxed{\bm{L}=I\bm\omega}
   }
 \end{frame}
 
@@ -327,11 +310,11 @@
   Linear and angular momentum have very similar expressions
     
   \eq{-.2in}{
-    \boxed{\mb{p}=m\mb{v}}\quad\quad\quad\boxed{\mb{L}=I\bm\omega}
+    \boxed{\bm{p}=m\bm{v}}\quad\quad\quad\boxed{\bm{L}=I\bm\omega}
   }
   \begin{itemize}
-  \item Just as $\mb{p}$ describes the overall \emph{translational} state of a
-    physical system, $\mb{L}$ describes its overall \emph{rotational} state
+  \item Just as $\bm{p}$ describes the overall \emph{translational} state of a
+    physical system, $\bm{L}$ describes its overall \emph{rotational} state
   \item Momentum of inertia $I$ can be considered to be an object's
     ``rotational mass''
   \end{itemize}
@@ -346,13 +329,13 @@
   acting on it is zero:
   
   \eq{-.2in}{
-    \mb{F}_\text{net}=\mb{0}
+    \bm{F}_\text{net}=\bm{0}
   }
 
   This does \emph{not} mean that the object has no translational motion; it
   just means that the object's overall \emph{transtational state} is not
-  changing, i.e.\ the translational momentum $\mb{p}$ is constant. For
-  constant mass, this means $\mb{a}=\mb{0}$.
+  changing, i.e.\ the translational momentum $\bm{p}$ is constant. For
+  constant mass, this means $\bm{a}=\bm{0}$.
 \end{frame}
 
 
@@ -363,12 +346,12 @@
   acting on it is zero:
 
   \eq{-.3in}{
-    \bm{\tau}_\text{net}=\mb{0}
+    \bm{\tau}_\text{net}=\bm{0}
   }
   
   This does \emph{not} mean that the object has no rotational motion; it just
   means that the object's overall \emph{rotational state} is not changing,
-  i.e.\ $\bm{\alpha}=\mb{0}$, or that the angular momentum $\mb{L}$ is constant.
+  i.e.\ $\bm{\alpha}=\bm{0}$, or that the angular momentum $\bm{L}$ is constant.
 \end{frame}
 
 
@@ -378,10 +361,10 @@
   interval:
 
   \eq{-.2in}{
-    \overline{\bm\tau}_\text{net}=\mb{r}\times\mb{F}_\text{net}
-    =\mb{r}\times\frac{\Delta\mb{p}}{\Delta t}
-    =\frac{\Delta(\mb{r}\times\mb{p})}{\Delta t}\;\;\longrightarrow\;\;
-    \boxed{\overline{\bm{\tau}}=\frac{\Delta\mb{L}}{\Delta t}}
+    \overline{\bm\tau}_\text{net}=\bm{r}\times\bm{F}_\text{net}
+    =\bm{r}\times\frac{\Delta\bm{p}}{\Delta t}
+    =\frac{\Delta(\bm{r}\times\bm{p})}{\Delta t}\;\;\longrightarrow\;\;
+    \boxed{\overline{\bm{\tau}}=\frac{\Delta\bm{L}}{\Delta t}}
   }
   \begin{itemize}
   \item If the net torque on a system is zero, then the rate of change
@@ -400,14 +383,14 @@
   motion states that the net force is rate of change of the object's momentum:
 
   \eq{-.2in}{
-    \overline{\mb{F}}_\text{net}=\frac{\Delta\mb{p}}{\Delta t}
+    \overline{\bm{F}}_\text{net}=\frac{\Delta\bm{p}}{\Delta t}
   }
 
   For objects with constant mass, the second law reduces to the more familiar
   form:
 
   \eq{-.2in}{
-    \mb{F}=m\mb{a}
+    \bm{F}=m\bm{a}
   }
 \end{frame}
 
@@ -415,12 +398,12 @@
 \begin{frame}{Second Law of Motion for Rotational Motion}
   Likewise, the second law of motion for rotational motion has a very similar
   form, but with average torque $\overline{\bm\tau}$ replacing average force
-  $\overline{\mb{F}}$, and angular momentum $\mb{L}$ replacing linear momentum
-  $\mb{p}$:
+  $\overline{\bm{F}}$, and angular momentum $\bm{L}$ replacing linear momentum
+  $\bm{p}$:
 
   \eq{-.2in}{
     \boxed{
-      \overline{\bm\tau}_\text{net}=\frac{\Delta\mb{L}}{\Delta t}
+      \overline{\bm\tau}_\text{net}=\frac{\Delta\bm{L}}{\Delta t}
     }
   }
 
@@ -441,28 +424,28 @@
   \begin{center}
     \begin{tikzpicture}
       \draw[dashed](-5,0)--(5,0);
-      \draw[very thick,red!70!black,->](-5,0)--(-3,0) node[below]{$\mb{v}$};
+      \draw[very thick,red!70!black,->](-5,0)--(-3,0) node[below]{$\bm{v}$};
       \tikzstyle{balloon}=[ball color=red!70!black];
       \shade[balloon] (-5,0) circle(.2) node[above left,red!70!black]{$m$};
-      \fill[black] (0,-2) circle(.05) node[below]{$P$};
+      \fill (0,-2) circle(.05) node[below]{$P$};
       \draw[very thick,blue!70!black,->](0,-2)--(-5,0)
-      node[midway,below left]{$\mb{r}$};
+      node[midway,below left]{$\bm{r}$};
       \uncover<2->{
         \draw[dotted](0,0) circle(.2) node[above left]{$m$};
-        \draw[thick,red!50,->](.2,0)--(2,0)node[right]{$\mb{v}$};
-        \draw[thick,blue!50,->](0,-2)--(0,0) node[midway,left]{$\mb{r}$};
+        \draw[thick,red!50,->](.2,0)--(2,0)node[right]{$\bm{v}$};
+        \draw[thick,blue!50,->](0,-2)--(0,0) node[midway,left]{$\bm{r}$};
       }
       \uncover<3->{
         \draw[dotted](4,0) circle(.2) node[above left]{$m$};
-        \draw[thick,red!50,->](4.2,0)--(6,0)node[right]{$\mb{v}$};
-        \draw[thick,blue!50,->](0,-2)--(4,0)node[midway,above left]{$\mb{r}$};
+        \draw[thick,red!50,->](4.2,0)--(6,0)node[right]{$\bm{v}$};
+        \draw[thick,blue!50,->](0,-2)--(4,0)node[midway,above left]{$\bm{r}$};
       }
     \end{tikzpicture}
   \end{center}
   \uncover<4>{
     Since there is no force and no torque acting on the object, both the linear
-    momentum ($\mb{p}=m\mb{v}$) and angular momentum
-    ($\mb{L}=\mb{r}\times\mb{v}$) are constant.
+    momentum ($\bm{p}=m\bm{v}$) and angular momentum
+    ($\bm{L}=\bm{r}\times\bm{v}$) are constant.
   }
 \end{frame}
 
@@ -551,19 +534,16 @@
 
 \begin{frame}{Rotational Kinetic Energy}
   To find the kinetic energy of a rotating system of particles (discrete number
-  of particles, or continuous mass distribution), we sum (or integrate) the
+  of particles, or continuous mass distribution), we sum the
   kinetic energy of the individual particles:
     
-  \vspace{-.3in}{\Large
-    \begin{align*}
-      K&=\sum_i\frac12m_iv_i^2=\frac12\left(\sum_i m_ir_i^2\right)\omega^2\\
-      K&=\int\frac12v^2dm=\frac12\left(\int r^2dm\right)\omega^2
-    \end{align*}
+  \eq{-.1in}{
+    K=\sum_i\frac12m_iv_i^2=\frac12\left(\sum_i m_ir_i^2\right)\omega^2
   }
   
   It's no surprise that in both case, rotational kinetic energy is given by:
   
-  \eq{-.25in}{
+  \eq{-.2in}{
     \boxed{K=\frac12I\omega^2}
   }
 \end{frame}
