@@ -5,12 +5,15 @@ export DESTINATION
 
 all:
 	cd 06-rotMotion ; make
+	cd 07-SHM ; make
 
 clean:
 	rm -rf *.*~ *~ *.log
 	cd 06-rotMotion ; make clean
+	cd 07-SHM ; make clean
 
 public:
 	mkdir -p $(DESTINATION)
 	cd 06-rotMotion ; make public
+	cd 07-SHM ; make public
 

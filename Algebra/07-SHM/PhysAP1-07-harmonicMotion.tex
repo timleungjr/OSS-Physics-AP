@@ -5,6 +5,7 @@
 \usepackage{siunitx}
 \usepackage{tikz}
 \usepackage{mathpazo}
+\usepackage{bm}
 
 \usetikzlibrary{decorations.pathmorphing,patterns}
 
@@ -27,7 +28,6 @@
 \date{\today}
 
 \newcommand{\pic}[2]{\includegraphics[width=#1\textwidth]{#2}}
-\newcommand{\mb}[1]{\ensuremath\mathbf{#1}}
 \newcommand{\eq}[2]{\vspace{#1}{\Large\begin{displaymath}#2\end{displaymath}}}
 
 \begin{document}
@@ -40,21 +40,21 @@
 \section{Review: Hooke's Law}
 
 \begin{frame}{Review: Hooke's Law}
-  \textbf{Hooke's law} relates the force $\mb{F}_s$ (\textbf{spring force})
+  \textbf{Hooke's law} relates the force $\bm{F}_s$ (\textbf{spring force})
   exerted by a compressed or stretched spring onto another object to the
   stiffness of the spring $k$ (\textbf{spring constant}, \textbf{Hooke's
-    constant} or \textbf{force constant}) and spring displacement $\mb{x}$:
+    constant} or \textbf{force constant}) and spring displacement $\bm{x}$:
 
   \eq{-.1in}{
-    \boxed{\mb{F}_s=-k\mb{x}}
+    \boxed{\bm{F}_s=-k\bm{x}}
   }
 
   \begin{itemize}
   \item\vspace{-.1in}The unit for $k$ is \textbf{newton per meter}
     (\si{\newton\per\metre})
-  \item $\mb{F}_s$ is a \textbf{restoring force}: its direction is always
-    opposite to the displacement to always move it back towards $\mb{x}=0$.
-  \item The magnitude of $\mb{F}_s$ is non constant: the acceleration of
+  \item $\bm{F}_s$ is a \textbf{restoring force}: its direction is always
+    opposite to the displacement to always move it back towards $\bm{x}=0$.
+  \item The magnitude of $\bm{F}_s$ is non constant: the acceleration of
     objects connected to it changes with time
   \end{itemize}
 \end{frame}
@@ -93,15 +93,15 @@
       
       \fill[red!80!black] (5.5,1) circle(.08);
       \begin{scope}[very thick,->,red!80!black]
-        \draw (5.5,1)--(5.5,0) node[below]{\footnotesize $m\mb{g}$};
-        \draw (5.5,1)--(5.5,2) node[above]{\footnotesize $\mb{N}$};
-        \draw (5.5,1)--(4.5,1) node[above]{\footnotesize $\mb{F}_s$};
+        \draw (5.5,1)--(5.5,0) node[below]{\footnotesize $m\bm{g}$};
+        \draw (5.5,1)--(5.5,2) node[above]{\footnotesize $\bm{N}$};
+        \draw (5.5,1)--(4.5,1) node[above]{\footnotesize $\bm{F}_s$};
       \end{scope}
     \end{tikzpicture}
   \end{center}
 
-  \vspace{-.1in}$m\mb{g}$ and $\mb{N}$ cancel out, so net force is due only to
-  spring force $\mb{F}_s=-k\mb{x}$ along the $x$-axis. This is true both when
+  \vspace{-.1in}$m\bm{g}$ and $\bm{N}$ cancel out, so net force is due only to
+  spring force $\bm{F}_s=-k\bm{x}$ along the $x$-axis. This is true both when
   the spring is in compression or extension. (The spring is in extension in the
   diagram.)
 \end{frame}
@@ -210,14 +210,14 @@
       \draw[thick] (0,5)--(2,5);
       \draw[->](1.75,3)--(1.75,2) node[below]{$x$};
       \begin{scope}[very thick,->,red!80!black]
-        \draw(1,2)--(1,1)node[right]{\footnotesize $m\mb{g}$};
-        \draw(1,1)--(1,3)node[right]{\footnotesize $\mb{F}_s$};
+        \draw(1,2)--(1,1)node[right]{\footnotesize $m\bm{g}$};
+        \draw(1,2)--(1,3)node[right]{\footnotesize $\bm{F}_s$};
       \end{scope}
-      \fill[red](1,2) circle(.05);
+      \fill[red!80!black](1,2) circle(.05);
     \end{tikzpicture}
 
     \column{.8\textwidth}
-    For a vertical spring-mass system, we must consider the weight $m\mb{g}$
+    For a vertical spring-mass system, we must consider the weight $m\bm{g}$
     of the mass as well, but since weight is constant, the only change is the
     addition of a constant $B$ in the expression of $x(t)$:
     
@@ -244,13 +244,13 @@
         decoration={aspect=.4,segment length=2.2mm, amplitude=2.5mm, coil},
         decorate] (1,5)--(1,2.25); 
       \fill [pattern=north east lines] (0,5) rectangle (2,5.2);
-      \draw[ultra thick] (0,5)--(2,5);
+      \draw[thick] (0,5)--(2,5);
       \draw[->](1.75,3)--(1.75,2) node[below]{$x$};
       \begin{scope}[very thick,->,red!80!black]
-        \draw(1,2)--(1,1) node[right]{\footnotesize $\mb{w}$};
-        \draw(1,1)--(1,3) node[right]{\footnotesize $\mb{F}_s$};
+        \draw(1,2)--(1,1) node[right]{\footnotesize $m\bm{g}$};
+        \draw(1,2)--(1,3) node[right]{\footnotesize $\bm{F}_s$};
       \end{scope}
-      \fill[red](1,2) circle(.05);
+      \fill[red!80!black](1,2) circle(.05);
     \end{tikzpicture}
 
     \column{.8\textwidth}
@@ -334,13 +334,13 @@
     \item Pendulums also exhibit oscillatory motion
     \item A \textbf{simple pendulum} is where the mass is concentrated at the
       end point
-    \item There are two forces acting on the mass: weight $w=mg$ and tension $T$
-    \item When the mass is deflected by $\beta$, the component of gravity in
-      the angular direction is $F_\beta=-mg\sin\beta$
+    \item There are two forces acting on the mass: weight $mg$ and tension $T$
+    \item When the mass is deflected by $\phi$, the component of gravity in
+      the tangential direction is $F_t=-mg\sin\phi$
     \item No need to worry about the radial direction because it does not
       have to do with the restoring force
     \end{itemize}
-    (I am running out of Greek letters for angles!)
+    %(I am running out of Greek letters for angles!)
     
     \column{.25\textwidth}
     \begin{tikzpicture}
@@ -351,14 +351,14 @@
         \tikzstyle{balloon}=[ball color=red];
         \shade[balloon] (0,-5) circle (.2) node[below right]{$m$};
         \begin{scope}[very thick,->,red!80!black]
-          \draw[dotted](0,-5)--(-0.5,-5)node[left]{\footnotesize $mg\sin\beta$};
-          \draw (0,-5)--(0,-3) node[left]{\footnotesize $\mb{T}$};
+          \draw[dotted](0,-5)--(-0.5,-5)node[left]{\footnotesize $mg\sin\phi$};
+          \draw (0,-5)--(0,-3) node[left]{\footnotesize $\bm{T}$};
           \draw[rotate around={-10:(0,-5)}](0,-5)--(0,-6.5)
-          node[below]{\footnotesize $m\mb{g}$};
+          node[below]{\footnotesize $m\bm{g}$};
         \end{scope}
       \end{scope}
       \draw[dashed,thin](0,0)--(0,-5);
-      \draw[->](0,-2) arc(270:280:2) node[midway,below]{$\beta$};
+      \draw[->](0,-2) arc(270:280:2) node[midway,below]{$\phi$};
     \end{tikzpicture}
   \end{columns}
 \end{frame}
@@ -368,24 +368,24 @@
 \begin{frame}{The Simple Pendulum}
   \begin{columns}
     \column{.75\textwidth}
-    Substitute $F_\beta$ into the second law of motion, and cancelling mass
-    term, we get:
+    Substitute $F_t$ into the second law of motion, and cancelling mass term,
+    we get:
 
     \eq{-.2in}{
-      F_\beta=ma_\beta\;\;\rightarrow\;\;
-      -g\sin\beta=L\alpha
+      F_t=ma_t\;\;\rightarrow\;\; -g\sin\phi=\ell\alpha
     }
 
-    \vspace{-.1in}where the acceleration $a=L\alpha$ and $\alpha$ is the
-    angular acceleration $\alpha$. Solving this ODE is difficult because of the
-    $\sin\beta$ term. However, using the series expansion of the sine function
+    \vspace{-.1in}where the acceleration $\alpha$ is the angular acceleration
+    $\alpha$, and tangential acceleration is $a_t=\ell\alpha$. Solving this ODE
+    is difficult because of the $\sin\phi$ term. However, using the series
+    expansion of the sine function
 
     \eq{-.2in}{
-      \sin\beta=\beta-\frac{\beta^3}{3!}+\frac{\beta^5}{5!}-
-      \frac{\beta^7}{7!}+\cdots
+      \sin\phi=\phi-\frac{\phi^3}{3!}+\frac{\phi^5}{5!}-
+      \frac{\phi^7}{7!}+\cdots
     }
     
-    shows that for small angles ($\beta<\ang{10}$), $\sin\beta\approx\beta$
+    shows that for ``small angles'' (usually <\ang{10}), $\sin\phi\approx\phi$
     
     \column{.25\textwidth}
     \begin{tikzpicture}
@@ -397,7 +397,7 @@
         \shade[balloon] (0,-5) circle (0.2) node[below right]{$m$};
       \end{scope}
       \draw[dashed,thin](0,0)--(0,-5);
-      \draw[->](0,-2) arc(270:280:2) node[midway,below]{$\beta$};
+      \draw[->](0,-2) arc(270:280:2) node[midway,below]{$\phi$};
     \end{tikzpicture}
   \end{columns}
 \end{frame}
@@ -407,16 +407,16 @@
 \begin{frame}{The Simple Pendulum}
   \begin{columns}
     \column{.75\textwidth}
-    For small angles of $\beta$, the equation that needs to be solved is
+    For small angles of $\phi$, the equation that needs to be solved is
     essentially the same as the spring-mass system:
 
     \eq{-.2in}{
-      -g\beta=L\alpha
+      -g\phi=\ell\alpha
     }
 
     \vspace{-.1in}Instead of position $x$ and acceleration $a$, we have
-    \emph{angular} position $\beta$ and \emph{angular} acceleration $\alpha$.
-    This expression is similar to the spring-mass case.
+    \emph{angular} position $\phi$ and \emph{angular} acceleration $\alpha$ of
+    the pendulum. This expression is similar to the spring-mass case.
     
     \column{.25\textwidth}
     \begin{tikzpicture}
@@ -436,14 +436,13 @@
 
 
 \begin{frame}{Solution for Deflection}
-  The solution for $\beta(t)$, as well as its derivatives, are similar to the
-  spring-mass system:
+  The solution for $\phi(t)$ is similar to the spring-mass system:
 
   \eq{-.2in}{
-    \boxed{\beta(t)=A\cos(\omega t-\phi) +B}
+    \boxed{\phi(t)=\Phi\cos(\omega t-\beta)}
   }
     
-  where amplitude $A$ is the maximum deflection of the pendulum (less than
+  where amplitude $\Phi$ is the maximum deflection of the pendulum (less than
   \ang{10}), and angular frequency of the oscillation $\omega$ is given by:
   
   \eq{-.15in}{
@@ -513,10 +512,10 @@
       \uncover<2->{
         \fill[red] (3.5,1)circle(.075);
         \begin{scope}[very thick,->,red!80!black]
-          \draw(3.5,1)--(3.5,0) node[below]{$m\mb{g}$};
-          \draw(3.5,1)--(3.5,2) node[above]{$\mb{N}$};
-          \draw(3.5,1)--(2.5,1) node[above]{$\mb{F}_s$};
-          \draw(3.5,1)--(4.5,1) node[below]{$\mb{F}_D$};
+          \draw(3.5,1)--(3.5,0) node[below]{$m\bm{g}$};
+          \draw(3.5,1)--(3.5,2) node[above]{$\bm{N}$};
+          \draw(3.5,1)--(2.5,1) node[above]{$\bm{F}_s$};
+          \draw(3.5,1)--(4.5,1) node[below]{$\bm{F}_D$};
         \end{scope}
       }
     \end{tikzpicture}
@@ -526,7 +525,7 @@
     direction:
 
     \eq{-.3in}{
-      \mb{F}_D=-b\mb{v}
+      \bm{F}_D=-b\bm{v}
     }
 
     \vspace{-.1in}Second law of motion:
@@ -630,11 +629,11 @@
       \end{scope}
       \fill[red] (3.5,1)circle(.075);
       \begin{scope}[very thick,->,red!80!black]
-        \draw (3.5,1)--(3.5,0) node[below]{$m\mb{g}$};
-        \draw (3.5,1)--(3.5,2) node[above]{$\mb{N}$};
-        \draw (3.5,1)--(2.5,1) node[above]{$\mb{F}_s$};
-        \draw (3.5,.9)--(2,.9) node[below]{$\mb{F}_\text{ext}$};
-        \draw (3.5,1)--(4.5,1) node[below]{$\mb{F}_D$};
+        \draw (3.5,1)--(3.5,0) node[below]{$m\bm{g}$};
+        \draw (3.5,1)--(3.5,2) node[above]{$\bm{N}$};
+        \draw (3.5,1)--(2.5,1) node[above]{$\bm{F}_s$};
+        \draw (3.5,.9)--(2,.9) node[below]{$\bm{F}_\text{ext}$};
+        \draw (3.5,1)--(4.5,1) node[below]{$\bm{F}_D$};
       \end{scope}
     \end{tikzpicture}
   \end{center}
@@ -720,7 +719,7 @@
   equal to the natural frequency $\omega_0$, with a maximum value of:
   
   \eq{-.2in}{
-    A_{\textrm{max}}=\frac{F_0}{b\omega}
+    A_\text{max}=\frac{F_0}{b\omega}
   }
 \end{frame}
 

@@ -9,7 +9,6 @@
 \usepackage{mathpazo}
 \usepackage{bm}
 \usepackage{xcolor,colortbl}
-%\usepackage{hyperref}
 
 \usetikzlibrary{decorations.pathmorphing,patterns}
 
@@ -17,8 +16,6 @@
 \renewcommand{\baselinestretch}{1}
 
 \sisetup{
-  %detect-all,
-  %number-math-rm=\mathnormal,
   per-mode=symbol
 }
 \tikzset{>=latex}
@@ -26,11 +23,10 @@
 \title{Topic 8: Harmonic Motion}
 \subtitle{Advanced Placement Physics C}
 \author[TML]{Dr.\ Timothy Leung}
-\institute{Olympiads School, Toronto, ON, Canada}
+\institute{Olympiads School}
 \date{\today}
 
 \newcommand{\pic}[2]{\includegraphics[width=#1\textwidth]{#2}}
-\newcommand{\mb}[1]{\ensuremath\mathbf{#1}}
 \newcommand{\eq}[2]{\vspace{#1}{\Large\begin{displaymath}#2\end{displaymath}}}
 
 \begin{document}
@@ -87,23 +83,26 @@
 
 \section{Spring-Mass}
 
-\begin{frame}{Mass on a Spring}
+\begin{frame}{Horizontal Spring-Mass System}
   Consider the forces acting on a mass connected horizontally to a spring
 
   \begin{center}
     \begin{tikzpicture}[scale=1.1]
-      \node[fill=blue!70,inner sep=4.5mm] (a) at (5.5,1) {$m$};
+      \draw[fill=blue!70] (4.95,.5) rectangle (6.05,1.5); %{$m$};
       \draw[thick,draw=black!70,
         decoration={aspect=.3,segment length=2mm, amplitude=2.5mm, coil},
         decorate] (0,1)--(4.95,1);
-      \fill [pattern=north east lines] (6.5,.5)--(6.5,.3)--(-.2,.3)
+      \fill[pattern=north east lines] (6.5,.5)--(6.5,.3)--(-0.2,.3)
       --(-.2,2)--(0,2)--(0,.5)--cycle;
-      \draw[thick] (0,0.5)--(6.5,0.5);
-      \draw[thick] (0,0.5)--(0,2);
-      \draw[ultra thick,->,red](a)--(5.5,0) node[right]{$m\bm{g}$};
-      \draw[ultra thick,->,red](a)--(5.5,2) node[right]{$\bm{N}$};
-      \draw[ultra thick,->,red](a)--(4.5,1) node[above]{$\bm{F}_s$};
-      \draw[->,thick](7,1)--(7.8,1) node[right]{$x$};
+      \draw[thick] (6.5,.5)--(0,.5)--(0,2);
+      \draw[->,thick](7,1)--(7.8,1) node[right]{\footnotesize $x$};
+      
+      \fill[red!80!black] (5.5,1) circle(.08);
+      \begin{scope}[very thick,->,red!80!black]
+        \draw (5.5,1)--(5.5,0) node[below]{\footnotesize $m\bm{g}$};
+        \draw (5.5,1)--(5.5,2) node[above]{\footnotesize $\bm{N}$};
+        \draw (5.5,1)--(4.5,1) node[above]{\footnotesize $\bm{F}_s$};
+      \end{scope}
     \end{tikzpicture}
   \end{center}
   $m\bm{g}$ and $\bm{N}$ cancel out, so net force is due only to spring force
@@ -120,12 +119,12 @@
     \sum F=F_s=ma\quad\longrightarrow\quad-kx=m\frac{d^2x}{dt^2}
   }
 
-  This equation is called a
+  This is a
   \emph{second-order ordinary differential equation with constant coefficients}.
   It is generally written in the standard form
 
   \eq{-.15in}{
-    \boxed{\frac{d^2x}{dt^2}+\frac{k}{m}x=0}
+    \frac{d^2x}{dt^2}+\frac{k}mx=0
   }
   
 
@@ -139,7 +138,7 @@
   derivative $\ddot{x}$ looks like $x$ but with a negative sign
 
   \eq{-.2in}{
-    \boxed{\frac{d^2x}{dt^2}+\frac{k}{m}x=0}
+    \frac{d^2x}{dt^2}+\frac{k}mx=0
   }
 
   The obvious choices are the trigonometric functions $\sin(t)$ and $\cos(t)$.
@@ -149,7 +148,7 @@
     x(t)=A\cos(\omega t-\phi)
   }
   
-  \vspace{-.15in}Cosine is usually preferred over sine because $\cos(0)=1$,
+  \vspace{-.1in}Cosine is usually preferred over sine because $\cos(0)=1$,
   consistent with the fact that oscillations usually begin at maximum amplitude
   $A$ at $t=0$. However, mathematically, the two functions only differ in $\phi$
 \end{frame}
@@ -158,7 +157,7 @@
 \begin{frame}{Mass on a Spring}
 
   \eq{-.1in}{
-    \boxed{\frac{d^2x}{dt^2}+\frac{k}{m}x=0}
+    \boxed{\frac{d^2x}{dt^2}+\frac{k}mx=0}
   }
   
   Starting with the general form and take the time derivatives to obtain the
@@ -185,7 +184,7 @@
   constant and mass by:
 
   \eq{-.2in}{
-    \omega=\sqrt{\frac{k}{m}}
+    \omega=\sqrt{\frac{k}m}
   }
 
   The angular frequency for the (undamped) simple harmonic oscillator is called
@@ -198,8 +197,8 @@
   The period $T$ and frequency $f$ of the simple harmonic motion are given by:
 
   \eq{-.1in}{
-    f=\frac{\omega}{2\pi}=\frac1{2\pi}\sqrt{\frac{k}{m}}\quad\quad
-    T=\frac1f=2\pi\sqrt{\frac{m}{k}}
+    f=\frac{\omega}{2\pi}=\frac1{2\pi}\sqrt{\frac{k}m}\quad\quad
+    T=\frac1f=2\pi\sqrt{\frac{m}k}
   }
   
   Angular frequency, frequency and period do not depend on amplitude $A$
@@ -263,20 +262,25 @@
   }
 \end{frame}
 
+
+
 \begin{frame}{Vertical Spring-Mass System}
   \vspace{.2in}
   \begin{columns}
     \column{.17\textwidth}
     \begin{tikzpicture}[scale=1.3]
-      \node[fill=blue!70,inner sep=3.5mm] (b) at (1,2) {};
+      \draw[fill=blue!60] (.75,1.75) rectangle (1.25,2.25);
       \draw[thick,
-        decoration={aspect=0.3,segment length=2mm, amplitude=2.5mm, coil},
-        decorate] (1,5)--(b); 
+        decoration={aspect=.4,segment length=2.2mm, amplitude=2.5mm, coil},
+        decorate] (1,5)--(1,2.25); 
       \fill [pattern=north east lines] (0,5) rectangle (2,5.2);
       \draw[thick] (0,5)--(2,5);
       \draw[->](1.75,3)--(1.75,2) node[below]{$x$};
-      \draw[very thick,->,red](1,2)--(1,1) node[below]{$m\bm{g}$};
-      \draw[very thick,->,red](1,2)--(1,3) node[right]{$\bm{F}_s$};
+      \begin{scope}[very thick,->,red!80!black]
+        \draw(1,2)--(1,1)node[right]{\footnotesize $m\bm{g}$};
+        \draw(1,2)--(1,3)node[right]{\footnotesize $\bm{F}_s$};
+      \end{scope}
+      \fill[red!80!black](1,2) circle(.05);
     \end{tikzpicture}
 
     \column{.85\textwidth}
@@ -307,15 +311,18 @@
   \begin{columns}
     \column{.17\textwidth}
     \begin{tikzpicture}[scale=1.3]
-      \node[fill=blue!70,inner sep=3.5mm] (b) at (1,2) {};
+      \draw[fill=blue!60] (.75,1.75) rectangle (1.25,2.25);
       \draw[thick,
-        decoration={aspect=0.3,segment length=2mm, amplitude=2.5mm, coil},
-        decorate] (1,5)--(b); 
+        decoration={aspect=.4,segment length=2.2mm, amplitude=2.5mm, coil},
+        decorate] (1,5)--(1,2.25); 
       \fill [pattern=north east lines] (0,5) rectangle (2,5.2);
       \draw[thick] (0,5)--(2,5);
       \draw[->](1.75,3)--(1.75,2) node[below]{$x$};
-      \draw[very thick,->,red](1,2)--(1,1) node[below]{$m\bm{g}$};
-      \draw[very thick,->,red](1,2)--(1,3) node[right]{$\bm{F}_s$};
+      \begin{scope}[very thick,->,red!80!black]
+        \draw(1,2)--(1,1)node[right]{\footnotesize $m\bm{g}$};
+        \draw(1,2)--(1,3)node[right]{\footnotesize $\bm{F}_s$};
+      \end{scope}
+      \fill[red!80!black](1,2) circle(.05);
     \end{tikzpicture}
 
     \column{.85\textwidth}
@@ -398,11 +405,12 @@
     \column{.75\textwidth}
     \begin{itemize}
     \item Pendulums also exhibit oscillatory motion
-    \item For a \emph{simple} pendulum, there are two forces acting on the
-      mass: weight $w=mg$ and tension $T$
-    \item It has already been shown in the previous topic on circular motion
-      that when the mass is deflected by an angle $\theta$, the force in the
-      angular direction is $F_\theta=-mg\sin\theta$
+    \item A \textbf{simple pendulum} is where the mass is concentrated at the
+      end point 
+    \item There are two forces acting on the mass: weight $mg$ and tension $T$
+    \item It has already been shown previously that when the mass is deflected
+      by an angle $\phi$, the force in the tangential direction is
+      $F_t=-mg\sin\phi$
     \item No need to worry about the radial direction because it does not
       have to do with the restoring force
     \end{itemize}
@@ -415,15 +423,15 @@
         \draw[thick](0,0)--(0,-5);
         \tikzstyle{balloon}=[ball color=red];    
         \shade[balloon] (0,-5) circle(.2) node[below right]{$m$};
-        \draw[dotted,->,very thick,red](0,-5)--(-0.5,-5)
-        node[left]{$mg\sin\theta$};
-        \draw[->,very thick,red](0,-5)--(0,-3)
-        node[left]{$\bm{T}$};
-        \draw[->,very thick,red, rotate around={-10:(0,-5)}](0,-5)--(0,-6.5)
-        node[below]{$m\bm{g}$};
+        \begin{scope}[red!80!black,very thick,->]
+          \draw[dotted](0,-5)--(-0.5,-5) node[left]{$mg\sin\theta$};
+          \draw(0,-5)--(0,-3) node[left]{$\bm{T}$};
+          \draw[rotate around={-10:(0,-5)}](0,-5)--(0,-6.5)
+          node[below]{$m\bm{g}$};
+        \end{scope}
       \end{scope}
       \draw[dashed,thin](0,0)--(0,-5);
-      \draw[->](0,-2) arc(270:280:2) node[pos=.5,below]{$\theta$};
+      \draw[->](0,-2) arc(270:280:2) node[midway,below]{$\phi$};
     \end{tikzpicture}
   \end{columns}
 \end{frame}
@@ -433,22 +441,22 @@
 \begin{frame}{The Simple Pendulum}
   \begin{columns}
     \column{.75\textwidth}
-    Substitute $F_\theta$ into second law of motion, and cancelling mass term, we
+    Substitute $F_t$ into second law of motion, and cancelling mass term, we
     get:
 
     \eq{-.2in}{
-      F_\theta=ma_\theta\;\;\rightarrow\;\; -g\sin\theta=L\frac{d^2\theta}{dt^2}
+      F_t=ma_t\;\;\rightarrow\;\; -g\sin\phi=\ell\frac{d^2\phi}{dt^2}
     }
 
     Solving this ODE in its present form is difficult because of the
-    $\sin\theta$ term. However, the series expansion of the sine function
+    $\sin\phi$ term. However, the series expansion of the sine function
 
     \eq{-.2in}{
-      \sin(\theta)=\theta-\frac{\theta^3}{3!}+\frac{\theta^5}{5!}-
-      \frac{\theta^7}{7!}+\cdots
+      \sin(\phi)=\phi-\frac{\phi^3}{3!}+\frac{\phi^5}{5!}-\frac{\phi^7}{7!}+
+      \cdots
     }
     
-    shows that for small angles ($\theta<\ang{10}$), $\sin\theta\approx\theta$
+    shows that for small angles (less than \ang{10}), $\sin\phi\approx\phi$
     
     \column{.25\textwidth}
     \begin{tikzpicture}
@@ -460,7 +468,7 @@
         \shade[balloon] (0,-5) circle (0.2) node[below right]{$m$};
       \end{scope}
       \draw[dashed,thin](0,0)--(0,-5);
-      \draw[->](0,-2) arc(270:280:2) node[pos=.5,below]{$\theta$};
+      \draw[->](0,-2) arc(270:280:2) node[midway,below]{$\phi$};
     \end{tikzpicture}
   \end{columns}
 \end{frame}
@@ -470,11 +478,11 @@
 \begin{frame}{The Simple Pendulum}
   \begin{columns}
     \column{.75\textwidth}
-    For small angles of $\theta$, the ODE reduces to the same form as the
+    For small angles of $\phi$, the ODE reduces to the same form as the
     spring-mass system!
 
     \eq{-.1in}{
-      \frac{d^2\alpha}{dt^2}+\frac{g}{L}\alpha=0
+      \frac{d^2\alpha}{dt^2}+\frac{g}\ell\alpha=0
     }
     
     \column{.25\textwidth}
@@ -487,7 +495,7 @@
         \shade[balloon] (0,-5) circle (.2) node[below right]{$m$};
       \end{scope}
       \draw[dashed,thin](0,0)--(0,-5);
-      \draw[->](0,-2) arc(270:280:2) node[pos=0.5,below]{$\theta$};
+      \draw[->](0,-2) arc(270:280:2) node[pos=0.5,below]{$\phi$};
     \end{tikzpicture}
   \end{columns}
 \end{frame}
@@ -495,20 +503,20 @@
 
 
 \begin{frame}{Ordinary Differential Equation for the Pendulum}
-  The solution for $\theta(t)$ is very similar to the spring-mass system:
+  The solution for $\phi(t)$ is very similar to the spring-mass system:
 
     \eq{-.2in}{
-      \boxed{\theta(t)=\theta_\text{max}\cos(\omega t-\phi)}
+      \boxed{\phi(t)=\Phi\cos(\omega t-\beta)}
     }
 
-    where $\theta_\text{max}$ is the maximum deflection (amplitude), and angular
+    where $\Phi$ is the maximum deflection (amplitude), and angular
     frequency of the oscillation $\omega$ is given by:
     
     \eq{-.15in}{
-      \boxed{\omega=\sqrt{\frac{g}{L}}}
+      \boxed{\omega=\sqrt{\frac{g}L}}
     }
 
-    and $\phi$ is a phase shift based on the initial condition of the pendulum.
+    and $\beta$ is a phase shift based on the initial condition of the pendulum.
 \end{frame}
 
 
@@ -582,11 +590,13 @@
         \draw[very thick](5.5,1)--(6.5,1);
       }
       \uncover<3->{
-        \fill[red] (3.5,1)circle(.075);
-        \draw[ultra thick,->,red](3.5,1)--(3.5,0) node[below]{$m\bm{g}$};
-        \draw[ultra thick,->,red](3.5,1)--(3.5,2) node[above]{$\bm{N}$};
-        \draw[ultra thick,->,red](3.5,1)--(2.5,1) node[above]{$\bm{F}_s$};
-        \draw[ultra thick,->,red](3.5,1)--(4.5,1) node[below]{$\bm{F}_D$};
+        \fill[red!80!black] (3.5,1)circle(.075);
+        \begin{scope}[very thick,->,red!80!black]
+          \draw(3.5,1)--(3.5,0) node[below]{$m\bm{g}$};
+          \draw(3.5,1)--(3.5,2) node[above]{$\bm{N}$};
+          \draw(3.5,1)--(2.5,1) node[above]{$\bm{F}_s$};
+          \draw(3.5,1)--(4.5,1) node[below]{$\bm{F}_D$};
+        \end{scope}
       }
     \end{tikzpicture}
   \end{center}
@@ -693,7 +703,7 @@
 
 \begin{frame}{Comparing Damped System}
   \begin{center}
-    \pic{.5}{oscda8.png}
+    \pic{.5}{oscda8}
   \end{center}
   The motion of the damped oscillator is not strictly periodic.
 \end{frame}
@@ -745,16 +755,20 @@
       --(6.5,.5)--(0,.5)--(0,2)--cycle;
       \draw[thick] (0,2)--(0,.5)--(6.5,.5)--(6.5,2);
       \draw[fill=blue!20!white] (4.9,.8) rectangle(5.5,1.2);
-      \draw[very thick](4.05,1)--(4.9,1);
-      \draw[very thick](4.9,.8)--(4.9,1.2);
-      \draw[very thick](4.8,1.2)--(5.5,1.2)--(5.5,.8)--(4.8,.8);
-      \draw[very thick](5.5,1)--(6.5,1);
-      \fill[red] (3.5,1)circle(.075);
-      \draw[ultra thick,->,red](3.5,1)--(3.5,0) node[below]{$m\bm{g}$};
-      \draw[ultra thick,->,red](3.5,1)--(3.5,2) node[above]{$\bm{N}$};
-      \draw[ultra thick,->,red](3.5,1)--(2.5,1) node[above]{$\bm{F}_s$};
-      \draw[ultra thick,->,red](3.5,.9)--(2,.9) node[below]{$\bm{F}_{ext}$};
-      \draw[ultra thick,->,red](3.5,1)--(4.5,1) node[below]{$\bm{F}_D$};
+      \begin{scope}[very thick]
+        \draw(4.05,1)--(4.9,1);
+        \draw(4.9,.8)--(4.9,1.2);
+        \draw(4.8,1.2)--(5.5,1.2)--(5.5,.8)--(4.8,.8);
+        \draw(5.5,1)--(6.5,1);
+      \end{scope}
+      \fill[red!80!black] (3.5,1)circle(.075);
+      \begin{scope}[very thick,->,red!80!black]
+        \draw(3.5,1)--(3.5,0) node[below]{$m\bm{g}$};
+        \draw(3.5,1)--(3.5,2) node[above]{$\bm{N}$};
+        \draw(3.5,1)--(2.5,1) node[above]{$\bm{F}_s$};
+        \draw(3.5,.9)--(2,.9) node[below]{$\bm{F}_{ext}$};
+        \draw(3.5,1)--(4.5,1) node[below]{$\bm{F}_D$};
+      \end{scope}
     \end{tikzpicture}
   \end{center}
 \end{frame}
@@ -861,7 +875,7 @@
 \begin{frame}{Resonance}
   \begin{columns}
     \column{.4\textwidth}
-    \pic{1}{resonance-fig2.png}
+    \pic{1}{resonance-fig2}
     
     \column{.6\textwidth}
     Plotting amplitude $A$ as a function of driving frequency $\omega$ shows
