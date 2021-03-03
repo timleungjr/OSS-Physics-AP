@@ -1,13 +1,12 @@
 \documentclass[12pt,compress,aspectratio=169]{beamer}
-
 \usetheme{metropolis}
 \setbeamersize{text margin left=.5cm,text margin right=.5cm}
 %\usefonttheme{professionalfonts}
 \usepackage[lf]{carlito}
 \usepackage{siunitx}
-%\usepackage{graphicx}
 \usepackage{tikz}
 \usepackage{mathpazo}
+\usepackage{bm}
 \usepackage{xcolor,colortbl}
 
 \usetikzlibrary{decorations.pathmorphing,patterns}
@@ -16,8 +15,7 @@
 \renewcommand{\baselinestretch}{1}
 
 \sisetup{
-  detect-all,
-  %number-math-rm=\mathnormal,
+  inter-unit-product=\cdotp,
   per-mode=symbol
 }
 \tikzset{>=latex}
@@ -25,11 +23,10 @@
 \title{Topic 9: Universal Gravitation}
 \subtitle{Advanced Placement Physics C}
 \author{Dr.\ Timothy Leung}
-\institute{Olympiads School\\Toronto, Ontario, Canada}
+\institute{Olympiads School}
 \date{\today}
 
 \newcommand{\pic}[2]{\includegraphics[width=#1\textwidth]{#2}}
-\newcommand{\mb}[1]{\ensuremath\mathbf{#1}}
 \newcommand{\eq}[2]{\vspace{#1}{\Large\begin{displaymath}#2\end{displaymath}}}
 
 
@@ -60,31 +57,30 @@
 \begin{frame}{Law of Universal Gravitation}
   \begin{center}
     \begin{tikzpicture}[scale=.65]
-      \draw[->,very thick,red](0,0)--(2,0) node[right]{$\mb{F}_{21}$};
-      \draw[->,very thick,blue](8,0)--(6,0) node[left]{$\mb{F}_{12}$};
+      \draw[->,very thick,red](0,0)--(2,0) node[right]{$\bm{F}_{21}$};
+      \draw[->,very thick,blue](8,0)--(6,0) node[left]{$\bm{F}_{12}$};
       \tikzstyle{balloon1}=[ball color=red];
       \tikzstyle{balloon2}=[ball color=blue];
       \shade[balloon1] (0,0) circle(.7) node[white]{$m_1$};
       \shade[balloon2] (8,0) circle(1) node[white]{$m_2$};
       \draw[dashed] (0,0)--(0,-1.5);
       \draw[dashed] (8,0)--(8,-1.5);
-      \draw[->,thick](0,-1.3)--(8,-1.3) node[midway,below]{$\mb{r}_{12}$};
+      \draw[->,thick](0,-1.3)--(8,-1.3) node[midway,below]{$\bm{r}_{12}$};
     \end{tikzpicture}
   \end{center}
 
   In classical mechanics, \textbf{gravity} is a mutually attractive force
-  between all massive objects, %The force $m_1$ exerts on $m_2$ is
-  given by the law of universal gravitation:
+  between all massive objects, given by the law of universal gravitation:
 
   \eq{-.2in}{
     \boxed{
-      \mb{F}_{12}=-G\frac{m_1m_2}{|\mb{r}_{12}|^2}\hat{\mb{r}}_{12}}
+      \bm{F}_{12}=-G\frac{m_1m_2}{|\bm{r}_{12}|^2}\hat{\bm{r}}_{12}}
   }
 
-  where $G=\SI{6.674e-11}{N.m^2/kg^2}$ is the
-  \textbf{universal gravitational constant}, $r=|\mb{r}_{12}|$ is the distance
+  where $G=\SI{6.674e-11}{\newton.\metre\squared\per\kilo\gram\squared}$ is the
+  \textbf{universal gravitational constant}, $r=|\bm{r}_{12}|$ is the distance
   between the centers of the masses, and
-  $\hat{\mb{r}}_{12}=\mb{r}_{12}/|\mb{r}_{12}|$ is the unit vector pointing in
+  $\hat{\bm{r}}_{12}=\bm{r}_{12}/|\bm{r}_{12}|$ is the unit vector pointing in
   the direction from $m_1$ to $m_2$.
 \end{frame}
 
@@ -93,20 +89,20 @@
 \begin{frame}{Law of Universal Gravitation}
   \begin{center}
     \begin{tikzpicture}[scale=.5]
-      \draw[->,very thick,red](0,0)--(2,0) node[right]{$\mb{F}_{21}$};
-      \draw[->,very thick,blue](8,0)--(6,0) node[left]{$\mb{F}_{12}$};
+      \draw[->,very thick,red](0,0)--(2,0) node[right]{$\bm{F}_{21}$};
+      \draw[->,very thick,blue](8,0)--(6,0) node[left]{$\bm{F}_{12}$};
       \tikzstyle{balloon1}=[ball color=red];
       \tikzstyle{balloon2}=[ball color=blue];
       \shade[balloon1] (0,0) circle(.7) node[white]{$m_1$};
       \shade[balloon2] (8,0) circle(1) node[white]{$m_2$};
       \draw[dashed] (0,0)--(0,-1.5);
       \draw[dashed] (8,0)--(8,-1.5);
-      \draw[->,thick](0,-1.3)--(8,-1.3) node[midway,below]{$\mb{r}_{12}$};
+      \draw[->,thick](0,-1.3)--(8,-1.3) node[midway,below]{$\bm{r}_{12}$};
     \end{tikzpicture}
   \end{center}
   \begin{itemize}
-  \item If $m_1$ exerts a gravitational force $\mb{F}_{12}$ on
-    $m_2$, then $m_2$ likewise also exerts a force of $\mb{F}_{21}=-\mb{F}_{12}$
+  \item If $m_1$ exerts a gravitational force $\bm{F}_{12}$ on
+    $m_2$, then $m_2$ likewise also exerts a force of $\bm{F}_{21}=-\bm{F}_{12}$
     on $m_1$. The two forces are equal in magnitude and opposite in direction
     (third law of motion).
   \item $m_1$ and $m_2$ are \emph{point masses} that do not occupy any space
@@ -131,33 +127,33 @@
       \tikzstyle{balloon5}=[ball color=purple];
       \shade[balloon1] (0,0) circle(.72) node[white]{$M$};
       \begin{scope}[rotate=45]
-        \draw[->,very thick,blue](.72,0)--(2.5,0) node[right]{$\mb{F}_1$};
+        \draw[->,very thick,blue](.72,0)--(2.5,0) node[right]{$\bm{F}_1$};
         \shade[balloon2] (7,0) circle(1) node[white]{$m_1$};
       \end{scope}
       \uncover<2->{
         \begin{scope}[rotate=105]
           \draw[->,very thick,green](.72,0)--(2,0)
-          node[right]{$\mb{F}_2$};
+          node[right]{$\bm{F}_2$};
           \shade[balloon3] (4,0) circle(.65) node[white]{$m_2$};
         \end{scope}
       }
       \uncover<3->{
         \begin{scope}[rotate=190]
           \draw[->,very thick,yellow](.7,0)--(3.5,0)
-          node[above]{$\mb{F}_3$};
+          node[above]{$\bm{F}_3$};
           \shade[balloon4] (6,0) circle(1.1) node[white]{$m_3$};
         \end{scope}
       }
       \uncover<4->{
         \begin{scope}[rotate=260]
           \draw[->,very thick,purple](.72,0)--(1.4,0)
-          node[right]{$\mb{F}_4$};
+          node[right]{$\bm{F}_4$};
           \shade[balloon5] (9,0) circle(.8) node[white]{$m_4$};
         \end{scope}
       }
       \uncover<5>{
         \begin{scope}[rotate=125]
-          \draw[->,ultra thick](.72,0)--(3.5,0) node[left]{$\mb{F}$};
+          \draw[->,ultra thick](.72,0)--(3.5,0) node[left]{$\bm{F}$};
         \end{scope}
       }
     \end{tikzpicture}
@@ -165,12 +161,12 @@
     \column{.6\textwidth}
     For a mass that is subjected to the influence of multiple discrete point
     masses $m_i$, the total gravitational force that $M$ experiences
-    is the vector sum of all the forces $\mb{F}_i$:
+    is the vector sum of all the forces $\bm{F}_i$:
     
     \eq{-.25in}{
-      \boxed{\mb{F}
-        =\sum_i\mb{F}_i
-        =GM\left(\sum_{i=1}^N\frac{m_i}{r_i^2}\hat{\mb{r}_i}\right)
+      \boxed{\bm{F}
+        =\sum_i\bm{F}_i
+        =GM\left(\sum_{i=1}^N\frac{m_i}{r_i^2}\hat{\bm{r}_i}\right)
       }
     }
   \end{columns}
@@ -185,9 +181,9 @@
   distribution of mass):
 
   \eq{-.2in}{
-    \boxed{\mb{F}
-      =\int d\mb{F}
-      =GM\int\frac{dm}{r^2}\hat{\mb{r}}
+    \boxed{\bm{F}
+      =\int d\bm{F}
+      =GM\int\frac{dm}{r^2}\hat{\bm{r}}
     }
   }
 
@@ -204,18 +200,18 @@
   We generally describe the gravitational force (weight) as:
   
   \eq{-.2in}{
-    \boxed{\mb{F}_g=m\mb{g}}
+    \boxed{\bm{F}_g=m\bm{g}}
   }
 
-  To find $\mb{g}$, we group the variables in the law of universal gravitation:
+  To find $\bm{g}$, we group the variables in the law of universal gravitation:
     
   \eq{-.2in}{
-    \mb{F}_g
-    =\underbrace{\left[-\frac{Gm_1}{|\mb{r}|^2}\hat{\mb{r}}\right]}_{=\mb{g}}m
-    =m\mb{g}
+    \bm{F}_g
+    =\underbrace{\left[-\frac{Gm_1}{|\bm{r}|^2}\hat{\bm{r}}\right]}_{=\bm{g}}m
+    =m\bm{g}
   }
 
-  The vector field function $\mb{g}$ is known as the
+  The vector field function $\bm{g}$ is known as the
   \textbf{acceleration due to gravity} in kinematics, and
   \textbf{gravitational field} in field theory.
 \end{frame}
@@ -227,8 +223,8 @@
 
   \vspace{-.4in}{\Large
     \begin{align*}
-      m_1&=m_\oplus=\SI{5.972e24}{\kilo\gram}\\
-      r&=r_\oplus=\SI{6.371e6}{\metre}
+      m_1&=m_E=\SI{5.972e24}{\kilo\gram}\\
+      r&=r_E=\SI{6.371e6}{\metre}
     \end{align*}
   }
   
@@ -236,7 +232,7 @@
 
   \vspace{-.4in}{\Large
     \begin{align*}
-      g &\approx\SI{9.81}{\metre\per\second^2}\\
+      g &\approx\SI{9.81}{\metre\per\second\squared}\\
       g &\approx\SI{9.81}{\newton\per\kilo\gram}
     \end{align*}
   }
@@ -247,22 +243,22 @@
 
 
 \begin{frame}{Gravitational Field}
-  The \textbf{gravitational field} $\mb{g}$ generated by point mass $m$
+  The \textbf{gravitational field} $\bm{g}$ generated by point mass $m$
   shows how it influences the gravitational forces on other masses:
 
   \eq{-.2in}{
-    \boxed{g(m,\mb{r})=-\frac{Gm}{|\mb{r}|^2}\hat{\mb{r}}}
+    \boxed{g(m,\bm{r})=-\frac{Gm}{|\bm{r}|^2}\hat{\bm{r}}}
   }
   \begin{center}
     \begin{tabular}{l|c|c}
       \rowcolor{pink}
       \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
-      Gravitational field       & $\mb{g}$ & \si{\newton\per\kilo\gram}\\
+      Gravitational field       & $\bm{g}$ & \si{\newton\per\kilo\gram}\\
       Universal gravitational constant
-      & $G$ & \si{\newton\metre^2/\kilo\gram^2} \\
+      & $G$ & \si{\newton.\metre\squared/\kilo\gram\squared} \\
       Source mass               & $m$ & \si{\kilo\gram} \\
-      Distance from source mass & $|\mb{r}|$ & \si{\metre}\\
-      Outward radial unit vector from source & $\hat{\mb{r}}$ & N/A
+      Distance from source mass & $|\bm{r}|$ & \si{\metre}\\
+      Outward radial unit vector from source & $\hat{\bm{r}}$ & N/A
     \end{tabular}
   \end{center}
   The negative sign indicates that \emph{direction} of the gravitational field
@@ -273,12 +269,12 @@
 
 \begin{frame}{More Than One Mass}
   When there are multiple point masses present, the total gravitational field
-  at any position $\mb{r}$ is the vector sum of all the forces $\mb{F}_i$:
+  at any position $\bm{r}$ is the vector sum of all the forces $\bm{F}_i$:
     
   \eq{-.2in}{
-    \boxed{\mb{g}
-      =\sum_i\mb{g}_i
-      =G\left(\sum_i\frac{m_i}{r_i^2}\hat{\mb{r}_i}\right)
+    \boxed{\bm{g}
+      =\sum_i\bm{g}_i
+      =G\left(\sum_i\frac{m_i}{r_i^2}\hat{\bm{r}_i}\right)
     }
   }
 
@@ -287,9 +283,9 @@
   \emph{spatial extend}:
 
   \eq{-.2in}{
-    \boxed{\mb{g}
-      =\int d\mb{g}
-      =G\int\frac{dm}{r^2}\hat{\mb{r}}
+    \boxed{\bm{g}
+      =\int d\bm{g}
+      =G\int\frac{dm}{r^2}\hat{\bm{r}}
     }
   }
   
@@ -301,20 +297,20 @@
 
 \begin{frame}{Relating Gravitational Field \& Gravitational Force}
   \vspace{.2in}
-  $\mb{g}$ itself doesn't \emph{do} anything unless/until another mass $m$
-  enters the field. Then, $m$ experiences a gravitational force $\mb{F}_g$
-  proportional to $m$ and $\mb{g}$, regardless of how the field is created:
+  $\bm{g}$ itself doesn't \emph{do} anything unless/until another mass $m$
+  enters the field. Then, $m$ experiences a gravitational force $\bm{F}_g$
+  proportional to $m$ and $\bm{g}$, regardless of how the field is created:
 
   \eq{-.2in}{
-    \boxed{\mb{F}_g=m\mb{g}}
+    \boxed{\bm{F}_g=m\bm{g}}
   }
   \begin{center}
     \begin{tabular}{l|c|c}
       \rowcolor{pink}
       \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
-      Gravitational force on a mass & $\mb{F}_g$ & \si{\newton} \\
+      Gravitational force on a mass & $\bm{F}_g$ & \si{\newton} \\
       Mass inside the gravitational field & $m$ & \si{\kilo\gram}\\
-      Gravitational field & $\mb{g}$   & \si{\newton\per\kilogram}
+      Gravitational field & $\bm{g}$   & \si{\newton\per\kilogram}
     \end{tabular}
   \end{center}
   Note: A point mass is not affected by the gravitational field that itself
@@ -341,10 +337,10 @@
       
     \eq{-.3in}{
       \boxed{
-        \mb{F}_g=
+        \bm{F}_g=
         \begin{cases}
-          \mb{0} & \text{if}\;\;r<R\\
-          -Gm_1m_2/r^2\hat{\mb{r}} & \text{otherwise}
+          \bm{0} & \text{if}\;\;r<R\\
+          -Gm_1m_2/r^2\hat{\bm{r}} & \text{otherwise}
         \end{cases}
       }
     }
@@ -366,7 +362,7 @@
     \end{tikzpicture}
 
     \column{.7\textwidth}
-    That $\mb{g}_{inside}=\mb{0}$ can be calculated by:
+    That $\bm{g}_{inside}=\bm{0}$ can be calculated by:
     \begin{itemize}
     \item Integrating the fields created by infinitesimal mass elements $dm$ at
       any point inside the shell, or
@@ -374,7 +370,7 @@
       electric field inside a charged conducting sphere:
       
       \eq{-.2in}{
-        \oint\mb{g}\cdot d\mb{A}=-4\pi GM_{encl}
+        \oint\bm{g}\cdot d\bm{A}=-4\pi GM_{encl}
       }
     \end{itemize}
   \end{columns}
@@ -382,7 +378,7 @@
 
 
 
-\begin{frame}{What If You Are Inside Another Mass?}{Uniform Mass of Radius $R$}
+\begin{frame}{What If You Are Inside Another Mass?}%{Uniform Mass of Radius $R$}
   \begin{columns}
     \column{.35\textwidth}
 
@@ -408,7 +404,7 @@
 \begin{frame}{Falling Toward the Center of Earth}
   \begin{columns}
     \column{.3\textwidth}
-    \pic{1}{eartholeg.png}
+    \pic{1}{eartholeg}
 
     \column{.7\textwidth}
     As you fall through Earth, we can separate the part of Earth that is
@@ -431,11 +427,11 @@
   given by finding how much mass is still ``below'' the person, $M(r)$:
 
   \eq{-.1in}{
-    g(r)=\frac{GM(r)}{r^2}\quad M(r)=\frac{4}{3}\rho\pi r^3\quad
-    \rho=\frac{3M_\oplus}{4\pi r_\oplus^3}
+    g(r)=\frac{GM(r)}{r^2}\quad M(r)=\frac43\rho\pi r^3\quad
+    \rho=\frac{3M_E}{4\pi r_E^3}
   }
 
-  where $M_\oplus$ is the mass of Earth, $r_\oplus$ is the radius of Earth,
+  where $M_E$ is the mass of Earth, $r_E$ is the radius of Earth,
   $\rho$ is the (constant) density, and $r$ is the distance from Earth's
   center. Then $M(r)$ is the amount of mass ``below'' the person as he/she
   falls toward the center.
@@ -447,21 +443,21 @@
   \vspace{.2in}
   \begin{columns}
     \column{.25\textwidth}
-    \pic{1.2}{eartholeg.png}
+    \pic{1.2}{eartholeg}
 
     \column{.75\textwidth}
     The gravitational field strength inside this hypothetical Earth is a
     linear function of distance $r$ from the center:
 
     \eq{-.2in}{
-      g(r)=\frac{GM_\oplus r}{r_\oplus^3}=\left[\frac{g_0}{r_\oplus}\right]r
+      g(r)=\frac{GM_E r}{r_E^3}=\left[\frac{g_0}{r_E}\right]r
     }
     
     where $g_0=\SI{9.81}{\newton\per\kilogram}$ is the field strength at the
     surface. At the center ($r=0$), $g=0$. The gravitational force is:
     
     \eq{-.2in}{
-      F_g(r)=-\underbrace{\left[\frac{mg_0}{r_\oplus}\right]}_{k} r
+      F_g(r)=-\underbrace{\left[\frac{mg_0}{r_E}\right]}_{k} r
     }
   \end{columns}
 \end{frame}
@@ -471,7 +467,7 @@
 \begin{frame}{Falling Toward the Center of Earth}
   \begin{columns}
     \column{.25\textwidth}
-    \pic{1}{eartholsat.png}
+    \pic{1}{eartholsat}
 
     \column{.75\textwidth}
     The gravitational force has the same form as Hooke's law: it is
@@ -486,7 +482,7 @@
     oscillate through Earth with a period of:
 
     \eq{-.2in}{
-      T=2\pi\sqrt{\frac{m}{k}}=2\pi\sqrt{\frac{r_\oplus}{g_0}}
+      T=2\pi\sqrt{\frac{m}k}=2\pi\sqrt{\frac{r_E}{g_0}}
     }
 
     For Earth, $T=\SI{5068}{\second}$. The traveler would pop up on the
@@ -500,7 +496,7 @@
 \begin{frame}{Falling Toward the Center of Earth}
   \begin{columns}
     \column{.25\textwidth}
-    \pic{1}{eartholsat.png}
+    \pic{1}{eartholsat}
 
     \column{.75\textwidth}
     Since simple harmonic motion is a projection of a uniform circular motion,
@@ -522,9 +518,9 @@
     \end{tikzpicture}
   \end{center}
   \begin{itemize}
-  \item The direction of $\mb{g}$ is toward the center of the object that
+  \item The direction of $\bm{g}$ is toward the center of the object that
     created it
-  \item Field lines do not tell the intensity (i.e.\ magnitude) of $\mb{g}$,
+  \item Field lines do not tell the intensity (i.e.\ magnitude) of $\bm{g}$,
     only the direction
   \end{itemize}
 \end{frame}
@@ -535,7 +531,7 @@
   When there are multiple masses, the total gravitational field (dotted line)
   is the vector sum of all the individual fields.
   \begin{center}
-    \pic{.4}{grav-fields.png}
+    \pic{.4}{grav-fields}
   \end{center}
   The solid lines are called \textbf{equipotential lines}, where the potential
   energy is constant. Equipotential lines are perpendicular to
@@ -552,8 +548,8 @@
 
   \vspace{-.25in}{\Large
     \begin{align*}
-      W&=\int \mb{F}_g\cdot d\mb{r}=
-      -\int_{r_1}^{r_2}\frac{Gm_1m_2}{r^2}\hat{\mb{r}}\cdot d\mb{r}\\
+      W&=\int \bm{F}_g\cdot d\bm{r}=
+      -\int_{r_1}^{r_2}\frac{Gm_1m_2}{r^2}\hat{\bm{r}}\cdot d\bm{r}\\
       &=-\int_{r_1}^{r_2}\frac{Gm_1m_2}{r^2}dr=\frac{Gm_1m_2}{r}\Big|^{r_2}_{r_1}
       =-\Delta U_g
     \end{align*}
@@ -574,42 +570,41 @@
 
 \begin{frame}{Relating Gravitational Potential Energy to Force}
   The fundamental theorem of calculus shows that gravitational force
-  ($\mb{F}_g$) is the negative gradient of the gravitational potential energy
+  ($\bm{F}_g$) is the negative gradient of the gravitational potential energy
   ($U_g$):
   
   \eq{-.1in}{
-    \mb{F}_g=-\nabla U_g=
-    -\frac{\partial U_g}{\partial r}\hat{\mb{r}}
+    \bm{F}_g=-\nabla U_g=
+    -\frac{\partial U_g}{\partial r}\hat{\bm{r}}
   }
 
-  The direction of $\mb{F}_g$ always points from high to low potential energy
+  The direction of $\bm{F}_g$ always points from high to low potential energy
   \begin{itemize}
   \item A free-falling object is always decreasing in $U_g$
-  \item ``Steepest descent'': the direction of $\mb{F}_g$ is the shortest path
+  \item ``Steepest descent'': the direction of $\bm{F}_g$ is the shortest path
     to decrease $U_g$ 
-  \item Objects traveling perpendicular to $\mb{F}_g$ has constant $U_g$
+  \item Objects traveling perpendicular to $\bm{F}_g$ has constant $U_g$
   \end{itemize}
 \end{frame}
 
 
 
-\begin{frame}{Relating $U_g$, $\mb{F}_g$ and $\mb{g}$}
-  Knowing that $\mb{F}_g$ and $\mb{g}$ only differ by a constant (mass $m$), we
+\begin{frame}{Relating $U_g$, $\bm{F}_g$ and $\bm{g}$}
+  Knowing that $\bm{F}_g$ and $\bm{g}$ only differ by a constant (mass $m$), we
   can also relate gravitational field to potential energy by the gradient
   operator:
 
   \eq{-.15in}{
-    \mb{g}%=\frac{\mb{F}_g}{m}=
-    =-\nabla V_g=-\frac{\partial V_g}{\partial r}\hat{\mb{r}}
+    \bm{g}=-\nabla V_g=-\frac{\partial V_g}{\partial r}\hat{\bm{r}}
     \quad\text{where}\quad
     V_g=\frac{U_g}{m}
   }
 
-  We already know that the direction of $\mb{g}$ is the same as $\mb{F}_g$,
+  We already know that the direction of $\bm{g}$ is the same as $\bm{F}_g$,
   i.e.
   \begin{itemize}
-  \item The direction of $\mb{g}$ is the shortest path to decrease $U_g$ 
-  \item Objects traveling perpendicular to $\mb{g}$ has constant $U_g$
+  \item The direction of $\bm{g}$ is the shortest path to decrease $U_g$ 
+  \item Objects traveling perpendicular to $\bm{g}$ has constant $U_g$
   \item $V_g$ is called the \textbf{gravitational potential} but
     it is rarely used
   \end{itemize}
@@ -634,7 +629,7 @@
   In \emph{Treatise of the System of the World}, the third book in
   \emph{Principia}, Newton presented this thought experiment:
   \begin{center}
-    \pic{.8}{figure-5.png}
+    \pic{.8}{figure-5}
   \end{center}
   \begin{itemize}
   \item How fast does the cannonball have to travel before it goes around Earth
@@ -654,10 +649,11 @@
   }
 
   \vspace{-.1in}Solving for $v$, we obtain the \textbf{orbital velocity}
-  $v_{orbit}$, which does not depend on the mass of the small object in orbit:
+  $v_\text{orbit}$, which does not depend on the mass of the small object in
+  orbit:
 
   \eq{-.15in}{
-    \boxed{v_{orbit}=\sqrt{\frac{GM}{r}}}
+    \boxed{v_\text{orbit}=\sqrt{\frac{GM}{r}}}
   }
 
   \vspace{-.1in}This equation is only applicable for perfectly circular orbits.
@@ -711,18 +707,18 @@
     \frac12mv_i^2=\frac{GMm}{r_i}
   }
 
-  We can then solve for the initial speed $v_i=v_{esc}$
+  We can then solve for the initial speed $v_i=v_\text{esc}$
   (\textbf{escape speed} or \textbf{escape velocity}):
 
   \eq{-.2in}{
-    \boxed{v_{esc}=\sqrt{\frac{2GM}{r_i}}}
+    \boxed{v_\text{esc}=\sqrt{\frac{2GM}{r_i}}}
   }
 
   where $r_i$ is the initial distance from the center of the planet/star.
   There is a simple relationship between orbital speed and escape speed:
 
   \eq{-.25in}{
-    v_{esc}=\sqrt{2} v_{orbit}
+    v_\text{esc}=\sqrt{2} v_\text{orbit}
   }
 \end{frame}
 
@@ -762,15 +758,15 @@
     \end{tikzpicture}
   \end{center}
   The difference is that the object in orbit (left) already has orbital speed
-  $v_{orbit}$, so escaping from that orbit requires only an additional
+  $v_\text{orbit}$, so escaping from that orbit requires only an additional
   speed of
   
   \eq{-.2in}{
-    \Delta v=v_{esc}-v_{orbit}=(\sqrt2-1)v_{orbit}
+    \Delta v=v_\text{esc}-v_\text{orbit}=(\sqrt2-1)v_\text{orbit}
   }
   \begin{itemize}
-  \item What if $v_{orbit}<v<v_{esc}$?
-  \item What if $v<v_{orbit}$?
+  \item What if $v_\text{orbit}<v<v_\text{esc}$?
+  \item What if $v<v_\text{orbit}$?
   \end{itemize}
 \end{frame}
 
@@ -791,7 +787,7 @@
   orbit by using the orbital speed in our expression of kinetic energy:
 
   \eq{-.3in}{
-    K_{orbit}=\frac12mv_{orbit}^2=\frac{1}{2}m
+    K_\text{orbit}=\frac12mv_\text{orbit}^2=\frac12m
     \left(\sqrt{\frac{GM}{r}}\right)^2=\boxed{\frac{GMm}{2r}}
   }
 
@@ -799,13 +795,13 @@
   \textbf{gravitational potential energy}:
 
   \eq{-.15in}{
-    U_g=-\frac{GMm}{r}=-2K_{orbit}
+    U_g=-\frac{GMm}{r}=-2K_\text{orbit}
   }
   
   \vspace{-.1in}The \textbf{total orbital energy} is the sum of $K$ and $U_g$:
 
   \eq{-.15in}{
-    E_T=K_{orbit}+U_g=-\frac{GMm}{2r}=-K_{orbit}
+    E_T=K_\text{orbit}+U_g=-\frac{GMm}{2r}=-K_\text{orbit}
   }
 \end{frame}
 
@@ -831,10 +827,10 @@
     \end{itemize}
   \item Gravity is a \emph{central force}, in that
     \begin{itemize}
-    \item Gravitational force $\mb{F}_g$ is always in the $-\hat{\mb{r}}$
-      direction, i.e.\ $\mb{F}\times\mb{r}=\mb{0}$
+    \item Gravitational force $\bm{F}_g$ is always in the $-\hat{\bm{r}}$
+      direction, i.e.\ $\bm{F}\times\bm{r}=\bm{0}$
     \item Therefore gravity doesn't generate any torque
-    \item And therefore angular momentum $\mb{L}$ is constant
+    \item And therefore angular momentum $\bm{L}$ is constant
     \end{itemize}
   \end{enumerate}
   These two properties are true regardless of the shape of the orbit, and even
@@ -872,10 +868,10 @@
       \end{minipage}
     }
 
-    \pic{.4}{201532-132212364-3243-planet.png}
+    \pic{.4}{201532-132212364-3243-planet}
   \end{center}
   The second law of planetary motion is the easiest to proof, by applying the
-  conservation of angular momentum $\mb{L}=m(\mb{r}\times\mb{v})$ (gravity is a
+  conservation of angular momentum $\bm{L}=m(\bm{r}\times\bm{v})$ (gravity is a
   central force).
 \end{frame}
 
@@ -893,30 +889,30 @@
 %    \column{.3\textwidth}
 %    \begin{tikzpicture}[scale=1.3]
 %      \fill[gray!45](0,0)--(2,3)--(3,2.8)--cycle;
-%      \node at (1.7,2) {$d\mb{A}$};
+%      \node at (1.7,2) {$d\bm{A}$};
 %      \draw[->,thick](0,0)--(2,3)
-%      node[midway,left]{$\mb{r}$} node[pos=.95,right]{$\alpha$};
-%      \draw[->,thick](2,3)--(3,2.8) node[midway,above]{$d\mb{r}$};
+%      node[midway,left]{$\bm{r}$} node[pos=.95,right]{$\alpha$};
+%      \draw[->,thick](2,3)--(3,2.8) node[midway,above]{$d\bm{r}$};
 %      \draw[dashed](3,2.8)--(0,0);
 %      \fill[black](0,0) circle(.07) node[right]{\tiny\text{Sun}};
 %      \fill[black](2,3) circle(.035)node[above]{\tiny\text{Planet}};
 %    \end{tikzpicture}
 %    \column{.7\textwidth}
-%    The infinitesimal area $d\mb{A}$ swept out by an object (such as a planet)
-%    as it moves in orbit by an infinitesimal amount $d\mb{r}$ is given by:
+%    The infinitesimal area $d\bm{A}$ swept out by an object (such as a planet)
+%    as it moves in orbit by an infinitesimal amount $d\bm{r}$ is given by:
 %    
 %    \eq{-.4in}{
 %      dA=\frac{1}{2}rdr\sin\alpha
 %      \;\rightarrow\;
-%      d\mb{A}=\frac{1}{2}\mb{r}\times d\mb{r}
+%      d\bm{A}=\frac{1}{2}\bm{r}\times d\bm{r}
 %    }
 %
 %    \vspace{-.15in}Its time derivative is called the \textbf{areal velocity}:
 %      
 %    \eq{-.15in}{
-%      \frac{d\mb{A}}{dt}
-%      =\frac{1}{2}\mb{r}\times\frac{d\mb{r}}{dt}
-%      =\frac{1}{2}\mb{r}\times\mb{v}
+%      \frac{d\bm{A}}{dt}
+%      =\frac{1}{2}\bm{r}\times\frac{d\bm{r}}{dt}
+%      =\frac{1}{2}\bm{r}\times\bm{v}
 %    }
 %  \end{columns}
 %\end{frame}
@@ -924,8 +920,8 @@
 %
 %
 \begin{frame}{Kepler's Second Law: Law of Equal Areas}
-%  We can express $\mb{r}\times\mb{v}$ in terms of angular momentum,
-%  $\mb{L}=m(\mb{r}\times\mb{v})$. But in motion under any central force (such
+%  We can express $\bm{r}\times\bm{v}$ in terms of angular momentum,
+%  $\bm{L}=m(\bm{r}\times\bm{v})$. But in motion under any central force (such
 %  as gravity), angular momentum is a constant, and therefore:
   %
   The rate of change of the area ($dA/dt$) swept out by a planet (called the
@@ -933,7 +929,7 @@
 
   \eq{-.15in}{
     \frac{dA}{dt}
-    %=\frac12(\mb{r}\times\mb{v})
+    %=\frac12(\bm{r}\times\bm{v})
     =\frac{L}{2m}=\text{constant}
   }
 
@@ -952,7 +948,7 @@
   \begin{columns}
     \column{.3\textwidth}
     \begin{center}
-      \pic{1.25}{elliporb.png}
+      \pic{1.25}{elliporb}
     \end{center}
 
     \column{.7\textwidth}
@@ -981,7 +977,7 @@
     orbits are fairly close to being circular, but comets are much more
     eccentric
     \begin{center}
-      \pic{.65}{kep5.png}
+      \pic{.65}{kep5}
     \end{center}
     
     \column{.4\textwidth}
@@ -1008,8 +1004,8 @@
 
 \begin{frame}{Kepler's First Law: Law of Ellipses}
   As $m$ orbits around $M$, there are two velocity components:
-  \textbf{radial velocity} $\mb{v}_r$ and \textbf{angular velocity}
-  $\mb{v}_\theta$.
+  \textbf{radial velocity} $\bm{v}_r$ and \textbf{angular velocity}
+  $\bm{v}_\theta$.
   \begin{columns}
     \column{.3\textwidth}
     \begin{tikzpicture}[scale=.55]
@@ -1023,9 +1019,9 @@
       node[below right]{\tiny $M$};
       \begin{scope}[rotate around={\angle:({sqrt(\a*\a-\b*\b)},0)}]
         \draw[->]({sqrt(\a*\a-\b*\b)},0)--(8.5,0)
-        node[pos=.45,below]{\tiny$\mb{r}$}
-        node[left]{\tiny $\mb{v}_r$};
-        \draw[->](7.65,0)--(7.65,.85) node[below]{\tiny $\mb{v}_\theta$};
+        node[pos=.45,below]{\tiny$\bm{r}$}
+        node[left]{\tiny $\bm{v}_r$};
+        \draw[->](7.65,0)--(7.65,.85) node[below]{\tiny $\bm{v}_\theta$};
         \fill (7.65,0) circle(.1) node[above]{\tiny $m$};
       \end{scope}
       \draw[->]({sqrt(\a*\a-\b*\b)+.5},0) arc(0:\angle:.5)
@@ -1036,9 +1032,9 @@
     
     \column{.7\textwidth}
     \begin{itemize}
-    \item $\mb{v}_\theta$ means a centripetal acceleration toward $M$
-    \item Changes in $\mb{v}_r$ (i.e.\ accceleration in the radial direction)
-      also means a force along $\hat{\mb{r}}$
+    \item $\bm{v}_\theta$ means a centripetal acceleration toward $M$
+    \item Changes in $\bm{v}_r$ (i.e.\ accceleration in the radial direction)
+      also means a force along $\hat{\bm{r}}$
     \item Both components of acceleration are due entirely to gravitational
       force toward $M$
     \item Applying second law of motion gives a complicated (at least for
@@ -1057,8 +1053,7 @@
   is formed):
 
   \eq{-.2in}{
-    r%=\frac{1}{\frac{GMm^2}{L^2}(1+e\cos\theta)}
-    =\left[\frac{L^2}{GMm^2}\right]\frac{1}{1+e\cos\theta}
+    r=\left[\frac{L^2}{GMm^2}\right]\frac{1}{1+e\cos\theta}
     \quad\text{where}\quad  e=\frac{BL^2}{GMm^2}
   }
 
@@ -1066,7 +1061,7 @@
   values of $r$:
   
   \eq{-.25in}{
-    a=\frac12(r_{min} + r_{max})
+    a=\frac12(r_\text{min} + r_\text{max})
     =\left[\frac{L^2}{GMm^2}\right]\frac{1}{1-e^2}
   }
 
@@ -1086,7 +1081,7 @@
       \end{minipage}
     }
 
-    \vspace{.2in}\pic{.45}{kep8.png}
+    \vspace{.2in}\pic{.45}{kep8}
   \end{center}
 \end{frame}
 
@@ -1184,8 +1179,8 @@
 %  \begin{center}
 %    \begin{tikzpicture}
 %      \begin{scope}[rotate=23]
-%        \draw[very thick,->](0,0)--(3,0) node[midway,below]{$\mb{r}_1$};
-%        \draw[very thick,->](0,0)--(-1.8,0) node[midway,above]{$\mb{r}_2$};
+%        \draw[very thick,->](0,0)--(3,0) node[midway,below]{$\bm{r}_1$};
+%        \draw[very thick,->](0,0)--(-1.8,0) node[midway,above]{$\bm{r}_2$};
 %        \fill[black] (3.1,0) circle(.1) node[right]{$m_1$};
 %        \fill[black] (-1.9,0) circle(.1) node[left]{$m_2$};
 %        \fill[red!80!black] (0,0) circle(.1) node[below]{$M$};
@@ -1193,14 +1188,14 @@
 %    \end{tikzpicture}
 %  \end{center}
 %
-%  \vspace{-.1in}The vectors $\mb{r}_1$ and $\mb{r}_2$ are relative to the
-%  center of mass, and the relative position $\mb{r}$ velocity $\mb{v}$ and
-%  acceleration $\mb{a}$ between $m_1$ and $m_2$ are therefore:
+%  \vspace{-.1in}The vectors $\bm{r}_1$ and $\bm{r}_2$ are relative to the
+%  center of mass, and the relative position $\bm{r}$ velocity $\bm{v}$ and
+%  acceleration $\bm{a}$ between $m_1$ and $m_2$ are therefore:
 %  
 %  \eq{-.2in}{
-%    \mb{r}=\mb{r}_2 - \mb{r}_1\quad
-%    \mb{v}=\mb{v}_2 - \mb{v}_1\quad
-%    \mb{a}=\mb{a}_2 - \mb{a}_1
+%    \bm{r}=\bm{r}_2 - \bm{r}_1\quad
+%    \bm{v}=\bm{v}_2 - \bm{v}_1\quad
+%    \bm{a}=\bm{a}_2 - \bm{a}_1
 %  }
 %\end{frame}
 %
@@ -1211,14 +1206,14 @@
 %  $m_1$ on $m_2$ is opposite the force exerted by $m_2$ on $m_1$:
 %
 %  \eq{-.2in}{
-%    m_1\mb{a}_1+m_2\mb{a}_2=0
+%    m_1\bm{a}_1+m_2\bm{a}_2=0
 %  }
 %
 %  \vspace{-.2in}Substituting the expression for relative acceleration, we have:
 %
 %  \eq{-.2in}{
-%    \mb{a}=\mb{F}_g\left[\frac{1}{m_1}+\frac{1}{m_2}\right]=
-%    \mb{F}_g\left[\frac{m_1+m_2}{m_1m_2}\right]=\frac{\mb{F}_g}{\mu}
+%    \bm{a}=\bm{F}_g\left[\frac{1}{m_1}+\frac{1}{m_2}\right]=
+%    \bm{F}_g\left[\frac{m_1+m_2}{m_1m_2}\right]=\frac{\bm{F}_g}{\mu}
 %  }
 %  
 %  We can now define a new concept called \textbf{reduced mass}:
@@ -1236,9 +1231,9 @@
 %  \vspace{-.2in}\begin{center}
 %    \begin{tikzpicture}
 %      \begin{scope}[rotate=23]
-%        \draw[very thick,->](0,0)--(4.8,0) node[midway,below]{$\mb{r}$};
+%        \draw[very thick,->](0,0)--(4.8,0) node[midway,below]{$\bm{r}$};
 %        \draw[very thick,->,red!70!black](4.87,0)--(4.5,1)
-%        node[above]{$\mb{v}$};
+%        node[above]{$\bm{v}$};
 %        \fill[red!70!black] (0,0) circle(.15) node[below]{$M$};
 %        \fill[black] (4.87,0) circle(.07) node[right]{$\mu$};
 %      \end{scope}
@@ -1259,9 +1254,9 @@
       \shade[balloon1] ( 4,0) circle(1)  node[white]{\footnotesize $m_1$};
       \shade[balloon2] (-8,0) circle(.7) node[white]{\footnotesize $m_2$};
       \draw[very thick,->,blue!80!black](-7.3,0)--(-5.3,0)
-      node[above]{\footnotesize $\mb{F}_g$};
+      node[above]{\footnotesize $\bm{F}_g$};
       \draw[very thick,->,red!80!black](3,0)--(1,0)
-      node[above]{\footnotesize $\mb{F}_g$};
+      node[above]{\footnotesize $\bm{F}_g$};
     \end{tikzpicture}
 
     \column{.55\textwidth}
@@ -1270,5 +1265,4 @@
     force, but this time, the distance to the center of motion is empty space.
   \end{columns}
 \end{frame}
-
 \end{document}

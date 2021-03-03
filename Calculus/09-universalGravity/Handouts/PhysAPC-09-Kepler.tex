@@ -4,16 +4,13 @@
 \usepackage{enumitem}
 \usepackage{tikz}
 \usepackage{siunitx}
-%\usepackage{graphicx}
-%\usepackage{mathpazo}
-%\usepackage{xcolor,colortbl}
-%\usepackage{hyperref}
-%\usepackage{cancel}
 
 \sisetup{
   detect-all,
   per-mode=symbol
 }
+\tikzset{>=latex}
+
 %\usetikzlibrary{decorations.pathmorphing,patterns}
 
 \setlength{\parindent}{0pt}
@@ -21,9 +18,6 @@
 \setlength{\headheight}{26pt}
 
 \newcommand{\mb}[1]{\ensuremath\mathbf{#1}}
-\newcommand{\iii}{\ensuremath\hat{\bm{\imath}}}
-\newcommand{\jjj}{\ensuremath\hat{\bm{\jmath}}}
-\newcommand{\kkk}{\ensuremath\hat{\bm{k}}}
 \newcommand{\pic}[2]{\includegraphics[width=#1\textwidth]{#2}}
 
 %\newcommand\vertarrowbox[2]{%
@@ -49,53 +43,6 @@
 \thispagestyle{title}
 \gentitle
 
-%\documentclass[11pt]{article}
-%
-%\usepackage[margin=1in,letterpaper]{geometry}
-%\usepackage{amsmath,bm}
-%\usepackage{siunitx}
-%\usepackage{enumitem}
-%%\usepackage{times}
-%\usepackage{graphicx}
-%\usepackage{tikz}
-%\usepackage{mathpazo}
-%%\usepackage[scaled]{helvet}
-%%\usepackage{xcolor,colortbl}
-%%\usepackage{hyperref}
-%%\usepackage{cancel}
-%
-%\setlength{\parindent}{0pt}
-%\setlength{\parskip}{10pt}
-%
-%%\usetikzlibrary{decorations.pathmorphing,patterns}
-%
-%\sisetup{
-%  detect-all,
-%  number-math-rm=\mathnormal,
-%  per-mode=symbol
-%}
-%
-
-%\author{Timothy M.\ Leung, Ph.D.\\
-%  Olympiads School\\ Toronto, Ontario, Canada}
-%\date{\today\\(First Draft)}
-%
-%\newcommand{\pic}[2]{
-%  \includegraphics[width=#1\textwidth]{#2}
-%}
-%\newcommand{\mb}[1]{
-%  \ensuremath\mathbf{#1}
-%}
-%\newcommand{\eq}[2]{
-%  \vspace{#1}{\Large
-%    \begin{displaymath}
-%      #2
-%    \end{displaymath}
-%  }
-%}
-%
-%\begin{document}
-%\maketitle
 Johannes Kepler\footnote{1571--1630. German mathematician, astromer and
   astrologer.} formulated his \textbf{laws of planetary motion}
 between 1609 to 1619, by carefully interpreting the empirical planetary motion
@@ -140,7 +87,6 @@ of the shape of the orbit, and whether an object is even in orbit altogether:
     direction (i.e.\ $\mb{F}\times\mb{r}=\mb{0}$), shown in
     Fig.~\ref{central-force}, therefore gravity does not generate any torque,
   \item angular momentum $\mb{L}$ about the sun is therefore constant
-  %\item the motion of the planet is confined to a two-dimensional plane
   \end{itemize}
 \end{enumerate}
 \begin{figure}[!ht]
@@ -202,11 +148,11 @@ infinitesimal area $d\mb{A}$ (Fig.~\ref{fig:dA})
 as it moves in orbit by an infinitesimal amount $d\mb{r}$, which can be
 computed by the area of the triangle:
 \begin{equation}
-  dA=\frac{1}{2}rdr\sin\alpha
+  dA=\frac12rdr\sin\alpha
 \end{equation}
 or in vector form:
 \begin{equation}
-  d\mb{A}=\frac{1}{2}\mb{r}\times d\mb{r}
+  d\mb{A}=\frac12\mb{r}\times d\mb{r}
 \end{equation}
 The direction of $d\mb{A}$, in this case, points into the
 page.\footnote{The direction of the vector is not important in the calculation,
@@ -215,8 +161,8 @@ the area is called the \textbf{areal velocity}, which literally means how
 quickly the area is changing:
 \begin{equation}
   \frac{d\mb{A}}{dt}
-  =\frac{1}{2}\mb{r}\times\frac{d\mb{r}}{dt}
-  =\frac{1}{2}\mb{r}\times\mb{v}
+  =\frac12\mb{r}\times\frac{d\mb{r}}{dt}
+  =\frac12\mb{r}\times\mb{v}
 \end{equation}
 We can express $\mb{r}\times\mb{v}$ in terms of angular momentum. Since angular
 momentum is defined as $\mb{L}=m(\mb{r}\times\mb{v})\;\rightarrow\;
@@ -224,7 +170,7 @@ momentum is defined as $\mb{L}=m(\mb{r}\times\mb{v})\;\rightarrow\;
 momentum is a constant, i.e:
 \begin{equation}
   \boxed{\frac{d\mb{A}}{dt}
-    =\frac{1}{2}(\mb{r}\times\mb{v})=\frac{\mb{L}}{2m}=
+    =\frac12(\mb{r}\times\mb{v})=\frac{\mb{L}}{2m}=
     \text{constant}
   }
   \label{constant}
@@ -362,7 +308,7 @@ substitution\footnote{this variable may not be immediately obvious without
   some experience with solving ODEs}, by introducing a new variable $u$ which
 is the inverse of the radius $r$:
 \begin{equation}
-  u=\frac{1}{r}
+  u=\frac1r
 \end{equation}
 We can then use the fact that angular momentum $L$ is constant to relate
 derivatives in time $t$ to derivatives in angle $\theta$:
@@ -411,8 +357,8 @@ the form
 where the coefficient $B$ is determined by the total energy and total angular
 momentum (both are constants) of the planets. Solving for $r=1/u$, we have
 \begin{equation}
-  r(\theta)=\frac{1}{u}= \frac{1}{B\cos\theta+ \frac{GMm^2}{L^2}}
-  =\left(\frac{L^2}{GMm^2}\right)\frac{1}{1+e\cos\theta}
+  r(\theta)=\frac1u = \frac1{B\cos\theta+ \frac{GMm^2}{L^2}}
+  =\left(\frac{L^2}{GMm^2}\right)\frac1{1+e\cos\theta}
 \end{equation}
 where $e$ is a constant:
 \begin{equation}
@@ -426,14 +372,14 @@ From this form of $r$, it is clear that the maximum and a
 minimum values of $r$ represent the \emph{aphelion} and \emph{perihelion} of
 an ellipse (points of furthest and closest distance to the focus):
 \begin{equation}
-  r_{\textrm{max}}=\left(\frac{L^2}{GMm^2}\right)\frac{1}{1-e}
+  r_\text{max}=\left(\frac{L^2}{GMm^2}\right)\frac1{1-e}
   \quad\quad
-  r_{\textrm{min}}=\left(\frac{L^2}{GMm^2}\right)\frac{1}{1+e}
+  r_\text{min}=\left(\frac{L^2}{GMm^2}\right)\frac1{1+e}
 \end{equation}
 This the semi-major axis $r$ is the average of the two values:
 \begin{equation}
   a=\dfrac12\left(r_\text{min} + r_\text{max}\right)=
-  \left(\frac{L^2}{GMm^2}\right)\frac{1}{1-e^2}
+  \left(\frac{L^2}{GMm^2}\right)\frac1{1-e^2}
   \label{semimajor}
 \end{equation}
 More importantly, Eq.\ \ref{semimajor} allows us to relate the eccentricity

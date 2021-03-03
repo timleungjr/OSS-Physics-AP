@@ -9,6 +9,7 @@ all:
 	cd 06-circMotion	; make
 	cd 07-rotMotion		; make
 	cd 08-harmonicMotion	; make
+	cd 09-universalGravity	; make
 
 clean:
 	rm -rf *.*~ *~ *.log
@@ -17,6 +18,7 @@ clean:
 	cd 06-circMotion	; make clean
 	cd 07-rotMotion 	; make clean
 	cd 08-harmonicMotion	; make clean
+	cd 09-universalGravity	; make clean
 
 public:
 	mkdir -p $(DESTINATION)
@@ -25,3 +27,4 @@ public:
 	cd 06-circMotion	; make public
 	cd 07-rotMotion		; make public
 	cd 08-harmonicMotion	; make public
+	cd 09-universalGravity	; make public
