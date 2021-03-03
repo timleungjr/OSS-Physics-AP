@@ -4,21 +4,24 @@ DESTINATION=$(HOME)/Nextcloud/Physics-APC-$(TERM)-Web
 export DESTINATION
 
 all:
-	cd 04-momentumCollisions ; make
-	cd 05-centerOfMas ; make
-	cd 06-circMotion ; make
-	cd 07-rotMotion ; make
+	cd 04-momentumCollisions; make
+	cd 05-centerOfMas	; make
+	cd 06-circMotion	; make
+	cd 07-rotMotion		; make
+	cd 08-harmonicMotion	; make
 
 clean:
 	rm -rf *.*~ *~ *.log
-	cd 04-momentumCollisions ; make clean
-	cd 05-centerOfMas ; make clean
-	cd 06-circMotion ; make clean
-	cd 07-rotMotion ; make clean
+	cd 04-momentumCollisions; make clean
+	cd 05-centerOfMas	; make clean
+	cd 06-circMotion	; make clean
+	cd 07-rotMotion 	; make clean
+	cd 08-harmonicMotion	; make clean
 
 public:
 	mkdir -p $(DESTINATION)
-	cd 04-momentumCollisions ; make public
-	cd 05-centerOfMas ; make public
-	cd 06-circMotion ; make public
-	cd 07-rotMotion ; make public
+	cd 04-momentumCollisions; make public
+	cd 05-centerOfMas	; make public
+	cd 06-circMotion	; make public
+	cd 07-rotMotion		; make public
+	cd 08-harmonicMotion	; make public
