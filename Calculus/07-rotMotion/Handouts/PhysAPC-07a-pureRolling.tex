@@ -1,21 +1,23 @@
 \documentclass{../../../oss-handout}
 \usepackage{amsmath,bm}
-\usepackage{txfonts}  % must be loaded after amsmath?
+\usepackage{newtxtext,newtxmath}
+%\usepackage{txfonts}  % must be loaded after amsmath?
 \usepackage{enumitem}
 \usepackage{tikz}
 \usepackage{siunitx}
-
+\tikzset{
+  >=latex
+}
 \sisetup{
-  detect-all,
   per-mode=symbol
 }
 
 %\usetikzlibrary{decorations.pathmorphing,patterns}
 
 \newcommand{\mb}[1]{\mathbf{#1}}
-\newcommand{\iii}{\bm{\hat{\imath}}}
-\newcommand{\jjj}{\bm{\hat{\jmath}}}
-\newcommand{\kkk}{\bm{\hat{k}}}
+\newcommand{\iii}{\hat{\bm{\imath}}}
+\newcommand{\jjj}{\hat{\bm{\jmath}}}
+\newcommand{\kkk}{\hat{\bm{k}}}
 \newcommand{\pic}[2]{\includegraphics[width=#1\textwidth]{#2}}
 
 \setlength{\parindent}{0pt}
@@ -45,17 +47,17 @@ while one example is presented for a case with slippage.
 
 \section{Pure Rolling of Rigid Body on Flat Surface}
 \label{no-slip-ball}
-In the first case, a smooth solid sphere of constant density rolls on a smooth
-surface without slipping (rolling without slippage is called
-\textbf{pure rolling}). We assume that the sphere and the surface are both
-perfectly rigid, in that they cannot be deformed. We also assume that the sphere
-and the surface are both perfectly smooth without defects even at the atomic
-level. The free-body diagram is shown in Fig.~\ref{roll-flat}. Notice that
+In the first case, a smooth solid sphere of constant density rolls along a
+smooth surface without slipping (called \textbf{pure rolling}). We assume that
+the sphere and the surface are both perfectly rigid, in that they do not
+deform. We also assume that the sphere and the surface are both
+perfectly smooth without defects even at the microscopic level. The free-body
+diagram is shown in Fig.~\ref{roll-flat}. Notice that
 \emph{there is no friction between the sphere and the surface}. Since there is
-neither a net force nor a net torque acting on the sphere, neither the
-translational nor rotational state of the ball changes over time. In
-theory---if our assumptions are correct---a the sphere with translational
-velocity $\mb{v}$ and angular velocity $\bm{\omega}$ will roll along forever.
+neither a net force nor a net torque acting on the sphere, the translational
+and rotational states are constant in time. In theory (if our assumptions are
+correct) a the sphere with translational velocity $\mb{v}$ and angular velocity
+$\bm\omega$ will roll along forever.
 \begin{figure}[!ht]
   \centering
   \begin{tikzpicture}[scale=1.3]
@@ -68,7 +70,7 @@ velocity $\mb{v}$ and angular velocity $\bm{\omega}$ will roll along forever.
     \draw[->](4,0)--(4,1) node[pos=1,above]{$y$};
     \fill(0,0) circle(.05) node[right]{\small CM};
     \draw[->,ultra thick,blue!80!black](0,0)--(0,-1.5)
-    node[pos=1,below]{$\mb{w}$};
+    node[pos=1,below]{$m\mb{g}$};
     \draw[->,ultra thick,red!80!black](-.03,-1)--(-.03,.5)
     node[pos=1,above]{$\mb{N}$};
   \end{tikzpicture}
