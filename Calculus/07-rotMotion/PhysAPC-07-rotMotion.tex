@@ -83,7 +83,7 @@
       motion of the object
     \item $\bm{F}_c$ not do any mechanical work
     \item Therefore,  angular velocity $\bm\omega$ remains constant
-    \item\textbf{the ``rotational state'' of the object does not change}
+    \item\textbf{The ``rotational state'' of the object does not change}
     \item Rotation of an object is not determined by merely what forces are
       acting it
     \end{itemize}
@@ -92,7 +92,24 @@
 
 
 
-\section{Torque}
+\begin{frame}{Turning A Wrench}
+  \begin{columns}
+    \column{.35\textwidth}
+    \pic{1}{wrench}
+    
+    \column{.65\textwidth}
+    Similarly, when tightening/loosening a bolt by turning a wrench.
+    \begin{itemize}
+    \item When the nut turns, its ``rotational state'' changes
+    \item The applied force has to be directed at a distance away from the
+      bolt
+    \item How easy to turn the nut depends on \emph{both} the distance and the
+      force
+    \end{itemize}
+  \end{columns}
+\end{frame}
+
+
 
 \begin{frame}{Torque}
   Recall the second law of motion for objects with constant mass:
@@ -107,6 +124,7 @@
 \end{frame}
 
 
+\section{Torque}
 
 \begin{frame}{Torque}
   I have a rod on a table, and with my fingers, I push the two ends of the rod
@@ -121,7 +139,7 @@
     \end{tikzpicture}
   \end{center}
   $\bm{F}_\text{net}=\bm{0}$, therefore $\bm{a}=\bm{0}$ at the center of mass.
-  But it is obvious that the rod would \emph{rotate} instead.
+  But it is also obvious that the rod would \emph{rotate} instead.
 \end{frame}
 
 
@@ -168,7 +186,7 @@
   using the angle $\phi$ between $\bm{F}$ and $\bm{r}$:
 
   \eq{-.23in}{
-    \boxed{\tau=rF\sin\phi}
+    \boxed{\tau=Fr\sin\phi}
   }
   \begin{center}
     \begin{tabular}{l|c|c}
@@ -259,17 +277,27 @@
   \begin{columns}
     \column{.77\textwidth}
     
-    \eq{-.3in}{
-      \boxed{\bm{L}=\bm{r}\times\bm{p}=m(\bm{r}\times\bm{v})=mr^2\bm\omega}
+    \eq{-.32in}{
+      \boxed{\bm{L}=\bm{r}\times\bm{p}=m(\bm{r}\times\bm{v})}%=mr^2\bm\omega}
     }
-      
-    Or in scalar form:
+
+    \vspace{-.1in}Expanding the term with $\bm{v}=\bm\omega\times\bm{r}$, the
+    expression for angular momentum can now be expressed in quantities related
+    to rotations:
+
+    \eq{-.32in}{
+      \boxed{\bm{L}=m(\bm{r}\times\bm{v})
+        =m(\bm{r}\times(\bm\omega\times\bm{r}))
+        =mr^2\bm\omega}
+    }
     
-    \eq{-.2in}{
+    \vspace{-.2in}Or in scalar form:
+    
+    \eq{-.25in}{
       \boxed{L=rmv=mr^2\omega}
     }
 
-    The unit for angular momentum is a
+    \vspace{-.2in}The unit for angular momentum is a
     \textbf{kilogram meter squared per second}
     (\si{\newton\metre\squared\per\second}).
     
@@ -295,17 +323,20 @@
   Look again at the definition of angular momentum:
     
   \eq{-.2in}{
-    \bm{L}=\bm{r}\times\bm{p}=\bm{r}\times(m\bm{v})
-    =m\bm{r}\times(\bm{\omega}\times\bm{r})
+    \bm{L}%=\bm{r}\times\bm{p}=\bm{r}\times(m\bm{v})
+    %=m\bm{r}\times(\bm{\omega}\times\bm{r})
     =\underbrace{mr^2}_{I}\bm\omega
   }
     
-  The quantity $I$ is called the \textbf{moment of inertia} with a unit of
+  The quantity $I=mr^2$ is called the \textbf{moment of inertia} with a unit of
   \textbf{kilogram meter squared} (\si{\kilo\gram\metre\squared}), and 
 
   \eq{-.2in}{
     \boxed{\bm{L}=I\bm\omega}
   }
+
+  Momentum of inertia can be considered to be an object's ``rotational mass''
+
 \end{frame}
 
 
@@ -348,12 +379,9 @@
   \eq{-.2in}{
     \boxed{\bm{p}=m\bm{v}}\quad\quad\quad\boxed{\bm{L}=I\bm\omega}
   }
-  \begin{itemize}
-  \item Just as $\bm{p}$ describes the overall \emph{translational} state of a
-    physical system, $\bm{L}$ describes its overall \emph{rotational} state
-  \item Momentum of inertia $I$ can be considered to be an object's
-    ``rotational mass''
-  \end{itemize}
+  
+  Just as $\bm{p}$ describes the overall \emph{translational} state of a
+  physical system, $\bm{L}$ describes its overall \emph{rotational} state
 \end{frame}
 
 
@@ -428,6 +456,7 @@
     \bm{F}=m\bm{a}
   }
 \end{frame}
+
 
 
 \begin{frame}{Second Law of Motion for Rotational Motion}
@@ -566,6 +595,29 @@
 
   
 \section{Work \& Energy in Rotational Motion}
+
+\begin{frame}{Mechanical Work}
+  For translational motion, mechanical work is defined as
+
+  \eq{-.2in}{
+    W=\int_{x_1}^{x_2}\bm{F}\cdot d\bm{x}
+  }
+
+  For rotational motion, mechanical work is defined similarly as:
+
+  \eq{-.2in}{
+    \boxed{
+      W=\int_{\theta_1}^{\theta_2}\bm\tau\cdot d\bm\theta
+    }
+  }
+
+  The work-energy theorem still applies to rotational motion, i.e.;
+
+  \eq{-.25in}{
+    W=\Delta K
+  }
+\end{frame}
+
 
 \begin{frame}{Rotational Kinetic Energy}
   To find the kinetic energy of a rotating system of particles (discrete number
