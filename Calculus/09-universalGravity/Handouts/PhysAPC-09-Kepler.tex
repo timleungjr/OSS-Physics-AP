@@ -1,17 +1,9 @@
 \documentclass{../../../oss-handout}
-\usepackage{amsmath,bm}
-\usepackage{txfonts}  % must be loaded after amsmath?
+\usepackage{newtxtext,newtxmath}
 \usepackage{enumitem}
 \usepackage{tikz}
-\usepackage{siunitx}
 
-\sisetup{
-  detect-all,
-  per-mode=symbol
-}
 \tikzset{>=latex}
-
-%\usetikzlibrary{decorations.pathmorphing,patterns}
 
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{8pt}
@@ -20,20 +12,13 @@
 \newcommand{\mb}[1]{\ensuremath\mathbf{#1}}
 \newcommand{\pic}[2]{\includegraphics[width=#1\textwidth]{#2}}
 
-%\newcommand\vertarrowbox[2]{%
-%    \begin{array}[t]{@{}c@{}} #1 \\
-%    \rotatebox{90}{$\xrightarrow{\hphantom{abcdefgh}}$} \\[-1ex]
-%    \mathclap{\scriptstyle\text{#2}}%
-%    \end{array}}
-
-
 % Set the page style for the document
 \pagestyle{plain}
 
 % Course & handout information
 \renewcommand{\institution}{Olympiads School, Toronto, ON, Canada}
 \renewcommand{\coursetitle}{Advanced Placement Physics C}
-\renewcommand{\term}{Summer 2020}
+\renewcommand{\term}{Winter/Spring 2021}
 
 \title{Kepler's Laws of Planetary Motion}
 \author{Dr.\ Timothy Leung}
@@ -48,14 +33,15 @@ Johannes Kepler\footnote{1571--1630. German mathematician, astromer and
 between 1609 to 1619, by carefully interpreting the empirical planetary motion
 data from his teacher, Tycho Brahe.\footnote{1546--1601. Danish nobleman and
   astronomer.} It is an improvement over the heliocentric
-theory of Nicolaus Copernicus\footnote{1473--1543}. It should be noted that the
-complete mathematical understanding was missing until Issac
-Newton\footnote{1642--1726. English mathematician, physicist, astronomer,
-  theologian, and author.} derived each law as pieces using his laws of motion.
-In this handout we seek to obtain each law in turn, as we consider the orbit of
-a small planet in the gravitational field of a much more massive star. In
-modern form, Kepler's laws of planetary motion state that:
-\begin{enumerate}[leftmargin=18pt,noitemsep,topsep=0pt]
+theory of Nicolaus Copernicus\footnote{1473--1543. German mathematician,
+  astronomer and Catholic canon.}. It should be noted that the complete
+mathematical understanding was missing until Issac Newton\footnote{1642--1726.
+  English mathematician, physicist, astronomer, theologian, and author.}
+derived each law as using his laws of motion. In this handout we seek to obtain
+each law, as we consider the orbit of a small planet in the gravitational field
+of a much more massive star. In modern form, Kepler's laws of planetary motion
+state that:
+\begin{enumerate}[nosep]
 \item A planet moves around the Sun in an elliptical path with the Sun as one
   of the foci.
 \item The line segment joining a planet and the Sun sweeps out equal areas
@@ -71,9 +57,9 @@ To begin, we recognize that two properties of gravitational force, or Newton's
 are crucial to
 understanding orbital mechanics. These two properties hold true regardless
 of the shape of the orbit, and whether an object is even in orbit altogether:
-\begin{enumerate}[leftmargin=18pt,topsep=0pt]
+\begin{enumerate}[topsep=0pt]
 \item Gravity is a \emph{conservative} force, in that
-  \begin{itemize}[leftmargin=15pt,noitemsep,topsep=0pt]
+  \begin{itemize}[nosep]
   \item assuming that minor collisions with space dust and other methods of
     energy dissipation are negligible, then the total mechanical energy
     $E=K+U_g$ is conserved.
@@ -82,7 +68,7 @@ of the shape of the orbit, and whether an object is even in orbit altogether:
     gravity (negative work) converts $K$ into $U_g$.
   \end{itemize}
 \item Gravity is a \emph{central} force, in that
-  \begin{itemize}[leftmargin=15pt,noitemsep,topsep=0pt]
+  \begin{itemize}[nosep]
   \item gravitational force $\mb{F}_g$ is always in the $-\hat{\mb{r}}$
     direction (i.e.\ $\mb{F}\times\mb{r}=\mb{0}$), shown in
     Fig.~\ref{central-force}, therefore gravity does not generate any torque,
@@ -120,7 +106,7 @@ law of planetary motion is the easiest to proof using concepts in rotational
 motion.
 \begin{figure}[!ht]
   \centering
-    \pic{.4}{../201532-132212364-3243-planet.png}
+    \pic{.4}{../201532-132212364-3243-planet}
     \caption{The Earth sweeps out the same shaded area (purple) over the
       same amount of time regardless of where it is in its orbit.}
     \label{kep2}
@@ -214,14 +200,13 @@ coordinate system located at one of the two foci.
     \draw[very thick, green](0,0)--(0,-\b) node[midway,right]{$b$};
   \end{tikzpicture}
   \caption{A basic ellipse with the origin of the coordinate system placed at
-    one of the focus.}
+    one of the fous.}
   \label{ellipse1}
 \end{figure}
 
-The longest dimension from the origin is the \textbf{semi-major axis} $a$, while
-the shortest dimension is the \textbf{semi-minor axis} $b$. The two lengths are
-related by the parameter $e$, generally called the \textbf{eccentricity} of the
-ellipse:
+The longer dimension from the origin is the \textbf{semi-major axis} $a$, while
+the shorter dimension is the \textbf{semi-minor axis} $b$. The two lengths are
+related by the parameter $e$, the \textbf{eccentricity} of the ellipse:
 \begin{equation}
   b^2=a^2(1-e^2)\quad\text{where}\quad 0\leq e < 1
 \end{equation}
@@ -273,9 +258,9 @@ planet orbits a star:
   \caption{Elliptical orbit of a small mass $m$ around a large mass $M$.}
   \label{eorbit}
 \end{figure}
-\begin{itemize}[leftmargin=15pt]
+\begin{itemize}
 \item\textbf{Angular velocity} $\mb{v}_\theta$. The presence of $\mb{v}_\theta$
-  means that there is a centripetal acceleration $a_c$ toward $M$. The
+  means that there is a centripetal acceleration $a_c$ towards $M$. The
   direction of the acceleration is perpendicular to the direction of
   $\mb{v}_\theta$, and towards the sun:
   \begin{equation}
@@ -290,8 +275,8 @@ planet orbits a star:
   \end{equation}
 \end{itemize}
 Both components of acceleration are due entirely to gravitational force.
-Applying second law of motion ($\sum F=ma$), and dividing all sides by the mass
-of the planet $m$, we arrive at a differential equation:
+Applying second law of motion, and dividing all sides by the mass of the planet
+$m$, we arrive at a differential equation:
 \begin{equation}
   \frac{d^2r}{dt^2}-r\omega^2=-\frac{GM}{r^2}
   \label{ode1}
@@ -306,37 +291,32 @@ However, the
 differential equation is easier to solve by making a variable
 substitution\footnote{this variable may not be immediately obvious without
   some experience with solving ODEs}, by introducing a new variable $u$ which
-is the inverse of the radius $r$:
+is the reciprocal of $r$:
 \begin{equation}
   u=\frac1r
 \end{equation}
 We can then use the fact that angular momentum $L$ is constant to relate
 derivatives in time $t$ to derivatives in angle $\theta$:
 \begin{equation}
-  L=mr^2\frac{d\theta}{dt}=\frac{m}{u^2}\frac{d\theta}{dt}
+  L=mr^2\omega=mr^2\frac{d\theta}{dt}=\frac{m}{u^2}\frac{d\theta}{dt}
   \quad\longrightarrow\quad
-  \frac{d}{d\theta}=\frac{Lu^2}{m}\frac{d}{dt}
+  \frac{d\theta}{dt}=\frac{Lu^2}m
+  %\frac{d}{d\theta}=\frac{Lu^2}{m}\frac{d}{dt}
 \end{equation}
 The derivative $\dot{r}$ can now be expressed in terms of derivatives of
 $\theta$ instead of time $t$:
-\begin{align}
-  \nonumber
-  \frac{dr}{dt} &=\frac{d}{dt}\left(\frac{1}{u}\right)
-  =-\frac{1}{u}\frac{du}{dt}\\
-  \nonumber
-  &=-\frac{L}{m}\frac{du}{d\theta}\\
-  \nonumber
-  &= -u^{-2}\frac{du}{d\theta} \frac{Lu^2}{m} \\
-  \frac{dr}{dt}&= -\frac{L}{m}\frac{du}{d\theta}
-\end{align}
+\begin{equation}
+  \frac{dr}{dt} =\frac{d}{dt}\left(\frac1u\right)
+  =-\frac1{u^2}\frac{du}{dt}=-\frac1{u^2}\frac{du}{d\theta}\frac{d\theta}{dt}
+  = -\frac1{u^2}\frac{du}{d\theta} \frac{Lu^2}{m}
+  = -\frac{L}m\frac{du}{d\theta}
+\end{equation}
 Repeating the same process for the second derivative $\ddot{r}$, we have
-\begin{align}
-  \nonumber
-  \frac{d^2r}{dt^2} &= \frac{d}{dt}\left(-\frac{L}{m}\frac{du}{d\theta}\right)\\
-  \nonumber
-  &= -\frac{L}{m} \frac{d}{d\theta}\frac{du}{d\theta} \\
-  \frac{d^2r}{dt^2}&= -\left(\frac{L^2u^2}{m^2}\right)\frac{d^2u}{d\theta^2}
-\end{align}
+\begin{equation}
+  \frac{d^2r}{dt^2} = \frac{d}{dt}\left(-\frac{L}{m}\frac{du}{d\theta}\right)
+  = -\frac{L}m\frac{d}{d\theta}\frac{du}{d\theta} \\
+  = -\left(\frac{L^2u^2}{m^2}\right)\frac{d^2u}{d\theta^2}
+\end{equation}
 With this identity in hand, our original differential equation
 (Eq.~\ref{ode1}) becomes
 \begin{equation}
@@ -396,7 +376,7 @@ derived Kepler's first law.
 \section{Third law: Period of motion}
 \begin{figure}[!ht]
   \centering
-  \pic{.55}{../kep8.png}
+  \pic{.55}{../kep8}
   \caption{The orbits of all the planets in the solar system obey the third
   law of planetary motion.}
   \label{3rdlaw}
