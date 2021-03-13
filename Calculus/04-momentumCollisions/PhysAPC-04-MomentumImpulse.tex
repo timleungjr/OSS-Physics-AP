@@ -7,6 +7,9 @@
 \usepackage{mathpazo}
 \usepackage{bm}
 \usepackage{xcolor,colortbl}
+\usepackage[ISO]{diffcoeff}
+\diffdef{}{ op-symbol=\mathsf{d} }
+
 \setlength{\parskip}{0pt}
 \renewcommand{\baselinestretch}{1}
 \sisetup{
@@ -21,7 +24,6 @@
 \date{Last Updated: \today}
 
 \newcommand{\pic}[2]{\includegraphics[width=#1\textwidth]{#2}}
-\newcommand{\mb}[1]{\ensuremath\mathbf{#1}}
 \newcommand{\eq}[2]{\vspace{#1}{\Large\begin{displaymath}#2\end{displaymath}}}
 
 \begin{document}
@@ -60,8 +62,8 @@
   reference) using the chain rule:
 
   \eq{-.15in}{
-    \frac{d\bm{p}}{dt}=\frac{d(m\bm{v})}{dt}
-    =m\frac{d\bm{v}}{dt}+\frac{dm}{dt}\bm{v}
+    \diff{\bm{p}}t=\diff{(m\bm{v})}t
+    =m\diff{\bm{v}}t+\diff mt\bm{v}
     =m\bm{a}+\dot{m}\bm{v}
   }
 
@@ -73,7 +75,7 @@
 
   \eq{-.2in}{
     \boxed{
-      \bm{F}_{net}(t)=\frac{d\bm{p}(t)}{dt}
+      \bm{F}_{net}(t)=\diff{\bm{p}}t
     }
   }
 \end{frame}
@@ -83,7 +85,7 @@
 \begin{frame}{Laws of Motion \& Conservation of Momentum}
 
   \eq{-.2in}{
-    \boxed{\bm{F}_{net}=\frac{d\bm{p}}{dt}}
+    \boxed{\bm{F}_{net}=\diff{\bm{p}}t}
   }
   
   \textbf{First law of motion:} The momentum state of an object is conserved
@@ -106,8 +108,8 @@
   Rearranging the variables in the general form of the second law of motion:
   
   \eq{-.15in}{
-    \bm{F}_{net}=\frac{d\bm{p}}{dt}\;\rightarrow\;
-    \bm{F}_{net}dt=d\bm{p}
+    \bm{F}_{net}=\diff{\bm{p}}t\;\rightarrow\;
+    \bm{F}_{net}\dl t=\dl\bm{p}
   }
 
   Integrating both sides, we get the \textbf{impulse-momentum theorem}:
@@ -115,8 +117,8 @@
   \eq{-.15in}{
     \boxed{
       \bm{J}_{net}
-      =\int_{t_1}^{t_2}\bm{F}_{net}dt
-      =\int_{p_1}^{p_2} d\bm{p}=\Delta\bm{p}}
+      =\int_{t_1}^{t_2}\bm{F}_{net}\dl t
+      =\int_{p_1}^{p_2}\dl\bm{p}=\Delta\bm{p}}
   }
   
   The quantity $\bm{J}_{net}$ is called the \textbf{net impulse}.
@@ -129,7 +131,7 @@
   evaluated in each of the $x$, $y$ and $z$ axis, i.e., for the $x$ direction:
 
   \eq{-.15in}{
-    J_x=\int_{t_1}^{t_2}F_xdt=\int dp_x=\Delta p_x
+    J_x=\int_{t_1}^{t_2}F_x\dl t=\int\dl p_x=\Delta p_x
   }
   
   Note that impulse from each individual force does not depend on whether the
@@ -143,12 +145,8 @@
   that gets the same impulse. It is used extensively in introductory physics
   courses to avoid integration:
 
-%  \eq{-.15in}{
-%    \overline{\bm{F}}=\frac{\int_{t_1}^{t_2}\bm{F}dt}{t_2-t_1}
-%    =\frac{\bm{J}}{\Delta t}
-%  }
   \eq{-.15in}{
-    \bm{J}=\int_{t_1}^{t_2}\bm{F}dt=\overline{\bm{F}}\Delta t
+    \bm{J}=\int_{t_1}^{t_2}\bm{F}\dl t=\overline{\bm{F}}\Delta t
   }
 \end{frame}
 

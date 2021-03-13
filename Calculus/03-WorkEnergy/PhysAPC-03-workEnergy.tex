@@ -1,25 +1,21 @@
 \documentclass[12pt,compress,aspectratio=169]{beamer}
-
 \usetheme{metropolis}
 \setbeamersize{text margin left=.5cm,text margin right=.5cm}
-%\setbeamertemplate{navigation symbols}{} % suppress nav bar
-%\setbeamercovered{transparent}
-
-%\usefonttheme{professionalfonts}
 \usepackage[lf]{carlito}
-\usepackage{bm}
 \usepackage{siunitx}
 \usepackage{tikz}
 \usepackage{mathpazo}
 \usepackage{xcolor,colortbl}
+\usepackage{bm}
+\usepackage[ISO]{diffcoeff}
+\diffdef{}{ op-symbol=\mathsf{d} }
+
 
 \setmonofont{Ubuntu Mono}
 \setlength{\parskip}{0pt}
 \renewcommand{\baselinestretch}{1}
 
 \sisetup{
-  %detect-all,
-  %number-math-rm=\mathnormal,
   inter-unit-product=\cdot,
   per-mode=symbol
 }
@@ -32,10 +28,9 @@
 \subtitle{Advanced Placement Physics C}
 \author[TML]{Dr.\ Timothy Leung}
 \institute{Olympiads School}
-\date{\today}
+\date{Last Updated: \today}
 
 \newcommand{\pic}[2]{\includegraphics[width=#1\textwidth]{#2}}
-\newcommand{\mb}[1]{\ensuremath\mathbf{#1}}
 \newcommand{\eq}[2]{\vspace{#1}{\Large\begin{displaymath}#2\end{displaymath}}}
 
 \begin{document}
@@ -74,20 +69,20 @@
 \section{Work}
 
 \begin{frame}{Work}
-  \textbf{Mechanical work} $dW$ is performed when a force $\mb{F}$ displaces an
-  object by $d\mb{x}$. If a varying force
-  is applied to move an object from $\mb{x}_1$ to $\mb{x}_2$ along a path, then
+  \textbf{Mechanical work} $dW$ is performed when a force $\bm{F}$ displaces an
+  object by $d\bm{x}$. If a varying force
+  is applied to move an object from $\bm{x}_1$ to $\bm{x}_2$ along a path, then
   the total work done by the force is defined by the integral:
 
   \eq{-.2in}{
-    W=\int\mb{F}(\mb{x})\cdot d\mb{x}
+    W=\int\bm{F}(\bm{x})\cdot d\bm{x}
   }
 
   \begin{itemize}
   \item Work is a scalar quantity
   \item No work done if the force is perpendicular to displacement, when
-    $\mb{F}\cdot d\mb{x}=0$ (i.e.\ the force did not cause the displacement)
-  \item No work done if no displacement ($d\mb{x}=\mb{0}$)
+    $\bm{F}\cdot d\bm{x}=0$ (i.e.\ the force did not cause the displacement)
+  \item No work done if no displacement ($d\bm{x}=\bm{0}$)
   \item Work can be positive or negative depending on the dot product
   \item When there are multiple forces acting on an object, we can compute the
     work done by each \emph{each} force
@@ -102,7 +97,7 @@
 
   \eq{-.2in}{
     \boxed{
-      W=\mb{F}\cdot\Delta\mb{r}
+      W=\bm{F}\cdot\Delta\bm{x}
     }
   }
 
@@ -145,17 +140,17 @@
   given by:
 
   \eq{-.2in}{
-    W_\text{net}=\int\mb{F}_\text{net}\cdot d\mb{x}=\int m\mb{a}\cdot d\mb{x}
-    =m\int\frac{d\mb{v}}{dt}\cdot d\mb{x}
+    W_\text{net}=\int\bm{F}_\text{net}\cdot\dl\bm{x}=\int m\bm{a}\cdot\dl\bm{x}
+    =m\int\diff{\bm{v}}t\cdot\dl\bm{x}
   }
 
-  Both $\mb{v}$ and $\mb{x}$ are continuous functions in time, we can switch
-  the order of differentiation. Also, since $\mb{v}$ and $d\mb{v}$ must be in
-  the same direction, the dot product is trivial: $\mb{v}\cdot d\mb{v}=vdv$
+  Both $\bm{v}$ and $\bm{x}$ are continuous functions in time, we can switch
+  the order of differentiation. Also, since $\bm{v}$ and $d\bm{v}$ must be in
+  the same direction, the dot product is trivial: $\bm{v}\cdot d\bm{v}=vdv$
 
   \eq{-.2in}{
-    =m\int\frac{d\mb{x}}{dt}\cdot d\mb{v}=m\int\mb{v}\cdot d\mb{v}
-    =m\int_{v_1}^{v_2} vdv %=\Delta\left(\frac{1}{2}mv^2\right)=\Delta K
+    =m\int\diff{\bm{x}}t\cdot\dl\bm{v}=m\int\bm{v}\cdot\dl\bm{v}
+    =m\int_{v_1}^{v_2}v\dl v
   }
 \end{frame}
 
@@ -166,7 +161,7 @@
   (final \emph{speed}), becomes:
 
   \eq{-.2in}{
-    =m\int_{v_1}^{v_2} vdv=\frac{1}{2}mv^2\Big|^{v_2}_{v_1}=\Delta K
+    =m\int_{v_1}^{v_2}v\dl v=\frac12mv^2\Big|^{v_2}_{v_1}=\Delta K
   }
   
   where $K$ is defined as the \textbf{translational kinetic energy}:
@@ -204,7 +199,7 @@
 
 
 \begin{frame}{Example}
-  \textbf{Example 1:} A force $\mb{F}=4.0x\bm{\hat{\imath}}$ (in newtons) acts
+  \textbf{Example 1:} A force $\bm{F}=4.0x\bm{\hat{\imath}}$ (in newtons) acts
   on an object of mass \SI{2.}{\kilo\gram} as it moves from $x=1.0$ to
   $x=\SI{5.}{\metre}$. Given that the object is at rest at $x=1$,
   \begin{enumerate}[(a)]
@@ -221,17 +216,17 @@
   The gravitational force (weight) of an object is defined as:
   
   \eq{-.25in}{
-    \mb{w}=m\mb{g}
+    \bm{w}=m\bm{g}
   }
   
   \vspace{-.1in}Near Earth's surface, we assume that
-  $\mb{g}=-g\bm{\hat{\jmath}}\approx -10\bm{\hat{\jmath}}$ \si{\metre\per\second^2}
-  is constant. The work done to move an object from height $h_1$ to $h_2$ is
-  therefore:
+  $\bm{g}=-g\bm{\hat{\jmath}}\approx -10\bm{\hat{\jmath}}$
+  \si{\metre\per\second\squared} is constant. The work done to move an object
+  from height $h_1$ to $h_2$ is therefore:
 
   \eq{-.2in}{
-    W=\int \mb{w}\cdot d\mb{h}
-    =\int_{h_1}^{h_2} -mg\bm{\hat{\jmath}}\cdot dh\hat{\bm{\jmath}}
+    W=\int \bm{w}\cdot\dl\bm{h}
+    =\int_{h_1}^{h_2} -mg\bm{\hat{\jmath}}\cdot\dl h\hat{\bm{\jmath}}
     =-mgh\Big|^{h_2}_{h_1}=-\Delta U_g
   }
 
@@ -249,17 +244,17 @@
 
 
 \begin{frame}{Spring Force \& Elastic Potential Energy}
-  The spring force $\mb{F}_e$ is the force that a compressed/stretched spring
+  The spring force $\bm{F}_e$ is the force that a compressed/stretched spring
   exerts on the object connected to it. It obeys Hooke's law:
     
   \eq{-.2in}{
-    \mb{F}_e=-k\mb{x}
+    \bm{F}_e=-k\bm{x}
   }
 
   \vspace{-.1in}We can find the work done to displace a spring:
 
   \eq{-.3in}{
-    W=\int\mb{F}_e\cdot d\mb{x}=-k\int xdx=-\frac{1}{2}kx^2\Big|^{x_2}_{x_1}
+    W=\int\bm{F}_e\cdot\dl\bm{x}=-k\int x\dl x=-\frac12kx^2\Big|^{x_2}_{x_1}
     =-\Delta U_e
   }
   
@@ -297,10 +292,8 @@
   are therefore the negative gradient of the potential energies:
 
   \eq{-.2in}{
-    \mb{F}=-\nabla U=
-    -\frac{\partial U}{\partial x}\bm{\hat{\imath}}
-    -\frac{\partial U}{\partial y}\bm{\hat{\jmath}}
-    -\frac{\partial U}{\partial z}\hat{\bm{k}}
+    \bm{F}=-\nabla U=
+    -\diffp Ux\bm{\hat{\imath}}-\diffp Uy\bm{\hat{\jmath}}-\diffp Uz\hat{\bm{k}}
   }
 
   The direction of a conservative force \emph{always} decreases the potential
@@ -308,7 +301,7 @@
 
   \eq{-.2in}{
     \boxed{
-      F=-\frac{dU}{dx}
+      F=-\diff Ux
     }
   }
 
@@ -421,7 +414,7 @@
     \begin{tikzpicture}[scale=.8]
       \draw[thick,fill=gray!30] (7.75,0) arc(75:105:30);
       \draw[fill=blue!50] (0,4) circle(.2) node[right]{$\;m$};
-      \draw[very thick, red!65,->] (0,4)--(0,3) node[below]{$\mb{F}_g$};
+      \draw[very thick, red!65,->] (0,4)--(0,3) node[below]{$\bm{F}_g$};
     \end{tikzpicture}
   \end{center}
   
@@ -545,7 +538,7 @@
   equilibrium position of a spring. Set up the equation that determines the
   spring's compression $d$ when the object is instantaneously at rest.
   \begin{center}
-    \pic{.35}{spring-example1.png}
+    \pic{.35}{spring-example1}
   \end{center}
 \end{frame}
 
@@ -571,7 +564,7 @@
   \begin{itemize}
   \item Plots of potential energy ($U$) vs.\ position for a conservative force
     \begin{center}
-      \pic{.5}{energy-diagram.png}
+      \pic{.5}{energy-diagram}
     \end{center}
   \item If more than one conservative force, they can be combined into one graph
   \item Where slope is zero means no force acting on it: it is in a state of
@@ -588,7 +581,7 @@
   which energy is being transformed:
 
   \eq{-.2in}{
-    \boxed{P(t) = \frac{dW}{dt}}\quad\quad
+    \boxed{P(t) = \diff Wt}\quad\quad
     \boxed{\overline{P} = \frac{W}{\Delta t}}
   }
   \begin{center}
@@ -611,10 +604,10 @@
   power produced by the force is:
   
   \eq{-.1in}{
-    P=\frac{dW}{dt}=\frac{\mb{F}\cdot d\mb{x}}{dt}
-    =\mb{F}\cdot\frac{d\mb{x}}{dt}
+    P=\diff{W}t=\frac{\bm{F}\cdot\dl\bm{x}}{\dl t}
+    =\bm{F}\cdot\diff{\bm{x}}t
     \quad\rightarrow\quad
-    \boxed{P=\mb{F}\cdot\mb{v}}
+    \boxed{P=\bm{F}\cdot\bm{v}}
   }
   
   Application: aerodynamics

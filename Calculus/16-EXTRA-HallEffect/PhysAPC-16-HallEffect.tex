@@ -1,38 +1,35 @@
 \documentclass[12pt,aspectratio=169]{beamer}
-
 \usetheme{metropolis}
 \setbeamersize{text margin left=.6cm,text margin right=.6cm}
-
-\usefonttheme{professionalfonts}
-\usepackage{graphicx}
+\usepackage[lf]{carlito}
 \usepackage{tikz}
-\usepackage{amsmath}
 \usepackage{mathpazo}
 \usepackage{xcolor,colortbl}
 \usepackage{siunitx}
+\usepackage{bm}
 %\usepackage{hyperref}
 %\usepackage[siunitx]{circuitikz} % to draw circuits!
 
 \setlength{\parskip}{0pt}
 \renewcommand{\baselinestretch}{1}
 
-\setsansfont{Roboto Light}
-\setmonofont{Ubuntu Mono}
+%\setsansfont{Roboto Light}
+%\setmonofont{Ubuntu Mono}
 
 \sisetup{
-  detect-all,
-  number-math-rm=\textsf,
   per-mode=symbol
 }
+
+\tikzset{>=latex}
 
 \title{Hall Effect}
 \subtitle{Advanced Placement Physics C}
 \author{Dr.\ Timothy Leung}
-\institute{Olympiads School, Toronto, ON, Canada}
+\institute{Olympiads School}
 \date{\today}
 
 \newcommand{\pic}[2]{
-  \includegraphics[width=#1\textwidth]{#2}}\newcommand{\mb}[1]{\mathbf{#1}
+  \includegraphics[width=#1\textwidth]{#2}
 }
 \newcommand{\eq}[2]{
   \vspace{#1}{\Large\begin{displaymath}#2\end{displaymath}}
@@ -133,13 +130,13 @@
 
 \begin{frame}{Hall Effect}
   When a current $I$ flows through a conductor in a magnetic field
-  $\mb{B}$, the magnetic field exerts a transverse (i.e.\ perpendicular to
-  motion) magnetic force $\mb{F}_m$ on the moving charges which pushes them
+  $\bm{B}$, the magnetic field exerts a transverse (i.e.\ perpendicular to
+  motion) magnetic force $\bm{F}_m$ on the moving charges which pushes them
   toward one side of the conductor. %This is called \textbf{Hall effect}.
   \begin{center}
     \begin{tikzpicture}
       \node at (4.5,3.8) {\textcolor{blue!80}{
-          \footnotesize$\mb{B}$ (into the page)}
+          \footnotesize$\bm{B}$ (into the page)}
       };
       \foreach \x in {0,.5,...,6}{
         \foreach \y in {.5,1,...,3.5}{
@@ -151,8 +148,8 @@
       \draw[very thick](-.4,2)--(.8,2);
       \draw[very thick](5.2,2)--(6.4,2);
 
-      \draw[->,very thick](2.18,2)--(3.3,2) node[pos=1,right]{$\mb{v}_d$};
-      \draw[->,very thick,red](2,2.18)--(2,3) node[pos=1,above]{$\mb{F}_m$};
+      \draw[->,very thick](2.18,2)--(3.3,2) node[right]{$\bm{v}_d$};
+      \draw[->,very thick,red](2,2.18)--(2,3) node[above]{$\bm{F}_m$};
       \draw[very thick,fill=gray](2,2) circle(.18) node{$+$};
     \end{tikzpicture}
   \end{center}
@@ -165,7 +162,7 @@
   \begin{center}
     \begin{tikzpicture}
       \node at (4.5,3.8) {\textcolor{blue!80}{
-          \footnotesize$\mb{B}_\mathrm{in}$
+          \footnotesize$\bm{B}_\text{in}$
         }
       };
       \foreach \x in {0,.5,...,6}{
@@ -178,19 +175,19 @@
       \draw[ultra thick](-.4,2)--(.8,2);
       \draw[ultra thick](5.2,2)--(6.4,2);
 
-      \draw[->,ultra thick](2.18,2)--(3.3,2) node[pos=1,right]{$\mb{v}_d$};
-      \draw[->,ultra thick,red](2,2.18)--(2,3) node[pos=1,above]{$\mb{F}_m$};
+      \draw[->,ultra thick](2.18,2)--(3.3,2) node[right]{$\bm{v}_d$};
+      \draw[->,ultra thick,red](2,2.18)--(2,3) node[above]{$\bm{F}_m$};
       \draw[ultra thick,fill=gray](2,2) circle(.18) node{$+$};
     \end{tikzpicture}
   \end{center}
-  \vspace{-.1in}As the charges enter the magnetic field, $\mb{F}_m$ is directed
+  \vspace{-.1in}As the charges enter the magnetic field, $\bm{F}_m$ is directed
   toward the top:
   
   \eq{-.2in}{
-    \mb{F}_m
-    =e\textcolor{red}{\mb{v}_d}\times\mb{B}
-    =\frac{e\textcolor{red}{\mb{I}}\times\mb{B}}{\textcolor{red}{neA}}
-    =\frac{\mb{I}\times\mb{B}}{nA}
+    \bm{F}_m
+    =e\textcolor{red}{\bm{v}_d}\times\bm{B}
+    =\frac{e\textcolor{red}{\bm{I}}\times\bm{B}}{\textcolor{red}{neA}}
+    =\frac{\bm{I}\times\bm{B}}{nA}
   }
 
   leading to a surplus of positive charges on the top edge of
@@ -203,7 +200,7 @@
   \begin{center}
     \begin{tikzpicture}
       \node at (4.5,3.8) {\textcolor{blue!80}{
-          \footnotesize$\mb{B}_\mathrm{in}$
+          \footnotesize$\bm{B}_\text{in}$
         }
       };
       \foreach \x in {0,.5,...,6}{
@@ -221,10 +218,10 @@
       \foreach \x in {1,1.5,...,5}{
         \draw[thick,->,red!60] (\x,2.8)--(\x,1.2);
       }
-      \node at (4.85,2) {\textcolor{red}{\footnotesize$\mb{E}$}};
+      \node at (4.85,2) {\textcolor{red}{\footnotesize$\bm{E}$}};
     \end{tikzpicture}
   \end{center}
-  The charge imbalance on the conductor creates an electric field $\mb{E}$,
+  The charge imbalance on the conductor creates an electric field $\bm{E}$,
   pointing toward the bottom, and therefore a voltage across two sides of the
   conductor (width $W$), called the \textbf{Hall voltage}:
 
@@ -239,7 +236,7 @@
   \begin{center}
     \begin{tikzpicture}
       \node at (4.5,3.8) {\textcolor{blue!80}{
-          \footnotesize$\mb{B}_\mathrm{in}$
+          \footnotesize$\bm{B}_\text{in}$
         }
       };
       \foreach \x in {0,.5,...,6}{
@@ -255,11 +252,11 @@
       \foreach \x in {1,1.5,...,5}{
         \draw[thick,->,red!60] (\x,2.8)--(\x,1.2);
       }
-      \node at (4.85,2) {\textcolor{red}{\footnotesize$\mb{E}$}};
+      \node at (4.85,2) {\textcolor{red}{\footnotesize$\bm{E}$}};
       
-      \draw[->,ultra thick](2.18,2)--(3.3,2) node[pos=1,right]{$\mb{v}_d$};
-      \draw[->,ultra thick,red](2,2.18)--(2,3) node[pos=1,above]{$\mb{F}_m$};
-      \draw[->,ultra thick,red](2,1.82)--(2,1) node[pos=1,below]{$\mb{F}_q$};
+      \draw[->,ultra thick](2.18,2)--(3.3,2) node[right]{$\bm{v}_d$};
+      \draw[->,ultra thick,red](2,2.18)--(2,3) node[above]{$\bm{F}_m$};
+      \draw[->,ultra thick,red](2,1.82)--(2,1) node[below]{$\bm{F}_q$};
       \draw[ultra thick,fill=gray](2,2) circle(.18) node{$+$};
     \end{tikzpicture}
   \end{center}
@@ -268,7 +265,7 @@
   forces are balanced:
 
   \eq{-.3in}{
-    \mb{F}_m+\mb{F}_q=\mb{0}
+    \bm{F}_m+\bm{F}_q=\bm{0}
   }
 \end{frame}
 

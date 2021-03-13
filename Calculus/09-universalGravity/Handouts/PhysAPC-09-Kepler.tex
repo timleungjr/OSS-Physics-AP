@@ -2,6 +2,7 @@
 \usepackage{newtxtext,newtxmath}
 \usepackage{enumitem}
 \usepackage{tikz}
+\usepackage[ISO]{diffcoeff}
 
 \tikzset{>=latex}
 
@@ -119,35 +120,35 @@ infinitesimal area $d\mb{A}$ (Fig.~\ref{fig:dA})
   \centering
   \begin{tikzpicture}[scale=1.3]
     \fill[gray!45](0,0)--(2,3)--(3,2.8)--cycle;
-    \node at (1.7,2) {$d\mb{A}$};
+    \node at (1.7,2) {$\dl\mb{A}$};
     \draw[->,thick](0,0)--(2,3)
     node[midway,left]{$\mb{r}$} node[pos=.95,right]{$\alpha$};
-    \draw[->,thick](2,3)--(3,2.8) node[midway,above]{$d\mb{r}$};
+    \draw[->,thick](2,3)--(3,2.8) node[midway,above]{$\dl\mb{r}$};
     \draw[dashed](3,2.8)--(0,0);
     \fill[black](0,0) circle(.07) node[right]{Sun};
     \fill[black](2,3) circle(.035)node[left]{Planet};
   \end{tikzpicture}
-  \caption{Infinitesimal area $d\mb{A}$ swept by a planet as it moves
-    $d\mb{r}$ in orbit.}
+  \caption{Infinitesimal area $\dl\mb{A}$ swept by a planet as it moves
+    $\dl\mb{r}$ in orbit.}
   \label{fig:dA}
 \end{figure}
 as it moves in orbit by an infinitesimal amount $d\mb{r}$, which can be
 computed by the area of the triangle:
 \begin{equation}
-  dA=\frac12rdr\sin\alpha
+  \dl A=\frac12r\dl r\sin\alpha
 \end{equation}
 or in vector form:
 \begin{equation}
-  d\mb{A}=\frac12\mb{r}\times d\mb{r}
+  \dl\mb{A}=\frac12\mb{r}\times \dl\mb{r}
 \end{equation}
-The direction of $d\mb{A}$, in this case, points into the
-page.\footnote{The direction of the vector is not important in the calculation,
-  but is only used to formalize the vector operations.} The time derivative of
-the area is called the \textbf{areal velocity}, which literally means how
-quickly the area is changing:
+The direction of $\dl\mb{A}$, in this case, points into the page.\footnote{The
+  direction of the vector is not important in the calculation, but is only used
+  to formalize the vector operations.} The time derivative of the area is
+called the \textbf{areal velocity}, which literally means how quickly the area
+is changing:
 \begin{equation}
-  \frac{d\mb{A}}{dt}
-  =\frac12\mb{r}\times\frac{d\mb{r}}{dt}
+  \diff{\mb{A}}t
+  =\frac12\mb{r}\times\diff{\mb{r}}t
   =\frac12\mb{r}\times\mb{v}
 \end{equation}
 We can express $\mb{r}\times\mb{v}$ in terms of angular momentum. Since angular
@@ -155,8 +156,7 @@ momentum is defined as $\mb{L}=m(\mb{r}\times\mb{v})\;\rightarrow\;
 \mb{r}\times\mb{v}=\mb{L}/m$. Since gravity is a central force, angular
 momentum is a constant, i.e:
 \begin{equation}
-  \boxed{\frac{d\mb{A}}{dt}
-    =\frac12(\mb{r}\times\mb{v})=\frac{\mb{L}}{2m}=
+  \boxed{\diff{\mb{A}}t=\frac12(\mb{r}\times\mb{v})=\frac{\mb{L}}{2m}=
     \text{constant}
   }
   \label{constant}
@@ -271,14 +271,14 @@ planet orbits a star:
   circular orbits), then there is an acceleration $a_r$, also in the radial
   direction:
   \begin{equation}
-    a_r=\frac{dv_r}{dt}\hat{\mb{r}}=\frac{d^2r}{dt^2}\hat{\mb{r}}
+    a_r=\diff{v_r}t\hat{\mb{r}}=\diff[2]rt\hat{\mb{r}}
   \end{equation}
 \end{itemize}
 Both components of acceleration are due entirely to gravitational force.
 Applying second law of motion, and dividing all sides by the mass of the planet
 $m$, we arrive at a differential equation:
 \begin{equation}
-  \frac{d^2r}{dt^2}-r\omega^2=-\frac{GM}{r^2}
+  \diff[2]rt-r\omega^2=-\frac{GM}{r^2}
   \label{ode1}
 \end{equation}
 In this equation, the ($+$) direction is radially outward from $M$. In the
@@ -298,33 +298,33 @@ is the reciprocal of $r$:
 We can then use the fact that angular momentum $L$ is constant to relate
 derivatives in time $t$ to derivatives in angle $\theta$:
 \begin{equation}
-  L=mr^2\omega=mr^2\frac{d\theta}{dt}=\frac{m}{u^2}\frac{d\theta}{dt}
+  L=mr^2\omega=mr^2\diff{\theta}t=\frac{m}{u^2}\diff{\theta}t
   \quad\longrightarrow\quad
-  \frac{d\theta}{dt}=\frac{Lu^2}m
-  %\frac{d}{d\theta}=\frac{Lu^2}{m}\frac{d}{dt}
+  \diff{\theta}t=\frac{Lu^2}m
 \end{equation}
 The derivative $\dot{r}$ can now be expressed in terms of derivatives of
 $\theta$ instead of time $t$:
 \begin{equation}
-  \frac{dr}{dt} =\frac{d}{dt}\left(\frac1u\right)
-  =-\frac1{u^2}\frac{du}{dt}=-\frac1{u^2}\frac{du}{d\theta}\frac{d\theta}{dt}
-  = -\frac1{u^2}\frac{du}{d\theta} \frac{Lu^2}{m}
-  = -\frac{L}m\frac{du}{d\theta}
+  \diff rt =\diff*{\left(\frac1u\right)}t
+  =-\frac1{u^2}\diff ut=-\frac1{u^2}\diff{u}{\theta}\diff{\theta}t
+  = -\frac1{u^2}\diff{u}{\theta} \frac{Lu^2}{m}
+  = -\frac{L}m\diff{u}{\theta}
 \end{equation}
 Repeating the same process for the second derivative $\ddot{r}$, we have
 \begin{equation}
-  \frac{d^2r}{dt^2} = \frac{d}{dt}\left(-\frac{L}{m}\frac{du}{d\theta}\right)
-  = -\frac{L}m\frac{d}{d\theta}\frac{du}{d\theta} \\
-  = -\left(\frac{L^2u^2}{m^2}\right)\frac{d^2u}{d\theta^2}
+  \diff[2] rt = \diff*{\left(-\frac{L}{m}\diff{u}{\theta}\right)}t
+  = -\frac{L}m\diff*{\left(\diff{u}{\theta}\right)}{\theta} \\
+  = -\left(\frac{L^2u^2}{m^2}\right)\diff[2]u\theta
 \end{equation}
 With this identity in hand, our original differential equation
 (Eq.~\ref{ode1}) becomes
 \begin{equation}
-  -\left(\frac{L^2u^2}{m^2}\right)\frac{d^2u}{d\theta^2} - \left(\frac{L}{m}\right)^2u^3 = -GMu^2
+  -\left(\frac{L^2u^2}{m^2}\right)\diff[2]u\theta-\left(\frac{L}{m}\right)^2u^3
+  = -GMu^2
 \end{equation}
 which can be simplified to:
 \begin{equation}
-  \frac{d^2u}{d\theta^2} + u = \frac{GMm^2}{L^2}
+  \diff[2]u\theta + u = \frac{GMm^2}{L^2}
   \label{newdiff}
 \end{equation}
 Anyone experienced with calculus can recognize that Eq.\ \ref{newdiff} is a
@@ -386,7 +386,7 @@ swept by the planet through one orbital period is the areal velocity (which is
 constant, as shown in Eq.\ \ref{constant}) integrated by time, from $t=0$ to
 $T$, the orbital period of the planet:
 \begin{equation}
-  A=\int dA=\int_0^T\frac{dA}{dt}dt=\frac{L}{2m}\int_0^Tdt=\frac{LT}{2m}
+  A=\int\dl A=\int_0^T\diff At\dl t=\frac{L}{2m}\int_0^T\dl t=\frac{LT}{2m}
   \label{A1}
 \end{equation}
 From proofing Kepler's first law in the previous section, we know that the

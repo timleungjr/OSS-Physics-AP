@@ -1,25 +1,21 @@
 \documentclass[12pt,aspectratio=169]{beamer}
-
 \usetheme{metropolis}
 \setbeamersize{text margin left=.5cm,text margin right=.5cm}
-
-\usefonttheme{professionalfonts}
-%\usepackage{graphicx}
+\usepackage[lf]{carlito}
 %\usepackage{tikz}
-%\usepackage{amsmath}
 \usepackage{mathpazo}
 %\usepackage{xcolor,colortbl}
 \usepackage{siunitx}
 \usepackage{hyperref}
+\usepackage{bm}
+\usepackage[ISO]{diffcoeff}
+\diffdef{}{ op-symbol=\mathsf{d} }
 
-\setsansfont{Roboto Light}
-\setmonofont{Ubuntu Mono}
 \setlength{\parskip}{0pt}
 \renewcommand{\baselinestretch}{1}
 
 \sisetup{
-  detect-all,
-  math-sf=\textsf,
+  inter-unit-ptoduct=\cdotp,
   per-mode=symbol
 }
 
@@ -29,9 +25,7 @@
 \institute{Olympiads School, Toronto, ON, Canada}
 \date{\today}
 
-\newcommand{\pic}[2]{
-  \includegraphics[width=#1\textwidth]{#2}}\newcommand{\mb}[1]{\mathbf{#1}
-}
+\newcommand{\pic}[2]{\includegraphics[width=#1\textwidth]{#2}}
 \newcommand{\eq}[2]{
   \vspace{#1}{\Large\begin{displaymath}#2\end{displaymath}}
 }
@@ -77,7 +71,7 @@
   Amp\`{e}re's law, as we know it, only applies to \emph{steady} currents $I_c$:
 
   \eq{-.1in}{
-    \oint_C \mb{B}\cdot d\boldsymbol{\ell}=\mu_0 I_c
+    \oint_C \bm{B}\cdot\dl\boldsymbol{\ell}=\mu_0 I_c
   }
   However,
   \begin{itemize}
@@ -91,7 +85,7 @@
 
 \begin{frame}{Modifying Amp\`{e}re's Law for Unsteady Current}
   \begin{center}
-    \pic{.3}{mag_displacement_fig3.png}
+    \pic{.3}{mag_displacement_fig3}
   \end{center}
   Four surfaces bounded by the same circular Amperian loop
   (think blowing a soap bubble). Surfaces \numlist{1;2;4} have currents
@@ -117,13 +111,12 @@
 
   \eq{-.1in}{
     \boxed{
-      \oint\mb{B}\cdot d\boldsymbol{\ell}=\mu_0\left( I +
-      \varepsilon_0 \frac{d\Phi_E}{dt}\right)
+      \oint\bm{B}\cdot\dl\boldsymbol{\ell}=\mu_0\left( I +
+      \varepsilon_0 \diff{\Phi_E}t\right)
     }
   }
 
-  Maxwell called the correction term
-  $\displaystyle \varepsilon_0\frac{d\Phi_E}{dt}$
+  Maxwell called the correction term $\displaystyle\varepsilon_0\diff{\Phi_E}t$
   \textbf{displacement current}.
   \begin{itemize}
   \item The word ``displacement'' has historical roots, but no physical meaning
@@ -151,14 +144,14 @@
 
   \vspace{-.2in}{\Large
     \begin{align*}
-      \oint\mb{E}\cdot d\mb{A} &=\frac{q}{\varepsilon_0} &
-      \text{\normalsize (Gauss, for $\mb{E}$)}\\
-      \oint\mb{B}\cdot d\mb{A} &= 0 &
-      \text{\normalsize (Gauss, for $\mb{B}$)}\\
-      \oint\mb{E}\cdot d\boldsymbol{\ell} &=-\frac{d\Phi_B}{dt} &
+      \oint\bm{E}\cdot\dl\bm{A} &=\frac{q}{\varepsilon_0} &
+      \text{\normalsize (Gauss, for $\bm{E}$)}\\
+      \oint\bm{B}\cdot\dl\bm{A} &= 0 &
+      \text{\normalsize (Gauss, for $\bm{B}$)}\\
+      \oint\bm{E}\cdot\dl\boldsymbol{\ell} &=-\diff{\Phi_B}t &
       \text{\normalsize (Faraday)}\\
-      \oint\mb{B}\cdot d\boldsymbol{\ell} &
-      =\mu_0I+\mu_0\varepsilon_0\frac{d\Phi_E}{dt} &
+      \oint\bm{B}\cdot\dl\boldsymbol{\ell} &
+      =\mu_0I+\mu_0\varepsilon_0\diff{\Phi_E}t &
       \text{\normalsize (Amp\`{e}re-Maxwell)}
     \end{align*}
   }
@@ -172,10 +165,10 @@
     
     {\Large
       \begin{align*}
-        \oint\mb{E}\cdot d\mb{A} &= 0 \\
-        \oint\mb{B}\cdot d\mb{A} &= 0 \\
-        \oint\mb{E}\cdot d\boldsymbol{\ell}&=-\frac{d\Phi_B}{dt} \\
-        \oint\mb{B}\cdot d\boldsymbol{\ell}&=\mu_0\epsilon_0\frac{d\Phi_E}{dt}\\
+        \oint\bm{E}\cdot\dl\bm{A} &= 0 \\
+        \oint\bm{B}\cdot\dl\bm{A} &= 0 \\
+        \oint\bm{E}\cdot\dl\boldsymbol{\ell}&=-\diff{\Phi_B}t \\
+        \oint\bm{B}\cdot\dl\boldsymbol{\ell}&=\mu_0\epsilon_0\diff{\Phi_E}t\\
       \end{align*}
     }
 
@@ -194,16 +187,16 @@
 
 
 \begin{frame}{Maxwell's Equations in Differential Form}
-  \framesubtitle{For Simplicity, in a Vacuum}
+  %{For Simplicity, in a Vacuum}
   \begin{columns}
 
     \column{.25\textwidth}
     {\Large
       \begin{align*}
-        \nabla\cdot\mb{E} &= 0\\
-        \nabla\cdot\mb{B} &= 0\\
-        \nabla\times\mb{E} &=-\frac{\partial\mb{B}}{\partial t}\\
-        \nabla\times\mb{B} &=\mu_o\varepsilon_o\frac{\partial\mb{E}}{\partial t}
+        \nabla\cdot\bm{E} &= 0\\
+        \nabla\cdot\bm{B} &= 0\\
+        \nabla\times\bm{E} &=-\diffp{\bm{B}}t \\
+        \nabla\times\bm{B} &=\mu_o\varepsilon_o\diffp{\bm{E}}t
       \end{align*}
     }
 
@@ -213,7 +206,7 @@
       which is obtained using vector calculus. Follow
       [\underline{\href{https://www.wikihow.com/Convert-Maxwell\%27s-Equations-into-Differential-Form}{this link}}] if you want to see how it's done.
     \item The differential form shows how the \emph{time derivatives} of
-      $\mb{E}$ and $\mb{B}$ are related to the \emph{spatial derivatives}
+      $\bm{E}$ and $\bm{B}$ are related to the \emph{spatial derivatives}
       of the other field
     \item The last two equations (Faraday's and Amp\`{e}re's laws) together
       represent two set of second order partial differential equations (one for
@@ -227,14 +220,12 @@
 \begin{frame}{Electromagnetic (EM) Wave}
   Maxwell's equations show that an ``electromagnetic wave'' must exist. In a
   simple case where electric and magnetic fields only vary in $x$ and time $t$
-  only, i.e.\ $\mb{E}=E(x,t)$ and $\mb{B}=B(x,t)$, Faraday's and Amp\`{e}re's
+  only, i.e.\ $\bm{E}=E(x,t)$ and $\bm{B}=B(x,t)$, Faraday's and Amp\`{e}re's
   laws reduce to:
 
   \eq{-.1in}{
-    \frac{\partial E}{\partial x}=-\frac{\partial B}{\partial t}
-    \quad\quad
-    \frac{\partial B}{\partial x}=
-    -\mu_0\varepsilon_0\frac{\partial E}{\partial t}
+    \diffp Ex=-\diffp Bt \quad\quad
+    \diffp Bx=-\mu_0\varepsilon_0\diffp Et
   }
 
   (A negative sign appears on the right-hand side because we have ignored some
@@ -243,12 +234,9 @@
   differentiation, we get:
 
   \eq{-.2in}{
-    \frac{\partial}{\partial x}
-    \left(\frac{\partial E}{\partial x}\right)
-    =-\frac{\partial}{\partial x}\left(\frac{\partial B}{\partial t}\right)
+    \diffp*{\left(\diffp Ex\right)}x =-\diffp*{\left(\diffp Bt\right)}x
     \quad\rightarrow\quad
-    \frac{\partial^2E}{\partial x^2}=
-    -\frac{\partial}{\partial t}\left(\frac{\partial B}{\partial x}\right)
+    \diffp[2]Ex = -\diffp*{\left(\diffp Bx\right)}t
   }
 \end{frame}
 
@@ -259,25 +247,21 @@
   Amp\`{e}re's law:
 
   \eq{-.2in}{
-    \frac{\partial^2E}{\partial x^2}=
-    -\frac{\partial}{\partial t}\left(\frac{\partial B}{\partial x}\right)
-    =-\frac{\partial}{\partial t}
-    \left(-\mu_0\varepsilon_0\frac{\partial E}{\partial t}\right)
+    \diffp[2] Ex = \diffp*{\left(\diffp Bx \right)}t
+    =-\diffp*{\left(-\mu_0\varepsilon_0\diffp Et\right)}t
   }
 
   Rearranging the terms on the right hand side, we get
 
   \eq{-.2in}{
-    \frac{\partial^2E}{\partial x^2}=
-    \mu_0\varepsilon_0\frac{\partial^2 E}{\partial t^2}
+    \diffp[2] Ex = \mu_0\varepsilon_0\diffp[2] Et
   }
   
   This is the standard form of the \textbf{wave equation} (a second-order
   partial differential equation):
 
   \eq{-.25in}{
-    \frac{\partial^2\Psi}{\partial x^2}=
-    \frac{1}{v^2}\frac{\partial^2\Psi}{\partial t^2}
+    \diffp[2]{\Psi}x = \frac1{v^2}\diffp[2]{\Psi}t
   }
 \end{frame}
 
@@ -294,8 +278,7 @@
     law to get
 
     \eq{-.1in}{
-      \frac{\partial^2 B}{\partial x^2}=
-      \mu_0\varepsilon_0\frac{\partial^2 B}{\partial t^2}
+      \diffp[2] Bx = \mu_0\varepsilon_0\diffp[2] Bt
     }
   \end{itemize}
 \end{frame}
@@ -308,21 +291,21 @@
   generally referred to as the \textbf{speed of light}.
 
   \eq{-.2in}{
-    v=c_0=\frac{1}{\sqrt{\mu_0\varepsilon_0}}=\SI{299792458}{m/s}
+    v=c_0=\frac1{\sqrt{\mu_0\varepsilon_0}}=\SI{299792458}{m/s}
   }
 
   The simplified 1D example cannot (because we have ignored the cross-product)
-  that $\mb{E}$ and $\mb{B}$ are actually perpendicular to each other
+  that $\bm{E}$ and $\bm{B}$ are actually perpendicular to each other
 \end{frame}
 
 
 
 \begin{frame}{Electromagnetic (EM) Wave}
-  A EM wave is considered to be \textbf{polarized} if both $\mb{E}$
-  (and therefore) $\mb{B}$ of the wave are confined to a single plane. The
-  direction of the polarization is the direction of $\mb{E}$.
+  A EM wave is considered to be \textbf{polarized} if both $\bm{E}$
+  (and therefore) $\bm{B}$ of the wave are confined to a single plane. The
+  direction of the polarization is the direction of $\bm{E}$.
   \begin{center}
-    \pic{.4}{em-20field.png}
+    \pic{.4}{em-20field}
   \end{center}
 \end{frame}
 

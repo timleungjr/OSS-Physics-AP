@@ -7,7 +7,8 @@
 \usepackage{tikz}
 \usepackage{mathpazo}
 \usepackage{bm}
-%\usepackage{xcolor,colortbl}
+\usepackage[ISO]{diffcoeff}
+\diffdef{}{ op-symbol=\mathsf{d} }
 
 \usetikzlibrary{patterns}
 
@@ -26,7 +27,7 @@
 \subtitle{Advanced Placement Physics C}
 \author[TML]{Dr.\ Timothy Leung}
 \institute{Olympiads School}
-\date{\today}
+\date{Last Updated: \today}
 
 \newcommand{\pic}[2]{\includegraphics[width=#1\textwidth]{#2}}
 \newcommand{\eq}[2]{\vspace{#1}{\Large\begin{displaymath}#2\end{displaymath}}}
@@ -218,7 +219,7 @@
     time derivative:
       
     \eq{-.2in}{
-      \boxed{\omega(t)=\frac{d\theta(t)}{dt}=\dot{\theta}}
+      \boxed{\omega(t)=\diff{\theta}t=\dot{\theta}}
     }
 
     $\theta$ is measured in \si{radians}, and $\omega$ in \si{rad/\s}
@@ -387,15 +388,15 @@
   Relationship between angular position and angular velocity:
 
   \eq{-.2in}{
-    \omega(t)=\frac{d\theta}{dt}\quad\quad
-    \theta(t)=\int\omega(t) dt +\theta_0
+    \omega(t)=\diff{\theta}t\quad\quad
+    \theta(t)=\int\omega(t)\dl t +\theta_0
   }
 
   Relationship between angular velocity and angular acceleration:
 
   \eq{-.2in}{
-    \alpha(t)=\frac{d\omega}{dt}=\frac{d^2\theta}{dt^2}
-    \quad\quad\omega(t)=\int\alpha(t) dt+\omega_0
+    \alpha(t)=\diff{\omega}t=\diff[2]{\theta}t
+    \quad\quad\omega(t)=\int\alpha(t)\dl t+\omega_0
   }
 
   The relationships are the same as in rectilinear motion.

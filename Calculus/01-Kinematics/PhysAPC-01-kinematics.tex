@@ -7,9 +7,10 @@
 \usepackage{mathpazo}
 \usepackage{bm}
 \usepackage{mathtools}
-
+\usepackage[ISO]{diffcoeff}
+\diffdef{}{ op-symbol=\mathsf{d} }
+  
 \sisetup{
-  %number-math-rm=\mathnormal,
   per-mode=symbol
 }
 \tikzset{>=latex}
@@ -28,7 +29,6 @@
 \newcommand{\iii}{\ensuremath\hat{\bm{\imath}}}
 \newcommand{\jjj}{\ensuremath\hat{\bm{\jmath}}}
 \newcommand{\kkk}{\ensuremath\hat{\bm{k}}}
-\newcommand{\mb}[1]{\ensuremath\mathbf{#1}}
 \newcommand{\eq}[2]{\vspace{#1}{\Large\begin{displaymath}#2\end{displaymath}}}
 
 
@@ -71,18 +71,6 @@
   \item Electricity and Magnetism
   \end{itemize}
 \end{frame}
-
-
-
-%\begin{frame}{Classroom Rules}
-%  \begin{itemize}
-%  \item Treat each other with respect
-%  \item Raise your hands if you have a question. Don't wait too long
-%  \item E-mail me at \texttt{tleung@olympiadsmail.ca} for any questions related
-%    to physics and math and engineering
-%  \item Do \textbf{\emph{not}} try to find me on social media
-%  \end{itemize}
-%\end{frame}
 
 
 
@@ -228,7 +216,7 @@
   
   \eq{-.2in}{
     \boxed{
-      \bm{v}(t)= \frac{d\bm{x}}{dt}
+      \bm{v}(t)= \diff{\bm{x}}t
     }
   }
   
@@ -237,9 +225,8 @@
   derivative in every component:
 
   \eq{-.15in}{
-    \bm{v}(t)= \frac{d\bm{x}}{dt}=
-    \frac{dx}{dt}\iii + \frac{dy}{dt}\jjj + \frac{dz}{dt}\kkk =
-    u\iii + v\jjj + w\kkk
+    \bm{v}(t)= \diff{\bm{x}}t=
+    \diff xt\iii + \diff yt\jjj + \diff zt\kkk = u\iii + v\jjj + w\kkk
   }
 \end{frame}
 
@@ -251,7 +238,7 @@
   
   \eq{-.2in}{
     \boxed{
-      \bm{x}(t)=\int\bm{v}(t)dt + \bm{x}_0
+      \bm{x}(t)=\int\bm{v}(t)\dl t + \bm{x}_0
     }
   }
   
@@ -259,7 +246,7 @@
   $t=\num{0}$. We can integrate each component to get $\bm{x}$:
 
  \eq{-.2in}{ \bm{x}(t)= \left(
-    \int u\iii + \int v\jjj + \int w\kkk \right) dt + \bm{x}_0
+    \int u\iii + \int v\jjj + \int w\kkk \right)\dl t + \bm{x}_0
   }
 \end{frame}
 
@@ -275,7 +262,7 @@
       \overline{\bm{v}}=
       \frac{\Delta\bm{x}}{\Delta t}=
       \frac{\bm{x}-\bm{x}_0}{t-t_0}=
-      \frac{\int_{t_0}^t\bm{v}dt}{t-t_0}
+      \frac{\int_{t_0}^t\bm{v}\dl t}{t-t_0}
     }
   }
   
@@ -301,7 +288,7 @@
 
   \eq{-.2in}{
     \boxed{
-      v=\frac{ds}{dt}
+      v=\diff st
     }
   }
   \begin{itemize}
@@ -315,7 +302,7 @@
   
   \eq{-.2in}{
     \boxed{
-      \overline{v}=\frac{s}{\Delta t}=\frac{\int_{t_0}^t vdt}{t-t_0}
+      \overline{v}=\frac{s}{\Delta t}=\frac{\int_{t_0}^t v\dl t}{t-t_0}
     }
   }
   
@@ -344,7 +331,7 @@
 
   \eq{-.25in}{
     \boxed{
-      \bm{a}(t)= \frac{d\bm{v}}{dt}=\frac{d^2\bm{x}}{dt^2}
+      \bm{a}(t)= \diff{\bm{v}}t=\diff[2]{\bm{x}}t
     }
   }
 
@@ -356,7 +343,7 @@
       \overline{\bm{a}}=
       \frac{\Delta\bm{v}}{\Delta t}
       =\frac{\bm{v}-\bm{v}_0}{t-t_0}
-      =\frac{\int_{t_0}^t\bm{a}dt}{t-t_0}
+      =\frac{\int_{t_0}^t\bm{a}\dl t}{t-t_0}
     }
   }
 
@@ -388,7 +375,7 @@
     
   \eq{-.2in}{
     \boxed{
-      \bm{v}(t)=\int\bm{a}(t)dt+\bm{v}_0
+      \bm{v}(t)=\int\bm{a}(t)\dl t+\bm{v}_0
     }
   }
 
@@ -396,7 +383,7 @@
 
   \eq{-.2in}{
     \bm{v}(t)=
-    \left(\int a_x\iii + \int a_y\jjj + \int a_z\kkk \right) dt +\bm{v}_0
+    \left(\int a_x\iii + \int a_y\jjj + \int a_z\kkk \right)\dl t +\bm{v}_0
   }
 \end{frame}
 
@@ -407,15 +394,14 @@
   of \si{\metre\per\second\cubed}:
 
   \eq{-.15in}{
-    \bm{j}=\frac{d\bm{a}}{dt}=\frac{d^2\bm{v}}{dt^2}=\frac{d^3\bm{x}}{dt^3}
+    \bm{j}=\diff{\bm{a}}t=\diff[2]{\bm{v}}t=\diff[3]{\bm{x}}t
   }
 
   The time derivative of jerk is \textbf{jounce}, or \textbf{snap}, with a
   unit of \si{\metre\per\second^4}:
   
   \eq{-.15in}{
-    \bm{s}=\frac{d\bm{j}}{dt}=\frac{d^2\bm{a}}{dt^2}=\frac{d^3\bm{v}}{dt^3}
-    =\frac{d^4\bm{x}}{dt^4}
+    \bm{s}=\diff{\bm{j}}t=\diff[2]{\bm{a}}t=\diff[3]{\bm{v}}t=\diff[4]{\bm{x}}t
   }
   
   The next two derivatives of snap are called \textbf{crackle} and
