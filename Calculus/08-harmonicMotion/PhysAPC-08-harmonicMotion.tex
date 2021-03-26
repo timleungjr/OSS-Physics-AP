@@ -1,7 +1,6 @@
 \documentclass[12pt,compress,aspectratio=169]{beamer}
 \usetheme{metropolis}
 \setbeamersize{text margin left=.5cm,text margin right=.5cm}
-%\usefonttheme{professionalfonts}
 \usepackage[lf]{carlito}
 \usepackage{siunitx}
 \usepackage{graphicx}
@@ -115,7 +114,6 @@
   Applying second law of motion in the $x$-direction:
 
   \eq{-.2in}{
-    %\sum F=F_s=ma\quad\longrightarrow\quad-kx=m\frac{d^2x}{dt^2}
     \sum F=F_s=ma\quad\longrightarrow\quad-kx=m\ddot{x}
   }
 
@@ -124,7 +122,7 @@
     coefficients}. In standard form:
 
   \eq{-.15in}{
-    \ddot{x}+\frac{k}mx=0    %\frac{d^2x}{dt^2}+\frac{k}mx=0
+    \ddot{x}+\frac{k}mx=0
   }
   
 
@@ -138,8 +136,7 @@
   derivative $\ddot{x}$ looks like $x$ but with a negative sign
 
   \eq{-.2in}{
-    \ddot{x}%\frac{d^2x}{dt^2}
-    +\frac{k}mx=0
+    \ddot{x}+\frac{k}mx=0
   }
 
   The obvious choices are the trigonometric functions $\sin(t)$ and $\cos(t)$.
@@ -180,7 +177,7 @@
 
 
 
-\begin{frame}{Mass on a Spring}{Angular Frequency}
+\begin{frame}{Mass on a Spring: Angular Frequency}
   Substituting expressions of $x(t)$ and $a(t)=\ddot{x}$ back into the ODE, we
   find that the solution is satisfied if $\omega$ is related to the spring
   constant and mass by:
@@ -205,6 +202,38 @@
   }
   
   Angular frequency, frequency, and period do not depend on amplitude $A$
+\end{frame}
+
+
+
+\begin{frame}
+  \begin{columns}
+    \column{.4\textwidth}
+
+    \begin{align*}
+      x(t)&=A\cos(\omega_0 t-\phi)\\
+      v(t)&=-A\omega_0\sin(\omega_0 t-\phi)\\
+      a(t)&=-A\omega_0^2\cos(\omega_0 t-\phi)=-\omega_0^2x
+    \end{align*}
+
+    \column{.6\textwidth}
+    \begin{tikzpicture}[yscale=.5]
+      \draw[->](0,-2)--(0,2)  node[left]{$x$};
+      \draw[->](-1,0)--(8,0) node[right]{$t$};
+      \draw[red,very thick,smooth,samples=80,domain=0:7.5]
+      plot(\x,{1.5*cos(90*\x)});
+      
+      \draw[->](0,-7)--(0,-3)  node[left]{$v$};
+      \draw[->](-1,-5)--(8,-5) node[right]{$t$};
+      \draw[blue,very thick,smooth,samples=80,domain=0:7.5]
+      plot(\x,{-1.5*sin(90*\x)-5});
+      
+      \draw[->](0,-12)--(0,-8)  node[left]{$a$};
+      \draw[->](-1,-10)--(8,-10) node[right]{$t$};
+      \draw[purple!70!black,very thick,smooth,samples=80,domain=0:7.5]
+      plot(\x,{-1.5*cos(90*\x)-10});
+    \end{tikzpicture}
+  \end{columns}
 \end{frame}
 
 
@@ -539,6 +568,22 @@
 \end{frame}
 
 
+
+\begin{frame}{Natural Frequency of a Simple Pendulum System}
+
+
+  \begin{center}
+    \begin{tikzpicture}
+      \draw[->](0,0)--(2.5,0) node[right]{$\phi$};
+      \draw[->](0,0)--(0,2.5) node[above]{$y$};
+      \draw[very thick](0,0)--(2,2) node[right]{$y=\phi$};
+      \draw[purple!70!black,very thick,smooth,samples=80,domain=0:2]
+      plot(\x,{sin(60*\x)}) node[midway,above]{$y=\sin(\phi)$};
+      \draw(1.5,.2)--(1.5,-.2) node[below]{$\pi/2$};
+    \end{tikzpicture}
+  \end{center}
+  
+\end{frame}
 
 \begin{frame}{Pendulum Example Problem}
   \textbf{Example:} A simple pendulum consists of a mass $m$ attached to a

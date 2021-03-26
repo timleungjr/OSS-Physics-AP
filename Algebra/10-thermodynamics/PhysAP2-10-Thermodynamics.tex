@@ -4,13 +4,12 @@
 %\usefonttheme{professionalfonts}
 \usepackage[lf]{carlito}
 \usepackage{tikz}
-\usepackage{bm}
 \usepackage{mathpazo}
+\usepackage{bm}
 \usepackage{xcolor,colortbl}
 \usepackage{siunitx}
 
 \sisetup{
-  %detect-all,
   inter-unit-product=\cdot,
   per-mode=symbol
 }
@@ -23,37 +22,27 @@
 \title{Topic 10: Thermodynamics}
 \subtitle{Advanced Placement Physics 2}
 \author[TML]{Dr.\ Timothy Leung}
-\institute{Olympiads School\\Toronto, ON, Canada}
+\institute{Olympiads School}
 \date{\today}
 
 \newcommand{\pic}[2]{
-  \begin{center}\includegraphics[width=#1\textwidth]{#2}\end{center}
+  \begin{center}
+    \includegraphics[width=#1\textwidth]{#2}
+  \end{center}
 }
-\newcommand{\mb}[1]{\mathbf{#1}}
-\newcommand{\eq}[2]{\vspace{#1}{\Large\begin{displaymath}#2\end{displaymath}}}
+\newcommand{\eq}[2]{
+  \vspace{#1}{\Large
+    \begin{displaymath}
+      #2
+    \end{displaymath}
+  }
+}
 
 \begin{document}
 
 \begin{frame}
   \maketitle
 \end{frame}
-
-
-
-%\begin{frame}
-%  \frametitle{Files for You to Download}
-%  Download from the school website:
-%  \begin{enumerate}
-%  \item\texttt{20-thermodynamics.pdf}---This presentation. If you want to print
-%    the slides on paper, I recommend printing 4 slides per page.
-%  \item\texttt{20-Homework.pdf}---Homework assignment for Classes 19 and 20,
-%    which cover Fluid Mechanics and Thermodynamics
-%  \end{enumerate}
-%
-%  \vspace{.2in}There are also three PDF files with supplemental information.
-%  Some of the information on those files are duplicates. Please download/print
-%  and read them.
-%\end{frame}
 
 
 
@@ -176,60 +165,56 @@
 
 
 
-%\begin{frame}{Thermal Expansion}
-%  When temperature $T$ of an object with length $L$ increases, the object
-%  \emph{usually} expands. The \emph{thermal strain} ($\Delta L/L$) is
-%  proportional the change in temperature ($\Delta T$) by the \textbf{coefficient
-%    of linear thermal expansion} ($\alpha$):
-%  
-%  \eq{-.15in}{
-%    \boxed{\frac{\Delta L}{L} =\alpha\Delta T}%\quad
-%    %\text{\normalsize where}\quad
-%    %\boxed{\alpha=\frac{1}{L}\frac{dL}{dT}}
-%  }
-%  \begin{center}
-%    \begin{tabular}{l|c|c}
-%      \rowcolor{pink}
-%      \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
-%      Length      & $L$  & \si{\metre}  \\
-%      Temperature & $T$  & \si{\kelvin} \\
-%      Coefficient of linear expansion & $\alpha$ & \si{\per\kelvin}
-%    \end{tabular}
-%  \end{center}
-%  $\alpha$ is independent of pressure for solids and liquids, but may vary
-%  with $T$.
-%\end{frame}
-%
-%
-%
-%\begin{frame}{Thermal Expansion}
-%  There is also a similar expression for
-%  \textbf{coefficient of volume expansion}:
-%  
-%  \eq{-.15in}{
-%    \boxed{\frac{\Delta V}{V}=\beta\Delta T}
-%    %\quad\text{\normalsize where}\quad
-%    %\boxed{\beta=\frac{1}{V}\frac{dV}{dT}}
-%  }
-%
-%  $\beta$ is also independent of pressure for solids and liquids,
-%  but may vary with $T$.
-%  \begin{center}
-%    \begin{tabular}{l|c|c}
-%      \rowcolor{pink}
-%      \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
-%      Volume      & $V$  & \si{\metre^3} \\
-%      Temperature & $T$  & \si{\kelvin} \\
-%      Coefficient of volume expansion & $\beta$ & \si{\per\kelvin} \\
-%    \end{tabular}
-%  \end{center}
-%  Careful application of calculus will show that for isotropic material (where
-%  $\alpha$ is the same in all direction)
-%
-%  \eq{-.4in}{
-%    \beta = 3\alpha
-%  }
-%\end{frame}
+\begin{frame}{Thermal Expansion}
+  When temperature $T$ of an object with length $L$ increases, the object
+  \emph{usually} expands. The \emph{thermal strain} ($\Delta L/L$) is
+  proportional the change in temperature ($\Delta T$) by the \textbf{coefficient
+    of linear thermal expansion} ($\alpha$):
+  
+  \eq{-.15in}{
+    \boxed{\frac{\Delta L}{L} =\alpha\Delta T}
+  }
+  \begin{center}
+    \begin{tabular}{l|c|c}
+      \rowcolor{pink}
+      \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
+      Length      & $L$  & \si{\metre}  \\
+      Temperature & $T$  & \si{\kelvin} \\
+      Coefficient of linear expansion & $\alpha$ & \si{\per\kelvin}
+    \end{tabular}
+  \end{center}
+  $\alpha$ is independent of pressure for solids and liquids, but may vary
+  with $T$.
+\end{frame}
+
+
+
+\begin{frame}{Thermal Expansion}
+  There is also a similar expression for \textbf{coefficient of volume
+    expansion}:
+  
+  \eq{-.15in}{
+    \boxed{\frac{\Delta V}V=\beta\Delta T}
+  }
+
+  $\beta$ is also independent of pressure for solids and liquids,
+  but may vary with $T$.
+  \begin{center}
+    \begin{tabular}{l|c|c}
+      \rowcolor{pink}
+      \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
+      Volume      & $V$  & \si{\metre\cubed} \\
+      Temperature & $T$  & \si{\kelvin} \\
+      Coefficient of volume expansion & $\beta$ & \si{\per\kelvin} \\
+    \end{tabular}
+  \end{center}
+  Careful application of calculus will show that for isotropic material (where
+  $\alpha$ is the same in all direction)
+
+  \eq{-.4in}{
+    \beta = 3\alpha
+  }
+\end{frame}
 
 
 
@@ -273,7 +258,7 @@
     \boxed{PV=Nk_BT}
   }
 
-  \vspace{-.15in}The constant $k_B=\SI{1.381e-23}{\joule/\kelvin}$ is called
+  \vspace{-.15in}The constant $k_B=\SI{1.381e-23}{\joule\per\kelvin}$ is called
   \textbf{Boltzmann's constant}. It is found experimentally to have the same
   value for any kind or amount of gas.
 \end{frame}
@@ -420,7 +405,7 @@
 \begin{frame}{Root Mean Square Speed}
   When studying the behavior of gases, the quantity of interest is often the
   average \emph{kinetic energy} of the molecules $\langle K\rangle$, which
-  scales with $v^2$. The weighted average of $K=\frac12mv^2$:\footnote{Again,
+  scales with $v^2$. The weighted average of kinetic energy:\footnote{Again,
     the proper calculus notation is the integral $\int_0^\infty v^2f(v)dv$.}
   \begin{displaymath}
     \langle K\rangle=\frac{\frac12mv_1+\cdots+\frac12mv_N^2}{N}
@@ -706,7 +691,7 @@
   \textcolor{green!80!black}{$W$} is the mechanical work\footnote{The full
     definition in calculus form is $W=\int PdV$ (i.e.\ pressure times change in
     volume) which is derived from the definition of mechanical work:
-    $W=\int\mb{F}\cdot d\mb{x}$ (force times distance).} done \emph{by}
+    $W=\int\bm{F}\cdot d\bm{x}$ (force times distance).} done \emph{by}
   the system to the surrounding.
 
   \eq{-.2in}{

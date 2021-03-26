@@ -1,5 +1,4 @@
 \documentclass[11pt]{article}
-
 %\usepackage[margin=1.2cm,top=2cm,bottom=2cm,letterpaper]{geometry}
 \usepackage[margin=1cm,top=1.5cm,bottom=1.5cm,papersize={8.5in,17in}]{geometry}
 \usepackage{enumitem}
@@ -100,17 +99,16 @@ $g=\SI{10}{\metre\per\second\squared}$ in all problems.
   \item Block $Y$ with mass $m_Y$ falls onto and sticks to block $X$, which is
     attached to a vertical spring, as shown in Figure 1. A short time later, as
     shown in Figure 2, the blocks are momentarily at rest. At that moment,
-    block $Y$ exerts a force of magnitude $F$ down on block $X$, and block $X$
-    exerts a force of magnitude $F$ up on block $Y$. Which of the following
-    correctly relates $F_\text{up}$, $F_\text{down}$, and $m_Yg$ at the
-    instant shown in Figure 2?
+    block $Y$ exerts a force of magnitude $F_\text{down}$ on block $X$, and
+    block $X$ exerts a force of magnitude $F_\text{up}$ on block $Y$. Which of
+    the following correctly relates $F_\text{up}$, $F_\text{down}$, and $m_Yg$ at
+    the instant shown in Figure 2?
     \begin{enumerate}[nosep,leftmargin=18pt,label=(\Alph*)]
     \item$\left(F_\text{up}=F_\text{down}\right)>m_Yg$
     \item$\left(F_\text{up}=m_Yg\right)>F_\text{down}$
     \item$m_Yg > F_\text{up} > F_\text{down}$
     \item$F_\text{up}=F_\text{down}=m_Yg$
     \end{enumerate}
-    %\vspace{.7in}
     \columnbreak
     
     \begin{center}
@@ -167,7 +165,7 @@ $g=\SI{10}{\metre\per\second\squared}$ in all problems.
     top of a frictionless track of height $h$, as shown above. The block is
     released, loses contact with the spring at point $B$, and slides along the
     track until it passes point $C$, also at height $h$. How do the potential
-    energy U of the block-Earth system and the kinetic energy $K$ of the block
+    energy $U$ of the block-Earth system and the kinetic energy $K$ of the block
     at point $C$ compare with those at point $A$?
 
     \begin{tabular}{ccc}
@@ -177,7 +175,7 @@ $g=\SI{10}{\metre\per\second\squared}$ in all problems.
       (A) & $U_C=U_A$ & $K_C=K_A$ \\
       (B) & $U_C=U_A$ & $K_C>K_A$ \\
       (C) & $U_C>U_A$ & $K_C=K_A$ \\
-      (D) & $U_C>U_A$ & $K_C>K_A$ \\
+      (D) & $U_C>U_A$ & $K_C>K_A$
     \end{tabular}
     \vspace{.7in}
     
@@ -295,8 +293,7 @@ $g=\SI{10}{\metre\per\second\squared}$ in all problems.
     by Earth on each satellite and the speed $v$ of each satellite?
 
     \begin{tabular}{ccc}
-      & Force & Speed\\
-      \hline
+      & Force & Speed\\ \hline
       (A) & $F_1>F_2$ & $v_1>v_2$ \\
       (B) & $F_1>F_2$ & $v_2>v_1$ \\
       (C) & $F_2>F_1$ & $v_1>v_2$ \\
@@ -351,9 +348,8 @@ $g=\SI{10}{\metre\per\second\squared}$ in all problems.
     
     \begin{center}
       \begin{tikzpicture}[xscale=1.7]
-        \draw[very thick,->](0,0)--(3.3,0)
-        node[pos=0,below left]{$O$} node[right]{$x$ (m)};
-        \draw[very thick,->](0,0)--(0,1.8) node[above]{$A$ (m)};
+        \draw[very thick,->](0,0)--(3.3,0) node[right]{$x$};
+        \draw[very thick,->](0,0)--(0,1.8) node[above]{$A$};
         \foreach \x in {.5,1.5,2.5} \draw(\x,.1)--(\x,-.1);
         \foreach \x in {1,2,3} \draw(\x,.1)--(\x,-.1) node[below]{\x};
         \draw(.1,1.2)--(-.1,1.2) node[left]{.003};
@@ -488,17 +484,19 @@ $g=\SI{10}{\metre\per\second\squared}$ in all problems.
     
     \begin{center}
       \begin{tikzpicture}[scale=1.7]
-        \draw[thick](0,0) circle(1);
-        \draw[thick](-1,0)--(1,0);
-        \draw[thick,fill=gray](-1,0) circle(.05) node[left]{$m$};
-        \draw[thick,fill=gray]( 1,0) circle(.05) node[right]{$2M$};
-        \draw[thick,rotate=60](-1,0)--(1,0);
+        \begin{scope}[thick]
+        \draw (0,0) circle(1);
+        \draw (-1,0)--(1,0);
+        \draw[fill=gray](-1,0) circle(.05) node[left]{$m$};
+        \draw[fill=gray]( 1,0) circle(.05) node[right]{$2M$};
+        \draw[rotate=60](-1,0)--(1,0);
         \begin{scope}[rotate=-60]
-          \draw[thick](-1,0)--(1,0) node[pos=.25,above right]{$R$};
-          \draw[thick,fill=gray](-1,0) circle(.05) node[above left]{$M$};
+          \draw (-1,0)--(1,0) node[pos=.25,above right]{$R$};
+          \draw[fill=gray](-1,0) circle(.05) node[above left]{$M$};
         \end{scope}
-        \draw[<->,thick](-.35,0) arc(180:120:.35) node[midway,left]{\ang{60}};
-        \draw[thick,fill=white](0,0) circle(.06);
+        \draw[<->](-.35,0) arc(180:120:.35) node[midway,left]{\ang{60}};
+        \draw[fill=white](0,0) circle(.06);
+        \end{scope}
       \end{tikzpicture}
     \end{center}
   \item A wheel of radius $R$ and negligible mass is mounted on a horizontal

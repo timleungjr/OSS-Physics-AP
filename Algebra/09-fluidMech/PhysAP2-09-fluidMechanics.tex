@@ -3,8 +3,8 @@
 \setbeamersize{text margin left=.5cm,text margin right=.5cm}
 \usepackage[lf]{carlito}
 \usepackage{tikz}
-\usepackage{bm}
 \usepackage{mathpazo}
+\usepackage{bm}
 \usepackage{xcolor,colortbl}
 \usepackage{siunitx}
 \setlength{\parskip}{0pt}
@@ -12,7 +12,6 @@
 
 \sisetup{
   inter-unit-product=\cdotp,
-  %number-math-rm=\mathnormal,
   per-mode=symbol
 }
 \tikzset{
@@ -89,7 +88,7 @@
   }
   \begin{itemize}
   \item Unit for density is \textbf{kilograms per meter cubed}
-    (\si{\kilo\gram\per\metre^3})
+    (\si{\kilo\gram\per\metre\cubed})
   \item Below Mach number $M\approx 0.3$, density can be assumed to be constant
     throughout the fluid
   \item May be dependent on temperature by basic thermal expansion
@@ -209,7 +208,7 @@
     \end{enumerate}
 
     \column{.3\textwidth}
-    \pic{1}{home-fish-tank.jpg}
+    \pic{1}{home-fish-tank}
   \end{columns}
 \end{frame}
 
@@ -251,7 +250,7 @@
     \end{align*}
     
     \column{.45\textwidth}
-    \pic{1}{mano.png}
+    \pic{1}{mano}
   \end{columns}
 \end{frame}
 
@@ -286,19 +285,19 @@
   \item By hydrostatics, the pressure is higher at the bottom than at the top
   \end{itemize}
   \begin{center}
-    \pic{.3}{rock_fbvectors.png}
+    \pic{.3}{rock_fbvectors}
   \end{center}
 \end{frame}
 
 
 
-\begin{frame}{Buoyant Force}
+\begin{frame}{Buoyancy}
   Using some basic calculus (well, depends on who you ask), we can find the
-  pressure over the entire surface to find the total buoyant force $\mb{B}$ the
+  pressure over the entire surface to find the total buoyant force $\bm{B}$ the
   fluid exerts on the object. The expression is surprisingly simple:
   
   \eq{-.1in}{
-    \boxed{\mb{B} = \rho_\text{fluid}gV\bm{\hat{k}}=
+    \boxed{\bm{B} = \rho_\text{fluid}gV\bm{\hat{k}}=
       m_\text{fluid}g\bm{\hat{k}}}
   }
   
@@ -306,7 +305,7 @@
   $V$ is the volume displaced. The direction of the force is upward. This
   equation is known as \textbf{Archimedes' principle}.
   
-  \vspace{.25in}\textbf{Buoyance force has a magnitude that equals to the
+  \vspace{.25in}\textbf{Buoyant force has a magnitude that equals to the
     weight of the fluid displaced by the submerged object, pointing upward.}
 \end{frame}
 
@@ -315,7 +314,7 @@
 \begin{frame}{Buoyancy}
 
   \eq{0in}{
-    \boxed{\mb{B} = \rho_\text{fluid}gV\bm{\hat{k}}=
+    \boxed{\bm{B} = \rho_\text{fluid}gV\bm{\hat{k}}=
       m_\text{fluid}g\bm{\hat{k}}}
   }
 
@@ -326,10 +325,10 @@
   \end{itemize}
 
   \vspace{.15in}Objects immersed in a fluid have an ``apparent weight''
-  $\mb{W}'$ that is reduced by the buoyance force:
+  $\bm{W}'$ that is reduced by the buoyant force:
 
   \eq{-.2in}{
-    \mb{W}'=\mb{W}-\mb{B}=\rho'\mb{g}V
+    \bm{W}'=\bm{W}-\bm{B}=\rho'\bm{g}V
   }
   
   where $\rho'=\rho_\text{obj}-\rho_\text{fluid}$ is the relative density
@@ -351,7 +350,7 @@
   submarine submerges, water is pumped into the  ``ballast tanks'' in the hull
   hull to make the submarine heavier.
   \begin{center}
-    \pic{1}{risinglemur.png}
+    \pic{1}{risinglemur}
   \end{center}
 \end{frame}
 
@@ -415,7 +414,7 @@
   and out of it. The surfaces of the control volume is called the control
   surface ``CS''.
   \begin{center}
-    \pic{.5}{CV-CS.png}
+    \pic{.5}{CV-CS}
   \end{center}
 \end{frame}
 
@@ -428,12 +427,12 @@
 
   \vspace{-.35in}{\Large
     \begin{align*}
-      \frac{\partial\rho}{\partial t} + \nabla\cdotp(\rho\mb{v})&=0\\
-      \frac{\partial(\rho\mb{v})}{\partial t} +
-      \nabla(\rho\mb{v}\otimes\mb{v}) &= -\nabla p +\mb{f}+\mu\nabla^2\mb{v}\\
-      \frac{\partial e}{\partial t} + \nabla\cdotp(e\mb{v})&=
+      \frac{\partial\rho}{\partial t} + \nabla\cdotp(\rho\bm{v})&=0\\
+      \frac{\partial(\rho\bm{v})}{\partial t} +
+      \nabla(\rho\bm{v}\otimes\bm{v}) &= -\nabla p +\bm{f}+\mu\nabla^2\bm{v}\\
+      \frac{\partial e}{\partial t} + \nabla\cdotp(e\bm{v})&=
       -\nabla\cdotp p +\frac{1}{Re\; Pr}\nabla q +
-      \frac{1}{Re}\nabla\cdotp(\tau\cdotp\mb{v})
+      \frac{1}{Re}\nabla\cdotp(\tau\cdotp\bm{v})
     \end{align*}
 
   }
@@ -446,7 +445,7 @@
   conservation of mass:
 
   \eq{-.2in}{
-    \frac{\partial\rho}{\partial t} + \nabla\cdot(\rho\mb{v})=0
+    \frac{\partial\rho}{\partial t} + \nabla\cdot(\rho\bm{v})=0
   }
 
   \textbf{Meaning:} The increase in fluid mass in a fixed volume containing a
@@ -460,10 +459,10 @@
   momentum-impulse theorem applied to fluids in a volume:
 
   \eq{-.15in}{
-    \frac{\partial(\rho\mb{v})}{\partial t} +
-    \nabla(\rho\mb{v}\otimes\mb{v}) = -\nabla p +\nabla\cdot\bm{\tau}
-    +\rho\mb{g}
-    %+\mu\nabla^2\mb{v}
+    \frac{\partial(\rho\bm{v})}{\partial t} +
+    \nabla(\rho\bm{v}\otimes\bm{v}) = -\nabla p +\nabla\cdot\bm{\tau}
+    +\rho\bm{g}
+    %+\mu\nabla^2\bm{v}
   }
 
   \textbf{Meaning:} The increase in the total momentum of a fluid in a fixed
@@ -479,7 +478,7 @@
   the work-kinetic energy theorem applied to fluids:
   
   \eq{-.2in}{
-    \rho\frac{\partial e}{\partial t} + p(\nabla\cdotp\mb{v})=
+    \rho\frac{\partial e}{\partial t} + p(\nabla\cdotp\bm{v})=
     \nabla\cdotp(k\nabla T)+\Phi
   }
 
@@ -543,21 +542,21 @@
 %  \vspace{-.3in}{
 %    \begin{align*}
 %      \int_{CV}\frac{\partial\rho}{\partial t}dV+
-%      \int_{CS}\rho\mb{v}\cdot d\mb{A}=&0\\
+%      \int_{CS}\rho\bm{v}\cdot d\bm{A}=&0\\
 %    \end{align*}
 %  }
 %\end{frame}
 %  \eq{-.15in}{
-%    \boxed{\Phi_\text{V}=\int\mb{V}\cdot d\mb{A}}
+%    \boxed{\Phi_\text{V}=\int\bm{V}\cdot d\bm{A}}
 %  }
 %    
-%  \vspace{-.1in}where $\mb{V}$ is the velocity (vector field) at the surface,
-%  and $d\mb{A}$ is the infinitesimal area pointing \textbf{outwards}. We can
+%  \vspace{-.1in}where $\bm{V}$ is the velocity (vector field) at the surface,
+%  and $d\bm{A}$ is the infinitesimal area pointing \textbf{outwards}. We can
 %  also expressed volume flux using the outward normal unit vector
-%  $\hat{\mb{n}}$:
+%  $\hat{\bm{n}}$:
 %
 %  \eq{-.15in}{
-%    \boxed{\Phi_\text{V}=\int\mb{V}\cdot\hat{\mb{n}}dA}
+%    \boxed{\Phi_\text{V}=\int\bm{V}\cdot\hat{\bm{n}}dA}
 %  }
 %\end{frame}
 %
@@ -596,7 +595,7 @@
 \begin{frame}{Bernoulli Equation}
   Regions where Bernoulli equation is valid:
   \begin{center}
-    \pic{.8}{bernoulli.png}
+    \pic{.8}{bernoulli}
   \end{center}
 \end{frame}
 
@@ -604,7 +603,7 @@
 
 \begin{frame}{Inlet Outlet Flow}
   \begin{center}
-    \pic{.5}{physicsbook_fluids_graphik_26.png}
+    \pic{.5}{physicsbook_fluids_graphik_26}
   \end{center}
   In this example, the mass flowing at the inlet is the same as the flow out of
   it:
@@ -645,11 +644,12 @@
     \column{.57\textwidth}
     \textbf{Example 6:} Water at \SI{20}{\celsius} flows steadily through a
     closed tank, as shown in the figure. As section 1,
-    $D_1=\SI{6}{\centi\metre}$ and the volume flow is \SI{100}{\metre^3/h}. At
-    section 2, $D_2=\SI{5}{\centi\metre}$ and the average velocity is
-    \SI{8}{\metre\per\second}. If $D_3=\SI{4}{\centi\metre}$, what is
+    $D_1=\SI{6}{\centi\metre}$ and the volume flow is
+    \SI{100}{\metre\cubed\per\hour}. At section 2, $D_2=\SI{5}{\centi\metre}$
+    and the average velocity is \SI{8}{\metre\per\second}. If
+    $D_3=\SI{4}{\centi\metre}$, what is
     \begin{enumerate}
-    \item the flow rate $Q_3$ in \si{\metre^3/h}?
+    \item the flow rate $Q_3$ in \si{\metre\cubed\per\hour}?
     \item the average $v_3$ in \si{\metre\per\second}?
     \end{enumerate}
   \end{columns}
@@ -661,7 +661,7 @@
   \textbf{Example 7:} Find a relation between the nozzle discharge velocity
   $V$ and the tank free-surface height $h$. Assume frictionless flow.
   \begin{center}
-    \pic{.35}{EGL.png}
+    \pic{.35}{EGL}
   \end{center}
 
   \vspace{-.15in}{
@@ -671,13 +671,4 @@
     EGL is a constant.\par
   }
 \end{frame}
-%
-%
-%
-%\begin{frame}
-%  \frametitle{How Does A Wing Work?}
-%
-%  When air flows past a wing, a force is generated
-%\end{frame}
-%
 \end{document}

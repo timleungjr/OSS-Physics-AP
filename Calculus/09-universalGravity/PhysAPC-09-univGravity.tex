@@ -355,14 +355,16 @@
   \begin{columns}
     \column{.3\textwidth}
     \begin{tikzpicture}[scale=.45]
-      \draw[thick,fill=gray](0,0) circle(5);% node[above]{$m_1$};
-      \draw[thick,fill=white](0,0) circle(4.9);% node[above]{$m_1$};
-      \draw[thick,->,rotate=30](0,0)--(4.9,0) node[midway,below]{$R$};
+      \begin{scope}[thick]
+        \draw[fill=gray](0,0) circle(5);% node[above]{$m_1$};
+        \draw[fill=white](0,0) circle(4.9);% node[above]{$m_1$};
+        \draw[->,rotate=30](0,0)--(4.9,0) node[midway,below]{$R$};
+      \end{scope}
       \draw[fill=red!65](1,-1) circle(.2) node[below]{$m_2$};
     \end{tikzpicture}
 
     \column{.7\textwidth}
-    That $\bm{g}_{inside}=\bm{0}$ can be calculated by:
+    That $\bm{g}_\text{inside}=\bm{0}$ can be calculated by:
     \begin{itemize}
     \item Integrating the fields created by infinitesimal mass elements $dm$ at
       any point inside the shell, or
@@ -370,7 +372,7 @@
       electric field inside a charged conducting sphere:
       
       \eq{-.2in}{
-        \oint\bm{g}\cdot d\bm{A}=-4\pi GM_{encl}
+        \oint\bm{g}\cdot d\bm{A}=-4\pi GM_\text{encl}
       }
     \end{itemize}
   \end{columns}
@@ -511,7 +513,8 @@
 \begin{frame}{Gravitational Field Lines}
   \begin{center}
     \begin{tikzpicture}[scale=1.5]
-      \foreach \x in {0,...,9}\draw[red!50,ultra thick,rotate=36*\x](0,0)--(0,1);
+      \foreach \x in {0,...,9}
+      \draw[red!50,ultra thick,rotate=36*\x](0,0)--(0,1);
       \foreach \x in {0,...,9}
       \draw[red!50,<-,ultra thick,rotate around={36*\x:(0,0)}](0,.95)--(0,1.5);
       \draw[fill=blue!20,thick](0,0) circle(.3) node{$m$};
@@ -928,9 +931,7 @@
   \textbf{areal velocity}) is given by:
 
   \eq{-.15in}{
-    \frac{dA}{dt}
-    %=\frac12(\bm{r}\times\bm{v})
-    =\frac{L}{2m}=\text{constant}
+    \frac{dA}{dt}=\frac{L}{2m}=\text{constant}
   }
 
   The rate a planet sweeps out the area in orbit is its angular momentum around

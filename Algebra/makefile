@@ -7,14 +7,17 @@ all:
 	cd 06-rotMotion ; make
 	cd 07-SHM ; make
 	cd 08-mechWaves ; make
+	cd 09-fluidMechanics ; make
 
 clean:
 	rm -rf *.*~ *~ *.log
-	cd 06-rotMotion ; make clean
+	cd 06-rotMotion	; make clean
 	cd 07-SHM	; make clean
-	cd 08-mechWaves ; make clean
+	cd 08-mechWaves	; make clean
+	cd 09-fluidMech	; make clean
 public:
 	mkdir -p $(DESTINATION)
-	cd 06-rotMotion ; make public
+	cd 06-rotMotion	; make public
 	cd 07-SHM	; make public
-	cd 08-mechWaves ; make public
+	cd 08-mechWaves	; make public
+	cd 09-fluidMech	; make public

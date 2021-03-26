@@ -1,11 +1,11 @@
 \documentclass[11pt]{article}
-
-\usepackage[margin=1.7cm,top=2.5cm,bottom=2.5cm,letterpaper]{geometry}
+%\usepackage[margin=1.7cm,top=2.5cm,bottom=2.5cm,letterpaper]{geometry}
+\usepackage[margin=1cm,top=1.5cm,bottom=1.5cm,papersize={8.5in,17in}]{geometry}
 \usepackage{enumitem}
 \usepackage{tikz,graphicx,wrapfig}
 \usepackage{pgfplots}
 \usepackage{amsmath}
-\usepackage{txfonts}
+\usepackage{newtxtext,newtxmath}
 \usepackage[document]{ragged2e}
 \usepackage[none]{hyphenat}
 \usepackage{siunitx}
@@ -18,8 +18,10 @@
 \rhead{}
 \chead{}
 \lhead{}
-\lfoot{}\cfoot{-\textsf{\textbf{\thepage}}-}
-\rfoot{\textsf{\textbf{GO ON TO THE NEXT PAGE.}}}
+%\lfoot{}\cfoot{-\textsf{\textbf{\thepage}}-}
+%\rfoot{\textsf{\textbf{GO ON TO THE NEXT PAGE.}}}
+\lfoot{}
+\rfoot{}
 
 \newcommand{\pic}[2]{
   \begin{center}\includegraphics[width=#1\textwidth]{#2}\end{center}
@@ -27,11 +29,10 @@
 \newcommand{\mb}[1]{\ensuremath\mathbf{#1}}
 \sisetup{
   detect-all,
-  inter-unit-product =\ensuremath{\cdot{}},
-  per-mode=symbol,
-  group-separator={,},
+  inter-unit-product =\ensuremath{\cdot},
+  per-mode=symbol
 }
-
+\tikzset{>=latex}
 
 \begin{document}
 
@@ -50,12 +51,12 @@ minutes each to answer and are worth 12 points. Show your work for each
 part in the space provided after that part.
 
 \pic{.4}{swing-around}
-\begin{enumerate}[leftmargin=18pt]
+\begin{enumerate}
 \item A small sphere of mass $M$ is suspended by a string of length $L$. The
   sphere is made to move in a horizontal circle of radius $R$ at a constant
   speed, as shown above. The center of the circle is labeled point $C$, and the
   string makes an $\theta_0$ with the vertical.
-  \begin{enumerate}[leftmargin=18pt]
+  \begin{enumerate}
   \item Two students are discussing the motion of the sphere and make the
     following statements.
     
@@ -66,17 +67,17 @@ part in the space provided after that part.
 
     \vspace{.1in}Student 2: I see another problem. The tension force exerted by
     the string is at an angle from the vertical. Therefore, its vertical
-    component must be less than the weight Mg of the sphere. That means the net
-    force on the sphere has a downward vertical component, and the sphere
+    component must be less than the weight $Mg$ of the sphere. That means the
+    net force on the sphere has a downward vertical component, and the sphere
     should move downward as well as moving around in a circle.
 
-    \vspace{.1in}\begin{enumerate}[leftmargin=18pt]
+    \vspace{.1in}\begin{enumerate}
     \item What is one aspect of Student 1's reasoning that is incorrect?
     \item What is one aspect of Student 2's reasoning that is incorrect?
     \end{enumerate}
     
   \item
-    \begin{enumerate}[leftmargin=18pt]
+    \begin{enumerate}
     \item Derive an equation for the magnitude of the net force exerted on
       the sphere. Express your answer in terms of $M$, $\theta$, and physical
       constants, as appropriate.
@@ -95,19 +96,44 @@ part in the space provided after that part.
   $T$ as a function of string length $L$.
 
   \pic{.5}{T2-L}
-  \begin{enumerate}[leftmargin=18pt,resume]
+  \begin{enumerate}[resume]
   \item On the graph above, draw a best-fit line for the data. Then use the
     line to calculate a numerical value for the gravitational acceleration $g$.
     \newpage
 
-    \pic{.4}{sinusoidal}
+    \begin{center}
+      \begin{tikzpicture}[xscale=1.5,yscale=.8]
+        \draw[->,very thick](0,0)--(4.2,0) node[pos=0,left]{0};
+        \draw[->,very thick](0,-2)--(0,2.5);
+        \draw[dashed,thin](0,-2) grid(4,2);
+        \draw[domain=0:4,smooth,very thick] plot({\x},{2*cos(90*\x)});
+        \draw(0,2)--(-.1,2)node[left]{\footnotesize $\theta_\text{max}$};
+        \draw(0,-2)--(-.1,-2)node[left]{\footnotesize $\theta_\text{min}$};
+        \node at (2,-3) {\footnotesize Time (s)};
+        \foreach\x in {0.0,0.5,1.0}{
+          \draw(4*\x,-2)--(4*\x,-2.1) node[below]{\footnotesize \x};
+        }
+        \node[rotate=90] at (-.5,0) {\footnotesize Swing Angle, $\theta$};
+      \end{tikzpicture}
+    \end{center}
   \item The graph above shows the angle $\theta$ from the vertical as a function
     of time for the pendulum. On the axes below, sketch a graph of the
     gravitational potential energy of the sphere-Earth system for the same time
     interval. Take the zero of potential energy to be when the potential energy
     has its a minimum value.
-
-    \pic{.45}{graph-paper}
+    \begin{center}
+      \begin{tikzpicture}[xscale=1.8,yscale=.8]
+        \draw[->,very thick](0,-2)--(4.2,-2);
+        \draw[->,very thick](0,-2)--(0,2.5);
+        \draw[dashed,thin](0,-2) grid(4,2);
+        \node at (2,-3) {\footnotesize Time (s)};
+        \draw(0,-2)--(-.1,-2) node[left]{\footnotesize 0};
+        \foreach\x in {0.0,0.5,1.0}{
+          \draw(4*\x,-2)--(4*\x,-2.1) node[below]{\footnotesize \x};
+        }
+        \node[rotate=90] at (-.5,0) {\footnotesize Potential Energy};
+      \end{tikzpicture}
+    \end{center}
   \item As the sphere swings back and forth, it must also rotate a small amount
     during each swing. The figures below indicate the direction that the sphere
     rotates as it is swinging in each direction.
@@ -125,8 +151,7 @@ part in the space provided after that part.
   \end{enumerate}
   \newpage
 
-  \pic{.4}{masses-and-springs}
-  
+  \pic{.4}{masses-and-springs}  
 \item A spring with unstretched length $L_1$ is hung vertically, with the top
   end fixed in place, as shown in Figure 1 above. A block of mass $M$ is
   attached to the bottom of the spring, as shown in Figure 2, and the spring
@@ -170,10 +195,9 @@ part in the space provided after that part.
   the string touches the top of the pulley is 1.20 m. The linear mass density
   of the string is \SI{1.e-4}{\kilo\gram\per\metre}, and remains constant
   throughout the experiment.
-  \begin{enumerate}[leftmargin=18pt]
+  \begin{enumerate}
   \item Determine the wavelength of the standing wave.
   \item Determine the speed of the transverse waves along the string.
-    \newpage
   \item The speed of waves along the string increases with increase tension in
     the string. Indicate whether the value of $M$ should be increases or
     decreased in order to double the number of loops in the standing wave
