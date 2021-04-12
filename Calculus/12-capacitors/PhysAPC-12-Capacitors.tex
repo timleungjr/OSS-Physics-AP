@@ -6,6 +6,7 @@
 \usepackage{mathpazo}
 \usepackage{xcolor,colortbl}
 \usepackage{siunitx}
+\usepackage{circuitikz}
 \usepackage{bm}
 \usepackage[ISO]{diffcoeff}
 \diffdef{}{ op-symbol=\mathsf{d} }
@@ -35,25 +36,7 @@
 \end{frame}
 
 
-%\begin{frame}{Files for You to Download}
-%  Please download these files from the school website if you have not already
-%  done so:
-%  \begin{enumerate}
-%  \item\texttt{PhysAPC-12-Capacitors.pdf}---This presentation. If you want to
-%    print on paper, I recommend printing 4 pages per side.
-%  %\item\texttt{09-10-Homework.pdf}---Homework assignment for Topics 9
-%  %  (electrostatics) and 10 (Gauss' law).
-%  \end{enumerate}
-%
-%  \vspace{.2in}Please download/print the PDF file \emph{before} each class.
-%  There is no point copying notes that are already printed out for you.
-%  Instead, take notes on things I say that aren't necessarily on the slides.
-%\end{frame}
-
-
-
-\section{Capacitors}
-
+\section{Parallel-Plate Capacitors}
 
 \begin{frame}{Electric Field and Electric Potential Difference}
   Recall that the relationship between electrostatic force ($\bm{F}_q$) and
@@ -106,7 +89,7 @@
   difference simplifies to:
 
   \eq{-.2in}{
-    \boxed{E=\frac{\Delta V}{d}}
+    \boxed{E=\frac{\Delta V}d}
     \quad\text{or}\quad
     \boxed{\Delta V=Ed}
   }
@@ -115,8 +98,7 @@
       \rowcolor{pink}
       \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
       Electric field intensity & $E$ & \si{\newton\per\coulomb}\\
-      Electric potential difference between plates & $\Delta V$ &
-      \si{\volt} \\
+      Potential difference between plates & $\Delta V$ & \si{\volt} \\
       Distance between plates       & $d$ & \si{\metre}
     \end{tabular}
   \end{center}
@@ -148,14 +130,14 @@
   }
   
   Substituting this into the relationship between the plate voltage $V$ and
-  electric field, we find a relationship between the charges across the plates
-  and the voltage:
+  electric field, we find a linear relationship between the charges across the
+  plates and the voltage:
 
   \eq{-.2in}{
-    V=\textcolor{blue}{E}d=
+    \Delta V=\textcolor{blue}{E}d=
     \frac{\textcolor{blue}{Q}d}{\textcolor{blue}{A\epsilon_0}}
     \quad\longrightarrow\quad
-    \boxed{Q=\left[\frac{A\epsilon_0}{d}\right]V}
+    \boxed{Q=\left[\frac{A\epsilon_0}d\right]\Delta V}
   }
 \end{frame}
 
@@ -164,53 +146,158 @@
 \begin{frame}{Parallel-Plate Capacitors}
   Since area $A$, distance of separation $d$ and the vacuum permittivity
   $\epsilon_0$ are all constants, the relationship between charge $Q$ and
-  voltage $V$ is \emph{linear}. And the constant is called the
+  voltage $\Delta V$ is \emph{linear}. And the constant is called the
   \textbf{capacitance} $C$, defined as:
 
   \eq{-.15in}{
-    \boxed{C=\frac{Q}{V}}
+    \boxed{C=\frac{Q}{\Delta V}}
   }
 
   For parallel plates:
 
   \eq{-.2in}{
-    C=\frac{A\epsilon_0}{d}
+    C=\frac{A\epsilon_0}d
   }
 
   The unit for capacitance is a \textbf{farad} (named after Michael Faraday),
-  where $\SI{1}{\farad}=\SI{1}{\coulomb\per\volt}$.
+  where $\SI1\farad=\SI1{\coulomb\per\volt}$.
 \end{frame}
 
 
-%\begin{frame}{Parallel-Plate Capacitors}
-%  Capacitance $C$ is defined as the ratio between charge $Q$ ($+$ on one
-%  plate; $-$ on the other) and potential difference (voltage) $V$:
-%  
-%  \eq{-.05in}{
-%    \boxed{C=\frac{Q}{V}}
-%  }
-%  
-%  \begin{center}
-%    \begin{tabular}{l|c|l}
-%      \rowcolor{pink}
-%      \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
-%      Capacitance   & $C$   & \si{\farad} (farads)\\
-%      Charge        & $Q$   & \si{\coulomb} (coulombs)\\
-%      Voltage across the plates & $V$ & \si{\volt} (volts)
-%    \end{tabular}
-%  \end{center}
-%\end{frame}
+
+\begin{frame}{Storage of Electrical Energy}
+  \begin{center}
+    \pic{.45}{slide14}
+  \end{center}
+  \begin{itemize}
+  \item When charging up a capacitor, imagine positive charges moving from the
+    negatively charged plate to the positively charged plate
+  \item Initially neither plates are charged, so moving the first charge takes
+    very little work; as the electric field builds, more and more work needs
+    to be done
+  \end{itemize}
+\end{frame}
 
 
+
+\begin{frame}{Storage of Electrical Energy}
+  \begin{center}
+    \pic{.35}{slide14}
+  \end{center}
+  In the beginning---when the plates aren't charged---moving an infinitesimal
+  charge $\dl q$ across the plates, the infinitesimal work done $\dl U$ is very
+  small and related to the capacitance by:
+
+  \eq{-.2in}{
+    \dl U=V\dl q=\frac qC\dl q
+  }
+  As the electric field begins to form between plates, more and more work
+  is required to move the charges.
+\end{frame}
+
+
+
+\begin{frame}{Storage of Electrical Energy}
+  To fully charge the plates, the total work $U_c$ is the integral:
+
+  \eq{-.2in}{
+    U_c=\int\dl U=\int_0^Q\frac qC\dl q=\frac12\frac{Q^2}C
+  }
+
+  The work done is stored as a potential energy inside the capacitor. There are
+  different ways to express $U_c$ using definition of capacitance:
+
+  \eq{-.15in}{
+    \boxed{U_c=\frac12\frac{Q^2}{C}=\frac12QV=\frac12CV^2}
+  }
+\end{frame}
+
+
+\section{Cylindrical Capacitors}
+
+\begin{frame}{Cylindrical Capacitors}
+  \begin{columns}
+    \column{.4\textwidth}
+    \pic{1.05}{cylindrical-capacitor}
+
+    \column{.56\textwidth}
+    Not all capacitors are parallel plates. Cylindrical capacitors are also
+    popular.
+    \begin{itemize}
+    \item The capacitor has length $\ell$ which is much larger than the radii
+      of the inner \& outer cylinders ($a$, $b$)
+    \item Inner cylinder has total charge $Q$
+    \item Outer cylinder has total charge $-Q$
+    \item Inside the capacitor, the electric field in the radial direction
+    \item Outside of the capacitor, there is no electric field
+    \end{itemize}
+  \end{columns}
+\end{frame}
+
+
+
+\begin{frame}{Cylindrical Capacitors: Electric Field}
+  \begin{columns}
+    \column{.4\textwidth}
+    \pic{1.05}{cylindrical-capacitor}
+
+    \column{.56\textwidth}
+    Use Gauss's law to find the electric field between the cylinders, by placing
+    a Gaussian surface of radius $r$ between the cylinders: 
+
+    \eq{-.2in}{
+      \oint \bm{E}\cdot\dl A=2\pi rLE=\frac{Q}{\epsilon_0}
+    }
+    
+    which gives the expression:
+
+    \eq{-.23in}{
+      E=\frac{Q}{2\pi rL\epsilon_0}\quad\text{or}\quad
+      E=\frac{\lambda}{2\pi r\epsilon_0}
+    }
+    where $\lambda=Q/L$ is the linear charge density
+  \end{columns}
+\end{frame}
+
+
+
+
+\begin{frame}{Cylindrical Capacitors: Voltage Across the Cylinders}
+  Integrating the eclectic field to get voltage across the plates:
+
+  \eq{-.2in}{
+    \Delta V= -\int_a^b E\dl r=\frac{Q}{2\pi L\epsilon_0}\int_b^a\frac 1r\dl r
+    =\frac{Q}{2\pi L\epsilon_0}\ln\left[\frac ba\right]
+  }
+
+  Like the parallel plate, the relationship between voltage and charge is still
+  linear, but in this case, the capacitance is defined as:
+
+  \eq{-.2in}{
+    C=\frac{Q}{\Delta V}=\frac{2\pi L\epsilon_0}{\ln(b/a)}
+    \quad\longrightarrow\quad
+    \boxed{\frac CL=\frac{2\pi\epsilon_0}{\ln(b/a)}}
+  }
+
+  The capacitance is generally expressed by $C/L$ (unit \si{\farad\per\metre}).
+  Like the parallel-plate, the capacitance of the cylindrical capacitor also
+  only depends on the geometry (i.e.\ the raidii $a$ and $b$) and the
+  permittiviy.
+\end{frame}
+
+
+
+\section{Practical Capacitors}
 
 \begin{frame}{Practical Capacitors}
   \begin{columns}
     \column{.3\textwidth}
     \pic{1.15}{Figure_20_05_05a}
+
     \column{.7\textwidth}
     \begin{itemize}
-    \item Parallel-plate capacitors are very common in electric circuits,
-      but the vacuum between the plates is not very effective
+    \item Capacitors (both parallel-plate and cylindrical) are very common in
+      electric circuits, but the vacuum between the plates is not very effective
     \item Instead, a non-conducting \textbf{dielectric} material is inserted
       between the plates
     \item When the plates are charged, the electric field of the plates
@@ -229,7 +316,7 @@
   reduced by $\kappa$, the \textbf{dielectric constant}:
 
   \eq{-.25in}{
-    \boxed{\kappa=\frac{E_0}{E}}
+    \boxed{\kappa=\frac{E_0}E}
   }
 
   The capacitance of the plates with the dielectric is now amplified by the
@@ -267,64 +354,16 @@
 \end{frame}
 
 
-\begin{frame}{Storage of Electrical Energy}
-  \begin{center}
-    \pic{.45}{slide14}
-  \end{center}
-  \begin{itemize}
-  \item When charging up a capacitor, imagine positive charges moving from the
-    negatively charged plate to the positively charged plate
-  \item Initially neither plates are charged, so moving the first charge takes
-    very little work; as the electric field builds, more and more work needs
-    to be done
-  \end{itemize}
-\end{frame}
-
-
-
-\begin{frame}{Storage of Electrical Energy}
-  \begin{center}
-    \pic{.35}{slide14}
-  \end{center}
-  In the beginning---when the plates aren't charged---moving an infinitesimal
-  charge $dq$ across the plates, the infinitesimal work done $\dl U$ is very
-  small and related to the capacitance by:
-
-  \eq{-.2in}{
-    \dl U=V\dl q=\frac qC\dl q
-  }
-  As the electric field begins to form between plates, more and more work
-  is required to move the charges.
-\end{frame}
-
-
-
-\begin{frame}{Storage of Electrical Energy}
-  To fully charge the plates, the total work $U_c$ is the integral:
-
-  \eq{-.2in}{
-    U_c=\int\dl U=\int_0^Q\frac qC\dl q=\frac12\frac{Q^2}C
-  }
-
-  The work done is stored as a potential energy inside the capacitor. There are
-  different ways to express $U_c$ using efinition of capacitance:
-
-  \eq{-.15in}{
-    \boxed{U_c=\frac12\frac{Q^2}{C}=\frac12QV=\frac12CV^2}
-  }
-\end{frame}
-
-
-
 
 \begin{frame}{Notes About Storage of Electric Energy}
-  \begin{itemize}
-  \item The work done (i.e.\ the energy stored in the capacitor) is inversely
-    proportional to the capacitance:
+  The work done (i.e.\ the energy stored in the capacitor) is inversely
+  proportional to the capacitance:
 
-    \eq{-.2in}{
-      \dl U=V\dl q=\frac{q}{C}\dl q
-    }
+  \eq{-.2in}{
+    \dl U=V\dl q=\frac{q}{C}\dl q
+  }
+
+  \begin{itemize}
   \item The presence of a dielectric \emph{increases} the capacitance; therefore
     the work (and potential energy stored) to move the charge $\dl q$
     \emph{decreases} with the dielectric constant $\kappa$
@@ -333,4 +372,19 @@
   \end{itemize}
 \end{frame}
 
+
+
+\begin{frame}{Capacitors in Electric Circuits}
+  Capacitors are an important part of an electric circuits because it stores
+  energy in the electric field
+  \begin{itemize}
+  \item Denoted by this symbol (with reference to the parallel-plate capacitor):
+    \begin{center}
+      {\tikz \draw[thick] (3,0) to[C,o-o](5,0);}
+    \end{center}
+  \item Act like a voltage source
+  \item Unlike a battery, the voltage increases or decreases as the charge
+    across the capacitor plates change.
+  \end{itemize}
+\end{frame}
 \end{document}
