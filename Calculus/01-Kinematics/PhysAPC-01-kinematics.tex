@@ -117,30 +117,31 @@
 
 \section{Kinematics}
 
-\begin{frame}{Kinematics}
-  \textbf{Kinematics} is a discipline within mechanics concerning the
-  motion of bodies. It describes the mathematical relationship between 
-  \begin{itemize}
-  \item<alert@1> Position
-  \item<alert@1> Displacement
-  \item Distance 
-  \item<alert@1> Velocity
-  \item Speed
-  \item<alert@1> Acceleration
-  \end{itemize}
-  Kinematics does not deal with the causes of motion. The quantities that are
-  highlighted are vectors.
-\end{frame}
+%\begin{frame}{Kinematics}
+%  \textbf{Kinematics} is a discipline within mechanics concerning the
+%  motion of bodies. It describes the mathematical relationship between 
+%  \begin{itemize}
+%  \item<alert@1> Position
+%  \item<alert@1> Displacement
+%  \item Distance 
+%  \item<alert@1> Velocity
+%  \item Speed
+%  \item<alert@1> Acceleration
+%  \end{itemize}
+%  Kinematics does not deal with the causes of motion. The quantities that are
+%  highlighted are vectors.
+%\end{frame}
 
 
 
 \begin{frame}{Position}
-  \textbf{Position} ($\bm{x}$) describes the location of an object in a
-  coordinate system. The origin of%\footnote{The coordinate system is usually
+  \textbf{Position} ($\bm{x}(t)$) describes the location of an object in a
+  predefined coordinate system. %The origin of
+  %\footnote{The coordinate system is usually
   %\emph{Cartesian}, but it can also be \emph{polar}, \emph{cylindrical} or
   %\emph{spherical}}.
-  the coordinate system is called the ``reference point''.
-  The SI unit for position is \textbf{meter}, \si{\metre}.
+  %the coordinate system is called the ``reference point''.
+  %The SI unit for position is \textbf{meter}, \si{\metre}.
   
   \eq{-.2in}{
     \boxed{\bm{x}(t)=x(t)\iii + y(t)\jjj + z(t)\kkk}
@@ -169,22 +170,23 @@
       =(x-x_0)\iii + (y-y_0)\jjj + (z-z_0)\kkk
     }
   }
-  \begin{itemize}
-  \item IJK notation makes vector addition and subtraction less prone to errors
-  \item Since the reference point $\bm{x}_\text{ref}=\bm{0}$, the position
-    vector $\bm{x}$ is also its displacement from the reference point
-  \end{itemize}
+  %\begin{itemize}
+  %\item IJK notation makes vector addition and subtraction less prone to errors
+  %\item Since the reference point $\bm{x}_\text{ref}=\bm{0}$, the position
+  %  vector $\bm{x}$ is also its displacement from the reference point
+  %\end{itemize}
 \end{frame}
+
 
 
 \begin{frame}{Distance}
   \textbf{Distance} $s(t)$ is a quantity that is \emph{related} to displacement.
-  The unit for distance is also a meter (\si{\metre}).
+  %The unit for distance is also a meter (\si{\metre}).
   \begin{columns}
     \column{.7\textwidth}
     \begin{itemize}
-    \item The length of the path taken by an object when it travels from
-      $\bm{x}_0$ to $\bm{x}$
+    \item The \emph{length of the path} taken by an object when it travels from
+      $\bm{x}_0$ to $\bm{x}(t)$
     \item A scalar quantity
     \item Always positive, i.e.\ $s\geq 0$
     \item Although the magnitude of the displacement vector is also a scalar,
@@ -207,106 +209,95 @@
 
 
 
-\begin{frame}{Instantaneous Velocity}
-  Since position $\bm{x}$ is continuously differentiable in time $t$, the
-  \textbf{instantaneous velocity} can be found at any time by differentiating
-  $\bm{x}$ with respect to $t$. The unit for velocity is
-  \textbf{meters per second} (\si{\metre\per\second}):
+\begin{frame}{Instantaneous \& Average Velocity}
+  \textbf{Instantaneous velocity} $\bm{v}(t)$ is the time rate of change in
+  position. It is related to positiion $\bm{x}(t)$ by:
+  %\textbf{average velocity}
+%  $\overline{\bm{v}}$ are defined as:
+%  %Position $\bm{x}$ is continuously differentiable in time $t$, and the
+%  %\textbf{instantaneous velocity} can be found at any time by differentiating
+%  %$\bm{x}$ with respect to $t$:
+%  %The unit for velocity is
+%  %\textbf{meters per second} (\si{\metre\per\second}):
 
-  
-  \eq{-.2in}{
+  \eq{-.13in}{
     \boxed{
       \bm{v}(t)= \diff{\bm{x}}t
-    }
-  }
-  
-  Since $\bm{x}$ has $x$, $y$ and $z$ components along the $\iii$, $\jjj$ and
-  $\kkk$ directions that are linearly independent, we can take the time
-  derivative in every component:
-
-  \eq{-.15in}{
-    \bm{v}(t)= \diff{\bm{x}}t=
-    \diff xt\iii + \diff yt\jjj + \diff zt\kkk = u\iii + v\jjj + w\kkk
-  }
-\end{frame}
-
-
-
-\begin{frame}{Integrating Velocity to Get Position/Displacement}
-  Conversely, if instantaneous velocity $\bm{v}(t)$ is the time rate of change
-  of position $\bm{x}(t)$, then $\bm{x}(t)$ is the time integral of $\bm{v}(t)$:
-  
-  \eq{-.2in}{
-    \boxed{
+      \quad\quad
       \bm{x}(t)=\int\bm{v}(t)\dl t + \bm{x}_0
     }
   }
-  
-  The constant of integration $\bm{x}_0$ is the \emph{initial position} at
-  $t=\num{0}$. We can integrate each component to get $\bm{x}$:
 
- \eq{-.2in}{ \bm{x}(t)= \left(
-    \int u\iii + \int v\jjj + \int w\kkk \right)\dl t + \bm{x}_0
-  }
-\end{frame}
+  The constant of integration $\bm{x}_0$ evaluated at $t=0$. Likewise, the
+  \textbf{average velocity} $\overline{\bm{v}}(t)$ is the change in
+  position $\Delta\bm{x}(t)$ over a finite time interval $t$:
 
-
-
-\begin{frame}{Average Velocity}
-  \textbf{Average velocity} $\overline{\bm{v}}$ of an object is the
-  \emph{finite} change in position $\Delta\bm{x}$ over a \emph{finite} time
-  interval $\Delta t$:
-
-  \eq{-.3in}{
+  \eq{-.1in}{
     \boxed{
-      \overline{\bm{v}}=
-      \frac{\Delta\bm{x}}{\Delta t}=
-      \frac{\bm{x}-\bm{x}_0}{t-t_0}=
-      \frac{\int_{t_0}^t\bm{v}\dl t}{t-t_0}
+      \overline{\bm{v}}(t)=
+      \frac{\Delta\bm{x}}t=
+      \frac{\bm{x}(t)-\bm{x}_0}{t}=
+      \frac{\int_0^t\bm{v}\dl t}{t}
     }
   }
-  
-  Like instantaneous velocity, we can find the $x$, $y$ and $z$ components of
-  average velocity by separating components in each direction:
 
-  \eq{-.15in}{
-    \overline{\bm{v}}=
-    \frac{\Delta x}{\Delta t}\iii+
-    \frac{\Delta y}{\Delta t}\jjj+
-    \frac{\Delta z}{\Delta t}\kkk
-  }
-%  The notation $\overline{v}$ means that $v$ is averaged over \emph{time},
-%  while the notation $\langle v\rangle$ is used if $v$ is the average of
-%  many particles (called an \emph{ensemble average})
+  
+  %We can integrate each component to get $\bm{x}$:  
+
 \end{frame}
+
+
+
+
+%
+%
+%
+%\begin{frame}{Average Velocity}
+%  \textbf{Average velocity} $\overline{\bm{v}}$ of an object is the
+%  \emph{finite} change in position $\Delta\bm{x}$ over a \emph{finite} time
+%  interval $\Delta t$:
+%
+%  \eq{-.3in}{
+
+%  }
+%  
+%  Like instantaneous velocity, we can find the $x$, $y$ and $z$ components of
+%  average velocity by separating components in each direction:
+%
+%  \eq{-.15in}{
+%    \overline{\bm{v}}=
+%    \frac{\Delta x}{\Delta t}\iii+
+%    \frac{\Delta y}{\Delta t}\jjj+
+%    \frac{\Delta z}{\Delta t}\kkk
+%  }
+%%  The notation $\overline{v}$ means that $v$ is averaged over \emph{time},
+%%  while the notation $\langle v\rangle$ is used if $v$ is the average of
+%%  many particles (called an \emph{ensemble average})
+%\end{frame}
 
 
 
 \begin{frame}{Instantaneous \& Average Speed}
   \textbf{Instantaneous speed} $v$ is the time rate of change of
-  \emph{distance}.
+  \emph{distance}. It is the \emph{magnitude} of instantaneous velocity
+  (i.e.\ $v=|\bm{v}|$)
 
   \eq{-.2in}{
     \boxed{
       v=\diff st
     }
   }
-  \begin{itemize}
-  \item\vspace{-.1in}Since $s\geq 0$, instantaneous speed must also be
-    positive, i.e.\ $v\geq 0$
-  \item Instantaneous speed is also the magnitude of the instantaneous velocity
-    vector, i.e.\ $v=|\bm{v}|$
-  \end{itemize}
-  Likewise, \textbf{average speed} is similar to average velocity: it is the
-  distance travelled over a finite time interval.
+
+  Since $s\geq 0$, instantaneous speed must also be positive, i.e.\ $v\geq 0$.
+  \textbf{Average speed} $\overline{v}(t)$ is the distance $s(t)$ travelled
+  over a finite time interval $t$:
   
-  \eq{-.2in}{
+  \eq{-.15in}{
     \boxed{
-      \overline{v}=\frac{s}{\Delta t}=\frac{\int_{t_0}^t v\dl t}{t-t_0}
+      \overline{v}=\frac{s(t)}t=\frac{\int_0^t v\dl t}t
     }
   }
-  
-  The SI unit of speed is also meters per second \si{\metre\per\second}.
+  %The SI unit of speed is also meters per second \si{\metre\per\second}.
 \end{frame}
 
 
@@ -325,35 +316,39 @@
 
 \begin{frame}{Instantaneous \& Average Acceleration}
   In the same way that velocity is the time rate of change in position,
-  \textbf{instantaneous acceleration} $\bm{a}(t)$ is the time rate of change in
-  velocity, with a unit of \textbf{meters per second squared}
-  (\si{\metre\per\second\squared}):
+  \textbf{instantaneous acceleration} $\bm{a}(t)$ is related to
+  instantaneous velocity by:
+  %with a unit of \textbf{meters per second squared}
+  %(\si{\metre\per\second\squared}):
 
-  \eq{-.25in}{
+  \eq{-.2in}{
     \boxed{
       \bm{a}(t)= \diff{\bm{v}}t=\diff[2]{\bm{x}}t
+      \quad\quad
+      \bm{v}(t)=\int\bm{a}(t)\dl t+\bm{v}_0
     }
   }
 
-  Likewise, \textbf{average acceleration} $\overline{\bm{a}}$ is the finite
-  change in velocity $\Delta\bm{v}$ over a finite time interval $\Delta t$:
+  Likewise, \textbf{average acceleration} $\overline{\bm{a}}(t)$ is the finite
+  change in velocity $\Delta\bm{v}(t)$ over a finite time interval $t$:
 
   \eq{-.27in}{
     \boxed{
-      \overline{\bm{a}}=
-      \frac{\Delta\bm{v}}{\Delta t}
-      =\frac{\bm{v}-\bm{v}_0}{t-t_0}
-      =\frac{\int_{t_0}^t\bm{a}\dl t}{t-t_0}
+      \overline{\bm{a}}(t)=
+      \frac{\Delta\bm{v}(t)}t
+      =\frac{\bm{v}(t)-\bm{v}_0}t
+      =\frac{\int_0^t\bm{a}\dl t}t
     }
   }
 
   Note that acceleration only requires a \emph{change} in velocity. It does
-  \emph{not} necessarily mean an object has to speed up or slow down.
+  \emph{not} necessarily mean an object speeds up or slows down (e.g.\ uniform
+  circular motion).
 \end{frame}
 
 
 
-\begin{frame}{Special Notation}{When Differentiating With Time}
+\begin{frame}{Special Notation When Differentiating With Time}
   Physicists and engineers use a special notation when the derivative is
   taken with respect to \emph{time}, by writing a dot above the variable. For
   example:
@@ -369,23 +364,41 @@
 \end{frame}
 
 
+\begin{frame}{Linear Independence}
+  The $x$, $y$ and $z$ components of $\bm{x}$ along the $\iii$, $\jjj$ and
+  $\kkk$ directions are \emph{linearly independent}, therefore the time
+  derivative and integral can be separated into components:
 
-\begin{frame}{Integrating Acceleration to Get Velocity}
-  Velocity $\bm{v}(t)$ is the time integral of acceleration $\bm{a}(t)$:
-    
-  \eq{-.2in}{
-    \boxed{
-      \bm{v}(t)=\int\bm{a}(t)\dl t+\bm{v}_0
-    }
-  }
-
-  Again, we can integrate each component of the vector independently:
-
-  \eq{-.2in}{
-    \bm{v}(t)=
-    \left(\int a_x\iii + \int a_y\jjj + \int a_z\kkk \right)\dl t +\bm{v}_0
+  \vspace{-.3in}{\Large
+    \begin{align*}
+      \bm{v}(t) &=
+      \diff xt\iii + \diff yt\jjj + \diff zt\kkk = v_x\iii + v_y\jjj + v_z\kkk\\
+      \bm{a}(t) &=
+      \diff{v_x}t\iii + \diff{v_y}t\jjj + \diff{v_z}t\kkk =
+      a_x\iii + a_y\jjj + a_z\kkk      
+%      \bm{x}(t) &= \left(
+%      \int u\iii + \int v\jjj + \int w\kkk \right)\dl t + \bm{x}_0
+    \end{align*}
   }
 \end{frame}
+
+
+
+%\begin{frame}{Integrating Acceleration to Get Velocity}
+%  Velocity $\bm{v}(t)$ is the time integral of acceleration $\bm{a}(t)$:
+%    
+%  \eq{-.2in}{
+%    \boxed{
+%    }
+%  }
+%
+%  Again, we can integrate each component of the vector independently:
+%
+%  \eq{-.2in}{
+%    \bm{v}(t)=
+%    \left(\int a_x\iii + \int a_y\jjj + \int a_z\kkk \right)\dl t +\bm{v}_0
+%  }
+%\end{frame}
 
 
 
@@ -394,14 +407,15 @@
   of \si{\metre\per\second\cubed}:
 
   \eq{-.15in}{
-    \bm{j}=\diff{\bm{a}}t=\diff[2]{\bm{v}}t=\diff[3]{\bm{x}}t
+    \bm{j}(t)=\diff{\bm{a}}t=\diff[2]{\bm{v}}t=\diff[3]{\bm{x}}t
   }
 
   The time derivative of jerk is \textbf{jounce}, or \textbf{snap}, with a
   unit of \si{\metre\per\second^4}:
   
   \eq{-.15in}{
-    \bm{s}=\diff{\bm{j}}t=\diff[2]{\bm{a}}t=\diff[3]{\bm{v}}t=\diff[4]{\bm{x}}t
+    \bm{s}(t)=\diff{\bm{j}}t
+    =\diff[2]{\bm{a}}t=\diff[3]{\bm{v}}t=\diff[4]{\bm{x}}t
   }
   
   The next two derivatives of snap are called \textbf{crackle} and
@@ -413,18 +427,17 @@
 
 \begin{frame}{Acceleration as Functions of Velocity and Position}
   Acceleration may be expressed as functions of velocity and position rather
-  than of time, if an object's motion is dominated by these forces:
+  than of time, if motion is driven by these forces:
   \begin{itemize}
   \item Gravitational or electrostatic forces:
-    $\displaystyle a(x)=\frac{Gm_s}{x^2}\quad a(x)=\frac{kq_1q_2}{mx^2}$
-  \item Spring force: $\displaystyle a(x)=-\frac{k}{m}x$
+    $a(x)=\dfrac{Gm_s}{x^2}\quad a(x)=\dfrac{kq_1q_2}{mx^2}$
+  \item Spring force: $a(x)=-\dfrac kmx$
   \item Damping force: $a(v)=-bv$
-  \item Aerodynamic drag:
-    $\displaystyle a(v)=\left[\frac{\rho C_D A_\text{ref}}{2m}\right] v^2$
+  \item Aerodynamic drag: $a(v)=\left[\dfrac{\rho C_D A}{2m}\right] v^2$
   \end{itemize}
 
-  In these cases, solving for $x(t)$, $v(t)$ and $a(t)$ will require solving a
-  differential equation (see handout).
+  \vspace{.1in}In these cases, solving for $x(t)$, $v(t)$ and $a(t)$ will
+  require solving a differential equation (see handout).
 \end{frame}
 
 
@@ -435,31 +448,33 @@
   While kinematic problems in AP Physics C exams often require calculus, these
   basic kinematic equations for \underline{constant acceleration} are still a
   powerful tool.
-  \begin{columns}
-    \column{.45\textwidth}
+%  \begin{columns}
+%    \column{.45\textwidth}
 
-    \vspace{-.3in}{\Large
-      \begin{align*}
-        x &= x_0+ v_0t + \frac12at^2\\
-        v &= v_0+at\\
-        v^2 &= v_0^2+ 2a(x-x_0)
-      \end{align*}
-    }
+  \vspace{-.3in}{\Large
+    \begin{align*}
+      x &= x_0+ v_0t + \frac12at^2\\
+      v &= v_0+at\\
+      v^2 &= v_0^2+ 2a(x-x_0)
+    \end{align*}
+  }
     
-    \column{.55\textwidth}
-    The variables of interests are:
-    \begin{itemize}
-    \item Initial position: $x_0$
-    \item Position at time $t$: $x$
-    \item Initial velocity: $v_0$
-    \item Instantaneous velocity: $v$
-    \item Acceleration (constant): $a$
-    \end{itemize}
-  \end{columns}
-  Kinematic equations are sometimes called the ``Big-five'' or ``Big-four''
-  equations. Here, you will only be given three equations in your equation
-  sheet. You will still be required to integrate when acceleration is not
-  constant.
+%    \column{.55\textwidth}
+%    The variables of interests are:
+%    \begin{itemize}
+%    \item Initial position: $x_0$
+%    \item Position at time $t$: $x$
+%    \item Initial velocity: $v_0$
+%    \item Instantaneous velocity: $v$
+%    \item Acceleration (constant): $a$
+%    \end{itemize}
+%  \end{columns}
+  \vspace{-.1in}
+  %Kinematic equations are sometimes called the ``Big-five'' or ``Big-four''
+  %equations.
+  For AP Physics, you will only be given three kinematic equations in your
+  equation sheet. You will still be required to integrate when acceleration is
+  not constant.
 \end{frame}
 
 
@@ -469,9 +484,9 @@
 \begin{frame}{Motion Graphs}
   You should already be familiar with the basic motion graphs for 1D motion:
   \begin{itemize}
-  \item Position vs.\ time ($x-t$) graph
-  \item Velocity vs.\ time ($v-t$) graph
-  \item Acceleration vs.\ time ($a-t$) graph
+  \item Position vs.\ time graph
+  \item Velocity vs.\ time graph
+  \item Acceleration vs.\ time graph
   \end{itemize}
 
   However, depending on the situation, it may be more useful to plot motion
@@ -628,6 +643,8 @@
 \begin{frame}{Graphing ``Linear'' Functions}
   This concept extends to graphing other physical quantities not relating to
   motion:
+  
+  \vspace{.1in}
   \begin{itemize}
   \item To find the index of refraction of a material using Snell's law, plot
     $\sin\theta_i$ vs.\ $\sin\theta_2$ (rather than $\theta_1$ vs.\ $\theta_2$).
@@ -638,11 +655,11 @@
       \underbracket{\sin\theta_2}_x
     }
   \item To relate the period of oscillation of a simple pendulum to the length
-    of the pendulum, plot $T$ vs.\ $\sqrt{L}$:
+    of the pendulum, plot $T^2$ vs.\ $L$:
 
     \eq{-.2in}{
-      \underbracket{T}_y=\underbracket{\frac{2\pi}{\sqrt{g}}}_m
-      \underbracket{\sqrt{L}}_x
+      \underbracket{T^2}_y=\underbracket{\frac{4\pi^2}{g}}_m
+      \underbracket{L}_x
     }
   \end{itemize}
 \end{frame}
@@ -661,7 +678,7 @@
       \draw[dotted,domain=0:4,thick] plot (\x, {1.2*\x-.2*\x*\x});
       \draw[very thick,->](0,0)--(.75,.9)node[above]{$\bm{v}_0$};
       \draw[very thick,red!80!black,->]
-      (0,0)--(0,.9)node[midway,left]{$v_{y1}$};
+      (0,0)--(0,.9)node[midway,left]{$v_y$};
       \draw[very thick,blue!80!black,->]
       (0,0)--(.75,0)node[midway,below]{$v_x$};
       \draw[->](.5,0)arc(0:52:.5) node[pos=.6,right]{$\theta$};
@@ -674,20 +691,21 @@
     pointing \emph{up}
   \item The reference point is where the projectile is launched
   \item Consistent with the right-handed Cartesian coordinate system
+  \item The launch angle $\theta$ is measured above the the horizontal.
   \end{itemize}
 \end{frame}
 
 
 
 \begin{frame}{Horizontal ($x$) Direction}
-  No acceleration (i.e.\ $a_x=\num{0}$) along the horizontal direction,
+  There is no acceleration (i.e.\ $a_x=\num{0}$) along the horizontal direction,
   therefore horizontal velocity is constant. The kinematic equations reduce to:
 
   \eq{-.2in}{
-    x=v_xt=\left[v_0\cos\theta\right] t
+    x(t)=v_xt=\left[v_0\cos\theta\right] t
   }
 
-  where $x$ is the horizontal position at time $t$, $v_0$ is the
+  where $x(t)$ is the horizontal position at time $t$, $v_0$ is the
   magnitude of the initial velocity, $v_x=v_0\cos\theta$ is its horizontal
   component.
 \end{frame}
@@ -701,7 +719,7 @@
   coordinate system.) The important equation is this one:
 
   \eq{-.2in}{
-    y = \left[v_0\sin\theta\right]t-\frac12gt^2
+    y(t) = \left[v_0\sin\theta\right]t-\frac12gt^2
   }
 
   These two kinematic equations may also be useful:
@@ -742,13 +760,12 @@
   of deriving them during the exam.
   \begin{itemize}
   \item Time of flight
-    \eq{-.1in}{t_\text{max}=\frac{2v_0\sin\theta}{g}}
+    \eq{-.1in}{T=\frac{2v_0\sin\theta}{g}}
   \item Range
     \eq{-.1in}{R=\frac{v_0^2\sin(2\theta)}{g}}
   \item Maximum height
-    \eq{-.1in}{y_\text{max}=\frac{v_0^2\sin^2\theta}{2g}}
+    \eq{-.1in}{H=\frac{v_0^2\sin^2\theta}{2g}}
   \end{itemize}
-  The angle $\theta$ is measured above the the horizontal.
 \end{frame}
 
 

@@ -7,14 +7,12 @@
 \usepackage{xcolor,colortbl}
 \usepackage{siunitx}
 \usepackage{bm}
-%\usepackage{hyperref}
-%\usepackage[siunitx]{circuitikz} % to draw circuits!
+\usepackage[ISO]{diffcoeff}
+\diffdef{}{ op-symbol=\mathsf{d} }
 
 \setlength{\parskip}{0pt}
 \renewcommand{\baselinestretch}{1}
 
-%\setsansfont{Roboto Light}
-%\setmonofont{Ubuntu Mono}
 
 \sisetup{
   per-mode=symbol
@@ -22,7 +20,7 @@
 
 \tikzset{>=latex}
 
-\title{Hall Effect}
+\title{Topic 16: Hall Effect}
 \subtitle{Advanced Placement Physics C}
 \author{Dr.\ Timothy Leung}
 \institute{Olympiads School}
@@ -48,15 +46,16 @@
   charge carriers pass through a point in the conductor:
 
   \eq{-.15in}{
-    \boxed{I=\frac{dQ}{dt}} = \left(\frac{Q}{V}\right)\frac{dV}{dt}
-    =\left[ne\right]\left[Av_d\right]
+    \boxed{
+      I=\diff Qt = \frac QV \diff Vt =\left[ne\right]\left[Av_d\right]
+    }
   }
   where
   \begin{itemize}
   \item $Q/V$ is the amount of charges \emph{per volume}, which is just
     the charge carrier density $n$ times the elementary charge $e$
-  \item $dV/dt$ is the rate the volume of charges moves through the conductor,
-    give by the cross-section area of the conductor $A$ times the
+  \item $\diff V/t$ is the rate the volume of charges moves through the
+    conductor, give by the cross-section area of the conductor $A$ times the
     \textbf{drift velocity} $v_d$ of the charge carrier
   \end{itemize}
   For simplicity, we \emph{assume} that charge carriers are positive. While the
@@ -68,17 +67,17 @@
 \begin{frame}{Current Through the Conductor}
 
   \eq{-.1in}{
-    \boxed{I=\frac{dQ}{dt}=neAv_d}
+    \boxed{I=\diff Qt=neAv_d}
   }
   \begin{center}
     \begin{tabular}{l|c|c}
       \rowcolor{pink}
       \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
-      Current                               & $I$    & \si{\ampere} \\
+      Current                               & $I$  & \si{\ampere} \\
       Charge carrier density (carriers per volume) &
-      $n$ & \si{\per\metre^3} \\
-      Elementary charge                     & $e$    & \si{\coulomb}\\
-      Cross-section area of the conductor   & $A$ & \si{\metre^2}\\
+      $n$ & \si{\per\metre\cubed} \\
+      Elementary charge                     & $e$ & \si{\coulomb}\\
+      Cross-section area of the conductor   & $A$ & \si{\metre\squared}\\
       Drift velocity of the charge carriers & $v_d$ & \si{\metre\per\second}
     \end{tabular}
   \end{center}
@@ -114,10 +113,10 @@
     \begin{tabular}{l|c|c}
       \rowcolor{pink}
       \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
-      Charge carrier density   & $n$    & \si{\per\metre^3} \\
-      Density of material      & $\rho$ & \si{\kilo\gram\per\metre^3} \\
+      Charge carrier density   & $n$    & \si{\per\metre\cubed} \\
+      Density of material      & $\rho$ & \si{\kilo\gram\per\metre\cubed} \\
       Number of free electrons per atom & $k$ & \\
-      Avogadro's number        & $N_A$  & \si{/\mol}\\
+      Avogadro's number        & $N_A$  & \si{\per\mol}\\
       Molar mass               & $M$    & \si{\kilo\gram\per\mol}
     \end{tabular}
   \end{center}
