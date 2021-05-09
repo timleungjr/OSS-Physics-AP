@@ -259,7 +259,7 @@
     \boxed{R = \rho\frac LA}
   }
   
-  \vspace{-.2in}\begin{columns}[t]
+  \begin{columns}[t]
     \column{.5\textwidth}
     \centering
     \begin{tabular}{c|c|c}
@@ -796,27 +796,29 @@
     and the capacitor is already charged to $V_c=Q_\text{tot}/C$. What happens
     when the current begin to flow?
     
-    \vspace{.2in}As current starts to flow, the charge on the capacitor
-    decrease. Over time
-    the current decreases, until the capacitor is fully discharged, and current
-    stops flowing.
+    \vspace{.15in}As current starts to flow, the charge on the capacitor
+    decreases. Over time the current decreases, until the capacitor is fully
+    discharged, and current stops flowing.
   \end{columns}
 
-  \vspace{.15in}Apply the voltage law for the circuit, and substitute
-  the definition of current $I=\diff Q/t$ and the voltage across a capacitor
+  \vspace{.15in}Now we apply the voltage law for the circuit. In this case,
+  as the current flow in the circuit \emph{decreases} the total charge in the
+  capacitor, $I=-\diff Q/t$, while the voltage across a capacitor is
   $V_c=Q/C$:
 
-  \eq{-.15in}{V_c-IR=0\quad\rightarrow\quad -\frac QC-R\diff Qt=0}
+  \eq{-.25in}{
+    V_c-IR=0\quad\rightarrow\quad
+    \frac QC+R\diff Qt=0}
 \end{frame}
 
 
 \begin{frame}{Discharging a Capacitor}
-  A separation of variable, gives the first-order linear differential
-  equation:
+  Separating the variable gives the first-order linear differential equation:
 
   \eq{-.2in}{
     \frac{\dl Q}{Q}=\frac{-\dl t}{RC}
   }
+  
   which we can now integrate and ``exponentiate'':
 
   \eq{-.15in}{
@@ -879,8 +881,8 @@
   \vspace{.2in}Again, separating variables, and integrating, we get:
 
   \eq{-.2in}{
-    \int\frac{\dl Q}{CV-Q}=\int\frac{-\dl t}{RC}
-    \quad\rightarrow\quad\ln(CV-Q)=\frac{-t}{RC}+K
+    \int\frac{\dl Q}{CV-Q}=\int\frac{\dl t}{RC}
+    \quad\rightarrow\quad-\ln(CV-Q)=\frac{t}{RC}+K
   }
  \end{frame}
 
