@@ -7,7 +7,6 @@
 \usepackage{cancel}
 
 \sisetup{
-  %detect-all,
   per-mode=symbol
 }
 \tikzset{>=latex}
@@ -15,12 +14,6 @@
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{8pt}
 \setlength{\headheight}{26pt}
-
-\newcommand{\mb}[1]{\ensuremath\mathbf{#1}}
-\newcommand{\iii}{\ensuremath\hat{\bm{\imath}}}
-\newcommand{\jjj}{\ensuremath\hat{\bm{\jmath}}}
-\newcommand{\kkk}{\ensuremath\hat{\bm{k}}}
-\newcommand{\pic}[2]{\includegraphics[width=#1\textwidth]{#2}}
 
 \newcommand\vertarrowbox[2]{%
     \begin{array}[t]{@{}c@{}} #1 \\
@@ -48,7 +41,7 @@ In analyzing one-dimensional motion, particularly in experiments, we often use
 \textbf{motion graphs} to graphically express how motion quantities (position,
 velocity, acceleration) evolves in time. The basic motion graphs most familiar
 to physics students are:
-\begin{itemize}[noitemsep,topsep=0pt,leftmargin=15pt]
+\begin{itemize}[nosep]
 \item position vs.\ time (or displacement vs.\ time)
 \item velocity vs.\ time
 \item acceleration vs.\ time
@@ -97,21 +90,21 @@ finding the acceleration using only the position graph is much more difficult.
 \begin{figure}[!ht]
   \centering
   \begin{tikzpicture}[scale=.7]
-    \draw[->,thick] (0,0)--(4.5,0) node[pos=1,right]{$t$};
-    \draw[->,thick] (0,-1.5)--(0,4.5) node[pos=1,above]{$d$};
+    \draw[->,thick] (0,0)--(4.5,0) node[right]{$t$};
+    \draw[->,thick] (0,-1.5)--(0,4.5) node[above]{$d$};
     \draw[smooth,samples=20,domain=0:4,red!80!black,ultra thick]
     plot({\x},{0.35*(\x-1)*(\x-1)+1});
   \end{tikzpicture}
   \hspace{.15in}
   \begin{tikzpicture}[scale=.7]
-    \draw[->,thick] (0,0)--(4.5,0) node[pos=1,right]{$t$};
-    \draw[->,thick] (0,-1.5)--(0,4.5) node[pos=1,above]{$v$};
+    \draw[->,thick] (0,0)--(4.5,0) node[right]{$t$};
+    \draw[->,thick] (0,-1.5)--(0,4.5) node[above]{$v$};
     \draw[red!80!black,ultra thick](0,-1)--(4,2.5);
   \end{tikzpicture}
   \hspace{.15in}
   \begin{tikzpicture}[scale=.7]
-    \draw[->,thick] (0,0)--(4.5,0) node[pos=1,right]{$t$};
-    \draw[->,thick] (0,-1.5)--(0,4.5) node[pos=1,above]{$a$};
+    \draw[->,thick] (0,0)--(4.5,0) node[right]{$t$};
+    \draw[->,thick] (0,-1.5)--(0,4.5) node[above]{$a$};
     \draw[red!80!black,ultra thick](0,1)--(4,1);
   \end{tikzpicture}
   \caption{Displacement, velocity and acceleration as functions of time for
@@ -122,8 +115,8 @@ finding the acceleration using only the position graph is much more difficult.
 
 \section{Position vs. Time Squared}
 In many cases, the position graph in Fig.~\ref{uniform-acceleration} would be
-obtained by plotting experimental values of $x$ and $t$. For example, and then making
-curve fit of the data, by making an educated guess that acceleration is
+obtained by plotting experimental values of $x$ and $t$. For example, and then
+making curve fit of the data, by making an educated guess that acceleration is
 uniform\footnote{This would have to be done through a thorough analysis of all
   the forces acting on an object.}, and therefore the graph is a parabola.
 However, one of the weaknesses of this graph is the difficulty in determining
@@ -134,13 +127,13 @@ Inevitably, some accuracy will be lost.
 
 One way to get around the problem is that, \emph{if initial velocity is zero},
 i.e.\ $v_0=0$, then instead of plotting position $x$ directly against time $t$,
-we re-interpret the the kinematic equation as a linear function in the form
+we re-interpret the kinematic equation as a linear function in the form
 of $y=mx+b$:
 \begin{equation}
-  \vertarrowbox{x}{y}=\vertarrowbox{\left(\frac12 a\right)}{m}
-  \vertarrowbox{t^2}{x}+
+  \vertarrowbox{x}{$y$}=\vertarrowbox{\left(\frac12 a\right)}{$m$}
+  \vertarrowbox{t^2}{$x$}+
   \cancel{v_0t}+
-  \vertarrowbox{x_0}{b}
+  \vertarrowbox{x_0}{$b$}
 \end{equation}
 and plot $x$ against the \emph{square} of time, $t^2$. If acceleration is
 indeed uniform, then the graph would be linear. That constant acceleration is
@@ -154,8 +147,8 @@ $t^2$ graphs both describe the same motion.
 \begin{figure}[!ht]
   \centering
   \begin{tikzpicture}[scale=.7]
-    \draw[->,thick] (0,0)--(4.5,0) node[pos=1,right]{$t$};
-    \draw[->,thick] (0,-1.5)--(0,4.5) node[pos=1,above]{$d$};
+    \draw[->,thick] (0,0)--(4.5,0) node[right]{$t$};
+    \draw[->,thick] (0,-1.5)--(0,4.5) node[above]{$d$};
     \draw[smooth,samples=20,domain=0:4,red!80!black,ultra thick]
     plot({\x},{.2*(\x)*(\x)+1});
     \node[red!80!black] at (3.5,1.5) {$\displaystyle x=\frac12at^2+x_0$};
@@ -163,8 +156,8 @@ $t^2$ graphs both describe the same motion.
   \end{tikzpicture}
   \hspace{.15in}
   \begin{tikzpicture}[scale=.7]
-    \draw[->,thick] (0,0)--(4.5,0) node[pos=1,right]{$t^2$};
-    \draw[->,thick] (0,-1.5)--(0,4.5) node[pos=1,above]{$d$};
+    \draw[->,thick] (0,0)--(4.5,0) node[right]{$t^2$};
+    \draw[->,thick] (0,-1.5)--(0,4.5) node[above]{$d$};
     \draw[red!80!black,ultra thick](0,1)--(4,4.2);
     \node[red!80!black] at (3,1.5) {$\displaystyle x=\frac12at^2+x_0$};
     \node[red!80!black] at (-.4,1) {$x_0$};
@@ -185,12 +178,12 @@ graph is not straightforward. However, another option is to, like in the
 previous section, re-interpret the kinematic equation as a linear function:
 \begin{equation}
   \vertarrowbox{v^2}{$y$}=
-  \vertarrowbox{v_0^2}{b}+\vertarrowbox{(2a)}{m}
-  \vertarrowbox{(x-x_0)}{x}
+  \vertarrowbox{v_0^2}{$b$}+\vertarrowbox{(2a)}{$m$}
+  \vertarrowbox{(x-x_0)}{$x$}
 \end{equation}
 and plot the \emph{square} of velocity (i.e.\ $v^2$) as a function of
 displacement ($x-x_0$). If acceleration is uniform (constant $a$), the graph
 would be linear. The acceleration is half the slope $m$ of the graph:
-$\displaystyle a=\frac{m}{2}$ and the $y$-intercept is the square of the
-initial velocity (i.e.\ $v_0^2$).
+$a=\dfrac m2$ and the $y$-intercept is the square of the initial velocity
+(i.e.\ $v_0^2$).
 \end{document}

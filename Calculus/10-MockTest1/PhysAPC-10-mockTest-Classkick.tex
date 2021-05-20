@@ -1,31 +1,11 @@
-\documentclass[12pt]{exam}
-\usepackage[margin=1cm,papersize={8.5in,17in}]{geometry}
+\documentclass[12pt]{../../oss-classkick-exam}
 \usepackage{enumitem}
-\usepackage{tikz}
-\usepackage{newtxtext,newtxmath}
-\usepackage{siunitx}
-\usepackage{multicol}
-\usepackage{bm}
 
 \usetikzlibrary{patterns}
 
 \newcommand{\pic}[2]{\includegraphics[width=#1\textwidth]{#2}}
-\renewcommand{\choicelabel}{(\thechoice)}
-\sisetup{
-  inter-unit-product =\ensuremath{\cdot{}},
-  per-mode=symbol
-}
 \tikzset{
   >=latex
-}
-\pagestyle{empty}
-
-\renewcommand{\choiceshook}{
-  \setlength{\leftmargin}{25pt}
-  \setlength{\itemsep}{2.5pt}%.9\baselineskip}
-  \setlength{\topsep}{0pt}
-  %\setlength\partopsep{100pt} 
-  \setlength\parsep{0pt}
 }
 
 \begin{document}
@@ -36,7 +16,6 @@
     35 Questions
   }
 \end{center}
-\raggedcolumns
 
 \textbf{Directions:} Each of the questions or incomplete statements below is
 followed by five suggested answers or completions. Select the one that is best
@@ -92,13 +71,15 @@ $g=\SI{10}{\metre\per\second\squared}$ in all problems.
   ground. The ball reaches a maximum height of \SI{3}{\metre} above its
   starting point and then falls \SI5{\metre} to the ground. When the ball
   strikes the ground, what is its displacement from its starting point?
-  \begin{choices}
+
+  \begin{oneparchoices}
     \choice Zero
     \choice \SI{8}{\metre} below
     \choice \SI{5}{\metre} below
     \choice \SI{2}{\metre} below
     \choice \SI{3}{\metre} above
-  \end{choices}
+  \end{oneparchoices}
+  \vspace{.3in}
   
   \question What do acceleration and velocity have in common?
   \begin{choices}
@@ -142,30 +123,31 @@ $g=\SI{10}{\metre\per\second\squared}$ in all problems.
   
   \question Several forces act on an object, but the object is in equilibrium.
   Which of the following statements about the object must be true?
-  \begin{enumerate}[topsep=0pt,itemsep=3pt]
+  \begin{enumerate}[nosep]
   \item[I.] It has zero acceleration.
   \item[II.] The net force acting on it is zero.
   \item[III.] It is at rest.
   \item[IV.] It is moving with constant velocity.
   \end{enumerate}
-  \begin{choices}
+  
+  \begin{oneparchoices}
     \choice I and II
     \choice I and III
     \choice I and IV
     \choice II and III
     \choice II and IV
-  \end{choices}
+  \end{oneparchoices}
+  \newpage
   
-  \fullwidth{
+  \uplevel{
     \textbf{Question \ref{proj1}--\ref{proj2}}
     \begin{center}
-      \pic{.45}{projectile1}
+      \pic{.4}{projectile1}
     \end{center}
     A rock is thrown from the edge of a cliff with an initial velocity $v_0$ at
-    an angle $\theta$ with the horizontal as shown\\
-    above. Point $P$ is the highest point in the rock's trajectory and point
-    $Q$ is level with the starting point. Assume\\
-    air resistance is negligible.
+    an angle $\theta$ with the horizontal as shown above. Point $P$ is the
+    highest point in the rock's trajectory and point $Q$ is level with the
+    starting point. Assume air resistance is negligible.
   }
 
   \question Which of the following correctly describes the horizontal and
@@ -194,21 +176,23 @@ $g=\SI{10}{\metre\per\second\squared}$ in all problems.
     (E)  & 0 & $v_0\cos\theta$ & 0
   \end{tabular}
 
-  \begin{center}
-    \pic{.5}{child}
-  \end{center}
+  \uplevel{
+    \cpic{.45}{child}
+  }
+  
   \question As shown in the figure above, a child of mass \SI{20}{\kilo\gram}
   who is running at a speed of \SI{4.}{\metre\per\second} jumps onto a
   stationary sled of mass \SI{5.}{\kilo\gram} on a frozen lake. The speed at
   which the child and sled begin to slide across the ice is most nearly
 
-  \begin{choices}
+  \begin{oneparchoices}
     \choice \SI{.20}{\metre\per\second}
     \choice \SI{.80}{\metre\per\second}
     \choice \SI{1.2}{\metre\per\second}
     \choice \SI{3.2}{\metre\per\second}
     \choice \SI{16}{\metre\per\second}
-  \end{choices}
+  \end{oneparchoices}
+  \vspace{.3in}
   
   \question A toy spacecraft is launched directly upward. When the toy reaches
   its highest point, a spring is released and the toy splits into two parts
@@ -240,26 +224,31 @@ $g=\SI{10}{\metre\per\second\squared}$ in all problems.
   \item[II.] Linear momentum
   \item[III.] Kinetic energy
   \end{enumerate}
-  \begin{choices}
+  
+  \begin{oneparchoices}
     \choice I only
     \choice II only
     \choice I and II only
     \choice II and III only
     \choice I, II, and III
-  \end{choices}
+  \end{oneparchoices}
+  \vspace{.3in}
+  \newpage
   
   \question In an experiment with a simple pendulum, measurements of the period
   $T$ of the pendulum are made for different values of its length $L$.
   When plotted on a graph, which of the following should result in a
   straight-line fit of the data?
-  \begin{choices}
+
+  \begin{oneparchoices}
     \choice $\sqrt{T}$ versus $L$
     \choice $T$ versus $L$
     \choice $T$ versus $L^2$
     \choice $T^2$ versus $L$
     \choice $T^2$ versus $L^2$
-  \end{choices}
-
+  \end{oneparchoices}
+  \vspace{.3in}
+  
   \begin{center}
     \vspace{-.3in} 
     \pic{.15}{comet}
@@ -282,27 +271,30 @@ $g=\SI{10}{\metre\per\second\squared}$ in all problems.
   Satellite $Y$ is also in a circular orbit around Earth, and it completes one
   orbit for every eight orbits completed by satellite $X$. What is the
   orbital radius of satellite $Y$?
-  \begin{choices}
+
+  \begin{oneparchoices}
     \choice $R/4$
     \choice $R/2$
     \choice $2R$
     \choice $4R$
     \choice $8R$
-  \end{choices}
-
+  \end{oneparchoices}
+  \vspace{.3in}
+  
   \question A newly discovered planet is found to have twice the radius and five
   times the mass of Earth. If the acceleration of gravity at the surface of
   Earth is $g$, the acceleration of gravity at the surface of the new planet is
 
-  \begin{choices}
+  \begin{oneparchoices}
     \choice $\dfrac{2g}5$
     \choice $\dfrac{4g}5$
     \choice $g$
     \choice $\dfrac{5g}4$
     \choice $\dfrac{5g}2$
-  \end{choices}
-
-  \fullwidth{
+  \end{oneparchoices}
+  \vspace{.3in}
+  
+  \uplevel{
     \textbf{Questions \ref{toycar1}--\ref{toycar2}}
     
     A toy car of mass 6 kg, moving in a straight path, experiences a net force
@@ -313,14 +305,15 @@ $g=\SI{10}{\metre\per\second\squared}$ in all problems.
   
   \question The car will come instantaneously to rest at time $t$ equal to
   \label{toycar1}
-  \begin{choices}
+  
+  \begin{oneparchoices}
     \choice$\dfrac23$ \si\second
     \choice$\sqrt{\dfrac43}$ \si\second
     \choice$\sqrt{\dfrac83}$ \si\second
     \choice$\sqrt8$ \si\second
     \choice\SI{4}{\second}
-  \end{choices}
-
+  \end{oneparchoices}
+  \vspace{.3in}
 
   \question Which of the following best shows a graph of position $d$ versus
   time $t$ for the car?
@@ -364,11 +357,9 @@ $g=\SI{10}{\metre\per\second\squared}$ in all problems.
   \end{oneparchoices}
   \label{toycar2}
   
-  \fullwidth{
+  \uplevel{
     \textbf{Questions \ref{connect1}--\ref{connect2}}
-    \begin{center}
-      \pic{.3}{connected-mass}
-    \end{center}
+    \cpic{.3}{connected-mass}
     A block of mass $M_1$ on a horizontal table is connected to a hanging block
     of mass $M_2$ by a string that passes over a pulley, as shown above. The
     acceleration of the blocks is $0.6g$. Assume that friction and the mass of
@@ -376,28 +367,30 @@ $g=\SI{10}{\metre\per\second\squared}$ in all problems.
   }
 
   \question The tension $T$ in the string is \label{connect1}
-  \begin{choices}
+
+  \begin{oneparchoices}
     \choice zero
     \choice $0.4M_2g$
     \choice $0.6M_2g$
     \choice $1.0M_2g$
     \choice $1.6M_2g$
-  \end{choices}
+  \end{oneparchoices}
+  \vspace{.3in}
   
   \question The ratio of masses $M_2/M_1$ is  \label{connect2}
-  \begin{choices}
+
+  \begin{oneparchoices}
     \choice 0.67
     \choice 1.0
     \choice 1.4
     \choice 1.5
     \choice 1.6
-  \end{choices}
+  \end{oneparchoices}
+  \vspace{.3in}
   
   \fullwidth{
     \textbf{Questions \ref{spring1}--\ref{spring2}}
-    \begin{center}
-      \pic{.28}{spring-mass}
-    \end{center}
+    \cpic{.28}{spring-mass}
     \vspace{-.1in}In the system of two blocks and a spring shown above, blocks
     1 and 2 are
     connected by a string that passes over a pulley. The initially unstretched
@@ -442,17 +435,19 @@ $g=\SI{10}{\metre\per\second\squared}$ in all problems.
       \draw[very thick](0,0)--(1.2,2.2)--(2.4,0) node[below]{$t$};
     \end{tikzpicture}
   \end{center}
-  \question\vspace{-.2in}The graph above shows the force acting on an object as
+  \question\vspace{-.1in}The graph above shows the force acting on an object as
   a function of time. The change in momentum of the object from time 0 to $t$ is
-  \begin{choices}
+
+  \begin{oneparchoices}
     \choice $2Ft$
     \choice $Ft$
     \choice $\dfrac12Ft$
     \choice $\dfrac14Ft$
     \choice zero
-  \end{choices}
+  \end{oneparchoices}
+  \vspace{.3in}
   
-  \fullwidth{
+  \uplevel{
     \textbf{Questions \ref{orbit1}--\ref{orbit2}}
     \begin{center}
       \pic{.38}{orbit}\\
@@ -466,28 +461,32 @@ $g=\SI{10}{\metre\per\second\squared}$ in all problems.
 
   \question When the moon is at point $A$, the distance from the moon to the
   center of mass of the planet-moon system is most nearly
-  \begin{choices}
+
+  \begin{oneparchoices}
     \choice $\dfrac1{50}r_A$
     \choice $\dfrac17r_A$
     \choice $\dfrac12r_A$
     \choice $\dfrac67r_A$
     \choice $\dfrac{49}{50}r_A$
-  \end{choices}
+  \end{oneparchoices}
   \label{orbit1}
+  \vspace{.3in}
   
   \question When the moon is at point $B$, the distance from the moon to the
   center of the planet is most nearly
 
-  \begin{choices}
+  \begin{oneparchoices}
     \choice $\dfrac1{25}r_A$
     \choice $\dfrac15r_A$
     \choice $\dfrac1{\sqrt5}r_A$
     \choice $r_A$
     \choice $\sqrt5r_A$
-  \end{choices}
+  \end{oneparchoices}
+  \vspace{.3in}
   \label{orbit2}
+  \newpage
   
-  \fullwidth{
+  \uplevel{
     \textbf{Questions \ref{beam1}--\ref{beam2}}
     \begin{center}
       \vspace{-.2in}
@@ -642,18 +641,22 @@ $g=\SI{10}{\metre\per\second\squared}$ in all problems.
       4 & 64 \\ \hline
     \end{tabular}
   \end{center}
+  
   \question A specially designed spring is stretched from equilibrium to the
   distances $x$ given in the table above, and the restoring force $F$ is
   measured and recorded in each case. What is the potential energy of the
   spring when it is stretched \SI3{\metre} from equilibrium?
-  \begin{choices}
+
+  \begin{oneparchoices}
     \choice $\dfrac92$ \si{\joule}
     \choice \SI9{\joule}
     \choice $\dfrac{81}4$ \si{\joule}
     \choice \SI{27}{\joule}
     \choice $\dfrac{81}2$ \si{\joule}
-  \end{choices}
- 
+  \end{oneparchoices}
+  \vspace{.3in}
+  \newpage
+  
   \question An object on the end of a spring with spring constant $k$ moves in
   simple harmonic motion with amplitude $A$ and frequency $f$. Which of the
   following is a possible expression for the kinetic energy of the object as a
@@ -677,7 +680,6 @@ $g=\SI{10}{\metre\per\second\squared}$ in all problems.
     \choice $-aD^2 + bD^3$
     \choice $-2aD^2 + 3bD^3$
   \end{choices}
-  \newpage
   
   \fullwidth{
     \textbf{Questions \ref{ladder1}--\ref{ladder2} refer to the following.}
@@ -701,47 +703,55 @@ $g=\SI{10}{\metre\per\second\squared}$ in all problems.
 
   \question The magnitude of the normal force exerted by the floor on the ladder
   is
-  \begin{choices}
+  
+  \begin{oneparchoices}
     \choice $W$
     \choice $W\sin\theta$
     \choice $W\cos\theta$
     \choice $\dfrac W2\sin\theta$
     \choice $\dfrac W2\cos\theta$
-  \end{choices}
+  \end{oneparchoices}
   \label{ladder1}
-
+  \vspace{.3in}
+  
   \question The magnitude of the friction force exerted on the ladder by the
   floor is
-  \begin{choices}
+  
+  \begin{oneparchoices}
     \choice $2W\tan\theta$
     \choice $W$
     \choice $W\cot\theta$
     \choice $\dfrac W2$
     \choice $\dfrac W2\cot\theta$
-  \end{choices}
-  \label{ladder2}`
+  \end{oneparchoices}
+  \vspace{.3in}
+  \label{ladder2}
   
   \question An ideal spring with spring constant $k$ is cut in half. What is the
   spring constant of either one of the two half springs?
-  \begin{choices}
+
+  \begin{oneparchoices}
     \choice $\dfrac k2$
     \choice $\sqrt k$
     \choice $k$
     \choice $k^2$
     \choice $2k$
-  \end{choices}
-
+  \end{oneparchoices}
+  \vspace{.3in}
+  
   \question A rocket has landed on Planet X, which has half the radius of
   Earth. An astronaut onboard the rocket weighs twice as much on Planet X as on
   Earth. If the escape velocity for the rocket taking off from Earth is $v_0$,
   then its escape velocity on Planet X is
-  \begin{choices}
+
+  \begin{oneparchoices}
     \choice $2v_0$
     \choice $\sqrt2 v_0$
     \choice $v_0$
     \choice $v_0/2$
     \choice $v_0/4$
-  \end{choices}
+  \end{oneparchoices}
+  \vspace{.3in}
   
   \begin{center}
     \begin{tikzpicture}[scale=.7]
@@ -765,28 +775,29 @@ $g=\SI{10}{\metre\per\second\squared}$ in all problems.
   be a solid sphere of mass $M$ and radius $R$ and friction is assumed to be
   negligible, correct expressions for the kinetic energy of the mass as it
   passes Earth's center include which of the following ?
-  \begin{enumerate}[topsep=0pt,itemsep=3pt]
+  \begin{enumerate}[nosep]
   \item[I.] $\dfrac12MgR$
   \item[II.] $\dfrac12mgR$
   \item[III.] $\dfrac{GMm}{2R}$
   \end{enumerate}
-  \begin{choices}
+  
+  \begin{oneparchoices}
     \choice I only
     \choice II only
     \choice III only
     \choice I and III only
     \choice II and III only
-  \end{choices}
+  \end{oneparchoices}
 \end{questions}
-\newpage
-
-\begin{center}
-  \textbf{
-    PHYSICS C: MECHANICS\\
-    SECTION II\\
-    Time--45 minutes\\
-    3 Questions
-  }
-\end{center}
-
+%\newpage
+%
+%\begin{center}
+%  \textbf{
+%    PHYSICS C: MECHANICS\\
+%    SECTION II\\
+%    Time--45 minutes\\
+%    3 Questions
+%  }
+%\end{center}
+%
 \end{document}
