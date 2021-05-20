@@ -1,20 +1,21 @@
 \documentclass{../../../oss-handout}
 \usepackage{amsmath,bm}
-%\usepackage{txfonts}  % must be loaded after amsmath?
 \usepackage{enumitem}
 \usepackage{tikz}
 \usepackage{siunitx}
-%\usepackage{graphicx}
-%\usepackage{mathpazo}
-%\usepackage{xcolor,colortbl}
-%\usepackage{hyperref}
-%\usepackage{cancel}
+\usepackage{titlesec}
+
+\usepackage[ISO]{diffcoeff}
+
+\titleformat{\section}{\fontsize{13}{15}\bfseries}{\thesection}{1em}{}
+\titlespacing{\section}{0pt}{14pt}{2pt}
+
+\titleformat{\subsection}{\bfseries}{\thesubsection}{1em}{}
+\titlespacing{\subsection}{0pt}{6pt}{-3pt}
 
 \sisetup{
-  %detect-all,
   per-mode=symbol
 }
-%\usetikzlibrary{decorations.pathmorphing,patterns}
 
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{8pt}
@@ -26,20 +27,13 @@
 \newcommand{\kkk}{\ensuremath\hat{\bm{k}}}
 \newcommand{\pic}[2]{\includegraphics[width=#1\textwidth]{#2}}
 
-%\newcommand\vertarrowbox[2]{%
-%    \begin{array}[t]{@{}c@{}} #1 \\
-%    \rotatebox{90}{$\xrightarrow{\hphantom{abcdefgh}}$} \\[-1ex]
-%    \mathclap{\scriptstyle\text{#2}}%
-%    \end{array}}
-
-
 % Set the page style for the document
 \pagestyle{plain}
 
 % Course & handout information
 \renewcommand{\institution}{Olympiads School, Toronto, ON, Canada}
 \renewcommand{\coursetitle}{Advanced Placement Physics C}
-\renewcommand{\term}{Summer 2020}
+\renewcommand{\term}{Summer 2021}
 
 \title{Basic Vector and Calculus That You Need to Know}
 \author{Dr.\ Timothy Leung}
@@ -68,7 +62,7 @@ In keeping with the convention used in \emph{most} technical journals and
 university-level textbooks, vectors are \emph{printed} (e.g.\ on the slides and
 handouts) using a bold face font in this course:
 \begin{equation*}
-  \mb{v}\quad\mb{F}_g\quad\mb{p}\quad\mb{I}
+  \bm{v}\quad\bm{F}_g\quad\bm{p}\quad\bm{I}
 \end{equation*}
 while the ``arrow on top'' notation is used when \emph{writing} (e.g.\ on the
 blackboard)\footnote{Although this format is still used in \emph{some}
@@ -78,7 +72,7 @@ blackboard)\footnote{Although this format is still used in \emph{some}
 \end{equation*}
 The magnitude of vectors are expressed either with the absolute-value symbol:
 \begin{equation*}
-  |\mb{v}|\quad|\mb{F}_g|\quad|\mb{p}|\quad|\mb{I}|
+  |\bm{v}|\quad|\bm{F}_g|\quad|\bm{p}|\quad|\bm{I}|
 \end{equation*}
 or as a scalar quantity (afterall, the magnitude of a vector is indeed a scalar
 with a positive value):
@@ -92,7 +86,7 @@ In Grades 11 and 12 Physics, vectors are usually written by separating the
 magnitude from the direction. For example, a velocity vector would usually
 written as:
 \begin{equation*}
-  \mb{v}=\SI{4.5}{\metre\per\second}\text{ [N \ang{55} E]}
+  \bm{v}=\SI{4.5}{\metre\per\second}\text{ [N \ang{55} E]}
 \end{equation*}
 This approach is based on the \textbf{polar coordinate system}, which is the
 preferred coordinate system for circular motion. In general, this approach is
@@ -106,7 +100,7 @@ perform vector arithmetic for \emph{rectilinear} motion.
 Instead, for rectilinear motion, vectors in 2D/3D Cartesian space are generally
 written in their $x$, $y$ and $z$ components using the \textbf{IJK notation}:
 \begin{equation*}
-  \mb{A}=A_x\bm{\hat{\imath}} + A_y\bm{\hat{\jmath}} + A_z\bm{\hat{k}}
+  \bm{A}=A_x\bm{\hat{\imath}} + A_y\bm{\hat{\jmath}} + A_z\bm{\hat{k}}
 \end{equation*}
 The vectors $\bm{\hat{\imath}}$, $\bm{\hat{\jmath}}$ and $\bm{\hat{k}}$ are
 \textbf{basis vectors} indicating the directions of the $x$, $y$ and $z$ axes.
@@ -114,7 +108,7 @@ Basis vectors are \textbf{unit vectors} (i.e.\ length $1$). Note that the
 IJK notation does not give the magnitude of the vector, which needs to be
 calculated using the general form of the pythagorean theorem:
 \begin{equation*}
-  A=|\mb{A}|=\sqrt{A_x^2 + A_y^2 + A_z^2}
+  A=|\bm{A}|=\sqrt{A_x^2 + A_y^2 + A_z^2}
 \end{equation*}
 
 
@@ -122,7 +116,7 @@ calculated using the general form of the pythagorean theorem:
 
 Adding and subtracting vectors is straightforward:
 \begin{equation*}
-  \mb{A}\pm\mb{B}=
+  \bm{A}\pm\bm{B}=
   (A_x\pm B_x)\bm{\hat{\imath}} +
   (A_y\pm B_y)\bm{\hat{\jmath}} +
   (A_z\pm B_z)\bm{\hat{k}}
@@ -139,16 +133,16 @@ explicitly referring using this notation), for example, when calculating
 mechanical work. It is determined by the magnitude of the two vectors and the
 cosine of the angle $\theta$ between them:
 \begin{equation*}
-  C=\mb{A}\cdot\mb{B}=\mb{B}\cdot\mb{A}=|\mb{A}||\mb{B}|\cos\theta
+  C=\bm{A}\cdot\bm{B}=\bm{B}\cdot\bm{A}=|\bm{A}||\bm{B}|\cos\theta
 \end{equation*}
-In the dot product, $C$ is the \emph{projection} of the vector $\mb{A}$ onto
-$\mb{B}$, or the component of $\mb{A}$ along $\mb{B}$. Note that
+In the dot product, $C$ is the \emph{projection} of the vector $\bm{A}$ onto
+$\bm{B}$, or the component of $\bm{A}$ along $\bm{B}$. Note that
 $\iii\cdot\iii=1$, $\jjj\cdot\jjj=1$, and $\kkk\cdot\kkk=1$. For general
 vectors written in IJK notation, where the magnitude and direction of vectors
 are not immediately known, the dot product is the sum of the products of
-individual components of $\mb{A}$ and $\mb{B}$:
+individual components of $\bm{A}$ and $\bm{B}$:
 \begin{equation*}
-  C=\mb{A}\cdot\mb{B}=A_xB_x+A_yB_y+A_zB_z
+  C=\bm{A}\cdot\bm{B}=A_xB_x+A_yB_y+A_zB_z
 \end{equation*}
 
 
@@ -156,15 +150,15 @@ individual components of $\mb{A}$ and $\mb{B}$:
 The vector \textbf{cross product} is the \emph{vector multiplication} of two
 vectors:
 \begin{equation*}
-  \mb{C}=\mb{A}\times\mb{B}
+  \bm{C}=\bm{A}\times\bm{B}
 \end{equation*}
-The magnitude of the cross product is determined by the magnitude of $\mb{A}$
-and $\mb{B}$ and the angle $\theta$ between them:
+The magnitude of the cross product is determined by the magnitude of $\bm{A}$
+and $\bm{B}$ and the angle $\theta$ between them:
 \begin{equation*}
   C=AB\sin\theta
 \end{equation*}
-The cross product $\mb{C}$ is perpendicular to \emph{both} $\mb{A}$ and
-$\mb{B}$; its direction given by the right hand rule. Cross products are used
+The cross product $\bm{C}$ is perpendicular to \emph{both} $\bm{A}$ and
+$\bm{B}$; its direction given by the right hand rule. Cross products are used
 extensively in rotational motion and in electromagnetism.
 \begin{figure}[ht]
   \centering
@@ -175,12 +169,12 @@ extensively in rotational motion and in electromagnetism.
 Note that unlike the dot product, the order of the cross product is important.
 (This is why you have to get the right hand rule correctly.)
 \begin{equation*}
-  \mb{A}\times\mb{B}=-\mb{B}\times\mb{A}
+  \bm{A}\times\bm{B}=-\bm{B}\times\bm{A}
 \end{equation*}
 In general, the cross product of any two vectors in 3D space is the determinant
 of this $3\times 3$ matrix:
 \begin{equation*}
-  \mb{A}\times\mb{B}=
+  \bm{A}\times\bm{B}=
   \left|
   \begin{matrix}
     \bm{\hat{\imath}} & \bm{\hat{\jmath}} & \bm{\hat{k}}\\
@@ -209,9 +203,9 @@ $\bm{\hat{k}}\times\bm{\hat{\jmath}}=-\bm{\hat{\imath}}$)
 
 
 \section{Calculus}
-We cannot learn physics properly without calculus (you got away with it for
-long enough in grades 11 and 12!). Calculus was a mathematical tool that was
-``invented'' so that we can understand motion, especially non-constant
+We cannot learn physics properly without calculus\footnote{You got away with it
+  for long enough in grades 11 and 12!}. Calculus was a mathematical tool that
+was ``invented'' so that we can understand motion, especially non-constant
 velocities and accelerations. Even in your calculus class(es), you may have
 already noticed that a lot of the word problems  are really physics problems.
 In this course, both forms of calculus will be used:
@@ -223,15 +217,13 @@ In this course, both forms of calculus will be used:
   \emph{velocity} (how quickly position changes with time), \emph{acceleration}
   (how quickly velocity changes with time), \emph{power} (how quickly work is
   done), \emph{electric fields} (how electric potential changes in space)
-\item\textbf{Integral Calculus}
-  \begin{itemize}
-  \item The opposite of differentiation
-  \item We use it to compute the area under a curve, or
-  \item Summation of many small terms
-  \item Examples: area under the $\mb{v}$-$t$ graph (displacement), area
-    under the $\mb{F}$-$t$ graph (impulse), area under the $\mb{F}$-$d$ graph
-    (work)
-  \end{itemize}
+\item\textbf{Integral Calculus} is the opposite of differentiation. It is used
+  to compute the area under a curve, or summation of many small terms. For
+  exsmple, the area under the velocity vs.\ time $v$-$t$ graph gives the
+  \emph{displacement} of an object; the area under the force vs.\ time
+  $F$-$t$ graph gives the \emph{impulse} acted on an object, and the area
+  under the force vs.\ position $F$-$d$ graph gives the \emph{work} that is
+  done by that force.
 \end{itemize}
 
 
@@ -250,34 +242,34 @@ very small non-zero number.
 The derivative of a constant $C$ with respect to any variable is zero. This
 should be obvious, since the slope of any function $f(x)=C$ is zero.
 \begin{equation*}
-  \frac{dC}{dx}=0
+  \diff Cx=0
 \end{equation*}
 A constant multiple $a$ of any function $f$ can be factored outside the
 derivative:
 \begin{equation*}
-  \frac{d}{dx}(af)=a\frac{df}{dx}
+  \diff{}x(af)=a\diff fx
 \end{equation*}
 The derivative of a sum of two functions is the sum of the derivatives of the
 functions:
 \begin{equation*}
-  \frac{d}{dt}\left(f(t)+g(t)\right) = \frac{df}{dt}+\frac{dg}{dt}
+  \diff{}t\left(f(t)+g(t)\right) = \diff ft+\diff gt
 \end{equation*}
 Power Rule:
 \begin{equation*}
-  \frac{d}{dt}\left(t^n\right) = nt^{n-1}\quad\text{for}\quad n\neq 0
+  \diff{}t\left(t^n\right) = nt^{n-1}\quad\text{for}\quad n\neq 0
 \end{equation*}
 Product Rule:
 \begin{equation*}
-  \frac{d}{dx}\left(f(x)g(x)\right)=f'(x)g(x)+f(x)g'(x)
+  \diff{}x\left(f(x)g(x)\right)=f'(x)g(x)+f(x)g'(x)
 \end{equation*}
 Chain Rule:
 \begin{equation*}
-  \frac{d}{dx}f\left(g(x)\right)=f'(g(x))g'(x)
+  \diff{}xf\left(g(x)\right)=f'(g(x))g'(x)
 \end{equation*}
 Quotient Rule is rarely used in physics tests in AP or first-year university,
 but you should remember it anyway:
 \begin{equation*}
-  \frac{d}{dx}\left[\frac{f(x)}{g(x)}\right]=
+  \diff{}x\left[\frac{f(x)}{g(x)}\right]=
   \frac{f'(x)g(x)-g'(x)f(x)}{\left(g(x)\right)^2}
 \end{equation*}
 
@@ -289,12 +281,12 @@ trigonometric and exponential functions are often used. We will also find out
 the relationship between complex exponential functions and sine/cosine
 functions. %The derivatives of sines and cosines are related:
 \begin{align*}
-    \frac{d}{dt}\sin t &= \cos t \quad\quad\quad\\
-    \frac{d}{dt}\cos t &= -\sin t
+    \diff{}t \sin t &= \cos t \quad\quad\quad\\
+    \diff{}t \cos t &= -\sin t
 \end{align*}
 And the exponential function:
 \begin{equation*}
-  \frac{d}{dt}e^{at} = ae^{at}
+  \diff{}t e^{at} = ae^{at}
 \end{equation*}
 
 \subsection{Partial Derivatives}
@@ -308,7 +300,7 @@ Differentiating with respect to one variable while holding others constant
 gives its \textbf{partial derivative}. (We use the $\partial$ symbol). For
 example, the partial derivative of $U_g$ with respect to $r$ is
 \begin{equation*}
-    \frac{\partial U_g}{\partial r}=\frac{Gm_1m_2}{r^2}
+    \diffp{U_g}{r}=\frac{Gm_1m_2}{r^2}
 \end{equation*}
 In case you have not noticed: the derivative is the is the relationship between
 gravitational potential energy $U_g$ and the magnitude of the gravitational
@@ -319,7 +311,7 @@ force $F_g$.
 
 If $F(x)$ is the anti-derivative of $f(x)$, they are related this way:
 \begin{equation*}
-  \frac{d}{dx}F(x)=f(x)\quad\longrightarrow\quad F(x)=\int f(x)dx
+  \diff{}xF(x)=f(x)\quad\longrightarrow\quad F(x)=\int f(x)\dl x
 \end{equation*}
 The mathematical proof is the \textbf{fundamental theorem of calculus}.
 
@@ -330,43 +322,41 @@ Physics C  are generally straightforward. These rules should help in most cases.
 
 Power rule in reverse:
 \begin{equation*}
-  \int x^ndx=\frac{1}{n+1}x^{n+1}+C
+  \int x^n\dl x=\frac1{n+1}x^{n+1}+C
 \end{equation*}
 Natural logarithm:
 \begin{equation*}
-  \int \frac{1}{x}dx =\ln |x|+C 
+  \int \frac1x\dl x =\ln |x|+C 
 \end{equation*}
 Sines and cosines:
 \begin{align*}
-  \int\cos xdx&=\sin x+C\\
-  \int\sin xdx&=-\cos x+C
+  \int\cos x\dl x&=\sin x+C\\
+  \int\sin x\dl x&=-\cos x+C
 \end{align*}
-%We can ``ignore'' (i.e.\ cancel) the constant of integration $C$ for definite
-%integrals.
 
 
 \subsection{Definite and Indefinite Integrals}
 Integrals can be either \textbf{indefinite} or \textbf{definite}. An
-``indefinite'' integral is another function, e.g.\ position $\mb{x}(t)$ as a
-function of time is found by integrating velocity $\mb{v}(t)$:
+``indefinite'' integral is another function, e.g.\ position $\bm{x}(t)$ as a
+function of time is found by integrating velocity $\bm{v}(t)$:
 \begin{equation*}
-  \mb{x}(t)=\int\mb{v}(t)dt=\cdots+\mb{C}
+  \bm{x}(t)=\int\bm{v}(t)\dl t=\cdots+\bm{C}
 \end{equation*}
-A \textbf{constant of integration} $\mb{C}$ is added to the integral
-$\mb{x}(t)$. It is obtained through applying ``initial condition'' to the
+A \textbf{constant of integration} $\bm{C}$ is added to the integral
+$\bm{x}(t)$. It is obtained through applying ``initial condition'' to the
 problem. On the other hand, a \textbf{definite integral} has lower and upper
-bounds. For example, given $\mb{v}(t)$, the displacement between $t_0$ and
+bounds. For example, given $\bm{v}(t)$, the displacement between $t_0$ and
 $t_1$ can be found by integrating between these limits:
 \begin{equation*}
-  \Delta\mb{x}=\int_{t_0}^{t_1} \mb{v}(t)dt
+  \Delta\bm{x}=\int_{t_0}^{t_1} \bm{v}(t)\dl t
 \end{equation*}
 Once we have computed the integral, we evaluate the limits:
 \begin{equation*}
-  \Delta\mb{x} =
-  \mb{x}(t_1)\Big|^t_{t_0}=
-  \mb{x}(t_1)-\mb{x}(t_0)=
-  \mb{x}_1-\mb{x}_0
+  \Delta\bm{x} =
+  \bm{x}(t_1)\Big|^t_{t_0}=
+  \bm{x}(t_1)-\bm{x}(t_0)=
+  \bm{x}_1-\bm{x}_0
 \end{equation*}
-The constant of integration $\mb{C}$ cancels when we evaluate the upper and
+The constant of integration $\bm{C}$ cancels when we evaluate the upper and
 lower bounds.
 \end{document}

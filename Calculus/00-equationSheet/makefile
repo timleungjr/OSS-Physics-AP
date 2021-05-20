@@ -1,3 +1,3 @@
 public:
-	mkdir -p $(DESTINATION)/Class01
-	cp *.pdf $(DESTINATION)/Class01
+	mkdir -p $(DESTINATION)/Topic01
+	cp *.pdf $(DESTINATION)/Topic01

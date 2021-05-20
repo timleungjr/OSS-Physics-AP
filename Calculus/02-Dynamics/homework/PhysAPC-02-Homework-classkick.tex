@@ -361,7 +361,7 @@
       \choice The speed of the particle is increasing.
       \choice The speed of the particle is constant.
       \choice The speed of the particle is decreasing.
-    \end{enumerate}
+    \end{choices}
     \vspace{.7in}
 
     \fullwidth{
@@ -409,19 +409,16 @@
 \end{multicols*}
 \newpage
 
-\genfreetitle{C}{DYNAMICS}{5}
+\genfreetitle{C}{DYNAMICS}{4}
 
 \genfreedirections
 
 \begin{center}
   \begin{tikzpicture}[scale=1.1]
-    \draw (0,0)--(6,0);
-    \draw[fill=green!30!gray!50]
-    (1.8,0)rectangle(4.2,1.5) node[midway,black]{$M$};
-    \draw[fill=yellow!50](2.5,1.5)rectangle(3.5,2.2)
-    node[midway,black]{$m$};
-    \draw[ultra thick,red!80!black,->](4.2,.75)--(6.2,.75)
-    node[right]{$\mb{F}$};
+    \draw[thick,fill=gray] (1.8,0)rectangle(4.2,1.5) node[midway]{$M$};
+    \draw[thick,fill=gray!50](2.5,1.5)rectangle(3.5,2.2) node[midway]{$m$};
+    \draw[ultra thick,->](4.2,.75)--(6.2,.75) node[right]{$\bm{F}$};
+    \draw[ultra thick] (0,0)--(6,0);
   \end{tikzpicture}
 \end{center}
 \begin{questions}
@@ -429,13 +426,13 @@
   on a frictionless table, as shown below. The coefficient of friction between
   the blocks are $\mu_s=0.30$ and $\mu_k=0.20$.
   \begin{parts}
-    \part What is the maximum force $\mb{F}$ that can be applied if the block on
+    \part What is the maximum force $\bm{F}$ that can be applied if the block on
     the top is not to slide on the block on the bottom.
     
-    \part If $\mb{F}$ is half this value, find the acceleration of each block
+    \part If $\bm{F}$ is half this value, find the acceleration of each block
     and the force of friction acting on each block.
     
-    \part If $\mb{F}$ is twice the value found in (a), find the acceleration of
+    \part If $\bm{F}$ is twice the value found in (a), find the acceleration of
     each block.
   \end{parts}
   \newpage
@@ -472,6 +469,60 @@
 %  \vspace{2in}
 %  \newpage
 
+  % TAKEN FROM 2007 AP PHYSICS C FREE-RESPONSE QUESTION MECH 1
+  \uplevel{
+    \begin{center}
+      \begin{tikzpicture}
+        \draw[very thick](0,0) rectangle(2,1.5) node[midway]{$m$};
+        \draw[ultra thick](-2,0)--(5,0);
+        \draw[thick,dashed](2,1.5)--(5,1.5);
+        \draw[ultra thick,->](2,1.5)--(4.5,3.5) node[midway,above left]{$F_1$};
+        \draw[->,thick](3,1.5) arc(0:40:1) node[midway,right]{$\theta$};
+      \end{tikzpicture}
+    \end{center}
+  }
+  \question A block of mass $m$ is pulled along a rough horizontal surface by a
+  constant applied force of magnitude $F_1$ that acts at an angle $\theta$ to
+  the horizontal, as indicated above. The acceleration of the block is $a_1$.
+  Express all algebraic answers in terms of $m$, $F_1$, $\theta$, $a_1$, and
+  fundamental constants.
+  \begin{parts}
+    \part On the figure below, draw and label a free-body diagram showing all
+    the forces on the block.
+
+    \vspace{.3in}
+    \begin{center}
+      \tikz{\draw[thick](0,0) rectangle(.7,.5);}
+    \end{center}
+    \vspace{.3in}
+    
+    \part Derive an expression for the normal force exerted by the surface on
+    the block.
+
+    \part Derive an expression for the coefficient of kinetic friction $\mu$
+    between the block and the surface.
+
+    \part On the axes below, sketch graphs of the speed $\varv$ and
+    displacement $x$ of the block as functions of time $t$ if the
+    block started from rest at $x = 0$ and $t = 0$.
+
+    \begin{tikzpicture}
+      \draw[very thick,->](0,0)--(7.5,0) node[right]{$t$};
+      \draw[very thick,->](0,0)--(0,4) node[above]{$\varv$}
+      node[pos=0,left]{$O$};
+    \end{tikzpicture}
+    \begin{tikzpicture}
+      \draw[very thick,->](0,0)--(7.5,0) node[right]{$t$};
+      \draw[very thick,->](0,0)--(0,4) node[above]{$x$} node[pos=0,left]{$O$};
+    \end{tikzpicture}
+    
+  \item If the applied force is large enough, the block will lose contact with
+    the surface. Derive an expression for the magnitude of the greatest
+    acceleration $a_\text{max}$ that the block can have and still maintain
+    contact with the ground.
+  \end{parts}
+  \newpage
+  
   % THIS IS TAKEN FROM THE 2013 AP PHYSICS C FREE-RESPONSE QUESTION MECH 2
   \fullwidth{
     \begin{center}
@@ -574,8 +625,8 @@
       compartment and the track, but instead the compartment is brought to rest
       by a braking force $-k\mb{v}$, where $k$ is a constant and $\mb{v}$ is the
       velocity of the compartment. Express all algebraic answers to the
-      following in terms of $M$, $R$, $k$, $v_D$, and fundamental constants, as
-      appropriate.
+      following in terms of $M$, $R$, $k$, $\varv_D$, and fundamental
+      constants, as appropriate.
     }
 
     \part Write, but do NOT solve, the differential equation for $\varv(t)$.
@@ -590,11 +641,55 @@
     \begin{center}
       \begin{tikzpicture}[scale=1.2]
         \begin{scope}[very thick,->]
-          \draw(0,0)--(7,0) node[midway,below]{Time};
-          \draw(0,0)--(0,3) node[above]{Magnitude of Acceleration};
+          \draw(0,0)--(7,0) node[right]{$t$};
+          \draw(0,0)--(0,3) node[above]{$a$};
         \end{scope}
       \end{tikzpicture}
     \end{center}
+  \end{parts}
+  \newpage
+
+  % TAKEN FROM THE 2009 AP PHYSICS C MECH EXAM FREE-RESPONSE QUESTION MECH 3
+  \uplevel{
+    \cpic{.65}{pulley1}
+  }
+  \question A block of mass $M/2$ rests on a frictionless horizontal table, as
+  shown above. It is connected to one end of a string that passes over a
+  massless pulley and has another block of mass $M/2$ hanging from its other
+  end. The apparatus is released from rest.
+  \begin{parts}
+    \part Derive an expression for the speed $\varv_h$ of the hanging block as
+    a function of the distance $d$ it descends.
+
+    \uplevel{
+      Now the block and pulley system is replaced by a uniform rope of length
+      $L$ and mass $M$, with one end of the rope hanging slightly over the edge
+      of the frictionless table. The rope is released from rest, and at some
+      time later there is a length $y$ of rope hanging over the edge, as shown
+      below. Express your answers to parts (b), (c), and (d) in terms of
+      $y$, $L$, $M$, and fundamental constants.
+      \cpic{.45}{rope1}
+    }
+    
+    \part Determine an expression for the force of gravity on the hanging part
+    of the rope as a function of $y$.
+    
+    \part Derive an expression for the work done by gravity on the rope as a
+    function of $y$, assuming $y$ is initially zero.
+
+    \part Derive an expression for the speed $\varv_r$ of the rope as a
+    function of $y$.
+    
+    \part The hanging block and the right end of the rope are each allowed to
+    fall a distance $L$ (the length of the rope). The string is long enough
+    that the sliding block does not hit the pulley. Indicate whether $\varv_h$
+    from part (a) or $\varv_r$ from part (d) is greater after the block and the
+    end of the rope have traveled this distance. Justify your answer.
+
+    \vspace{.1in}
+    \underline{\hspace{.5in}} $\varv_h$ is greater.\hspace{1in}
+    \underline{\hspace{.5in}} $\varv_r$ is greater.\hspace{1in}
+    \underline{\hspace{.5in}} The speeds are equal.
   \end{parts}
 \end{questions}
 \end{document}

@@ -12,4 +12,4 @@ clean:
 public:
 	mkdir -p $(DESTINATION)/Topic08
 	cp *-print.pdf $(DESTINATION)/Topic08
-	cp homework/*Homework.pdf $(DESTINATION)/Topic08
+	cp homework/*Homework-Classkick.pdf $(DESTINATION)/Topic08
