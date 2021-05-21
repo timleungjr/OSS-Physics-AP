@@ -9,4 +9,4 @@ clean:
 public:
 	mkdir -p $(DESTINATION)/Topic03
 	cp PhysAPC-03-workEnergy.pdf $(DESTINATION)/Topic03
-	cp homework/*-Homework-Classkick.pdf $(DESTINATION)/Topic03
+	cp homework/*-Homework.pdf $(DESTINATION)/Topic03

@@ -386,14 +386,65 @@
 \end{multicols*}
 \newpage
 
-\genfreetitle{C}{CIRCULAR MOTION}{1}
+\genfreetitle{C}{CIRCULAR MOTION}{2}
 
 \genfreedirections
 
-% TAKEN FROM THE 2014 AP PHYSICS C FREE-RESPONSE QUESTION MECH 2
-\cpic{.7}{ramp-circle}
-
 \begin{questions}
+  \question A mass $m$ attached to a string of length $2r$ swings, starting at
+  rest when the string is horizontal, until the string is vertical. At the
+  instant the string is vertical, the mass makes contact with the horizontal
+  surface, the string is cut, and the mass continues along a frictionless track
+  as shown below.
+  \begin{center}
+    \vspace{-.1in}
+    \begin{tikzpicture}[scale=1.5]
+      \begin{scope}[thick]
+        \draw(0,0)--(-2,0);
+        \draw[|<->|](0,.25)--(-2,.25) node[midway,fill=white]{$2r$};
+        \draw(-2,.1) rectangle (-2.3,-.1) node[midway]{$m$};
+        \draw[->](-2.15,-.15) arc(185:200:2.15);
+        \draw[dashed](0,0)--(0,-2);
+        \draw(-.7,-2)--(2.5,-2);
+        \draw (2.5,-2) arc(-90:90:1);
+        \fill(2.5,-1) circle(.05);
+        \draw[rotate around={40:(2.5,-1)},->] (2.5,-1)--(3.5,-1)
+        node[midway,fill=white]{$r$};
+      \end{scope}
+    \end{tikzpicture}
+  \end{center}
+  \begin{parts}
+    \part What is the speed of the mass attached to the string the instant the
+    string is cut?
+    \part Sketch the forces acting on the mass when it is in the position shown
+    below.
+    \begin{center}
+      \begin{tikzpicture}[scale=2]
+        \begin{scope}[thick]
+          \draw(0,-2)--(2.5,-2);
+          \draw (2.5,-2) arc(-90:90:1);
+          \begin{scope}[rotate around={40:(2.5,-1)}]
+            \draw[dashed](2.5,-1)--(3.5,-1);
+            \draw[fill=gray!50](3.5,-.93) rectangle (3.36,-1.07);
+          \end{scope}
+          \draw[dashed](2.5,-1)--(2.5,0);
+          \draw(2.5,-.6) arc(90:40:.4) node[midway,above]{$\theta$};
+        \end{scope}
+      \end{tikzpicture}
+    \end{center}
+    \uplevel{
+      When the mass is in the position shown above,
+    }
+    \part Find the object's speed as a function of $\theta$
+    \part Find the object's centripetal acceleration as a function of $\theta$
+    \part Determine at what angle $\theta$ the mass will fall of the track
+  \end{parts}
+  \newpage
+
+  % TAKEN FROM 2014 AP PHYSICS C MECHANICS EXAM FREE-RESPONSE QUESTION 2
+  \uplevel{
+    \cpic{.7}{ramp-circle}
+  }
   \question A small block of mass $m$ starts from rest at the top of a
   frictionless ramp, which is at a height $h$ above a horizontal tabletop, as
   shown in the side view above. The block slides down the smooth ramp and

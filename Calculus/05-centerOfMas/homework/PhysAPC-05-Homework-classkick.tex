@@ -1,4 +1,5 @@
 \documentclass{../../../oss-classkick-exam}
+\usetikzlibrary{decorations.pathmorphing,patterns}
 
 \begin{document}
 \genheader
@@ -462,8 +463,7 @@
       \choice $\dfrac{6m}{(t+1)^2}$
       \choice $\dfrac{m(t+1)^2}{6}$
     \end{choices}
-%    \columnbreak
-%    
+
     \question A moving object is changing its momentum during a time interval.
     If a graph of momentum vs.\ time is plotted, the net force acting on the
     mass at any time can be determined by finding the
@@ -528,33 +528,86 @@
 \newpage
 
 
-\genfreetitle{C}{MOMENTUM, IMPULSE, COLLISIONS, AND CENTER OF MASS}{5}
+\genfreetitle{C}{MOMENTUM, IMPULSE, COLLISIONS, AND CENTER OF MASS}{4}
 
 \genfreedirections
 
-%\begin{enumerate}
-%\item A projectile is fired from the edge of a cliff \SI{100}{\metre} high with
-%  an initial speed of \SI{60}{\metre\per\second} at an angle of elevation of
-%  \ang{45}.
-%  \begin{enumerate}
-%  \item Write equation for $x(t)$, $y(t)$, $v_x$ and $v_y$. Choose the origin of
-%    your coordinate system at the particle's original location.
-%  \item Calculate the location and velocity of the particle at time
-%    $t=\SI{5}{s}$.
-%  \end{enumerate}
-%  Suppose the projectile experiences an internal explosion at time $t=\SI{4}{s}$
-%  with an internal force purely in the $y$-direction, causing it to break into
-%  a \SI{2}{\kg} and a \SI{1}{\kg} fragment.
-%  \begin{enumerate}[resume]
-%  \item If the \SI{2}{\kg} fragment is \SI{77}{m} above the height of the
-%    cliff at $t=\SI{5}{s}$, what is the $y$-coordinate of the position of the
-%    \SI{1}{\kg} piece?
-%  \item If the speed of the \SI{2}{kg} fragment is \SI{46}{m/s} and the
-%    fragment is falling at $t=\SI{5}{s}$, what is the $y$-component of the
-%    velocity of the \SI{1}{kg} fragment?
-%  \end{enumerate}
-%  \newpage
-%  
+\begin{questions}
+  \question A projectile is fired from the edge of a cliff \SI{100}{\metre}
+  high with an initial speed of \SI{60}{\metre\per\second} at an angle of
+  elevation of \ang{45}.
+  \begin{parts}
+    \part Write equation for $x(t)$, $y(t)$, $v_x$ and $v_y$. Choose the origin
+    of your coordinate system at the particle's original location.
+    \part Calculate the location and velocity of the particle at time
+    $t=\SI{5}{\second}$.
+    
+    \uplevel{Suppose the projectile experiences an internal explosion at time
+      $t=\SI{4}{\second}$ with an internal force purely in the $y$-direction,
+      causing it to break into a \SI{2}{\kilo\gram} and a \SI{1}{\kilo\gram}
+      fragment.}
+    
+    \part If the \SI{2}{\kilo\gram} fragment is \SI{77}{\metre} above the
+    height of the cliff at $t=\SI{5}{\second}$, what is the $y$-coordinate of
+    the position of the \SI{1}{\kilo\gram} piece?
+    
+    \part If the speed of the \SI{2}{\kilo\gram} fragment is
+    \SI{46}{\metre\per\second} and the fragment is falling at
+    $t=\SI{5}{\second}$, what is the $y$-component of the velocity of the
+    \SI{1}{\kilo\gram} fragment?
+  \end{parts}
+  \newpage
+
+  % TAKEN FROM THE 2015 AP PHYSICS C MECHANICS EXAM FREE-RESPONSE QUESTION 2
+  \uplevel{
+    \cpic{.5}{dart}
+  }
+  \question A small dart of mass \SI{.020}{\kilo\gram} is launched at an angle
+  of \ang{30} above the horizontal with an initial speed of
+  \SI{10}{\meter\per\second}. At the moment it reaches the highest point in its
+  path and is moving horizontally, it collides with and sticks to a wooden
+  block of mass \SI{.10}{\kilo\gram} that is suspended at the end of a massless
+  string. The center of mass of the block is \SI{1.2}{\metre} below the pivot
+  point of the string. The block and dart then swing up until the string makes
+  an angle $\theta$ with the vertical, as shown above. Air resistance is
+  negligible.
+  \begin{parts}
+    \part Determine the speed of the dart just before it strikes the block.
+    
+    \part Calculate the horizontal distance d between the launching point of
+    the dart and a point on the floor directly below the block.
+    
+    \part Calculate the speed of the block just after the dart strikes.
+    
+    \part Calculate the angle $\theta$ through which the dart and block on the
+    string will rise before coming momentarily to rest.
+    
+    \part The block then continues to swing as a simple pendulum. Calculate the
+    time between when the dart collides with the block and when the block first
+    returns to its original position.
+
+    \part In a second experiment, a dart with more mass is launched at the same
+    speed and angle. The dart collides with and sticks to the same wooden block.
+    \begin{subparts}
+      \subpart Would the angle $\theta$ that the dart and block swing to
+      increase, decrease, or stay the same? Justify your answer.
+
+      \vspace{.1in}
+      \underline{\hspace{.3in}} Increase\hspace{.6in}
+      \underline{\hspace{.3in}} Decrease\hspace{.6in}
+      \underline{\hspace{.3in}} Stay the same
+
+      \subpart Would the period of oscillation after the collision increase,
+      decrease, or stay the same? Justify your answer.
+
+      \vspace{.1in}
+      \underline{\hspace{.3in}} Increase\hspace{.6in}
+      \underline{\hspace{.3in}} Decrease\hspace{.6in}
+      \underline{\hspace{.3in}} Stay the same
+    \end{subparts}
+  \end{parts}
+  \newpage
+  
 %\item The Ballistic Pendulum. To determine the muzzle speed of a gun, a bullet
 %  is shot into a mass $M$ from a string as shown below, causing $M$ to swing
 %  upward through a maximum angle of $\theta$.
@@ -568,74 +621,45 @@
 %    swing (when the string makes an angle of $\theta$ with the vertical as
 %    shown)?
 %  \end{enumerate}
-%  \newpage
-%\item Two masses are connected by a spring (spring constant $k$) resting on a
-%  frictionless horizontal surface as shown. The right mass is initially in
-%  contact with a wall. A brief blow to the left block leaves it with an initial
-%  velocity $v_0$ to the right.
-%  \begin{enumerate}
-%  \item What is the maximum compression of the spring as the left block moves
-%    to the right?
-%  \end{enumerate}
-%  After the spring is maximally compressed, it eventually moves to the left,
-%  away from wall. As it moves away from the wall, it continues oscillating.
-%  \cpic{.45}{mass-spring-2}
-%  \begin{enumerate}[resume]
-%  \item What is the net momentum of the two masses after they leave the wall?
-%  \item What is the total mechanical energy of the oscillating spring system?
-%  \item What is the relative velocity of the two masses when the spring is
-%    maximally compressed?
-%  \item What is the maximum compression of the spring after the two masses have
-%    left the wall? Compare the compression to the maximum compression calculated
-%    in part (a) and explain any similarities and differences.
-%  \end{enumerate}
-%  \newpage
-%
-%%\item In the billiards shot shown in the figure below, the initial direction of
-%%  the cue ball is perpendicular to the line joining the centers of the other
-%%  two balls, which are touching. The cue ball strikes both balls simultaneously.
-%%  Use the symmetry of the situation along with the appropriate conservation
-%%  laws to find the final velocities of all three balls.
-%%  \begin{center}
-%%    \begin{tikzpicture}[scale=.8]
-%%      \tikzstyle{balloon1}=[ball color=yellow!60];
-%%      \tikzstyle{balloon2}=[ball color=green!60!gray];
-%%      \tikzstyle{balloon3}=[ball color=gray];
-%%      \draw[dashed](0,-2.4)--(0,2.4);
-%%      \draw[dashed](0,0)--(-4,0);
-%%      \shade[balloon2] (0,.4) circle (.4) node{$m$};
-%%      \shade[balloon1] (0,-.4) circle (.4) node{$m$};
-%%      \draw[ultra thick,->,blue!60!black](-4,0)--(-2,0)
-%%      node[pos=1,right]{$\mb{v}_{ci}$};
-%%      \shade[balloon3] (-4,0) circle (.4) node{$m$};
-%%    \end{tikzpicture}
-%%    \hspace{1in}
-%%    \begin{tikzpicture}[scale=.8]
-%%      \tikzstyle{balloon1}=[ball color=yellow!60];
-%%      \tikzstyle{balloon2}=[ball color=green!60!gray];
-%%      \tikzstyle{balloon3}=[ball color=gray];
-%%      \draw[dashed](-4,0)--(4,0);
-%%      \begin{scope}[rotate=25]
-%%        \draw[dashed](0,0)--(4,0);
-%%        \draw[ultra thick,->,blue!60!black](4,0)--(5,0)
-%%        node[pos=1,right]{$\mb{v}_{1f}$};
-%%        \shade[balloon2] (4,0) circle (.4) node{$m$};
-%%      \end{scope}
-%%      \begin{scope}[rotate=-25]
-%%        \draw[dashed](0,0)--(4,0);
-%%        \draw[ultra thick,->,blue!60!black](4,0)--(5,0)
-%%        node[pos=1,right]{$\mb{v}_{2f}$};
-%%        \shade[balloon1] (4,0) circle (.4) node{$m$};
-%%      \end{scope}
-%%      \draw(1.5,0) arc(0: 25:1.5) node[pos=.6,right]{$\theta_1$};
-%%      \draw(1.5,0) arc(0:-25:1.5) node[pos=.6,right]{$\theta_2$};
-%%      \draw[ultra thick,->,blue!60!black](-2,0)--(-3,0)
-%%      node[pos=1,left]{$\mb{v}_{cf}$};
-%%      \shade[balloon3] (-2,0) circle (.4) node{$m$};
-%%    \end{tikzpicture}
-%%  \end{center}
-%%  \vspace{\stretch{1}}
-%  
+  %  \newpage
+  
+  \question Two masses are connected by a spring (spring constant $k$) resting
+  on a frictionless horizontal surface as shown. The right mass is initially in
+  contact with a wall. A brief blow to the left block leaves it with an initial
+  velocity $\varv_0$ to the right.
+  \begin{parts}
+    \part What is the maximum compression of the spring as the left block moves
+    to the right?
+    
+    \uplevel{After the spring is maximally compressed, it eventually moves to
+      the left, away from wall. As it moves away from the wall, it continues
+      oscillating.
+      \begin{center}
+        \begin{tikzpicture}
+          \draw[thick,fill=gray!70](0,0) rectangle(-1,1) node[midway]{$m$};
+          \draw[thick,fill=gray!70](-3,0) rectangle(-4,1) node[midway]{$m$};
+          \draw[
+            thick,
+            decoration={aspect=.3,segment length=2mm, amplitude=2mm, coil},
+            decorate] (-1,.5)--(-3,.5);
+          \draw[very thick](-6,0)--(0,0)--(0,2);
+        \end{tikzpicture}
+      \end{center}
+    }
+    
+    \part What is the net momentum of the two masses after they leave the wall?
+    
+    \part What is the total mechanical energy of the oscillating spring system?
+    
+    \part What is the relative velocity of the two masses when the spring is
+    maximally compressed?
+    
+    \part What is the maximum compression of the spring after the two masses
+    have left the wall? Compare the compression to the maximum compression
+    calculated in part (a) and explain any similarities and differences.
+  \end{parts}
+  \newpage
+
 %\item A stream of glass beads, each with a mass of \SI{.5}{\gram}, comes out of
 %  a horizontal tube at $100$ per second. The beads fall a distance of
 %  \SI{.5}{\metre} to a balance pan and bounce back to their original height as
@@ -644,43 +668,96 @@
 %  
 %  \cpic{.5}{balance}
 %  \newpage
-%
-%  % THIS IS TAKEN FROM THE 2011 AP PHYSICS C FREE-RESPONSE QUESTION MECH 1
-%  \cpic{.25}{projectile}
-%\item A projectile is fired horizontally from a launching device, exiting with
-%  a speed $v_x$. While the projectile is in the launching device, the impulse
-%  imparted to it is $J_p$, and the average force on it is $F_\text{avg}$. Assume
-%  the force becomes zero just as the projectile reaches the end of the launching
-%  device. Express your answers to parts (a) and (b) in terms of $v_x$, $J_p$,
-%  $F_\text{avg}$, and fundamental constants, as appropriate.
-%  \begin{enumerate}
-%  \item Determine an expression for the time required for the projectile to
-%    travel the length of the launching device.
-%  \item Determine an expression for the mass of the projectile.
-%  \end{enumerate}
-%  The projectile is fired horizontally into a block of wood that is clamped to
-%  a tabletop so that it cannot move. The projectile travels a distance $d$ into
-%  the block before it stops. Express all algebraic answers to the following in
-%  terms of $d$ and the given quantities previously indicated, as appropriate.
-%  \begin{enumerate}[resume]
-%  \item Derive an expression for the work done in stopping the projectile.
-%  \item Derive an expression for the average force $F_b$ exerted on the
-%    projectile as it comes to rest in the block.
-%  \end{enumerate}
-%  Now a new projectile and block are used, identical to the first ones, but the
-%  block is not clamped to the table. The projectile is again fired into the
-%  block of wood and travels a new distance $d_n$ into the block while the block
-%  slides across the table a short distance $D$. Assume the following: the
-%  projectile enters the block with speed $v_x$, the average force $F_b$ between
-%  the projectile and the block has the same value as determined in part (d),
-%  the average force of friction between the table and the block is $f_T$, and
-%  the collision is instantaneous so the frictional force is negligible
-%  during the collision.
-%  \begin{enumerate}[resume]
-%  \item Derive an expression for $d_n$ in terms of $d$, $D$, $f_T$, and $F_b$,
-%    as appropriate.
-%  \item Derive an expression for $d_n$ in terms of $d$, the mass $m$ of the
-%    projectile, and the mass $M$ of the block.
-%  \end{enumerate}
-%\end{enumerate}
+
+  % TAKEN FROM THE 2011 AP PHYSICS C MECHANICS EXAM FREE-RESPONSE QUESTION 1
+  \uplevel{
+    \cpic{.25}{projectile}
+  }
+  \question A projectile is fired horizontally from a launching device, exiting
+  with a speed $v_x$. While the projectile is in the launching device, the
+  impulse imparted to it is $J_p$, and the average force on it is
+  $F_\text{avg}$. Assume the force becomes zero just as the projectile reaches
+  the end of the launching device. Express your answers to parts (a) and (b) in
+  terms of $v_x$, $J_p$, $F_\text{avg}$, and fundamental constants, as
+  appropriate.
+  \begin{parts}
+    \part Determine an expression for the time required for the projectile to
+    travel the length of the launching device.
+    
+    \part Determine an expression for the mass of the projectile.
+    
+    \uplevel{The projectile is fired horizontally into a block of wood that is
+      clamped to a tabletop so that it cannot move. The projectile travels a
+      distance $d$ into the block before it stops. Express all algebraic
+      answers to the following in terms of $d$ and the given quantities
+      previously indicated, as appropriate.}
+
+    \part Derive an expression for the work done in stopping the projectile.
+    
+    \part Derive an expression for the average force $F_b$ exerted on the
+    projectile as it comes to rest in the block.
+
+    \uplevel{Now a new projectile and block are used, identical to the first
+      ones, but the block is not clamped to the table. The projectile is again
+      fired into the block of wood and travels a new distance $d_n$ into the
+      block while the block slides across the table a short distance $D$.
+      Assume the following: the projectile enters the block with speed $v_x$,
+      the average force $F_b$ between the projectile and the block has the same
+      value as determined in part (d), the average force of friction between
+      the table and the block is $f_T$, and the collision is instantaneous so
+      the frictional force is negligible during the collision.
+    }
+
+    \part Derive an expression for $d_n$ in terms of $d$, $D$, $f_T$, and $F_b$,
+    as appropriate.
+    
+    \part Derive an expression for $d_n$ in terms of $d$, the mass $m$ of the
+    projectile, and the mass $M$ of the block.
+  \end{parts}
+
+%\item In the billiards shot shown in the figure below, the initial direction of
+%  the cue ball is perpendicular to the line joining the centers of the other
+%  two balls, which are touching. The cue ball strikes both balls simultaneously.
+%  Use the symmetry of the situation along with the appropriate conservation
+%  laws to find the final velocities of all three balls.
+%  \begin{center}
+%    \begin{tikzpicture}[scale=.8]
+%      \tikzstyle{balloon1}=[ball color=yellow!60];
+%      \tikzstyle{balloon2}=[ball color=green!60!gray];
+%      \tikzstyle{balloon3}=[ball color=gray];
+%      \draw[dashed](0,-2.4)--(0,2.4);
+%      \draw[dashed](0,0)--(-4,0);
+%      \shade[balloon2] (0,.4) circle (.4) node{$m$};
+%      \shade[balloon1] (0,-.4) circle (.4) node{$m$};
+%      \draw[ultra thick,->,blue!60!black](-4,0)--(-2,0)
+%      node[pos=1,right]{$\mb{v}_{ci}$};
+%      \shade[balloon3] (-4,0) circle (.4) node{$m$};
+%    \end{tikzpicture}
+%    \hspace{1in}
+%    \begin{tikzpicture}[scale=.8]
+%      \tikzstyle{balloon1}=[ball color=yellow!60];
+%      \tikzstyle{balloon2}=[ball color=green!60!gray];
+%      \tikzstyle{balloon3}=[ball color=gray];
+%      \draw[dashed](-4,0)--(4,0);
+%      \begin{scope}[rotate=25]
+%        \draw[dashed](0,0)--(4,0);
+%        \draw[ultra thick,->,blue!60!black](4,0)--(5,0)
+%        node[right]{$\mb{v}_{1f}$};
+%        \shade[balloon2] (4,0) circle (.4) node{$m$};
+%      \end{scope}
+%      \begin{scope}[rotate=-25]
+%        \draw[dashed](0,0)--(4,0);
+%        \draw[ultra thick,->,blue!60!black](4,0)--(5,0)
+%        node[right]{$\mb{v}_{2f}$};
+%        \shade[balloon1] (4,0) circle (.4) node{$m$};
+%      \end{scope}
+%      \draw(1.5,0) arc(0: 25:1.5) node[pos=.6,right]{$\theta_1$};
+%      \draw(1.5,0) arc(0:-25:1.5) node[pos=.6,right]{$\theta_2$};
+%      \draw[ultra thick,->,blue!60!black](-2,0)--(-3,0)
+%      node[pos=1,left]{$\mb{v}_{cf}$};
+%      \shade[balloon3] (-2,0) circle (.4) node{$m$};
+%    \end{tikzpicture}
+%  \end{center}
+%  \vspace{\stretch{1}}  
+\end{questions}
 \end{document}
