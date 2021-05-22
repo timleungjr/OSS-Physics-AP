@@ -516,8 +516,8 @@
           \fill[gray](-.4,.7) rectangle(.7,.9);
           \draw[thick](-.4,.7)--(.7,.7);
           %\draw[<-](.15,.06) to[in=0,out=250](-.5,-.5) node[left]{Pivot Point};
-  \end{tikzpicture}
-\end{center}
+        \end{tikzpicture}
+      \end{center}
       The rod is fixed at one end and allowed to fall from the horizontal
       position $A$ through the vertical position $B$.
     }
@@ -577,44 +577,113 @@
   \end{parts}
   \newpage
 
-  \question A uniform sphere of mass $M$ and radius $R$ is free to rotate,
-  without friction, about a horizontal axis through its center. A string is
-  wrapped around the sphere and is attached to a body of mass $m$ as shown in
-  the figure below. Find
-  \begin{center}
-    \begin{tikzpicture}[scale=.6]
-      \tikzstyle{balloon}=[ball color=red!80!gray!50];
-      \shade[balloon] (0,0) circle (2);% node[below right]{$m$};
-      \draw(0,0) circle(2);
-      \draw[fill=gray](0,0) circle(.2);
-      \draw[thick](2,0)--(2,-4);
-      \draw[fill=yellow!80!gray!50](1.5,-4) rectangle(2.5,-5)
-      node[midway,black]{$m$};
-      \draw[ultra thick,red!80!black,->](2,-4)--(2,-1.8)
-      node[pos=.9,right,black]{$T$};
-    \end{tikzpicture}
-  \end{center}
-  \begin{parts}
-    \part the acceleration of the body, and
-    \part the tension in the string.
-  \end{parts}
-  \newpage
+  % THIS IS ACTUALLY A PRETTY GOOD QUESTION THAT I USE IN CLASS EXAMPLE
+%  \question A uniform sphere of mass $M$ and radius $R$ is free to rotate,
+%  without friction, about a horizontal axis through its center. A string is
+%  wrapped around the sphere and is attached to a body of mass $m$ as shown in
+%  the figure below. Find
+%  \begin{center}
+%    \begin{tikzpicture}[scale=.6]
+%      \tikzstyle{balloon}=[ball color=red!80!gray!50];
+%      \shade[balloon] (0,0) circle (2);% node[below right]{$m$};
+%      \draw(0,0) circle(2);
+%      \draw[fill=gray](0,0) circle(.2);
+%      \draw[thick](2,0)--(2,-4);
+%      \draw[fill=yellow!80!gray!50](1.5,-4) rectangle(2.5,-5)
+%      node[midway,black]{$m$};
+%      \draw[ultra thick,red!80!black,->](2,-4)--(2,-1.8)
+%      node[pos=.9,right,black]{$T$};
+%    \end{tikzpicture}
+%  \end{center}
+%  \begin{parts}
+%    \part the acceleration of the body, and
+%    \part the tension in the string.
+%  \end{parts}
+%  \newpage
 
-  \question A uniform cylinder of mass $M$ and radius $R$ has a string wrapped
-  around it. The string is held fixed, and the cylinder falls vertically as
-  shown in the figure below. Find
-  \begin{center}
-    \begin{tikzpicture}[scale=.5]
-      \draw[fill=yellow!80!gray!50](0,0) circle(2);
-      \draw[thick](2,0)--(2,5);
-      \draw[ultra thick,red!80!black,->](2,0)--(2,3) node[pos=.9,right]{$T$};
-    \end{tikzpicture}
-  \end{center}
+  % TAKEN FROM THE 2004 AP PHYSICS C MECHANICS EXAM FREE-RESPONSE QUESTION 2
+  \uplevel{
+    \begin{center}
+      \begin{tikzpicture}[scale=.85]
+        \draw[very thick](0,0) circle(1);
+        \fill(0,0) circle(.07);
+        \draw[very thick](0,0)--(0,2);
+        \fill[gray!50](-3,2) rectangle(3,2.3);
+        \draw[very thick](-3,2)--(3,2);
+        \draw[thick,->,rotate=30](0,0)--(1,0) node[midway,above]{$R$};
+        \draw[very thick](-1,0)--(-1,-2);
+        \draw[very thick](-1.4,-2) rectangle(-.6,-2.5) node[midway]{$m$};
+        \draw[thick,|<->](-2,-2.5)--(-2,-5) node[midway,fill=white]{$D$};
+        \fill[gray!50](-3,-5) rectangle(3,-5.3);
+        \draw[very thick](-3,-5)--(3,-5);
+      \end{tikzpicture}
+    \end{center}
+  }
+  \question A solid disk of unknown mass and known radius $R$ is used as a
+  pulley in a lab experiment, as shown above. A small block of mass $m$ is
+  attached to a string, the other end of which is attached to the pulley and
+  wrapped around it several times. The block of mass $m$ is released from rest
+  and takes a time $t$ to fall the distance $D$ to the floor.
   \begin{parts}
-    \part the acceleration of the body, and
-    \part the tension in the string.
+    \part Calculate the linear acceleration $a$ of the falling block in terms
+    of the given quantities.
+
+    \part The time $t$ is measured for various heights $D$ and the data are
+    recorded in the following table.
+    \begin{center}
+      \begin{tabular}{|c|c|}
+        \hline
+        $D$ (m) & $t$ (s)\\\hline
+        0.5 & 0.68\\\hline
+        1   & 1.02\\\hline
+        1.5 & 1.19\\\hline
+        2   & 1.38\\\hline
+      \end{tabular}
+    \end{center}
+    \begin{subparts}
+      \subpart What quantities should be graphed in order to best determine the
+      acceleration of the block? Explain your reasoning.
+
+      \subpart On the grid below, plot the quantities determined in (b)i.,
+      label the axes, and draw the best-fit line to the data.
+      
+      \vspace{.1in}
+      \begin{center}
+        \begin{tikzpicture}[xscale=.6,yscale=.35]
+          \draw[thick,dashed](0,0) grid(20,20);
+          \draw[very thick,step=5](0,0) grid(20,20);
+        \end{tikzpicture}
+      \end{center}\vspace{.2in}
+      
+      \subpart Use your graph to calculate the magnitude of the acceleration.
+    \end{subparts}
+
+    \part Calculate the rotational inertia of the pulley in terms of $m$, $R$,
+    $a$, and fundamental constants.
+
+    \part The value of acceleration found in (b)iii, along with numerical
+    values for the given quantities and your answer to (c), can be used to
+    determine the rotational inertia of the pulley. The pulley is removed from
+    its support and its rotational inertia is found to be greater than this
+    value. Give one explanation for this discrepancy.
   \end{parts}
   \newpage
+  
+%  \question A uniform cylinder of mass $M$ and radius $R$ has a string wrapped
+%  around it. The string is held fixed, and the cylinder falls vertically as
+%  shown in the figure below. Find
+%  \begin{center}
+%    \begin{tikzpicture}[scale=.5]
+%      \draw[fill=yellow!80!gray!50](0,0) circle(2);
+%      \draw[thick](2,0)--(2,5);
+%      \draw[ultra thick,red!80!black,->](2,0)--(2,3) node[pos=.9,right]{$T$};
+%    \end{tikzpicture}
+%  \end{center}
+%  \begin{parts}
+%    \part the acceleration of the body, and
+%    \part the tension in the string.
+%  \end{parts}
+%  \newpage
 
   \uplevel{
     \cpic{.65}{disc1}
