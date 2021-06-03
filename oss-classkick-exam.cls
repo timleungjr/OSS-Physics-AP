@@ -99,3 +99,4 @@
   %\setlength\partopsep{100pt} 
   \setlength\parsep{0pt}
 }
+\renewcommand{\choicelabel}{(\thechoice)}

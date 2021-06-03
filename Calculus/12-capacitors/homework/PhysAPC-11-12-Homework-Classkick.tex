@@ -1,6 +1,6 @@
 \documentclass{../../../oss-classkick}
 
-\usepackage{circuitikz} % to draw circuits!
+\usepackage[siunitx]{circuitikz}
 
 \begin{document}
 \genheader
@@ -377,13 +377,9 @@
   \begin{enumerate}[resume]
   \item Determine an expression for the electric potential at point $P$ due to
     the charge $Q$.
-    %\vspace{\stretch{1}}
   \item A positive point charge $q$ with mass $m$ is placed at point $P$ and
     released from rest. Derive an expression for the speed of the point charge
-    when it is very far from the origin.
-    %\vspace{\stretch{1}}
-    %\newpage
-    
+    when it is very far from the origin.    
   \item On the dot representing point $P$ below, indicate the direction of the
     electric field at point P due to the charge $Q$.
     \begin{center}
@@ -399,19 +395,19 @@
   \vspace{2in}
   \newpage
   
-\item In the Bohr model of the hydrogen atom, the electron moves in a circular
-  orbit of radius $r$ around the proton.
-  \begin{enumerate}
-  \item Find an expression for the kinetic energy of the electron as a function
-    of $r$. Show that at any distance $r$ the kinetic energy is half the
-    potential energy.
-  \item Evaluate kinetic energy $K$, potential energy $U$ and the total
-    energy $W=K+U$ in electron volts for\\ $r=\SI{0.529e-10}{\metre}$, the
-    radius of the electron's orbit in hydrogen. (The energy $|W|$ that must be
-    supplied to the hydrogen atom to remove the electron is called the
-    ionization energy.)
-  \end{enumerate}
-  \newpage
+%\item In the Bohr model of the hydrogen atom, the electron moves in a circular
+%  orbit of radius $r$ around the proton.
+%  \begin{enumerate}
+%  \item Find an expression for the kinetic energy of the electron as a function
+%    of $r$. Show that at any distance $r$ the kinetic energy is half the
+%    potential energy.
+%  \item Evaluate kinetic energy $K$, potential energy $U$ and the total
+%    energy $W=K+U$ in electron volts for\\ $r=\SI{0.529e-10}{\metre}$, the
+%    radius of the electron's orbit in hydrogen. (The energy $|W|$ that must be
+%    supplied to the hydrogen atom to remove the electron is called the
+%    ionization energy.)
+%  \end{enumerate}
+%  \newpage
 
   % TAKEN FROM 2016 AP PHYSICS C EXAM FREE-RESPONSE QUESTION E&M 1
   \cpic{.9}{potentials}
@@ -452,6 +448,141 @@
     \vspace{.1in}Justify your answer.
   \end{enumerate}
   \vspace{\stretch{1}}
+  \newpage
+
+  % TAKEN FROM 2003 AP PHYSICS C EXAM FREE-RESPONSE QUESTION E&M 1. THE
+  % TIKZ FIGURE BELOW IS A FAIRLY GOOD REPRODUCTION OF THE ORIGINAL AP EXAM
+  % DIAGRAM.
+  \begin{center}
+    \begin{tikzpicture}[scale=.85]
+      \filldraw[dashed,thick,
+        even odd rule,
+        inner color=black!70,
+        outer color=gray!20] (0,0) circle (2);
+      \draw[very thick,->,rotate=45](0,0)--(2,0) node[midway,below]{$R$};
+      \fill(6,0) circle(.05) node[below]{$P$};
+    \end{tikzpicture}
+  \end{center}
+\item A spherical cloud of charge of radius $R$ contains a total charge $+Q$
+  with a nonuniform volume charge density that varies according to the equation
+  \begin{align*}
+    \rho(r)&= \rho_0\left( 1 -\dfrac rR \right)\text{ for }r\leq R\text{ and}\\
+    \rho(r)&= 0\text{ for }r>R
+  \end{align*}
+  where $r$ is the distance from the center of the cloud. Express all algebraic
+  answers in terms of $Q$, $R$, and fundamental constants.
+  \begin{enumerate}
+  \item Determine the following as a function of $r$ for $r>R$.
+    \begin{enumerate}
+    \item The magnitude $E$ of the electric field
+    \item The electric potential $V$
+    \end{enumerate}
+  \item A proton is placed at point $P$ shown above and released. Describe its
+    motion for a long time after its release.
+  \item An electron of charge magnitude $e$ is now placed at point $P$, which
+    is a distance $r$ from the center of the sphere, and released. Determine
+    the kinetic energy of the electron as a function of $r$ as it strikes the
+    cloud.
+  \item Derive an expression for $\rho_0$.
+  \item Determine the magnitude $E$ of the electric field as a function of $r$
+    for $r\leq R$.
+  \end{enumerate}
+  \newpage
+
+  % TAKEN FROM THE 2004 AP PHYSICS C FREE-RESPONSE QUESTION E&M 1. NO CHANGES TO
+  % THE QUESTION HAVE BEEN MADE 
+  \cpic{.65}{nonconcentric}
+\item The figure above left shows a hollow, infinite, cylindrical, uncharged
+  conducting shell of inner radius $r_1$ and outer radius $r_2$. An infinite
+  line charge of linear charge density $+\lambda$ is parallel to its axis but
+  off center. An enlarged cross section of the cylindrical shell is shown above
+  right.
+  \begin{enumerate}
+  \item  On the cross section above right,
+    \begin{enumerate}
+    \item sketch the electric field lines, if any, in each of regions I, II,
+      and III and
+    \item use $+$ and $-$ signs to indicate any charge induced on the conductor.
+      \end{enumerate}
+  \item In the spaces below, rank the electric potentials at points $a$, $b$,
+    $c$, $d$, and $e$ from highest to lowest (1 = highest potential). If two
+    points are at the same potential, give them the same number.
+
+    \vspace{.1in}
+    \underline{\hspace{.2in}} $V_a$\hspace{.3in}
+    \underline{\hspace{.2in}} $V_b$\hspace{.3in}
+    \underline{\hspace{.2in}} $V_c$\hspace{.3in}
+    \underline{\hspace{.2in}} $V_d$\hspace{.3in}
+    \underline{\hspace{.2in}} $V_e$
+  \end{enumerate}
+  \cpic{.65}{concentric}
+  \begin{enumerate}[resume]
+  \item The shell is replaced by another cylindrical shell that has the same
+    dimensions but is nonconducting and carries a uniform volume charge density
+    $+\rho$. The infinite line charge, still of charge density $+\lambda$, is
+    located at the center of the shell as shown above. Using Gauss's law,
+    calculate the magnitude of the electric field as a function of the distance
+    $r$ from the center of the shell for each of the following regions. Express
+    your answers in terms of the given quantities and fundamental constants.
+    \begin{enumerate}
+    \item $r < r_1$
+    \item $r_1\leq r\leq r_2$
+    \item $r > r_2$
+    \end{enumerate}
+  \end{enumerate}
+  \newpage
+    
+\item A spherically symmetric charge distribution has net positive charge $Q_0$
+  distributed within a radius of $R$. Its electric potential $V$ as a function
+  of the distance $r$ from the center of the sphere is given by the following
+  \begin{align*}
+    V(r) &= \frac{Q_0}{4\pi\epsilon_0R}\left[-2+3\left(\frac rR\right)^2 \right]
+    \text{ for } r<R\\
+    V(r) &= \frac{Q_0}{4\pi\epsilon_0r}\text{ for } r>R
+  \end{align*}
+  Express all algebraic answers in terms of the given quantities and
+  fundamental constants.
+  \begin{enumerate}
+  \item For the following regions, indicate the direction of the electric field
+    $E(r)$ and derive an expression for its magnitude.
+    \begin{enumerate}
+    \item $r < R$
+      
+      \vspace{.1in}\underline{\hspace{.4in}} Radially inward
+        
+      \vspace{.1in}\underline{\hspace{.4in}} Radially outward
+      
+    \item $r > R$
+      
+      \vspace{.1in}\underline{\hspace{.4in}} Radially inward
+
+      \vspace{.1in}\underline{\hspace{.4in}} Radially outward
+    \end{enumerate}
+  \item For the following regions, derive an expression for the enclosed charge
+    that generates the electric field in that region, expressed as a function
+    of $r$.
+    \begin{enumerate}
+    \item $r < R$
+    \item $r > R$
+    \end{enumerate}
+  \item Is there any charge on the surface of the sphere ($r=R$)?
+
+    \vspace{.1in}\underline{\hspace{.4in}} Yes\hspace{.3in}
+    \underline{\hspace{.4in}} No
+    
+    If there is, determine the charge. In either case, explain your reasoning.
+  \item On the axes below, sketch a graph of the force that would act on a
+    positive test charge in the regions $r<R$ and $r > R$. Assume that a force
+    directed radially outward is positive.
+  \end{enumerate}
+  \begin{center}
+    \begin{tikzpicture}[scale=1.1]
+      \draw[very thick,->](0,-3)--(0,3) node[above]{$F$};
+      \draw[very thick,->](0,0)--(10,0) node[right]{$r$};
+      \draw[dashed](4,-3)--(4,3) node[midway,below left]{$R$};
+    \end{tikzpicture}
+  \end{center}
+\newpage
   
 %\item Two identical small spheres of mass $m$ are suspended from a common point
 %  by threads of length $L$. When each sphere carries a charge $q$, each thread
@@ -495,44 +626,44 @@
 %    \shade[balloon] (0,0) circle(0.12) node[right]{$\;q$};
 %  \end{tikzpicture}
 %  \vspace{\stretch{1}}
-  \newpage
+%  \newpage
   
-\item Two positive charges $+q$ are on the $y$ axis at $y=+a$ and $y=-a$.
-  \begin{enumerate}
-  \item Show that the electric field on the $x$ axis is along the $x$ axis with
-    $E_x=2kqx(x^2+a^2)^{-3/2}$.
-  \item Show that near the origin, when $x\ll a$, $E_x\approx 2kqx/a^3$.
-  \item Show that for $x\gg a$, $E_x\approx 2kq/x^2$.
-  \item Explain why you should expect the result in (c) even before calculating
-    it.
-  \end{enumerate}
-  A bead of mass $m$ with a negative charge $-q$ slides along a thread that
-  runs along the $x$ axis.
-  \begin{enumerate}[resume]
-  \item Show that for small displacements $x\ll a$, the bead experiences a
-    restoring force that is proportional to $x$ and therefore undergoes
-    simple harmonic motion.
-  \item Find the period of the motion.
-  \end{enumerate}
-  %\vspace{\stretch{4}}
-  \newpage
+%\item Two positive charges $+q$ are on the $y$ axis at $y=+a$ and $y=-a$.
+%  \begin{enumerate}
+%  \item Show that the electric field on the $x$ axis is along the $x$ axis with
+%    $E_x=2kqx(x^2+a^2)^{-3/2}$.
+%  \item Show that near the origin, when $x\ll a$, $E_x\approx 2kqx/a^3$.
+%  \item Show that for $x\gg a$, $E_x\approx 2kq/x^2$.
+%  \item Explain why you should expect the result in (c) even before calculating
+%    it.
+%  \end{enumerate}
+%  A bead of mass $m$ with a negative charge $-q$ slides along a thread that
+%  runs along the $x$ axis.
+%  \begin{enumerate}[resume]
+%  \item Show that for small displacements $x\ll a$, the bead experiences a
+%    restoring force that is proportional to $x$ and therefore undergoes
+%    simple harmonic motion.
+%  \item Find the period of the motion.
+%  \end{enumerate}
+%  %\vspace{\stretch{4}}
+%  \newpage
   
-\item Using Gauss's law, find
-  \begin{enumerate}
-  \item the electric field strength inside and outside of a uniformly charged
-    hollow sphere of radius $R$ and surface charge density $\sigma$ (charge
-    per unit area).
-  \item the electric field inside and outside an infinitely long cyclindrical
-    shell of charge of radius $R$ with charge discibution $\sigma$ (charge
-    per unit area).
-  \item the electric field strength inside and outside a infinitely long solid
-    cylinder of radius $R$ carrying a linear uniform charge density $\rho$
-    (charge per unit volume).
-  \end{enumerate}
-  Hint: In all cases, think about where to put the Gaussian surface. Take
-  advantage of symmetry.
-  %\vspace{\stretch{1}}
-  \newpage
+%\item Using Gauss's law, find
+%  \begin{enumerate}
+%  \item the electric field strength inside and outside of a uniformly charged
+%    hollow sphere of radius $R$ and surface charge density $\sigma$ (charge
+%    per unit area).
+%  \item the electric field inside and outside an infinitely long cyclindrical
+%    shell of charge of radius $R$ with charge discibution $\sigma$ (charge
+%    per unit area).
+%  \item the electric field strength inside and outside a infinitely long solid
+%    cylinder of radius $R$ carrying a linear uniform charge density $\rho$
+%    (charge per unit volume).
+%  \end{enumerate}
+%  Hint: In all cases, think about where to put the Gaussian surface. Take
+%  advantage of symmetry.
+%  %\vspace{\stretch{1}}
+%  \newpage
 
 %\item For the circuit shown below, find
 %  \begin{enumerate}[noitemsep]
@@ -547,19 +678,19 @@
 %  \end{tikzpicture}
 %  \vspace{\stretch{1}}
   
-\item A parallel-plate capacitor has a capacitance $C_0$ and plate separation
-  of $d$. To dielectric slabs of constants $\kappa_1$ and $\kappa_2$, each of
-  thickness $d/2$ and having the same area as the plates, are inserted between
-  the plates as shown in the figure below. When the free charge on the plates
-  are $Q$,
-  \begin{enumerate}
-  \item find the electric field in each of the dielectric
-  \item find the potential difference between the plates
-  \item show that the new capacitance is given by:
-    $\displaystyle C=\frac{\kappa_1\kappa_2}{\kappa_1+\kappa_2}C_0$
-  \end{enumerate}
-  \pic{.2}{stacked}
-  %\vspace{\stretch{1}}
+%\item A parallel-plate capacitor has a capacitance $C_0$ and plate separation
+%  of $d$. To dielectric slabs of constants $\kappa_1$ and $\kappa_2$, each of
+%  thickness $d/2$ and having the same area as the plates, are inserted between
+%  the plates as shown in the figure below. When the free charge on the plates
+%  are $Q$,
+%  \begin{enumerate}
+%  \item find the electric field in each of the dielectric
+%  \item find the potential difference between the plates
+%  \item show that the new capacitance is given by:
+%    $\displaystyle C=\frac{\kappa_1\kappa_2}{\kappa_1+\kappa_2}C_0$
+%  \end{enumerate}
+%  \pic{.2}{stacked}
+%  %\vspace{\stretch{1}}
 
 %\item Several point charges produce the equipotential lines shown.
 %  \begin{enumerate}[noitemsep]

@@ -75,7 +75,7 @@
 \usepackage{siunitx}
 \usepackage{multicol}
 \usepackage{fancyhdr}
-\usepackage{circuitikz}
+\usepackage[siunitx]{circuitikz}
 
 \usetikzlibrary{decorations.pathmorphing,patterns}
 

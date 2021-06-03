@@ -10,4 +10,4 @@ clean:
 public:
 	mkdir -p $(DESTINATION)/Topic06
 	cp PhysAPC-06-circMotion.pdf $(DESTINATION)/Topic06
-	cp homework/*Homework.pdf $(DESTINATION)/Topic06
+	cp homework/*Homework-Classkick.pdf $(DESTINATION)/Topic06
