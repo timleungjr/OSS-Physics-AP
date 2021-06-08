@@ -1,13 +1,6 @@
 \documentclass[12pt,compress,aspectratio=169]{beamer}
-\usetheme{metropolis}
-\setbeamersize{text margin left=.5cm,text margin right=.5cm}
-\usepackage[lf]{carlito}
-\usepackage{siunitx}
-\usepackage{graphicx}
-\usepackage{tikz}
-\usepackage{mathpazo}
-\usepackage{bm}
-\usepackage{xcolor,colortbl}
+\input{../mybeamer}
+\usepackage{pgfplots}
 
 \usetikzlibrary{decorations.pathmorphing,patterns}
 
@@ -21,12 +14,9 @@
 
 \title{Topic 8: Harmonic Motion}
 \subtitle{Advanced Placement Physics C}
-\author[TML]{Dr.\ Timothy Leung}
-\institute{Olympiads School}
-\date{\today}
+\input{../me}
+\input{../mycommands}
 
-\newcommand{\pic}[2]{\includegraphics[width=#1\textwidth]{#2}}
-\newcommand{\eq}[2]{\vspace{#1}{\Large\begin{displaymath}#2\end{displaymath}}}
 
 \begin{document}
 
@@ -156,7 +146,7 @@
 \begin{frame}{Mass on a Spring}
 
   \eq{-.1in}{
-    \boxed{\ddot{x}+\frac{k}mx=0}%\frac{d^2x}{dt^2}+\frac{k}mx=0}
+    \boxed{\ddot{x}+\frac{k}mx=0}
   }
   
   Starting with the general form and take the time derivatives to obtain the
@@ -192,7 +182,7 @@
 
 
 
-\begin{frame}{Mass on a Spring}{Frequency and Period}
+\begin{frame}{Mass on a Spring: Frequency and Period}
   Period ($T_0$) and frequency ($f_0$) of the undamped harmonic oscillator are
   given by:
 
@@ -206,7 +196,7 @@
 
 
 
-\begin{frame}
+\begin{frame}{Displacement, Velocity and Acceleration}
   \begin{columns}
     \column{.4\textwidth}
 
@@ -519,15 +509,15 @@
     }
 
     So how small is ``small angle''? That depends on what tolerance (the
-    number of significant figures) is needed in the answer:
-    \begin{center}
-      \begin{tabular}{c|c}
-        \rowcolor{pink}
-        \textbf{Tolerance} & \textbf{Maximum Angle} $\bm{\phi}$ \\ \hline
-        \SI{10}{\percent} (2 sig.\ figs.) & \ang{5.7} \\
-        \SI{1}{\percent} (3 sig.\ figs.) & \ang{.57}
-      \end{tabular}
-    \end{center}
+    number of significant figures) is needed in the answer.
+%    \begin{center}
+%      \begin{tabular}{c|c}
+%        \rowcolor{pink}
+%        \textbf{Tolerance} & \textbf{Maximum Angle} $\bm{\phi}$ \\ \hline
+%        \SI{10}{\percent} (2 sig.\ figs.) & \ang{5.7} \\
+%        \SI{1}{\percent} (3 sig.\ figs.) & \ang{.57}
+%      \end{tabular}
+%    \end{center}
     
     \column{.25\textwidth}
     \centering
@@ -568,21 +558,63 @@
 
 
 
-\begin{frame}{Natural Frequency of a Simple Pendulum System}
-
-
+\begin{frame}{How Good is the Small Angle Approximation?}
   \begin{center}
     \begin{tikzpicture}
-      \draw[->](0,0)--(2.5,0) node[right]{$\phi$};
-      \draw[->](0,0)--(0,2.5) node[above]{$y$};
-      \draw[very thick](0,0)--(2,2) node[right]{$y=\phi$};
-      \draw[purple!70!black,very thick,smooth,samples=80,domain=0:2]
-      plot(\x,{sin(60*\x)}) node[midway,above]{$y=\sin(\phi)$};
-      \draw(1.5,.2)--(1.5,-.2) node[below]{$\pi/2$};
+      \begin{axis}[
+          width=2.5in,
+          xmin=0,xmax=pi/2,
+          ymin=0,ymax=pi/2,
+          xlabel=$\theta$ (radian),
+          xtick={0,pi/4,pi/2},
+          xticklabels={0,$\dfrac\pi4$,$\dfrac\pi2$},
+          grid = both,
+          legend pos=north west,
+        ]
+        \addplot[
+          color=blue,
+          domain=0:pi/2,
+          samples=40,
+          style={thick}]{sin(x*180/pi)};
+        \addlegendentry{$\sin\theta$};
+        \addplot[
+          color=red,
+          domain=0:pi/2,
+          samples=40,
+          thick]{x};
+        \addlegendentry{$\theta$};
+      \end{axis}
+    \end{tikzpicture}
+    \begin{tikzpicture}
+      \begin{axis}[
+          width=2.5in,
+          ylabel=Percentage Error,
+          xmin=0,xmax=pi/2,
+          ymin=0,ymax=60,
+          xlabel=$\theta$ (radian),
+          xtick={0,pi/8,pi/4,3*pi/8,pi/2},
+          xticklabels={
+            0,$\dfrac\pi8$,$\dfrac\pi4$,$\dfrac{3\pi}8$,$\dfrac\pi2$
+          },
+          ytick={0,10,...,60},
+          legend pos=north west,
+          grid = both,
+        ]
+        \addplot[
+          color=purple,
+          domain=0:pi/2,
+          samples=40,
+          style=thick
+        ]{abs(sin(x*180/pi)-x)/sin(x*180/pi)*100};
+        %\addlegendentry{$1-\left|\frac{\theta}{sin\theta}\right|$};
+      \end{axis}
     \end{tikzpicture}
   \end{center}
-  
+  What the maximum angle of deflection can be depends on the accuracy the answer
+  requires.
 \end{frame}
+
+
 
 \begin{frame}{Pendulum Example Problem}
   \textbf{Example:} A simple pendulum consists of a mass $m$ attached to a
@@ -714,30 +746,28 @@
   }
 
   \vspace{-.15in}where $A_0$ is the initial amplitude of the damped oscillator,
-  and angular frequency is now given by:
+  and ``natural frequency'' for the damped oscillator is given by:
 
   \eq{-.2in}{
     \omega=\sqrt{\omega_0^2-\left(\frac{b}{2m}\right)^2}
-    %\quad{\text{where}}\quad
-    %\omega_0=\sqrt{\frac{k}m}
   }
   
-  Angular frequency $\omega$ of the damped oscillator is lower than the 
-  undamped case $\omega_0$ depending on the damping factor $b$.
+  Note that $\omega<\omega_0$ (natural frequency decreases) because of the
+  damping factor $b$.
   \vspace{.2in}
 \end{frame}
 
 
 
 \begin{frame}{Critical Damping}
-  \textbf{Critical damping} occurs when the angular frequency $\omega$ is zero,
+  \textbf{Critical damping} occurs when the natural frequency $\omega$ is zero,
   i.e.:
   
   \eq{-.2in}{
     \sqrt{\omega_0^2-\left(\frac{b}{2m}\right)^2}=0
   }
 
-  which occurs when the damping constant is:
+  which corresponds to a damping constant:
 
   \eq{-.2in}{
     b_c=2m\omega_0
@@ -896,10 +926,11 @@
   This means that:
   \begin{itemize}
   \item The frequency of the driving force is same as the natural frequency of
-    the oscillator
+    the damped oscillator:
 
     \eq{-.2in}{
-      \omega_E=\omega_0%\quad\text{where}\quad\omega_0=\sqrt{\frac{k}{m}}
+      \omega_E=\omega=\sqrt{\omega_0-\frac{b}{2m}}
+      \quad\text{where}\quad\omega_0=\sqrt{\frac km}
     }
     
   \item The driving force follows the motion of the oscillator.
@@ -909,32 +940,72 @@
 
 
 \begin{frame}{Resonance}
-  Looking at the expression for amplitude of the oscillation:
-  
-  \eq{-.2in}{
+  \eq{-.25in}{
     A=\frac{F}{\sqrt{m^2(\omega_0^2-\omega_E^2)^2+b^2\omega_E^2}}
   }
   
-  Amplitude is at maximum when the driving frequency $\omega_E$ is equal to the
-  natural frequency $\omega_0$, with a maximum value of:
-  
+  Maximum $A$ occurs when the denominator is the smallest, which can be related
+  to the external frequency by setting the derivative with respect to
+  $\omega_E$ to 0:
+
   \eq{-.2in}{
-    A_\text{max}=\frac{F}{b\omega_0}
+    \diff{}{\omega_E}\left[m^2(\omega_0^2-\omega_E^2)^2+b^2\omega_E^2\right]=0
   }
+
+  It is a simple exercise
+  %\footnote{$b$, $m$ and $\omega_o$ are all constants anyway!}
+  to see that the minimum value occurs at the natural frequency of
+  the damped oscillator.
+
+  \eq{-.35in}{
+    \omega_E=\sqrt{\omega_0-\frac{b}{2m}}
+  }
+%
+%  The maximum amplitude is:
+%  
+%  \eq{-.2in}{
+%    A_\text{max}=\frac{F}{b\omega_E}
+%  }
 \end{frame}
 
 
 
 \begin{frame}{Resonance}
   \begin{columns}
-    \column{.4\textwidth}
-    \pic{1}{resonance-fig2}
-    
-    \column{.6\textwidth}
+    \column{.55\textwidth}
+    \begin{tikzpicture}
+      \begin{axis}[
+          width=3.3in,
+          xmin=0,xmax=3, xlabel=Driving Frequency ($\omega_E$),
+          xtick={0,1,2,3}, xticklabels={0,$\omega_0$,$2\omega_0$,$3\omega_0$},
+          ymin=0,ymax=5, ylabel=Relative Amplitude ($A$),
+        ]
+        \addplot[
+          color=red!30,
+          samples=300,
+          domain=0:3,
+          very thick]{1/sqrt((1-x^2)^2+x^2)};
+        \addlegendentry{$\frac{b}{2m}=\frac12\omega_0$};
+        \addplot[
+          color=red!60,
+          samples=200,
+          domain=0:3,
+          very thick]{1/sqrt((1-x^2)^2+x^2/4)};
+        \addlegendentry{$\frac{b}{2m}=\frac14\omega_0$};
+        \addplot[
+          color=red,
+          samples=200,
+          domain=0:3,
+          very thick]{1/sqrt((1-x^2)^2+x^2/16)};
+        \addlegendentry{$\frac{b}{2m}=\frac18\omega_0$};
+      \end{axis}
+    \end{tikzpicture}
+
+    \column{.45\textwidth}
     Plotting amplitude $A$ as a function of driving frequency $\omega$ shows
     that:
     \begin{itemize}
-    \item Resonance response is highest when $\omega=\omega_0$, which we know
+    \item Resonance response is highest when $\omega_E=\omega$, which we know
       already
     \item The smaller the damping constant $b$, the higher and narrower the
       peak is

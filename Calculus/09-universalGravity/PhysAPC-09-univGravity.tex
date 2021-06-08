@@ -1,13 +1,5 @@
 \documentclass[12pt,compress,aspectratio=169]{beamer}
-\usetheme{metropolis}
-\setbeamersize{text margin left=.5cm,text margin right=.5cm}
-%\usefonttheme{professionalfonts}
-\usepackage[lf]{carlito}
-\usepackage{siunitx}
-\usepackage{tikz}
-\usepackage{mathpazo}
-\usepackage{bm}
-\usepackage{xcolor,colortbl}
+\input{../mybeamer}
 
 \usetikzlibrary{decorations.pathmorphing,patterns}
 
@@ -22,13 +14,8 @@
 
 \title{Topic 9: Universal Gravitation}
 \subtitle{Advanced Placement Physics C}
-\author{Dr.\ Timothy Leung}
-\institute{Olympiads School}
-\date{\today}
-
-\newcommand{\pic}[2]{\includegraphics[width=#1\textwidth]{#2}}
-\newcommand{\eq}[2]{\vspace{#1}{\Large\begin{displaymath}#2\end{displaymath}}}
-
+\input{../me}
+\input{../mycommands}
 
 
 \begin{document}
@@ -452,7 +439,7 @@
     linear function of distance $r$ from the center:
 
     \eq{-.2in}{
-      g(r)=\frac{GM_E r}{r_E^3}=\left[\frac{g_0}{r_E}\right]r
+      g(r)=\frac{GM_E r}{r_E^3}=\left(\frac{r}{r_E}\right)g_0
     }
     
     where $g_0=\SI{9.81}{\newton\per\kilogram}$ is the field strength at the
@@ -777,7 +764,7 @@
 
 \begin{frame}{Non-Circular Orbits}
   \begin{center}
-    \pic{.6}{newton-cannon-orbital-types-Seeds.jpg}
+    \pic{.6}{newton-cannon-orbital-types-Seeds}
   \end{center}
 \end{frame}
 

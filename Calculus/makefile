@@ -1,5 +1,5 @@
-TERM=Summer-2021
-DESTINATION=$(HOME)/Nextcloud/Physics-APC-$(TERM)-Web
+TERM=2021-07-Summer
+DESTINATION=$(HOME)/Nextcloud/$(TERM)/Physics-APC-Post
 
 export DESTINATION
 
