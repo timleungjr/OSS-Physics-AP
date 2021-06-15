@@ -1,11 +1,5 @@
 \documentclass[12pt,compress,aspectratio=169]{beamer}
-\usetheme{metropolis}
-\setbeamersize{text margin left=.5cm,text margin right=.5cm}
-\usepackage[lf]{carlito}
-\usepackage{siunitx}
-\usepackage{tikz}
-\usepackage{mathpazo}
-\usepackage{bm}
+\input{../mybeamer}
 
 \usetikzlibrary{decorations.pathmorphing,patterns}
 
@@ -23,12 +17,8 @@
 
 \title{Topic 7: Simple Harmonic Motion}
 \subtitle{Advanced Placement Physics 1}
-\author[TML]{Dr.\ Timothy Leung}
-\institute{Olympiads School}
-\date{\today}
-
-\newcommand{\pic}[2]{\includegraphics[width=#1\textwidth]{#2}}
-\newcommand{\eq}[2]{\vspace{#1}{\Large\begin{displaymath}#2\end{displaymath}}}
+\input{../me}
+\input{../mycommands}
 
 \begin{document}
 
@@ -490,8 +480,7 @@
   spring-mass system that takes away energy, represented by a shock absorber:
   \begin{center}
     \begin{tikzpicture}
-      \draw[fill=blue!20!white] (2.95,.5) rectangle(4.05,1.5)
-      node[midway]{$m$};
+      \draw[fill=blue!20!white] (2.95,.5) rectangle(4.05,1.5);
       \draw[thick,draw=black!50,
         decoration={aspect=0.3,segment length=2mm, amplitude=2.5mm, coil},
         decorate] (0,1)--(2.95,1);
@@ -509,30 +498,27 @@
         \draw(5.5,1)--(6.5,1);
       \end{scope}
       
-      \uncover<2->{
-        \fill[red] (3.5,1)circle(.075);
-        \begin{scope}[very thick,->,red!80!black]
-          \draw(3.5,1)--(3.5,0) node[below]{$m\bm{g}$};
-          \draw(3.5,1)--(3.5,2) node[above]{$\bm{N}$};
-          \draw(3.5,1)--(2.5,1) node[above]{$\bm{F}_s$};
-          \draw(3.5,1)--(4.5,1) node[below]{$\bm{F}_D$};
-        \end{scope}
-      }
+      \fill[red!80!black] (3.5,1)circle(.075);
+      \begin{scope}[very thick,->,red!80!black]
+        \draw(3.5,1)--(3.5,0) node[below]{$m\bm{g}$};
+        \draw(3.5,1)--(3.5,2) node[above]{$\bm{N}$};
+        \draw(3.5,1)--(2.5,1) node[above]{$\bm{F}_s$};
+        \draw(3.5,1)--(4.5,1) node[below]{$\bm{F}_D$};
+      \end{scope}
     \end{tikzpicture}
   \end{center}
-  \uncover<2->{
-    The damping force is typically proportional to velocity, in the opposite
-    direction:
 
-    \eq{-.3in}{
-      \bm{F}_D=-b\bm{v}
-    }
+  The damping force is typically proportional to velocity, in the opposite
+  direction:
+  
+  \eq{-.3in}{
+    \bm{F}_D=-b\bm{v}
+  }
 
-    \vspace{-.1in}Second law of motion:
+  \vspace{-.1in}Second law of motion:
 
-    \eq{-.4in}{
-      -kx-bv=ma
-    }
+  \eq{-.4in}{
+    -kx-bv=ma
   }
 \end{frame}
 

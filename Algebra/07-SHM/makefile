@@ -1,8 +1,6 @@
 all:
 	xelatex PhysAP1-07-harmonicMotion
 	xelatex PhysAP1-07-harmonicMotion
-	xelatex PhysAP1-07-harmonicMotion-print
-	xelatex PhysAP1-07-harmonicMotion-print
 	cd homework ; make
 
 clean:
@@ -11,5 +9,5 @@ clean:
 
 public:
 	mkdir -p $(DESTINATION)/Topic07
-	cp *-print.pdf $(DESTINATION)/Topic07
+	cp *.pdf $(DESTINATION)/Topic07
 	cp homework/*Homework.pdf $(DESTINATION)/Topic07
