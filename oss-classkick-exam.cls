@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{oss-apphys}[2018/03/04 Olympiads School AP Phys Homework class]
+\ProvidesClass{oss-classkick-exam}[2018/03/04 Olympiads School AP Phys Homework class]
 
 \LoadClass[11pt]{exam}
 
