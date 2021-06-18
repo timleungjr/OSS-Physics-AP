@@ -6,11 +6,12 @@ export DESTINATION
 all:
 	cd 01-Kinematics; make
 	cd 02-Dynamics	; make
+	cd 03-workEnergy; make
 #	cd 06-rotMotion ; make
 	cd 07-SHM ; make
 	cd 08-mechWaves ; make
-#	cd 09-fluidMech ; make
-#	cd 10-thermodynamics ; make
+	cd 09-fluidMech ; make
+	cd 10-thermodynamics ; make
 #	cd 11-electrostatics ; make
 #	cd 12-capacitors ; make
 
@@ -18,11 +19,12 @@ clean:
 	rm -rf *.*~ *~ *.log
 	cd 01-Kinematics; make clean
 	cd 02-Dynamics	; make clean
+	cd 03-workEnergy; make clean
 #	cd 06-rotMotion	; make clean
 	cd 07-SHM	; make clean
 	cd 08-mechWaves	; make clean
-#	cd 09-fluidMech	; make clean
-#	cd 10-thermodynamics ; make clean
+	cd 09-fluidMech	; make clean
+	cd 10-thermodynamics ; make clean
 #	cd 11-electrostatics ; make clean
 #	cd 12-capacitors ; make clean
 
@@ -30,10 +32,11 @@ public:
 	mkdir -p $(DESTINATION)
 	cd 01-Kinematics; make public
 	cd 02-Dynamics	; make public
+	cd 03-workEnergy; make public
 #	cd 06-rotMotion	; make public
 	cd 07-SHM	; make public
 	cd 08-mechWaves	; make public
-#	cd 09-fluidMech	; make public
-#	cd 10-thermodynamics ; make public
+	cd 09-fluidMech	; make public
+	cd 10-thermodynamics ; make public
 #	cd 11-electrostatics ; make public
 #	cd 12-capacitors ; make public
