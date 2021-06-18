@@ -1,19 +1,11 @@
 \documentclass[12pt,compress,aspectratio=169]{beamer}
-\usetheme{metropolis}
-\setbeamersize{text margin left=.5cm,text margin right=.5cm}
-\usepackage[lf]{carlito}
-\usepackage{siunitx}
-\usepackage{tikz}
-\usepackage{mathpazo}
-\usepackage{bm}
-\usepackage{xcolor,colortbl}
+\input{../mybeamer}
 
 \setmonofont{Ubuntu Mono}
 \setlength{\parskip}{0pt}
 \renewcommand{\baselinestretch}{1}
 
 \sisetup{
-  %detect-all,
   inter-unit-product=\cdotp,
   per-mode=symbol
 }
@@ -21,37 +13,18 @@
 
 \title{Topic 5: Center of Mass}
 \subtitle{Advanced Placement Physics C}
-\author[TML]{Dr.\ Timothy Leung}
-\institute{Olympiads School}
-\date{\today}
+\input{../me}
+\input{../mycommands}
 
-\newcommand{\pic}[2]{\includegraphics[width=#1\textwidth]{#2}}
-\newcommand{\mb}[1]{\ensuremath\mathbf{#1}}
-\newcommand{\eq}[2]{\vspace{#1}{\Large\begin{displaymath}#2\end{displaymath}}}
 \newcommand{\ii}{\ensuremath\hat{\bm{\imath}}}
 \newcommand{\jj}{\ensuremath\hat{\bm{\jmath}}}
 \newcommand{\kk}{\ensuremath\hat{\bm{k}}}
-%\newcommand{\uveci}{\bm{\hat{\textnormal{\bfseries i}}}}
 
 \begin{document}
 
 \begin{frame}
   \maketitle
 \end{frame}
-
-
-
-%\begin{frame}{Files to Download}
-%  \begin{itemize}
-%  \item\texttt{PhysAPC-05-CM-print.pdf}--The ``print version'' of this topic.
-%  \item\texttt{PhysAPC-05-Homework.pdf}--Homework problems for Topics 4 \& 5.
-%  \end{itemize}
-%  
-%  \vspace{.1in}Please download/print the PDF file for the class slides before
-%  each class. There is no point copying notes that are already on the slides.
-%  Instead, focus on things that aren't necessarily on the slides. If you wish
-%  to print the slides, we recommend printing 4 slides per page.
-%\end{frame}
 
 
 
@@ -325,13 +298,14 @@
         \draw[thick,fill=gray](0,0) circle(2);
         \draw[thick,fill=white](0,1) circle(1);
         \draw[fill=black](0,0) circle(.04);
-        \draw[thick,->](0,0)--(-1.41,-1.41) node[midway,below]{\footnotesize$r$};
+        \draw[thick,->](0,0)--(-1.41,-1.41)node[midway,below]{\footnotesize$r$};
         \draw[fill=black](0,1) circle(.04);
         \draw[thick,->](0,1)--(.707,.293) node[right]{\footnotesize$r/2$};
       \end{tikzpicture}
     \end{center}
   \end{itemize}
 \end{frame}
+
 
 
 \begin{frame}{Negative Mass Example}
@@ -362,7 +336,8 @@
         y_{CM}
         =\frac{\sum y_i m_i}{\sum m_i}
         =\frac{m_A(0) + m_B (r/2)}{m_A+m_B}
-        =\frac{-\sigma\pi\left(r/2\right)^2(r/2)}{\sigma\pi r^2-\sigma\pi\left(r/2\right)^2}
+        =\frac{-\sigma\pi\left(r/2\right)^2(r/2)}
+        {\sigma\pi r^2-\sigma\pi\left(r/2\right)^2}
         \uncover<2->{
           =\frac{-r}{6}
         }

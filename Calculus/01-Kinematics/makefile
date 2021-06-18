@@ -6,9 +6,11 @@ all:
 
 clean:
 	rm -rf *~ *.*~ *.log *.nav *.aux *.out *.snm *.toc
+	cd homework ; make clean
+	cd Handouts ; make clean
 
 public:
 	mkdir -p $(DESTINATION)/Topic01
-	cp PhysAPC-01-kinematics.pdf $(DESTINATION)/Topic01
-	cp homework/*-Homework-Classkick.pdf $(DESTINATION)/Topic01
+	cp *.pdf $(DESTINATION)/Topic01
+	cp homework/*-Homework.pdf $(DESTINATION)/Topic01
 	cp Handouts/*.pdf $(DESTINATION)/Topic01

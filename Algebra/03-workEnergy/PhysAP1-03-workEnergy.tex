@@ -1,12 +1,6 @@
 \documentclass[12pt,compress,aspectratio=169]{beamer}
-\usetheme{metropolis}
-\setbeamersize{text margin left=.5cm,text margin right=.5cm}
-\usepackage[lf]{carlito}
-\usepackage{siunitx}
-\usepackage{tikz}
-\usepackage{mathpazo}
-\usepackage{bm}
-\usepackage{xcolor,colortbl}
+\input{../mybeamer}
+
 %\setmonofont{Ubuntu Mono}
 \setlength{\parskip}{0pt}
 \renewcommand{\baselinestretch}{1}
@@ -22,15 +16,10 @@
 
 \title{Topic 3: Work and Energy}
 \subtitle{Advanced Placement Physics 1}
-\author[TML]{Dr.\ Timothy Leung}
-\institute{Olympiads School}
-\date{Last Upated: \today}
+\input{../me}
+\input{../mycommands}
 
-
-\newcommand{\pic}[2]{\includegraphics[width=#1\textwidth]{#2}}
-\newcommand{\mb}[1]{\ensuremath\mathbf{#1}}
 \newcommand{\kkk}{\ensuremath\hat{\bm{k}}}
-\newcommand{\eq}[2]{\vspace{#1}{\Large\begin{displaymath}#2\end{displaymath}}}
 
 \begin{document}
 
@@ -67,14 +56,14 @@
 \section{Work}
 
 \begin{frame}{Mechanical Work}
-  \textbf{Mechanical work} is performed when a force $\mb{F}$ displaces an
-  object by $\Delta \mb{x}$. If the force is \emph{constant}, then the work
+  \textbf{Mechanical work} is performed when a force $\bm{F}$ displaces an
+  object by $\Delta \bm{x}$. If the force is \emph{constant}, then the work
   done is given by the dot product between the force and displacement vectors:
 
   \eq{-.2in}{
-    \boxed{W=\mb{F}\cdot\Delta\mb{x}}
+    \boxed{W=\bm{F}\cdot\Delta\bm{x}}
     \quad\text{\normalsize or}\quad
-    \boxed{W=|\mb{F}||\Delta\mb{x}|\cos\theta}
+    \boxed{W=|\bm{F}||\Delta\bm{x}|\cos\theta}
   }
 
   \vspace{-.15in}where $\theta$ is the angle between the two vectors. When
@@ -92,19 +81,19 @@
   Mechanical work is a scalar quantity:
   
   \eq{-.2in}{
-    \boxed{W=\mb{F}\cdot\Delta\mb{x}}
+    \boxed{W=\bm{F}\cdot\Delta\bm{x}}
   }
   
-%  is applied to move an object from $\mb{x}_1$ to $\mb{x}_2$ along a path, then
+%  is applied to move an object from $\bm{x}_1$ to $\bm{x}_2$ along a path, then
 %  the total work done by the force is defined by the integral:
 %
 %  \eq{-.2in}{
-%    W=\int\mb{F}(\mb{x})\cdot d\mb{x}
+%    W=\int\bm{F}(\bm{x})\cdot d\bm{x}
 %  }
   \begin{itemize}
-  \item No work done if no displacement ($\Delta\mb{x}=\mb{0}$)
-  \item No work done when $\mb{F}\perp\Delta\mb{x}$, when (i.e.\
-    $\mb{F}\cdot\Delta\mb{x}=0$; the force did not cause the displacement)
+  \item No work done if no displacement ($\Delta\bm{x}=\bm{0}$)
+  \item No work done when $\bm{F}\perp\Delta\bm{x}$, when (i.e.\
+    $\bm{F}\cdot\Delta\bm{x}=0$; the force did not cause the displacement)
   \item Work can be positive or negative depending on the dot product (or in
     the scalar case, $\cos\theta$)
 %  \item When there are multiple forces acting on an object, we can c1ompute the
@@ -168,27 +157,6 @@
     F_\text{net}\Delta x = \frac{1}{2}m(v_1^2-v_0^2)
     =\frac{1}{2}mv_1^2- \frac{1}{2}mv_0^2
   }
-  
-
-  
-%  When a net force on an object accelerates it, the resulting amount of
-%  work done on the object (net work $W_{\textrm{net}}$) is given by:
-%
-%  \eq{-.2in}{
-%    W_{\textrm{net}}=\int\mb{F}_{\textrm{net}}\cdot d\mb{x}=\int m\mb{a}\cdot d\mb{x}
-%    =m\int\frac{d\mb{v}}{dt}\cdot d\mb{x}
-%  }
-%
-%  Since both $\mb{v}$ and $\mb{x}$ are continuous functions in
-%  time, we can switch the order of differentiation, i.e.:
-%
-%  \eq{-.2in}{
-%    =m\int\frac{d\mb{x}}{dt}\cdot d\mb{v}=m\int\mb{v}\cdot d\mb{v}
-%    =m\int_{v_1}^{v_2} vdv %=\Delta\left(\frac{1}{2}mv^2\right)=\Delta K
-%  }
-%
-%  and since $\mb{v}$ and $d\mb{v}$ must be in the same direction, the dot
-%  product is trivial: $\mb{v}\cdot d\mb{v}=vdv$
 \end{frame}
 
 
@@ -230,33 +198,21 @@
 
 
 
-%\begin{frame}{Example}
-%  \textbf{Example 1:} A force $\mb{F}=4.0x\bm{\hat{\imath}}$ (in newtons) acts
-%  on an object of mass \SI{2.}{\kilo\gram} as it moves from $x=1.0$ to
-%  $x=\SI{5.}{\metre}$. Given that the object is at rest at $x=1$,
-%  \begin{enumerate}[(a)]
-%  \item Calculate the net work
-%  \item What is the final speed of the object?
-%  \end{enumerate}
-%\end{frame}
-
-
-
 \section{Potential Energy}
 
 \begin{frame}{Gravitational Force \& Gravitational Potential Energy}
   The gravitational force (weight) of an object is defined as:
   
   \eq{-.25in}{
-    \mb{w}=m\mb{g}
+    \bm{w}=m\bm{g}
   }
   
-  \vspace{-.1in}Near Earth's surface, $\mb{g}=-g\kkk$ can be considered to be
+  \vspace{-.1in}Near Earth's surface, $\bm{g}=-g\kkk$ can be considered to be
   constant. Using the definition of mechanical work, the work done to move an
   object from height $h_0$ to $h_1$ is therefore:
 
   \eq{-.2in}{
-    W=\mb{w}\cdot\Delta\mb{h}
+    W=\bm{w}\cdot\Delta\bm{h}
     =-mg\kkk\cdot\Delta h\kkk
     =-\left[mgh_1-mgh_0\right]%=-\Delta U_g
   }
@@ -272,18 +228,18 @@
 
 
 \begin{frame}{Spring Force \& Elastic Potential Energy}
-  The spring force $\mb{F}_e$ is the force that a compressed/stretched spring
+  The spring force $\bm{F}_e$ is the force that a compressed/stretched spring
   exerts on the object connected to it. It obeys Hooke's law:
     
   \eq{-.2in}{
-    \mb{F}_e=-k\mb{x}
+    \bm{F}_e=-k\bm{x}
   }
 
   \vspace{-.1in}We can find the work done to displace a spring using some
   calculus that is not shown here:
 
   \eq{-.3in}{
-    W=\mb{F}_e\cdot\Delta\mb{x}=\frac12kx_1^2-\frac12kx_0^2
+    W=\bm{F}_e\cdot\Delta\bm{x}=\frac12kx_1^2-\frac12kx_0^2
   }
   
   From this we define the \textbf{elastic potential energy} $U_e$:
@@ -311,19 +267,6 @@
 \begin{frame}{Conservative Forces}
   With a little bit of calculus, a constant conservative forces can be related
   to the change in potential energy by the expression in one-dimension:
-%  Expressions for potential energies are obtained by integrating the work done
-%  by the conservative forces, these forces are therefore the negative gradient
-%  of the potential energies:
-%
-%  \eq{-.2in}{
-%    \mb{F}=-\nabla U=
-%    -\frac{\partial U}{\partial x}\bm{\hat{\imath}}
-%    -\frac{\partial U}{\partial y}\bm{\hat{\jmath}}
-%    -\frac{\partial U}{\partial z}\hat{\bm{k}}
-%  }
-%
-%  The direction of a conservative force \emph{always} decreases the potential
-%  energy. In 1D:
 
   \eq{-.2in}{
     \boxed{
@@ -448,7 +391,7 @@
     \begin{tikzpicture}[scale=.8]
       \draw[thick,fill=gray!30] (7.75,0) arc(75:105:30);
       \draw[fill=blue!50] (0,4) circle(.2) node[right]{$\;m$};
-      \draw[ultra thick, red!65,->] (0,4)--(0,3) node[below]{$\mb{F}_g$};
+      \draw[ultra thick, red!65,->] (0,4)--(0,3) node[below]{$\bm{F}_g$};
     \end{tikzpicture}
   \end{center}
   Assuming no friction, the total mechanical energy consists of:
@@ -640,10 +583,10 @@
   power produced by the force is:
   
   \eq{-.1in}{
-    P=\frac{W}{\Delta t}=\frac{\mb{F}\cdot\Delta\mb{x}}{\Delta t}
-    =\mb{F}\cdot\frac{\Delta\mb{x}}{\Delta t}
+    P=\frac{W}{\Delta t}=\frac{\bm{F}\cdot\Delta\bm{x}}{\Delta t}
+    =\bm{F}\cdot\frac{\Delta\bm{x}}{\Delta t}
     \quad\rightarrow\quad
-    \boxed{P=\mb{F}\cdot\mb{v}}
+    \boxed{P=\bm{F}\cdot\bm{v}}
   }
   
   Application: aerodynamics
