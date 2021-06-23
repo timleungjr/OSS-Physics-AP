@@ -1,12 +1,6 @@
 \documentclass[12pt,compress,aspectratio=169]{beamer}
-\usetheme{metropolis}
-\setbeamersize{text margin left=.5cm,text margin right=.5cm}
-\usepackage[lf]{carlito}
-\usepackage{tikz}
-\usepackage{mathpazo}
-\usepackage{xcolor,colortbl}
-\usepackage{siunitx}
-\usepackage{bm}
+\input{../mybeamer}
+
 \setlength{\parskip}{0pt}
 \renewcommand{\baselinestretch}{1}
 
@@ -16,14 +10,9 @@
 \tikzset{>=latex}
 
 \title{Topic 2: Dynamics}
-\subtitle{Advanced Placement Physics 1}
-\author[TML]{Dr.\ Timothy Leung}
-\institute{Olympiads School}
-\date{\today}
-
-\newcommand{\pic}[2]{\includegraphics[width=#1\textwidth]{#2}}
-\newcommand{\mb}[1]{\ensuremath\mathbf{#1}}
-\newcommand{\eq}[2]{\vspace{#1}{\Large\begin{displaymath}#2\end{displaymath}}}
+\subtitle{AP and IBHL Physics}
+\input{../me}
+\input{../mycommands}
 
 \begin{document}
 
@@ -53,9 +42,9 @@
   \end{center}
   \begin{itemize}
   \item \emph{Uniform motion} means constant velocity
-  \item An object ``at rest'' is also in uniform motion with $\mb{v}=\mb{0}$
+  \item An object ``at rest'' is also in uniform motion with $\bm{v}=\bm{0}$
   \item As long as an object moves in uniform motion, it must be that
-    $\mb{F}_\text{net}=\mb{0}$
+    $\bm{F}_\text{net}=\bm{0}$
   \item The object is in a state of \textbf{equilibrium}
   \end{itemize}
 \end{frame}
@@ -77,7 +66,7 @@
 
 
 \begin{frame}{Static \& Dynamic (Translational) Equilibrium}
-  If the net force on an object is zero ($\Sigma\mb{F}=\mb{0}$) then the
+  If the net force on an object is zero ($\Sigma\bm{F}=\bm{0}$) then the
   object is in a \emph{state of translational equilibrium}\footnote{For
     rotational motion, the state of \emph{rotational} equilibrium is when the
     net torque on an object is zero. We will discuss that later in the course.}
@@ -103,16 +92,16 @@
   equation:
 
   \eq{-.2in}{
-    \boxed{\mb{F}_\text{net}=\Sigma\mb{F}=m\mb{a}}
+    \boxed{\bm{F}_\text{net}=\Sigma\bm{F}=m\bm{a}}
   }
 %  \begin{center}
 %    \begin{tabular}{l|c|c}
 %      \rowcolor{pink}
 %      \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
 %      Net unbalanced force (sum of all forces)
-%      & $\mb{F}_{\text{net}}$ & \si{\newton}\\
+%      & $\bm{F}_{\text{net}}$ & \si{\newton}\\
 %      Mass         & $m$       & \si{\kilo\gram} \\
-%      Acceleration & $\mb{a}$  & \si{m/s^2}
+%      Acceleration & $\bm{a}$  & \si{m/s^2}
 %    \end{tabular}
 %  \end{center}
 
@@ -126,7 +115,7 @@
     \fbox{
       \begin{minipage}{.63\textwidth}
         \textbf{Third Law: To every action there is always opposed an equal
-          reaction; the fores of two bodies acting on each other are always
+          reaction; the forces of two bodies acting on each other are always
           equal, and directed to contrary parts.}
       \end{minipage}
     }
@@ -136,7 +125,7 @@
   %direction, on object (A), due to object (B):
 
   \eq{-.2in}{
-    \boxed{\mb{F}_{\text{AB}} = -\mb{F}_{\text{BA}}}
+    \boxed{\bm{F}_{\text{AB}} = -\bm{F}_{\text{BA}}}
   }
   \begin{itemize}
   \item ``Contrary parts'' means the action and reaction forces act on
@@ -210,16 +199,16 @@
 \begin{frame}{Common Forces}
   Common everyday forces that we encounter in Physics 12 include:
   \begin{itemize}
-  \item Weight (gravitational force) $\mb{w}$ (or $\mb{F}_G$)
-  \item Normal force $\mb{N}$
-  \item Friction (static $\mb{f}_s$ and kinetic $\mb{f}_k$)
-  \item Tension $\mb{T}$
-  \item Applied force $\mb{F}_a$
-  \item Spring force $\mb{F}_s$
-  \item Drag $\mb{D}$ (fluid resistance, discussed in fluid mechanics)
-  \item Buoyant force $\mb{B}$ (discussed in fluid mechanics)
-  \item Electrostatic force $\mb{F}_e$
-  \item Magnetic force $\mb{F}_m$
+  \item Weight (gravitational force) $\bm{w}$ (or $\bm{F}_G$)
+  \item Normal force $\bm{N}$
+  \item Friction (static $\bm{f}_s$ and kinetic $\bm{f}_k$)
+  \item Tension $\bm{T}$
+  \item Applied force $\bm{F}_a$
+  \item Spring force $\bm{F}_s$
+  \item Drag $\bm{D}$ (fluid resistance, discussed in fluid mechanics)
+  \item Buoyant force $\bm{B}$ (discussed in fluid mechanics)
+  \item Electrostatic force $\bm{F}_e$
+  \item Magnetic force $\bm{F}_m$
   \end{itemize}
 \end{frame}
 
@@ -229,13 +218,13 @@
   Gravity is the force of attraction between all objects with mass
     
   \eq{-.2in}{
-    \boxed{\mb{w}=m\mb{g}}
+    \boxed{\bm{w}=m\bm{g}}
   }
   \begin{itemize}
   \item\vspace{-.15in}Near surface of Earth, use $g=\SI{9.81}{m/s^2}$ (or
     $g=\SI{10}{m/s^2}$ for your AP exam)
   %\item You may be asked to find the value of $g$ on some ``unknown planet''.
-  \item $\mb{w}$ always points \emph{down} (the direction of $\mb{w}$ is how
+  \item $\bm{w}$ always points \emph{down} (the direction of $\bm{w}$ is how
     down is defined)
 %  \item Newton's law of universal gravity:
 %
@@ -258,13 +247,13 @@
         \draw[fill=pink,thick] (0,0) rectangle (1.5,1);
         \fill(.75,.5) circle(2pt);
         \draw[->,very thick] (.75,.5)--(.75,-.5)
-        node[below]{$m\mb{g}$};
+        node[below]{$m\bm{g}$};
         \draw[->,very thick] (.75,.5)--(.75,1.5)
-        node[above]{$\mb{N}$};
+        node[above]{$\bm{N}$};
       \end{tikzpicture}
     \end{center}
     \begin{displaymath}
-      m\mb{g}=-\mb{N}
+      m\bm{g}=-\bm{N}
     \end{displaymath}
     
     \column{.78\textwidth}
@@ -300,10 +289,10 @@
           \draw [->,thick,dotted,red] (1.5,1)--(.45,1)
           node[left]{$mg\sin\theta$};
           \draw [->,ultra thick,red] (1.5,1)--(.45,-.5)
-          node[below]{$m\mb{g}$}
+          node[right]{$m\bm{g}$}
           node[pos=.3,below right]{$\theta$};
-        \draw [->,ultra thick] (1.5,1)--(1.5,2.5) node[above]{$\mb{N}$};
-        \draw [->,ultra thick] (1.5,1)--(2.3,1) node[right]{$\mb{f}$};
+        \draw [->,ultra thick] (1.5,1)--(1.5,2.5) node[above]{$\bm{N}$};
+        \draw [->,ultra thick] (1.5,1)--(2.3,1) node[right]{$\bm{f}$};
         \end{scope}
       \end{tikzpicture}
     \end{center}
@@ -374,7 +363,7 @@
 \begin{frame}{Kinetic Friction}
   \textbf{Kinetic friction} between two surfaces is when they are moving
   relative to each other. $f_k$ is constant along the path of movement as long
-  as $\mb{N}$ stays constant
+  as $\bm{N}$ stays constant
 
   \eq{-.3in}{
     \boxed{f_k = \mu_kN}
@@ -412,10 +401,10 @@
         \draw [thick] (-1,0)--(2.5,0);
         \draw [fill=pink,thick] (0,0) rectangle (1.5,1);
         \fill (.75,.5) circle(2pt);
-        \draw[->,very thick](.75,.5)--(.75,-.5) node[below]{$m\mb{g}$};
-        \draw[->,very thick](.75,.5)--(.75,1.5) node[above]{$\mb{N}$};
-        \draw[->,very thick](.75,.5)--(2.,.5) node[right]{$\mb{F}_a$};
-        \draw[->,very thick](.75,.5)--(.1,.5) node[left]{$\mb{f}$};
+        \draw[->,very thick](.75,.5)--(.75,-.5) node[below]{$m\bm{g}$};
+        \draw[->,very thick](.75,.5)--(.75,1.5) node[above]{$\bm{N}$};
+        \draw[->,very thick](.75,.5)--(2.,.5) node[right]{$\bm{F}_a$};
+        \draw[->,very thick](.75,.5)--(.1,.5) node[left]{$\bm{f}$};
       \end{tikzpicture}
     \end{center}
 
@@ -478,8 +467,8 @@
     \vspace{-.15in}
     \begin{center}
       \begin{tikzpicture}[scale=.9]
-        \draw[very thick,->](0,0)--(0,-1.5) node[below]{$m\mb{g}$};
-        \draw[very thick,->,white](0,0)--(0,1.5) node[above]{$\mb{D}$};
+        \draw[very thick,->](0,0)--(0,-1.5) node[below]{$m\bm{g}$};
+        \draw[very thick,->,white](0,0)--(0,1.5) node[above]{$\bm{D}$};
         \fill(0,0) circle(.07);
       \end{tikzpicture}
     \end{center}
@@ -492,9 +481,9 @@
     \vspace{-.15in}
     \begin{center}
       \begin{tikzpicture}[scale=.9]
-        \draw[very thick,->](0,0)--(0,-1.5) node[below]{$m\mb{g}$};
-        \draw[very thick,->,white](0,0)--(0,1.5) node[above]{$\mb{D}$};
-        \draw[very thick,->,green](0,0)--(0,.6) node[above]{$\mb{D}$};
+        \draw[very thick,->](0,0)--(0,-1.5) node[below]{$m\bm{g}$};
+        \draw[very thick,->,white](0,0)--(0,1.5) node[above]{$\bm{D}$};
+        \draw[very thick,->,green](0,0)--(0,.6) node[above]{$\bm{D}$};
         \fill(0,0) circle(.07);
       \end{tikzpicture}
     \end{center}
@@ -507,8 +496,8 @@
     \vspace{-.15in}
     \begin{center}
       \begin{tikzpicture}[scale=.9]
-        \draw[very thick,->](0,0)--(0,-1.5) node[below]{$m\mb{g}$};
-        \draw[very thick,->,red](0,0)--(0,1.5) node[above]{$\mb{D}$};
+        \draw[very thick,->](0,0)--(0,-1.5) node[below]{$m\bm{g}$};
+        \draw[very thick,->,red](0,0)--(0,1.5) node[above]{$\bm{D}$};
         \fill(0,0) circle(.07);
       \end{tikzpicture}
     \end{center}
@@ -571,9 +560,9 @@
   exerts onto objects connected to it. It obeys Hooke's law:
   
   \eq{-.2in}{
-    \mb{F}_s=-k\mb{x}
+    \bm{F}_s=-k\bm{x}
   }
-  where $\mb{x}$ is the relative displacement of the ends of the spring.
+  where $\bm{x}$ is the relative displacement of the ends of the spring.
   \begin{center}
     \pic{.35}{graphics/spring-example1}
   \end{center}
@@ -621,7 +610,7 @@
 \begin{frame}{Buoyancy}
   When an object is submerged inside a fluid (e.g.\ water, air, etc), the fluid
   exerts a pressure at the surface of the object. We can find the total buoyant 
-  force $\mb{B}$ the fluid exerts on the object.
+  force $\bm{B}$ the fluid exerts on the object.
   \begin{center}
     \pic{.4}{graphics/rock_fbvectors}
   \end{center}
@@ -633,13 +622,13 @@
   The buoyant force is given by:
   
   \eq{-.1in}{
-    \boxed{\mb{B}=\rho_\text{fluid}gV\bm{\hat{k}}}
+    \boxed{\bm{B}=\rho_\text{fluid}gV\bm{\hat{k}}}
   }
   \begin{center}
     \begin{tabular}{l|c|c}
       \rowcolor{pink}
       \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
-      Buoyant force & $\mb{B}$  & \si{\newton} \\
+      Buoyant force & $\bm{B}$  & \si{\newton} \\
       Density of the fluid & $\rho_\text{fluid}$ & \si{\kg/\m\cubed}\\
       Volume of the object & $V$ & \si{\metre\cubed}
     \end{tabular}
@@ -655,7 +644,7 @@
 \begin{frame}{Free Body Diagrams}
   \begin{itemize}
   \item Acceleration (if there is going to be any at all) depends
-    on net force $\mb{F}_\text{net}$
+    on net force $\bm{F}_\text{net}$
   \item Without a vector sum of all the forces, we cannot determine the
     magnitude, direction of the acceleration, or how acceleration will evolve
     in time
@@ -677,17 +666,17 @@
   \begin{center}
     \begin{tikzpicture}[scale=.8]
       \fill (1.5,1) circle(.1);
-      \draw [->,very thick] (1.5,1)--(1.5,-.5) node[below]{$m\mb{g}$};
-      \draw [->,very thick] (1.5,1)--(1.5,2.5) node[above]{$\mb{N}$};
-      \draw [->,very thick] (1.5,1)--(3.1,1) node[right]{$\mb{F}_a$};
-      \draw [->,very thick] (1.5,1)--(.75,1) node[left]{$\mb{f}$};
+      \draw [->,very thick] (1.5,1)--(1.5,-.5) node[below]{$m\bm{g}$};
+      \draw [->,very thick] (1.5,1)--(1.5,2.5) node[above]{$\bm{N}$};
+      \draw [->,very thick] (1.5,1)--(3.1,1) node[right]{$\bm{F}_a$};
+      \draw [->,very thick] (1.5,1)--(.75,1) node[left]{$\bm{f}$};
     \end{tikzpicture}
   \end{center}
   \vspace{-.1in}We can still use this method for rectilinear motion. However,
   this is not entirely correct. We notice that:
   \begin{itemize}
-  \item Gravitational force $m\mb{g}$ acts at the CM, but
-  \item Normal force $\mb{N}$, friction $\mb{f}$ and applied force $\mb{F}_a$
+  \item Gravitational force $m\bm{g}$ acts at the CM, but
+  \item Normal force $\bm{N}$, friction $\bm{f}$ and applied force $\bm{F}_a$
     act at the point of contact
   \end{itemize}
 \end{frame}
@@ -696,8 +685,8 @@
 
 \begin{frame}{Free Body Diagrams}
   Instead, forces should be drawn at the point where they are applied. For
-  example, a sphere rolling down a ramp should have weight $\mb{w}$, normal
-  force $\mb{N}$ and static friction $\mb{f}_s$ acting on it:
+  example, a sphere rolling down a ramp should have weight $\bm{w}$, normal
+  force $\bm{N}$ and static friction $\bm{f}_s$ acting on it:
   \begin{center}
     \begin{tikzpicture}[scale=1.3]
       \begin{scope}[rotate=-30]
@@ -707,9 +696,9 @@
 	    \draw[thick,->](0,1.2) arc(90:60:1.2) node[pos=.3,right]{$\omega$};
 	    \fill(0,0) circle(.05);
 	    \draw[->,ultra thick,rotate=30](0,0)--(0,-1.5)
-	    node[below]{$m\mb{g}$};
-	    \draw[->,ultra thick](.0,-1)--(.0,.3)  node[above]{$\mb{N}$};
-	    \draw[->,ultra thick](.0,-1)--(-.5,-1) node[left]{$\mb{f}_s$};
+	    node[below]{$m\bm{g}$};
+	    \draw[->,ultra thick](.0,-1)--(.0,.3)  node[above]{$\bm{N}$};
+	    \draw[->,ultra thick](.0,-1)--(-.5,-1) node[left]{$\bm{f}_s$};
 	    \draw[->](2,0)--(3,0) node[right]{$x$};
        \draw[->](2,0)--(2,1) node[above]{$y$};
 	  \end{scope}
@@ -808,7 +797,7 @@
       \draw[thick](-2,0)--(4,0);
       \draw[thick](0,0) rectangle(1,1) node[midway]{$m$};
       \draw[thick](1,0) rectangle(3,1.75) node[midway]{$M$};
-      \draw[very thick,<-](0,.5)--(-1,.5) node[left]{$\mb{F}_a$};
+      \draw[very thick,<-](0,.5)--(-1,.5) node[left]{$\bm{F}_a$};
     \end{tikzpicture}
   \end{center}
 \end{frame}
@@ -822,7 +811,7 @@
       \draw[thick](-1,0)--(5.5,0);
       \draw[thick](0,0) rectangle(3,1) node[midway]{$M$};
       \draw[thick](.75,1) rectangle(2.25,1.75) node[midway]{$m$};
-      \draw[very thick,->](3,.5)--(4.5,.5) node[right]{$\mb{F}_a$};
+      \draw[very thick,->](3,.5)--(4.5,.5) node[right]{$\bm{F}_a$};
     \end{tikzpicture}
   \end{center}
 \end{frame}
@@ -919,38 +908,38 @@
 %\end{frame}
 
 
+
 \begin{frame}{A More Typical Problem}
   More typically, an Atwood machine problem is one where two objects are
-  sliding on a surface. These surfaces may (or may not) have friction.
-
-  \vspace{.1in}\textbf{Example:} Two blocks are connected by a massless string
-  over a frictionless pulley as shown in the diagram.
-  \begin{columns}
-    \column{.45\textwidth}
-    \begin{tikzpicture}[scale=.8]
-      \draw[thick](0,0)--(-4,0) node[midway,below]{$\mu$};
-      \draw[thick,fill=blue!50!gray!60](-1.75,0)rectangle(-3,1)node[midway]{$m$};
-      \draw(-1.75,.44)--(.1,.44);
+  sliding on a surface. These surfaces may have (or may not) have friction. In
+  this example, two blocks are connected by a massless string over a
+  frictionless pulley as shown in the diagram.
+  \begin{center}
+    \begin{tikzpicture}[scale=1.2]
+      \draw[thick,brown](-4,.4)--(.1,.4);
+      \draw[thick](0,0)--(-5.5,0) node[midway,below]{\scriptsize$\mu$};
+      \draw[thick,fill=red!70!gray!50](-4,0) rectangle(-5,.75)
+      node[midway]{\scriptsize$m$};
       \begin{scope}[rotate=-30]
-        \draw[thick](0,0)--(5.5,0) node[midway,below left]{$\mu$};
-        \draw[thick,fill=pink!80!gray](3,0) rectangle(5,1) node[midway]{$M$};
-        \draw(3,.44)--(-.05,.44);
+        \draw[thick,brown](1,.4)--(-.05,.4);
+        \draw[thick](0,0)--(3,0) node[midway,below left] {\scriptsize$\mu$};
+        \draw[thick,fill=blue!50!gray!50](1,0) rectangle(2.5,1)
+        node[midway]{\scriptsize$M$};
       \end{scope}
       \begin{scope}[rotate=-15]
-        \draw (0,0)--(0,.3);
-        \draw (0,.3) circle(.15);
+        \draw[thick,fill=gray] (0,.3) circle(.15);
+        \draw[thick,fill=gray!50] (0,.3) circle(.1);
+        \draw[ultra thick] (0,0)--(0,.3);
+        \fill (0,.3) circle(.04);
       \end{scope}
-      \draw[gray!50](0,0)--(0,-2);
-      \draw[->](0,-1)arc(270:330:1)node[midway,below]{$\theta$};
+      \draw[thick,gray!70](0,0)--(0,-1.5);
+      \draw[thick,->](0,-.5)arc(270:330:.5)
+      node[midway,below]{\scriptsize$\phi$};
     \end{tikzpicture}
-    \column{.55\textwidth}
-
-    \begin{enumerate}[(a)]
-    \item Determine the acceleration of the blocks.
-    \item Calculate the tension in the string.
-    \item If the string broke, for what minimum value of the coefficient of
-      static friction would the mass $M$ not begin to slide?
-    \end{enumerate}
-  \end{columns}
+  \end{center}
+  \vspace{-.2in}\begin{enumerate}[(a)]
+  \item Determine the acceleration of the blocks.
+  \item Calculate the tension in the string.
+  \end{enumerate}
 \end{frame}
 \end{document}

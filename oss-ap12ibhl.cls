@@ -4,13 +4,19 @@
 
 \LoadClass[11pt]{exam}
 
-\newcommand{\pic}[2]{\includegraphics[width=#1\textwidth]{#2}}
+\newcommand{\pic}[2]{
+  \includegraphics[width=#1\textwidth]{#2}
+}
+
 \newcommand{\cpic}[2]{
   \begin{center}
     \includegraphics[width=#1\textwidth]{#2}
   \end{center}
 }
-%\newcommand{\mb}[1]{\mathbf{#1}}
+
+\newcommand{\drawline}{
+  \uplevel{\rule{\linewidth}{.6pt}}
+}
 
 \newcommand{\genheader}{
   Student \#: \underline{\hspace{2in}}\hfill
@@ -45,15 +51,6 @@
   $g=\SI{10}{\metre\per\second\squared}$ in all problems.
 }
 
-%\newcommand{\genanswersheet}[2]{
-%  \begin{center}
-%    {\Large
-%      \textbf{AP\textsuperscript{\textregistered} Physics #1: #2 \\
-%        Student Answer Sheet for Multiple-Choice Section}
-%    }
-%  \end{center}
-%}
-%
 \newcommand{\genfreedirections}{
   \textbf{Directions:} Answer all questions. The parts within a
   question may not have equal weight. All final numerical answers should
@@ -68,16 +65,9 @@
 \setlength{\headheight}{14pt}
 
 \usepackage[margin=.5in,papersize={8.5in,17in}]{geometry}
-%\usepackage{enumitem}
 \usepackage{tikz}%,graphicx,wrapfig}
-%\usepackage{pgfplots}
-%\usepackage{amsmath}
 \usepackage{newtxtext,newtxmath}
-%\usepackage[document]{ragged2e}
-%\usepackage[none]{hyphenat}
 \usepackage{siunitx}
-%\usepackage{multicol}
-%\usepackage{fancyhdr}
 \usepackage{circuitikz}
 \usepackage{bm}
 
