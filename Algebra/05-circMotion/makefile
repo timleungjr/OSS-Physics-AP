@@ -9,5 +9,5 @@ clean:
 
 public:
 	mkdir -p $(DESTINATION)/Topic05
-	cp *.pdf $(DESTINATION)/Topic05
+	cp PhysAP1-05-circMotion.pdf $(DESTINATION)/Topic05
 	cp homework/*-Homework.pdf $(DESTINATION)/Topic05

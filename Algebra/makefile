@@ -9,7 +9,8 @@ all:
 	cd 03-workEnergy; make
 	cd 04-momentum	; make
 	cd 05a-gravity	; make
-#	cd 06-rotMotion ; make
+	cd 05-circMotion; make
+	cd 06-rotMotion ; make
 	cd 07-SHM ; make
 	cd 08-mechWaves ; make
 	cd 09-fluidMech ; make
@@ -24,7 +25,8 @@ clean:
 	cd 03-workEnergy; make clean
 	cd 04-momentum	; make clean
 	cd 05a-gravity	; make clean
-#	cd 06-rotMotion	; make clean
+	cd 05-circMotion; make clean
+	cd 06-rotMotion	; make clean
 	cd 07-SHM	; make clean
 	cd 08-mechWaves	; make clean
 	cd 09-fluidMech	; make clean
@@ -39,7 +41,8 @@ public:
 	cd 03-workEnergy; make public
 	cd 04-momentum	; make public
 	cd 05a-gravity	; make public
-#	cd 06-rotMotion	; make public
+	cd 05-circMotion; make public
+	cd 06-rotMotion	; make public
 	cd 07-SHM	; make public
 	cd 08-mechWaves	; make public
 	cd 09-fluidMech	; make public

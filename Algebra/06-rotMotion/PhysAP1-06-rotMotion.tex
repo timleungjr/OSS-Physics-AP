@@ -1,16 +1,8 @@
 \documentclass[12pt,compress,aspectratio=169]{beamer}
-\usetheme{metropolis}
-\setbeamersize{text margin left=.5cm,text margin right=.5cm}
-\usepackage[lf]{carlito}
-\usepackage{siunitx}
-\usepackage{tikz}
-\usepackage{mathpazo}
-\usepackage{xcolor,colortbl}
-\usepackage{bm}
+\input{../mybeamer}
 
 \usetikzlibrary{patterns}
 
-%\setmonofont{Liberation Mono}
 \setlength{\parskip}{0pt}
 \setlength{\itemsep}{0pt}
 \renewcommand{\baselinestretch}{1}
@@ -22,16 +14,13 @@
 \tikzset{>=latex}
 
 \title{Topic 6: Rotational Motion of a Rigid Body}
-\subtitle{Advanced Placement Physics 1}
-\author[TML]{Dr.\ Timothy Leung}
-\institute{Olympiads School}
-\date{Last Updated: \today}
+\subtitle{AP and IBHL Physics}
+\input{../me}
+\input{../mycommands}
 
-\newcommand{\pic}[2]{\includegraphics[width=#1\textwidth]{#2}}
 \newcommand{\iii}{\hat{\bm\imath}}
 \newcommand{\jjj}{\hat{\bm\jmath}}
 \newcommand{\kkk}{\hat{\bm{k}}}
-\newcommand{\eq}[2]{\vspace{#1}{\Large\begin{displaymath}#2\end{displaymath}}}
 
 
 \begin{document}
@@ -41,23 +30,60 @@
 \end{frame}
 
 
-%\begin{frame}{Files to Download}
-%  Please download the following files from the school website if you have not
-%  already done so:
-%  \begin{itemize}
-%  \item\texttt{PhysAP-06-rotMotion-print.pdf}---The ``print version'' of the
-%    class slides for this topic.
-%  \item\texttt{PhysAP-06-Homework.pdf}---Homework problems for this topic.
-%  \end{itemize}
-%  \vspace{.1in}Please download/print the PDF file for the class slides before
-%  each class. There is no point copying notes that are already on the slides.
-%  Instead, focus on things that aren't necessarily on the slides. If you wish
-%  to print the slides, we recommend printing 4 slides per page.
-%\end{frame}
-
-
-
 \section{Torque}
+
+\begin{frame}{Uniform Circular Motion}
+  Consider the uniform circular motion of an object with a constant angular
+  velocity $\bm\omega$:
+  \begin{columns}
+    \column{.3\textwidth}
+    \begin{tikzpicture}[scale=.75]
+      \draw[->](-3,0)--(3,0);
+      \draw[->](0,-3)--(0,3);
+      \draw (0,0) circle(2.5);
+      \begin{scope}[rotate=38]
+        \begin{scope}[very thick,->]
+          \draw[blue!70!black] (2.5,0)--(2.5,1.5) node[above]{$\bm{v}$};
+          \draw[red!70!black] (2.5,0)--(1,0) node[below]{$\bm{F}_c$};
+          \draw(2.5,0) arc(0:100:2.5) node[above left]{$\omega$};
+        \end{scope}
+        \draw[fill=pink] (2.5,0) circle(.1);
+      \end{scope}
+    \end{tikzpicture}
+
+    \column{.7\textwidth}
+    \begin{itemize}
+    \item Centripetal force $\bm{F}_c$ is always perpendicular to the
+      motion of the object
+    \item $\bm{F}_c$ does not do any mechanical work
+    \item Therefore, angular velocity $\bm\omega$ remains constant, i.e.
+    \item\textbf{The ``rotational state'' of the object does not change}
+    \item Rotational motion of an object is not determined solely by what
+      forces are acting it
+    \end{itemize}
+  \end{columns}
+\end{frame}
+
+
+
+\begin{frame}{Turning A Wrench}
+  \begin{columns}
+    \column{.35\textwidth}
+    \pic{1}{wrench}
+    
+    \column{.65\textwidth}
+    Similarly, when tightening/loosening a bolt by turning a wrench:
+    \begin{itemize}
+    \item When the nut turns, its ``rotational state'' changes
+    \item The applied force has to be directed at a distance away from the
+      bolt
+    \item How easy to turn the nut depends on \emph{both} the distance and the
+      force
+    \end{itemize}
+  \end{columns}
+\end{frame}
+
+
 
 \begin{frame}{Torque}
   Recall the second law of motion for objects with constant mass:
@@ -73,21 +99,21 @@
 
 
 
-\begin{frame}{Torque}
-  I have a rod on a table, and with my fingers, I push the two ends of the rod
-  with equal force $\textcolor{red!80!black}{F}$. \emph{What happens?}
-  \begin{center}
-    \begin{tikzpicture}[scale=1.5]
-      \fill[gray,draw=black,thick] (-2,-.1) rectangle (2,.1);
-      \begin{scope}[very thick, red!80!black,<-]
-        \draw(-1.8,-.1)--(-1.8,-.7) node[below]{$F$};
-        \draw( 1.8, .1)--( 1.8, .7) node[above]{$F$};
-      \end{scope}
-    \end{tikzpicture}
-  \end{center}
-  $\bm{F}_\text{net}=\bm{0}$, therefore $\bm{a}=\bm{0}$ at the center of mass.
-  But it is obvious that the rod would \emph{rotate} instead.
-\end{frame}
+%\begin{frame}{Torque}
+%  I have a rod on a table, and with my fingers, I push the two ends of the rod
+%  with equal force $\textcolor{red!80!black}{F}$. \emph{What happens?}
+%  \begin{center}
+%    \begin{tikzpicture}[scale=1.5]
+%      \fill[gray,draw=black,thick] (-2,-.1) rectangle (2,.1);
+%      \begin{scope}[very thick, red!80!black,<-]
+%        \draw(-1.8,-.1)--(-1.8,-.7) node[below]{$F$};
+%        \draw( 1.8, .1)--( 1.8, .7) node[above]{$F$};
+%      \end{scope}
+%    \end{tikzpicture}
+%  \end{center}
+%  $\bm{F}_\text{net}=\bm{0}$, therefore $\bm{a}=\bm{0}$ at the center of mass.
+%  But it is obvious that the rod would \emph{rotate} instead.
+%\end{frame}
 
 
 
@@ -177,40 +203,9 @@
       \node[white](C) at (1.5,0) {\textbf{C}};
     \end{tikzpicture}
   \end{center}
-%  \uncover<2->{
-%    \textbf{Example 8b:} Now find the net torque on A.
-%  }
 \end{frame}
 
 
-
-
-
-%\begin{frame}{Torque}
-%  Going back to the example question:
-%  \begin{center}
-%    \begin{tikzpicture}
-%      \fill[black!75,draw=black!75] (-5,-.05) rectangle (5,.05);
-%      \fill (0,0) circle (.1);
-%      \draw[ultra thick](0,0)--(.5,-1.5)--(-.5,-1.5)--(0,0);
-%      \uncover<2->{
-%        \draw[ultra thick,red!75,->](0,0)--(-4.8,0) node[pos=.5,below]{$d_1$};
-%        \draw[ultra thick,red!75,->](-4.8,0)--(-4.8,-1)node[below]{$F_1$};
-%      }
-%      \uncover<3->{
-%        \draw[ultra thick,blue!60,->](0,0)--(4,0) node[pos=.5,below]{$d_2$};
-%        \draw[ultra thick,blue!60,->](4,0)--(4,-1.2) node[below]{$F_2$};
-%      }
-%    \end{tikzpicture}
-%  \end{center}
-%  \begin{itemize}
-%  \item<2->$F_1$ will rotate the board counter clockwise
-%  \item<3->$F_2$ will rotate the board clockwise
-%  \item<4->The beam will remain static (in equilibrium) if
-%
-%    \eq{-.2in}{ F_1d_1=F_2d_2 }
-%  \end{itemize}
-%\end{frame}
 
 
 
@@ -264,7 +259,7 @@
     =\underbrace{mr^2}_{I}\bm\omega
   }
     
-  The quantity $I$ is called the \textbf{moment of inertia} with a unit of
+  The quantity $I=mr^2$ is called the \textbf{moment of inertia} with a unit of
   \textbf{kilogram meter squared} (\si{\kilo\gram\metre\squared}), and 
 
   \eq{-.2in}{
@@ -345,7 +340,7 @@
   Likewise, an object is in \textbf{rotational equilibrium} when the net torque
   acting on it is zero:
 
-  \eq{-.3in}{
+  \eq{-.2in}{
     \bm{\tau}_\text{net}=\bm{0}
   }
   
@@ -532,6 +527,24 @@
   
 \section{Work \& Energy in Rotational Motion}
 
+\begin{frame}{Rotational Work}
+  For translational motion, the work done by a constant force displacing an
+  object by $\Delta x$ is given by:
+
+  \eq{-.2in}{
+    W_\text{trans} = F\Delta x
+  }
+
+  For rotational motion, the work done by a constant \emph{torque} displacing
+  an object by an \emph{angular displacement} of $\delta$ is given by:
+
+  \eq{-.2in}{
+    \boxed{W_\text{rot} = \tau\Delta\theta}
+    }
+\end{frame}
+
+
+
 \begin{frame}{Rotational Kinetic Energy}
   To find the kinetic energy of a rotating system of particles (discrete number
   of particles, or continuous mass distribution), we sum the
@@ -569,21 +582,4 @@
   In this case, the $I_\text{P}$ is calculated at the pivot.
   \textbf{IMPORTANT:} $I_\text{CM}\neq I_\text{P}$
 \end{frame}
-
-
-
-%TL1\begin{frame}{Parallel Axis Theorem}
-%TL1  \begin{columns}
-%TL1    \column{.35\textwidth}
-%TL1    \pic{1}{Steiner.png}
-%TL1    
-%TL1    \column{.65\textwidth}
-%TL1    The \textbf{parallel axis theorem} relates the moment of inertia of an
-%TL1    object along two different but parallel axis by:
-%TL1
-%TL1    \eq{-.2in}{
-%TL1      \boxed{I=I_{\textrm{CM}}+md^2}
-%TL1    }
-%TL1  \end{columns}
-%TL1\end{frame}
 \end{document}
