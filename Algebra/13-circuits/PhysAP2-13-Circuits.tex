@@ -1,11 +1,5 @@
 \documentclass[12pt,aspectratio=169]{beamer}
-\usetheme{metropolis}
-\setbeamersize{text margin left=.5cm,text margin right=.5cm}
-\usepackage[lf]{carlito}
-\usepackage{tikz}
-\usepackage{mathpazo}
-\usepackage{xcolor,colortbl}
-\usepackage{siunitx}
+\input{../mybeamer}
 \usepackage{circuitikz} % to draw circuits!
 
 \setlength{\parskip}{0pt}
@@ -20,12 +14,9 @@
 }
 
 \title{Topic 12: DC Circuit Analysis}
-\subtitle{Advanced Placement Physics 1 \& 2}
-\author[TML]{Dr.\ Timothy Leung}
-\institute{Olympiads School}
-\date{Last Updated: \today}
-
-\newcommand{\eq}[2]{\vspace{#1}{\Large\begin{displaymath}#2\end{displaymath}}}
+\subtitle{AP (1\&2) and IBHL Physics}
+\input{../me}
+\input{../mycommands}
 
 
 \begin{document}
@@ -70,22 +61,27 @@
   \eq{-.2in}{
     \boxed{I=\frac{Q}t}
   }
+
+  In general electric circuits, the current through a conductor is a function
+  of time, and the $+/-$ signs may be used to indicate direction of the
+  current.
 \end{frame}
 
 
 
 \begin{frame}{Current Through the Conductor}
 
-Expanding the expression:
+  The expression for electric current can be expanded this way:
+  
   \eq{-.15in}{
     I=\frac{Q}{t}=\left(\frac{Q}{V}\right)\frac{V}{t}
     =\left[ne\right]\left[Av_d\right]
   }
   where
   \begin{itemize}
-  \item $Q/V$ is the amount of charge carriers \emph{per volume}, which is just
-    the \textbf{charge carrier density} (number of charge carriers per volume)
-    $n$ times the \textbf{elementary charge} $e$
+  \item $Q/V$ is the \emph{amount of charges per volume}, which is also the
+    \textbf{charge carrier density} (number of charge carriers per volume) $n$
+    times the \textbf{elementary charge} $e$
   \item $V/t$ is the rate the volume of charges moves through the
     conductor, give by the cross-section area of the conductor $A$ times the
     \textbf{drift velocity} $v_d$ of the charge carrier
@@ -100,7 +96,7 @@ Expanding the expression:
   Combining the terms:
 
   \eq{-.2in}{
-    \boxed{I=\diff Qt=neAv_d}
+    \boxed{I=\frac Qt=neAv_d}
   }
   \begin{center}
     \begin{tabular}{l|c|c}
