@@ -19,6 +19,7 @@ all:
 	cd 12-capacitors ; make
 	cd 16-quantumPhysics ; make
 	cd 17-relativity ; make
+	cd 18-nuclearPhysics ; make
 
 clean:
 	rm -rf *.*~ *~ *.log
@@ -37,6 +38,7 @@ clean:
 	cd 12-capacitors ; make clean
 	cd 16-quantumPhysics ; make clean
 	cd 17-relativity ; make clean
+	cd 18-nuclearPhysics ; make clean
 
 public:
 	mkdir -p $(DESTINATION)
@@ -55,3 +57,4 @@ public:
 	cd 12-capacitors ; make public
 	cd 16-quantumPhysics ; make public
 	cd 17-relativity ; make public
+	cd 18-nuclearPhysics ; make public

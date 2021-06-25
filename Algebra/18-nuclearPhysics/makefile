@@ -8,4 +8,3 @@ clean:
 public:
 	mkdir -p $(DESTINATION)/Topic18
 	cp *.pdf $(DESTINATION)/Topic18
-	cp homework/*Homework.pdf $(DESTINATION)/Topic18
