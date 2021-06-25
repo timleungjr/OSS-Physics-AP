@@ -17,6 +17,8 @@ all:
 	cd 10-thermodynamics ; make
 	cd 11-electrostatics ; make
 	cd 12-capacitors ; make
+	cd 16-quantumPhysics ; make
+	cd 17-relativity ; make
 
 clean:
 	rm -rf *.*~ *~ *.log
@@ -33,6 +35,8 @@ clean:
 	cd 10-thermodynamics ; make clean
 	cd 11-electrostatics ; make clean
 	cd 12-capacitors ; make clean
+	cd 16-quantumPhysics ; make clean
+	cd 17-relativity ; make clean
 
 public:
 	mkdir -p $(DESTINATION)
@@ -49,3 +53,5 @@ public:
 	cd 10-thermodynamics ; make public
 	cd 11-electrostatics ; make public
 	cd 12-capacitors ; make public
+	cd 16-quantumPhysics ; make public
+	cd 17-relativity ; make public
