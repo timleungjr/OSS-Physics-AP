@@ -1,7 +1,6 @@
 all:
-	xelatex PhysIBHL-nuclearPhysics
-	xelatex PhysIBHL-nuclearPhysics
-	cd homework ; make
+	xelatex PhysIBHL-nuclearPhys
+	xelatex PhysIBHL-nuclearPhys
 
 clean:
 	rm -rf *~ *.*~ *.log *.nav *.aux *.out *.snm *.toc
