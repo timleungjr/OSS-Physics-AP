@@ -4,6 +4,7 @@ DESTINATION=$(HOME)/Nextcloud/$(TERM)/Physics-AP-1-2-IBHL-Web
 export DESTINATION
 
 all:
+	cd 00-outline	; make
 	cd 01-Kinematics; make
 	cd 02-Dynamics	; make
 	cd 03-workEnergy; make
@@ -23,6 +24,7 @@ all:
 
 clean:
 	rm -rf *.*~ *~ *.log
+	cd 00-outline	; make clean
 	cd 01-Kinematics; make clean
 	cd 02-Dynamics	; make clean
 	cd 03-workEnergy; make clean
@@ -42,6 +44,7 @@ clean:
 
 public:
 	mkdir -p $(DESTINATION)
+	cd 00-outline	; make public
 	cd 01-Kinematics; make public
 	cd 02-Dynamics	; make public
 	cd 03-workEnergy; make public

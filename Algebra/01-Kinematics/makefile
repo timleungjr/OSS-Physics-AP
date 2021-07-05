@@ -9,5 +9,6 @@ clean:
 
 public:
 	mkdir -p $(DESTINATION)/Topic01
+	cp ../00-equations/*.pdf $(DESTINATION)/Topic01
 	cp *.pdf $(DESTINATION)/Topic01
 	cp homework/*-Homework.pdf $(DESTINATION)/Topic01

@@ -17,7 +17,7 @@
 % Seee also http://www.queensu.ca/identity for more about Queen's visual standards
 %\RequirePackage{mathpazo}
 \RequirePackage[scaled=0.85]{beramono}
-\RequirePackage[T1]{fontenc}
+%\RequirePackage[T1]{fontenc}
 
 % Set up some nice text spacing, for report readability
 \newcommand{\spread}{1.08}
