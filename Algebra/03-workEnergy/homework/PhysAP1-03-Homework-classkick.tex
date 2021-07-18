@@ -221,18 +221,18 @@
     \choice $mgR$
     \choice $mgR\cos\theta$
     \choice $mgR\sin\theta$
-    \choice $mg(R-R\cos\theta)$
-    \choice $mg(R-R\sin\theta)$
+    \choice $mgR(1-\cos\theta)$
+    \choice $mgR(1-\sin\theta)$
   \end{choices}
 
   \question The speed of the block as it leaves the surface of the sphere is
   \label{sphere2}
   \begin{choices}
-    \choice $\displaystyle\sqrt{2g}{m}$
-    \choice $\displaystyle\sqrt{2gR}{m}$
-    \choice $\displaystyle 2gR\cos\theta$
-    \choice $\displaystyle 2g(R-R\cos\theta)$
-    \choice $\displaystyle 2g(R-R\sin\theta)$
+    \choice $\sqrt{2g}{m}$
+    \choice $\sqrt{2gR}{m}$
+    \choice $\sqrt{2gR\cos\theta}$
+    \choice $\sqrt{2gR(1-\cos\theta)}$
+    \choice $\sqrt{2gR(1-\sin\theta)}$
   \end{choices}
     
   \question A small ball starts from rest and rolls down a quarter-circle ramp
@@ -251,10 +251,10 @@
   \end{minipage}
   \begin{minipage}{.68\linewidth}
     \begin{choices}
-      \choice $gR$
-      \choice $2gR$
-      \choice $\displaystyle\sqrt{gR\sin\ang{45}}$
-      \choice $\displaystyle\sqrt{2gR\sin\ang{45}}$
+      \choice$gR$
+      \choice$2gR$
+      \choice$\sqrt{gR\sin\ang{45}}$
+      \choice$\sqrt{2gR\sin\ang{45}}$
       \choice The speed cannot be determined without knowing the mass of the
       ball.
     \end{choices}
@@ -367,28 +367,25 @@
         \fill(0,0) rectangle(-.1,1);
         \draw[thick,
           decoration={aspect=.4,segment length=1.5mm, amplitude=2mm,coil},
-          decorate] (-.1,.5)--(-1.5,.5)
-        node[midway,above right]{$k=\SI{100}{\newton\per\metre}$};
+          decorate] (-.1,.5)--(-1.5,.5) node[midway,above right]{$k$};
         \fill(-1.5,0) rectangle(-1.6,1);
-        \draw[<->,thick](-1.6,1.5)--(-5.6,1.5)
-        node[midway,above right,sloped]{\SI{4.}{\metre}};
-        \draw[thick](-1.6,1.05)--(-1.6,2);
-        \draw[thick](-5.6,1.05)--(-5.6,2);
-        \draw[fill=yellow!50](-5.6,0) rectangle(-6.3,.7)
-        node[black,above left]{$m=\SI{2.}{\kilo\gram}$};
+        \draw[|<->|,thick](-1.6,1.3)--(-5.6,1.3)
+        node[midway,above right,sloped]{\SI4{\metre}};
+        \draw[fill=yellow!50](-5.6,0) rectangle(-6.3,.7)node[black,midway]{$m$};
       \end{scope}
       \draw[fill=pink!50](0,0)--(-6.06,0)--(-6.06,3.5)--cycle;
-      \draw[<->,thick](-2,0) arc(180:150:2) node[midway,left]{\ang{30}};
+      \draw[thick](-2,0) arc(180:150:2) node[midway,left]{$\theta$};
     \end{tikzpicture}
   }
-  \question A \SI{2}{\kilo\gram} block is released \SI{4.}{\metre} from a
-  massless spring with a spring constant of \SI{100}{\newton\per\metre} that is
-  fixed along a frictionless plane inclined at \ang{30}, as shown in the figure
-  below. Plese give answer to $3$ significant figures.
+  \question A block of mass $m=\SI2{\kilo\gram}$ is released \SI4{\metre}
+  from a massless spring with a spring constant of
+  $k=\SI{100}{\newton\per\metre}$ that is fixed along a frictionless plane
+  inclined at $\theta=\ang{30}$, as shown in the figure above. (Plese give
+  answer to 3 significant figures.)
   \begin{parts}
     \part Find the maximum compression of the spring.
     \part If the plane is not frictionless, and the coefficient of kinetic
-    friction between it and the block is $0.20$, find the maximum compression.
+    friction between it and the block is 0.20, find the maximum compression.
     \part For the rough incline ($\mu=0.20$), how far up the incline will the
     block travel after leaving the spring?
   \end{parts}
