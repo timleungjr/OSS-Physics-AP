@@ -6,6 +6,7 @@ all:
 	xelatex PhysAPC-01c-motionGraphs
 	xelatex PhysAPC-01c-motionGraphs
 	xelatex PhysAPC-01d-projectileMotion
+	xelatex PhysAPC-01d-projectileMotion
 
 
 clean:
