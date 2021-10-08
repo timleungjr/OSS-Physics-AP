@@ -10,6 +10,6 @@ clean:
 	cd homework ; make clean
 
 public:
-	mkdir -p $(DESTINATION)/Topic05
-	cp *-print.pdf $(DESTINATION)/Topic05
-	cp homework/*-Homework.pdf $(DESTINATION)/Topic05
+	mkdir -p $(DESTINATION)/Class05
+	cp *-print.pdf $(DESTINATION)/Class05
+	cp homework/*-Homework.pdf $(DESTINATION)/Class05

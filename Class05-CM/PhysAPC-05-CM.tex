@@ -11,14 +11,14 @@
 }
 \tikzset{>=latex}
 
-\title{Topic 5: Center of Mass}
+\title{Class 5: Center of Mass}
 \subtitle{Advanced Placement Physics C}
 \input{../me}
 \input{../mycommands}
 
-\newcommand{\ii}{\ensuremath\hat{\bm{\imath}}}
-\newcommand{\jj}{\ensuremath\hat{\bm{\jmath}}}
-\newcommand{\kk}{\ensuremath\hat{\bm{k}}}
+%\newcommand{\ii}{\ensuremath\hat{\bm{\imath}}}
+%\newcommand{\jj}{\ensuremath\hat{\bm{\jmath}}}
+%\newcommand{\kk}{\ensuremath\hat{\bm{k}}}
 
 \begin{document}
 
@@ -67,9 +67,7 @@
       \draw[->] (-4,0)--(4,0) node[right]{$x$};
       \draw[fill=gray!50] (-2.5,0) circle(.3) node{$m$};
       \draw[fill=gray!50] (2.5,0) circle(.3) node{$m$};
-      \uncover<2->{
-        \draw[fill=black] (0,0) circle(.05) node[below]{CM};
-      }
+      \uncover<2->{ \fill(0,0) circle(.05) node[below]{CM}; }
     \end{tikzpicture}
   \end{center}
   \vspace{.2in}
@@ -90,9 +88,7 @@
       \draw[->] (-4,0)--(4,0) node[right]{$x$};
       \draw[fill=gray!50] (-2.5,0) circle(.3) node{$m$};
       \draw[fill=gray!50] (2.5,0) circle(.42) node{$2m$};
-      \uncover<2->{
-        \draw[fill=black] (.833,0) circle(.05) node[below]{CM};
-      }
+      \uncover<2->{ \fill (.833,0) circle(.05) node[below]{CM}; }
     \end{tikzpicture}
   \end{center}
     
@@ -139,26 +135,17 @@
   The center of mass is defined for discrete number of masses as:
 
   \eq{-.2in}{
-    \boxed{\bm{x}_{CM}=\frac{\sum \bm{x}_i m_i}{\sum m_i}}
+    \boxed{\bm x_{CM}=\frac{\sum \bm x_i m_i}{\sum m_i}}
   }
   \begin{center}
     \begin{tabular}{l|c|c}
       \rowcolor{pink}
       \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
-      Position of center of mass (vector) & $\bm{x}_{CM}$ & \si{\metre}\\
-      Position of point mass $i$ (vector) & $\bm{x}_i$ & \si{\metre}\\
+      Position of center of mass (vector) & $\bm x_{CM}$ & \si\metre \\
+      Position of point mass $i$ (vector) & $\bm x_i$ & \si\metre \\
       Point mass $i$ & $m_i$ & \si{\kilo\gram}
     \end{tabular}
   \end{center}
-%\end{frame}
-%
-%
-%\begin{frame}{Breaking Down Into Components}
-%  
-%  \eq{0in}{
-%    \boxed{\bm{x}_{CM}=\frac{\sum \bm{x}_i m_i}{\sum m_i}}
-%  }
-%
   In components:
 
   \eq{-.2in}{
@@ -173,9 +160,9 @@
   \textbf{Example 1:} Consider the following masses and their coordinates
   which make up a ``discrete mass'' rigid body''
   \begin{align*}
-    m_1&=\SI{5.}{\kg} &\bm{x}_1&=3\ii-2\kk\\
-    m_2&=\SI{10.}{\kg}&\bm{x}_2&=-4\ii+2\jj+7\kk\\
-    m_3&=\SI{1.}{\kg}&\bm{x}_3&=10\ii-17\jj+10\kk
+    m_1&=\SI{5.}{\kg} &\bm{x}_1&=3\iii-2\kkk\\
+    m_2&=\SI{10.}{\kg}&\bm{x}_2&=-4\iii+2\jjj+7\kkk\\
+    m_3&=\SI{1.}{\kg}&\bm{x}_3&=10\iii-17\jjj+10\kkk
   \end{align*}
   What are the coordinates for the center of mass of this system?
 \end{frame}
@@ -188,14 +175,14 @@
   number of masses approaches $\infty$:
   
   \eq{-.15in}{
-    \bm{x}_{CM}=\lim_{n\rightarrow\infty}
-    \left(\frac{\sum_{i=1}^n \bm{x}_i m_i}{\sum_{i=1}^n m_i}\right)
+    \bm x_{CM}=\lim_{n\rightarrow\infty}
+    \left(\frac{\sum_{i=1}^n \bm x_i m_i}{\sum_{i=1}^n m_i}\right)
   }
 
   This gives us an integral form of our equation:
 
   \eq{-.15in}{
-    \boxed{\bm{x}_{CM}=\frac{\int\bm{x} dm}{\int dm}}
+    \boxed{\bm x_{CM}=\frac{\int\bm x\dl m}{\int\dl m}}
   }
 \end{frame}
 
@@ -206,19 +193,19 @@
   \item Linear density (for 1D problems)
     {\Large
       \begin{displaymath}
-        \gamma=\frac{m}{L}
+        \gamma = \diff mL\quad\rightarrow\quad \dl m =\gamma\dl L
       \end{displaymath}
     }
   \item Surface area density (for 2D problems)
     {\Large
       \begin{displaymath}
-        \sigma=\frac{m}{A}
+        \sigma=\diff mA\quad\rightarrow\quad \dl m =\sigma\dl A
       \end{displaymath}
     }
   \item Volume density (for 3D problems)
     {\Large
       \begin{displaymath}
-        \rho=\frac{m}{V}
+        \rho=\diff mV\quad\rightarrow\quad \dl m =\rho\dl V
       \end{displaymath}
     }
   \end{itemize}
@@ -242,7 +229,7 @@
       --(0,4)--cycle node[midway,left]{$b$};
       \uncover<2->{
         \draw[fill=red](1,0)--(1.2,0)--(1.2,2.4)--(1,2.67)
-          node[midway,right]{\footnotesize $dm$}--cycle;
+          node[midway,right]{\footnotesize $\dl m$}--cycle;
       }
     \end{tikzpicture}
   \end{columns}
@@ -349,29 +336,29 @@
 
 
 \begin{frame}{Velocity, Acceleration and Momentum}
-  Take time derivative of the equation for $\bm{x}_\text{CM}$ to get the
+  Take time derivative of the equation for $\bm x_\text{CM}$ to get the
   velocity at the CM:
     
   \eq{-.2in}{
-    \bm{v}_\text{CM}=\frac{d\bm{x}_\text{CM}}{dt}
-    =\frac1m\frac{d}{dt}\left(\int\bm{x}dm\right)
-    =\frac1m\int\frac{d\bm{x}}{dt}dm
-    =\frac{\int \bm{v}dm}{m}
+    \bm v_\text{CM}=\diff{\bm{x}_\text{CM}}t
+    =\frac1m\diff{}t\left(\int\bm x\dl m\right)
+    =\frac1m\int\diff{\bm x}t\dl m
+    =\frac{\int\bm v\dl m}m
   }
   
   The integral in the numerator is the sum of the momentum of all the masses in
-  the system ($\bm{p}_\text{net}$) which means that we have
+  the system ($\bm p_\text{net}$) which means that we have
 
   \eq{-.2in}{
-    \bm{p}_\text{net}=m\bm{v}_\text{CM}
+    \bm p_\text{net}=m\bm v_\text{CM}
     }
 
-  Taking the derivative of $\bm{p}_\text{net}$ relates force and acceleration
+  Taking the derivative of $\bm p_\text{net}$ relates force and acceleration
   at the CM as well:
     
   \eq{-.2in}{
-    \bm{F}_\text{net}=\frac{d\bm{p}_\text{net}}{dt}=m\frac{d\bm{v}_\text{CM}}{dt}
-    =m\bm{a}_\text{CM}
+    \bm F_\text{net}=\diff{\bm p_\text{net}}t=m\diff{\bm v_\text{CM}}t
+    =m\bm a_\text{CM}
   }
 \end{frame}
 

@@ -3,17 +3,6 @@
 
 \usetikzlibrary{patterns}
 
-%\setmonofont{Ubuntu Mono}
-\setlength{\parskip}{0pt}
-\setlength{\itemsep}{0pt}
-\renewcommand{\baselinestretch}{1}
-
-\sisetup{
-  inter-unit-product=\cdotp,
-  per-mode=symbol
-}
-\tikzset{>=latex}
-
 \title{Topic 6: Circular Motion}
 \subtitle{Advanced Placement Physics C}
 \input{../me}
@@ -25,21 +14,6 @@
 \begin{frame}
   \maketitle
 \end{frame}
-
-
-%\begin{frame}{Files to Download}
-%  Please download the following files from the school website if you have not
-%  already done so:
-%  \begin{itemize}
-%  \item\texttt{PhysAPC-06-circMotion.pdf}---The ``print version'' of the
-%    class slides for this topic.
-%  \item\texttt{PhysAPC-06-Homework.pdf}---Homework problems for this topic.
-%  \end{itemize}
-%  \vspace{.1in}Please download/print the PDF file for the class slides before
-%  each class. There is no point copying notes that are already on the slides.
-%  Instead, focus on things that aren't necessarily on the slides. If you wish
-%  to print the slides, we recommend printing 4 slides per page.
-%\end{frame}
 
 
 
@@ -67,17 +41,17 @@
         \draw(0,-3)--(0,3) node[above]{\footnotesize$y$};
       \end{scope}
       \begin{scope}[very thick,->]
-        \draw(0,0)--(1,0) node[below]{\footnotesize$\bm{\hat{\imath}}$};
-        \draw(0,0)--(0,1) node[left]{\footnotesize$\bm{\hat{\jmath}}$};
+        \draw(0,0)--(1,0) node[below]{\footnotesize$\iii$};
+        \draw(0,0)--(0,1) node[left]{\footnotesize$\jjj$};
       \end{scope}
       \draw (0,0) circle(2.5);
       \begin{scope}[rotate=38]
         \draw[->] (0,0)--(2.45,0) node[midway,above]{\footnotesize$r$};
         \draw[fill=red!60] (2.5,0) circle(.1);
         \begin{scope}[very thick,->]
-          \draw(2.55,0)--(3.55,0) node[right]{\footnotesize$\hat{\bm{r}}$};
+          \draw(2.55,0)--(3.55,0) node[right]{\footnotesize$\hat{\bm r}$};
           \draw(2.5,.05)--(2.5,1.05)
-          node[above]{\footnotesize$\hat{\bm{\theta}}$};
+          node[above]{\footnotesize$\hat{\bm\theta}$};
           \end{scope}
       \end{scope}
       \draw(1.5,0)[->] arc(0:38:1.5) node[pos=.55,right]{\footnotesize$\theta$};
@@ -88,7 +62,7 @@
     its $x$ and $y$ coordinates:
 
     \eq{-.25in}{
-      \bm{x}(t)=x(t)\bm{\hat{\imath}} + y(t) \bm{\hat{\jmath}}
+      \bm r(t)=x(t)\iii + y(t)\jjj
       }
 
     \vspace{-.15in}For circular motion or general rotational motion, the
@@ -114,18 +88,16 @@
     \begin{tikzpicture}[scale=.75]
       \draw[->](-3,0)--(3,0) node[right]{\footnotesize$x$};
       \draw[->](0,-3)--(0,3) node[above]{\footnotesize$y$};
-      \draw[very thick,->](0,0)--(1,0)
-      node[below]{\footnotesize$\bm{\hat{\imath}}$};
-      \draw[very thick,->](0,0)--(0,1)
-      node[left]{\footnotesize$\bm{\hat{\jmath}}$};
+      \draw[very thick,->](0,0)--(1,0) node[below]{\footnotesize$\iii$};
+      \draw[very thick,->](0,0)--(0,1) node[left]{\footnotesize$\jjj$};
       \draw (0,0) circle(2.5);
       \begin{scope}[rotate=38]
         \draw[->] (0,0)--(2.45,0) node[midway,above]{\footnotesize$r$};
         \draw[fill=red!60] (2.5,0) circle(.1);
         \draw[very thick,->](2.55,0)--(3.55,0)
-        node[right]{\footnotesize$\hat{\bm{r}}$};
+        node[right]{\footnotesize$\hat{\bm r}$};
         \draw[very thick,->](2.5,.05)--(2.5,1.05)
-        node[above]{\footnotesize$\hat{\bm{\theta}}$};        
+        node[above]{\footnotesize$\hat{\bm\theta}$};        
       \end{scope}
       \draw(1.5,0)[->] arc(0:38:1.5) node[pos=.55,right]{\footnotesize$\theta$};
     \end{tikzpicture}
@@ -134,8 +106,8 @@
     \begin{itemize}
     \item Like the Cartesian system, the polar coordinate system is also
       right-handed
-    \item Both basic vectors $\hat{\bm{r}}$ (radial direction) and
-      $\hat{\bm{\theta}}$ (angular direction) rotate as the object moves
+    \item Both basic vectors $\hat{\bm r}$ (radial direction) and
+      $\hat{\bm\theta}$ (angular direction) rotate as the object moves
     \item Simpler way is to think of position as just two
       parameters, which is \emph{exactly} how position vectors are expressed in
       Grade 11/12 Physics: magnitude ($r$) and direction ($\theta$)!
@@ -162,7 +134,7 @@
       \draw[dashed,fill=green!40,opacity=.4](0,0)--(3,-1.5)
       node[pos=.6,below left,opacity=1]{$r$}--(3,2.5)
       node[midway,right,black,opacity=1]{$z$}--(0,4);
-      \fill[black](3,2.5) circle(.1) node[right]{$\bm{r}(r,\theta,z)$};
+      \fill[black](3,2.5) circle(.1) node[right]{$\bm r(r,\theta,z)$};
       \draw[->] (-1,-1) arc(-110:-45:2) node[midway,below]{$\theta$};
       \draw[thick,->](0,0)--(0,5) node[above]{$z$};
     \end{tikzpicture}
@@ -177,7 +149,7 @@
 
 
 
-\section{Rigid-Body Circular Motion}
+\section{General Circular Motion}
 
 \begin{frame}{Angular Position and Angular Velocity}
   \vspace{.2in}
@@ -206,10 +178,11 @@
     time derivative:
       
     \eq{-.2in}{
-      \boxed{\omega(t)=\diff{\theta}t=\dot{\theta}}
+      \boxed{\omega(t)=\diff{\theta}t}
     }
 
-    $\theta$ is measured in \si{radians}, and $\omega$ in \si{rad/\s}
+    $\theta$ is measured in \si{radians}, and $\omega$ in
+    \si{\radian\per\second}
   \end{columns}
 \end{frame}
 
@@ -226,7 +199,7 @@
         \draw[->] (0,0)--(2.44,0) node[midway,above]{\footnotesize$r$};
         \draw[fill=red!60] (2.5,0) circle(.1);
         \draw[very thick,->](2.5,.08)--(2.5,1.5)
-        node[above]{\footnotesize$\bm{v}$};
+        node[above]{\footnotesize$\bm v$};
       \end{scope}
       \draw(1,0)[->] arc(0:38:1) node[midway,right]{\footnotesize$\theta$};
     \end{tikzpicture}
@@ -240,8 +213,8 @@
     }    
 
     \begin{itemize}
-    \item\vspace{-.25in} The direction of $\bm{v}$ is tangent to circle, along
-      $\hat{\bm{\theta}}$, and therefore $\perp$ to $\hat{\bm{r}}$
+    \item\vspace{-.25in} The direction of $\bm v$ is tangent to circle, along
+      $\hat{\bm\theta}$, and therefore $\perp$ to $\hat{\bm r}$
     \item If $\omega>0$, the motion is counter-clockwise
     \item If $\omega<0$, the motion is clockwise
     \end{itemize}
@@ -261,7 +234,7 @@
         \draw[->] (0,0)--(2.44,0) node[midway,above]{\footnotesize$r$};
         \draw[fill=red!60] (2.5,0) circle(.1);
         \draw[very thick,->](2.5,.08)--(2.5,1.5)
-        node[above]{\footnotesize$\bm{v}$};
+        node[above]{\footnotesize$\bm v$};
       \end{scope}
       \draw(1,0)[->] arc(0:38:1) node[midway,right]{\footnotesize$\theta$};
     \end{tikzpicture}
@@ -271,15 +244,15 @@
     the angular velocity using this vector cross product:
 
     \eq{-.25in}{
-      \bm{v}=\bm{\omega}\times\bm{r}
+      \bm v=\bm\omega\times\bm r
     }
 
     \begin{itemize}
-    \item\vspace{-.2in}$\bm{\omega}$: out of the page if motion is
+    \item\vspace{-.2in}$\bm\omega$: out of the page if motion is
       counter-clockwise
-    \item $\bm{\omega}$: into the page if motion is clockwise
+    \item $\bm\omega$: into the page if motion is clockwise
     \end{itemize}
-    Visualizing $\bm{\omega}$ takes practice, but this vector notation is
+    Visualizing $\bm\omega$ takes practice, but this vector notation is
     mathematically rigorious and consistent
   \end{columns}
 \end{frame}
@@ -297,7 +270,7 @@
         \draw[->] (0,0)--(2.44,0) node[midway,above]{\footnotesize$r$};
         \draw[fill=red!60] (2.5,0) circle(.1);
         \draw[very thick,->](2.5,.08)--(2.5,1.5)
-        node[above]{\footnotesize$\bm{v}$};
+        node[above]{\footnotesize$\bm v$};
       \end{scope}
       \draw(1,0)[->] arc(0:38:1) node[midway,right]{\footnotesize$\theta$};
     \end{tikzpicture}
@@ -351,10 +324,10 @@
 
 \begin{frame}{Angular Acceleration}
   The time derivative of $\omega$ is \textbf{angular acceleration}, which
-  has a unit of \si{rad/\second^2}:
+  has a unit of \si{\radian\per\second\squared}:
 
   \eq{-.2in}{
-    \alpha=\dot{\omega}=\ddot{\theta}
+    \alpha=\diff{\omega}t=\diff[2]{\theta}t
   }
 
   Similar to the relationship between velocity and angular velocity,
@@ -362,7 +335,7 @@
   $\alpha$ by the radius $r$:
     
   \eq{-.2in}{
-    a_t(t)=\dot{v}=r\dot{\omega}=r\alpha
+    a_t(t)=\diff vt=r\diff{\omega}t=r\alpha
   }
     
   For \emph{uniform} circular motion, $\omega$ is constant, and therefore
@@ -422,15 +395,15 @@
   called the \textbf{centripetal acceleration} $a_c$:
 
   \eq{-.15in}{
-    \boxed{\bm{a}_c=-\frac{v^2}{r}\hat{\bm{r}}=-(\omega^2r)\hat{\bm{r}}}
+    \boxed{\bm a_c=-\frac{v^2}r\hat{\bm r}=-(\omega^2r)\hat{\bm r}}
   }
 
-  (The negative sign is because $\hat{\bm{r}}$ is radially outward from the
+  (The negative sign is because $\hat{\bm r}$ is radially outward from the
   center.) The force that causes the centripetal acceleration is called the
   \textbf{centripetal force}:
 
   \eq{-.15in}{
-    \boxed{\bm{F}_c=m\bm{a}_c=-\frac{mv^2}{r}\hat{\bm{r}}}
+    \boxed{\bm F_c=m\bm a_c=-\frac{mv^2}r\hat{\bm r}}
   }
 \end{frame}
 
@@ -441,7 +414,6 @@
   frequency are known, the speed of the object is:
 
   \eq{-.15in}{
-    %v=\frac{2\pi r}{T}=2\pi rf
     v=\omega r = 2\pi rf = \frac{2\pi r}T
   }
 
@@ -663,7 +635,7 @@
   vertical motion:
   \begin{itemize}
   \item Generally difficult to solve by dynamics and kinematics
-  \item Instead, use conservation of energy to solve for $\bm{v}$
+  \item Instead, use conservation of energy to solve for $\bm v$
   \item Then use the equation for centripetal force to find other forces
   \end{itemize}
 
@@ -686,9 +658,9 @@
         \tikzstyle{balloon}=[ball color=red!70!black];
         \shade[balloon] (0,-5) circle (0.2) node[below right]{$m$};
         \begin{scope}[->,very thick,red!70!black]
-          \draw(0,-5)--(0,-3.3) node[left]{\footnotesize $\bm{T}$};
+          \draw(0,-5)--(0,-3.3) node[left]{\footnotesize $\bm T$};
           \draw[rotate around={-20:(0,-5)}](0,-5)--(0,-6.5)
-          node[below]{\footnotesize $m\bm{g}$};
+          node[below]{\footnotesize $m\bm g$};
         \end{scope}
       \end{scope}
       \draw[dashed,thin](0,0)--(0,-5);
@@ -698,16 +670,15 @@
 
     \column{.65\textwidth}
     \begin{itemize}
-    \item There are two forces act on the pendulum: weight $\bm{w}=m\bm{g}$, and
-    tension $\bm{T}$
+    \item There are two forces act on the pendulum: weight $m\bm g$, and
+    tension $\bm T$
     \item Speed of the pendulum at any height is found using conservation
       of energy
       \begin{itemize}
-      \item Tension $\bm{T}$ is always $\perp$ to motion, therefore it doesn't
+      \item Tension $\bm T$ is always $\perp$ to motion, therefore it doesn't
         do any work
       \item Work is done by gravity (a conservative force) alone
       \end{itemize}
-    %\item The velocity vector is tangent to the path
     \item Tangential and centripetal accelerations are based on the net force
       along the angular and radial directions
     \end{itemize}
@@ -748,7 +719,7 @@
       a_c=\frac{v^2}{r}=0
     }
 
-    and therefore the net force along the radial direction $\hat{\bm{r}}$ is
+    and therefore the net force along the radial direction $\hat{\bm r}$ is
     zero. The tension force $T$ can be calculated:
 
     \eq{-.2in}{
@@ -761,8 +732,9 @@
 
 
 \begin{frame}{Simple Pendulum}
-  In the radial direction $\hat{\bm{\theta}}$, there is still a net force of
+  In the radial direction $\hat{\bm\theta}$, there is still a net force of
   $mg\sin\theta$, therefore:
+  \vspace{.2in}
   \begin{columns}
     \column{.5\textwidth}
     \begin{tikzpicture}[scale=.75]
@@ -777,9 +749,9 @@
         \draw[dotted,->,very thick,red!70!black](0,-5)--(0,-6.1)
         node[right]{\footnotesize $mg\cos\theta$};
         \draw[->,very thick,red!70!black](0,-5)--(0,-3.9)
-        node[left]{\footnotesize $\bm{T}$};
+        node[left]{\footnotesize $\bm T$};
         \draw[->,very thick,red!70!black,rotate around={-45:(0,-5)}]
-        (0,-5)--(0,-6.5) node[below]{\footnotesize $m\bm{g}$};
+        (0,-5)--(0,-6.5) node[below]{\footnotesize $m\bm g$};
       \end{scope}
       \draw[dashed,thin](0,0)--(0,-5);
       \draw[dashed,thin](3.54,-3.54) arc(315:225:5);
@@ -787,7 +759,7 @@
     \end{tikzpicture}
 
     \column{.5\textwidth}
-    There is a tengential acceleration along $\hat{\bm{\theta}}$, with a
+    There is a tengential acceleration along $\hat{\bm\theta}$, with a
     magnitude of:
 
     \eq{-.25in}{
@@ -814,8 +786,8 @@
       \tikzstyle{balloon}=[ball color=red!70!black];    
       \shade[balloon] (0,-5) circle (0.2) node[below right]{$m$};
       \begin{scope}[->,very thick,red!70!black]
-        \draw (0,-5)--(0,-2.5) node[right]{\footnotesize $\bm{T}$};
-        \draw (0,-5)--(0,-6.5) node[below]{\footnotesize $m\bm{g}$};
+        \draw (0,-5)--(0,-2.5) node[right]{\footnotesize $\bm T$};
+        \draw (0,-5)--(0,-6.5) node[below]{\footnotesize $m\bm g$};
       \end{scope}
       \draw[dashed,thin](0,0)--(0,-5);
       \draw[dashed,thin](3.54,-3.54) arc(315:225:5);
@@ -836,7 +808,7 @@
     \item At the lowest point, tension is the highest:
 
       \eq{-.3in}{
-        T=w+F_c=m\left(g+\frac{v^2}{r}\right)
+        T=mg+F_c=m\left(g+\frac{v^2}r\right)
       }
     \end{itemize}
   \end{columns}
