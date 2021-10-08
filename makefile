@@ -6,7 +6,7 @@ export DESTINATION
 all:
 	cd Class01-outline	; make
 	cd Class01-kinematics	; make
-#	cd 02-Dynamics		; make
+	cd Class02-dynamics	; make
 #	cd 03-WorkEnergy	; make
 #	cd 04-momentumCollisions; make
 #	cd 05-centerOfMass	; make
@@ -26,7 +26,7 @@ clean:
 	rm -rf *.*~ *~ *.log
 	cd Class01-outline	; make clean
 	cd Class01-kinematics	; make clean
-#	cd 02-Dynamics		; make clean
+	cd Class02-dynamics	; make clean
 #	cd 03-WorkEnergy	; make clean
 #	cd 04-momentumCollisions; make clean
 #	cd 05-centerOfMass	; make clean
@@ -47,7 +47,7 @@ public:
 	cd Class01-eqSheet	; make public
 	cd Class01-outline	; make public
 	cd Class01-kinematics	; make public
-#	cd 02-Dynamics		; make public
+	cd Class02-dynamics	; make public
 #	cd 03-WorkEnergy	; make public
 #	cd 04-momentumCollisions; make public
 #	cd 05-centerOfMass	; make public
