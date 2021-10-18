@@ -37,24 +37,23 @@
     \column{.32\textwidth}
     \begin{tikzpicture}[scale=.75]
       \begin{scope}[->]
-        \draw(-3,0)--(3,0) node[right]{\footnotesize$x$};
-        \draw(0,-3)--(0,3) node[above]{\footnotesize$y$};
+        \draw(-3,0)--(3,0) node[right]{$x$};
+        \draw(0,-3)--(0,3) node[above]{$y$};
       \end{scope}
       \begin{scope}[very thick,->]
-        \draw(0,0)--(1,0) node[below]{\footnotesize$\iii$};
-        \draw(0,0)--(0,1) node[left]{\footnotesize$\jjj$};
+        \draw(0,0)--(1,0) node[below]{$\iii$};
+        \draw(0,0)--(0,1) node[left] {$\jjj$};
       \end{scope}
       \draw (0,0) circle(2.5);
       \begin{scope}[rotate=38]
-        \draw[->] (0,0)--(2.45,0) node[midway,above]{\footnotesize$r$};
-        \draw[fill=red!60] (2.5,0) circle(.1);
+        \draw[->] (0,0)--(2.45,0) node[midway,above]{$r$};
         \begin{scope}[very thick,->]
-          \draw(2.55,0)--(3.55,0) node[right]{\footnotesize$\hat{\bm r}$};
-          \draw(2.5,.05)--(2.5,1.05)
-          node[above]{\footnotesize$\hat{\bm\theta}$};
-          \end{scope}
+          \draw(2.5,0)--(3.5,0) node[right]{$\hat r$};
+          \draw(2.5,0)--(2.5,1) node[above]{$\hat\theta$};
+        \end{scope}
+        \draw[fill=red!60] (2.5,0) circle(.1);
       \end{scope}
-      \draw(1.5,0)[->] arc(0:38:1.5) node[pos=.55,right]{\footnotesize$\theta$};
+      \draw(1.5,0)[->] arc(0:38:1.5) node[pos=.55,right]{$\theta$};
     \end{tikzpicture}
 
     \column{.68\textwidth}
@@ -62,7 +61,7 @@
     its $x$ and $y$ coordinates:
 
     \eq{-.25in}{
-      \bm r(t)=x(t)\iii + y(t)\jjj
+      \vec r(t)=x(t)\iii + y(t)\jjj
       }
 
     \vspace{-.15in}For circular motion or general rotational motion, the
@@ -70,7 +69,7 @@
     is described by:
 
     \eq{-.2in}{
-      \bm{r}(t)=r(t)\hat{\bm{r}} + \theta(t)\hat{\bm{\theta}}
+      \vec{r}(t)=r(t)\hat{\vec{r}} + \theta(t)\hat{\vec{\theta}}
     }
     \begin{itemize}
     \item\vspace{-.15in}$r$ is distance from the origin
@@ -86,28 +85,26 @@
   \begin{columns}
     \column{.3\textwidth}
     \begin{tikzpicture}[scale=.75]
-      \draw[->](-3,0)--(3,0) node[right]{\footnotesize$x$};
-      \draw[->](0,-3)--(0,3) node[above]{\footnotesize$y$};
-      \draw[very thick,->](0,0)--(1,0) node[below]{\footnotesize$\iii$};
-      \draw[very thick,->](0,0)--(0,1) node[left]{\footnotesize$\jjj$};
+      \draw[->](-3,0)--(3,0) node[right]{$x$};
+      \draw[->](0,-3)--(0,3) node[above]{$y$};
+      \draw[very thick,->](0,0)--(1,0) node[below]{$\iii$};
+      \draw[very thick,->](0,0)--(0,1) node[left] {$\jjj$};
       \draw (0,0) circle(2.5);
       \begin{scope}[rotate=38]
-        \draw[->] (0,0)--(2.45,0) node[midway,above]{\footnotesize$r$};
+        \draw[->] (0,0)--(2.45,0) node[midway,above]{$r$};
+        \draw[very thick,->](2.5,0)--(3.5,0) node[right]{$\hat r$};
+        \draw[very thick,->](2.5,0)--(2.5,1) node[above]{$\hat\theta$};
         \draw[fill=red!60] (2.5,0) circle(.1);
-        \draw[very thick,->](2.55,0)--(3.55,0)
-        node[right]{\footnotesize$\hat{\bm r}$};
-        \draw[very thick,->](2.5,.05)--(2.5,1.05)
-        node[above]{\footnotesize$\hat{\bm\theta}$};        
       \end{scope}
-      \draw(1.5,0)[->] arc(0:38:1.5) node[pos=.55,right]{\footnotesize$\theta$};
+      \draw(1.5,0)[->] arc(0:38:1.5) node[pos=.55,right]{$\theta$};
     \end{tikzpicture}
 
     \column{.7\textwidth}
     \begin{itemize}
     \item Like the Cartesian system, the polar coordinate system is also
       right-handed
-    \item Both basic vectors $\hat{\bm r}$ (radial direction) and
-      $\hat{\bm\theta}$ (angular direction) rotate as the object moves
+    \item Both basis vectors $\hat r$ (radial direction) and $\hat\theta$
+      (angular direction) rotate as the object moves
     \item Simpler way is to think of position as just two
       parameters, which is \emph{exactly} how position vectors are expressed in
       Grade 11/12 Physics: magnitude ($r$) and direction ($\theta$)!
@@ -134,7 +131,7 @@
       \draw[dashed,fill=green!40,opacity=.4](0,0)--(3,-1.5)
       node[pos=.6,below left,opacity=1]{$r$}--(3,2.5)
       node[midway,right,black,opacity=1]{$z$}--(0,4);
-      \fill[black](3,2.5) circle(.1) node[right]{$\bm r(r,\theta,z)$};
+      \fill[black](3,2.5) circle(.1) node[right]{$\vec r(r,\theta,z)$};
       \draw[->] (-1,-1) arc(-110:-45:2) node[midway,below]{$\theta$};
       \draw[thick,->](0,0)--(0,5) node[above]{$z$};
     \end{tikzpicture}
@@ -156,33 +153,32 @@
   \begin{columns}
     \column{.32\textwidth}
     \begin{tikzpicture}[scale=.75]
-      \draw[->](-3,0)--(3,0) node[right]{\footnotesize$x$};
-      \draw[->](0,-3)--(0,3) node[above]{\footnotesize$y$};
+      \draw[->](-3,0)--(3,0) node[right]{$x$};
+      \draw[->](0,-3)--(0,3) node[above]{$y$};
       \draw (0,0) circle(2.5);
       \begin{scope}[rotate=38]
-        \draw[->] (0,0)--(2.44,0) node[midway,above]{\footnotesize$r$};
+        \draw[->] (0,0)--(2.44,0) node[midway,above]{$r$};
         \draw[fill=red!60] (2.5,0) circle(.1);
       \end{scope}
-      \draw(1,0)[->] arc(0:38:1) node[midway,right]{\footnotesize$\theta$};
+      \draw(1,0)[->] arc(0:38:1) node[midway,right]{$\theta$};
     \end{tikzpicture}
     
     \column{.68\textwidth}
     For a constant $r$, the \textbf{angular position} $\theta$ determines an
-    object's position as a function of time:
-      
+    object's position as a function of time. It is usually measured in
+    \textbf{radian} (\si{\radian}):
+
     \eq{-.2in}{
       \boxed{\theta=\theta(t)}
     }
     
     \textbf{Angular velocity} $\omega$ (or \textbf{angular frequency}) is its
-    time derivative:
+    time derivative, measured in \textbf{radian per second}
+    (\si{\radian\per\second}):
       
     \eq{-.2in}{
       \boxed{\omega(t)=\diff{\theta}t}
     }
-
-    $\theta$ is measured in \si{radians}, and $\omega$ in
-    \si{\radian\per\second}
   \end{columns}
 \end{frame}
 
@@ -192,16 +188,15 @@
   \begin{columns}
     \column{.35\textwidth}
     \begin{tikzpicture}[scale=.75]
-      \draw[->](-3,0)--(3,0) node[right]{\footnotesize$x$};
-      \draw[->](0,-3)--(0,3) node[above]{\footnotesize$y$};
+      \draw[->](-3,0)--(3,0) node[right]{$x$};
+      \draw[->](0,-3)--(0,3) node[above]{$y$};
       \draw (0,0) circle(2.5);
       \begin{scope}[rotate=38]
-        \draw[->] (0,0)--(2.44,0) node[midway,above]{\footnotesize$r$};
+        \draw[->] (0,0)--(2.44,0) node[midway,above]{$r$};
         \draw[fill=red!60] (2.5,0) circle(.1);
-        \draw[very thick,->](2.5,.08)--(2.5,1.5)
-        node[above]{\footnotesize$\bm v$};
+        \draw[very thick,->](2.5,.08)--(2.5,1.5) node[above]{$\vec v$};
       \end{scope}
-      \draw(1,0)[->] arc(0:38:1) node[midway,right]{\footnotesize$\theta$};
+      \draw(1,0)[->] arc(0:38:1) node[midway,right]{$\theta$};
     \end{tikzpicture}
 
     \column{.65\textwidth}
@@ -213,8 +208,8 @@
     }    
 
     \begin{itemize}
-    \item\vspace{-.25in} The direction of $\bm v$ is tangent to circle, along
-      $\hat{\bm\theta}$, and therefore $\perp$ to $\hat{\bm r}$
+    \item\vspace{-.25in} The direction of $\vec v$ is tangent to circle, along
+      $\hat\theta$, and therefore $\perp$ to $\hat r$
     \item If $\omega>0$, the motion is counter-clockwise
     \item If $\omega<0$, the motion is clockwise
     \end{itemize}
@@ -227,16 +222,15 @@
   \begin{columns}
     \column{.3\textwidth}
     \begin{tikzpicture}[scale=.75]
-      \draw[->](-3,0)--(3,0) node[right]{\footnotesize$x$};
-      \draw[->](0,-3)--(0,3) node[above]{\footnotesize$y$};
+      \draw[->](-3,0)--(3,0) node[right]{$x$};
+      \draw[->](0,-3)--(0,3) node[above]{$y$};
       \draw (0,0) circle(2.5);
       \begin{scope}[rotate=38]
-        \draw[->] (0,0)--(2.44,0) node[midway,above]{\footnotesize$r$};
+        \draw[->] (0,0)--(2.44,0) node[midway,above]{$r$};
         \draw[fill=red!60] (2.5,0) circle(.1);
-        \draw[very thick,->](2.5,.08)--(2.5,1.5)
-        node[above]{\footnotesize$\bm v$};
+        \draw[very thick,->](2.5,.08)--(2.5,1.5) node[above]{$\vec v$};
       \end{scope}
-      \draw(1,0)[->] arc(0:38:1) node[midway,right]{\footnotesize$\theta$};
+      \draw(1,0)[->] arc(0:38:1) node[midway,right]{$\theta$};
     \end{tikzpicture}
 
     \column{.7\textwidth}
@@ -244,15 +238,15 @@
     the angular velocity using this vector cross product:
 
     \eq{-.25in}{
-      \bm v=\bm\omega\times\bm r
+      \vec v=\vec\omega\times\vec r
     }
 
     \begin{itemize}
-    \item\vspace{-.2in}$\bm\omega$: out of the page if motion is
+    \item\vspace{-.2in}$\vec\omega$: out of the page if motion is
       counter-clockwise
-    \item $\bm\omega$: into the page if motion is clockwise
+    \item $\vec\omega$: into the page if motion is clockwise
     \end{itemize}
-    Visualizing $\bm\omega$ takes practice, but this vector notation is
+    Visualizing $\vec\omega$ takes practice, but this vector notation is
     mathematically rigorious and consistent
   \end{columns}
 \end{frame}
@@ -263,16 +257,15 @@
   \begin{columns}
     \column{.3\textwidth}
     \begin{tikzpicture}[scale=.75]
-      \draw[->](-3,0)--(3,0) node[right]{\footnotesize$x$};
-      \draw[->](0,-3)--(0,3) node[above]{\footnotesize$y$};
+      \draw[->](-3,0)--(3,0) node[right]{$x$};
+      \draw[->](0,-3)--(0,3) node[above]{$y$};
       \draw (0,0) circle(2.5);
       \begin{scope}[rotate=38]
-        \draw[->] (0,0)--(2.44,0) node[midway,above]{\footnotesize$r$};
+        \draw[->] (0,0)--(2.44,0) node[midway,above]{$r$};
         \draw[fill=red!60] (2.5,0) circle(.1);
-        \draw[very thick,->](2.5,.08)--(2.5,1.5)
-        node[above]{\footnotesize$\bm v$};
+        \draw[very thick,->](2.5,.08)--(2.5,1.5) node[above]{$\vec v$};
       \end{scope}
-      \draw(1,0)[->] arc(0:38:1) node[midway,right]{\footnotesize$\theta$};
+      \draw(1,0)[->] arc(0:38:1) node[midway,right]{$\theta$};
     \end{tikzpicture}
 
     \column{.7\textwidth}
@@ -280,12 +273,12 @@
     motion is periodic. Its \textbf{frequency} and \textbf{period} are given by:
 
     \eq{-.15in}{
-      f=\frac{\omega}{2\pi}\quad
-      T=\frac{2\pi}{\omega}\quad
+      f=\frac\omega{2\pi}\quad
+      T=\frac{2\pi}\omega\quad
       f=\frac1T
     }
     
-    $T$ is in \textbf{seconds} (\si{\s}) and $f$ is in \textbf{hertz}
+    $T$ is in \textbf{seconds} (\si{\second}) and $f$ is in \textbf{hertz}
     (\si{\hertz})
   \end{columns}
 \end{frame}
@@ -371,8 +364,8 @@
 
   \vspace{-.3in}{\Large
     \begin{align*}
-      \theta&=\theta_0 + \omega_0 t + \frac{1}{2}\alpha t^2\\
-      \theta&=\theta_0+ \frac{\omega_0+\omega}{2} t\\
+      \theta&=\theta_0 + \omega_0 t + \frac12\alpha t^2\\
+      \theta&=\theta_0+ \frac{\omega_0+\omega}2 t\\
       \omega^2& = \omega_0^2+ 2\alpha(\theta-\theta_0)
     \end{align*}
   }
@@ -384,8 +377,8 @@
 
 \begin{frame}{A Simple Example}
   \textbf{Example 1:} An object moves in a circle with angular acceleration
-  \SI{3.}{rad/\s^2}. The radius is \SI{2.}{\metre} and it starts from rest. How
-  long does it take for this object to finish a circle?
+  \SI{3.}{\radian\per\second\squared}. The radius is \SI{2.}{\metre} and it
+  starts from rest. How long does it take for this object to finish a circle?
 \end{frame}
 
 
@@ -395,15 +388,15 @@
   called the \textbf{centripetal acceleration} $a_c$:
 
   \eq{-.15in}{
-    \boxed{\bm a_c=-\frac{v^2}r\hat{\bm r}=-(\omega^2r)\hat{\bm r}}
+    \boxed{\vec a_c=-\frac{v^2}r\hat r=-(\omega^2r)\hat r}
   }
 
-  (The negative sign is because $\hat{\bm r}$ is radially outward from the
-  center.) The force that causes the centripetal acceleration is called the
+  (The negative sign is because $\hat r$ is radially outward from the center.)
+  The force that causes the centripetal acceleration is called the
   \textbf{centripetal force}:
 
   \eq{-.15in}{
-    \boxed{\bm F_c=m\bm a_c=-\frac{mv^2}r\hat{\bm r}}
+    \boxed{\vec F_c=m\vec a_c=-\frac{mv^2}r\hat r}
   }
 \end{frame}
 
@@ -419,10 +412,10 @@
 
   Centripetal acceleration can therefore be expressed based on $T$ or $f$:
 
-  \eq{-.2in}{
-    \bm{a}_c=-\frac{v^2}{r}\hat{\bm{r}}\quad\rightarrow\quad
+  \eq{-.15in}{
+    \vec a_c=-(\omega^2r)\hat r\quad\rightarrow\quad
     \boxed{
-      \bm{a}_c=-\frac{4\pi^2r}{T^2}\hat{\bm{r}}=-4\pi^2rf^2\hat{\bm{r}}
+      \vec a_c=-\frac{4\pi^2r}{T^2}\hat r=-4\pi^2rf^2\hat r
     }
   }
 \end{frame}
@@ -435,9 +428,9 @@
     \begin{tikzpicture}[scale=4.2]
       \draw[dashed] (.866,-.5) arc(-30:30:1);
       \draw[ultra thick,red,->] (1,0)--(.5,0)
-      node[midway,below]{\footnotesize $a_c=\omega^2r$};
+      node[midway,below]{$a_c=\omega^2r$};
       \draw[ultra thick, blue,->] (1,0)--(1,.3)
-      node[above right]{\footnotesize $a_t=r\alpha$};
+      node[right]{$a_t=r\alpha$};
       \fill (1,0) circle(.02);
     \end{tikzpicture}
     
@@ -462,7 +455,7 @@
   The condition for circular motion is the second law of motion:
 
   \eq{-.2in}{
-    \bm{F}_c=\sum\bm{F}=m\bm{a}_c
+    \vec F_c=\sum\vec F=m\vec a_c
   }
   
   The forces that generate the centripetal force comes from the free-body
@@ -497,12 +490,13 @@
   \begin{columns}
     \column{.35\textwidth}
     \centering
-    \pic{.8}{banked-turn-acceleration.png}\\
+    \pic{.8}{banked-turn-acceleration}
+    
     \begin{tikzpicture}
       \fill[black](0,0) circle(.08);
-      \draw[thick,->,rotate=-30](0,0)--(0,1)node[above]{$\bm{N}$};
-      \draw[thick,->](0,0)--(0,-1)node[below]{$m\bm{g}$};
-      \draw[thick,->,rotate=60](0,0)--(0,-1)node[right]{$\bm{f}$};
+      \draw[thick,->,rotate=-30](0,0)--(0,1)node[above]{$\vec N$};
+      \draw[thick,->](0,0)--(0,-1)node[below]{$m\vec g$};
+      \draw[thick,->,rotate=60](0,0)--(0,-1)node[right]{$\vec f$};
     \end{tikzpicture}
     \begin{tikzpicture}
       \draw[->](0,0)--(1,0) node[right]{$x$};
@@ -519,10 +513,10 @@
     Net force in the $x$ direction is the centripetal force:
 
     \eq{-.35in}{
-      \sum F_x=N\sin\theta +f\cos\theta = \frac{mv^2}{r}
+      \sum F_x=N\sin\theta +f\cos\theta = \frac{mv^2}r
     }
 
-    Friction force $\bm{f}$ may be static or kinetic.
+    Friction force $\vec f$ may be static or kinetic.
   \end{columns}
 \end{frame}
 
@@ -532,12 +526,13 @@
   \begin{columns}
     \column{.35\textwidth}
     \centering
-    \pic{.8}{banked-turn-acceleration.png}\\
+    \pic{.8}{banked-turn-acceleration}
+    
     \begin{tikzpicture}
       \fill[black](0,0) circle(.08);
-      \draw[thick,->,rotate=-30](0,0)--(0,1)node[above]{$\bm{N}$};
-      \draw[thick,->](0,0)--(0,-1)node[below]{$\bm{w}$};
-      \draw[thick,->,rotate=60](0,0)--(0,-1)node[right]{$\bm{f}$};
+      \draw[thick,->,rotate=-30](0,0)--(0,1)node[above]{$\vec N$};
+      \draw[thick,->](0,0)--(0,-1)node[below]{$m\vec g$};
+      \draw[thick,->,rotate=60](0,0)--(0,-1)node[right]{$\vec f$};
     \end{tikzpicture}
     \begin{tikzpicture}
       \draw[->](0,0)--(1,0) node[right]{$x$};
@@ -552,7 +547,7 @@
     \vspace{-.4in}{\Large
       \begin{align*}
         N\left(\cos\theta-\mu\sin\theta\right) &=mg\\
-        N\left(\sin\theta+\mu\cos\theta\right) &=\frac{mv^2}{r}
+        N\left(\sin\theta+\mu\cos\theta\right) &=\frac{mv^2}r
       \end{align*}
     }
   \end{columns}
@@ -566,9 +561,9 @@
     \pic{.8}{banked-turn-acceleration.png}\\
     \begin{tikzpicture}
       \fill[black](0,0) circle(.08);
-      \draw[thick,->,rotate=-30](0,0)--(0,1)node[above]{$\bm{N}$};
-      \draw[thick,->](0,0)--(0,-1)node[below]{$m\bm{g}$};
-      \draw[thick,->,rotate=60](0,0)--(0,-1)node[right]{$\bm{f}$};
+      \draw[thick,->,rotate=-30](0,0)--(0,1)node[above]{$\vec N$};
+      \draw[thick,->](0,0)--(0,-1)node[below]{$m\vec g$};
+      \draw[thick,->,rotate=60](0,0)--(0,-1)node[right]{$\vec f$};
     \end{tikzpicture}
     \begin{tikzpicture}
       \draw[->](0,0)--(1,0) node[right]{$x$};
@@ -601,7 +596,7 @@
   In the limit of $\mu=0$ (frictionless case), the equation reduces to:
 
   \eq{-.1in}{
-    \boxed{ v_{\text{max}}=\sqrt{rg\tan\theta} }
+    \boxed{ v_\text{max}=\sqrt{rg\tan\theta} }
   }
 
   And in the limit of a flat roadway with no banking ($\theta=0$,
@@ -635,7 +630,7 @@
   vertical motion:
   \begin{itemize}
   \item Generally difficult to solve by dynamics and kinematics
-  \item Instead, use conservation of energy to solve for $\bm v$
+  \item Instead, use conservation of energy to solve for $\vec v$
   \item Then use the equation for centripetal force to find other forces
   \end{itemize}
 
@@ -658,9 +653,9 @@
         \tikzstyle{balloon}=[ball color=red!70!black];
         \shade[balloon] (0,-5) circle (0.2) node[below right]{$m$};
         \begin{scope}[->,very thick,red!70!black]
-          \draw(0,-5)--(0,-3.3) node[left]{\footnotesize $\bm T$};
+          \draw(0,-5)--(0,-3.3) node[left]{$\vec T$};
           \draw[rotate around={-20:(0,-5)}](0,-5)--(0,-6.5)
-          node[below]{\footnotesize $m\bm g$};
+          node[below]{$m\vec g$};
         \end{scope}
       \end{scope}
       \draw[dashed,thin](0,0)--(0,-5);
@@ -670,12 +665,12 @@
 
     \column{.65\textwidth}
     \begin{itemize}
-    \item There are two forces act on the pendulum: weight $m\bm g$, and
-    tension $\bm T$
+    \item There are two forces act on the pendulum: weight $m\vec g$, and
+    tension $\vec T$
     \item Speed of the pendulum at any height is found using conservation
       of energy
       \begin{itemize}
-      \item Tension $\bm T$ is always $\perp$ to motion, therefore it doesn't
+      \item Tension $\vec T$ is always $\perp$ to motion, therefore it doesn't
         do any work
       \item Work is done by gravity (a conservative force) alone
       \end{itemize}
@@ -700,11 +695,12 @@
         \tikzstyle{balloon}=[ball color=red!70!black];    
         \shade[balloon] (0,-5) circle (0.2) node[below right]{$m$};
         \begin{scope}[->,very thick,red!70!black]
-          \draw[dotted](0,-5)--(-1.1,-5)node[left]{\footnotesize$mg\sin\theta$};
-          \draw[dotted](0,-5)--(0,-6.1)node[right]{\footnotesize$mg\cos\theta$};
-          \draw(0,-5)--(0,-3.9) node[left]{\footnotesize $\bm{T}$};
+          \draw[dotted](0,-5)--(-1.1,-5)node[left]{$mg\sin\theta$};
+          \draw[dotted](0,-5)--(0,-6.1)
+          node[right,fill=yellow!30]{$mg\cos\theta$};
+          \draw(0,-5)--(0,-3.9) node[left,fill=yellow!30]{$\vec T$};
           \draw[rotate around={-45:(0,-5)}](0,-5)--(0,-6.5)
-          node[below]{\footnotesize $m\bm{g}$};
+          node[below]{$m\vec g$};
         \end{scope}
       \end{scope}
       \draw[dashed,thin](0,0)--(0,-5);
@@ -716,11 +712,11 @@
     Centripetal acceleration is also zero:
 
     \eq{-.2in}{
-      a_c=\frac{v^2}{r}=0
+      a_c=\frac{v^2}r=0
     }
 
-    and therefore the net force along the radial direction $\hat{\bm r}$ is
-    zero. The tension force $T$ can be calculated:
+    and therefore the net force along the radial direction $\hat r$ is zero.
+    The tension force $T$ can be calculated:
 
     \eq{-.2in}{
       T=mg\cos\theta
@@ -732,7 +728,7 @@
 
 
 \begin{frame}{Simple Pendulum}
-  In the radial direction $\hat{\bm\theta}$, there is still a net force of
+  In the radial direction $\hat\theta$, there is still a net force of
   $mg\sin\theta$, therefore:
   \vspace{.2in}
   \begin{columns}
@@ -745,13 +741,13 @@
         \tikzstyle{balloon}=[ball color=red!70!black];    
         \shade[balloon] (0,-5) circle (0.2) node[below right]{$m$};
         \draw[dotted,->,very thick,red!70!black](0,-5)--(-1.1,-5)
-        node[left]{\footnotesize $mg\sin\theta$};
+        node[left,fill=blue!20]{$mg\sin\theta$};
         \draw[dotted,->,very thick,red!70!black](0,-5)--(0,-6.1)
-        node[right]{\footnotesize $mg\cos\theta$};
+        node[right]{$mg\cos\theta$};
         \draw[->,very thick,red!70!black](0,-5)--(0,-3.9)
-        node[left]{\footnotesize $\bm T$};
+        node[left]{$\vec T$};
         \draw[->,very thick,red!70!black,rotate around={-45:(0,-5)}]
-        (0,-5)--(0,-6.5) node[below]{\footnotesize $m\bm g$};
+        (0,-5)--(0,-6.5) node[below]{$m\vec g$};
       \end{scope}
       \draw[dashed,thin](0,0)--(0,-5);
       \draw[dashed,thin](3.54,-3.54) arc(315:225:5);
@@ -759,8 +755,7 @@
     \end{tikzpicture}
 
     \column{.5\textwidth}
-    There is a tengential acceleration along $\hat{\bm\theta}$, with a
-    magnitude of:
+    There is a tengential acceleration along $\hat\theta$, with a magnitude of:
 
     \eq{-.25in}{
       a_t=g\sin\theta
@@ -786,10 +781,9 @@
       \tikzstyle{balloon}=[ball color=red!70!black];    
       \shade[balloon] (0,-5) circle (0.2) node[below right]{$m$};
       \begin{scope}[->,very thick,red!70!black]
-        \draw (0,-5)--(0,-2.5) node[right]{\footnotesize $\bm T$};
-        \draw (0,-5)--(0,-6.5) node[below]{\footnotesize $m\bm g$};
+        \draw (0,-5)--(0,-2.5) node[right]{$\vec T$};
+        \draw (0,-5)--(0,-6.5) node[below]{$m\vec g$};
       \end{scope}
-      \draw[dashed,thin](0,0)--(0,-5);
       \draw[dashed,thin](3.54,-3.54) arc(315:225:5);
     \end{tikzpicture}
 

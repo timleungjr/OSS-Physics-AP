@@ -7,6 +7,6 @@ clean:
 	rm -rf *~ *.*~ *.log *.nav *.aux *.out *.snm *.toc
 
 public:
-	mkdir -p $(DESTINATION)/Topic03
-	cp PhysAPC-03-workEnergy.pdf $(DESTINATION)/Topic03
-	cp homework/*-Homework.pdf $(DESTINATION)/Topic03
+	mkdir -p $(DESTINATION)/Class03
+	cp PhysAPC-03-workEnergy.pdf $(DESTINATION)/Class03
+	cp homework/*-Homework.pdf $(DESTINATION)/Class03

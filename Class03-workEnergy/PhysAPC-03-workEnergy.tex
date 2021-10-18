@@ -110,13 +110,14 @@
   }
 
   Both $\bm v$ and $\bm x$ are continuous functions in time, we can switch
-  the order of differentiation. %Also, since $\bm v$ and $d\bm v$ must be in
-  %the same direction, the dot product is trivial: $\bm v\cdot d\bm v=vdv$
-
+  the order of differentiation.
+  
   \eq{-.2in}{
     =m\int\diff{\bm x}t\cdot\dl\bm v=m\int\bm v\cdot\dl\bm v
     =m\int_{v_1}^{v_2}v\dl v
   }
+
+  where $v_1=v(x_1)$ and $v_2=v(x_2)$.
 \end{frame}
 
 
@@ -125,7 +126,7 @@
   This integral, when integrated from $v_1$ (initial \emph{speed}) to $v_2$
   (final \emph{speed}), becomes:
 
-  \eq{-.2in}{
+  \eq{-.1in}{
     =m\int_{v_1}^{v_2}v\dl v
     =\frac12mv^2\Big|^{v_2}_{v_1}
     =\frac12mv_2^2-\frac12mv_1^2
@@ -183,12 +184,11 @@
 \begin{frame}{Gravitational Force \& Gravitational Potential Energy}
   Consier an object that is free-falling under the force of gravity over a
   distance of $\Delta x$:
-
   \begin{center}
     \begin{tikzpicture}[scale=.6]
       \draw[thick,fill=gray!30] (7.75,0) arc(75:105:30);
       \draw[thick,fill=blue!50] (0,4) circle(.2) node[right]{$\;m$};
-`      \draw[very thick, red,->] (0,4)--(0,3) node[below]{$m\bm g$};
+      \draw[very thick, red,->] (0,4)--(0,3) node[below]{$m\bm g$};
     \end{tikzpicture}
   \end{center}
   \begin{itemize}
@@ -217,16 +217,6 @@
       \draw[thick,->|,blue](0,1)--(0,3) node[midway,right]{$h_2$};
     \end{tikzpicture}
   \end{center} 
-%  
-%  \eq{-.25in}{
-%    \bm{w}=m\bm{g}
-%  }
-%  
-%  \vspace{-.1in}Near Earth's surface, we assume that
-%  $\bm{g}$ %=-g\bm{\hat{\jmath}}\approx -10\bm{\hat{\jmath}}$
-%  %\si{\metre\per\second\squared}
-%  is constant. The work done to move an object from height $h_1$ to $h_2$ is
-%  therefore:
 
   \vspace{-.3in}{\Large
     \begin{align*}
@@ -346,7 +336,7 @@
 
   \eq{-.2in}{
     \bm F=-\nabla U=
-    -\diffp Ux\bm{\hat{\imath}}-\diffp Uy\bm{\hat{\jmath}}-\diffp Uz\hat{\bm{k}}
+    -\diffp Ux\hat{\bm\imath}-\diffp Uy\hat{\bm\jmath}-\diffp Uz\hat{\bm k}
   }
 
   In one-dimension:
@@ -487,7 +477,7 @@
   \begin{columns}
     \column{.25\textwidth}
     \centering
-    \begin{tikzpicture}[scale=1.3]
+    \begin{tikzpicture}[scale=1.2]
       \fill(0,0) circle(.08);
       \begin{scope}[->,very thick]
         \draw(0,0)--(0,-1) node[below]{$m_2\bm g$};
@@ -515,7 +505,7 @@
     
     \column{.4\textwidth}
     \centering
-    \begin{tikzpicture}[scale=1.3]
+    \begin{tikzpicture}[scale=1.2]
       \fill(0,0) circle(.08);
       \begin{scope}[->,very thick]
         \draw(0,0)--(0,-1) node[below]{$m_1\bm g+\bm N_{12}$};
@@ -599,7 +589,7 @@
 
 
 \begin{frame}{Example: Gravity}
-  Assuming that there is no friction and drag, a free-falling object forms a
+  Assuming that there are no friction and drag, a free-falling object forms a
   closed system with Earth:
   \begin{center}
     \begin{tikzpicture}[scale=.7]
@@ -669,12 +659,13 @@
     \begin{itemize}
     \item Gravity ($m\bm g$), which is conservative, is the only force that
       does work
-    \item Tension ($\bm T$) does not do work on the pendulum because it is
-      perpendicular to the motion of the pendulum bob
+    \item Tension ($\bm T$), which is non-conservative, does not do work on the
+      pendulum because it is always perpendicular to the motion of the pendulum
+      bob
     \item The sum of the kinetic energy of the mass ($K$), the gravitational
       potential energy stored between the mass and Earth ($U_g$) is constant:
 
-      \eq{-.1in}{
+      \eq{-.2in}{
           K + U_g =\text{constant}
       }
     \end{itemize}
@@ -766,7 +757,7 @@
   $K+U$) is always conserved:
 
   \eq{-.2in}{
-    \boxed{K +U =K'+U'}
+    \boxed{K+U =K'+U'}
   }
   
   When external non-conservative forces are also doing work, instead of

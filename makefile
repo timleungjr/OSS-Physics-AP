@@ -8,7 +8,7 @@ all:
 	cd Class01-kinematics	; make
 	cd Class02-dynamics	; make
 	cd Class03-workEnergy	; make
-#	cd 04-momentumCollisions; make
+	cd Class04-momentum	; make
 	cd Class05-CM		; make
 	cd Class06-circMotion	; make
 #	cd 07-rotMotion		; make
@@ -28,7 +28,7 @@ clean:
 	cd Class01-kinematics	; make clean
 	cd Class02-dynamics	; make clean
 	cd Class03-workEnergy	; make clean
-#	cd 04-momentumCollisions; make clean
+	cd Class04-momentum	; make clean
 	cd Class05-CM		; make clean
 	cd Class06-circMotion	; make clean
 #	cd 07-rotMotion 	; make clean
@@ -49,7 +49,7 @@ public:
 	cd Class01-kinematics	; make public
 	cd Class02-dynamics	; make public
 	cd Class03-workEnergy	; make public
-#	cd 04-momentumCollisions; make public
+	cd Class04-momentum	; make public
 	cd Class05-CM		; make public
 	cd Class06-circMotion	; make public
 #	cd 07-rotMotion		; make public
