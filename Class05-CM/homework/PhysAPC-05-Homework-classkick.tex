@@ -203,7 +203,8 @@
           \draw[thick](.8,0) rectangle(1.8,1);
           \draw[thick](2.5,0) rectangle(3.5,1);
           \draw[thick](5,0) rectangle(6,1);
-          \draw[very thick,->](5,.5)--(4,.5) node[midway,above]{\SI{3}{m/s}};
+          \draw[very thick,->](5,.5)--(4,.5)
+          node[midway,above]{\SI3{\metre\per\second}};
         \end{tikzpicture}
       \end{center}
     }
@@ -246,9 +247,9 @@
     \question A \SI{1000}{\kilo\gram} (empty mass) railroad car is rolling
     without friction on a horizontal track at a speed of
     \SI{2.}{\metre\per\second}. Sand is poured into the open top of the car for
-    the time interval from $t=0$ to $t=\SI{4.}{\second}$. The mass of the sand
+    the time interval from $t=0$ to $t=\SI4\second$. The mass of the sand
     poured into the car as a function of time is $m(t)=60t^2$. The velocity of
-    the car at a time of \SI{4.}{\second} is most nearly
+    the car at a time of \SI4{\second} is most nearly
     \cpic{.25}{railroad-car-sand}
     \begin{choices}
       \choice\SI1{\metre\per\second}
@@ -286,15 +287,15 @@
     \question Which of the following is a true statement regarding Figure III?
     \label{ramps2}
     \begin{choices}
-      \question The small block is moving to the left and the ramp is moving to
+      \choice The small block is moving to the left and the ramp is moving to
       the right.
-      \question The small block is moving to the right and the ramp is moving
+      \choice The small block is moving to the right and the ramp is moving
       to the left.
-      \question The small block is moving to the right and the ramp is moving
+      \choice The small block is moving to the right and the ramp is moving
       to the right.
-      \question The small block is moving to the left and the ramp is moving to
+      \choice The small block is moving to the left and the ramp is moving to
       the left.
-      \question The small block and the large block are moving with the same
+      \choice The small block and the large block are moving with the same
       velocity.
     \end{choices}
     \vspace{.7in}
@@ -382,24 +383,24 @@
   high with an initial speed of \SI{60}{\metre\per\second} at an angle of
   elevation of \ang{45}.
   \begin{parts}
-    \part Write equation for $x(t)$, $y(t)$, $v_x$ and $v_y$. Choose the origin
-    of your coordinate system at the particle's original location.
+    \part Write equation for $x(t)$, $y(t)$, $v_x(t)$ and $v_y(t)$. Choose the
+    origin of your coordinate system at the particle's original location.
     \part Calculate the location and velocity of the particle at time
-    $t=\SI{5}{\second}$.
+    $t=\SI5\second$.
     
     \uplevel{Suppose the projectile experiences an internal explosion at time
-      $t=\SI{4}{\second}$ with an internal force purely in the $y$-direction,
-      causing it to break into a \SI{2}{\kilo\gram} and a \SI{1}{\kilo\gram}
+      $t=\SI4\second$ with an internal force purely in the $y$-direction,
+      causing it to break into a \SI2{\kilo\gram} and a \SI1{\kilo\gram}
       fragment.}
     
-    \part If the \SI{2}{\kilo\gram} fragment is \SI{77}{\metre} above the
-    height of the cliff at $t=\SI{5}{\second}$, what is the $y$-coordinate of
+    \part If the \SI2{\kilo\gram} fragment is \SI{77}{\metre} above the
+    height of the cliff at $t=\SI5\second$, what is the $y$-coordinate of
     the position of the \SI{1}{\kilo\gram} piece?
     
-    \part If the speed of the \SI{2}{\kilo\gram} fragment is
+    \part If the speed of the \SI2{\kilo\gram} fragment is
     \SI{46}{\metre\per\second} and the fragment is falling at
-    $t=\SI{5}{\second}$, what is the $y$-component of the velocity of the
-    \SI{1}{\kilo\gram} fragment?
+    $t=\SI5\second$, what is the $y$-component of the velocity of the
+    \SI1{\kilo\gram} fragment?
   \end{parts}
   \newpage
 
@@ -467,6 +468,19 @@
 %    shown)?
 %  \end{enumerate}
   %  \newpage
+
+  \uplevel{
+    \centering
+    \begin{tikzpicture}[scale=1.2]
+      \draw[thick,fill=gray!70](0,0) rectangle(-1,1) node[midway]{$m$};
+      \draw[thick,fill=gray!70](-3,0) rectangle(-4,1) node[midway]{$m$};
+      \draw[thick,
+        decoration={aspect=.3,segment length=2mm, amplitude=2mm, coil},
+        decorate] (-1,.5)--(-3,.5);
+      \draw[very thick](-6,0)--(0,0)--(0,2);
+    \end{tikzpicture}
+
+  }
   
   \question Two masses are connected by a spring (spring constant $k$) resting
   on a frictionless horizontal surface as shown. The right mass is initially in
@@ -475,21 +489,11 @@
   \begin{parts}
     \part What is the maximum compression of the spring as the left block moves
     to the right?
+    \label{maxcomp}
     
     \uplevel{After the spring is maximally compressed, it eventually moves to
       the left, away from wall. As it moves away from the wall, it continues
       oscillating.
-      \begin{center}
-        \begin{tikzpicture}
-          \draw[thick,fill=gray!70](0,0) rectangle(-1,1) node[midway]{$m$};
-          \draw[thick,fill=gray!70](-3,0) rectangle(-4,1) node[midway]{$m$};
-          \draw[
-            thick,
-            decoration={aspect=.3,segment length=2mm, amplitude=2mm, coil},
-            decorate] (-1,.5)--(-3,.5);
-          \draw[very thick](-6,0)--(0,0)--(0,2);
-        \end{tikzpicture}
-      \end{center}
     }
     
     \part What is the net momentum of the two masses after they leave the wall?
@@ -501,7 +505,8 @@
     
     \part What is the maximum compression of the spring after the two masses
     have left the wall? Compare the compression to the maximum compression
-    calculated in part (a) and explain any similarities and differences.
+    calculated in part (\ref{maxcomp}) and explain any similarities and
+    differences.
   \end{parts}
   \newpage
 
@@ -510,11 +515,11 @@
     \cpic{.25}{projectile}
   }
   \question A projectile is fired horizontally from a launching device, exiting
-  with a speed $v_x$. While the projectile is in the launching device, the
+  with a speed $\varv_x$. While the projectile is in the launching device, the
   impulse imparted to it is $J_p$, and the average force on it is
   $F_\text{avg}$. Assume the force becomes zero just as the projectile reaches
   the end of the launching device. Express your answers to parts (a) and (b) in
-  terms of $v_x$, $J_p$, $F_\text{avg}$, and fundamental constants, as
+  terms of $\varv_x$, $J_p$, $F_\text{avg}$, and fundamental constants, as
   appropriate.
   \begin{parts}
     \part Determine an expression for the time required for the projectile to
@@ -532,16 +537,17 @@
     
     \part Derive an expression for the average force $F_b$ exerted on the
     projectile as it comes to rest in the block.
-
+    \label{this}
+    
     \uplevel{Now a new projectile and block are used, identical to the first
       ones, but the block is not clamped to the table. The projectile is again
       fired into the block of wood and travels a new distance $d_n$ into the
       block while the block slides across the table a short distance $D$.
-      Assume the following: the projectile enters the block with speed $v_x$,
-      the average force $F_b$ between the projectile and the block has the same
-      value as determined in part (d), the average force of friction between
-      the table and the block is $f_T$, and the collision is instantaneous so
-      the frictional force is negligible during the collision.
+      Assume the following: the projectile enters the block with speed
+      $\varv_x$, the average force $F_b$ between the projectile and the block
+      has the same value as determined in part (\ref{this}), the average force
+      of friction between the table and the block is $f_T$, and the collision is
+      instantaneous so the frictional force is negligible during the collision.
     }
 
     \part Derive an expression for $d_n$ in terms of $d$, $D$, $f_T$, and $F_b$,
