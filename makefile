@@ -11,9 +11,10 @@ all:
 	cd Class04-momentum	; make
 	cd Class05-CM		; make
 	cd Class06-circMotion	; make
-#	cd 07-rotMotion		; make
-#	cd 08-harmonicMotion	; make
-#	cd 09-universalGravity	; make
+	cd Class07-rotMotion	; make
+	cd Class08-rotMotion2	; make
+	cd Class09-harmonicMotion ; make
+	cd Class10-gravity	; make
 #	cd 10-MockTest1		; make
 #	cd 11-electrostatics	; make
 #	cd 12-capacitors	; make
@@ -31,9 +32,10 @@ clean:
 	cd Class04-momentum	; make clean
 	cd Class05-CM		; make clean
 	cd Class06-circMotion	; make clean
-#	cd 07-rotMotion 	; make clean
-#	cd 08-harmonicMotion	; make clean
- #	cd 09-universalGravity	; make clean
+	cd Class07-rotMotion 	; make clean
+	cd Class08-rotMotion2	; make clean
+	cd Class09-harmonicMotion ; make clean
+	cd Class10-gravity	; make clean
 #	cd 10-MockTest1		; make clean
 #	cd 11-electrostatics	; make clean
 #	cd 12-capacitors	; make clean
@@ -52,9 +54,10 @@ public:
 	cd Class04-momentum	; make public
 	cd Class05-CM		; make public
 	cd Class06-circMotion	; make public
-#	cd 07-rotMotion		; make public
-#	cd 08-harmonicMotion	; make public
-#	cd 09-universalGravity	; make public
+	cd Class07-rotMotion	; make public
+	cd Class08-rotMotion2	; make public
+	cd Class09-harmonicMotion ; make public
+	cd Class10-gravity	; make public
 #	cd 10-MockTest1		; make public
 #	cd 11-electrostatics	; make public
 #	cd 12-capacitors	; make public

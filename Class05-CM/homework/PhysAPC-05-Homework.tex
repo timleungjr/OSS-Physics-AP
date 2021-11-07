@@ -13,6 +13,38 @@
 \raggedcolumns
 \begin{multicols*}{2}
   \begin{questions}
+    \question A uniform rod of length $2\ell$ is bent, as shown in the figure
+    below. What are the coordinates of the center of mass of the rod?
+    \begin{center}
+      \begin{tikzpicture}[scale=.8]
+        \draw[->](0,0)--(3,0) node[right]{$x$};
+        \draw[->](0,0)--(0,3) node[left]{$y$};
+        \draw[line width=.8mm](0,0)--(2,0) node[below]{$(\ell,0)$}
+        --(2,2) node[right]{$(\ell,\ell)$};
+      \end{tikzpicture}
+    \end{center}
+    \begin{choices}
+      \choice $(\ell/4,3\ell/4)$
+      \correctchoice $(3\ell/4,\ell/4)$
+      \choice $(2\ell/3,\ell/3)$
+      \choice $(2\ell/3,2\ell/3)$
+      \choice $(\ell/2,\ell/3)$
+    \end{choices}
+
+    \question Two uniform spheres of mass $M$ and $4M$ are connected by a rod
+    whose mass is negligible, and the distance between the centers of the
+    spheres is $d$. The $4M$ sphere is then moved a distance of $d/3$ toward the
+    smaller sphere. How far has the center of mass of the entire object moved?
+    \begin{choices}
+      \choice The center of mass has not moved, because both spheres still have
+      their original masses.
+      \choice $d/15$
+      \choice $d/5$
+      \correctchoice $4d/15$
+      \choice $8d/15$
+    \end{choices}
+    \columnbreak
+    
     \question A rubber ball of mass $m$ strikes a wall with a speed $\varv$ at
     an angle $\theta$ below the normal line and rebounds from the wall at the
     same speed and angle above the normal line as shown. The magnitude of the
@@ -47,6 +79,16 @@
       \choice kinetic energy
       \choice potential energy
     \end{choices}
+
+    \question A known net force $F$ acts on an unknown mass for a known time
+    $\Delta t$. From this information, you could determine the
+    \begin{choices}
+      \choice change in kinetic energy of the object
+      \choice change in velocity of the object
+      \choice acceleration of the object
+      \choice mass of the object
+      \choice change in momentum of the object
+    \end{choices}
     \columnbreak
     
     \question Two billiard balls are rolling to the right on a table as shown.
@@ -76,65 +118,13 @@
     \question A small mass $m$ is moving with a speed $\varv$ toward a
     stationary mass $M$. The speed of the center of mass of the system is
     \begin{choices}
-      \choice $\left(\dfrac{m}{m+M}\right)\varv$
-      \choice $\left(\dfrac{m+M}{m}\right)\varv$
-      \choice $\left(\dfrac{m}{M}\right)\varv$
-      \choice $\left(1+\dfrac{m}{M}\right)\varv$
-      \choice $\left(1+\dfrac{M}{3m}\right)\varv$
+      \choice $\left(\dfrac m{m+M}\right)\varv$
+      \choice $\left(\dfrac{m+M} m\right)\varv$
+      \choice $\left(\dfrac mM\right)\varv$
+      \choice $\left(1+\dfrac mM\right)\varv$
+      \choice $\left(1+\dfrac M{3m}\right)\varv$
     \end{choices}
 
-    \question A known net force $F$ acts on an unknown mass for a known time
-    $\Delta t$. From this information, you could determine the
-    \begin{choices}
-      \choice change in kinetic energy of the object
-      \choice change in velocity of the object
-      \choice acceleration of the object
-      \choice mass of the object
-      \choice change in momentum of the object
-    \end{choices}
-    
-    \uplevel{\textbf{Questions \ref{bfa1}--\ref{bfa2}}\\
-      Two balls are on a horizontal billiard table. A \SI1{\kilo\gram}
-      billiard ball moves downward along the $y$-axis with
-      a speed of \SI{16}{\metre\per\second} toward a \SI2{\kilo\gram} ball
-      that is at rest. The balls collide at an angle, and move along the lines
-      shown. After the collision, the \SI1{\kilo\gram} ball moves at
-      \SI9{\metre\per\second} along the $+x$-axis. The table below shows the
-      $x$ and $y$ components of the momentum in
-      \si{\kilo\gram\metre\per\second} of the two balls before and after the
-      collision.
-      \begin{center}
-        \begin{tabular}{lcccc}
-          \hline
-          & $p_{1x}$ & $p_{1y}$ & $p_{2x}$ & $p_{2y}$ \\ \hline
-          \textbf{Before Collision} & 0    & $-16$ &   0  & 0     \\ \hline
-          \textbf{After Collision}  & $+9$ & 0     & $-9$ & $-16$ \\ \hline 
-        \end{tabular}
-      \end{center}
-    }
-
-    \question Which of the following statements is true?
-    \begin{choices}    
-      \choice Momentum is conserved only in the $x$-direction in this collision.
-      \choice Momentum is conserved only in the $y$-direction in this collision.
-      \choice Momentum is conserved in both the $x$- and $y$-directions in this
-      collision
-      \choice The momentum of the 1 kg ball increases after the collision.
-      \choice The momentum of the 2 kg ball decreases after the collision.
-    \end{choices}
-    \label{bfa1}
-    
-    \question What is the speed of the \SI2{\kilo\gram} ball after the
-    collision?
-    \begin{choices}
-      \choice\SI{16}{\metre\per\second}
-      \choice\SI{9.2}{\metre\per\second}
-      \choice\SI{7.5}{\metre\per\second}
-      \choice\SI{6.}{\metre\per\second}
-      \choice\SI{5.}{\metre\per\second}
-    \end{choices}
-    \label{bfa2}
-    
     \question An object has a mass $4m$. The object explodes into three pieces
     of mass $m$, $m$, and $2m$. The two pieces of mass $m$ move off at right
     angles to each other with the same momentum $m\varv$, as shown below. The
@@ -145,7 +135,7 @@
         \draw[thick,dashed](0,-1.5)--(0,3);
         \draw[thick](0,0) circle(.5);
         \fill[thick](-1.5,0) circle(.15) node[above]{\small $m$};
-          \fill[thick](0,-1.5) circle(.15) node[right]{\small $m$};
+        \fill[thick](0,-1.5) circle(.15) node[right]{\small $m$};
           \draw[very thick,->](-1.5,0)--(-3,0)node[left]{\small$m\varv$};
           \draw[very thick,->](0,-1.5)--(0,-3)node[below]{\small$m\varv$};
       \end{tikzpicture}
@@ -153,12 +143,12 @@
     \vspace{-.2in}
     \begin{choices}
       \choice $2v$
-      \choice $\displaystyle\sqrt{2}\varv$
-      \choice $\dfrac{\sqrt{2}}{2}\varv$
-      \choice $\dfrac{\sqrt{2}}{3}\varv$
-      \choice $\dfrac{\sqrt{3}}{2}\varv$
+      \choice $\sqrt 2\varv$
+      \choice $\dfrac{\sqrt 2}2\varv$
+      \choice $\dfrac{\sqrt 2}3\varv$
+      \choice $\dfrac{\sqrt 3}2\varv$
     \end{choices}
-    
+
     \uplevel{
       \textbf{Questions \ref{cm1}--\ref{cm2}}\\
       A projectile is launched at an angle to the level ground as shown. At the
@@ -172,11 +162,11 @@
     explosion?
     \label{cm1}
     \begin{choices}
-      \choice{\LARGE$\leftarrow$}
-      \choice{\LARGE$\swarrow$}
-      \choice{\LARGE$\searrow$}
-      \choice{\LARGE$\rightarrow$}
-      \choice{\LARGE$\nearrow$}
+      \choice{\huge$\leftarrow$}
+      \choice{\huge$\swarrow$}
+      \choice{\huge$\searrow$}
+      \choice{\huge$\rightarrow$}
+      \choice{\huge$\nearrow$}
     \end{choices}
     
     \question Which of the following statements is true of the center of mass
@@ -195,6 +185,48 @@
       \choice The center of mass will travel straight upward from the point of
       explosion.
     \end{choices}
+    
+%    \uplevel{\textbf{Questions \ref{bfa1}--\ref{bfa2}}\\
+%      Two balls are on a horizontal billiard table. A \SI1{\kilo\gram}
+%      billiard ball moves downward along the $y$-axis with
+%      a speed of \SI{16}{\metre\per\second} toward a \SI2{\kilo\gram} ball
+%      that is at rest. The balls collide at an angle, and move along the lines
+%      shown. After the collision, the \SI1{\kilo\gram} ball moves at
+%      \SI9{\metre\per\second} along the $+x$-axis. The table below shows the
+%      $x$ and $y$ components of the momentum in
+%      \si{\kilo\gram\metre\per\second} of the two balls before and after the
+%      collision.
+%      \begin{center}
+%        \begin{tabular}{lcccc}
+%          \hline
+%          & $p_{1x}$ & $p_{1y}$ & $p_{2x}$ & $p_{2y}$ \\ \hline
+%          \textbf{Before Collision} & 0    & $-16$ &   0  & 0     \\ \hline
+%          \textbf{After Collision}  & $+9$ & 0     & $-9$ & $-16$ \\ \hline 
+%        \end{tabular}
+%      \end{center}
+%    }
+%
+%    \question Which of the following statements is true?
+%    \begin{choices}    
+%      \choice Momentum is conserved only in the $x$-direction in this collision.
+%      \choice Momentum is conserved only in the $y$-direction in this collision.
+%      \choice Momentum is conserved in both the $x$- and $y$-directions in this
+%      collision
+%      \choice The momentum of the 1 kg ball increases after the collision.
+%      \choice The momentum of the 2 kg ball decreases after the collision.
+%    \end{choices}
+%    \label{bfa1}
+%    
+%    \question What is the speed of the \SI2{\kilo\gram} ball after the
+%    collision?
+%    \begin{choices}
+%      \choice\SI{16}{\metre\per\second}
+%      \choice\SI{9.2}{\metre\per\second}
+%      \choice\SI{7.5}{\metre\per\second}
+%      \choice\SI{6.}{\metre\per\second}
+%      \choice\SI{5.}{\metre\per\second}
+%    \end{choices}
+%    \label{bfa2}    
     \columnbreak
     
     \uplevel{

@@ -12,7 +12,7 @@ clean:
 	cd Handouts ; make clean
 
 public:
-	mkdir -p $(DESTINATION)/Topic07
-	cp *-print.pdf $(DESTINATION)/Topic07
-	cp homework/*Homework.pdf $(DESTINATION)/Topic07
-	cp Handouts/PhysAPC*.pdf $(DESTINATION)/Topic07
+	mkdir -p $(DESTINATION)/Class08
+	cp *.pdf $(DESTINATION)/Class08
+	cp homework/*Homework.pdf $(DESTINATION)/Class08
+	cp Handouts/PhysAPC*.pdf $(DESTINATION)/Class08

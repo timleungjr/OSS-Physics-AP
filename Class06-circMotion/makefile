@@ -8,6 +8,6 @@ clean:
 	cd homework ; make clean
 
 public:
-	mkdir -p $(DESTINATION)/Topic06
-	cp PhysAPC-06-circMotion.pdf $(DESTINATION)/Topic06
-	cp homework/*Homework-Classkick.pdf $(DESTINATION)/Topic06
+	mkdir -p $(DESTINATION)/Class06
+	cp *.pdf $(DESTINATION)/Class06
+	cp homework/*Homework.pdf $(DESTINATION)/Class06
