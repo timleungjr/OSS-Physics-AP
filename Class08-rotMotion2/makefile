@@ -1,8 +1,6 @@
 all:
-	xelatex PhysAPC-07-rotMotion
-	xelatex PhysAPC-07-rotMotion
-	xelatex PhysAPC-07-rotMotion-print
-	xelatex PhysAPC-07-rotMotion-print
+	xelatex PhysAPC-08-rotMotion2
+	xelatex PhysAPC-08-rotMotion2
 	cd homework ; make
 	cd Handouts ; make
 

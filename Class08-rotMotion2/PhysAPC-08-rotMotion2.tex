@@ -37,7 +37,7 @@
     \begin{align*}
       m &\quad\rightarrow\quad I\\
       \vec F &\quad\rightarrow\quad \vec\tau\\
-      \vec p=m\vec v &\quad\rightarrow\quad \vec L=I\omega
+      \vec p=m\vec v &\quad\rightarrow\quad \vec L=I\vec\omega
     \end{align*}
   }
 \end{frame}
@@ -58,428 +58,6 @@
     \end{align*}
   }
 \end{frame}
-
-
-
-%\begin{frame}{Torque}
-%  Recall the second law of motion for objects with constant mass:
-%    
-%  \eq{-.2in}{
-%    \bm{F}_\text{net}=m\bm{a}
-%  }
-%
-%  \vspace{-.1in}Is it also true for \emph{rotational} motion? If a net force
-%  $\bm{F}_\text{net}$ causes the center of mass of an object to begin to
-%  accelerate, what causes a mass to rotate?
-%\end{frame}
-%
-%
-%\section{Torque}
-%
-%\begin{frame}{Torque}
-%  I have a rod on a table, and with my fingers, I push the two ends of the rod
-%  with equal force $\textcolor{red!80!black}{F}$. \emph{What happens?}
-%  \begin{center}
-%    \begin{tikzpicture}[scale=1.5]
-%      \fill[gray,draw=black,thick] (-2,-.1) rectangle (2,.1);
-%      \begin{scope}[very thick, red!80!black,<-]
-%        \draw(-1.8,-.1)--(-1.8,-.7) node[below]{$F$};
-%        \draw( 1.8, .1)--( 1.8, .7) node[above]{$F$};
-%      \end{scope}
-%    \end{tikzpicture}
-%  \end{center}
-%  $\bm{F}_\text{net}=\bm{0}$, therefore $\bm{a}_{CM}=\bm{0}$. But it is also
-%  obvious that the rod would \emph{rotate} instead.
-%\end{frame}
-%
-%
-%
-%\begin{frame}{What is Torque?}
-%  \textbf{Torque} (or \textbf{moment}) is the tendency for a force to change
-%  the rotational motion of a body.
-%  \begin{itemize}
-%  \item A force $\bm{F}_a$ acting at a point some distance $\bm{r}$ (called the
-%    \textbf{moment arm}) from a \textbf{fulcrum} (or \textbf{pivot}) at an angle
-%    $\phi$ between $\bm{F}_a$ and $\bm{r}$
-%  \item e.g.\ the force to twist a screw
-%  \end{itemize}
-%  In the example below, a force $\bm{F}$ is applied $\bm{r}$ away from
-%  the pivot at an angle $\phi$. This generates a torque around the pivot.
-%  \begin{center}
-%    \begin{tikzpicture}[scale=2.8]
-%      \begin{scope}[thick]
-%        \draw[fill=gray!50](0,-.05) rectangle (2,.05);
-%        \draw[fill=gray!50](0,0) circle (.15);
-%      \end{scope}
-%      \fill (0,0) circle (.03);
-%      \begin{scope}[very thick]
-%        \draw[red!70!black,->](0,0)--(1.8,0) node[midway,below]{$\bm{r}$};
-%        \draw[blue!70!black,->](1.2,-.7)--(1.8,0) node[pos=0,below]{$\bm{F}$};
-%        \draw[<->] (1.4,0) arc(180:229:.4)node[midway,left]{$\phi$};
-%      \end{scope}
-%    \end{tikzpicture}
-%  \end{center}
-%\end{frame}
-%
-%
-%
-%\begin{frame}{Torque}
-%  Torque $\bm\tau$ is defined as the cross product of the force $\bm{F}$ and the
-%  \textbf{moment arm} $\bm{r}$. The unit for torque is a \textbf{newton meter}
-%  (\si{\newton\metre}).
-%
-%  \eq{-.25in}{
-%    \boxed{\bm{\tau}=\bm{r}\times\bm{F}_a}
-%  }
-%
-%  \vspace{-.1in}Its magnitude can be calculated in scalar form
-%  using the angle $\phi$ between $\bm{F}$ and $\bm{r}$:
-%
-%  \eq{-.23in}{
-%    \boxed{\tau=Fr\sin\phi}
-%  }
-%  \begin{center}
-%    \begin{tabular}{l|c|c}
-%      \rowcolor{pink}
-%      \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
-%      Torque        & $\bm\tau$ & \si{\newton\metre} \\
-%      Applied force & $\bm{F}_a$  & \si\newton \\
-%      Moment arm (from fulcrum to force) & $\bm{r}$ & \si\metre \\
-%      Angle between force and moment arm & $\phi$ & (no units)
-%    \end{tabular}
-%  \end{center}
-%\end{frame}
-%
-%
-%
-%\begin{frame}{Example Problem}
-%  \textbf{Example:} Find the net torque on point C.
-%  \begin{center}
-%    \begin{tikzpicture}[scale=2.65]
-%      \fill[blue!40,draw=black,thick] (-1.65,-.12) rectangle (1.65,.12);
-%      \draw[thick,<->](-1.5,-.25)--(1.5,-.25) node[midway,below]{\SI{3.}\metre};
-%      \draw[thick,<->](-1.5,.25)--(0,.25) node[midway,above]{\SI{1.5}\metre};
-%      \draw[dashed,thick](-2.2,0)--(2.2,0);
-%      \draw[dashed,thick](0,0)--(0,.5);
-%      \begin{scope}[orange,ultra thick,->]
-%        \draw[rotate=-45](0,0)--(0,1.5)node[right]{\SI{30}\newton};
-%        \draw[rotate around={30:(-1.5,0)}](-1.5,0)--(-2.5,0)
-%        node[left]{\SI{20}\newton};
-%        \draw[rotate around={-30:(1.5,0)}](1.5,0)--(2.2,0)
-%        node[right]{\SI{10}\newton};
-%      \end{scope}
-%      \begin{scope}[thick,->]
-%        \draw(0,.4)   arc(90:45:.4)  node[pos=.7,above]{\ang{45}};
-%        \draw(-1.9,0) arc(180:210:.4)node[midway,left] {\ang{30}};
-%        \draw(1.9,0)  arc(0:-30:.4)  node[midway,right]{\ang{30}};
-%      \end{scope}
-%      \fill (-1.5,0) circle(.1) node[white]{\textbf{A}};
-%      \fill (   0,0) circle(.1) node[white]{\textbf{B}};
-%      \fill ( 1.5,0) circle(.1) node[white]{\textbf{C}};
-%    \end{tikzpicture}
-%  \end{center}
-%%  \uncover<2->{
-%%    \textbf{Example 8b:} Now find the net torque on A.
-%%  }
-%\end{frame}
-%
-%
-%
-%
-%
-%%\begin{frame}{Torque}
-%%  Going back to the example question:
-%%  \begin{center}
-%%    \begin{tikzpicture}
-%%      \fill[black!75,draw=black!75] (-5,-.05) rectangle (5,.05);
-%%      \fill (0,0) circle (.1);
-%%      \draw[ultra thick](0,0)--(.5,-1.5)--(-.5,-1.5)--(0,0);
-%%      \uncover<2->{
-%%        \draw[ultra thick,red!75,->](0,0)--(-4.8,0) node[pos=.5,below]{$d_1$};
-%%        \draw[ultra thick,red!75,->](-4.8,0)--(-4.8,-1)node[below]{$F_1$};
-%%      }
-%%      \uncover<3->{
-%%        \draw[ultra thick,blue!60,->](0,0)--(4,0) node[pos=.5,below]{$d_2$};
-%%        \draw[ultra thick,blue!60,->](4,0)--(4,-1.2) node[below]{$F_2$};
-%%      }
-%%    \end{tikzpicture}
-%%  \end{center}
-%%  \begin{itemize}
-%%  \item<2->$F_1$ will rotate the board counter clockwise
-%%  \item<3->$F_2$ will rotate the board clockwise
-%%  \item<4->The beam will remain static (in equilibrium) if
-%%
-%%    \eq{-.2in}{ F_1d_1=F_2d_2 }
-%%  \end{itemize}
-%%\end{frame}
-%
-%
-%
-%\section{Angular Momentum}
-%
-%\begin{frame}{Angular Momentum}
-%  Consider a mass $m$ connected to a massless beam rotates with velocity
-%  $\bm{v}$ at a position $\bm{r}$ from the center (shown on the right). It has
-%  an \textbf{angular momentum} ($\bm{L}$), defined as:
-%  \begin{columns}
-%    \column{.77\textwidth}
-%    
-%    \eq{-.32in}{
-%      \boxed{\bm{L}=\bm{r}\times\bm{p}=m(\bm{r}\times\bm{v})}
-%    }
-%
-%    \vspace{-.1in}Expanding the term with $\bm{v}=\bm\omega\times\bm{r}$, the
-%    expression for angular momentum can now be expressed in quantities related
-%    to rotations:
-%
-%    \eq{-.32in}{
-%      \boxed{\bm{L}=m(\bm{r}\times\bm{v})
-%        =m(\bm{r}\times(\bm\omega\times\bm{r}))
-%        =mr^2\bm\omega}
-%    }
-%    
-%    \vspace{-.2in}Or in scalar form:
-%    
-%    \eq{-.25in}{
-%      \boxed{L=rmv=mr^2\omega}
-%    }
-%
-%    \vspace{-.2in}The unit for angular momentum is a
-%    \textbf{kilogram meter squared per second}
-%    (\si{\newton\metre\squared\per\second}).
-%    
-%    \column{.23\textwidth}
-%    \begin{tikzpicture}[scale=2.5]
-%      \begin{scope}[rotate=70]
-%        \fill[black!75,draw=black!75] (0,-.02) rectangle (2,.02);
-%        \fill[blue!75,draw=blue,thick] (2,0) circle(.05);
-%        \node(M) at (2,-.2) {$m$};
-%        \fill (0,0) circle (.05);
-%        \begin{scope}[very thick,->]
-%          \draw[red!70!black](0,0)--(2,0)node[midway,right]{$\bm{r}$};
-%          \draw (2,0)--(2,.5)node[left]{$\bm{v}$};
-%        \end{scope}
-%      \end{scope}
-%    \end{tikzpicture}
-%  \end{columns}
-%\end{frame}
-%
-%
-%
-%\begin{frame}{Moment of Inertia}
-%  Look again at the definition of angular momentum:
-%    
-%  \eq{-.2in}{
-%    \bm{L}=\underbrace{mr^2}_{I}\bm\omega
-%  }
-%    
-%  The quantity $I=mr^2$ is called the \textbf{moment of inertia} with a unit of
-%  \textbf{kilogram meter squared} (\si{\kilo\gram\metre\squared}), and 
-%
-%  \eq{-.2in}{
-%    \boxed{\bm{L}=I\bm\omega}
-%  }
-%
-%  Momentum of inertia can be considered to be an object's ``rotational mass''
-%
-%\end{frame}
-%
-%
-%
-%\begin{frame}{Moment of Inertia}
-%  For a \emph{single particle} of $m$ rotating at a distance $r$ from the pivot:
-%  
-%  \eq{-.2in}{
-%    \boxed{I=mr^2}
-%  }
-%
-%  For a \emph{collection of particles} rotating at $\omega$, each of mass
-%  $m_i$ at distance $r_i$ from the pivot:
-%
-%  \eq{-.2in}{
-%    \boxed{I=\sum m_ir_i^2}
-%  }
-%
-%  For a \emph{continuous distribution of mass} about a pivot, integral calculus
-%  is need to calculate the momentum of inertia:
-%
-%  \eq{-.25in}{
-%    \boxed{I=\int r^2\dl m}
-%  }
-%\end{frame}
-%
-%
-%
-%\begin{frame}{Moment of Inertia}
-%  \centering
-%  \pic{.7}{mic}
-%\end{frame}
-%
-%
-%
-%\begin{frame}{Angular Momentum and Moment of Inertia}
-%  Linear and angular momentum have very similar expressions
-%    
-%  \vspace{-.4in}{\Large
-%    \begin{align*}
-%      \bm{p}&=m\bm{v}\\
-%      \bm{L}&=I\bm\omega
-%    \end{align*}
-%  }
-%  
-%  \vspace{-.25in}Just as $\bm{p}$ describes the overall \emph{translational}
-%  state of motion of a physical system, $\bm{L}$ describes its overall
-%  \emph{rotational} state
-%\end{frame}
-%
-%
-%
-%\section{Laws of Motion}
-%
-%\begin{frame}{Equilibrium: First Law of Motion}
-%  An object is in \textbf{translational equilibrium} is when the net force
-%  acting on it is zero:
-%  
-%  \eq{-.2in}{
-%    \bm{F}_\text{net}=\bm{0}
-%  }
-%
-%  This does \emph{not} mean that the object has no translational motion; it
-%  just means that the object's overall \emph{transtational state} is not
-%  changing, i.e.\ linear momentum $\bm{p}$ is constant. For
-%  constant mass $m$, this means that $\bm{a}=\bm{0}$.
-%\end{frame}
-%
-%
-%
-%
-%\begin{frame}{Equilibrium: First Law of Motion}
-%  Likewise, an object is in \textbf{rotational equilibrium} when the net torque
-%  acting on it is zero:
-%
-%  \eq{-.2in}{
-%    \bm{\tau}_\text{net}=\bm{0}
-%  }
-%  
-%  This does \emph{not} mean that the object has no rotational motion; it just
-%  means that the object's overall \emph{rotational state} is not changing,
-%  i.e.\  angular momentum $\bm{L}$ is constant. For constant moment of inertia
-%  $I$, this means that $\bm\alpha=\bm{0}$.
-%\end{frame}
-%
-%
-%
-%\begin{frame}{Second Law of Motion for Rotational Motion}
-%  The net torque is the time rate of change of angular momentum:
-%
-%  \eq{-.2in}{
-%    \bm{\tau}_\text{net}=\bm{r}\times\bm{F}_\text{net}
-%    =\bm{r}\times\diff{\bm{p}}t
-%    =\diff{(\bm{r}\times\bm{p})}t\;\;\longrightarrow\;\;
-%    \boxed{\bm{\tau}_\text{net}=\diff{\bm{L}}t}
-%  }
-%  \begin{itemize}
-%  \item If the net torque on a system is zero, then the rate of change
-%    of angular momentum is zero, and we say that the angular momentum is
-%    conserved. 
-%  \item e.g.\ When an ice skater starts to spin and draws his arms inward.
-%    Since angular momentum is conserved, a decrease in $r$ means an
-%    increase in $\omega$.
-%  \end{itemize}
-%\end{frame}
-%
-%
-%
-%\begin{frame}{Second Law of Motion for Translational Motion}
-%  For translational motion, the general form of the first and second laws of
-%  motion states that the net force is rate of change of the object's momentum:
-%
-%  \eq{-.2in}{
-%    \bm{F}_\text{net}=\diff{\bm{p}}t
-%  }
-%
-%  For objects with constant mass, this reduces to the more familiar form:
-%
-%  \eq{-.2in}{
-%    \bm{F}=m\bm{a}
-%  }
-%\end{frame}
-%
-%
-%
-%\begin{frame}{Second Law of Motion for Rotational Motion}
-%  Likewise, the second law of motion for rotational motion has a similar
-%  form, but with torque $\bm\tau$ replacing force $\bm{F}$, and angular
-%  momentum $\bm{L}$ replacing linear momentum $\bm{p}$:
-%
-%  \eq{-.2in}{
-%    \boxed{
-%      \bm{\tau}_\text{net}=\diff{\bm{L}}{t}
-%    }
-%  }
-%
-%  For objects with constant momentum of inertia $I$, this reduces to:
-%
-%  \eq{-.2in}{
-%    \bm\tau_\text{net}=I\bm\alpha
-%  }
-%\end{frame}
-%
-%
-%
-%\begin{frame}{But there is no rotational motion, is there?}
-%  Even when there is no apparent rotational motion, it does not necessarily
-%  mean that angular momentum is zero! In this case, mass $m$ travels along a
-%  straight path at constant velocity (uniform motion), but the angular momentum
-%  around point $P$ is not zero:
-%  \begin{center}
-%    \begin{tikzpicture}
-%      \draw[dashed](-5,0)--(5,0);
-%      \draw[very thick,red!70!black,->](-5,0)--(-3,0) node[below]{$\bm{v}$};
-%      \tikzstyle{balloon}=[ball color=red!70!black];
-%      \shade[balloon] (-5,0) circle(.2) node[above left,red!70!black]{$m$};
-%      \fill (0,-2) circle(.05) node[below]{$P$};
-%      \draw[very thick,blue!70!black,->](0,-2)--(-5,0)
-%      node[midway,below left]{$\bm{r}$};
-%      \uncover<2->{
-%        \draw[dotted](0,0) circle(.2) node[above left]{$m$};
-%        \draw[thick,red!50,->](.2,0)--(2,0)node[right]{$\bm{v}$};
-%        \draw[thick,blue!50,->](0,-2)--(0,0) node[midway,left]{$\bm{r}$};
-%      }
-%      \uncover<3->{
-%        \draw[dotted](4,0) circle(.2) node[above left]{$m$};
-%        \draw[thick,red!50,->](4.2,0)--(6,0)node[right]{$\bm{v}$};
-%        \draw[thick,blue!50,->](0,-2)--(4,0)node[midway,above left]{$\bm{r}$};
-%      }
-%    \end{tikzpicture}
-%  \end{center}
-%  \uncover<4>{
-%    Since there is no force and no torque acting on the object, both the linear
-%    momentum ($\bm{p}=m\bm{v}$) and angular momentum
-%    ($\bm{L}=\bm{r}\times\bm{v}$) are constant.
-%  }
-%\end{frame}
-%
-%
-%
-%\begin{frame}{Example Problem}
-%  \textbf{Example:} A skater extends her arms (both arms!), holding a
-%  \SI{2.}{\kilo\gram} mass in each hand. She is rotating about a vertical axis
-%  at a given rate. She brings her arms inward toward her body in such a way that
-%  the distance of each mass from the axis changes from \SI{1.}\metre to
-%  \SI{.50}\metre. Her rate of rotation (neglecting her own mass) will?
-%\end{frame}
-%
-%
-%
-%
-%\begin{frame}{Example Problem}
-%  \textbf{Example:} A \SI{1.}{\kilo\gram} mass swings in a vertical circle
-%  after having been released from a horizontal position with zero initial
-%  velocity. The mass is attached to a massless rigid rod of length
-%  \SI{1.5}\metre. What is the angular momentum of the mass, when it is in its
-%  lowest position?
-%\end{frame}
 
 
 
@@ -531,52 +109,59 @@
   \item Relate angular acceleration to linear acceleration, if applicable:
 
     \eq{-.25in}{
-      \alpha=\frac{a}R
+      \alpha=\frac aR
     }
   \end{enumerate}
   Now there are two equations with force and acceleration terms.
 \end{frame}
 
 
-\begin{frame}{Problems with Only Rotations}
-
-
-\end{frame}
+%\begin{frame}{Problems with Only Rotations}
+%
+%
+%\end{frame}
 
 
 
 \section{Pure Rolling Problems}
 
 \begin{frame}{Pure Rolling Problems}
-  A smooth solid sphere of constant density rolls along a smooth surface
-  without slipping (called \textbf{pure rolling}). We assume that:
-  \begin{itemize}
-    \item Both the sphere and the surface are both perfectly rigid (they
-      do not deform)
-    \item The sphere and the surface are both perfectly smooth without defects
-      even at the microscopic level
-  \end{itemize}
-  The free-body diagram: %in Figure \ref{roll-flat}. Notice that
-%\emph{there is no friction between the sphere and the surface}. Since there is
-%neither a net force nor a net torque acting on the sphere, the translational
-%and rotational states are constant in time. In theory (if our assumptions are
-%correct), the sphere with translational velocity $\bm{v}$ and angular velocity
-%$\bm\omega$ (where $\bm{v}=\bm{\omega}\times R$) will roll along forever.
-  \begin{center}
+  In a \textbf{pure rolling} problem, a smooth solid sphere\footnote{any object
+    that can roll with do!} rolls along a smooth surface without slipping
+  \begin{columns}
+    \column{.35\textwidth}
+    \centering
     \begin{tikzpicture}[scale=1.1]
-      \shade[ball color=gray!10](0,0) circle(1);
+      \shade[ball color=gray!5](0,0) circle(1);
       \draw[thick](-2,-1)--(2,-1);
-      \draw[thick,->](1.5,0)--(2.5,0) node[right]{$\vec v$};
+      \draw[thick,->](1.2,0)--(2.2,0) node[above]{$\vec v$};
       \draw[thick,->](0,1.2) arc(90:60:1.2) node[midway,above]{$\vec\omega$};
-      \draw[->](4,0)--(4.5,0) node[right]{$x$};
-      \draw[->](4,0)--(4,.5) node[above]{$y$};
-      \fill(0,0) circle(.05) node[right]{\small CM};
+      \draw[->](1,-2)--(1.5,-2) node[right]{$x$};
+      \draw[->](1,-2)--(1,-1.5) node[above]{$y$};
+      \fill(0,0) circle(.05);
       \begin{scope}[->,ultra thick]
         \draw[blue](0,0)--(0,-1.5) node[below]{$m\vec g$};
         \draw[red](-.03,-1)--(-.03,.5) node[above]{$\vec N$};
       \end{scope}
     \end{tikzpicture}
-  \end{center}
+
+    \column{.65\textwidth}
+    \begin{itemize}
+    \item Assumptions:
+      \begin{itemize}
+      \item Both the sphere and the surface are both perfectly rigid (they
+        do not deform)
+      \item The sphere and the surface are both perfectly smooth without defects
+        even at the microscopic level
+      \end{itemize}
+    \item There are only two forces acting on the sphere:
+      \begin{itemize}
+      \item Gravitational force $m\vec g$
+      \item Normal force $\vec N$
+      \item There is no friction
+      \end{itemize}
+    \end{itemize}
+  \end{columns}
 \end{frame}
 
 
@@ -586,14 +171,22 @@
   \begin{columns}
     \column{.65\textwidth}
     \begin{itemize}
-    \item There is no friction
-    \item Neither gravity ($m\vec g$) nor normal force ($\vec N$) generate a
-      torque about the CM
-    \item $\sum F=0$ and $\sum\tau=0$, therefore
-    \item The translational state ($\vec v$) and rotational state ($\omega$) are
-      constant in time
-    \item In \emph{theory}, this sphere will roll along with velocity $\vec v$
-      and angular velocity $\omega=v/R$ forever
+    \item There is no net force, therefore the translational state ($\vec v$)
+      of the sphere is constant
+
+      \eq{-.35in}{
+        \sum\vec F=\vec 0\quad\quad \vec v=\text{constant}
+      }
+      
+    \item\vspace{-.25in} Neither gravity or normal force generate a torque
+      about the center of mass, therefore there is no net torque, and the
+      rotational state $\vec\omega$ is constant:
+
+      \eq{-.35in}{
+        \sum\vec\tau=\vec 0\quad\quad\vec\omega=\text{constant}
+      }
+    \item\vspace{-.1in}In \emph{theory}, this sphere will roll along with
+      angular speed $\omega$ and speed $v=\omega R$ forever
     \end{itemize}
 
     \column{.35\textwidth}
@@ -602,7 +195,7 @@
       \draw[thick](-2,-1)--(2,-1);
       \draw[thick,->](1.5,0)--(2.5,0) node[right]{$\vec v$};
       \draw[thick,->](0,1.2) arc(90:60:1.2) node[midway,above]{$\vec\omega$};
-      \fill(0,0) circle(.05) node[right]{\small CM};
+      \fill(0,0) circle(.05) node[right]{\small cm};
       \begin{scope}[->,ultra thick]
         \draw[blue](0,0)--(0,-1.5) node[below]{$m\vec g$};
         \draw[red](-.03,-1)--(-.03,.5) node[above]{$\vec N$};
@@ -612,25 +205,24 @@
 \end{frame}
 
 
+
 \begin{frame}{Reality: Rolling Resistance}
-  In reality, the rolling ball will slow down and eventually come to a stop,
-  because \emph{nothing is perfectly rigid}: both the ball and the surface
+  In reality, the rolling sphere will slow down and eventually come to a stop,
+  because \emph{nothing is perfectly rigid}: both the sphere and the surface
   deform when they make contact
   \begin{columns}
-    \column{.65\textwidth}
+    \column{.7\textwidth}
     \begin{itemize}
-      %\begin{itemize}
-      %\item e.g.\ a tire flattens when it makes contact with the ground
-      %\end{itemize}
+    \item Example: a car's tires flatten when they make contact with the ground
     \item The normal force is larger in magnitude on the front side than on the
       other
-    \item $N$ exerts both a horizontal force to slow down the ball, as well as a
-      torque to slow down its rotation
+    \item $N$ exerts both a horizontal force to slow down the sphere, as well
+      as a torque to slow down its rotation
     \item The normal force does not point toward the CM because of the
       deformation.
     \end{itemize}
 
-    \column{.35\textwidth}
+    \column{.3\textwidth}
     \vspace{.3in}
     \pic1{OAGZy}
   \end{columns}
@@ -639,9 +231,153 @@
 
 
 
-\begin{frame}{Rolling with Slipping}
+\begin{frame}{Rolling with Slipping on Rough Surface}
+  What if the rolling sphere is slipping against the surface?
+  \begin{columns}
+    \column{.27\textwidth}
+    \centering
+    \begin{tikzpicture}
+      \shade[ball color=gray!5](0,0) circle(1);
+      \draw[thick](-1.5,-1)--(1.5,-1);
+      \draw[thick,->](1.5,0)--(2.5,0) node[right]{$\vec v$};
+      \draw[thick,->](0,1.2) arc(90:60:1.2) node[midway,above]{$\vec\omega$};
+      \fill(0,0) circle(.05);
+      \begin{scope}[->,ultra thick]
+        \draw[blue](-0.03,0)--(-.03,-1.5) node[below]{$m\vec g$};
+        \draw[red](0,-1)--(0,.5) node[above]{$\vec N$};
+        \draw[green!80!black](0,-1)--(1,-1) node[below]{$\vec f_k$};
+      \end{scope}
+    \end{tikzpicture}
+
+    \column{.73\textwidth}
+    \begin{itemize}
+    \item Slippage at the point of contact between the sphere and the flat
+      surface
+    \item There is \emph{kinetic} friction $f_k=\mu_kN$ in the $+\iii$
+      direction (toward the right). The friction force generates:
+      \begin{itemize}
+      \item A net force $F_\text{net}$ in the $+\iii$ direction, toward the
+        right
+      \item A net torque $\tau_\text{net}$ in the $+\kkk$ direction, i.e.\
+        counter clockwise
+      \end{itemize}
+    \end{itemize}
+  \end{columns}
 \end{frame}
 
+
+
+\begin{frame}{Rolling with Slipping on Rough Surface}
+  \begin{columns}
+    \column{.27\textwidth}
+    \begin{tikzpicture}
+      \shade[ball color=gray!5](0,0) circle(1);
+      \draw[thick](-1.5,-1)--(1.5,-1);
+      \draw[thick,->](1.5,0)--(2.5,0) node[right]{$\vec v$};
+      \draw[thick,->](0,1.2) arc(90:60:1.2) node[midway,above]{$\vec\omega$};
+      \fill(0,0) circle(.05);
+      \begin{scope}[->,ultra thick]
+        \draw[blue](-0.03,0)--(-.03,-1.5) node[below]{$m\vec g$};
+        \draw[red](0,-1)--(0,.5) node[above]{$\vec N$};
+        \draw[green!80!black](0,-1)--(1,-1) node[below]{$\vec f_k$};
+      \end{scope}
+    \end{tikzpicture}
+
+    \column{.73\textwidth}
+    \begin{itemize}
+    \item Kinetic friction $f_k$ causes the center of mass of the sphere to
+      accelerate toward the right
+
+      \eq{-.25in}{
+        F_\text{net}=f_k=ma_\text{cm}
+      }
+      
+    \item\vspace{-.2in}Since $f_k$ is constant, acceleration is also constant
+      as well, as long as the sphere slips.
+    \item e.g.: A car with its tires spinning on ice still has a small
+      forward acceleration
+    \item The acceleration of the center of mass is:
+
+      \eq{-.25in}{
+        a_\text{cm}=\mu_kg
+      }
+    \end{itemize}
+  \end{columns}
+\end{frame}
+
+
+
+\begin{frame}{Rolling with Slipping on Rough Surface}
+  \begin{columns}
+    \column{.27\textwidth}
+    \begin{tikzpicture}
+      \shade[ball color=gray!5](0,0) circle(1);
+      \draw[thick](-1.5,-1)--(1.5,-1);
+      \draw[thick,->](1.5,0)--(2.5,0) node[right]{$\vec v$};
+      \draw[thick,->](0,1.2) arc(90:60:1.2) node[midway,above]{$\vec\omega$};
+      \fill(0,0) circle(.05);
+      \begin{scope}[->,ultra thick]
+        \draw[blue](-0.03,0)--(-.03,-1.5) node[below]{$m\vec g$};
+        \draw[red](0,-1)--(0,.5) node[above]{$\vec N$};
+        \draw[green!80!black](0,-1)--(1,-1) node[below]{$\vec f_k$};
+      \end{scope}
+    \end{tikzpicture}
+
+    \column{.73\textwidth}
+    \begin{itemize}
+    \item The constant net torque in the $+\kkk$ (counter clockwise) direction
+      generates a constant angular acceleration (because $f_k$ is constant)
+
+      \eq{-.25in}{
+        \tau_\text{net}=f_kR=I\alpha
+      }
+    \item The angular acceleration causes the angular speed $\omega$ to
+      decrease over time
+    \item The angular acceleration in the $+\kkk$ direction:
+
+      \eq{-.15in}{
+        \alpha=\frac{\textcolor{green!80!black}{f_k}R}{\textcolor{purple}{I}}
+        =\frac
+        {\textcolor{green!80!black}{\mu_kmg}R}
+        {\textcolor{purple}{\frac25mR^2}}
+        =\frac{5\mu_kg}{2R}
+      }
+    \end{itemize}
+  \end{columns}
+\end{frame}
+
+
+
+\begin{frame}{Rolling with Slipping on Rough Surface}
+  \begin{columns}
+    \column{.27\textwidth}
+    \begin{tikzpicture}
+      \shade[ball color=gray!5](0,0) circle(1);
+      \draw[thick](-1.5,-1)--(1.5,-1);
+      \draw[thick,->](1.5,0)--(2.5,0) node[right]{$\vec v$};
+      \draw[thick,->](0,1.2) arc(90:60:1.2) node[midway,above]{$\vec\omega$};
+      \fill(0,0) circle(.05);
+      \begin{scope}[->,ultra thick]
+        \draw[blue](-0.03,0)--(-.03,-1.5) node[below]{$m\vec g$};
+        \draw[red](0,-1)--(0,.5) node[above]{$\vec N$};
+        \draw[green!80!black](0,-1)--(1,-1) node[below]{$\vec f_k$};
+      \end{scope}
+    \end{tikzpicture}
+
+    \column{.73\textwidth}
+    \begin{itemize}
+    \item Unlike the no-slip case where where angular acceleration is related
+      to linear acceleration by the radius, i.e.\ $a=\alpha R$, in this case,
+      there is \textbf{no relationship between $\alpha$ and $a$.}
+    \item There is also no relationship between the velocity and the center
+      of mass and the angular velocity
+    \item The speed of the sphere $v$ increases, while the angular speed
+      $\omega$ decreases, until\ldots
+    \item When $v=\omega r$, the sphere stops slipping, and the problem returns
+      to the no-slip case
+    \end{itemize}
+  \end{columns}
+\end{frame}
 
 
 
@@ -660,7 +396,7 @@
         \draw[thick,->](0,1.2) arc(90:60:1.2) node[right]{$\vec\omega$};
         \draw[->](2,0)--(3,0) node[right]{$x$};
         \draw[->](2,0)--(2,1) node[above]{$y$};
-        \fill(0,0) circle(.05) node[right]{\small CM};
+        \fill(0,0) circle(.05) node[right]{\small cm};
         \begin{scope}[->,ultra thick]
           \draw[blue,rotate=30](0,0)--(0,-1.5) node[below]{$m\vec g$};
           \draw[red](0,-1)--(0,.5) node[above]{$\vec N$};
@@ -671,10 +407,6 @@
         \end{scope}
       \end{scope}
     \end{tikzpicture}
-%  \caption{Force diagram on a smooth solid sphere of radius $R$ rolling down a
-%    smooth ramp without slipping. The ball travels distance $d$ to the bottom
-%    of the ramp.}
-    %  \label{roll-ramp}
 
     \column{.65\textwidth}
     Three forces act on the sphere as it rolls down the ramp
@@ -705,7 +437,7 @@
         \draw[thick,->](0,1.2) arc(90:60:1.2) node[right]{$\vec\omega$};
         \draw[->](2,0)--(3,0) node[right]{$x$};
         \draw[->](2,0)--(2,1) node[above]{$y$};
-        \fill(0,0) circle(.05) node[right]{\small CM};
+        \fill(0,0) circle(.05) node[right]{\small cm};
         \begin{scope}[->,ultra thick]
           \draw[blue,rotate=30](0,0)--(0,-1.5) node[below]{$m\vec g$};
           \draw[red](0,-1)--(0,.5) node[above]{$\vec N$};
@@ -716,16 +448,9 @@
         \end{scope}
       \end{scope}
     \end{tikzpicture}
-%  \caption{Force diagram on a smooth solid sphere of radius $R$ rolling down a
-%    smooth ramp without slipping. The ball travels distance $d$ to the bottom
-%    of the ramp.}
-    %  \label{roll-ramp}
 
     \column{.67\textwidth}
     To solve this problem, there are three dynamics equations:
-  %axes\footnote{the $\kkk$ axis points \emph{out} of the page. Counter-clockwise
-    %  rotational motion is positive, while clockwise rotational motion is negative}
-
     \vspace{-.4in}{\Large
       \begin{align*}
         \sum F_x&=mg\sin\theta-f_s=ma\\
@@ -734,7 +459,6 @@
       \end{align*}
     }
     
-    %\textbf{Don't be so sure about what $\mu_s$ tells us.}
     \vspace{-.2in}At this point, static friction $f_s$ is \emph{not} known.
     The coefficient of static friction ($\mu_s$) only tells us the
     \emph{maximum} static friction, not the \emph{actual} friction. (We will
@@ -755,7 +479,7 @@
         \draw[thick,->](0,1.2) arc(90:60:1.2) node[right]{$\vec\omega$};
         \draw[->](2,0)--(3,0) node[right]{$x$};
         \draw[->](2,0)--(2,1) node[above]{$y$};
-        \fill(0,0) circle(.05) node[right]{\small CM};
+        \fill(0,0) circle(.05) node[right]{\small cm};
         \begin{scope}[->,ultra thick]
           \draw[blue,rotate=30](0,0)--(0,-1.5) node[below]{$m\vec g$};
           \draw[red](0,-1)--(0,.5) node[above]{$\vec N$};
@@ -784,7 +508,7 @@
     solve for the acceleration of the CM down the ramp:
 
     \eq{-.2in}{
-        mg\sin\theta-\frac25 ma =ma%\rightarrow
+        mg\sin\theta-\frac25 ma=ma
     }
   \end{columns}
 \end{frame}
@@ -801,7 +525,7 @@
         \draw[thick,->](0,1.2) arc(90:60:1.2) node[right]{$\vec\omega$};
         \draw[->](2,0)--(3,0) node[right]{$x$};
         \draw[->](2,0)--(2,1) node[above]{$y$};
-        \fill(0,0) circle(.05) node[right]{\small CM};
+        \fill(0,0) circle(.05) node[right]{\small cm};
         \begin{scope}[->,ultra thick]
           \draw[blue,rotate=30](0,0)--(0,-1.5) node[below]{$m\vec g$};
           \draw[red](0,-1)--(0,.5) node[above]{$\vec N$};
@@ -878,7 +602,7 @@
 
   \eq{-.2in}{
     \boxed{
-      W_r=\int_{\theta_1}^{\theta_2}\tau\cdot\dl\theta
+      W_r=\int_{\theta_1}^{\theta_2}\tau\dl\theta
     }
   }
 
@@ -915,10 +639,10 @@
   and rotational kinetic energies at its center of mass:
 
   \eq{-.2in}{
-    \boxed{K=K_t+K_r=\frac12mv_\text{CM}^2+\frac12I_\text{CM}\omega^2}
+    \boxed{K=K_t+K_r=\frac12mv_\text{cm}^2+\frac12I_\text{cm}\omega^2}
   }
   
-  In this case, $I_\text{CM}$ is calculated at the center of
+  In this case, $I_\text{cm}$ is calculated at the center of
   mass. For simple problems, we only need to compute rotational kinetic energy
   at the pivot:
 
@@ -927,7 +651,7 @@
   }
   
   In this case, the $I_\text{P}$ is calculated at the pivot.
-  \textbf{IMPORTANT:} $I_\text{CM}\neq I_\text{P}$
+  \textbf{IMPORTANT:} $I_\text{cm}\neq I_\text{P}$
 \end{frame}
 
 
@@ -942,7 +666,7 @@
     object along two different but parallel axis by:
 
     \eq{-.2in}{
-      \boxed{I=I_\text{CM}+md^2}
+      \boxed{I=I_\text{cm}+md^2}
     }
   \end{columns}
 \end{frame}

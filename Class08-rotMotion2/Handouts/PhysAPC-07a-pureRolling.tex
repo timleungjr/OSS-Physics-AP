@@ -1,6 +1,6 @@
-\documentclass{../../../oss-handout}
+\documentclass{../../oss-handout}
 \usepackage{amsmath,bm}
-%\usepackage{newtxtext,newtxmath}
+\usepackage{newtxtext,newtxmath}
 \usepackage{enumitem}
 \usepackage{tikz}
 \usepackage{siunitx}
@@ -11,9 +11,9 @@
   per-mode=symbol
 }
 
-\newcommand{\iii}{\hat{\bm{\imath}}}
-\newcommand{\jjj}{\hat{\bm{\jmath}}}
-\newcommand{\kkk}{\hat{\bm{k}}}
+\newcommand{\iii}{\hat\imath}}
+\newcommand{\jjj}{\hat\jmath}}
+\newcommand{\kkk}{\hat k}}
 \newcommand{\pic}[2]{\includegraphics[width=#1\textwidth]{#2}}
 
 \setlength{\parindent}{0pt}
@@ -24,9 +24,9 @@
 \pagestyle{plain}
 
 % Course & handout information
-\renewcommand{\institution}{Olympiads School, Toronto, ON, Canada}
+\renewcommand{\institution}{Olympiads School}%, Toronto, ON, Canada}
 \renewcommand{\coursetitle}{Advanced Placement Physics C}
-\renewcommand{\term}{Summer 2021}
+\renewcommand{\term}{Fall 2021}
 
 \title{Examples of Rigid-Body Rotational Motion}
 \author{Timothy M.\ Leung, Ph.D.}
@@ -52,26 +52,27 @@ diagram is shown in Figure \ref{roll-flat}. Notice that
 \emph{there is no friction between the sphere and the surface}. Since there is
 neither a net force nor a net torque acting on the sphere, the translational
 and rotational states are constant in time. In theory (if our assumptions are
-correct), the sphere with translational velocity $\bm{v}$ and angular velocity
-$\bm\omega$ (where $\bm{v}=\bm{\omega}\times R$) will roll along forever.
+correct), the sphere with translational velocity $\vec\varv$ and angular
+velocity $\vec\omega$ (where $\vec\varv=\vec\omega\times R$) will roll along
+forever.
 \begin{figure}[!ht]
   \centering
   \begin{tikzpicture}[scale=1.3]
     \tikzstyle{balloon}=[ball color=gray!20];
     \shade[balloon](0,0) circle(1);
     \draw[thick](-2,-1)--(2,-1);
-    \draw[thick,->](1.5,0)--(2.5,0) node[right]{$\bm{v}$};
-    \draw[thick,->](0,1.2) arc(90:60:1.2) node[midway,above]{$\bm{\omega}$};
+    \draw[thick,->](1.5,0)--(2.5,0) node[right]{$\vec\varv$};
+    \draw[thick,->](0,1.2) arc(90:60:1.2) node[midway,above]{$\vec\omega$};
     \draw[->](4,0)--(5,0) node[right]{$x$};
     \draw[->](4,0)--(4,1) node[above]{$y$};
     \fill(0,0) circle(.05) node[right]{\small CM};
     \begin{scope}[->,ultra thick]
-      \draw[blue!80!black](0,0)--(0,-1.5) node[below]{$m\bm{g}$};
-      \draw[red!80!black](-.03,-1)--(-.03,.5) node[above]{$\bm{N}$};
+      \draw[blue!80!black](0,0)--(0,-1.5) node[below]{$m\vec g$};
+      \draw[red!80!black](-.03,-1)--(-.03,.5) node[above]{$\vec N$};
     \end{scope}
   \end{tikzpicture}
-  \caption{Force diagram on a uniform density solid sphere rolling on a smooth
-    flat surface without slipping.}
+  \caption{Free-body diagram on a uniform density solid sphere rolling on a
+    smooth flat surface without slipping.}
   \label{roll-flat}
 \end{figure}
 
@@ -81,6 +82,7 @@ steel ball bearing on a track can roll over a much longer distance and
 much longer time than a soccer ball on a grassy field, but neither will roll
 forever. So what causes this? Specifically, what is missing in the free-body
 diagram in Figure \ref{roll-flat}?
+\newpage
 
 \textbf{Our assumptions aren't quite correct.} There are two major oversights
 in our initial assumptions.
@@ -108,23 +110,23 @@ in our initial assumptions.
   both a resistive force to slow down the wheel, as well as negative torque to
   slow down the tire. Also, the normal force does not point toward the CM. This
   is called \textbf{rolling resistance}.
-  \begin{figure}[!ht]
-    \centering
-    \pic{.45}{OAGZy}
-    \caption{Deformation of a tire under load as it rolls over a surface
-      without slipping.}
-     \label{tire1}
-  \end{figure}
-\end{enumerate}
-
+\end{enumerate}  
 Now that we have understood the basic problem, we can tackle the next problem
 that involves friction.
+\begin{figure}[!ht]
+  \centering
+  \pic{.3}{../OAGZy}
+  \caption{Deformation of a tire under load as it rolls over a surface
+    without slipping.}
+  \label{tire1}
+\end{figure}
+
 
 \section{Pure Rolling on an Inclined Surface}
 But what if the sphere rolls without slippage down a ramp of angle $\theta$
 instead? The free-body diagram for that sphere shown in Figure~\ref{roll-ramp}.
 The radius of the sphere is $R$. This time, there is also a static friction
-$\bm{f}_s$ acting up the ramp at at the point of contact between the sphere and
+$\vec f_s$ acting up the ramp at at the point of contact between the sphere and
 the surface.
 \begin{figure}[!ht]
   \centering
@@ -134,23 +136,23 @@ the surface.
       \shade[balloon](0,0) circle(1);
       \draw[thick](-2,-1)--(5,-1);
       \draw[->,rotate=30](0,0)--(-1,0) node[left]{$R$};
-      \draw[thick,->](0,1.2) arc(90:60:1.2) node[pos=.3,right]{$\bm{\omega}$};
+      \draw[thick,->](0,1.2) arc(90:60:1.2) node[pos=.3,right]{$\vec\omega$};
       \draw[->](2,0)--(3,0) node[right]{$x$};
       \draw[->](2,0)--(2,1) node[above]{$y$};
       \fill(0,0) circle(.05) node[right]{\small CM};
       \begin{scope}[->,ultra thick]
-        \draw[blue!80!black,rotate=30](0,0)--(0,-1.5) node[below]{$m\bm{g}$};
-        \draw[red!80!black](.0,-1)--(.0,.3) node[above]{$\bm{N}$};
-        \draw[green!80!black](.0,-1)--(-.5,-1) node[left]{$\bm{f}_s$};
+        \draw[blue!80!black,rotate=30](0,0)--(0,-1.5) node[below]{$m\vec g$};
+        \draw[red!80!black](.0,-1)--(.0,.3) node[above]{$\vec N$};
+        \draw[green!80!black](.0,-1)--(-.5,-1) node[left]{$\vec f_s$};
       \end{scope}
       \begin{scope}[rotate around={30:(5,-1)}]
         \draw[thick](5,-1)--(3,-1) node[pos=.4,above]{$\theta$};
       \end{scope}
     \end{scope}
   \end{tikzpicture}
-  \caption{Force diagram on a smooth solid sphere of radius $R$ rolling down a
-    smooth ramp without slipping. The ball travels distance $d$ to the bottom
-    of the ramp.}
+  \caption{Free-body diagram on a smooth solid sphere of radius $R$ rolling
+    down a smooth ramp without slipping. The ball travels distance $d$ to the
+    bottom of the ramp.}
   \label{roll-ramp}
 \end{figure}
 
@@ -159,7 +161,7 @@ at the center of gravity, while the normal force acts at the point of contact.
 Neither forces generate any torque about the CM, therefore, without friction,
 the sphere will just \emph{slide} down the ramp without rotation. To solve this
 problem, we have three dynamic equations along the three
-axes\footnote{the $\kkk$ axis points \emph{out} of the page. Counter-clockwise
+axes\footnote{The $\kkk$-axis points \emph{out} of the page. Counter-clockwise
   rotational motion is positive, while clockwise rotational motion is negative}:
 \begin{align}
   \sum F_x&=mg\sin\theta-f_s=ma\\ \label{f_x}
@@ -233,24 +235,23 @@ If the ramp angle is too steep, then the friction will transition from static
 to kinetic, which is a much more difficult problem.
 
 \textbf{Energy is conserved, of course.} There is a much simpler way to find
-$v$, that is, by using the conservation of energy. In this case, kinetic
+$\varv$, that is, by using the conservation of energy. In this case, kinetic
 energy is split between translational kinetic energy $K_t$ and rotational
 kinetic energy $K_r$:
 \begin{align*}
   \Delta U_g&=K_t+K_r\\
-  mg\textcolor{red}{\Delta h}&=\frac12 mv^2+
+  mg\textcolor{red}{\Delta h}&=\frac12 m\varv^2+
   \frac12
   \textcolor{blue}{I}\textcolor{orange}{\omega}^2\\
-  mg\textcolor{red}{d\sin\theta}&=\frac12 mv^2+\frac12
-  \left(\textcolor{blue}{\frac25 mr^2}\right)
-  \left(\textcolor{orange}{\frac{v}{r}}\right)^2
-  =\frac12 mv^2+\frac15mv^2\\
-  &=\frac7{10}mv^2
+  mg\textcolor{red}{d\sin\theta}&=\frac12 m\varv^2+\frac12
+  \left(\textcolor{blue}{\frac25 mR^2}\right)
+  \left(\textcolor{orange}{\frac{\varv}R}\right)^2
+  =\frac12 m\varv^2+\frac15m\varv^2=\frac7{10}m\varv^2
 \end{align*}
-Cancelling mass terms on both sides, and solving for $v$, we arrive at
+Cancelling mass terms on both sides, and solving for $\varv$, we arrive at
 the same expression as using dynamics and kinematics equations:
 \begin{equation}
-  v=\sqrt{\frac{10}{7}gd\sin\theta}
+  \varv=\sqrt{\frac{10}{7}gd\sin\theta}
 \end{equation}
 
 \textbf{But why is energy conserved?} That the total system energy is conserved
@@ -260,7 +261,7 @@ would have done some non-conservative external work. However, a careful look at
 the work done by the static friction reveals how energy is transformed:
 \begin{itemize}[topsep=0pt]
 \item Static friction does \emph{positive rotational work}. It is the only
-  force that generates a torque, therefore the positive work done by $\bm{f}_s$
+  force that generates a torque, therefore the positive work done by $\vec f_s$
   increases the rotational kinetic energy, i.e.\ $W=\Delta K_r>0$ by the
   work-energy theorem. This is supported by the fact that as the ball rolls, the
   angular velocity increases.
@@ -294,14 +295,14 @@ friction is toward the right.
     \tikzstyle{balloon}=[ball color=gray!20];
     \shade[balloon](0,0) circle(1);
     \draw[thick](-2,-1)--(2,-1);
-    \draw[thick,->](0,1.2) arc(90:60:1.2) node[below right]{$\bm{\omega}$};
+    \draw[thick,->](0,1.2) arc(90:60:1.2) node[below right]{$\vec\omega$};
     \draw[->](2,0)--(3,0) node[right]{$x$};
     \draw[->](2,0)--(2,1) node[above]{$y$};
     \fill(0,0) circle(.05) node[right]{\small CM};
     \begin{scope}[->,ultra thick]
-      \draw[blue!80!black](0,0)--(0,-1.5) node[below]{$m\bm{g}$};
-      \draw[red!80!black](-.05,-1)--(-.05,.5) node[above]{$\bm{N}$};
-      \draw[green!80!black](0,-1)--(.75,-1) node[below]{$\bm{f}_k$};
+      \draw[blue!80!black](0,0)--(0,-1.5) node[below]{$m\vec g$};
+      \draw[red!80!black](-.05,-1)--(-.05,.5) node[above]{$\vec N$};
+      \draw[green!80!black](0,-1)--(.75,-1) node[below]{$\vec f_k$};
     \end{scope}
   \end{tikzpicture}
   \caption{Force diagram on a smooth solid sphere rolling on a flat surface with
@@ -319,12 +320,12 @@ are that:
   first glance, this may seem counter intuitive, but, we know that a car with
   its tires spinning on ice will still have a small acceleration.
 \item The net torque in the $+\kkk$ (counter clockwise) direction
-  causes the angular velocity $\bm{\omega}$ to decrease over time.
+  causes the angular velocity $\vec\omega$ to decrease over time.
 \end{enumerate}
 It is important to note that, unlike the previous no-slip cases where we can 
 relate angular acceleration $\alpha$ with linear acceleration $a$ by the radius
 of the sphere, for the slippage case, there is \emph{no relationship between
-  $\alpha$ and $a$.} The velocity of the sphere $\bm{v}$ toward the right can
+  $\alpha$ and $a$.} The velocity of the sphere $\vec\varv$ toward the right can
 be expressed with a simple kinetic equation:
 \begin{equation}
   v_x=v_0+at
@@ -379,8 +380,8 @@ not equal ($I_x\neq I_y\neq I_z$) if the rolling object is not a sphere.
 
 Depending on whether an object rolls with or without slipping, there may be
 no relationship between angular velocity $\omega$ and translational velocity
-$\bm{v}$, or between angular acceleration $\alpha$ and translational
-acceleration $\bm{a}$. But in any case, you will be left with a system of
+$\vec\varv$, or between angular acceleration $\alpha$ and translational
+acceleration $\vec a$. But in any case, you will be left with a system of
 equations with equal number of unknowns to be solved. Use whatever method that
 you are comfortable with to solve for the answers.
 \end{document}
