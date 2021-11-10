@@ -1,10 +1,10 @@
 all:
-	xelatex PhysAPC-11-Electrostatics
-	xelatex PhysAPC-11-Electrostatics
+	xelatex PhysAPC-13-gaussLaw
+	xelatex PhysAPC-13-gaussLaw
 
 clean:
 	rm -rf *~ *.*~ *.log *.nav *.aux *.out *.snm *.toc
 
 public:
-	mkdir -p $(DESTINATION)/Topic11
-	cp *.pdf $(DESTINATION)/Topic11
+	mkdir -p $(DESTINATION)/Class13
+	cp *.pdf $(DESTINATION)/Class13

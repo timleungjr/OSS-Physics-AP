@@ -16,31 +16,15 @@
 \end{frame}
 
 
-%\section[Intro]{Introduction}
-%
-%\begin{frame}{Files to Download}
-%  If you have not done so already, please download the following files.
-%  \begin{itemize}
-%  \item\texttt{PhysAP-08-Gravity-print.pdf}---The presentation slides for this
-%    topic.
-%  \item\texttt{PhysAP-08-Homework.pdf}---Homework questions for this topic.
-%  \end{itemize}
-%\end{frame}
-
-
-
 \section{Gravitational Force}
-
 
 \begin{frame}{Law of Universal Gravitation}
   \begin{center}
     \begin{tikzpicture}[scale=.65]
       \draw[->,very thick,red](0,0)--(2,0) node[right]{$\vec F_{21}$};
       \draw[->,very thick,blue](8,0)--(6,0) node[left]{$\vec F_{12}$};
-      \tikzstyle{balloon1}=[ball color=red];
-      \tikzstyle{balloon2}=[ball color=blue];
-      \shade[balloon1] (0,0) circle(.7) node[white]{$m_1$};
-      \shade[balloon2] (8,0) circle(1) node[white]{$m_2$};
+      \shade[ball color=red] (0,0) circle(.7) node[white]{$m_1$};
+      \shade[ball color=blue](8,0) circle(1)  node[white]{$m_2$};
       \draw[dashed] (0,0)--(0,-1.5);
       \draw[dashed] (8,0)--(8,-1.5);
       \draw[->,thick](0,-1.3)--(8,-1.3) node[midway,below]{$\vec r_{12}$};
@@ -68,10 +52,8 @@
     \begin{tikzpicture}[scale=.5]
       \draw[->,very thick,red](0,0)--(2,0) node[right]{$\vec F_{21}$};
       \draw[->,very thick,blue](8,0)--(6,0) node[left]{$\vec F_{12}$};
-      \tikzstyle{balloon1}=[ball color=red];
-      \tikzstyle{balloon2}=[ball color=blue];
-      \shade[balloon1] (0,0) circle(.7) node[white]{$m_1$};
-      \shade[balloon2] (8,0) circle(1) node[white]{$m_2$};
+      \shade[ball color=red] (0,0) circle(.7) node[white]{$m_1$};
+      \shade[ball color=blue](8,0) circle(1)  node[white]{$m_2$};
       \draw[dashed] (0,0)--(0,-1.5);
       \draw[dashed] (8,0)--(8,-1.5);
       \draw[->,thick](0,-1.3)--(8,-1.3) node[midway,below]{$\vec r_{12}$};
@@ -97,35 +79,30 @@
   \begin{columns}
     \column{.4\textwidth}
     \begin{tikzpicture}[scale=.4]
-      \tikzstyle{balloon1}=[ball color=red];
-      \tikzstyle{balloon2}=[ball color=blue];
-      \tikzstyle{balloon3}=[ball color=green];
-      \tikzstyle{balloon4}=[ball color=yellow!70!black];
-      \tikzstyle{balloon5}=[ball color=purple];
-      \shade[balloon1] (0,0) circle(.72) node[white]{$M$};
+      \shade[ball color=red] (0,0) circle(.72) node[white]{$M$};
       \begin{scope}[rotate=45]
         \draw[->,very thick,blue](.72,0)--(2.5,0) node[right]{$\vec F_1$};
-        \shade[balloon2] (7,0) circle(1) node[white]{$m_1$};
+        \shade[ball color=blue] (7,0) circle(1) node[white]{$m_1$};
       \end{scope}
       \uncover<2->{
         \begin{scope}[rotate=105]
           \draw[->,very thick,green](.72,0)--(2,0)
           node[right]{$\vec F_2$};
-          \shade[balloon3] (4,0) circle(.65) node[white]{$m_2$};
+          \shade[ball color=green] (4,0) circle(.65) node[white]{$m_2$};
         \end{scope}
       }
       \uncover<3->{
         \begin{scope}[rotate=190]
           \draw[->,very thick,yellow](.7,0)--(3.5,0)
           node[above]{$\vec F_3$};
-          \shade[balloon4] (6,0) circle(1.1) node[white]{$m_3$};
+          \shade[ball color=yellow!70!black](6,0)circle(1.1) node[white]{$m_3$};
         \end{scope}
       }
       \uncover<4->{
         \begin{scope}[rotate=260]
           \draw[->,very thick,purple](.72,0)--(1.4,0)
           node[right]{$\vec F_4$};
-          \shade[balloon5] (9,0) circle(.8) node[white]{$m_4$};
+          \shade[ball color=purple] (9,0) circle(.8) node[white]{$m_4$};
         \end{scope}
       }
       \uncover<5>{
@@ -137,12 +114,12 @@
 
     \column{.6\textwidth}
     For a mass that is subjected to the influence of multiple discrete point
-    masses $m_i$, the total gravitational force that $M$ experiences
-    is the vector sum of all the forces $\vec F_i$:
+    masses $m_i$, the total gravitational force that $M$ experiences is the
+    vector sum of all the forces $\vec F_i$:
     
     \eq{-.25in}{
-      \boxed{\vec F
-        =\sum_i\vec F_i
+      \boxed{
+        \vec F=\sum_i\vec F_i
         =GM\left(\sum_{i=1}^N\frac{m_i}{r_i^2}\hat r_i\right)
       }
     }
@@ -158,7 +135,7 @@
   distribution of mass):
 
   \eq{-.2in}{
-    \boxed{\vec F =\int\dl\vec F =GM\int\frac{\dl m}{r^2}\hat r
+    \boxed{\vec F=\int\dl\vec F=GM\int\frac{\dl m}{r^2}\hat r
     }
   }
 
@@ -381,7 +358,7 @@
 \begin{frame}{Falling Toward the Center of Earth}
   \begin{columns}
     \column{.3\textwidth}
-    \pic{1}{eartholeg}
+    \pic1{eartholeg}
 
     \column{.7\textwidth}
     As you fall through Earth, we can separate the part of Earth that is
@@ -444,7 +421,7 @@
 \begin{frame}{Falling Toward the Center of Earth}
   \begin{columns}
     \column{.25\textwidth}
-    \pic{1}{eartholsat}
+    \pic1{eartholsat}
 
     \column{.75\textwidth}
     The gravitational force has the same form as Hooke's law: it is
@@ -473,7 +450,7 @@
 \begin{frame}{Falling Toward the Center of Earth}
   \begin{columns}
     \column{.25\textwidth}
-    \pic{1}{eartholsat}
+    \pic1{eartholsat}
 
     \column{.75\textwidth}
     Since simple harmonic motion is a projection of a uniform circular motion,
@@ -590,17 +567,8 @@
 
 
 \section{Orbits}
-%\begin{frame}{Orbital Mechanics \& Kepler's Laws of Planetary Motion}
-%  In Physics 12, you studied briefly at the orbits of satellites around Earth,
-%  or the orbit of Earth and other planets around the Sun.
-%  \begin{itemize}
-%  \item Used your understanding of centripetal motion and gravity
-%  \item Assumed a circular orbit
-%  \end{itemize}
-%  Let's review some of those ideas.
-%\end{frame}
 
-\subsection{Orbital Speed}
+\subsection{Orbital Velocity and Escape Velocity}
 
 \begin{frame}{Newton's Thought Experiment}
   In \emph{Treatise of the System of the World}, the third book in
@@ -622,7 +590,7 @@
   The required centripetal force is supplied by the gravitational force:
   
   \eq{-.2in}{
-    F_g=F_c\quad\longrightarrow\quad \frac{GMm}{r^2}=\frac{mv^2} r
+    F_g=F_c\quad\longrightarrow\quad \frac{GMm}{r^2}=\frac{mv^2}r
   }
 
   \vspace{-.1in}Solving for $v$, we obtain the \textbf{orbital velocity}
@@ -630,7 +598,7 @@
   orbit:
 
   \eq{-.15in}{
-    \boxed{v_\text{orbit}=\sqrt{\frac{GM} r}}
+    \boxed{v_\text{orbit}=\sqrt{\frac{GM}r}}
   }
 
   \vspace{-.1in}This equation is only applicable for perfectly circular orbits.
@@ -638,9 +606,9 @@
 
 
 
-\subsection{Escape Speed}
+\subsection{Escape Velocity}
 
-\begin{frame}{Escape Speed}
+\begin{frame}{Escape Velocity}
   An object can leave the surface of Earth at any speed. But when all the
   kinetic energy of that object is converted to gravitational potential energy,
   it will return back to the surface of the earth. There is, however, a
@@ -650,7 +618,7 @@
 
 
 
-\begin{frame}{Escape Speed}
+\begin{frame}{Escape Velocity}
   The calculation for escape is a simple exercise in conservation of energy,
   since gravity is a conservative force, i.e.:
 
@@ -677,7 +645,7 @@
 
 
 
-\begin{frame}{Escape Speed from Circular Orbits}
+\begin{frame}{Escape Velocity from Circular Orbits}
   Set $K$ to equal to $-U_g$:
 
   \eq{-.25in}{
@@ -695,7 +663,7 @@
   There is a simple relationship between orbital speed and escape speed:
 
   \eq{-.25in}{
-    v_\text{esc}=\sqrt{2} v_\text{orbit}
+    v_\text{esc}=\sqrt2v_\text{orbit}
   }
 \end{frame}
 
@@ -718,20 +686,20 @@
   Both objects have the same escape velocity:
   \begin{center}
     \begin{tikzpicture}[scale=1.3]
-      \draw[fill=blue!80](0,0) circle(0.2) node[midway,below]{\tiny $M$};
+      \draw[fill=blue!80](0,0) circle(.2) node[midway,below]{\tiny $M$};
       \draw[dotted,thick] (0,0) circle(1);
-      \fill[black!70](0,1) circle(.03);
+      \fill (0,1) circle(.03);
       \draw[->,thick](0,0)--(0,.98) node[midway,right]{\tiny $r$};
-      \fill[black!70](2,0) circle(.03);
+      \fill (2,0) circle(.03);
       \draw[->,dash dot](0,1) to[out=0,in=135](2,0);
     \end{tikzpicture}
     \hspace{.3in}
     \begin{tikzpicture}[scale=1.3]
       \draw[fill=blue!20] (0,0) circle(1) node[midway,below]{\tiny $M$};
-      \fill[black!70](0,1) circle(0.03);
+      \fill (0,1) circle(.03);
       \draw[->,thick](0,0)--(0,.98) node[midway,right]{\tiny $r$};
-      \fill[black!70](2,0) circle(0.03);
-        \draw[->,dash dot](0,1) to[out=0,in=135](2,0);      
+      \fill (2,0) circle(.03);
+      \draw[->,dash dot](0,1) to[out=0,in=135](2,0);      
     \end{tikzpicture}
   \end{center}
   The difference is that the object in orbit (left) already has orbital speed
@@ -750,9 +718,8 @@
 
 
 \begin{frame}{Non-Circular Orbits}
-  \begin{center}
-    \pic{.6}{newton-cannon-orbital-types-Seeds}
-  \end{center}
+  \centering
+  \pic{.6}{newton-cannon-orbital-types-Seeds}
 \end{frame}
 
 
@@ -765,14 +732,14 @@
 
   \eq{-.3in}{
     K_\text{orbit}=\frac12mv_\text{orbit}^2=\frac12m
-    \left(\sqrt{\frac{GM} r}\right)^2=\boxed{\frac{GMm}{2r}}
+    \left(\sqrt{\frac{GM}r}\right)^2=\boxed{\frac{GMm}{2r}}
   }
 
   \vspace{-.11in}We already have an expression for
   \textbf{gravitational potential energy}:
 
   \eq{-.15in}{
-    U_g=-\frac{GMm} r=-2K_\text{orbit}
+    U_g=-\frac{GMm}r=-2K_\text{orbit}
   }
   
   \vspace{-.1in}The \textbf{total orbital energy} is the sum of $K$ and $U_g$:
@@ -848,7 +815,7 @@
     \pic{.4}{201532-132212364-3243-planet}
   \end{center}
   The second law of planetary motion is the easiest to proof, by applying the
-  conservation of angular momentum $\vec{L}=m(\vec r\times\vec{v})$ (gravity is a
+  conservation of angular momentum $\vec L=m(\vec r\times\vec v)$ (gravity is a
   central force).
 \end{frame}
 
@@ -897,15 +864,11 @@
 %
 %
 \begin{frame}{Kepler's Second Law: Law of Equal Areas}
-%  We can express $\vec r\times\vec{v}$ in terms of angular momentum,
-%  $\vec{L}=m(\vec r\times\vec{v})$. But in motion under any central force (such
-%  as gravity), angular momentum is a constant, and therefore:
-  %
-  The rate of change of the area ($dA/dt$) swept out by a planet (called the
-  \textbf{areal velocity}) is given by:
+  The rate of change of the area ($\dl A/\dl t$) swept out by a planet (called
+  the \textbf{areal velocity}) is given by:
 
   \eq{-.15in}{
-    \diff At=\frac{L}{2m}=\text{constant}
+    \diff At=\frac L{2m}=\text{constant}
   }
 
   The rate a planet sweeps out the area in orbit is its angular momentum around
@@ -922,9 +885,8 @@
   ellipse.
   \begin{columns}
     \column{.3\textwidth}
-    \begin{center}
-      \pic{1.1}{elliporb}
-    \end{center}
+    \centering
+    \pic{1.1}{elliporb}
 
     \column{.7\textwidth}
     \begin{itemize}
@@ -990,8 +952,7 @@
       \draw (0,0) ellipse ({\a} and {\b});% Draw the ellipse
       \draw ({sqrt(\a*\a-\b*\b)},-2.65)--({sqrt(\a*\a-\b*\b)},2.65);
       \draw (-\a-.2,0)--(\a+.2,0);
-      \fill[black]({sqrt(\a*\a-\b*\b)},0) circle(.1)
-      node[below right]{\tiny $M$};
+      \fill ({sqrt(\a*\a-\b*\b)},0) circle(.1) node[below right]{\tiny $M$};
       \begin{scope}[rotate around={\angle:({sqrt(\a*\a-\b*\b)},0)}]
         \draw[->]({sqrt(\a*\a-\b*\b)},0)--(8.5,0)
         node[pos=.45,below]{\tiny$\vec r$}
@@ -1028,7 +989,7 @@
   is formed):
 
   \eq{-.2in}{
-    r=\left[\frac{L^2}{GMm^2}\right]\frac{1}{1+e\cos\theta}
+    r=\left[\frac{L^2}{GMm^2}\right]\frac1{1+e\cos\theta}
     \quad\text{where}\quad  e=\frac{BL^2}{GMm^2}
   }
 
@@ -1037,7 +998,7 @@
   
   \eq{-.25in}{
     a=\frac12(r_\text{min} + r_\text{max})
-    =\left[\frac{L^2}{GMm^2}\right]\frac{1}{1-e^2}
+    =\left[\frac{L^2}{GMm^2}\right]\frac1{1-e^2}
   }
 
   We can rearrange the terms to see that this is the equation for an ellipse.
@@ -1048,16 +1009,15 @@
 \subsection{Third Law}
 
 \begin{frame}{Kepler's Third Law: The Law of Periods}
-  \begin{center}
-    \fbox{
-      \begin{minipage}{.97\textwidth}
-        \textbf{Law of Periods: The square of the orbital period of a planet
-          is proportional to the cube of the semi-major axis of its orbit.}
-      \end{minipage}
-    }
+  \centering
+  \fbox{
+    \begin{minipage}{.97\textwidth}
+      \textbf{Law of Periods: The square of the orbital period of a planet
+        is proportional to the cube of the semi-major axis of its orbit.}
+    \end{minipage}
+  }
 
-    \vspace{.2in}\pic{.45}{kep8}
-  \end{center}
+  \vspace{.2in}\pic{.45}{kep8}
 \end{frame}
 
 
@@ -1156,8 +1116,8 @@
 %      \begin{scope}[rotate=23]
 %        \draw[very thick,->](0,0)--(3,0) node[midway,below]{$\vec r_1$};
 %        \draw[very thick,->](0,0)--(-1.8,0) node[midway,above]{$\vec r_2$};
-%        \fill[black] (3.1,0) circle(.1) node[right]{$m_1$};
-%        \fill[black] (-1.9,0) circle(.1) node[left]{$m_2$};
+%        \fill (3.1,0) circle(.1) node[right]{$m_1$};
+%        \fill (-1.9,0) circle(.1) node[left]{$m_2$};
 %        \fill[red!80!black] (0,0) circle(.1) node[below]{$M$};
 %      \end{scope}
 %    \end{tikzpicture}
@@ -1210,7 +1170,7 @@
 %        \draw[very thick,->,red!70!black](4.87,0)--(4.5,1)
 %        node[above]{$\vec{v}$};
 %        \fill[red!70!black] (0,0) circle(.15) node[below]{$M$};
-%        \fill[black] (4.87,0) circle(.07) node[right]{$\mu$};
+%        \fill (4.87,0) circle(.07) node[right]{$\mu$};
 %      \end{scope}
 %    \end{tikzpicture}
 %  \end{center}

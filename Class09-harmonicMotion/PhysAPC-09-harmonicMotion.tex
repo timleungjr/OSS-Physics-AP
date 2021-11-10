@@ -28,11 +28,12 @@
 \section{Hooke's Law}
 
 \begin{frame}{Hooke's Law}
-  Hooke's law for an ideal spring relates the \textbf{spring force} $\bm F_s$
+  Hooke's law for an ideal spring relates the \textbf{spring force} $\bm F_e$
   exerted by a compressed or stretched spring onto another object to the
-  \textbf{spring constant} $k$ (stiffness, also called \textbf{Hooke's
-    constant}, \textbf{force constant}, or the \textbf{spring rate}) of the
-  spring, and the spring's displacement $\vec x$:
+  \textbf{spring constant} $k$\footnote{It is the stiffness of the spring,
+    and it is also called \textbf{Hooke's constant}, \textbf{force constant},
+    or the \textbf{spring rate}} of the spring, and the spring's displacement
+  $\vec x$:
 
   \eq{-.2in}{
     \boxed{\vec F_s=-k\vec x}
@@ -41,7 +42,7 @@
     \begin{tabular}{l|c|c}
       \rowcolor{pink}
       \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
-      Spring force                    & $\vec F_s$ & \si\newton \\
+      Spring force                    & $\vec F_e$ & \si\newton \\
       Spring constant                 & $k$        & \si{\newton\per\metre}\\
       Amount of extension/compression & $\vec x$   & \si\metre
     \end{tabular}
@@ -445,7 +446,7 @@
         \draw[thick](0,0)--(0,-5);
         \tikzstyle{balloon}=[ball color=red];    
         \shade[balloon] (0,-5) circle(.2) node[below right]{$m$};
-        \begin{scope}[red!80!black,very thick,->]
+        \begin{scope}[red,very thick,->]
           \draw[dotted](0,-5)--(-0.5,-5) node[left]{$mg\sin\phi$};
           \draw(0,-5)--(0,-3) node[left]{$\vec T$};
           \draw[rotate around={-10:(0,-5)}](0,-5)--(0,-6.5)
@@ -821,9 +822,11 @@
   that the system is subjected to an external force ($F_E$) that is harmonic
   with time, with a driving frequency $\omega_E$:
 
-  \eq{-.2in}{
+  \eq{-.3in}{
     F_E=F\cos(\omega_Et)
   }
+  
+  \vspace{-.2in}
   \begin{center}
     \begin{tikzpicture}
       \node[fill=blue!40!white,inner sep=3.5mm] (a) at (3.5,1) {$m$};
@@ -850,6 +853,8 @@
       \end{scope}
     \end{tikzpicture}
   \end{center}
+  In general, the driving frequency $\omega_E$ does not have to be related to
+  the natural frequency $\omega_0$ or damped frequency $\omega$.
 \end{frame}
 
 
@@ -1004,7 +1009,7 @@
     that:
     \begin{itemize}
     \item For light damping (i.e.\ small $b$), resonance response is highest
-      when $\omega_E\approx\omega$, which we know already
+      when $\omega_E\approx\omega\approx\omega_0$, which we know already
     \item The smaller the damping constant $b$, the higher and narrower the
       peak is
     \end{itemize}

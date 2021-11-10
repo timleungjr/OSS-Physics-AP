@@ -1,6 +1,6 @@
 all:
-	xelatex PhysAPC-13-Magnetism
-	xelatex PhysAPC-13-Magnetism
+	xelatex PhysAPC-15-Magnetism
+	xelatex PhysAPC-15-Magnetism
 	cd homework ; make
 
 clean:
@@ -8,6 +8,6 @@ clean:
 	cd homework ; make clean
 
 public:
-	mkdir -p $(DESTINATION)/Topic13
-	cp *.pdf $(DESTINATION)/Topic13
-	cp homework/*Homework.pdf $(DESTINATION)/Topic13
+	mkdir -p $(DESTINATION)/Class15
+	cp *.pdf $(DESTINATION)/Class15
+	cp homework/*Homework.pdf $(DESTINATION)/Class15

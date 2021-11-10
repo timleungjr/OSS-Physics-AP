@@ -76,12 +76,35 @@
     \end{tabular}
   \end{center}
 
-  \vspace{-.1in}\textbf{Coulomb's constant}
-  $\displaystyle k=\frac1{4\pi\epsilon_0}=\SI{8.99e9}{N.m^2/C^2}$ where
-  $\epsilon_0=\SI{8.85e-12}{C^2/N.m^2}$ is called the
-  ``permittivity of free space''
+%  \vspace{-.1in}\textbf{Coulomb's constant}
+
+
+
 \end{frame}
 
+
+
+\begin{frame}{Coulomb's Constant}
+
+  \eq{-.2in}{
+    \boxed{\vec F_{12}=\frac{kq_1q_2}{|\vec r_{12}|^2}\hat r_{12}}
+  }
+
+  The constant $k$ in the Coulomb's law is called the
+  \textbf{coulomb's constant}, defined as:
+
+  \eq{-.2in}{
+    k=\dfrac1{4\pi\epsilon_0}=\SI{8.99e9}{N.m^2/C^2}
+  }
+
+  where $\epsilon_0$ is a fundamental constant called the
+  \textbf{permittivity of free space}, or \textbf{vacuum permittivity}. It
+  measures a vacuum's ability to resist the formation of an electric field:
+
+  \eq{-.2in}{
+    \epsilon_0=\SI{8.85e-12}{C^2/N.m^2}
+  }
+\end{frame}
 
 
 \begin{frame}{Coulomb's Law for Electrostatic Force}
@@ -103,11 +126,12 @@
   \begin{itemize}
   \item\vspace{-.15in}If $q_1$ exerts an electrostatic force $\vec F_{12}$ on
     $q_2$, then $q_2$ likewise exerts a force of $\vec F_{21}=-\vec F_{12}$
-    on $q_1$. The two forces are equal in magnitude and opposite in direction,
-    in agreement with the third law of motion.
+    on $q_1$. The two forces are equal in magnitude and opposite in direction.
+    (Third law of motion)
   \item $q_1$ and $q_2$ are assumed to be \emph{point charges} that do not
     occupy any space
-  \item The (more familiar) scalar form is often used as well:
+  \item The scalar form is often used as well, since the direction of $F_q$ can
+    easily be found:
 
     \eq{-.2in}{
       \boxed{F_q=\frac{kq_1q_2}{r^2}}
@@ -410,12 +434,12 @@
     \pic1{serway}
     
     \column{.65\textwidth}
-    Luckily for us, the integral is in the form of $\displaystyle\int u^ndu$,
-    with $u=x^2+r^2$ and $n=\dfrac{-3}2$. You can find the integral in any math
+    Luckily for us, the integral is in the form of $\int u^ndu$,
+    with $u=x^2+r^2$ and $n=\frac{-3}2$. You can find the integral in any math
     textbook:
 
-    \eq{-.2in}{
-      \boxed{E_x =2\pi k\sigma\left(1-\frac x{\sqrt{x^2+a^2}}\right)}
+    \eq{-.25in}{
+      E_x =2\pi k\sigma\left(1-\frac x{\sqrt{x^2+a^2}}\right)
     }
   \end{columns}
 \end{frame}
@@ -529,10 +553,11 @@
 
 
 
-\section{Electric Potential \& Potential Energy}
+\section{Electric Potential Energy}
 
-\begin{frame}{Electrical Potential Energy}
-  The work done by the electrostatic force is given by:
+\begin{frame}{Electric Potential Energy}
+  The electrostsatic force is a conservative force, therefore the work done
+  by $F_q$ is related to the \textbf{electric potential energy} $U_q$:
   
   \eq{-.3in}{
     W=\int\vec F_q\cdot\dl\vec r
@@ -540,13 +565,19 @@
     =-\frac{kq_1q_2} r\Big|^{r_2}_{r_1}=-\Delta U_q
   }
 
-  where $U_q$ is defined as the \textbf{electric potential energy}:
+  where
     
   \eq{-.2in}{
     \boxed{U_q=\frac{kq_1q_2} r}
   }
-
-  $U_q$ can be ($+$) or ($-$), because charges can be either ($+$) or ($-$).
+  \begin{itemize}
+  \item $U_q$ can be ($+$) or ($-$), because charges can be either ($+$) or
+    ($-$)
+  \item Positive work done by $F_q$ decreases $U_q$, while
+  \item Negative work done by $F_q$ increases $U_q$
+  \item $W$ depends on $r_1$ and $r_2$ but not \emph{how} the charge moves from
+    $r_1\rightarrow r_2$
+  \end{itemize}
 \end{frame}
 
 
@@ -581,6 +612,33 @@
 
 
 
+\begin{frame}{Relating $U_q$ to $\vec F_q$}
+  From the fundamental theorem calculus, we can relate electrostatic force
+  ($\vec F_q$) to electric potential energy ($U_q$) by the gradient operator:
+%  and electric field ($\vec E$) to the electric potential ($V$) the same way:
+
+  \eq{-.2in}{
+    \Delta U_q=-\int\vec F_q\cdot\dl\vec r\quad\rightarrow\quad
+    \vec F_q(r)=-\nabla U_q=-\diffp{U_q}r\hat r
+%    \quad\;\;
+%    \vec E(r)=-\nabla V=-\diffp Vr\hat r
+  }
+
+  Electrostatic force $\vec F_q$ always points from high to low potential
+  energy (steepest descent direction)
+%  \item Electric field can also be expressed as the change of electric
+%    potential per unit distance, which has the unit
+%    
+%    \eq{-.2in}{
+%      \SI1{\newton\per\coulomb}=\SI1{\volt\per\metre}
+%    }
+%  \item Electric field is also called ``potential gradient''
+%  \end{itemize}
+\end{frame}
+
+
+
+\section{Electric Potential}
 
 \begin{frame}{Electric Potential: Using Gravity as Example}
   An object at a specific location inside a gravitational field has a
@@ -611,23 +669,22 @@
 \begin{frame}{Electric Potential}
   This is also true for moving a charged particle $q$ against an electric
   electric field created by $q_s$, and the ``constant'' is called the
-  \textbf{electric potential}. For a point charge, it is defined as:
+  \textbf{electric potential}. The unit for electric potential is a \emph{volt}
+  which is \emph{one joule per coulomb}, i.e.\
+  $\SI1\volt=\SI1{\joule\per\coulomb}$
 
   \eq{-.2in}{
-    \boxed{V=\frac{U_q}q=\frac{kq_s}r}
+    \boxed{
+      V=\frac{U_q}q%=\frac{kq_s}r
+    }
   }
 
-  The unit for electric potential is a \emph{volt} which is
-  \emph{one joule per coulomb}:
+  The electric potential from a source point charge $q_s$ is therefore:
 
   \eq{-.2in}{
-    \SI1\volt=\SI1{\joule\per\coulomb}
-  }
-
-  \vspace{-.2in}We can easily the relationship between $V$ and $\vec E$:
-  
-  \eq{-.2in}{
-    \boxed{\Delta V=\int\vec E\cdot\dl\vec r}
+    \boxed{
+      V=\frac{kq_s}r
+    }
   }
 \end{frame}
 
@@ -637,31 +694,30 @@
   \begin{columns}
     \column{.4\textwidth}
     \centering
-    \begin{tikzpicture}[scale=.8]
+    \begin{tikzpicture}[scale=.75]
       \shade[ball color=blue](0,0) circle(.3) node[white]{\tiny$\bm{+q}$};
       \foreach \theta in {20,40,...,360}{
-        \draw[rotate=\theta,->,gray!50,thick](.3,0)--(3,0);
-        \draw[rotate=\theta,gray!50,thick](2.8,0)--(4,0);
+        \draw[rotate=\theta,->,gray,thick](.3,0)--(3,0);
+        \draw[rotate=\theta,gray,thick](2.8,0)--(4,0);
       }
       \foreach \r in {1,2,3}{
-        \draw[dashed,very thick,red!70!black](0,0) circle(\r);
-        \node[red!70!black,] at (0,-\r-.22){\footnotesize $V_\r$};
+        \draw[very thick,red](0,0) circle(\r);
+        \node[red,below] at (0,-\r+.09){\footnotesize $V_\r$};
       }
     \end{tikzpicture}
  
-    \vspace{-.4in}
-    \begin{displaymath}
-      V_1>V_2>V_3
-    \end{displaymath}
-    
     \column{.6\textwidth}
     For a point charge $q$, every point at a distance $r$ will have the same
     electric potential $V(r)$.
     \begin{itemize}
-    \item The (dotted red) lines have the same electric potential; they are
-      called \textbf{equipotential lines}, or \textbf{equipotential contours}
+    \item The red lines have the same electric potential; they are called
+      \textbf{equipotential lines}, or \textbf{equipotential contours}
     \item Equipotential lines are perpendicular to the electric field lines
-    \item Electric field lines always points from higher $V$ toward lower $V$
+    \item Electric field lines always points from higher $V$ toward lower $V$,
+      i.e.
+      \begin{displaymath}
+        V_1>V_2>V_3
+      \end{displaymath}
     \end{itemize}
   \end{columns}
 \end{frame}
@@ -672,14 +728,15 @@
   \begin{columns}
     \column{.4\textwidth}
     \centering
-    \begin{tikzpicture}[scale=.8]
-      \shade[ball color=blue](0,0) circle(.3) node[white]{\footnotesize$q$};
-      \foreach \theta in {30,60,...,360}{
-        \draw[rotate=\theta,->,gray,thick](.3,0)--(4,0);
+    \begin{tikzpicture}[scale=.75]
+      \shade[ball color=blue](0,0) circle(.3) node[white]{\tiny$\bm{+q}$};
+      \foreach \theta in {20,40,...,360}{
+        \draw[rotate=\theta,->,gray,thick](.3,0)--(3,0);
+        \draw[rotate=\theta,gray,thick](2.8,0)--(4,0);
       }
       \foreach \r in {1,2,3}{
-        \draw[dashed,very thick,red!70!black](0,0) circle(\r);
-        \node[red!70!black,] at (0,-\r-.22){\footnotesize $V_\r$};
+        \draw[very thick,red](0,0) circle(\r);
+        \node[red,below] at (0,-\r+0.09){\footnotesize$V_\r$};
       }
       \shade[ball color=red,rotate=-20](2,0) circle(.23)
       node[white]{\footnotesize$Q$};
@@ -707,11 +764,10 @@
       \foreach \theta in {30,60,...,360}{
         \draw[rotate=\theta,->,gray,thick](.3,0)--({7-4*sin(\theta/2)},0);
       }
-      \draw[dashed,very thick,red!70!black,rotate around={-70:(0,0)}]
-      (2.5,0) arc(0:100:2.5) node[left]{$V_2$};
-      \draw[dashed,very thick,red!70!black,rotate around={-60:(0,0)}]
-      (5,0) arc(0:90:5) node[left]{$V_1$};
-
+      \draw[red,ultra thick,dotted,<-]
+      (2.5*cos{30}+.23,-2.5*sin{30}) to[out=0,in=270](5*cos{15},5*sin{15}-.2);
+      \draw[thick,red,rotate=-70] (2.5,0) arc(0:100:2.5) node[above]{$V_2$};
+      \draw[thick,red,rotate=-60] (5,0)   arc(0:90:5)    node[above]{$V_1$};
       \begin{scope}[rotate=-30]
         \shade[ball color=red](2.5,0) circle(.23) node[white]{\footnotesize$q$};
         \draw[<->,thick](.3,0)--(2.27,0) node[midway,above]{$r_2$};
@@ -733,25 +789,6 @@
     \vspace{-.1in}where $\Delta V$ is called the \textbf{potential difference}
   \end{columns}
 \end{frame}
-
-
-
-%\begin{frame}{Potential Difference}
-%  The change in electric potential is called the \textbf{electric potential
-%    difference} or \textbf{voltage}:
-%
-%  \eq{-.2in}{
-%    \boxed{
-%      \Delta V=\frac{\Delta U_q}q
-%    }
-%  }
-%
-%  or in this form:
-%  
-%  \eq{-.2in}{
-%    \boxed{\Delta U_q=q\Delta V}
-%  }
-%\end{frame}
 
 
 
@@ -778,50 +815,72 @@
 
 
 
+\begin{frame}{Relating $V$ to $\vec E$}
+  In the same way that the fundamental theorem of calculus relates the 
+  electrostatic force ($\vec F_q$) and electric potential energy ($U_q$) by the
+  gradient operator, electric field ($\vec E$) and electric potential ($V$) are
+  also related the same way:
+
+  \eq{-.2in}{
+    \Delta V_q=-\int\vec E_q\cdot\dl\vec r\quad\rightarrow\quad
+    \vec E(r)=-\nabla V_q=-\diffp Vr\hat r
+  }
+  \begin{itemize}
+  \item Electrostatic field $\vec E$ always points from high to low electric
+    potential
+  \item Electric field is also called ``potential gradient''
+  \end{itemize}
+\end{frame}
+
+
+
+
 \begin{frame}{Getting Those Names Right}
   Remember that these three scalar quantities, as opposed to electrostatic
   force $\vec F_q$ and electric field $\vec E$ which are vectors
   \begin{itemize}
   \item Electric potential energy:
-    \begin{displaymath}
-      U_q=\frac{kq_1q_2}r
-    \end{displaymath}
-  \item Electric potential:
-    \begin{displaymath}
-      V=\frac{U_q}q=\frac{kq}r
-    \end{displaymath}
-  \item Electric potential difference (voltage):
-    \begin{displaymath}
-      \Delta V=\frac{\Delta U_q}q
-    \end{displaymath}
-  \end{itemize}
-\end{frame}
-
-
-
-\begin{frame}{Relating $U_q$, $\vec F_q$ and $\vec E$}
-  From the fundamental theorem calculus, we can relate electrostatic force
-  ($\vec F_q$) to electric potential energy ($U_q$) by the gradient operator,
-  and electric field ($\vec E$) to the electric potential ($V$) the same way:
-
-  \eq{-.2in}{
-    \vec F_q(r)=-\nabla U_q=-\diffp{U_q}r\hat r
-    \quad\;\;
-    \vec E(r)=-\nabla V=-\diffp Vr\hat r
-  }
-  \begin{itemize}  
-  \item Electrostatic force $\vec F_q$ always points from high to low potential
-    energy (steepest descent direction)
-  \item Electric field can also be expressed as the change of electric
-    potential per unit distance, which has the unit
     
-    \eq{-.2in}{
-      \SI1{\newton\per\coulomb}=\SI1{\volt\per\metre}
+    \eq{-.3in}{
+      U_q=\frac{kq_1q_2}r
     }
-  \item Electric field is also called ``potential gradient''
+  \item Electric potential:
+
+    \eq{-.25in}{
+      V=\frac{U_q}q%=\frac{kq}r
+    }
+  \item Electric potential difference (voltage):
+
+    \eq{-.2in}{
+      \Delta V=\frac{\Delta U_q}q
+    }
   \end{itemize}
 \end{frame}
 
+
+
+%\begin{frame}{Relating $U_q$, $V$, $\vec F_q$ and $\vec E$}
+%  From the fundamental theorem calculus, we can relate electrostatic force
+%  ($\vec F_q$) to electric potential energy ($U_q$) by the gradient operator,
+%  and electric field ($\vec E$) to the electric potential ($V$) the same way:
+%
+%  \eq{-.2in}{
+%    \vec F_q(r)=-\nabla U_q=-\diffp{U_q}r\hat r
+%    \quad\;\;
+%    \vec E(r)=-\nabla V=-\diffp Vr\hat r
+%  }
+%  \begin{itemize}  
+%  \item Electrostatic force $\vec F_q$ always points from high to low potential
+%    energy (steepest descent direction)
+%  \item Electric field can also be expressed as the change of electric
+%    potential per unit distance, which has the unit
+%    
+%    \eq{-.2in}{
+%      \SI1{\newton\per\coulomb}=\SI1{\volt\per\metre}
+%    }
+%  \item Electric field is also called ``potential gradient''
+%  \end{itemize}
+%\end{frame}
 
 
 

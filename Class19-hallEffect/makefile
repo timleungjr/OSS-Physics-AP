@@ -1,6 +1,6 @@
 all:
-	xelatex PhysAPC-16-HallEffect
-	xelatex PhysAPC-16-HallEffect
+	xelatex PhysAPC-19A-HallEffect
+	xelatex PhysAPC-19A-HallEffect
 	cd homework ; make
 
 clean:
@@ -8,6 +8,6 @@ clean:
 	cd homework ; make clean
 
 public:
-	mkdir -p $(DESTINATION)/Topic16
-	cp *.pdf $(DESTINATION)/Topic16
-	cp homework/*Homework.pdf $(DESTINATION)/Topic16
+	mkdir -p $(DESTINATION)/Class19
+	cp *.pdf $(DESTINATION)/Class19
+	cp homework/*Homework.pdf $(DESTINATION)/Class19
