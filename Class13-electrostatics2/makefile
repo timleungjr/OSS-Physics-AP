@@ -7,4 +7,4 @@ clean:
 
 public:
 	mkdir -p $(DESTINATION)/Class13
-	cp *.pdf $(DESTINATION)/Class13
+	cp PhysAPC*.pdf $(DESTINATION)/Class13
