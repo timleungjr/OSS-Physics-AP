@@ -1,0 +1,357 @@
+\documentclass[12pt,compress,aspectratio=169]{beamer}
+\input{../mybeamer}
+
+\title{Class 5: Center of Mass}
+\subtitle{Advanced Placement Physics C}
+\input{../me}
+\input{../mycommands}
+
+\begin{document}
+
+\begin{frame}
+  \maketitle
+\end{frame}
+
+
+
+\begin{frame}{Center of Mass}
+  Finding an object's center of mass is important, because
+  \begin{itemize}
+  \item The laws of motion are formulated by treating an objects as point
+    masses (for real-life objects, we let the forces apply to the center of
+    mass)
+  \item Objects can have \emph{rotational} motion in addition to
+    \emph{translational} motion as well (we will examine that a bit more in a
+    very-important topic later)
+  \end{itemize}
+\end{frame}
+
+
+
+\begin{frame}{Start with a Definition}
+  The \textbf{center of mass} (``CM'') is the \emph{weighted average of the
+    masses in a system.} The ``system'' may be:
+  \begin{itemize}
+  \item A collection of individual particles
+  \item A continuous distribution of mass with constant density. In this case,
+    CM is also the geometric center (\textbf{centroid}) of the object
+  \item A continuous distribution of mass with varying density
+  \item If the masses are inside of a gravitational field, then the CM is also
+    its \textbf{center of gravity} (``CG'')
+  \end{itemize}
+\end{frame}
+
+
+
+\begin{frame}{Simple Example}
+  We start with a very simple example: there are two equal masses along the
+  $x$-axis. What is the center of mass of the system?
+    
+  \vspace{.25in}
+  \begin{center}
+    \begin{tikzpicture}
+      \draw[->] (-4,0)--(4,0) node[right]{$x$};
+      \draw[fill=gray!50] (-2.5,0) circle(.3) node{$m$};
+      \draw[fill=gray!50] (2.5,0) circle(.3) node{$m$};
+      \uncover<2->{ \fill(0,0) circle(.05) node[below]{CM}; }
+    \end{tikzpicture}
+  \end{center}
+  \vspace{.2in}
+
+  \uncover<2->{Answer: the half way point between the two masses!}
+\end{frame}
+
+ 
+\begin{frame}{Slightly More Challenging}
+  \begin{itemize}
+  \item What if one of the masses are increased to $2m$?
+  \item This is still not a terribly difficult problem; you can still
+    \emph{guess} the right answer without knowing the equation for center of
+    mass.
+  \end{itemize}
+  \begin{center}
+    \begin{tikzpicture}
+      \draw[->] (-4,0)--(4,0) node[right]{$x$};
+      \draw[fill=gray!50] (-2.5,0) circle(.3) node{$m$};
+      \draw[fill=gray!50] (2.5,0) circle(.42) node{$2m$};
+      \uncover<2->{ \fill (.833,0) circle(.05) node[below]{CM}; }
+    \end{tikzpicture}
+  \end{center}
+    
+  \uncover<2>{
+    \vspace{.15in}The answer is still simple. The CM is no longer half way
+    between the two masses, but now $\frac13$ the total distance from the
+    larger masses.
+  }
+\end{frame}
+
+
+\begin{frame}{Complicating Things Further}{Many Point Masses}
+  If we increase the number of point masses along the $x$-axis, our problem can
+  become much more complicated (although still not devastatingly so)
+  \begin{center}
+    \begin{tikzpicture}
+      \draw[->] (-4,0)--(4,0) node[right]{$x$};
+      \draw[fill=gray!50] (-3.2,0) circle(.4);
+      \draw[fill=gray!50] (-2.5,0) circle(.1);
+      \draw[fill=gray!50] (1.5,0) circle(.15);
+      \draw[fill=gray!50] (0  ,0) circle(.3);
+      \draw[fill=gray!50] (2.5,0) circle(.25);
+    \end{tikzpicture}
+  \end{center}
+  
+  \vspace{-.1in}Difficulties really arises when there are many masses in the
+  system in 2D or 3D:
+  \begin{center}
+    \vspace{-.2in}
+    \begin{tikzpicture}
+      \draw[->] (-3,0)--(3,0) node[right]{$x$};
+      \draw[->] (0,-1.5)--(0,1.5) node[above]{$y$};
+      \draw[fill=gray!50] (-1.3,1) circle(.4);
+      \draw[fill=gray!50] (-1.5,-.5) circle(.1);
+      \draw[fill=gray!50] (1,.3) circle(.15);
+      \draw[fill=gray!50] (0,.3) circle(.2);
+      \draw[fill=gray!50] (2,-1) circle(.25);
+    \end{tikzpicture}
+  \end{center}
+\end{frame}
+
+
+\begin{frame}{An Equation Helps}
+  The center of mass is defined for discrete number of masses as:
+
+  \eq{-.2in}{
+    \boxed{\vec x_\text{CM}=\frac{\sum \vec x_i m_i}{\sum m_i}}
+  }
+  \begin{center}
+    \begin{tabular}{l|c|c}
+      \rowcolor{pink}
+      \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
+      Position of center of mass (vector) & $\vec x_\text{CM}$ & \si\metre \\
+      Position of point mass $i$ (vector) & $\vec x_i$ & \si\metre \\
+      Point mass $i$ & $m_i$ & \si{\kilo\gram}
+    \end{tabular}
+  \end{center}
+  In components:
+
+  \eq{-.2in}{
+    x_\text{CM}=\frac{\sum x_i m_i}{\sum m_i}\quad\quad
+    y_\text{CM}=\frac{\sum y_i m_i}{\sum m_i}\quad\quad
+    z_\text{CM}=\frac{\sum z_i m_i}{\sum m_i}
+  }
+\end{frame}
+
+
+\begin{frame}{An Example}
+  \textbf{Example 1:} Consider the following masses and their coordinates
+  which make up a ``discrete mass'' rigid body''
+  \begin{align*}
+    m_1&=\SI{5.}{\kg} &\vec x_1&=3\iii-2\kkk\\
+    m_2&=\SI{10.}{\kg}&\vec x_2&=-4\iii+2\jjj+7\kkk\\
+    m_3&=\SI{1.}{\kg}&\vec x_3&=10\iii-17\jjj+10\kkk
+  \end{align*}
+  What are the coordinates for the center of mass of this system?
+\end{frame}
+
+
+
+\begin{frame}{Continuous Mass Distribution}
+  In general, objects are not a discrete collection of point masses, but a
+  continuous distribution of mass. Therefore, we take the limit of when the
+  number of masses approaches $\infty$:
+  
+  \eq{-.15in}{
+    \vec x_\text{CM}=\lim_{n\rightarrow\infty}
+    \left(\frac{\sum_{i=1}^n \vec x_i m_i}{\sum_{i=1}^n m_i}\right)
+  }
+
+  This gives us an integral form of our equation:
+
+  \eq{-.15in}{
+    \boxed{\vec x_\text{CM}=\frac{\int\vec x\dl m}{\int\dl m}}
+  }
+\end{frame}
+
+
+
+\begin{frame}{Densities}
+  \begin{itemize}
+  \item Linear density (for 1D problems)
+    {\Large
+      \begin{displaymath}
+        \gamma = \diff mL\quad\rightarrow\quad \dl m =\gamma\dl L
+      \end{displaymath}
+    }
+  \item Surface area density (for 2D problems)
+    {\Large
+      \begin{displaymath}
+        \sigma=\diff mA\quad\rightarrow\quad \dl m =\sigma\dl A
+      \end{displaymath}
+    }
+  \item Volume density (for 3D problems)
+    {\Large
+      \begin{displaymath}
+        \rho=\diff mV\quad\rightarrow\quad \dl m =\rho\dl V
+      \end{displaymath}
+    }
+  \end{itemize}
+\end{frame}
+
+
+\begin{frame}{An Example with Integrals}
+  \begin{columns}
+    \column{.65\textwidth}
+    \textbf{Example 2:} A triangular plate is placed in a Cartesian coordinate
+    system with two of its edges along the $x$ and $y$-axis. The length of the
+    edges along the axes are $a$ and $b$ respectively. Assuming that the
+    surface area density $\sigma$ is uniform, determine the coordinate of its
+    center of mass.
+
+    \column{.35\textwidth}
+    \begin{tikzpicture}[scale=.8]
+      \draw[->](0,0)--(4,0) node[right]{\footnotesize $x$};
+      \draw[->](0,0)--(0,5) node[above]{\footnotesize $y$};
+      \draw[fill=gray!60](0,0)--(3,0) node[midway,below]{$a$}
+      --(0,4)--cycle node[midway,left]{$b$};
+      \uncover<2->{
+        \draw[fill=red](1,0)--(1.2,0)--(1.2,2.4)--(1,2.67)
+          node[midway,right]{\footnotesize $\dl m$}--cycle;
+      }
+    \end{tikzpicture}
+  \end{columns}
+\end{frame}
+
+
+
+%\begin{frame}{A Difficult Example to Try at Home}
+%  Not typically an AP problem, this example shows how we can use integral to
+%  find the center of mass for something very complicated.
+%  \begin{columns}
+%    \column{.6\textwidth}
+%    \textbf{Example 3:} Find the $x$-coordinate of the center of mass in the
+%    shape bound by the two functions shown on the right.
+%
+%    \column{.4\textwidth}
+%    \begin{tikzpicture}[scale=3]
+%      \draw[->](0,0)--(1.25,0) node[right]{\footnotesize $x$};
+%      \draw[->](0,0)--(0,1.25) node[above]{\footnotesize $y$};
+%      \draw[fill=green!40]
+%      plot[smooth,samples=40,domain=0:1] (\x,{\x*\x*\x})--
+%      plot[smooth,samples=40,domain=1:0] (\x,{\x^(.5)});
+%      
+%      \draw[red!70,thick]  plot[smooth,samples=40,domain=0:1] (\x,{\x*\x*\x});
+%      \draw[blue!70,thick] plot[smooth,samples=40,domain=0:1] (\x,{\x^(.5)});
+%      \node at (.4,.85){\textcolor{blue!70}{\footnotesize $y=\sqrt{x}$}};
+%      \node at (.9,.3){\textcolor{red!70}{\footnotesize $y=x^3$}};
+%    \end{tikzpicture}
+%  \end{columns}
+%\end{frame}
+
+
+
+\begin{frame}{Symmetry}{There are always shortcuts!}
+  \begin{itemize}
+  \item Any plane of symmetry, mirror line, axis of rotation, point of inversion
+    \emph{must} contain the center of mass.
+  \item Caveat: only works if the density distribution is also symmetric
+  \item Again: if density is uniform, CM is also geometric center (centroid)
+  \end{itemize}
+\end{frame}
+
+
+
+\begin{frame}{``Negative Mass''}{A Mathematical Trick}
+  \begin{itemize}
+  \item Where there is a ``hole'' in the geometry, treat it as having negative
+    mass density $-\sigma$ in that region.
+  \item Negative masses don't exist, so this is really just a trick.
+  \item\textbf{Example:} What is the center of mass of this shape?
+    \begin{center}
+      \begin{tikzpicture}
+        \draw[thick,fill=gray](0,0) circle(2);
+        \draw[thick,fill=white](0,1) circle(1);
+        \draw[fill=black](0,0) circle(.04);
+        \draw[thick,->](0,0)--(-1.41,-1.41)node[midway,below]{\footnotesize$r$};
+        \draw[fill=black](0,1) circle(.04);
+        \draw[thick,->](0,1)--(.707,.293) node[right]{\footnotesize$r/2$};
+      \end{tikzpicture}
+    \end{center}
+  \end{itemize}
+\end{frame}
+
+
+
+\begin{frame}{Negative Mass Example}
+  \begin{itemize}
+  \item This is how we would think of it:
+    \begin{center}
+      \begin{tikzpicture}[scale=.6]
+        \draw[thick,fill=gray](0,0) circle(2);
+        \draw[thick,fill=white](0,1) circle(1);
+        \draw[fill=black](0,0) circle(.04);
+        \draw[thick,->](0,0)--(-1.41,-1.41)
+        node[midway,below]{\footnotesize$r$};
+        \draw[fill=black](0,1) circle(.04);
+        \draw[thick,->](0,1)--(.707,.293) node[right]{\footnotesize$r/2$};
+      
+        \draw[thick,fill=gray](6,0) circle(2) node{\large$A$};
+        \draw[thick,fill=gray](11,1) circle(1) node{\large$B$};
+        \node at (3,0) {\huge=};
+        \node at (9,0) {\huge -};
+      \end{tikzpicture}
+    \end{center}
+  \item Let the origin of the coordinate system to located at the center of $A$
+  \item Based on symmetry: $x_\text{CM}=0$; only have to find $y$-coordinate.
+  \item Sum our weighted average:
+    
+    \eq{-.25in}{
+      y_\text{CM}
+      =\frac{\sum y_i m_i}{\sum m_i}
+      =\frac{m_A(0) + m_B (r/2)}{m_A+m_B}
+      =\frac{-\sigma\pi\left(r/2\right)^2(r/2)}
+      {\sigma\pi r^2-\sigma\pi\left(r/2\right)^2}
+      \uncover<2->{
+        =\frac{-r}6
+      }
+    }
+  \end{itemize}
+\end{frame}
+
+
+
+\begin{frame}{Velocity, Acceleration and Momentum}
+  Take time derivative of the equation for $\vec x_\text{CM}$ to get the
+  velocity at the CM:
+    
+  \eq{-.2in}{
+    \vec v_\text{CM}=\diff{\vec x_\text{CM}}t
+    =\frac1m\diff{}t\left(\int\vec x\dl m\right)
+    =\frac1m\int\diff{\vec x}t\dl m
+    =\frac{\int\vec v\dl m}m
+  }
+  
+  The integral in the numerator is the sum of the momentum of all the masses in
+  the system ($\vec p_\text{net}$) which means that we have
+
+  \eq{-.2in}{
+    \vec p_\text{net}=m\vec v_\text{CM}
+    }
+
+  Taking the derivative of $\vec p_\text{net}$ relates force and acceleration
+  at the CM as well:
+    
+  \eq{-.2in}{
+    \vec F_\text{net}=\diff{\vec p_\text{net}}t=m\diff{\vec v_\text{CM}}t
+    =m\vec a_\text{CM}
+  }
+\end{frame}
+
+
+%\begin{frame}{What This All Means}
+%  \begin{itemize}
+%  \item Newton was right all along by treating all objects as point masses
+%    located at the CM
+%  \end{itemize}
+%\end{frame}
+
+\end{document}
