@@ -10,7 +10,7 @@
 }
 \tikzset{>=latex}
 
-\title{Topic 12: Capacitors}
+\title{Class 14: Capacitors}
 \subtitle{Advanced Placement Physics C}
 \input{../me}
 \input{../mycommands}
@@ -26,22 +26,22 @@
 \section{Parallel-Plate Capacitors}
 
 \begin{frame}{Electric Field and Electric Potential Difference}
-  Recall that the relationship between electrostatic force ($\bm{F}_q$) and
+  Recall that the relationship between electrostatic force ($\bm F_q$) and
   electric potential energy ($U_q$) can be expressed using definition of
   mechanical work and the fundamental theorem of calculus:
 
   \eq{-.25in}{
-    \Delta U_q=-\int\bm{F}_q\cdot\dl\bm{r}\quad\quad
-    \bm{F}_q=-\nabla U_q=-\diffp{U_q}r\hat{\bm{r}}
+    \Delta U_q=-\int\vec F_q\cdot\dl\vec r\quad\quad
+    \vec F_q=-\nabla U_q=-\diffp{U_q}r\hat r
   }
 
   \vspace{-.08in}Dividing both sides of the equations by $q$, we get the
-  relationship between electric field ($\bm{E}$), electric potential ($V$) and
+  relationship between electric field ($\vec E$), electric potential ($V$) and
   electric potential difference ($\Delta V$):
   
   \eq{-.2in}{
-    \Delta V=-\int\bm{E}\cdot\dl\bm{r}\quad\quad
-    \boxed{\bm{E}=-\nabla V=-\diffp Vr\hat{\bm{r}}}
+    \Delta V=-\int\vec E\cdot\dl\vec r\quad\quad
+    \boxed{\vec E=-\nabla V=-\diffp Vr\hat r}
   }
 
   This relationship holds regardless of the charge configuration.
@@ -85,8 +85,8 @@
       \rowcolor{pink}
       \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
       Electric field intensity & $E$ & \si{\newton\per\coulomb}\\
-      Potential difference between plates & $\Delta V$ & \si{\volt} \\
-      Distance between plates       & $d$ & \si{\metre}
+      Potential difference between plates & $\Delta V$ & \si\volt \\
+      Distance between plates       & $d$ & \si\metre
     \end{tabular}
   \end{center}
 \end{frame}
@@ -121,7 +121,7 @@
   plates and the voltage:
 
   \eq{-.2in}{
-    \Delta V=\textcolor{blue}{E}d=
+    \Delta V=\textcolor{blue} Ed=
     \frac{\textcolor{blue}{Q}d}{\textcolor{blue}{A\epsilon_0}}
     \quad\longrightarrow\quad
     \boxed{Q=\left[\frac{A\epsilon_0}d\right]\Delta V}
@@ -137,7 +137,7 @@
   \textbf{capacitance} $C$, defined as:
 
   \eq{-.15in}{
-    \boxed{C=\frac{Q}{\Delta V}}
+    \boxed{C=\frac Q{\Delta V}}
   }
 
   For parallel plates:
@@ -194,7 +194,7 @@
   different ways to express $U_c$ using definition of capacitance:
 
   \eq{-.15in}{
-    \boxed{U_c=\frac12\frac{Q^2}{C}=\frac12QV=\frac12CV^2}
+    \boxed{U_c=\frac12\frac{Q^2}C=\frac12QV=\frac12CV^2}
   }
 \end{frame}
 
@@ -232,14 +232,14 @@
     a Gaussian surface of radius $r$ between the cylinders: 
 
     \eq{-.2in}{
-      \oint \bm{E}\cdot\dl A=2\pi rLE=\frac{Q}{\epsilon_0}
+      \oint\vec E\cdot\dl\vec A=2\pi rLE=\frac Q{\epsilon_0}
     }
     
     which gives the expression:
 
     \eq{-.23in}{
-      E=\frac{Q}{2\pi rL\epsilon_0}\quad\text{or}\quad
-      E=\frac{\lambda}{2\pi r\epsilon_0}
+      E=\frac Q{2\pi rL\epsilon_0}\quad\text{or}\quad
+      E=\frac\lambda{2\pi r\epsilon_0}
     }
     where $\lambda=Q/L$ is the linear charge density
   \end{columns}
@@ -252,15 +252,15 @@
   Integrating the eclectic field to get voltage across the plates:
 
   \eq{-.2in}{
-    \Delta V= -\int_a^b E\dl r=\frac{Q}{2\pi L\epsilon_0}\int_b^a\frac 1r\dl r
-    =\frac{Q}{2\pi L\epsilon_0}\ln\left[\frac ba\right]
+    \Delta V= \int_a^b E\dl r=\frac Q{2\pi L\epsilon_0}\int_b^a\frac{\dl r}r
+    =\frac Q{2\pi L\epsilon_0}\ln\left[\frac ba\right]
   }
 
   Like the parallel plate, the relationship between voltage and charge is still
   linear, but in this case, the capacitance is defined as:
 
   \eq{-.2in}{
-    C=\frac{Q}{\Delta V}=\frac{2\pi L\epsilon_0}{\ln(b/a)}
+    C=\frac Q{\Delta V}=\frac{2\pi L\epsilon_0}{\ln(b/a)}
     \quad\longrightarrow\quad
     \boxed{\frac CL=\frac{2\pi\epsilon_0}{\ln(b/a)}\;\;\text{cylindrical}}
   }
@@ -356,7 +356,7 @@
   proportional to the capacitance:
 
   \eq{-.2in}{
-    \dl U=V\dl q=\frac{q}{C}\dl q
+    \dl U=V\dl q=\frac qC\dl q
   }
 
   \begin{itemize}

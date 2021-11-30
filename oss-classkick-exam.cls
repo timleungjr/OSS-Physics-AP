@@ -16,7 +16,7 @@
 
 \newcommand{\gentitle}[2]{
   \begin{center}
-    {\large\textbf{AP PHYSICS #1: #2}}
+    {\large\textbf{AP PHYSICS C CLASS #1: #2}}
   \end{center}
 }
 

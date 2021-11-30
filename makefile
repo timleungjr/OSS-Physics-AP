@@ -13,17 +13,18 @@ all:
 	cd Class06-circMotion	; make
 	cd Class07-rotMotion	; make
 	cd Class08-rotMotion2	; make
-	cd Class09-harmonicMotion ; make
-	cd Class10-gravity	; make
-#	cd 10-MockTest1		; make
-	cd Class12-electrostatics ; make
-	cd Class13-electrostatics2 ; make
-	cd Class14-capacitors	; make
-	cd Class15-magnetism1	; make
-	cd Class16-magnetism2	; make
+	cd Class09-rotMotion3	; make
+	cd Class10-harmonicMotion ; make
+	cd Class11-gravity	; make
+	cd Class12-gravity2	; make
+#	cd Class12-electrostatics ; make
+#	cd Class13-electrostatics2 ; make
+#	cd Class14-capacitors	; make
+#	cd Class15-magnetism1	; make
+#	cd Class16-magnetism2	; make
 #	cd 14-ElectricCircuits	; make
-	cd Class19-hallEffect	; make
-	cd Class19-maxwellEquations ; make
+#	cd Class19-hallEffect	; make
+#	cd Class19-maxwellEquations ; make
 
 clean:
 	rm -rf *.*~ *~ *.log
@@ -36,17 +37,19 @@ clean:
 	cd Class06-circMotion	; make clean
 	cd Class07-rotMotion 	; make clean
 	cd Class08-rotMotion2	; make clean
-	cd Class09-harmonicMotion ; make clean
-	cd Class10-gravity	; make clean
-	cd Class12-electrostatics ; make clean
-	cd Class13-electrostatics2 ; make clean
-	cd Class14-capacitors	; make clean
-	cd Class15-magnetism1	; make clean
-	cd Class16-magnetism2	; make clean
-#	cd 10-MockTest1		; make clean
-#	cd 14-ElectricCircuits	; make clean
-	cd Class19-hallEffect	; make clean
-	cd Class19-maxwellEquations ; make clean
+	cd Class09-rotMotion3	; make clean
+	cd Class10-harmonicMotion ; make clean
+	cd Class11-gravity	; make clean
+	cd Class12-gravity2	; make clean
+#	cd Class12-electrostatics ; make clean
+#	cd Class13-electrostatics2 ; make clean
+#	cd Class14-capacitors	; make clean
+#	cd Class15-magnetism1	; make clean
+#	cd Class16-magnetism2	; make clean
+##	cd 10-MockTest1		; make clean
+##	cd 14-ElectricCircuits	; make clean
+#	cd Class19-hallEffect	; make clean
+#	cd Class19-maxwellEquations ; make clean
 
 public:
 	mkdir -p $(DESTINATION)
@@ -60,14 +63,16 @@ public:
 	cd Class06-circMotion	; make public
 	cd Class07-rotMotion	; make public
 	cd Class08-rotMotion2	; make public
-	cd Class09-harmonicMotion ; make public
-	cd Class10-gravity	; make public
-	cd Class12-electrostatics ; make public
-	cd Class13-electrostatics2 ; make public
-	cd Class14-capacitors	; make public
-	cd Class15-magnetism1	; make public
-	cd Class16-magnetism2	; make public
-#	cd 10-MockTest1		; make public
-#	cd 14-ElectricCircuits	; make public
-	cd Class19-hallEffect	; make public
-	cd Class19-maxwellEquations ; make public
+	cd Class09-rotMotion3	; make public
+	cd Class10-harmonicMotion ; make public
+	cd Class11-gravity	; make public
+	cd Class11-gravity2	; make public
+#	cd Class12-electrostatics ; make public
+#	cd Class13-electrostatics2 ; make public
+#	cd Class14-capacitors	; make public
+#	cd Class15-magnetism1	; make public
+#	cd Class16-magnetism2	; make public
+##	cd 10-MockTest1		; make public
+##	cd 14-ElectricCircuits	; make public
+#	cd Class19-hallEffect	; make public
+#	cd Class19-maxwellEquations ; make public
