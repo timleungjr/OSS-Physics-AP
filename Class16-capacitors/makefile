@@ -1,6 +1,6 @@
 all:
-	xelatex PhysAPC-14-Capacitors
-	xelatex PhysAPC-14-Capacitors
+	xelatex PhysAPC-16-Capacitors
+	xelatex PhysAPC-16-Capacitors
 	cd homework ; make
 
 clean:
@@ -8,6 +8,6 @@ clean:
 	cd homework ; make clean
 
 public:
-	mkdir -p $(DESTINATION)/Class14
-	cp *.pdf $(DESTINATION)/Class14
-	cp homework/*Homework.pdf $(DESTINATION)/Class14
+	mkdir -p $(DESTINATION)/Class16
+	cp *.pdf $(DESTINATION)/Class16
+	cp homework/*Homework.pdf $(DESTINATION)/Class16

@@ -1,16 +1,13 @@
 all:
 	xelatex PhysAPC-11-univGravity
 	xelatex PhysAPC-11-univGravity
-#	cd homework ; make
-#	cd Handouts ; make
+	cd homework ; make
 
 clean:
 	rm -rf *~ *.*~ *.log *.nav *.aux *.out *.snm *.toc
-#	cd homework ; make clean
-#	cd Handouts ; make clean
+	cd homework ; make clean
 
 public:
-	mkdir -p $(DESTINATION)/Class10
-	cp *.pdf $(DESTINATION)/Class10
-#	cp homework/*Homework.pdf $(DESTINATION)/Class10
-#	cp Handouts/*.pdf $(DESTINATION)/Class10
+	mkdir -p $(DESTINATION)/Class11
+	cp *.pdf $(DESTINATION)/Class11
+	cp homework/*Homework.pdf $(DESTINATION)/Class11

@@ -1,11 +1,11 @@
 all:
-	xelatex PhysAPC-12-Electrostatics
-	xelatex PhysAPC-12-Electrostatics
+	xelatex PhysAPC-14-Electrostatics
+	xelatex PhysAPC-14-Electrostatics
 	cd homework ; make
 clean:
 	rm -rf *~ *.*~ *.log *.nav *.aux *.out *.snm *.toc
 
 public:
-	mkdir -p $(DESTINATION)/Class12
-	cp PhysAPC*.pdf $(DESTINATION)/Class12
-	cp homework/*.pdf $(DESTINATION)/Class12
+	mkdir -p $(DESTINATION)/Class14
+	cp PhysAPC*.pdf $(DESTINATION)/Class14
+	cp homework/*.pdf $(DESTINATION)/Class14

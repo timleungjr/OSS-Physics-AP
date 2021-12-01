@@ -442,9 +442,8 @@
       \fill[pattern=north east lines] (-1,0) rectangle (1,0.2);
       \draw[thick](-1,0)--(1,0);
       \begin{scope}[rotate=10]
-        \draw[thick](0,0)--(0,-5);
-        \tikzstyle{balloon}=[ball color=red];    
-        \shade[balloon] (0,-5) circle(.2) node[below right]{$m$};
+        \draw[thick](0,0)--(0,-5) node[midway,right]{$\ell$};
+        \shade[ball color=red](0,-5) circle(.2) node[below right]{$m$};
         \begin{scope}[red,very thick,->]
           \draw[dotted](0,-5)--(-0.5,-5) node[left]{$mg\sin\phi$};
           \draw(0,-5)--(0,-3) node[left]{$\vec T$};
@@ -485,9 +484,8 @@
       \fill[pattern=north east lines] (-1,0) rectangle (1,0.2);
       \draw[thick](-1,0)--(1,0);
       \begin{scope}[rotate=10]
-        \draw[thick](0,0)--(0,-5);
-        \tikzstyle{balloon}=[ball color=red];    
-        \shade[balloon] (0,-5) circle (0.2) node[below right]{$m$};
+        \draw[thick](0,0)--(0,-5) node[midway,right]{$\ell$};
+        \shade[ball color=red](0,-5) circle(.2) node[below right]{$m$};
       \end{scope}
       \draw[dashed,thin](0,0)--(0,-5);
       \draw[->](0,-2) arc(270:280:2) node[midway,below]{$\phi$};
@@ -509,14 +507,6 @@
 
     So how small is ``small angle''? That depends on what tolerance (the
     number of significant figures) is needed in the answer.
-%    \begin{center}
-%      \begin{tabular}{c|c}
-%        \rowcolor{pink}
-%        \textbf{Tolerance} & \textbf{Maximum Angle} $\vec{\phi}$ \\ \hline
-%        \SI{10}{\percent} (2 sig.\ figs.) & \ang{5.7} \\
-%        \SI{1}{\percent} (3 sig.\ figs.) & \ang{.57}
-%      \end{tabular}
-%    \end{center}
     
     \column{.25\textwidth}
     \centering
@@ -524,9 +514,8 @@
       \fill[pattern=north east lines] (-1,0) rectangle (1,0.2);
       \draw[thick](-1,0)--(1,0);
       \begin{scope}[rotate=10]
-        \draw[thick](0,0)--(0,-5);
-        \tikzstyle{balloon}=[ball color=red];    
-        \shade[balloon] (0,-5) circle (.2) node[below right]{$m$};
+        \draw[thick](0,0)--(0,-5) node[midway,right]{$\ell$};
+        \shade[ball color=red](0,-5) circle(.2) node[below right]{$m$};
       \end{scope}
       \draw[dashed,thin](0,0)--(0,-5);
       \draw[->](0,-2) arc(270:280:2) node[midway,below]{$\phi$};
@@ -788,28 +777,28 @@
 
 
 
-%\begin{frame}{Energy in a Damped System}
-%  The non-conservative damping force dissipates energy from the oscillator at
-%  a rate of:
-%
-%  \eq{-.2in}{
-%    P=\frac{dE}{dt}=\vec F_D\cdot\vec v=-bv^2
-%  }
-%
-%  As velocity relate to energy by: $(v_{av})^2=E/m$, power
-%  dissipation is a first-order linear ODE:
-%
-%  \eq{-.25in}{
-%    \frac{dE}{dt}=-\frac{b}mE
-%  }
-%
-%  The solution to the ODE shows the total amount of energy decreases
-%  exponentially with time:
-%
-%  \eq{-.2in}{
-%    E(t)=E_0e^{-\frac{b}{m}t} %=E_0e^{-\frac{t}{\tau}}
-%    }
-%\end{frame}
+\begin{frame}{Energy in a Damped System}
+  The non-conservative damping force dissipates energy from the oscillator at
+  a rate of:
+
+  \eq{-.2in}{
+    P=\diff Et=\vec F_D\cdot\vec v=-bv^2
+  }
+
+  As velocity relate to energy by: $(v_{av})^2=E/m$, power
+  dissipation is a first-order linear ODE:
+
+  \eq{-.25in}{
+    \diff Et=-\frac bmE
+  }
+
+  The solution to the ODE shows the total amount of energy decreases
+  exponentially with time:
+
+  \eq{-.2in}{
+    E(t)=E_0e^{-\frac bmt} %=E_0e^{-\frac{t}{\tau}}
+    }
+\end{frame}
 
 
 

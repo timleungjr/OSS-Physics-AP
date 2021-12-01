@@ -23,7 +23,7 @@
 \newcommand{\genfreetitle}[3]{
   \begin{center}
     \textbf{
-      AP PHYSICS #1: #2 \\
+      AP PHYSICS C CLASS #1: #2 \\
       SECTION II\\
       #3 Questions}
   \end{center}

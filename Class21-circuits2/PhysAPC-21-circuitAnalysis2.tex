@@ -1,0 +1,393 @@
+\documentclass[12pt,aspectratio=169]{beamer}
+\input{../mybeamer}
+
+\title{Classs 21: Circuit Analysis}
+\subtitle{AP Physics C}
+\input{../me}
+\input{../mycommands}
+
+
+\begin{document}
+
+\begin{frame}
+  \maketitle
+\end{frame}
+
+
+
+\section{Capacitors in Circuit}
+
+\begin{frame}{Capacitors in Parallel}
+  \begin{center}
+    \begin{tikzpicture}[scale=1.2]
+      \draw[thick](0,1)to[short,o-](1,1) to[C=$C_1$] (1,0)to[short,-o](0,0);
+      \draw[thick](1,1)--(3,1) to[C=$C_2$]       (3,0)--(1,0);
+      \draw[thick](3,1)--(5,1) to[C=$C_3\ldots$] (5,0)--(3,0);
+    \end{tikzpicture}
+  \end{center}
+  From the voltage law, we know that the voltage across all the capacitors are
+  the same, i.e.\ $V_1=V_2=V_3-\cdots=V$. We can express the total charge
+  $Q_\text{tot}$ stored across all the capacitors in terms of capacitance and
+  this common voltage $V$: 
+
+  \eq{-.3in}{
+    Q_\text{tot}=Q_1+Q_2+Q_3+\cdots=C_1V+C_2V+C_3V+\cdots
+  }
+  
+  \vspace{-.15in}Factoring out $V$ from each term gives us the equivalent
+  capacitance:
+
+  \eq{-.15in}{
+    \boxed{C_p=\sum_i C_i}
+  }
+\end{frame}
+
+
+\begin{frame}{Capacitors in Series}
+  Likewise, we can do a similar analysis to capacitors connected in series.
+  \begin{center}
+    \begin{tikzpicture}[scale=1.2]
+      \draw[thick](0,0) to[C=$C_1$,o-] (1.25,0) to[C=$C_2$] (2.5,0)
+      to[C=$C_3$,-o] (3.75,0);
+    \end{tikzpicture}
+  \end{center}
+  The total voltage across these capacitors are the sum of the voltages across
+  each of them, i.e.\ $V_\text{tot}=V_1+V_2+V_3+\cdots$
+  
+  \vspace{.1in}The charge stored on all the capacitors must be the same! The
+  total voltage in terms of capacitance and charge is:
+
+  \eq{-.25in}{
+    V_\text{tot}=\frac Q{C_1}+\frac Q{C_2}+\frac Q{C_3}+\cdots
+  }
+\end{frame}
+
+
+
+
+\begin{frame}{Equivalent Capacitance in Series}
+  The inverse of the equivalent capacitance for $N$ capacitors connected in
+  series is the sum of the inverses of the individual capacitance.
+
+  \eq{-.2in}{
+    \boxed{ \frac1{C_s}=\sum_i\frac1{C_i} }
+  }
+  
+  Make sure we don't confuse ourselves with resistors.
+\end{frame}
+
+
+
+\begin{frame}{How Do We Know That Charges Are The Same?}
+  It's simple to show that the charges across all the capacitors are the same
+  \begin{center}
+    \begin{tikzpicture}[scale=1.5]
+      \draw[thick](0,0) to[C=$C_1$,o-] (1.25,0) to[C=$C_2$,-o] (2.5,0);
+      \draw[dashed](0.625,-.75) rectangle (1.875,1.2);
+    \end{tikzpicture}
+  \end{center}
+  The capacitor plates and the wire connecting them are really one piece of
+  conductor. There is nowhere for the charges to leave the conductor, therefore
+  when charges are accumulating on $C_1$, $C_2$ must also have the same charge
+  because of conservation of charges.
+\end{frame}
+
+
+
+\section{R-C Circuits}
+
+\begin{frame}{Circuits with Resistors and Capacitors}
+  An \textbf{RC circuit} is one that has both resistors and capacitors. The
+  simplest form is a resistor and capacitor connected in series, and then
+  connect to a voltage source.
+  \begin{center}
+    \begin{tikzpicture}[american voltages]
+      \draw[thick](0,0)
+      to[battery,l=$V$] (0,2)
+      to[R=$R$] (2,2)
+      to[C=$C$] (2,0)--(0,0);
+    \end{tikzpicture}
+  \end{center}
+  Because of the nature of capacitors, the current through the circuit will not
+  be steady as were the case with only resistors.
+\end{frame}
+
+
+
+\begin{frame}{Discharging a Capacitor}
+  \begin{columns}
+    \column{.3\textwidth}
+    \centering
+    \begin{tikzpicture}[scale=1.4]
+      \draw[thick](0,0) to[R=$R$] (0,2)--(2,2) to[C=$C$] (2,0)--(0,0);
+    \end{tikzpicture}
+    
+    \column{.7\textwidth}
+    The analysis starts with something simpler. There is no voltage source,
+    and the capacitor is already charged to $V_c=Q_\text{tot}/C$. What happens
+    when the current begin to flow?
+    
+    \vspace{.15in}As current starts to flow, the charge on the capacitor
+    decreases. Over time the current decreases, until the capacitor is fully
+    discharged, and current stops flowing.
+  \end{columns}
+
+  \vspace{.15in}Now we apply the voltage law for the circuit. In this case,
+  as the current flow in the circuit \emph{decreases} the total charge in the
+  capacitor, $I=-\diff Q/t$, while the voltage across a capacitor is
+  $V_c=Q/C$:
+
+  \eq{-.25in}{
+    V_c-IR=0\quad\rightarrow\quad
+    \frac QC+R\diff Qt=0}
+\end{frame}
+
+
+\begin{frame}{Discharging a Capacitor}
+  Separating the variable gives the first-order linear differential equation:
+
+  \eq{-.2in}{
+    \frac{\dl Q}Q = \frac{-\dl t}{RC}
+  }
+  
+  which we can now integrate and ``exponentiate'':
+
+  \eq{-.15in}{
+    \int\frac{\dl Q}Q = \int\frac{-\dl t}{RC}
+    \;\rightarrow\;
+    \ln Q=\frac{-t}{RC} + K
+    \;\rightarrow\;
+    Q=e^Ke^{-t/RC}
+  }
+
+  The constant of integration $K$ is the initial charge on the capacitor
+  $Q_\text{tot}$:
+
+  \eq{-.2in}{
+    e^K=Q_\text{tot}
+  }
+\end{frame}
+
+
+
+\begin{frame}{Discharging a Capacitor}
+  The expression of charge across the capacitor is time-dependent:
+
+  \eq{-.15in}{\boxed{Q(t)=Q_0e^{-t/\tau}}}
+
+  \vspace{-.1in}where $Q_0=Q_\text{tot}$ is the initial charge on the
+  capacitor, and $\tau=RC$ is called the \textbf{time constant}. Taking the
+  time derivative of $Q(t)$ gives us the current through the circuit:
+
+  \eq{-.15in}{
+    \boxed{I(t)=\diff Qt=I_0e^{-t/\tau}}
+  }
+
+  where the initially current at $t=0$ is given by
+  $I_0=Q_\text{tot}/\tau$.
+\end{frame}
+
+
+
+\begin{frame}{Charging a Capacitor}
+  \begin{columns}
+    \column{.3\textwidth}
+    \centering
+    \begin{tikzpicture}[american voltages,scale=1.25]
+      \draw[thick](0,0)
+      to[battery,l=$V$] (0,2)
+      to[R=$R$] (2,2)
+      to[C=$C$] (2,0)--(0,0);
+    \end{tikzpicture}
+    
+    \column{.7\textwidth}
+    In charging up the capacitor, we go back to our original circuit, and apply
+    the voltage law, then substitute the expression for current and voltage
+    across the capacitor:
+
+    \eq{-.2in}{
+      V-R\diff Qt-\frac QC=0
+    }
+  \end{columns}
+  \vspace{.2in}Again, separating variables, and integrating, we get:
+
+  \eq{-.2in}{
+    \int\frac{\dl Q}{CV-Q}=\int\frac{\dl t}{RC}
+    \quad\rightarrow\quad-\ln(CV-Q)=\frac t{RC}+K
+  }
+ \end{frame}
+
+
+
+\begin{frame}{Charging a Capacitor}
+  ``Exponentiating'' both sides, we have
+  
+  \eq{-.2in}{
+    CV-Q=e^Ke^{-t/RC}
+  }
+
+  To find the constant of integration $K$, we note that at $t=0$, the charge
+  across the capacitor is $0$, and we get
+
+  \eq{-.2in}{e^K=CV=Q_\text{tot}}
+
+  which is the charge stored in the capacitor at the end. Substitute this back
+  into the equation:
+
+  \eq{-.2in}{
+    \boxed{Q(t)=Q_\text{tot}(1-e^{-t/RC})}
+  }
+\end{frame}
+
+
+
+
+\begin{frame}{Capacitors}
+
+  \eq{-.15in}{\boxed{Q(t)=Q_\text{tot}(1-e^{-t/\tau})}}
+
+  \vspace{-.1in}Charging a capacitor has the same time constant $\tau=RC$ as
+  during discharge. We can also differentiate to find the current through the
+  circuit; it is identical to the equation for discharge:
+
+  \eq{-.2in}{
+    \boxed{I(t)=\diff Qt=I_0e^{-t/\tau}}
+  }
+
+  where the initial current is given by $I_o=Q_\text{tot}/\tau=V/R$. This
+  makes sense because $V_C(t=0)=0$, and all of the energy must be dissipated
+  through the resistor. Similarly at $I(t=\infty)=0$.
+\end{frame}
+
+
+
+\begin{frame}{Two Small Notes}
+  \begin{enumerate}
+  \item When a capacitor is uncharged, there is no voltage across the plate,
+    it acts like a short circuit.
+  \item When a capacitor is charged, there is a voltage across it, but no
+    current flows \emph{through} it. Effectively it acts like an open circuit.
+  \end{enumerate}
+\end{frame}
+
+
+
+\begin{frame}{A Slightly More Difficult Problem}
+  \begin{center}
+    \begin{tikzpicture}[scale=1.2,american voltages]
+      \draw[thick] (0,0) to[battery1,l=12<\volt>] (0,2)
+      to[R=4<\ohm>] (2,2)
+      to[short,-*](2.46,2.3);
+      \draw[thick](2.5,2) to[short,*-] (3,2) to[short] (4,2)
+      to[C=\SI{6}{\micro\farad}] (4,0)--(0,0);
+      \draw[thick] (3,0) to[R=\SI{8}{\ohm}] (3,2);
+    \end{tikzpicture}
+  \end{center}
+  \textbf{Example:} The capacitor in the circuit is initially uncharged. Find
+  the current through the battery
+  \begin{enumerate}
+  \item Immediately after the switch is closed
+  \item A long time after the switch is closed
+  \end{enumerate}
+\end{frame}
+
+
+\section{LR Circuits}
+
+\begin{frame}{Circuits with Inductors}
+  \begin{itemize}
+  \item Coils and solenoids in circuits are known as ``inductors'' and have
+    large self inductance $L$
+  \item Self inductance prevents currents rising and falling instantaneously
+  \item A basic circuit containing a resistor and an inductor is called an
+    \textbf{\emph{LR} circuit}:
+    \begin{center}
+      \begin{tikzpicture}[american voltages,scale=1.2]
+        \draw[thick](0,0) to[battery,l=$\mathcal E_0$] (0,2)
+        to[short,-*](0.5,2);
+        \draw[thick](0.51,2.3) to[short,*-*](1,2)--(1.5,2) to [R=$R$] (3,2)
+        to [L=$L$] (3,0)--(0,0);
+      \end{tikzpicture}
+    \end{center}
+  \end{itemize}
+\end{frame}
+
+
+
+\begin{frame}{Analyzing LR Circuits}
+  \begin{columns}
+    \column{.35\textwidth}
+    \begin{tikzpicture}[american voltages,scale=1.2]
+      \draw[thick](0,0) to[battery,l=$\mathcal E_0$] (0,2)
+      to[short,-*](0.5,2);
+      \draw[thick](0.51,2.3) to[short,*-*](1,2)--(1.5,2) to [R=$R$] (3,2)
+      to [L=$L$] (3,0)--(0,0);
+    \end{tikzpicture}
+
+    \column{.65\textwidth}
+    Applying Kirchhoff's voltage law:
+
+    \eq{-.2in}{\mathcal{E}_0-IR-L\diff It=0}
+
+    Following the same procedure as charging a capacitor, the time-dependent
+    current is found to be:
+
+    \eq{-.2in}{I(t)=\frac{\mathcal E_0}R\left(1-e^{-t/\tau}\right)}
+
+    Where the time constant $\tau$ is defined as:
+    
+    \eq{-.2in}{\tau=\frac LR}
+  \end{columns}
+\end{frame}
+
+
+
+\section{LC Circuit}
+
+\begin{frame}{LC Circuit}
+  The final type of circuit in AP Physics is the LC circuit. In its simplest
+  form, the circuit has an inductor and capacitor connected in series:
+  \begin{center}
+    \begin{tikzpicture}[american voltages,scale=1.2]
+      \draw[thick](0,0) to[L=$L$] (0,2)--(2,2) to[C=$C$] (2,0)--(0,0);
+    \end{tikzpicture}
+  \end{center}
+  We apply the Kirchhoff's voltage law:
+  
+  \eq{-.2in}{
+    -V_L-V_C=0
+    \quad\rightarrow\quad
+    L\diff It+\frac QC=0
+  }
+\end{frame}
+
+\begin{frame}{LC Circuits}
+  Since both terms are continuously differentiable, we can differentiate both
+  sides of the equation, which gives:
+
+  \eq{-.25in}{
+    L\diff[2]It+\frac1C\diff Qt=0
+  }
+
+  In fact, the above equation a second-order ordinary differential equation
+  with constant coefficients.
+
+  \eq{-.25in}{
+    \diff[2]It+\frac1{LC}I=0
+  }
+
+  The solution to such an equation is the simple harmonic motion.
+%
+%
+%\end{frame}
+%
+%
+%\begin{frame}{LC Circuit}
+%  The current inside of an LC circuit is given by:
+
+  \eq{-.23in}{
+    I(t)=I_0\sin(\omega t + \varphi)\quad\text{where}\quad
+    \omega=\frac1{\sqrt{LC}}
+  }
+\end{frame}
+\end{document}
