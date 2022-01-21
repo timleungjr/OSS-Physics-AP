@@ -1,0 +1,625 @@
+\documentclass{../../oss-classkick-exam}
+
+\begin{document}
+\genheader
+
+\gentitle{15}{GAUSS'S LAW}
+
+\genmultidirections
+\raggedcolumns
+
+\begin{multicols*}{2}
+  \begin{questions}
+
+    \question A non-conducting sphere does not have a uniform charge density,
+    but the density $\rho$ varies with the distance $r$ from the center of the
+    sphere according to the equation $\rho=\beta r$ where $\beta$ is a positive
+    constant. The electric field inside the sphere ($r<R$) at a distance $r$
+    from the center of the sphere is
+    \begin{choices}
+      \choice $\dfrac{\beta r^2}{12\epsilon_0}$
+      \choice $\dfrac{\beta r^3}{3\epsilon_0}$
+      \choice $\dfrac{\beta r}{2\epsilon_0}$
+      \choice $\dfrac{\beta r^2}{2\epsilon_0}$
+      \choice $\dfrac{\beta r^2}{4\epsilon_0}$
+    \end{choices}
+ 
+    \question The electric potential at the surface of the sphere from the last
+    question is
+    \begin{choices}
+      \choice $\dfrac{\beta R^3}{12\epsilon_0}$
+      \choice $\dfrac{\beta R}{2\epsilon_0}$
+      \choice $\dfrac{\beta R^3}{3\epsilon_0}$
+      \choice $\dfrac{\beta R^2}{2\epsilon_0}$
+      \choice $\dfrac{\beta R^2}{4\epsilon_0}$
+    \end{choices}
+   
+    \question According to Gauss's law, the net electric flux passing through a
+    closed surface is
+    \begin{choices}
+      \choice positive if the flux is entering the surface
+      \choice negative if the flux is exiting the surface
+      \choice positive if the net charge inside the surface is zero
+      \choice negative if the net charge inside the surface is zero
+      \choice zero if the net charge inside the surface is zero
+    \end{choices}
+    \vspace{.7in}
+    
+    \question According to Gauss's law, which of the following statements is
+    true?
+    \begin{choices}
+      \choice It is possible to have a nonzero electric field, but zero electric
+      flux.
+      \choice It is possible to have a nonzero electric flux, but zero electric
+      field.
+      \choice It is possible to have a nonzero electric flux through a closed
+      surface even if the enclosed charge in a surface is zero.
+      \choice If a surface is not closed (such as a sheet of paper), the flux
+      through it must be zero.
+      \choice It is possible for charges located outside a closed surface to
+      produce a net positive flux through the surface.
+    \end{choices}
+    \vspace{.7in}
+    
+    \question Gauss's law is most convenient to use when calculating an electric
+    field due to
+    \begin{choices}
+      \choice charges outside a closed surface
+      \choice charges inside a closed surface that has high symmetry
+      \choice charges inside a closed surface that has low symmetry
+      \choice a potential difference that is negative
+      \choice a potential difference that is positive
+    \end{choices}
+
+%    \uplevel{
+%      \textbf{Questions \ref{cap1}--\ref{cap2}}
+%      \begin{center}
+%        \begin{tikzpicture}[scale=.5]
+%          \draw circle(1);
+%          \draw circle(3);
+%          \fill circle(.1);
+%          \draw[->](0,0)--(1,0) node[midway,above]{a};
+%          \draw[->,rotate=-140](0,0)--(3,0) node[midway,left]{b};
+%          \begin{scope}[rotate=160]
+%            \draw[->](0,0)--(2,0) node[midway,above]{r};
+%            \fill(2,0) circle(.1);
+%          \end{scope}
+%          \node at (0,3.3) (a){$+Q$};
+%          \node at (0,1.3) (b){$-Q$};
+%        \end{tikzpicture}
+%      \end{center}
+%      The spherical capacitor shown above consists of a conducting shell of
+%      radius $a$ inside a larger conducting shell of radius $b$. A charge $-Q$
+%      is placed on the inner sphere and a charge $+Q$ is placed on the outer
+%      shell. The capacitance of the capacitor is $C_0$.
+%    }
+%
+%    \question The magnitude of the electric field $E$ at a distance $r$ between
+%    the spheres is
+%    \label{cap1}
+%    \begin{choices}
+%      \choice $\dfrac Q{4\pi\epsilon_0r^2}$
+%      \choice $\dfrac Q{4\pi\epsilon_0r}$
+%      \choice $\dfrac Q{4\pi\epsilon_0a^2}$
+%      \choice $\dfrac Q{4\pi\epsilon_0b^2}$
+%      \choice zero
+%    \end{choices}
+%
+%    \question The bottom half of the space between the spheres is filled with
+%    oil of dielectric constant $\kappa=3$, creating two capacitors connected to
+%    each other. Which of the following is true of the two capacitors?
+%    \begin{center}
+%      \begin{tikzpicture}[scale=.5]
+%        \draw[fill=gray!60](-1,0)--(-3,0) arc(180:360:3)--(1,0) arc(0:-180:1);
+%        \draw circle(1);
+%        \draw circle(3);
+%        \fill circle(.1);
+%        \draw[->,rotate=230](0,0)--(1,0) node[midway,above left]{a};
+%        \draw[->](0,0)--(3,0) node[pos=.7,above]{b};
+%        \node at (0,3.3) (a){$+Q$};
+%        \node at (0,1.3) (b){$-Q$};
+%      \end{tikzpicture}
+%    \end{center}
+%    \begin{choices}
+%      \choice They are connected in series.
+%      \choice They are connected in parallel.
+%      \choice The total capacitance has not changed.
+%      \choice The total capacitance of the spheres has decreased.
+%      \choice The total capacitance is now zero.
+%    \end{choices}
+%    \vspace{.7in}
+%    
+%    \question With the bottom half of the space between the spheres having been
+%    filled with oil of dielectric constant $\kappa=3$, the new capacitance of
+%    the spheres is
+%    \label{cap2}
+%    \begin{choices}
+%      \choice zero
+%      \choice $C_0$
+%      \choice $2C_0$
+%      \choice $3C_0$
+%      \choice $4C_0$
+%    \end{choices}
+%    \columnbreak
+
+    \uplevel{
+      \textbf{Question \ref{cube1}-\ref{cube2}}
+      \cpic{.3}{cube}
+    }
+    \question A cube has sides of length $a$. The cube rests so that one side
+    rests on the $x$-axis as shown. An electric field is established in the
+    $x$-direction according to the function $E_x=bx^2$ , where $b$ is a positive
+    constant. Which of the following statements is true?
+    \label{cube1}
+    \begin{choices}
+      \choice There is a net charge inside the cube.
+      \choice There is no net charge inside the cube.
+      \choice The flux passing through the cube is negative.
+      \choice The flux passing through the cube is zero.
+      \choice The flux diminishes while passing through the cube.
+    \end{choices}
+    \vspace{.7in}
+    
+    \question The charge inside the cube can be expressed by the equation
+    \label{cube2}
+    \begin{choices}
+      \choice $\epsilon_0ba$
+      \choice $\epsilon_0ba^2$
+      \choice $\epsilon_0ba^3$
+      \choice $\epsilon_0ba^4$
+      \choice $\epsilon_0b^22a^2$
+    \end{choices}
+    \columnbreak
+    
+    \uplevel{
+      \textbf{Questions \ref{sphere1}--\ref{sphere2}}: A nonconducting spherical
+      charge distribution has a nonuniform positive charge density $\rho$. The
+      center of the sphere is point $O$, the radius of the sphere is $a$. The
+      sphere is centered on the $x$-axis. A point inside the sphere lies on
+      the $x$-axis at a distance $x_1$ from the center of the sphere. Another
+      point, $x_2$, is outside the sphere on the $x$-axis.
+      \begin{center}
+        \begin{tikzpicture}
+          \draw[thick] circle(1);
+          \fill circle(.08);
+          \draw[very thick,->](0,0)--(0,1) node[midway,left]{$a$};
+          \draw[dashed,thick] (0,0)--(6,0) node[right]{\small$\infty$};
+          \fill(.5,0) circle(.05) node[below]{\footnotesize$x_1$};
+          \fill(4,0)  circle(.05) node[below]{\footnotesize$x_2$};
+        \end{tikzpicture}
+      \end{center}
+    }
+
+    \question The electric field at point $x_2$ can be determined by
+    \begin{choices}
+      \choice using Gauss's law to determine the electric field from $O$ to $a$,
+      then using Gauss's law to determine the electric field from $a$ to $x_2$,
+      then finding the difference between the two electric fields.
+      \choice using Gauss's law to determine the electric field from $O$ to $a$,
+      then using Gauss's law to determine the electric field from $a$ to $x_2$,
+      then finding the sum of the two electric fields.
+      \choice integrating the electric potential outside the sphere from
+      infinity to $a$, then integrating the electric potential inside the
+      sphere from $a$ to $x_1$, then finding the difference between the two
+      potential integrals.
+      \choice integrating the electric potential outside the sphere from
+      infinity to $a$, then integrating the electric potential inside the
+      sphere from $a$ to $x_1$, then finding the sum of the two potential
+      integrals.
+      \choice determining the derivative of the potential function inside and
+      outside the sphere, then finding the difference between the two
+      derivatives.
+    \end{choices}
+    \label{sphere1}
+    
+    \question The electric potential at point $x_1$ can be determined by
+    \begin{choices}
+      \choice determining the derivative of the electric field function inside
+      and outside the sphere, then finding the difference between the two
+      derivatives.
+      \choice determining the derivative of the electric field function inside
+      and outside the sphere, then finding the sum of the two derivatives.
+      \choice integrating the derivative of the product of the electric field
+      and potential functions, then finding their sum.
+      \choice integrating the electric field outside the sphere from infinity
+      to $a$, then integrating the electric field inside the sphere from $a$ to
+      $x_1$, then finding the sum of the two potentials.
+      \choice integrating the electric field outside the sphere from infinity
+      to $a$, then integrating the electric field inside the sphere from $a$ to
+      $x_1$, then finding the difference between the two potentials.
+    \end{choices}
+    \label{sphere2}
+    \vspace{.7in}
+    \columnbreak
+    
+    \uplevel{
+      \textbf{Questions \ref{solid1}--\ref{solid2}}: A solid conducting sphere
+      of radius $a$ is placed inside a conducting spherical shell of radius
+      $3a$, as shown. A charge $+2Q$ is placed on the inner sphere, and a
+      charge $-Q$ is placed on the outer sphere.
+    }
+
+    \question Which of the following graphs best represents the electric field
+    $\vec E$ as a function of the distance $r$ from the center of the spheres?
+
+    \begin{oneparchoices}
+      \choice
+      \begin{tikzpicture}[scale=1.5]
+        \begin{scope}[thick]
+          \draw[->](0,0)--(2,0);
+          \draw[->](0,0)--(0,1.5) node[right]{\small$E$};
+          \draw(.5,.05)--(.5,-.05) node[below]{\small$a$};
+          \draw(1.5,.05)--(1.5,-.05) node[below]{\small$3a$};
+        \end{scope}
+        \draw[ultra thick](0,0) to[out=50,in=260](.5,1.2)--(1.8,0);
+      \end{tikzpicture}
+      \choice
+      \begin{tikzpicture}[scale=1.5]
+        \begin{scope}[thick]
+          \draw[->](0,0)--(2,0);
+          \draw[->](0,0)--(0,1.5) node[right]{\small$E$};
+          \draw(.5,.05)--(.5,-.05) node[below]{\small$a$};
+          \draw(1.5,.05)--(1.5,-.05) node[below]{\small$3a$};
+        \end{scope}
+        \draw[ultra thick](0,1.2)--(.5,1.2) to[out=-55,in=180](1.8,.3);
+      \end{tikzpicture}
+      \choice
+      \begin{tikzpicture}[scale=1.5]
+        \begin{scope}[thick]
+          \draw[->](0,0)--(2,0);
+          \draw[->](0,0)--(0,1.5) node[right]{\small$E$};
+          \draw(.5,.05)--(.5,-.05) node[below]{\small$a$};
+          \draw(1.5,.05)--(1.5,-.05) node[below]{\small$3a$};
+        \end{scope}
+        \draw[ultra thick](0,0)--(.5,1.2) to[out=-55,in=180](1.8,.3);
+      \end{tikzpicture}
+      \choice
+      \begin{tikzpicture}[scale=1.5]
+        \draw[thick,->](0,0)--(2,0);
+        \draw[thick,->](0,0)--(0,1.5) node[right]{\small$E$};
+        \draw[thick](.5,.05)--(.5,-.05) node[below]{\small$a$};
+        \draw[thick](1.5,.05)--(1.5,-.05) node[below]{\small$3a$};
+        \draw[ultra thick](0,0)--(.5,0);
+        \draw[ultra thick](0.5,1.2) to[out=-55,in=180](1.5,.7);
+        \draw[ultra thick](1.5,.5) to[out=-55,in=180](1.8,.3);
+        \fill(.5,1.2) circle(.05);
+        \fill(1.5,.5) circle(.05);
+      \end{tikzpicture}
+      \choice
+      \begin{tikzpicture}[scale=1.5]
+        \draw[thick,->](0,0)--(2,0);
+        \draw[thick,->](0,0)--(0,1.5) node[right]{\small$E$};
+        \draw[thick](.5,.05)--(.5,-.05) node[below]{\small$a$};
+        \draw[thick](1.5,.05)--(1.5,-.05) node[below]{\small$3a$};
+        \draw[ultra thick](0,0)--(.5,0);
+        \draw[ultra thick](0.5,1.2) to[out=-55,in=180](1.5,.7);
+        \draw[ultra thick](1.5,0)--(1.8,0);
+        \fill(.5,1.2) circle(.05);
+        \fill(1.5,.7) circle(.05);
+      \end{tikzpicture}
+    \end{oneparchoices}
+    \label{solid1}
+    \vspace{.7in}
+    
+    \question Which of the following graphs best represents the electric
+    potential $V$ as a function of the distance $r$ from the center of the
+    spheres?
+
+    \begin{oneparchoices}
+      \choice
+      \begin{tikzpicture}[scale=1.5]
+        \begin{scope}[thick]
+          \draw[->](0,0)--(2,0);
+          \draw[->](0,0)--(0,1.5) node[right]{\small$V$};
+          \draw(.5,.05)--(.5,-.05) node[below]{\small$a$};
+          \draw(1.5,.05)--(1.5,-.05) node[below]{\small$3a$};
+        \end{scope}
+        \draw[ultra thick](0,1.2)--(.5,1.2) to[out=-55,in=180](1.5,.7);
+        \draw[ultra thick](1.5,.5) to[out=-55,in=180](2,.3);
+      \end{tikzpicture}
+      \choice
+      \begin{tikzpicture}[scale=1.5]
+        \begin{scope}[thick]
+          \draw[->](0,0)--(2,0);
+          \draw[->](0,0)--(0,1.5) node[right]{\small$V$};
+          \draw(.5,.05)--(.5,-.05) node[below]{\small$a$};
+          \draw(1.5,.05)--(1.5,-.05) node[below]{\small$3a$};
+        \end{scope}
+        \draw[ultra thick](0,0)--(.5,1.2)to[out=-60,in=170](1.8,.2);
+      \end{tikzpicture}
+      \choice
+      \begin{tikzpicture}[scale=1.5]
+        \begin{scope}[thick]
+          \draw[->](0,0)--(2,0);
+          \draw[->](0,0)--(0,1.5) node[right]{\small$V$};
+          \draw(.5,.05)--(.5,-.05) node[below]{\small$a$};
+          \draw(1.5,.05)--(1.5,-.05) node[below]{\small$3a$};
+        \end{scope}
+        \draw[ultra thick](0,1.2)--(.5,1.2) to[out=-55,in=180](1.5,.4);
+        \draw[ultra thick](1.5,0)--(1.9,0);
+      \end{tikzpicture}
+      \choice
+      \begin{tikzpicture}[scale=1.5]
+        \begin{scope}[thick]
+          \draw[->](0,0)--(2,0);
+          \draw[->](0,0)--(0,1.5) node[right]{\small$V$};
+          \draw(.5,.05)--(.5,-.05) node[below]{\small$a$};
+          \draw(1.5,.05)--(1.5,-.05) node[below]{\small$3a$};
+        \end{scope}
+        \draw[ultra thick](0,1.2)--(.5,1.2)
+        to[out=-55,in=170](1.5,.7) to[out=-55,in=170](2,.3);
+      \end{tikzpicture}
+      \choice
+      \begin{tikzpicture}[scale=1.5]
+        \draw[thick,->](0,0)--(2,0);
+        \draw[thick,->](0,0)--(0,1.5) node[right]{\small$V$};
+        \draw[thick](.5,.05)--(.5,-.05) node[below]{\small$a$};
+        \draw[thick](1.5,.05)--(1.5,-.05) node[below]{\small$3a$};
+        \draw[ultra thick](0,0)--(.5,0);
+        \draw[ultra thick](0.5,1.2) to[out=-55,in=180](1.5,.7);
+        \draw[ultra thick](1.5,0)--(1.8,0);
+        \fill(.5,1.2) circle(.05);
+        \fill(1.5,.7) circle(.05);
+      \end{tikzpicture}   
+    \end{oneparchoices}
+    \label{solid2}
+  \end{questions}  
+\end{multicols*}
+\newpage
+
+\genfreetitle{15}{GAUSS'S LAW}{3}
+
+\genfreedirections
+
+% TAKEN FROM 2007 AP PHYSICS C EXAM FREE-RESPONSE QUESTION E&M 2
+\cpic{.3}{charges}
+\begin{questions}
+  \question In the figure above, a nonconducting solid sphere of radius a with
+  charge $+Q$ uniformly distributed throughout its volume is concentric with a
+  nonconducting spherical shell of inner radius $2a$ and outer radius $3a$ that
+  has a charge $-Q$ uniformly distributed throughout its volume. Express all
+  answers in terms of the given quantities and fundamental constants.
+
+  \begin{parts}
+    \part Using Gauss's law, derive expressions for the magnitude of the
+    electric field as a function of radius $r$ in the following regions.
+    \begin{subparts}
+      \subpart Within the solid sphere ($r<a$)
+      \subpart Between the solid sphere and the spherical shell ($a<r<2a$)
+      \subpart Within the spherical shell ($2a<r<3a$)
+      \subpart Outside the spherical shell ($r>3a$)
+    \end{subparts}
+    
+    \part What is the electric potential at the outer surface of the spherical
+    shell ($r=3a$)? Explain your reasoning.
+    
+    \part Derive an expression for the electric potential difference $V_X-V_Y$
+    between points $X$ and $Y$ shown in the figure.
+  \end{parts}
+  \newpage
+
+  % TAKEN FROM 2010 AP PHYSICS C EXAM FREE-RESPONSE QUESTION E&M 1
+  \uplevel{
+    \cpic{.28}{circle}
+  }
+  \question A charge $+Q$ is uniformly distributed over a quarter circle of
+  radius $R$, as shown above. Points $A$, $B$, and $C$ are located as shown,
+  with $A$ and $C$ located symmetrically relative to the $x$-axis. Express all
+  algebraic answers in terms of the given quantities and fundamental constants.
+  \begin{parts}
+    \part Rank the magnitude of the electric potential at points $A$, $B$, and
+    $C$ from greatest to least, with number 1 being greatest. If two points have
+    the same potential, give them the same ranking. Justify your rankings.
+
+    \vspace{.1in}
+    \underline{\hspace{.3in} } $V_A$ \hspace{.3in}
+    \underline{\hspace{.3in} } $V_B$ \hspace{.3in}
+    \underline{\hspace{.3in} } $V_C$
+    
+    \uplevel{
+      Point $P$ is at the origin, as shown below, and is the center of curvature
+      of the charge distribution.
+      \cpic{.28}{circle2}
+    }
+
+    \part Determine an expression for the electric potential at point $P$ due to
+    the charge $Q$.
+
+    \part A positive point charge $q$ with mass $m$ is placed at point $P$ and
+    released from rest. Derive an expression for the speed of the point charge
+    when it is very far from the origin.    
+
+    \part On the dot representing point $P$ below, indicate the direction of the
+    electric field at point P due to the charge $Q$.
+    \begin{center}
+      \begin{tikzpicture}[scale=1.2]
+        \draw[dashed,->](-1,0)--(1,0) node[right]{$x$};
+        \draw[dashed,->](0,-1)--(0,1) node[above]{$y$};
+        \fill circle(.1);
+      \end{tikzpicture}
+    \end{center}
+    
+    \part Derive an expression for the magnitude of the electric field at point
+    $P$.
+  \end{parts}
+  \newpage
+  
+  % TAKEN FROM 2003 AP PHYSICS C EXAM FREE-RESPONSE QUESTION E&M 1. THE
+  % TIKZ FIGURE BELOW IS A FAIRLY GOOD REPRODUCTION OF THE ORIGINAL AP EXAM
+  % DIAGRAM.
+  \uplevel{
+    \centering
+    \begin{tikzpicture}[scale=.85]
+      \filldraw[dashed,thick,
+        even odd rule,
+        inner color=black!70,
+        outer color=gray!20] circle (2);
+      \draw[very thick,->,rotate=45](0,0)--(2,0) node[midway,below]{$R$};
+      \fill(6,0) circle(.05) node[below]{$P$};
+    \end{tikzpicture}
+  }
+  \question A spherical cloud of charge of radius $R$ contains a total charge
+  $+Q$ with a nonuniform volume charge density that varies according to the
+  equation
+  \begin{align*}
+    \rho(r)&= \rho_0\left( 1 -\dfrac rR \right)\text{ for }r\leq R\text{ and}\\
+    \rho(r)&= 0\text{ for }r>R
+  \end{align*}
+  where $r$ is the distance from the center of the cloud. Express all algebraic
+  answers in terms of $Q$, $R$, and fundamental constants.
+  \begin{parts}
+    \part Determine the following as a function of $r$ for $r>R$.
+    \begin{subparts}
+      \subpart The magnitude $E$ of the electric field
+      \subpart The electric potential $V$
+    \end{subparts}
+    \part A proton is placed at point $P$ shown above and released. Describe its
+    motion for a long time after its release.
+    
+    \part An electron of charge magnitude $e$ is now placed at point $P$, which
+    is a distance $r$ from the center of the sphere, and released. Determine
+    the kinetic energy of the electron as a function of $r$ as it strikes the
+    cloud.
+    
+    \part Derive an expression for $\rho_0$.
+    
+    \part Determine the magnitude $E$ of the electric field as a function of $r$
+    for $r\leq R$.
+  \end{parts}
+  \newpage
+
+%  % TAKEN FROM THE 2004 AP PHYSICS C FREE-RESPONSE QUESTION E&M 1. NO CHANGES TO
+%  % THE QUESTION HAVE BEEN MADE
+%  \uplevel{
+%    \cpic{.65}{nonconcentric}
+%  }
+%  \question The figure above left shows a hollow, infinite, cylindrical,
+%  uncharged conducting shell of inner radius $r_1$ and outer radius $r_2$. An
+%  infinite line charge of linear charge density $+\lambda$ is parallel to its
+%  axis but off center. An enlarged cross section of the cylindrical shell is
+%  shown above right.
+%  \begin{parts}
+%    \part On the cross section above right,
+%    \begin{subparts}
+%      \subpart sketch the electric field lines, if any, in each of regions I,
+%      II, and III and
+%      \subpart use $+$ and $-$ signs to indicate any charge induced on the
+%      conductor.
+%      \end{subparts}
+%    \part In the spaces below, rank the electric potentials at points $a$, $b$,
+%    $c$, $d$, and $e$ from highest to lowest (1 = highest potential). If two
+%    points are at the same potential, give them the same number.
+%
+%    \vspace{.1in}
+%    \underline{\hspace{.2in}} $V_a$\hspace{.3in}
+%    \underline{\hspace{.2in}} $V_b$\hspace{.3in}
+%    \underline{\hspace{.2in}} $V_c$\hspace{.3in}
+%    \underline{\hspace{.2in}} $V_d$\hspace{.3in}
+%    \underline{\hspace{.2in}} $V_e$
+%    \uplevel{
+%      \cpic{.65}{concentric}
+%    }
+%
+%    \part The shell is replaced by another cylindrical shell that has the same
+%    dimensions but is nonconducting and carries a uniform volume charge density
+%    $+\rho$. The infinite line charge, still of charge density $+\lambda$, is
+%    located at the center of the shell as shown above. Using Gauss's law,
+%    calculate the magnitude of the electric field as a function of the distance
+%    $r$ from the center of the shell for each of the following regions. Express
+%    your answers in terms of the given quantities and fundamental constants.
+%    \begin{subparts}
+%      \subpart $r < r_1$
+%      \subpart $r_1\leq r\leq r_2$
+%      \subpart $r > r_2$
+%    \end{subparts}
+%  \end{parts}
+  
+%\item Two positive charges $+q$ are on the $y$ axis at $y=+a$ and $y=-a$.
+%  \begin{enumerate}
+%  \item Show that the electric field on the $x$ axis is along the $x$ axis with
+%    $E_x=2kqx(x^2+a^2)^{-3/2}$.
+%  \item Show that near the origin, when $x\ll a$, $E_x\approx 2kqx/a^3$.
+%  \item Show that for $x\gg a$, $E_x\approx 2kq/x^2$.
+%  \item Explain why you should expect the result in (c) even before calculating
+%    it.
+%  \end{enumerate}
+%  A bead of mass $m$ with a negative charge $-q$ slides along a thread that
+%  runs along the $x$ axis.
+%  \begin{enumerate}[resume]
+%  \item Show that for small displacements $x\ll a$, the bead experiences a
+%    restoring force that is proportional to $x$ and therefore undergoes
+%    simple harmonic motion.
+%  \item Find the period of the motion.
+%  \end{enumerate}
+%  %\vspace{\stretch{4}}
+%  \newpage
+  
+%\item Using Gauss's law, find
+%  \begin{enumerate}
+%  \item the electric field strength inside and outside of a uniformly charged
+%    hollow sphere of radius $R$ and surface charge density $\sigma$ (charge
+%    per unit area).
+%  \item the electric field inside and outside an infinitely long cyclindrical
+%    shell of charge of radius $R$ with charge discibution $\sigma$ (charge
+%    per unit area).
+%  \item the electric field strength inside and outside a infinitely long solid
+%    cylinder of radius $R$ carrying a linear uniform charge density $\rho$
+%    (charge per unit volume).
+%  \end{enumerate}
+%  Hint: In all cases, think about where to put the Gaussian surface. Take
+%  advantage of symmetry.
+%  %\vspace{\stretch{1}}
+%  \newpage
+
+%\item For the circuit shown below, find
+%  \begin{enumerate}[noitemsep]
+%  \item The total equivalent capacitance between the terminals
+%  \item The charge stored on each capacitor
+%  \item the total stored charge
+%  \end{enumerate}
+%  \begin{tikzpicture}[scale=1.2,american voltages]
+%    \draw[thick] (0,2) to[C=0.30<\micro\farad>,*-] (3,2)
+%    to[C=1.0<\micro\farad>] (3,0) to[short,-*](0,0);
+%    \draw[thick] (3,2)--(5,2) to[C=0.25<\micro\farad>,] (5,0)--(3,0);
+%  \end{tikzpicture}
+%  \vspace{\stretch{1}}
+  
+%\item A parallel-plate capacitor has a capacitance $C_0$ and plate separation
+%  of $d$. To dielectric slabs of constants $\kappa_1$ and $\kappa_2$, each of
+%  thickness $d/2$ and having the same area as the plates, are inserted between
+%  the plates as shown in the figure below. When the free charge on the plates
+%  are $Q$,
+%  \begin{enumerate}
+%  \item find the electric field in each of the dielectric
+%  \item find the potential difference between the plates
+%  \item show that the new capacitance is given by:
+%    $\displaystyle C=\frac{\kappa_1\kappa_2}{\kappa_1+\kappa_2}C_0$
+%  \end{enumerate}
+%  \pic{.2}{stacked}
+%  %\vspace{\stretch{1}}
+
+%\item Several point charges produce the equipotential lines shown.
+%  \begin{enumerate}[noitemsep]
+%  \item At which point on the diagram is the magnitude of the electric field
+%    greatest? Explain.
+%  \item Points C and D are approximately \SI{.02}{\metre} apart. Point F is
+%    halfway between points C and D. What is the electric field at point F?
+%  \item A \SI{5.}{\micro\coulomb} point charge is moved from point C to point
+%    E, then to point D by an external force. Determine the work done by the
+%    external force.
+%  \end{enumerate}
+%  \pic{.45}{equipotentials}
+%  \vspace{\stretch{1}}
+
+%\item A potential is given by
+%  \begin{displaymath}
+%    V(x,y,z)=\frac{kQ}{\sqrt{(x-a)^2+y^2+z^2}}
+%  \end{displaymath}
+%  \begin{enumerate}[noitemsep]
+%  \item Find the components $E_x$, $E_y$ and $E_z$ of the electric field by
+%    differentiating this potential function.
+%  \item What simple charge distribution might be responsible for this potential?
+%  \end{enumerate}
+%  \vspace{\stretch{1}}
+\end{questions}
+\end{document}
