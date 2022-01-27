@@ -20,7 +20,7 @@ all:
 	cd Class14-electrostatics ; make
 	cd Class15-electrostatics2 ; make
 	cd Class16-capacitors	; make
-#	cd Class15-magnetism1	; make
+	cd Class17-magnetism1	; make
 #	cd Class16-magnetism2	; make
 #	cd 14-ElectricCircuits	; make
 #	cd Class19-hallEffect	; make
@@ -44,7 +44,7 @@ clean:
 	cd Class14-electrostatics ; make clean
 	cd Class15-electrostatics2 ; make clean
 	cd Class16-capacitors	; make clean
-#	cd Class15-magnetism1	; make clean
+	cd Class17-magnetism1	; make clean
 #	cd Class16-magnetism2	; make clean
 ##	cd 10-MockTest1		; make clean
 ##	cd 14-ElectricCircuits	; make clean
@@ -70,7 +70,7 @@ public:
 	cd Class14-electrostatics ; make public
 	cd Class15-electrostatics2 ; make public
 	cd Class16-capacitors	; make public
-#	cd Class15-magnetism1	; make public
+	cd Class17-magnetism1	; make public
 #	cd Class16-magnetism2	; make public
 ##	cd 10-MockTest1		; make public
 ##	cd 14-ElectricCircuits	; make public
