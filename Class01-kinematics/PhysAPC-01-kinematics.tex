@@ -1,21 +1,11 @@
-\documentclass[12pt,compress,aspectratio=169]{beamer}
+\documentclass[12pt,compress,aspectratio=169,dvipsnames]{beamer}
 \input{../mybeamer}
 \usepackage{mathtools}
   
 \title{Class 1: Kinematics}
 \subtitle{Advanced Placement Physics C}
 \input{../me}
-<<<<<<< HEAD:Calculus/01-Kinematics/PhysAPC-01-kinematics.tex
-
-\newcommand{\iii}{\ensuremath\hat{\bm x}}
-\newcommand{\jjj}{\ensuremath\hat{\bm y}}
-\newcommand{\kkk}{\ensuremath\hat{\bm z}}
-\newcommand{\eq}[2]{\vspace{#1}{\Large\begin{displaymath}#2\end{displaymath}}}
-
-
-=======
 \input{../mycommands}
->>>>>>> ca6e305ad4df399e2a9ef8a235f5fe570640d2e8:Class01-kinematics/PhysAPC-01-kinematics.tex
 
 \begin{document}
 
@@ -121,7 +111,7 @@
 \begin{frame}{Position}
   \begin{columns}
     \column{.7\textwidth}
-    \textbf{Position} ($\bm r(t)$) is the location of an object in a coordinate
+    \textbf{Position} ($\vec r(t)$) is the location of an object in a coordinate
     system, as a function if time. It is measured in \textbf{meters}
     (\si{\metre}).
 
@@ -131,7 +121,7 @@
     %\emph{spherical}}. the coordinate system is called the ``reference point''.
   
     \eq{-.2in}{
-      \boxed{\bm r(t)=x(t)\iii + y(t)\jjj + z(t)\kkk}
+      \boxed{\vec r(t)=x(t)\iii + y(t)\jjj + z(t)\kkk}
     }
     \begin{itemize}
     \item\textbf{IJK notation}: $\iii$, $\jjj$ and $\kkk$ are
@@ -148,7 +138,7 @@
         \draw(0,0)--(5,0)   node[right]{$x$};
         \draw(0,0)--(0,5)   node[above]{$y$};
         \draw(0,0)--(-2,-2) node[below]{$z$};
-        \draw[red,very thick] (0,0)--(4,3) node[midway,above]{\small$\bm r$}
+        \draw[red,very thick] (0,0)--(4,3) node[midway,above]{\small$\vec r$}
         node[above]{\small$(x,y,z)$};
       \end{scope}
     \end{tikzpicture}
@@ -158,7 +148,7 @@
 
 
 \begin{frame}{Position}
-  \textbf{Position} ($\bm r(t)$) describes the location of an object in a
+  \textbf{Position} ($\vec r(t)$) describes the location of an object in a
   predefined coordinate system, as a function if time. %The origin of
   %\footnote{The coordinate system is usually
   %\emph{Cartesian}, but it can also be \emph{polar}, \emph{cylindrical} or
@@ -166,7 +156,7 @@
   The SI unit for position is \textbf{meter}, \si{\metre}.
   
   \eq{-.2in}{
-    \boxed{\bm r(t)=x(t)\iii + y(t)\jjj + z(t)\kkk}
+    \boxed{\vec r(t)=x(t)\iii + y(t)\jjj + z(t)\kkk}
   }
 
   Vectors in 2D/3D Cartesian space are generally using the
@@ -183,19 +173,19 @@
 
 
 \begin{frame}{Displacement}
-  \textbf{Displacement} $\Delta\bm r(t)$ is the change in position from the
-  initial position $\bm r_0$ within the same coordinate system:
+  \textbf{Displacement} $\Delta\vec r(t)$ is the change in position from the
+  initial position $\vec r_0$ within the same coordinate system:
 
   \eq{-.25in}{
     \boxed{
-      \Delta\bm r(t)=\bm r(t)-\bm r_0
+      \Delta\vec r(t)=\vec r(t)-\vec r_0
       =(x-x_0)\iii + (y-y_0)\jjj + (z-z_0)\kkk
     }
   }
   %\begin{itemize}
   %\item IJK notation makes vector addition and subtraction less prone to errors
-  %\item Since the reference point $\bm{x}_\text{ref}=\bm{0}$, the position
-  %  vector $\bm{x}$ is also its displacement from the reference point
+  %\item Since the reference point $\vec{x}_\text{ref}=\vec{0}$, the position
+  %  vector $\vec{x}$ is also its displacement from the reference point
   %\end{itemize}
 \end{frame}
 
@@ -207,21 +197,21 @@
     \column{.7\textwidth}
     \begin{itemize}
     \item The \emph{length of the path} taken by an object when it travels from
-      $\bm r_0$ to $\bm r(t)$
+      $\vec r_0$ to $\vec r(t)$
     \item A scalar quantity
     \item Always positive, i.e.\ $s\geq 0$
     \item Although the magnitude of the displacement vector is also a scalar,
       it is not necessarily the same as distance
-    \item $s\geq |\Delta\bm r|$
+    \item $s\geq |\Delta\vec r|$
     \end{itemize}
     
     \column{.3\textwidth}
     \begin{tikzpicture}[scale=.5]
       \draw[->](0,0)--(6,0) node[right]{$x$};
       \draw[->](0,0)--(0,8) node[above]{$y$};
-      \draw[->,red,very thick] (0,0)--(4,1) node[midway,above]{$\bm r_0$};
-      \draw[->,red,very thick] (0,0)--(2,6) node[midway,left]{$\bm r$};
-      \draw[->,blue,very thick](4,1)--(2,6) node[midway,right]{$\Delta\bm r$};
+      \draw[->,red,very thick] (0,0)--(4,1) node[midway,above]{$\vec r_0$};
+      \draw[->,red,very thick] (0,0)--(2,6) node[midway,left]{$\vec r$};
+      \draw[->,blue,very thick](4,1)--(2,6) node[midway,right]{$\Delta\vec r$};
       \draw[thick,dash dot,<->] (4,1)..controls (6,5) and (5,7)..(2,6)
       node[midway,right]{$s$};
     \end{tikzpicture}
@@ -231,25 +221,25 @@
 
 
 \begin{frame}{Instantaneous \& Average Velocity}
-  \textbf{Instantaneous velocity} $\bm v(t)$ is the time rate of change in
-  position. It is related to positiion $\bm r(t)$ by:
+  \textbf{Instantaneous velocity} $\vec v(t)$ is the time rate of change in
+  position. It is related to positiion $\vec r(t)$ by:
 
   \eq{-.13in}{
     \boxed{
-      \bm v(t)= \diff{\bm r}t
+      \vec v(t)= \diff{\vec r}t
       \quad\quad
-      \bm r(t)=\int\bm v(t)\dl t + \bm r_0
+      \vec r(t)=\int\vec v(t)\dl t + \vec r_0
     }
   }
 
-  The constant of integration $\bm x_0$ evaluated at $t=0$. Likewise, the
-  \textbf{average velocity} $\overline{\bm v}(t)$ is the change in
-  position $\Delta\bm r(t)$ over a finite time interval $t$:
+  The constant of integration $\vec x_0$ evaluated at $t=0$. Likewise, the
+  \textbf{average velocity} $\overline{\vec v}(t)$ is the change in
+  position $\Delta\vec r(t)$ over a finite time interval $t$:
 
   \eq{-.1in}{
     \boxed{
-      \overline{\bm v}(t) = \frac{\Delta\bm r}t=
-      \frac{\bm r(t)-\bm r_0}{t} = \frac{\int_0^t\bm v\dl t}{t}
+      \vec v_\text{ave}(t) = \frac{\Delta\vec r}t=
+      \frac{\vec r(t)-\vec r_0}{t} = \frac{\int_0^t\vec v\dl t}{t}
     }
   }
 
@@ -259,38 +249,10 @@
 
 
 
-%
-%
-%
-%\begin{frame}{Average Velocity}
-%  \textbf{Average velocity} $\overline{\bm{v}}$ of an object is the
-%  \emph{finite} change in position $\Delta\bm{x}$ over a \emph{finite} time
-%  interval $\Delta t$:
-%
-%  \eq{-.3in}{
-
-%  }
-%  
-%  Like instantaneous velocity, we can find the $x$, $y$ and $z$ components of
-%  average velocity by separating components in each direction:
-%
-%  \eq{-.15in}{
-%    \overline{\bm{v}}=
-%    \frac{\Delta x}{\Delta t}\iii+
-%    \frac{\Delta y}{\Delta t}\jjj+
-%    \frac{\Delta z}{\Delta t}\kkk
-%  }
-%%  The notation $\overline{v}$ means that $v$ is averaged over \emph{time},
-%%  while the notation $\langle v\rangle$ is used if $v$ is the average of
-%%  many particles (called an \emph{ensemble average})
-%\end{frame}
-
-
-
 \begin{frame}{Instantaneous \& Average Speed}
   \textbf{Instantaneous speed} $v$ is the time rate of change of
   \emph{distance}. It is the \emph{magnitude} of instantaneous velocity
-  (i.e.\ $v=|\bm v|$)
+  (i.e.\ $v=|\vec v|$)
 
   \eq{-.2in}{
     \boxed{
@@ -304,7 +266,7 @@
   
   \eq{-.15in}{
     \boxed{
-      \overline v(t)=\frac{s(t)}t=\frac{\int_0^t v\dl t}t
+      v_\text{avg}(t)=\frac{s(t)}t=\frac{\int_0^t v\dl t}t
     }
   }
 
@@ -327,30 +289,28 @@
 
 \begin{frame}{Instantaneous \& Average Acceleration}
   In the same way that velocity is the time rate of change in position,
-  \textbf{instantaneous acceleration} $\bm a(t)$ is related to
+  \textbf{instantaneous acceleration} $\vec a(t)$ is related to
   instantaneous velocity by:
-  %with a unit of \textbf{meters per second squared}
-  %(\si{\metre\per\second\squared}):
 
   \eq{-.2in}{
     \boxed{
-      \bm a(t)= \diff{\bm v}t=\diff[2]{\bm r}t
+      \vec a(t)= \diff{\vec v}t=\diff[2]{\vec r}t
       \quad\quad
-      \bm v(t)=\int\bm a(t)\dl t+\bm v_0
+      \vec v(t)=\int\vec a(t)\dl t+\vec v_0
     }
   }
 
   The SI unit of velocity is \textbf{meters per second squared}
   (\si{\metre\per\second\squared}). \textbf{Average acceleration}
-  $\overline{\bm a}(t)$ is the finite change in velocity $\Delta\bm v(t)$ over
+  $\vec a_\text{avg}(t)$ is the finite change in velocity $\Delta\vec v(t)$ over
   a finite time interval $t$:
 
   \eq{-.2in}{
     \boxed{
-      \overline{\bm a}(t)=
-      \frac{\Delta\bm v(t)}t
-      =\frac{\bm v(t)-\bm v_0}t
-      =\frac{\int_0^t\bm a\dl t}t
+      \vec a_\text{avg}(t)=
+      \frac{\Delta\vec v(t)}t
+      =\frac{\vec v(t)-\vec v_0}t
+      =\frac{\int_0^t\vec a\dl t}t
     }
   }
 
@@ -368,8 +328,8 @@
 
   \vspace{-.3in}{\Large
     \begin{align*}
-      \bm v &= \dot{\bm r}\\
-      \bm a &= \dot{\bm v}=\ddot{\bm r}
+      \vec v &= \dot{\vec r}\\
+      \vec a &= \dot{\vec v}=\ddot{\vec r}
     \end{align*}
   }
 
@@ -378,40 +338,20 @@
 
 
 \begin{frame}{Linear Independence}
-  The $x$, $y$ and $z$ components of $\bm r$ along the $\iii$, $\jjj$ and
+  The $x$, $y$ and $z$ components of $\vec r$ along the $\iii$, $\jjj$ and
   $\kkk$ directions are \emph{linearly independent}, therefore the time
   derivative and integral can be separated into components:
 
   \vspace{-.3in}{\Large
     \begin{align*}
-      \bm v(t) &=
+      \vec v(t) &=
       \diff xt\iii + \diff yt\jjj + \diff zt\kkk = v_x\iii + v_y\jjj + v_z\kkk\\
-      \bm a(t) &=
+      \vec a(t) &=
       \diff{v_x}t\iii + \diff{v_y}t\jjj + \diff{v_z}t\kkk =
-      a_x\iii + a_y\jjj + a_z\kkk      
-%      \bm{x}(t) &= \left(
-%      \int u\iii + \int v\jjj + \int w\kkk \right)\dl t + \bm{x}_0
+      a_x\iii + a_y\jjj + a_z\kkk
     \end{align*}
   }
 \end{frame}
-
-
-
-%\begin{frame}{Integrating Acceleration to Get Velocity}
-%  Velocity $\bm{v}(t)$ is the time integral of acceleration $\bm{a}(t)$:
-%    
-%  \eq{-.2in}{
-%    \boxed{
-%    }
-%  }
-%
-%  Again, we can integrate each component of the vector independently:
-%
-%  \eq{-.2in}{
-%    \bm{v}(t)=
-%    \left(\int a_x\iii + \int a_y\jjj + \int a_z\kkk \right)\dl t +\bm{v}_0
-%  }
-%\end{frame}
 
 
 
@@ -420,15 +360,15 @@
   of \si{\metre\per\second\cubed}:
 
   \eq{-.15in}{
-    \bm j(t)=\diff{\bm a}t=\diff[2]{\bm v}t=\diff[3]{\bm r}t
+    \vec j(t)=\diff{\vec a}t=\diff[2]{\vec v}t=\diff[3]{\vec r}t
   }
 
   The time derivative of jerk is \textbf{jounce}, or \textbf{snap}, with a
   unit of \si{\metre\per\second^4}:
   
   \eq{-.15in}{
-    \bm s(t)=\diff{\bm j}t
-    =\diff[2]{\bm a}t=\diff[3]{\bm v}t=\diff[4]{\bm r}t
+    \vec s(t)=\diff{\vec j}t
+    =\diff[2]{\vec a}t=\diff[3]{\vec v}t=\diff[4]{\vec r}t
   }
   
   The next two derivatives of snap are called \textbf{crackle} and
@@ -463,8 +403,6 @@
   While kinematic problems in AP Physics C exams often require calculus, these
   basic kinematic equations for \underline{constant acceleration} are still a
   powerful tool.
-%  \begin{columns}
-%    \column{.45\textwidth}
 
   \vspace{-.3in}{\Large
     \begin{align*}
@@ -473,20 +411,7 @@
       v^2 &= v_0^2+ 2a(x-x_0)
     \end{align*}
   }
-    
-%    \column{.55\textwidth}
-%    The variables of interests are:
-%    \begin{itemize}
-%    \item Initial position: $x_0$
-%    \item Position at time $t$: $x$
-%    \item Initial velocity: $v_0$
-%    \item Instantaneous velocity: $v$
-%    \item Acceleration (constant): $a$
-%    \end{itemize}
-%  \end{columns}
   \vspace{-.1in}
-  %Kinematic equations are sometimes called the ``Big-five'' or ``Big-four''
-  %equations.
   For AP Physics, you will only be given three kinematic equations in your
   equation sheet. You will still be required to integrate when acceleration is
   not constant.
@@ -684,14 +609,14 @@
 
 \begin{frame}{Projectile Motion}
   A \textbf{projectile} is an object that is launched with an initial velocity
-  of $\bm v_0$ along a parabolic trajectory and accelerates only due to
+  of $\vec v_0$ along a parabolic trajectory and accelerates only due to
   gravity.
   \begin{center}
     \begin{tikzpicture}[scale=1.1]
       \begin{scope}[->]
         \draw (0,0)--(2,0) node[right]{$x$};
         \draw (0,0)--(0,2) node[above]{$y$};
-        \draw[very thick,rotate=atan(1.2)] (0,0)--(2,0)node[above]{$\bm v_0$};
+        \draw[very thick,rotate=atan(1.2)] (0,0)--(2,0)node[above]{$\vec v_0$};
         \draw[very thick,red] (0,0)--(0,2*sin{atan{1.2}}) node[left] {$v_y$};
         \draw[very thick,blue](0,0)--(2*cos{atan{1.2}},0) node[below]{$v_x$};
         \draw (1,0)arc(0:atan{1.2}:1) node[pos=.6,right]{$\theta$};
@@ -837,12 +762,12 @@
     \column{.4\textwidth}
     \begin{tikzpicture}[scale=1.3]
       \draw[->](0,0)--(-.5,-.5) node[left]{$x'$}
-      node[pos=0,above left]{$C$};
+      node[pos=0,above left]{$\mathcal C$};
       \draw[->](0,0)--(1,0)     node[right]{$y'$};
       \draw[->](0,0)--(0,1)     node[above]{$z'$};
 
       \draw[->](2,3)--(1.5,2.5) node[left]{$x$}
-      node[pos=0,above left]{$B$};
+      node[pos=0,above left]{$\mathcal B$};
       \draw[->](2,3)--(3,3)     node[right]{$y$};
       \draw[->](2,3)--(2,4)     node[above]{$z$};
 
@@ -852,8 +777,8 @@
     \column{.6\textwidth}
     Two frames of reference
     \begin{itemize}
-    \item $B$ with axes $x,y,z$
-    \item $C$ with axes $x',y',z'$
+    \item $\mathcal B$ with axes $x,y,z$
+    \item $\mathcal C$ with axes $x',y',z'$
     \end{itemize}
     The two reference frames may (or may not) be moving relative to each other.
     The motion of the two reference frames affect how motion of
@@ -867,28 +792,28 @@
     \column{.4\textwidth}
     \begin{tikzpicture}[scale=1.3]
       \draw[->](0,0)--(-.5,-.5) node[left]{$x'$}
-      node[pos=0,above left]{$C$};
+      node[pos=0,above left]{$\mathcal C$};
       \draw[->](0,0)--(1,0)     node[right]{$y'$};
       \draw[->](0,0)--(0,1)     node[above]{$z'$};
 
       \draw[->](2,3)--(1.5,2.5) node[left]{$x$}
-      node[pos=0,above left]{$B$};
+      node[pos=0,above left]{$\mathcal B$};
       \draw[->](2,3)--(3,3)     node[right]{$y$};
       \draw[->](2,3)--(2,4)     node[above]{$z$};
 
-      \draw[very thick,->,blue](0,0)--(3,1)  node[midway,below]{$\bm r_{AC}$};
-      \draw[very thick,->,green](2,3)--(3,1) node[midway,right]{$\bm r_{AB}$};
+      \draw[very thick,->,blue](0,0)--(3,1)  node[midway,below]{$\vec r_{AC}$};
+      \draw[very thick,->,orange](2,3)--(3,1) node[midway,right]{$\vec r_{AB}$};
       \fill[red] (3,1) circle(.03) node[right]{$A$};
     \end{tikzpicture}
 
     \column{.6\textwidth}
     The position of $\color{red} A$ can be described by
     \begin{itemize}
-    \item $\color{green}\bm r_{AB}(t)$ (relative to frame $B$)
-    \item $\color{blue}\bm r_{AC}(t)$ (relative to frame $C$)
+    \item $\color{orange}\vec r_{AB}(t)$ (relative to frame $B$)
+    \item $\color{blue}\vec r_{AC}(t)$ (relative to frame $C$)
     \end{itemize}
-    It is obvious that $\color{green}\bm r_{AB}(t)$ and
-    $\color{blue}\bm r_{AC}(t)$ are different vectors
+    It is obvious that $\color{orange}\vec r_{AB}(t)$ and
+    $\color{blue}\vec r_{AC}(t)$ are different vectors
   \end{columns}
 \end{frame}
 
@@ -899,38 +824,38 @@
     \column{.4\textwidth}
     \begin{tikzpicture}[scale=1.3]
       \draw[->](0,0)--(-.5,-.5) node[left]{$x'$}
-      node[pos=0,above left]{$C$};
+      node[pos=0,above left]{$\mathcal C$};
       \draw[->](0,0)--(1,0)     node[right]{$y'$};
       \draw[->](0,0)--(0,1)     node[above]{$z'$};
 
       \draw[->](2,3)--(1.5,2.5) node[left]{$x$}
-      node[pos=0,above left]{$B$};
+      node[pos=0,above left]{$\mathcal B$};
       \draw[->](2,3)--(3,3)     node[right]{$y$};
       \draw[->](2,3)--(2,4)     node[above]{$z$};
       
-      \draw[very thick,->,purple](0,0)--(2,3)  node[midway,left]{$\bm r_{BC}$};
-      \draw[very thick,->,blue!30](0,0)--(3,1) node[midway,below]{$\bm r_{AC}$};
-      \draw[very thick,->,green!30](2,3)--(3,1)node[midway,right]{$\bm r_{AB}$};
+      \draw[very thick,->,violet](0,0)--(2,3)  node[midway,left]{$\vec r_{BC}$};
+      \draw[very thick,->,blue!30](0,0)--(3,1) node[midway,below]{$\vec r_{AC}$};
+      \draw[very thick,->,orange!30](2,3)--(3,1)node[midway,right]{$\vec r_{AB}$};
       \fill[pink] (3,1) circle(.03) node[right]{$A$};
     \end{tikzpicture}
 
     \column{.6\textwidth}
     The position vector of the origins of the two reference frames is given by
-    $\color{purple}\bm r_{BC}$
+    $\color{violet}\vec r_{BC}$
     \begin{itemize}
     \item The vector pointing from the origin of frame $C$ to the origin of
       frame $B$
     \item If the two frames are moving relative to each other, then
-    $\color{purple}\bm r_{BC}$ is also a function of time
+    $\color{violet}\vec r_{BC}$ is also a function of time
     \end{itemize}
     Even without using vector notations, the relationship between the vectors
     is obvious:
 
     \eq{-.3in}{
       \boxed{
-        \textcolor{blue}{\bm r_{AC}}=
-        \textcolor{green}{\bm r_{AB}}+
-        \textcolor{purple}{\bm r_{BC}}
+        \textcolor{blue}{\vec r_{AC}}=
+        \textcolor{orange}{\vec r_{AB}}+
+        \textcolor{violet}{\vec r_{BC}}
       }
     }
   \end{columns}
@@ -943,19 +868,19 @@
     \column{.4\textwidth}
     \begin{tikzpicture}[scale=1.3]
       \draw[->](0,0)--(-.5,-.5)  node[left]{$x'$}
-      node[pos=0,above left]{$C$};
+      node[pos=0,above left]{$\mathcal C$};
       \draw[->](0,0)--(1,0) node[right]{$y'$};
       \draw[->](0,0)--(0,1) node[above]{$z'$};
 
       \draw[->](2,3)--(1.5,2.5)
       node[left]{$x$}
-      node[pos=0,above left]{$B$};
+      node[pos=0,above left]{$\mathcal B$};
       \draw[->](2,3)--(3,3) node[right]{$y$};
       \draw[->](2,3)--(2,4) node[above]{$z$};
 
-      \draw[very thick,->,blue](0,0)--(3,1)  node[midway,below]{$\bm r_{AC}$};
-      \draw[very thick,->,green](2,3)--(3,1) node[midway,right]{$\bm r_{AB}$};
-      \draw[very thick,->,purple](0,0)--(2,3)node[midway,left] {$\bm r_{BC}$};
+      \draw[very thick,->,blue](0,0)--(3,1)  node[midway,below]{$\vec r_{AC}$};
+      \draw[very thick,->,orange](2,3)--(3,1) node[midway,right]{$\vec r_{AB}$};
+      \draw[very thick,->,violet](0,0)--(2,3)node[midway,left] {$\vec r_{BC}$};
       \fill[red] (3,1) circle(.03) node[right]{$A$};
     \end{tikzpicture}
 
@@ -964,8 +889,8 @@
 
     \eq{-.33in}{
       \boxed{
-        \textcolor{blue}{\bm r_{AC}} =
-        \textcolor{green}{\bm r_{AB}} + \textcolor{purple}{\bm r_{BC}}
+        \textcolor{blue}{\vec r_{AC}} =
+        \textcolor{orange}{\vec r_{AB}} + \textcolor{violet}{\vec r_{BC}}
       }
     }
     
@@ -974,8 +899,8 @@
 
     \eq{-.25in}{
       \boxed{
-        \textcolor{blue}{\bm v_{AC}} =
-        \textcolor{green}{\bm v_{AB}}+ \textcolor{purple}{\bm v_{BC}}
+        \textcolor{blue}{\vec v_{AC}} =
+        \textcolor{orange}{\vec v_{AB}}+ \textcolor{violet}{\vec v_{BC}}
       }
     }
 
@@ -984,8 +909,8 @@
 
     \eq{-.25in}{
       \boxed{
-        \textcolor{blue}{\bm a_{AC}} =
-        \textcolor{green}{\bm a_{AB}} + \textcolor{purple}{\bm a_{BC}}
+        \textcolor{blue}{\vec a_{AC}} =
+        \textcolor{orange}{\vec a_{AB}} + \textcolor{violet}{\vec a_{BC}}
       }
     }
   \end{columns}
@@ -999,7 +924,7 @@
   than the speed of light:
 
   \eq{-.25in}{
-    \bm v_{AC}=\bm v_{AB}+\bm v_{BC}
+    \vec v_{AC}=\vec v_{AB}+\vec v_{BC}
   }
 
   The velocity of $A$ relative to reference frame $C$ is the velocity of $A$
@@ -1007,7 +932,7 @@
   we add another reference frame $D$, the equation becomes:
 
   \eq{-.25in}{
-    \bm v_{AD}=\bm v_{AB}+\bm v_{BC}+\bm v_{CD}
+    \vec v_{AD}=\vec v_{AB}+\vec v_{BC}+\vec v_{CD}
   }
 \end{frame}
 

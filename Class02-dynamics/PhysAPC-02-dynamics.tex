@@ -1,6 +1,8 @@
 \documentclass[12pt,compress,aspectratio=169]{beamer}
 \input{../mybeamer}
 
+\usetikzlibrary{decorations.pathmorphing,patterns}
+
 \title{Class 2: Dynamics}
 \subtitle{Advanced Placement Physics C}
 \input{../me}
@@ -34,9 +36,9 @@
   \end{center}
   \begin{itemize}
   \item Uniform motion means constant velocity; an object ``at rest'' is also
-    in uniform motion with $\bm v=\bm 0$
+    in uniform motion with $\vec v=\vec 0$
   \item As long as an object moves in uniform motion, it must be that
-    $\bm F_\text{net}=\bm 0$
+    $\vec F_\text{net}=\vec 0$
   \item Common examples:
     \begin{itemize}
     \item A hockey puck sliding on very smooth ice has gravity and normal
@@ -51,7 +53,7 @@
 
 
 \begin{frame}{Translational Equilibrium}
-  If the net force on an object is zero ($\Sigma\bm F=\bm 0$) then the
+  If the net force on an object is zero ($\Sigma\vec F=\vec 0$) then the
   object is in a \emph{state of translational equilibrium}
   \begin{itemize}
   \item Dynamic equilibrium: the object is moving relative to us
@@ -76,14 +78,14 @@
   \item The first two laws of motion can be summarized in the equation:
 
     \eq{-.2in}{
-      \boxed{\bm F_\text{net}=\Sigma\bm F=m\bm a}
+      \boxed{\vec F_\text{net}=\Sigma\vec F=m\vec a}
     }
   \item For non-constant mass, net force is the rate of change of momentum
-    $\bm p$:
+    $\vec p$:
 
     \eq{-.2in}{
       \boxed{
-        \bm F_\text{net}=\diff{\bm p}t
+        \vec F_\text{net}=\diff{\vec p}t
       }
     }
   \end{itemize}
@@ -109,29 +111,20 @@
 \begin{frame}{Third Law of Motion}
   \begin{center}
     \fbox{
-<<<<<<< HEAD:Calculus/02-Dynamics/PhysAPC-02-dynamics.tex
-      \begin{minipage}{.83\textwidth}
-        \textbf{For every action there is always opposed and equal reaction: the
-          mutual actions of two objects on each other are always equal, and
-          directed to other object.}
-        %\footnote{Lex III: Actioni contrariam semper et aequalem
-        %esse reactionem: sive corporum duorum actiones in se mutuo semper esse
-        %aequales et in partes contrarias dirigi.}
-=======
-      \begin{minipage}{.69\textwidth}
+      \begin{minipage}{.9\textwidth}
         \textbf{Third Law: For every action there is always and opposite and
           equal reaction; the mutual actions of two objects on each other are
           always equal, and directed to the other object.}
->>>>>>> ca6e305ad4df399e2a9ef8a235f5fe570640d2e8:Class02-dynamics/PhysAPC-02-dynamics.tex
       \end{minipage}
     }
   \end{center}
+
   For every action force on an object (B) due to another object (A), there is a
   reaction force which is equal in magnitude but opposite in direction, on
   object (A), due to object (B):
 
   \eq{-.3in}{
-    \boxed{\bm F_\text{AB} = -\bm F_\text{BA}}
+    \boxed{\vec F_\text{AB} = -\vec F_\text{BA}}
   }
   \begin{itemize}
   \item The action and reaction forces act on different objects!
@@ -165,16 +158,16 @@
 \begin{frame}{Common Forces}
   Common forces that we encounter in AP Physics include:
   \begin{itemize}
-  \item Weight (gravitational force) $\bm w$ (or $\bm F_g$, or just $m\bm g$)
-  \item Normal force $\bm N$
-  \item Friction (static $\bm f_s$ and kinetic $\bm f_k$)
-  \item Tension $\bm T$
-  \item Applied force $\bm F_a$
-  \item Spring force $\bm F_s$
-  \item Drag $\bm D$ (fluid resistance)
-  \item Buoyant force $\bm D$ (discussed in fluid mechanics, in AP Physics 2)
-  \item Electrostatic force $\bm F_q$ (discussed in E \& M)
-  \item Magnetic force $\bm F_m$ (discussed E \& M)
+  \item Weight (gravitational force) $\vec w$ (or $\vec F_g$, or just $m\vec g$)
+  \item Normal force $\vec N$
+  \item Friction (static $\vec f_s$ and kinetic $\vec f_k$)
+  \item Tension $\vec T$
+  \item Applied force $\vec F_a$
+  \item Spring force $\vec F_e$
+  \item Drag $\vec D$ (fluid resistance)
+  \item Buoyant force $\vec D$ (discussed in fluid mechanics, in AP Physics 2)
+  \item Electrostatic force $\vec F_q$ (discussed in E \& M)
+  \item Magnetic force $\vec F_m$ (discussed E \& M)
   \end{itemize}
 \end{frame}
 
@@ -184,14 +177,14 @@
   Gravity is the force of attraction between all objects with mass
     
   \eq{-.2in}{
-    \boxed{\bm w=m\bm g}
+    \boxed{\vec w=m\vec g}
   }
   \begin{itemize}
   \item\vspace{-.15in}Near surface of Earth, use
     $g=\SI{9.81}{\metre\per\second\squared}$ (or
     $g=\SI{10}{\metre\per\second\squared}$ for your AP exam)
   \item You may be asked to find the value of $g$ on some ``unknown planet''.
-  \item $\bm w$ always points \emph{down} (the direction of $\bm w$ is how
+  \item $\vec w$ always points \emph{down} (the direction of $\vec w$ is how
     down is defined)
   \item Based on the law of universal gravitation:
 
@@ -211,13 +204,13 @@
     \centering
     \begin{tikzpicture}{scale=1.5}
       \draw[thick] (-1,0)--(2.5,0);
-      \draw[fill=pink,thick] (0,0) rectangle (1.5,1);
+      \draw[fill=pink,thick] rectangle (1.5,1);
       \fill(.75,.5) circle(2pt);
-      \draw[->,very thick] (.75,.5)--(.75,-.5) node[below]{$m\bm g$};
-      \draw[->,very thick] (.75,.5)--(.75,1.5) node[above]{$\bm N$};
+      \draw[->,very thick] (.75,.5)--(.75,-.5) node[below]{$m\vec g$};
+      \draw[->,very thick] (.75,.5)--(.75,1.5) node[above]{$\vec N$};
     \end{tikzpicture}
     
-    $m\bm g=-\bm N$\\(special case)
+    $m\vec g=-\vec N$\\(special case)
     
     \column{.78\textwidth}
     \begin{itemize}
@@ -245,15 +238,15 @@
         \draw[->](3.5,.5)--(4,.5)  node[right]{$x$};
         \draw[->](3.5,.5)--(3.5,1) node[above]{$y$};
         \draw[thick] (-1,0)--(4,0);
-        \draw[fill=pink,thick] (0,0) rectangle (3,2);
+        \draw[fill=pink,thick] rectangle (3,2);
         \fill(1.5,1) circle (2pt);
         \draw [->,very thick,dotted,red] (1.5,1)--(1.5,-.5)
         node[right]{$mg\cos\theta$};
         \draw [->,very thick,dotted,red] (1.5,1)--(.45,1)
         node[left]{$mg\sin\theta$};
         \draw [->,very thick,red] (1.5,1)--(.45,-.5)
-        node[below]{$m\bm g$};
-        \draw [->,very thick] (1.5,1)--(1.5,2.5) node[above]{$\bm N$};
+        node[below]{$m\vec g$};
+        \draw [->,very thick] (1.5,1)--(1.5,2.5) node[above]{$\vec N$};
       \end{scope}
     \end{tikzpicture}
     
@@ -322,7 +315,7 @@
 \begin{frame}{Kinetic Friction}
   \textbf{Kinetic friction} between two surfaces is when they are moving
   relative to each other. $f_k$ is constant along the path of movement as long
-  as $\bm N$ stays constant
+  as $\vec N$ stays constant
 
   \eq{-.3in}{
     \boxed{f_k = \mu_kN}
@@ -358,13 +351,13 @@
     \centering
     \begin{tikzpicture}
       \draw [thick] (-1,0)--(2.5,0);
-      \draw [fill=pink,thick] (0,0) rectangle (1.5,1);
+      \draw [fill=pink,thick] rectangle (1.5,1);
       \fill (.75,.5) circle(2pt);
       \begin{scope}[->,very thick]
-        \draw(.75,.5)--(.75,-.5) node[below]{$m\bm g$};
-        \draw(.75,.5)--(.75,1.5) node[above]{$\bm N$};
-        \draw(.75,.5)--(2.,.5)   node[right]{$\bm F_a$};
-        \draw(.75,.5)--(.1,.5)   node[left] {$\bm f$};
+        \draw(.75,.5)--(.75,-.5) node[below]{$m\vec g$};
+        \draw(.75,.5)--(.75,1.5) node[above]{$\vec N$};
+        \draw(.75,.5)--(2.,.5)   node[right]{$\vec F_a$};
+        \draw(.75,.5)--(.1,.5)   node[left] {$\vec f$};
       \end{scope}
     \end{tikzpicture}
 
@@ -396,7 +389,7 @@
 
 \begin{frame}{Drag}
   When an object moves through a fluid (most gases and liquids), it experiences
-  are fluid resistance force called \textbf{drag} $\bm D$.
+  are fluid resistance force called \textbf{drag} $\vec D$.
   \begin{center}
     \pic{.338}{graphics/boeing787}
     \pic{.35}{graphics/ganna}
@@ -453,9 +446,9 @@
     \vspace{-.15in}
     \begin{center}
       \begin{tikzpicture}[scale=.9]
-        \draw[very thick,->](0,0)--(0,-1.5) node[below]{$m\bm g$};
-        \draw[very thick,->,white](0,0)--(0,1.5) node[above]{$\bm D$};
-        \fill(0,0) circle(.07);
+        \draw[very thick,->](0,0)--(0,-1.5) node[below]{$m\vec g$};
+        \draw[very thick,->,white](0,0)--(0,1.5) node[above]{$\vec D$};
+        \fill circle(.07);
       \end{tikzpicture}
     \end{center}
     
@@ -467,10 +460,10 @@
     \vspace{-.15in}
     \begin{center}
       \begin{tikzpicture}[scale=.9]
-        \draw[very thick,->](0,0)--(0,-1.5) node[below]{$m\bm g$};
-        \draw[very thick,->,white](0,0)--(0,1.5) node[above]{$\bm D$};
-        \draw[very thick,->,green](0,0)--(0,.6) node[above]{$\bm D$};
-        \fill(0,0) circle(0.07);
+        \draw[very thick,->](0,0)--(0,-1.5) node[below]{$m\vec g$};
+        \draw[very thick,->,white](0,0)--(0,1.5) node[above]{$\vec D$};
+        \draw[very thick,->,green](0,0)--(0,.6) node[above]{$\vec D$};
+        \fill circle(.07);
       \end{tikzpicture}
     \end{center}
     
@@ -482,9 +475,9 @@
     \vspace{-.15in}
     \begin{center}
       \begin{tikzpicture}[scale=.9]
-        \draw[very thick,->](0,0)--(0,-1.5) node[below]{$m\bm g$};
-        \draw[very thick,->,red](0,0)--(0,1.5) node[above]{$\bm D$};
-        \fill(0,0) circle(0.07);
+        \draw[very thick,->](0,0)--(0,-1.5) node[below]{$m\vec g$};
+        \draw[very thick,->,red](0,0)--(0,1.5) node[above]{$\vec D$};
+        \fill circle(.07);
       \end{tikzpicture}
     \end{center}
         
@@ -530,7 +523,7 @@
 
 
 \begin{frame}{Tension Force}
-  \textbf{Tension} $\bm T$ is the force that is the force that is transmitted
+  \textbf{Tension} $\vec T$ is the force that is the force that is transmitted
   through objects that can be stretched, e.g.\ a rope that is being pulled
   \begin{center}
     \pic{.6}{graphics/3-rope}
@@ -545,20 +538,71 @@
 
 
 
-\begin{frame}{Spring Force}
-  The spring force $F_s$ is the force a compressed or stretched spring
-  exerts onto objects connected to it. It obeys Hooke's Law:
-  
+\begin{frame}{Spring Force \& Elastic Potential Energy}
+  The spring force $\vec F_e$ is the force that a compressed/stretched spring
+  exerts on the object connected to it.  An \emph{ideal} spring obeys Hooke's
+  law:
+    
   \eq{-.2in}{
-    \bm F_s=-k\bm x
+    \boxed{\vec F_e=-k\vec x}
   }
-  where $\bm x$ is the relative displacement of the ends of the spring.
+
+  \vspace{-.1in}The spring force acts in the opposite direction to the spring's
+  displacement, and is proportional to the amount of compression/stretching.
+
+  \vspace{.1in}
   \begin{center}
-    \pic{.35}{graphics/spring-example1}
+    \begin{tikzpicture}
+      \draw[thick,fill=blue!40] (5,.5) rectangle (6,1.5);
+      \draw[thick,
+        decoration={aspect=.3,segment length=2mm, amplitude=2.5mm, coil},
+        decorate] (0,1)--(5,1);
+      \fill[pattern=north east lines](-.2,0) rectangle(0,2);
+      \draw[thick](0,.0)--(0,2);
+      \fill[red] (5.5,1) circle(.06);
+      \draw[ultra thick,->,red](5.5,1)--(4,1) node[above]{$\vec F_e$};
+      \draw[dashed](3,0)--(3,2) node[above]{\small Equilibrium position};
+      \draw[ultra thick,->](3,.3)--(5,.3) node[midway,below]{$\Delta x$};
+    \end{tikzpicture}
+    \hspace{.2in}
+    \begin{tikzpicture}
+      \draw[thick,gray!40,fill=gray!20] (5,.5) rectangle (6,1.5);
+      \draw[thick,gray!20,
+        decoration={aspect=.3,segment length=2mm, amplitude=2.5mm, coil},
+        decorate] (0,1)--(5,1);
+      \fill[pattern=north east lines](-.2,0) rectangle(0,2);
+      \draw[thick](0,.0)--(0,2);
+      \fill[gray!30] (5.5,1) circle(.06);
+      \draw[ultra thick,->,gray!30](5.5,1)--(4,1) node[above]{$\vec F_e$};
+      \draw[dashed](3,0)--(3,2);
+      \draw[ultra thick,->,gray!30](3,.3)--(5,.3)node[midway,below]{$\Delta x$};
+      \draw[thick,fill=blue!40] (1.5,.5) rectangle (2.5,1.5);
+      \draw[thick,
+        decoration={aspect=.3,segment length=2mm, amplitude=2.5mm, coil},
+        decorate] (0,1)--(1.5,1);
+      \draw[ultra thick,->](3,.3)--(1.5,.3) node[midway,below]{$\Delta x$};
+      \fill[red] (2,1) circle(.06);
+      \draw[ultra thick,->,red](2,1)--(3,1) node[above]{$\vec F_e$};
+    \end{tikzpicture}
   \end{center}
 \end{frame}
-
-
+%
+%
+%
+%\begin{frame}{Spring Force}
+%  The spring force $F_e$ is the force a compressed or stretched spring
+%  exerts onto objects connected to it. It obeys Hooke's Law:
+%  
+%  \eq{-.2in}{
+%    \vec F_s=-k\vec x
+%  }
+%  where $\vec x$ is the relative displacement of the ends of the spring.
+%  \begin{center}
+%    \pic{.35}{graphics/spring-example1}
+%  \end{center}
+%\end{frame}
+%
+%
 %\begin{frame}{Spring Force}
 %  \begin{center}
 %    \pic{.28}{graphics/spring-example1}
@@ -601,7 +645,7 @@
 %\begin{frame}{Buoyancy}{Everything Floats a Little}
 %  When an object is submerged inside a fluid (e.g.\ water, air, etc), the fluid
 %  exerts a pressure at the surface of the object. We can integrate the pressure
-%  over the entire surface area $S$ to find the total force $\bm B$ the fluid
+%  over the entire surface area $S$ to find the total force $\vec B$ the fluid
 %  exerts on the object.
 %  \begin{center}
 %    \pic{.25}{graphics/rock_fbvectors}
@@ -615,15 +659,15 @@
 %  The buoyant force is given by:
 %  
 %  \eq{-.1in}{
-%    \bm{B}
-%    =\rho_\text{fluid}g\bm{\hat{k}}\iiint dV
-%    =\rho_\text{fluid}gV\bm{\hat{k}}
+%    \vec{B}
+%    =\rho_\text{fluid}g\vec{\hat{k}}\iiint dV
+%    =\rho_\text{fluid}gV\vec{\hat{k}}
 %  }
 %  \begin{center}
 %    \begin{tabular}{l|c|c}
 %      \rowcolor{pink}
 %      \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
-%      Buoyant force & $\bm{B}$  & \si{\newton} \\
+%      Buoyant force & $\vec{B}$  & \si{\newton} \\
 %      Density of the fluid & $\rho_\text{fluid}$ & \si{\kg/\m^3}\\
 %      Volume of the object & $V$ & \si{\metre^3}
 %    \end{tabular}
@@ -639,7 +683,7 @@
 \begin{frame}{Free-Body Diagrams}
   \begin{itemize}
   \item Acceleration (if there is going to be any at all) depends
-    on net force $\bm F_\text{net}$
+    on net force $\vec F_\text{net}$
   \item Without a vector sum of all the forces, we cannot determine the
     magnitude, direction of the acceleration, or how acceleration will evolve
     in time
@@ -662,18 +706,18 @@
     \begin{tikzpicture}[scale=.8]
       \fill(1.5,1) circle(.1);
       \begin{scope}[->,very thick]
-        \draw(1.5,1)--(1.5,-.5) node[below]{$m\bm g$};
-        \draw(1.5,1)--(1.5,2.5) node[above]{$\bm N$};
-        \draw(1.5,1)--(3.1,1)   node[right]{$\bm F_a$};
-        \draw(1.5,1)--(.75,1)   node[left] {$\bm f$};
+        \draw(1.5,1)--(1.5,-.5) node[below]{$m\vec g$};
+        \draw(1.5,1)--(1.5,2.5) node[above]{$\vec N$};
+        \draw(1.5,1)--(3.1,1)   node[right]{$\vec F_a$};
+        \draw(1.5,1)--(.75,1)   node[left] {$\vec f$};
       \end{scope}
     \end{tikzpicture}
   \end{center}
   However, for motion where \emph{rotation} is (at least) a possibility, we
   mist note that:
   \begin{itemize}
-  \item Gravitational force $m\bm g$ acts at the CM, but
-  \item Normal force $\bm N$, friction $\bm f$ and applied force $\bm F_a$
+  \item Gravitational force $m\vec g$ acts at the CM, but
+  \item Normal force $\vec N$, friction $\vec f$ and applied force $\vec F_a$
     act at the point of contact
   \end{itemize}
 \end{frame}
@@ -682,19 +726,19 @@
 
 \begin{frame}{Free-Body Diagrams}
   In those cases, forces should be drawn where they are applied. For example, a
-  sphere rolling down a ramp should have weight $m\bm g$, normal force $\bm N$
-  and static friction $\bm f_s$ acting on it:
+  sphere rolling down a ramp should have weight $m\vec g$, normal force $\vec N$
+  and static friction $\vec f_s$ acting on it:
   \begin{center}
     \begin{tikzpicture}[scale=1.1]
       \begin{scope}[rotate=-30]
-	    \shade[ball color=gray!50](0,0) circle(1);
+	    \shade[ball color=gray!50] circle(1);
 	    \draw[thick](-2,-1)--(2,-1);
 	    \draw[thick,->](0,1.2) arc(90:60:1.2) node[pos=.3,right]{$\omega$};
-	    \fill(0,0) circle(.05);
+	    \fill circle(.05);
 	    \draw[->,very thick,rotate=30](0,0)--(0,-1.5)
-	    node[below]{$m\bm g$};
-	    \draw[->,very thick](0,-1)--(0,.3)  node[above]{$\bm N$};
-	    \draw[->,very thick](0,-1)--(-.5,-1) node[left]{$\bm f_s$};
+	    node[below]{$m\vec g$};
+	    \draw[->,very thick](0,-1)--(0,.3)  node[above]{$\vec N$};
+	    \draw[->,very thick](0,-1)--(-.5,-1) node[left]{$\vec f_s$};
 	    \draw[->](2,0)--(2.5,0) node[right]{$x$};
             \draw[->](2,0)--(2,.5) node[above]{$y$};
 	  \end{scope}
@@ -791,10 +835,10 @@
     \begin{tikzpicture}[scale=.8]
       \begin{scope}[thick]
         \draw(-3,0)--(4,0);
-        \draw(0,0) rectangle(1,1)   node[midway]{$m$};
+        \draw rectangle(1,1)   node[midway]{$m$};
         \draw(1,0) rectangle(3,1.5) node[midway]{$M$};
       \end{scope}
-      \draw[very thick,->](-1.5,.5)--(0,.5) node[pos=0,left]{$\bm F_a$};
+      \draw[very thick,->](-1.5,.5)--(0,.5) node[pos=0,left]{$\vec F_a$};
     \end{tikzpicture}
   \end{center}
   Or multiple objects stacked on top of one another. The contact surface between
@@ -804,10 +848,10 @@
     \begin{tikzpicture}[scale=.8]
       \begin{scope}[thick]
         \draw(-1,0)--(5.5,0);
-        \draw(0,0) rectangle(3,1.5) node[midway]{$M$};
+        \draw rectangle(3,1.5) node[midway]{$M$};
         \draw(.75,1.5) rectangle(2.25,2.5) node[midway]{$m$};
       \end{scope}
-      \draw[very thick,->](3,.5)--(4.5,.5) node[right]{$\bm F_a$};
+      \draw[very thick,->](3,.5)--(4.5,.5) node[right]{$\vec F_a$};
     \end{tikzpicture}
   \end{center}
 \end{frame}
