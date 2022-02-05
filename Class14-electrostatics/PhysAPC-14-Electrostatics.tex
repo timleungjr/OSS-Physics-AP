@@ -40,10 +40,8 @@
         \draw[red] (0,0)--(2,0) node[right]{$\vec F_{21}$};
         \draw[blue](8,0)--(6,0) node[left] {$\vec F_{12}$};
       \end{scope}
-      \tikzstyle{balloon1}=[ball color=red];
-      \tikzstyle{balloon2}=[ball color=blue];
-      \shade[balloon1] (0,0) circle(.2) node[above]{$q_1$};
-      \shade[balloon2] (8,0) circle(.2) node[above]{$q_2$};
+      \shade[ball color=red] circle(.2) node[above]{$q_1$};
+      \shade[ball color=blue] (8,0) circle(.2) node[above]{$q_2$};
       \draw[dashed] (0,0)--(0,-1.5);
       \draw[dashed] (8,0)--(8,-1.5);
       \draw[->,thick](0,-1.3)--(8,-1.3) node[midway,below]{$\vec r_{12}$};
@@ -61,7 +59,7 @@
 
 
 \begin{frame}{Coulomb's Law for Electrostatic Force}
-  \eq{-.2in}{
+  \eq{-.1in}{
     \boxed{\vec F_{12}=\frac{kq_1q_2}{|\vec r_{12}|^2}\hat r_{12}}
   }
   \begin{center}
@@ -75,11 +73,6 @@
       Unit vector of direction between point charges & $\hat r_{12}$ &
     \end{tabular}
   \end{center}
-
-%  \vspace{-.1in}\textbf{Coulomb's constant}
-
-
-
 \end{frame}
 
 
@@ -114,26 +107,24 @@
         \draw[red] (0,0)--(2,0) node[right]{$\vec F_{12}$};
         \draw[blue](8,0)--(6,0) node[left] {$\vec F_{21}$};
       \end{scope}
-      \tikzstyle{balloon1}=[ball color=red];
-      \tikzstyle{balloon2}=[ball color=blue];
-      \shade[balloon1] (0,0) circle(.2) node[above]{$q_1$};
-      \shade[balloon2] (8,0) circle(.2) node[above]{$q_2$};
+      \shade[ball color=red] circle(.2) node[above]{$q_1$};
+      \shade[ball color=blue] (8,0) circle(.2) node[above]{$q_2$};
       \draw[dashed] (0,0)--(0,-1.5);
       \draw[dashed] (8,0)--(8,-1.5);
       \draw[->,thick](0,-1.3)--(8,-1.3) node[midway,below]{$\vec r_{12}$};
     \end{tikzpicture}
   \end{center}
   \begin{itemize}
-  \item\vspace{-.15in}If $q_1$ exerts an electrostatic force $\vec F_{12}$ on
-    $q_2$, then $q_2$ likewise exerts a force of $\vec F_{21}=-\vec F_{12}$
-    on $q_1$. The two forces are equal in magnitude and opposite in direction.
-    (Third law of motion)
+  \item Third law of motion: If $q_1$ exerts an electrostatic force
+    $\vec F_{12}$ on $q_2$, then $q_2$ likewise exerts a force of
+    $\vec F_{21}=-\vec F_{12}$ on $q_1$. The two forces are equal in magnitude
+    and opposite in direction.
   \item $q_1$ and $q_2$ are assumed to be \emph{point charges} that do not
     occupy any space
   \item The scalar form is often used as well, since the direction of $F_q$ can
     easily be found:
 
-    \eq{-.2in}{
+    \eq{-.1in}{
       \boxed{F_q=\frac{kq_1q_2}{r^2}}
     }
   \end{itemize}
@@ -145,35 +136,31 @@
   \begin{columns}
     \column{.4\textwidth}
     \begin{tikzpicture}[scale=.4]
-      \tikzstyle{balloon1}=[ball color=red];
-      \tikzstyle{balloon2}=[ball color=blue];
-      \tikzstyle{balloon3}=[ball color=green];
-      \tikzstyle{balloon4}=[ball color=yellow!70!black];
-      \tikzstyle{balloon5}=[ball color=purple];
-      \shade[balloon1] (0,0) circle(.72) node[white]{$Q$};
+      \shade[ball color=red] circle(.72) node[white]{$Q$};
       \begin{scope}[rotate=45]
         \draw[->,very thick,blue](.72,0)--(2.5,0) node[right]{$\vec F_1$};
-        \shade[balloon2] (7,0) circle(1) node[white]{$q_1$};
+        \shade[ball color=blue] (7,0) circle(1) node[white]{$q_1$};
       \end{scope}
       \uncover<2->{
         \begin{scope}[rotate=105]
           \draw[->,very thick,green](.72,0)--(2,0)
           node[right]{$\vec F_2$};
-          \shade[balloon3] (4,0) circle(.65) node[white]{$q_2$};
+          \shade[ball color=green] (4,0) circle(.65) node[white]{$q_2$};
         \end{scope}
       }
       \uncover<3->{
         \begin{scope}[rotate=190]
           \draw[->,very thick,yellow](.7,0)--(3.5,0)
           node[above]{$\vec F_3$};
-          \shade[balloon4] (6,0) circle(1.1) node[white]{$q_3$};
+          \shade[ball color=yellow!70!black]
+          (6,0) circle(1.1) node[white]{$q_3$};
         \end{scope}
       }
       \uncover<4->{
         \begin{scope}[rotate=260]
-          \draw[->,very thick,purple](.72,0)--(1.4,0)
+          \draw[->,very thick,violet](.72,0)--(1.4,0)
           node[right]{$\vec F_4$};
-          \shade[balloon5] (9,0) circle(.8) node[white]{$q_4$};
+          \shade[ball color=violet] (9,0) circle(.8) node[white]{$q_4$};
         \end{scope}
       }
       \uncover<5>{
@@ -188,7 +175,7 @@
     point charges $q_i$, the total electrostatic force that $Q$ experiences is
     the vector sum of all the forces $\vec F_i$:
     
-    \eq{-.25in}{
+    \eq{-.1in}{
       \boxed{\vec F
         =\sum_i\vec F_i
         =kQ\left(\sum_{i=1}^N\frac{q_i}{r_i^2}\hat r_i\right)
@@ -205,7 +192,7 @@
   charges that take up physical space (e.g.\ a continuous distribution of
   charges):
 
-  \eq{-.2in}{
+  \eq{-.1in}{
     \boxed{\vec F
       =\int\dl\vec F
       =kQ\int\frac{\dl q}{r^2}\hat r
@@ -215,6 +202,33 @@
 
 
 
+\begin{frame}{Infinitesimal Charge $\dl q$}
+  The calculation for the infinitesimal charge $\dl q$ is similar to the
+  calculation for the infinitesimal mass $\dl m$ earlier in the course (See
+  Class 5: Center of Mass)
+  \begin{itemize}
+  \item Linear charge density (for 1D problems)
+
+    \eq{-.1in}{
+      \gamma = \diff qL\quad\rightarrow\quad \dl q =\gamma\dl L
+    }
+
+  \item Surface charge density (for 2D problems)
+
+    \eq{-.1in}{
+      \sigma=\diff qA\quad\rightarrow\quad \dl q=\sigma\dl A
+    }
+
+  \item Charge density (for 3D problems)
+
+    \eq{-.1in}{
+      \rho=\diff qV\quad\rightarrow\quad \dl q=\rho\dl V
+    }
+  \end{itemize}
+\end{frame}
+
+    
+
 \section{Electric Field}
 
 \begin{frame}{Electric Field}
@@ -222,16 +236,16 @@
   procedure as with gravitational field, by grouping the variables in
   Coulomb's law:
 
-  \eq{-.2in}{
+  \eq{-.1in}{
     F_q
     =\underbrace{
       \left[\frac{kq_1}{|\vec r_{12}|^2}\hat r\right]
     }_{\vec E}q_2
   }
 
-  \vspace{-.15in}The electric field $\vec E$ created by $q_1$ is a vector
-  function (called a \textbf{vector field}) that shows how it influences other
-  charged particles around it.
+  The electric field $\vec E$ created by $q_1$ is a vector function (called a
+  \textbf{vector field}) that shows how it influences other charged particles
+  around it.
 \end{frame}
 
 
@@ -239,7 +253,7 @@
 \begin{frame}{Electric Field Near a Point Charge}
   The electric field a distance $r$ away from a point charge $q$ is given by:
 
-  \eq{-.2in}{
+  \eq{-.1in}{
     \boxed{\vec E(q,\vec r)=\frac{kq}{|\vec r|^2}\hat r}
   }
   \begin{center}
@@ -248,8 +262,8 @@
       \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
       Electric field intensity    & $\vec E$ & \si{\newton\per\coulomb}\\
       Coulomb's constant          & $k$   & \si{N.m^2/C^2} \\
-      Source charge               & $q$   & \si{\coulomb} \\
-      Distance from source charge & $|\vec r|$   & \si{\metre} \\
+      Source charge               & $q$   & \si\coulomb \\
+      Distance from source charge & $|\vec r|$   & \si\metre \\
       Outward unit vector from point source & $\hat r$ &
     \end{tabular}
   \end{center}
@@ -263,7 +277,7 @@
   When multiple point charges are present, the total electric field at any
   position $\vec r$ is the vector sum of all the fields $\vec E_i$:
     
-  \eq{-.2in}{
+  \eq{-.1in}{
     \boxed{\vec E
       =\sum_i\vec E_i
       =k\left(\sum_{i=1}^N\frac{q_i}{r_i^2}\hat r_i\right)
@@ -278,14 +292,15 @@
   used to describe the electric field generated by charges with
   \emph{spatial extend}:
 
-  \eq{-.2in}{
+  \eq{-.1in}{
     \boxed{
       \vec E=\int\dl\vec E=k\int\frac{\dl q}{r^2}\hat r
     }
   }
   
   This integral may be difficult to compute if the geometry of is complicated,
-  but in general, there are usually symmetry that can be exploited.
+  but in general, in AP Physics C, there are usually symmetry that can be
+  exploited.
 \end{frame}
 
 
@@ -296,7 +311,7 @@
   the charge experiences is proportional to $q$ and $\vec E$, regardless of how
   the electric field is generated:
 
-  \eq{-.15in}{
+  \eq{-.1in}{
     \boxed{\vec F_q=q\vec E}
   }
 
@@ -311,18 +326,22 @@
   electric field.
   \begin{center}
     \begin{tikzpicture}[scale=.5]
-      \shade[ball color=blue](0,0) circle(.35) node[white]{\tiny $+q$};
+      \shade[ball color=blue] circle(.35) node[white]{\tiny $+q$};
       \foreach \theta in {15,30,...,360}{
-        \draw[rotate=\theta,->,red!70!black,thick](.35,0)--(3,0);
-        \draw[rotate=\theta,red!70!black,thick](2.8,0)--(4,0);
+        \begin{scope}[rotate=\theta,red!70!black,thick]
+          \draw[->](.35,0)--(3,0);
+          \draw (2.8,0)--(4,0);
+        \end{scope}
         }
     \end{tikzpicture}
     \hspace{.2in}
     \begin{tikzpicture}[scale=.5]
-      \shade[ball color=blue](0,0) circle(.35) node[white]{\tiny $-q$};
+      \shade[ball color=blue] circle(.35) node[white]{\tiny $-q$};
       \foreach \theta in {15,30,...,360}{
-        \draw[rotate=\theta,red!70!black,thick](.35,0)--(2.5,0);
-        \draw[rotate=\theta,<-,red!70!black,thick](2.3,0)--(4,0);
+        \begin{scope}[rotate=\theta,red!70!black,thick]
+          \draw (.35,0)--(2.5,0);
+          \draw[<-](2.3,0)--(4,0);
+        \end{scope}
         }
     \end{tikzpicture}
   \end{center}
@@ -340,20 +359,6 @@
   \item Direction of the electric field is tangent to the field lines
   \end{itemize}
 \end{frame}
-
-
-
-%\begin{frame}{Electric Field Lines}
-%  %If you place a positive charge in an electric field, the electrostatic force
-%  %on the charge will be in the direction of the electric field.
-%  \begin{columns}
-%    \column{0.25\textwidth}
-%    \pic{.95}{pos_charge}\\
-%    \pic{.95}{neg_charge}
-%    \column{0.75\textwidth}
-%    \pic{.95}{2charges}
-%  \end{columns}
-%\end{frame}
 
 
 
@@ -383,17 +388,17 @@
     \item Based on symmetry, $\dl E_\perp$ doesn't contribute to anything; but
       $\dl E_x$ is pretty easy to find:
 
+      \eq{-.2in}{
+        \dl E_x =\frac{k\dl q}{r^2}{\color{red}\cos\theta}
+        =\frac{k\dl q}{r^2}{\color{red}\frac xr}
+        =\frac{kx\dl q}{(x^2+a^2)^{3/2}}
+      }
     \end{itemize}
   \end{columns}
-  \eq{-.1in}{
-    \dl E_x =\frac{k\dl q}{r^2}{\color{red}\cos\theta}
-    =\frac{k\dl q}{r^2}{\color{red}\frac xr}
-    =\frac{kx\dl q}{(x^2+a^2)^{3/2}}
-  }      
 
-  \vspace{-.15in}Integrating this over all charges $\dl q$, we have:
+  \vspace{.1in}Integrating this over all charges $\dl q$, we have:
   
-  \eq{-.25in}{
+  \eq{-.1in}{
     E_x =\frac{kx}{(x^2+a^2)^{3/2}}\int \dl q=\boxed{\frac{kQx}{(x^2+a^2)^{3/2}}}
   }
 \end{frame}
@@ -412,13 +417,13 @@
     We start with the solution from the ring problem, and replace $Q$ with
     $\dl q=2\pi\sigma r\dl r$:
 
-    \eq{-.2in}{
+    \eq{-.1in}{
       \dl E_x =\frac{2\pi kr\sigma x}{(x^2+r^2)^{3/2}}\dl r
     }
 
     Integrating over the entire disk:
 
-    \eq{-.2in}{
+    \eq{-.1in}{
       E_x =\pi kx\sigma\int_0^a\frac{2r}{(x^2+r^2)^{3/2}}\dl r
     }
     
@@ -438,118 +443,11 @@
     with $u=x^2+r^2$ and $n=\frac{-3}2$. You can find the integral in any math
     textbook:
 
-    \eq{-.25in}{
+    \eq{-.1in}{
       E_x =2\pi k\sigma\left(1-\frac x{\sqrt{x^2+a^2}}\right)
     }
   \end{columns}
 \end{frame}
-
-
-
-%\section{Gauss's Law}
-%
-%\begin{frame}{Flux}
-%  \textbf{Flux} is an important concept in many disciplines in physics. The
-%  flux of a vector quantity $\vec X$ is the amount of that quantity flowing
-%  through a surface. In integral form:
-%
-%  \eq{-.1in}{
-%    \Phi=\int\vec X\cdot\dl\vec A\quad\text{or}\quad
-%    \Phi=\int(\vec X\cdot\hat n)\dl A
-%  }
-%
-%  The direction of the infinitesimal area $\dl\vec A$ is \textbf{outward normal}
-%  to the surface.
-%  \begin{center}
-%    \pic{.3}{eflux}
-%  \end{center}
-%\end{frame}
-%
-%
-%
-%\begin{frame}{Flux}
-%  \vspace{.2in}$\Phi$ can be something physical, like water, or bananas, or
-%  something abstract, like electric field (which is what we are interested
-%  in). We can compute a flux as long as there is a vector field i.e.\
-%  $\vec X=\vec X(x,y,z)$. In the case of \textbf{electric flux}, the quantity
-%  $\vec X$ is just the
-%  electric field, i.e.:
-%    
-%  \eq{-.2in}{
-%    \boxed{
-%      \Phi_E=\int\vec E\cdot\dl\vec A
-%    }
-%  }
-%  \begin{center}
-%    \pic{.3}{eflux}
-%  \end{center}
-%\end{frame}
-%
-%
-%
-%\begin{frame}{Electric Flux and Gauss's Law}
-%  \textbf{Gauss's law} tells us that if we have a closed surface (think of
-%  the surface of a balloon), the total electric flux is very well defined:
-%
-%  \eq{-.2in}{
-%    \boxed{
-%      \Phi_E=\oint\vec E\cdot\dl\vec A=\frac{Q_\text{encl}}{\epsilon_0}    
-%    }
-%  }
-%    
-%  where
-%  \begin{itemize}
-%  \item $Q_\text{encl}$ is the charge enclosed by the surface
-%  \item $\epsilon_0=\SI{8.85e-12}{C^2/N.m^2}$ is the permittivity of free space
-%  \end{itemize}
-%  That closed surface is called a \textbf{Gaussian surface}
-%\end{frame}
-%
-%
-%
-%\begin{frame}{Closed Surfaces}
-%  \begin{columns}
-%    \column{.55\textwidth}
-%    A \textbf{closed surface} is one that does not have a boundary, like the
-%    sphere, toroid, and cube on the left.
-%    \column{.45\textwidth}
-%    \pic{1}{800px-SurfacesWithAndWithoutBoundary}
-%  \end{columns}
-%\end{frame}
-%
-%
-%
-%\begin{frame}{Electric Field from a Positive Point Charge}
-%  \begin{columns}
-%    \column{.25\textwidth}
-%    \begin{tikzpicture}[scale=1.2]
-%      \fill[red!65!black](0,0) circle(0.07);
-%      \draw[dashed,thick](0,0) circle(1.5);
-%      \foreach \x in {0,...,13}{
-%        \draw[red!65!black,thick,rotate=30*\x,->](0,0)--(0,1);
-%      }
-%      \draw[thick,->](0,1.5)--(0,2)
-%      node[above]{\footnotesize$\hat{\vec n}$};
-%      \node[red!65!black] at (1.1,0) (E) {\footnotesize$\vec E$};
-%    \end{tikzpicture}
-%    
-%    \column{.75\textwidth}
-%    By symmetry, electric field lines must be radially outward from the charge,
-%    so the integral reduces to:
-%
-%    \eq{-.2in}{
-%      \Phi_E=\oint\vec E\cdot\dl\vec A=EA=\frac q{\epsilon_0}
-%    }
-%
-%    Since area of a sphere is $A=4\pi r^2$, we recover Coulomb's law and the
-%    magnitude of the electric field from a point charge:
-%
-%    \eq{-.2in}{
-%      E=\frac1{4\pi\epsilon_0}\frac q{r^2}=\frac{kq}{r^2}
-%    }
-%  \end{columns}
-%\end{frame}
-
 
 
 
@@ -559,7 +457,7 @@
   The electrostsatic force is a conservative force, therefore the work done
   by $F_q$ is related to the \textbf{electric potential energy} $U_q$:
   
-  \eq{-.3in}{
+  \eq{-.1in}{
     W=\int\vec F_q\cdot\dl\vec r
     =kq_1q_2\int_{r_1}^{r_2}\frac{\dl r}{r^2}
     =-\frac{kq_1q_2} r\Big|^{r_2}_{r_1}=-\Delta U_q
@@ -567,7 +465,7 @@
 
   where
     
-  \eq{-.2in}{
+  \eq{-.1in}{
     \boxed{U_q=\frac{kq_1q_2} r}
   }
   \begin{itemize}
@@ -615,25 +513,14 @@
 \begin{frame}{Relating $U_q$ to $\vec F_q$}
   From the fundamental theorem calculus, we can relate electrostatic force
   ($\vec F_q$) to electric potential energy ($U_q$) by the gradient operator:
-%  and electric field ($\vec E$) to the electric potential ($V$) the same way:
 
-  \eq{-.2in}{
+  \eq{-.1in}{
     \Delta U_q=-\int\vec F_q\cdot\dl\vec r\quad\rightarrow\quad
     \vec F_q(r)=-\nabla U_q=-\diffp{U_q}r\hat r
-%    \quad\;\;
-%    \vec E(r)=-\nabla V=-\diffp Vr\hat r
   }
 
   Electrostatic force $\vec F_q$ always points from high to low potential
   energy (steepest descent direction)
-%  \item Electric field can also be expressed as the change of electric
-%    potential per unit distance, which has the unit
-%    
-%    \eq{-.2in}{
-%      \SI1{\newton\per\coulomb}=\SI1{\volt\per\metre}
-%    }
-%  \item Electric field is also called ``potential gradient''
-%  \end{itemize}
 \end{frame}
 
 
@@ -644,22 +531,22 @@
   An object at a specific location inside a gravitational field has a
   gravitational potential energy proportional to its mass, i.e.\
 
-  \eq{-.25in}{
+  \eq{-.1in}{
     U_g=V_gm
   }
   
-  \vspace{-.1in}This ``constant'' $V_g$ is called the \textbf{gravitational
-    potential}, which is the \emph{gravitational potential energy per unit
-    mass}. In the trivial case with a uniform gravitational field:
+  This ``constant'' $V_g$ is called the \textbf{gravitational potential}, which
+  is the \emph{gravitational potential energy per unit mass}. In the trivial
+  case with a uniform gravitational field:
 
-  \eq{-.2in}{
+  \eq{-.1in}{
     V_g=\frac{U_g}m=gh
   }
 
   This also applies to the general case of the gravitational
   potential energy:
   
-  \eq{-.2in}{
+  \eq{-.1in}{
     V_g=\frac{U_g}m=-\frac{Gm}r
   }  
 \end{frame}
@@ -673,15 +560,15 @@
   which is \emph{one joule per coulomb}, i.e.\
   $\SI1\volt=\SI1{\joule\per\coulomb}$
 
-  \eq{-.2in}{
+  \eq{-.1in}{
     \boxed{
-      V=\frac{U_q}q%=\frac{kq_s}r
+      V=\frac{U_q}q
     }
   }
 
   The electric potential from a source point charge $q_s$ is therefore:
 
-  \eq{-.2in}{
+  \eq{-.1in}{
     \boxed{
       V=\frac{kq_s}r
     }
@@ -695,13 +582,13 @@
     \column{.4\textwidth}
     \centering
     \begin{tikzpicture}[scale=.75]
-      \shade[ball color=blue](0,0) circle(.3) node[white]{\tiny$\bm{+q}$};
+      \shade[ball color=blue] circle(.3) node[white]{\tiny$\bm{+q}$};
       \foreach \theta in {20,40,...,360}{
         \draw[rotate=\theta,->,gray,thick](.3,0)--(3,0);
         \draw[rotate=\theta,gray,thick](2.8,0)--(4,0);
       }
       \foreach \r in {1,2,3}{
-        \draw[very thick,red](0,0) circle(\r);
+        \draw[very thick,red] circle(\r);
         \node[red,below] at (0,-\r+.09){\footnotesize $V_\r$};
       }
     \end{tikzpicture}
@@ -715,9 +602,10 @@
     \item Equipotential lines are perpendicular to the electric field lines
     \item Electric field lines always points from higher $V$ toward lower $V$,
       i.e.
-      \begin{displaymath}
+
+      \eq{-.1in}{
         V_1>V_2>V_3
-      \end{displaymath}
+      }
     \end{itemize}
   \end{columns}
 \end{frame}
@@ -729,13 +617,13 @@
     \column{.4\textwidth}
     \centering
     \begin{tikzpicture}[scale=.75]
-      \shade[ball color=blue](0,0) circle(.3) node[white]{\tiny$\bm{+q}$};
+      \shade[ball color=blue] circle(.3) node[white]{\tiny$\bm{+q}$};
       \foreach \theta in {20,40,...,360}{
         \draw[rotate=\theta,->,gray,thick](.3,0)--(3,0);
         \draw[rotate=\theta,gray,thick](2.8,0)--(4,0);
       }
       \foreach \r in {1,2,3}{
-        \draw[very thick,red](0,0) circle(\r);
+        \draw[very thick,red] circle(\r);
         \node[red,below] at (0,-\r+0.09){\footnotesize$V_\r$};
       }
       \shade[ball color=red,rotate=-20](2,0) circle(.23)
@@ -746,7 +634,7 @@
     A charge $Q$ that is placed inside this electric field will now have an
     electric potential energy of:
 
-    \eq{-.2in}{
+    \eq{-.1in}{
       U_q=QV=Q\left[\frac{kq}r\right]
     }
 
@@ -756,11 +644,36 @@
 
 
 
+\begin{frame}{Electric Potential from Multiple Charges}
+  When there are multiple points charges present, the electric potential is
+  given by the summation:
+
+  \eq{-.1in}{
+    \boxed{
+      V =\underbrace{\frac1{4\pi\epsilon_0}}_k\sum_{i=1}^N\frac{q_i}{r_i}
+    }
+  }
+
+  As $N\rightarrow\infty$ the summation becomes an integral:
+
+  \eq{-.1in}{
+    \boxed{
+      V =\frac1{4\pi\epsilon_0}\int\frac{\dl q}r
+    }
+  }
+
+  where $r$ is the distance to the infinitesimal charge $\dl q$
+\end{frame}
+
+
+
+\section{Electric Potential Difference}
+
 \begin{frame}{Potential Difference}
   \begin{columns}
     \column{.45\textwidth}
     \begin{tikzpicture}[scale=.75]
-      \shade[ball color=blue](0,0) circle(.3) node[white]{\footnotesize$Q$};
+      \shade[ball color=blue] circle(.3) node[white]{\footnotesize$Q$};
       \foreach \theta in {30,60,...,360}{
         \draw[rotate=\theta,->,gray,thick](.3,0)--({7-4*sin(\theta/2)},0);
       }
@@ -782,11 +695,11 @@
     When a charge is moved from $r_1$ to $r_2$, the change in electric potential
     energy is related to the change in electric potential by:
 
-    \eq{-.3in}{
+    \eq{-.1in}{
       \Delta U_q=U_2-U_1=q\Delta V
     }
 
-    \vspace{-.1in}where $\Delta V$ is called the \textbf{potential difference}
+    where $\Delta V$ is called the \textbf{potential difference}
   \end{columns}
 \end{frame}
 
@@ -797,20 +710,20 @@
   The change in electric potential is called the
   \textbf{electric potential difference} or \textbf{voltage}:
 
-  \eq{-.2in}{
+  \eq{-.1in}{
     \boxed{\Delta V=\frac{\Delta U_q}q}\quad\textsf{\normalsize and}\quad
     \boxed{\dl V=\frac{\dl U_q}q}
   }
 
   Here, we can relate $\Delta V$ to an equation that we knew from Grade 11
-  Physics, which related to the energy dissipated in a resistor in a circuit
-  $\Delta U$ to the voltage drop $\Delta V$:
+  Physics and AP Physics 1/2, which related to the energy dissipated in a
+  resistor in a circuit $\Delta U$ to the voltage drop $\Delta V$:
     
-  \eq{-.2in}{
+  \eq{-.1in}{
     \boxed{\Delta U_q=q\Delta V}
   }
 
-  Electric potential difference also has the unit \emph{volts} (\si{\volt})
+  Electric potential difference also has the unit \emph{volts} (\si\volt)
 \end{frame}
 
 
@@ -821,7 +734,7 @@
   gradient operator, electric field ($\vec E$) and electric potential ($V$) are
   also related the same way:
 
-  \eq{-.2in}{
+  \eq{-.1in}{
     \Delta V_q=-\int\vec E_q\cdot\dl\vec r\quad\rightarrow\quad
     \vec E(r)=-\nabla V_q=-\diffp Vr\hat r
   }
@@ -841,17 +754,17 @@
   \begin{itemize}
   \item Electric potential energy:
     
-    \eq{-.3in}{
+    \eq{-.1in}{
       U_q=\frac{kq_1q_2}r
     }
   \item Electric potential:
 
-    \eq{-.25in}{
-      V=\frac{U_q}q%=\frac{kq}r
+    \eq{-.1in}{
+      V=\frac{U_q}q
     }
   \item Electric potential difference (voltage):
 
-    \eq{-.2in}{
+    \eq{-.1in}{
       \Delta V=\frac{\Delta U_q}q
     }
   \end{itemize}
@@ -884,158 +797,12 @@
 
 
 
-\begin{frame}{Equipotential Lines}
-  \begin{center}
-    \pic{0.65}{plate3}
-  \end{center}
-  The dotted blue lines are called \textbf{equipotential lines}. They are
-  always \emph{perpendicular} to the electric field lines. Charges moving in
-  the direction of the equipotential lines have constant electric potential
-\end{frame}
-
-
-
-%\begin{frame}{Electric Field Near an Infinite Plane of Charge}
-%  \begin{columns}
-%    \column{.25\textwidth}
-%    \pic{1.1}{elec_gauss_figure9}
-%
-%    \column{.75\textwidth}
-%    \begin{itemize}
-%    \item Charge density (charge per unit area) $\sigma$
-%    \item By symmetry, $\vec E$ must be perpendicular to the plane
-%    \item Our Gaussian surface is a cylinder shown in the left with an area
-%      $A$; the height of the cylinder is unimportant
-%    \item Nothing ``flows out'' of the side of the cylinder, only at the ends
-%    \item The total flux is $\Phi_q=E(2A)$
-%    \item The enclosed charge is $Q_\text{encl}=\sigma A$
-%    \end{itemize}
-%  \end{columns}
-%\end{frame}
-%
-%
-%
-%\begin{frame}{Electric Field Near an Infinite Plane of Charge}
-%  \begin{columns}
-%    \column{.25\textwidth}
-%    \pic{1.1}{elec_gauss_figure9}
-%
-%    \column{.75\textwidth}
-%    Gauss's law simplifies to:
-%    
-%    \eq{-.2in}{
-%      \oint\vec E\cdot\dl\vec{A}=\frac{Q_\text{encl}}{\epsilon_0}
-%      \;\rightarrow\;
-%      E(2A)=\frac{\sigma A}{\epsilon_0}
-%    }
-%
-%    \vspace{-.1in}Solving for $E$, we get:
-%
-%    \eq{-.2in}{
-%      \boxed{E=\frac{\sigma}{2\epsilon_0}}
-%    }
-%    \begin{itemize}
-%    \item $E$ is a constant
-%    \item Independent of distance from the plane
-%    \item Both sides of the plane are the same
-%    \end{itemize}
-%  \end{columns}
-%\end{frame}
-%
-%
-%
-%\begin{frame}{Electric Field Between Parallel Charged Plates}
+%\begin{frame}{Equipotential Lines}
 %  \begin{center}
-%    \begin{tikzpicture}[xscale=.8]
-%      \begin{scope}[thick]
-%        \draw(0,0) rectangle (8,.2);
-%        \draw(0,1.4) rectangle (8,1.6);
-%        \foreach \x in {.4,.8,1.2,...,7.6}{
-%          \draw[->](\x,1.4)--(\x,.7);
-%          \draw    (\x,1.4)--(\x,.2);
-%        }
-%        \foreach \x in {.8,1.6,2.4,...,7.2}{
-%          \node at (\x,1.78) {\scriptsize $\vec{+}$};
-%          \node at (\x,-.28) {\scriptsize $\vec{-}$};
-%        }
-%        
-%        \draw[->] (0,1.5)..controls(-.15,1.2)..(-.2,.7);
-%        \draw (-.2,.8)..controls(-.15,.4)..(0,.1);
-%        
-%        \draw[->](8,1.5)..controls(8.15,1.2)..(8.2,.7);
-%        \draw    (8.2,.8)..controls(8.15,.4)..(8,.1);
-%      \end{scope}
-%    \end{tikzpicture}
+%    \pic{.65}{plate3}
 %  \end{center}
-%  \begin{itemize}
-%  \item Two plates, each producing an electric field pointing in
-%    the same direction
-%  \item The total electric field is twice the value of \emph{one} infinite
-%    plane, pointing from the positively charged plate toward the negatively
-%    charged plate
-%
-%    \eq{-.2in}{
-%      \boxed{E=\frac{\sigma}{\epsilon_0}}
-%    }
-%  \item $\vec E$ outside the plates is very low (close to zero), except for
-%    fringe effects at the edges of the plates
-%  \end{itemize}
-%\end{frame}
-%
-%
-%
-%\begin{frame}{Electric Field and Electric Potential Difference}
-%  Recall the relationship between electric field ($\vec E$) and electric
-%  potential difference ($V$):
-%    
-%  \eq{-.2in}{
-%    \vec E=-\diffp Vr\hat{\vec r}
-%  }
-%  
-%  This relationship holds regardless of the charge configuration.
-%\end{frame}
-%
-%
-%
-%
-%\begin{frame}{Electric Field and Electric Potential Difference}
-%  \begin{center}
-%    \begin{tikzpicture}[scale=.7]
-%      \begin{scope}[thick]
-%        \draw(0,0) rectangle (8,.2);
-%        \draw(0,1.4) rectangle (8,1.6);
-%        \foreach\x in {.4,.8,1.2,...,7.6}{
-%          \draw[->](\x,1.4)--(\x,.7);
-%          \draw(\x,1.4)--(\x,.2);
-%        }
-%        \foreach\x in {.8,1.6,2.4,...,7.2}{
-%          \node at (\x,1.78) {\scriptsize $\vec{+}$};
-%          \node at (\x,-.28) {\scriptsize $\vec{-}$};
-%        }
-%        
-%        \draw[->](0,1.5)..controls(-.15,1.2)..(-.2,.7);
-%        \draw(-.2,.8)..controls(-.15,.4)..(0,.1);
-%        
-%        \draw[->](8,1.5)..controls(8.15,1.2)..(8.2,.7);
-%        \draw(8.2,.8)..controls(8.15,.4)..(8,.1);
-%      \end{scope}
-%    \end{tikzpicture}
-%  \end{center}
-%  In the case of two parallel plates, the electric field is uniform, and the
-%  relationship simplifies to:
-%
-%  \eq{-.2in}{
-%    \boxed{E=\frac{\Delta V}d}
-%  }
-%  \begin{center}
-%    \begin{tabular}{l|c|c}
-%      \rowcolor{pink}
-%      \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
-%      Electric field intensity & $E$ & \si{\newton\per\coulomb}\\
-%      Electric potential difference between plates & $\Delta V$ &
-%      \si{\volt} \\
-%      Distance between plates       & $d$ & \si{\metre}
-%    \end{tabular}
-%  \end{center}
+%  The dotted blue lines are called \textbf{equipotential lines}. They are
+%  always \emph{perpendicular} to the electric field lines. Charges moving in
+%  the direction of the equipotential lines have constant electric potential
 %\end{frame}
 \end{document}

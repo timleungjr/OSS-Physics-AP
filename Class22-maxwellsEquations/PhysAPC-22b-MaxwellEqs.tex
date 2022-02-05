@@ -1,0 +1,306 @@
+\documentclass[12pt,aspectratio=169]{beamer}
+\input{../mybeamer}
+
+\title{Class 22: Maxwell's Equations}
+\subtitle{Advanced Placement Physics C}
+\input{../me}
+\input{../mycommands}
+
+\begin{document}
+
+\begin{frame}
+  \maketitle
+\end{frame}
+
+
+\begin{frame}{Making Amp\`{e}re's Law Better}
+  Amp\`{e}re's law, as we know it, only applies to \emph{steady} currents $I_c$:
+
+  \eq{-.1in}{
+    \boxed{
+      \oint_C \vec B\cdot\dl\vec\ell=\mu_0 I_c
+    }
+  }
+  However,
+  \begin{itemize}
+  \item Current are usually not steady in RC, RL, LC or RLC circuits
+  \item Applying Amp\`{e}re's law at a charging/discharging capacitor gives an
+    ambiguous answer
+  \end{itemize}
+\end{frame}
+
+
+
+\begin{frame}{Modifying Amp\`{e}re's Law for Unsteady Current}
+  \begin{center}
+    \pic{.3}{mag_displacement_fig3}
+  \end{center}
+  Four surfaces bounded by the same circular Amperian loop
+  (think blowing a soap bubble). Surfaces \numlist{1;2;4} have currents
+  penetrating through them, but surface \num{3} does not.
+\end{frame}
+
+
+
+\begin{frame}{Modifying Amp\`{e}re's Law}
+  This might give a better view of what the ``soap bubble'' looks like
+  \begin{center}
+    \pic{.5}{bubble}
+  \end{center}
+  There is no current through the surface $A_2$ (same as surface \num{3} in the
+  last slide), but there is definitely a changing \emph{electric flux}
+\end{frame}
+
+
+
+\begin{frame}{Maxwell's Modification to Amp\`{e}re's Law}
+  James Clerk Maxwell, in 1860, proposed a modification to Amp\`{e}re's Law
+  to make it work with unsteady current as well
+
+  \eq{-.1in}{
+    \boxed{
+      \oint\vec B\cdot\dl\vec\ell=\mu_0\left( I +
+      \varepsilon_0 \diff{\Phi_E}t\right)
+    }
+  }
+
+  Maxwell called the correction term $\displaystyle\varepsilon_0\diff{\Phi_E}t$
+  \textbf{displacement current}.
+  \begin{itemize}
+  \item The word ``displacement'' has historical roots, but no physical meaning
+  \item However, ``current'' means that the effect of changing the electric
+    flux is indistinguishable from real currents in producing magnetic field
+  \end{itemize}
+\end{frame}
+
+
+
+\begin{frame}{Maxwell's Equations}
+  \begin{itemize}
+  \item Maxwell recognized the relationship between electricity and
+    magnetism in \textbf{Gauss's law}, \textbf{Faraday's law} and
+    \textbf{Amp\`{e}re's law}
+  \item Combined them into a unified set of equations, now known as
+    \textbf{Maxwell's equations} for electrodynamics
+  \end{itemize}
+\end{frame}
+
+
+\begin{frame}{Maxwell's Equations in Integral Form}
+  Maxwell's equations can be expressed in its integral form, which is how we
+  have studied the equations in the first place:
+
+  \vspace{-.2in}{\large
+    \begin{align*}
+      \oint\vec E\cdot\dl\vec A &=\frac q{\varepsilon_0} &
+      \text{\normalsize (Gauss, for $\vec E$)}\\
+      \oint\vec B\cdot\dl\vec A &= 0 &
+      \text{\normalsize (Gauss, for $\vec B$)}\\
+      \oint\vec E\cdot\dl\vec\ell &=-\diff{\Phi_B}t &
+      \text{\normalsize (Faraday)}\\
+      \oint\vec B\cdot\dl\vec\ell &
+      =\mu_0I+\mu_0\varepsilon_0\diff{\Phi_E}t &
+      \text{\normalsize (Amp\`{e}re-Maxwell)}
+    \end{align*}
+  }
+\end{frame}
+
+
+
+\begin{frame}{Maxwell's Equations in Vacuum}
+  \begin{columns}
+    \column{.35\textwidth}
+    \large
+    \begin{align*}
+      \oint\vec E\cdot\dl\vec A &= 0 \\
+      \oint\vec B\cdot\dl\vec A &= 0 \\
+      \oint\vec E\cdot\dl\vec\ell &=-\diff{\Phi_B}t \\
+      \oint\vec B\cdot\dl\vec\ell &=\mu_0\epsilon_0\diff{\Phi_E}t\\
+    \end{align*}
+
+    \column{.65\textwidth}
+    In vacuum, we can remove all references to matter in the equation, and
+    Maxwell's equations simplifies.
+    \begin{itemize}
+    \item The equations show ``symmetry''
+    \item Magnetic and electric fields are on equal footing
+    \item In a vacuum where charges are currents are absent, the only source of
+      either field is a change in the other field
+    \end{itemize}
+  \end{columns}
+\end{frame}
+
+
+
+\begin{frame}{Maxwell's Equations in Differential Form}
+  \begin{columns}
+    \column{.25\textwidth}
+    \large
+    \begin{align*}
+      \nabla\cdot\vec E &= 0\\
+      \nabla\cdot\vec B &= 0\\
+      \nabla\times\vec E &=-\diffp{\vec B}t \\
+      \nabla\times\vec B &=\mu_o\varepsilon_o\diffp{\vec E}t
+    \end{align*}
+
+    \column{.7\textwidth}
+    \begin{itemize}
+    \item Maxwell's equations are usually expressed in \emph{differential} form,
+      which is obtained using vector calculus. Follow
+      [\underline{\href{https://www.wikihow.com/Convert-Maxwell\%27s-Equations-into-Differential-Form}{this link}}] if you want to see how it's done.
+    \item The differential form shows how the \emph{time derivatives} of
+      $\vec E$ and $\vec B$ are related to the \emph{spatial derivatives}
+      of the other field
+    \item The last two equations (Faraday's and Amp\`{e}re's laws) together
+      represent two set of second order partial differential equations (one for
+      each field), the solution of which represents a traveling wave
+    \end{itemize}
+  \end{columns}
+\end{frame}
+
+
+
+\begin{frame}{Electromagnetic (EM) Wave}
+  Maxwell's equations show that an ``electromagnetic wave'' must exist. In a
+  simple case where electric and magnetic fields only vary in $x$ and time $t$
+  only, i.e.\ $\vec E=E(x,t)$ and $\vec B=B(x,t)$, Faraday's and Amp\`{e}re's
+  laws reduce to:
+
+  \eq{-.1in}{
+    \diffp Ex=-\diffp Bt \quad\quad
+    \diffp Bx=-\mu_0\varepsilon_0\diffp Et
+  }
+
+  (A negative sign appears on the right-hand side because we have ignored some
+  of the vector operations.) Taking the spatial derivative of $E$ with respect
+  to $x$ on both side of Faraday's law, and switch the order of
+  differentiation, we get:
+
+  \eq{-.1in}{
+    \diffp*{\left(\diffp Ex\right)}x =-\diffp*{\left(\diffp Bt\right)}x
+    \quad\rightarrow\quad
+    \diffp[2]Ex = -\diffp*{\left(\diffp Bx\right)}t
+  }
+\end{frame}
+
+
+
+\begin{frame}{Electromagnetic (EM) Wave}
+  But we already have an expression for $\partial B/\partial x$ from
+  Amp\`{e}re's law:
+
+  \eq{-.1in}{
+    \diffp[2] Ex = \diffp*{\left(\diffp Bx \right)}t
+    =-\diffp*{\left(-\mu_0\varepsilon_0\diffp Et\right)}t
+  }
+
+  Rearranging the terms on the right hand side, we get
+
+  \eq{-.1in}{
+    \diffp[2] Ex = \mu_0\varepsilon_0\diffp[2] Et
+  }
+  
+  This is the standard form of the \textbf{wave equation} (a second-order
+  partial differential equation):
+
+  \eq{-.1in}{
+    \diffp[2]{\Psi}x = \frac1{v^2}\diffp[2]{\Psi}t
+  }
+\end{frame}
+
+
+
+\begin{frame}{Electromagnetic (EM) Wave}
+  \begin{itemize}
+  \item ``Second-order'' means that the equation deals with second derivatives,
+    in this case, in $x$ and in $t$.
+  \item ``Partial'' means the equation involves partial derivatives (i.e.\
+    when a function has more than one variables, and you only differentiate
+    against one variable)
+  \item We can also repeat the exercise by first differentiating Amp\`{e}re's
+    law to get
+
+    \eq{-.1in}{
+      \diffp[2] Bx = \mu_0\varepsilon_0\diffp[2] Bt
+    }
+  \end{itemize}
+\end{frame}
+
+
+
+\begin{frame}{Electromagnetic (EM) Wave}
+  The wave equation shows that disturbances in electric and magnetic fields
+  propagate as an electromagnetic wave (``EM wave'') with a universal speed
+  generally referred to as the \textbf{speed of light}.
+
+  \eq{-.1in}{
+    v=c_0=\frac1{\sqrt{\mu_0\varepsilon_0}}=\SI{299792458}{\metre\per\second}
+  }
+
+  The simplified 1D example cannot (because we have ignored the cross-product)
+  that $\vec E$ and $\vec B$ are actually perpendicular to each other
+\end{frame}
+
+
+
+\begin{frame}{Electromagnetic (EM) Wave}
+  A EM wave is considered to be \textbf{polarized} if both $\vec E$
+  (and therefore) $\vec B$ of the wave are confined to a single plane. The
+  direction of the polarization is the direction of $\vec E$.
+  \begin{center}
+    \pic{.4}{em-20field}
+  \end{center}
+\end{frame}
+
+
+
+\begin{frame}{``Failure'' of Maxwell's Equation}
+  A peculiar feature of Maxwell's equation:
+  \begin{itemize}
+  \item When applying \emph{Galilean transformation} (our classical equation for
+    \emph{relative motion}) to Maxwell's equations, they seem to ``fail''
+  \item Gauss's law for magnetism break down: magnetic field lines appear to
+    have beginnings/ends
+  \item So does that mean that in \emph{some} inertial frames of reference,
+    Maxwell's equations are valid, but in others, they are not?
+  \item Physicists theorized that, perhaps, there is/are actually
+    \emph{preferred} inertial frame(s) of references
+  \item This violate the long-standing
+    \emph{principle of relativity}, which says that
+    \emph{the laws of physics are equal in all inertial frames of reference}
+  \end{itemize}
+\end{frame}
+
+
+
+\begin{frame}{Making The Equations Work Again}
+  Maxwell's equations didn't ``fail''; it was our understanding of space and
+  time that needed to change
+  \begin{itemize}
+  \item Albert Einstein believed in the principle of relativity, and rejected
+    the concept of a preferred frame of reference
+  \item In Maxwell's equations, the speed of an electromagnetic wave (speed of
+    light) is independent of the frame of reference
+  \item In order to make the equations to work again, Einstein revisited the
+    most basic concepts involved in our understanding of physics: space and
+    time
+  \end{itemize}
+\end{frame}
+
+
+
+\begin{frame}{Einstein and Special Relativity}
+  Einstein's Postulates of Special Relativity:
+  \begin{enumerate}
+  \item\textbf{Principle of relavity:} All laws of physics must apply equally
+    in all inertial frames of reference.
+  \item\textbf{Principle of invariant speed of light:} As measured in any
+    inertial frame of reference, light always propagated in a vacuum with a
+    definite velocity $c_0$ that is independent of the state of motion of the
+    emitting body.
+  \end{enumerate}
+  Published in 1905 in the article \emph{On the Electrodynamics of Moving
+    Bodies} when Einstein was 26 years old working as a patent clerk in
+  Switzerland
+\end{frame}
+\end{document}

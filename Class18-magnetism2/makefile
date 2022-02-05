@@ -1,13 +1,13 @@
 all:
-	xelatex PhysAPC-13-Magnetism
-	xelatex PhysAPC-13-Magnetism
-	cd homework ; make
+	xelatex PhysAPC-18-faradaysLaw
+	xelatex PhysAPC-18-faradaysLaw
+#	cd homework ; make
 
 clean:
 	rm -rf *~ *.*~ *.log *.nav *.aux *.out *.snm *.toc
-	cd homework ; make clean
+#	cd homework ; make clean
 
 public:
-	mkdir -p $(DESTINATION)/Topic13
-	cp *.pdf $(DESTINATION)/Topic13
-	cp homework/*Homework.pdf $(DESTINATION)/Topic13
+	mkdir -p $(DESTINATION)/Class18
+	cp *.pdf $(DESTINATION)/Class18
+#	cp homework/*Homework.pdf $(DESTINATION)/Class18

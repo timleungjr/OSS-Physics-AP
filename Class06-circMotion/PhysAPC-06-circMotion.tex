@@ -3,7 +3,7 @@
 
 \usetikzlibrary{patterns}
 
-\title{Topic 6: Circular Motion}
+\title{Class 6: Circular Motion}
 \subtitle{Advanced Placement Physics C}
 \input{../me}
 \input{../mycommands}
@@ -60,7 +60,7 @@
     In the Cartesian coordinate system, an object's position is described by
     its $x$ and $y$ coordinates:
 
-    \eq{-.25in}{
+    \eq{-.1in}{
       \vec r(t)=x(t)\iii + y(t)\jjj
       }
 
@@ -68,7 +68,7 @@
     \textbf{polar coordinate system} is preferred. The position of an object
     is described by:
 
-    \eq{-.2in}{
+    \eq{-.1in}{
       \vec{r}(t)=r(t)\hat r + \theta(t)\hat\theta
     }
     \begin{itemize}
@@ -164,11 +164,11 @@
     \end{tikzpicture}
     
     \column{.68\textwidth}
-    For a constant $r$, the \textbf{angular position} $\theta$ determines an
+    For constant $r$, the \textbf{angular position} $\theta$ determines an
     object's position as a function of time. It is usually measured in
     \textbf{radian} (\si{\radian}):
 
-    \eq{-.2in}{
+    \eq{-.1in}{
       \boxed{\theta=\theta(t)}
     }
     
@@ -176,7 +176,7 @@
     time derivative, measured in \textbf{radian per second}
     (\si{\radian\per\second}):
       
-    \eq{-.2in}{
+    \eq{-.1in}{
       \boxed{\omega(t)=\diff{\theta}t}
     }
   \end{columns}
@@ -190,7 +190,7 @@
     \begin{tikzpicture}[scale=.75]
       \draw[->](-3,0)--(3,0) node[right]{$x$};
       \draw[->](0,-3)--(0,3) node[above]{$y$};
-      \draw (0,0) circle(2.5);
+      \draw circle(2.5);
       \begin{scope}[rotate=38]
         \draw[->] (0,0)--(2.44,0) node[midway,above]{$r$};
         \draw[fill=red!60] (2.5,0) circle(.1);
@@ -203,12 +203,12 @@
     The velocity of the object in circular motion is related to the angular
     velocity (or angular frequency) by:
 
-    \eq{-.3in}{
+    \eq{-.1in}{
       v=r\omega
     }    
 
     \begin{itemize}
-    \item\vspace{-.25in} The direction of $\vec v$ is tangent to circle, along
+    \item The direction of $\vec v$ is tangent to circle, along
       $\hat\theta$, and therefore $\perp$ to $\hat r$
     \item If $\omega>0$, the motion is counter-clockwise
     \item If $\omega<0$, the motion is clockwise
@@ -237,13 +237,12 @@
     The velocity of the object in circular motion is more properly related to
     the angular velocity using this vector cross product:
 
-    \eq{-.25in}{
+    \eq{-.1in}{
       \vec v=\vec\omega\times\vec r
     }
 
     \begin{itemize}
-    \item\vspace{-.2in}$\vec\omega$: out of the page if motion is
-      counter-clockwise
+    \item $\vec\omega$: out of the page if motion is counter-clockwise
     \item $\vec\omega$: into the page if motion is clockwise
     \end{itemize}
     Visualizing $\vec\omega$ takes practice, but this vector notation is
@@ -257,7 +256,7 @@
   If two points $A$ and $B$ are rotating with the same angular velocity with the
   same center, their relative position is given by:
 
-  \eq{-.2in}{
+  \eq{-.1in}{
     \boxed{
       \vec V_B=\vec V_A+ \vec\omega\times\vec r_{BA}
     }
@@ -289,14 +288,14 @@
     For constant angular velocity $\omega$ (uniform circular motion), the
     motion is periodic. Its \textbf{frequency} and \textbf{period} are given by:
 
-    \eq{-.15in}{
+    \eq{-.1in}{
       f=\frac\omega{2\pi}\quad
       T=\frac{2\pi}\omega\quad
       f=\frac1T
     }
     
-    $T$ is in \textbf{seconds} (\si{\second}) and $f$ is in \textbf{hertz}
-    (\si{\hertz})
+    $T$ is in \textbf{seconds} (\si\second) and $f$ is in \textbf{hertz}
+    (\si\hertz)
   \end{columns}
 \end{frame}
 
@@ -336,7 +335,7 @@
   The time derivative of $\omega$ is \textbf{angular acceleration}, which
   has a unit of \si{\radian\per\second\squared}:
 
-  \eq{-.2in}{
+  \eq{-.1in}{
     \alpha=\diff{\omega}t=\diff[2]{\theta}t
   }
 
@@ -344,7 +343,7 @@
   \textbf{tangential acceleration} $a_t$ is related to angular acceleration
   $\alpha$ by the radius $r$:
     
-  \eq{-.2in}{
+  \eq{-.1in}{
     a_t(t)=\diff vt=r\diff{\omega}t=r\alpha
   }
     
@@ -357,14 +356,14 @@
 \begin{frame}{With Calculus}
   Relationship between angular position and angular velocity:
 
-  \eq{-.2in}{
+  \eq{-.1in}{
     \omega(t)=\diff{\theta}t\quad\quad
     \theta(t)=\int\omega(t)\dl t +\theta_0
   }
 
   Relationship between angular velocity and angular acceleration:
 
-  \eq{-.2in}{
+  \eq{-.1in}{
     \alpha(t)=\diff{\omega}t=\diff[2]{\theta}t
     \quad\quad\omega(t)=\int\alpha(t)\dl t+\omega_0
   }
@@ -379,7 +378,7 @@
   For constant $\alpha$, the kinematic equations are just like in rectilinear
   motion:
 
-  \vspace{-.3in}{\Large
+  \vspace{-.3in}{\large
     \begin{align*}
       \theta&=\theta_0 + \omega_0 t + \frac12\alpha t^2\\
       \theta&=\theta_0+ \frac{\omega_0+\omega}2 t\\
@@ -404,7 +403,7 @@
   There is also a component of acceleration toward the center of the motion,
   called the \textbf{centripetal acceleration} $a_c$:
 
-  \eq{-.15in}{
+  \eq{-.1in}{
     \boxed{\vec a_c=-\frac{v^2}r\hat r=-(\omega^2r)\hat r}
   }
 
@@ -412,7 +411,7 @@
   The force that causes the centripetal acceleration is called the
   \textbf{centripetal force}:
 
-  \eq{-.15in}{
+  \eq{-.1in}{
     \boxed{\vec F_c=m\vec a_c=-\frac{mv^2}r\hat r}
   }
 \end{frame}
@@ -423,13 +422,13 @@
   In uniform circular motion ($\alpha=0$) problems where the period or
   frequency are known, the speed of the object is:
 
-  \eq{-.15in}{
+  \eq{-.1in}{
     v=\omega r = 2\pi rf = \frac{2\pi r}T
   }
 
   Centripetal acceleration can therefore be expressed based on $T$ or $f$:
 
-  \eq{-.15in}{
+  \eq{-.1in}{
     \vec a_c=-(\omega^2r)\hat r\quad\rightarrow\quad
     \boxed{
       \vec a_c=-\frac{4\pi^2r}{T^2}\hat r=-4\pi^2rf^2\hat r
@@ -444,9 +443,9 @@
     \column{.25\textwidth}
     \begin{tikzpicture}[scale=4.2]
       \draw[dashed] (.866,-.5) arc(-30:30:1);
-      \draw[ultra thick,red,->] (1,0)--(.5,0)
+      \draw[ultra thick,magenta,->] (1,0)--(.5,0)
       node[midway,below]{$a_c=\omega^2r$};
-      \draw[ultra thick, blue,->] (1,0)--(1,.3)
+      \draw[ultra thick,cyan,->] (1,0)--(1,.3)
       node[right]{$a_t=r\alpha$};
       \fill (1,0) circle(.02);
     \end{tikzpicture}
@@ -454,16 +453,15 @@
     \column{.75\textwidth}
     In general circular motion, there are two components of acceleration:
     \begin{itemize}
-    \item\textcolor{red}{\textbf{Centripetal acceleration} $a_c$} depends on
+    \item\textcolor{magenta}{\textbf{Centripetal acceleration} $a_c$} depends on
       radius of curvature $r$ and instantaneous speed $v$. The direction of
       the acceleration is toward the center of the circle.
-    \item \textcolor{blue}{\textbf{Tangential acceleration} $a_t$}
+    \item \textcolor{cyan}{\textbf{Tangential acceleration} $a_t$}
       depends on radius $r$  and angular acceleration $\alpha$. The direction
       of the acceleration is tangent to the circle
     \end{itemize}
+    Most of the cases in AP Physics are uniform circular motion.
   \end{columns}
-
-  \vspace{.2in}Most of the cases in AP Physics are uniform circular motion.
 \end{frame}
 
 
@@ -471,7 +469,7 @@
 \begin{frame}{How to Solve Circular Motion Problems}
   The condition for circular motion is the second law of motion:
 
-  \eq{-.2in}{
+  \eq{-.1in}{
     \vec F_c=\sum\vec F=m\vec a_c
   }
   
@@ -523,13 +521,13 @@
     \column{.65\textwidth}
     No motion in the $y$ direction, i.e.\ no net force:
 
-    \eq{-.35in}{
+    \eq{-.1in}{
       \sum F_y=N\cos\theta-f\sin\theta-w=0
     }
 
     Net force in the $x$ direction is the centripetal force:
 
-    \eq{-.35in}{
+    \eq{-.1in}{
       \sum F_x=N\sin\theta +f\cos\theta = \frac{mv^2}r
     }
 
@@ -561,7 +559,7 @@
     assume either kinetic friction or maximum static friction), and weight
     $w=mg$, the equations on the previous slides can be arranged as:
 
-    \vspace{-.4in}{\Large
+    \vspace{-.3in}{\large
       \begin{align*}
         N\left(\cos\theta-\mu\sin\theta\right) &=mg\\
         N\left(\sin\theta+\mu\cos\theta\right) &=\frac{mv^2}r
@@ -590,14 +588,14 @@
     \column{.65\textwidth}
     Dividing the two equations removes both the normal force and mass terms:
 
-    \eq{-.15in}{
+    \eq{-.1in}{
       \frac{\sin\theta+\mu\cos\theta}{\cos\theta-\mu\sin\theta}
       =\frac{v^2}{rg}
     }
 
     The \emph{maximum} velocity $v_\text{max}$ can be expressed as:
 
-    \eq{-.25in}{
+    \eq{-.1in}{
       \boxed{v_\text{max}=
         \sqrt{rg\frac{\sin\theta+\mu\cos\theta}{\cos\theta-\mu\sin\theta}}
       }
@@ -619,7 +617,7 @@
   And in the limit of a flat roadway with no banking ($\theta=0$,
   $\sin\theta=0$ and $\cos\theta=1$), the equation reduces to:
 
-  \eq{-.2in}{
+  \eq{-.1in}{
     \boxed{
       v_{\text{max}}=\sqrt{\mu rg}
     }
@@ -667,16 +665,15 @@
       \draw[very thick](-1,0)--(1,0);
       \begin{scope}[rotate=20]
         \draw[thick](0,0)--(0,-5);
-        \tikzstyle{balloon}=[ball color=red!70!black];
-        \shade[balloon] (0,-5) circle (0.2) node[below right]{$m$};
-        \begin{scope}[->,very thick,red!70!black]
+        \shade[ball color=red] (0,-5) circle (0.2) node[below right]{$m$};
+        \begin{scope}[->,very thick,red]
           \draw(0,-5)--(0,-3.3) node[left]{$\vec T$};
           \draw[rotate around={-20:(0,-5)}](0,-5)--(0,-6.5)
           node[below]{$m\vec g$};
         \end{scope}
       \end{scope}
-      \draw[dashed,thin](0,0)--(0,-5);
-      \draw[dashed,thin](3.54,-3.54) arc(315:225:5);
+      \draw[dashed](0,0)--(0,-5);
+      \draw[dashed](3.54,-3.54) arc(315:225:5);
       \draw[->](0,-2) arc(270:290:2) node[midway,below]{$\theta$};
     \end{tikzpicture}
 
@@ -700,22 +697,19 @@
 
 
 \begin{frame}{Simple Pendulum}
-  At the top of the swing, velocity $v$ is zero, therefore:
-  
-  \vspace{.1in}\begin{columns}
+  \begin{columns}
     \column{.5\textwidth}
     \begin{tikzpicture}[scale=.75]
       \fill[pattern=north east lines] (-1,0) rectangle (1,0.2);
       \draw[very thick](-1,0)--(1,0);
       \begin{scope}[rotate=45]
         \draw[thick](0,0)--(0,-5);
-        \tikzstyle{balloon}=[ball color=red!70!black];    
-        \shade[balloon] (0,-5) circle (0.2) node[below right]{$m$};
-        \begin{scope}[->,very thick,red!70!black]
+        \shade[ball color=red] (0,-5) circle(.2) node[below right]{$m$};
+        \begin{scope}[->,very thick,red]
           \draw[dotted](0,-5)--(-1.1,-5)node[left]{$mg\sin\theta$};
           \draw[dotted](0,-5)--(0,-6.1)
-          node[right,fill=yellow!30]{$mg\cos\theta$};
-          \draw(0,-5)--(0,-3.9) node[left,fill=yellow!30]{$\vec T$};
+          node[right,fill=yellow!20]{$mg\cos\theta$};
+          \draw(0,-5)--(0,-3.9) node[left,fill=yellow!20]{$\vec T$};
           \draw[rotate around={-45:(0,-5)}](0,-5)--(0,-6.5)
           node[below]{$m\vec g$};
         \end{scope}
@@ -726,27 +720,27 @@
     \end{tikzpicture}
 
     \column{.5\textwidth}
-    Centripetal acceleration is also zero:
+    At the top of the swing, velocity $v$ is zero, therefore centripetal
+    acceleration is also zero:
 
-    \eq{-.2in}{
+    \eq{-.1in}{
       a_c=\frac{v^2}r=0
     }
 
-    and therefore the net force along the radial direction $\hat r$ is zero.
-    The tension force $T$ can be calculated:
+    the net force along the radial direction $\hat r$ is zero. The tension
+    force $T$ can be calculated:
 
-    \eq{-.2in}{
+    \eq{-.1in}{
       T=mg\cos\theta
     }
+    
+    At the highest point when $\theta$ is largest, tension is the lowest.
   \end{columns}
-  At the highest point when $\theta$ is largest, tension is the lowest.
 \end{frame}
 
 
 
 \begin{frame}{Simple Pendulum}
-  In the radial direction $\hat\theta$, there is still a net force of
-  $mg\sin\theta$, therefore:
   \vspace{.2in}
   \begin{columns}
     \column{.5\textwidth}
@@ -755,31 +749,32 @@
       \draw[very thick](-1,0)--(1,0);
       \begin{scope}[rotate=45]
         \draw[thick](0,0)--(0,-5);
-        \tikzstyle{balloon}=[ball color=red!70!black];    
-        \shade[balloon] (0,-5) circle (0.2) node[below right]{$m$};
-        \draw[dotted,->,very thick,red!70!black](0,-5)--(-1.1,-5)
-        node[left,fill=blue!20]{$mg\sin\theta$};
-        \draw[dotted,->,very thick,red!70!black](0,-5)--(0,-6.1)
+        \shade[ball color=red] (0,-5) circle(.2) node[below right]{$m$};
+        \draw[dotted,->,very thick,red](0,-5)--(-1.1,-5)
+        node[left,fill=cyan!10]{$mg\sin\theta$};
+        \draw[dotted,->,very thick,red](0,-5)--(0,-6.1)
         node[right]{$mg\cos\theta$};
-        \draw[->,very thick,red!70!black](0,-5)--(0,-3.9)
+        \draw[->,very thick,red](0,-5)--(0,-3.9)
         node[left]{$\vec T$};
-        \draw[->,very thick,red!70!black,rotate around={-45:(0,-5)}]
+        \draw[->,very thick,red,rotate around={-45:(0,-5)}]
         (0,-5)--(0,-6.5) node[below]{$m\vec g$};
       \end{scope}
-      \draw[dashed,thin](0,0)--(0,-5);
-      \draw[dashed,thin](3.54,-3.54) arc(315:225:5);
+      \draw[dashed](0,0)--(0,-5);
+      \draw[dashed](3.54,-3.54) arc(315:225:5);
       \draw[->](0,-2) arc(270:315:2) node[pos=.5,below]{$\theta$};
     \end{tikzpicture}
 
     \column{.5\textwidth}
-    There is a tengential acceleration along $\hat\theta$, with a magnitude of:
+    In the radial direction $\hat\theta$, there is still a net force of
+    $mg\sin\theta$, therefore, there is a tengential acceleration along
+    $\hat\theta$, with a magnitude of:
 
-    \eq{-.25in}{
+    \eq{-.1in}{
       a_t=g\sin\theta
     }
 
-    \vspace{-.1in}This is the same acceleration as an object sliding down a
-    frictionless ramp at an angle of $\theta$.
+    %This is the same acceleration as an object sliding down a
+    %frictionless ramp at an angle of $\theta$.
   \end{columns}
 \end{frame}
 
@@ -791,34 +786,33 @@
   \vspace{.1in}\begin{columns}
     \column{.35\textwidth}
     \begin{tikzpicture}[scale=.8]
-      \fill[pattern=north east lines] (-1,0) rectangle (1,0.2);
+      \fill[pattern=north east lines] (-1,0) rectangle (1,.2);
       \draw[very thick](-1,0)--(1,0);
 
       \draw[thick](0,0)--(0,-5);
-      \tikzstyle{balloon}=[ball color=red!70!black];    
-      \shade[balloon] (0,-5) circle (0.2) node[below right]{$m$};
-      \begin{scope}[->,very thick,red!70!black]
+      \shade[ball color=red] (0,-5) circle (0.2) node[below right]{$m$};
+      \begin{scope}[->,very thick,red]
         \draw (0,-5)--(0,-2.5) node[right]{$\vec T$};
         \draw (0,-5)--(0,-6.5) node[below]{$m\vec g$};
       \end{scope}
-      \draw[dashed,thin](3.54,-3.54) arc(315:225:5);
+      \draw[dashed](3.54,-3.54) arc(315:225:5);
     \end{tikzpicture}
 
     \column{.65\textwidth}
     \begin{itemize}
     \item Maximum centripetal acceleration:
 
-      \eq{-.25in}{
+      \eq{-.1in}{
         a_c=\frac{v^2}r
       }
     \item No tangential acceleration:
 
-      \eq{-.25in}{
+      \eq{-.1in}{
         a_t=0
       }
     \item At the lowest point, tension is the highest:
 
-      \eq{-.3in}{
+      \eq{-.1in}{
         T=mg+F_c=m\left(g+\frac{v^2}r\right)
       }
     \end{itemize}

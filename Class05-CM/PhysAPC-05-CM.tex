@@ -57,14 +57,14 @@
   \end{center}
   The answer is simple: the half way point between them:
 
-  \eq{-.2in}{
+  \eq{-.1in}{
     x_{cm}=\frac{x_1+x_2}2
   }
 
   Multiply both numerator and denominator by mass $m$ (for generalization
   later), the equation becomes:
 
-  \eq{-.2in}{
+  \eq{-.1in}{
     x_{cm}=\frac{mx_1+mx_2}{2m}
   }
 \end{frame}
@@ -82,30 +82,18 @@
       \fill(2.5/3,0) circle(.05) node[below]{CM};
     \end{tikzpicture}
   \end{center}
-  \vspace{.15in}The answer is still simple. The CM is no longer half way
-  between the two masses, but now $\frac13$ the total distance from the
-  larger masses. We can show using a weighted average:
+  The answer is still simple. The CM is no longer half way between the two
+  masses, but now $\frac13$ the total distance from the larger masses. We can
+  show using a weighted average:
   
-  \eq{-.2in}{
+  \eq{-.1in}{
     x_{cm}=\frac{mx_1+(2m)x_2}{m+2m}
   }  
 \end{frame}
 
 
-\begin{frame}{Complicating Things Further}{Many Point Masses}
-%  If we increase the number of point masses along the $x$-axis, our problem can
-%  become much more complicated (although still not devastatingly so)
-%  \begin{center}
-%    \begin{tikzpicture}
-%      \draw[->] (-4,0)--(4,0) node[right]{$x$};
-%      \draw[fill=gray!50] (-3.2,0) circle(.4);
-%      \draw[fill=gray!50] (-2.5,0) circle(.1);
-%      \draw[fill=gray!50] (1.5,0) circle(.15);
-%      \draw[fill=gray!50] (0  ,0) circle(.3);
-%      \draw[fill=gray!50] (2.5,0) circle(.25);
-%    \end{tikzpicture}
-%  \end{center}
 
+\begin{frame}{Complicating Things Further}{Many Point Masses}
   The weighted average concept can now be applied to cases when there are
   masses in 2D or 3D:
   \begin{center}
@@ -123,11 +111,12 @@
 \end{frame}
 
 
+
 \begin{frame}{An Equation Helps}
   The center of mass is defined for discrete number of masses with the weighted
   average:
 
-  \eq{-.2in}{
+  \eq{-.1in}{
     \boxed{\vec x_{cm}=\frac{\sum \vec x_i m_i}{\sum m_i}}
   }
   \begin{center}
@@ -141,12 +130,13 @@
   \end{center}
   In components:
 
-  \eq{-.2in}{
+  \eq{-.1in}{
     x_{cm}=\frac{\sum x_i m_i}{\sum m_i}\quad\quad
     y_{cm}=\frac{\sum y_i m_i}{\sum m_i}\quad\quad
     z_{cm}=\frac{\sum z_i m_i}{\sum m_i}
   }
 \end{frame}
+
 
 
 \begin{frame}{An Example}
@@ -163,19 +153,11 @@
 
 
 \begin{frame}{Continuous Mass Distribution}
-%  In general, objects are not a discrete collection of point masses, but a
-%  continuous distribution of mass. Therefore, we take the limit of when the
-%  number of masses approaches $\infty$:
-%  
-%  \eq{-.15in}{
-%    \vec x_{cm}=\lim_{n\rightarrow\infty}
-%    \left(\frac{\sum_{i=1}^n \vec x_i m_i}{\sum_{i=1}^n m_i}\right)
-%  }
   When the number of masses approaches infinity, this becomes a continuous
   distribution of mass. Taking the limit of masses $N\rightarrow\infty$ gives
   the integral form of our equation:
 
-  \eq{-.15in}{
+  \eq{-.1in}{
     \boxed{\vec x_{cm}=\frac{\int\vec x\dl m}{\int\dl m}}
   }
 
@@ -187,19 +169,19 @@
 \begin{frame}{Densities}
   Linear density (for 1D problems)
 
-  \eq{-.2in}{
+  \eq{-.1in}{
     \gamma = \diff mL\quad\rightarrow\quad \dl m =\gamma\dl L
   }
 
   Surface area density (for 2D problems)
 
-  \eq{-.2in}{
+  \eq{-.1in}{
     \sigma=\diff mA\quad\rightarrow\quad \dl m =\sigma\dl A
   }
 
   Volume density (for 3D problems)
 
-  \eq{-.2in}{
+  \eq{-.1in}{
     \rho=\diff mV\quad\rightarrow\quad \dl m =\rho\dl V
   }
   
@@ -277,8 +259,8 @@
   \item\textbf{Example:} What is the center of mass of this shape?
     \begin{center}
       \begin{tikzpicture}
-        \draw[thick,fill=gray] circle(2);
-        \draw[thick,fill=white](0,1) circle(1);
+        \draw[thick,fill=lightgray] circle(2);
+        \draw[thick,fill=black!2](0,1) circle(1);
         \fill circle(.04);
         \draw[thick,->](0,0)--(-1.41,-1.41)node[midway,below]{\footnotesize$r$};
         \draw[fill=black](0,1) circle(.04);
@@ -295,16 +277,16 @@
   \item This is how we would think of it:
     \begin{center}
       \begin{tikzpicture}[scale=.6]
-        \draw[thick,fill=gray] circle(2);
-        \draw[thick,fill=white](0,1) circle(1);
+        \draw[thick,fill=lightgray] circle(2);
+        \draw[thick,fill=black!2](0,1) circle(1);
         \draw[fill=black](0,0) circle(.04);
         \draw[thick,->](0,0)--(-1.41,-1.41)
         node[midway,below]{\footnotesize$r$};
         \fill (0,1) circle(.04);
         \draw[thick,->](0,1)--(.707,.293) node[right]{\footnotesize$r/2$};
       
-        \draw[thick,fill=gray](6,0) circle(2) node{\large$A$};
-        \draw[thick,fill=gray](11,1) circle(1) node{\large$B$};
+        \draw[thick,fill=lightgray](6,0) circle(2) node{\large$A$};
+        \draw[thick](11,1) circle(1) node{\large$B$};
         \node at (3,0) {\huge=};
         \node at (9,0) {\huge -};
       \end{tikzpicture}
@@ -313,7 +295,7 @@
   \item Based on symmetry: $x_{cm}=0$; only have to find $y$-coordinate.
   \end{itemize}
 
-  \eq{-.25in}{
+  \eq{-.2in}{
     y_{cm}
     =\frac{\sum y_i m_i}{\sum m_i}
     =\frac{m_A(0) + m_B (r/2)}{m_A+m_B}
@@ -329,7 +311,7 @@
   Take time derivative of the equation for $\vec x_{cm}$ to get the
   velocity at the CM:
     
-  \eq{-.2in}{
+  \eq{-.1in}{
     \vec v_{cm}=\diff{\vec x_{cm}}t
     =\frac1m\diff{}t\left(\int\vec x\dl m\right)
     =\frac1m\int\diff{\vec x}t\dl m
@@ -339,14 +321,14 @@
   The integral in the numerator is the sum of the momentum of all the masses in
   the system ($\vec p_\text{net}$) which means that we have
 
-  \eq{-.2in}{
+  \eq{-.1in}{
     \vec p_\text{net}=m\vec v_{cm}
     }
 
   Taking the derivative of $\vec p_\text{net}$ relates force and acceleration
   at the CM as well:
     
-  \eq{-.2in}{
+  \eq{-.1in}{
     \vec F_\text{net}=\diff{\vec p_\text{net}}t=m\diff{\vec v_{cm}}t
     =m\vec a_{cm}
   }

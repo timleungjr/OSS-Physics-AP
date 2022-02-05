@@ -4,14 +4,6 @@
 
 \usetikzlibrary{decorations.pathmorphing,patterns}
 
-\setlength{\parskip}{0pt}
-\renewcommand{\baselinestretch}{1}
-
-\sisetup{
-  per-mode=symbol
-}
-\tikzset{>=latex}
-
 \title{Class 10: Harmonic Motion}
 \subtitle{Advanced Placement Physics C}
 \input{../me}
@@ -34,7 +26,7 @@
   \emph{Hooke's constant}, \emph{force constant}, or the \emph{spring rate}) of
   the spring, and the spring's displacement $\vec x$:
 
-  \eq{-.2in}{
+  \eq{-.1in}{
     \boxed{\vec F_s=-k\vec x}
   }
   \begin{center}
@@ -51,18 +43,17 @@
 
 
 \begin{frame}{Elastic Potential Energy}
-  Applying Hooke's law in the work equation gives the amount of 
-  \textbf{elastic potential energy} stored in the spring when it is
-  compressed or stretched:
+  Applying Hooke's law in the work equation gives the amount of \textbf{elastic
+    potential energy} stored in the spring when it is compressed or stretched:
 
-  \eq{-.25in}{
+  \eq{-.1in}{
     W=\int^{x_2}_{x_1}\vec F_s\cdot\dl\vec x=-\int^{x_2}_{x_1}kx\dl x
     =-\frac12kx^2\Big|^{x_2}_{x_1}=-\Delta U_e
   }
 
   where elastic potential energy is defined as
 
-  \eq{-.2in}{
+  \eq{-.1in}{
     \boxed{U_e=\frac12kx^2}
   }
 \end{frame}
@@ -76,10 +67,10 @@
   without friction
   \begin{center}
     \begin{tikzpicture}[scale=1.1]
-      \draw[thick,fill=blue!70] (4.95,.5) rectangle (6.05,1.5);
-      \draw[thick,draw=black!70,
+      \draw[thick,fill=blue!70] (5,.5) rectangle (6,1.5);
+      \draw[thick,
         decoration={aspect=.3,segment length=2mm, amplitude=2.5mm, coil},
-        decorate] (0,1)--(4.95,1);
+        decorate] (0,1)--(5,1);
       \fill[pattern=north east lines] (6.5,.5)--(6.5,.3)--(-0.2,.3)
       --(-.2,2)--(0,2)--(0,.5)--cycle;
       \draw[thick] (6.5,.5)--(0,.5)--(0,2);
@@ -103,7 +94,7 @@
 \begin{frame}{Horizontal Spring-Mass System}
   Applying second law of motion in the $x$-direction:
 
-  \eq{-.2in}{
+  \eq{-.1in}{
     \sum F=F_s=ma\quad\longrightarrow\quad-kx=m\ddot x
   }
 
@@ -111,7 +102,7 @@
   \emph{second-order ordinary differential equation with constant
     coefficients}. In standard form:
 
-  \eq{-.15in}{
+  \eq{-.1in}{
     \ddot x+\frac kmx=0
   }
   
@@ -125,34 +116,35 @@
   The solution to the equation is a function $x(t)$ where the second time
   derivative $\ddot x$ looks like $x$ but with a negative sign
 
-  \eq{-.2in}{
+  \eq{-.1in}{
     \ddot x+\frac kmx=0
   }
 
   The obvious choices are the trigonometric functions $\sin(t)$ and $\cos(t)$.
   Starting with this general form:
     
-  \eq{-.25in}{
+  \eq{-.1in}{
     x(t)=A\cos(\omega_0 t-\phi)
   }
   
-  \vspace{-.1in}Cosine is usually preferred over sine because $\cos(0)=1$,
-  consistent with the fact that oscillations usually begin at maximum amplitude
-  $A$ at $t=0$, and therefore $\phi=0$. However, mathematically, the two
-  functions only differ in $\phi$
+  Cosine is usually preferred over sine because $\cos(0)=1$, consistent with
+  the fact that oscillations usually begin at maximum amplitude $A$ at $t=0$,
+  and therefore $\phi=0$. Mathematically, the two functions only differ in
+  $\phi$
 \end{frame}
+
 
 
 \begin{frame}{Mass on a Spring}
 
-  \eq{-.1in}{
+  \eq{0in}{
     \boxed{\ddot x+\frac kmx=0}
   }
   
   Starting with the general form and take the time derivatives to obtain the
   velocity and acceleration of the mass:
  
-  \vspace{-.35in}{\Large
+  \vspace{-.2in}{\large
     \begin{align*}
       x(t)&=A\cos(\omega_0 t-\phi)\\
       v(t)&=-A\omega_0\sin(\omega_0 t-\phi)\\
@@ -160,9 +152,8 @@
     \end{align*}
   }
   
-  \vspace{-.2in}where $\omega_0$ is the angular frequency of the oscillation,
-  $A$ is the amplitude, and $\phi$ is a \textbf{phase shift} (or
-  \textbf{phase constant})% that depends on the initial condition
+  where $\omega_0$ is the angular frequency of the oscillation, $A$ is the
+  amplitude, and $\phi$ is the phase shift
 \end{frame}
 
 
@@ -172,19 +163,14 @@
   find that the solution is satisfied if $\omega_0$ is related to the spring
   constant and mass by:
 
-  \eq{-.2in}{
-    \omega_0=\sqrt{\frac km}
-  }
+  \eq{-.1in}{
+    \boxed{
+      \omega_0=\sqrt{\frac km}
+    }  }
 
   The angular frequency for the (undamped) simple harmonic oscillator is called
-  the \textbf{natural frequency}.
-\end{frame}
-
-
-
-\begin{frame}{Mass on a Spring: Frequency and Period}
-  Period ($T_0$) and frequency ($f_0$) of the undamped harmonic oscillator are
-  given by:
+  the \textbf{natural frequency}. The period ($T_0$) and frequency ($f_0$) of
+  the undamped harmonic oscillator are then given by:
 
   \eq{-.1in}{
     f_0=\frac{\omega_0}{2\pi}=\frac1{2\pi}\sqrt{\frac km}\quad\quad
@@ -233,7 +219,7 @@
   you will know that the solution to any ODE is the linear combination of
   \emph{all} possible solutions, i.e.:
 
-  \eq{-.2in}{
+  \eq{-.1in}{
     x(t)=c_1\sin(\omega t)+c_2\cos(\omega t)
   }
 
@@ -250,14 +236,14 @@
   function itself. However, the second derivative of $e^{\omega t}$ does not have
   the negative sign that is needed to solve the problem.
 
-  \eq{-.2in}{
+  \eq{-.1in}{
     x(t)=e^{\omega t}\quad\rightarrow\quad
     \ddot x=\omega^2 e^{\omega t}=\omega^2x
   }
 
   But if the exponential function is \emph{imaginary}:
 
-  \eq{-.2in}{
+  \eq{-.1in}{
     x(t)=e^{i\omega t}
   }
 
@@ -265,21 +251,22 @@
 \end{frame}
 
 
+
 \begin{frame}{Side Note \#2}
   The second derivative \emph{does} in fact have the negative sign:
 
-  \vspace{-.4in}{\Large
+  \vspace{-.2in}{\large
     \begin{align*}
       x&=e^{i\omega t}\\
       \dot x&=i\omega e^{i\omega t}\\
-      \ddot x&=i^2\omega^2 e^{i\omega t}=-\omega^2 e^{i\omega t}\\
+      \ddot x&=i^2\omega^2 e^{i\omega t}=-\omega^2 e^{i\omega t}
     \end{align*}
   }
   
-  \vspace{-.55in}This should not come as a surprise, since the complex
+  \vspace{-.2in}This should not come as a surprise, since the complex
   exponential function and the sinusoidal functions are related:
 
-  \eq{-.2in}{
+  \eq{-.1in}{
     e^{i\omega t}=\cos(\omega t)+i\sin(\omega t)
   }
 \end{frame}
@@ -287,7 +274,6 @@
 
 
 \begin{frame}{Vertical Spring-Mass System}
-  \vspace{.2in}
   \begin{columns}
     \column{.17\textwidth}
     \begin{tikzpicture}[scale=1.3]
@@ -309,14 +295,14 @@
     For a vertical spring-mass system, we must consider the
     {\color{purple}weight} as well:
 
-    \eq{-.25in}{
+    \eq{-.1in}{
       {\color{purple}mg}-kx=m\ddot x%\frac{d^2x}{dt^2}
     }
 
     But since $mg$ is a constant, the only change is the addition of a constant
     $B$ in the expression of $x(t)$:
     
-    \vspace{-.4in}{\Large
+    \vspace{-.25in}{\large
       \begin{align*}
         x(t)&=A\cos(\omega_0 t-\phi) +B\\
         v(t)&=-A\omega_0\sin(\omega_0 t-\phi)\\
@@ -329,7 +315,6 @@
 
 
 \begin{frame}{Vertical Spring-Mass System}
-  \vspace{.2in}
   \begin{columns}
     \column{.17\textwidth}
     \begin{tikzpicture}[scale=1.3]
@@ -351,14 +336,14 @@
     $B$ is found by substituting $x$ and $\ddot x$ into the ODE.
     It is stretching of the spring due to its weight:
     
-    \eq{-.15in}{
+    \eq{-.1in}{
       B=\frac{mg}k
     }
 
     Angular frequency (natural frequency) remains the same as the horizontal
     case:
 
-    \eq{-.2in}{
+    \eq{-.1in}{
       \omega_0=\sqrt{\frac km}
     }
   \end{columns}
@@ -373,17 +358,18 @@
   (vertical). Both forces are \emph{conservative}, therefore the total
   mechanical energy is conserved:
 
-  \eq{-.2in}{
+  \eq{-.1in}{
     K_1 + U_{e1} + U_{g1} = K_2 + U_{e2} + U_{g2}
   }
   
   For the horizontal spring-mass system, the total energy of the simple harmonic
   oscillator is:
     
-  \eq{-.2in}{
+  \eq{-.1in}{
     \boxed{E_T=\frac12kA^2}
   }
 \end{frame}
+
 
 
 \begin{frame}{Simple Example}
@@ -464,14 +450,14 @@
     \column{.75\textwidth}
     Substitute $F_t$ into second law of motion, and cancelling $m$:
 
-    \eq{-.2in}{
-      F_t=ma_t\;\;\rightarrow\;\; -g\sin\phi=\ell\ddot{\phi}
+    \eq{-.1in}{
+      F_t=ma_t\quad\rightarrow\quad -g\sin\phi=\ell\ddot{\phi}
     }
 
     Solving this ODE in its present form is difficult because of the
     $\sin\phi$ term. However, the series expansion of the sine function:
 
-    \eq{-.15in}{
+    \eq{-.1in}{
       \sin\phi=\phi-\frac{\phi^3}{3!}+\frac{\phi^5}{5!}-\frac{\phi^7}{7!}+
       \cdots
     }
@@ -529,19 +515,21 @@
   The solution for $\phi(t)$ is a sinusoidal function, like the spring-mass
   system:
 
-    \eq{-.2in}{
-      \boxed{\phi(t)=\Phi\cos(\omega_0 t-\beta)}
-    }
+  \eq{-.1in}{
+    \boxed{\phi(t)=\Phi\cos(\omega_0 t-\beta)}
+  }
 
-    where $\Phi$ is the maximum deflection (amplitude), and angular
-    frequency (natural frequency) of the oscillation $\omega_0$ is given by:
+  where $\Phi$ is the maximum deflection (amplitude), and angular frequency
+  (natural frequency) of the oscillation $\omega_0$ is given by:
     
-    \eq{-.15in}{
-      \boxed{\omega_0=\sqrt{\frac g\ell}}
+  \eq{-.1in}{
+    \boxed{
+      \omega_0=\sqrt{\frac g\ell}
     }
+  }
 
-    and $\beta$ is a phase shift based on the initial condition of the pendulum.
-    If the oscillation begins at amplitude, then $\beta=0$.
+  and $\beta$ is a phase shift based on the initial condition of the pendulum.
+  If the oscillation begins at amplitude, then $\beta=0$.
 \end{frame}
 
 
@@ -688,11 +676,11 @@
     \vspace{-.1in}The damping force is typically related to velocity, in the
     opposite direction:
 
-    \eq{-.3in}{
+    \eq{-.12in}{
       \vec F_D=-b(\vec v)^n
     }
 
-    \vspace{-.1in}where $b$ is a positive constant. In the simplest case is to
+    \vspace{-.12in}where $b$ is a positive constant. In the simplest case is to
     use $n=1$ to represent viscous effects. (For kinetic friction, $n=0$; for
     aerodynamic drag, $n=2$.)
   }
@@ -704,14 +692,14 @@
   The 2nd-order ODE is obtained by applying second law of motion, this time
   with the additional term from the damping force:
 
-  \eq{-.25in}{
+  \eq{-.1in}{
     \sum F=F_s+{\color{red}F_D}=ma\quad\rightarrow\quad
     -kx{\color{red}-b\dot x}=m\ddot x
   }
 
   Arranging into standard form:
   
-  \eq{-.15in}{
+  \eq{-.1in}{
     \ddot x+\frac bm\dot x+\frac kmx=0
   }
 
@@ -726,14 +714,14 @@
     calculus.} has both an {\color{red}exponential decay term} and a
   {\color{blue}sinusoidal term}:
 
-  \eq{-.2in}{
+  \eq{-.1in}{
     x(t)=A_0{\color{red}e^{-\frac b{2m}t}}{\color{blue}\cos(\omega t+\phi)}
   }
 
-  \vspace{-.15in}where $A_0$ is the initial amplitude of the damped oscillator,
+  \vspace{-.1in}where $A_0$ is the initial amplitude of the damped oscillator,
   and the ``natural frequency'' for the damped oscillator is given by:
 
-  \eq{-.2in}{
+  \eq{-.1in}{
     \omega=\sqrt{\omega_0^2-\left(\frac b{2m}\right)^2}
   }
   
@@ -748,17 +736,17 @@
   \textbf{Critical damping} occurs when the natural frequency $\omega$ is zero,
   i.e.:
   
-  \eq{-.2in}{
+  \eq{-.1in}{
     \sqrt{\omega_0^2-\left(\frac b{2m}\right)^2}=0
   }
 
   which corresponds to a damping constant:
 
-  \eq{-.2in}{
+  \eq{-.1in}{
     b_c=2m\omega_0=2\sqrt{km}
   }
   \begin{itemize}
-  \item\vspace{-.1in}A critically damped system returns to its equilibrium
+  \item A critically damped system returns to its equilibrium
     position in the shortest time with \emph{no} oscillation
   \item When $b>b_c$, the system is \textbf{over-damped}
   \item Critical or near-critical damping is desired in many engineering designs
@@ -781,21 +769,21 @@
   The non-conservative damping force dissipates energy from the oscillator at
   a rate of:
 
-  \eq{-.2in}{
+  \eq{-.1in}{
     P=\diff Et=\vec F_D\cdot\vec v=-bv^2
   }
 
-  As velocity relate to energy by: $(v_{av})^2=E/m$, power
-  dissipation is a first-order linear ODE:
+  As velocity relate to energy by: $(v_{av})^2=E/m$, power dissipation is a
+  first-order linear ODE:
 
-  \eq{-.25in}{
+  \eq{-.1in}{
     \diff Et=-\frac bmE
   }
 
   The solution to the ODE shows the total amount of energy decreases
   exponentially with time:
 
-  \eq{-.2in}{
+  \eq{-.1in}{
     E(t)=E_0e^{-\frac bmt} %=E_0e^{-\frac{t}{\tau}}
     }
 \end{frame}
@@ -805,22 +793,21 @@
 \section{Driven Oscillation}
 
 \begin{frame}{Forced Harmonic Motion}
-  \vspace{.2in}
   To keep a damped system going, energy must be added into the system. Assuming
   that the system is subjected to an external force ($F_E$) that is harmonic
   with time, with a driving frequency $\omega_E$:
 
-  \eq{-.3in}{
+  \eq{-.1in}{
     F_E=F\cos(\omega_Et)
   }
   
   \vspace{-.2in}
   \begin{center}
     \begin{tikzpicture}
-      \node[fill=blue!40!white,inner sep=3.5mm] (a) at (3.5,1) {$m$};
-      \draw[thick,draw=black!50,
+      \draw[thick,fill=blue!30](3,.5) rectangle(4,1.5);
+      \draw[thick,
         decoration={aspect=0.3,segment length=2mm, amplitude=2.5mm, coil},
-        decorate] (0,1)--(2.95,1);
+        decorate] (0,1)--(3,1);
       \fill[pattern=north east lines](-.5,2)--(-.5,0)--(7,0)--(7,2)--(6.5,2)
       --(6.5,.5)--(0,.5)--(0,2)--cycle;
       \draw[thick] (0,2)--(0,.5)--(6.5,.5)--(6.5,2);
@@ -831,8 +818,8 @@
         \draw(4.8,1.2)--(5.5,1.2)--(5.5,.8)--(4.8,.8);
         \draw(5.5,1)--(6.5,1);
       \end{scope}
-      \fill[red!80!black] (3.5,1)circle(.075);
-      \begin{scope}[very thick,->,red!80!black]
+      \fill[red] (3.5,1)circle(.075);
+      \begin{scope}[very thick,->,red]
         \draw(3.5,1)--(3.5,0) node[below]{$m\vec g$};
         \draw(3.5,1)--(3.5,2) node[above]{$\vec N$};
         \draw(3.5,1)--(2.5,1) node[above]{$\vec F_s$};
@@ -851,7 +838,7 @@
   Again, the second-order ordinary differential equation is obtained by
   applying the second law of motion:
   
-  \eq{-.2in}{
+  \eq{-.1in}{
     \sum F=-kx-bv+F\cos(\omega_Et)=ma
   }
 
@@ -859,7 +846,7 @@
   \textcolor{green!80!black}{additional external force term} on the right-hand
   side:
 
-  \eq{-.2in}{
+  \eq{-.1in}{
     m\ddot x+b\dot x+kx=
     \textcolor{green!80!black}{F\cos(\omega_Et)}
   }
@@ -868,7 +855,7 @@
 
 
 \begin{frame}{Forced Harmonic Motion}
-  \eq{-.02in}{
+  \eq{0in}{
     m\ddot x+b\dot x+kx=F\cos(\omega_E t)
   }
   
@@ -894,14 +881,14 @@
   but it can be shown that the solution is a harmonic motion at the driving
   frequency $\omega_E$ of the external force:
 
-  \eq{-.2in}{
+  \eq{-.1in}{
     \boxed{x(t)=A\cos(\omega_E t-\phi)}
   }
   
-  \vspace{-.1in}where the amplitude of the oscillation $A$ and phase shift
-  $\phi$ are given by:
+  where the amplitude of the oscillation $A$ and phase shift $\phi$ are given
+  by:
 
-  \eq{-.3in}{
+  \eq{-.1in}{
     A=\frac F{\sqrt{m^2(\omega_0^2-\omega_E^2)^2+b^2\omega_E^2}}
     \quad\;\;
     \tan\phi=\frac{b\omega_E}{m(\omega_0^2-\omega_E^2)}
@@ -918,7 +905,7 @@
   \item The frequency of the driving force is \emph{approximately} the natural
     frequency of the damped oscillator:
 
-    \eq{-.2in}{
+    \eq{-.1in}{
       \omega_E=\sqrt{\omega_0-\frac b{2m}}
       \quad\text{where}\quad\omega_0=\sqrt{\frac km}
     }
@@ -932,7 +919,7 @@
 
 
 \begin{frame}{Resonance}
-  \eq{-.25in}{
+  \eq{-.1in}{
     A=\frac F{\sqrt{m^2(\omega_0^2-\omega_E^2)^2+b^2\omega_E^2}}
   }
   
@@ -940,7 +927,7 @@
   to the external frequency by setting the derivative with respect to
   $\omega_E$ to 0:
 
-  \eq{-.2in}{
+  \eq{-.1in}{
     \diff{}{\omega_E}\left[m^2(\omega_0^2-\omega_E^2)^2+b^2\omega_E^2\right]=0
   }
 
@@ -949,7 +936,7 @@
   to see that the minimum value occurs at the natural frequency of
   the damped oscillator.
 
-  \eq{-.35in}{
+  \eq{-.1in}{
     \omega_E=\sqrt{\omega_0-\frac b{2m}}
   }
 %  The maximum amplitude is:
@@ -1007,13 +994,11 @@
 
 
 \begin{frame}{Resonance}
-
-  \eq{-.01in}{
+  \eq{0in}{
     \boxed{\tan\phi=\frac{b\omega_E}{m(\omega_0^2-\omega_E^2)}}
   }
 
-  When $\omega_E=\omega_0$ is substituted into the phase shift
-  expression, the
+  When $\omega_E=\omega_0$ is substituted into the phase shift expression, the
   right-hand side becomes undefined. From this, we obtain a phase shift of
   $\phi=\pi/2$. Taking derivative of $x(t)$ for velocity $v(t)$, and
   substituting $\phi=\pi/2$:
@@ -1031,7 +1016,7 @@
   At resonance, the object is always moving in the same direction as the
   driving force:
 
-  \vspace{-.4in}{\Large
+  \vspace{-.3in}{\large
     \begin{align*}
       v(t)&=A\omega_E\cos(\omega_E t)\\
       F_E(t)&=F\cos(\omega_E t)

@@ -77,13 +77,13 @@
     ``special case'' that assumes a constant mass.}
   \item The first two laws of motion can be summarized in the equation:
 
-    \eq{-.2in}{
+    \eq{-.1in}{
       \boxed{\vec F_\text{net}=\Sigma\vec F=m\vec a}
     }
   \item For non-constant mass, net force is the rate of change of momentum
     $\vec p$:
 
-    \eq{-.2in}{
+    \eq{-.1in}{
       \boxed{
         \vec F_\text{net}=\diff{\vec p}t
       }
@@ -92,17 +92,18 @@
 \end{frame}
 
 
+
 \begin{frame}{Mass}
   What is \textbf{mass} then? It is
   \begin{itemize}
-    \item the property of an object that relates its acceleration to the force
-      applied to it. Literally, it means:
+  \item the property of an object that relates its acceleration to the force
+    applied to it. Literally, it means:
 
-      \eq{-.2in}{
-        m\equiv\frac{F_\text{net}}a
-      }
-    \item Intrinsic to the object itself
-    \item This is explicitly referred to as the object's \textbf{inertial mass}
+    \eq{-.1in}{
+      m\equiv\frac{F_\text{net}}a
+    }
+  \item Intrinsic to the object itself
+  \item This is explicitly referred to as the object's \textbf{inertial mass}
   \end{itemize}
 \end{frame}
 
@@ -123,7 +124,7 @@
   reaction force which is equal in magnitude but opposite in direction, on
   object (A), due to object (B):
 
-  \eq{-.3in}{
+  \eq{-.1in}{
     \boxed{\vec F_\text{AB} = -\vec F_\text{BA}}
   }
   \begin{itemize}
@@ -176,19 +177,16 @@
 \begin{frame}{Gravity}
   Gravity is the force of attraction between all objects with mass
     
-  \eq{-.2in}{
-    \boxed{\vec w=m\vec g}
+  \eq{-.1in}{
+    \boxed{\vec F_g=m\vec g}
   }
   \begin{itemize}
-  \item\vspace{-.15in}Near surface of Earth, use
-    $g=\SI{9.81}{\metre\per\second\squared}$ (or
+  \item Near surface of Earth, use $g=\SI{9.81}{\metre\per\second\squared}$ (or
     $g=\SI{10}{\metre\per\second\squared}$ for your AP exam)
-  \item You may be asked to find the value of $g$ on some ``unknown planet''.
-  \item $\vec w$ always points \emph{down} (the direction of $\vec w$ is how
-    down is defined)
+  \item $\vec F_g$ always points \emph{down}
   \item Based on the law of universal gravitation:
 
-    \eq{-.3in}{
+    \eq{-.1in}{
       \boxed{F_g=\frac{Gm_1m_2}{r^2}}\;\;
       \text{\normalsize where}\;\;
       G=\SI{6.674e-11}{\newton\metre\squared\per\kilo\gram\squared}
@@ -204,10 +202,12 @@
     \centering
     \begin{tikzpicture}{scale=1.5}
       \draw[thick] (-1,0)--(2.5,0);
-      \draw[fill=pink,thick] rectangle (1.5,1);
-      \fill(.75,.5) circle(2pt);
-      \draw[->,very thick] (.75,.5)--(.75,-.5) node[below]{$m\vec g$};
-      \draw[->,very thick] (.75,.5)--(.75,1.5) node[above]{$\vec N$};
+      \draw[fill=cyan!80,thick] rectangle (1.5,1);
+      \fill (.75,.5) circle(2pt);
+      \begin{scope}[->,very thick]
+        \draw (.75,.5)--(.75,-.5) node[below]{$m\vec g$};
+        \draw (.75,.5)--(.75,1.5) node[above]{$\vec N$};
+      \end{scope}
     \end{tikzpicture}
     
     $m\vec g=-\vec N$\\(special case)
@@ -238,7 +238,7 @@
         \draw[->](3.5,.5)--(4,.5)  node[right]{$x$};
         \draw[->](3.5,.5)--(3.5,1) node[above]{$y$};
         \draw[thick] (-1,0)--(4,0);
-        \draw[fill=pink,thick] rectangle (3,2);
+        \draw[fill=cyan!80,thick] rectangle (3,2);
         \fill(1.5,1) circle (2pt);
         \draw [->,very thick,dotted,red] (1.5,1)--(1.5,-.5)
         node[right]{$mg\cos\theta$};
@@ -296,7 +296,7 @@
   \item Maximum when the object is just about to move
   \end{itemize}
 
-  \eq{-.35in}{
+  \eq{-.1in}{
     \boxed{f_s\leq\mu_sN}
   }
   \begin{center}
@@ -317,7 +317,7 @@
   relative to each other. $f_k$ is constant along the path of movement as long
   as $\vec N$ stays constant
 
-  \eq{-.3in}{
+  \eq{-.1in}{
     \boxed{f_k = \mu_kN}
   }
   \begin{center}
@@ -337,7 +337,7 @@
   Kinetic friction coefficient is always lower than the static coefficient,
   otherwise nothing will ever move:
     
-  \eq{-.45in}{
+  \eq{-.1in}{
     \mu_k\leq\mu_s
   }
 
@@ -345,13 +345,12 @@
   floor. The free-body diagram is simple (left). How do the magnitudes of the
   applied force $F_a$ and friction $f$ compare?
 
-  \vspace{-.2in}
   \begin{columns}
     \column{.4\textwidth}
     \centering
     \begin{tikzpicture}
       \draw [thick] (-1,0)--(2.5,0);
-      \draw [fill=pink,thick] rectangle (1.5,1);
+      \draw [fill=cyan!80,thick] rectangle (1.5,1);
       \fill (.75,.5) circle(2pt);
       \begin{scope}[->,very thick]
         \draw(.75,.5)--(.75,-.5) node[below]{$m\vec g$};
@@ -398,7 +397,7 @@
   Unlike kinetic friction, drag force is highly dependent on the speed of the
   object relative to the fluid that it is moving in:
   
-  \eq{-.28in}{
+  \eq{-.15in}{
     D=\frac12\rho v_\infty^2C_dA
   }
 
@@ -447,7 +446,7 @@
     \begin{center}
       \begin{tikzpicture}[scale=.9]
         \draw[very thick,->](0,0)--(0,-1.5) node[below]{$m\vec g$};
-        \draw[very thick,->,white](0,0)--(0,1.5) node[above]{$\vec D$};
+        \draw[very thick,->,black!2](0,0)--(0,1.5) node[above]{$\vec D$};
         \fill circle(.07);
       \end{tikzpicture}
     \end{center}
@@ -461,7 +460,7 @@
     \begin{center}
       \begin{tikzpicture}[scale=.9]
         \draw[very thick,->](0,0)--(0,-1.5) node[below]{$m\vec g$};
-        \draw[very thick,->,white](0,0)--(0,1.5) node[above]{$\vec D$};
+        \draw[very thick,->,black!2](0,0)--(0,1.5) node[above]{$\vec D$};
         \draw[very thick,->,green](0,0)--(0,.6) node[above]{$\vec D$};
         \fill circle(.07);
       \end{tikzpicture}
@@ -543,7 +542,7 @@
   exerts on the object connected to it.  An \emph{ideal} spring obeys Hooke's
   law:
     
-  \eq{-.2in}{
+  \eq{-.1in}{
     \boxed{\vec F_e=-k\vec x}
   }
 
@@ -553,7 +552,7 @@
   \vspace{.1in}
   \begin{center}
     \begin{tikzpicture}
-      \draw[thick,fill=blue!40] (5,.5) rectangle (6,1.5);
+      \draw[thick,fill=cyan!80] (5,.5) rectangle (6,1.5);
       \draw[thick,
         decoration={aspect=.3,segment length=2mm, amplitude=2.5mm, coil},
         decorate] (0,1)--(5,1);
@@ -576,7 +575,7 @@
       \draw[ultra thick,->,gray!30](5.5,1)--(4,1) node[above]{$\vec F_e$};
       \draw[dashed](3,0)--(3,2);
       \draw[ultra thick,->,gray!30](3,.3)--(5,.3)node[midway,below]{$\Delta x$};
-      \draw[thick,fill=blue!40] (1.5,.5) rectangle (2.5,1.5);
+      \draw[thick,fill=cyan!80] (1.5,.5) rectangle (2.5,1.5);
       \draw[thick,
         decoration={aspect=.3,segment length=2mm, amplitude=2.5mm, coil},
         decorate] (0,1)--(1.5,1);
@@ -731,18 +730,18 @@
   \begin{center}
     \begin{tikzpicture}[scale=1.1]
       \begin{scope}[rotate=-30]
-	    \shade[ball color=gray!50] circle(1);
-	    \draw[thick](-2,-1)--(2,-1);
-	    \draw[thick,->](0,1.2) arc(90:60:1.2) node[pos=.3,right]{$\omega$};
-	    \fill circle(.05);
-	    \draw[->,very thick,rotate=30](0,0)--(0,-1.5)
-	    node[below]{$m\vec g$};
-	    \draw[->,very thick](0,-1)--(0,.3)  node[above]{$\vec N$};
-	    \draw[->,very thick](0,-1)--(-.5,-1) node[left]{$\vec f_s$};
-	    \draw[->](2,0)--(2.5,0) node[right]{$x$};
-            \draw[->](2,0)--(2,.5) node[above]{$y$};
-	  \end{scope}
-	\end{tikzpicture}
+	\shade[ball color=red!20] circle(1);
+	\draw[thick](-2,-1)--(2,-1);
+	\draw[thick,->](0,1.2) arc(90:60:1.2) node[pos=.3,right]{$\omega$};
+	\fill circle(.05);
+	\draw[->,very thick,rotate=30](0,0)--(0,-1.5)
+	node[below]{$m\vec g$};
+	\draw[->,very thick](0,-1)--(0,.3)  node[above]{$\vec N$};
+	\draw[->,very thick](0,-1)--(-.5,-1) node[left]{$\vec f_s$};
+	\draw[->](2,0)--(2.5,0) node[right]{$x$};
+        \draw[->](2,0)--(2,.5) node[above]{$y$};
+      \end{scope}
+    \end{tikzpicture}
   \end{center}
   Once the FBD is drawn, decide on the axes to help you solve the motion. One of
   the axes should line up with the direction of motion. This guarantees that
@@ -942,15 +941,15 @@
     \begin{tikzpicture}[scale=1.2]
       \draw[thick,brown](-4,.4)--(.1,.4);
       \draw[thick](0,0)--(-5.5,0) node[midway,below]{$\mu$};
-      \draw[thick,fill=red!70!gray!50](-4,0) rectangle(-5,.75)node[midway]{$m$};
+      \draw[thick,fill=magenta!20](-4,0) rectangle(-5,.75)node[midway]{$m$};
       \begin{scope}[rotate=-30,thick]
         \draw[brown](1,.4)--(-.05,.4);
         \draw(0,0)--(3,0) node[midway,below left] {$\mu$};
-        \draw[fill=blue!50!gray!50](1,0) rectangle(2.5,1)node[midway]{$M$};
+        \draw[fill=cyan!50](1,0) rectangle(2.5,1)node[midway]{$M$};
       \end{scope}
       \begin{scope}[rotate=-15]
         \draw[thick,fill=gray] (0,.3) circle(.15);
-        \draw[thick,fill=gray!50] (0,.3) circle(.1);
+        \draw[thick,fill=lightgray] (0,.3) circle(.1);
         \draw[ultra thick] (0,0)--(0,.3);
         \fill(0,.3) circle(.04);
       \end{scope}

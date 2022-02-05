@@ -21,10 +21,12 @@ all:
 	cd Class15-electrostatics2 ; make
 	cd Class16-capacitors	; make
 	cd Class17-magnetism1	; make
-#	cd Class16-magnetism2	; make
-#	cd 14-ElectricCircuits	; make
-#	cd Class19-hallEffect	; make
-#	cd Class19-maxwellEquations ; make
+	cd Class18-magnetism2	; make
+	cd Class19-magnetism3	; make
+	cd Class20-circuits1 	; make
+	cd Class21-circuits2 	; make
+	cd Class22-hallEffect	; make
+	cd Class22-maxwellsEquations ; make
 
 clean:
 	rm -rf *.*~ *~ *.log
@@ -45,11 +47,12 @@ clean:
 	cd Class15-electrostatics2 ; make clean
 	cd Class16-capacitors	; make clean
 	cd Class17-magnetism1	; make clean
-#	cd Class16-magnetism2	; make clean
-##	cd 10-MockTest1		; make clean
-##	cd 14-ElectricCircuits	; make clean
-#	cd Class19-hallEffect	; make clean
-#	cd Class19-maxwellEquations ; make clean
+	cd Class18-magnetism2	; make clean
+	cd Class19-magnetism3	; make clean
+	cd Class20-circuits1 	; make clean
+	cd Class21-circuits2 	; make clean
+	cd Class22-hallEffect	; make clean
+	cd Class22-maxwellsEquations ; make clean
 
 public:
 	mkdir -p $(DESTINATION)
@@ -71,8 +74,9 @@ public:
 	cd Class15-electrostatics2 ; make public
 	cd Class16-capacitors	; make public
 	cd Class17-magnetism1	; make public
-#	cd Class16-magnetism2	; make public
-##	cd 10-MockTest1		; make public
-##	cd 14-ElectricCircuits	; make public
-#	cd Class19-hallEffect	; make public
-#	cd Class19-maxwellEquations ; make public
+	cd Class18-magnetism2	; make public
+	cd Class19-magnetism3	; make public
+	cd Class20-circuits1 	; make public
+	cd Class21-circuits2 	; make public
+	cd Class22-hallEffect	; make public
+	cd Class22-maxwellsEquations ; make public
