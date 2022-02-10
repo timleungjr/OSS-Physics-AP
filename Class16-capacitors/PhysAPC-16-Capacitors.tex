@@ -40,7 +40,6 @@
 
 
 
-
 \begin{frame}{Electric Field and Electric Potential Difference}
   \begin{center}
     \begin{tikzpicture}[xscale=.7,yscale=.9]
@@ -71,15 +70,6 @@
     \quad\text{or}\quad
     \boxed{\Delta V=Ed}
   }
-%  \begin{center}
-%    \begin{tabular}{l|c|c}
-%      \rowcolor{pink}
-%      \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
-%      Electric field intensity & $E$ & \si{\newton\per\coulomb}\\
-%      Potential difference between plates & $\Delta V$ & \si\volt \\
-%      Distance between plates       & $d$ & \si\metre
-%    \end{tabular}
-%  \end{center}
 \end{frame}
 
 
@@ -337,7 +327,7 @@
       Neoprene    & \num{6.9} \\
       Plexiglas   & \num{3.4} \\
       Polystyrene & \num{2.55} \\
-      Water (\SI{20}{\celsius}) & \num{80} 
+      Water (\SI{20}\celsius) & \num{80} 
     \end{tabular}
   \end{center}
 \end{frame}
@@ -365,15 +355,17 @@
 
 \begin{frame}{Capacitors in Electric Circuits}
   Capacitors are an important part of an electric circuits because it stores
-  energy in the electric field
+  energy in the electric field. Suppose we replace a battery with a capacitor
+  in a basic resistive circuit:
+  \begin{center}
+    \begin{tikzpicture}[scale=.85]
+      \draw[thick](0,0) to[C=$C$] (0,3)--(3,3) to[R=$R$] (3,0)--(0,0);
+    \end{tikzpicture}
+  \end{center}
   \begin{itemize}
-  \item Denoted by this symbol (with reference to the parallel-plate capacitor):
-    \begin{center}
-      {\tikz \draw[thick] (3,0) to[C,o-o](5,0);}
-    \end{center}
-  \item Act like a voltage source
-  \item Unlike a battery, the voltage increases or decreases as the charge
-    across the capacitor plates change.
+  \item The capacitor acts like a voltage source.
+  \item Unlike a battery, the voltage decreases as it drives a current, and the
+    charge across the capacitor plates decreases.
   \end{itemize}
 \end{frame}
 \end{document}
