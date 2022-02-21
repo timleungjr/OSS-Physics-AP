@@ -19,16 +19,17 @@
 
 \begin{frame}{Current}
   The \textbf{electric current} is defined as the rate at which \textbf{charges}
-  pass through a point in a circuit. In differential form:
+  $Q$ pass through a point in a circuit. In differential form:
   
   \eq{-.1in}{
     \boxed{I(t)=\diff Qt}
-  }
-
-  Expanding the expression:
-
-  \eq{-.1in}{
-    I = \diff Qt = \frac QV\diff Vt = (ne)(Av_d)
+%  }
+%
+%  Expanding the expression:
+%
+%  \eq{-.1in}{
+%    I = \diff Qt
+    = \frac QV\diff Vt = (ne)(Av_d)
   }
   \begin{itemize}
   \item $Q/V$ is the amount of charge carriers \emph{per volume}, which
@@ -43,26 +44,26 @@
 
 
 
-\begin{frame}{Current Through the Conductor}
-  Combining the terms:
-
-  \eq{-.1in}{
-    \boxed{I=\diff Qt=neAv_d}
-  }
-  \begin{center}
-    \begin{tabular}{l|c|c}
-      \rowcolor{pink}
-      \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
-      Current                               & $I$ & \si\ampere \\
-      Charge carrier density                & $n$ & \si{\per\metre\cubed} \\
-      Elementary charge                     & $e$ & \si\coulomb \\
-      Cross-section area of the conductor   & $A$ & \si{\metre\squared}\\
-      Drift velocity of the charge carriers & $v_d$ & \si{\metre\per\second}
-    \end{tabular}
-  \end{center}
-  The calculation for the charge carrier density $n$ requires some additional
-  thoughts.
-\end{frame}
+%\begin{frame}{Current Through the Conductor}
+%  Combining the terms:
+%
+%  \eq{-.1in}{
+%    \boxed{I=\diff Qt=neAv_d}
+%  }
+%  \begin{center}
+%    \begin{tabular}{l|c|c}
+%      \rowcolor{pink}
+%      \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
+%      Current                               & $I$ & \si\ampere \\
+%      Charge carrier density                & $n$ & \si{\per\metre\cubed} \\
+%      Elementary charge                     & $e$ & \si\coulomb \\
+%      Cross-section area of the conductor   & $A$ & \si{\metre\squared}\\
+%      Drift velocity of the charge carriers & $v_d$ & \si{\metre\per\second}
+%    \end{tabular}
+%  \end{center}
+%  The calculation for the charge carrier density $n$ requires some additional
+%  thoughts.
+%\end{frame}
 
 
 
@@ -109,7 +110,8 @@
 \begin{frame}{Current}
   Another alternate description of the electric current is to express it in
   terms of the \textbf{current density} $J$, with a unit of of \emph{amp\`{e}re
-    per meters squared} (\si{\ampere\per\meter\squared}).
+    per meters squared} (\si{\ampere\per\meter\squared}).\footnote{We had
+    previously encountered this quantity when studying Amp\`{e}re's law.}
 
   \eq{-.1in}{
     \boxed{I(t)=J(t)A}
@@ -192,17 +194,19 @@
   The resistance of a conductor is proportional to the resistivity $\rho$ and
   its length $L$, and inversely proportional to the cross-sectional area $A$:
 
-  \eq{-.2in}{
-    \boxed{R = \rho\frac LA}
+  \eq{-.1in}{
+    \boxed{
+      R=\int\dl R=\rho\int_0^L\frac{\dl x}{A(x)}
+    }
   }
   \begin{center}
     \begin{tabular}{l|c|c}
       \rowcolor{pink}
       \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
       Resistance           & $R$    & \si\ohm \\
-      Resistivity          & $\rho$ & \si{\ohm.\metre} \\
+      Resistivity          & $\rho$ & \si{\ohm\metre} \\
       Length of conductor  & $L$    & \si\metre \\
-      Cross-sectional area & $A$    & \si{\metre\squared}
+      Cross-sectional area & $A(x)$ & \si{\metre\squared}
     \end{tabular}
   \end{center}
 \end{frame}
@@ -271,7 +275,45 @@
       Resistance           & $R$    & \si\ohm
     \end{tabular}
   \end{center}
-  A resistor is considered ``ohmic'' if it obeys Ohm's law
+  A resistor is considered ``ohmic'' if it obeys Ohm's law. Note that Ohm's law
+  is not a fundamental law in physics.
+\end{frame}
+
+
+
+\begin{frame}{Ohmic Devices}
+  In an ohmic device such as a resistor, the relationship between voltage
+  across the device and the current through the device is linear, i.e.:
+  \begin{center}
+    \begin{tikzpicture}[scale=.9]
+      \draw[ultra thick,red](0,0)--(2.5,2.5)
+      node[midway,below right]{\small $\text{slope}=R$};
+      \draw[thick,->](0,0)--(3,0) node[right]{$I$};
+      \draw[thick,->](0,0)--(0,3) node[right]{$V$};
+    \end{tikzpicture}
+    \hspace{.15in}
+    \begin{tikzpicture}[scale=.9]
+      \draw[ultra thick,red](0,0)--(2.5,2.5)
+      node[pos=.65,below right]{\small $\text{slope}=\dfrac1R$};
+      \draw[thick,->](0,0)--(3,0) node[right]{$V$};
+      \draw[thick,->](0,0)--(0,3) node[right]{$I$};
+    \end{tikzpicture}
+  \end{center}
+\end{frame}
+
+
+
+\begin{frame}{Non-Ohmic Devices}
+  Loads that are \textbf{non-ohmic} do not obey Ohm's law: the relationship
+  between voltage and current is \emph{not} linear.
+  \begin{center}
+    \begin{tikzpicture}[scale=.9]
+      \draw[thick,->](0,0)--(3,0) node[right]{$V$};
+      \draw[thick,->](0,0)--(0,3) node[right]{$I$};
+      \draw[ultra thick,red,domain=0:2.45,smooth] plot(\x,.0008*\x^9);
+    \end{tikzpicture}
+  \end{center}
+  For example, diodes (e.g.\ your TV's LED screen) are non-ohmic.
 \end{frame}
 
 
@@ -307,7 +349,7 @@
     \column{.4\textwidth}
     \begin{tikzpicture}[scale=1.6]
       \begin{scope}[thick]
-        \draw(.2,1) to[short,o-*] (1.5,1)--(3.5,1)--(3.5,-.2);
+        \draw(.2,1) to[short,o-] (1.5,1)--(3.5,1)--(3.5,-.2);
         \draw(1.5,1)--(1.5,-.2);
         \draw(2.5,1)--(2.5,-.2);
       \end{scope}
@@ -365,8 +407,8 @@
   \begin{columns}
     \column{.32\textwidth}
     \begin{tikzpicture}
-     \draw[thick] (0,2) to[short,o-] (1,2)to[R=$R_1$] (1,0) to[short,-o] (0,0);
-     \draw[thick](1,2)  to[short] (2.25,2)to[R=$R_2$] (2.25,0)to[short] (1,0);
+     \draw[thick](0,2) to[short,o-] (1,2)to[R=$R_1$] (1,0) to[short,-o] (0,0);
+     \draw[thick](1,2) to[short] (2.25,2)to[R=$R_2$] (2.25,0)to[short] (1,0);
      \draw[thick](2.25,2)to[short](3.5,2) to[R=$R_3\cdots$] (3.5,0)
      to[short] (2.25,0);
     \end{tikzpicture}
@@ -586,7 +628,6 @@
         \end{scope}
       }
     \end{tikzpicture}
-
     
     \column{.55\textwidth}
     \begin{itemize}

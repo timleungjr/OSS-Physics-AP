@@ -70,8 +70,8 @@
 %\usepackage{pgfplots}
 %\usepackage{amsmath}
 \usepackage{newtxtext,newtxmath}
-\usepackage[document]{ragged2e}
-\usepackage[none]{hyphenat}
+%\usepackage[document]{ragged2e}
+%\usepackage[none]{hyphenat}
 \usepackage{siunitx}
 \usepackage{multicol}
 %\usepackage{fancyhdr}

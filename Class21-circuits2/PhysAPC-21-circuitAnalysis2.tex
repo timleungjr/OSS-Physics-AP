@@ -26,7 +26,7 @@
     \end{tikzpicture}
   \end{center}
   From the voltage law, we know that the voltage across all the capacitors are
-  the same, i.e.\ $V_1=V_2=V_3-\cdots=V$. We can express the total charge
+  the same, i.e.\ $V_1=V_2=V_3=\cdots=V$. We can express the total charge
   $Q_\text{tot}$ stored across all the capacitors in terms of capacitance and
   this common voltage $V$: 
 
@@ -94,17 +94,15 @@
 
 
 
-\section{R-C Circuits}
+\section{RC Circuits}
 
 \begin{frame}{Circuits with Resistors and Capacitors}
-  An \textbf{R-C circuit} is one that has both resistors and capacitors. The
+  An \textbf{RC circuit} is one that has both resistors and capacitors. The
   simplest form is a resistor and capacitor connected in series, and then
   connect to a voltage source.
   \begin{center}
     \begin{tikzpicture}[american voltages]
-      \draw[thick](0,0)
-      to[battery,l=$V$] (0,2)
-      to[R=$R$] (2,2)
+      \draw[thick](0,0) to[battery,l=$V$] (0,2) to[R=$R$] (2,2)
       to[C=$C$] (2,0)--(0,0);
     \end{tikzpicture}
   \end{center}
@@ -198,10 +196,8 @@
     \column{.3\textwidth}
     \centering
     \begin{tikzpicture}[american voltages,scale=1.25]
-      \draw[thick](0,0)
-      to[battery,l=$\mathcal E$] (0,2)
-      to[R=$R$] (2,2)
-      to[C=$C$] (2,0)--(0,0);
+      \draw[thick](0,0) to[battery,l=$\mathcal E$] (0,2)
+      to[R=$R$] (2,2) to[C=$C$] (2,0)--(0,0);
     \end{tikzpicture}
     
     \column{.7\textwidth}
@@ -298,7 +294,7 @@
 
 
 
-\section{L-R Circuits}
+\section{LR Circuits}
 
 \begin{frame}{Circuits with Inductors}
   \begin{itemize}
@@ -306,7 +302,7 @@
     large self inductance $L$
   \item Self inductance prevents currents rising and falling instantaneously
   \item A basic circuit containing a resistor and an inductor is called an
-    \textbf{L-R circuit}:
+    \textbf{LR circuit}:
     \begin{center}
       \begin{tikzpicture}[american voltages,scale=1.2]
         \draw[thick](0,0) to[battery,l=$\mathcal E$] (0,2)
@@ -320,7 +316,7 @@
 
 
 
-\begin{frame}{Analyzing L-R Circuits}
+\begin{frame}{Analyzing LR Circuits}
   \begin{columns}
     \column{.35\textwidth}
     \begin{tikzpicture}[american voltages,scale=1.2]
@@ -354,7 +350,7 @@
 
 
 
-\section{L-C Circuit}
+\section{LC Circuit}
 
 \begin{frame}{L-C Circuit}
   The final type of circuit in AP Physics is the L-C circuit. In its simplest
@@ -393,7 +389,7 @@
   The solution to such an equation is the simple harmonic motion.
 
   \eq{-.1in}{
-    I(t)=I_0\sin(\omega t + \varphi)\quad\text{where}\quad
+    I(t)=I_0\sin(\omega t)\quad\text{where}\quad
     \omega=\frac1{\sqrt{LC}}
   }
 \end{frame}

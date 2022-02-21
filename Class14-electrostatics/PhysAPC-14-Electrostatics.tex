@@ -1,7 +1,7 @@
 \documentclass[12pt,aspectratio=169]{beamer}
 \input{../mybeamer}
 
-\title{Class 12: Electrostatics Part 1 (Point Charges)}
+\title{Class 14: Electrostatics Part 1 (Point Charges)}
 \subtitle{Advanced Placement Physics C}
 \input{../me}
 \input{../mycommands}
@@ -51,7 +51,7 @@
   repulsive/attractive force between all charged objects. The force that charge
   $q_1$ exerts on $q_2$ is given by \textbf{Coulomb's law}:
 
-  \eq{-.2in}{
+  \eq{-.1in}{
     \boxed{\vec F_{12}=\frac{kq_1q_2}{|\vec r_{12}|^2}\hat r_{12}}
   }
 \end{frame}
@@ -79,14 +79,14 @@
 
 \begin{frame}{Coulomb's Constant}
 
-  \eq{-.2in}{
+  \eq{-.1in}{
     \boxed{\vec F_{12}=\frac{kq_1q_2}{|\vec r_{12}|^2}\hat r_{12}}
   }
 
   The constant $k$ in the Coulomb's law is called the
   \textbf{coulomb's constant}, defined as:
 
-  \eq{-.2in}{
+  \eq{-.1in}{
     k=\dfrac1{4\pi\epsilon_0}=\SI{8.99e9}{N.m^2/C^2}
   }
 
@@ -94,7 +94,7 @@
   \textbf{permittivity of free space}, or \textbf{vacuum permittivity}. It
   measures a vacuum's ability to resist the formation of an electric field:
 
-  \eq{-.2in}{
+  \eq{-.1in}{
     \epsilon_0=\SI{8.85e-12}{C^2/N.m^2}
   }
 \end{frame}
@@ -137,37 +137,34 @@
     \column{.4\textwidth}
     \begin{tikzpicture}[scale=.4]
       \shade[ball color=red] circle(.72) node[white]{$Q$};
+
       \begin{scope}[rotate=45]
         \draw[->,very thick,blue](.72,0)--(2.5,0) node[right]{$\vec F_1$};
         \shade[ball color=blue] (7,0) circle(1) node[white]{$q_1$};
       \end{scope}
-      \uncover<2->{
-        \begin{scope}[rotate=105]
-          \draw[->,very thick,green](.72,0)--(2,0)
-          node[right]{$\vec F_2$};
-          \shade[ball color=green] (4,0) circle(.65) node[white]{$q_2$};
-        \end{scope}
-      }
-      \uncover<3->{
-        \begin{scope}[rotate=190]
-          \draw[->,very thick,yellow](.7,0)--(3.5,0)
-          node[above]{$\vec F_3$};
-          \shade[ball color=yellow!70!black]
-          (6,0) circle(1.1) node[white]{$q_3$};
-        \end{scope}
-      }
-      \uncover<4->{
-        \begin{scope}[rotate=260]
-          \draw[->,very thick,violet](.72,0)--(1.4,0)
-          node[right]{$\vec F_4$};
-          \shade[ball color=violet] (9,0) circle(.8) node[white]{$q_4$};
-        \end{scope}
-      }
-      \uncover<5>{
-        \begin{scope}[rotate=125]
-          \draw[->,ultra thick](.72,0)--(3.5,0) node[left]{$\vec F$};
-        \end{scope}
-      }
+      
+      \begin{scope}[rotate=105]
+        \draw[->,very thick,green](.72,0)--(2,0)
+        node[right]{$\vec F_2$};
+        \shade[ball color=green] (4,0) circle(.65) node[white]{$q_2$};
+      \end{scope}
+
+      \begin{scope}[rotate=190]
+        \draw[->,very thick,yellow](.7,0)--(3.5,0)
+        node[above]{$\vec F_3$};
+        \shade[ball color=yellow!70!black]
+        (6,0) circle(1.1) node[white]{$q_3$};
+      \end{scope}
+
+      \begin{scope}[rotate=260]
+        \draw[->,very thick,violet](.72,0)--(1.4,0)
+        node[right]{$\vec F_4$};
+        \shade[ball color=violet] (9,0) circle(.8) node[white]{$q_4$};
+      \end{scope}
+
+      \begin{scope}[rotate=125]
+        \draw[->,ultra thick](.72,0)--(3.5,0) node[left]{$\vec F$};
+      \end{scope}
     \end{tikzpicture}
 
     \column{.6\textwidth}
@@ -411,7 +408,7 @@
   \vspace{.1in}
   \begin{columns}
     \column{.37\textwidth}
-    \pic{1}{serway}
+    \pic1{serway}
 
     \column{.63\textwidth}
     We start with the solution from the ring problem, and replace $Q$ with
@@ -577,6 +574,68 @@
 
 
 
+\begin{frame}{Electric Potential from Multiple Charges}
+  When there are multiple point charges present, the electric potential is
+  given by the summation:
+
+  \eq{-.1in}{
+    \boxed{
+      V =k\sum_{i=1}^N\frac{q_i}{r_i}
+    }
+  }
+
+  As $N\rightarrow\infty$ the summation becomes an integral:
+
+  \eq{-.1in}{
+    \boxed{
+      V =k\int\frac{\dl q}r
+    }
+  }
+
+  where $r$ is the distance to the infinitesimal charge $\dl q$
+\end{frame}
+
+
+
+\section{Electric Potential Difference}
+
+\begin{frame}{Potential Difference}
+  \begin{columns}
+    \column{.45\textwidth}
+    \begin{tikzpicture}[scale=.75]
+      \shade[ball color=blue] circle(.3) node[white]{\footnotesize$Q$};
+      \foreach \theta in {30,60,...,360}{
+        \draw[rotate=\theta,->,gray,thick](.3,0)--({7-4*sin(\theta/2)},0);
+      }
+      \draw[red,ultra thick,dotted,<-]
+      (2.5*cos{30}+.23,-2.5*sin{30}) to[out=0,in=270](5*cos{15},5*sin{15}-.2);
+      \draw[thick,red,rotate=-70] (2.5,0) arc(0:100:2.5) node[above]{$V_2$};
+      \draw[thick,red,rotate=-60] (5,0)   arc(0:90:5)    node[above]{$V_1$};
+      \begin{scope}[rotate=-30]
+        \shade[ball color=red](2.5,0) circle(.23) node[white]{\footnotesize$q$};
+        \draw[<->,thick](.3,0)--(2.27,0) node[midway,above]{$r_2$};
+      \end{scope}
+      \begin{scope}[rotate=15]
+        \shade[ball color=red](5,0) circle(.23) node[white]{\footnotesize$q$};
+        \draw[<->,thick](.3,0)--(4.77,0) node[pos=2/3,below]{$r_1$};
+      \end{scope}
+    \end{tikzpicture}
+
+    \column{.55\textwidth}
+    When a charge is moved from $r_1$ to $r_2$, the change in electric potential
+    energy is related to the change in electric potential by:
+
+    \eq{-.1in}{
+      \Delta U_q=U_2-U_1=q\Delta V
+    }
+
+    where $\Delta V$ is called the \textbf{potential difference}
+  \end{columns}
+\end{frame}
+
+
+
+
 \begin{frame}{Electric Potential}
   \begin{columns}
     \column{.4\textwidth}
@@ -639,67 +698,6 @@
     }
 
     in agreement with equation for electric potential energy
-  \end{columns}
-\end{frame}
-
-
-
-\begin{frame}{Electric Potential from Multiple Charges}
-  When there are multiple points charges present, the electric potential is
-  given by the summation:
-
-  \eq{-.1in}{
-    \boxed{
-      V =\underbrace{\frac1{4\pi\epsilon_0}}_k\sum_{i=1}^N\frac{q_i}{r_i}
-    }
-  }
-
-  As $N\rightarrow\infty$ the summation becomes an integral:
-
-  \eq{-.1in}{
-    \boxed{
-      V =\frac1{4\pi\epsilon_0}\int\frac{\dl q}r
-    }
-  }
-
-  where $r$ is the distance to the infinitesimal charge $\dl q$
-\end{frame}
-
-
-
-\section{Electric Potential Difference}
-
-\begin{frame}{Potential Difference}
-  \begin{columns}
-    \column{.45\textwidth}
-    \begin{tikzpicture}[scale=.75]
-      \shade[ball color=blue] circle(.3) node[white]{\footnotesize$Q$};
-      \foreach \theta in {30,60,...,360}{
-        \draw[rotate=\theta,->,gray,thick](.3,0)--({7-4*sin(\theta/2)},0);
-      }
-      \draw[red,ultra thick,dotted,<-]
-      (2.5*cos{30}+.23,-2.5*sin{30}) to[out=0,in=270](5*cos{15},5*sin{15}-.2);
-      \draw[thick,red,rotate=-70] (2.5,0) arc(0:100:2.5) node[above]{$V_2$};
-      \draw[thick,red,rotate=-60] (5,0)   arc(0:90:5)    node[above]{$V_1$};
-      \begin{scope}[rotate=-30]
-        \shade[ball color=red](2.5,0) circle(.23) node[white]{\footnotesize$q$};
-        \draw[<->,thick](.3,0)--(2.27,0) node[midway,above]{$r_2$};
-      \end{scope}
-      \begin{scope}[rotate=15]
-        \shade[ball color=red](5,0) circle(.23) node[white]{\footnotesize$q$};
-        \draw[<->,thick](.3,0)--(4.77,0) node[pos=2/3,below]{$r_1$};
-      \end{scope}
-    \end{tikzpicture}
-
-    \column{.55\textwidth}
-    When a charge is moved from $r_1$ to $r_2$, the change in electric potential
-    energy is related to the change in electric potential by:
-
-    \eq{-.1in}{
-      \Delta U_q=U_2-U_1=q\Delta V
-    }
-
-    where $\Delta V$ is called the \textbf{potential difference}
   \end{columns}
 \end{frame}
 
@@ -769,31 +767,6 @@
     }
   \end{itemize}
 \end{frame}
-
-
-
-%\begin{frame}{Relating $U_q$, $V$, $\vec F_q$ and $\vec E$}
-%  From the fundamental theorem calculus, we can relate electrostatic force
-%  ($\vec F_q$) to electric potential energy ($U_q$) by the gradient operator,
-%  and electric field ($\vec E$) to the electric potential ($V$) the same way:
-%
-%  \eq{-.2in}{
-%    \vec F_q(r)=-\nabla U_q=-\diffp{U_q}r\hat r
-%    \quad\;\;
-%    \vec E(r)=-\nabla V=-\diffp Vr\hat r
-%  }
-%  \begin{itemize}  
-%  \item Electrostatic force $\vec F_q$ always points from high to low potential
-%    energy (steepest descent direction)
-%  \item Electric field can also be expressed as the change of electric
-%    potential per unit distance, which has the unit
-%    
-%    \eq{-.2in}{
-%      \SI1{\newton\per\coulomb}=\SI1{\volt\per\metre}
-%    }
-%  \item Electric field is also called ``potential gradient''
-%  \end{itemize}
-%\end{frame}
 
 
 
