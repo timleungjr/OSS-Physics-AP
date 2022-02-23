@@ -3,75 +3,85 @@
 \begin{document}
 \genheader
 
-\gentitle{C}{CIRCUIT ANALYSIS}
+\gentitle{20}{CIRCUIT ANALYSIS, PART 1}
 
 \genmultidirections
 
 \gengravity
 
 \raggedcolumns
-\begin{multicols*}{2}
-
-%  \textbf{Questions \ref{circ1}--\ref{circ4}}  
-%  \begin{center}
-%    \begin{tikzpicture}[american voltages,scale=1.1]
-%      \draw(0,0)
-%      to[battery=\mbox{$\Delta V=\SI{12.}{\volt}$}] (0,3)
-%      to[R=\mbox{$R_1=\SI{3.}{\ohm}$}] (2,3)
-%      to[R=\mbox{$R_2=\SI{1.}{\ohm}$}] (2,0)
-%      to[R=\mbox{$R_3=\SI{2.}{\ohm}$}] (0,0);
-%    \end{tikzpicture}
-%  \end{center}
-  
+\begin{multicols}{2}
   \begin{questions}
+    \question Five resistors are made of the same material. Which of the
+    following has the highest resistance?
+    \begin{choices}
+      \choice
+      \begin{tikzpicture}[scale=.6]
+        \draw ellipse(.5 and 1) node{$A$};
+        \draw(3,0) ellipse (.5 and 1) node{$A$};
+        \draw(0,1)--(3,1) node[midway,above]{\small$L$};
+        \draw(0,-1)--(3,-1);
+      \end{tikzpicture}
 
-%    \question What is the current flowing through the circuit shown in the
-%    diagram?
-%    \label{circ1}
-%    \begin{choices}
-%      \choice\SI{1}{\ampere}
-%      \choice\SI{2}{\ampere}
-%      \choice\SI{4}{\ampere}
-%      \choice\SI{6}{\ampere}
-%      \choice\SI{12}{\ampere}
-%    \end{choices}
-%    
-%    \question Which of the following statements is true about the circuit shown
-%    in the diagram?
-%    \begin{choices}
-%      \choice The voltage drop is greatest across $R_1$, but $R_1$ has the least
-%      amount of current flowing through it.
-%      \choice The voltage drop is greatest across $R_2$, but $R_2$ has the least
-%      amount of current flowing through it.
-%      \choice The voltage drop is greatest across $R_3$, but $R_3$ has the least
-%      amount of current flowing through it.
-%      \choice The voltage drops and current are equal across all resistors.
-%      \choice The voltage drop is greatest across $R_1$, but the current is
-%      equal at all points in the circuit.
-%    \end{choices}
-%    
-%    \question In this diagram, what is the power dissipated by all of the
-%    resistors in the circuit?
-%    \begin{choices}
-%      \choice\SI{2}{\watt}
-%      \choice\SI{6}{\watt}
-%      \choice\SI{12}{\watt}
-%      \choice\SI{24}{\watt}
-%      \choice\SI{48}{\watt}
-%    \end{choices}
-%    \columnbreak
-%    
-%    \question In the diagram, what is the voltage drop across the third resistor
-%    ($R_3$)?
-%    \label{circ4}
-%    \begin{choices}
-%      \choice\SI{2}{\volt}
-%      \choice\SI{3}{\volt}
-%      \choice\SI{4}{\volt}
-%      \choice\SI{6}{\volt}
-%      \choice\SI{12}{\volt}
-%    \end{choices}
-%
+      \choice
+      \begin{tikzpicture}[scale=.6]
+        \draw ellipse(.7 and 1.6) node{$2A$};
+        \draw(3,0) ellipse (.5 and 1) node{$A$};
+        \draw(0,1.6)--(3,1) node[midway,above]{\small$L$};
+        \draw(0,-1.6)--(3,-1);
+      \end{tikzpicture}
+
+      \choice
+      \begin{tikzpicture}[scale=.6]
+        \draw ellipse(.7 and 1.6) node{$2A$};
+        \draw(3,0) ellipse (.7 and 1.6) node{$2A$};
+        \draw(0,1.6)--(3,1.6) node[midway,above]{\small$L$};
+        \draw(0,-1.6)--(3,-1.6);
+      \end{tikzpicture}
+
+      \choice
+      \begin{tikzpicture}[scale=.6]
+        \draw ellipse(.3 and .7) node[left]{$A/2\;\;$};
+        \draw(3,0) ellipse (.3 and .7) node[right]{$\;\;A/2$};
+        \draw(0,.7)--(3,.7) node[midway,above]{\small$L$};
+        \draw(0,-.7)--(3,-.7);
+      \end{tikzpicture}
+
+      \choice
+      \begin{tikzpicture}[scale=.6]
+        \draw ellipse(.3 and .7) node[left]{$A/2\;\;$};
+        \draw(3,0) ellipse (.5 and 1) node{$A$};
+        \draw(0,.7)--(3,1) node[midway,above]{\small$L$};
+        \draw(0,-.7)--(3,-1);
+      \end{tikzpicture}
+    \end{choices}
+    
+    \uplevel{
+      \cpic{.46}{add-resistor}
+    }
+    \vspace{-.2in}
+    \question In the circuit shown, what effect would adding another resistor in
+    parallel with the resistor labeled $R$ have?
+    \begin{choices}
+      \choice The reading on the voltmeter would increase.
+      \choice The reading on the ammeter would increase.
+      \choice The reading on the voltmeter would decrease.
+      \choice The reading on the ammeter would decrease.
+      \choice The reading on the ammeter would not change.
+    \end{choices}
+    \vspace{.7in}
+    
+    \question The current flowing in a wire as a function of time is given by
+    the equation $I=4t^3$. The charge that passes through the wire from
+    \SI0{\second} to \SI2{\second} is
+    \begin{choices}
+      \choice\SI2\coulomb
+      \choice\SI4\coulomb
+      \choice\SI8\coulomb
+      \choice\SI{16}\coulomb
+      \choice\SI{24}\coulomb
+    \end{choices}
+    
 %    \question Which of the following statements best summarizes a series circuit
 %    with three different resistances?
 %    \begin{choices}
@@ -86,85 +96,54 @@
 %      \choice In all parts of the circuit, the resistances are the same, the
 %      voltage drops are the same, and the current is the same.
 %    \end{choices}
-%    \columnbreak
-%
-%    \uplevel{
-%      \textbf{Questions \ref{circ2-1}--\ref{circ2-2}}
-%      \begin{center}
-%        \begin{tikzpicture}[american voltages,scale=1.3]
-%          \draw(0,0) to[battery=$\Delta V$] (0,2)--(3,2)--(3,1.8);
-%          \draw(2,1.8)--(4.4,1.8);
-%          \draw(2,0.2)--(4.4,0.2);
-%          \draw(2,1.8) to[R=$R_1$] (2,0.2);
-%          \draw(3.2,1.8) to[R=$R_2$] (3.2,0.2);
-%          \draw(4.4,1.8) to[R=$R_3$] (4.4,0.2);
-%          \draw(3,0.2)--(3,0)--(0,0);
-%        \end{tikzpicture}
-%    
-%        \vspace{.1in}$\Delta V=\SI{12.0}{V}$, $R_1=\SI{10.0}{\ohm}$,\\
-%        $R_2=\SI{6.0}{\ohm}$, $R_3=\SI{8.0}{\ohm}$
-%      \end{center}
-%    }
-%
-%    \question For the circuit in the diagram, which of the following
-%    expressions will describe the amount of current flowing through the
-%    resistors?
-%    \label{circ2-1}
-%    \begin{choices}
-%      \choice $I_1=I_2=I_3$
-%      \choice $I_3>I_2>I_1$
-%      \choice $I_1>I_2<I_3$
-%      \choice $I_2>I_1>I_3$
-%      \choice $I_1<I_2<I_3$
-%    \end{choices}
-%    
-%    \question For the circuit in the diagram, what is the equivalent resistance?
-%    \begin{choices}
-%      \choice\SI{0.040}{\ohm}
-%      \choice\SI{0.40}{\ohm}
-%      \choice\SI{1.0}{\ohm}
-%      \choice\SI{2.6}{\ohm}
-%      \choice\SI{24}{\ohm}
-%    \end{choices}
-%    
-%    \question For the circuit in the diagram, what is the total current?
-%    \begin{choices}
-%      \choice\SI{0.5}{\ampere}
-%      \choice\SI{4.6}{\ampere}
-%      \choice\SI{12}{\ampere}
-%      \choice\SI{30}{\ampere}
-%      \choice\SI{300}{\ampere}
-%    \end{choices}
-%    
-%    \question For the circuit in the diagram, the third resistor ($R_3$)
-%    dissipates how much energy each second?
-%    \label{circ2-2}
-%    \begin{choices}
-%      \choice\SI{12}{\watt}
-%      \choice\SI{14}{\watt}
-%      \choice\SI{46}{\watt}
-%      \choice\SI{212}{\watt}
-%      \choice\SI{300}{\watt}
-%    \end{choices}
-%    
-%%  \item Two resistors made of the same material are shown in the figure. A
-%%    current of $I$ flows through the left resistor when connected to a
-%%    potential difference of $V$. What current will flow through the right
-%%    resistor when connected to the same potential?
-%%
-%%    \vspace{-.2in}
-%%    \begin{center}
-%%      \pic{.45}{resistors.png}
-%%    \end{center}
-%%    \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
-%%    \item $I/2$
-%%    \item $I/4$
-%%    \item $I$
-%%    \item $2I$
-%%    \item $4I$
-%    %    \end{enumerate}
-%    \columnbreak
-%    
+    \uplevel{
+      \cpic{.35}{3batteries}
+%      \centering
+%      \begin{tikzpicture}[yscale=1.5,xscale=1.2]
+%        \draw(5,2)--(5,1) to[R,*-](3,1) to[battery,-*](0,1)--(0,2);
+%        \draw(5,1)--(5,0)--(3,0) to[battery](0,0)--(0,1);
+%        \draw(5,2)--(3,2) to[battery=\mbox{\SI6\volt}](0,2);
+%      \end{tikzpicture}
+    }
+    \question There are three batteries in the circuit shown above. There may
+    be other resistances not shown on the diagram. The potential difference
+    between points $a$ and $b$ is
+    \begin{choices}
+      \choice\SI{3}\volt
+      \choice\SI{6}\volt
+      \choice\SI{9}\volt
+      \choice\SI{12}\volt
+      \choice\SI{18}\volt
+    \end{choices}
+    \columnbreak
+
+    \uplevel{
+      \textbf{Questions \ref{adjust1}--\ref{adjust2}} An adjustable resistor is
+      connected to a battery of emf ε in a simple circuit. A graph of power
+      vs.\ current in the battery is shown in the figure.
+      \cpic{.45}{adjustable}
+    }
+    \question The emf $\mathcal E$ of the battery is most nearly
+    \label{adjust1}
+    \begin{choices}
+      \choice 5 V
+      \choice 10 V
+      \choice 20 V
+      \choice 40 V
+      \choice 60 V
+    \end{choices}
+    
+    \question What is the resistance of the adjustable resistor when the power
+    in the circuit is 10 watts?
+    \label{adjust2}
+    \begin{choices}
+      \choice\SI{1.25}\ohm
+      \choice\SI{1.5}\ohm
+      \choice\SI{2.5}\ohm
+      \choice\SI{5.0}\ohm
+      \choice\SI{0}\ohm
+    \end{choices}    
+    
 %    \uplevel{
 %      \textbf{Questions \ref{series1}--\ref{series2}}
 %      \cpic{.45}{r-in-series}
@@ -173,563 +152,264 @@
 %    \question Which is the correct ranking of the currents for the resistors?
 %    \label{series1}
 %    \begin{choices}
-%      \choice$I_A = I_B = I_C$
-%      \choice$I_A > I_B > I_C$
-%      \choice$I_C > I_A = I_B$
-%      \choice$I_C > I_B > I_A$
-%      \choice$I_C < I_B < I_A$
+%      \choice$I_A=I_B=I_C$
+%      \choice$I_A>I_B>I_C$
+%      \choice$I_C>I_A=I_B$
+%      \choice$I_C>I_B>I_A$
+%      \choice$I_C<I_B<I_A$
 %    \end{choices}
 %
 %    \question Which is the correct ranking of the potential differences of the
 %    resistors?
 %    \label{series2}
 %    \begin{choices}
-%      \choice $V_A = V_B = V_C$
-%      \choice $V_A > V_B > V_C$
-%      \choice $V_A = V_B > V_C$
-%      \choice $V_C > V_B > V_A$
-%      \choice $V_C < V_B < V_A$
-%    \end{choices}
-%
-%    \uplevel{
-%      \textbf{Questions \ref{combo1}--\ref{combo2}}
-%      \begin{center}
-%        \begin{tikzpicture}[american voltages,scale=1.2]
-%          \draw(0,0) to[battery,l=\mbox{\SI{120}{\volt}}] (0,2)
-%          to[C,l=\mbox{\SI{2}{\micro\farad}}] (2,2)
-%          to[C,l_=\mbox{\SI8{\micro\farad}}] (2,0)
-%          to[C,l=\mbox{\SI4{\micro\farad}}](0,0);
-%          \draw(2,2)--(3,2) to[C=\mbox{\SI8{\micro\farad}}] (3,0)--(2,0);
-%        \end{tikzpicture}
-%      \end{center}
-%    }
-%
-%    \question The equivalent capacitance of this circuit is
-%    \label{combo1}
-%    \begin{choices}
-%      \choice\SI{7/4}{\micro\farad}
-%      \choice\SI{4/7}{\micro\farad}
-%      \choice\SI{21/16}{\micro\farad}
-%      \choice\SI{10}{\micro\farad}
-%      \choice\SI{22}{\micro\farad}
-%    \end{choices}
-%    
-%    \question The charge stored on the \SI{2}{\micro\farad} capacitor is most
-%    nearly
-%    \label{combo2}
-%    \begin{choices}
-%      \choice\SI{6}{\micro\coulomb}
-%      \choice\SI{12}{\micro\coulomb}
-%      \choice\SI{22}{\micro\coulomb}
-%      \choice\SI{36}{\micro\coulomb}
-%      \choice\SI{120}{\micro\coulomb}
-%    \end{choices}
+%      \choice $V_A=V_B=V_C$
+%      \choice $V_A>V_B>V_C$
+%      \choice $V_A=V_B>V_C$
+%      \choice $V_C>V_B>V_A$
+%      \choice $V_C<V_B<V_A$
+%    \end{choices}    
 %    \columnbreak
-%    
-%    \question A capacitor $C_0$ is connected to a battery and stores charge. If
-%    the space between the capacitor plates is filled with oil, which of the
-%    following quantities increase?
-%    \begin{choices}
-%      \choice Capacitance and voltage across the plates
-%      \choice Charge and voltage across the plates
-%      \choice Capacitance and electric field between the plates
-%      \choice Capacitance and charge on the plates
-%      \choice Electric field between the plates and voltage across the plates
-%    \end{choices}
-%
-%    \uplevel{
-%      \textbf{Question \ref{switch1}--\ref{switch2}}
-%
-%      The circuit shows a capacitor, a battery, and a resistor. Switch $S$ is
-%      first connected to point $a$ to charge the capacitor, then a long time
-%      later switched to point $b$ to discharge the capacitor through the
-%      resistor.
-%      \begin{center}
-%        \begin{tikzpicture}[american voltages,scale=1.5]
-%          \draw(0,0) to[battery,l=$\mathcal{E}$](0,2) to[short,-*] (1.5,2);
-%          \draw(2.5,2) to[short,*-] (3.5,2) to[R=$R$,] (3.5,0)--(0,0);
-%          \draw(2,0) to[C=$C$,-*] (2,1.25);
-%          \draw(2,1.25)--(2.3,2.15) node[above]{s};
-%          \node at (1.5,1.8) (a){a};
-%          \node at (2.5,1.8) (b){b};
-%        \end{tikzpicture}
-%      \end{center}
-%    }
-%
-%    \question The time constant $\tau$ for discharging the capacitor through the
-%    resistor could be decreased (faster discharge) by
-%    \label{switch1}
-%    \begin{choices}
-%      \choice placing another resistor in series with the first resistor
-%      \choice placing another resistor in parallel with the first resistor
-%      \choice placing another capacitor in parallel with the first capacitor
-%      \choice placing another battery in series in the same direction with the
-%      first battery
-%      \choice increasing both R and C
-%    \end{choices}
-%    
-%    \question The maximum current through the resistor is
-%    \label{switch2}
-%    \begin{choices}
-%      \choice $\mathcal{E}/2R$
-%      \choice $\mathcal{E}/R$
-%      \choice $\mathcal{E}/RC$
-%      \choice $\mathcal{E}/2RC$
-%      \choice $C\mathcal{E}/R$
-%    \end{choices}
-%    \columnbreak
-%
-%    \question A battery of voltage $V_0$ is attached to two parallel conducting
-%    plates. Charge is distributed on the plates, and then the battery is
-%    removed. A dielectric is then inserted between the plates, filling the
-%    space. Which of the following decreases after the battery is removed and the
-%    dielectric is inserted to fill the space between the plates?
-%    \begin{choices}
-%    \item Capacitance
-%    \item Charge on the plates
-%    \item Net electric field between the plates
-%    \item Area of the plates
-%    \item Separation distance between the plates
-%    \end{choices}
-%    
-%    \question Circuit I and Circuit II shown each consist of a capacitor and a
-%    resistor. A battery is connected across a and b, and then removed. Which of
-%    the following statements is true of the circuits?
-%    \begin{center}
-%      Circuit I\\
-%      \begin{tikzpicture}
-%        \draw(0,1.25) to[short,*-](0,2.5)--(2,2.5) to[C=$C$](2,1.25)
-%        to[R=$R$](2,0)--(0,0) to[short,-*](0,0.75);
-%        \node at (-0.3,0.75) {a};
-%        \node at (-0.3,1.25) {b};
-%      \end{tikzpicture}
-%      
-%      Circuit II\\
-%      \begin{tikzpicture}
-%        \draw(0,1.25) to[short,*-](0,2)--(1.5,2) to[R=$R$](1.5,0)--(0,0)
-%        to[short,-*](0,0.75);
-%        \draw(1.5,2)--(3,2) to[C=$C$](3,0)--(1.5,0);
-%        \node at (-0.3,0.75) {a};
-%        \node at (-0.3,1.25) {b};
-%      \end{tikzpicture}
-%    \end{center}
-%    \begin{choices}
-%      \choice Circuit I and Circuit II will both retain stored energy when the
-%      battery is removed.
-%      \choice Neither Circuit I nor Circuit II will retain stored energy when
-%      the battery is removed.
-%      \choice Only Circuit I will retain stored energy when the battery is
-%      removed.
-%      \choice Only Circuit II will retain stored energy when the battery is
-%      removed.
-%      \choice Current will continue to flow in both circuits after the battery
-%      is removed.
-%    \end{choices}
-%    \columnbreak
-%    
-%    \question A thin sheet of copper is placed in a uniform magnetic field. A
-%    battery is connected to the top and bottom ends of the copper sheet, so that
-%    conventional current flows from the top to the bottom of the sheet.
-%    Points X and Y are on the left and right sides of the sheet, respectively.
-%    Which of the following statements is true?
-%    \begin{center}
-%      \begin{tikzpicture}[scale=.7]
-%        \foreach\x in {0,...,3}{
-%          \foreach \y in {0,...,3} \fill[gray](\x,\y) circle(.08); 
-%        }
-%        \draw[thick](.3,-.2) rectangle(2.7,3.2);
-%        \draw[thick](1.5,-.2)--(1.5,-.7)--(4.5,-.7)
-%        to[battery1,l_=$\mathcal{E}$](4.5,3.7)--(1.5,3.7)--(1.5,3.2);
-%        \fill(.3,1.5) circle(.1) node[left]{$X$};
-%        \fill(2.7,1.5) circle(.1) node[right]{$Y$};
-%        \node at (1,2.2) {$\mb{B}$};
-%      \end{tikzpicture}
-%    \end{center}
-%    \begin{choices}
-%      \choice Point $X$ is at a higher potential than point $Y$.
-%      \choice Point $Y$ is at a higher potential than point $X$.
-%      \choice Point $X$ and point $Y$ are at equal potential.
-%      \choice Point $X$ is at zero potential, and point $Y$ has a positive
-%      potential.
-%      \choice Point $Y$ is at zero potential, and point $X$ has a negative
-%      potential.
-%    \end{choices}
-
-%  \item A very long conducting slab of copper of height $a$ and width $b$
-%    carries a current $I$ throughout its cross-sectional area. The current
-%    density $j$ is constant throughout the slab, and is directed out of the
-%    page through the facing area of the slab. Points $X$ and $Y$ are marked on
-%    the facing area of the slab. The current density $j$ can be expressed by
-%    the expression
-%    \begin{center}
-%      \pic{.25}{square-conductor.png}
-%    \end{center}
-%    \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
-%    \item $\displaystyle\frac{I}{a^2}$
-%    \item $\displaystyle\frac{I}{b^2}$
-%    \item $\displaystyle\frac{I}{(ab)^2}$
-%    \item $\displaystyle\frac{I}{ab}$
-%    \item $\displaystyle\frac{I}{a+b}$
-%    \end{enumerate}
+    
+    \uplevel{
+      \textbf{Questions \ref{bulb1}--\ref{bulb2}}
+      Four identical light bulbs are connected to a battery as shown.
+      \cpic{.5}{bulbs}
+      }
+    \question Which bulb will burn the brightest?
+    \label{bulb1}
+    \begin{choices}
+       \choice 1
+       \choice 2
+       \choice 3
+       \choice 4
+       \choice All will emit the same brightness.
+    \end{choices}
+    \vspace{.7in}
+    
+    \question If bulb 4 is removed, how will the brightness of each of the bulbs
+    change, if at all?
+    \label{bulb2}
+    \begin{choices}
+      \choice Bulb 2 will be less bright.
+      \choice Bulb 2 will be brighter.
+      \choice Bulb 3 will not change its brightness.
+      \choice Bulb 1 will not give off light.
+      \choice None of the bulbs will change their brightness.
+    \end{choices}
   \end{questions}
-\end{multicols*}
+\end{multicols}
 \newpage
 
-\genfreetitle{C}{ELECTRIC CIRCUITS}{5}
+\genfreetitle{20}{CIRCUIT ANALYSIS}{2}
 
 \genfreedirections
 
-%TAKEN FROM 2010 AP PHYSICS EXAM FREE-RESPONSE QUESTION E&M 2
-\cpic{.25}{r-c-1}
+%TAKEN FROM 2015 AP PHYSICS EXAM FREE-RESPONSE QUESTION E&M.2.
+\cpic{.25}{find-internal-resistance}
 
 \begin{questions}
-  \question In the circuit illustrated above, switch $S$ is initially open and
-  the battery has been connected for a long time.
-  \begin{parts}
-    \part What is the steady-state current through the ammeter?
-    
-    \part Calculate the charge on the \SI{10}{\micro\farad} capacitor.
-    
-    \part Calculate the energy stored in the \SI{5.}{\micro\farad} capacitor.
 
-    \uplevel{
-      The switch is now closed, and the circuit comes to a new steady state.
-    }
-
-    \part Calculate the steady-state current through the battery.
-    
-    \part Calculate the final charge on the \SI{5.}{\micro\farad} capacitor.
-    
-    \part Calculate the energy dissipated as heat in the \SI{40}{\ohm} resistor
-    in one minute once the circuit has reached steady state.
-  \end{parts}
-  \newpage
-
-  
-  % TAKEN FROM THE 2012 AP PHYSICS C EXAM FREE-RESPONSE QUESTION E&M 2
-  \uplevel{
-    \cpic{.5}{resistance}
-  }
-  \question A physics student wishes to measure the resistivity of slightly
-  conductive paper that has a thickness of \SI{1.0e4}{\metre}. The student cuts
-  a sheet of the conductive paper into strips of width \SI{.02}{\metre} and
-  varying lengths, making five resistors labeled R1 to R5. Using an ohmmeter,
-  the student measures the resistance of each strip, as shown above. The data
-  are recorded below.
+  \question A student performs an experiment to determine the emf $\mathcal E$
+  and internal resistance $r$ of a given battery. The student connects the
+  battery in series to a variable resistance $R$, with a voltmeter across the
+  variable resistor, as shown in the figure above, and measures the voltmeter
+  reading $V$ as a function of the resistance $R$. The data are
+  shown in the table below.
   \begin{center}
-    \begin{tabular}{|l|c|c|c|c|c|}
+    \begin{tabular}{|c|c|c|c|c|}
       \hline
-      Resistor & R1 & R2 & R3 & R4 & R5 \\ \hline
-      Length (m) & 0.020 & 0.040 & 0.060 & 0.080 & 0.100\\ \hline
-      Resistance (\si{\ohm}) & 80,000 & 180,000 & 260,000 & 370,000 & 440,000\\
+      Trial \# & Resistance (\si\ohm) & Voltage (\si\volt) &
+      $1/R$ (\si{\per\ohm}) & $1/V$ (\si{\per\volt}) \\
       \hline
+      1 & 0.50 & 5.6 & 2.00 & 0.179 \\ \hline
+      2 & 1.0 &  7.4 & 1.00 & 0.135 \\ \hline
+      3 & 2.0 &  9.4 & 0.50 & 0.106 \\ \hline
+      4 & 3.0 & 10.6 & 0.33 & 0.094 \\ \hline
+      5 & 5.0 & 10.9 & 0.20 & 0.092 \\ \hline
+      6 & 10 &  11.4 & 0.10 & 0.088 \\ \hline
     \end{tabular}
   \end{center}
   \begin{parts}
-    \part Use the grid below to plot a linear graph of the data points from
-    which the resistivity of the paper can be determined. Include labels and
-    scales for both axes. Draw the straight line that best represents the data.
+    \part
+    \label{part1a}
+    \begin{subparts}
+      \subpart Derive an expression for the measured voltage $V$. Express your
+      answer in terms of $R$, $\mathcal E$, $r$, and physical constants, as
+      appropriate.
+
+      \subpart Rewrite your expression from part (\ref{part1a})-i to express
+      $1/V$ as a function of $1/R$.
+    \end{subparts}
+
+    \part On the grid below, plot data points for the graph of $1/V$ as a
+    function of $1/R$. Clearly scale and label all axes, including units as
+    appropriate. Draw a straight line that best represents the data.
+    \label{part1b}
     \begin{center}
-      \begin{tikzpicture}[yscale=.3,xscale=.45]
-        \draw (0,0) grid(30,30);
-        \draw[step=5,very thick](0,0) grid(30,30);
+      \begin{tikzpicture}[scale=1.6]
+        \draw[thick](0,0)--(5,0);
+        \draw[thick](0,0)--(0,5);
+        \foreach\x in {.2,.4,...,4.8}{
+          \draw[thick,dashed,gray](\x,0)--(\x,5);
+          \draw[thick,dashed,gray](0,\x)--(5,\x);
+        }
+        \foreach\x in {1,...,5}{
+          \draw[very thick,dashed](\x,0)--(\x,5);
+          \draw[very thick,dashed](0,\x)--(5,\x);
+        }
       \end{tikzpicture}
     \end{center}
 
-    \part Using the graph, calculate the resistivity of the paper.
-
-    \uplevel{
-      \cpic{.45}{resistors-and-capacitor}
-      The student uses resistors R4 and R5 to build a circuit using wire, a
-      \SI{1.5}{\volt} battery, an uncharged \SI{10}{\micro\farad} capacitor,
-      and an open switch, as shown above.
-    }
+    \part Use the straight line from part (\ref{part1b}) to obtain values for
+    the following.
+    \begin{subparts}
+      \subpart $\mathcal E$
+      \subpart $r$
+    \end{subparts}
     
-    \part Calculate the time constant of the circuit.
+    \part Using the results of the experiment, calculate the maximum current
+    that the battery can provide.
+
+    \part A voltmeter is to be used to determine the emf of the battery after
+    removing the battery from the circuit. Two voltmeters are available to take
+    this measurement---one with low internal resistance and one with high
+    internal resistance. Indicate which voltmeter will provide the most
+    accurate measurement. Justify your answer.
+    
+    \vspace{.05in}
+    \underline{\hspace{.4in}} The voltmeter with low resistance will provide
+    the most accurate measurement.
+
+    \vspace{.05in}
+    \underline{\hspace{.4in}} The voltmeter with high resistance will provide
+    the most accurate measurement.
+
+    \vspace{.05in}
+    \underline{\hspace{.4in}} The two voltmeters will provide equal accuracy.
+  \end{parts}
+  \newpage
+
+  %TAKEN FROM 2016 AP PHYSICS EXAM FREE-RESPONSE QUESTION E&M.2.
+  \uplevel{
+    \cpic{.27}{sample}
+  }
+  \question The circuit shown above consists of a source of variable emf
+  $\mathcal E$, an ideal ammeter A, an ideal voltmeter V, a resistor of
+  resistance $R$, and a sample of wire with resistance $r$.
+  \begin{parts}
+    \part How does the current through the wire sample compare with the current
+    through the resistor $R$? Justify your answer.
+    
+    \vspace{.05in}
+    \underline{\hspace{.4in}} It is greater through R.
+    
+    \vspace{.05in}
+    \underline{\hspace{.4in}} It is greater through the sample.
+    
+    \vspace{.05in}
+    \underline{\hspace{.4in}} It is the same through both.
+    
+    \vspace{.05in}
+    \underline{\hspace{.4in}} It depends on the resistance of the sample.
+
+    \part How does the potential difference across the wire sample compare with
+    the potential difference across the resistor $R$? Justify your answer.
+    
+    \vspace{.05in}    
+    \underline{\hspace{.4in}}It is greater across R.
+        
+    \vspace{.05in}
+    \underline{\hspace{.4in}}It is greater across the sample.
+        
+    \vspace{.05in}
+    \underline{\hspace{.4in}}It is the same across both.
+        
+    \vspace{.05in}
+    \underline{\hspace{.4in}}It depends on the resistance of the sample.
+
+    \uplevel{With the sample of wire in place, the emf of the source is set to
+      a given value. The current through and potential difference across the
+      resistor $R$ are measured. This is repeated for several values of emf,
+      and the data are recorded in the table below.
+      \begin{center}
+        \begin{tabular}{|c|c|c|p{.5in}|p{.5in}|}
+          \hline
+          $\mathcal E$ (\si\volt)&  $V_R$ (\si\volt) & $I_R$ (\si\ampere) & &\\
+          \hline
+          0.250 & 0.179 & 0.162 & & \\ \hline
+          0.500 & 0.335 & 0.327 & & \\ \hline
+          0.750 & 0.520 & 0.490 & & \\ \hline
+          1.000 & 0.670 & 0.687 & & \\ \hline
+        \end{tabular}
+      \end{center}
+    }
+
+    \part Indicate below which quantities should be graphed to yield a straight
+    line that could be used to calculate a numerical value for the resistance
+    of the wire sample.
+    \label{part2c}
+
+    \vspace{.05in}
+    Horizontal axis: \underline{\hspace{.5in}}
+
+    \vspace{.05in}
+    Vertical axis: \underline{\hspace{.5in}}
+
+    You may use the remaining columns in the table above, as needed, to record
+    any quantities that you indicated that are not given.
     \newpage
-    
-    \part At time $t=0$, the student closes the switch. On the axes below,
-    sketch the magnitude of the voltage $V_c$ across the capacitor and the
-    magnitudes of the voltages $V_\text{R4}$ and $V_\text{R5}$ across each
-    resistor as functions of time $t$. Clearly label each curve according to
-    the circuit element it represents. On the axes, explicitly label any
-    intercepts, asymptotes, maxima, or minima with values or expressions, as
-    appropriate.
-    \begin{center}
-      \begin{tikzpicture}[scale=.9]
-        \draw[very thick,->](0,0)--(10,0)
-        node[midway,below]{Time $t$} node[pos=0,below left]{$O$};
-        \draw[very thick,->](0,0)--(0,6)node[midway,above,sloped]{Voltage $V$};
-      \end{tikzpicture}
-    \end{center}
-  \end{parts}
-  \newpage
   
-%\item The circuit in the figure consists of three capacitors
-%  (\SI{3}{\micro\farad}, \SI{4}{\micro\farad}, and \SI{6}{\micro\farad})
-%  connected to a \SI{200}{\volt} battery.
-%  
-%  \begin{minipage}{0.3\textwidth}
-%    \begin{tikzpicture}[american voltages,scale=1.3]
-%      \draw[thick](4,0) to[battery=200<\volt>](0,0)--(0,1)
-%      to[C=4<\micro\farad>](4,1)--(4,0);
-%      \draw[thick](0,1)--(0,2) to[C=6<\micro\farad>] (2,2)
-%      to[C=3<\micro\farad>] (4,2)--(4,1);
-%    \end{tikzpicture}
-%  \end{minipage}
-%  \begin{minipage}{.68\textwidth}
-%    \begin{enumerate}[noitemsep]
-%    \item Calculate the equivalent capacitance of the combined three
-%      capacitors.
-%    \item Calculate the total energy stored in the \SI{6}{\micro\farad} and
-%      \SI{3}{\micro\farad} capacitor combination.
-%    \end{enumerate}
-%  \end{minipage}
-
-
-%TAKEN FROM 2007 AP PHYSICS C EXAM FREE-RESPONSE QUESTION E&M 1.
-  \uplevel{
-    \cpic{.4}{r-c-2}
-  }
-  \question A student sets up the circuit above in the lab. The values of the
-  resistance and capacitance are as shown, but the constant voltage
-  $\mathcal{E}$ delivered by the ideal battery is unknown. At time $t=0$, the
-  capacitor is uncharged and the student closes the switch. The current as a
-  function of time is measured using a computer system, and the following graph
-  is obtained.
-  \cpic{.4}{current-graph}
-  \begin{parts}
-    \part Using the data above, calculate the battery voltage $\mathcal{E}$.
-
-    \part Calculate the voltage across the capacitor at time
-    $t =\SI{4.}{\second}$.
-    
-    \part Calculate the charge on the capacitor at $t =\SI{4.}{\second}$.
-
-    \part On the axes below, sketch a graph of the charge on the capacitor as a
-    function of time.
+    \part On the grid below, plot the straight line data points from part
+    (\ref{part2c}). Clearly scale and label all axes, including units if
+    appropriate. Draw a straight line that best represents the data.
     \begin{center}
-      \begin{tikzpicture}[scale=.65]
-        \draw[very thick,->](0,0)--(10,0)
-        node[midway,below]{Time ($s$)} node[pos=0,below left]{$O$};
-        \draw[very thick,->](0,0)--(0,6)node[midway,above,sloped]{Charge};
-        \draw(9,-.1)--(9,.1) node[pos=0,below]{10};
+      \begin{tikzpicture}[scale=1.6]
+        \draw[thick](0,0)--(5,0);
+        \draw[thick](0,0)--(0,5);
+        \foreach\x in {.2,.4,...,4.8}{
+          \draw[thick,dashed,gray](\x,0)--(\x,5);
+          \draw[thick,dashed,gray](0,\x)--(5,\x);
+        }
+        \foreach\x in {1,...,5}{
+          \draw[very thick,dashed](\x,0)--(\x,5);
+          \draw[very thick,dashed](0,\x)--(5,\x);
+        }
       \end{tikzpicture}
     \end{center}
-    \part Calculate the power being dissipated as heat in the resistor at
-    $t=\SI{4.}{\second}$.
-
-    \part  The capacitor is now discharged, its dielectric of constant
-    $\kappa=1$ is replaced by a dielectric of constant $\kappa=3$, and the
-    procedure is repeated. Is the amount of charge on one plate of the
-    capacitor at $t=\SI{4.}{\second}$ now greater than, less than, or the same
-    as before? Justify your answer.
-
-    \vspace{.1in}
-    \underline{\hspace{.3in}} Greater than\hspace{.3in}
-    \underline{\hspace{.3in}} Less than\hspace{.3in}
-    \underline{\hspace{.3in}} The same
-  \end{parts}
-  \newpage
-  
-  %TAKEN FROM 2017 AP PHYSICS C EXAM FREE-RESPONSE QUESTION E&M 2
-  \uplevel{
-    \cpic{.4}{r-c-3}
-  }
-  \question In the circuit above, an ideal battery of voltage $V_0$ is
-  connected to a capacitor with capacitance $C_0$ and resistors with
-  resistances $R_1$ and $R_2$ , with $R_1>R_2$. The switch $S$ is open, and the
-  capacitor is initially uncharged.
-  \begin{parts}
-    \part The switch is closed at time $t=0$. On the axes below, sketch the
-    charge $q$ on the capacitor as a function of time $t$. Explicitly label any
-    intercepts, asymptotes, maxima, or minima with numerical values or algebraic
-    expressions, as appropriate.
-    \begin{center}
-      \begin{tikzpicture}[scale=.65]
-        \draw[very thick,->](0,0)--(10,0) node[right]{$t$};
-        \draw[very thick,->](0,0)--(0,5)  node[above]{$q$};
-      \end{tikzpicture}
-    \end{center}
-
-    \part On the axes below, sketch the current $I$ through each resistor as a
-    function of time $t$. Clearly label the two curves as $I_1$ and $I_2$ , the
-    currents through resistors $R_1$ and $R_2$, respectively. Explicitly label
-    any intercepts, asymptotes, maxima, or minima with numerical values or
-    algebraic expressions, as appropriate.
-    \begin{center}
-      \begin{tikzpicture}[scale=.65]
-        \draw[very thick,->](0,0)--(10,0) node[right]{$t$};
-        \draw[very thick,->](0,0)--(0,5)  node[above]{$I$};
-      \end{tikzpicture}
-    \end{center}
-
-    \uplevel{
-      The circuit is constructed using an ideal \SI{1.5}{\volt} battery, an
-      \SI{80}{\micro\farad} capacitor, and resistors $R_1=\SI{150}{\ohm}$ and
-      $R_2=\SI{100}{\ohm}$. The switch is closed, allowing the capacitor to
-      fully charge. The switch is then opened, allowing the capacitor to
-      discharge.
-    }
-
-    \part The time it takes to charge the capacitor to \SI{50}{\percent} of its
-    maximum charge is $\Delta t_C$. The time it takes for the capacitor to
-    discharge to \SI{50}{\percent} of its maximum charge is $\Delta t_D$.
-    Which of the following correctly relates the two time intervals?
-    Justify your answer.
     
-    \vspace{.1in}
-    \underline{\hspace{.3in}} $\Delta t_C > \Delta t_D$\hspace{.3in}
-    \underline{\hspace{.3in}} $\Delta t_C = \Delta t_D$\hspace{.3in}
-    \underline{\hspace{.3in}} $\Delta t_C < \Delta t_D$
-    
+    \part Use your straight line to calculate the value of the resistance of
+    the wire sample.
+    \label{part2e}
+
+    \part The wire sample has a length of \SI{3.00}{\metre} and a radius of
+    \SI{1.00e-3}\metre. Calculate the resistivity of the material from which
+    the wire sample is made.
+
     \part
     \begin{subparts}
-      \subpart Calculate the current through resistor $R_2$ immediately after
-      the switch is opened.
-      \subpart Is the current through resistor $R_2$ increasing, decreasing, or
-      constant immediately after the switch is opened?
+      \subpart Suppose the ammeter used to collect these data was not ideal.
+      Would the actual value of the resistance of the wire sample be greater
+      than, less than, or equal to that calculated in part (\ref{part2e})?
       Justify your answer.
+
+      \vspace{.05in}
+      \underline{\hspace{.4in}} Greater than\hspace{.5in}
+      \underline{\hspace{.4in}} Less than\hspace{.5in}
+      \underline{\hspace{.4in}} Equal to
+      \vspace{.7in}
       
-      \vspace{.1in}
-      \underline{\hspace{.3in}} Increasing\hspace{.3in}
-      \underline{\hspace{.3in}} Decreasing\hspace{.3in}
-      \underline{\hspace{.3in}} Constant
-    \end{subparts}
-    \part
-    \begin{subparts}
-      \subpart Calculate the energy stored in the capacitor immediately after
-      the switch is opened.
-      \subpart Calculate the energy dissipated by resistor $R_1$ as the
-      capacitor completely discharges.
+      \subpart If the ideal voltmeter is replaced by a voltmeter that is not
+      ideal and the experiment is repeated, would the readings of the ideal
+      ammeter be greater than, less than, or equal to those in the data chart
+      before part (\ref{part2c})? Justify your answer.
+
+      \vspace{.05in}
+      \underline{\hspace{.4in}} Greater than\hspace{.5in}
+      \underline{\hspace{.4in}} Less than\hspace{.5in}
+      \underline{\hspace{.4in}} Equal to
+      \vspace{.7in}
     \end{subparts}
   \end{parts}
-  \newpage
-  
-  %TAKEN FROM THE 2001 AP PHYSICS C FREE-RESPONSE QUESTION E&M 2
-
-  \question You have been hired to determine the internal resistance of
-  \SI{8.}{\micro\farad} capacitors for an electronic component manufacturer.
-  (Ideal capacitors have an infinite internal resistance—that is, the material
-  between their plates is a perfect insulator. In practice, however, the
-  material has a very small, but nonzero, conductivity.) You cannot simply
-  connect the capacitors to an ohmmeter, because their resistance is too large
-  for an ohmmeter to measure. Therefore you charge the capacitor to a potential
-  difference of \SI{10}{\volt} with a battery, disconnect it from the battery
-  and measure the potential difference across the capacitor every 20 minutes
-  with an ideal voltmeter, obtaining the graph shown above.
-  \begin{parts}
-    \part Determine the internal resistance of the capacitor.
-    
-    \uplevel{
-      The capacitor can be approximated as a parallel-plate capacitor separated
-      by a \SI{.10}{\milli\metre} thick dielectric with $\kappa=5.6$.
-    }
-
-    \part Determine the approximate surface area of one of the capacitor
-    ``plates.''
-    
-    \part Determine the resistivity of the dielectric.
-    
-    \part Determine the magnitude of the charge leaving the positive plate of
-    the capacitor in the first \SI{100}{min}.
-  \end{parts}
-  
-%\item A \SI{60}{\micro\farad} capacitor is charged to \SI{12}{\volt}. The
-%  capacitor is then removed from the battery and the plate separation is
-%  increased from \SI{2.0}{mm} to \SI{3.5}{mm}.
-%  \begin{enumerate}[noitemsep]
-%  \item What is the charge on the capacitor?
-%  \item How much energy was originally stored in the capacitor?
-%  \item By how much is the energy increased when the plate separation is
-%    changed?
-%  \end{enumerate}
-%  \newpage
-
-%\item Find the current in each part of the circuit shown in the figure below.
-%  \begin{center}
-%    \begin{tikzpicture}[american voltages,scale=1.25]
-%      \draw[thick](0,0) to[short,*-](0,2) to[R=3<\ohm>,*-] (0,4)
-%      to[battery1=42<\volt>,*-](2,4) to[R=3<\ohm>] (4,4) to[short,*-](4,2)
-%      to[R=4<\ohm>,*-](4,0) to[short,*-](2,0) to[battery1=6<\volt>,*-](2,2)
-%      to[R,l_=4<\ohm>,*-](0,2);
-%      \draw[thick](0,0) to[R,l_=6<\ohm>](2,0);
-%      \draw[thick](2,2) to[R,l_=6<\ohm>](4,2);
-%    \end{tikzpicture}
-%  \end{center}
-%  \newpage
-%  
-%\item The capacitor in the circuit is initially uncharged. Find the current
-%  through the battery
-%  \begin{enumerate}[noitemsep]
-%  \item Immediately after the switch is closed
-%  \item A long time after the switch is closed 
-%  \end{enumerate}
-%
-%  \begin{center}
-%    \begin{tikzpicture}[scale=1.25,american voltages]
-%      \draw[thick] (0,0) to[battery1=12<\volt>,*-*] (0,2) to[R=4<\ohm>] (2,2)
-%      to[short,*-](2.46,2.3);
-%      \draw[thick](2.5,2) to[short,*-*] (3,2) to[short,-*] (4,2)
-%      to[C=6<\micro\farad>,-*] (4,0)--(0,0);
-%      \draw[thick] (3,0) to[R=8<\ohm>,*-] (3,2);
-%    \end{tikzpicture}
-%  \end{center}
-%
-%
-%\item The figure shows a circuit with two resistors, a battery, a capacitor,
-%  and a switch. Originally, the switch is open, and the capacitor is
-%  uncharged.
-%
-%  \vspace{-.5cm}
-%  \begin{center}
-%    \begin{tikzpicture}[scale=1.4,american voltages]
-%      \draw[thick] (2,0) to[battery1=12<\volt>,*-*] (0,0)
-%      to[short,-*] (0,1.5) to[R=\mbox{$R_1=\SI{15}{\ohm}$},-*] (2,1.5)--(2,0);
-%      \draw[thick](0,1.5) to[short,-*] (0,3) to[C=240<\micro\farad>] (1,3)
-%      to[R=\mbox{$R_2=\SI{10}{\ohm}$},-*] (2,3)--(2,1.5);
-%    \end{tikzpicture}
-%  \end{center}
-%  
-%  \begin{enumerate}[noitemsep]
-%  \item Complete the voltage-current-resistance-power (VIRP) chart for
-%    the circuit immediately after the switch is closed.
-%    \bgroup
-%    \def\arraystretch{2}
-%    
-%    {\large
-%      \begin{center}
-%        \begin{tabular}{l|m{1.2cm}|m{1.2cm}|m{1.2cm}|m{1.2cm}}
-%          \hline
-%          \textbf{Location} & \textbf{\emph{V}} & \textbf{\emph{I}} &
-%          \textbf{\emph{R}} & \textbf{\emph{P}}\\ \hline
-%          1 & & & \SI{15}{\ohm} & \\ \hline
-%          2 & & & \SI{10}{\ohm} & \\ \hline
-%          Total for Circuit & \SI{12}{\volt}& & & \\\hline
-%        \end{tabular}
-%      \end{center}
-%    }
-%    \egroup
-%  \item Complete the voltage-current-resistance-power (VIRP) chart for
-%    the circuit after the switch is closed for a long time.
-%        \bgroup
-%    \def\arraystretch{2}
-%    
-%    {\large
-%      \begin{center}
-%        \begin{tabular}{l|m{1.2cm}|m{1.2cm}|m{1.2cm}|m{1.2cm}}
-%          \hline
-%          \textbf{Location} & \textbf{\emph{V}} & \textbf{\emph{I}} &
-%          \textbf{\emph{R}} & \textbf{\emph{P}}\\ \hline
-%          1 & & & \SI{15}{\ohm} & \\ \hline
-%          2 & & & \SI{10}{\ohm} & \\ \hline
-%          Total for Circuit & \SI{12}{\volt}& & & \\\hline
-%        \end{tabular}
-%      \end{center}
-%    }
-%    \egroup
-%  \item What is the energy stored in the capacitor after the switch has
-%    been closed a long time?
-%  \end{enumerate}
 \end{questions}
 \end{document}

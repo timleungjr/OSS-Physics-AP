@@ -3,24 +3,25 @@
 \begin{document}
 \genheader
 
-\gentitle{C}{CIRCUIT ANALYSIS, PART 2}
+\gentitle{21}{CIRCUIT ANALYSIS, PART 2}
 
 \genmultidirections
 
-\gengravity
+%\gengravity
 
-\textbf{Questions \ref{combo1}--\ref{combo2}}
-\begin{center}
-  \begin{tikzpicture}[american voltages,scale=1.2]
-    \draw(0,0) to[battery,l=\mbox{\SI{120}\volt}] (0,2)
-    to[C,l=\mbox{\SI2{\micro\farad}}] (2,2)
-    to[C,l_=\mbox{\SI8{\micro\farad}}] (2,0)
-    to[C,l=\mbox{\SI4{\micro\farad}}](0,0);
-    \draw(2,2)--(3,2) to[C=\mbox{\SI8{\micro\farad}}] (3,0)--(2,0);
-        \end{tikzpicture}
-\end{center}
-
-\begin{questions}
+\begin{multicols}{2}
+  \textbf{Questions \ref{combo1}--\ref{combo2}}
+  \begin{center}
+    \begin{tikzpicture}[american voltages,scale=1.2]
+      \draw(0,0) to[battery,l=\mbox{\SI{120}\volt}] (0,2)
+      to[C,l=\mbox{\SI2{\micro\farad}}] (2,2)
+      to[C,l_=\mbox{\SI8{\micro\farad}}] (2,0)
+      to[C,l=\mbox{\SI4{\micro\farad}}](0,0);
+      \draw(2,2)--(3,2) to[C=\mbox{\SI8{\micro\farad}}] (3,0)--(2,0);
+          \end{tikzpicture}
+  \end{center}
+  
+  \begin{questions}
   \question The equivalent capacitance of this circuit is
   \label{combo1}
   \begin{choices}
@@ -41,18 +42,6 @@
     \choice\SI{36}{\micro\coulomb}
     \choice\SI{120}{\micro\coulomb}
   \end{choices}
-
-  % THIS SHOULD GO TO CLASS 14 HOMEWORK
-%  \question A capacitor $C_0$ is connected to a battery and stores charge. If
-%  the space between the capacitor plates is filled with oil, which of the
-%  following quantities increase?
-%  \begin{choices}
-%    \choice Capacitance and voltage across the plates
-%    \choice Charge and voltage across the plates
-%    \choice Capacitance and electric field between the plates
-%    \choice Capacitance and charge on the plates
-%    \choice Electric field between the plates and voltage across the plates
-%  \end{choices}
 
   \uplevel{
     \textbf{Question \ref{switch1}--\ref{switch2}}
@@ -94,21 +83,8 @@
     \choice $\mathcal E/2RC$
     \choice $C\mathcal E/R$
   \end{choices}
-
-    % MOVE TO CLASS 14 HOMEWORK
-%    \question A battery of voltage $V_0$ is attached to two parallel conducting
-%    plates. Charge is distributed on the plates, and then the battery is
-%    removed. A dielectric is then inserted between the plates, filling the
-%    space. Which of the following decreases after the battery is removed and the
-%    dielectric is inserted to fill the space between the plates?
-%    \begin{choices}
-%    \item Capacitance
-%    \item Charge on the plates
-%    \item Net electric field between the plates
-%    \item Area of the plates
-%    \item Separation distance between the plates
-%    \end{choices}
-    
+  \columnbreak
+  
   \question Circuit I and Circuit II shown each consist of a capacitor and a
   resistor. A battery is connected across a and b, and then removed. Which of
   the following statements is true of the circuits?
@@ -142,7 +118,7 @@
     \choice Current will continue to flow in both circuits after the battery
     is removed.
   \end{choices}
-    
+
   \question A thin sheet of copper is placed in a uniform magnetic field. A
   battery is connected to the top and bottom ends of the copper sheet, so that
   conventional current flows from the top to the bottom of the sheet.
@@ -170,27 +146,11 @@
     \choice Point $Y$ is at zero potential, and point $X$ has a negative
     potential.
   \end{choices}
-
-%  \item A very long conducting slab of copper of height $a$ and width $b$
-%    carries a current $I$ throughout its cross-sectional area. The current
-%    density $j$ is constant throughout the slab, and is directed out of the
-%    page through the facing area of the slab. Points $X$ and $Y$ are marked on
-%    the facing area of the slab. The current density $j$ can be expressed by
-%    the expression
-%    \begin{center}
-%      \pic{.25}{square-conductor.png}
-%    \end{center}
-%    \begin{enumerate}[noitemsep,topsep=0pt,leftmargin=18pt,label=(\Alph*)]
-%    \item $\displaystyle\frac{I}{a^2}$
-%    \item $\displaystyle\frac{I}{b^2}$
-%    \item $\displaystyle\frac{I}{(ab)^2}$
-%    \item $\displaystyle\frac{I}{ab}$
-%    \item $\displaystyle\frac{I}{a+b}$
-%    \end{enumerate}
-\end{questions}
+  \end{questions}
+\end{multicols}
 \newpage
 
-\genfreetitle{C}{ELECTRIC CIRCUITS}{5}
+\genfreetitle{21}{CIRCUIT ANALYSIS, PART 2}{4}
 
 \genfreedirections
 
@@ -396,36 +356,36 @@
       capacitor completely discharges.
     \end{subparts}
   \end{parts}
-  \newpage
-  
-  %TAKEN FROM THE 2001 AP PHYSICS C FREE-RESPONSE QUESTION E&M 2
-
-  \question You have been hired to determine the internal resistance of
-  \SI{8.}{\micro\farad} capacitors for an electronic component manufacturer.
-  (Ideal capacitors have an infinite internal resistance—that is, the material
-  between their plates is a perfect insulator. In practice, however, the
-  material has a very small, but nonzero, conductivity.) You cannot simply
-  connect the capacitors to an ohmmeter, because their resistance is too large
-  for an ohmmeter to measure. Therefore you charge the capacitor to a potential
-  difference of \SI{10}{\volt} with a battery, disconnect it from the battery
-  and measure the potential difference across the capacitor every 20 minutes
-  with an ideal voltmeter, obtaining the graph shown above.
-  \begin{parts}
-    \part Determine the internal resistance of the capacitor.
-    
-    \uplevel{
-      The capacitor can be approximated as a parallel-plate capacitor separated
-      by a \SI{.10}{\milli\metre} thick dielectric with $\kappa=5.6$.
-    }
-
-    \part Determine the approximate surface area of one of the capacitor
-    ``plates.''
-    
-    \part Determine the resistivity of the dielectric.
-    
-    \part Determine the magnitude of the charge leaving the positive plate of
-    the capacitor in the first \SI{100}{min}.
-  \end{parts}
+%  \newpage
+%  
+%  %TAKEN FROM THE 2001 AP PHYSICS C FREE-RESPONSE QUESTION E&M 2
+%
+%  \question You have been hired to determine the internal resistance of
+%  \SI{8.}{\micro\farad} capacitors for an electronic component manufacturer.
+%  (Ideal capacitors have an infinite internal resistance---that is, the material
+%  between their plates is a perfect insulator. In practice, however, the
+%  material has a very small, but nonzero, conductivity.) You cannot simply
+%  connect the capacitors to an ohmmeter, because their resistance is too large
+%  for an ohmmeter to measure. Therefore you charge the capacitor to a potential
+%  difference of \SI{10}{\volt} with a battery, disconnect it from the battery
+%  and measure the potential difference across the capacitor every 20 minutes
+%  with an ideal voltmeter, obtaining the graph shown above.
+%  \begin{parts}
+%    \part Determine the internal resistance of the capacitor.
+%    
+%    \uplevel{
+%      The capacitor can be approximated as a parallel-plate capacitor separated
+%      by a \SI{.10}{\milli\metre} thick dielectric with $\kappa=5.6$.
+%    }
+%
+%    \part Determine the approximate surface area of one of the capacitor
+%    ``plates.''
+%    
+%    \part Determine the resistivity of the dielectric.
+%    
+%    \part Determine the magnitude of the charge leaving the positive plate of
+%    the capacitor in the first \SI{100}{min}.
+%  \end{parts}
   
 %\item A \SI{60}{\micro\farad} capacitor is charged to \SI{12}{\volt}. The
 %  capacitor is then removed from the battery and the plate separation is
