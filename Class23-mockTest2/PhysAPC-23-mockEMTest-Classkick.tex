@@ -56,8 +56,8 @@ the student answer sheet.
     \begin{center}
       \begin{tikzpicture}[scale=.95]
         \fill circle(.08) node[above]{$+q$}; 
-        \draw[very thick,dashed] circle(1);
-        \draw[very thick,dashed] circle(2);
+        \draw[thick,dashed] circle(1);
+        \draw[thick,dashed] circle(2);
       \end{tikzpicture}
     \end{center}
     Two concentric spherical surfaces are drawn around an isolated positive
@@ -298,21 +298,17 @@ the student answer sheet.
   \question The three light bulbs in the circuit below are identical, and the
   battery has zero internal resistance. When switch $S$ is closed to cause
   bulb 1 to light, which of the other two bulbs increase(s) in brightness?
-
-  \begin{minipage}{.3\linewidth}
-    \pic{.75}{3-bulbs}
-  \end{minipage}
-  \begin{minipage}{.64\linewidth}
-    \begin{choices}
-      \choice Neither bulb
-      \choice Bulb 2 only
-      \choice Bulb 3 only
-      \choice Both bulbs
-      \choice It cannot be determined without knowing the emf of the battery.
-    \end{choices}
-  \end{minipage}
+  \begin{choices}
+    \choice Neither bulb
+    \choice Bulb 2 only
+    \choice Bulb 3 only
+    \choice Both bulbs
+    \choice It cannot be determined without knowing the emf of the battery.
+  \end{choices}
   
-  \uplevel{ \rule{\linewidth}{.5pt}}
+  \uplevel{
+    \rule{\linewidth}{.5pt}
+  }
     
   \question A length of wire of resistance $R$ is connected across a battery
   with zero internal resistance. The wire is then cut in half and the two
@@ -328,8 +324,7 @@ the student answer sheet.
     (D) & Doubles    & Quadruples\\
     (E) & Quadruples & Quadruples
   \end{tabular}
-  
-  \uplevel{\rule{\linewidth}{.5pt}}
+  \newpage
   
   \question In the circuit shown below, the \SI{10}{\micro\farad} capacitor is
   initially uncharged. After the switch $S$ has been closed for a long time,
@@ -353,7 +348,7 @@ the student answer sheet.
       \choice\SI{1000}{\micro\joule}
     \end{choices}
   \end{minipage}
-  \newpage
+  \uplevel{\rule{\linewidth}{.5pt}}
   
   \question An electron $e^-$ moving in the plane of the page is injected into a
   uniform magnetic field $\vec B$ that is perpendicular to the page, as shown
@@ -432,8 +427,8 @@ the student answer sheet.
     \choice toward the top of the page
     \choice perpendicular to the plane of the page
   \end{choices}
-
-  \uplevel{ \rule{\linewidth}{.5pt}}
+  \newpage
+  
   
   \question A helium nucleus (charge $+2q$ and mass $4m$) and a lithium nucleus
   (charge $+3q$ and mass $7m$) are accelerated through the same electric
@@ -446,7 +441,7 @@ the student answer sheet.
     \choice$\dfrac76$
     \choice$\dfrac32$
   \end{choices}
-  \newpage
+  \uplevel{ \rule{\linewidth}{.5pt}}
   
   \question The electric potential in the $xy$-plane in a certain region of
   space is given by $V(x,y)=6x^2y-2y^3$, where $x$ and $y$ are in meters and
@@ -568,10 +563,9 @@ the student answer sheet.
       \choice $L\mathcal E$
     \end{choices}
   \end{minipage}
-  
+  \newpage  
   
   \uplevel{
-    \rule{\linewidth}{.5pt}
     \textbf{Questions \ref{emf1}--\ref{emf2}}
     
     An emf of \SI{20}{\volt} is induced around a metal ring by increasing a
@@ -602,9 +596,9 @@ the student answer sheet.
     \choice\SI{1.e4}\watt
   \end{choices}
 
-  
   \uplevel{
     \centering
+    \rule{\linewidth}{.5pt}
     \begin{tikzpicture}[scale=.77]
       \draw[dashed,thick,->](-4,0)--(4,0)node[right]{$x$};
       \draw[dashed,thick,->](0,-3)--(0,3)node[above]{$y$};
@@ -659,7 +653,7 @@ the student answer sheet.
       \node at (0,-3) {Loop $X$};
     \end{tikzpicture}
     \hspace{.3in}
-    \begin{tikzpicture}[scale=.8]
+    \begin{tikzpicture}
       \draw[very thick,->](-2.2,0) arc(180:-200:2.2) node[above left]{$I$};
       \node at (0,-3) {Loop $Y$};
     \end{tikzpicture}
@@ -677,10 +671,10 @@ the student answer sheet.
     \choice 3
     \choice 9
   \end{choices}
+  \newpage
   
   \uplevel{
-    \rule{\linewidth}{.5pt}
-    \cpic{.26}{cable-xsection}
+    \cpic{.23}{cable-xsection}
   }
   \question The diagram above shows the cross section of a long cable that has
   an inner wire of radius $R$ surrounded by a conducting sheath of outer radius
@@ -696,7 +690,7 @@ the student answer sheet.
   \end{choices}
 
   \uplevel{
-    \uplevel{\rule{\linewidth}{.5pt}}
+    \rule{\linewidth}{.5pt}
     \cpic{.2}{long-wire1}
   }
   \question A long wire of radius $R$ carries a current $I$, as
@@ -707,8 +701,8 @@ the student answer sheet.
   \begin{oneparchoices}
     \choice
     \begin{tikzpicture}[scale=1.1]
-      \draw[thick,->](0,0)--(2,0)  node[right]{$r$};
-      \draw[thick,->](0,0)--(0,1.7)node[right]{$B$};
+      \draw[->](0,0)--(2,0)  node[right]{$r$};
+      \draw[->](0,0)--(0,1.7)node[right]{$B$};
       \draw[dashed](1,1)--(1,0) node[below]{$R$};
       \draw[ultra thick](0,1)--(1,1);
       \draw[ultra thick,domain=1:1.7] plot(\x,{2.72*exp(-\x)});
@@ -716,8 +710,8 @@ the student answer sheet.
 
     \choice
     \begin{tikzpicture}[scale=1.1]
-      \draw[thick,->](0,0)--(2,0)  node[right]{$r$};
-      \draw[thick,->](0,0)--(0,1.7)node[right]{$B$};
+      \draw[->](0,0)--(2,0)  node[right]{$r$};
+      \draw[->](0,0)--(0,1.7)node[right]{$B$};
       \draw[dashed](1,1)--(1,0) node[below]{$R$};
       \draw[ultra thick](0,0)--(1,1);
       \draw[ultra thick,domain=1:1.7] plot(\x,{2.72*exp(-\x)});
@@ -725,8 +719,8 @@ the student answer sheet.
 
     \choice
     \begin{tikzpicture}[scale=1.1]
-      \draw[thick,->](0,0)--(2,0)  node[right]{$r$};
-      \draw[thick,->](0,0)--(0,1.7)node[right]{$B$};
+      \draw[->](0,0)--(2,0)  node[right]{$r$};
+      \draw[->](0,0)--(0,1.7)node[right]{$B$};
       \draw[dashed](1,1)--(1,0) node[below]{$R$};
       \draw[ultra thick,domain=0:1]   plot(\x,{\x*\x)});
       \draw[ultra thick,domain=1:1.7] plot(\x,{2.72*exp(-\x)});
@@ -734,8 +728,8 @@ the student answer sheet.
 
     \choice
     \begin{tikzpicture}[scale=1.1]
-      \draw[thick,->](0,0)--(2,0)  node[right]{$r$};
-      \draw[thick,->](0,0)--(0,1.7)node[right]{$B$};
+      \draw[->](0,0)--(2,0)  node[right]{$r$};
+      \draw[->](0,0)--(0,1.7)node[right]{$B$};
       \draw[dashed](1,1)--(1,0) node[below]{$R$};
       \draw[ultra thick](0,0)--(1,0);
       \draw[ultra thick,domain=1:1.7] plot(\x,{2.72*exp(-\x)});
@@ -743,34 +737,33 @@ the student answer sheet.
 
     \choice
     \begin{tikzpicture}[scale=1.1]
-      \draw[thick,->](0,0)--(2,0)  node[right]{$r$};
-      \draw[thick,->](0,0)--(0,1.7)node[right]{$B$};
+      \draw[->](0,0)--(2,0)  node[right]{$r$};
+      \draw[->](0,0)--(0,1.7)node[right]{$B$};
       \draw[dashed](1,1)--(1,0) node[below]{$R$};
       \draw[ultra thick] (0,0)--(1,1);
       \draw[ultra thick] (1,0)--(1.7,0);
     \end{tikzpicture}    
   \end{oneparchoices}
   \vspace{.3in}
-  \newpage
-  
+
+  \uplevel{
+    \centering
+    \rule{\linewidth}{.5pt}
+    \pic{.23}{rc-loop}
+  }
   \question In the circuit drawn above, the switch $S$ is initially open, and
   the capacitor $C$ is charged with the polarity indicated. The switch is then
   closed, and the capacitor begins discharging through the resistor. Which of
   the following is true of the current that is subsequently induced in the
   circular wire loop near the long, straight wire $AB$?
 
-  \begin{minipage}{.3\linewidth}
-    \pic{.8}{rc-loop}
-  \end{minipage}
-  \begin{minipage}{.59\linewidth}
-    \begin{choices}
-      \choice It is counterclockwise and constant.
-      \choice It is counterclockwise and increases with time.
-      \choice It is counterclockwise and decreases with time.
-      \choice It is clockwise and increases with time.
-      \choice It is clockwise and decreases with time
-    \end{choices}
-  \end{minipage}
+  \begin{choices}
+    \choice It is counterclockwise and constant.
+    \choice It is counterclockwise and increases with time.
+    \choice It is counterclockwise and decreases with time.
+    \choice It is clockwise and increases with time.
+    \choice It is clockwise and decreases with time
+  \end{choices}
   \vspace{.3in}
   
   \uplevel{\rule{\linewidth}{.5pt}}
@@ -788,8 +781,8 @@ the student answer sheet.
     inversely proportional to the square of the distance from the charge.
   \end{choices}
   \vspace{.7in}
-
-  \uplevel{\rule{\linewidth}{.5pt}}
+  \newpage
+  
   
   \question A student building a circuit wishes to increase the frequency of an
   oscillator consisting of a capacitor of capacitance $C$ and an inductor of
