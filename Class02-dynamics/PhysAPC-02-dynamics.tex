@@ -53,7 +53,7 @@
 
 
 \begin{frame}{Translational Equilibrium}
-  If the net force on an object is zero ($\Sigma\vec F=\vec 0$) then the
+  If the net force on an object is zero ($\sum\vec F=\vec 0$) then the
   object is in a \emph{state of translational equilibrium}
   \begin{itemize}
   \item Dynamic equilibrium: the object is moving relative to us
@@ -78,7 +78,7 @@
   \item The first two laws of motion can be summarized in the equation:
 
     \eq{-.1in}{
-      \boxed{\vec F_\text{net}=\Sigma\vec F=m\vec a}
+      \boxed{\vec F_\text{net}=\sum\vec F=m\vec a}
     }
   \item For non-constant mass, net force is the rate of change of momentum
     $\vec p$:
@@ -552,129 +552,39 @@
   \vspace{.1in}
   \begin{center}
     \begin{tikzpicture}
-      \draw[thick,fill=cyan!80] (5,.5) rectangle (6,1.5);
+      \draw[thick,fill=cyan!40] (5,.5) rectangle (6,1.5);
       \draw[thick,
-        decoration={aspect=.3,segment length=2mm, amplitude=2.5mm, coil},
+        decoration={aspect=.6,segment length=5mm, amplitude=2.5mm, coil},
         decorate] (0,1)--(5,1);
       \fill[pattern=north east lines](-.2,0) rectangle(0,2);
       \draw[thick](0,.0)--(0,2);
       \fill[red] (5.5,1) circle(.06);
       \draw[ultra thick,->,red](5.5,1)--(4,1) node[above]{$\vec F_e$};
-      \draw[dashed](3,0)--(3,2) node[above]{\small Equilibrium position};
-      \draw[ultra thick,->](3,.3)--(5,.3) node[midway,below]{$\Delta x$};
+      \draw[dashed](3,0)--(3,2) node[above]{\scriptsize Equilibrium position};
+      \draw[ultra thick,->](3,.3)--(5,.3) node[midway,below]{$x$};
     \end{tikzpicture}
     \hspace{.2in}
     \begin{tikzpicture}
       \draw[thick,gray!40,fill=gray!20] (5,.5) rectangle (6,1.5);
       \draw[thick,gray!20,
-        decoration={aspect=.3,segment length=2mm, amplitude=2.5mm, coil},
+        decoration={aspect=.6,segment length=5mm, amplitude=2.5mm, coil},
         decorate] (0,1)--(5,1);
       \fill[pattern=north east lines](-.2,0) rectangle(0,2);
       \draw[thick](0,.0)--(0,2);
       \fill[gray!30] (5.5,1) circle(.06);
       \draw[ultra thick,->,gray!30](5.5,1)--(4,1) node[above]{$\vec F_e$};
       \draw[dashed](3,0)--(3,2);
-      \draw[ultra thick,->,gray!30](3,.3)--(5,.3)node[midway,below]{$\Delta x$};
-      \draw[thick,fill=cyan!80] (1.5,.5) rectangle (2.5,1.5);
+      \draw[ultra thick,->,gray!30](3,.3)--(5,.3)node[midway,below]{$x$};
+      \draw[thick,fill=cyan!40] (1.5,.5) rectangle (2.5,1.5);
       \draw[thick,
-        decoration={aspect=.3,segment length=2mm, amplitude=2.5mm, coil},
+        decoration={aspect=.3,segment length=1.5mm, amplitude=2.5mm, coil},
         decorate] (0,1)--(1.5,1);
-      \draw[ultra thick,->](3,.3)--(1.5,.3) node[midway,below]{$\Delta x$};
+      \draw[ultra thick,->](3,.3)--(1.5,.3) node[midway,below]{$x$};
       \fill[red] (2,1) circle(.06);
       \draw[ultra thick,->,red](2,1)--(3,1) node[above]{$\vec F_e$};
     \end{tikzpicture}
   \end{center}
 \end{frame}
-%
-%
-%
-%\begin{frame}{Spring Force}
-%  The spring force $F_e$ is the force a compressed or stretched spring
-%  exerts onto objects connected to it. It obeys Hooke's Law:
-%  
-%  \eq{-.2in}{
-%    \vec F_s=-k\vec x
-%  }
-%  where $\vec x$ is the relative displacement of the ends of the spring.
-%  \begin{center}
-%    \pic{.35}{graphics/spring-example1}
-%  \end{center}
-%\end{frame}
-%
-%
-%\begin{frame}{Spring Force}
-%  \begin{center}
-%    \pic{.28}{graphics/spring-example1}
-%  \end{center}
-%  \begin{itemize}
-%  \item\vspace{-.15in}As the object falls onto the spring, the spring begins to
-%    compress
-%  \item As the spring compresses, the spring force (pointing up!) increases
-%    linearly (Hooke's law)
-%  \item At some point, the spring force balances the weight of the block
-%    \begin{itemize}
-%    \item At this point, the \emph{acceleration} is zero
-%    \item But the velocity continues to be downward
-%    \end{itemize}
-%  \item The spring continues to compress until velocity is zero
-%  \end{itemize}
-%\end{frame}
-%
-%
-%
-%\begin{frame}{Spring Force}
-%  \begin{center}
-%    \pic{.28}{graphics/spring-example1}
-%  \end{center}
-%  \begin{itemize}
-%  \item\vspace{-.15in}Solving this problem using dynamics is difficult, because:
-%    \begin{itemize}
-%    \item Spring force scales linearly with \emph{displacement}, but
-%    \item Net force scales linearly with \emph{acceleration} (2nd time
-%      derivative of displacement)
-%    \end{itemize}
-%  \item Note that the block continues to \emph{increase} velocity even after
-%    it starts to compress the spring.
-%  \item Acceleration is zero only after the spring has compressed some amount
-%  \end{itemize}
-%\end{frame}
-
-
-
-%\begin{frame}{Buoyancy}{Everything Floats a Little}
-%  When an object is submerged inside a fluid (e.g.\ water, air, etc), the fluid
-%  exerts a pressure at the surface of the object. We can integrate the pressure
-%  over the entire surface area $S$ to find the total force $\vec B$ the fluid
-%  exerts on the object.
-%  \begin{center}
-%    \pic{.25}{graphics/rock_fbvectors}
-%  \end{center}
-%\end{frame}
-%
-%
-%
-%\begin{frame}{Buoyancy}
-%  \framesubtitle{Everything Floats a Little}
-%  The buoyant force is given by:
-%  
-%  \eq{-.1in}{
-%    \vec{B}
-%    =\rho_\text{fluid}g\vec{\hat{k}}\iiint dV
-%    =\rho_\text{fluid}gV\vec{\hat{k}}
-%  }
-%  \begin{center}
-%    \begin{tabular}{l|c|c}
-%      \rowcolor{pink}
-%      \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
-%      Buoyant force & $\vec{B}$  & \si{\newton} \\
-%      Density of the fluid & $\rho_\text{fluid}$ & \si{\kg/\m^3}\\
-%      Volume of the object & $V$ & \si{\metre^3}
-%    \end{tabular}
-%  \end{center}
-%
-%  We will discuss this later in the course, when we deal with fluid mechanics.
-%\end{frame}
-
 
 
 \section{Free-Body Diagrams}

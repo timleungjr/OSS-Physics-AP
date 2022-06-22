@@ -4,7 +4,7 @@
 \begin{document}
 \genheader
 
-\gentitle{C}{KINEMATICS}
+\gentitle{1}{KINEMATICS}
 
 \genmultidirections
 
@@ -13,59 +13,68 @@
 \raggedcolumns
 \begin{multicols*}{2}
 
-  \textbf{Questions 1--2}
-  
-  A ball of mass \SI{.5}{\kilo\gram} is launched
-  horizontally from the top of a cliff \SI{80}{\metre} high with a speed of
-  \SI{20}{\metre\per\second} at time $t=0$.
-  
-  \begin{center}
-    \begin{tikzpicture}[scale=.35]
-      \draw[very thick](0,5)--(0,0)--(6,0);
-      \draw[|<->|,very thick](-1,0)--(-1,5)
-      node[midway,left]{\SI{80}\metre};
-      \draw[very thick,->](0,5.3)--(2,5.3) node[right]{\SI{20}{m/s}};
-      \draw[thick,fill=gray](0,5.3) circle(.2);
-    \end{tikzpicture}
-  \end{center}
+%  \textbf{Questions 1--2}
+%  
+%  A ball of mass \SI{.5}{\kilo\gram} is launched
+%  horizontally from the top of a cliff \SI{80}{\metre} high with a speed of
+%  \SI{20}{\metre\per\second} at time $t=0$.
+%  
+%  \begin{center}
+%    \begin{tikzpicture}[scale=.35]
+%      \draw[very thick](0,5)--(0,0)--(6,0);
+%      \draw[|<->|,very thick](-1,0)--(-1,5)
+%      node[midway,left]{\SI{80}\metre};
+%      \draw[very thick,->](0,5.3)--(2,5.3) node[right]{\SI{20}{m/s}};
+%      \draw[thick,fill=gray](0,5.3) circle(.2);
+%    \end{tikzpicture}
+%  \end{center}
   \begin{questions}
-    \question The horizontal distance $x$ traveled by the ball before striking
-    the ground is
-    \begin{choices}
-      \choice\SI{20}\metre
-      \choice\SI{40}\metre
-      \choice\SI{80}\metre 
-      \choice\SI{160}\metre
-      \choice\SI{320}\metre
-    \end{choices}
-    
-    \question The speed of the ball just before striking the ground is
-    \begin{choices}
-      \choice\SI{4}{\metre\per\second}
-      \choice\SI{14}{\metre\per\second}
-      \choice\SI{20}{\metre\per\second}
-      \choice\SI{44}{\metre\per\second}
-      \choice\SI{64}{\metre\per\second}
-    \end{choices}
-
-    \question A space explorer throws a tool downward on a planet with an
-    initial velocity of \SI2{\metre\per\second} from a height of
-    \SI6{\metre} above the surface. The tool strikes the surface in a time of
-    \SI2\second. The acceleration due to gravity on the planet is
-    \begin{choices}
-      \choice\SI1{\metre\per\second\squared}
-      \choice\SI2{\metre\per\second\squared}
-      \choice\SI3{\metre\per\second\squared}
-      \choice\SI4{\metre\per\second\squared}
-      \choice\SI{10}{\metre\per\second\squared}
-    \end{choices}
-    \columnbreak
-    
+%    \question The horizontal distance $x$ traveled by the ball before striking
+%    the ground is
+%    \begin{choices}
+%      \choice\SI{20}\metre
+%      \choice\SI{40}\metre
+%      \choice\SI{80}\metre 
+%      \choice\SI{160}\metre
+%      \choice\SI{320}\metre
+%    \end{choices}
+%    
+%    \question The speed of the ball just before striking the ground is
+%    \begin{choices}
+%      \choice\SI{4}{\metre\per\second}
+%      \choice\SI{14}{\metre\per\second}
+%      \choice\SI{20}{\metre\per\second}
+%      \choice\SI{44}{\metre\per\second}
+%      \choice\SI{64}{\metre\per\second}
+%    \end{choices}
+%
+%    \question A space explorer throws a tool downward on a planet with an
+%    initial velocity of \SI2{\metre\per\second} from a height of
+%    \SI6{\metre} above the surface. The tool strikes the surface in a time of
+%    \SI2\second. The acceleration due to gravity on the planet is
+%    \begin{choices}
+%      \choice\SI1{\metre\per\second\squared}
+%      \choice\SI2{\metre\per\second\squared}
+%      \choice\SI3{\metre\per\second\squared}
+%      \choice\SI4{\metre\per\second\squared}
+%      \choice\SI{10}{\metre\per\second\squared}
+%    \end{choices}
+  
     \question A golf ball is hit from level ground and has a horizontal range of
     \SI{100}\metre. The ball leaves the golf club at an angle of \ang{60} to
     the level ground. At what other angle(s) can the ball be struck at the same
     initial velocity and still have a range of \SI{100}\metre?
-    \cpic{.25}{golf-ball}
+    \begin{center}
+      \begin{tikzpicture}
+        \fill[gray!50] rectangle (4.5,-.3);
+        \draw[thick](0,0)--(4.5,0);
+        \fill circle(.07);
+        \draw[thick,smooth,domain=0:4,dashed]
+        plot({\x},{-.5*((\x-2)*(\x-2))+2});
+        \draw[very thick,rotate=62,->](0,0)--(1.3,0);
+        \draw(.7,0) arc(0:62:.7) node[midway,right]{\ang{60}};
+      \end{tikzpicture}
+    \end{center}
     \begin{choices}
       \choice\ang{30}
       \choice\ang{20} and \ang{80}
@@ -74,34 +83,45 @@
       \choice There is no other angle other than \ang{60} in which the ball will
       have a range of \SI{100}\metre.
     \end{choices}
-
+      
     \question A stack of coffee filters falls from rest through the air. Due to
     air resistance, the filters fall with an acceleration proportional to the
-    velocity of fall, that is, $a=-kv$, where $k$ is a positive constant. The
-    velocity of the falling filters as a function of time of fall is
+    velocity of fall, that is, $a=-k\varv$, where $k$ is a positive constant.
+    The velocity of the falling filters as a function of time of fall is
     \begin{choices}
-      \choice $-kv^2$
-      \choice $-1⁄2kv^2$
+      \choice $-k\varv^2$
+      \choice $-1⁄2k\varv^2$
       \choice $-k$
       \choice $\ln(kt)$
-      \choice $v_0e^{-kt}$
+      \choice $\varv_0e^{-kt}$
     \end{choices}
     \columnbreak
     
     \question A rubber ball is dropped from rest onto a plane angled at
     $\theta=\ang{30}$ to the horizontal floor and bounces off the plane with a
-    horizontal speed $v_0$. The ball lands on the plane a distance $D$ along the
-    plane, as shown below. In terms of $v_0$, $D$, and $g$, the speed of the
-    ball just before striking the plane is
-    \cpic{.23}{bounce}
+    horizontal speed $\varv_0$. The ball lands on the plane a distance $D$
+    along the plane, as shown below. In terms of $\varv_0$, $D$, and $g$, the
+    speed of the ball just before striking the plane is
+    \begin{center}
+      \begin{tikzpicture}[scale=1.5]
+        \draw[thick](0,0)--(3,0)--(0,1.5)--cycle;
+        \draw(2.2,0) arc(180:180-atan(.5):.8) node[midway,left]{$\theta$};
+        \draw[dashed,->,thick](.5,2.3)--(.5,1.25);
+        \draw[thick,fill=gray](.5,2.3) circle(.08);
+        \draw[->,very thick](.5,1.25)--(1.25,1.25) node[above]{$\varv_0$};
+        \fill(2.5,.25) circle(.06);
+        \draw[dashed,thick](.5,1.25) to[out=0,in=110](2.5,.25);
+        \draw[thick,|<->|](.45,1.12)--(2.45,.12) node[midway,left=4]{$D$};
+      \end{tikzpicture}
+    \end{center}
     \begin{choices}
-      \choice $v_0$
-      \choice $\sqrt{v_0^2+2D\sin\theta g}$
-      \choice $\sqrt{v_0+\dfrac{D\sin\theta}g}$
-      \choice $\sqrt{v_0^2+\dfrac{D\sin\theta}g}$
-      \choice $\sqrt{2D\sin\theta g}$
+      \choice $\varv_0$
+      \choice\vspace{.13in} $\sqrt{\varv_0^2+2D\sin\theta g}$
+      \choice $\sqrt{\varv_0+\dfrac{D\sin\theta}g}$
+      \choice $\sqrt{\varv_0^2+\dfrac{D\sin\theta}g}$
+      \choice\vspace{.1in} $\sqrt{2D\sin\theta g}$
     \end{choices}
-  
+    
     \question A small ball is launched with a speed of \SI8{\metre\per\second}
     at an angle of \ang{30} from the horizontal. A cup is hung so that it is in
     position to catch the ball when it reaches its maximum height. How far
@@ -116,27 +136,27 @@
     \end{choices}
     \columnbreak
     
-    \question The velocity vs.\ time graph below represents the motion of a
-    bicycle rider. The displacement of the rider between $0$ and \SI4{\hour} is
-    \begin{center}
-      \begin{tikzpicture}[xscale=.8,yscale=.05]
-        \draw[thick,->](0,0)--(4.4,0) node[right]{$t$ (h)};
-        \draw[thick,->](0,-22)--(0,28)node[above]{$v$ (km/h)};
-        \foreach\x in {1,...,4} \draw(\x,2)--(\x,-2)node[below]{\x};
-        \foreach\y in {-20,-10,...,20} \draw(.1,\y)--(-.1,\y)node[left]{$\y$};
-        \draw[very thick](0,0)--(1,20)--(2,20)--(3,0)--(4,-20);
-        \draw[dotted](1,0)--(1,20);
-        \draw[dotted](2,0)--(2,20);
-      \draw[dotted](4,0)--(4,-20);
-      \end{tikzpicture}
-    \end{center}
-    \begin{choices}
-      \choice $+\SI{10}{\kilo\metre}$
-      \choice $+\SI{20}{\kilo\metre}$
-      \choice $+\SI{30}{\kilo\metre}$
-      \choice $+\SI{40}{\kilo\metre}$
-      \choice $-\SI{10}{\kilo\metre}$
-    \end{choices}
+%    \question The velocity vs.\ time graph below represents the motion of a
+%    bicycle rider. The displacement of the rider between $0$ and \SI4{\hour} is
+%    \begin{center}
+%      \begin{tikzpicture}[xscale=.8,yscale=.05]
+%        \draw[thick,->](0,0)--(4.4,0) node[right]{$t$ (h)};
+%        \draw[thick,->](0,-22)--(0,28)node[above]{$v$ (km/h)};
+%        \foreach\x in {1,...,4} \draw(\x,2)--(\x,-2)node[below]{\x};
+%        \foreach\y in {-20,-10,...,20} \draw(.1,\y)--(-.1,\y)node[left]{$\y$};
+%        \draw[very thick](0,0)--(1,20)--(2,20)--(3,0)--(4,-20);
+%        \draw[dotted](1,0)--(1,20);
+%        \draw[dotted](2,0)--(2,20);
+%      \draw[dotted](4,0)--(4,-20);
+%      \end{tikzpicture}
+%    \end{center}
+%    \begin{choices}
+%      \choice $+\SI{10}{\kilo\metre}$
+%      \choice $+\SI{20}{\kilo\metre}$
+%      \choice $+\SI{30}{\kilo\metre}$
+%      \choice $+\SI{40}{\kilo\metre}$
+%      \choice $-\SI{10}{\kilo\metre}$
+%    \end{choices}
 
     \question An object starts from rest at $t=0$ and position $x=0$, then moves
     in a straight line with an acceleration described by the equation $a=4t^2$
@@ -150,12 +170,11 @@
     \end{choices}
     
     \uplevel{
-      \textbf{Questions \ref{car1}--\ref{car2}}
-      
-      A car of mass $m$ travels along a straight horizontal road. The car begins
-      with a speed $v_0^2$, but accelerates according to the velocity function
-      $v=\left(v_0^2+\dfrac{Ct^2}m\right)$, where $t$ is time, and $C$ is a
-      positive constant.
+      \textbf{Questions \ref{car1}--\ref{car2}} A car of mass $m$ travels along
+      a straight horizontal road. The car begins with a speed $\varv_0^2$, but
+      accelerates according to the velocity function
+      $\varv=\left(\varv_0^2+\dfrac{Ct^2}m\right)$, where $t$ is time, and $C$
+      is a positive constant.
     }
 
     \question The speed of the car is zero at a time $t$ of
@@ -170,83 +189,85 @@
     
     \question The acceleration of the car as a function of time is
     \begin{choices}
-      \choice $v_0^2+\dfrac{Ct^2}m$
-      \choice $v_0^2+\dfrac{2Ct^2}m$
-      \choice $v_0+\dfrac{Ct}m$
+      \choice $\varv_0^2+\dfrac{Ct^2}m$
+      \choice $\varv_0^2+\dfrac{2Ct^2}m$
+      \choice $\varv_0+\dfrac{Ct}m$
       \choice $\dfrac{2Ct}m$
       \choice $\dfrac{2Ct^2}m$
     \end{choices}
     \label{car2}
   
-    \fullwidth{
-      \textbf{Questions \ref{q:graph1}--\ref{q:graph2}}
-      
-      The graph shown below represents the velocity vs.\ time graphs for two
-      cars, $P$ and $Q$. Car $P$ begins with a speed $v_P$, and Car $Q$ begins
-      with a speed $v_Q$ which is twice the velocity of Car $P$, that is,
-      $v_Q=2v_P$.
-
-      Both car start at the same position at $t=0$.
-
-      \begin{center}
-        \begin{tikzpicture}[scale=.5]
-          \draw[thick,->](0,0)--(5,0) node[right]{$t$};
-          \draw[thick,->](0,0)--(0,5) node[above]{$v$};
-          \draw[ultra thick](0,4)--(4,0);
-          \draw[ultra thick](0,2)--(4,2);
-          \draw[thick](2,.2)--(2,-.2) node[below]{10};
-          \draw[thick](4,.2)--(4,-.2) node[below]{20};
-          \draw[thick](.2,4)--(-.2,4) node[left]{$v_Q$};
-          \draw[thick](.2,2)--(-.2,2) node[left]{$v_P$};
-        \end{tikzpicture}
-      \end{center}
-    }
-    
-    \question Which of the following is true at a time of \SI{10}\second?
-    \begin{choices}
-      \choice The cars occupy the same position.
-      \choice Car $P$ is at rest.
-      \choice $v_Q>v_P$
-      \choice $v_P>v_Q$
-      \choice Car $Q$ is ahead of Car $P$.
-    \end{choices}
-    \label{q:graph1}
-    
-    \question Which of the following is true at a time of \SI{20}\second?
-    \begin{choices}
-      \choice The cars occupy the same position.
-      \choice Car $P$ is at rest.
-      \choice $v_Q>v_P$
-      \choice $a_P=a_Q$
-      \choice Car $P$ is ahead of Car $Q$.
-    \end{choices}
-    \label{q:graph2}
-
-    \question The motion of an object is represented by the acceleration vs.\
-    time graph below. The object is intially at rest. Which of the following
-    statements is true about the motion of the object?
-    \begin{center}
-      \begin{tikzpicture}[scale=.47]
-        \draw[thick,->](0,0)--(6.3,0) node[right]{$t$};
-        \draw[thick,->](0,-3.5)--(0,3.5) node[above]{$a$};
-        \draw[ultra thick](0,2)--(2,2);
-        \draw[ultra thick](2,-2)--(4,-2);
-        \draw[dashed,thick](2,2)--(2,-2);
-        \draw[thick](2,.2)--(2,-.2) node[below]{2};
-        \draw[thick](4,.2)--(4,-.2) node[below]{4};
-        \draw[thick](.2,2)--(-.2,2) node[left]{+2};
-        \draw[thick](.2,-2)--(-.2,-2) node[left]{-2};
-      \end{tikzpicture}
-    \end{center}
-    \begin{choices}
-      \choice The object returns to its original position.
-      \choice The velocity of the object is zero at a time of \SI2\second.
-      \choice The velocity of the object is zero at a time of \SI4\second.
-      \choice The displacement of the object is zero at a time of \SI4\second.
-      \choice The acceleration of the object is zero at a time of \SI2\second.
-    \end{choices}
+%    \fullwidth{
+%      \textbf{Questions \ref{q:graph1}--\ref{q:graph2}}
+%      
+%      The graph shown below represents the velocity vs.\ time graphs for two
+%      cars, $P$ and $Q$. Car $P$ begins with a speed $v_P$, and Car $Q$ begins
+%      with a speed $v_Q$ which is twice the velocity of Car $P$, that is,
+%      $v_Q=2v_P$.
+%
+%      Both car start at the same position at $t=0$.
+%
+%      \begin{center}
+%        \begin{tikzpicture}[scale=.5]
+%          \draw[thick,->](0,0)--(5,0) node[right]{$t$};
+%          \draw[thick,->](0,0)--(0,5) node[above]{$v$};
+%          \draw[ultra thick](0,4)--(4,0);
+%          \draw[ultra thick](0,2)--(4,2);
+%          \draw[thick](2,.2)--(2,-.2) node[below]{10};
+%          \draw[thick](4,.2)--(4,-.2) node[below]{20};
+%          \draw[thick](.2,4)--(-.2,4) node[left]{$v_Q$};
+%          \draw[thick](.2,2)--(-.2,2) node[left]{$v_P$};
+%        \end{tikzpicture}
+%      \end{center}
+%    }
+%    
+%    \question Which of the following is true at a time of \SI{10}\second?
+%    \begin{choices}
+%      \choice The cars occupy the same position.
+%      \choice Car $P$ is at rest.
+%      \choice $v_Q>v_P$
+%      \choice $v_P>v_Q$
+%      \choice Car $Q$ is ahead of Car $P$.
+%    \end{choices}
+%    \label{q:graph1}
+%    \vspace{.65in}
+%    
+%    \question Which of the following is true at a time of \SI{20}\second?
+%    \begin{choices}
+%      \choice The cars occupy the same position.
+%      \choice Car $P$ is at rest.
+%      \choice $v_Q>v_P$
+%      \choice $a_P=a_Q$
+%      \choice Car $P$ is ahead of Car $Q$.
+%    \end{choices}
+%    \label{q:graph2}
+%    \vspace{.65in}
+%
+%    \question The motion of an object is represented by the acceleration vs.\
+%    time graph below. The object is intially at rest. Which of the following
+%    statements is true about the motion of the object?
+%    \begin{center}
+%      \begin{tikzpicture}[scale=.47]
+%        \draw[thick,->](0,0)--(6.3,0) node[right]{$t$};
+%        \draw[thick,->](0,-3.5)--(0,3.5) node[above]{$a$};
+%        \draw[ultra thick](0,2)--(2,2);
+%        \draw[ultra thick](2,-2)--(4,-2);
+%        \draw[dashed,thick](2,2)--(2,-2);
+%        \draw[thick](2,.2)--(2,-.2) node[below]{2};
+%        \draw[thick](4,.2)--(4,-.2) node[below]{4};
+%        \draw[thick](.2,2)--(-.2,2) node[left]{+2};
+%        \draw[thick](.2,-2)--(-.2,-2) node[left]{-2};
+%      \end{tikzpicture}
+%    \end{center}
+%    \begin{choices}
+%      \choice The object returns to its original position.
+%      \choice The velocity of the object is zero at a time of \SI2\second.
+%      \choice The velocity of the object is zero at a time of \SI4\second.
+%      \choice The displacement of the object is zero at a time of \SI4\second.
+%      \choice The acceleration of the object is zero at a time of \SI2\second.
+%    \end{choices}
     \columnbreak
-
+    
     \begin{center}
       \begin{tikzpicture}[scale=.5]
         \draw[thick,->](0,0)--(8,0) node[right]{$t$};
@@ -262,7 +283,7 @@
     \end{center}    
     \question Which of the following pairs of graphs could show the position
     vs.\ time and velocity vs.\ time graphs for the acceleration vs. time graph
-    shown above? Assume $v=0$ and $x=0$ at $t=0$.
+    shown above? Assume $\varv=0$ and $x=0$ at $t=0$.
     \begin{choices}
       \choice
       \begin{tikzpicture}[scale=.78]
@@ -345,55 +366,55 @@
       \end{tikzpicture}
     \end{choices}
     \columnbreak
-    
-    \question Two velocity vectors $v_1$ and $v_2$ each have a magnitude of
-    \SI{10}{\metre\per\second}. Graph 1 shows the velocity $v_1$ at
-    $t=\SI0\second$, and then the same object has a velocity $v_2$ at
+  
+    \question Two velocity vectors $\varv_1$ and $\varv_2$ each have a magnitude
+    of \SI{10}{\metre\per\second}. Graph 1 shows the velocity $\varv_1$ at
+    $t=\SI0\second$, and then the same object has a velocity $\varv_2$ at
     $t=\SI2\second$, shown in Graph 2. Which of the following vectors best
     represents the average acceleration vector that causes the object's velocity
-    to change from $v_1$ to $v_2$ ?
+    to change from $\varv_1$ to $\varv_2$ ?
     \begin{center}
       \begin{tikzpicture}[scale=.5]
         \draw[thick](-2,0)--(2,0);
         \draw[thick](0,-2)--(0,2) node[pos=0,below]{Graph 1};
-        \draw[ultra thick,->](0,0)--(1.5,0) node[above]{$v_1$};
+        \draw[ultra thick,->](0,0)--(1.5,0) node[above]{$\varv_1$};
       \end{tikzpicture}
       \hspace{.2in}
       \begin{tikzpicture}[scale=.5]
         \draw[thick](-2,0)--(2,0);
         \draw[thick](0,-2)--(0,2) node[pos=0,below]{Graph 2};
-        \draw[ultra thick,->](0,0)--(0,1.5) node[right]{$v_2$};
+        \draw[ultra thick,->](0,0)--(0,1.5) node[right]{$\varv_2$};
       \end{tikzpicture}
     \end{center}
     \begin{choices}
       \choice
       \begin{tikzpicture}[scale=.5]
         \draw[thick](-2,0)--(2,0);
-        \draw[thick](0,0)--(0,2);
+        \draw[thick](0,-2)--(0,2);
         \draw[ultra thick,->](0,0)--(0,1.5);
       \end{tikzpicture}
       \choice
       \begin{tikzpicture}[scale=.5]
         \draw[thick](-2,0)--(2,0);
-        \draw[thick](0,0)--(0,2);
+        \draw[thick](0,-2)--(0,2);
         \draw[ultra thick,->](0,0)--(1.5,0);
       \end{tikzpicture}
       \choice
       \begin{tikzpicture}[scale=.5]
         \draw[thick](-2,0)--(2,0);
-        \draw[thick](0,0)--(0,2);
+        \draw[thick](0,-2)--(0,2);
         \draw[ultra thick,->](0,0)--(-1.5,0);
       \end{tikzpicture}
       \choice
       \begin{tikzpicture}[scale=.5]
         \draw[thick](-2,0)--(2,0);
-        \draw[thick](0,0)--(0,2);
+        \draw[thick](0,-2)--(0,2);
         \draw[ultra thick,->](0,0)--(1.12,1.12);
       \end{tikzpicture}
       \choice
       \begin{tikzpicture}[scale=.5]
         \draw[thick](-2,0)--(2,0);
-        \draw[thick](0,0)--(0,2);
+        \draw[thick](0,-2)--(0,2);
         \draw[ultra thick,->](0,0)--(-1.12,1.12);
       \end{tikzpicture}
     \end{choices}
@@ -469,13 +490,12 @@
     \end{choices}
     \columnbreak
     
-    \fullwidth{
-      \textbf{Questions \ref{q:fall1}--\ref{q:fall2}}
-
-      An object is released from rest and falls through a resistive medium. The
-      resistance causes the velocity of the object to change according to the
-      equation $v=16t-\dfrac12t^4$, where $v$ is in \si{m/s} and time is in
-      \si{\second}.
+    \uplevel{
+      \textbf{Questions \ref{q:fall1}--\ref{q:fall2}} An object is released
+      from rest and falls through a resistive medium. The resistance causes the
+      velocity of the object to change according to the equation
+      $\varv=16t-\dfrac12t^4$, where $\varv$ is in \si{\metre\per\second} and
+      time is in \si\second.
     }
 
     \question Which of the following is a possible equation for the
@@ -502,20 +522,11 @@
 \end{multicols*}
 \newpage
 
-\genfreetitle{C}{KINEMATICS}{4}
+\genfreetitle{1}{KINEMATICS}{3}
 
 \genfreedirections
 
 \begin{questions}
-%  \question An object has a position vector given by
-%  $\mb{r}=30t\bm{\hat{\imath}}+(40t-5t^2)\bm{\hat{\jmath}}$. Find
-%  \begin{parts}
-%    \part its intantaneous velocity and acceleration vectors as functions of
-%    time
-%    \part its displacement after $t=\SI{3}{\second}$.
-%  \end{parts}
-%  \newpage
-
   \question The position $x$ of an object is described with respect to time $t$
   by the following equation: $x=2t^3-15t^2+36t-8$, where $x$ is in meters and
   $t$ in seconds. Answer the following questions.
@@ -554,19 +565,19 @@
   \end{center}
   \newpage
 
-  \question A steel ball is dropped from a point with $(x,y)$ coordinate of
-  $(\SI{8}{\metre},\SI{16}{\metre})$. At the same time, another ball is launched
-  from the origin with a speed of \SI{20}{\metre\per\second} at an angle of
-  \ang{30}.
-  \begin{parts}
-    \part Find the minimum distance of separation occur of the two balls.
-    \part At what time does this separation occur?
-    \part Give the coordinates of the two balls for the minimum separation.
-  \end{parts}
-  \newpage
+%  \question A steel ball is dropped from a point with $(x,y)$ coordinate of
+%  $(\SI{8}{\metre},\SI{16}{\metre})$. At the same time, another ball is launched
+%  from the origin with a speed of \SI{20}{\metre\per\second} at an angle of
+%  \ang{30}.
+%  \begin{parts}
+%    \part Find the minimum distance of separation occur of the two balls.
+%    \part At what time does this separation occur?
+%    \part Give the coordinates of the two balls for the minimum separation.
+%  \end{parts}
+%  \newpage
 
   % TAKEN FROM 2015 AP PHYSICS C FREE-RESPONSE QUESTION MECH 1
-  \cpic{.4}{motion-sensor}
+  \cpic{.44}{motion-sensor}
 
   \question A block of mass $m$ is projected up from the bottom of an inclined
   ramp with an initial velocity of magnitude $v_0$. The ramp has negligible
