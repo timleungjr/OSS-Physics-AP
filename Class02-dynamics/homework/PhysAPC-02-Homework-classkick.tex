@@ -4,7 +4,7 @@
 \begin{document}
 \genheader
 
-\gentitle{C}{DYNAMICS}
+\gentitle{2}{DYNAMICS}
 
 \genmultidirections
 
@@ -116,8 +116,8 @@
       \begin{center}
         \begin{tikzpicture}[scale=.8]
           \begin{scope}[thick]
-            \draw(0,0) circle(1);
-            \fill(0,0) circle(.08);
+            \draw circle(1);
+            \fill circle(.08);
             \draw(1,0)--(1,-2.5);
             \draw(.5,-2.5) rectangle(1.5,-3.3) node[midway]{\SI1{\kilo\gram}};
             \draw(-1,0)--(-1,-1.5);
@@ -157,7 +157,7 @@
       force of \SI{24}{\newton} to the right, as shown.
       \begin{center}
         \begin{tikzpicture}[scale=.9]
-          \fill[pattern=north east lines] (0,0) rectangle(8,-.3);
+          \fill[pattern=north east lines] rectangle(8,-.3);
           \begin{scope}[thick]
             \draw (0,0)--(8,0);
             \draw (2,0) rectangle(4,1.5) node[midway]{3 kg};
@@ -244,117 +244,117 @@
       \choice $cv/m$
     \end{choices}
 
-    \fullwidth{
-      \textbf{Questions \ref{fbds}--\ref{fk}}
-      
-      A \SI1{\kilo\gram} block is sliding up a rough \ang{30} incline and is
-      slowing down with an acceleration of \SI{-6}{\metre\per\second\squared}.
-      The direction up the ramp is positive.
-      \begin{center}
-        \begin{tikzpicture}[scale=1.2]
-          \begin{scope}[thick]
-            \draw(0,0)--(-3.46,0)--(-3.46,2)--cycle;
-            \draw[thick](-1,0) arc(180:150:1) node[midway,left]{\ang{30}};
-            \begin{scope}[rotate=-30]
-              \draw(-2,0) rectangle(-2.8,.8);
-              \draw[->](-2,1)--(-2.8,1)node[left]{$\varv$};
-            \end{scope}
-          \end{scope}
-        \end{tikzpicture}
-      \end{center}
-    }
-
-    \question Which of the following free body diagrams best represents the
-    forces acting on the block as it slides up the plane?
-    \begin{choices}
-      \choice
-      \begin{tikzpicture}[scale=.7]
-        \fill[black](0,0) circle(.08);
-        \draw[thick,->](0,0)--(0,1) node[above]{$\mb N$};
-        \draw[thick,->](0,0)--(0,-1)node[below]{$m\mb g$};
-        \draw[thick,->,rotate=60](0,0)--(0,1)node[left]{$\mb f$};
-      \end{tikzpicture}
-      \choice
-      \begin{tikzpicture}[scale=.7]
-        \fill[black](0,0) circle(.08);
-        \draw[thick,->,rotate=-30](0,0)--(0,1)node[above]{$\mb N$};
-        \draw[thick,->,rotate=-30](0,0)--(0,-1)node[below]{$m\mb g$};
-        \draw[thick,->,rotate=60](0,0)--(0,1)node[left]{$\mb f$};
-      \end{tikzpicture}
-      \choice
-      \begin{tikzpicture}[scale=.7]
-        \fill[black](0,0) circle(.08);
-        \draw[thick,->,rotate=-30](0,0)--(0,1)node[above]{$\mb N$};
-        \draw[thick,->](0,0)--(0,-1)node[below]{$m\mb g$};
-        \draw[thick,->,rotate=60](0,0)--(0,-1)node[right]{$\mb f$};
-      \end{tikzpicture}
-      \choice
-      \begin{tikzpicture}[scale=.7]
-        \fill[black](0,0) circle(.08);
-        \draw[thick,->](0,0)--(0,1)node[above]{$\mb N$};
-        \draw[thick,->](0,0)--(0,-1)node[below]{$m\mb g$};
-        \draw[thick,->,rotate=60](0,0)--(0,-1)node[right]{$\mb f$};
-      \end{tikzpicture}
-      \choice
-      \begin{tikzpicture}[scale=.7]
-        \fill[black](0,0) circle(.08);
-        \draw[thick,->,rotate=120](0,0)--(0,1)node[left]{$\mb N$};
-        \draw[thick,->](0,0)--(0,-1)node[below]{$m\mb g$};
-        \draw[thick,->,rotate=60](0,0)--(0,-1)node[right]{$\mb f$};
-      \end{tikzpicture}
-    \end{choices}
-    \label{fbds}
-    
-  \item The magnitude of the frictional force $f$ between the block and the
-    plane is most nearly
-    \begin{choices}
-      \choice\SI1\newton
-      \choice\SI2\newton
-      \choice\SI3\newton
-      \choice\SI4\newton
-      \choice\SI5\newton
-    \end{choices}
-    \label{fk}
-
-    \fullwidth{
-      \textbf{Questions \ref{plane1}--\ref{plane2}}
-
-      A \SI{10}{\newton} block sits atop an inclined plane in the shape of a
-      right triangle of sides \SI{3}{\metre}, \SI{4}{\metre}, and
-      \SI{5}{\metre}, as shown. The block is allowed to slide down the plane
-      with negligible friction.
-      \begin{center}
-        \begin{tikzpicture}[scale=.85]
-          \begin{scope}[thick]
-            \draw(0,0)--(4,0) node[midway,below]{\SI4\metre}
-            --(0,3) node[midway,above right]{\SI5\metre}
-            --(0,0) node[midway,left]{\SI3\metre};
-            \draw[rotate around={-atan(3/4):(0,3)}](0,3) rectangle(.8,3.8)
-            node[above right]{\SI{10}\newton};
-          \end{scope}
-        \end{tikzpicture}
-      \end{center}
-    }
-    
-    \question The acceleration of the block is most nearly
-    \begin{choices}
-      \choice\SI2{\metre\per\second\squared}
-      \choice\SI4{\metre\per\second\squared}
-      \choice\SI6{\metre\per\second\squared}
-      \choice\SI{10}{\metre\per\second\squared}
-      \choice\SI{12}{\metre\per\second\squared}
-    \end{choices}
-    \label{plane1}
-    
-    \question The normal force exerted on the block by the plane is most nearly
-    \begin{choices}
-      \choice\SI2\newton
-      \choice\SI4\newton
-      \choice\SI6\newton
-      \choice\SI{8}\newton
-      \choice\SI{10}\newton
-    \end{choices}
-    \label{plane2}
+%    \fullwidth{
+%      \textbf{Questions \ref{fbds}--\ref{fk}}
+%      
+%      A \SI1{\kilo\gram} block is sliding up a rough \ang{30} incline and is
+%      slowing down with an acceleration of \SI{-6}{\metre\per\second\squared}.
+%      The direction up the ramp is positive.
+%      \begin{center}
+%        \begin{tikzpicture}[scale=1.2]
+%          \begin{scope}[thick]
+%            \draw(0,0)--(-3.46,0)--(-3.46,2)--cycle;
+%            \draw[thick](-1,0) arc(180:150:1) node[midway,left]{\ang{30}};
+%            \begin{scope}[rotate=-30]
+%              \draw(-2,0) rectangle(-2.8,.8);
+%              \draw[->](-2,1)--(-2.8,1)node[left]{$\varv$};
+%            \end{scope}
+%          \end{scope}
+%        \end{tikzpicture}
+%      \end{center}
+%    }
+%
+%    \question Which of the following free body diagrams best represents the
+%    forces acting on the block as it slides up the plane?
+%    \begin{choices}
+%      \choice
+%      \begin{tikzpicture}[scale=.7]
+%        \fill circle(.08);
+%        \draw[thick,->](0,0)--(0,1) node[above]{$\mb N$};
+%        \draw[thick,->](0,0)--(0,-1)node[below]{$m\mb g$};
+%        \draw[thick,->,rotate=60](0,0)--(0,1)node[left]{$\mb f$};
+%      \end{tikzpicture}
+%      \choice
+%      \begin{tikzpicture}[scale=.7]
+%        \fill circle(.08);
+%        \draw[thick,->,rotate=-30](0,0)--(0,1)node[above]{$\mb N$};
+%        \draw[thick,->,rotate=-30](0,0)--(0,-1)node[below]{$m\mb g$};
+%        \draw[thick,->,rotate=60](0,0)--(0,1)node[left]{$\mb f$};
+%      \end{tikzpicture}
+%      \choice
+%      \begin{tikzpicture}[scale=.7]
+%        \fill circle(.08);
+%        \draw[thick,->,rotate=-30](0,0)--(0,1)node[above]{$\mb N$};
+%        \draw[thick,->](0,0)--(0,-1)node[below]{$m\mb g$};
+%        \draw[thick,->,rotate=60](0,0)--(0,-1)node[right]{$\mb f$};
+%      \end{tikzpicture}
+%      \choice
+%      \begin{tikzpicture}[scale=.7]
+%        \fill circle(.08);
+%        \draw[thick,->](0,0)--(0,1)node[above]{$\mb N$};
+%        \draw[thick,->](0,0)--(0,-1)node[below]{$m\mb g$};
+%        \draw[thick,->,rotate=60](0,0)--(0,-1)node[right]{$\mb f$};
+%      \end{tikzpicture}
+%      \choice
+%      \begin{tikzpicture}[scale=.7]
+%        \fill circle(.08);
+%        \draw[thick,->,rotate=120](0,0)--(0,1)node[left]{$\mb N$};
+%        \draw[thick,->](0,0)--(0,-1)node[below]{$m\mb g$};
+%        \draw[thick,->,rotate=60](0,0)--(0,-1)node[right]{$\mb f$};
+%      \end{tikzpicture}
+%    \end{choices}
+%    \label{fbds}
+%    
+%  \item The magnitude of the frictional force $f$ between the block and the
+%    plane is most nearly
+%    \begin{choices}
+%      \choice\SI1\newton
+%      \choice\SI2\newton
+%      \choice\SI3\newton
+%      \choice\SI4\newton
+%      \choice\SI5\newton
+%    \end{choices}
+%    \label{fk}
+%
+%    \fullwidth{
+%      \textbf{Questions \ref{plane1}--\ref{plane2}}
+%
+%      A \SI{10}{\newton} block sits atop an inclined plane in the shape of a
+%      right triangle of sides \SI{3}{\metre}, \SI{4}{\metre}, and
+%      \SI{5}{\metre}, as shown. The block is allowed to slide down the plane
+%      with negligible friction.
+%      \begin{center}
+%        \begin{tikzpicture}[scale=.85]
+%          \begin{scope}[thick]
+%            \draw(0,0)--(4,0) node[midway,below]{\SI4\metre}
+%            --(0,3) node[midway,above right]{\SI5\metre}
+%            --(0,0) node[midway,left]{\SI3\metre};
+%            \draw[rotate around={-atan(3/4):(0,3)}](0,3) rectangle(.8,3.8)
+%            node[above right]{\SI{10}\newton};
+%          \end{scope}
+%        \end{tikzpicture}
+%      \end{center}
+%    }
+%    
+%    \question The acceleration of the block is most nearly
+%    \begin{choices}
+%      \choice\SI2{\metre\per\second\squared}
+%      \choice\SI4{\metre\per\second\squared}
+%      \choice\SI6{\metre\per\second\squared}
+%      \choice\SI{10}{\metre\per\second\squared}
+%      \choice\SI{12}{\metre\per\second\squared}
+%    \end{choices}
+%    \label{plane1}
+%    
+%    \question The normal force exerted on the block by the plane is most nearly
+%    \begin{choices}
+%      \choice\SI2\newton
+%      \choice\SI4\newton
+%      \choice\SI6\newton
+%      \choice\SI{8}\newton
+%      \choice\SI{10}\newton
+%    \end{choices}
+%    \label{plane2}
    
     \question A constant force acts on a particle in such a way that the
     direction of the force is always perpendicular to its velocity. Which of the
@@ -366,7 +366,7 @@
       \choice The speed of the particle is constant.
       \choice The speed of the particle is decreasing.
     \end{choices}
-    \vspace{.7in}
+    \columnbreak
 
     \fullwidth{
       \textbf{Questions \ref{stacked1}--\ref{stacked2}}
@@ -414,7 +414,7 @@
 \end{multicols*}
 \newpage
 
-\genfreetitle{C}{DYNAMICS}{4}
+\genfreetitle{2}{DYNAMICS}{4}
 
 \genfreedirections
 
@@ -446,7 +446,7 @@
   \uplevel{
     \centering
     \begin{tikzpicture}
-      \draw[very thick](0,0) rectangle(2,1.5) node[midway]{$m$};
+      \draw[very thick] rectangle(2,1.5) node[midway]{$m$};
       \draw[ultra thick](-2,0)--(5,0);
       \draw[thick,dashed](2,1.5)--(5,1.5);
       \draw[ultra thick,->](2,1.5)--(4.5,3.5) node[midway,above left]{$F_1$};
@@ -462,11 +462,11 @@
     \part On the figure below, draw and label a free-body diagram showing all
     the forces on the block.
 
-    \vspace{.3in}
+    \vspace{.7in}
     \begin{center}
-      \tikz{\draw[thick](0,0) rectangle(.7,.5);}
+      \tikz{\draw[thick] rectangle(.7,.5);}
     \end{center}
-    \vspace{.3in}
+    \vspace{.7in}
     
     \part Derive an expression for the normal force exerted by the surface on
     the block.
@@ -502,7 +502,7 @@
       \fill[gray!40](-1.5,-.15) rectangle(5.5,0);
       \begin{scope}[very thick]
         \draw(-1.5,0)--(5.5,0);
-        \draw(0,0) rectangle(1.8,1) node[midway]{$m$};
+        \draw rectangle(1.8,1) node[midway]{$m$};
         \draw[->](.2,1.3)--(1.6,1.3) node[midway,above]{$\varv$};
       \end{scope}
       \draw[ultra thick,->](1.8,.5)--(4,.5) node[right]{$F_A$};
@@ -518,11 +518,11 @@
   \begin{parts}
     \part The dot below represents the box. Draw and label the forces (not
     components) that act on the box.
-    \vspace{.5in}
+    \vspace{.7in}
     \begin{center}
-      {\tikz\fill(0,0) circle(.2);}
+      {\tikz\fill circle(.2);}
     \end{center}
-    \vspace{.5in}
+    \vspace{.7in}
 
     \part Write, but do not solve, a differential equation that could be used to
     determine the speed $\varv$ of the box as a function of time $t$. If you
@@ -541,8 +541,7 @@
     or minima with numerical values or algebraic expressions, as appropriate.
     \begin{center}
       \begin{tikzpicture}
-        \draw[very thick,->](0,0)--(4,0)
-        node[pos=0,left]{$O$} node[right]{$t$};
+        \draw[very thick,->](0,0)--(4,0) node[pos=0,left]{$O$} node[right]{$t$};
         \draw[very thick,->](0,-3)--(0,3)node[above]{$\varv$};
       \end{tikzpicture}
     \end{center}
@@ -567,7 +566,7 @@
     when it is at point $C$, which is at an angle $\theta$ from point $B$.
     \begin{center}
       \begin{tikzpicture}
-        \fill(0,0) circle(.25);
+        \fill circle(.25);
         \draw[rotate=35,dashed,very thick](0,2)--(0,-2);
       \end{tikzpicture}
     \end{center}
@@ -594,8 +593,8 @@
     \uplevel{
       Now consider the case in which there is no friction between the
       compartment and the track, but instead the compartment is brought to rest
-      by a braking force $-k\mb{v}$, where $k$ is a constant and $\mb{v}$ is the
-      velocity of the compartment. Express all algebraic answers to the
+      by a braking force $-k\vec\varv$, where $k$ is a constant and $\vec\varv$
+      is the velocity of the compartment. Express all algebraic answers to the
       following in terms of $M$, $R$, $k$, $\varv_D$, and fundamental
       constants, as appropriate.
     }
