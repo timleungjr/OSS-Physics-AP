@@ -1,6 +1,6 @@
 all:
-	xelatex PhysAPC-19-faradaysLawAsymmetry
-	xelatex PhysAPC-19-faradaysLawAsymmetry
+	xelatex PhysAPC-19-magnetism3
+	xelatex PhysAPC-19-magnetism3
 #	cd homework ; make
 
 clean:

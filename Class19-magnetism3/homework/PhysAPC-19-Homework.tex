@@ -1,6 +1,7 @@
-\documentclass{../../oss-classkick-exam}
+\documentclass{../../oss-apphys-exam}
 \usepackage{bm}
-\usepackage{circuitikz} % to draw circuits!
+
+\renewcommand{\arraystretch}{1.5}
 
 \begin{document}
 \genheader
@@ -26,11 +27,13 @@
     check mark in the appropriate box in each column in the table below to
     indicate whether the speed of the loop increases, decreases, or stays the
     same as the loop moves to the right.
-    \begin{center}
+    \uplevel{
+      \centering
       \begin{tabular}{|c|c|c|c|c|}
         \hline
+        & \multicolumn{4}{c|}{Position of Right End of Loop} \\ \hline
         Speed of Loop & $L<x<2L$ & $2L<x<3L$ & $3L<x<4L$ & $4L<x<5L$ \\
-        \hline\hline
+        \hline
         Increases & & & & \\
         \hline
         Dereases & & & & \\
@@ -38,7 +41,7 @@
         Stays the Same & & & & \\
         \hline
       \end{tabular}
-    \end{center}
+    }
 
     \part Derive an expression for the magnitude of the current induced in the
     loop as its right edge enters the field.
@@ -69,11 +72,10 @@
     \centering
     \begin{tikzpicture}[scale=1.2]
       \foreach \x in {0,...,3}{
-        \foreach \y in {0,...,4}
-        \node at (\x,\y){\textcolor{black!80}{$\bm\times$}};
+        \foreach \y in {0,...,4} \node[gray] at (\x,\y){$\bm\times$};
       }
       \draw[thick,fill=lightgray](.5,2.25) rectangle(2.5,2.5)
-      node[above,midway]{$M$, $L$};
+      node[above=1,midway]{$M,L$};
       \draw[thick](.5,.5)--(.5,3.7) node[pos=0,left]{$B$}
       to[R,l=$R$](2.5,3.7)--(2.5,.5);
       \fill (1.5,1.5) circle(.06) node[right]{$D$};
@@ -140,7 +142,7 @@
     \label{parte}
     
     \part Using your differential equation from part (\ref{partd}), derive an
-    expression for the speed of the falling bar $\varv_t$ as a function of time
+    expression for the speed of the falling bar $\varv(t)$ as a function of time
     $t$.
     \label{partf}
     
