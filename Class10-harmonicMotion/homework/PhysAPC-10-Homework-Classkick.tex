@@ -1,5 +1,7 @@
 \documentclass{../../oss-classkick-exam}
 
+\usetikzlibrary{decorations.pathmorphing,patterns}
+
 \begin{document}
 \genheader
 
@@ -32,9 +34,9 @@
     that it rises to the same height with each bounce. The motion of the ball
     can be described as
     \begin{choices}
-      \choice harmonic motion with a period of $2$ \si{\second}
-      \choice harmonic motion with a period of $1$ \si{\second}
-      \choice harmonic motion with a period of $1/2$ \si{\second}
+      \choice harmonic motion with a period of $2$ \si\second
+      \choice harmonic motion with a period of $1$ \si\second
+      \choice harmonic motion with a period of $1/2$ \si\second
       \choice motion with a constant velocity
       \choice motion with a constant momentum
     \end{choices}
@@ -82,7 +84,7 @@
     springs connected to it is
     \begin{choices}
       \choice $T/2$
-      \choice $T/\sqrt{2}$
+      \choice $T/\sqrt2$
       \choice $T$ (unchanged)
       \choice $\sqrt2T$
       \choice $2T$
@@ -109,15 +111,15 @@
       \textbf{Questions \ref{first}--\ref{last}}
 
       A harmonic oscillator follows the equation $\dfrac{d^2x}{dt^2}=-4x$. The
-      spring constant $k$ is \SI{4}{\newton\per\metre}.
+      spring constant $k$ is \SI4{\newton\per\metre}.
     }
 
     \question The angular frequency $\omega$ of the harmonic motion is
     \begin{choices}
       \choice zero
-      \choice\SI{2}{rad\per\second}
-      \choice\SI{4}{rad\per\second}
-      \choice\SI{8}{rad\per\second}
+      \choice\SI2{rad\per\second}
+      \choice\SI4{rad\per\second}
+      \choice\SI8{rad\per\second}
       \choice\SI{16}{rad\per\second}
     \end{choices}
     \label{first}
@@ -134,17 +136,17 @@
     \question The period $T$ of oscillation is
     \begin{choices}
       \choice zero
-      \choice $\pi/4$\si{\second}
-      \choice $\pi/2$\si{\second}
-      \choice $\pi$  \si{\second}
-      \choice $2\pi$ \si{\second}
+      \choice $\pi/4$\si\second
+      \choice $\pi/2$\si\second
+      \choice $\pi$  \si\second
+      \choice $2\pi$ \si\second
     \end{choices}
     \label{last}
     
-    \question A pendulum of length $L$ has a period of \SI{2}{\second} on
-    Earth. A planetary explorer takes the same pendulum of length $L$ to
-    another planet where its period is \SI{1}{\second}. The gravitational
-    acceleration on the surface of this planet is most nearly
+    \question A pendulum of length $L$ has a period of \SI2{\second} on Earth.
+    A planetary explorer takes the same pendulum of length $L$ to another
+    planet where its period is \SI1\second. The gravitational acceleration on
+    the surface of this planet is most nearly
 %    \begin{center}
 %      \begin{tikzpicture}
 %        \fill [pattern=north east lines] (-5,0)--(0,0)--(0,2)--(.2,2)--
@@ -159,17 +161,17 @@
 %      \end{tikzpicture}
 %    \end{center}
     \begin{choices}
-      \choice $8g$
-      \choice $4g$
-      \choice $2g$
-      \choice $g/2$
-      \choice $g/4$
+      \choice$8g$
+      \choice$4g$
+      \choice$2g$
+      \choice$g/2$
+      \choice$g/4$
     \end{choices}
   \end{questions}
 \end{multicols*}
 \newpage
 
-\genfreetitle{C}{SIMPLE HARMONIC MOTION}{6}
+\genfreetitle{10}{HARMONIC MOTION}{4}
 
 \genfreedirections
 
@@ -197,34 +199,9 @@
 %  \end{enumerate}
 %%  \vspace{3in}
 %  \newpage
-%  
-%\item A mass oscillates in simple harmonic motion as shown by the position $x$
-%  vs. time $t$ graph below.
-%  \begin{center}
-%    \pic{.45}{oscillate.png}
-%  \end{center}
-%  \begin{enumerate}[noitemsep]  
-%  \item What is the frequency of oscillation?
-%  \item Write the equation that represents the speed of the mass as a function
-%    of time.
-%  \end{enumerate}
-%  \newpage
 
 
-  % THIS QUESTION SHOULD MOVE TO AP/IBHL PHYSICS 
-%  \question In heavy seas, the bow of a battle ship undergoes a simple harmonic
-%  vertical pitching motion with a period of \SI{8.}{\second} and an amplitude
-%  of \SI{2.}{\metre}.
-%  \begin{parts}
-%    \part What is the maximum vertical velocity of the battle ship's bow?
-%    \part What is its maximum acceleration?
-%    \part An \SI{80}{\kilo\gram} sailor is standing on the scale in the bunk
-%    room in the bow. What are the maximum and minimum reading on the scale in
-%    newtons?
-%  \end{parts}
-%  \newpage
-
-  % THIS QUESTION SHOULD MOVE TO AP/IBHL PHYSICS 
+% THIS QUESTION SHOULD MOVE TO AP/IBHL PHYSICS 
 %  \question Show that for the situations in the figures below, the object of
 %  mass $m$ oscillates with a frequency of
 %  $f=\dfrac1{2\pi}\sqrt{\dfrac{k_\text{eff}}m}$ where $k_\text{eff}$
@@ -279,8 +256,8 @@
   \question The torsion pendulum shown above consists of a disk of rotational
   inertia $I$ suspended by a flexible rod attached to a rigid support. When the
   disk is twisted through a small angle $\theta$, the twisted rod exerts a
-  restoring torque $t$ that is proportional to the angular displacement:
-  $t=-\beta\theta$, where $\beta$ is a constant. The motion of a torsion
+  restoring torque $\tau$ that is proportional to the angular displacement:
+  $\tau=-\beta\theta$, where $\beta$ is a constant. The motion of a torsion
   pendulum is analogous to the motion of a mass oscillating on a spring.
   \begin{parts}
     \part In terms of the quantities given above, write but do NOT solve the
@@ -346,11 +323,27 @@
     \part Calculate the value of $k$.
     \newpage
     
-    \uplevel{\underline{Experiment 2.} The block and spring arrangement is now
+    \uplevel{
+      \underline{Experiment 2.} The block and spring arrangement is now
       placed on a rough surface, as shown below. The block is displaced so that
       the spring is \underline{compressed} a distance $d$ and released from
       rest.
-      \cpic{.5}{rough}
+      \begin{center}
+        \begin{tikzpicture}
+          \draw[lightgray!70,line width=7.2](-.12,3)--(-.12,-.12)--(9,-.12);
+          \draw[very thick](0,3)--(0,0)--(9,0);
+          \draw[dashed,thick](5.1,0)--(5.1,2.5);
+          \draw[thick](3.1,1.6)--(3.1,2.3);
+          \draw[very thick,fill=gray!60](2.5,0) rectangle (3.7,1.6);
+          \draw[thick,<->](3.1,2)--(5.1,2) node[midway,above]{$d$};
+          \draw[very thick,<-](6,0)--(7,.8) node[above]{Rough Surface};
+          \draw[very thick,<-](5.1,1.5)--(5.9,2.1)
+          node[right]{Equilibrium Position};
+          \draw[very thick,
+        decoration={aspect=.3,segment length=2mm, amplitude=3.5mm, coil},
+        decorate] (0,1)--(2.5,1);
+        \end{tikzpicture}
+      \end{center}
     }
     \part On the dots below that represent the block, draw and label the forces
     (not components) that act on the block when the spring is
@@ -358,21 +351,21 @@
     direction indicated below each dot.
     
     \begin{minipage}{.45\textwidth}
-      \vspace{.5in}
+      \vspace{.8in}
       \begin{center}
-        \tikz{\fill(0,0) circle(.15);}
+        \tikz{\fill circle(.15);}
         
-        \vspace{.3in}
+        \vspace{.5in}
         Toward\\
         the equilibrium position
       \end{center}
     \end{minipage}
     \begin{minipage}{.45\textwidth}
-      \vspace{.5in}
+      \vspace{.8in}
       \begin{center}
-        \tikz{\fill(0,0) circle(.15);}
+        \tikz{\fill circle(.15);}
         
-        \vspace{.3in}
+        \vspace{.5in}
         Away from\\
         the equilibrium position
       \end{center}
@@ -381,7 +374,22 @@
     \part Draw a sketch of $\varv$ versus $t$ in this case. Assume that
     there is a negligible change in the period and that the positive direction
     is still to the right.
-    \cpic{.6}{graphpaper}
+    \uplevel{
+      \centering
+      \begin{tikzpicture}[xscale=5.2]
+        \begin{scope}[very thick,->]
+          \draw(0,-2)--(2.1,-2);
+          \draw(0,-2)--(0,2.5);
+        \end{scope}
+        \foreach \x in {0.1,0.2,...,2.0}\draw[dashed,thick](\x,-2.1)--(\x,2);
+        \foreach \x in {0.0,0.5,1.0,1.5,2.0}
+        \draw[thick](\x,-2)--(\x,2) node[pos=0,below]{$\x$};
+        \foreach \y in {-1,...,2}\draw[thick](0,\y)--(2.03,\y);
+        \draw[thick](0,0)--(-0.03,0) node[left]{$0$};
+        \node at (1,-2.8){Time $t$ (\si\second)};
+        \node[rotate=90] at (-.15,0){Velocity $\varv$ (\si{\metre\per\second})};
+      \end{tikzpicture}
+    }
   \end{parts}
   \newpage
   
