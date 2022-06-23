@@ -4,7 +4,6 @@ DESTINATION=$(HOME)/Nextcloud/$(TERM)/Physics-APC
 export DESTINATION
 
 all:
-	cd Class01-outline	; make
 	cd Class01-kinematics	; make
 	cd Class02-dynamics	; make
 	cd Class03-workEnergy	; make
@@ -30,7 +29,6 @@ all:
 
 clean:
 	rm -rf *.*~ *~ *.log
-	cd Class01-outline	; make clean
 	cd Class01-kinematics	; make clean
 	cd Class02-dynamics	; make clean
 	cd Class03-workEnergy	; make clean
@@ -56,8 +54,6 @@ clean:
 
 public:
 	mkdir -p $(DESTINATION)
-	cd Class01-eqSheet	; make public
-	cd Class01-outline	; make public
 	cd Class01-kinematics	; make public
 	cd Class02-dynamics	; make public
 	cd Class03-workEnergy	; make public
