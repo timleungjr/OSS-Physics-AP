@@ -3,7 +3,7 @@
 \begin{document}
 \genheader
 
-\gentitle{16}{MAGNETISM, PART 1}
+\gentitle{17}{MAGNETISM, PART 1}
 
 \genmultidirections
 \raggedcolumns
@@ -17,8 +17,8 @@
     \begin{center}
       \begin{tikzpicture}
         \draw[thick,dashed,fill=gray!20] circle(1);
-        \node at (1.2,.5) {$X$};
-        \draw[thick](0,2.5) circle(.1) node[above]{$e$};
+        \node at (1.1,-.6) {$X$};
+        \draw[thick](0,2.5) circle(.1) node[above=3]{$e$};
         \draw[thick,->](0,2.4)--(0,1);
       \end{tikzpicture}
     \end{center}
@@ -36,10 +36,10 @@
     \begin{center}
       \begin{tikzpicture}[scale=1.3]
         \begin{scope}[thick]
-          \draw rectangle(.2,2);
-          \draw(1,0) rectangle(1.2,2);
-          \draw[->](.1,2)--(.1,3) node[above]{$I_A$};
-          \draw[->](1.1,2)--(1.1,3) node[above]{$I_B$};
+          \draw rectangle(.15,2);
+          \draw(1,0) rectangle(1.15,2);
+          \draw[->](.075,2)--(.075,3) node[above]{$I_A$};
+          \draw[->](1.075,2)--(1.075,3) node[above]{$I_B$};
         \end{scope}
       \end{tikzpicture}
     \end{center}
@@ -117,9 +117,9 @@
     current-carrying wire due to the electron?
     \begin{center}
       \begin{tikzpicture}
-        \draw[thick,->](0,4)--(0,2.5);
+        \draw[thick,->](0,4)--(0,2.5) node[right]{$I$};
         \draw[thick](0,3)--(0,0);
-        \fill(-.5,2) circle(.1) node[above] {$e$};
+        \fill(-.5,2) circle(.1) node[above left] {$e$};
         \draw[thick,->](-.5,2)--(-.5,1) node[below]{$\varv$};
       \end{tikzpicture}
     \end{center}
@@ -194,33 +194,32 @@
 %      carrying $4A$, and in the same direction.
 %    \end{choices}
 %    \label{q:2wires1}
-%    \vspace{.7in}
     
     \question The magnitude of the resultant magnetic field at point $P$ due to
     the current in the two wires is
     \begin{choices}
       \choice zero
-      \choice $\dfrac{\mu_0(2A)}{2\pi r}$
-      \choice $\dfrac{\mu_0(2A)}{\pi r}$
-      \choice $\dfrac{\mu_0(4A)}{2\pi r}$
-      \choice $\dfrac{\mu_0(6A)}{4\pi r}$
+      \choice$\dfrac{\mu_0(2A)}{2\pi r}$
+      \choice$\dfrac{\mu_0(2A)}{\pi r}$
+      \choice$\dfrac{\mu_0(4A)}{2\pi r}$
+      \choice$\dfrac{\mu_0(6A)}{4\pi r}$
     \end{choices}
     \label{q:2wires2}
 
-    \question A dynamic microphone contains a magnet and a coil of wire
-    connected to a movable diaphragm, as shown in the figure. Sound waves
-    directed at the diaphragm generate a current in the wires leading from the
-    coil. Which of the following helps to explain why this occurs?
-    \cpic{.3}{mic}
-    \begin{choices}
-      \choice The area of the coil changes.
-      \choice The magnitude of the magnetic field produced by the magnet
-      changes.
-      \choice The angle between the plane of the coil and the magnetic field
-      produced by the magnet change.
-      \choice The strength of the magnetic field in the plane of the coil
-      changes.
-    \end{choices}
+%    \question A dynamic microphone contains a magnet and a coil of wire
+%    connected to a movable diaphragm, as shown in the figure. Sound waves
+%    directed at the diaphragm generate a current in the wires leading from the
+%    coil. Which of the following helps to explain why this occurs?
+%    \cpic{.38}{mic}
+%    \begin{choices}
+%      \choice The area of the coil changes.
+%      \choice The magnitude of the magnetic field produced by the magnet
+%      changes.
+%      \choice The angle between the plane of the coil and the magnetic field
+%      produced by the magnet change.
+%      \choice The strength of the magnetic field in the plane of the coil
+%      changes.
+%    \end{choices}
 
     \uplevel{
       \textbf{Questions \ref{q:2curr1}--\ref{q:2curr2}}
@@ -242,7 +241,6 @@
       \choice The net force between the wires is zero.
     \end{choices}
     \label{q:2curr1}
-    \vspace{.7in}
     
     \question The direction of the force between the wires is
     \begin{choices}
@@ -253,7 +251,6 @@
       \choice out of the page
     \end{choices}
     \label{q:2curr2}
-    \vspace{.7in}
     \columnbreak
     
     \uplevel{
@@ -270,7 +267,7 @@
           \draw[thick,->](1.5,1.5)--(2.5,1.5) node[midway,above]{$r$};
           \draw[dashed](1.5,1.5) circle(1);
           \draw[fill=white](1.5,2.5) circle(.2);
-          \draw[thick,->](1.5,2.5)--(.5,2.5) node[left]{$v$};
+          \draw[thick,->](1.5,2.5)--(.5,2.5) node[left]{$\varv$};
         \end{tikzpicture}
       \end{center}
     }
@@ -278,11 +275,11 @@
     \question In terms of the other given quantities, the charge-to-mass ratio
     $q/m$ of the particle is
     \begin{choices}
-      \choice $\dfrac{Bv}r$
-      \choice $\dfrac r{Bv}$
-      \choice $\dfrac{rv}B$
-      \choice $rvB$
-      \choice $\dfrac v{rB}$
+      \choice $\dfrac{B\varv}r$
+      \choice $\dfrac r{B\varv}$
+      \choice $\dfrac{r\varv}B$
+      \choice $r\varv B$
+      \choice $\dfrac\varv{rB}$
     \end{choices}
     \label{q:circ1}
     
@@ -290,12 +287,13 @@
     the charge is
     \begin{choices}
       \choice zero
-      \choice $-qvB/rm$
-      \choice $qvm/Br$
-      \choice $-mBr/qv$
-      \choice $-mqvBr$
+      \choice $-\dfrac{q\varv B}{rm}$
+      \choice $\dfrac{q\varv m}{Br}$
+      \choice $-\dfrac{mBr}{q\varv}$
+      \choice $-mq\varv Br$
     \end{choices}
     \label{q:circ2}
+    \columnbreak
     
     \question A current is passed through an analog ammeter and the needle moves
     to indicate the current flowing through the circuit. Which of the
@@ -313,7 +311,6 @@
       \choice Current flows through the needle, making it heavier, and it falls
       to the high side of the scale.
     \end{choices}
-    \vspace{.7in}
     
 %    \question An electric motor consists of a current-carrying loop of wire
 %    mounted to an axle and turned at a slight angle in a magnetic field as
@@ -330,7 +327,7 @@
 \end{multicols*}
 \newpage
 
-\genfreetitle{17}{MAGNETISM}{3}
+\genfreetitle{17}{MAGNETISM, PART 1}{3}
 
 \genfreedirections
 
@@ -340,7 +337,7 @@
     \draw[ultra thick](-5,0)--(5,0);
     \draw[line width=.8mm](-2,1)--(2,1) node[midway,above]{$\ell$};
     \draw[thick](-2,1)--(-2,2.5)node[midway,left]{$d$}
-    to[battery1=$\mathcal E$](2,2.5)--(2,1) node[midway,right]{$d$};
+    to[battery1=$\varepsilon$](2,2.5)--(2,1) node[midway,right]{$d$};
     \draw[<->](-1,1)--(-1,0) node[midway,fill=white]{$r$};
     \draw[<-](4.7,0) to[in=270,out=-80](5.5,-.3) node[above]{Cable};
     \draw[<-](1.7,1) to[in=180,out=-80](3,.85)
@@ -351,7 +348,7 @@
 \end{center}
 
 \begin{questions}
-  \question The circuit shown above consists of a battery of emf $\mathcal E$
+  \question The circuit shown above consists of a battery of emf $\varepsilon$
   in series with a rod of length $\ell$, mass $m$, and resistance $R$. The rod
   is suspended by vertical connecting wires of length $d$, and the horizontal
   wires that connect to the battery are fixed. All these wires have negligible
@@ -442,7 +439,7 @@
     \SI1{\milli\metre}.
     \begin{center}
       \begin{tikzpicture}[american voltages,scale=1.2]
-        \draw(0,-.5)--(0,1)--(4,1)--(4,-.5) to[battery1=$\mathcal E$] (2,-.5)
+        \draw(0,-.5)--(0,1)--(4,1)--(4,-.5) to[battery1=$\varepsilon$] (2,-.5)
         to[R=$R$] (0,-.5);
         \draw[fill=gray!60](1.5,1.3) circle (0.1);
         \draw[thick,->](1.7,1.3)--(2.7,1.3) node[midway,above]{$\varv$};
