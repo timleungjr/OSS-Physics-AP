@@ -1,14 +1,12 @@
 \documentclass{../../oss-apphys-exam}
-\usepackage{ragged2e}
 
+\renewcommand{\arraystretch}{1.2}
 \begin{document}
 \genheader
 
 \gentitle{21}{CIRCUIT ANALYSIS, PART 2}
 
 \genmultidirections
-
-%\gengravity
 
 \begin{multicols*}{2}
   \textbf{Questions \ref{combo1}--\ref{combo2}}
@@ -19,7 +17,7 @@
       to[C,l_=\mbox{\SI8{\micro\farad}}] (2,0)
       to[C,l=\mbox{\SI4{\micro\farad}}](0,0);
       \draw(2,2)--(3,2) to[C=\mbox{\SI8{\micro\farad}}] (3,0)--(2,0);
-          \end{tikzpicture}
+    \end{tikzpicture}
   \end{center}
   
   \begin{questions}
@@ -43,8 +41,7 @@
     \choice\SI{36}{\micro\coulomb}
     \choice\SI{120}{\micro\coulomb}
   \end{choices}
-  \columnbreak
-  
+
   \uplevel{
     \textbf{Question \ref{switch1}--\ref{switch2}}
     
@@ -54,8 +51,8 @@
     resistor.
     \begin{center}
       \begin{tikzpicture}[american voltages]
-        \draw(0,0) to[battery,l=$\mathcal E$](0,2) to[short,-*] (1.5,2);
-        \draw(2.5,2) to[short,*-] (3.5,2) to[R=$R$,] (3.5,0)--(0,0);
+        \draw(0,0) to[battery,l=$\varepsilon$](0,2) to[short,-*] (1.5,2);
+        \draw(2.5,2) to[short,*-] (3.5,2) to[R=$R$] (3.5,0)--(0,0);
         \draw(2,0) to[C=$C$,-*] (2,1.25);
         \draw(2,1.25)--(2.3,2.15) node[above]{s};
         \node at (1.5,1.8) (a){a};
@@ -63,7 +60,6 @@
       \end{tikzpicture}
     \end{center}
   }
-
   \question The time constant $\tau$ for discharging the capacitor through the
   resistor could be decreased (faster discharge) by
   \label{switch1}
@@ -85,7 +81,6 @@
     \choice $\mathcal E/2RC$
     \choice $C\mathcal E/R$
   \end{choices}
-  \columnbreak
   
   \question Circuit I and Circuit II shown each consist of a capacitor and a
   resistor. A battery is connected across a and b, and then removed. Which of
@@ -120,6 +115,7 @@
     \choice Current will continue to flow in both circuits after the battery
     is removed.
   \end{choices}
+  \columnbreak
   
   \question A thin sheet of copper is placed in a uniform magnetic field. A
   battery is connected to the top and bottom ends of the copper sheet, so that
@@ -188,7 +184,7 @@
     \cpic{.5}{resistance}
   }
   \question A physics student wishes to measure the resistivity of slightly
-  conductive paper that has a thickness of \SI{1.0e4}\metre. The student cuts
+  conductive paper that has a thickness of \SI{1.0e-4}\metre. The student cuts
   a sheet of the conductive paper into strips of width \SI{.02}{\metre} and
   varying lengths, making five resistors labeled R1 to R5. Using an ohmmeter,
   the student measures the resistance of each strip, as shown above. The data
@@ -197,7 +193,7 @@
     \begin{tabular}{|l|c|c|c|c|c|}
       \hline
       Resistor & R1 & R2 & R3 & R4 & R5 \\ \hline
-      Length (m) & 0.020 & 0.040 & 0.060 & 0.080 & 0.100\\ \hline
+      Length (\si\metre) & 0.020 & 0.040 & 0.060 & 0.080 & 0.100\\ \hline
       Resistance (\si\ohm) & 80,000 & 180,000 & 260,000 & 370,000 & 440,000\\
       \hline
     \end{tabular}
@@ -208,8 +204,8 @@
     scales for both axes. Draw the straight line that best represents the data.
     \begin{center}
       \begin{tikzpicture}[yscale=.3,xscale=.45]
-        \draw (0,0) grid(30,30);
-        \draw[step=5,very thick](0,0) grid(30,30);
+        \draw grid(30,30);
+        \draw[step=5,very thick] grid(30,30);
       \end{tikzpicture}
     \end{center}
 
@@ -223,7 +219,8 @@
     }
     
     \part Calculate the time constant of the circuit.
-
+    \newpage
+    
     \part At time $t=0$, the student closes the switch. On the axes below,
     sketch the magnitude of the voltage $V_c$ across the capacitor and the
     magnitudes of the voltages $V_\text{R4}$ and $V_\text{R5}$ across each
@@ -320,10 +317,9 @@
 
     \uplevel{
       The circuit is constructed using an ideal \SI{1.5}{\volt} battery, an
-      \SI{80}{\micro\farad} capacitor, and resistors $R_1=\SI{150}{\ohm}$ and
-      $R_2=\SI{100}{\ohm}$. The switch is closed, allowing the capacitor to
-      fully charge. The switch is then opened, allowing the capacitor to
-      discharge.
+      \SI{80}{\micro\farad} capacitor, and resistors $R_1=\SI{150}\ohm$ and
+      $R_2=\SI{100}\ohm$. The switch is closed, allowing the capacitor to fully
+      charge. The switch is then opened, allowing the capacitor to discharge.
     }
 
     \part The time it takes to charge the capacitor to \SI{50}{\percent} of its
@@ -350,6 +346,7 @@
       \underline{\hspace{.3in}} Decreasing\hspace{.3in}
       \underline{\hspace{.3in}} Constant
     \end{subparts}
+    \newpage
     \part
     \begin{subparts}
       \subpart Calculate the energy stored in the capacitor immediately after

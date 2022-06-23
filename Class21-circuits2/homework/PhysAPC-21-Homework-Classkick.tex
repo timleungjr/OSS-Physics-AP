@@ -1,5 +1,6 @@
 \documentclass{../../oss-classkick-exam}
 
+\renewcommand{\arraystretch}{1.2}
 \begin{document}
 \genheader
 
@@ -7,9 +8,7 @@
 
 \genmultidirections
 
-%\gengravity
-
-\begin{multicols}{2}
+\begin{multicols*}{2}
   \textbf{Questions \ref{combo1}--\ref{combo2}}
   \begin{center}
     \begin{tikzpicture}[american voltages,scale=1.2]
@@ -18,7 +17,7 @@
       to[C,l_=\mbox{\SI8{\micro\farad}}] (2,0)
       to[C,l=\mbox{\SI4{\micro\farad}}](0,0);
       \draw(2,2)--(3,2) to[C=\mbox{\SI8{\micro\farad}}] (3,0)--(2,0);
-          \end{tikzpicture}
+    \end{tikzpicture}
   \end{center}
   
   \begin{questions}
@@ -52,8 +51,8 @@
     resistor.
     \begin{center}
       \begin{tikzpicture}[american voltages]
-        \draw(0,0) to[battery,l=$\mathcal E$](0,2) to[short,-*] (1.5,2);
-        \draw(2.5,2) to[short,*-] (3.5,2) to[R=$R$,] (3.5,0)--(0,0);
+        \draw(0,0) to[battery,l=$\varepsilon$](0,2) to[short,-*] (1.5,2);
+        \draw(2.5,2) to[short,*-] (3.5,2) to[R=$R$] (3.5,0)--(0,0);
         \draw(2,0) to[C=$C$,-*] (2,1.25);
         \draw(2,1.25)--(2.3,2.15) node[above]{s};
         \node at (1.5,1.8) (a){a};
@@ -61,7 +60,6 @@
       \end{tikzpicture}
     \end{center}
   }
-
   \question The time constant $\tau$ for discharging the capacitor through the
   resistor could be decreased (faster discharge) by
   \label{switch1}
@@ -84,6 +82,7 @@
     \choice $\mathcal E/2RC$
     \choice $C\mathcal E/R$
   \end{choices}
+  \vspace{1in}
   \columnbreak
   
   \question Circuit I and Circuit II shown each consist of a capacitor and a
@@ -149,7 +148,7 @@
     potential.
   \end{choices}
   \end{questions}
-\end{multicols}
+\end{multicols*}
 \newpage
 
 \genfreetitle{21}{CIRCUIT ANALYSIS, PART 2}{4}
@@ -208,8 +207,8 @@
     scales for both axes. Draw the straight line that best represents the data.
     \begin{center}
       \begin{tikzpicture}[yscale=.3,xscale=.45]
-        \draw (0,0) grid(30,30);
-        \draw[step=5,very thick](0,0) grid(30,30);
+        \draw grid(30,30);
+        \draw[step=5,very thick] grid(30,30);
       \end{tikzpicture}
     \end{center}
 
