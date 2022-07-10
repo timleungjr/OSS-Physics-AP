@@ -178,31 +178,31 @@
 
 
 
-%%\begin{frame}{Torque}
-%%  Going back to the example question:
-%%  \begin{center}
-%%    \begin{tikzpicture}
-%%      \fill[black!75,draw=black!75] (-5,-.05) rectangle (5,.05);
-%%      \fill (0,0) circle (.1);
-%%      \draw[ultra thick](0,0)--(.5,-1.5)--(-.5,-1.5)--(0,0);
-%%      \uncover<2->{
-%%        \draw[ultra thick,red!75,->](0,0)--(-4.8,0) node[pos=.5,below]{$d_1$};
-%%        \draw[ultra thick,red!75,->](-4.8,0)--(-4.8,-1)node[below]{$F_1$};
-%%      }
-%%      \uncover<3->{
-%%        \draw[ultra thick,blue!60,->](0,0)--(4,0) node[pos=.5,below]{$d_2$};
-%%        \draw[ultra thick,blue!60,->](4,0)--(4,-1.2) node[below]{$F_2$};
-%%      }
-%%    \end{tikzpicture}
-%%  \end{center}
-%%  \begin{itemize}
-%%  \item<2->$F_1$ will rotate the board counter clockwise
-%%  \item<3->$F_2$ will rotate the board clockwise
-%%  \item<4->The beam will remain static (in equilibrium) if
-%%
-%%    \eq{-.2in}{ F_1d_1=F_2d_2 }
-%%  \end{itemize}
-%%\end{frame}
+%\begin{frame}{Torque}
+%  Going back to the example question:
+%  \begin{center}
+%    \begin{tikzpicture}
+%      \fill[black!75,draw=black!75] (-5,-.05) rectangle (5,.05);
+%      \fill (0,0) circle (.1);
+%      \draw[ultra thick](0,0)--(.5,-1.5)--(-.5,-1.5)--(0,0);
+%      \uncover<2->{
+%        \draw[ultra thick,red!75,->](0,0)--(-4.8,0) node[pos=.5,below]{$d_1$};
+%        \draw[ultra thick,red!75,->](-4.8,0)--(-4.8,-1)node[below]{$F_1$};
+%      }
+%      \uncover<3->{
+%        \draw[ultra thick,blue!60,->](0,0)--(4,0) node[pos=.5,below]{$d_2$};
+%        \draw[ultra thick,blue!60,->](4,0)--(4,-1.2) node[below]{$F_2$};
+%      }
+%    \end{tikzpicture}
+%  \end{center}
+%  \begin{itemize}
+%  \item<2->$F_1$ will rotate the board counter clockwise
+%  \item<3->$F_2$ will rotate the board clockwise
+%  \item<4->The beam will remain static (in equilibrium) if
+%
+%    \eq{-.2in}{ F_1d_1=F_2d_2 }
+%  \end{itemize}
+%\end{frame}
 
 
 
@@ -242,9 +242,9 @@
     \column{.23\textwidth}
     \begin{tikzpicture}[scale=2.5]
       \begin{scope}[rotate=70]
-        \fill (0,-.03) rectangle (2,.03);
+        \draw[line width=3.5] (0,0)--(2,0);
         \fill[blue,draw=blue,thick] (2,0) circle(.04) node[right]{$m$};
-        \fill circle (.05);
+        \fill circle (.05) node[right]{\small pivot};
         \begin{scope}[very thick,->]
           \draw[red](0,0)--(2,0)node[midway,right]{$\vec r$};
           \draw (2,0)--(2,.5)node[left]{$\vec v$};
@@ -311,8 +311,8 @@
     
   \vspace{-.3in}{\large
     \begin{align*}
-      \vec p&=m\vec v\\
-      \vec L&=I\vec\omega
+      \vec p &= m\vec v\\
+      \vec L &= I\vec\omega
     \end{align*}
   }
   
