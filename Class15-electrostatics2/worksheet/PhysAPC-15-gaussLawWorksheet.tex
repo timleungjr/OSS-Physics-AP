@@ -1,0 +1,476 @@
+\documentclass{../../oss-handout}
+\usepackage{newtxtext,newtxmath}
+\usepackage{enumitem}
+\usepackage{tikz}
+\usepackage[ISO]{diffcoeff}
+
+\tikzset{>=latex}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{8pt}
+\setlength{\headheight}{26pt}
+
+% Set the page style for the document
+\pagestyle{plain}
+
+% Course & handout information
+\renewcommand{\institution}{Olympiads School, Toronto, ON, Canada}
+\renewcommand{\coursetitle}{Advanced Placement Physics C}
+\renewcommand{\term}{Fall 2021}
+
+\title{Gauss' Law In-Class Worksheet for Class 15}
+\author{}%Dr.\ Timothy Leung}
+\date{Last Updated: \today}
+
+\begin{document}
+\thispagestyle{title}
+\gentitle
+
+\textbf{Uniformly-Charged Thin Shell}
+
+\begin{minipage}{.43\linewidth}
+  \begin{tikzpicture}[scale=1.3]
+    \draw[thick,fill=black!70] circle(1.5);
+    \draw[thick,fill=white] circle(1.45);
+    \shade[ball color=red,opacity=.3] circle(1.5);
+    \draw[thick,->,rotate=60](0,0)--(1.45,0)node[above]{$R$};
+    
+    \draw[thick,->,rotate=-20](0,0)--(1,0)node[midway,below left]{$r_i<R$};
+    \draw[dashed,thick] circle(1);
+
+    \draw[thick,->,rotate=20](0,0)--(2.15,0)node[right]{$r_0>R$};
+    \draw[dashed,gray,thick] circle(2.15);
+  \end{tikzpicture}
+\end{minipage}
+\begin{minipage}{.55\linewidth}
+  Consider a thin shell with radius $R$ and a total charge $Q$ uniformly
+  distributed over its surface.
+  
+  \begin{enumerate}[nosep]
+  \item What is the electric field inside the sphere?
+  \item What is the electric field outside the sphere?
+  \end{enumerate}
+  
+  \vspace{.2in}Steps:
+  \begin{itemize}[nosep]
+  \item Construct a spherical Gaussian surface with its center coinciding with
+    the center of the shell with radii $r_i$ (for inside the shell) and $r_0$
+    (for outside the shell)
+  \item Find the enclosed charge
+  \item Calculate the electric field using Gauss's law
+  \end{itemize}
+\end{minipage}
+\vspace{\stretch1}
+\begin{center}
+  \begin{tikzpicture}
+    \draw[very thick,->](0,0)--(8,0) node[right]{$r$};
+    \draw[very thick,->](0,0)--(0,4) node[above]{$E$};
+    \draw[thick,dashed](2.5,4)--(2.5,0) node[below]{$R$};
+  \end{tikzpicture}
+\end{center}
+\newpage
+
+We have seen this distribution before, for but for gravitational field inside a
+hollow shell. Relate the permittivity of free-space to the Coulomb's constant,
+then derive a Gauss' law for gravity.
+\vspace{1.25in}
+\newpage
+
+\textbf{Uniformly-Charged Sphere}
+Consider a uniformly-charged sphere with a radius $R$ and a total charge $Q$.
+\begin{enumerate}[nosep]
+\item What is the electric field inside the sphere?
+\item What is the electric field outside the sphere?
+\end{enumerate}
+\vspace{\stretch1}
+\begin{center}
+  \begin{tikzpicture}
+    \draw[very thick,->](0,0)--(8,0) node[right]{$r$};
+    \draw[very thick,->](0,0)--(0,5) node[above]{$E$};
+    \draw[thick,dashed](2.5,4.5)--(2.5,0) node[below]{$R$};
+  \end{tikzpicture}
+\end{center}
+\newpage
+
+\textbf{Charged Sphere with Variable Charge Density}
+\begin{enumerate}[nosep]
+\item What is the electric field inside the sphere?
+\item What is the electric field outside the sphere?
+\end{enumerate}
+\vspace{\stretch1}
+\begin{center}
+  \begin{tikzpicture}
+    \draw[very thick,->](0,0)--(8,0) node[right]{$r$};
+    \draw[very thick,->](0,0)--(0,5) node[above]{$E$};
+    \draw[thick,dashed](2.5,4.5)--(2.5,0) node[below]{$R$};
+  \end{tikzpicture}
+\end{center}
+\newpage
+
+%  astrologer.} formulated his \textbf{laws of planetary motion}
+%between 1609 to 1619, by carefully interpreting the empirical planetary motion
+%data from his teacher, Tycho Brahe.\footnote{1546--1601. Danish nobleman and
+%  astronomer.} It is an improvement over the heliocentric
+%theory of Nicolaus Copernicus\footnote{1473--1543. German mathematician,
+%  astronomer and Catholic canon.}. It should be noted that the complete
+%mathematical understanding was missing until Issac Newton\footnote{1642--1726.
+%  English mathematician, physicist, astronomer, theologian, and author.}
+%derived each law as using his laws of motion. In this handout we seek to obtain
+%each law, as we consider the orbit of a small planet in the gravitational field
+%of a much more massive star. In modern form, Kepler's laws of planetary motion
+%state that:
+%\begin{enumerate}[nosep]
+%\item A planet moves around the Sun in an elliptical path with the Sun as one
+%  of the foci.
+%\item The line segment joining a planet and the Sun sweeps out equal areas
+%  during equal intervals of time.
+%\item The square of the orbital time period of a planet is proportional to the
+%  cube of the semi-major axis of its orbit.
+%\end{enumerate}
+%To begin, we recognize that two properties of gravitational force, or Newton's
+%\textbf{law of universal gravitation}:
+%\begin{equation}
+%  \vec F_g=-\frac{Gm_1m_2}{r^2}\hat r
+%\end{equation}
+%are crucial to
+%understanding orbital mechanics. These two properties hold true regardless
+%of the shape of the orbit, and whether an object is even in orbit altogether:
+%\begin{enumerate}[topsep=0pt]
+%\item Gravity is a \emph{conservative} force, in that
+%  \begin{itemize}[nosep]
+%  \item assuming that minor collisions with space dust and other methods of
+%    energy dissipation are negligible, then the total mechanical energy
+%    $E=K+U_g$ is conserved.
+%  \item work done \emph{by} gravity (positive work) converts gravitational
+%    potential energy $U_g$ into kinetic energy $K$, while work \emph{against}
+%    gravity (negative work) converts $K$ into $U_g$.
+%  \end{itemize}
+%\item Gravity is a \emph{central} force, in that
+%  \begin{itemize}[nosep]
+%  \item gravitational force $\vec F_g$ is always in the $-\hat r$ direction
+%    (i.e.\ $\vec F\times\vec r=\vec 0$), shown in
+%    Fig.~\ref{central-force}, therefore gravity does not generate any torque,
+%  \item angular momentum $\vec L$ about the sun is therefore constant
+%  \end{itemize}
+%\end{enumerate}
+%\begin{figure}[!ht]
+%  \centering
+%  \begin{tikzpicture}[scale=1.3]
+%    \draw[->,ultra thick,blue](0,0)--(2,3)
+%    node[midway,left]{$\vec r$};
+%    \draw[->,thick](0,0)--(2,3) node[midway,left]{$\vec r$};
+O%    \begin{scope}[rotate around={-33.7:(2.03,3)}]
+%      \draw[->,ultra thick,red](2.03,3)--(2.03,1.5)
+%      node[midway,below right]{$\vec F_g$};
+%    \end{scope}
+%    \draw[->,thick](2,3)--(3,2.8) node[pos=1,right]{$\vec\varv$};
+%    \fill[black](0,0) circle(.12) node[right]{Sun};
+%    \fill[black](2,3) circle(.07) node[left]{Planet};
+%  \end{tikzpicture}
+%  \caption{A central force such as gravity do not generate a torque (moment).}
+%  \label{central-force}
+%\end{figure}
+%For the purpose of the analysis, we assume that the Sun's mass $M_\odot$
+%is very large compared to any other object in the solar system (planets,
+%comets, asteroids, etc.), and its motion is essentially unaffected by the
+%gravity from them.
+
+\section{Electric Field Inside and Second law: Equal area in equal time}
+
+%The second law of planetary motion, called the \textbf{law of equal areas},
+%states (in modern terms) that line segment joining a planet and the Sun sweeps
+%out equal areas during equal intervals of time (Fig.~\ref{kep2}). The second
+%law of planetary motion is the easiest to proof using concepts in rotational
+%motion.
+%\begin{figure}[!ht]
+%  \centering
+%    \pic{.4}{../201532-132212364-3243-planet}
+%    \caption{The Earth sweeps out the same shaded area (purple) over the
+%      same amount of time regardless of where it is in its orbit.}
+%    \label{kep2}
+%\end{figure}
+%
+%To begin, recognize that for a planet with a velocity vector $\vec\varv$ that is
+%not co-linear with the displacement vector $\vec r$ will sweep out an
+%infinitesimal area $\dl\vec A$ (Fig.~\ref{fig:dA})
+%\begin{figure}[ht]
+%  \centering
+%  \begin{tikzpicture}[scale=1.3]
+%    \fill[gray!45](0,0)--(2,3)--(3,2.8)--cycle;
+%    \node at (1.7,2) {$\dl\vec A$};
+%    \draw[->,thick](0,0)--(2,3)
+%    node[midway,left]{$\vec r$} node[pos=.95,right]{$\alpha$};
+%    \draw[->,thick](2,3)--(3,2.8) node[midway,above]{$\dl\vec r$};
+%    \draw[dashed](3,2.8)--(0,0);
+%    \fill[black](0,0) circle(.07) node[right]{Sun};
+%    \fill[black](2,3) circle(.035)node[left]{Planet};
+%  \end{tikzpicture}
+%  \caption{Infinitesimal area $\dl\vec A$ swept by a planet as it moves
+%    $\dl\vec r$ in orbit.}
+%  \label{fig:dA}
+%\end{figure}
+%as it moves in orbit by an infinitesimal amount $\dl\vec r$, which can be
+%computed by the area of the triangle:
+%\begin{equation}
+%  \dl A=\frac12r\dl r\sin\alpha
+%\end{equation}
+%or in vector form:
+%\begin{equation}
+%  \dl\vec A=\frac12\vec r\times \dl\vec r
+%\end{equation}
+%The direction of $\dl\vec A$, in this case, points into the page.\footnote{The
+%  direction of the vector is not important in the calculation, but is only used
+%  to formalize the vector operations.} The time derivative of the area is
+%called the \textbf{areal velocity}, which literally means how quickly the area
+%is changing:
+%\begin{equation}
+%  \diff{\vec A}t
+%  =\frac12\vec r\times\diff{\vec r}t
+%  =\frac12\vec r\times\vec\varv
+%\end{equation}
+%We can express $\vec r\times\vec\varv$ in terms of angular momentum. Since
+%angular momentum is defined as $\vec L=m(\vec r\times\vec\varv)\;\rightarrow\;
+%\vec r\times\vec\varv=\vec L/m$. Since gravity is a central force, angular
+%momentum is a constant, i.e:
+%\begin{equation}
+%  \boxed{\diff{\vec A}t=\frac12(\vec r\times\vec\varv)=\frac{\vec L}{2m}=
+%    \text{constant}
+%  }
+%  \label{constant}
+%\end{equation}
+%as predicted by Kepler's second law. The rate that a planet sweeps out the area
+%in orbit is its angular momentum around the sun, divided by twice its mass. It
+%is constant regardless of its location relative to the sun.
+%
+%\section{First Law: The Law of Ellipses}
+%Kepler's first law, called the \textbf{law of ellipses}, is more difficult to
+%proof. In order to proof the
+%law, we must show that all orbital motion must agree with the equations of an
+%ellipse. An ellipse is shown in Fig.~\ref{ellipse1} with the origin of the
+%coordinate system located at one of the two foci.
+%\begin{figure}[!ht]
+%  \centering
+%  \begin{tikzpicture}
+%    \def\a{4}       % semi-major axis
+%    \def\b{3.25}    % semi-minor axis
+%    \def\angle{150} % angle
+%    \draw[thick] (0,0) ellipse ({\a} and {\b});% Draw the ellipse
+%    \draw[->] ({sqrt(\a*\a-\b*\b)},-3.5)--({sqrt(\a*\a-\b*\b)},3.5)
+%    node[pos=1,above]{$y$};
+%    \draw[->] (-\a-.2,0)--(\a+.5,0) node[pos=1,right]{$x$};
+%    \begin{scope}[rotate around={\angle:({sqrt(\a*\a-\b*\b)},0)}]
+%      \draw[red,thick]({sqrt(\a*\a-\b*\b)},0)--(7.66,0) node[pos=.7,below]{$r$};
+%      \fill[red] (7.66,0) circle(.04);
+%    \end{scope}
+%    \begin{scope}[rotate around={-91.1:({-sqrt(\a*\a-\b*\b)},0)}]
+%      \draw[red,thick]({-sqrt(\a*\a-\b*\b)},0)--(-5,0) node[midway,left]{$r'$};
+%    \end{scope}
+%    \draw[->]({sqrt(\a*\a-\b*\b)+.5},0) arc(0:\angle:.5)
+%    node[pos=.4,above]{$\theta$};
+%    %\draw[<->]({sqrt(\a*\a-\b*\b)-.2},0)--({sqrt(\a*\a-\b*\b)-.2},-2.65)
+%    %node[midway,left]{\tiny$r_0$};
+%    \fill ({sqrt(\a*\a-\b*\b)},0) circle(.05) node[below]{$f_1$};
+%    \fill ({-sqrt(\a*\a-\b*\b)},0) circle(.05) node[below]{$f_2$};
+%    \draw[very thick, blue](0,0)--(\a,0) node[midway,below]{$a$};
+%    \draw[very thick, blue](0,0)--(-\a,0) node[midway,below]{$a$};
+%    \draw[very thick, green](0,0)--(0,\b) node[midway,right]{$b$};
+%    \draw[very thick, green](0,0)--(0,-\b) node[midway,right]{$b$};
+%  \end{tikzpicture}
+%  \caption{A basic ellipse with the origin of the coordinate system placed at
+%    one of the fous.}
+%  \label{ellipse1}
+%\end{figure}
+%
+%The longer dimension from the origin is the \textbf{semi-major axis} $a$, while
+%the shorter dimension is the \textbf{semi-minor axis} $b$. The two lengths are
+%related by the parameter $e$, the \textbf{eccentricity} of the ellipse:
+%\begin{equation}
+%  b^2=a^2(1-e^2)\quad\text{where}\quad 0\leq e < 1
+%\end{equation}
+%When the eccentricity of a planet's orbit is zero, the orbit is perfectly
+%circular, and $a=b=r$. As $e\rightarrow 1$, the orbit is stretched out into
+%more elongated elliptical trajectories. At $e=1$, the shape becomes a parabola,
+%and is no longer an ellipse.
+%
+%The area $A$ of an ellipse is given by the semi-major and semi-minor axes:
+%\begin{equation}
+%  A=\pi ab=\pi a^2\sqrt{1-e^2}
+%  \label{A2}
+%\end{equation}
+%When the origin of the coordinate system placed one of the two foci, an ellipse
+%can be expressed using polar coordinates:
+%\begin{equation}
+%  r=\frac{a(1-e^2)}{1+e\cos\theta}
+%  \label{ellipse-eq}
+%\end{equation}
+%
+%As shown in Fig.~\ref{eorbit}, there are two components of velocity when a
+%planet orbits a star:
+%\begin{figure}[!ht]
+%  \centering
+%  \begin{tikzpicture}[scale=.8]
+%    \def\a{4}       % semi-major axis
+%    \def\b{3.25}    % semi-minor axis
+%    \def\angle{150} % angle
+%    \draw[very thick] (0,0) ellipse ({\a} and {\b});% Draw the ellipse
+%    \draw ({sqrt(\a*\a-\b*\b)},-2.65)--({sqrt(\a*\a-\b*\b)},2.65);
+%    \draw (-\a-.2,0)--(\a+.2,0);
+%    \fill[black]({sqrt(\a*\a-\b*\b)},0) circle(.1) node[below right]{$M$};
+%    \begin{scope}[rotate around={\angle:({sqrt(\a*\a-\b*\b)},0)}]
+%      \draw[->]({sqrt(\a*\a-\b*\b)},0)--(8.5,0)
+%      node[pos=.45,below]{$\vec r$} node[pos=1,left]{$\vec\varv_r$};
+%      \draw[->](7.65,0)--(7.65,.85) node[below]{$\vec\varv_\theta$};
+%      \fill (7.65,0) circle(.1) node[above]{$m$};
+%    \end{scope}
+%    \draw[->]({sqrt(\a*\a-\b*\b)+.5},0) arc(0:\angle:.5)
+%    node[pos=.4,above]{$\theta$};
+%  \end{tikzpicture}
+%  \caption{Elliptical orbit of a small mass $m$ around a large mass $M$.}
+%  \label{eorbit}
+%\end{figure}
+%\begin{itemize}
+%\item\textbf{Angular velocity} $\vec\varv_\theta$. The presence of
+%  $\vec\varv_\theta$ means that there is a centripetal acceleration $a_c$ toward
+%  $M$. The direction of the acceleration is perpendicular to the direction of
+%  $\vec\varv_\theta$, and toward the sun:
+%  \begin{equation}
+%    a_c=-r\omega^2\hat r
+%  \end{equation}
+%\item\textbf{Radial velocity} $\vec\varv_r$. If this velocity is non-zero and
+%  changes with time (which is the case for elliptical orbits but not for
+%  circular orbits), then there is an acceleration $a_r$, also in the radial
+%  direction:
+%  \begin{equation}
+%    a_r=\diff{\varv_r}t\hat r=\diff[2]rt\hat r
+%  \end{equation}
+%\end{itemize}
+%Both components of acceleration are due entirely to gravitational force.
+%Applying second law of motion, and dividing all sides by the mass of the planet
+%$m$, we arrive at a differential equation:
+%\begin{equation}
+%  \diff[2]rt-r\omega^2=-\frac{GM}{r^2}
+%  \label{ode1}
+%\end{equation}
+%In this equation, the ($+$) direction is radially outward from $M$. In the
+%circular motion case, where $\ddot r=0$, we are left with only the centripetal
+%acceleration $a_c=r\omega^2$ which is expected in uniform circular motion. The
+%differential equation, in its present form, is difficult to solve. Moreover,
+%the equation that for an ellipse (Eq.~\ref{ellipse-eq}) depends on $\theta$ but
+%not on $t$. However, the differential equation is easier to solve by making a
+%variable substitution\footnote{this variable may not be immediately obvious
+%  without some experience with solving ODEs}, by introducing a new variable $u$
+%which is the reciprocal of $r$:
+%\begin{equation}
+%  u=\frac1r
+%\end{equation}
+%We can then use the fact that angular momentum $L$ is constant to relate
+%derivatives in time $t$ to derivatives in angle $\theta$:
+%\begin{equation}
+%  L=mr^2\omega=mr^2\diff{\theta}t=\frac m{u^2}\diff{\theta}t
+%  \quad\longrightarrow\quad
+%  \diff{\theta}t=\frac{Lu^2}m
+%\end{equation}
+%The derivative $\dot r$ can now be expressed in terms of derivatives of
+%$\theta$ instead of time $t$:
+%\begin{equation}
+%  \diff rt =\diff*{\left(\frac1u\right)}t
+%  =-\frac1{u^2}\diff ut=-\frac1{u^2}\diff u\theta\diff{\theta}t
+%  = -\frac1{u^2}\diff u\theta \frac{Lu^2}m
+%  = -\frac Lm\diff u\theta
+%\end{equation}
+%Repeating the same process for the second derivative $\ddot{r}$, we have
+%\begin{equation}
+%  \diff[2] rt = \diff*{\left(-\frac Lm\diff u\theta\right)}t
+%  = -\frac Lm\diff*{\left(\diff u\theta\right)}\theta \\
+%  = -\left(\frac{L^2u^2}{m^2}\right)\diff[2]u\theta
+%\end{equation}
+%With this identity in hand, our original differential equation
+%(Eq.~\ref{ode1}) becomes
+%\begin{equation}
+%  -\left(\frac{L^2u^2}{m^2}\right)\diff[2]u\theta-\left(\frac{L}{m}\right)^2u^3
+%  = -GMu^2
+%\end{equation}
+%which can be simplified to:
+%\begin{equation}
+%  \diff[2]u\theta + u = \frac{GMm^2}{L^2}
+%  \label{newdiff}
+%\end{equation}
+%Anyone experienced with calculus can recognize that Eq.\ \ref{newdiff} is a
+%\emph{second-order ordinary differential equation with constant coefficients
+%  and a constant forcing function}. The solution to this type of equation is in
+%the form
+%\begin{equation} 
+%  u =B\cos\theta + \frac{GMm^2}{L^2}
+%\end{equation}
+%where the coefficient $B$ is determined by the total energy and total angular
+%momentum (both are constants) of the planets. Solving for $r=1/u$, we have
+%\begin{equation}
+%  r(\theta)=\frac1u = \frac1{B\cos\theta+ \frac{GMm^2}{L^2}}
+%  =\left(\frac{L^2}{GMm^2}\right)\frac1{1+e\cos\theta}
+%\end{equation}
+%where $e$ is a constant:
+%\begin{equation}
+%  e=\dfrac{BL^2}{GMm^2}
+%\end{equation}
+%It should become obvious that this $e$ is, in fact, the eccentricity of the
+%elliptical orbit previously mentioned. If a planet, or any celestrial object
+%has too much total energy when it enters the gravitational field of the sun,
+%then $e>1$, and the object will not return.
+%From this form of $r$, it is clear that the maximum and a
+%minimum values of $r$ represent the \emph{aphelion} and \emph{perihelion} of
+%an ellipse (points of furthest and closest distance to the focus):
+%\begin{equation}
+%  r_\text{max}=\left(\frac{L^2}{GMm^2}\right)\frac1{1-e}
+%  \quad\quad
+%  r_\text{min}=\left(\frac{L^2}{GMm^2}\right)\frac1{1+e}
+%\end{equation}
+%This the semi-major axis $r$ is the average of the two values:
+%\begin{equation}
+%  a=\dfrac12\left(r_\text{min} + r_\text{max}\right)=
+%  \left(\frac{L^2}{GMm^2}\right)\frac1{1-e^2}
+%  \label{semimajor}
+%\end{equation}
+%More importantly, Eq.\ \ref{semimajor} allows us to relate the eccentricity
+%$e$ and the semi-major axis $a$ to the numerator in the $r$ expression:
+%\begin{equation}
+%  a(1-e^2)=\frac{L^2}{GMm^2}
+%  \label{eq:numerator}
+%\end{equation}
+%We see that the orbit is given by an ellipse as Kepler found from Brahe's
+%data. Moreover, since $r_\mathrm{min}$ and $r_\mathrm{max}$ are distances from
+%the Sun, we see that the Sun is at one focus of the orbit. Thus, we have
+%derived Kepler's first law.
+%
+%\section{Third law: Period of motion}
+%\begin{figure}[!ht]
+%  \centering
+%  \pic{.55}{../kep8}
+%  \caption{The orbits of all the planets in the solar system obey the third
+%  law of planetary motion.}
+%  \label{3rdlaw}
+%\end{figure}
+%In the third law, called the \textbf{law of periods}, the total area $A$
+%swept by the planet through one orbital period is the areal velocity (which is
+%constant, as shown in Eq.\ \ref{constant}) integrated by time, from $t=0$ to
+%$T$, the orbital period of the planet:
+%\begin{equation}
+%  A=\int\dl A=\int_0^T\diff At\dl t=\frac{L}{2m}\int_0^T\dl t=\frac{LT}{2m}
+%  \label{A1}
+%\end{equation}
+%From proofing Kepler's first law in the previous section, we know that the
+%area $A$ is in the form of an ellipse, given in Eq.~\ref{A2}. Solving for
+%period $T$ in Eq.~\ref{A1}, then substituting the expression for area from
+%Eq.~\ref{A2}, and then squaring both sides, we arrive at this expression:
+%\begin{equation}
+%  T^2=\frac{m^2}{L^2}4\pi^2a^4(1-e^2)
+%  \label{eq:almost}
+%\end{equation}
+%Substituting Eq.~\ref{eq:numerator} into Eq.\ \ref{eq:almost} above, and after
+%some simple algebra, we arrive at this expression:
+%\begin{equation}
+%  \boxed{T^2=\left[\frac{4\pi^2}{GM}\right] a^3}
+%\end{equation}
+%which is Kepler's third law. Note that this law holds for all elliptical
+%orbits, regardless of their eccentricities.
+\end{document}
+

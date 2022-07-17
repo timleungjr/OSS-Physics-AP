@@ -1,10 +1,10 @@
 all:
-	xelatex PhysAPC-19B-MaxwellEqs
-	xelatex PhysAPC-19B-MaxwellEqs
+	xelatex PhysAPC-22b-MaxwellEqs
+	xelatex PhysAPC-22b-MaxwellEqs
 
 clean:
 	rm -rf *~ *.*~ *.log *.nav *.aux *.out *.snm *.toc
 
 public:
-	mkdir -p $(DESTINATION)/Class19
-	cp *.pdf $(DESTINATION)/Class19
+	mkdir -p $(DESTINATION)/Class22
+	cp *.pdf $(DESTINATION)/Class22

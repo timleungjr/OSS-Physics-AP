@@ -1,8 +1,8 @@
 all:
-	xelatex PhysAPC-17-Circuits
-	xelatex PhysAPC-17-Circuits
-	xelatex PhysAPC-17-Circuits-print
-	xelatex PhysAPC-17-Circuits-print
+	xelatex PhysAPC-20-Circuits
+	xelatex PhysAPC-20-Circuits
+	xelatex PhysAPC-20-Circuits-print
+	xelatex PhysAPC-20-Circuits-print
 	cd homework ; make
 
 clean:
@@ -10,6 +10,6 @@ clean:
 	cd homework ; make clean
 
 public:
-	mkdir -p $(DESTINATION)/Class17
-	cp *-print.pdf $(DESTINATION)/Class17
-	cp homework/*Homework.pdf $(DESTINATION)/Class17
+	mkdir -p $(DESTINATION)/Class20
+	cp *-print.pdf $(DESTINATION)/Class20
+	cp homework/*Homework.pdf $(DESTINATION)/Class20

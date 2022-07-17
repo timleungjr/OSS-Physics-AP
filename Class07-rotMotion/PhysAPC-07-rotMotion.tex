@@ -18,23 +18,23 @@
 \section{Introduction}
 
 \begin{frame}{Uniform Circular Motion}
-  Consider the uniform circular motion of an object with (constant)
-  angular velocity $\vec\omega$. If the rotation is
-    counterclockwise, the direction of $\vec\omega$ is \emph{out of the page};
-    if rotation is clockwise, $\vec\omega$ is \emph{into the page}.
+  Consider the uniform circular motion of an object with (constant) angular
+  velocity $\vec\omega$. If the rotation is counterclockwise, the direction of
+  $\vec\omega$ is \emph{out of the page}; if rotation is clockwise,
+  $\vec\omega$ is \emph{into the page}.
   \begin{columns}
     \column{.3\textwidth}
     \centering
     \begin{tikzpicture}[scale=.7]
       \draw[->](-3,0)--(3,0) node[right]{$x$};
       \draw[->](0,-3)--(0,3) node[above]{$y$};
-      \draw (0,0) circle(2.5);
+      \draw circle(2.5);
       \begin{scope}[rotate=38]
         \begin{scope}[very thick,->]
-          \draw[red!70!black] (2.45,0)--(1,0) node[below]{$\vec F_c$};
+          \draw[red] (2.45,0)--(1,0) node[below]{$\vec F_c$};
           \draw(2.5,0) arc(0:100:2.5) node[above left]{$\omega$};
         \end{scope}
-        \draw[fill=pink] (2.5,0) circle(.1);
+        \fill[red] (2.5,0) circle(.1);
       \end{scope}
     \end{tikzpicture}
 
@@ -75,7 +75,7 @@
 \begin{frame}{Torque}
   Recall the second law of motion for objects with constant mass:
     
-  \eq{-.2in}{
+  \eq{-.1in}{
     \vec F_\text{net}=m\vec a
   }
 
@@ -83,26 +83,6 @@
   $\vec F_\text{net}$ causes the center of mass of an object to begin to
   accelerate, what causes a mass to rotate?
 \end{frame}
-
-
-
-%\section{Torque}
-%
-%\begin{frame}{Torque}
-%  I have a rod on a table, and with my fingers, I push the two ends of the rod
-%  with equal force $\textcolor{red!80!black}{F}$. \emph{What happens?}
-%  \begin{center}
-%    \begin{tikzpicture}[scale=1.5]
-%      \fill[gray,draw=black,thick] (-2,-.1) rectangle (2,.1);
-%      \begin{scope}[very thick, red!80!black,<-]
-%        \draw(-1.8,-.1)--(-1.8,-.7) node[below]{$F$};
-%        \draw( 1.8, .1)--( 1.8, .7) node[above]{$F$};
-%      \end{scope}
-%    \end{tikzpicture}
-%  \end{center}
-%  $\bm F_\text{net}=\bm 0$, therefore $\bm a_{CM}=\bm 0$. But it is also obvious
-%  that the rod would \emph{rotate} instead.
-%\end{frame}
 
 
 
@@ -120,13 +100,13 @@
   \begin{center}
     \begin{tikzpicture}[scale=2.8]
       \begin{scope}[thick]
-        \draw[fill=gray!50](0,-.05) rectangle (2,.05);
-        \draw[fill=gray!50](0,0) circle (.15);
+        \draw[fill=lightgray](0,-.05) rectangle (2,.05);
+        \draw[fill=lightgray] circle (.15);
       \end{scope}
-      \fill (0,0) circle (.03);
+      \fill circle (.03);
       \begin{scope}[very thick]
-        \draw[red!70!black,->](0,0)--(1.8,0) node[midway,below]{$\vec r$};
-        \draw[blue!70!black,->](1.2,-.7)--(1.8,0) node[pos=0,below]{$\vec F$};
+        \draw[red,->](0,0)--(1.8,0) node[midway,below]{$\vec r$};
+        \draw[blue,->](1.2,-.7)--(1.8,0) node[pos=0,below]{$\vec F$};
         \draw[<->] (1.4,0) arc(180:229:.4)node[midway,left]{$\phi$};
       \end{scope}
     \end{tikzpicture}
@@ -140,14 +120,14 @@
   the \textbf{moment arm} $\vec r$. The unit for torque is a \textbf{newton
     meter} (\si{\newton\metre}).
 
-  \eq{-.25in}{
+  \eq{-.1in}{
     \boxed{\vec\tau=\vec r\times\vec F}
   }
 
   \vspace{-.1in}Its magnitude can be calculated in scalar form
   using the angle $\phi$ between $\vec F$ and $\vec r$:
 
-  \eq{-.23in}{
+  \eq{-.1in}{
     \boxed{\tau=Fr\sin\phi}
   }
   \begin{center}
@@ -169,8 +149,10 @@
   \begin{center}
     \begin{tikzpicture}[scale=2.65]
       \fill[blue!40,draw=black,thick] (-1.65,-.12) rectangle (1.65,.12);
-      \draw[thick,<->](-1.5,-.25)--(1.5,-.25) node[midway,below]{\SI{3.}\metre};
-      \draw[thick,<->](-1.5,.25)--(0,.25) node[midway,above]{\SI{1.5}\metre};
+      \draw[thick,<->](-1.5,-.25)--(1.5,-.25)
+      node[midway,fill=black!2]{\SI{3.}\metre};
+      \draw[thick,<->](-1.5,.25)--(0,.25)
+      node[midway,fill=black!2]{\SI{1.5}\metre};
       \draw[dashed,thick](-2.2,0)--(2.2,0);
       \draw[dashed,thick](0,0)--(0,.5);
       \begin{scope}[orange,ultra thick,->]
@@ -233,7 +215,7 @@
   \begin{columns}
     \column{.77\textwidth}
     
-    \eq{-.32in}{
+    \eq{-.1in}{
       \boxed{\vec L=\vec r\times\vec p=m(\vec r\times\vec v)}
     }
 
@@ -241,7 +223,7 @@
     expression for angular momentum can now be expressed in quantities related
     to rotations:
 
-    \eq{-.32in}{
+    \eq{-.1in}{
       \boxed{\vec L=m(\vec r\times\vec v)
         =m(\vec r\times(\vec\omega\times\vec r))
         =mr^2\vec\omega}
@@ -249,7 +231,7 @@
     
     \vspace{-.2in}Or in scalar form:
     
-    \eq{-.25in}{
+    \eq{-.1in}{
       \boxed{L=rmv=mr^2\omega}
     }
 
@@ -260,12 +242,11 @@
     \column{.23\textwidth}
     \begin{tikzpicture}[scale=2.5]
       \begin{scope}[rotate=70]
-        \fill[black!75,draw=black!75] (0,-.02) rectangle (2,.02);
-        \fill[blue!75,draw=blue,thick] (2,0) circle(.05);
-        \node(M) at (2,-.2) {$m$};
-        \fill (0,0) circle (.05);
+        \fill (0,-.03) rectangle (2,.03);
+        \fill[blue,draw=blue,thick] (2,0) circle(.04) node[right]{$m$};
+        \fill circle (.05);
         \begin{scope}[very thick,->]
-          \draw[red!70!black](0,0)--(2,0)node[midway,right]{$\vec r$};
+          \draw[red](0,0)--(2,0)node[midway,right]{$\vec r$};
           \draw (2,0)--(2,.5)node[left]{$\vec v$};
         \end{scope}
       \end{scope}
@@ -278,14 +259,14 @@
 \begin{frame}{Moment of Inertia}
   Look again at the definition of angular momentum:
     
-  \eq{-.2in}{
+  \eq{-.1in}{
     \vec L=\underbrace{mr^2}_I\vec\omega
   }
     
   The quantity $I=mr^2$ is called the \textbf{moment of inertia} with a unit of
   \textbf{kilogram meter squared} (\si{\kilo\gram\metre\squared}), and 
 
-  \eq{-.2in}{
+  \eq{-.1in}{
     \boxed{\vec L=I\vec\omega}
   }
 
@@ -297,21 +278,21 @@
 \begin{frame}{Moment of Inertia}
   For a \emph{single particle} of $m$ rotating at a distance $r$ from the pivot:
   
-  \eq{-.2in}{
+  \eq{-.1in}{
     \boxed{I=mr^2}
   }
 
   For a \emph{collection of particles} rotating at $\omega$, each of mass
   $m_i$ at distance $r_i$ from the pivot:
 
-  \eq{-.2in}{
+  \eq{-.1in}{
     \boxed{I=\sum m_ir_i^2}
   }
 
-  For a \emph{continuous distribution of mass} about a pivot, integral calculus
-  is need to calculate the momentum of inertia:
+  For a \emph{continuous distribution of mass} rotating about a pivot, integral
+  calculus is need to calculate the momentum of inertia:
 
-  \eq{-.25in}{
+  \eq{-.1in}{
     \boxed{I=\int r^2\dl m}
   }
 \end{frame}
@@ -328,16 +309,15 @@
 \begin{frame}{Angular Momentum and Moment of Inertia}
   Linear and angular momentum have very similar expressions
     
-  \vspace{-.4in}{\Large
+  \vspace{-.3in}{\large
     \begin{align*}
       \vec p&=m\vec v\\
       \vec L&=I\vec\omega
     \end{align*}
   }
   
-  \vspace{-.25in}Just as $\vec p$ describes the overall \emph{translational}
-  state of motion of a physical system, $\vec L$ describes its overall
-  \emph{rotational} state
+  Just as $\vec p$ describes the overall \emph{translational} state of motion
+  of a physical system, $\vec L$ describes its overall \emph{rotational} state
 \end{frame}
 
 
@@ -348,7 +328,7 @@
   An object is in \textbf{translational equilibrium} is when the net force
   acting on it is zero:
   
-  \eq{-.2in}{
+  \eq{-.1in}{
     \vec F_\text{net}=\vec 0
   }
 
@@ -365,7 +345,7 @@
   Likewise, an object is in \textbf{rotational equilibrium} when the net torque
   acting on it is zero:
 
-  \eq{-.2in}{
+  \eq{-.1in}{
     \vec\tau_\text{net}=\vec 0
   }
   
@@ -380,7 +360,7 @@
 \begin{frame}{Second Law of Motion for Rotational Motion}
   The net torque is the time rate of change of angular momentum:
 
-  \eq{-.2in}{
+  \eq{-.1in}{
     \vec\tau_\text{net}=\vec r\times\vec F_\text{net}
     =\vec r\times\diff{\vec p}t
     =\diff{(\vec r\times\vec p)}t\;\;\longrightarrow\;\;
@@ -408,7 +388,7 @@
 
   For objects with constant mass, this reduces to the more familiar form:
 
-  \eq{-.2in}{
+  \eq{-.1in}{
     \vec F=m\vec a
   }
 \end{frame}
@@ -420,7 +400,7 @@
   but with torque $\vec\tau$ replacing force $\vec F$, and angular momentum
   $\vec L$ replacing linear momentum $\vec p$:
 
-  \eq{-.2in}{
+  \eq{-.1in}{
     \boxed{
       \vec\tau_\text{net}=\diff{\vec L}t
     }
@@ -428,7 +408,7 @@
 
   For objects with constant momentum of inertia $I$, this reduces to:
 
-  \eq{-.2in}{
+  \eq{-.1in}{
     \boxed{
       \vec\tau_\text{net}=I\vec\alpha
     }
@@ -445,10 +425,10 @@
   \begin{center}
     \begin{tikzpicture}
       \draw[dashed](-5,0)--(5,0);
-      \draw[very thick,red!70!black,->](-5,0)--(-3,0) node[below]{$\vec v$};
-      \shade[ball color=red!70!black] (-5,0) circle(.2) node[above left]{$m$};
+      \draw[very thick,red,->](-5,0)--(-3,0) node[below]{$\vec v$};
+      \shade[ball color=red] (-5,0) circle(.2) node[above left]{$m$};
       \fill (0,-2) circle(.05) node[below]{$P$};
-      \draw[very thick,blue!70!black,->](0,-2)--(-5,0)
+      \draw[very thick,blue,->](0,-2)--(-5,0)
       node[midway,below left]{$\vec r$};
       \uncover<2->{
         \draw[dotted](0,0) circle(.2) node[above left]{$m$};

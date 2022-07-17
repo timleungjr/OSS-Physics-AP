@@ -23,7 +23,7 @@
   Kinematic quantities for rectilinear (translational) vs.\ curvilinear
   (circular) motion are related:
 
-  \vspace{-.5in}{\Large
+  \vspace{-.3in}{\large
     \begin{align*}
       \vec r &\quad\rightarrow\quad \theta \\
       \vec v &\quad\rightarrow\quad \omega \\
@@ -33,7 +33,7 @@
 
   Dynamics:
   
-  \vspace{-.5in}{\Large
+  \vspace{-.3in}{\large
     \begin{align*}
       m &\quad\rightarrow\quad I\\
       \vec F &\quad\rightarrow\quad \vec\tau\\
@@ -45,11 +45,10 @@
 
 
 \begin{frame}{Laws of Motion}
-
   The laws of motion are also related between translational and rotational
   motion:
   
-  \vspace{-.3in}{\Large
+  \vspace{-.2in}{\large
     \begin{align*}
       \vec F_\text{net}=\diff{\vec p}t &\quad\rightarrow\quad
       \vec\tau_\text{net}=\diff{\vec L}t \\
@@ -82,14 +81,14 @@
   are defined properly, only one direction should have acceleration (usually
   $\iii$), i.e.:
   
-  \eq{-.2in}{
+  \eq{-.1in}{
     \sum F_x=ma \quad\quad \sum F_y=0 \quad\quad \sum F_z=0
   }
 
   There are also three equations for rotation, and torque is only applied in one
   direction (likely $\kkk$):
     
-  \eq{-.2in}{
+  \eq{-.1in}{
     \sum\tau_x=0 \quad\quad \sum\tau_y=0 \quad\quad \sum\tau_z=I_z\alpha
   }
 \end{frame}
@@ -101,19 +100,20 @@
   \begin{enumerate}
   \item Relate the force(s) that causes rotational motion to the net torque
 
-    \eq{-.2in}{
+    \eq{-.1in}{
       \tau_\text{net}=\sum_i F_ir_i
     }
   \item Substitute the expression for momentum of inertia (which has both mass
     and radius terms in it) into the equation for rotational motion
   \item Relate angular acceleration to linear acceleration, if applicable:
 
-    \eq{-.25in}{
+    \eq{-.1in}{
       \alpha=\frac aR
     }
   \end{enumerate}
   Now there are two equations with force and acceleration terms.
 \end{frame}
+
 
 
 \section{Pure Rolling Problems}
@@ -125,13 +125,13 @@
     \column{.35\textwidth}
     \centering
     \begin{tikzpicture}[scale=1.1]
-      \shade[ball color=gray!5](0,0) circle(1);
+      \shade[ball color=gray!5] circle(1);
       \draw[thick](-2,-1)--(2,-1);
       \draw[thick,->](1.2,0)--(2.2,0) node[above]{$\vec v$};
       \draw[thick,->](0,1.2) arc(90:60:1.2) node[midway,above]{$\vec\omega$};
       \draw[->](1,-2)--(1.5,-2) node[right]{$x$};
       \draw[->](1,-2)--(1,-1.5) node[above]{$y$};
-      \fill(0,0) circle(.05);
+      \fill circle(.05);
       \begin{scope}[->,ultra thick]
         \draw[blue](0,0)--(0,-1.5) node[below]{$m\vec g$};
         \draw[red](-.03,-1)--(-.03,.5) node[above]{$\vec N$};
@@ -167,28 +167,27 @@
     \item There is no net force, therefore the translational state ($\vec v$)
       of the sphere is constant
 
-      \eq{-.35in}{
+      \eq{-.1in}{
         \sum\vec F=\vec 0\quad\quad \vec v=\text{constant}
       }
-      
-    \item\vspace{-.25in} Neither gravity or normal force generate a torque
-      about the center of mass, therefore there is no net torque, and the
-      rotational state $\vec\omega$ is constant:
+    \item Neither gravity or normal force generate a torque about the CM,
+      therefore there is no net torque, and the rotational state $\vec\omega$
+      is constant:
 
-      \eq{-.35in}{
+      \eq{-.1in}{
         \sum\vec\tau=\vec 0\quad\quad\vec\omega=\text{constant}
       }
-    \item\vspace{-.1in}In \emph{theory}, this sphere will roll along with
+    \item In \emph{theory}, this sphere will roll along with
       angular speed $\omega$ and speed $v=\omega R$ forever
     \end{itemize}
 
     \column{.35\textwidth}
     \begin{tikzpicture}
-      \shade[ball color=gray!10](0,0) circle(1);
+      \shade[ball color=gray!10] circle(1);
       \draw[thick](-2,-1)--(2,-1);
       \draw[thick,->](1.5,0)--(2.5,0) node[right]{$\vec v$};
       \draw[thick,->](0,1.2) arc(90:60:1.2) node[midway,above]{$\vec\omega$};
-      \fill(0,0) circle(.05) node[right]{\small cm};
+      \fill circle(.05) node[right]{\small cm};
       \begin{scope}[->,ultra thick]
         \draw[blue](0,0)--(0,-1.5) node[below]{$m\vec g$};
         \draw[red](-.03,-1)--(-.03,.5) node[above]{$\vec N$};
@@ -230,11 +229,11 @@
     \column{.27\textwidth}
     \centering
     \begin{tikzpicture}
-      \shade[ball color=gray!5](0,0) circle(1);
+      \shade[ball color=gray!5] circle(1);
       \draw[thick](-1.5,-1)--(1.5,-1);
       \draw[thick,->](1.5,0)--(2.5,0) node[right]{$\vec v$};
       \draw[thick,->](0,1.2) arc(90:60:1.2) node[midway,above]{$\vec\omega$};
-      \fill(0,0) circle(.05);
+      \fill circle(.05);
       \begin{scope}[->,ultra thick]
         \draw[blue](-0.03,0)--(-.03,-1.5) node[below]{$m\vec g$};
         \draw[red](0,-1)--(0,.5) node[above]{$\vec N$};
@@ -264,11 +263,11 @@
   \begin{columns}
     \column{.27\textwidth}
     \begin{tikzpicture}
-      \shade[ball color=gray!5](0,0) circle(1);
+      \shade[ball color=gray!5] circle(1);
       \draw[thick](-1.5,-1)--(1.5,-1);
       \draw[thick,->](1.5,0)--(2.5,0) node[right]{$\vec v$};
       \draw[thick,->](0,1.2) arc(90:60:1.2) node[midway,above]{$\vec\omega$};
-      \fill(0,0) circle(.05);
+      \fill circle(.05);
       \begin{scope}[->,ultra thick]
         \draw[blue](-0.03,0)--(-.03,-1.5) node[below]{$m\vec g$};
         \draw[red](0,-1)--(0,.5) node[above]{$\vec N$};
@@ -281,17 +280,16 @@
     \item Kinetic friction $f_k$ causes the center of mass of the sphere to
       accelerate toward the right
 
-      \eq{-.25in}{
+      \eq{-.1in}{
         F_\text{net}=f_k=ma_\text{cm}
       }
-      
-    \item\vspace{-.2in}Since $f_k$ is constant, acceleration is also constant
-      as well, as long as the sphere slips.
+    \item Since $f_k$ is constant, acceleration is also constant as well, as
+      long as the sphere slips.
     \item e.g.: A car with its tires spinning on ice still has a small
       forward acceleration
     \item The acceleration of the center of mass is:
 
-      \eq{-.25in}{
+      \eq{-.1in}{
         a_\text{cm}=\mu_kg
       }
     \end{itemize}
@@ -304,11 +302,11 @@
   \begin{columns}
     \column{.27\textwidth}
     \begin{tikzpicture}
-      \shade[ball color=gray!5](0,0) circle(1);
+      \shade[ball color=gray!5] circle(1);
       \draw[thick](-1.5,-1)--(1.5,-1);
       \draw[thick,->](1.5,0)--(2.5,0) node[right]{$\vec v$};
       \draw[thick,->](0,1.2) arc(90:60:1.2) node[midway,above]{$\vec\omega$};
-      \fill(0,0) circle(.05);
+      \fill circle(.05);
       \begin{scope}[->,ultra thick]
         \draw[blue](-0.03,0)--(-.03,-1.5) node[below]{$m\vec g$};
         \draw[red](0,-1)--(0,.5) node[above]{$\vec N$};
@@ -321,14 +319,14 @@
     \item The constant net torque in the $+\kkk$ (counter clockwise) direction
       generates a constant angular acceleration (because $f_k$ is constant)
 
-      \eq{-.25in}{
+      \eq{-.1in}{
         \tau_\text{net}=f_kR=I\alpha
       }
     \item The angular acceleration causes the angular speed $\omega$ to
       decrease over time
     \item The angular acceleration in the $+\kkk$ direction:
 
-      \eq{-.15in}{
+      \eq{-.1in}{
         \alpha=\frac{\textcolor{green!80!black}{f_k}R}{\textcolor{purple}{I}}
         =\frac
         {\textcolor{green!80!black}{\mu_kmg}R}
@@ -345,11 +343,11 @@
   \begin{columns}
     \column{.27\textwidth}
     \begin{tikzpicture}
-      \shade[ball color=gray!5](0,0) circle(1);
+      \shade[ball color=gray!5] circle(1);
       \draw[thick](-1.5,-1)--(1.5,-1);
       \draw[thick,->](1.5,0)--(2.5,0) node[right]{$\vec v$};
       \draw[thick,->](0,1.2) arc(90:60:1.2) node[midway,above]{$\vec\omega$};
-      \fill(0,0) circle(.05);
+      \fill circle(.05);
       \begin{scope}[->,ultra thick]
         \draw[blue](-0.03,0)--(-.03,-1.5) node[below]{$m\vec g$};
         \draw[red](0,-1)--(0,.5) node[above]{$\vec N$};
@@ -383,13 +381,13 @@
     \column{.35\textwidth}
     \begin{tikzpicture}[scale=.9]
       \begin{scope}[rotate=-30]
-        \shade[ball color=gray!20](0,0) circle(1);
+        \shade[ball color=gray!20] circle(1);
         \draw[thick](-2,-1)--(4,-1);
         \draw[->,rotate=30](0,0)--(-1,0) node[left]{$R$};
         \draw[thick,->](0,1.2) arc(90:60:1.2) node[right]{$\vec\omega$};
         \draw[->](2,0)--(3,0) node[right]{$x$};
         \draw[->](2,0)--(2,1) node[above]{$y$};
-        \fill(0,0) circle(.05) node[right]{\small cm};
+        \fill circle(.05) node[right]{\small cm};
         \begin{scope}[->,ultra thick]
           \draw[blue,rotate=30](0,0)--(0,-1.5) node[below]{$m\vec g$};
           \draw[red](0,-1)--(0,.5) node[above]{$\vec N$};
@@ -424,13 +422,13 @@
     \column{.33\textwidth}
     \begin{tikzpicture}[scale=.9]
       \begin{scope}[rotate=-30]
-        \shade[ball color=gray!20](0,0) circle(1);
+        \shade[ball color=gray!20] circle(1);
         \draw[thick](-2,-1)--(4,-1);
         \draw[->,rotate=30](0,0)--(-1,0) node[left]{$R$};
         \draw[thick,->](0,1.2) arc(90:60:1.2) node[right]{$\vec\omega$};
         \draw[->](2,0)--(3,0) node[right]{$x$};
         \draw[->](2,0)--(2,1) node[above]{$y$};
-        \fill(0,0) circle(.05) node[right]{\small cm};
+        \fill circle(.05) node[right]{\small cm};
         \begin{scope}[->,ultra thick]
           \draw[blue,rotate=30](0,0)--(0,-1.5) node[below]{$m\vec g$};
           \draw[red](0,-1)--(0,.5) node[above]{$\vec N$};
@@ -444,7 +442,8 @@
 
     \column{.67\textwidth}
     To solve this problem, there are three dynamics equations:
-    \vspace{-.4in}{\Large
+
+    \vspace{-.3in}{\large
       \begin{align*}
         \sum F_x&=mg\sin\theta-f_s=ma\\
         \sum F_y&=N-mg\cos\theta=0\\
@@ -466,13 +465,13 @@
     \column{.33\textwidth}
     \begin{tikzpicture}[scale=.9]
       \begin{scope}[rotate=-30]
-        \shade[ball color=gray!20](0,0) circle(1);
+        \shade[ball color=gray!20] circle(1);
         \draw[thick](-2,-1)--(4,-1);
         \draw[->,rotate=30](0,0)--(-1,0) node[left]{$R$};
         \draw[thick,->](0,1.2) arc(90:60:1.2) node[right]{$\vec\omega$};
         \draw[->](2,0)--(3,0) node[right]{$x$};
         \draw[->](2,0)--(2,1) node[above]{$y$};
-        \fill(0,0) circle(.05) node[right]{\small cm};
+        \fill circle(.05) node[right]{\small cm};
         \begin{scope}[->,ultra thick]
           \draw[blue,rotate=30](0,0)--(0,-1.5) node[below]{$m\vec g$};
           \draw[red](0,-1)--(0,.5) node[above]{$\vec N$};
@@ -488,11 +487,13 @@
     For non-slip case, angular and translational acceleration are related using
     relative motion:
 
-    \eq{-.3in}{ a=\alpha R}
+    \eq{-.1in}{
+      a=\alpha R
+    }
     
     \vspace{-.22in}Solving for the static friction:
 
-    \eq{-.15in}{
+    \eq{-.1in}{
       f_s=\frac{I\alpha}R=
       \frac25mR^2\cdotp\frac aR\cdotp\frac1R=\frac25ma
     }
@@ -500,11 +501,12 @@
     It is substituted into the force equation in the $\iii$ direction to
     solve for the acceleration of the CM down the ramp:
 
-    \eq{-.2in}{
-        mg\sin\theta-\frac25 ma=ma
+    \eq{-.1in}{
+      mg\sin\theta-\frac25 ma=ma
     }
   \end{columns}
 \end{frame}
+
 
 
 \begin{frame}{Rolling on an Inclined Surface}
@@ -512,13 +514,13 @@
     \column{.33\textwidth}
     \begin{tikzpicture}[scale=.9]
       \begin{scope}[rotate=-30]
-        \shade[ball color=gray!20](0,0) circle(1);
+        \shade[ball color=gray!20] circle(1);
         \draw[thick](-2,-1)--(4,-1);
         \draw[->,rotate=30](0,0)--(-1,0) node[left]{$R$};
         \draw[thick,->](0,1.2) arc(90:60:1.2) node[right]{$\vec\omega$};
         \draw[->](2,0)--(3,0) node[right]{$x$};
         \draw[->](2,0)--(2,1) node[above]{$y$};
-        \fill(0,0) circle(.05) node[right]{\small cm};
+        \fill circle(.05) node[right]{\small cm};
         \begin{scope}[->,ultra thick]
           \draw[blue,rotate=30](0,0)--(0,-1.5) node[below]{$m\vec g$};
           \draw[red](0,-1)--(0,.5) node[above]{$\vec N$};
@@ -533,14 +535,14 @@
     \column{.67\textwidth}
     The acceleration of the center of mass is therefore:
 
-    \eq{-,2in}{
+    \eq{-.1in}{
       a=\frac57 g\sin\theta
     }
 
     \vspace{-.1in}Compare this to an object \emph{sliding} without friction
     down the same ramp, which is higher than the pure rolling case.
     
-    \eq{-.25in}{
+    \eq{-.1in}{
       a=g\sin\theta
     }
     
@@ -587,13 +589,13 @@
 \begin{frame}{Mechanical Work}
   For translational motion, mechanical work is defined as
 
-  \eq{-.2in}{
+  \eq{-.1in}{
     W_t=\int_{x_1}^{x_2}\vec F\cdot\dl\vec x
   }
 
   For rotational motion, mechanical work is defined similarly as:
 
-  \eq{-.2in}{
+  \eq{-.1in}{
     W=\int_{x_1}^{x_2}F\dl x=\int_{\theta_1}^{\theta_2}F(r\dl\theta)
     \quad\rightarrow\quad
     \boxed{
@@ -603,7 +605,7 @@
 
   The work-energy theorem still applies to rotational motion, i.e.;
 
-  \eq{-.25in}{
+  \eq{-.1in}{
     W_r=\Delta K_r
   }
 \end{frame}
@@ -622,7 +624,7 @@
   
   It's no surprise that rotational kinetic energy is given by:
   
-  \eq{-.2in}{
+  \eq{-.1in}{
     \boxed{K_r=\frac12I\omega^2}
   }
 \end{frame}
@@ -633,15 +635,14 @@
   The total kinetic energy of a rotating system is the sum of its translational
   and rotational kinetic energies at its center of mass:
 
-  \eq{-.2in}{
+  \eq{-.1in}{
     \boxed{K=K_t+K_r=\frac12mv_\text{cm}^2+\frac12I_\text{cm}\omega^2}
   }
   
-  In this case, $I_\text{cm}$ is calculated at the center of
-  mass. For simple problems, we only need to compute rotational kinetic energy
-  at the pivot:
+  In this case, $I_\text{cm}$ is calculated at the CM. For simple problems, we
+  only need to compute rotational kinetic energy at the pivot:
 
-  \eq{-.2in}{
+  \eq{-.1in}{
     \boxed{K=\frac12I_\text{P}\omega^2}
   }
   
@@ -654,13 +655,13 @@
 \begin{frame}{Parallel Axis Theorem}
   \begin{columns}
     \column{.35\textwidth}
-    \pic{1}{Steiner}
+    \pic1{Steiner}
     
     \column{.65\textwidth}
     The \textbf{parallel axis theorem} relates the moment of inertia of an
     object along two different but parallel axis by:
 
-    \eq{-.2in}{
+    \eq{-.1in}{
       \boxed{I=I_\text{cm}+md^2}
     }
   \end{columns}

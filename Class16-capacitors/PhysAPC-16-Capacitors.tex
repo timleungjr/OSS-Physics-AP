@@ -21,23 +21,22 @@
   electric potential energy ($U_q$) can be expressed using definition of
   mechanical work and the fundamental theorem of calculus:
 
-  \eq{-.25in}{
+  \eq{-.1in}{
     \Delta U_q=-\int\vec F_q\cdot\dl\vec r\quad\quad
     \vec F_q=-\nabla U_q=-\diffp{U_q}r\hat r
   }
 
-  \vspace{-.08in}Dividing both sides of the equations by $q$, we get the
-  relationship between electric field ($\vec E$), electric potential ($V$) and
-  electric potential difference ($\Delta V$):
+  Dividing both sides of the equations by $q$, we get the relationship between
+  electric field ($\vec E$), electric potential ($V$) and electric potential
+  difference ($\Delta V$):
   
-  \eq{-.2in}{
+  \eq{-.1in}{
     \Delta V=-\int\vec E\cdot\dl\vec r\quad\quad
     \boxed{\vec E=-\nabla V=-\diffp Vr\hat r}
   }
 
   This relationship holds regardless of the charge configuration.
 \end{frame}
-
 
 
 
@@ -62,24 +61,15 @@
       \draw[thick](8.2,.8)..controls(8.15,.4)..(8,.1);
     \end{tikzpicture}
   \end{center}
-  \vspace{-.1in}Recall that for two charged parallel plates, the electric field
-  is uniform, and the relationship between electric field and potential
-  difference simplifies to:
+  Recall that for two charged parallel plates, the electric field is uniform,
+  and the relationship between electric field and potential difference
+  simplifies to:
 
-  \eq{-.2in}{
+  \eq{-.1in}{
     \boxed{E=\frac{\Delta V}d}
     \quad\text{or}\quad
     \boxed{\Delta V=Ed}
   }
-  \begin{center}
-    \begin{tabular}{l|c|c}
-      \rowcolor{pink}
-      \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
-      Electric field intensity & $E$ & \si{\newton\per\coulomb}\\
-      Potential difference between plates & $\Delta V$ & \si\volt \\
-      Distance between plates       & $d$ & \si\metre
-    \end{tabular}
-  \end{center}
 \end{frame}
 
 
@@ -102,7 +92,7 @@
   plates is proportional to the charge density $\sigma$, which is the charge
   $Q$ divided by the area of the plates $A$:
 
-  \eq{-.2in}{
+  \eq{-.1in}{
     E=\frac{\textcolor{red}{\sigma}}{\epsilon_0}=
     \frac{\textcolor{red}{Q}}{\textcolor{red}{A}\epsilon_0}
   }
@@ -111,7 +101,7 @@
   electric field, we find the relationship between the charges across the
   plates and the voltage:
 
-  \eq{-.2in}{
+  \eq{-.1in}{
     \Delta V=\textcolor{blue} Ed=
     \frac{\textcolor{blue}{Q}d}{\textcolor{blue}{A\epsilon_0}}
     \quad\longrightarrow\quad
@@ -124,16 +114,16 @@
 \begin{frame}{Parallel-Plate Capacitors}
   Since area $A$, distance of separation $d$ and the vacuum permittivity
   $\epsilon_0$ are all constants, the relationship between charge $Q$ and
-  voltage $\Delta V$ is \emph{linear}. And the constant is called the
+  voltage $\Delta V$ is \emph{linear}. The constant is called the
   \textbf{capacitance} $C$, defined as:
 
-  \eq{-.15in}{
+  \eq{-.1in}{
     \boxed{C=\frac Q{\Delta V}}
   }
 
   For parallel plates:
 
-  \eq{-.2in}{
+  \eq{-.1in}{
     \boxed{C=\frac{A\epsilon_0}d\quad\text{parallel plate}}
   }
 
@@ -164,7 +154,7 @@
   charge $\dl q$ across the plates, the infinitesimal work done $\dl U$ is very
   small and related to the capacitance by:
 
-  \eq{-.2in}{
+  \eq{-.1in}{
     \dl U=V\dl q=\frac qC\dl q
   }
   
@@ -177,14 +167,14 @@
 \begin{frame}{Storage of Electrical Energy}
   To fully charge the plates, the total work $U_c$ is the integral:
 
-  \eq{-.2in}{
+  \eq{-.1in}{
     U_c=\int\dl U=\int_0^Q\frac qC\dl q=\frac12\frac{Q^2}C
   }
 
   The work done is stored as a potential energy inside the capacitor. There are
   different ways to express $U_c$ using definition of capacitance:
 
-  \eq{-.15in}{
+  \eq{-.1in}{
     \boxed{U_c=\frac12\frac{Q^2}C=\frac12QV=\frac12CV^2}
   }
 \end{frame}
@@ -222,17 +212,18 @@
     Use Gauss's law to find the electric field between the cylinders, by placing
     a Gaussian surface of radius $r$ between the cylinders: 
 
-    \eq{-.2in}{
-      \oint\vec E\cdot\dl\vec A=2\pi rLE=\frac Q{\epsilon_0}
+    \eq{-.1in}{
+      \oint\vec E\cdot\dl\vec A=2\pi r\ell E=\frac Q{\epsilon_0}
     }
     
     which gives the expression:
 
-    \eq{-.23in}{
-      E=\frac Q{2\pi rL\epsilon_0}\quad\text{or}\quad
+    \eq{-.1in}{
+      E=\frac Q{2\pi r\ell\epsilon_0}\quad\text{or}\quad
       E=\frac\lambda{2\pi r\epsilon_0}
     }
-    where $\lambda=Q/L$ is the linear charge density
+    
+    where $\lambda=Q/\ell$ is the linear charge density
   \end{columns}
 \end{frame}
 
@@ -242,25 +233,26 @@
 \begin{frame}{Cylindrical Capacitors: Voltage Across the Cylinders}
   Integrating the eclectic field to get voltage across the plates:
 
-  \eq{-.2in}{
-    \Delta V= \int_a^b E\dl r=\frac Q{2\pi L\epsilon_0}\int_b^a\frac{\dl r}r
-    =\frac Q{2\pi L\epsilon_0}\ln\left[\frac ba\right]
+  \eq{-.1in}{
+    \Delta V= \int_a^b E\dl r=\frac Q{2\pi\ell\epsilon_0}\int_b^a\frac{\dl r}r
+    =\frac Q{2\pi\ell\epsilon_0}\ln\left[\frac ba\right]
   }
 
-  Like the parallel plate, the relationship between voltage and charge is still
+  Like parallel plates, the relationship between voltage and charge is still
   linear, but in this case, the capacitance is defined as:
 
-  \eq{-.2in}{
-    C=\frac Q{\Delta V}=\frac{2\pi L\epsilon_0}{\ln(b/a)}
+  \eq{-.1in}{
+    C=\frac Q{\Delta V}=\frac{2\pi\ell\epsilon_0}{\ln(b/a)}
     \quad\longrightarrow\quad
-    \boxed{\frac CL=\frac{2\pi\epsilon_0}{\ln(b/a)}\;\;\text{cylindrical}}
+    \boxed{\frac C\ell=\frac{2\pi\epsilon_0}{\ln(b/a)}\;\;\text{cylindrical}}
   }
 
-  The capacitance is generally expressed by $C/L$ (unit \si{\farad\per\metre}).
-  Like the parallel-plate, the capacitance of the cylindrical capacitor also
-  only depends on the geometry (i.e.\ the raidii $a$ and $b$) and the
-  permittiviy.
+  The capacitance is generally expressed by $C/\ell$ (with unit
+  \si{\farad\per\metre}). Like the parallel-plate capacitor, the capacitance of
+  the cylindrical capacitor also only depends on the geometry (i.e.\ the raidii
+  $a$ and $b$) and the permittiviy.
 \end{frame}
+
 
 
 \begin{frame}{Capacitance}
@@ -302,21 +294,21 @@
   If electric field without dielectric is $E_0$, then $E$ in the dielectric is
   reduced by $\kappa$, the \textbf{dielectric constant}:
 
-  \eq{-.25in}{
+  \eq{-.1in}{
     \boxed{\kappa=\frac{E_0}E}
   }
 
   The capacitance of the plates with the dielectric is now amplified by the
   same factor $\kappa$:
 
-  \eq{-.3in}{
+  \eq{-.1in}{
     \boxed{C=\kappa C_0}
   }
 
   We can also view the dielectric as something that increases the
   \emph{effective permittivity}:
   
-  \eq{-.3in}{
+  \eq{-.1in}{
     \boxed{\epsilon=\kappa\epsilon_0}
   }
 \end{frame}
@@ -335,7 +327,7 @@
       Neoprene    & \num{6.9} \\
       Plexiglas   & \num{3.4} \\
       Polystyrene & \num{2.55} \\
-      Water (\SI{20}{\celsius}) & \num{80} 
+      Water (\SI{20}\celsius) & \num{80} 
     \end{tabular}
   \end{center}
 \end{frame}
@@ -346,7 +338,7 @@
   The work done (i.e.\ the energy stored in the capacitor) is inversely
   proportional to the capacitance:
 
-  \eq{-.2in}{
+  \eq{-.1in}{
     \dl U=V\dl q=\frac qC\dl q
   }
 
@@ -363,15 +355,17 @@
 
 \begin{frame}{Capacitors in Electric Circuits}
   Capacitors are an important part of an electric circuits because it stores
-  energy in the electric field
+  energy in the electric field. Suppose we replace a battery with a capacitor
+  in a basic resistive circuit:
+  \begin{center}
+    \begin{tikzpicture}[scale=.85]
+      \draw[thick](0,0) to[C=$C$] (0,3)--(3,3) to[R=$R$] (3,0)--(0,0);
+    \end{tikzpicture}
+  \end{center}
   \begin{itemize}
-  \item Denoted by this symbol (with reference to the parallel-plate capacitor):
-    \begin{center}
-      {\tikz \draw[thick] (3,0) to[C,o-o](5,0);}
-    \end{center}
-  \item Act like a voltage source
-  \item Unlike a battery, the voltage increases or decreases as the charge
-    across the capacitor plates change.
+  \item The capacitor acts like a voltage source.
+  \item Unlike a battery, the voltage decreases as it drives a current, and the
+    charge across the capacitor plates decreases.
   \end{itemize}
 \end{frame}
 \end{document}
