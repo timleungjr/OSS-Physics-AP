@@ -22,9 +22,9 @@
 \begin{frame}{Hooke's Law}
   Hooke's law for an ideal spring relates the \textbf{spring force} $\vec F_e$
   exerted by a compressed or stretched spring onto another object to the
-  \textbf{spring constant} $k$ (the stiffness of the spring, also called
-  \emph{Hooke's constant}, \emph{force constant}, or the \emph{spring rate}) of
-  the spring, and the spring's displacement $\vec x$:
+  \textbf{spring constant} $k$\footnote{It is the stiffness of the spring, also
+    called \emph{Hooke's constant}, \emph{force constant}, or the \emph{spring
+      rate}) of the spring}, and the spring's displacement $\vec x$:
 
   \eq{-.1in}{
     \boxed{\vec F_e=-k\vec x}
@@ -38,6 +38,7 @@
       Amount of extension/compression & $\vec x$   & \si\metre
     \end{tabular}
   \end{center}
+  \vspace{.3in}
 \end{frame}
 
 
@@ -47,7 +48,7 @@
     potential energy} stored in the spring when it is compressed or stretched:
 
   \eq{-.1in}{
-    W=\int^{x_2}_{x_1}\vec F_s\cdot\dl\vec x=-\int^{x_2}_{x_1}kx\dl x
+    W = \int^{x_2}_{x_1} F_e\dl x = -\int^{x_2}_{x_1}kx\dl x
     =-\frac12kx^2\Big|^{x_2}_{x_1}=-\Delta U_e
   }
 
@@ -60,7 +61,7 @@
 
 
 
-\section{Spring-Mass}
+\section{Spring-Mass Systems}
 
 \begin{frame}{Horizontal Spring-Mass System}
   Consider the forces acting on a mass connected horizontally to a spring
@@ -112,7 +113,7 @@
 
 
 
-\begin{frame}{Mass on a Spring}
+\begin{frame}{Horizontal Spring-Mass System}
 
   The solution to the equation is a function $x(t)$ where the second time
   derivative $\ddot x$ looks like $x$ but with a negative sign
@@ -121,7 +122,7 @@
     \diff[2]xt + \frac kmx=0
   }
 
-  The obvious choices are the trigonometric functions $\sin(t)$ and $\cos(t)$.
+  The obvious choices are the trigonometric functions: $\sin(t)$ and $\cos(t)$.
   Starting with this general form:
     
   \eq{-.1in}{
@@ -136,7 +137,7 @@
 
 
 
-\begin{frame}{Mass on a Spring}
+\begin{frame}{Horizontal Spring-Mass System}
 
   \eq{0in}{
     \boxed{\diff[2]xt + \frac kmx=0}
@@ -153,13 +154,13 @@
     \end{align*}
   }
   
-  where $\omega_0$ is the angular frequency of the oscillation, $A$ is the
-  amplitude, and $\phi$ is the phase shift
+  $\omega_0$ is the angular frequency of the oscillation, $A$ is the amplitude,
+  and $\phi$ is the phase shift, based on initial condition
 \end{frame}
 
 
 
-\begin{frame}{Mass on a Spring: Angular Frequency}
+\begin{frame}{Horizontal Spring-Mass System: Angular Frequency}
   Substituting expressions of $x(t)$ and $a(t)=\ddot x$ back into the ODE, we
   find that the solution is satisfied if $\omega_0$ is related to the spring
   constant and mass by:
@@ -169,9 +170,9 @@
       \omega_0=\sqrt{\frac km}
     }  }
 
-  The angular frequency for the (undamped) simple harmonic oscillator is called
-  the \textbf{natural frequency}. The period ($T_0$) and frequency ($f_0$) of
-  the undamped harmonic oscillator are then given by:
+  The angular frequency for the simple harmonic oscillator is called the
+  \textbf{natural frequency}. The period ($T_0$) and frequency ($f_0$) of the
+  simple harmonic oscillator are then given by:
 
   \eq{-.1in}{
     f_0=\frac{\omega_0}{2\pi}=\frac1{2\pi}\sqrt{\frac km}\quad\quad
@@ -195,7 +196,7 @@
 
     \column{.6\textwidth}
     \begin{tikzpicture}[yscale=.5]
-      \draw[->](0,-2)--(0,2)  node[left]{$x$};
+      \draw[->](0,-2)--(0,2) node[left]{$x$};
       \draw[->](-1,0)--(8,0) node[right]{$t$};
       \draw[red,very thick,smooth,samples=80,domain=0:7.5]
       plot(\x,{1.5*cos(90*\x)});
@@ -239,7 +240,7 @@
 
   \eq{-.1in}{
     x(t)=e^{\omega t}\quad\rightarrow\quad
-    \ddot x=\omega^2 e^{\omega t}=\omega^2x
+    \diff[2]xt=\omega^2 e^{\omega t}=\omega^2x
   }
 
   But if the exponential function is \emph{imaginary}:
@@ -304,7 +305,7 @@
     $B$ in the expression of $x(t)$:
     
     \vspace{-.25in}{\large
-      \begin{align*}1
+      \begin{align*}
         x(t)&=A\cos(\omega_0 t-\phi) +B\\
         v(t)&=-A\omega_0\sin(\omega_0 t-\phi)\\
         a(t)&=-A\omega_0^2\cos(\omega_0 t-\phi)
@@ -416,9 +417,10 @@
     \item Pendulums also exhibit oscillatory motion
     \item In a \textbf{simple pendulum}, all of the mass is concentrated at the
       end point 
-    \item There are two forces acting on the mass: weight $mg$ and tension $T$
-    \item It has already been shown previously that when the mass is deflected
-      by an angle $\phi$, the tangential force is $F_t=-mg\sin\phi$
+    \item Two forces act on the mass: weight $mg$ and tension $T$
+    \item It has been shown in Class 6 (circular motion) that when the mass is
+      deflected by an angle $\theta$, the tangential force is
+      $F_t=-mg\sin\theta$
     \item No need to worry about the radial direction; it does not have to do
       with the restoring force
     \end{itemize}
@@ -428,18 +430,21 @@
     \begin{tikzpicture}
       \fill[pattern=north east lines] (-1,0) rectangle (1,0.2);
       \draw[thick](-1,0)--(1,0);
-      \begin{scope}[rotate=10]
+      \begin{scope}[rotate=15]
         \draw[thick](0,0)--(0,-5) node[midway,right]{$\ell$};
         \shade[ball color=red](0,-5) circle(.2) node[below right]{$m$};
         \begin{scope}[red,very thick,->]
-          \draw[dotted](0,-5)--(-0.5,-5) node[left]{$mg\sin\phi$};
+          \draw[dotted](0,-5)--(-1.5*sin{20},-5)
+          node[left,fill=yellow!10]{$mg\sin\theta$};
           \draw(0,-5)--(0,-3) node[left]{$\vec T$};
-          \draw[rotate around={-10:(0,-5)}](0,-5)--(0,-6.5)
+          \draw[rotate around={-15:(0,-5)}](0,-5)--(0,-6.5)
           node[below]{$m\vec g$};
         \end{scope}
       \end{scope}
       \draw[dashed,thin](0,0)--(0,-5);
-      \draw[->](0,-2) arc(270:280:2) node[midway,below]{$\phi$};
+      \draw[->](0,-2) arc(270:285:2) node[midway,below]{$\theta$};
+      \draw[dashed](0,-5) arc(270:295:5);
+      \draw[dashed](0,-5) arc(270:255:5);
     \end{tikzpicture}
   \end{columns}
 \end{frame}
@@ -452,30 +457,31 @@
     Substitute $F_t$ into second law of motion, and cancelling $m$:
 
     \eq{-.1in}{
-      F_t=ma_t\quad\rightarrow\quad -g\sin\phi=\ell\diff[2]{\phi}t
+      F_t=ma_t\quad\rightarrow\quad -mg\sin\theta=m\ell\diff[2]{\theta}t
     }
 
-    Solving this ODE in its present form is difficult because of the
-    $\sin\phi$ term. However, the series expansion of the sine function:
+    Solving this ODE is difficult because of the $\sin\theta$ term. However,
+    the series expansion of the sine function:
 
     \eq{-.1in}{
-      \sin\phi=\phi-\frac{\phi^3}{3!}+\frac{\phi^5}{5!}-\frac{\phi^7}{7!}+
-      \cdots
+      \sin\theta
+      =\theta-\frac{\theta^3}{3!}+\frac{\theta^5}{5!}-\frac{\theta^7}{7!}+\cdots
     }
     
-    shows that for small angles, $\sin\phi\approx\phi$
+    shows that for small angles, $\sin\phi\approx\theta$
     
     \column{.25\textwidth}
-    \centering
     \begin{tikzpicture}
       \fill[pattern=north east lines] (-1,0) rectangle (1,0.2);
       \draw[thick](-1,0)--(1,0);
-      \begin{scope}[rotate=10]
+      \begin{scope}[rotate=20]
         \draw[thick](0,0)--(0,-5) node[midway,right]{$\ell$};
         \shade[ball color=red](0,-5) circle(.2) node[below right]{$m$};
       \end{scope}
       \draw[dashed,thin](0,0)--(0,-5);
-      \draw[->](0,-2) arc(270:280:2) node[midway,below]{$\phi$};
+      \draw[->](0,-2) arc(270:290:2) node[midway,below]{$\theta$};
+      \draw[dashed](0,-5) arc(270:295:5);
+      \draw[dashed](0,-5) arc(270:255:5);
     \end{tikzpicture}
   \end{columns}
 \end{frame}
@@ -485,27 +491,26 @@
 \begin{frame}{The Simple Pendulum}
   \begin{columns}
     \column{.75\textwidth}
-    For small angles of $\phi$, the ODE reduces to the same form as the
+    For small angles of $\theta$, the ODE reduces to the same form as the
     spring-mass system
 
     \eq{-.1in}{
-      \diff[2]{\phi}t + \frac g\ell\phi=0
+      \diff[2]{\theta}t + \frac g\ell\theta=0
     }
 
     So how small is ``small angle''? That depends on what tolerance (the
     number of significant figures) is needed in the answer.
     
     \column{.25\textwidth}
-    \centering
     \begin{tikzpicture}
       \fill[pattern=north east lines] (-1,0) rectangle (1,0.2);
       \draw[thick](-1,0)--(1,0);
-      \begin{scope}[rotate=10]
+      \begin{scope}[rotate=20]
         \draw[thick](0,0)--(0,-5) node[midway,right]{$\ell$};
         \shade[ball color=red](0,-5) circle(.2) node[below right]{$m$};
       \end{scope}
       \draw[dashed,thin](0,0)--(0,-5);
-      \draw[->](0,-2) arc(270:280:2) node[midway,below]{$\phi$};
+      \draw[->](0,-2) arc(270:290:2) node[midway,below]{$\theta$};
     \end{tikzpicture}
   \end{columns}
 \end{frame}
@@ -513,24 +518,23 @@
 
 
 \begin{frame}{Ordinary Differential Equation for the Pendulum}
-  The solution for $\phi(t)$ is a sinusoidal function, like the spring-mass
+  The solution for $\theta(t)$ is a sinusoidal function, like the spring-mass
   system:
 
   \eq{-.1in}{
-    \boxed{\phi(t)=\Phi\cos(\omega_0 t-\beta)}
+    \boxed{\theta(t)=\theta_\text{max}\cos(\omega_0 t-\varphi)}
   }
 
-  where $\Phi$ is the maximum deflection (amplitude), and angular frequency
-  (natural frequency) of the oscillation $\omega_0$ is given by:
+  where $\theta_\text{max}$ is the maximum deflection (amplitude), and $\varphi$
+  is a phase shift based on the initial condition of the pendulum. (If the
+  oscillation begins at amplitude, then $\varphi=0$.) The natural frequency of
+  the oscillation $\omega_0$ is given by:
     
   \eq{-.1in}{
     \boxed{
       \omega_0=\sqrt{\frac g\ell}
     }
   }
-
-  and $\beta$ is a phase shift based on the initial condition of the pendulum.
-  If the oscillation begins at amplitude, then $\beta=0$.
 \end{frame}
 
 
@@ -594,13 +598,13 @@
 
 \begin{frame}{Pendulum Example Problem}
   \textbf{Example:} A simple pendulum consists of a mass $m$ attached to a
-  light string of length $l$. If the system is oscillating through small
+  light string of length $\ell$. If the system is oscillating through small
   angles, which of the following is true
   \begin{enumerate}[(A)]
   \item The frequency is independent of the acceleration due to gravity, $g$.
   \item The period depends on the amplitude of the oscillation.
   \item The period is independent of the mass $m$.
-  \item The period is independent of the length $l$.
+  \item The period is independent of the length $\ell$.
   \end{enumerate}
 \end{frame}
 
@@ -645,7 +649,7 @@
   the spring-mass system, represented schematically by the shock absorber:
   \begin{center}
     \begin{tikzpicture}[scale=1.1]
-      \node[draw,fill=blue!40!white,inner sep=4.5mm] (a) at (3.5,1) {$m$};
+      \node[draw,fill=blue!30!white,inner sep=4.5mm] (a) at (3.5,1) {$m$};
       \draw[thick,draw=black!50,
         decoration={aspect=0.3,segment length=2mm, amplitude=2.5mm, coil},
         decorate] (0,1)--(2.95,1);
@@ -663,12 +667,12 @@
         \end{scope}
       }
       \uncover<3->{
-        \fill[red] (3.5,1)circle(.075);
-        \begin{scope}[very thick,->,red]
-          \draw(3.5,1)--(3.5,0) node[below]{$m\vec g$};
-          \draw(3.5,1)--(3.5,2) node[above]{$\vec N$};
-          \draw(3.5,1)--(2.5,1) node[above]{$\vec F_s$};
-          \draw(3.5,1)--(4.5,1) node[above]{$\vec F_D$};
+        \fill[red!60] (3.5,1) circle(.075);
+        \begin{scope}[very thick,->]
+          \draw[red!60](3.5,1)--(3.5,0) node[below]{$m\vec g$};
+          \draw[red!60](3.5,1)--(3.5,2) node[above]{$\vec N$};
+          \draw[red!60](3.5,1)--(2.5,1) node[above]{$\vec F_e$};
+          \draw[red!70!black](3.5,1)--(4.5,1) node[above]{$\vec F_D$};
         \end{scope}
       }
     \end{tikzpicture}
@@ -677,13 +681,13 @@
     \vspace{-.1in}The damping force is typically related to velocity, in the
     opposite direction:
 
-    \eq{-.12in}{
+    \eq{-.135in}{
       \vec F_D=-b(\vec v)^n
     }
 
-    \vspace{-.12in}where $b$ is a positive constant. In the simplest case is to
-    use $n=1$ to represent viscous effects. (For kinetic friction, $n=0$; for
-    aerodynamic drag, $n=2$.)
+    \vspace{-.12in}where $b$ is a positive constant called the \textbf{damping
+      factor}. The simplest case is to use $n=1$ to represent viscous
+    effects. (Kinetic friction, $n=0$; aerodynamic drag, $n=2$)
   }
 \end{frame}
 
@@ -694,7 +698,7 @@
   with the additional term from the damping force:
 
   \eq{-.1in}{
-    \sum F=F_s+{\color{red}F_D}=ma\quad\rightarrow\quad
+    \sum F=F_e+{\color{red}F_D}=ma\quad\rightarrow\quad
     -kx{\color{red}-b\diff xt}=m\diff[2]xt
   }
 
@@ -741,10 +745,10 @@
     \sqrt{\omega_0^2-\left(\frac b{2m}\right)^2}=0
   }
 
-  which corresponds to a damping constant:
+  which corresponds to the \textbf{critical damping constant} $b_c$:
 
   \eq{-.1in}{
-    b_c=2m\omega_0=2\sqrt{km}
+    b_c=2m\omega_0%=2\sqrt{km}
   }
   \begin{itemize}
   \item A critically damped system returns to its equilibrium
@@ -819,18 +823,18 @@
         \draw(4.8,1.2)--(5.5,1.2)--(5.5,.8)--(4.8,.8);
         \draw(5.5,1)--(6.5,1);
       \end{scope}
-      \fill[red] (3.5,1)circle(.075);
+      \fill[red!60] (3.5,1)circle(.075);
       \begin{scope}[very thick,->,red]
-        \draw(3.5,1)--(3.5,0) node[below]{$m\vec g$};
-        \draw(3.5,1)--(3.5,2) node[above]{$\vec N$};
-        \draw(3.5,1)--(2.5,1) node[above]{$\vec F_s$};
-        \draw(3.5,.9)--(2,.9) node[below]{$\vec F_E$};
-        \draw(3.5,1)--(4.5,1) node[below]{$\vec F_D$};
+        \draw[red!60](3.5,1)--(3.5,0) node[below]{$m\vec g$};
+        \draw[red!60](3.5,1)--(3.5,2) node[above]{$\vec N$};
+        \draw[red!60](3.5,1)--(2.5,1) node[above]{$\vec F_e$};
+        \draw[red!70!black](3.5,.9)--(2,.9) node[below]{$\vec F_E$};
+        \draw[red!60](3.5,1)--(4.5,1) node[below]{$\vec F_D$};
       \end{scope}
     \end{tikzpicture}
   \end{center}
-  In general, the driving frequency $\omega_E$ does not have to be related to
-  the natural frequency $\omega_0$ or damped frequency $\omega$.
+  In general, the driving frequency $\omega_E$ is unrelated to the undamped
+  natural frequency $\omega_0$ or damped frequency $\omega$.
 \end{frame}
 
 
@@ -844,19 +848,20 @@
   }
 
   Rearranging the terms gives a similar ODE to the damped case, but with the
-  \textcolor{green!80!black}{additional external force term} on the right-hand
-  side:
+  {\color{violet}additional external force term} on the right-hand side:
 
   \eq{-.1in}{
-    m\ddot x+b\dot x+kx=
-    \textcolor{green!80!black}{F\cos(\omega_Et)}
+    m\diff[2]xt+b\diff xt+kx={\color{violet}F\cos(\omega_Et)}
   }
 \end{frame}
 
 
 
 \begin{frame}{Forced Harmonic Motion}
-  \eq{0in}{
+  This is a much more difficult problem in calculus, but nevertheless still a
+  standard problem
+  
+  \eq{-.1in}{
     m\diff[2]xt + b\diff xt+kx=F\cos(\omega_E t)
   }
   
@@ -899,48 +904,30 @@
 
 
 
-\begin{frame}{Resonance}
-  \textbf{Resonance} is caused by in-phase excitation at natural frequency.
-  This means that:
-  \begin{itemize}
-  \item The frequency of the driving force is \emph{approximately} the natural
-    frequency of the damped oscillator:
-
-    \eq{-.1in}{
-      \omega_E=\sqrt{\omega_0-\frac b{2m}}
-      \quad\text{where}\quad\omega_0=\sqrt{\frac km}
-    }
-
-    For a lightly damped system, this means that $\omega_E\approx\omega$
-    
-  \item The driving force follows the motion of the oscillator.
-  \end{itemize}
-\end{frame}
-
-
-
-\begin{frame}{Resonance}
+\begin{frame}{Amplitude Response to External Driving Force}
+  The amplitude of the driven oscillation is given by:
+  
   \eq{-.1in}{
     A=\frac F{\sqrt{m^2(\omega_0^2-\omega_E^2)^2+b^2\omega_E^2}}
   }
   
-  Maximum $A$ occurs when the denominator is the smallest, which can be related
-  to the external frequency by setting the derivative with respect to
-  $\omega_E$ to 0:
+  Maximum $A$ occurs when the denominator is minimized, i.e.\ when the
+  derivative w.r.t.\ external frequency $\omega_E$ is 0:
 
-  \eq{-.1in}{
+  \eq{-.25in}{
     \diff{}{\omega_E}\left[m^2(\omega_0^2-\omega_E^2)^2+b^2\omega_E^2\right]=0
+    \quad\longrightarrow\quad
+%  }
+%
+%  The minimum value occurs at the natural frequency of the damped oscillator:
+%
+%  \eq{-.1in}{
+    \omega_E=\sqrt{\omega_0^2-\frac{b^2}{2m^2}}\approx\omega
   }
 
-  It is a simple exercise
-  %\footnote{$b$, $m$ and $\omega_o$ are all constants anyway!}
-  to see that the minimum value occurs at the natural frequency of
-  the damped oscillator.
-
-  \eq{-.1in}{
-    \omega_E=\sqrt{\omega_0-\frac b{2m}}
-  }
-%  The maximum amplitude is:
+  The driving frequency $\omega_E$ when amplitude is maximum occurs at a
+  frequency that is very close to (albeit slightly different from) the natural
+  frequency of the damped system.
 %  
 %  \eq{-.2in}{
 %    A_\text{max}=\frac F{b\omega_E}
@@ -951,36 +938,43 @@
 
 \begin{frame}{Resonance}
   \begin{columns}
-    \column{.55\textwidth}
-    \begin{tikzpicture}
+    \column{.5\textwidth}
+    \begin{tikzpicture}[scale=.95]
       \begin{axis}[
           width=3.3in,
           xmin=0,xmax=3, xlabel=Driving Frequency ($\omega_E$),
           xtick={0,1,2,3}, xticklabels={0,$\omega_0$,$2\omega_0$,$3\omega_0$},
-          ymin=0,ymax=5, ylabel=Relative Amplitude ($A$),
+          ymin=0,ymax=6, ylabel=Relative Amplitude ($A$),
+          ytick={0,1,2,3,4,5,6}
         ]
         \addplot[
-          color=red!30,
-          samples=300,
+          color=red!25,
+          samples=50,
           domain=0:3,
           very thick]{1/sqrt((1-x^2)^2+x^2)};
         \addlegendentry{$\frac b{2m}=\frac12\omega_0$};
         \addplot[
-          color=red!60,
-          samples=200,
+          color=red!50,
+          samples=80,
           domain=0:3,
           very thick]{1/sqrt((1-x^2)^2+x^2/4)};
         \addlegendentry{$\frac b{2m}=\frac14\omega_0$};
         \addplot[
-          color=red,
-          samples=200,
+          color=red!75,
+          samples=250,
           domain=0:3,
           very thick]{1/sqrt((1-x^2)^2+x^2/16)};
         \addlegendentry{$\frac b{2m}=\frac18\omega_0$};
+        \addplot[
+          color=red,
+          samples=400,
+          domain=0:3,
+          very thick]{1/sqrt((1-x^2)^2+x^2/32)};
+        \addlegendentry{$\frac b{2m}=\frac1{16}\omega_0$};
       \end{axis}
     \end{tikzpicture}
 
-    \column{.45\textwidth}
+    \column{.5\textwidth}
     Plotting amplitude $A$ as a function of driving frequency $\omega$ shows
     that:
     \begin{itemize}
@@ -1027,4 +1021,29 @@
   \vspace{-.2in}This also makes sense from a work-energy perspective, because
   now the external force is doing positive work to the system.
 \end{frame}
+
+
+
+\begin{frame}{Resonance}
+  \textbf{Resonance} is caused by in-phase excitation near the natural
+  frequency. This means that:
+  \begin{itemize}
+  \item The frequency of the driving force is \emph{approximately} equal to the
+    natural frequency of the damped oscillator:
+
+    \eq{-.1in}{
+      \omega_E=\sqrt{\omega_0^2-\frac{b^2}{2m^2}}
+      \quad\text{where}\quad\omega_0=\sqrt{\frac km}
+    }
+
+    For a lightly damped system, this means that
+    $\omega_E\approx\omega\approx\omega_0$
+  \item The driving force follows the motion of the oscillator.
+  \end{itemize}
+\end{frame}
+
+
+
+
+
 \end{document}

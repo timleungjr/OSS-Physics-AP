@@ -44,15 +44,14 @@
 
 
 \begin{frame}{Simple Example}
-  We start with a very simple example: there are two equal masses $m$ along the
-  $x$-axis, located at $x_1$ and $x_1$. What is the center of mass of the
-  system?
+  Start with a very simple example: two equal masses $m$ along the $x$-axis,
+  located at $x_1$ and $x_1$. What is the center of mass of the system?
   \begin{center}
     \begin{tikzpicture}
       \draw[->] (-4,0)--(4,0) node[right]{$x$};
       \draw[fill=lightgray] (-2.5,0) circle(.3) node{$m$};
       \draw[fill=lightgray] (2.5,0) circle(.3) node{$m$};
-      \fill circle(.05) node[below]{CM};
+      \fill circle(.05) node[below]{\small cm};
     \end{tikzpicture}
   \end{center}
   The answer is simple: the half way point between them:
@@ -79,7 +78,7 @@
       \draw[->] (-4,0)--(4,0) node[right]{$x$};
       \draw[fill=lightgray] (-2.5,0) circle(.3) node{$m$};
       \draw[fill=lightgray] (2.5,0) circle(.42) node{$2m$};
-      \fill(2.5/3,0) circle(.05) node[below]{CM};
+      \fill(2.5/3,0) circle(.05) node[below]{\small cm};
     \end{tikzpicture}
   \end{center}
   The answer is still simple. The CM is no longer half way between the two
@@ -117,7 +116,9 @@
   average:
 
   \eq{-.1in}{
-    \boxed{\vec x_\text{cm}=\frac{\sum \vec x_i m_i}{\sum m_i}}
+    \boxed{
+      \vec x_\text{cm}=\frac{\sum \vec x_i m_i}{\sum m_i}
+    }
   }
   \begin{center}
     \begin{tabular}{l|c|c}
@@ -206,7 +207,7 @@
       --(0,4)--cycle node[midway,left]{$b$};
       \uncover<2->{
         \draw[fill=red](1,0)--(1.2,0)--(1.2,2.4)--(1,2.67)
-          node[midway,right]{\footnotesize $\dl m$}--cycle;
+          node[midway,right]{\footnotesize $\dl m=y\dl x$}--cycle;
       }
     \end{tikzpicture}
   \end{columns}
@@ -307,24 +308,37 @@
 
 
 
-\begin{frame}{Velocity, Acceleration and Momentum}
-  Take time derivative of the equation for $\vec x_\text{cm}$ to get the
-  velocity at the CM:
+\begin{frame}{Velocity and Momentum}
+  The time derivative of $\vec x_\text{cm}(t)$ is the velocity of the center of
+  mass $\vec v_\text{cm}$:
     
   \eq{-.1in}{
     \vec v_\text{cm}=\diff{\vec x_{cm}}t
-    =\frac1m\diff{}t\left(\int\vec x\dl m\right)
-    =\frac1m\int\diff{\vec x}t\dl m
-    =\frac{\int\vec v\dl m}m
+    =\frac1{m_\text{tot}}\diff{}t\left(\int\vec x\dl m\right)
+    =\frac1{m_\text{tot}}\int\diff{\vec x}t\dl m
+    =\frac{\int\vec v\dl m}{m_\text{tot}}
   }
-  
-  The integral in the numerator is the sum of the momentum of all the masses in
-  the system ($\vec p_\text{net}$) which means that we have
+
+  Rearranging the terms, we have:
 
   \eq{-.1in}{
-    \vec p_\text{net}=m\vec v_\text{cm}
-    }
+    \int\vec v\dl m = m_\text{tot}\vec v_\text{cm}
+  }
 
+  The integral on the left hand side of the equation is the \textbf{net
+    momentum} (i.e.\ the total of the momentum of all the masses). It is simply
+  the momentum evluated using the velocity of the center of mass.
+\end{frame}
+
+
+
+\begin{frame}{Acceleration of the Center of Mass}
+  
+%  the system ($\vec p_\text{net}$) which means that we have
+%
+%  \eq{-.1in}{
+%    \vec p_\text{net}=m\vec v_\text{cm}
+%    }
   Taking the derivative of $\vec p_\text{net}$ relates force and acceleration
   at the CM as well:
     
@@ -332,6 +346,9 @@
     \vec F_\text{net}=\diff{\vec p_\text{net}}t=m\diff{\vec v_\text{cm}}t
     =m\vec a_\text{cm}
   }
+
+  The net force acting on the object is related to the acceleration of the
+  center of mass
 \end{frame}
 
 

@@ -3,7 +3,7 @@
 
 \usetikzlibrary{patterns}
 
-\title{Class 8: Rotational Motion of a Rigid Body, Part 2}
+\title{Class 8: Rigid Body Rotational Motion, Part 2}
 \subtitle{Advanced Placement Physics C}
 \input{../me}
 \input{../mycommands}
@@ -36,8 +36,8 @@
   \vspace{-.3in}{\large
     \begin{align*}
       m &\quad\rightarrow\quad I\\
-      \vec F &\quad\rightarrow\quad \vec\tau\\
-      \vec p=m\vec v &\quad\rightarrow\quad \vec L=I\vec\omega
+      \vec F &\quad\rightarrow\quad \tau\\
+      \vec p=m\vec v &\quad\rightarrow\quad L=I\omega
     \end{align*}
   }
 \end{frame}
@@ -51,9 +51,9 @@
   \vspace{-.2in}{\large
     \begin{align*}
       \vec F_\text{net}=\diff{\vec p}t &\quad\rightarrow\quad
-      \vec\tau_\text{net}=\diff{\vec L}t \\
+      \tau_\text{net}=\diff Lt \\
       \vec F_\text{net}=m \vec a &\quad\rightarrow\quad
-      \vec\tau_\text{net}=I\vec\alpha
+      \tau_\text{net}=I\alpha
     \end{align*}
   }
 \end{frame}
@@ -119,8 +119,8 @@
 \section{Pure Rolling Problems}
 
 \begin{frame}{Pure Rolling Problems}
-  In a \textbf{pure rolling} problem, a smooth solid sphere\footnote{any object
-    that can roll with do!} rolls along a smooth surface without slipping
+  In a \textbf{pure rolling} problem, a smooth solid sphere (any object that
+  can roll with do) rolls along a smooth surface without slipping
   \begin{columns}
     \column{.35\textwidth}
     \centering
@@ -128,7 +128,7 @@
       \shade[ball color=gray!5] circle(1);
       \draw[thick](-2,-1)--(2,-1);
       \draw[thick,->](1.2,0)--(2.2,0) node[above]{$\vec v$};
-      \draw[thick,->](0,1.2) arc(90:60:1.2) node[midway,above]{$\vec\omega$};
+      \draw[thick,->](0,1.2) arc(90:60:1.2) node[midway,above]{$\omega$};
       \draw[->](1,-2)--(1.5,-2) node[right]{$x$};
       \draw[->](1,-2)--(1,-1.5) node[above]{$y$};
       \fill circle(.05);
@@ -171,14 +171,14 @@
         \sum\vec F=\vec 0\quad\quad \vec v=\text{constant}
       }
     \item Neither gravity or normal force generate a torque about the CM,
-      therefore there is no net torque, and the rotational state $\vec\omega$
-      is constant:
+      therefore there is no net torque, and the rotational state $\omega$ is
+      constant:
 
       \eq{-.1in}{
-        \sum\vec\tau=\vec 0\quad\quad\vec\omega=\text{constant}
+        \sum\tau=0\quad\quad\omega=\text{constant}
       }
-    \item In \emph{theory}, this sphere will roll along with
-      angular speed $\omega$ and speed $v=\omega R$ forever
+    \item In \emph{theory}, this sphere will roll along with angular velocity
+      $\omega$ and speed $v=\omega R$ forever
     \end{itemize}
 
     \column{.35\textwidth}
@@ -232,7 +232,7 @@
       \shade[ball color=gray!5] circle(1);
       \draw[thick](-1.5,-1)--(1.5,-1);
       \draw[thick,->](1.5,0)--(2.5,0) node[right]{$\vec v$};
-      \draw[thick,->](0,1.2) arc(90:60:1.2) node[midway,above]{$\vec\omega$};
+      \draw[thick,->](0,1.2) arc(90:60:1.2) node[midway,above]{$\omega$};
       \fill circle(.05);
       \begin{scope}[->,ultra thick]
         \draw[blue](-0.03,0)--(-.03,-1.5) node[below]{$m\vec g$};
@@ -266,7 +266,7 @@
       \shade[ball color=gray!5] circle(1);
       \draw[thick](-1.5,-1)--(1.5,-1);
       \draw[thick,->](1.5,0)--(2.5,0) node[right]{$\vec v$};
-      \draw[thick,->](0,1.2) arc(90:60:1.2) node[midway,above]{$\vec\omega$};
+      \draw[thick,->](0,1.2) arc(90:60:1.2) node[midway,above]{$\omega$};
       \fill circle(.05);
       \begin{scope}[->,ultra thick]
         \draw[blue](-0.03,0)--(-.03,-1.5) node[below]{$m\vec g$};
@@ -305,7 +305,7 @@
       \shade[ball color=gray!5] circle(1);
       \draw[thick](-1.5,-1)--(1.5,-1);
       \draw[thick,->](1.5,0)--(2.5,0) node[right]{$\vec v$};
-      \draw[thick,->](0,1.2) arc(90:60:1.2) node[midway,above]{$\vec\omega$};
+      \draw[thick,->](0,1.2) arc(90:60:1.2) node[midway,above]{$\omega$};
       \fill circle(.05);
       \begin{scope}[->,ultra thick]
         \draw[blue](-0.03,0)--(-.03,-1.5) node[below]{$m\vec g$};
@@ -374,7 +374,7 @@
 
 \begin{frame}{Rolling on an Inclined Surface}
   For a rigid and smooth sphere of radius $R$ rolling down a ramp of angle
-  $\phi$ without slippage down a ramp of angle $\theta$.
+  $\phi$ without slippage.
 
   \vspace{.2in}
   \begin{columns}
@@ -384,7 +384,7 @@
         \shade[ball color=gray!20] circle(1);
         \draw[thick](-2,-1)--(4,-1);
         \draw[->,rotate=30](0,0)--(-1,0) node[left]{$R$};
-        \draw[thick,->](0,1.2) arc(90:60:1.2) node[right]{$\vec\omega$};
+        \draw[thick,->](0,1.2) arc(90:60:1.2) node[right]{$\omega$};
         \draw[->](2,0)--(3,0) node[right]{$x$};
         \draw[->](2,0)--(2,1) node[above]{$y$};
         \fill circle(.05) node[right]{\small cm};
@@ -425,7 +425,7 @@
         \shade[ball color=gray!20] circle(1);
         \draw[thick](-2,-1)--(4,-1);
         \draw[->,rotate=30](0,0)--(-1,0) node[left]{$R$};
-        \draw[thick,->](0,1.2) arc(90:60:1.2) node[right]{$\vec\omega$};
+        \draw[thick,->](0,1.2) arc(90:60:1.2) node[right]{$\omega$};
         \draw[->](2,0)--(3,0) node[right]{$x$};
         \draw[->](2,0)--(2,1) node[above]{$y$};
         \fill circle(.05) node[right]{\small cm};
@@ -445,8 +445,8 @@
 
     \vspace{-.3in}{\large
       \begin{align*}
-        \sum F_x&=mg\sin\theta-f_s=ma\\
-        \sum F_y&=N-mg\cos\theta=0\\
+        \sum F_x&=mg\sin\phi-f_s=ma\\
+        \sum F_y&=N-mg\cos\phi=0\\
         \sum\tau &=Rf_s=I\alpha
       \end{align*}
     }
@@ -468,7 +468,7 @@
         \shade[ball color=gray!20] circle(1);
         \draw[thick](-2,-1)--(4,-1);
         \draw[->,rotate=30](0,0)--(-1,0) node[left]{$R$};
-        \draw[thick,->](0,1.2) arc(90:60:1.2) node[right]{$\vec\omega$};
+        \draw[thick,->](0,1.2) arc(90:60:1.2) node[right]{$\omega$};
         \draw[->](2,0)--(3,0) node[right]{$x$};
         \draw[->](2,0)--(2,1) node[above]{$y$};
         \fill circle(.05) node[right]{\small cm};
@@ -487,7 +487,7 @@
     For non-slip case, angular and translational acceleration are related using
     relative motion:
 
-    \eq{-.1in}{
+    \eq{-.15in}{
       a=\alpha R
     }
     
@@ -502,7 +502,7 @@
     solve for the acceleration of the CM down the ramp:
 
     \eq{-.1in}{
-      mg\sin\theta-\frac25 ma=ma
+      mg\sin\phi-\frac25 ma=ma
     }
   \end{columns}
 \end{frame}
@@ -517,7 +517,7 @@
         \shade[ball color=gray!20] circle(1);
         \draw[thick](-2,-1)--(4,-1);
         \draw[->,rotate=30](0,0)--(-1,0) node[left]{$R$};
-        \draw[thick,->](0,1.2) arc(90:60:1.2) node[right]{$\vec\omega$};
+        \draw[thick,->](0,1.2) arc(90:60:1.2) node[right]{$\omega$};
         \draw[->](2,0)--(3,0) node[right]{$x$};
         \draw[->](2,0)--(2,1) node[above]{$y$};
         \fill circle(.05) node[right]{\small cm};
@@ -536,14 +536,14 @@
     The acceleration of the center of mass is therefore:
 
     \eq{-.1in}{
-      a=\frac57 g\sin\theta
+      a=\frac57 g\sin\phi
     }
 
     \vspace{-.1in}Compare this to an object \emph{sliding} without friction
     down the same ramp, which is higher than the pure rolling case.
     
     \eq{-.1in}{
-      a=g\sin\theta
+      a=g\sin\phi
     }
     
 %The simplest explanation is that some of the gravitational potential energy is
@@ -558,7 +558,7 @@
     it reaches the bottom of the ramp, a distance $d$ away, would be:
 
     \eq{-.2in}{
-      v=\sqrt{2ad}=\sqrt{\frac{10}7gd\sin\theta}
+      v=\sqrt{2ad}=\sqrt{\frac{10}7gd\sin\phi}
     }
 
 %There is, of course, one ``sanity check'' that must be done, that is to make
@@ -590,7 +590,7 @@
   For translational motion, mechanical work is defined as
 
   \eq{-.1in}{
-    W_t=\int_{x_1}^{x_2}\vec F\cdot\dl\vec x
+    W_t=\int_{x_1}^{x_2}F\dl x
   }
 
   For rotational motion, mechanical work is defined similarly as:

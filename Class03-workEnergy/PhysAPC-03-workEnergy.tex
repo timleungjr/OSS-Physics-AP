@@ -117,17 +117,16 @@
 
   \eq{-.1in}{
     W_\text{net}
-    =\int_{x_0}^{x_1}\vec F_\text{net}\cdot\dl\vec x
-    =\int m\vec a\cdot\dl\vec x
-    =m\int\diff{\vec v}t\cdot\dl\vec x
+    =\int_{x_0}^{x_1}F_\text{net}\dl x
+    =\int ma\dl x
+    =m\int\diff vt\dl x
   }
 
   Both $\vec v$ and $\vec x$ are continuous functions in time, we can switch
   the order of differentiation.
   
   \eq{-.1in}{
-    =m\int\diff{\vec x}t\cdot\dl\vec v=m\int\vec v\cdot\dl\vec v
-    =m\int_{v_0}^{v_1}v\dl v
+    =m\int\diff xt\dl\vec v=m\int_{v_0}^{v_1}v\dl v
   }
 
   where $v_0=v(x_0)$ and $v_1=v(x_1)$.
@@ -225,16 +224,16 @@
       \draw[thick,fill=cyan!20] (7.75,0) arc(75:105:30);
       \draw[thick,fill=cyan] (0,6) circle(.25);
       \draw[very thick,violet,->](0,6)--(0,3) node[midway,right]{$\Delta x$};
-      \draw[thick,->|,blue](-.4,1)--(-.4,6) node[midway,left]{$h_1$};
-      \draw[thick,->|,blue](0,1)--(0,3) node[midway,right]{$h_2$};
+      \draw[thick,->|,blue](-.4,1)--(-.4,6) node[midway,left]{$h_0$};
+      \draw[thick,->|,blue](0,1)--(0,3) node[midway,right]{$h_1$};
     \end{tikzpicture}
   \end{center}
 
   \vspace{-.3in}{\large
     \begin{align*}
       W_g
-      &= mg(h_1-h_2)\\
-      &= -mg(h_2-h_1)=-(mgh_2-mgh_1) = -\Delta U_g
+      &= mg(h_0-h_1)\\
+      &= -mg(h_1-h_0)=-(mgh_1-mgh_0) = -\Delta U_g
     \end{align*}
   }
 
@@ -250,7 +249,7 @@
     \boxed{U_g=mgh}
   }
 
-  The the work done by gravity can be related to this potential energy by:
+  The work done by gravity is related to this potential energy by:
   
   \eq{-.1in}{
     \boxed{
@@ -261,10 +260,12 @@
   \fcolorbox{black}{yellow!10}{
     \begin{minipage}{.95\textwidth}
       \begin{itemize}
-      \item \emph{Positive} work decreases gravitational potential energy, while
-      \item \emph{Negative} work increases gravitational potential energy
-      \item $W_g$ depends on the end points $h_1$ and $h_2$, but not \emph{how}
-        it went from $h_1\rightarrow h_2$
+      \item \emph{Positive} work by gravity decreases gravitational potential
+        energy, while
+      \item \emph{Negative} work by gravity increases gravitational potential
+        energy
+      \item $W_g$ depends on the end points $h_0$ and $h_1$, but not \emph{how}
+        it went from $h_0\rightarrow h_1$
       \end{itemize}
     \end{minipage}
   }
@@ -551,7 +552,7 @@
 
 
 
-\begin{frame}{Work Done By Friction}
+\begin{frame}{Work by Friction}
   \begin{columns}
     \column{.25\textwidth}
     \centering
@@ -637,7 +638,8 @@
     \eq{-.1in}{ U_g=Mgh }
 
     But the random motion of the air molecules also contribute to additional
-    energy, called the \textbf{internal energy} $E_\text{int}$.
+    energy, called the \textbf{internal energy} $E_\text{int}$, or
+    \textbf{thermal energy}.
   \end{columns}
 \end{frame}
 
@@ -652,12 +654,13 @@
   }
 
   It is a function of the molecules' \textbf{absolute temperature}, measured in
-  \emph{kelvin}. For example, 
-  \begin{itemize}
-  \item For an ideal gas: $E_\text{int}=\dfrac32NkT$
-  \item For an diatomic gas: $E_\text{int}=\dfrac32NkT$
-  \item Solid: $E_\text{int}=3NkT$
-  \end{itemize}
+  \emph{kelvin}.
+  %For example, 
+  %\begin{itemize}
+  %\item For an ideal gas: $E_\text{int}=\dfrac32NkT$
+  %\item For an diatomic gas: $E_\text{int}=\dfrac32NkT$
+  %\item Solid: $E_\text{int}=3NkT$
+  %\end{itemize}
 \end{frame}
 
 
