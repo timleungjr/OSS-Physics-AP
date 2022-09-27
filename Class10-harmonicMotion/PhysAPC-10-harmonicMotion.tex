@@ -20,7 +20,7 @@
 \section{Hooke's Law}
 
 \begin{frame}{Hooke's Law}
-  Hooke's law for an ideal spring relates the \textbf{spring force} $\vec F_e$
+  Hooke's law for an ideal spring relates the \textbf{spring force} $\vec F_s$
   exerted by a compressed or stretched spring onto another object to the
   \textbf{spring constant} $k$ (the stiffness of the spring, also called
   \emph{Hooke's constant}, \emph{force constant}, or the \emph{spring rate}) of
@@ -33,9 +33,9 @@
     \begin{tabular}{l|c|c}
       \rowcolor{pink}
       \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
-      Spring force                    & $\vec F_e$ & \si\newton \\
-      Spring constant                 & $k$        & \si{\newton\per\metre}\\
-      Amount of extension/compression & $\vec x$   & \si\metre
+      Spring force        & $\vec F_s$ & \si\newton \\
+      Spring constant     & $k$        & \si{\newton\per\metre}\\
+      Spring Displacement & $\vec x$   & \si\metre
     \end{tabular}
   \end{center}
 \end{frame}
@@ -47,8 +47,8 @@
     potential energy} stored in the spring when it is compressed or stretched:
 
   \eq{-.1in}{
-    W=\int^{x_2}_{x_1}\vec F_s\cdot\dl\vec x=-\int^{x_2}_{x_1}kx\dl x
-    =-\frac12kx^2\Big|^{x_2}_{x_1}=-\Delta U_e
+    W=\int^{x_1}_{x_0}F_s\dl x=-\int^{x_1}_{x_0}kx\dl x
+    =-\frac12kx^2\Big|^{x_1}_{x_0}=-\Delta U_e
   }
 
   where elastic potential energy is defined as
@@ -255,7 +255,7 @@
 \begin{frame}{Side Note \#2}
   The second derivative \emph{does} in fact have the negative sign:
 
-  \vspace{-.2in}{\large
+  \vspace{-.3in}{\large
     \begin{align*}
       x&=e^{i\omega t}\\
       \dot x&=i\omega e^{i\omega t}\\
@@ -263,8 +263,8 @@
     \end{align*}
   }
   
-  \vspace{-.2in}This should not come as a surprise, since the complex
-  exponential function and the sinusoidal functions are related:
+  This should not come as a surprise, since the complex exponential function
+  and the sinusoidal functions are related:
 
   \eq{-.1in}{
     e^{i\omega t}=\cos(\omega t)+i\sin(\omega t)
@@ -552,13 +552,13 @@
           domain=0:pi/2,
           samples=40,
           style={thick}]{sin(x*180/pi)};
-        \addlegendentry{$\sin\theta$};
+        \addlegendentry{$\sin\theta$}
         \addplot[
           color=red,
           domain=0:pi/2,
           samples=40,
           thick]{x};
-        \addlegendentry{$\theta$};
+        \addlegendentry{$\theta$}
       \end{axis}
     \end{tikzpicture}
     \begin{tikzpicture}
@@ -963,19 +963,19 @@
           samples=300,
           domain=0:3,
           very thick]{1/sqrt((1-x^2)^2+x^2)};
-        \addlegendentry{$\frac b{2m}=\frac12\omega_0$};
+        \addlegendentry{$\frac b{2m}=\frac12\omega_0$}
         \addplot[
           color=red!60,
           samples=200,
           domain=0:3,
           very thick]{1/sqrt((1-x^2)^2+x^2/4)};
-        \addlegendentry{$\frac b{2m}=\frac14\omega_0$};
+        \addlegendentry{$\frac b{2m}=\frac14\omega_0$}
         \addplot[
           color=red,
           samples=200,
           domain=0:3,
           very thick]{1/sqrt((1-x^2)^2+x^2/16)};
-        \addlegendentry{$\frac b{2m}=\frac18\omega_0$};
+        \addlegendentry{$\frac b{2m}=\frac18\omega_0$}
       \end{axis}
     \end{tikzpicture}
 
@@ -1023,7 +1023,7 @@
     \end{align*}
   }
 
-  \vspace{-.2in}This also makes sense from a work-energy perspective, because
-  now the external force is doing positive work to the system.
+  This also makes sense from a work-energy perspective, because now the
+  external force is doing positive work to the system.
 \end{frame}
 \end{document}

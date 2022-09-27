@@ -1,4 +1,5 @@
 \documentclass{../../oss-apphys-exam}
+\newcounter{lastmc}
 
 \begin{document}
 \genheader
@@ -12,7 +13,7 @@
 \raggedcolumns
 \begin{multicols*}{2}
   \begin{questions}
-    \question A mass oscillates horizontally on the end of a spring that obeys
+    \question A mass oscillates hozirontally on the end of a spring that obeys
     Hooke's law. Which of the following statements is true?
     \begin{choices}
       \choice The amplitude of oscillation is equal to the potential energy of
@@ -25,6 +26,7 @@
       \choice The kinetic energy of the spring at the amplitude is equal to the
       potential energy.
     \end{choices}
+    \vspace{.7in}
     
     \question A superball is dropped from a height of \SI{5.}{\metre} above a
     floor. The ball bounces off the floor in a perfectly elastic collision so
@@ -37,6 +39,7 @@
       \choice motion with a constant velocity
       \choice motion with a constant momentum
     \end{choices}
+    \vspace{.7in}
     
     \question An object oscillates in simple harmonic motion along the $x$-axis
     according to the equation $x=6\cos(4t)$. The period of oscillation of the
@@ -72,7 +75,6 @@
 %      \choice Decrease the length of the pendulum to $L/2$
 %      \choice Decrease the mass of the pendulum to $m/2$
 %    \end{choices}
-%    \vspace{.7in}
     \columnbreak
     
     \question A mass hangs from two parallel springs, each with the same spring
@@ -80,11 +82,11 @@
     one of the springs, the period of oscillation of the mass with both
     springs connected to it is
     \begin{choices}
-      \choice $T/4$
-      \choice $T/\sqrt{2}$
+      \choice $T/2$
+      \choice $T/\sqrt2$
       \choice $T$ (unchanged)
+      \choice $\sqrt2T$
       \choice $2T$
-      \choice $4T$
     \end{choices}
     
     \question Which of the following is generally true for an object in simple
@@ -102,49 +104,11 @@
       of the motion.
     \end{choices}
     \vspace{.7in}
-    \columnbreak
     
-    \uplevel{  
-      \textbf{Questions \ref{first}--\ref{last}}
-
-      A harmonic oscillator follows the equation $\dfrac{d^2x}{dt^2}=-4x$. The
-      spring constant $k$ is \SI{4}{\newton\per\metre}.
-    }
-
-    \question The angular frequency $\omega$ of the harmonic motion is
-    \begin{choices}
-      \choice zero
-      \choice\SI{2}{rad\per\second}
-      \choice\SI{4}{rad\per\second}
-      \choice\SI{8}{rad\per\second}
-      \choice\SI{16}{rad\per\second}
-    \end{choices}
-    \label{first}
-
-    \question The mass $m$ oscillating on the spring is
-    \begin{choices}
-      \choice\SI{1}{\kilo\gram}
-      \choice\SI{2}{\kilo\gram}
-      \choice\SI{4}{\kilo\gram}
-      \choice\SI{8}{\kilo\gram}
-      \choice\SI{16}{\kilo\gram}
-    \end{choices}
-    
-    \question The period $T$ of oscillation is
-    \begin{choices}
-      \choice zero
-      \choice $\pi/4$\si{\second}
-      \choice $\pi/2$\si{\second}
-      \choice $\pi$  \si{\second}
-      \choice $2\pi$ \si{\second}
-    \end{choices}
-    \label{last}
-    \columnbreak
-    
-    \question A pendulum of length $L$ has a period of \SI{2}{\second} on
-    Earth. A planetary explorer takes the same pendulum of length $L$ to
-    another planet where its period is \SI{1}{\second}. The gravitational
-    acceleration on the surface of this planet is most nearly
+    \question A pendulum of length $L$ has a period of \SI2{\second} on Earth.
+    A planetary explorer takes the same pendulum of length $L$ to another
+    planet where its period is \SI1\second. The gravitational acceleration on
+    the surface of this planet is most nearly
 %    \begin{center}
 %      \begin{tikzpicture}
 %        \fill [pattern=north east lines] (-5,0)--(0,0)--(0,2)--(.2,2)--
@@ -165,15 +129,55 @@
       \choice $g/2$
       \choice $g/4$
     \end{choices}
+    \columnbreak
+    
+    \uplevel{  
+      \textbf{Questions \ref{first}--\ref{last}}
+
+      A harmonic oscillator follows the equation $\dfrac{d^2x}{dt^2}=-4x$. The
+      spring constant $k$ is \SI{4}{\newton\per\metre}.
+    }
+
+    \question The angular frequency $\omega$ of the harmonic motion is
+    \begin{choices}
+      \choice zero
+      \choice\SI2{rad\per\second}
+      \choice\SI4{rad\per\second}
+      \choice\SI8{rad\per\second}
+      \choice\SI{16}{rad\per\second}
+    \end{choices}
+    \label{first}
+
+    \question The mass $m$ oscillating on the spring is
+    \begin{choices}
+      \choice\SI1{\kilo\gram}
+      \choice\SI2{\kilo\gram}
+      \choice\SI4{\kilo\gram}
+      \choice\SI8{\kilo\gram}
+      \choice\SI{16}{\kilo\gram}
+    \end{choices}
+    
+    \question The period $T$ of oscillation is
+    \begin{choices}
+      \choice zero
+      \choice $\pi/4$\si{\second}
+      \choice $\pi/2$\si{\second}
+      \choice $\pi$  \si{\second}
+      \choice $2\pi$ \si{\second}
+    \end{choices}
+    \label{last}   
   \end{questions}
+  \setcounter{lastmc}{\value{question}}
 \end{multicols*}
 \newpage
 
-\genfreetitle{C}{SIMPLE HARMONIC MOTION}{6}
+\genfreetitle{10}{SIMPLE HARMONIC MOTION}{3}
 
 \genfreedirections
 
 \begin{questions}
+  \setcounter{question}{\value{lastmc}}
+  
 %\item A mass $m$ oscillates on an ideal spring of spring constant $k$ on a
 %  frictionless horizontal surface. The mass is pulled aside to a distance $A$
 %  from its equilibrium position, and released.
@@ -260,18 +264,18 @@
 %  \end{tikzpicture}
 %  \newpage
   
-  \question A simple pendulum of length $L$ is released from rest from an angle
-  of $\theta_0$.
-  \begin{parts}
-    \part Assuming the motion of the pendulum to be simple harmonic motion, find
-    its speed as it passes through $\theta=0$.
-    \part Using the conservation of energy, find this speed exactly.
-    \part Show that your results for (a) and (b) are the same when $\theta_0$ is
-    small.
-    \part Find the difference in your results for $\theta_0=\SI{.20}{rad}$ and
-    $L=\SI1\metre$.
-  \end{parts}
-  \newpage
+%  \question A simple pendulum of length $L$ is released from rest from an angle
+%  of $\theta_0$.
+%  \begin{parts}
+%    \part Assuming the motion of the pendulum to be simple harmonic motion, find
+%    its speed as it passes through $\theta=0$.
+%    \part Using the conservation of energy, find this speed exactly.
+%    \part Show that your results for (a) and (b) are the same when $\theta_0$ is
+%    small.
+%    \part Find the difference in your results for $\theta_0=\SI{.20}{rad}$ and
+%    $L=\SI1\metre$.
+%  \end{parts}
+%  \newpage
     
   \uplevel{
     \cpic{.35}{torsional}
@@ -286,11 +290,14 @@
     \part In terms of the quantities given above, write but do NOT solve the
     differential equation that could be used to determine the angular
     displacement $\theta$ of the torsion pendulum as a function of time $t$.
+    \vspace{\stretch1}
     
     \part Using the analogy to a mass oscillating on a spring, determine the
     period of the torsion pendulum in terms of the given quantities and
     fundamental constants, as appropriate.
-
+    \vspace{\stretch1}
+    \newpage
+    
     \uplevel{
       To determine the torsion constant $\beta$ of the rod, disks of different,
       known values of rotational inertia are attached to the rod, and the data
@@ -312,14 +319,19 @@
   
     \part On the graph below, plot the data points. Draw a straight line that
     best represents the data.
-    \cpic{.9}{graph-paper}
- 
+    \uplevel{
+      \cpic{.9}{graph-paper}
+    }
+    
     \part Determine the equation for your line.
- 
+    \vspace{\stretch1}
+    
     \part Calculate the torsion constant $\beta$ of the rod from your line.
- 
+    \vspace{\stretch1}
+    
     \part What is the physical significance of the intercept of your line with
     the vertical axis?
+    \vspace{\stretch1}
   \end{parts}
   \newpage
 
@@ -327,23 +339,26 @@
   \uplevel{
     \cpic{.5}{spring-mass}
   }
-  \question \underline{Experiment 1.} A block of mass 0.30 kg is placed on a
-  frictionless table and is attached to one end of a horizontal spring of
-  spring constant $k$, as shown above. The other end of the spring is attached
-  to a fixed wall. The block is set into oscillatory motion by stretching the
-  spring and releasing the block from rest at time $t=0$. A motion detector is
-  used to record the position of the block as it oscillates. The resulting
-  graph of velocity $\varv$ versus time $t$ is shown below. The positive
-  direction for all quantities is to the right.
+  \question \underline{Experiment 1.} A block of mass \SI{.30}{\kilo\gram} is
+  placed on a frictionless table and is attached to one end of a horizontal
+  spring of spring constant $k$, as shown above. The other end of the spring is
+  attached to a fixed wall. The block is set into oscillatory motion by
+  stretching the spring and releasing the block from rest at time $t=0$. A
+  motion detector is used to record the position of the block as it oscillates.
+  The resulting graph of velocity $\varv$ versus time $t$ is shown below. The
+  positive direction for all quantities is to the right.
   \cpic{.5}{oscillation1}
   \begin{parts}
     \part Determine the equation for $\varv(t)$, including numerical values for
     all constants.
- 
+    \vspace{\stretch1}
+    
     \part Given that the equilibrium position is at $x=0$, determine the
     equation for $x(t)$, including numerical values for all constants.
-
+    \vspace{\stretch1}
+    
     \part Calculate the value of $k$.
+    \vspace{\stretch1}
     \newpage
     
     \uplevel{\underline{Experiment 2.} The block and spring arrangement is now
@@ -358,21 +373,21 @@
     direction indicated below each dot.
     
     \begin{minipage}{.45\textwidth}
-      \vspace{.5in}
+      \vspace{.7in}
       \begin{center}
-        \tikz{\fill(0,0) circle(.15);}
+        \tikz{\fill circle(.15);}
         
-        \vspace{.3in}
+        \vspace{.7in}
         Toward\\
         the equilibrium position
       \end{center}
     \end{minipage}
     \begin{minipage}{.45\textwidth}
-      \vspace{.5in}
+      \vspace{.7in}
       \begin{center}
-        \tikz{\fill(0,0) circle(.15);}
+        \tikz{\fill circle(.15);}
         
-        \vspace{.3in}
+        \vspace{.7in}
         Away from\\
         the equilibrium position
       \end{center}
@@ -396,25 +411,33 @@
   given quantities and fundamental constants.
   \begin{parts}
     \part Determine the speed of the clay at the instant it hits the pan.
+    \vspace{\stretch1}
+    
     \part Determine the speed of the pan just after the clay strikes it.
+    \vspace{\stretch1}
+    
     \part Determine the period of the simple harmonic motion that ensues.
+    \vspace{\stretch1}
+    
     \part Determine the distance the spring is stretched (from its initial
     unstretched length) at the moment the speed of the pan is a maximum.
     Justify your answer.
-
+    \vspace{\stretch1}
+    \newpage
+    
     \part The clay is now removed from the pan and the pan is returned to
     equilibrium at the end of the spring. A rubber ball, also of mass $M$, is
-    dropped from the same height H onto the pan, and after the collision is
-    caught in midair before hitting anything else.
-    
-    Indicate below whether the period of the resulting simple harmonic motion
-    of the pan is greater than, less than, or the same as it was in part (c).
-    Justify your answer.
+    dropped from the same height $H$ onto the pan, and after the collision is
+    caught in midair before hitting anything else. Indicate below whether the
+    period of the resulting simple harmonic motion of the pan is greater than,
+    less than, or the same as it was in part (c).
     
     \vspace{.1in}
     \underline{\hspace{.3in}} Greater than\hspace{.4in}
     \underline{\hspace{.3in}} Less than\hspace{.4in}
     \underline{\hspace{.3in}} The same as
+
+    \vspace{.1in}Justify your answer.
   \end{parts}
 \end{questions}
 \end{document}

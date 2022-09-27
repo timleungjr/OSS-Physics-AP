@@ -1,4 +1,5 @@
 \documentclass{../../oss-apphys-exam}
+\newcounter{last}
 
 \begin{document}
 \genheader
@@ -10,8 +11,8 @@
 \gengravity
 
 \raggedcolumns
-\begin{questions}
-  \begin{multicols*}{2}
+\begin{multicols*}{2}
+  \begin{questions}
     \question The Earth is at an average distance of \SI1{AU} from the Sun and
     has an orbital period of \SI1{year}. Jupiter orbits the Sun at
     approximately \SI5{AU}. About how long is the orbital period of Jupiter?
@@ -130,7 +131,8 @@
       \choice The speed of the satellite must remain constant for it to remain
       in orbit around the Earth.
     \end{choices}
-
+    \vspace{.7in}
+    
     \question A satellite of mass $m$ travels in an elliptical orbit around a
     planet of mass $M$. The satellite has a speed $\varv$ when it is closest to
     the planet at a distance $r$. Work is done by the engines of the satellite
@@ -166,15 +168,17 @@
       \choice The total energy of the satellite would have to be equal to the
       potential energy of the satellite.
     \end{choices}
-  \end{multicols*}
-  \newpage
-%\end{questions}
+  \end{questions}
+  \setcounter{last}{\value{question}}
+\end{multicols*}
+\newpage
 
-  \uplevel{
-    \genfreetitle{12}{UNIVERSAL GRAVITATION}{3}
-    \genfreedirections
-  }
+\genfreetitle{12}{UNIVERSAL GRAVITATION}{2}
+%\genfreedirections
 
+\begin{questions}
+  \setcounter{question}{\value{last}}
+  
   % TAKEN FROM THE 2007 AP PHYSICS C MECHANICS EXAM FREE-RESPONSE QUESTION 2
   \question In March 1999 the Mars Global Surveyor (GS) entered its final orbit
   about Mars, sending data back to Earth. Assume a circular orbit with a period
@@ -183,21 +187,31 @@
   and the radius of Mars is \SI{3.43e6}\metre.
   \begin{parts}
     \part Calculate the radius of the GS orbit.
+    \vspace{\stretch1}
+    
     \part Calculate the mass of Mars.
+    \vspace{\stretch1}
+    
     \part Calculate the total mechanical energy of the GS in this orbit.
+    \vspace{\stretch1}
+    
     \part If the GS was to be placed in a lower circular orbit (closer to the
     surface of Mars), would the new orbital period of the GS be greater than or
-    less than the given period? Justify your answer.
-
+    less than the given period?
+    
     \vspace{.15in}
     \underline{\hspace{.3in}} Greater than\hspace{1in}
     \underline{\hspace{.3in}} Less than
 
+    \vspace{.15in} Justify your answer.
+    \vspace{\stretch1}
+    
     \part In fact, the orbit the GS entered was slightly elliptical with its
     closest approach to Mars at \SI{3.71e5}{\metre} above the surface and its
     furthest distance at \SI{4.36e5}{\metre} above the surface. If the speed of
     the GS at closest approach is \SI{3.40e3}{\metre\per\second}, calculate the
     speed at the furthest point of the orbit.
+    \vspace{\stretch1}
   \end{parts}
   \newpage
   
@@ -223,39 +237,45 @@
     \part Write an algebraic expression for the gravitational force between
     Saturn and one of its moons.
     \label{algebraic}
+    \vspace{\stretch1}
     
     \part Use your expression from part (\ref{algebraic}) and the assumption of
     circular orbits to derive an equation for the orbital period $T$ of a moon
     as a function of its orbital radius $R$.
+    \vspace{\stretch1}
     
     \part Which quantities should be graphed to yield a straight line whose
     slope could be used to determine Saturn's mass?
-
+    \vspace{\stretch1}
+    
     \part Complete the data table by calculating the two quantities to be
     graphed. Label the top of each column, including units.
-
+    \vspace{\stretch1}
+    \newpage
+    
     \part Plot the graph on the axes below. Label the axes with the variables
     used and appropriate numbers to indicate the scale.
     \begin{center}
       \begin{tikzpicture}[xscale=.48,yscale=.35]
         \draw[very thick,->](0,0)--(31,0);
         \draw[very thick,->](0,0)--(0,31);
-        \draw[dashed,gray,thick](0,0) grid(30,30);
-        \draw[very thick,step=5](0,0) grid(30,30);
+        \draw[dashed] grid(30,30);
+        \draw[very thick,step=5] grid(30,30);
       \end{tikzpicture}
     \end{center}
+    \vspace{.4in}
     \part Using the graph, calculate a value for the mass of Saturn.
   \end{parts}
-  \newpage
-  
-  \question\textbf{THIS IS A CHALLENGE PROBLEM THAT IS MORE DIFFICULT THAN AP
-    EXAMS:} Spacecraft that study the Sun are often placed at the ``L1 Lagrange
-  Point'', located sunward of Earth on the Sun--Earth line. L1 is the point
-  where Earth's and Sun's gravity together produce an orbital period of one
-  year, so that a spacecraft at L1 stays fixed relative to Earth as both planet
-  and spacecraft orbit the Sun. This placement ensures an uninterrupted view of
-  the sun, without being periodically eclipsed by Earth as would occur in Earth
-  orbit. Find L1's location relative to Earth. (Hint: This problem calls for
-  numerical methods for solving high-order polynomial equation.)
+%  \newpage
+%  
+%  \question\textbf{THIS IS A CHALLENGE PROBLEM THAT IS MORE DIFFICULT THAN AP
+%    EXAMS:} Spacecraft that study the Sun are often placed at the ``L1 Lagrange
+%  Point'', located sunward of Earth on the Sun--Earth line. L1 is the point
+%  where Earth's and Sun's gravity together produce an orbital period of one
+%  year, so that a spacecraft at L1 stays fixed relative to Earth as both planet
+%  and spacecraft orbit the Sun. This placement ensures an uninterrupted view of
+%  the sun, without being periodically eclipsed by Earth as would occur in Earth
+%  orbit. Find L1's location relative to Earth. (Hint: This problem calls for
+%  numerical methods for solving high-order polynomial equation.)
 \end{questions}
 \end{document}

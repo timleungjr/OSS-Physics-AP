@@ -1,8 +1,6 @@
 all:
-	xelatex PhysAPC-0708-Homework
-	xelatex PhysAPC-0708-Homework
-	xelatex PhysAPC-0708-Homework-Classkick
-	xelatex PhysAPC-0708-Homework-Classkick
+	xelatex PhysAPC-09-Homework
+	xelatex PhysAPC-09-Homework
 
 clean:
 	rm -rf *.aux *.log *.*~ *~
