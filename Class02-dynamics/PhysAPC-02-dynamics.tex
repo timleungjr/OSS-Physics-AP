@@ -200,7 +200,7 @@
   \begin{columns}
     \column{.22\textwidth}
     \centering
-    \begin{tikzpicture}{scale=1.5}
+    \begin{tikzpicture}[scale=1.5]
       \draw[thick] (-1,0)--(2.5,0);
       \draw[fill=cyan!80,thick] rectangle (1.5,1);
       \fill (.75,.5) circle(2pt);
@@ -537,13 +537,13 @@
 
 
 
-\begin{frame}{Spring Force \& Elastic Potential Energy}
-  The spring force $\vec F_e$ is the force that a compressed/stretched spring
+\begin{frame}{Spring Force}
+  The spring force $\vec F_s$ is the force that a compressed/stretched spring
   exerts on the object connected to it.  An \emph{ideal} spring obeys Hooke's
   law:
     
   \eq{-.1in}{
-    \boxed{\vec F_e=-k\vec x}
+    \boxed{\vec F_s=-k\vec x}
   }
 
   \vspace{-.1in}The spring force acts in the opposite direction to the spring's
@@ -559,9 +559,9 @@
       \fill[pattern=north east lines](-.2,0) rectangle(0,2);
       \draw[thick](0,.0)--(0,2);
       \fill[red] (5.5,1) circle(.06);
-      \draw[ultra thick,->,red](5.5,1)--(4,1) node[above]{$\vec F_e$};
+      \draw[ultra thick,->,red](5.5,1)--(4,1) node[above]{$\vec F_s$};
       \draw[dashed](3,0)--(3,2) node[above]{\small Equilibrium position};
-      \draw[ultra thick,->](3,.3)--(5,.3) node[midway,below]{$\Delta x$};
+      \draw[ultra thick,->](3,.3)--(5,.3) node[midway,below]{$\vec x$};
     \end{tikzpicture}
     \hspace{.2in}
     \begin{tikzpicture}
@@ -572,16 +572,16 @@
       \fill[pattern=north east lines](-.2,0) rectangle(0,2);
       \draw[thick](0,.0)--(0,2);
       \fill[gray!30] (5.5,1) circle(.06);
-      \draw[ultra thick,->,gray!30](5.5,1)--(4,1) node[above]{$\vec F_e$};
+      \draw[ultra thick,->,gray!30](5.5,1)--(4,1) node[above]{$\vec F_s$};
       \draw[dashed](3,0)--(3,2);
-      \draw[ultra thick,->,gray!30](3,.3)--(5,.3)node[midway,below]{$\Delta x$};
+      \draw[ultra thick,->,gray!30](3,.3)--(5,.3)node[midway,below]{$\vec x$};
       \draw[thick,fill=cyan!80] (1.5,.5) rectangle (2.5,1.5);
       \draw[thick,
         decoration={aspect=.3,segment length=2mm, amplitude=2.5mm, coil},
         decorate] (0,1)--(1.5,1);
-      \draw[ultra thick,->](3,.3)--(1.5,.3) node[midway,below]{$\Delta x$};
+      \draw[ultra thick,->](3,.3)--(1.5,.3) node[midway,below]{$\vec x$};
       \fill[red] (2,1) circle(.06);
-      \draw[ultra thick,->,red](2,1)--(3,1) node[above]{$\vec F_e$};
+      \draw[ultra thick,->,red](2,1)--(3,1) node[above]{$\vec F_s$};
     \end{tikzpicture}
   \end{center}
 \end{frame}

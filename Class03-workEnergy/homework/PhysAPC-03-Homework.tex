@@ -1,62 +1,58 @@
 \documentclass{../../oss-apphys-exam}
 \usepackage{wrapfig}
-
+\newcounter{lastmc}
+  
 \begin{document}
 \genheader
 
-\gentitle{C}{WORK AND ENERGY}
+\gentitle{3}{WORK AND ENERGY}
 
 \genmultidirections
 
-\gengravity
+%\gengravity
 
 \raggedcolumns
+
 \begin{multicols*}{2}
+%    \question A \SI1{\kilo\gram} ball is thrown vertically downward from a
+%    \SI{50}{\metre} high tower with an initial speed of \SI4{\metre\per\second}.
+%    Just before striking the ground, the speed of the ball is
+%    \SI{20}{\metre\per\second}. The energy lost to air friction is most nearly
+%    \begin{choices}
+%      \choice\SI{101}{\joule}
+%      \choice\SI{210}{\joule}
+%      \choice\SI{308}{\joule}
+%      \choice\SI{406}{\joule}
+%      \choice\SI{508}{\joule}
+%    \end{choices}
 
+  \textbf{Questions \ref{q:pq1}--\ref{q:pq2}}: A \SI2{\kilo\gram} projectile is
+  launched with a speed of \SI{20}{\metre\per\second} from horizontal ground at
+  an angle of \ang{37} to the horizontal as shown. Point $P$ is at the top of
+  the path, and point $Q$ is at the end of the path, just before the projectile
+  again reaches the ground.
+  \cpic{.35}{symprojectile}
+    
   \begin{questions}
-
-    \question A \SI1{\kilo\gram} ball is thrown vertically downward from a
-    \SI{50}{\metre} high tower with an initial speed of \SI4{\metre\per\second}.
-    Just before striking the ground, the speed of the ball is
-    \SI{20}{\metre\per\second}. The energy lost to air friction is most nearly
-    \begin{choices}
-      \choice\SI{101}{\joule}
-      \choice\SI{210}{\joule}
-      \choice\SI{308}{\joule}
-      \choice\SI{406}{\joule}
-      \choice\SI{508}{\joule}
-    \end{choices}
-
-    \uplevel{
-      \textbf{Questions \ref{q:pq1}--\ref{q:pq2}}\\
-      A \SI2{\kilo\gram} projectile is launched with a speed of
-      \SI{20}{\metre\per\second} from horizontal ground at an angle of \ang{37}
-      to the horizontal as shown. Point $P$ is at the top of the path, and
-      point $Q$ is at the end of the path, just before the projectile again
-      reaches the ground.
-      \cpic{.35}{symprojectile}
-    }
-
-  \item The kinetic energy of the projectile at point $P$ is
+    \question The kinetic energy of the projectile at point $P$ is
     \label{q:pq1}
     \begin{choices}
-      \choice\SI{108}{\joule}
-      \choice\SI{225}{\joule}
-      \choice\SI{256}{\joule}
-      \choice\SI{400}{\joule}
-      \choice\SI{525}{\joule}
+      \choice\SI{108}\joule
+      \choice\SI{225}\joule
+      \choice\SI{256}\joule
+      \choice\SI{400}\joule
+      \choice\SI{525}\joule
     \end{choices}
     
-  \item The kinetic energy of the projectile at point $Q$ is
+    \question The kinetic energy of the projectile at point $Q$ is
     \label{q:pq2}
     \begin{choices}
-      \choice\SI{108}{\joule}
-      \choice\SI{225}{\joule}
-      \choice\SI{256}{\joule}
-      \choice\SI{400}{\joule}
-      \choice\SI{525}{\joule}
+      \choice\SI{108}\joule
+      \choice\SI{225}\joule
+      \choice\SI{256}\joule
+      \choice\SI{400}\joule
+      \choice\SI{525}\joule
     \end{choices}
-    \columnbreak
     
     \question If a projectile thrown directly upward reaches a maximum height
     $h$ and spends a total time in the air of $T$, then returning to the
@@ -79,16 +75,17 @@
       \choice the net change in the object's kinetic energy
       \choice the net change in the object's potential energy
     \end{choices}
+    \columnbreak
     
     \question The force acting on an object varies with the equation
     $F(x)=-3x^2-2x-4$, where force is in newtons and displacement is in meters.
-    The potential energy at $x=\SI2{\metre}$ is
+    The potential energy at $x=\SI2\metre$ is
     \begin{choices}
       \choice zero
-      \choice\SI{20}{\joule}
-      \choice\SI{40}{\joule}
-      \choice\SI{-20}{\joule}
-      \choice\SI{-40}{\joule}
+      \choice\SI{20}\joule
+      \choice\SI{40}\joule
+      \choice\SI{-20}\joule
+      \choice\SI{-40}\joule
     \end{choices}
     
     \question If the only force acting on an object is given by the equation
@@ -96,13 +93,12 @@
     what is the change in the object's kinetic energy as it moves from $x=2$ to
     $x=1$?
     \begin{choices}
-      \choice +\SI{4}{\joule}
-      \choice \SI{-4}{\joule}
-      \choice +\SI{2}{\joule}
-      \choice \SI{-2}{\joule}
-      \choice +\SI{8}{\joule}
+      \choice +\SI{4}\joule
+      \choice \SI{-4}\joule
+      \choice +\SI{2}\joule
+      \choice \SI{-2}\joule
+      \choice +\SI{8}\joule
     \end{choices}
-    \columnbreak
     
     \question The potential energy of an object varies with the equation
     $U(x)=2x^2+x-6$, where force is in newtons and displacement is in meters. A
@@ -114,6 +110,7 @@
       \choice A straight line with a positive slope
       \choice A straight line with a negative slope
     \end{choices}
+    \vspace{.7in}
     
     \question A particle of mass $m$ moves according to the displacement
     equation $x=2t^{5/2}$. The kinetic energy of the particle as a function of
@@ -121,7 +118,7 @@
     \begin{choices}
       \choice $10mt^{5/2}$
       \choice $10mt^{3/2}$
-      \choice $\displaystyle\frac{25}2mt^3$
+      \choice $\dfrac{25}2mt^3$
       \choice $5mt^2$
       \choice $2mt^{3/2}$
     \end{choices}
@@ -136,6 +133,7 @@
       \choice equal to the kinetic energy of the electron
       \choice equal to the potential energy of the electron
     \end{choices}
+    \vspace{.7in}
     
     \question An object is moved from rest at point $P$ to rest at point $Q$ in
     a gravitational field. The net work against the gravitational field depends
@@ -147,11 +145,35 @@
       \choice length moved between points $P$ and $Q$
       \choice coefficient of friction
     \end{choices}
-    \columnbreak
+    \vspace{.7in}
 
+    \question Two blocks of mass $m_A$ and $m_B$ are connected by a string that
+    passes over a light pulley. The mass of $A$ is larger than the mass of $B$.
+    The speed of mass $A$ just before reaching the floor is:
+    \begin{center}
+      \begin{tikzpicture}[scale=.7,thick]
+        \draw circle(1);
+        \draw(-1,0)--(-1,-1.5);
+        \draw(-1.5,-1.5) rectangle(-.5,-2.5) node[midway]{$A$};
+        \draw(1,0)--(1,-3);
+        \draw(1.5,-3) rectangle(.5,-4)  node[midway]{$B$};
+        \draw(-1.8,-2.5)--(-2.2,-2.5);
+        \draw[<->](-2,-2.5)--(-2,-5.5) node[midway,left]{$D$};
+        \fill[gray!50](-2.3,-5.7) rectangle(2,-5.5);
+        \draw(-2.3,-5.5)--(2,-5.5);
+      \end{tikzpicture}
+    \end{center}
+    \begin{choices}
+      \choice $\sqrt{\dfrac{2(m_A-m_B)}{m_A+m_B}gD}$
+      \choice $\sqrt{\dfrac{2(m_A+m_B)}{m_A-m_B}gD}$
+      \choice $\sqrt{\dfrac{2m_A}{m_A+m_B}gD}$
+      \choice $\sqrt{\dfrac{2m_B}{m_A+m_B}gD}$
+      \choice $\sqrt{\dfrac{2m_A}{m_B}gD}$
+    \end{choices}
+    
     \uplevel{
-      \textbf{Questions \ref{q:well1}--\ref{q:well2}}\\
-      Consider the potential energy function shown below.
+      \textbf{Questions \ref{q:well1}--\ref{q:well2}}: Consider the potential
+      energy function shown below.
       \cpic{.28}{potential-well}
     }
 
@@ -167,6 +189,7 @@
       \choice The particle will achieve no maximum speed but instead will
       continue to accelerate indefinitely.
     \end{choices}
+    \vspace{.7in}
     
     \question Which of the following is the most accurate description of the
     system introduced in the previous question?
@@ -178,124 +201,98 @@
       \choice A bound system
       \choice There is a linear restoring force
     \end{choices}
+    \vspace{.7in}
     
-    \question A pendulum bob of mass $m$ is released from rest as shown in the
-    figure below. What is the tension in the string as the pendulum swings
-    through the lowest point of its motion?
-    \begin{center}
-      \begin{tikzpicture}
-        \draw[thick,dashed](0,0)--(0,-3.5);
-        \begin{scope}[rotate=60]
-          \draw[very thick](0,0)--(0,-4);
-          \fill(0,-4) circle(.13) node[right]{$\;m$};
-          \draw[<->,thick](.5,0)--(.5,-4) node[midway,above right]{$l$};
-        \end{scope}
-        \draw[<->,thick](0,-1)arc(270:330:1)
-        node[pos=.6,below]{\ang{60}};
-      \end{tikzpicture}
-    \end{center}
-    \begin{choices}
-      \choice $\displaystyle T=\frac{1}{2}mg$
-      \choice $T=mg$
-      \choice $\displaystyle T=\frac{3}{2}mg$
-      \choice $T=2mg$
-      \choice None of the above
-    \end{choices}
-    \columnbreak
+%    \question A pendulum bob of mass $m$ is released from rest as shown in the
+%    figure below. What is the tension in the string as the pendulum swings
+%    through the lowest point of its motion?
+%    \begin{center}
+%      \begin{tikzpicture}
+%        \draw[thick,dashed](0,0)--(0,-3.5);
+%        \begin{scope}[rotate=60]
+%          \draw[very thick](0,0)--(0,-4);
+%          \fill(0,-4) circle(.13) node[right]{$\;m$};
+%          \draw[<->,thick](.5,0)--(.5,-4) node[midway,above right]{$l$};
+%        \end{scope}
+%        \draw[<->,thick](0,-1)arc(270:330:1)
+%        node[pos=.6,below]{\ang{60}};
+%      \end{tikzpicture}
+%    \end{center}
+%    \begin{choices}
+%      \choice $\displaystyle T=\frac{1}{2}mg$
+%      \choice $T=mg$
+%      \choice $\displaystyle T=\frac{3}{2}mg$
+%      \choice $T=2mg$
+%      \choice None of the above
+%    \end{choices}
     
-    \question Two blocks of mass $m_A$ and $m_B$ are connected by a string that
-    passes over a light pulley. The mass of $A$ is larger than the mass of $B$.
-    The speed of mass $A$ just before reaching the floor is:
-    \begin{center}
-      \begin{tikzpicture}[scale=.7]
-        \begin{scope}[thick]
-          \draw(0,0) circle(1);
-          \draw(-1,0)--(-1,-1.5);
-          \draw(-1.5,-1.5) rectangle(-.5,-2.5) node[midway]{$A$};
-          \draw(1,0)--(1,-3);
-          \draw(1.5,-3) rectangle(.5,-4)  node[midway]{$B$};
-          \draw(-1.8,-2.5)--(-2.2,-2.5);
-          \draw[<->](-2,-2.5)--(-2,-5.5) node[midway,left]{$D$};
-          \fill[gray!50](-2.3,-5.7) rectangle(2,-5.5);
-          \draw(-2.3,-5.5)--(2,-5.5);
-        \end{scope}
-      \end{tikzpicture}
-    \end{center}
-    \begin{choices}
-      \choice $\displaystyle\sqrt{\frac{2(m_A-m_B)}{m_A+m_B}gD}$
-      \choice $\displaystyle\sqrt{\frac{2(m_A+m_B)}{m_A-m_B}gD}$
-      \choice $\displaystyle\sqrt{\frac{2m_A}{m_A+m_B}gD}$
-      \choice $\displaystyle\sqrt{\frac{2m_B}{m_A+m_B}gD}$
-      \choice $\displaystyle\sqrt{\frac{2m_A}{m_B}gD}$
-    \end{choices}
-
-    \question A force is applied to a block of mass $m$ at a downward angle of
-    $\theta$ to the vertical as shown. The block moves with a constant speed
-    across a rough floor for a distance $x$. The work done by the applied force
-    on the block is
-    \begin{center}
-      \begin{tikzpicture}
-        \fill[gray!50](0,-.15) rectangle(5,0);
-        \draw[thick](0,0)--(5,0);
-        \draw[thick](1.5,0)rectangle(3,1);
-        \draw[<-,thick](3,1)--(4.3,2.3);
-          \draw[thick,dashed](2.5,2.3)--(4.3,2.3)--(4.3,.8);
-          \draw[thick](4.3,1.6) arc(270:225:.7)
-          node[midway,below left]{$\theta$};
-      \end{tikzpicture}
-    \end{center}
-    \begin{choices}
-      \choice $Fx\sin\theta$
-      \choice $Fx\cos\theta$
-      \choice $Fmx\sin\theta$
-      \choice $Fmx\cos\theta$
-      \choice zero
-    \end{choices}
+%    \question A force is applied to a block of mass $m$ at a downward angle of
+%    $\theta$ to the vertical as shown. The block moves with a constant speed
+%    across a rough floor for a distance $x$. The work done by the applied force
+%    on the block is
+%    \begin{center}
+%      \begin{tikzpicture}
+%        \fill[gray!50](0,-.15) rectangle(5,0);
+%        \draw[thick](0,0)--(5,0);
+%        \draw[thick](1.5,0)rectangle(3,1);
+%        \draw[<-,thick](3,1)--(4.3,2.3);
+%          \draw[thick,dashed](2.5,2.3)--(4.3,2.3)--(4.3,.8);
+%          \draw[thick](4.3,1.6) arc(270:225:.7)
+%          node[midway,below left]{$\theta$};
+%      \end{tikzpicture}
+%    \end{center}
+%    \begin{choices}
+%      \choice $Fx\sin\theta$
+%      \choice $Fx\cos\theta$
+%      \choice $Fmx\sin\theta$
+%      \choice $Fmx\cos\theta$
+%      \choice zero
+%    \end{choices}
+%    
+%    \uplevel{
+%      \textbf{Questions \ref{sphere1}--\ref{sphere2}}\\
+%      A small block rests on the top of a smooth sphere of radius $R$ when it
+%      is given a light tap so that it just begins sliding on the sphere. When
+%      the block reaches the angle $\theta$, it loses contact with the surface
+%      of the sphere.
+%      \begin{center}
+%        \begin{tikzpicture}[scale=.6]
+%          \draw[thick] circle(2);
+%          \fill circle(.05);
+%          \draw[thick,->](0,0)--(0,2) node[midway,left]{$R$};
+%          \draw[thick](-.2,2) rectangle(.2,2.4);
+%          \begin{scope}[rotate around={-40:(0,0)}]
+%            \draw[thick,dashed](0,0)--(0,2);
+%            \draw[thick](-.2,2) rectangle(.2,2.4);
+%            \draw[->,thick](0,2.2)--(.8,2.2) node[right]{$\mb{v}$};
+%          \end{scope}
+%          \draw[thick](0,.6) arc(90:50:.6) node[midway,above]{$\theta$};
+%        \end{tikzpicture}
+%      \end{center}
+%    }
+%
+%    \question The kinetic energy of the block as it leaves the surface of the
+%    sphere is
+%    \label{sphere1}
+%    \begin{choices}
+%      \choice $mgR$
+%      \choice $mgR\cos\theta$
+%      \choice $mgR\sin\theta$
+%      \choice $mg(R-R\cos\theta)$
+%      \choice $mg(R-R\sin\theta)$
+%    \end{choices}
+%
+%    \question The speed of the block as it leaves the surface of the sphere is
+%    \label{sphere2}
+%    \begin{choices}
+%      \choice $\displaystyle\sqrt{2g}{m}$
+%      \choice $\displaystyle\sqrt{2gR}{m}$
+%      \choice $\displaystyle\sqrt{2gR\cos\theta}$
+%      \choice $\displaystyle\sqrt{2g(R-R\cos\theta)}$
+%      \choice $\displaystyle\sqrt{2g(R-R\sin\theta)}$
+%    \end{choices}
     
-    \uplevel{
-      \textbf{Questions \ref{sphere1}--\ref{sphere2}}\\
-      A small block rests on the top of a smooth sphere of radius $R$ when it
-      is given a light tap so that it just begins sliding on the sphere. When
-      the block reaches the angle $\theta$, it loses contact with the surface
-      of the sphere.
-      \begin{center}
-        \begin{tikzpicture}[scale=.6]
-          \draw[thick](0,0) circle(2);
-          \fill(0,0) circle(.05);
-          \draw[thick,->](0,0)--(0,2) node[midway,left]{$R$};
-          \draw[thick](-.2,2) rectangle(.2,2.4);
-          \begin{scope}[rotate around={-40:(0,0)}]
-            \draw[thick,dashed](0,0)--(0,2);
-            \draw[thick](-.2,2) rectangle(.2,2.4);
-            \draw[->,thick](0,2.2)--(.8,2.2) node[right]{$\mb{v}$};
-          \end{scope}
-          \draw[thick](0,.6) arc(90:50:.6) node[midway,above]{$\theta$};
-        \end{tikzpicture}
-      \end{center}
-    }
-
-    \question The kinetic energy of the block as it leaves the surface of the
-    sphere is
-    \label{sphere1}
-    \begin{choices}
-      \choice $mgR$
-      \choice $mgR\cos\theta$
-      \choice $mgR\sin\theta$
-      \choice $mg(R-R\cos\theta)$
-      \choice $mg(R-R\sin\theta)$
-    \end{choices}
-
-    \question The speed of the block as it leaves the surface of the sphere is
-    \label{sphere2}
-    \begin{choices}
-      \choice $\displaystyle\sqrt{2g}{m}$
-      \choice $\displaystyle\sqrt{2gR}{m}$
-      \choice $\displaystyle\sqrt{2gR\cos\theta}$
-      \choice $\displaystyle\sqrt{2g(R-R\cos\theta)}$
-      \choice $\displaystyle\sqrt{2g(R-R\sin\theta)}$
-    \end{choices}
-    
-  \item A machine can lift large weights according to the power equation
+    \question A machine can lift large weights according to the power equation
     $P(t)=4t^3+3t^2-2$, where power is in watts and time is in seconds. The
     energy expended by the machine from $t=0$ to $t=\SI{10}{\second}$ is
     \begin{choices}
@@ -306,49 +303,70 @@
       \choice \SI{18150}{\joule}
     \end{choices}
     
-    \question A small ball starts from rest and rolls down a quarter-circle
-    ramp of radius $R$. The speed of the ball at the point halfway down the
-    ramp is most nearly
-    \begin{center}
-      \begin{tikzpicture}[scale=2]
-        \draw[thick](-1,0)--(-1,-1)--(0,-1);
-        \draw(-1,0) arc(180:270:1);
-        \draw[thick,->,rotate=45](0,0)--(-1,0) node[midway,above,sloped]{$R$};
-        \draw[thick,rotate=25](-.92,0) circle(.08);
-        \fill (0,0) circle(.022);
-      \end{tikzpicture}
-    \end{center}
-    \begin{choices}
-      \choice $gR$
-      \choice $2gR$
-      \choice $\displaystyle\sqrt{gR\sin\ang{45}}$
-      \choice $\displaystyle\sqrt{2gR\sin\ang{45}}$
-      \choice The speed cannot be determined without knowing the mass of the
-      ball.
-    \end{choices}
+%    \question A small ball starts from rest and rolls down a quarter-circle
+%    ramp of radius $R$. The speed of the ball at the point halfway down the
+%    ramp is most nearly
+%    \begin{center}
+%      \begin{tikzpicture}[scale=2]
+%        \draw[thick](-1,0)--(-1,-1)--(0,-1);
+%        \draw(-1,0) arc(180:270:1);
+%        \draw[thick,->,rotate=45](0,0)--(-1,0) node[midway,above,sloped]{$R$};
+%        \draw[thick,rotate=25](-.92,0) circle(.08);
+%        \fill circle(.022);
+%      \end{tikzpicture}
+%    \end{center}
+%    \begin{choices}
+%      \choice $gR$
+%      \choice $2gR$
+%      \choice $\displaystyle\sqrt{gR\sin\ang{45}}$
+%      \choice $\displaystyle\sqrt{2gR\sin\ang{45}}$
+%      \choice The speed cannot be determined without knowing the mass of the
+%      ball.
+%    \end{choices}
   \end{questions}
+  \setcounter{lastmc}{\value{question}}
 \end{multicols*}
 \newpage
 
-\genfreetitle{C}{WORK AND ENERGY}{4}
+\genfreetitle{3}{WORK AND ENERGY}{3}
 
 \genfreedirections
 
 \begin{questions}
+  \setcounter{question}{\value{lastmc}}
+%  \question A mass $m$ is placed on an incline of angle $\theta$ at a distance
+%  $d$ from the end of a spring as shown below. The coefficient of kinetic
+%  friction between the mass and the plane is $\mu$.
+%  \cpic{.3}{ramp1}
+%  \begin{parts}
+%    \part The mass is released from rest at the position shown. Using Newton's
+%    laws, calculate the block's speed when it reaches the spring.
+%    
+%    \part Using energy conservation, alculate the block's speed when it reaches
+%    the spring.
+%    
+%  \part The spring has spring constant $k$. At what value $x$ of the compression
+%    of the spring does the object reach its maximum speed?
+%  \end{parts}
+%  \newpage
 
-  \question A mass $m$ is placed on an incline of angle $\theta$ at a distance
-  $d$ from the end of a spring as shown below. The coefficient of kinetic
-  friction between the mass and the plane is $\mu$.
-  \cpic{.3}{ramp1}
+  % TAKEN FROM THE 2003 AP PHYSICS C MECHANICS FREE-RESPONSE QUESTION MECH.1
+  \question The \SI{100}{\kilo\gram} box shown below is being pulled along the
+  $x$-axis by a student. The box slides across a rough surface, and its
+  position $x$ varies with time $t$ according to the equation
+  $x= 0.5t^3+2t$, where $x$ is in meters and $t$ is in seconds.
+  \cpic{.3}{student}
   \begin{parts}
-    \part The mass is released from rest at the position shown. Using Newton's
-    laws, calculate the block's speed when it reaches the spring.
+    \part Determine the speed of the box at time $t=0$.
+    \part Determine the following as functions of time $t$.
+    \begin{subparts}
+      \subpart The kinetic energy of the box
+      \subpart The net force acting on the box
+      \subpart The power being delivered to the box
+    \end{subparts}
     
-    \part Using energy conservation, alculate the block's speed when it reaches
-    the spring.
-    
-  \part The spring has spring constant $k$. At what value $x$ of the compression
-    of the spring does the object reach its maximum speed?
+    \part Calculate the net work done on the box in the interval $t=0$ to
+    $t=\SI2\second$.
   \end{parts}
   \newpage
   
@@ -432,8 +450,8 @@
       \begin{tikzpicture}[yscale=.3,xscale=.45]
         \draw[very thick,->](0,0)--(34,0);
         \draw[very thick,->](0,0)--(0,27);
-        \draw[dashed](0,0) grid(32,25);
-        \draw[very thick,step=5](0,0) grid(32,25);
+        \draw[dashed] grid(32,25);
+        \draw[very thick,step=5] grid(32,25);
       \end{tikzpicture}
     \end{center}
 
@@ -463,75 +481,73 @@
   \end{parts}
   \newpage
 
-  % TAKEN FROM 2012 AP PHYSICS C MECHANICS EXAM FREE-RESPONSE QUESTION MECH 2
-  \question You are to perform an experiment investigating the conservation of
-  mechanical energy involving a transformation from initial gravitational
-  potential energy to translational kinetic energy.
-  \begin{parts}
-    \part You are given the equipment listed below, all the supports required
-    to hold the equipment, and a lab table. On the list below, indicate each
-    piece of equipment you would use by checking the line next to each item.
-
-    \begin{tabular}{lll}
-      \underline{\hspace{.3in}} Track &
-      \underline{\hspace{.3in}} Meterstick &
-      \underline{\hspace{.3in}} Set of objects of different masses\\
-      \underline{\hspace{.3in}} Cart &
-      \underline{\hspace{.3in}} Electronic balance &
-      \underline{\hspace{.3in}} Lightweight low-friction pulley\\
-      \underline{\hspace{.3in}} String &
-      \underline{\hspace{.3in}} Stopwatch & \\
-    \end{tabular}
-
-    \part Outline a procedure for performing the experiment. Include a diagram
-    of your experimental setup. Label the equipment in your diagram. Also
-    include a description of the measurements you would make and a symbol for
-    each measurement.
-    \label{procedure}
-    
-    \part Give a detailed account of the calculations of gravitational
-    potential energy and translational kinetic energy both before and after the
-    transformation, in terms of the quantities measured in part
-    (\ref{procedure}).
-
-    \part After your first trial, your calculations show that the energy
-    increased during the experiment. Assuming you made no mathematical errors,
-    give a reasonable explanation for this result.
-
-    \part On all other trials, your calculations show that the energy decreased
-    during the experiment. Assuming you made no mathematical errors, give a
-    reasonable physical explanation for the fact that the average energy you
-    determined decreased. Include references to conservative and
-    nonconservative forces, as appropriate.
-  \end{parts}
+%  % TAKEN FROM 2012 AP PHYSICS C MECHANICS EXAM FREE-RESPONSE QUESTION MECH 2
+%  \question You are to perform an experiment investigating the conservation of
+%  mechanical energy involving a transformation from initial gravitational
+%  potential energy to translational kinetic energy.
+%  \begin{parts}
+%    \part You are given the equipment listed below, all the supports required
+%    to hold the equipment, and a lab table. On the list below, indicate each
+%    piece of equipment you would use by checking the line next to each item.
+%
+%    \begin{tabular}{lll}
+%      \underline{\hspace{.3in}} Track &
+%      \underline{\hspace{.3in}} Meterstick &
+%      \underline{\hspace{.3in}} Set of objects of different masses\\
+%      \underline{\hspace{.3in}} Cart &
+%      \underline{\hspace{.3in}} Electronic balance &
+%      \underline{\hspace{.3in}} Lightweight low-friction pulley\\
+%      \underline{\hspace{.3in}} String &
+%      \underline{\hspace{.3in}} Stopwatch & \\
+%    \end{tabular}
+%
+%    \part Outline a procedure for performing the experiment. Include a diagram
+%    of your experimental setup. Label the equipment in your diagram. Also
+%    include a description of the measurements you would make and a symbol for
+%    each measurement.
+%    \label{procedure}
+%    
+%    \part Give a detailed account of the calculations of gravitational
+%    potential energy and translational kinetic energy both before and after the
+%    transformation, in terms of the quantities measured in part
+%    (\ref{procedure}).
+%
+%    \part After your first trial, your calculations show that the energy
+%    increased during the experiment. Assuming you made no mathematical errors,
+%    give a reasonable explanation for this result.
+%
+%    \part On all other trials, your calculations show that the energy decreased
+%    during the experiment. Assuming you made no mathematical errors, give a
+%    reasonable physical explanation for the fact that the average energy you
+%    determined decreased. Include references to conservative and
+%    nonconservative forces, as appropriate.
+%  \end{parts}
   
-%%\item The theoretical formula for the potential energy associated with the
-%%  nuclear force between two protons, two neutrons, or a proton and a neutron
-%%  is the \emph{Yukawa potential}:
-%%  \begin{displaymath}
-%%    U=-U_0\left(\frac{a}{x}\right)e^{-x/a}
-%%  \end{displaymath}
-%%  where $U_0$ and $a$ are constants.
-%%  \begin{enumerate}[noitemsep]
-%%  \item Sketch $U$ versus $x$ using $U_0=\SI{4}{\pico\joule}$ and
-%%    $a=\SI{2.5}{\femto\metre}$.
-%%  \item Find the force $F_x$.
-%%  \item Compare the magnitude of the force at the separation $x=2a$ to that at
-%%    $x=a$.
-%%  \item Compare the magnitude of the force at the separation $x=5a$ to that at
-%%    $x=a$.
-%%  \end{enumerate}
-%%  \vspace{\stretch{1}}
-%  \newpage
-%  
+%\question The theoretical formula for the potential energy associated with the
+%  nuclear force between two protons, two neutrons, or a proton and a neutron
+%  is the \emph{Yukawa potential}:
+%  \begin{displaymath}
+%    U=-U_0\left(\frac{a}{x}\right)e^{-x/a}
+%  \end{displaymath}
+%  where $U_0$ and $a$ are constants.
+%  \begin{parts}
+%  \part Sketch $U$ versus $x$ using $U_0=\SI{4}{\pico\joule}$ and
+%    $a=\SI{2.5}{\femto\metre}$.
+%  \part Find the force $F_x$.
+%  \part Compare the magnitude of the force at the separation $x=2a$ to that at
+%    $x=a$.
+%  \part Compare the magnitude of the force at the separation $x=5a$ to that at
+%    $x=a$.
+%  \end{parts}
+
 %\item A small block of mass $m$ slides without friction along the loop-the-loop
 %  track shown in the figure. The block starts from point $P$ a distance $h$
 %  above the bottom of the loop.
 %  \begin{center}
 %    \begin{tikzpicture}[scale=1.2]
-%      \fill[blue!30!black](0,0) circle(1);
-%      \fill[white](0,0) circle(.88);
-%      \fill(0,0) circle(.05);
+%      \fill[blue!30!black] circle(1);
+%      \fill[white] circle(.88);
+%      \fill circle(.05);
 %      \draw[thick,->](0,0)--(.88,0)node[midway,above]{\scriptsize$R$};
 %      \draw[dashed](-4,-1)--(2,-1);
 %      \fill[rotate=15,blue!30!black](0,-1)rectangle(2,-.88);
@@ -573,7 +589,7 @@
 %  \begin{center}
 %    \begin{tikzpicture}[scale=.7]
 %      \begin{scope}[rotate=-30]
-%        \fill(0,0) rectangle(-.1,1);
+%        \fill rectangle(-.1,1);
 %        \draw[thick,
 %          decoration={aspect=.4,segment length=1.5mm, amplitude=2mm,coil},
 %          decorate] (-.1,.5)--(-1.5,.5)

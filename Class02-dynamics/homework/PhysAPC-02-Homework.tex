@@ -1,22 +1,19 @@
 \documentclass{../../oss-apphys-exam}
-\usepackage{bm}
+\newcounter{lastmc}
 
 \begin{document}
 \genheader
 
-\gentitle{C}{DYNAMICS}
+\gentitle{2}{DYNAMICS}
 
 \genmultidirections
-
 \gengravity
 
 \raggedcolumns
 \begin{multicols*}{2}
-  \textbf{Questions \ref{q:2blocks1}--\ref{q:2blocks2}}
-  
-  Two blocks, \SI4{\kilo\gram} and \SI2{\kilo\gram}, are connected by a string.
-  An applied force $F$ of magnitude \SI{18}{\newton} pulls the blocks to the
-  left.
+  \textbf{Questions \ref{q:2blocks1}--\ref{q:2blocks2}}: Two blocks,
+  \SI4{\kilo\gram} and \SI2{\kilo\gram}, are connected by a string. An applied
+  force $F$ of magnitude \SI{18}{\newton} pulls the blocks to the left.
   \begin{center}
     \begin{tikzpicture}[scale=.95]
       \fill[pattern=north east lines] (2.5,0) rectangle(9,-.3);
@@ -25,7 +22,7 @@
         \draw (7,0) rectangle(8,1) node[midway]{2 kg};
         \draw (4,0) rectangle(6,1) node[midway]{4 kg};
         \draw (6,.5)--(7,.5);
-        \draw[->] (4,.5)--(3,.5) node[midway,above]{\SI{18}\newton};
+        \draw[->] (4,.5)--(3,.5) node[left]{\SI{18}\newton};
       \end{scope}
     \end{tikzpicture}
   \end{center}
@@ -79,12 +76,48 @@
     \end{choices}
     \label{pos2}
     \columnbreak
+
+    \question A block of mass \SI4{\kilo\gram} slides down a rough incline
+    with a constant speed. The angle the incline makes with the horizontal is
+    \ang{30}. The coefficient of friction acting between the block and incline
+    is most nearly
+    \begin{center}
+      \begin{tikzpicture}
+        \begin{scope}[thick]
+          \draw(0,0)--(-3.46,0)--(-3.46,2)--cycle;
+          \draw[thick](-1,0) arc(180:150:1) node[midway,left]{\ang{30}};
+        \begin{scope}[rotate=-30]
+          \draw(-2,0) rectangle(-2.8,.8);
+          \fill(-2.4,.4) circle(.05);
+          \draw[->](-2.4,.4)--(-1.,.4)node[right]{$\varv$};
+        \end{scope}
+      \end{scope}
+      \end{tikzpicture}
+    \end{center}
+    \begin{choices}
+      \choice 0.1
+      \choice 0.2
+      \choice 0.3
+      \choice 0.4
+      \choice 0.6
+    \end{choices}
+
+    \question A stone falls through the air toward the Earth's surface. The
+    resistive force the air applies to the stone as it falls is given by the
+    equation $F=cv$, where $c$ is a positive constant and $\varv$ is the speed
+    of the stone. The acceleration of the ball is given by the equation
+    \begin{choices}
+      \choice $c-g$
+      \choice $gc\varv/m$
+      \choice $g+c\varv$
+      \choice $g-c\varv/m$
+      \choice $c\varv/m$
+    \end{choices}
     
-    \fullwidth{
-      \textbf{Questions \ref{q:striaght1}--\ref{q:striaght2}}
-      
-      An object of mass $m$ moves along a straight line with a speed described
-      by the equation $\varv=c+bt^3$.
+    \uplevel{
+      \textbf{Questions \ref{q:striaght1}--\ref{q:striaght2}}: An object of
+      mass $m$ moves along a straight line with a speed described by the
+      equation $\varv=c+bt^3$.
     }
 
     \question The initial velocity of the mass is
@@ -107,17 +140,16 @@
     \end{choices}
     \label{q:striaght2}
 
-    \fullwidth{
-      \textbf{Questions \ref{q:pulley1}--\ref{q:pulley2}}
-      
-      A system consists of two blocks having masses of \SI2{\kilo\gram} and
-      \SI1{\kilo\gram}. The blocks are connected by a string of negligible
-      mass and hung over a light pulley, and then released from rest.
+    \uplevel{
+      \textbf{Questions \ref{q:pulley1}--\ref{q:pulley2}}: A system consists of
+      two blocks having masses of \SI2{\kilo\gram} and \SI1{\kilo\gram}. The
+      blocks are connected by a string of negligible mass and hung over a light
+      pulley, and then released from rest.
       \begin{center}
-        \begin{tikzpicture}[scale=.75]
+        \begin{tikzpicture}[scale=.8]
           \begin{scope}[thick]
-            \draw(0,0) circle(1);
-            \fill(0,0) circle(.08);
+            \draw circle(1);
+            \fill circle(.08);
             \draw(1,0)--(1,-2.5);
             \draw(.5,-2.5) rectangle(1.5,-3.3) node[midway]{\SI1{\kilo\gram}};
             \draw(-1,0)--(-1,-1.5);
@@ -128,8 +160,7 @@
       \end{center}
     }
 
-    \question\vspace{-.15in}The acceleration of the \SI2{\kilo\gram} block is
-    most nearly
+  \question The acceleration of the \SI2{\kilo\gram} block is most nearly
     \begin{choices}
       \choice $\dfrac29g$
       \choice $\dfrac13g$
@@ -150,239 +181,200 @@
     \end{choices}
     \label{q:pulley2}
 
-    \fullwidth{
-      \textbf{Questions \ref{3blks1}--\ref{3blks2}}
-      
-      Three blocks of mass \SI3{\kilo\gram}, \SI2{\kilo\gram}, and
-      \SI1{\kilo\gram} are pushed along a horizontal frictionless plane by a
-      force of \SI{24}{\newton} to the right, as shown.
-      \begin{center}
-        \begin{tikzpicture}[scale=.9]
-          \fill[pattern=north east lines] (0,0) rectangle(8,-.3);
-          \begin{scope}[thick]
-            \draw (0,0)--(8,0);
-            \draw (2,0) rectangle(4,1.5) node[midway]{3 kg};
-            \draw (4,0) rectangle(5.5,1.3) node[midway]{2 kg};
-            \draw (5.5,0) rectangle(6.5,1.1) node[midway]{1 kg};
-            \draw[->](0,.75)--(2,.75) node[midway,above]{24 N};
-          \end{scope}
-        \end{tikzpicture}
-      \end{center}
-    }
+%    \fullwidth{
+%      \textbf{Questions \ref{3blks1}--\ref{3blks2}}
+%      
+%      Three blocks of mass \SI3{\kilo\gram}, \SI2{\kilo\gram}, and
+%      \SI1{\kilo\gram} are pushed along a horizontal frictionless plane by a
+%      force of \SI{24}{\newton} to the right, as shown.
+%      \begin{center}
+%        \begin{tikzpicture}[scale=.9]
+%          \fill[pattern=north east lines] rectangle(8,-.3);
+%          \begin{scope}[thick]
+%            \draw (0,0)--(8,0);
+%            \draw (2,0) rectangle(4,1.5) node[midway]{3 kg};
+%            \draw (4,0) rectangle(5.5,1.3) node[midway]{2 kg};
+%            \draw (5.5,0) rectangle(6.5,1.1) node[midway]{1 kg};
+%            \draw[->](0,.75)--(2,.75) node[midway,above]{24 N};
+%          \end{scope}
+%        \end{tikzpicture}
+%      \end{center}
+%    }
+%
+%    \question The acceleration of the \SI{2}{\kilo\gram} block is
+%    \begin{choices}
+%      \choice\SI{144}{\metre\per\second\squared}
+%      \choice\SI{72}{\metre\per\second\squared}
+%      \choice\SI{12}{\metre\per\second\squared}
+%      \choice\SI6{\metre\per\second\squared}
+%      \choice\SI4{\metre\per\second\squared}
+%    \end{choices}
+%    \label{3blks1}
+%    
+%    \question The force that the \SI2{\kilo\gram} block exerts on the
+%    \SI1{\kilo\gram} block is
+%    \begin{choices}
+%      \choice\SI2\newton
+%      \choice\SI4\newton
+%      \choice\SI6\newton
+%      \choice\SI{24}\newton
+%      \choice\SI{144}\newton
+%    \end{choices}
+%    \label{3blks2}
+%    \columnbreak
 
-    \question The acceleration of the \SI{2}{\kilo\gram} block is
-    \begin{choices}
-      \choice\SI{144}{\metre\per\second\squared}
-      \choice\SI{72}{\metre\per\second\squared}
-      \choice\SI{12}{\metre\per\second\squared}
-      \choice\SI6{\metre\per\second\squared}
-      \choice\SI4{\metre\per\second\squared}
-    \end{choices}
-    \label{3blks1}
-    
-    \question The force that the \SI2{\kilo\gram} block exerts on the
-    \SI1{\kilo\gram} block is
-    \begin{choices}
-      \choice\SI2\newton
-      \choice\SI4\newton
-      \choice\SI6\newton
-      \choice\SI{24}\newton
-      \choice\SI{144}\newton
-    \end{choices}
-    \label{3blks2}
+%    \question A ball is thrown straight up into the air, encountering air
+%    resistance as it rises. What forces, if any, act on the ball as it rises?
+%    \begin{choices}
+%      \choice A decreasing gravitational force and an increasing force of air
+%      resistance
+%      \choice An increasing gravitational force and an increasing force of air
+%      resistance
+%      \choice A decreasing gravitational force and a decreasing force of air
+%      resistance
+%      \choice A constant gravitational force and an increasing force of air
+%      resistance
+%      \choice A constant gravitational force and a decreasing force of air
+%      resistance
+%    \end{choices}
 
-    \question A block of mass \SI4{\kilo\gram} slides down a rough incline
-    with a constant speed. The angle the incline makes with the horizontal is
-    \ang{30}. The coefficient of friction acting between the block and incline
-    is most nearly
-    \begin{center}
-      \begin{tikzpicture}[scale=.9]
-        \begin{scope}[thick]
-          \draw(0,0)--(-3.46,0)--(-3.46,2)--cycle;
-          \draw[thick](-1,0) arc(180:150:1) node[midway,left]{\ang{30}};
-        \begin{scope}[rotate=-30]
-          \draw(-2,0) rectangle(-2.8,.8);
-          \fill(-2.4,.4) circle(.05);
-          \draw[->](-2.4,.4)--(-1.,.4)node[right]{$\varv$};
-        \end{scope}
-      \end{scope}
-      \end{tikzpicture}
-    \end{center}
-    \begin{choices}
-      \choice 0.1
-      \choice 0.2
-      \choice 0.3
-      \choice 0.4
-      \choice 0.6
-    \end{choices}
+%    \fullwidth{
+%      \textbf{Questions \ref{fbds}--\ref{fk}}
+%      
+%      A \SI1{\kilo\gram} block is sliding up a rough \ang{30} incline and is
+%      slowing down with an acceleration of \SI{-6}{\metre\per\second\squared}.
+%      The direction up the ramp is positive.
+%      \begin{center}
+%        \begin{tikzpicture}[scale=1.2]
+%          \begin{scope}[thick]
+%            \draw(0,0)--(-3.46,0)--(-3.46,2)--cycle;
+%            \draw[thick](-1,0) arc(180:150:1) node[midway,left]{\ang{30}};
+%            \begin{scope}[rotate=-30]
+%              \draw(-2,0) rectangle(-2.8,.8);
+%              \draw[->](-2,1)--(-2.8,1)node[left]{$\varv$};
+%            \end{scope}
+%          \end{scope}
+%        \end{tikzpicture}
+%      \end{center}
+%    }
+%
+%    \question Which of the following free body diagrams best represents the
+%    forces acting on the block as it slides up the plane?
+%    \begin{choices}
+%      \choice
+%      \begin{tikzpicture}[scale=.7]
+%        \fill circle(.08);
+%        \draw[thick,->](0,0)--(0,1) node[above]{$\mb N$};
+%        \draw[thick,->](0,0)--(0,-1)node[below]{$m\mb g$};
+%        \draw[thick,->,rotate=60](0,0)--(0,1)node[left]{$\mb f$};
+%      \end{tikzpicture}
+%      \choice
+%      \begin{tikzpicture}[scale=.7]
+%        \fill circle(.08);
+%        \draw[thick,->,rotate=-30](0,0)--(0,1)node[above]{$\mb N$};
+%        \draw[thick,->,rotate=-30](0,0)--(0,-1)node[below]{$m\mb g$};
+%        \draw[thick,->,rotate=60](0,0)--(0,1)node[left]{$\mb f$};
+%      \end{tikzpicture}
+%      \choice
+%      \begin{tikzpicture}[scale=.7]
+%        \fill circle(.08);
+%        \draw[thick,->,rotate=-30](0,0)--(0,1)node[above]{$\mb N$};
+%        \draw[thick,->](0,0)--(0,-1)node[below]{$m\mb g$};
+%        \draw[thick,->,rotate=60](0,0)--(0,-1)node[right]{$\mb f$};
+%      \end{tikzpicture}
+%      \choice
+%      \begin{tikzpicture}[scale=.7]
+%        \fill circle(.08);
+%        \draw[thick,->](0,0)--(0,1)node[above]{$\mb N$};
+%        \draw[thick,->](0,0)--(0,-1)node[below]{$m\mb g$};
+%        \draw[thick,->,rotate=60](0,0)--(0,-1)node[right]{$\mb f$};
+%      \end{tikzpicture}
+%      \choice
+%      \begin{tikzpicture}[scale=.7]
+%        \fill circle(.08);
+%        \draw[thick,->,rotate=120](0,0)--(0,1)node[left]{$\mb N$};
+%        \draw[thick,->](0,0)--(0,-1)node[below]{$m\mb g$};
+%        \draw[thick,->,rotate=60](0,0)--(0,-1)node[right]{$\mb f$};
+%      \end{tikzpicture}
+%    \end{choices}
+%    \label{fbds}
+%    
+%  \item The magnitude of the frictional force $f$ between the block and the
+%    plane is most nearly
+%    \begin{choices}
+%      \choice\SI1\newton
+%      \choice\SI2\newton
+%      \choice\SI3\newton
+%      \choice\SI4\newton
+%      \choice\SI5\newton
+%    \end{choices}
+%    \label{fk}
 
-    \question A ball is thrown straight up into the air, encountering air
-    resistance as it rises. What forces, if any, act on the ball as it rises?
-    \begin{choices}
-      \choice A decreasing gravitational force and an increasing force of air
-      resistance
-      \choice An increasing gravitational force and an increasing force of air
-      resistance
-      \choice A decreasing gravitational force and a decreasing force of air
-      resistance
-      \choice A constant gravitational force and an increasing force of air
-      resistance
-      \choice A constant gravitational force and a decreasing force of air
-      resistance
-    \end{choices}
-
-    \question A stone falls through the air toward the Earth's surface. The
-    resistive force the air applies to the stone as it falls is given by the
-    equation $F=cv$, where $c$ is a positive constant and $v$ is the speed of
-    the stone. The acceleration of the ball is given by the equation
-    \begin{choices}
-      \choice $c-g$
-      \choice $gcv/m$
-      \choice $g+cv$
-      \choice $g-cv/m$
-      \choice $cv/m$
-    \end{choices}
     \columnbreak
-    
-    \fullwidth{
-      \textbf{Questions \ref{fbds}--\ref{fk}}
-      
-      A \SI1{\kilo\gram} block is sliding up a rough \ang{30} incline and is
-      slowing down with an acceleration of \SI{-6}{\metre\per\second\squared}.
-      The direction up the ramp is positive.
-      \begin{center}
-        \begin{tikzpicture}[scale=1.2]
-          \begin{scope}[thick]
-            \draw(0,0)--(-3.46,0)--(-3.46,2)--cycle;
-            \draw[thick](-1,0) arc(180:150:1) node[midway,left]{\ang{30}};
-            \begin{scope}[rotate=-30]
-              \draw(-2,0) rectangle(-2.8,.8);
-              \draw[->](-2,1)--(-2.8,1)node[left]{$\varv$};
-            \end{scope}
-          \end{scope}
-        \end{tikzpicture}
-      \end{center}
-    }
-
-    \question Which of the following free body diagrams best represents the
-    forces acting on the block as it slides up the plane?
-    \begin{choices}
-      \choice
-      \begin{tikzpicture}[scale=.7]
-        \fill[black](0,0) circle(.08);
-        \draw[thick,->](0,0)--(0,1) node[above]{$\mb N$};
-        \draw[thick,->](0,0)--(0,-1)node[below]{$m\mb g$};
-        \draw[thick,->,rotate=60](0,0)--(0,1)node[left]{$\mb f$};
-      \end{tikzpicture}
-      \choice
-      \begin{tikzpicture}[scale=.7]
-        \fill[black](0,0) circle(.08);
-        \draw[thick,->,rotate=-30](0,0)--(0,1)node[above]{$\mb N$};
-        \draw[thick,->,rotate=-30](0,0)--(0,-1)node[below]{$m\mb g$};
-        \draw[thick,->,rotate=60](0,0)--(0,1)node[left]{$\mb f$};
-      \end{tikzpicture}
-      \choice
-      \begin{tikzpicture}[scale=.7]
-        \fill[black](0,0) circle(.08);
-        \draw[thick,->,rotate=-30](0,0)--(0,1)node[above]{$\mb N$};
-        \draw[thick,->](0,0)--(0,-1)node[below]{$m\mb g$};
-        \draw[thick,->,rotate=60](0,0)--(0,-1)node[right]{$\mb f$};
-      \end{tikzpicture}
-      \choice
-      \begin{tikzpicture}[scale=.7]
-        \fill[black](0,0) circle(.08);
-        \draw[thick,->](0,0)--(0,1)node[above]{$\mb N$};
-        \draw[thick,->](0,0)--(0,-1)node[below]{$m\mb g$};
-        \draw[thick,->,rotate=60](0,0)--(0,-1)node[right]{$\mb f$};
-      \end{tikzpicture}
-      \choice
-      \begin{tikzpicture}[scale=.7]
-        \fill[black](0,0) circle(.08);
-        \draw[thick,->,rotate=120](0,0)--(0,1)node[left]{$\mb N$};
-        \draw[thick,->](0,0)--(0,-1)node[below]{$m\mb g$};
-        \draw[thick,->,rotate=60](0,0)--(0,-1)node[right]{$\mb f$};
-      \end{tikzpicture}
-    \end{choices}
-    \label{fbds}
-    
-  \item The magnitude of the frictional force $f$ between the block and the
-    plane is most nearly
-    \begin{choices}
-      \choice\SI1\newton
-      \choice\SI2\newton
-      \choice\SI3\newton
-      \choice\SI4\newton
-      \choice\SI5\newton
-    \end{choices}
-    \label{fk}
-
-    \fullwidth{
-      \textbf{Questions \ref{plane1}--\ref{plane2}}
-
-      A \SI{10}{\newton} block sits atop an inclined plane in the shape of a
-      right triangle of sides \SI{3}{\metre}, \SI{4}{\metre}, and
-      \SI{5}{\metre}, as shown. The block is allowed to slide down the plane
-      with negligible friction.
-      \begin{center}
-        \begin{tikzpicture}[scale=.85]
-          \begin{scope}[thick]
-            \draw(0,0)--(4,0) node[midway,below]{\SI4\metre}
-            --(0,3) node[midway,above right]{\SI5\metre}
-            --(0,0) node[midway,left]{\SI3\metre};
-            \draw[rotate around={-atan(3/4):(0,3)}](0,3) rectangle(.8,3.8)
-            node[above right]{\SI{10}\newton};
-          \end{scope}
-        \end{tikzpicture}
-      \end{center}
-    }
-    
-    \question The acceleration of the block is most nearly
-    \begin{choices}
-      \choice\SI2{\metre\per\second\squared}
-      \choice\SI4{\metre\per\second\squared}
-      \choice\SI6{\metre\per\second\squared}
-      \choice\SI{10}{\metre\per\second\squared}
-      \choice\SI{12}{\metre\per\second\squared}
-    \end{choices}
-    \label{plane1}
-    
-    \question The normal force exerted on the block by the plane is most nearly
-    \begin{choices}
-      \choice\SI2\newton
-      \choice\SI4\newton
-      \choice\SI6\newton
-      \choice\SI{8}\newton
-      \choice\SI{10}\newton
-    \end{choices}
-    \label{plane2}
+%    \uplevel{
+%      \textbf{Questions \ref{plane1}--\ref{plane2}}: A \SI{10}{\newton} block
+%      sits atop an inclined plane in the shape of a right triangle of sides
+%      \SI3\metre, \SI4\metre, and \SI5\metre, as shown. The block is allowed to
+%      slide down the plane without friction.
+%      \begin{center}
+%        \begin{tikzpicture}[scale=.85]
+%          \begin{scope}[thick]
+%            \draw(0,0)--(4,0) node[midway,below]{\SI4\metre}
+%            --(0,3) node[midway,above right]{\SI5\metre}
+%            --(0,0) node[midway,left]{\SI3\metre};
+%            \draw[rotate around={-atan(3/4):(0,3)}](0,3) rectangle(.8,3.8)
+%            node[above right]{\SI{10}\newton};
+%          \end{scope}
+%        \end{tikzpicture}
+%      \end{center}
+%    }
+%    
+%    \question The acceleration of the block is most nearly
+%    \begin{choices}
+%      \choice\SI2{\metre\per\second\squared}
+%      \choice\SI4{\metre\per\second\squared}
+%      \choice\SI6{\metre\per\second\squared}
+%      \choice\SI{10}{\metre\per\second\squared}
+%      \choice\SI{12}{\metre\per\second\squared}
+%    \end{choices}
+%    \label{plane1}
+%    
+%    \question The normal force exerted on the block by the plane is most nearly
+%    \begin{choices}
+%      \choice\SI2\newton
+%      \choice\SI4\newton
+%      \choice\SI6\newton
+%      \choice\SI{8}\newton
+%      \choice\SI{10}\newton
+%    \end{choices}
+%    \label{plane2}
    
-    \question A constant force acts on a particle in such a way that the
-    direction of the force is always perpendicular to its velocity. Which of the
-    following is true of the particle's motion?
-    \begin{choices}
-      \choice The acceleration of the particle is increasing
-      \choice The acceleration of the particle is decreasing.
-      \choice The speed of the particle is increasing.
-      \choice The speed of the particle is constant.
-      \choice The speed of the particle is decreasing.
-    \end{choices}
-    \vspace{.7in}
+%    \question A constant force acts on a particle in such a way that the
+%    direction of the force is always perpendicular to its velocity. Which of the
+%    following is true of the particle's motion?
+%    \begin{choices}
+%      \choice The acceleration of the particle is increasing
+%      \choice The acceleration of the particle is decreasing.
+%      \choice The speed of the particle is increasing.
+%      \choice The speed of the particle is constant.
+%      \choice The speed of the particle is decreasing.
+%    \end{choices}
+%    \vspace{.7in}
 
-    \fullwidth{
-      \textbf{Questions \ref{stacked1}--\ref{stacked2}}
-      
-      A block of mass \SI2{\kilo\gram} rests on top of a larger block of mass
-      \SI4{\kilo\gram}. The larger block slides without friction on a table,
-      but the surface between the two blocks is not frictionless. The
-      coefficient of friction between the two blocks is $0.2$. A horizontal
-      force $\mb F$ is applied to the \SI{4}{\kilo\gram} mass.
+    \uplevel{
+      \textbf{Questions \ref{stacked1}--\ref{stacked2}}: A block of mass
+      \SI2{\kilo\gram} rests on top of a larger block of mass \SI4{\kilo\gram}.
+      The larger block slides without friction on a table, but the surface
+      between the two blocks is not frictionless. The coefficient of friction
+      between the two blocks is $0.2$. A horizontal force $\vec F$ is applied
+      to the \SI4{\kilo\gram} mass.
       \begin{center}
         \begin{tikzpicture}[scale=.95]
           \fill[pattern=north east lines] (3,0) rectangle(9,-.3);
           \draw[thick] (3,0)--(9,0);
           \draw[thick](5,1) rectangle(6,2) node[midway]{\SI2{\kilo\gram}};
           \draw[thick](4,0) rectangle(7,1) node[midway]{\SI4{\kilo\gram}};
-          \draw[thick,->](7,.5)--(8,.5) node[right]{$\mb F$};
+          \draw[thick,->](7,.5)--(8,.5) node[right]{$\vec F$};
         \end{tikzpicture}
       \end{center}
     }
@@ -410,12 +402,12 @@
       \choice zero
     \end{choices}
     \label{stacked2}
+    \setcounter{lastmc}{\value{question}}
   \end{questions}
 \end{multicols*}
 \newpage
 
-\genfreetitle{C}{DYNAMICS}{4}
-
+\genfreetitle{2}{DYNAMICS}{4}
 \genfreedirections
 
 %\begin{center}
@@ -427,6 +419,7 @@
 %  \end{tikzpicture}
 %\end{center}
 \begin{questions}
+  \setcounter{question}{\value{lastmc}}
 %  \question A block with mass $m$ sits on a block of mass $M$ that is resting
 %  on a frictionless table, as shown below. The coefficient of friction between
 %  the blocks are $\mu_s=0.30$ and $\mu_k=0.20$.
@@ -445,8 +438,8 @@
   % TAKEN FROM 2007 AP PHYSICS C FREE-RESPONSE QUESTION MECH 1
   \uplevel{
     \centering
-    \begin{tikzpicture}
-      \draw[very thick](0,0) rectangle(2,1.5) node[midway]{$m$};
+    \begin{tikzpicture}[scale=.9]
+      \draw[very thick] rectangle(2,1.5) node[midway]{$m$};
       \draw[ultra thick](-2,0)--(5,0);
       \draw[thick,dashed](2,1.5)--(5,1.5);
       \draw[ultra thick,->](2,1.5)--(4.5,3.5) node[midway,above left]{$F_1$};
@@ -464,20 +457,22 @@
 
     \vspace{.3in}
     \begin{center}
-      \tikz{\draw[thick](0,0) rectangle(.7,.5);}
+      \tikz{\draw[thick] rectangle(.7,.5);}
     \end{center}
     \vspace{.3in}
     
     \part Derive an expression for the normal force exerted by the surface on
     the block.
-
+    \vspace{\stretch1}
+    
     \part Derive an expression for the coefficient of kinetic friction $\mu$
     between the block and the surface.
-
+    \vspace{\stretch1}
+    
     \part On the axes below, sketch graphs of the speed $\varv$ and
     displacement $x$ of the block as functions of time $t$ if the
     block started from rest at $x = 0$ and $t = 0$.
-
+    
     \begin{tikzpicture}
       \draw[very thick,->](0,0)--(7.5,0) node[right]{$t$};
       \draw[very thick,->](0,0)--(0,4) node[above]{$\varv$}
@@ -487,22 +482,24 @@
       \draw[very thick,->](0,0)--(7.5,0) node[right]{$t$};
       \draw[very thick,->](0,0)--(0,4) node[above]{$x$} node[pos=0,left]{$O$};
     \end{tikzpicture}
+    \newpage
     
   \item If the applied force is large enough, the block will lose contact with
     the surface. Derive an expression for the magnitude of the greatest
     acceleration $a_\text{max}$ that the block can have and still maintain
     contact with the ground.
+    \vspace{\stretch1}
   \end{parts}
   \newpage
   
   % THIS IS TAKEN FROM THE 2013 AP PHYSICS C FREE-RESPONSE QUESTION MECH 2
-  \fullwidth{
+  \uplevel{
     \centering
     \begin{tikzpicture}[scale=1.3]
       \fill[gray!40](-1.5,-.15) rectangle(5.5,0);
       \begin{scope}[very thick]
         \draw(-1.5,0)--(5.5,0);
-        \draw(0,0) rectangle(1.8,1) node[midway]{$m$};
+        \draw rectangle(1.8,1) node[midway]{$m$};
         \draw[->](.2,1.3)--(1.6,1.3) node[midway,above]{$\varv$};
       \end{scope}
       \draw[ultra thick,->](1.8,.5)--(4,.5) node[right]{$F_A$};
@@ -520,37 +517,42 @@
     components) that act on the box.
     \vspace{.5in}
     \begin{center}
-      {\tikz\fill(0,0) circle(.2);}
+      {\tikz\fill circle(.2);}
     \end{center}
     \vspace{.5in}
 
-    \part Write, but do not solve, a differential equation that could be used to
-    determine the speed $\varv$ of the box as a function of time $t$. If you
+    \part Write, but do not solve, a differential equation that could be used
+    to determine the speed $\varv$ of the box as a function of time $t$. If you
     need to draw anything other than what you have shown in part (a) to assist
     in your solution, use the space below. Do NOT add anything to the figure in
     part (a).
+    \vspace{\stretch1}
+    
     
     \part Determine the magnitude of the terminal velocity of the box.
+    \vspace{\stretch1}
     
-    \part Use the differential equation from part (b) to derive the equation for
-    the speed $\varv$ of the box as a function of time $t$. Assume that
+    \part Use the differential equation from part (b) to derive the equation
+    for the speed $\varv$ of the box as a function of time $t$. Assume that
     $\varv=0$ at time $t=0$.
+    \vspace{\stretch1}
+    \newpage
     
-    \part On the axes below, sketch a graph of the speed $\varv$ of the box as a
-    function of time $t$. Explicitly label any intercepts, asymptotes, maxima,
+    \part On the axes below, sketch a graph of the speed $\varv$ of the box as
+    a function of time $t$. Explicitly label any intercepts, asymptotes, maxima,
     or minima with numerical values or algebraic expressions, as appropriate.
     \begin{center}
       \begin{tikzpicture}
         \draw[very thick,->](0,0)--(4,0)
         node[pos=0,left]{$O$} node[right]{$t$};
-        \draw[very thick,->](0,-3)--(0,3)node[above]{$\varv$};
+        \draw[very thick,->](0,-3)--(0,3) node[above]{$\varv$};
       \end{tikzpicture}
     \end{center}
   \end{parts}
   \newpage
   
   % THIS IS TAKEN FROM THE 2011 AP PHYSICS C FREE-RESPONSE QUESTION MECH 2
-  \fullwidth{
+  \uplevel{
     \cpic{.5}{amusement}
   }
   
@@ -567,7 +569,7 @@
     when it is at point $C$, which is at an angle $\theta$ from point $B$.
     \begin{center}
       \begin{tikzpicture}
-        \fill(0,0) circle(.25);
+        \fill circle(.25);
         \draw[rotate=35,dashed,very thick](0,2)--(0,-2);
       \end{tikzpicture}
     \end{center}
@@ -577,11 +579,13 @@
     acting on the compartment at point $C$. If you need to draw anything
     besides what you have shown in part (a) to assist in your solution, use the
     space below. Do NOT add anything to the figure in part (a).
-
+    \vspace{\stretch1}
+    
     \part Derive an expression for the speed $\varv_D$ of the passenger
     compartment as it reaches point $D$ in terms of $M$, $R$, and fundamental
     constants, as appropriate.
-  
+    \vspace{\stretch1}
+    
     \uplevel{
       A force acts on the compartment between points $D$ and $E$ and brings it
       to rest at point $E$.
@@ -590,6 +594,8 @@
     \part If the compartment is brought to rest by friction, calculate the
     numerical value of the coefficient of friction $\mu$ between the
     compartment and the track.
+    \vspace{\stretch1}
+    \newpage
     
     \uplevel{
       Now consider the case in which there is no friction between the
@@ -601,9 +607,11 @@
     }
 
     \part Write, but do NOT solve, the differential equation for $\varv(t)$.
+    \vspace{\stretch1}
     \label{diffeq}
     
     \part Solve the differential equation you wrote in part (\ref{diffeq}).
+    \vspace{\stretch1}
     
     \part On the axes below, sketch a graph of the magnitude of the
     acceleration of the compartment as a function of time. On the axes,
@@ -617,6 +625,7 @@
         \end{scope}
       \end{tikzpicture}
     \end{center}
+    \vspace{\stretch2}
   \end{parts}
   \newpage
 
@@ -631,7 +640,8 @@
   \begin{parts}
     \part Derive an expression for the speed $\varv_h$ of the hanging block as
     a function of the distance $d$ it descends.
-
+    \vspace{\stretch1}
+    
     \uplevel{
       Now the block and pulley system is replaced by a uniform rope of length
       $L$ and mass $M$, with one end of the rope hanging slightly over the edge
@@ -644,23 +654,29 @@
     
     \part Determine an expression for the force of gravity on the hanging part
     of the rope as a function of $y$.
+    \vspace{\stretch1}
     
     \part Derive an expression for the work done by gravity on the rope as a
     function of $y$, assuming $y$ is initially zero.
-
+    \vspace{\stretch1}
+    
     \part Derive an expression for the speed $\varv_r$ of the rope as a
     function of $y$.
+    \vspace{\stretch1}
+    \newpage
     
     \part The hanging block and the right end of the rope are each allowed to
     fall a distance $L$ (the length of the rope). The string is long enough
     that the sliding block does not hit the pulley. Indicate whether $\varv_h$
     from part (a) or $\varv_r$ from part (d) is greater after the block and the
-    end of the rope have traveled this distance. Justify your answer.
+    end of the rope have traveled this distance.
 
     \vspace{.1in}
     \underline{\hspace{.5in}} $\varv_h$ is greater.\hspace{1in}
     \underline{\hspace{.5in}} $\varv_r$ is greater.\hspace{1in}
     \underline{\hspace{.5in}} The speeds are equal.
+
+    \vspace{.1in}Justify your answer.
   \end{parts}
 \end{questions}
 \end{document}

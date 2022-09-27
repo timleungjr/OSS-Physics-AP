@@ -273,12 +273,12 @@
 
 
 \begin{frame}{Spring Force \& Elastic Potential Energy}
-  The spring force $\vec F_e$ is the force that a compressed/stretched spring
+  The spring force $\vec F_s$ is the force that a compressed/stretched spring
   exerts on the object connected to it.  An \emph{ideal} spring obeys Hooke's
   law:
     
   \eq{-.1in}{
-    \boxed{\vec F_e=-k\vec x}
+    \boxed{\vec F_s=-k\vec x}
   }
 
   \vspace{-.1in}The spring force acts in the opposite direction to the spring's
@@ -293,9 +293,9 @@
       \fill[pattern=north east lines](-.2,0) rectangle(0,2);
       \draw[thick](0,.0)--(0,2);
       \fill[red] (5.5,1) circle(.06);
-      \draw[ultra thick,->,red](5.5,1)--(4,1) node[above]{$\vec F_e$};
+      \draw[ultra thick,->,red](5.5,1)--(4,1) node[above]{$\vec F_s$};
       \draw[dashed](3,0)--(3,2) node[above]{\scriptsize Equilibrium position};
-      \draw[ultra thick,->](3,.3)--(5,.3) node[midway,below]{$\Delta x$};
+      \draw[ultra thick,->](3,.3)--(5,.3) node[midway,below]{$\vec x$};
     \end{tikzpicture}
     \hspace{.2in}
     \begin{tikzpicture}
@@ -306,16 +306,16 @@
       \fill[pattern=north east lines](-.2,0) rectangle(0,2);
       \draw[thick](0,.0)--(0,2);
       \fill[gray!30] (5.5,1) circle(.06);
-      \draw[ultra thick,->,gray!30](5.5,1)--(4,1) node[above]{$\vec F_e$};
+      \draw[ultra thick,->,gray!30](5.5,1)--(4,1) node[above]{$\vec F_s$};
       \draw[dashed](3,0)--(3,2);
-      \draw[ultra thick,->,gray!30](3,.3)--(5,.3)node[midway,below]{$\Delta x$};
+      \draw[ultra thick,->,gray!30](3,.3)--(5,.3)node[midway,below]{$\vec x$};
       \draw[thick,fill=cyan] (1.5,.5) rectangle (2.5,1.5);
       \draw[thick,
         decoration={aspect=.3,segment length=2mm, amplitude=2.5mm, coil},
         decorate] (0,1)--(1.5,1);
-      \draw[ultra thick,->](3,.3)--(1.5,.3) node[midway,below]{$\Delta x$};
+      \draw[ultra thick,->](3,.3)--(1.5,.3) node[midway,below]{$\vec x$};
       \fill[red] (2,1) circle(.06);
-      \draw[ultra thick,->,red](2,1)--(3,1) node[above]{$\vec F_e$};
+      \draw[ultra thick,->,red](2,1)--(3,1) node[above]{$\vec F_s$};
     \end{tikzpicture}
   \end{center}
 \end{frame}
@@ -327,7 +327,7 @@
   masses that are connected to a compressed/stretched spring is therefore:
 
   \eq{-.1in}{
-    W_e=\int_{x_0}^{x_1}\vec F_e\cdot\dl\vec x =-k\int_{x_0}^{x_1} x\dl x
+    W_e=\int_{x_0}^{x_1}\vec F_s\cdot\dl\vec x =-k\int_{x_0}^{x_1} x\dl x
     =-\frac12kx^2\Big|^{x_1}_{x_0}=-\Delta U_e
   }
 
@@ -616,7 +616,7 @@
     \begin{tikzpicture}
       \draw[very thick,fill=gray!10](-.2,-.2) rectangle(2.2,2.2);
       \draw[line width=.5mm,->](0,2.5)--(2,2.5) node[right]{$v$};
-      \draw[line width=.5mm,|<->|](-.5,1)--(-.5,-3) node[midway,left]{$h$};
+      \draw[line width=.5mm,|<-|](-.5,1)--(-.5,-3) node[midway,left]{$h$};
       \foreach \i in {1,...,40}{
        \fill[red](rand+1,rand+1) circle(.06);
       }
@@ -650,12 +650,12 @@
   }
 
   It is a function of the molecules' \textbf{absolute temperature}, measured in
-  \emph{kelvin}. For example, 
-  \begin{itemize}
-  \item For an ideal gas: $E_\text{int}=\dfrac32NkT$
-  \item For an diatomic gas: $E_\text{int}=\dfrac32NkT$
-  \item Solid: $E_\text{int}=3NkT$
-  \end{itemize}
+  \emph{kelvin}. %For example, 
+  %\begin{itemize}
+  %\item For an ideal gas: $E_\text{int}=\dfrac32NkT$
+  %\item For an diatomic gas: $E_\text{int}=\dfrac32NkT$
+  %\item Solid: $E_\text{int}=3NkT$
+  %\end{itemize}
 \end{frame}
 
 
@@ -742,7 +742,7 @@
       \begin{scope}[very thick,->,red]
         \draw (5.5,1)--(5.5,0) node[below]{$m\vec g$};
         \draw (5.5,1)--(5.5,2) node[above]{$\vec N$};
-        \draw (5.5,1)--(4.5,1) node[above]{$\vec F_e$};
+        \draw (5.5,1)--(4.5,1) node[above]{$\vec F_s$};
       \end{scope}
     \end{tikzpicture}
   \end{center}
@@ -789,7 +789,7 @@
       \draw[very thick](0,5)--(2,5);
       \begin{scope}[very thick,->,red]
         \draw(1,2)--(1,1)node[right]{$m\vec g$};
-        \draw(1,2)--(1,3)node[right]{$\vec F_e$};
+        \draw(1,2)--(1,3)node[right]{$\vec F_s$};
       \end{scope}
       \fill[red](1,2) circle(.05);      
     \end{tikzpicture}
