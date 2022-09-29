@@ -1,6 +1,6 @@
 all:
-	xelatex PhysAPC-07a-pureRolling
-	xelatex PhysAPC-07a-pureRolling
+	xelatex PhysAPC-08-pureRolling
+	xelatex PhysAPC-08-pureRolling
 
 
 clean:

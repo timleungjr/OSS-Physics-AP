@@ -1,5 +1,5 @@
 \documentclass{../../oss-handout}
-\usepackage{newtxtext,newtxmath}
+\usepackage{amsmath}
 \usepackage{enumitem}
 \usepackage{tikz}
 \usepackage[ISO]{diffcoeff}
@@ -10,16 +10,15 @@
 \setlength{\parskip}{8pt}
 \setlength{\headheight}{26pt}
 
-\newcommand{\mb}[1]{\ensuremath\mathbf{#1}}
 \newcommand{\pic}[2]{\includegraphics[width=#1\textwidth]{#2}}
 
 % Set the page style for the document
 \pagestyle{plain}
 
 % Course & handout information
-\renewcommand{\institution}{Olympiads School, Toronto, ON, Canada}
+\renewcommand{\institution}{Olympiads School}
 \renewcommand{\coursetitle}{Advanced Placement Physics C}
-\renewcommand{\term}{Fall 2021}
+\renewcommand{\term}{Fall 2022}
 
 \title{Kepler's Laws of Planetary Motion}
 \author{Dr.\ Timothy Leung}
@@ -86,9 +85,9 @@ of the shape of the orbit, and whether an object is even in orbit altogether:
       \draw[->,ultra thick,red](2.03,3)--(2.03,1.5)
       node[midway,below right]{$\vec F_g$};
     \end{scope}
-    \draw[->,thick](2,3)--(3,2.8) node[pos=1,right]{$\vec\varv$};
-    \fill[black](0,0) circle(.12) node[right]{Sun};
-    \fill[black](2,3) circle(.07) node[left]{Planet};
+    \draw[->,thick](2,3)--(3,2.8) node[right]{$\vec v$};
+    \fill circle(.12) node[right]{Sun};
+    \fill (2,3) circle(.07) node[left]{Planet};
   \end{tikzpicture}
   \caption{A central force such as gravity do not generate a torque (moment).}
   \label{central-force}
@@ -113,7 +112,7 @@ motion.
     \label{kep2}
 \end{figure}
 
-To begin, recognize that for a planet with a velocity vector $\vec\varv$ that is
+To begin, recognize that for a planet with a velocity vector $\vec v$ that is
 not co-linear with the displacement vector $\vec r$ will sweep out an
 infinitesimal area $\dl\vec A$ (Fig.~\ref{fig:dA})
 \begin{figure}[ht]
@@ -125,8 +124,8 @@ infinitesimal area $\dl\vec A$ (Fig.~\ref{fig:dA})
     node[midway,left]{$\vec r$} node[pos=.95,right]{$\alpha$};
     \draw[->,thick](2,3)--(3,2.8) node[midway,above]{$\dl\vec r$};
     \draw[dashed](3,2.8)--(0,0);
-    \fill[black](0,0) circle(.07) node[right]{Sun};
-    \fill[black](2,3) circle(.035)node[left]{Planet};
+    \fill circle(.07) node[right]{Sun};
+    \fill (2,3) circle(.035)node[left]{Planet};
   \end{tikzpicture}
   \caption{Infinitesimal area $\dl\vec A$ swept by a planet as it moves
     $\dl\vec r$ in orbit.}
@@ -149,14 +148,14 @@ is changing:
 \begin{equation}
   \diff{\vec A}t
   =\frac12\vec r\times\diff{\vec r}t
-  =\frac12\vec r\times\vec\varv
+  =\frac12\vec r\times\vec v
 \end{equation}
-We can express $\vec r\times\vec\varv$ in terms of angular momentum. Since
-angular momentum is defined as $\vec L=m(\vec r\times\vec\varv)\;\rightarrow\;
-\vec r\times\vec\varv=\vec L/m$. Since gravity is a central force, angular
+We can express $\vec r\times\vec v$ in terms of angular momentum. Since
+angular momentum is defined as $\vec L=m(\vec r\times\vec v)\;\rightarrow\;
+\vec r\times\vec v=\vec L/m$. Since gravity is a central force, angular
 momentum is a constant, i.e:
 \begin{equation}
-  \boxed{\diff{\vec A}t=\frac12(\vec r\times\vec\varv)=\frac{\vec L}{2m}=
+  \boxed{\diff{\vec A}t=\frac12(\vec r\times\vec v)=\frac{\vec L}{2m}=
     \text{constant}
   }
   \label{constant}
@@ -177,10 +176,10 @@ coordinate system located at one of the two foci.
     \def\a{4}       % semi-major axis
     \def\b{3.25}    % semi-minor axis
     \def\angle{150} % angle
-    \draw[thick] (0,0) ellipse ({\a} and {\b});% Draw the ellipse
+    \draw[thick] ellipse ({\a} and {\b});% Draw the ellipse
     \draw[->] ({sqrt(\a*\a-\b*\b)},-3.5)--({sqrt(\a*\a-\b*\b)},3.5)
-    node[pos=1,above]{$y$};
-    \draw[->] (-\a-.2,0)--(\a+.5,0) node[pos=1,right]{$x$};
+    node[above]{$y$};
+    \draw[->] (-\a-.2,0)--(\a+.5,0) node[right]{$x$};
     \begin{scope}[rotate around={\angle:({sqrt(\a*\a-\b*\b)},0)}]
       \draw[red,thick]({sqrt(\a*\a-\b*\b)},0)--(7.66,0) node[pos=.7,below]{$r$};
       \fill[red] (7.66,0) circle(.04);
@@ -235,14 +234,14 @@ planet orbits a star:
     \def\a{4}       % semi-major axis
     \def\b{3.25}    % semi-minor axis
     \def\angle{150} % angle
-    \draw[very thick] (0,0) ellipse ({\a} and {\b});% Draw the ellipse
+    \draw[very thick] ellipse ({\a} and {\b});% Draw the ellipse
     \draw ({sqrt(\a*\a-\b*\b)},-2.65)--({sqrt(\a*\a-\b*\b)},2.65);
     \draw (-\a-.2,0)--(\a+.2,0);
-    \fill[black]({sqrt(\a*\a-\b*\b)},0) circle(.1) node[below right]{$M$};
+    \fill ({sqrt(\a*\a-\b*\b)},0) circle(.1) node[below right]{$M$};
     \begin{scope}[rotate around={\angle:({sqrt(\a*\a-\b*\b)},0)}]
       \draw[->]({sqrt(\a*\a-\b*\b)},0)--(8.5,0)
-      node[pos=.45,below]{$\vec r$} node[pos=1,left]{$\vec\varv_r$};
-      \draw[->](7.65,0)--(7.65,.85) node[below]{$\vec\varv_\theta$};
+      node[pos=.45,below]{$\vec r$} node[left]{$\vec v_r$};
+      \draw[->](7.65,0)--(7.65,.85) node[below]{$\vec v_\theta$};
       \fill (7.65,0) circle(.1) node[above]{$m$};
     \end{scope}
     \draw[->]({sqrt(\a*\a-\b*\b)+.5},0) arc(0:\angle:.5)
@@ -252,19 +251,19 @@ planet orbits a star:
   \label{eorbit}
 \end{figure}
 \begin{itemize}
-\item\textbf{Angular velocity} $\vec\varv_\theta$. The presence of
-  $\vec\varv_\theta$ means that there is a centripetal acceleration $a_c$ toward
+\item\textbf{Angular velocity} $\vec v_\theta$. The presence of
+  $\vec v_\theta$ means that there is a centripetal acceleration $a_c$ toward
   $M$. The direction of the acceleration is perpendicular to the direction of
-  $\vec\varv_\theta$, and toward the sun:
+  $\vec v_\theta$, and toward the sun:
   \begin{equation}
     a_c=-r\omega^2\hat r
   \end{equation}
-\item\textbf{Radial velocity} $\vec\varv_r$. If this velocity is non-zero and
+\item\textbf{Radial velocity} $\vec v_r$. If this velocity is non-zero and
   changes with time (which is the case for elliptical orbits but not for
   circular orbits), then there is an acceleration $a_r$, also in the radial
   direction:
   \begin{equation}
-    a_r=\diff{\varv_r}t\hat r=\diff[2]rt\hat r
+    a_r=\diff{v_r}t\hat r=\diff[2]rt\hat r
   \end{equation}
 \end{itemize}
 Both components of acceleration are due entirely to gravitational force.
@@ -301,7 +300,7 @@ $\theta$ instead of time $t$:
   = -\frac1{u^2}\diff u\theta \frac{Lu^2}m
   = -\frac Lm\diff u\theta
 \end{equation}
-Repeating the same process for the second derivative $\ddot{r}$, we have
+Repeating the same process for the second derivative $\ddot r$, we have
 \begin{equation}
   \diff[2] rt = \diff*{\left(-\frac Lm\diff u\theta\right)}t
   = -\frac Lm\diff*{\left(\diff u\theta\right)}\theta \\
@@ -310,7 +309,7 @@ Repeating the same process for the second derivative $\ddot{r}$, we have
 With this identity in hand, our original differential equation
 (Eq.~\ref{ode1}) becomes
 \begin{equation}
-  -\left(\frac{L^2u^2}{m^2}\right)\diff[2]u\theta-\left(\frac{L}{m}\right)^2u^3
+  -\left(\frac{L^2u^2}{m^2}\right)\diff[2]u\theta-\left(\frac Lm\right)^2u^3
   = -GMu^2
 \end{equation}
 which can be simplified to:
@@ -338,10 +337,10 @@ where $e$ is a constant:
 It should become obvious that this $e$ is, in fact, the eccentricity of the
 elliptical orbit previously mentioned. If a planet, or any celestrial object
 has too much total energy when it enters the gravitational field of the sun,
-then $e>1$, and the object will not return.
-From this form of $r$, it is clear that the maximum and a
-minimum values of $r$ represent the \emph{aphelion} and \emph{perihelion} of
-an ellipse (points of furthest and closest distance to the focus):
+then $e>1$, and the object will not return. From this form of $r$, it is clear
+that the maximum and a minimum values of $r$ represent the \emph{aphelion} and
+\emph{perihelion} of an ellipse (points of furthest and closest distance to the
+focus):
 \begin{equation}
   r_\text{max}=\left(\frac{L^2}{GMm^2}\right)\frac1{1-e}
   \quad\quad
@@ -359,10 +358,10 @@ $e$ and the semi-major axis $a$ to the numerator in the $r$ expression:
   a(1-e^2)=\frac{L^2}{GMm^2}
   \label{eq:numerator}
 \end{equation}
-We see that the orbit is given by an ellipse as Kepler found from Brahe's
-data. Moreover, since $r_\mathrm{min}$ and $r_\mathrm{max}$ are distances from
-the Sun, we see that the Sun is at one focus of the orbit. Thus, we have
-derived Kepler's first law.
+We see that the orbit is given by an ellipse as Kepler found from Brahe's data.
+Moreover, since $r_\text{min}$ and $r_\text{max}$ are distances from the Sun, we
+see that the Sun is at one focus of the orbit. Thus, we have derived Kepler's
+first law.
 
 \section{Third law: Period of motion}
 \begin{figure}[!ht]
@@ -372,12 +371,12 @@ derived Kepler's first law.
   law of planetary motion.}
   \label{3rdlaw}
 \end{figure}
-In the third law, called the \textbf{law of periods}, the total area $A$
-swept by the planet through one orbital period is the areal velocity (which is
+In the third law, called the \textbf{law of periods}, the total area $A$ swept
+by the planet through one orbital period is the areal velocity (which is
 constant, as shown in Eq.\ \ref{constant}) integrated by time, from $t=0$ to
 $T$, the orbital period of the planet:
 \begin{equation}
-  A=\int\dl A=\int_0^T\diff At\dl t=\frac{L}{2m}\int_0^T\dl t=\frac{LT}{2m}
+  A=\int\dl A=\int_0^T\diff At\dl t=\frac L{2m}\int_0^T\dl t=\frac{LT}{2m}
   \label{A1}
 \end{equation}
 From proofing Kepler's first law in the previous section, we know that the

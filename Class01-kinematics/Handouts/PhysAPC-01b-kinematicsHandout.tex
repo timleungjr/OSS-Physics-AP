@@ -29,7 +29,7 @@
 % Course & handout information
 \renewcommand{\institution}{Olympiads School}
 \renewcommand{\coursetitle}{Advanced Placement Physics C}
-\renewcommand{\term}{Winter/Spring 2021}
+\renewcommand{\term}{Fall 2022}
 
 \title{Kinematics of Rectilinear Motion}
 \author{Dr.\ Timothy Leung}
@@ -57,9 +57,9 @@ a fuller understanding using calculus.
   \begin{tikzpicture}[scale=.5]
     \draw[->](0,0)--(6,0) node[right]{$x$};
     \draw[->](0,0)--(0,8) node[above]{$y$};
-    \draw[->,red,very thick] (0,0)--(4,1) node[midway,above]{$\bm{x}_i$};
-    \draw[->,red,very thick] (0,0)--(2,6) node[midway,left]{$\bm{x}$};
-    \draw[->,blue,very thick](4,1)--(2,6) node[midway,right]{$\Delta\bm{x}$};
+    \draw[->,red,very thick] (0,0)--(4,1) node[midway,above]{$\bm x_i$};
+    \draw[->,red,very thick] (0,0)--(2,6) node[midway,left]{$\bm x$};
+    \draw[->,blue,very thick](4,1)--(2,6) node[midway,right]{$\Delta\bm x$};
     \draw[thick,dash dot,<->] (4,1)..controls (6,5) and (5,7)..(2,6)
     node[midway,right]{$s$};
   \end{tikzpicture}
@@ -77,25 +77,25 @@ rectilinear motion, we can express position of an object by its $x$, $y$ and
 $z$ components (i.e.\ their $x$, $y$ and $z$ coordinates). The SI unit for
 position is \emph{meters} (\si{\metre}).
 \begin{equation*}
-  \bm{x}(t)=x(t)\bm{\hat{\imath}} + y(t)\bm{\hat{\jmath}} + z(t)\bm{\hat{k}}
+  \bm x(t)=x(t)\bm{\hat{\imath}} + y(t)\bm{\hat{\jmath}} + z(t)\bm{\hat{k}}
 \end{equation*}
 If the object is in motion, then the position vector is a function of time $t$.
 
 \section{Displacement}
 
-\textbf{Displacement} is the change in position from $\bm{x}_i$ to
-$\bm{x}(t)$ within the same coordinate system, whenever an object moves.
+\textbf{Displacement} is the change in position from $\bm x_i$ to
+$\bm x(t)$ within the same coordinate system, whenever an object moves.
 \begin{equation*}
-  \Delta\bm{x}(t)=\bm{x}(t)-\bm{x}_i=
-  \left(x(t)-x_i\right)\bm{\hat{\imath}}+
-  \left(y(t)-y_i\right)\bm{\hat{\jmath}}+
-  \left(z(t)-z_i\right)\bm{\hat{k}}
+  \Delta\bm x(t)=\bm x(t)-\bm x_i=
+  \left(x(t)-x_i\right)\bm{\hat\imath}+
+  \left(y(t)-y_i\right)\bm{\hat\jmath}+
+  \left(z(t)-z_i\right)\bm{\hat k}
 \end{equation*}
 It it illustrated in Fig.~\ref{fig:d-vs-d}. Like position (not surprisingly),
 the SI unit for displacement is also \emph{meters}. The use of IJK notation
 makes vector addition and subtraction less prone to errors. Note that since
 ``reference point'' is the origin of the coordinate system, i.e.\
-$\bm{x}_{\textrm{ref}}=\bm{0}$, any position vector $\bm{x}$ is also its
+$\bm x_{\textrm{ref}}=\bm{0}$, any position vector $\bm x$ is also its
 displacement from the reference point.
 
 
@@ -104,73 +104,73 @@ displacement from the reference point.
 
 \textbf{Distance} $s$ is a quantity that is \emph{similar} (and related) to
 displacement. It is the \emph{length of the path} taken when an object moves
-from position $\bm{x}_i$ to position $\bm{x}_f$, as shown in
+from position $\bm x_i$ to position $\bm x_f$, as shown in
 Fig.~\ref{fig:d-vs-d}. Unlike displacement, however, distance is a scalar
 quantity that is always positive: $s\geq 0$, i.e.\ you can never walk a
 \emph{negative} distance to the store. Because the path is not always a
 straight line, therefore while the magnitude of the displacement vector is also
 a scalar, it is not necessarily the same as distance:
 \begin{equation*}
-  s\geq |\Delta\bm{x}|
+  s\geq |\Delta\bm x|
 \end{equation*}
 
 
 \section{Instantaneous \& Average Velocity}
 
 \textbf{Velocity} is a quantity used to describe how \emph{fast} an object is
-moving. If position $\bm{x}(t)$ is differentiable in time $t$, then its
-\textbf{instantaneous velocity} $\bm{v}(t)$ can be found at any time $t$ by
-differentiating $\bm{x}$ with respect to $t$. The SI unit for velocity is
+moving. If position $\bm x(t)$ is differentiable in time $t$, then its
+\textbf{instantaneous velocity} $\bm v(t)$ can be found at any time $t$ by
+differentiating $\bm x$ with respect to $t$. The SI unit for velocity is
 \emph{meters per second} (\si{\metre\per\second}):
 \begin{equation}
-  \boxed{\bm{v}(t)= \diff{\bm{x}(t)}t}
+  \boxed{\bm v(t)= \diff{\bm x(t)}t}
 \end{equation}
-Since position $\bm{x}(t)$ has $x(t)$, $y(t)$ and $z(t)$ components along the
-(linearly independent) $\bm{\hat{\imath}}$, $\bm{\hat{\jmath}}$ and
-$\bm{\hat{k}}$ directions, we can take the time derivative of every component
-to obtain the velocity components $v_x$, $v_y$ and $v_z$ in those directions:
+Since position $\bm x(t)$ has $x(t)$, $y(t)$ and $z(t)$ components along the
+(linearly independent) $\bm{\hat\imath}$, $\bm{\hat\jmath}$ and $\bm{\hat k}$
+directions, we can take the time derivative of every component to obtain the
+velocity components $v_x$, $v_y$ and $v_z$ in those directions:
 \begin{equation*}
-  \bm{v}(t)= \diff{\bm{x}}t=
-  \diff xt\bm{\hat{\imath}} + \diff yt\bm{\hat{\jmath}} + \diff zy\bm{\hat{k}}=
-  v_x\bm{\hat{\imath}} + v_y\bm{\hat{\jmath}} + v_z\bm{\hat{k}}
+  \bm v(t)= \diff{\bm x}t=
+  \diff xt\bm{\hat\imath} + \diff yt\bm{\hat\jmath} + \diff zy\bm{\hat k}=
+  v_x\bm{\hat\imath} + v_y\bm{\hat\jmath} + v_z\bm{\hat k}
 \end{equation*}
-By the fundamental theorem of calculus, if instantaneous velocity $\bm{v}(t)$
-is the time derivative of position $\bm{x}(t)$ with respect to time $t$, then
-$\bm{x}(t)$ is the time integral of $\bm{v}(t)$:
+By the fundamental theorem of calculus, if instantaneous velocity $\bm v(t)$
+is the time derivative of position $\bm x(t)$ with respect to time $t$, then
+$\bm x(t)$ is the time integral of $\bm v(t)$:
 \begin{equation}
-  \boxed{\bm{x}(t)=\int\bm{v}(t)\dl t + \bm{x}_0}
+  \boxed{\bm x(t)=\int\bm v(t)\dl t + \bm x_0}
 \end{equation}
-The constant of integration $\bm{x}_0=\bm{x}(0)$ is the object's \emph{initial
+The constant of integration $\bm x_0=\bm x(0)$ is the object's \emph{initial
   position} at $t=0$. As was the case in differentiation, we can integrate each
-component to get $\bm{x}$:
+component to get $\bm x$:
 \begin{equation*}
-  \bm{x}(t)= \left(
+  \bm x(t)= \left(
   \int u\bm{\hat{\imath}} + \int v\bm{\hat{\jmath}} + \int w\bm{\hat{k}}
-  \right)\dl t + \bm{x}_0
+  \right)\dl t + \bm x_0
 \end{equation*}
 
 
-The \textbf{average velocity} ($\overline{\bm{v}}$)\footnote{For
+The \textbf{average velocity} ($\overline{\bm v}$)\footnote{For
   \emph{time averages}, the convention amongst \emph{most} physicists is to
   write a bar over the quantity, as we have done here. In contrast, for
   \emph{ensemble averages}, e.g.\ the average speeds of many particles, we use
   the notation $\langle v\rangle$. %(See thermodynamics slides later in
   %the course)
-}of an object is the change in position $\Delta\bm{x}$ over a finite time
+}of an object is the change in position $\Delta\bm x$ over a finite time
 interval $\Delta t$:
 \begin{equation}
-  \boxed{\overline{\bm{v}}= \frac{\Delta\bm{x}}{\Delta t}}
+  \boxed{\overline{\bm v}= \frac{\Delta\bm x}{\Delta t}}
 \end{equation}
 Like instantaneous velocity, we can find the $x$, $y$ and $z$ components of
 average velocity by separating components in each direction:
 \begin{equation*}
-  \overline{\bm{v}}=
-  \frac{\Delta x}{\Delta t}\bm{\hat{\imath}} +
-  \frac{\Delta y}{\Delta t}\bm{\hat{\jmath}} +
-  \frac{\Delta z}{\Delta t}\bm{\hat{k}} =
-  \overline{u}\bm{\hat{\imath}} +
-  \overline{v}\bm{\hat{\jmath}} +
-  \overline{w}\bm{\hat{k}}
+  \overline{\bm v}=
+  \frac{\Delta x}{\Delta t}\bm{\hat\imath} +
+  \frac{\Delta y}{\Delta t}\bm{\hat\jmath} +
+  \frac{\Delta z}{\Delta t}\bm{\hat k} =
+  \overline u\bm{\hat\imath} +
+  \overline v\bm{\hat\jmath} +
+  \overline w\bm{\hat k}
 \end{equation*}
 
 
@@ -187,12 +187,12 @@ speed is also \si{\metre\per\second}:
 Since distance is a scalar quantity, so too is speed. As distance of any path
 must always be positive $s>0$, instantaneous speed must also be positive.
 Instantaneous speed $v$ is the magnitude of the instantaneous velocity vector
-$\bm{v}$. Likewise, \textbf{average speed} ($\overline{v}$) is similar to
+$\bm v$. Likewise, \textbf{average speed} ($\overline{v}$) is similar to
 average velocity: it is the distance travelled over a finite time
 interval.\footnote{It should be obvious that unlike instantaneous speed, average
   speed is not the magnitude of the average velocity.}
 \begin{equation}
-  \boxed{\overline{v}=\frac{s}{\Delta t}}
+  \boxed{\overline v=\frac s{\Delta t}}
 \end{equation}
 
 
@@ -212,31 +212,33 @@ interval.\footnote{It should be obvious that unlike instantaneous speed, average
 \section{Instantaneous and Average Acceleration}
 
 In the same way that velocity is the rate of change in position with respect
-to time, \textbf{instantaneous acceleration} $\bm{a}(t)$ is the rate of change
+to time, \textbf{instantaneous acceleration} $\bm a(t)$ is the rate of change
 in velocity with respect to time, and the second time derivative of position.
 The SI unit for acceleration is \emph{meters per second squared}
 (\si{\metre\per\second\squared}):
 \begin{equation}
-  \boxed{\bm{a}(t)= \diff{\bm{v}(t)}t=\diff[2]{\bm{x}(t)}t}
+  \boxed{\bm a(t)= \diff{\bm v(t)}t=\diff[2]{\bm x(t)}t}
 \end{equation}
 Although in grades 11 and 12 physics courses, students deal almost exclusively
 with constant ccceleration, in AP Physics, it must be understood that
 acceleration can also vary with time, and that calculus must be used in many
 cases.
 %  \begin{enumerate}
-%  \item Take derivative of $\bm{x}(t)$ to get $\bm{v}(t)=\bm{x}'(t)$
-%  \item Take derivative again of $\bm{v}(t)$ to get $\bm{a}(t)=\bm{v}'(t)$
+%  \item Take derivative of $\bm x(t)$ to get $\bm v(t)=\bm x'(t)$
+%  \item Take derivative again of $\bm v(t)$ to get $\bm a(t)=\bm v'(t)$
 %  \end{enumerate}
 %\end{frame}
 Again, by the fundamental theorem of calculus, instantaneous velocity
-$\bm{v}(t)$ is the time integral of instantaneous acceleration $\bm{a}(t)$:
+$\bm v(t)$ is the time integral of instantaneous acceleration $\bm a(t)$:
 \begin{equation}
-  \boxed{\bm{v}(t)=\int\bm{a}(t)\dl t+\bm{v}_0} =
-    \left(\int a_x\bm{\hat{\imath}} +
-    \int a_y\bm{\hat{\jmath}} +
-    \int a_z\bm{\hat{k}}\right)\dl t +\bm{v}_0
+  \boxed{\bm v(t)=\int\bm a(t)\dl t+\bm v_0} =
+  \left(
+  \int a_x\bm{\hat\imath} +
+  \int a_y\bm{\hat\jmath} +
+  \int a_z\bm{\hat k}
+  \right)\dl t +\bm v_0
 \end{equation}
-where $\bm{v}_0$ is the initial velocity at $t=0$.
+where $\bm v_0$ is the initial velocity at $t=0$.
 
 \section{Acceleration as Functions of Position and Velocity}
 
@@ -246,18 +248,18 @@ often expressed as functions of other motion quantities rather than time. For
 example:
 \begin{itemize}[leftmargin=15pt]
 \item\textbf{Gravitational force}\footnote{Newton's law of universal
-  gravitation: $\displaystyle F_g=\frac{Gm_1m_2}{r^2}$} or
+  gravitation: $F_g=\dfrac{Gm_1m_2}{r^2}$} or
   \textbf{electrostatic force}\footnote{Coulomb's law:
-    $\displaystyle F_q=\frac{kq_1q_2}{r^2}$} are both inversely proportional to
+    $F_q=\dfrac{kq_1q_2}{r^2}$} are both inversely proportional to
   the square of the distance (called the inverse-square law), and therefore
   acceleration is best express by this complicated differential equation:
   \begin{equation*}
-    a(x)=\frac{A}{x^2} \quad\text{or}\quad \diff[2] xt=\frac{A}{x^2}
+    a(x)=\frac A{x^2} \quad\text{or}\quad \diff[2] xt=\frac A{x^2}
   \end{equation*}
   The solution will likely require numerical integration.
 
-\item\textbf{Spring force} is proportional to displacement\footnote{By Hooke's
-  law $\bm{F}_s=-k\bm{x}$, where $k$ is the spring constant that describes the
+\item\textbf{Spring force} is proportional to displacement\footnote{By Hookes's
+  law $\bm F_s=-k\bm x$, where $k$ is the spring constant that describes the
   stiffness of the spring}, and therefore acceleration is expressed as:
   \begin{equation*}
     a(x)=-bx\quad\text{or}\quad \diff[2] xt=-bx
@@ -284,8 +286,8 @@ example:
   $a(t)$ can also easily be obtained by integrating and differentiating.
 
 \item\textbf{Aerodynamic forces} such as drag and lift\footnote{The equations
-  for lift and drag forces are $L=\frac12\rho v^2C_LA_\mathrm{ref}$ and
-  $D=\frac12\rho v^2C_DA_\text{ref}$ respectively, where $\rho$ is the density
+  for lift and drag forces are $L=\dfrac12\rho v^2C_LA_\text{ref}$ and
+  $D=\dfrac12\rho v^2C_DA_\text{ref}$ respectively, where $\rho$ is the density
   of the fluid, $A_\text{ref}$ is the reference area, $C_L$ is the lift
   coeffcient and $C_D$ is the drag coefficient}, which are proportional
   to the square of the velocity, leading to an expression for acceleration 
@@ -311,8 +313,8 @@ Physicists and engineers often use a special notation when the derivative is
 taken with respect to \emph{time} (and not spatial derivatives), by writing a
 dot above the variable for \emph{first} derivative, and \emph{two} dots for
 \emph{second} derivative, etc. For example, velocity is
-$\bm{v}(t)=\dot{\bm{x}}$ while acceleration is
-$\bm{a}(t)= \dot{\bm{v}}=\ddot{\bm{x}}$. This notation will be used occasionally
+$\bm v(t)=\dot{\bm x}$ while acceleration is
+$\bm a(t)= \dot{\bm v}=\ddot{\bm x}$. This notation will be used occasionally
 in this course when it is convenient to do so.
 
 
@@ -322,7 +324,7 @@ For those who are curious about higher derivatives, the time derivative of
 acceleration is called \textbf{jerk} $\bm{j}(t)$ with a unit of
 \si{\metre\per\second\cubed}:
 \begin{equation}
-  \bm{j}(t)=\diff{\bm{a}}t=\diff[2]{\bm{v}}t=\diff[3]{\bm{x}}t
+  \bm j(t)=\diff{\bm a}t=\diff[2]{\bm v}t=\diff[3]{\bm x}t
 \end{equation}
 The measurement of jerk is used in many sensors, for example, in accelerometers
 in airbags to determine if the acceleration of a car is under normal operation
@@ -330,7 +332,7 @@ in airbags to determine if the acceleration of a car is under normal operation
 derivative of jerk is \textbf{jounce}, or \textbf{snap}, with unit of
 \si{\metre\per\second^4}:
 \begin{equation}
-  \bm{s}(t)=\diff{\bm{j}}t=\diff[2]{\bm{a}}t=\diff[3]{\bm{v}}t=\diff[4]{\bm{x}}t
+  \bm s(t)=\diff{\bm j}t=\diff[2]{\bm a}t=\diff[3]{\bm v}t=\diff[4]{\bm x}t
 \end{equation}
 The next two derivatives of snap is facetiously called \textbf{crackle} and
 \textbf{pop}\footnote{As in the cartoon mascots for Kellogg's rice crispies},
@@ -345,20 +347,20 @@ Although kinematic problems in AP Physics often require calculus\footnote{Unlike
   your AP Calculus exams, the differentiation/integration in AP Physics will be
   fairly straightforward}, basic kinematic equations for \emph{constant}
 acceleration are still a very powerful tool. For constant acceleration
-$\bm{a}$, velocity can be obtained by integrating in time:
+$\bm a$, velocity can be obtained by integrating in time:
 \begin{equation}
-  \bm{v}(t)=\int\bm{a}\dl t\quad\rightarrow\quad
-  \boxed{\bm{v}(t)=\bm{v}_0+\bm{a}t}
+  \bm v(t)=\int\bm a\dl t\quad\rightarrow\quad
+  \boxed{\bm v(t)=\bm v_0+\bm at}
   \label{eq:big5-1}
 \end{equation}
-where $\bm{v}_0$ is the initial velocity at $t=0$. Integrating again for the
+where $\bm v_0$ is the initial velocity at $t=0$. Integrating again for the
 position vector:
 \begin{equation}
-  \bm{x}(t)=\int \bm{v}\dl t\quad\rightarrow\quad
-  \boxed{\bm{x}(t)=\bm{x}_0+\bm{v}_0t+\frac12 \bm{a}t^2}
+  \bm x(t)=\int \bm v\dl t\quad\rightarrow\quad
+  \boxed{\bm x(t)=\bm x_0+\bm v_0t+\frac12 \bm at^2}
   \label{eq:big5-2}
 \end{equation}
-where $\bm{x}_0$ is the initial position at $t=0$. The position vector is
+where $\bm x_0$ is the initial position at $t=0$. The position vector is
 quadratic in time.
 
 The derivation of the last equation is slightly more laborious. From
@@ -394,7 +396,7 @@ AP Exam equation sheet.
 %  \vspace{.2in}\textbf{Two objects:} two objects are in motion. Usually one of
 %  them is moving at constant velocity while the other is accelerating.
 %  \begin{itemize}
-%  \item Time interval $\Delta t$ and displacement $\Delta\bm{x}$ of the two
+%  \item Time interval $\Delta t$ and displacement $\Delta\bm x$ of the two
 %    objects are related
 %  \item Examples:
 %    \begin{itemize}

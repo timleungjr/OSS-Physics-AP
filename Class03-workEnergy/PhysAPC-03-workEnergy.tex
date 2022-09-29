@@ -31,10 +31,9 @@
 \section{Work}
 
 \begin{frame}{Work}
-  \textbf{Mechanical work} $\dl W$ is done when a force $\vec F$ displaces an
-  object by $\dl\vec x$. If a varying force is applied to move an object from
-  $\vec x_0$ to $\vec x_1$ along a path, then the total work done by the force
-  is defined by the integral:
+  \textbf{Mechanical work} $\dl W$ is done when a force $\vec F(x)$ displaces an
+  object by $\dl\vec x$. If the force moves an object from  $\vec x_0$ to
+  $\vec x_1$, the total work done by the force is defined as:
 
   \eq{-.1in}{
     \boxed{
@@ -48,8 +47,6 @@
     $\vec F\cdot\dl\vec x=0$ (i.e.\ the force did not cause the displacement)
   \item No work done if no displacement ($\dl\vec x=\vec 0$)
   \item Work can be positive or negative depending on the dot product
-  \item When there are multiple forces acting on an object, we can compute the
-    work done by each \emph{each} force
   \end{itemize}
 \end{frame}
 
@@ -63,9 +60,10 @@
     W=\int_{x_0}^{x_1} F(x)\dl x
   }
 
-  Direction still matters for $F$ and $x$, in that there is still a positive
-  and negative direction.
+  (Direction still matters for $F$ and $x$, even in 1D, in that there is still
+  a positive and negative direction.)
 \end{frame}
+
 
 
 \begin{frame}{Work by Constant Force}
@@ -117,17 +115,16 @@
 
   \eq{-.1in}{
     W_\text{net}
-    =\int_{x_0}^{x_1}\vec F_\text{net}\cdot\dl\vec x
-    =\int m\vec a\cdot\dl\vec x
-    =m\int\diff{\vec v}t\cdot\dl\vec x
+    =\int_{x_0}^{x_1}F_\text{net}(x)\dl x
+    =\int ma\dl x
+    =m\int\diff vt\dl x
   }
 
-  Both $\vec v$ and $\vec x$ are continuous functions in time, we can switch
-  the order of differentiation.
+  Both $v$ and $x$ are continuously differentiable in time, we can switch the
+  order of differentiation.
   
   \eq{-.1in}{
-    =m\int\diff{\vec x}t\cdot\dl\vec v=m\int\vec v\cdot\dl\vec v
-    =m\int_{v_0}^{v_1}v\dl v
+    =m\int\diff xt\dl v=m\int v\dl v =m\int_{v_0}^{v_1}v\dl v
   }
 
   where $v_0=v(x_0)$ and $v_1=v(x_1)$.
@@ -180,9 +177,9 @@
 
 
 \begin{frame}{Example}
-  \textbf{Example 1:} A force $\vec F=4.0x\hat\imath$ (in newtons) acts
-  on an object of mass \SI{2.}{\kilo\gram} as it moves from $x=1.0$ to
-  $x=\SI{5.}\metre$. Given that the object is at rest at $x=1$,
+  \textbf{Example 1:} A force $F=4x$ (in newtons) acts on an object of mass
+  \SI2{\kilo\gram} as it moves along the $x$-axis from $x=1$ to $x=\SI5\metre$.
+  Given that the object is at rest at $x=1$,
   \begin{enumerate}[(a)]
   \item Calculate the net work
   \item What is the final speed of the object?
@@ -221,24 +218,19 @@
   The work done by gravity can also be expressed in terms of the change in
   height. Using ground as the reference level (i.e.\ $h=0$):
   \begin{center}
-    \begin{tikzpicture}[scale=.55]
-      \draw[thick,fill=cyan!20] (7.75,0) arc(75:105:30);
-      \draw[thick,fill=cyan] (0,6) circle(.25);
+    \begin{tikzpicture}[scale=.55,thick]
+      \draw[fill=cyan!20] (7.75,0) arc(75:105:30);
+      \draw[fill=cyan] (0,6) circle(.25);
       \draw[very thick,violet,->](0,6)--(0,3) node[midway,right]{$\Delta x$};
-      \draw[thick,->|,blue](-.4,1)--(-.4,6) node[midway,left]{$h_1$};
-      \draw[thick,->|,blue](0,1)--(0,3) node[midway,right]{$h_2$};
+      \draw[->|,blue](-.4,1)--(-.4,6) node[midway,left]{$h_0$};
+      \draw[->|,blue](0,1)--(0,3) node[midway,right]{$h_1$};
     \end{tikzpicture}
   \end{center}
 
-  \vspace{-.3in}{\large
-    \begin{align*}
-      W_g
-      &= mg(h_1-h_2)\\
-      &= -mg(h_2-h_1)=-(mgh_2-mgh_1) = -\Delta U_g
-    \end{align*}
+  \eq{-.2in}{
+    W_g
+    = mg(h_0-h_1)=-mg(h_1-h_0)=-(mgh_1-mgh_0) = -\Delta U_g
   }
-
-
 \end{frame}
 
 
@@ -263,8 +255,8 @@
       \begin{itemize}
       \item \emph{Positive} work decreases gravitational potential energy, while
       \item \emph{Negative} work increases gravitational potential energy
-      \item $W_g$ depends on the end points $h_1$ and $h_2$, but not \emph{how}
-        it went from $h_1\rightarrow h_2$
+      \item $W_g$ depends on the end points $h_0$ and $h_1$, but not \emph{how}
+        it went from $h_0\rightarrow h_1$
       \end{itemize}
     \end{minipage}
   }
@@ -327,15 +319,15 @@
   masses that are connected to a compressed/stretched spring is therefore:
 
   \eq{-.1in}{
-    W_e=\int_{x_0}^{x_1}\vec F_s\cdot\dl\vec x =-k\int_{x_0}^{x_1} x\dl x
-    =-\frac12kx^2\Big|^{x_1}_{x_0}=-\Delta U_e
+    W_s=\int_{x_0}^{x_1}F_s\dl x =-k\int_{x_0}^{x_1} x\dl x
+    =-\frac12kx^2\Big|^{x_1}_{x_0}=-\Delta U_s
   }
 
-  where $U_e$ is the  \textbf{elastic potential energy}, defined as:
+  where $U_s$ is the  \textbf{elastic potential energy}, defined as:
   
   \eq{-.1in}{
     \boxed{
-      U_e=\frac12kx^2
+      U_s=\frac12kx^2
     }
   }
 \end{frame}
@@ -347,7 +339,7 @@
   potential energy by:
   
   \eq{-.1in}{
-    \boxed{  W_e=-\Delta U_e }
+    \boxed{  W_s=-\Delta U_s }
   }
 
   \fcolorbox{black}{yellow!10}{
@@ -356,7 +348,7 @@
       \item \emph{Positive} work by the spring decreases spring potential
         energy, while
       \item \emph{Negative} work by the spring increases spring potential energy
-      \item $W_e$ depends on the end points $x_0$ and $x_1$, but not \emph{how}
+      \item $W_s$ depends on the end points $x_0$ and $x_1$, but not \emph{how}
         it went from $x_0$ to $x_1$
       \end{itemize}
     \end{minipage}
@@ -369,7 +361,7 @@
   These forces are called \textbf{conservative forces}
   \begin{itemize}
   \item Gravitational force $\vec F_g$
-  \item Spring force $\vec F_e$
+  \item Spring force $\vec F_s$
   \item Electrostatic force $\vec F_q$
   \item Magnetic force $\vec F_m$
   \item Nuclear forces
@@ -747,10 +739,10 @@
     \end{tikzpicture}
   \end{center}
   The sum of the kinetic energy of the mass ($K$) and the elastic potential
-  energy stored in the spring ($U_e$) is constant
+  energy stored in the spring ($U_s$) is constant
 
   \eq{-.25in}{
-    K+U_e=\text{constant}
+    K+U_s=\text{constant}
   }
 \end{frame}
 
@@ -800,12 +792,12 @@
     and Earth) is a closed system.
 
     \eq{-.1in}{
-      K + U_g + U_e=\text{constant}
+      K + U_g + U_s=\text{constant}
     }
     
     The sum of the kinetic energy of the mass ($K$), the gravitational
     potential energy stored between the mass and Earth ($U_g$), and the elastic
-    potential energy stored in the spring ($U_e$) is constant.
+    potential energy stored in the spring ($U_s$) is constant.
   \end{columns}
 \end{frame}
 
@@ -871,7 +863,7 @@
   \begin{itemize}
   \item Kinetic energy of the mass ($K$)
   \item Gravitational potential energy ($U_g$) between the mass and Earth
-  \item Elastic potential energy ($U_e$) stored in the spring
+  \item Elastic potential energy ($U_s$) stored in the spring
   \item Internal energy ($E_\text{int}$) of the air molecules
   \end{itemize}
 \end{frame}
@@ -899,7 +891,7 @@
 
     \column{.6\textwidth}
     \eq{0pt}{
-      K + E_\text{int}+U_g+U_e=\text{constant}
+      K + E_\text{int}+U_g+U_s=\text{constant}
     }
   \end{columns}
 %

@@ -1,4 +1,4 @@
-TERM=2021-09-Fall
+TERM=2022-09-Fall
 DESTINATION=$(HOME)/Documents/ossfiles/$(TERM)/Physics.APC
 
 export DESTINATION
@@ -25,8 +25,8 @@ all:
 	cd Class19-magnetism3	; make
 #	cd Class20-circuits1 	; make
 	cd Class21-circuits2 	; make
-#	cd Class22-hallEffect	; make
-#	cd Class22-maxwellsEquations ; make
+	cd Class22-hallEffect	; make
+	cd Class22-maxwellsEquations ; make
 
 clean:
 	rm -rf *.*~ *~ *.log
@@ -60,7 +60,7 @@ public:
 	cd Class01-outline	; make public
 	cd Class01-kinematics	; make public
 	cd Class02-dynamics	; make public
-#	cd Class03-workEnergy	; make public
+	cd Class03-workEnergy	; make public
 #	cd Class04-momentum	; make public
 #	cd Class05-CM		; make public
 	cd Class06-circMotion	; make public
@@ -78,5 +78,5 @@ public:
 	cd Class19-magnetism3	; make public
 #	cd Class20-circuits1 	; make public
 	cd Class21-circuits2 	; make public
-#	cd Class22-hallEffect	; make public
-#	cd Class22-maxwellsEquations ; make public
+	cd Class22-hallEffect	; make public
+	cd Class22-maxwellsEquations ; make public
