@@ -20,11 +20,11 @@ all:
 	cd Class14-electrostatics ; make
 	cd Class15-electrostatics2 ; make
 	cd Class16-capacitors	; make
-#	cd Class17-magnetism1	; make
-#	cd Class18-magnetism2	; make
-#	cd Class19-magnetism3	; make
+	cd Class17-magnetism1	; make
+	cd Class18-magnetism2	; make
+	cd Class19-magnetism3	; make
 #	cd Class20-circuits1 	; make
-#	cd Class21-circuits2 	; make
+	cd Class21-circuits2 	; make
 #	cd Class22-hallEffect	; make
 #	cd Class22-maxwellsEquations ; make
 
@@ -73,10 +73,10 @@ public:
 	cd Class14-electrostatics ; make public
 	cd Class15-electrostatics2 ; make public
 	cd Class16-capacitors	; make public
-#	cd Class17-magnetism1	; make public
-#	cd Class18-magnetism2	; make public
-#	cd Class19-magnetism3	; make public
+	cd Class17-magnetism1	; make public
+	cd Class18-magnetism2	; make public
+	cd Class19-magnetism3	; make public
 #	cd Class20-circuits1 	; make public
-#	cd Class21-circuits2 	; make public
+	cd Class21-circuits2 	; make public
 #	cd Class22-hallEffect	; make public
 #	cd Class22-maxwellsEquations ; make public
