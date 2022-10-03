@@ -1,4 +1,5 @@
 \documentclass{../../oss-apphys-exam}
+\newcounter{lastmc}
 
 \begin{document}
 \genheader
@@ -190,6 +191,7 @@
 %      \choice $2\omega$
 %      \choice $4\omega$
 %    \end{choices}
+<<<<<<< HEAD
 
     \uplevel{
       \begin{center}
@@ -204,6 +206,22 @@
           \fill circle(.03);
         \end{tikzpicture}
       \end{center}
+=======
+%    \columnbreak
+    
+    \uplevel{
+      \centering
+      \begin{tikzpicture}[scale=2,thick]
+        \draw[dashed](1,0) arc(0:-180:1);
+        \draw (0,0)--(1,0);
+        \draw[fill=white](1,0) circle(.08) node[right]{$X$};
+        \draw[dashed] (0,0)--(-1,0);
+        \draw[dashed,fill=white](-1,0) circle(.08) node[left]{$Z$};
+        \draw[dashed](0,0)--(0,-1);
+        \draw[dashed,fill=white](0,-1) circle(.08) node[below]{$Y$};
+        \fill circle(.03);
+      \end{tikzpicture}
+>>>>>>> 0187f47 (A whole bunch of stuff that's changed for Fall of 2022?)
     }
 
     \question A ball on the end of a string is released from rest at point $X$
@@ -220,18 +238,19 @@
     \end{tabular}
     \columnbreak
 
-    \question A merry-go-round is initially at rest, and begins to rotate with a
-    constant angular acceleration $\alpha$. The angular speed $\omega$ of the
-    merry-go-round after making two complete revolutions is
-    \begin{choices}
-      \choice $2\alpha$
-      \choice $4\alpha$
-      \choice $\sqrt{2\pi\alpha}$
-      \choice $4\pi\alpha$
-      \choice $\sqrt{8\pi\alpha}$
-    \end{choices}
-
-    \question An airplane travelling at \SI{300}{\metre\per\second} banks its
+%    \question A merry-go-round is initially at rest, and begins to rotate with a
+%    constant angular acceleration $\alpha$. The angular speed $\omega$ of the
+%    merry-go-round after making two complete revolutions is
+%    \begin{choices}
+%      \choice $2\alpha$
+%      \choice $4\alpha$
+%      \choice $\sqrt{2\pi\alpha}$
+%      \choice $4\pi\alpha$
+%      \choice $\sqrt{8\pi\alpha}$
+%    \end{choices}
+    \columnbreak
+    
+    \question An airplane traveling at \SI{300}{\metre\per\second} banks its
     wings to enter into a horizontal circular turn. The circular path has a
     radius of \SI{2.7}{\kilo\metre}. Which of these values \emph{best}
     represents the angle of the wings relative to the horizontal if the airplane
@@ -244,14 +263,101 @@
       \choice\ang{25}
       \correctchoice\ang{74}
     \end{choices}
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> 0187f47 (A whole bunch of stuff that's changed for Fall of 2022?)
     \uplevel{
-      \textbf{Questions \ref{conical1}--\ref{conical2}}
-        
-      A conical pendulum consists of a ball attached to a string that
-      moves in a horizontal circle, as shown below.
+      \cpic{.18}{amusement}
+    }
+    
+    \question An amusement park ride consists of a cylindrical room that spins
+    so that people leaning up against the wall can stick to the wall even if the
+    floor is lowered out from under them. The rotating room reaches a maximum
+    angular speed $\omega$, the floor is lowered, and the riders stick to
+    the wall. Which of the following statements is true?
+    \begin{choices}
+      \choice The weight of each rider provides the centripetal force keeping
+      the rider moving in a circle.
+      \choice The normal force applied by the wall must equal the weight of the
+      rider.
+      \choice The difference between the normal force applied by the wall and
+      the weight of the rider is equal to the centripetal force acting on the
+      rider.
+      \choice The frictional force between the wall and the rider must equal the
+      weight of the rider.
+      \choice The frictional force between the wall and the rider provides the
+      centripetal force acting on the rider.
+    \end{choices}
+
+    \uplevel{  
       \begin{center}
+        \begin{tikzpicture}[scale=.8,thick]
+          \draw (-2,0)--(2,0);
+          \draw (0,-2)--(0,2);
+          \draw[fill=white](-2,0) circle(.12) node[left]{D};
+          \draw[fill=white](2,0) circle(.12) node[right]{B};
+          \draw[fill=white](0,2) circle(.12) node[above]{A};
+          \draw[fill=white](0,-2) circle(.12) node[below]{C};
+        \end{tikzpicture}
+      \end{center}
+      \textbf{Questions \ref{bug1}--\ref{bug2}}: Two balls of equal mass are
+      attached to each end of a rod that is spinning about its center in the
+      vertical plane with a constant angular speed $\omega$. Each ball is a
+      radius $r$ from the center of the rod. A bug holds on to one of the balls
+      as the system rotates. Four points, A, B, C, and D, are marked at the
+      quarter circle points on the circle.
+    }
+
+    \question At which point would the bug need to apply the most adhesive
+    force to remain on the ball?
+    \begin{choices}
+      \choice A
+      \choice B
+      \choice C
+      \choice D
+      \choice The bug would apply the same force at all points to remain on the
+      ball.
+    \end{choices}
+    \label{bug1}
+   
+    \question The minimum force necessary the bug would have to apply to remain
+    on the ball at point C is
+    \begin{choices}
+      \choice $m\omega r$
+      \choice $m\omega^2r$
+      \choice $mg$
+      \choice $m\omega^2r-mg$
+      \choice $m\omega^2r+mg$
+    \end{choices}
+    \label{bug2}
+
+    \question A typical curve on a high-speed racetrack has a radius of
+    \SI{200}{\metre} and is banked at \ang{31} above the horizontal. Assuming
+    that a race car has a mass of \SI{1500}{\kilo\gram} and that the
+    coefficient of friction between the car's tires and the track is 0.90, what
+    is the maximum speed at which a race car can travel through the curve and
+    not slide toward the top of the track?
+    \begin{choices}
+      \choice\SI{80}{\metre\per\second}
+      \choice\SI{87}{\metre\per\second}
+      \choice\SI{100}{\metre\per\second}
+      \choice\SI{120}{\metre\per\second}
+      \choice\SI{210}{\metre\per\second}
+    \end{choices}
+    \columnbreak
+        
+    \uplevel{
+      \textbf{Questions \ref{conical1}--\ref{conical2}}: A conical pendulum
+      consists of a ball attached to a string that moves in a horizontal
+      circle, as shown below.
+      \begin{center}
+<<<<<<< HEAD
         \begin{tikzpicture}[scale=.7]
+=======
+        \begin{tikzpicture}[scale=.75]
+>>>>>>> 0187f47 (A whole bunch of stuff that's changed for Fall of 2022?)
           \draw[thick,dashed] ellipse(3 and .7);
           \draw[thick,dashed](0,4)--(0,-1.5);
           \draw[very thick](-3,0)--(0,4) node[midway,left]{$\ell$};
@@ -269,6 +375,7 @@
     \label{conical1}
     \begin{choices}
       \choice
+<<<<<<< HEAD
       \begin{tikzpicture}
         \fill circle(.05);
         \begin{scope}[thick,->]
@@ -313,6 +420,42 @@
           \draw (0,0)--(0,-1)node[right]{$W$};
           \draw[rotate=120] (0,0)--(1.5,0) node[left]{$T$};
         \end{scope}
+=======
+      \begin{tikzpicture}[thick,->]
+        \fill circle(.05);
+        \draw (0,0)--(0,-1)node[right]{$W$};
+        \draw (0,0)--(1.3,0) node[right]{$F_c$};
+        \draw[rotate=30] (0,0)--(1.5,0) node[right]{$T$};
+      \end{tikzpicture}
+      
+      \choice
+      \begin{tikzpicture}[thick,->]
+        \fill circle(.05);
+        \draw (0,0)--(0,-1)node[right]{$W$};
+        \draw (0,0)--(1.5,0) node[right]{$T$};
+      \end{tikzpicture}
+      
+      \choice
+      \begin{tikzpicture}[thick,->]
+        \fill circle(.05);
+        \draw (0,0)--(0,-1)node[right]{$W$};
+        \draw[rotate=30] (0,0)--(1.5,0) node[right]{$T$};
+      \end{tikzpicture}
+
+      \choice
+      \begin{tikzpicture}[thick,->]
+        \fill circle(.05);
+        \draw (0,0)--(0,-1)node[right]{$W$};
+        \draw (0,0)--(1.5,0) node[right]{$F_c$};
+        \draw (0,0)--(0,1) node[right]{$T$};
+      \end{tikzpicture}
+      
+      \choice
+      \begin{tikzpicture}[thick,->]
+        \fill circle(.05);
+        \draw (0,0)--(0,-1)node[right]{$W$};
+        \draw[rotate=120] (0,0)--(1.5,0) node[left]{$T$};
+>>>>>>> 0187f47 (A whole bunch of stuff that's changed for Fall of 2022?)
       \end{tikzpicture}
     \end{choices}
     \label{ball1}
@@ -404,6 +547,7 @@
 %        \draw[very thick](0,0)--(1.5,1)--(3,1)--(3,0)--(4.5,0)--(6,1);
 %      \end{tikzpicture}
     %    \end{choices}
+<<<<<<< HEAD
 
 
     \question A typical curve on a high-speed racetrack has a radius of
@@ -486,6 +630,9 @@
       \choice $m\omega^2r+mg$
     \end{choices}
     \label{bug2}
+=======
+    \setcounter{lastmc}{\value{question}}
+>>>>>>> 0187f47 (A whole bunch of stuff that's changed for Fall of 2022?)
   \end{questions}
 \end{multicols*}
 \newpage
@@ -495,6 +642,7 @@
 \genfreedirections
 
 \begin{questions}
+  \setcounter{question}{\value{lastmc}}
   \question A mass $m$ attached to a string of length $2r$ swings, starting at
   rest when the string is horizontal, until the string is vertical. At the
   instant the string is vertical, the mass makes contact with the horizontal
@@ -520,6 +668,8 @@
   \begin{parts}
     \part What is the speed of the mass attached to the string the instant the
     string is cut?
+    \vspace{\stretch1}
+    
     \part Sketch the forces acting on the mass when it is in the position shown
     below.
     \begin{center}
@@ -540,8 +690,13 @@
       When the mass is in the position shown above,
     }
     \part Find the object's speed as a function of $\theta$
+    \vspace{\stretch1}
+    
     \part Find the object's centripetal acceleration as a function of $\theta$
+    \vspace{\stretch1}
+    
     \part Determine at what angle $\theta$ the mass will fall of the track
+    \vspace{\stretch1}
   \end{parts}
   \newpage
 
@@ -561,28 +716,30 @@
     \part Derive an expression for the height of the ramp $h$. Express your
     answer in terms of $\varv_0$, $m$, and fundamental constants, as
     appropriate.
-  
-    \uplevel{A short time after passing point $P$, the block is in contact with
-      the wall and moves with a speed of $\varv$.}
+    \vspace{\stretch1}
+    
+    \uplevel{
+      A short time after passing point $P$, the block is in contact with
+      the wall and moves with a speed of $\varv$.
+    }
  
-    \part
-    \begin{subparts}
-      \subpart Is the vertical component of the net force on the block upward,
-      downward, or zero?
+    \part Is the vertical component of the net force on the block upward,
+    downward, or zero?
       
-      \vspace{.1in}
-      \underline{\hspace{.3in}} Upward\hspace{.2in}
-      \underline{\hspace{.3in}} Downward\hspace{.2in}
-      \underline{\hspace{.3in}} Zero
-      
-      \vspace{.1in}Justify your answer.
-
-      \subpart On the figure below, draw an arrow starting on the block to
-      indicate the direction of the horizontal component of the net force on
-      the moving block when it is at the position shown.
-      \cpic{.3}{ramp-circle-top}
-    \end{subparts}
-  
+    \vspace{.1in}
+    \underline{\hspace{.3in}} Upward\hspace{.2in}
+    \underline{\hspace{.3in}} Downward\hspace{.2in}
+    \underline{\hspace{.3in}} Zero
+    
+    \vspace{.1in}Justify your answer.
+    \vspace{\stretch1}
+    
+    \part On the figure below, draw an arrow starting on the block to
+    indicate the direction of the horizontal component of the net force on
+    the moving block when it is at the position shown.
+    \cpic{.3}{ramp-circle-top}
+    \newpage
+    
     \uplevel{
       Express your answers to the following in terms of $\varv_0$, $\varv$, $m$,
       $R$, $\mu$, and fundamental constants, as appropriate.
@@ -590,12 +747,15 @@
 
     \part Determine an expression for the magnitude of the normal force $N$
     exerted on the block by the circular wall as a function of $\varv$.
+    \vspace{\stretch1}
     
     \part Derive an expression for the magnitude of the tangential acceleration
     of the block at the instant the block has attained a speed of $\varv$.
+    \vspace{\stretch1}
     
     \part Derive an expression for $\varv(t)$, the speed of the block as a
     function of time $t$ after passing point $P$ on the track.
+    \vspace{\stretch2}
   \end{parts}
   \newpage
 
@@ -615,12 +775,21 @@
   $m_1$, $m_2$, $L$, and fundamental constants.
   \begin{parts}
     \part The speed of the person just before the collision with the object
+    \vspace{\stretch1}
+    
     \part The tension in the rope just before the collision with the object
+    \vspace{\stretch1}
+    
     \part The speed of the person and object just after the collision
+    \vspace{\stretch1}
+    
     \part The ratio of the kinetic energy of the person-object system before
     the collision to the kinetic energy after the collision
+    \vspace{\stretch1}
+    
     \part The total horizontal displacement $x$ of the person from position
     $A$ until the person and object land in the water at point $D$.
+    \vspace{\stretch1}
   \end{parts}
 \end{questions}
 \end{document}

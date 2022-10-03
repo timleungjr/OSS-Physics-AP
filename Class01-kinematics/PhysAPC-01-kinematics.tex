@@ -9,9 +9,19 @@
 
 \begin{document}
 
+<<<<<<< HEAD
 \begin{frame}
   \centering\Large
   \textbf{WELCOME TO AP PHYSICS C}
+=======
+\begin{frame}{}  
+
+  {\Large
+    \begin{center}
+      \textbf{WELCOME TO AP PHYSICS C}
+    \end{center}
+  }
+>>>>>>> 0187f47 (A whole bunch of stuff that's changed for Fall of 2022?)
 \end{frame}
 
 
@@ -92,7 +102,7 @@
     \column{.7\textwidth}
     \textbf{Position} ($\vec r(t)$) is the location of an object in a coordinate
     system, as a function if time. It is measured in \textbf{meters}
-    (\si{\metre}).
+    (\si\metre).
 
     \eq{-.1in}{
       \boxed{\vec r(t)=x(t)\iii + y(t)\jjj + z(t)\kkk}
@@ -128,9 +138,16 @@
   \eq{-.1in}{
     \boxed{
       \Delta\vec r(t)=\vec r(t)-\vec r_0
-      =(x-x_0)\iii + (y-y_0)\jjj + (z-z_0)\kkk
+      =[x(t)-x_0]\iii + [y(t)-y_0]\jjj + [z(t)-z_0]\kkk
     }
   }
+
+  where the initial position is give by:
+
+  \eq{-.2in}{
+    r_0=x_0\iii+y_0\jjj + z_0\kkk
+  }
+  
 \end{frame}
 
 
@@ -165,10 +182,16 @@
 
 
 \begin{frame}{Instantaneous \& Average Velocity}
+<<<<<<< HEAD
   \textbf{Instantaneous velocity} $\vec v(t)$ is the time rate of change in
   position. It is related to position $\vec r(t)$ by:
+=======
+  \textbf{Instantaneous velocity} $\vec v(t)$ is the rate of change of
+  position\footnote{Or displacement} w.r.t.\ time. It is related to positiion
+  $\vec r(t)$ by:
+>>>>>>> 0187f47 (A whole bunch of stuff that's changed for Fall of 2022?)
 
-  \eq{-.1in}{
+  \eq{-.13in}{
     \boxed{
       \vec v(t)= \diff{\vec r}t
       \quad\quad
@@ -176,6 +199,7 @@
     }
   }
 
+<<<<<<< HEAD
   where $\vec r_0=\vec r(0)$, evaluated at $t=0$, is the constant of integration
   Likewise, the \textbf{average velocity} $\vec v_\text{avg}(t)$ is the change in
   position $\Delta\vec r(t)$ over a finite time interval $t$:
@@ -184,10 +208,21 @@
     \boxed{
       \vec v_\text{avg}(t) = \frac{\Delta\vec r(t)}t=
       \frac{\vec r(t)-\vec r_0}{t} = \frac{\int_0^t\vec v\dl t}t
+=======
+  The constant of integration $\vec x_0$ evaluated at $t=0$. Likewise, the
+  \textbf{average velocity} $\vec v_\text{avg}(t)$ is the displacement (change
+  in position) $\Delta\vec r(t)$ over a finite time interval $\Delta t$:
+
+  \eq{-.1in}{
+    \boxed{
+      \vec v_\text{avg}(t) = \frac{\Delta\vec r}t=
+      \frac{\vec r(t)-\vec r_0}{\Delta t} = \frac{\int_0^t\vec v\dl t}{\Delta t}
+>>>>>>> 0187f47 (A whole bunch of stuff that's changed for Fall of 2022?)
     }
   }
 
   The SI unit of velocity is \textbf{meters per second} (\si{\metre\per\second})
+  \vspace{.2in}
 \end{frame}
 
 
@@ -196,21 +231,27 @@
 \begin{frame}{Instantaneous \& Average Speed}
   \textbf{Instantaneous speed} $v$ is the time rate of change of
   \emph{distance}. It is the \emph{magnitude} of instantaneous velocity
-  (i.e.\ $v=|\vec v|$)
+  (i.e.\ $v=|\vec v|$). Since $s\geq 0$, instantaneous speed must be positive,
+  i.e.\ $v\geq 0$.
 
   \eq{-.1in}{
     \boxed{
-      v=\diff st
+      v=\diff st \geq 0
     }
   }
 
+<<<<<<< HEAD
   Since $s\geq 0$, instantaneous speed must also be positive, i.e.\ $v\geq 0$.
   \textbf{Average speed} $v_\text{avg}(t)$ is the distance $s(t)$ travelled
   over a finite time interval $t$:
+=======
+  \textbf{Average speed} $v_\text{avg}(t)$ is the distance $s(t)$ travelled
+  over a finite time interval $\Delta t$:
+>>>>>>> 0187f47 (A whole bunch of stuff that's changed for Fall of 2022?)
   
   \eq{-.1in}{
     \boxed{
-      v_\text{avg}(t)=\frac{s(t)}t=\frac{\int_0^t v\dl t}t
+      v_\text{avg}(t)=\frac{s(t)}{\Delta t}=\frac{\int_0^t v\dl t}{\Delta t}
     }
   }
 
@@ -272,8 +313,13 @@
 
   \vspace{-.3in}{\large
     \begin{align*}
+<<<<<<< HEAD
       v &= \dot r\\
       a &= \dot v=\ddot r
+=======
+      v &= \dot r \\
+      a &= \dot v =\ddot r
+>>>>>>> 0187f47 (A whole bunch of stuff that's changed for Fall of 2022?)
     \end{align*}
   }
 
@@ -496,9 +542,9 @@
     \column{.75\textwidth}
     The area under the $v-t$ graph is the displacement $x-x_0$.
     \begin{itemize}
-    \item Area \textcolor{blue!20}{\emph{above}} the time axis: $+$
+    \item Area {\color{blue!20}\emph{above}} the time axis: $+$
       displacement
-    \item Area \textcolor{red!40}{\emph{below}} the time axis: $-$ displacement
+    \item Area {\color{red!40}\emph{below}} the time axis: $-$ displacement
     \end{itemize}
     \vspace{.2in}Likewise, the area under the $a-t$ graph is the change in
     velocity $v-v_0$.
@@ -775,10 +821,12 @@
       node[pos=0,above left]{$\mathcal B$};
       \draw[->](2,3)--(3,3)     node[right]{$y$};
       \draw[->](2,3)--(2,4)     node[above]{$z$};
-      
-      \draw[very thick,->,violet](0,0)--(2,3)  node[midway,left]{$\vec r_{BC}$};
-      \draw[very thick,->,blue!30](0,0)--(3,1) node[midway,below]{$\vec r_{AC}$};
-      \draw[very thick,->,orange!30](2,3)--(3,1)node[midway,right]{$\vec r_{AB}$};
+
+      \begin{scope}[very thick,->] % vectors
+        \draw[violet](0,0)--(2,3)  node[midway,left]{$\vec r_{BC}$};
+        \draw[blue!30](0,0)--(3,1) node[midway,below]{$\vec r_{AC}$};
+        \draw[orange!30](2,3)--(3,1)node[midway,right]{$\vec r_{AB}$};
+      \end{scope}
       \fill[pink] (3,1) circle(.03) node[right]{$A$};
     \end{tikzpicture}
 
@@ -796,9 +844,9 @@
 
     \eq{-.1in}{
       \boxed{
-        \textcolor{blue}{\vec r_{AC}}=
-        \textcolor{orange}{\vec r_{AB}}+
-        \textcolor{violet}{\vec r_{BC}}
+        {\color{blue}\vec r_{AC}}=
+        {\color{orange}\vec r_{AB}}+
+        {\color{violet}\vec r_{BC}}
       }
     }
   \end{columns}
@@ -832,8 +880,8 @@
 
     \eq{-.13in}{
       \boxed{
-        \textcolor{blue}{\vec r_{AC}} =
-        \textcolor{orange}{\vec r_{AB}} + \textcolor{violet}{\vec r_{BC}}
+        {\color{blue}\vec r_{AC}} =
+        {\color{orange}\vec r_{AB}} + {\color{violet}\vec r_{BC}}
       }
     }
     
@@ -842,8 +890,8 @@
 
     \eq{-.13in}{
       \boxed{
-        \textcolor{blue}{\vec v_{AC}} =
-        \textcolor{orange}{\vec v_{AB}}+ \textcolor{violet}{\vec v_{BC}}
+        {\color{blue}\vec v_{AC}} =
+        {\color{orange}\vec v_{AB}}+ {\color{violet}\vec v_{BC}}
       }
     }
 
@@ -852,8 +900,8 @@
 
     \eq{-.13in}{
       \boxed{
-        \textcolor{blue}{\vec a_{AC}} =
-        \textcolor{orange}{\vec a_{AB}} + \textcolor{violet}{\vec a_{BC}}
+        {\color{blue}\vec a_{AC}} =
+        {\color{orange}\vec a_{AB}} + {\color{violet}\vec a_{BC}}
       }
     }
   \end{columns}
