@@ -21,8 +21,8 @@ all:
 	cd Class01-kinematics	; make
 	cd Class02-dynamics	; make
 	cd Class03-workEnergy	; make
-#	cd Class04-momentum	; make
-#	cd Class05-CM		; make
+	cd Class04-momentum	; make
+	cd Class05-CM		; make
 	cd Class06-circMotion	; make
 	cd Class07-rotMotion	; make
 	cd Class08-rotMotion2	; make
@@ -36,7 +36,7 @@ all:
 	cd Class17-magnetism1	; make
 	cd Class18-magnetism2	; make
 	cd Class19-magnetism3	; make
-#	cd Class20-circuits1 	; make
+	cd Class20-circuits1 	; make
 	cd Class21-circuits2 	; make
 	cd Class22-hallEffect	; make
 	cd Class22-maxwellsEquations ; make
@@ -71,8 +71,8 @@ public:
 	cd Class01-kinematics	; make public
 	cd Class02-dynamics	; make public
 	cd Class03-workEnergy	; make public
-#	cd Class04-momentum	; make public
-#	cd Class05-CM		; make public
+	cd Class04-momentum	; make public
+	cd Class05-CM		; make public
 	cd Class06-circMotion	; make public
 	cd Class07-rotMotion	; make public
 	cd Class08-rotMotion2	; make public
@@ -86,7 +86,7 @@ public:
 	cd Class17-magnetism1	; make public
 	cd Class18-magnetism2	; make public
 	cd Class19-magnetism3	; make public
-#	cd Class20-circuits1 	; make public
+	cd Class20-circuits1 	; make public
 	cd Class21-circuits2 	; make public
 	cd Class22-hallEffect	; make public
 	cd Class22-maxwellsEquations ; make public
