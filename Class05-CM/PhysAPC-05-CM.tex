@@ -58,14 +58,14 @@
   The answer is simple: the half way point between them:
 
   \eq{-.1in}{
-    x_{cm}=\frac{x_1+x_2}2
+    x_\text{cm}=\frac{x_1+x_2}2
   }
 
   Multiply both numerator and denominator by mass $m$ (for generalization
   later), the equation becomes:
 
   \eq{-.1in}{
-    x_{cm}=\frac{mx_1+mx_2}{2m}
+    x_\text{cm}=\frac{mx_1+mx_2}{2m}
   }
 \end{frame}
 
@@ -87,7 +87,7 @@
   show using a weighted average:
   
   \eq{-.1in}{
-    x_{cm}=\frac{mx_1+(2m)x_2}{m+2m}
+    x_\text{cm}=\frac{mx_1+(2m)x_2}{m+2m}
   }  
 \end{frame}
 
@@ -117,13 +117,13 @@
   average:
 
   \eq{-.1in}{
-    \boxed{\vec x_{cm}=\frac{\sum \vec x_i m_i}{\sum m_i}}
+    \boxed{\vec x_\text{cm}=\frac{\sum \vec x_i m_i}{\sum m_i}}
   }
   \begin{center}
     \begin{tabular}{l|c|c}
       \rowcolor{pink}
       \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
-      Position of center of mass (vector) & $\vec x_{cm}$ & \si\metre \\
+      Position of center of mass (vector) & $\vec x_\text{cm}$ & \si\metre \\
       Position of point mass $i$ (vector) & $\vec x_i$ & \si\metre \\
       Point mass $i$ & $m_i$ & \si{\kilo\gram}
     \end{tabular}
@@ -131,9 +131,9 @@
   In components:
 
   \eq{-.1in}{
-    x_{cm}=\frac{\sum x_i m_i}{\sum m_i}\quad\quad
-    y_{cm}=\frac{\sum y_i m_i}{\sum m_i}\quad\quad
-    z_{cm}=\frac{\sum z_i m_i}{\sum m_i}
+    x_\text{cm}=\frac{\sum x_i m_i}{\sum m_i}\quad\quad
+    y_\text{cm}=\frac{\sum y_i m_i}{\sum m_i}\quad\quad
+    z_\text{cm}=\frac{\sum z_i m_i}{\sum m_i}
   }
 \end{frame}
 
@@ -158,7 +158,7 @@
   the integral form of our equation:
 
   \eq{-.1in}{
-    \boxed{\vec x_{cm}=\frac{\int\vec x\dl m}{\int\dl m}}
+    \boxed{\vec x_\text{cm}=\frac{\int\vec x\dl m}{\int\dl m}}
   }
 
   What is the infinitesimal mass $\dl m$ then?
@@ -307,31 +307,91 @@
 
 
 
-\begin{frame}{Velocity, Acceleration and Momentum}
-  Take time derivative of the equation for $\vec x_{cm}$ to get the
-  velocity at the CM:
-    
+%\begin{frame}{Velocity, Acceleration and Momentum}
+%  Take time derivative of the equation for $\vec x_\text{cm}$ to get the
+%  velocity at the CM:
+%    
+
+%  The integral in the numerator is the sum of the momentum of all the masses in
+%  the system ($\vec p_\text{net}$) which means that we have
+%
+%  \eq{-.1in}{
+%    \vec p_\text{net}=m\vec v_\text{cm}
+%    }
+%
+%  Taking the derivative of $\vec p_\text{net}$ relates force and acceleration
+%  at the CM as well:
+%    
+%  \eq{-.1in}{
+%    \vec F_\text{net}=\diff{\vec p_\text{net}}t=m\diff{\vec v_\text{cm}}t
+%    =m\vec a_\text{cm}
+%  }
+%\end{frame}
+
+
+
+\begin{frame}{Velocity of the Center of Mass}
+  Take time derivative of the equation for $\vec x_\text{cm}$ to get the
+  velocity at the center of mass:
+
   \eq{-.1in}{
-    \vec v_{cm}=\diff{\vec x_{cm}}t
+    \vec v_\text{cm}=\diff{\vec x_\text{cm}}t
     =\frac1m\diff{}t\left(\int\vec x\dl m\right)
     =\frac1m\int\diff{\vec x}t\dl m
     =\frac{\int\vec v\dl m}m
   }
+
+  Or, in the form that is familiar, the velocity at the center of mass is the
+  weighted sum of the velocities of the distribution of mass:
   
-  The integral in the numerator is the sum of the momentum of all the masses in
-  the system ($\vec p_\text{net}$) which means that we have
-
   \eq{-.1in}{
-    \vec p_\text{net}=m\vec v_{cm}
-    }
-
-  Taking the derivative of $\vec p_\text{net}$ relates force and acceleration
-  at the CM as well:
-    
-  \eq{-.1in}{
-    \vec F_\text{net}=\diff{\vec p_\text{net}}t=m\diff{\vec v_{cm}}t
-    =m\vec a_{cm}
+    \vec v_\text{cm} = \frac{\int\vec v\dl m}m
   }
+\end{frame}
+
+
+
+\begin{frame}{Velocity and Momentum}
+  We can also rearrange the equation for the velocity of the center of mass to
+  relate it to momentum, because the term $\int\vec v\dl m$ is the net momentum
+  of the mass distribution $p_\text{net}$:
+  
+  \eq{-.05in}{
+    \vec v_\text{cm} = \frac{\int\vec v\dl m}m
+    \quad\longrightarrow\quad
+    \vec p_\text{net}=m\vec v_\text{cm}
+  }
+
+  During a collision, there is no change in the net momentum\footnote{Because
+  there are are no external forces}, the center of mass will continue to move
+  at the same velocity before/after the collision, as if the collision never
+  occurred.
+\end{frame}
+
+
+
+\begin{frame}{Acceleration of the Center of Mass}
+  Finding the rate of change of the net momentum (i.e\ applying the 2nd law of
+  motion to this distribution of masses):
+  
+  \eq{-.1in}{
+    \diff{\vec p_\text{net}}t =
+    \diff{}t (m\vec v_\text{cm})
+  }
+
+  If the system mass is constant, then this equation reduces to:
+
+  \eq{-.1in}{
+    \diff{\vec p_\text{net}}t
+    =m\diff{\vec v_\text{cm}}t
+    \quad\longrightarrow\quad
+    \boxed{
+      \vec F_\text{net}=m\vec a_\text{cm}
+    }
+  }
+  
+  We can see that when a net force is applied to an object, the object's
+  acceleration is evaluated at the center of mass.
 \end{frame}
 
 
