@@ -16,14 +16,14 @@ all:
 #	cd Class05-CM		; make
 	cd Class06-circMotion	; make
 	cd Class07-rotMotion	; make
-#	cd Class08-rotMotion2	; make
-#	cd Class09-rotMotion3	; make
-#	cd Class10-harmonicMotion ; make
-#	cd Class11-gravity1	; make
-#	cd Class12-gravity2	; make
-#	cd Class14-electrostatics ; make
-#	cd Class15-electrostatics2 ; make
-#	cd Class16-capacitors	; make
+	cd Class08-rotMotion2	; make
+	cd Class09-rotMotion3	; make
+	cd Class10-harmonicMotion ; make
+	cd Class11-gravity1	; make
+	cd Class12-gravity2	; make
+	cd Class14-electrostatics ; make
+	cd Class15-electrostatics2 ; make
+	cd Class16-capacitors	; make
 #	cd Class17-magnetism1	; make
 #	cd Class18-magnetism2	; make
 #	cd Class19-magnetism3	; make
@@ -66,14 +66,14 @@ public:
 #	cd Class05-CM		; make public
 	cd Class06-circMotion	; make public
 	cd Class07-rotMotion	; make public
-#	cd Class08-rotMotion2	; make public
-#	cd Class09-rotMotion3	; make public
-#	cd Class10-harmonicMotion ; make public
-#	cd Class11-gravity1	; make public
-#	cd Class12-gravity2	; make public
-#	cd Class14-electrostatics ; make public
-#	cd Class15-electrostatics2 ; make public
-#	cd Class16-capacitors	; make public
+	cd Class08-rotMotion2	; make public
+	cd Class09-rotMotion3	; make public
+	cd Class10-harmonicMotion ; make public
+	cd Class11-gravity1	; make public
+	cd Class12-gravity2	; make public
+	cd Class14-electrostatics ; make public
+	cd Class15-electrostatics2 ; make public
+	cd Class16-capacitors	; make public
 #	cd Class17-magnetism1	; make public
 #	cd Class18-magnetism2	; make public
 #	cd Class19-magnetism3	; make public
