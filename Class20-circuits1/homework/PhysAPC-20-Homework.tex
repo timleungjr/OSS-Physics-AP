@@ -1,13 +1,13 @@
 \documentclass{../../oss-apphys-exam}
+\newcounter{lastmc}
 
 \begin{document}
 \genheader
 
 \gentitle{20}{CIRCUIT ANALYSIS, PART 1}
 
-\genmultidirections
-
-\gengravity
+%\genmultidirections
+%\gengravity
 
 \raggedcolumns
 \begin{multicols}{2}
@@ -69,7 +69,7 @@
       \choice The reading on the ammeter would decrease.
       \choice The reading on the ammeter would not change.
     \end{choices}
-    \vspace{.7in}
+    \columnbreak
     
     \question The current flowing in a wire as a function of time is given by
     the equation $I=4t^3$. The charge that passes through the wire from
@@ -172,7 +172,7 @@
 %    \columnbreak
     
     \uplevel{
-      \textbf{Questions \ref{bulb1}--\ref{bulb2}}
+      \textbf{Questions \ref{bulb1}--\ref{bulb2}}:
       Four identical light bulbs are connected to a battery as shown.
       \cpic{.5}{bulbs}
       }
@@ -198,18 +198,25 @@
       \choice None of the bulbs will change their brightness.
     \end{choices}
   \end{questions}
+  \setcounter{lastmc}{\value{question}}
 \end{multicols}
 \newpage
 
+<<<<<<< HEAD
 \genfreetitle{20}{CIRCUIT ANALYSIS, PART 1}{2}
 
 \genfreedirections
+=======
+%\genfreetitle{20}{CIRCUIT ANALYSIS}{2}
+%\genfreedirections
+>>>>>>> 2022-09-fall
 
 %TAKEN FROM 2015 AP PHYSICS EXAM FREE-RESPONSE QUESTION E&M.2.
 \cpic{.25}{find-internal-resistance}
 
 \begin{questions}
-
+  \setcounter{question}{\value{lastmc}}
+  
   \question A student performs an experiment to determine the emf $\mathcal E$
   and internal resistance $r$ of a given battery. The student connects the
   battery in series to a variable resistance $R$, with a voltmeter across the
@@ -231,21 +238,18 @@
     \end{tabular}
   \end{center}
   \begin{parts}
-    \part
-    \label{part1a}
-    \begin{subparts}
-      \subpart Derive an expression for the measured voltage $V$. Express your
-      answer in terms of $R$, $\mathcal E$, $r$, and physical constants, as
-      appropriate.
-
-      \subpart Rewrite your expression from part (\ref{part1a})-i to express
-      $1/V$ as a function of $1/R$.
-    \end{subparts}
-
+    \part Derive an expression for the measured voltage $V$. Express your
+    answer in terms of $R$, $\mathcal E$, $r$, and physical constants, as
+    appropriate.
+    \vspace{\stretch1}
+    
+    \part Rewrite your expression from part (a) to express
+    $1/V$ as a function of $1/R$.
+    \vspace{\stretch1}
+    
     \part On the grid below, plot data points for the graph of $1/V$ as a
     function of $1/R$. Clearly scale and label all axes, including units as
     appropriate. Draw a straight line that best represents the data.
-    \label{part1b}
     \begin{center}
       \begin{tikzpicture}[scale=1.6]
         \draw[thick](0,0)--(5,0);
@@ -255,27 +259,30 @@
           \draw[thick,dashed,gray](0,\x)--(5,\x);
         }
         \foreach\x in {1,...,5}{
-          \draw[very thick,dashed](\x,0)--(\x,5);
-          \draw[very thick,dashed](0,\x)--(5,\x);
+          \draw[very thick](\x,0)--(\x,5);
+          \draw[very thick](0,\x)--(5,\x);
         }
       \end{tikzpicture}
     \end{center}
-
-    \part Use the straight line from part (\ref{part1b}) to obtain values for
-    the following.
+    \newpage
+    
+    \part Use the straight line from part (c) to obtain values for the
+    following.
     \begin{subparts}
       \subpart $\mathcal E$
       \subpart $r$
     \end{subparts}
+    \vspace{\stretch1}
     
     \part Using the results of the experiment, calculate the maximum current
     that the battery can provide.
-
+    \vspace{\stretch1}
+    
     \part A voltmeter is to be used to determine the emf of the battery after
     removing the battery from the circuit. Two voltmeters are available to take
     this measurement---one with low internal resistance and one with high
     internal resistance. Indicate which voltmeter will provide the most
-    accurate measurement. Justify your answer.
+    accurate measurement.
     
     \vspace{.05in}
     \underline{\hspace{.4in}} The voltmeter with low resistance will provide
@@ -287,19 +294,22 @@
 
     \vspace{.05in}
     \underline{\hspace{.4in}} The two voltmeters will provide equal accuracy.
+
+    \vspace{.1in}Justify your answer.
+    \vspace{\stretch{1.5}}
   \end{parts}
   \newpage
 
   %TAKEN FROM 2016 AP PHYSICS EXAM FREE-RESPONSE QUESTION E&M.2.
   \uplevel{
-    \cpic{.27}{sample}
+    \cpic{.25}{sample}
   }
   \question The circuit shown above consists of a source of variable emf
   $\mathcal E$, an ideal ammeter A, an ideal voltmeter V, a resistor of
   resistance $R$, and a sample of wire with resistance $r$.
   \begin{parts}
     \part How does the current through the wire sample compare with the current
-    through the resistor $R$? Justify your answer.
+    through the resistor $R$?
     
     \vspace{.05in}
     \underline{\hspace{.4in}} It is greater through R.
@@ -313,11 +323,14 @@
     \vspace{.05in}
     \underline{\hspace{.4in}} It depends on the resistance of the sample.
 
+    \vspace{.1in}Justify your answer.
+    \vspace{\stretch1}
+    
     \part How does the potential difference across the wire sample compare with
-    the potential difference across the resistor $R$? Justify your answer.
+    the potential difference across the resistor $R$?
     
     \vspace{.05in}    
-    \underline{\hspace{.4in}}It is greater across R.
+    \underline{\hspace{.4in}}It is greater across $R$.
         
     \vspace{.05in}
     \underline{\hspace{.4in}}It is greater across the sample.
@@ -328,6 +341,10 @@
     \vspace{.05in}
     \underline{\hspace{.4in}}It depends on the resistance of the sample.
 
+    \vspace{.1in}Justify your answer.
+    \vspace{\stretch1}
+    \newpage
+    
     \uplevel{With the sample of wire in place, the emf of the source is set to
       a given value. The current through and potential difference across the
       resistor $R$ are measured. This is repeated for several values of emf,
@@ -358,12 +375,14 @@
 
     You may use the remaining columns in the table above, as needed, to record
     any quantities that you indicated that are not given.
-    \newpage
   
     \part On the grid below, plot the straight line data points from part
     (\ref{part2c}). Clearly scale and label all axes, including units if
     appropriate. Draw a straight line that best represents the data.
-    \begin{center}
+
+    \uplevel{
+      \centering
+      \vspace{.3in}
       \begin{tikzpicture}[scale=1.6]
         \draw[thick](0,0)--(5,0);
         \draw[thick](0,0)--(0,5);
@@ -376,39 +395,46 @@
           \draw[very thick,dashed](0,\x)--(5,\x);
         }
       \end{tikzpicture}
-    \end{center}
+      \vspace{.3in}
+    }
     
     \part Use your straight line to calculate the value of the resistance of
     the wire sample.
     \label{part2e}
-
+    \vspace{\stretch1}
+    
     \part The wire sample has a length of \SI{3.00}{\metre} and a radius of
     \SI{1.00e-3}\metre. Calculate the resistivity of the material from which
     the wire sample is made.
-
+    \vspace{\stretch1}
+    \newpage
+    
     \part
     \begin{subparts}
       \subpart Suppose the ammeter used to collect these data was not ideal.
       Would the actual value of the resistance of the wire sample be greater
       than, less than, or equal to that calculated in part (\ref{part2e})?
-      Justify your answer.
 
-      \vspace{.05in}
+      \vspace{.2in}
       \underline{\hspace{.4in}} Greater than\hspace{.5in}
       \underline{\hspace{.4in}} Less than\hspace{.5in}
       \underline{\hspace{.4in}} Equal to
-      \vspace{.7in}
+      
+      \vspace{.1in}Justify your answer.
+      \vspace{\stretch1}
       
       \subpart If the ideal voltmeter is replaced by a voltmeter that is not
       ideal and the experiment is repeated, would the readings of the ideal
       ammeter be greater than, less than, or equal to those in the data chart
-      before part (\ref{part2c})? Justify your answer.
+      before part (\ref{part2c})?
 
-      \vspace{.05in}
+      \vspace{.2in}
       \underline{\hspace{.4in}} Greater than\hspace{.5in}
       \underline{\hspace{.4in}} Less than\hspace{.5in}
       \underline{\hspace{.4in}} Equal to
-      \vspace{.7in}
+
+      \vspace{.1in}Justify your answer.
+      \vspace{\stretch1}
     \end{subparts}
   \end{parts}
 \end{questions}

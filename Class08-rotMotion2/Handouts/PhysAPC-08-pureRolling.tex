@@ -1,6 +1,6 @@
 \documentclass{../../oss-handout}
 \usepackage{amsmath,bm}
-\usepackage{newtxtext,newtxmath}
+%\usepackage{newtxtext,newtxmath}
 \usepackage{enumitem}
 \usepackage{tikz}
 \usepackage{siunitx}
@@ -26,7 +26,7 @@
 % Course & handout information
 \renewcommand{\institution}{Olympiads School}%, Toronto, ON, Canada}
 \renewcommand{\coursetitle}{Advanced Placement Physics C}
-\renewcommand{\term}{Fall 2021}
+\renewcommand{\term}{Fall 2022}
 
 \title{Examples of Rigid-Body Rotational Motion}
 \author{Timothy M.\ Leung, Ph.D.}
@@ -52,20 +52,19 @@ diagram is shown in Figure \ref{roll-flat}. Notice that
 \emph{there is no friction between the sphere and the surface}. Since there is
 neither a net force nor a net torque acting on the sphere, the translational
 and rotational states are constant in time. In theory (if our assumptions are
-correct), the sphere with translational velocity $\vec\varv$ and angular
-velocity $\vec\omega$ (where $\vec\varv=\vec\omega\times R$) will roll along
+correct), the sphere with translational velocity $\vec v$ and angular
+velocity $\vec\omega$ (where $\vec v=\vec\omega\times R$) will roll along
 forever.
 \begin{figure}[!ht]
   \centering
   \begin{tikzpicture}[scale=1.3]
-    \tikzstyle{balloon}=[ball color=gray!20];
-    \shade[balloon](0,0) circle(1);
+    \shade[ball color=gray!20] circle(1);
     \draw[thick](-2,-1)--(2,-1);
-    \draw[thick,->](1.5,0)--(2.5,0) node[right]{$\vec\varv$};
+    \draw[thick,->](1.5,0)--(2.5,0) node[right]{$\vec v$};
     \draw[thick,->](0,1.2) arc(90:60:1.2) node[midway,above]{$\vec\omega$};
     \draw[->](4,0)--(5,0) node[right]{$x$};
     \draw[->](4,0)--(4,1) node[above]{$y$};
-    \fill(0,0) circle(.05) node[right]{\small CM};
+    \fill circle(.05) node[right]{\small cm};
     \begin{scope}[->,ultra thick]
       \draw[blue!80!black](0,0)--(0,-1.5) node[below]{$m\vec g$};
       \draw[red!80!black](-.03,-1)--(-.03,.5) node[above]{$\vec N$};
@@ -132,14 +131,13 @@ the surface.
   \centering
   \begin{tikzpicture}[scale=1.3]
     \begin{scope}[rotate=-30]
-      \tikzstyle{balloon}=[ball color=gray!20];
-      \shade[balloon](0,0) circle(1);
+      \shade[ball color=gray!20] circle(1);
       \draw[thick](-2,-1)--(5,-1);
       \draw[->,rotate=30](0,0)--(-1,0) node[left]{$R$};
       \draw[thick,->](0,1.2) arc(90:60:1.2) node[pos=.3,right]{$\vec\omega$};
       \draw[->](2,0)--(3,0) node[right]{$x$};
       \draw[->](2,0)--(2,1) node[above]{$y$};
-      \fill(0,0) circle(.05) node[right]{\small CM};
+      \fill circle(.05) node[right]{\small cm};
       \begin{scope}[->,ultra thick]
         \draw[blue!80!black,rotate=30](0,0)--(0,-1.5) node[below]{$m\vec g$};
         \draw[red!80!black](.0,-1)--(.0,.3) node[above]{$\vec N$};
@@ -235,23 +233,23 @@ If the ramp angle is too steep, then the friction will transition from static
 to kinetic, which is a much more difficult problem.
 
 \textbf{Energy is conserved, of course.} There is a much simpler way to find
-$\varv$, that is, by using the conservation of energy. In this case, kinetic
+$v$, that is, by using the conservation of energy. In this case, kinetic
 energy is split between translational kinetic energy $K_t$ and rotational
 kinetic energy $K_r$:
 \begin{align*}
   \Delta U_g&=K_t+K_r\\
-  mg\textcolor{red}{\Delta h}&=\frac12 m\varv^2+
+  mg\textcolor{red}{\Delta h}&=\frac12 mv^2+
   \frac12
   \textcolor{blue}{I}\textcolor{orange}{\omega}^2\\
-  mg\textcolor{red}{d\sin\theta}&=\frac12 m\varv^2+\frac12
+  mg\textcolor{red}{d\sin\theta}&=\frac12 mv^2+\frac12
   \left(\textcolor{blue}{\frac25 mR^2}\right)
-  \left(\textcolor{orange}{\frac{\varv}R}\right)^2
-  =\frac12 m\varv^2+\frac15m\varv^2=\frac7{10}m\varv^2
+  \left(\textcolor{orange}{\frac vR}\right)^2
+  =\frac12 mv^2+\frac15mv^2=\frac7{10}mv^2
 \end{align*}
-Cancelling mass terms on both sides, and solving for $\varv$, we arrive at
+Cancelling mass terms on both sides, and solving for $v$, we arrive at
 the same expression as using dynamics and kinematics equations:
 \begin{equation}
-  \varv=\sqrt{\frac{10}{7}gd\sin\theta}
+  v=\sqrt{\frac{10}{7}gd\sin\theta}
 \end{equation}
 
 \textbf{But why is energy conserved?} That the total system energy is conserved
@@ -292,13 +290,12 @@ friction is toward the right.
 \begin{figure}[!ht]
   \centering
   \begin{tikzpicture}[scale=1.3]
-    \tikzstyle{balloon}=[ball color=gray!20];
-    \shade[balloon](0,0) circle(1);
+    \shade[ball color=gray!20] circle(1);
     \draw[thick](-2,-1)--(2,-1);
     \draw[thick,->](0,1.2) arc(90:60:1.2) node[below right]{$\vec\omega$};
     \draw[->](2,0)--(3,0) node[right]{$x$};
     \draw[->](2,0)--(2,1) node[above]{$y$};
-    \fill(0,0) circle(.05) node[right]{\small CM};
+    \fill circle(.05) node[right]{\small cm};
     \begin{scope}[->,ultra thick]
       \draw[blue!80!black](0,0)--(0,-1.5) node[below]{$m\vec g$};
       \draw[red!80!black](-.05,-1)--(-.05,.5) node[above]{$\vec N$};
@@ -325,7 +322,7 @@ are that:
 It is important to note that, unlike the previous no-slip cases where we can 
 relate angular acceleration $\alpha$ with linear acceleration $a$ by the radius
 of the sphere, for the slippage case, there is \emph{no relationship between
-  $\alpha$ and $a$.} The velocity of the sphere $\vec\varv$ toward the right can
+  $\alpha$ and $a$.} The velocity of the sphere $\vec v$ toward the right can
 be expressed with a simple kinetic equation:
 \begin{equation}
   v_x=v_0+at
@@ -380,7 +377,7 @@ not equal ($I_x\neq I_y\neq I_z$) if the rolling object is not a sphere.
 
 Depending on whether an object rolls with or without slipping, there may be
 no relationship between angular velocity $\omega$ and translational velocity
-$\vec\varv$, or between angular acceleration $\alpha$ and translational
+$\vec v$, or between angular acceleration $\alpha$ and translational
 acceleration $\vec a$. But in any case, you will be left with a system of
 equations with equal number of unknowns to be solved. Use whatever method that
 you are comfortable with to solve for the answers.

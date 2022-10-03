@@ -1,5 +1,6 @@
 \documentclass{../../oss-handout}
-\usepackage{amsmath,bm}
+\usepackage{newtxmath,newtxtext}
+%\usepackage{amsmath}
 \usepackage{enumitem}
 \usepackage{tikz}
 \usepackage{siunitx}
@@ -11,12 +12,13 @@
 \titleformat{\subsection}{\bfseries}{\thesubsection}{1em}{}
 \titlespacing{\subsection}{0pt}{6pt}{-3pt}
 
-\newcommand{\mb}[1]{\mathbf{#1}}
+\newcommand{\iii}{\hat\imath}
+\newcommand{\jjj}{\hat\jmath}
 
-\newcommand{\iii}{\hat{\bm{\imath}}}
-\newcommand{\jjj}{\hat{\bm{\jmath}}}
+\tikzset{
+  >=latex
+}
 
-\tikzset{>=latex}
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{6pt}
 \setlength{\headheight}{26pt}
@@ -28,7 +30,7 @@
 % Course & handout information
 \renewcommand{\institution}{Olympiads School}%, Toronto, ON, Canada}
 \renewcommand{\coursetitle}{Advanced Placement Physics 1 \& C}
-\renewcommand{\term}{Fall 2021}
+\renewcommand{\term}{Fall 2022}
 
 \title{Projectile Motion}
 \author{Dr.\ Timothy Leung}
@@ -40,7 +42,7 @@
 
 \section{General Projectile Motion}
 A \textbf{projectile} is an object that is launched with an initial velocity
-of $\mb V_0$ at an angle $\theta$ with the horizontal. It travels along a
+of $\vec V_0$ at an angle $\theta$ with the horizontal. It travels along a
 parabolic trajectory and accelerates only due to gravity, as shown in
 Figure~\ref{fig:projectile}. 
 \begin{figure}[ht]
@@ -49,11 +51,11 @@ Figure~\ref{fig:projectile}.
     \draw[thick,->](0,0)--(2,0) node[right]{$x$};
     \draw[thick,->](0,0)--(0,2) node[above]{$y$};
     \draw[dotted,domain=0:5,thick] plot (\x, {1.2*\x-.2*\x*\x});
-    \draw[ultra thick,->,rotate=atan(1.2)](0,0)--(2,0)node[above]{$\mb V_0$};
-    \draw[ultra thick,red,->]
-    (0,0)--(0,2*sin{atan{1.2}}) node[left]{$\mb v_0$};
-    \draw[ultra thick,blue,->]
-    (0,0)--(2*cos{atan{1.2}},0)node[below]{$\mb u_0$};
+    \begin{scope}[ultra thick,->]
+      \draw[rotate=atan(1.2)](0,0)--(2,0)node[above]{$\vec V_0$};
+      \draw[red] (0,0)--(0,2*sin{atan{1.2}}) node[left]{$\vec v_0$};
+      \draw[blue](0,0)--(2*cos{atan{1.2}},0)node[below]{$\vec u_0$};
+    \end{scope}
     \draw[thick,->](.8,0)arc(0:atan{1.2}:.8) node[pos=.65,right]{$\theta$};
   \end{tikzpicture}
   \caption{The parameters defining the motion of a projectile.}
@@ -71,13 +73,13 @@ In general, when solving a projectile motion project:
   is below
 \end{itemize}
 This set up is consistent with the standard right-handed Cartesian coordinate
-system. The initial velocity $\mb V_0$ can be resolved into its $\iii$ and
-$\jjj$ components, $\mb u_0$ and $\mb v_0$:
+system. The initial velocity $\vec V_0$ can be resolved into its $\iii$ and
+$\jjj$ components, $\vec u_0$ and $\vec v_0$:
 \begin{equation}
-  \mb V_0 =\mb u_0+\mb v_0
+  \vec V_0 =\vec u_0+\vec v_0
   =\left[V_0\cos\theta\right]\iii + \left[V_0\sin\theta\right]\jjj
 \end{equation}
-where $V_0=|\mb V_0|$.
+where $V_0=|\vec V_0|$.
 
 \subsection{Motion in the Horizontal Direction}
 There is no acceleration (i.e.\ $a_x=0$) along the $\iii$ direction, therefore

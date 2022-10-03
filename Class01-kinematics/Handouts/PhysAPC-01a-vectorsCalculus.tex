@@ -21,10 +21,9 @@
 \setlength{\parskip}{8pt}
 \setlength{\headheight}{26pt}
 
-\newcommand{\mb}[1]{\ensuremath\mathbf{#1}}
-\newcommand{\iii}{\ensuremath\hat{\bm{\imath}}}
-\newcommand{\jjj}{\ensuremath\hat{\bm{\jmath}}}
-\newcommand{\kkk}{\ensuremath\hat{\bm{k}}}
+\newcommand{\iii}{\ensuremath\hat{\bm\imath}}
+\newcommand{\jjj}{\ensuremath\hat{\bm\jmath}}
+\newcommand{\kkk}{\ensuremath\hat{\bm k}}
 \newcommand{\pic}[2]{\includegraphics[width=#1\textwidth]{#2}}
 
 % Set the page style for the document
@@ -33,7 +32,7 @@
 % Course & handout information
 \renewcommand{\institution}{Olympiads School, Toronto, ON, Canada}
 \renewcommand{\coursetitle}{Advanced Placement Physics C}
-\renewcommand{\term}{Summer 2021}
+\renewcommand{\term}{Fall 2022}
 
 \title{Basic Vector and Calculus That You Need to Know}
 \author{Dr.\ Timothy Leung}
@@ -45,11 +44,11 @@
 
 
 Both AP Physics C exams (Mechanics and Electricity \& Magnetism) are calculus
-based, and will use vectors extensively.
-Students should be familiar with the material in this handout, however, it is
-likely that the calculus and vector operations used in the exams will be much
-simpler. If these concepts are difficult, this should be a good time to grab a
-calculus textbook and review them.
+based, and will use vectors extensively. Students should be familiar with the
+material in this handout, however, it is likely that the calculus and vector
+operations used in the exams will be much simpler. If these concepts are
+difficult, this should be a good time to grab a calculus textbook and review
+them.
 
 \section{Vectors}
 Vectors are used extensively in physics. They are an integral part of a larger
@@ -58,21 +57,20 @@ of AP Physics, it is sufficient to think of vectors as
 ``a number with a direction''.
 
 \subsection{Notation}
-In keeping with the convention used in \emph{most} technical journals and
-university-level textbooks, vectors are \emph{printed} (e.g.\ on the slides and
-handouts) using a bold face font in this course:
+In the convention used in \emph{most} technical journals and university-level
+textbooks, vectors are \emph{printed} using a bold face font. Until a few years
+ago, vectors in AP exams are printed this way.
 \begin{equation*}
-  \bm{v}\quad\bm{F}_g\quad\bm{p}\quad\bm{I}
+  \bm v\quad\bm F_g\quad\bm p\quad\bm I
 \end{equation*}
-while the ``arrow on top'' notation is used when \emph{writing} (e.g.\ on the
-blackboard)\footnote{Although this format is still used in \emph{some}
-  introductory level physics textbooks in universities}:
+while the ``arrow on top'' notation is used when \emph{writing} vectors. In
+recent years, AP exams have switched to this format:
 \begin{equation*}
-  \vec{v}\quad\vec{F}_g\quad\vec{p}\quad\vec{I}
+  \vec v\quad\vec F_g\quad\vec p\quad\vec I
 \end{equation*}
 The magnitude of vectors are expressed either with the absolute-value symbol:
 \begin{equation*}
-  |\bm{v}|\quad|\bm{F}_g|\quad|\bm{p}|\quad|\bm{I}|
+  |\bm v|\quad|\bm F_g|\quad|\bm p|\quad|\bm I|
 \end{equation*}
 or as a scalar quantity (afterall, the magnitude of a vector is indeed a scalar
 with a positive value):
@@ -86,29 +84,29 @@ In Grades 11 and 12 Physics, vectors are usually written by separating the
 magnitude from the direction. For example, a velocity vector would usually
 written as:
 \begin{equation*}
-  \bm{v}=\SI{4.5}{\metre\per\second}\text{ [N \ang{55} E]}
+  \bm v=\SI{4.5}{\metre\per\second}\text{ [N \ang{55} E]}
 \end{equation*}
 This approach is based on the \textbf{polar coordinate system}, which is the
 preferred coordinate system for circular motion. In general, this approach is
-very intuitive for describing \emph{one} vector in
-two dimensions (that's why it is used extensively in high-school level
-physics courses), but it is more complicated when extended into 3D; the
-coordinate system needs to be extended to \textbf{spherical coordinate system}
-or the \textbf{cylindrical coordinate system}. Moreover, it is difficult to
-perform vector arithmetic for \emph{rectilinear} motion.
+very intuitive for describing \emph{one} vector in two dimensions (that's why
+it is used extensively in high-school level physics courses), but it is more
+complicated when extended into 3D; the coordinate system needs to be extended
+to \textbf{spherical coordinate system} or the \textbf{cylindrical coordinate
+  system}. Moreover, it is difficult to perform vector arithmetic for
+\emph{rectilinear} motion.
 
 Instead, for rectilinear motion, vectors in 2D/3D Cartesian space are generally
 written in their $x$, $y$ and $z$ components using the \textbf{IJK notation}:
 \begin{equation*}
-  \bm{A}=A_x\bm{\hat{\imath}} + A_y\bm{\hat{\jmath}} + A_z\bm{\hat{k}}
+  \bm A=A_x\iii + A_y\jjj + A_z\kkk
 \end{equation*}
-The vectors $\bm{\hat{\imath}}$, $\bm{\hat{\jmath}}$ and $\bm{\hat{k}}$ are
-\textbf{basis vectors} indicating the directions of the $x$, $y$ and $z$ axes.
-Basis vectors are \textbf{unit vectors} (i.e.\ length $1$). Note that the
-IJK notation does not give the magnitude of the vector, which needs to be
-calculated using the general form of the pythagorean theorem:
+The vectors $\iii$, $\jjj$ and $\kkk$ are \textbf{basis vectors} indicating the
+directions of the $x$, $y$ and $z$ axes. Basis vectors are
+\textbf{unit vectors} (i.e.\ length $1$). Note that the IJK notation does not
+explicitly give the magnitude of the vector, which needs to be calculated using
+the pythagorean theorem:
 \begin{equation*}
-  A=|\bm{A}|=\sqrt{A_x^2 + A_y^2 + A_z^2}
+  A=|\bm A|=\sqrt{A_x^2 + A_y^2 + A_z^2}
 \end{equation*}
 
 
@@ -116,10 +114,7 @@ calculated using the general form of the pythagorean theorem:
 
 Adding and subtracting vectors is straightforward:
 \begin{equation*}
-  \bm{A}\pm\bm{B}=
-  (A_x\pm B_x)\bm{\hat{\imath}} +
-  (A_y\pm B_y)\bm{\hat{\jmath}} +
-  (A_z\pm B_z)\bm{\hat{k}}
+  \bm A\pm\bm B= (A_x\pm B_x)\iii + (A_y\pm B_y)\jjj + (A_z\pm B_z)\kkk
 \end{equation*}
 All that is required is to add or subtract each component of the vector in the
 $\iii$, $\jjj$ and $\kkk$ directions.
@@ -133,16 +128,16 @@ explicitly referring using this notation), for example, when calculating
 mechanical work. It is determined by the magnitude of the two vectors and the
 cosine of the angle $\theta$ between them:
 \begin{equation*}
-  C=\bm{A}\cdot\bm{B}=\bm{B}\cdot\bm{A}=|\bm{A}||\bm{B}|\cos\theta
+  C=\bm A\cdot\bm B=\bm B\cdot\bm A=|\bm A||\bm B|\cos\theta
 \end{equation*}
-In the dot product, $C$ is the \emph{projection} of the vector $\bm{A}$ onto
-$\bm{B}$, or the component of $\bm{A}$ along $\bm{B}$. Note that
+In the dot product, $C$ is the \emph{projection} of the vector $\bm A$ onto
+$\bm B$, or the component of $\bm A$ along $\bm B$. Note that
 $\iii\cdot\iii=1$, $\jjj\cdot\jjj=1$, and $\kkk\cdot\kkk=1$. For general
 vectors written in IJK notation, where the magnitude and direction of vectors
 are not immediately known, the dot product is the sum of the products of
-individual components of $\bm{A}$ and $\bm{B}$:
+individual components of $\bm A$ and $\bm B$:
 \begin{equation*}
-  C=\bm{A}\cdot\bm{B}=A_xB_x+A_yB_y+A_zB_z
+  C=\bm A\cdot\bm B=A_xB_x+A_yB_y+A_zB_z
 \end{equation*}
 
 
@@ -177,14 +172,12 @@ of this $3\times 3$ matrix:
   \bm{A}\times\bm{B}=
   \left|
   \begin{matrix}
-    \bm{\hat{\imath}} & \bm{\hat{\jmath}} & \bm{\hat{k}}\\
+    \iii & \jjj & \kkk \\
     A_x & A_y & A_z\\
     B_x & B_y & B_z
   \end{matrix}
   \right|
-  =(A_yB_z-A_zB_y)\bm{\hat{\imath}} +
-  (A_zB_x-A_xB_z)\bm{\hat{\jmath}} +
-  (A_zB_y-B_yA_x)\bm{\hat{k}}
+  = (A_yB_z-A_zB_y)\iii + (A_zB_x-A_xB_z)\jjj + (A_zB_y-B_yA_x)\kkk
 \end{equation*}
 although such notation is extremely rare in any AP exams. Most cross product
 applications in AP C exams are much simpler, so we
@@ -197,9 +190,8 @@ only have to remember the circle shown in Figure~\ref{fig:cross2}.
 \end{figure}
 
 The direction of the arrow gives the index of the cross product (e.g.\
-$\bm{\hat{\imath}}\times\bm{\hat{\jmath}}=\bm{\hat{k}}$); going against the
-direction of the arrow gives the negative of the next index (e.g.\
-$\bm{\hat{k}}\times\bm{\hat{\jmath}}=-\bm{\hat{\imath}}$)
+$\iii\times\jjj=\kkk$); going against the direction of the arrow gives the
+negative of the next index (e.g.\ $\kkk\times\jjj=-\iii$)
 
 
 \section{Calculus}

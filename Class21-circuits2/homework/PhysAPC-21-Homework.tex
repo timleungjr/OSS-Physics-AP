@@ -1,4 +1,8 @@
 \documentclass{../../oss-apphys-exam}
+<<<<<<< HEAD
+=======
+\newcounter{last}
+>>>>>>> 2022-09-fall
 
 \renewcommand{\arraystretch}{1.2}
 \begin{document}
@@ -6,11 +10,55 @@
 
 \gentitle{21}{CIRCUIT ANALYSIS, PART 2}
 
+<<<<<<< HEAD
 \genmultidirections
+=======
+%\genmultidirections
+%\gengravity
+\raggedcolumns
+>>>>>>> 2022-09-fall
 
 \begin{multicols*}{2}
-  \textbf{Questions \ref{combo1}--\ref{combo2}}
+%  \textbf{Questions \ref{combo1}--\ref{combo2}}
+%  \begin{center}
+%    \begin{tikzpicture}[american voltages,scale=1.2]
+%      \draw(0,0) to[battery,l=\mbox{\SI{120}\volt}] (0,2)
+%      to[C,l=\mbox{\SI2{\micro\farad}}] (2,2)
+%      to[C,l_=\mbox{\SI8{\micro\farad}}] (2,0)
+%      to[C,l=\mbox{\SI4{\micro\farad}}](0,0);
+%      \draw(2,2)--(3,2) to[C=\mbox{\SI8{\micro\farad}}] (3,0)--(2,0);
+%          \end{tikzpicture}
+%  \end{center}
+  
+%  \question The equivalent capacitance of this circuit is
+%  \label{combo1}
+%  \begin{choices}
+%    \choice$7/4$\si{\micro\farad}
+%    \choice$4/7$\si{\micro\farad}
+%    \choice$16/13$\si{\micro\farad}
+%    \choice\SI{10}{\micro\farad}
+%    \choice\SI{22}{\micro\farad}
+%  \end{choices}
+%  
+%  \question The charge stored on the \SI2{\micro\farad} capacitor is most
+%  nearly
+%  \label{combo2}
+%  \begin{choices}
+%    \choice\SI{6}{\micro\coulomb}
+%    \choice\SI{12}{\micro\coulomb}
+%    \choice\SI{22}{\micro\coulomb}
+%    \choice\SI{36}{\micro\coulomb}
+%    \choice\SI{120}{\micro\coulomb}
+%  \end{choices}
+%  \columnbreak
+  
+  \textbf{Question \ref{switch1}--\ref{switch2}}:
+  The circuit shows a capacitor, a battery, and a resistor. Switch $S$ is
+  first connected to point $a$ to charge the capacitor, then a long time
+  later switched to point $b$ to discharge the capacitor through the
+  resistor.
   \begin{center}
+<<<<<<< HEAD
     \begin{tikzpicture}[american voltages,scale=1.2]
       \draw(0,0) to[battery,l=\mbox{\SI{120}\volt}] (0,2)
       to[C,l=\mbox{\SI2{\micro\farad}}] (2,2)
@@ -60,6 +108,19 @@
       \end{tikzpicture}
     \end{center}
   }
+=======
+    \begin{tikzpicture}[american voltages]
+      \draw(0,0) to[battery,l=$\mathcal E$](0,2) to[short,-*] (1.5,2);
+      \draw(2.5,2) to[short,*-] (3.5,2) to[R=$R$,] (3.5,0)--(0,0);
+      \draw(2,0) to[C=$C$,-*] (2,1.25);
+      \draw(2,1.25)--(2.3,2.15) node[above]{s};
+      \node at (1.5,1.8) (a){a};
+      \node at (2.5,1.8) (b){b};
+    \end{tikzpicture}
+  \end{center}
+
+  \begin{questions}
+>>>>>>> 2022-09-fall
   \question The time constant $\tau$ for discharging the capacitor through the
   resistor could be decreased (faster discharge) by
   \label{switch1}
@@ -120,7 +181,7 @@
   \question A thin sheet of copper is placed in a uniform magnetic field. A
   battery is connected to the top and bottom ends of the copper sheet, so that
   conventional current flows from the top to the bottom of the sheet.
-  Points X and Y are on the left and right sides of the sheet, respectively.
+  Points $X$ and $Y$ are on the left and right sides of the sheet, respectively.
   Which of the following statements is true?
   \begin{center}
     \begin{tikzpicture}[scale=.7]
@@ -145,36 +206,44 @@
     potential.
   \end{choices}
   \end{questions}
+  \setcounter{last}{\value{question}}
 \end{multicols*}
 \newpage
 
-\genfreetitle{21}{CIRCUIT ANALYSIS, PART 2}{4}
-
-\genfreedirections
+%\genfreetitle{21}{CIRCUIT ANALYSIS, PART 2}{4}
+%\genfreedirections
 
 %TAKEN FROM 2010 AP PHYSICS EXAM FREE-RESPONSE QUESTION E&M 2
 \cpic{.25}{r-c-1}
 
 \begin{questions}
+  \setcounter{question}{\value{last}}
+  
   \question In the circuit illustrated above, switch $S$ is initially open and
   the battery has been connected for a long time.
   \begin{parts}
     \part What is the steady-state current through the ammeter?
+    \vspace{\stretch1}
     
     \part Calculate the charge on the \SI{10}{\micro\farad} capacitor.
+    \vspace{\stretch1}
     
-    \part Calculate the energy stored in the \SI{5.}{\micro\farad} capacitor.
-
+    \part Calculate the energy stored in the \SI{5.0}{\micro\farad} capacitor.
+    \vspace{\stretch1}
+    
     \uplevel{
       The switch is now closed, and the circuit comes to a new steady state.
     }
 
     \part Calculate the steady-state current through the battery.
+    \vspace{\stretch1}
     
-    \part Calculate the final charge on the \SI{5.}{\micro\farad} capacitor.
+    \part Calculate the final charge on the \SI{5.0}{\micro\farad} capacitor.
+    \vspace{\stretch1}
     
     \part Calculate the energy dissipated as heat in the \SI{40}{\ohm} resistor
     in one minute once the circuit has reached steady state.
+    \vspace{\stretch1}
   \end{parts}
   \newpage
 
@@ -203,14 +272,18 @@
     which the resistivity of the paper can be determined. Include labels and
     scales for both axes. Draw the straight line that best represents the data.
     \begin{center}
+      \vspace{.4in}
       \begin{tikzpicture}[yscale=.3,xscale=.45]
         \draw grid(30,30);
         \draw[step=5,very thick] grid(30,30);
       \end{tikzpicture}
     \end{center}
-
+    \vspace{.4in}
+    
     \part Using the graph, calculate the resistivity of the paper.
-
+    \vspace{\stretch1}
+    \newpage
+    
     \uplevel{
       \cpic{.45}{resistors-and-capacitor}
       The student uses resistors R4 and R5 to build a circuit using wire, a
@@ -219,7 +292,11 @@
     }
     
     \part Calculate the time constant of the circuit.
+<<<<<<< HEAD
     \newpage
+=======
+    \vspace{\stretch1}
+>>>>>>> 2022-09-fall
     
     \part At time $t=0$, the student closes the switch. On the axes below,
     sketch the magnitude of the voltage $V_c$ across the capacitor and the
@@ -229,14 +306,17 @@
     intercepts, asymptotes, maxima, or minima with values or expressions, as
     appropriate.
     \begin{center}
-      \begin{tikzpicture}[scale=.9]
+      \begin{tikzpicture}
         \draw[very thick,->](0,0)--(10,0)
         node[midway,below]{Time $t$} node[pos=0,below left]{$O$};
         \draw[very thick,->](0,0)--(0,6)node[midway,above,sloped]{Voltage $V$};
       \end{tikzpicture}
     \end{center}
+    \vspace{\stretch1}
   \end{parts}
   \newpage
+
+
   
   %TAKEN FROM 2007 AP PHYSICS C EXAM FREE-RESPONSE QUESTION E&M 1.
   \uplevel{
@@ -251,37 +331,48 @@
   \cpic{.4}{current-graph}
   \begin{parts}
     \part Using the data above, calculate the battery voltage $\mathcal E$.
-
-    \part Calculate the voltage across the capacitor at time
-    $t =\SI{4.}\second$.
+    \vspace{\stretch1}
     
-    \part Calculate the charge on the capacitor at $t =\SI{4.}\second$.
-
+    \part Calculate the voltage across the capacitor at time
+    $t =\SI{4.0}\second$.
+    \vspace{\stretch1}
+    
+    \part Calculate the charge on the capacitor at $t =\SI{4.0}\second$.
+    \vspace{\stretch1}
+    
     \part On the axes below, sketch a graph of the charge on the capacitor as a
     function of time.
     \begin{center}
-      \begin{tikzpicture}[scale=.65]
+      \begin{tikzpicture}[scale=.8]
         \draw[very thick,->](0,0)--(10,0)
         node[midway,below]{Time ($s$)} node[pos=0,below left]{$O$};
         \draw[very thick,->](0,0)--(0,6)node[midway,above,sloped]{Charge};
         \draw(9,-.1)--(9,.1) node[pos=0,below]{10};
       \end{tikzpicture}
     \end{center}
+    \newpage
+    
     \part Calculate the power being dissipated as heat in the resistor at
-    $t=\SI{4.}\second$.
-
+    $t=\SI{4.0}\second$.
+    \vspace{\stretch1}
+    
     \part The capacitor is now discharged, its dielectric of constant
     $\kappa=1$ is replaced by a dielectric of constant $\kappa=3$, and the
     procedure is repeated. Is the amount of charge on one plate of the
-    capacitor at $t=\SI{4.}\second$ now greater than, less than, or the same
-    as before? Justify your answer.
+    capacitor at $t=\SI{4.0}\second$ now greater than, less than, or the same
+    as before?
 
     \vspace{.1in}
     \underline{\hspace{.3in}} Greater than\hspace{.3in}
     \underline{\hspace{.3in}} Less than\hspace{.3in}
     \underline{\hspace{.3in}} The same
   \end{parts}
+
+  \vspace{.1in}Justify your answer.
+  \vspace{\stretch3}
   \newpage
+
+
   
   %TAKEN FROM 2017 AP PHYSICS C EXAM FREE-RESPONSE QUESTION E&M 2
   \uplevel{
@@ -302,7 +393,8 @@
         \draw[very thick,->](0,0)--(0,5)  node[above]{$q$};
       \end{tikzpicture}
     \end{center}
-
+    \vspace{\stretch1}
+    
     \part On the axes below, sketch the current $I$ through each resistor as a
     function of time $t$. Clearly label the two curves as $I_1$ and $I_2$ , the
     currents through resistors $R_1$ and $R_2$, respectively. Explicitly label
@@ -314,7 +406,9 @@
         \draw[very thick,->](0,0)--(0,5)  node[above]{$I$};
       \end{tikzpicture}
     \end{center}
-
+    \vspace{\stretch1}
+    \newpage
+    
     \uplevel{
       The circuit is constructed using an ideal \SI{1.5}{\volt} battery, an
       \SI{80}{\micro\farad} capacitor, and resistors $R_1=\SI{150}\ohm$ and
@@ -326,21 +420,23 @@
     maximum charge is $\Delta t_C$. The time it takes for the capacitor to
     discharge to \SI{50}{\percent} of its maximum charge is $\Delta t_D$.
     Which of the following correctly relates the two time intervals?
-    Justify your answer.
-    
+
     \vspace{.1in}
     \underline{\hspace{.3in}} $\Delta t_C > \Delta t_D$\hspace{.3in}
     \underline{\hspace{.3in}} $\Delta t_C = \Delta t_D$\hspace{.3in}
     \underline{\hspace{.3in}} $\Delta t_C < \Delta t_D$
+
+    \vspace{.1in}Justify your answer.
+    \vspace{\stretch1}
     
-    \part
-    \begin{subparts}
-      \subpart Calculate the current through resistor $R_2$ immediately after
-      the switch is opened.
-      \subpart Is the current through resistor $R_2$ increasing, decreasing, or
-      constant immediately after the switch is opened?
-      Justify your answer.
+    \part Calculate the current through resistor $R_2$ immediately after
+    the switch is opened.
+    \vspace{\stretch1}
+
+    \part Is the current through resistor $R_2$ increasing, decreasing, or
+    constant immediately after the switch is opened?
       
+<<<<<<< HEAD
       \vspace{.1in}
       \underline{\hspace{.3in}} Increasing\hspace{.3in}
       \underline{\hspace{.3in}} Decreasing\hspace{.3in}
@@ -354,9 +450,27 @@
       \subpart Calculate the energy dissipated by resistor $R_1$ as the
       capacitor completely discharges.
     \end{subparts}
+=======
+    \vspace{.1in}
+    \underline{\hspace{.3in}} Increasing\hspace{.3in}
+    \underline{\hspace{.3in}} Decreasing\hspace{.3in}
+    \underline{\hspace{.3in}} Constant
+
+    \vspace{.1in}Justify your answer.
+    \vspace{\stretch1}
+    
+    \part Calculate the energy stored in the capacitor immediately after the
+    switch is opened.
+    \vspace{\stretch1}
+    
+    \part Calculate the energy dissipated by resistor $R_1$ as the capacitor
+    completely discharges.
+    \vspace{\stretch1}
+>>>>>>> 2022-09-fall
   \end{parts}
-%  \newpage
-%  
+
+
+  
 %  %TAKEN FROM THE 2001 AP PHYSICS C FREE-RESPONSE QUESTION E&M 2
 %
 %  \question You have been hired to determine the internal resistance of
@@ -386,15 +500,15 @@
 %    the capacitor in the first \SI{100}{min}.
 %  \end{parts}
   
-%\item A \SI{60}{\micro\farad} capacitor is charged to \SI{12}{\volt}. The
+%\question A \SI{60}{\micro\farad} capacitor is charged to \SI{12}{\volt}. The
 %  capacitor is then removed from the battery and the plate separation is
 %  increased from \SI{2.0}{mm} to \SI{3.5}{mm}.
-%  \begin{enumerate}[noitemsep]
-%  \item What is the charge on the capacitor?
-%  \item How much energy was originally stored in the capacitor?
-%  \item By how much is the energy increased when the plate separation is
+%  \begin{parts}
+%    \part What is the charge on the capacitor?
+%    \part How much energy was originally stored in the capacitor?
+%    \part By how much is the energy increased when the plate separation is
 %    changed?
-%  \end{enumerate}
+%  \end{parts}
 %  \newpage
 
 %\item Find the current in each part of the circuit shown in the figure below.
@@ -410,13 +524,12 @@
 %  \end{center}
 %  \newpage
 %  
-%\item The capacitor in the circuit is initially uncharged. Find the current
+%\question The capacitor in the circuit is initially uncharged. Find the current
 %  through the battery
-%  \begin{enumerate}[noitemsep]
-%  \item Immediately after the switch is closed
-%  \item A long time after the switch is closed 
-%  \end{enumerate}
-%
+%  \begin{parts}
+%    \part Immediately after the switch is closed
+%    \part A long time after the switch is closed 
+%  \end{parts}
 %  \begin{center}
 %    \begin{tikzpicture}[scale=1.25,american voltages]
 %      \draw[thick] (0,0) to[battery1=12<\volt>,*-*] (0,2) to[R=4<\ohm>] (2,2)
@@ -426,61 +539,5 @@
 %      \draw[thick] (3,0) to[R=8<\ohm>,*-] (3,2);
 %    \end{tikzpicture}
 %  \end{center}
-%
-%
-%\item The figure shows a circuit with two resistors, a battery, a capacitor,
-%  and a switch. Originally, the switch is open, and the capacitor is
-%  uncharged.
-%
-%  \vspace{-.5cm}
-%  \begin{center}
-%    \begin{tikzpicture}[scale=1.4,american voltages]
-%      \draw[thick] (2,0) to[battery1=12<\volt>,*-*] (0,0)
-%      to[short,-*] (0,1.5) to[R=\mbox{$R_1=\SI{15}{\ohm}$},-*] (2,1.5)--(2,0);
-%      \draw[thick](0,1.5) to[short,-*] (0,3) to[C=240<\micro\farad>] (1,3)
-%      to[R=\mbox{$R_2=\SI{10}{\ohm}$},-*] (2,3)--(2,1.5);
-%    \end{tikzpicture}
-%  \end{center}
-%  
-%  \begin{enumerate}[noitemsep]
-%  \item Complete the voltage-current-resistance-power (VIRP) chart for
-%    the circuit immediately after the switch is closed.
-%    \bgroup
-%    \def\arraystretch{2}
-%    
-%    {\large
-%      \begin{center}
-%        \begin{tabular}{l|m{1.2cm}|m{1.2cm}|m{1.2cm}|m{1.2cm}}
-%          \hline
-%          \textbf{Location} & \textbf{\emph{V}} & \textbf{\emph{I}} &
-%          \textbf{\emph{R}} & \textbf{\emph{P}}\\ \hline
-%          1 & & & \SI{15}{\ohm} & \\ \hline
-%          2 & & & \SI{10}{\ohm} & \\ \hline
-%          Total for Circuit & \SI{12}{\volt}& & & \\\hline
-%        \end{tabular}
-%      \end{center}
-%    }
-%    \egroup
-%  \item Complete the voltage-current-resistance-power (VIRP) chart for
-%    the circuit after the switch is closed for a long time.
-%        \bgroup
-%    \def\arraystretch{2}
-%    
-%    {\large
-%      \begin{center}
-%        \begin{tabular}{l|m{1.2cm}|m{1.2cm}|m{1.2cm}|m{1.2cm}}
-%          \hline
-%          \textbf{Location} & \textbf{\emph{V}} & \textbf{\emph{I}} &
-%          \textbf{\emph{R}} & \textbf{\emph{P}}\\ \hline
-%          1 & & & \SI{15}{\ohm} & \\ \hline
-%          2 & & & \SI{10}{\ohm} & \\ \hline
-%          Total for Circuit & \SI{12}{\volt}& & & \\\hline
-%        \end{tabular}
-%      \end{center}
-%    }
-%    \egroup
-%  \item What is the energy stored in the capacitor after the switch has
-%    been closed a long time?
-%  \end{enumerate}
 \end{questions}
 \end{document}
