@@ -1,9 +1,13 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 TERM=2022-07-Summer
 DESTINATION=$(HOME)/Nextcloud/$(TERM)/Physics-APC
 =======
 TERM=2021-09-Fall
+=======
+TERM=2022-09-Fall
+>>>>>>> 598009b (Removed most of the PDF files that are no longer needed)
 DESTINATION=$(HOME)/Documents/ossfiles/$(TERM)/Physics.APC
 >>>>>>> 0187f47 (A whole bunch of stuff that's changed for Fall of 2022?)
 =======
@@ -34,8 +38,8 @@ all:
 	cd Class19-magnetism3	; make
 #	cd Class20-circuits1 	; make
 	cd Class21-circuits2 	; make
-#	cd Class22-hallEffect	; make
-#	cd Class22-maxwellsEquations ; make
+	cd Class22-hallEffect	; make
+	cd Class22-maxwellsEquations ; make
 
 clean:
 	rm -rf *.*~ *~ *.log
@@ -66,7 +70,7 @@ public:
 	mkdir -p $(DESTINATION)
 	cd Class01-kinematics	; make public
 	cd Class02-dynamics	; make public
-#	cd Class03-workEnergy	; make public
+	cd Class03-workEnergy	; make public
 #	cd Class04-momentum	; make public
 #	cd Class05-CM		; make public
 	cd Class06-circMotion	; make public
@@ -84,5 +88,5 @@ public:
 	cd Class19-magnetism3	; make public
 #	cd Class20-circuits1 	; make public
 	cd Class21-circuits2 	; make public
-#	cd Class22-hallEffect	; make public
-#	cd Class22-maxwellsEquations ; make public
+	cd Class22-hallEffect	; make public
+	cd Class22-maxwellsEquations ; make public
