@@ -45,173 +45,106 @@
 %  \end{choices}
 %  \columnbreak
   
-%TML  \textbf{Question \ref{switch1}--\ref{switch2}}:
-%TML  The circuit shows a capacitor, a battery, and a resistor. Switch $S$ is
-%TML  first connected to point $a$ to charge the capacitor, then a long time
-%TML  later switched to point $b$ to discharge the capacitor through the
-%TML  resistor.
-%TML  \begin{center}
-%TML<<<<<<< HEAD
-%TML<<<<<<< HEAD
-%TML    \begin{tikzpicture}[american voltages,scale=1.2]
-%TML      \draw(0,0) to[battery,l=\mbox{\SI{120}\volt}] (0,2)
-%TML      to[C,l=\mbox{\SI2{\micro\farad}}] (2,2)
-%TML      to[C,l_=\mbox{\SI8{\micro\farad}}] (2,0)
-%TML      to[C,l=\mbox{\SI4{\micro\farad}}](0,0);
-%TML      \draw(2,2)--(3,2) to[C=\mbox{\SI8{\micro\farad}}] (3,0)--(2,0);
-%TML    \end{tikzpicture}
-%TML  \end{center}
-%TML  
-%TML  \begin{questions}
-%TML  \question The equivalent capacitance of this circuit is
-%TML  \label{combo1}
-%TML  \begin{choices}
-%TML    \choice\SI{7/4}{\micro\farad}
-%TML    \choice\SI{4/7}{\micro\farad}
-%TML    \choice\SI{16/13}{\micro\farad}
-%TML    \choice\SI{10}{\micro\farad}
-%TML    \choice\SI{22}{\micro\farad}
-%TML  \end{choices}
-%TML  
-%TML  \question The charge stored on the \SI{2}{\micro\farad} capacitor is most
-%TML  nearly
-%TML  \label{combo2}
-%TML  \begin{choices}
-%TML    \choice\SI{6}{\micro\coulomb}
-%TML    \choice\SI{12}{\micro\coulomb}
-%TML    \choice\SI{22}{\micro\coulomb}
-%TML    \choice\SI{36}{\micro\coulomb}
-%TML    \choice\SI{120}{\micro\coulomb}
-%TML  \end{choices}
-%TML
-%TML  \uplevel{
-%TML    \textbf{Question \ref{switch1}--\ref{switch2}}
-%TML    
-%TML    The circuit shows a capacitor, a battery, and a resistor. Switch $S$ is
-%TML    first connected to point $a$ to charge the capacitor, then a long time
-%TML    later switched to point $b$ to discharge the capacitor through the
-%TML    resistor.
-%TML    \begin{center}
-%TML      \begin{tikzpicture}[american voltages]
-%TML        \draw(0,0) to[battery,l=$\varepsilon$](0,2) to[short,-*] (1.5,2);
-%TML        \draw(2.5,2) to[short,*-] (3.5,2) to[R=$R$] (3.5,0)--(0,0);
-%TML        \draw(2,0) to[C=$C$,-*] (2,1.25);
-%TML        \draw(2,1.25)--(2.3,2.15) node[above]{s};
-%TML        \node at (1.5,1.8) (a){a};
-%TML        \node at (2.5,1.8) (b){b};
-%TML      \end{tikzpicture}
-%TML    \end{center}
-%TML  }
-%TML=======
-%TML    \begin{tikzpicture}[american voltages]
-%TML      \draw(0,0) to[battery,l=$\mathcal E$](0,2) to[short,-*] (1.5,2);
-%TML      \draw(2.5,2) to[short,*-] (3.5,2) to[R=$R$,] (3.5,0)--(0,0);
-%TML      \draw(2,0) to[C=$C$,-*] (2,1.25);
-%TML      \draw(2,1.25)--(2.3,2.15) node[above]{s};
-%TML      \node at (1.5,1.8) (a){a};
-%TML      \node at (2.5,1.8) (b){b};
-%TML    \end{tikzpicture}
-%TML  \end{center}
-%TML
-%TML  \begin{questions}
-%TML>>>>>>> 2022-09-fall
-%TML=======
-%TML    \begin{tikzpicture}[american voltages]
-%TML      \draw(0,0) to[battery,l=$\mathcal E$](0,2) to[short,-*] (1.5,2);
-%TML      \draw(2.5,2) to[short,*-] (3.5,2) to[R=$R$,] (3.5,0)--(0,0);
-%TML      \draw(2,0) to[C=$C$,-*] (2,1.25);
-%TML      \draw(2,1.25)--(2.3,2.15) node[above]{s};
-%TML      \node at (1.5,1.8) (a){a};
-%TML      \node at (2.5,1.8) (b){b};
-%TML    \end{tikzpicture}
-%TML  \end{center}
-%TML
-%TML  \begin{questions}
-%TML>>>>>>> a849978 (Updated Class 21 and 22 stuff)
-  \question The time constant $\tau$ for discharging the capacitor through the
-  resistor could be decreased (faster discharge) by
-  \label{switch1}
-  \begin{choices}
-    \choice placing another resistor in series with the first resistor
-    \choice placing another resistor in parallel with the first resistor
-    \choice placing another capacitor in parallel with the first capacitor
-    \choice placing another battery in series in the same direction with the
-    first battery
-    \choice increasing both $R$ and $C$
-  \end{choices}
-  
-  \question The maximum current through the resistor is
-  \label{switch2}
-  \begin{choices}
-    \choice $\mathcal E/2R$
-    \choice $\mathcal E/R$
-    \choice $\mathcal E/RC$
-    \choice $\mathcal E/2RC$
-    \choice $C\mathcal E/R$
-  \end{choices}
-  
-  \question Circuit I and Circuit II shown each consist of a capacitor and a
-  resistor. A battery is connected across a and b, and then removed. Which of
-  the following statements is true of the circuits?
+  \textbf{Question \ref{switch1}--\ref{switch2}}: The circuit shows a
+  capacitor, a battery, and a resistor. Switch $S$ is first connected to point
+  $a$ to charge the capacitor, then a long time later switched to point $b$ to
+  discharge the capacitor through the resistor.
   \begin{center}
-    \begin{tikzpicture}
-      \node[above] at (1,2.5){Circuit I};
-      \draw(0,1.25) to[short,*-](0,2.5)--(2,2.5) to[C=$C$](2,1.25)
-      to[R=$R$](2,0)--(0,0) to[short,-*](0,0.75);
-      \node at (-0.3,0.75) {a};
-      \node at (-0.3,1.25) {b};
-    \end{tikzpicture}
-    \hspace{.5in}
-    \begin{tikzpicture}
-      \node[above] at (1.5,2){Circuit II};
-      \draw(0,1.25) to[short,*-](0,2)--(1.5,2) to[R=$R$](1.5,0)--(0,0)
-      to[short,-*](0,0.75);
-      \draw(1.5,2)--(3,2) to[C=$C$](3,0)--(1.5,0);
-      \node at (-0.3,0.75) {a};
-      \node at (-0.3,1.25) {b};
+    \begin{tikzpicture}[american voltages]
+      \draw(0,0) to[battery,l=$\mathcal E$](0,2) to[short,-*] (1.5,2);
+      \draw(2.5,2) to[short,*-] (3.5,2) to[R=$R$,] (3.5,0)--(0,0);
+      \draw(2,0) to[C=$C$,-*] (2,1.25);
+      \draw(2,1.25)--(2.3,2.15) node[above]{s};
+      \node at (1.5,1.8) (a){a};
+      \node at (2.5,1.8) (b){b};
     \end{tikzpicture}
   \end{center}
-  \begin{choices}
-    \choice Circuit I and Circuit II will both retain stored energy when the
-    battery is removed.
-    \choice Neither Circuit I nor Circuit II will retain stored energy when
-    the battery is removed.
-    \choice Only Circuit I will retain stored energy when the battery is
-    removed.
-    \choice Only Circuit II will retain stored energy when the battery is
-    removed.
-    \choice Current will continue to flow in both circuits after the battery
-    is removed.
-  \end{choices}
-  \columnbreak
+
+  \begin{questions}
+    \question The time constant $\tau$ for discharging the capacitor through the
+    resistor could be decreased (faster discharge) by
+    \label{switch1}
+    \begin{choices}
+      \choice placing another resistor in series with the first resistor
+      \choice placing another resistor in parallel with the first resistor
+      \choice placing another capacitor in parallel with the first capacitor
+      \choice placing another battery in series in the same direction with the
+      first battery
+      \choice increasing both $R$ and $C$
+    \end{choices}
+    
+    \question The maximum current through the resistor is
+    \label{switch2}
+    \begin{choices}
+      \choice $\mathcal E/2R$
+      \choice $\mathcal E/R$
+      \choice $\mathcal E/RC$
+      \choice $\mathcal E/2RC$
+      \choice $C\mathcal E/R$
+    \end{choices}
+    \columnbreak
+    
+    \question Circuit I and Circuit II shown each consist of a capacitor and a
+    resistor. A battery is connected across a and b, and then removed. Which of
+    the following statements is true of the circuits?
+    \begin{center}
+      \begin{tikzpicture}
+        \node[above] at (1,2.5){Circuit I};
+        \draw(0,1.25) to[short,*-](0,2.5)--(2,2.5) to[C=$C$](2,1.25)
+        to[R=$R$](2,0)--(0,0) to[short,-*](0,0.75);
+        \node at (-0.3,0.75) {a};
+        \node at (-0.3,1.25) {b};
+      \end{tikzpicture}
+      \hspace{.5in}
+      \begin{tikzpicture}
+        \node[above] at (1.5,2){Circuit II};
+        \draw(0,1.25) to[short,*-](0,2)--(1.5,2) to[R=$R$](1.5,0)--(0,0)
+        to[short,-*](0,0.75);
+        \draw(1.5,2)--(3,2) to[C=$C$](3,0)--(1.5,0);
+        \node at (-0.3,0.75) {a};
+        \node at (-0.3,1.25) {b};
+      \end{tikzpicture}
+    \end{center}
+    \begin{choices}
+      \choice Circuit I and Circuit II will both retain stored energy when the
+      battery is removed.
+      \choice Neither Circuit I nor Circuit II will retain stored energy when
+      the battery is removed.
+      \choice Only Circuit I will retain stored energy when the battery is
+      removed.
+      \choice Only Circuit II will retain stored energy when the battery is
+      removed.
+      \choice Current will continue to flow in both circuits after the battery
+      is removed.
+    \end{choices}
   
-  \question A thin sheet of copper is placed in a uniform magnetic field. A
-  battery is connected to the top and bottom ends of the copper sheet, so that
-  conventional current flows from the top to the bottom of the sheet.
-  Points $X$ and $Y$ are on the left and right sides of the sheet, respectively.
-  Which of the following statements is true?
-  \begin{center}
-    \begin{tikzpicture}[scale=.7]
-      \foreach\x in {0,...,3}{
-        \foreach \y in {0,...,3} \fill[gray](\x,\y) circle(.08); 
-      }
-      \draw[thick](.3,-.2) rectangle(2.7,3.2);
-      \draw[thick](1.5,-.2)--(1.5,-.7)--(4.5,-.7)
-      to[battery1,l_=$\mathcal E$](4.5,3.7)--(1.5,3.7)--(1.5,3.2);
-      \fill(.3,1.5) circle(.1) node[left]{$X$};
-      \fill(2.7,1.5) circle(.1) node[right]{$Y$};
-      \node at (1,2.2) {$\vec B$};
-    \end{tikzpicture}
-  \end{center}
-  \begin{choices}
-    \choice Point $X$ is at a higher potential than point $Y$.
-    \choice Point $Y$ is at a higher potential than point $X$.
-    \choice Point $X$ and point $Y$ are at equal potential.
-    \choice Point $X$ is at zero potential, and point $Y$ has a positive
-    potential.
-    \choice Point $Y$ is at zero potential, and point $X$ has a negative
-    potential.
-  \end{choices}
+    \question A thin sheet of copper is placed in a uniform magnetic field. A
+    battery is connected to the top and bottom ends of the copper sheet, so that
+    conventional current flows from the top to the bottom of the sheet.
+    Points $X$ and $Y$ are on the left and right sides of the sheet,
+    respectively. Which of the following statements is true?
+    \begin{center}
+      \begin{tikzpicture}[scale=.7]
+        \foreach\x in {0,...,3}{
+          \foreach \y in {0,...,3} \fill[gray](\x,\y) circle(.08); 
+        }
+        \draw[thick](.3,-.2) rectangle(2.7,3.2);
+        \draw[thick](1.5,-.2)--(1.5,-.7)--(4.5,-.7)
+        to[battery1,l_=$\mathcal E$](4.5,3.7)--(1.5,3.7)--(1.5,3.2);
+        \fill(.3,1.5) circle(.1) node[left]{$X$};
+        \fill(2.7,1.5) circle(.1) node[right]{$Y$};
+        \node at (1,2.2) {$\vec B$};
+      \end{tikzpicture}
+    \end{center}
+    \begin{choices}
+      \choice Point $X$ is at a higher potential than point $Y$.
+      \choice Point $Y$ is at a higher potential than point $X$.
+      \choice Point $X$ and point $Y$ are at equal potential.
+      \choice Point $X$ is at zero potential, and point $Y$ has a positive
+      potential.
+      \choice Point $Y$ is at zero potential, and point $X$ has a negative
+      potential.
+    \end{choices}
   \end{questions}
   \setcounter{last}{\value{question}}
 \end{multicols*}
@@ -281,7 +214,7 @@
     \begin{center}
       \vspace{.4in}
       \begin{tikzpicture}[yscale=.3,xscale=.45]
-        \draw grid(30,30);
+        \draw[gray] grid(30,30);
         \draw[step=5,very thick] grid(30,30);
       \end{tikzpicture}
     \end{center}
@@ -299,7 +232,6 @@
     }
     
     \part Calculate the time constant of the circuit.
-    \newpage
     \vspace{\stretch1}
     
     \part At time $t=0$, the student closes the switch. On the axes below,
@@ -319,7 +251,6 @@
     \vspace{\stretch1}
   \end{parts}
   \newpage
-
 
   
   %TAKEN FROM 2007 AP PHYSICS C EXAM FREE-RESPONSE QUESTION E&M 1.
@@ -376,7 +307,6 @@
   \vspace{\stretch3}
   \newpage
 
-
   
   %TAKEN FROM 2017 AP PHYSICS C EXAM FREE-RESPONSE QUESTION E&M 2
   \uplevel{
@@ -424,7 +354,7 @@
     maximum charge is $\Delta t_C$. The time it takes for the capacitor to
     discharge to \SI{50}{\percent} of its maximum charge is $\Delta t_D$.
     Which of the following correctly relates the two time intervals?
-
+    
     \vspace{.1in}
     \underline{\hspace{.3in}} $\Delta t_C > \Delta t_D$\hspace{.3in}
     \underline{\hspace{.3in}} $\Delta t_C = \Delta t_D$\hspace{.3in}
@@ -444,22 +374,8 @@
     \underline{\hspace{.3in}} Increasing\hspace{.3in}
     \underline{\hspace{.3in}} Decreasing\hspace{.3in}
     \underline{\hspace{.3in}} Constant
-  \end{subparts}
-  \newpage
-  \part
-  \begin{subparts}
-    \subpart Calculate the energy stored in the capacitor immediately after
-    the switch is opened.
-    \subpart Calculate the energy dissipated by resistor $R_1$ as the
-    capacitor completely discharges.
-  \end{subparts}
 
-  \vspace{.1in}
-  \underline{\hspace{.3in}} Increasing\hspace{.3in}
-  \underline{\hspace{.3in}} Decreasing\hspace{.3in}
-  \underline{\hspace{.3in}} Constant
-
-  \vspace{.1in}Justify your answer.
+    \vspace{.1in}Justify your answer.
     \vspace{\stretch1}
     
     \part Calculate the energy stored in the capacitor immediately after the

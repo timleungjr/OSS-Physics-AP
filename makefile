@@ -1,19 +1,5 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-TERM=2022-07-Summer
-DESTINATION=$(HOME)/Nextcloud/$(TERM)/Physics-APC
-=======
-TERM=2021-09-Fall
-=======
-TERM=2022-09-Fall
->>>>>>> 598009b (Removed most of the PDF files that are no longer needed)
-DESTINATION=$(HOME)/Documents/ossfiles/$(TERM)/Physics.APC
->>>>>>> 0187f47 (A whole bunch of stuff that's changed for Fall of 2022?)
-=======
 TERM=2022-09-Fall
 DESTINATION=$(HOME)/Documents/ossfiles/$(TERM)/Physics.APC
->>>>>>> 2022-09-fall
 
 export DESTINATION
 

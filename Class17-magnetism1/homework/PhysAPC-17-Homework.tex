@@ -19,7 +19,7 @@
       \begin{tikzpicture}
         \draw[thick,dashed,fill=gray!20] circle(1);
         \node at (1.1,-.6) {$X$};
-        \draw[thick](0,2.5) circle(.1) node[above=3]{$e$};
+        \draw[thick](0,2.5) circle(.1) node[above=3]{$e^-$};
         \draw[thick,->](0,2.4)--(0,1);
       \end{tikzpicture}
     \end{center}
@@ -36,13 +36,11 @@
     $I_B$ in the right wire. The magnetic force on the right wire is $F$. What
     is the magnetic force on the left wire in terms of $F$?
     \begin{center}
-      \begin{tikzpicture}[scale=1.3]
-        \begin{scope}[thick]
-          \draw rectangle(.15,2);
-          \draw(1,0) rectangle(1.15,2);
-          \draw[->](.075,2)--(.075,3) node[above]{$I_A$};
-          \draw[->](1.075,2)--(1.075,3) node[above]{$I_B$};
-        \end{scope}
+      \begin{tikzpicture}[scale=1.3,thick]
+        \draw rectangle(.15,2);
+        \draw(1,0) rectangle(1.15,2);
+        \draw[->](.075,2)--(.075,3) node[above]{$I_A$};
+        \draw[->](1.075,2)--(1.075,3) node[above]{$I_B$};
       \end{tikzpicture}
     \end{center}
     \begin{choices}
@@ -67,10 +65,10 @@
     
     \question A magnetic field, directed into the page, is placed between two
     charged capacitor plates, as shown in the figure. The magnetic and electric
-    fields are adjusted so a proton moving at a velocity of $\varv$ will pass
-    straight through the fields. The speed of the proton is doubled to $2\varv$.
+    fields are adjusted so a proton moving at a velocity of $v$ will pass
+    straight through the fields. The speed of the proton is doubled to $2v$.
     Which of the following force diagrams most accurately depicts the forces
-    acting on the proton when traveling at $2\varv$?
+    acting on the proton when traveling at $2v$?
     \begin{center}
       \begin{tikzpicture}[scale=.9]
         \begin{scope}[thick]
@@ -86,32 +84,32 @@
     \end{center}
     \begin{choices}
       \choice
-      \begin{tikzpicture}
-        \draw[very thick] circle(.2) node{$p$};
-        \draw[very thick,->](.2,0)--(1.2,0);
-        \draw[very thick,->](-.2,0)--(-1.2,0);
+      \begin{tikzpicture}[very thick]
+        \draw circle(.2) node{$p$};
+        \draw[->](.2,0)--(1.2,0);
+        \draw[->](-.2,0)--(-1.2,0);
       \end{tikzpicture}
       
       \choice
-      \begin{tikzpicture}
-        \draw[very thick] circle(.2) node{$p$};
-        \draw[very thick,->](.2,0)--(2.2,0);
-        \draw[very thick,->](-.2,0)--(-1.2,0);
+      \begin{tikzpicture}[very thick]
+        \draw circle(.2) node{$p$};
+        \draw[->](.2,0)--(2.2,0);
+        \draw[->](-.2,0)--(-1.2,0);
       \end{tikzpicture}
 
       \choice
-      \begin{tikzpicture}
-        \draw[very thick] circle(.2) node{$p$};
-        \draw[very thick,->](.2,0)--(1.2,0);
-        \draw[very thick,->](-.2,0)--(-2.2,0);
+      \begin{tikzpicture}[very thick]
+        \draw circle(.2) node{$p$};
+        \draw[->](.2,0)--(1.2,0);
+        \draw[->](-.2,0)--(-2.2,0);
       \end{tikzpicture}
       
       \choice
-      \begin{tikzpicture}
-        \draw[very thick] circle(.2) node{$p$};
-        \draw[very thick,->](.2,0)--(1.2,0);
-        \draw[very thick,->](-.2,0)--(-2.2,0);
-        \draw[very thick,->](0,.2)--(0,1.2);
+      \begin{tikzpicture}[very thick]
+        \draw circle(.2) node{$p$};
+        \draw[->](.2,0)--(1.2,0);
+        \draw[->](-.2,0)--(-2.2,0);
+        \draw[->](0,.2)--(0,1.2);
       \end{tikzpicture}
     \end{choices}
     \vspace{.7in}
@@ -119,25 +117,11 @@
     \question Which of the following is true concerning the force on the
     current-carrying wire due to the electron?
     \begin{center}
-<<<<<<< HEAD
-<<<<<<< HEAD
-      \begin{tikzpicture}
-        \draw[thick,->](0,4)--(0,2.5) node[right]{$I$};
-        \draw[thick](0,3)--(0,0);
-        \fill(-.5,2) circle(.1) node[above left] {$e$};
-        \draw[thick,->](-.5,2)--(-.5,1) node[below]{$\varv$};
-=======
-=======
->>>>>>> 2022-09-fall
       \begin{tikzpicture}[thick]
         \draw[->] (0,4)--(0,2.5);
         \draw (0,3)--(0,0);
         \fill(-.5,2) circle(.1) node[above] {$e$};
-        \draw[->] (-.5,2)--(-.5,1) node[below]{$\varv$};
-<<<<<<< HEAD
->>>>>>> bada03f (Lots of changes for Fall 2022. Mostly shortening homework sets)
-=======
->>>>>>> 2022-09-fall
+        \draw[->] (-.5,2)--(-.5,1) node[below]{$v$};
       \end{tikzpicture}
     \end{center}
     \begin{choices}
@@ -211,20 +195,6 @@
 %      carrying $4A$, and in the same direction.
 %    \end{choices}
 %    \label{q:2wires1}
-<<<<<<< HEAD
-<<<<<<< HEAD
-    
-    \question The magnitude of the resultant magnetic field at point $P$ due to
-    the current in the two wires is
-    \begin{choices}
-      \choice zero
-      \choice$\dfrac{\mu_0(2A)}{2\pi r}$
-      \choice$\dfrac{\mu_0(2A)}{\pi r}$
-      \choice$\dfrac{\mu_0(4A)}{2\pi r}$
-      \choice$\dfrac{\mu_0(6A)}{4\pi r}$
-    \end{choices}
-    \label{q:2wires2}
-=======
 %    \vspace{.7in}
 %    
 %    \question The magnitude of the resultant magnetic field at point $P$ due to
@@ -237,40 +207,7 @@
 %      \choice $\dfrac{\mu_0(6A)}{4\pi r}$
 %    \end{choices}
 %    \label{q:2wires2}
->>>>>>> ce7a159 (Lots of commits!)
 
-<<<<<<< HEAD
-%    \question A dynamic microphone contains a magnet and a coil of wire
-%    connected to a movable diaphragm, as shown in the figure. Sound waves
-%    directed at the diaphragm generate a current in the wires leading from the
-%    coil. Which of the following helps to explain why this occurs?
-%    \cpic{.38}{mic}
-%    \begin{choices}
-%      \choice The area of the coil changes.
-%      \choice The magnitude of the magnetic field produced by the magnet
-%      changes.
-%      \choice The angle between the plane of the coil and the magnetic field
-%      produced by the magnet change.
-%      \choice The strength of the magnetic field in the plane of the coil
-%      changes.
-%    \end{choices}
-=======
-%    \vspace{.7in}
-%    
-%    \question The magnitude of the resultant magnetic field at point $P$ due to
-%    the current in the two wires is
-%    \begin{choices}
-%      \choice zero
-%      \choice $\dfrac{\mu_0(2A)}{2\pi r}$
-%      \choice $\dfrac{\mu_0(2A)}{\pi r}$
-%      \choice $\dfrac{\mu_0(4A)}{2\pi r}$
-%      \choice $\dfrac{\mu_0(6A)}{4\pi r}$
-%    \end{choices}
-%    \label{q:2wires2}
->>>>>>> 2022-09-fall
-
-=======
->>>>>>> bada03f (Lots of changes for Fall 2022. Mostly shortening homework sets)
     \uplevel{
       \textbf{Questions \ref{q:2curr1}--\ref{q:2curr2}}: Two wires are parallel
       to each other, one carrying twice the current as the other. The two
@@ -290,6 +227,7 @@
       \choice The net force between the wires is zero.
     \end{choices}
     \label{q:2curr1}
+    \vspace{.7in}
     
     \question The direction of the force between the wires is
     \begin{choices}
@@ -300,29 +238,7 @@
       \choice out of the page
     \end{choices}
     \label{q:2curr2}
-<<<<<<< HEAD
-=======
     \vspace{.7in}
-<<<<<<< HEAD
-    
-    \question A dynamic microphone contains a magnet and a coil of wire
-    connected to a movable diaphragm, as shown in the figure. Sound waves
-    directed at the diaphragm generate a current in the wires leading from the
-    coil. Which of the following helps to explain why this occurs?
-    \cpic{.3}{mic}
-    \begin{choices}
-      \choice The area of the coil changes.
-      \choice The magnitude of the magnetic field produced by the magnet
-      changes.
-      \choice The angle between the plane of the coil and the magnetic field
-      produced by the magnet change.
-      \choice The strength of the magnetic field in the plane of the coil
-      changes.
-    \end{choices}
->>>>>>> 2022-09-fall
-    \columnbreak
-=======
->>>>>>> ce7a159 (Lots of commits!)
     
     \question A dynamic microphone contains a magnet and a coil of wire
     connected to a movable diaphragm, as shown in the figure. Sound waves
@@ -353,7 +269,7 @@
           \draw[thick,->](1.5,1.5)--(2.5,1.5) node[midway,above]{$r$};
           \draw[dashed](1.5,1.5) circle(1);
           \draw[fill=white](1.5,2.5) circle(.2);
-          \draw[thick,->](1.5,2.5)--(.5,2.5) node[left]{$\varv$};
+          \draw[thick,->](1.5,2.5)--(.5,2.5) node[left]{$v$};
         \end{tikzpicture}
       \end{center}
     }
@@ -361,11 +277,11 @@
     \question In terms of the other given quantities, the charge-to-mass ratio
     $q/m$ of the particle is
     \begin{choices}
-      \choice $\dfrac{B\varv}r$
-      \choice $\dfrac r{B\varv}$
-      \choice $\dfrac{r\varv}B$
-      \choice $r\varv B$
-      \choice $\dfrac\varv{rB}$
+      \choice $\dfrac{Bv}r$
+      \choice $\dfrac r{Bv}$
+      \choice $\dfrac{rv}B$
+      \choice $rvB$
+      \choice $\dfrac v{rB}$
     \end{choices}
     \label{q:circ1}
     
@@ -373,36 +289,13 @@
     the charge is
     \begin{choices}
       \choice zero
-      \choice $-\dfrac{q\varv B}{rm}$
-      \choice $\dfrac{q\varv m}{Br}$
-      \choice $-\dfrac{mBr}{q\varv}$
-      \choice $-mq\varv Br$
+      \choice $-\dfrac{qv B}{rm}$
+      \choice $\dfrac{qv m}{Br}$
+      \choice $-\dfrac{mBr}{qv}$
+      \choice $-mqv Br$
     \end{choices}
     \label{q:circ2}
-    \columnbreak
     
-<<<<<<< HEAD
-<<<<<<< HEAD
-    \question A current is passed through an analog ammeter and the needle moves
-    to indicate the current flowing through the circuit. Which of the
-    following best explains how an analog ammeter works?
-    \begin{choices}
-      \choice Current is passed through the needle placed in a magnetic field,
-      and the needle is attracted to the high side of the scale.
-      \choice The needle is a magnet, and is attracted to a magnet on the high
-      side of the scale.
-      \choice The needle gathers an electrostatic charge from the current, and
-      is attracted to an electrostatic charge on the high side of the scale.
-      \choice Current is passed through a spring coil of wire placed in a
-      magnetic field, and the coil rotates, moving the needle
-      proportionally to the current in the coil.
-      \choice Current flows through the needle, making it heavier, and it falls
-      to the high side of the scale.
-    \end{choices}
-    
-=======
-=======
->>>>>>> 2022-09-fall
 %    \question A current is passed through an analog ammeter and the needle moves
 %    to indicate the current flowing through the circuit. Which of the
 %    following best explains how an analog ammeter works?
@@ -421,10 +314,6 @@
 %    \end{choices}
 %    \vspace{.7in}
 %    
-<<<<<<< HEAD
->>>>>>> bada03f (Lots of changes for Fall 2022. Mostly shortening homework sets)
-=======
->>>>>>> 2022-09-fall
 %    \question An electric motor consists of a current-carrying loop of wire
 %    mounted to an axle and turned at a slight angle in a magnetic field as
 %    shown. The wire loop will
@@ -441,16 +330,7 @@
 \end{multicols*}
 \newpage
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-\genfreetitle{17}{MAGNETISM, PART 1}{3}
-
-=======
 %\genfreetitle{17}{MAGNETISM}{3}
->>>>>>> 2022-09-fall
-=======
-%\genfreetitle{17}{MAGNETISM}{3}
->>>>>>> ce7a159 (Lots of commits!)
 %\genfreedirections
 
 % TAKEN FROM 2001 AP PHYSICS C EXAM FREE-RESPONSE QUESTION E&M 3
@@ -459,7 +339,7 @@
     \draw[ultra thick](-5,0)--(5,0);
     \draw[line width=.8mm](-2,1)--(2,1) node[midway,above]{$\ell$};
     \draw[thick](-2,1)--(-2,2.5)node[midway,left]{$d$}
-    to[battery1=$\varepsilon$](2,2.5)--(2,1) node[midway,right]{$d$};
+    to[battery1=$\mathcal E$](2,2.5)--(2,1) node[midway,right]{$d$};
     \draw[<->](-1,1)--(-1,0) node[midway,fill=white]{$r$};
     \draw[<-](4.7,0) to[in=270,out=-80](5.5,-.3) node[above]{Cable};
     \draw[<-](1.7,1) to[in=180,out=-80](3,.85)
@@ -470,16 +350,9 @@
 \end{center}
 
 \begin{questions}
-<<<<<<< HEAD
-<<<<<<< HEAD
-  \question The circuit shown above consists of a battery of emf $\varepsilon$
-=======
-=======
->>>>>>> 2022-09-fall
   \setcounter{question}{\value{last}}
   
   \question The circuit shown above consists of a battery of emf $\mathcal E$
->>>>>>> bada03f (Lots of changes for Fall 2022. Mostly shortening homework sets)
   in series with a rod of length $\ell$, mass $m$, and resistance $R$. The rod
   is suspended by vertical connecting wires of length $d$, and the horizontal
   wires that connect to the battery are fixed. All these wires have negligible
@@ -518,7 +391,7 @@
       \draw[very thick,<->](4.3,.2)--(4.3,1.8) node[pos=.7,left]{$d$};
       \foreach \xx in {-.5,5.5}{
         \draw[fill=gray!60](\xx,1) circle(.1);
-        \draw[very thick,->](\xx+.2,1)--(\xx+1.2,1) node[midway,above]{$\varv$};
+        \draw[very thick,->](\xx+.2,1)--(\xx+1.2,1) node[midway,above]{$v$};
       }
       \draw(5.4,1.3) rectangle(5.6,2.5);
       \draw(5.4,0.7) rectangle(5.6,-.5);
@@ -530,7 +403,7 @@
   evacuated capacitor that is filled with a magnetic field, as shown in the
   figure above. Electrons that enter along the center line of the capacitor
   plates travel straight through (undeflected) with a velocity of
-  $\varv=\SI{1.0e7}{\metre\per\second}$ and out the hole in the center of the
+  $v=\SI{1.0e7}{\metre\per\second}$ and out the hole in the center of the
   apparatus on the right. The capacitor plates are separated by a distance of
   $d=\SI{.020}\metre$; each plate has an area of $A=\SI{1.0e-4}{\metre\squared}$
   and a potential difference of $\Delta V$. A uniform magnetic field of
@@ -569,22 +442,22 @@
       Support your argument with an equation.
       \vspace{\stretch1}
       
-      \subpart A second positron enters the apparatus at a speed of $2\varv$.
+      \subpart A second positron enters the apparatus at a speed of $2v$.
       Sketch the path of the positron through the capacitor plates on the
       figure.
       \vspace{\stretch1}
     \end{subparts}
     
     \part An electron exits the apparatus at a velocity of
-    $\varv=\SI{1.0e7}{\metre\per\second}$ parallel to a long wire of a circuit,
+    $v=\SI{1.0e7}{\metre\per\second}$ parallel to a long wire of a circuit,
     as shown in the figure. The distance between the electron and the wire is
     \SI1{\milli\metre}.
     \begin{center}
       \begin{tikzpicture}[american voltages,scale=1.2]
-        \draw(0,-.5)--(0,1)--(4,1)--(4,-.5) to[battery1=$\varepsilon$] (2,-.5)
+        \draw(0,-.5)--(0,1)--(4,1)--(4,-.5) to[battery1=$\mathcal E$] (2,-.5)
         to[R=$R$] (0,-.5);
         \draw[fill=gray!60](1.5,1.3) circle (0.1);
-        \draw[thick,->](1.7,1.3)--(2.7,1.3) node[midway,above]{$\varv$};
+        \draw[thick,->](1.7,1.3)--(2.7,1.3) node[midway,above]{$v$};
       \end{tikzpicture}
     \end{center}
     \begin{subparts}
@@ -857,11 +730,11 @@
 %  }
 %  \question The rectangular loop of wire shown on the left in the figure above
 %  has mass $M$, length $L$, width $L/4$, and resistance $R$. It is initially
-%  moving to the right at constant speed $\varv_0$ , with no net force acting on
+%  moving to the right at constant speed $v_0$ , with no net force acting on
 %  it. At time $t=0$ the loop enters a region of length $2L$ that contains a
 %  uniform magnetic field of magnitude $B$ directed into the page. The loop
-%  emerges from the field at time $t_f$ with final speed $\varv_f$. Express all
-%  algebraic answers to the following in terms of $M$, $L$, $R$, $B$, $\varv_0$,
+%  emerges from the field at time $t_f$ with final speed $v_f$. Express all
+%  algebraic answers to the following in terms of $M$, $L$, $R$, $B$, $v_0$,
 %  and fundamental constants, as appropriate.
 %  \begin{parts}
 %    \part Let $x$ represent the position of the right end of the loop. Place a
@@ -881,7 +754,7 @@
 %    \underline{\hspace{.5in}} Counterclockwise
 %    
 %    \part Write, but do not solve, a differential equation for the speed
-%    $\varv$ as a function of time as the loop enters the field.
+%    $v$ as a function of time as the loop enters the field.
 %    
 %    \part What is the direction of the acceleration of the loop just before
 %    its left edge leaves the field? Justify your answer.
