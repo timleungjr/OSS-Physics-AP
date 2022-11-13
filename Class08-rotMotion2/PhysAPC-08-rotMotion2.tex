@@ -126,16 +126,14 @@
     \centering
     \begin{tikzpicture}[scale=1.1]
       \shade[ball color=gray!5] circle(1);
-      \draw[thick](-2,-1)--(2,-1);
-      \draw[thick,->](1.2,0)--(2.2,0) node[above]{$\vec v$};
-      \draw[thick,->](0,1.2) arc(90:60:1.2) node[midway,above]{$\omega$};
-      \draw[->](1,-2)--(1.5,-2) node[right]{$x$};
-      \draw[->](1,-2)--(1,-1.5) node[above]{$y$};
+      \draw[thick] (-2,-1)--(2,-1);
+      \draw[vectors] (1.2,0)--(2.2,0) node[above]{$\vec v$};
+      \draw[vectors] (0,1.2) arc(90:60:1.2) node[midway,above]{$\omega$};
+      \draw[axes] (1,-2)--(1.5,-2) node[right]{$x$};
+      \draw[axes] (1,-2)--(1,-1.5) node[above]{$y$};
       \fill circle(.05);
-      \begin{scope}[->,ultra thick]
-        \draw[blue](0,0)--(0,-1.5) node[below]{$m\vec g$};
-        \draw[red](-.03,-1)--(-.03,.5) node[above]{$\vec N$};
-      \end{scope}
+      \draw[vectors,blue] (0,0)--(0,-1.5) node[below]{$m\vec g$};
+      \draw[vectors,red] (-.03,-1)--(-.03,.5) node[above]{$\vec N$};
     \end{tikzpicture}
 
     \column{.65\textwidth}
@@ -184,14 +182,12 @@
     \column{.35\textwidth}
     \begin{tikzpicture}
       \shade[ball color=gray!10] circle(1);
-      \draw[thick](-2,-1)--(2,-1);
-      \draw[thick,->](1.5,0)--(2.5,0) node[right]{$\vec v$};
-      \draw[thick,->](0,1.2) arc(90:60:1.2) node[midway,above]{$\vec\omega$};
+      \draw[thick] (-2,-1)--(2,-1);
+      \draw[vectors] (1.5,0)--(2.5,0) node[right]{$\vec v$};
+      \draw[vectors] (0,1.2) arc(90:60:1.2) node[midway,above]{$\vec\omega$};
       \fill circle(.05) node[right]{\small cm};
-      \begin{scope}[->,ultra thick]
-        \draw[blue](0,0)--(0,-1.5) node[below]{$m\vec g$};
-        \draw[red](-.03,-1)--(-.03,.5) node[above]{$\vec N$};
-      \end{scope}
+      \draw[vectors,blue] (0,0)--(0,-1.5) node[below]{$m\vec g$};
+      \draw[vectors,red] (-.03,-1)--(-.03,.5) node[above]{$\vec N$};
     \end{tikzpicture}
   \end{columns}
 \end{frame}
@@ -230,15 +226,13 @@
     \centering
     \begin{tikzpicture}
       \shade[ball color=gray!5] circle(1);
-      \draw[thick](-1.5,-1)--(1.5,-1);
-      \draw[thick,->](1.5,0)--(2.5,0) node[right]{$\vec v$};
-      \draw[thick,->](0,1.2) arc(90:60:1.2) node[midway,above]{$\omega$};
+      \draw[thick] (-1.5,-1)--(1.5,-1);
+      \draw[vectors] (1.5,0)--(2.5,0) node[right]{$\vec v$};
+      \draw[vectors] (0,1.2) arc(90:60:1.2) node[midway,above]{$\omega$};
       \fill circle(.05);
-      \begin{scope}[->,ultra thick]
-        \draw[blue](-0.03,0)--(-.03,-1.5) node[below]{$m\vec g$};
-        \draw[red](0,-1)--(0,.5) node[above]{$\vec N$};
-        \draw[green!80!black](0,-1)--(1,-1) node[below]{$\vec f_k$};
-      \end{scope}
+      \draw[vectors,blue] (-0.03,0)--(-.03,-1.5) node[below]{$m\vec g$};
+      \draw[vectors,red] (0,-1)--(0,.5) node[above]{$\vec N$};
+      \draw[vectors,violet] (0,-1)--(1,-1) node[below]{$\vec f_k$};
     \end{tikzpicture}
 
     \column{.73\textwidth}
@@ -265,14 +259,12 @@
     \begin{tikzpicture}
       \shade[ball color=gray!5] circle(1);
       \draw[thick](-1.5,-1)--(1.5,-1);
-      \draw[thick,->](1.5,0)--(2.5,0) node[right]{$\vec v$};
-      \draw[thick,->](0,1.2) arc(90:60:1.2) node[midway,above]{$\omega$};
+      \draw[vectors] (1.5,0)--(2.5,0) node[right]{$\vec v$};
+      \draw[vectors] (0,1.2) arc(90:60:1.2) node[midway,above]{$\omega$};
       \fill circle(.05);
-      \begin{scope}[->,ultra thick]
-        \draw[blue](-0.03,0)--(-.03,-1.5) node[below]{$m\vec g$};
-        \draw[red](0,-1)--(0,.5) node[above]{$\vec N$};
-        \draw[green!80!black](0,-1)--(1,-1) node[below]{$\vec f_k$};
-      \end{scope}
+      \draw[vectors,blue] (-0.03,0)--(-.03,-1.5) node[below]{$m\vec g$};
+      \draw[vectors,red] (0,-1)--(0,.5) node[above]{$\vec N$};
+      \draw[vectors,violet] (0,-1)--(1,-1) node[below]{$\vec f_k$};
     \end{tikzpicture}
 
     \column{.73\textwidth}
@@ -283,6 +275,7 @@
       \eq{-.1in}{
         F_\text{net}=f_k=ma_\text{cm}
       }
+
     \item Since $f_k$ is constant, acceleration is also constant as well, as
       long as the sphere slips.
     \item e.g.: A car with its tires spinning on ice still has a small
@@ -303,15 +296,13 @@
     \column{.27\textwidth}
     \begin{tikzpicture}
       \shade[ball color=gray!5] circle(1);
-      \draw[thick](-1.5,-1)--(1.5,-1);
-      \draw[thick,->](1.5,0)--(2.5,0) node[right]{$\vec v$};
-      \draw[thick,->](0,1.2) arc(90:60:1.2) node[midway,above]{$\omega$};
+      \draw[thick] (-1.5,-1)--(1.5,-1);
+      \draw[vectors] (1.5,0)--(2.5,0) node[right]{$\vec v$};
+      \draw[vectors] (0,1.2) arc(90:60:1.2) node[midway,above]{$\omega$};
       \fill circle(.05);
-      \begin{scope}[->,ultra thick]
-        \draw[blue](-0.03,0)--(-.03,-1.5) node[below]{$m\vec g$};
-        \draw[red](0,-1)--(0,.5) node[above]{$\vec N$};
-        \draw[green!80!black](0,-1)--(1,-1) node[below]{$\vec f_k$};
-      \end{scope}
+      \draw[vectors,blue] (-.03,0)--(-.03,-1.5) node[below]{$m\vec g$};
+      \draw[vectors,red] (0,-1)--(0,.5) node[above]{$\vec N$};
+      \draw[vectors,violet] (0,-1)--(1,-1) node[below]{$\vec f_k$};
     \end{tikzpicture}
 
     \column{.73\textwidth}
@@ -344,15 +335,13 @@
     \column{.27\textwidth}
     \begin{tikzpicture}
       \shade[ball color=gray!5] circle(1);
-      \draw[thick](-1.5,-1)--(1.5,-1);
-      \draw[thick,->](1.5,0)--(2.5,0) node[right]{$\vec v$};
-      \draw[thick,->](0,1.2) arc(90:60:1.2) node[midway,above]{$\vec\omega$};
+      \draw[thick] (-1.5,-1)--(1.5,-1);
+      \draw[vectors] (1.5,0)--(2.5,0) node[right]{$\vec v$};
+      \draw[vectors] (0,1.2) arc(90:60:1.2) node[midway,above]{$\omega$};
       \fill circle(.05);
-      \begin{scope}[->,ultra thick]
-        \draw[blue](-0.03,0)--(-.03,-1.5) node[below]{$m\vec g$};
-        \draw[red](0,-1)--(0,.5) node[above]{$\vec N$};
-        \draw[green!80!black](0,-1)--(1,-1) node[below]{$\vec f_k$};
-      \end{scope}
+      \draw[vectors,blue] (-.03,0)--(-.03,-1.5) node[below]{$m\vec g$};
+      \draw[vectors,red] (0,-1)--(0,.5) node[above]{$\vec N$};
+      \draw[vectors,violet] (0,-1)--(1,-1) node[below]{$\vec f_k$};
     \end{tikzpicture}
 
     \column{.73\textwidth}
@@ -382,19 +371,17 @@
     \begin{tikzpicture}[scale=.9]
       \begin{scope}[rotate=-30]
         \shade[ball color=gray!20] circle(1);
-        \draw[thick](-2,-1)--(4,-1);
-        \draw[->,rotate=30](0,0)--(-1,0) node[left]{$R$};
-        \draw[thick,->](0,1.2) arc(90:60:1.2) node[right]{$\omega$};
-        \draw[->](2,0)--(3,0) node[right]{$x$};
-        \draw[->](2,0)--(2,1) node[above]{$y$};
+        \draw[thick] (-2,-1)--(4,-1);
+        \draw[axes,rotate=30] (0,0)--(-1,0) node[left]{$R$};
+        \draw[vectors] (0,1.2) arc(90:60:1.2) node[right]{$\omega$};
+        \draw[axes] (2,0)--(3,0) node[right]{$x$};
+        \draw[axes] (2,0)--(2,1) node[above]{$y$};
         \fill circle(.05) node[right]{\small cm};
-        \begin{scope}[->,ultra thick]
-          \draw[blue,rotate=30](0,0)--(0,-1.5) node[below]{$m\vec g$};
-          \draw[red](0,-1)--(0,.5) node[above]{$\vec N$};
-          \draw[green](.0,-1)--(-1,-1) node[left]{$\vec f_s$};
-        \end{scope}
+        \draw[vectors,blue,rotate=30](0,0)--(0,-1.5) node[below]{$m\vec g$};
+        \draw[vectors,red](0,-1)--(0,.5) node[above]{$\vec N$};
+        \draw[vectors,orange](.0,-1)--(-1,-1) node[left]{$\vec f_s$};
         \begin{scope}[rotate around={30:(4,-1)}]
-          \draw[thick](4,-1)--(2,-1) node[pos=.6,above]{$\phi$};
+          \draw[thick] (4,-1)--(2,-1) node[pos=.6,above]{$\phi$};
         \end{scope}
       \end{scope}
     \end{tikzpicture}
@@ -423,19 +410,17 @@
     \begin{tikzpicture}[scale=.9]
       \begin{scope}[rotate=-30]
         \shade[ball color=gray!20] circle(1);
-        \draw[thick](-2,-1)--(4,-1);
-        \draw[->,rotate=30](0,0)--(-1,0) node[left]{$R$};
-        \draw[thick,->](0,1.2) arc(90:60:1.2) node[right]{$\omega$};
-        \draw[->](2,0)--(3,0) node[right]{$x$};
-        \draw[->](2,0)--(2,1) node[above]{$y$};
+        \draw[thick] (-2,-1)--(4,-1);
+        \draw[axes,rotate=30] (0,0)--(-1,0) node[left]{$R$};
+        \draw[axes] (2,0)--(3,0) node[right]{$x$};
+        \draw[axes] (2,0)--(2,1) node[above]{$y$};
+        \draw[vectors] (0,1.2) arc(90:60:1.2) node[right]{$\omega$};
         \fill circle(.05) node[right]{\small cm};
-        \begin{scope}[->,ultra thick]
-          \draw[blue,rotate=30](0,0)--(0,-1.5) node[below]{$m\vec g$};
-          \draw[red](0,-1)--(0,.5) node[above]{$\vec N$};
-          \draw[green](.0,-1)--(-1,-1) node[left]{$\vec f_s$};
-        \end{scope}
+        \draw[vectors,blue,rotate=30] (0,0)--(0,-1.5) node[below]{$m\vec g$};
+        \draw[vectors,red] (0,-1)--(0,.5) node[above]{$\vec N$};
+        \draw[vectors,orange] (.0,-1)--(-1,-1) node[left]{$\vec f_s$};
         \begin{scope}[rotate around={30:(4,-1)}]
-          \draw[thick](4,-1)--(2,-1) node[pos=.6,above]{$\phi$};
+          \draw[thick] (4,-1)--(2,-1) node[pos=.6,above]{$\phi$};
         \end{scope}
       \end{scope}
     \end{tikzpicture}
@@ -451,10 +436,10 @@
       \end{align*}
     }
     
-    \vspace{-.2in}At this point, static friction $f_s$ is \emph{not} known.
-    The coefficient of static friction ($\mu_s$) only tells us the
-    \emph{maximum} static friction, not the \emph{actual} friction. (We will
-    instead use it to check if the answer makes sense.)
+    At this point, static friction $f_s$ is \emph{not} known. The coefficient
+    of static friction ($\mu_s$) only tells us the \emph{maximum} static
+    friction, not the \emph{actual} friction. (We will instead use it to check
+    if the answer makes sense.)
   \end{columns}
 \end{frame}
 
@@ -466,17 +451,15 @@
     \begin{tikzpicture}[scale=.9]
       \begin{scope}[rotate=-30]
         \shade[ball color=gray!20] circle(1);
-        \draw[thick](-2,-1)--(4,-1);
-        \draw[->,rotate=30](0,0)--(-1,0) node[left]{$R$};
-        \draw[thick,->](0,1.2) arc(90:60:1.2) node[right]{$\omega$};
-        \draw[->](2,0)--(3,0) node[right]{$x$};
-        \draw[->](2,0)--(2,1) node[above]{$y$};
+        \draw[thick] (-2,-1)--(4,-1);
+        \draw[axes,rotate=30](0,0)--(-1,0) node[left]{$R$};
+        \draw[axes] (2,0)--(3,0) node[right]{$x$};
+        \draw[axes] (2,0)--(2,1) node[above]{$y$};
+        \draw[vectors] (0,1.2) arc(90:60:1.2) node[right]{$\omega$};
         \fill circle(.05) node[right]{\small cm};
-        \begin{scope}[->,ultra thick]
-          \draw[blue,rotate=30](0,0)--(0,-1.5) node[below]{$m\vec g$};
-          \draw[red](0,-1)--(0,.5) node[above]{$\vec N$};
-          \draw[green](.0,-1)--(-1,-1) node[left]{$\vec f_s$};
-        \end{scope}
+        \draw[vectors,blue,rotate=30] (0,0)--(0,-1.5) node[below]{$m\vec g$};
+        \draw[vectors,red] (0,-1)--(0,.5) node[above]{$\vec N$};
+        \draw[vectors,orange] (.0,-1)--(-1,-1) node[left]{$\vec f_s$};
         \begin{scope}[rotate around={30:(4,-1)}]
           \draw[thick](4,-1)--(2,-1) node[pos=.6,above]{$\phi$};
         \end{scope}
@@ -515,19 +498,17 @@
     \begin{tikzpicture}[scale=.9]
       \begin{scope}[rotate=-30]
         \shade[ball color=gray!20] circle(1);
-        \draw[thick](-2,-1)--(4,-1);
-        \draw[->,rotate=30](0,0)--(-1,0) node[left]{$R$};
-        \draw[thick,->](0,1.2) arc(90:60:1.2) node[right]{$\omega$};
-        \draw[->](2,0)--(3,0) node[right]{$x$};
-        \draw[->](2,0)--(2,1) node[above]{$y$};
+        \draw[thick] (-2,-1)--(4,-1);
+        \draw[axes,rotate=30](0,0)--(-1,0) node[left]{$R$};
+        \draw[axes] (2,0)--(3,0) node[right]{$x$};
+        \draw[axes] (2,0)--(2,1) node[above]{$y$};
+        \draw[vectors] (0,1.2) arc(90:60:1.2) node[right]{$\omega$};
         \fill circle(.05) node[right]{\small cm};
-        \begin{scope}[->,ultra thick]
-          \draw[blue,rotate=30](0,0)--(0,-1.5) node[below]{$m\vec g$};
-          \draw[red](0,-1)--(0,.5) node[above]{$\vec N$};
-          \draw[green](.0,-1)--(-1,-1) node[left]{$\vec f_s$};
-        \end{scope}
+        \draw[vectors,blue,rotate=30] (0,0)--(0,-1.5) node[below]{$m\vec g$};
+        \draw[vectors,red] (0,-1)--(0,.5) node[above]{$\vec N$};
+        \draw[vectors,orange] (.0,-1)--(-1,-1) node[left]{$\vec f_s$};
         \begin{scope}[rotate around={30:(4,-1)}]
-          \draw[thick](4,-1)--(2,-1) node[pos=.6,above]{$\phi$};
+          \draw[thick] (4,-1)--(2,-1) node[pos=.6,above]{$\phi$};
         \end{scope}
       \end{scope}
     \end{tikzpicture}

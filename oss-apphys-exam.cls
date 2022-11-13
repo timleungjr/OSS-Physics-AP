@@ -83,6 +83,8 @@
   voltage dir=RP,
   >=latex
 }
+\tikzstyle{vectors}=[very thick,->]
+\tikzstyle{axes}=[thick,->]
 
 \pagestyle{headandfoot}
 \header{}{}{}

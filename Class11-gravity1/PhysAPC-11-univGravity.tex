@@ -273,10 +273,10 @@
   \begin{columns}
     \column{.3\textwidth}
     \begin{tikzpicture}[scale=.45]
-      \draw[thick,fill=gray]  circle(5) node[above]{$m_1$};
-      \draw[thick,fill=black!2] circle(4.9);% node[above]{$m_1$};
-      \draw[thick,->,rotate=30](0,0)--(4.9,0) node[midway,below]{$R$};
-      \draw[fill=red](1,-1) circle(.2) node[below]{$m_2$};
+      \draw[thick,fill=gray] circle(5) node[above]{$m_1$};
+      \draw[thick,fill=black!2] circle(4.9);
+      \draw[axes,rotate=30] (0,0)--(4.9,0) node[midway,below]{$R$};
+      \draw[mass] (1,-1) circle(.2) node[below]{$m_2$};
     \end{tikzpicture}
 
     \column{.7\textwidth}
@@ -304,12 +304,10 @@
   \begin{columns}
     \column{.3\textwidth}
     \begin{tikzpicture}[scale=.45]
-      \begin{scope}[thick]
-        \draw[fill=gray]  circle(5);% node[above]{$m_1$};
-        \draw[fill=black!2] circle(4.9);% node[above]{$m_1$};
-        \draw[->,rotate=30](0,0)--(4.9,0) node[midway,below]{$R$};
-      \end{scope}
-      \draw[fill=red](1,-1) circle(.2) node[below]{$m_2$};
+      \draw[thick,fill=gray] circle(5);% node[above]{$m_1$};
+      \draw[thick,fill=black!2] circle(4.9);% node[above]{$m_1$};
+      \draw[axes,rotate=30] (0,0)--(4.9,0) node[midway,below]{$R$};
+      \draw[mass] (1,-1) circle(.2) node[below]{$m_2$};
     \end{tikzpicture}
 
     \column{.7\textwidth}
@@ -336,14 +334,14 @@
   The gravitational field strength inside spherical shell is:
   \begin{center}
     \begin{tikzpicture}
-      \draw[thick,->](0,0)--(0,3)node[right]{$|\vec g|$};
-      \draw[thick,->](0,0)--(5.5,0)node[right]{$r$};
-      \draw[thick,dashed](1,0)--(1,2) node[pos=0,below]{$R$}--(0,2)
+      \draw[axes] (0,0)--(0,3)node[right]{$|\vec g|$};
+      \draw[axes] (0,0)--(5.5,0)node[right]{$r$};
+      \draw[thick,dashed] (1,0)--(1,2) node[pos=0,below]{$R$}--(0,2)
       node[left]{$\dfrac{GM}{R^2}$};
-      \draw[very thick,red,samples=15,smooth,domain=1:5] plot(\x,{2/\x});
-      \draw[very thick,red](0,0)--(1,0);
-      \draw[very thick,red,fill=black!2](1,0) circle(.06);
-      \fill[red](1,2) circle(.06);
+      \draw[functions,samples=15,smooth,domain=1:5] plot(\x,{2/\x});
+      \draw[functions] (0,0)--(1,0);
+      \draw[functions,fill=black!2] (1,0) circle(.06);
+      \fill[red!80!black] (1,2) circle(.06);
     \end{tikzpicture}
   \end{center}
 \end{frame}
@@ -356,8 +354,8 @@
 
     \begin{tikzpicture}[scale=.45]
       \draw[thick,fill=gray!50] circle(5);
-      \draw[thick,fill=gray!10](-.2,5) rectangle(.2,-5);
-      \draw[fill=red](0,1) circle(.15) node[right,black]{\small $m$};
+      \draw[thick,fill=gray!10] (-.2,5) rectangle(.2,-5);
+      \draw[mass] (0,1) circle(.15) node[right,black]{\small $m$};
     \end{tikzpicture}
 
     \column{.65\textwidth}
@@ -410,7 +408,7 @@
 
 
 \begin{frame}{Falling Toward the Center of Earth}
-  \vspace{.2in}
+
   \begin{columns}
     \column{.25\textwidth}
     \pic{1.2}{eartholeg}
@@ -438,12 +436,12 @@
   The gravitational field strength inside a uniform sphere is:
   \begin{center}
     \begin{tikzpicture}
-      \draw[thick,->](0,0)--(0,3)node[right]{$|\vec g|$};
-      \draw[thick,->](0,0)--(5.5,0)node[right]{$r$};
-      \draw[thick,dashed](1,0)--(1,2) node[pos=0,below]{$R$}--(0,2)
+      \draw[axes] (0,0)--(0,3) node[right]{$|\vec g|$};
+      \draw[axes] (0,0)--(5.5,0) node[right]{$r$};
+      \draw[thick,dashed] (1,0)--(1,2) node[pos=0,below]{$R$}--(0,2)
       node[left]{$\dfrac{GM}{R^2}$};
-      \draw[very thick,red,domain=1:5] plot(\x,{2/\x});
-      \draw[very thick,red](0,0)--(1,2);
+      \draw[functions,domain=1:5] plot(\x,{2/\x});
+      \draw[functions] (0,0)--(1,2);
     \end{tikzpicture}
   \end{center}
 \end{frame}
