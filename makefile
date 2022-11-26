@@ -13,7 +13,7 @@ all:
 	cd Class07-rotMotion	; make
 	cd Class08-rotMotion2	; make
 	cd Class09-rotMotion3	; make
-	cd Class10-harmonicMotion ; make
+	cd Class09-harmonicMotion ; make
 	cd Class11-gravity1	; make
 	cd Class12-gravity2	; make
 	cd Class14-electrostatics ; make
@@ -38,7 +38,7 @@ clean:
 	cd Class07-rotMotion 	; make clean
 	cd Class08-rotMotion2	; make clean
 	cd Class09-rotMotion3	; make clean
-	cd Class10-harmonicMotion ; make clean
+	cd Class09-harmonicMotion ; make clean
 	cd Class11-gravity1	; make clean
 	cd Class12-gravity2	; make clean
 	cd Class14-electrostatics ; make clean
@@ -63,7 +63,7 @@ public:
 	cd Class07-rotMotion	; make public
 	cd Class08-rotMotion2	; make public
 	cd Class09-rotMotion3	; make public
-	cd Class10-harmonicMotion ; make public
+	cd Class09-harmonicMotion ; make public
 	cd Class11-gravity1	; make public
 	cd Class12-gravity2	; make public
 	cd Class14-electrostatics ; make public

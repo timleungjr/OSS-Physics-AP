@@ -4,7 +4,7 @@
 
 \usetikzlibrary{decorations.pathmorphing,patterns}
 
-\title{Class 10: Harmonic Motion}
+\title{Classes 9 \& 10: Harmonic Motion}
 \subtitle{Advanced Placement Physics C}
 \input{../me}
 \input{../mycommands}
@@ -19,16 +19,19 @@
 
 \section{Hooke's Law}
 
-\begin{frame}{Hooke's Law}
+\begin{frame}{Review: Hooke's Law}
   Hooke's law for an ideal spring relates the \textbf{spring force} $\vec F_s$
   exerted by a compressed or stretched spring onto another object to the
   \textbf{spring constant} $k$\footnote{It is the stiffness of the spring, also
-  called \emph{Hooke's constant}, \emph{force constant}, or the \emph{spring
-  rate} of the spring}, and the spring's displacement $\vec x$:
+  called \textbf{Hooke's constant}, \textbf{force constant}, or the
+  \textbf{spring rate} of the spring. It depends on both the geometry of the
+  spring, as well as the material properties of the spring}, and the spring's
+  displacement $\vec x$:
 
   \eq{-.1in}{
     \boxed{\vec F_s=-k\vec x}
   }
+  
   \begin{center}
     \begin{tabular}{l|c|c}
       \rowcolor{pink}
@@ -43,7 +46,7 @@
 
 
 
-\begin{frame}{Elastic Potential Energy}
+\begin{frame}{Review: Elastic Potential Energy}
   Applying Hooke's law in the work equation gives the amount of \textbf{elastic
     potential energy} stored in the spring when it is compressed or stretched:
 
@@ -55,7 +58,7 @@
   where elastic potential energy is defined as
 
   \eq{-.1in}{
-    \boxed{U_e=\frac12kx^2}
+    \boxed{U_s=\frac12kx^2}
   }
 \end{frame}
 
@@ -69,9 +72,8 @@
   \begin{center}
     \begin{tikzpicture}[scale=1.1]
       \draw[mass] (5,.5) rectangle (6,1.5);
-      \draw[thick,
-        decoration={aspect=.4,segment length=3mm, amplitude=2.5mm, coil},
-        decorate] (0,1)--(5,1);
+      \draw[thick,decorate,
+        decoration={aspect=.4,segment length=8,amplitude=8,coil}] (0,1)--(5,1);
       \fill[pattern=north east lines] (6.5,.5)--(6.5,.3)--(-0.2,.3)
       --(-.2,2)--(0,2)--(0,.5)--cycle;
       \draw[thick] (6.5,.5)--(0,.5)--(0,2);
@@ -86,7 +88,8 @@
   \end{center}
   $mg$ and $N$ cancel out, so net force is due only to spring force
   $F_s=-kx$ along the $x$-axis. This is true both when the spring is
-  in compression or extension. (The spring is in extension in the diagram.)
+  in compression or extension.\footnote{It should be obvious that the spring is
+  in extension in the diagram.}
 \end{frame}
 
 
@@ -127,10 +130,10 @@
     x(t)=A\cos(\omega_0 t-\phi)
   }
   
-  Cosine is usually preferred over sine because $\cos(0)=1$, consistent with
-  the fact that oscillations usually begin at maximum amplitude $A$ at $t=0$,
-  and therefore $\phi=0$. Mathematically, the two functions only differ in
-  $\phi$
+  Cosine is \emph{usually} preferred over sine because $\cos(0)=1$, consistent
+  with the fact that oscillations \emph{usually} begin at maximum amplitude $A$
+  at $t=0$, and therefore $\phi=0$. Mathematically, the two functions only
+  differ in $\phi$
 \end{frame}
 
 
@@ -185,7 +188,6 @@
 \begin{frame}{Displacement, Velocity and Acceleration}
   \begin{columns}
     \column{.4\textwidth}
-
     \begin{align*}
       x(t)&=A\cos(\omega_0 t-\phi)\\
       v(t)&=-A\omega_0\sin(\omega_0 t-\phi)\\
@@ -223,18 +225,18 @@
     x(t)=c_1\sin(\omega t)+c_2\cos(\omega t)
   }
 
-  Where $c_1$ and $c_2$ are constant coefficients based on the initial
-  conditions (position and velocity). Trigonometric identities can be used to
-  show that the solution form shown in previous slides is identical.
+  Where $c_1$ and $c_2$ are constant coefficients based on initial conditions
+  (position and velocity).\footnote{Trigonometric identities can be used to
+  show that the solution form shown in previous slides is identical.}
 \end{frame}
 
 
 
 \begin{frame}{Side Note \#2}
-  \textbf{Side Note \#2:} Another function that can be tried as a solution to
-  the ODE is the exponential function, where its derivatives is related to the
-  function itself. However, the second derivative of $e^{\omega t}$ does not have
-  the negative sign that is needed to solve the problem.
+  \textbf{Side Note \#2:} Another function that we can be try is the
+  exponential function, where its derivatives is related to the function
+  itself. However, the second derivative of $e^{\omega t}$ does not have the
+  negative sign that is needed to solve the problem.
 
   \eq{-.1in}{
     x(t)=e^{\omega t}\quad\rightarrow\quad
@@ -278,9 +280,9 @@
     \column{.17\textwidth}
     \begin{tikzpicture}[scale=1.3]
       \draw[mass] (.75,1.75) rectangle (1.25,2.25);
-      \draw[thick,
-        decoration={aspect=.4,segment length=2.2mm, amplitude=2.5mm, coil},
-        decorate] (1,5)--(1,2.25); 
+      \draw[thick,decorate,
+        decoration={aspect=.4,segment length=8,amplitude=8,coil}]
+      (1,5)--(1,2.25); 
       \fill[pattern=north east lines] (0,5) rectangle (2,5.2);
       \draw[thick] (0,5)--(2,5);
       \draw[axes] (1.75,3)--(1.75,2) node[below]{$+$};
@@ -297,14 +299,14 @@
       {\color{purple}mg}-kx=m\diff[2]xt
     }
 
-    But since $mg$ is a constant, the only change is the addition of a constant
+    But since $mg$ is constant, the only change is the addition of a constant
     $B$ in the expression of $x(t)$:
     
     \vspace{-.25in}{\large
       \begin{align*}
-        x(t)&=A\cos(\omega_0 t-\phi) +B\\
-        v(t)&=-A\omega_0\sin(\omega_0 t-\phi)\\
-        a(t)&=-A\omega_0^2\cos(\omega_0 t-\phi)
+        x(t) &= A\cos(\omega_0 t-\phi) +B\\
+        v(t) &= -A\omega_0\sin(\omega_0 t-\phi)\\
+        a(t) &= -A\omega_0^2\cos(\omega_0 t-\phi)
       \end{align*}
     }
   \end{columns}
@@ -317,9 +319,9 @@
     \column{.17\textwidth}
     \begin{tikzpicture}[scale=1.3]
       \draw[mass] (.75,1.75) rectangle (1.25,2.25);
-      \draw[thick,
-        decoration={aspect=.4,segment length=2.2mm, amplitude=2.5mm, coil},
-        decorate] (1,5)--(1,2.25); 
+      \draw[thick,decorate,
+        decoration={aspect=.4,segment length=8,amplitude=8,coil}]
+      (1,5)--(1,2.25); 
       \fill[pattern=north east lines] (0,5) rectangle (2,5.2);
       \draw[thick] (0,5)--(2,5);
       \draw[axes] (1.75,3)--(1.75,2) node[below]{$+$};
@@ -355,7 +357,7 @@
   mechanical energy is conserved:
 
   \eq{-.1in}{
-    K_1 + U_{e1} + U_{g1} = K_2 + U_{e2} + U_{g2}
+    K + U_s + U_g = K' + U_s' + U_g'
   }
   
   For the horizontal spring-mass system, the total energy of the simple harmonic
@@ -369,7 +371,7 @@
 
 
 \begin{frame}{Simple Example}
-  \textbf{Example 2:} A mass suspended from a spring is oscillating up and
+  \textbf{Example:} A mass suspended from a spring is oscillating up and
   down. Consider the following two statements:
   \begin{enumerate}
   \item At some point during the oscillation, the mass has zero velocity but it
@@ -389,7 +391,7 @@
 
 
 \begin{frame}{Another Example}
-  \textbf{Example 3:} An object of mass \SI5{\kilo\gram} hangs from a spring
+  \textbf{Example:} An object of mass \SI5{\kilo\gram} hangs from a spring
   and oscillates with a period of \SI{.5}\second. By how much will the
   equilibrium length of the spring be shortened when the object is removed.
   \begin{enumerate}[(A)]
@@ -540,9 +542,11 @@
           width=2.5in,
           xmin=0,xmax=pi/2,
           ymin=0,ymax=pi/2,
-          xlabel=$\theta$ (radian),
-          xtick={0,pi/4,pi/2},
-          xticklabels={0,$\dfrac\pi4$,$\dfrac\pi2$},
+          %xlabel=$\theta$ (radian),
+          xtick={0,pi/8,pi/4,3*pi/8,pi/2},
+          xticklabels={
+            0,$\dfrac\pi8$,$\dfrac\pi4$,$\dfrac{3\pi}8$,$\dfrac\pi2$
+          },
           grid = both,
           legend pos=north west,
         ]
@@ -563,10 +567,10 @@
     \begin{tikzpicture}
       \begin{axis}[
           width=2.5in,
-          ylabel=Percentage Error,
+          ylabel=\% Error,
           xmin=0,xmax=pi/2,
           ymin=0,ymax=60,
-          xlabel=$\theta$ (radian),
+          %xlabel=$\theta$ (radian),
           xtick={0,pi/8,pi/4,3*pi/8,pi/2},
           xticklabels={
             0,$\dfrac\pi8$,$\dfrac\pi4$,$\dfrac{3\pi}8$,$\dfrac\pi2$
@@ -576,7 +580,7 @@
           grid = both,
         ]
         \addplot[
-          color=purple,
+          color=violet,
           domain=0:pi/2,
           samples=40,
           style=thick
@@ -584,8 +588,8 @@
       \end{axis}
     \end{tikzpicture}
   \end{center}
-  What the maximum angle of deflection can be depends on the accuracy the answer
-  requires.
+  What the maximum angle of deflection can be used depends on the precision
+  that the answer requires.
 \end{frame}
 
 
@@ -642,34 +646,29 @@
   In reality, there are friction, or drag, or other damping forces present in
   the spring-mass system, represented schematically by the shock absorber:
   \begin{center}
-    \begin{tikzpicture}[scale=1.1]
-      \node[draw,thick,fill=cyan!20!white,inner sep=5.5mm] (a) at (3.5,1);
-      \draw[thick,draw=black!50,
-        decoration={aspect=0.3,segment length=2mm, amplitude=2.5mm, coil},
-        decorate] (0,1)--(2.95,1);
-      \fill[pattern=north east lines](-.5,2)--(-.5,0)--(7,0)--(7,2)--(6.5,2)
-      --(6.5,.5)--(0,.5)--(0,2)--cycle;
-      \draw[thick] (0,2)--(0,.5)--(6.5,.5)--(6.5,2);
-      \draw[->,thick](7.25,1)--(8,1) node[right]{$x$};
+    \begin{tikzpicture}
+      \draw[gray,mass] (3,.5) rectangle (4,1.5);
+      \draw[thick,draw=gray,decorate,
+        decoration={aspect=.4,segment length=5,amplitude=8,coil}] (0,1)--(3,1);
+      \fill[gray,pattern=north east lines] (-.5,2)--(-.5,0)--(7,0)--(7,2)
+      --(6.5,2)--(6.5,.5)--(0,.5)--(0,2)--cycle;
+      \draw[gray,thick] (0,2)--(0,.5)--(6.5,.5)--(6.5,2);
+      \draw[axes] (7.25,1)--(8,1) node[right]{$x$};
+      \fill[blue!20!white] (5,.8) rectangle(6,1.2);
+      \draw[very thick] (4,1)--(5,1);
+      \draw[very thick] (5,.8)--(5,1.2);
+      \draw[very thick] (4.9,1.2)--(6,1.2)--(6,.8)--(4.9,.8);
+      \draw[very thick] (6,1)--(6.5,1);
       \uncover<2->{
-        \draw[fill=blue!20!white] (4.9,.8) rectangle(5.5,1.2);
-        \begin{scope}[very thick]
-          \draw(4.05,1)--(4.9,1);
-          \draw(4.9,.8)--(4.9,1.2);
-          \draw(4.8,1.2)--(5.5,1.2)--(5.5,.8)--(4.8,.8);
-          \draw(5.5,1)--(6.5,1);
-        \end{scope}
-      }
-      \uncover<3->{
-        \fill[red!60] (3.5,1) circle(.075);
-        \draw[vectors,red!60] (3.5,1)--(3.5,0) node[below]{$m\vec g$};
-        \draw[vectors,red!60] (3.5,1)--(3.5,2) node[above]{$\vec N$};
-        \draw[vectors,red!60] (3.5,1)--(2.5,1) node[above]{$\vec F_s$};
-        \draw[vectors,red!70!black] (3.5,1)--(4.5,1) node[above]{$\vec F_D$};
+        \draw[vectors,pink] (3.5,1)--(3.5,0) node[below]{$m\vec g$};
+        \draw[vectors,pink] (3.5,1)--(3.5,2) node[above]{$\vec N$};
+        \draw[vectors,pink] (3.5,1)--(2.5,1) node[above]{$\vec F_s$};
+        \draw[vectors,red] (3.5,1)--(4.5,1) node[above]{$\vec F_D$};
+        \fill[pink] (3.5,1) circle(.075);
       }
     \end{tikzpicture}
   \end{center}
-  \uncover<4->{
+  \uncover<3->{
     \vspace{-.1in}The damping force is typically related to velocity, in the
     opposite direction:
 
@@ -678,8 +677,8 @@
     }
 
     \vspace{-.12in}where $b$ is a positive constant called the \textbf{damping
-      factor}. The simplest case is to use $n=1$ to represent viscous
-    effects. (Kinetic friction, $n=0$; aerodynamic drag, $n=2$)
+      factor}. The simplest case is to use $n=1$ to represent combined viscous
+    effects. %(Kinetic friction, $n=0$; aerodynamic drag, $n=2$)
   }
 \end{frame}
 
@@ -740,14 +739,14 @@
   which corresponds to the \textbf{critical damping constant} $b_c$:
 
   \eq{-.1in}{
-    b_c=2m\omega_0%=2\sqrt{km}
+    b=b_c=2m\omega_0%=2\sqrt{km}
   }
   \begin{itemize}
-  \item A critically damped system returns to its equilibrium
-    position in the shortest time with \emph{no} oscillation
+  \item A critically damped system returns to its equilibrium position in the
+    shortest time with \emph{no} oscillation
   \item When $b>b_c$, the system is \textbf{over-damped}
-  \item Critical or near-critical damping is desired in many engineering designs
-    (e.g.\ shock absorbers on car suspensions)
+  \item Critical or near-critical damping is desired in many engineering
+    designs (e.g.\ shock absorbers on car suspensions)
   \end{itemize}
 \end{frame}
 
@@ -801,28 +800,23 @@
   \vspace{-.2in}
   \begin{center}
     \begin{tikzpicture}
-      \draw[thick,fill=blue!30](3,.5) rectangle(4,1.5);
-      \draw[thick,
-        decoration={aspect=0.3,segment length=2mm, amplitude=2.5mm, coil},
-        decorate] (0,1)--(3,1);
-      \fill[pattern=north east lines](-.5,2)--(-.5,0)--(7,0)--(7,2)--(6.5,2)
-      --(6.5,.5)--(0,.5)--(0,2)--cycle;
-      \draw[thick] (0,2)--(0,.5)--(6.5,.5)--(6.5,2);
-      \draw[fill=blue!20!white] (4.9,.8) rectangle(5.5,1.2);
-      \begin{scope}[very thick]
-        \draw(4.05,1)--(4.9,1);
-        \draw(4.9,.8)--(4.9,1.2);
-        \draw(4.8,1.2)--(5.5,1.2)--(5.5,.8)--(4.8,.8);
-        \draw(5.5,1)--(6.5,1);
-      \end{scope}
-      \fill[red!60] (3.5,1)circle(.075);
-      \begin{scope}[very thick,->,red]
-        \draw[red!60](3.5,1)--(3.5,0) node[below]{$m\vec g$};
-        \draw[red!60](3.5,1)--(3.5,2) node[above]{$\vec N$};
-        \draw[red!60](3.5,1)--(2.5,1) node[above]{$\vec F_s$};
-        \draw[red!70!black](3.5,.9)--(2,.9) node[below]{$\vec F_E$};
-        \draw[red!60](3.5,1)--(4.5,1) node[below]{$\vec F_D$};
-      \end{scope}
+      \draw[gray,mass] (3,.5) rectangle(4,1.5);
+      \draw[thick,gray,decorate,
+        decoration={aspect=.4,segment length=6,amplitude=8,coil}] (0,1)--(3,1);
+      \fill[gray,pattern=north east lines] (-.5,2)--(-.5,0)--(7,0)--(7,2)
+      --(6.5,2)--(6.5,.5)--(0,.5)--(0,2)--cycle;
+      \draw[gray,thick] (0,2)--(0,.5)--(6.5,.5)--(6.5,2);
+      \draw[fill=blue!10] (4.9,.8) rectangle(5.5,1.2);
+      \draw[very thick,gray] (4,1)--(4.9,1);
+      \draw[very thick,gray] (4.9,.8)--(4.9,1.2);
+      \draw[very thick,gray] (4.8,1.2)--(5.5,1.2)--(5.5,.8)--(4.8,.8);
+      \draw[very thick,gray] (5.5,1)--(6.5,1);
+      \draw[vectors,pink] (3.5,1)--(3.5,0) node[below]{$m\vec g$};
+      \draw[vectors,pink] (3.5,1)--(3.5,2) node[above]{$\vec N$};
+      \draw[vectors,pink] (3.5,1)--(2.5,1) node[above]{$\vec F_s$};
+      \draw[vectors,red] (3.5,.95)--(2,.95) node[below]{$\vec F_E$};
+      \draw[vectors,pink] (3.5,1)--(4.5,1) node[below]{$\vec F_D$};
+      \fill[pink] (3.5,1) circle(.075);
     \end{tikzpicture}
   \end{center}
   In general, the driving frequency $\omega_E$ is unrelated to the undamped
@@ -904,7 +898,7 @@
   }
   
   Maximum $A$ occurs when the denominator is minimized, i.e.\ when the
-  derivative w.r.t.\ external frequency $\omega_E$ is 0:
+  derivative with respect to external frequency $\omega_E$ is 0:
 
   \eq{-.25in}{
     \diff{}{\omega_E}\left[m^2(\omega_0^2-\omega_E^2)^2+b^2\omega_E^2\right]=0
@@ -1028,8 +1022,7 @@
       \quad\text{where}\quad\omega_0=\sqrt{\frac km}
     }
 
-    For a lightly damped system, this means that
-    $\omega_E\approx\omega\approx\omega_0$
+    For a lightly damped system, $\omega_E\approx\omega\approx\omega_0$
   \item The driving force follows the motion of the oscillator.
   \end{itemize}
 \end{frame}

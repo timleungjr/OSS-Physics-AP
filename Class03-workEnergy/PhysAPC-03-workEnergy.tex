@@ -28,21 +28,23 @@
 \end{frame}
 
 
-\section{Work}
+\section{Mechanical Work}
 
-\begin{frame}{Work}
+\begin{frame}{Mechanical Work}
   \textbf{Mechanical work} $\dl W$ is done when a force $\vec F(x)$ displaces an
-  object by $\dl\vec x$. If the force moves an object from  $\vec x_0$ to
-  $\vec x_1$, the total work done by the force is defined as:
+  object by $\dl\vec x$. If the force moves an object along a path $\mathcal C$,
+  %from  $\vec x_0$ to $\vec x_1$,
+  the total work done by the force is defined as:
 
   \eq{-.1in}{
     \boxed{
-      W=\int_{x_0}^{x_1}\vec F(\vec x)\cdot\dl\vec x
+      W=\int_\mathcal{C}\vec F(\vec x)\cdot\dl\vec x
     }
   }
 
   \begin{itemize}
   \item Work is a scalar quantity
+  \item Work is (generally) path dependent
   \item No work done if the force is perpendicular to displacement, when
     $\vec F\cdot\dl\vec x=0$ (i.e.\ the force did not cause the displacement)
   \item No work done if no displacement ($\dl\vec x=\vec 0$)
@@ -53,8 +55,9 @@
 
 
 \begin{frame}{In One Dimension}
-  For motion confined to one dimension (which is common for AP Physics C), we
-  can ignore the dot product:
+  For motion confined that moves in only one direction in a one-dimensional
+  coordinate system (which is common for AP Physics C), the previous
+  expression simplifies to:
   
   \eq{-.1in}{
     W=\int_{x_0}^{x_1} F(x)\dl x
@@ -196,8 +199,8 @@
   \begin{center}
     \begin{tikzpicture}[scale=.6]
       \draw[thick,fill=cyan!20] (7.75,0) arc(75:105:30);
-      \draw[thick,fill=cyan] (0,4) circle(.2) node[right]{$\;m$};
-      \draw[very thick,red,->] (0,4)--(0,3) node[below]{$m\vec g$};
+      \draw[mass] (0,4) circle(.2) node[right=2.5]{$m$};
+      \draw[vectors,red] (0,4)--(0,3) node[below]{$m\vec g$};
     \end{tikzpicture}
   \end{center}
   \begin{itemize}
@@ -220,10 +223,10 @@
   \begin{center}
     \begin{tikzpicture}[scale=.55,thick]
       \draw[fill=cyan!20] (7.75,0) arc(75:105:30);
-      \draw[fill=cyan] (0,6) circle(.25);
-      \draw[very thick,violet,->](0,6)--(0,3) node[midway,right]{$\Delta x$};
-      \draw[->|,blue](-.4,1)--(-.4,6) node[midway,left]{$h_0$};
-      \draw[->|,blue](0,1)--(0,3) node[midway,right]{$h_1$};
+      \draw[mass] (0,6) circle(.25);
+      \draw[vectors,violet] (0,6)--(0,3) node[midway,right]{$\Delta x$};
+      \draw[->|,blue] (-.4,1)--(-.4,6) node[midway,left]{$h_0$};
+      \draw[->|,blue] (0,1)--(0,3) node[midway,right]{$h_1$};
     \end{tikzpicture}
   \end{center}
 
@@ -285,11 +288,11 @@
         decoration={aspect=.6,segment length=5mm, amplitude=2.5mm, coil},
         decorate] (0,1)--(5,1);
       \fill[pattern=north east lines](-.2,0) rectangle(0,2);
-      \draw[thick](0,.0)--(0,2);
+      \draw[thick] (0,0)--(0,2);
       \fill[red] (5.5,1) circle(.06);
-      \draw[ultra thick,->,red](5.5,1)--(4,1) node[above]{$\vec F_s$};
-      \draw[dashed](3,0)--(3,2) node[above]{\scriptsize Equilibrium position};
-      \draw[ultra thick,->](3,.3)--(5,.3) node[midway,below]{$\vec x$};
+      \draw[vectors,red] (5.5,1)--(4,1) node[above]{$\vec F_s$};
+      \draw[dashed] (3,0)--(3,2) node[above]{\scriptsize Equilibrium position};
+      \draw[vectors] (3,.3)--(5,.3) node[midway,below]{$\vec x$};
     \end{tikzpicture}
     \hspace{.2in}
     \begin{tikzpicture}
@@ -298,18 +301,18 @@
         decoration={aspect=.6,segment length=5mm, amplitude=2.5mm, coil},
         decorate] (0,1)--(5,1);
       \fill[pattern=north east lines](-.2,0) rectangle(0,2);
-      \draw[thick](0,.0)--(0,2);
+      \draw[thick] (0,0)--(0,2);
       \fill[gray!30] (5.5,1) circle(.06);
-      \draw[ultra thick,->,gray!30](5.5,1)--(4,1) node[above]{$\vec F_s$};
-      \draw[dashed](3,0)--(3,2);
-      \draw[ultra thick,->,gray!30](3,.3)--(5,.3)node[midway,below]{$\vec x$};
+      \draw[vectors,gray!30] (5.5,1)--(4,1) node[above]{$\vec F_s$};
+      \draw[dashed] (3,0)--(3,2);
+      \draw[vectors,gray!30] (3,.3)--(5,.3)node[midway,below]{$\vec x$};
       \draw[thick,fill=cyan!40] (1.5,.5) rectangle (2.5,1.5);
       \draw[thick,
         decoration={aspect=.3,segment length=1.5mm, amplitude=2.5mm, coil},
         decorate] (0,1)--(1.5,1);
-      \draw[ultra thick,->](3,.3)--(1.5,.3) node[midway,below]{$\vec x$};
+      \draw[vectors] (3,.3)--(1.5,.3) node[midway,below]{$\vec x$};
       \fill[red] (2,1) circle(.06);
-      \draw[ultra thick,->,red](2,1)--(3,1) node[above]{$\vec F_s$};
+      \draw[vectors,red] (2,1)--(3,1) node[above]{$\vec F_s$};
     \end{tikzpicture}
   \end{center}
 \end{frame}
@@ -317,7 +320,7 @@
 
 
 \begin{frame}{Elastic Potential Energy}
-  \vspace{-.15in}The work done by the spring force $W_e$ as it pushes any
+  \vspace{-.15in}The work done by the spring force $W_s$ as it pushes any
   masses that are connected to a compressed/stretched spring is therefore:
 
   \eq{-.1in}{
@@ -409,20 +412,23 @@
   Plot of potential energy ($U$) vs.\ position ($x$) for a conservative force
   \begin{center}
     \begin{tikzpicture}[scale=.8]
-      \draw[thick,->](0,0)--(10,0) node[right]{$x$};
-      \draw[thick,->](0,0)--(0,5) node[right]{$U(x)$};
-      \draw[very thick](.2,4.5) to[out=-70,in=180](1.5,2.5)
-      to[out=0,in=180](2.5,1)
+      \draw[axes] (0,0)--(10,0) node[right]{$x$};
+      \draw[axes] (0,0)--(0,5) node[right]{$U(x)$};
+      \draw[very thick] (.2,4.5)
+      to[out=-70,in=180] (1.5,2.5)
+      to[out=0,in=180] (2.5,1)
       --(5.5,1) node[midway,below]{\scriptsize Neutral equilibrium}
-      to[out=0,in=180](7,3.5)
-      to[out=0,in=180](8,2.5)
-      to[out=0,in=250](9.5,4.5);
-      \fill(1.5,2.5) circle(.07) node[below]{$A$};
-      \fill(7,3.5)   circle(.07) node[below]{$B$};
-      \fill(8,2.5)   circle(.07) node[above]{$C$};
-      \draw[<-](1.6,2.7)--(2,3.3) node[right]{\scriptsize Unstable equilibrium};
-      \draw[<-](6.9,3.6)--(6.4,4.2)node[left]{\scriptsize Unstable equilibrium};
-      \draw[<-](8,2.4)--(8,1.5)node[below]{\scriptsize Stable equilibrium};
+      to[out=0,in=180] (7,3.5)
+      to[out=0,in=180] (8,2.5)
+      to[out=0,in=250] (9.5,4.5);
+      \fill (1.5,2.5) circle(.07) node[below]{$A$};
+      \fill (7,3.5) circle(.07) node[below]{$B$};
+      \fill (8,2.5) circle(.07) node[above]{$C$};
+      \begin{scope}[<-]
+        \draw (1.6,2.7)--(2,3.3) node[right]{\scriptsize Unstable equilibrium};
+        \draw (6.9,3.6)--(6.4,4.2) node[left]{\scriptsize Unstable equilibrium};
+        \draw (8,2.4)--(8,1.5) node[below]{\scriptsize Stable equilibrium};
+      \end{scope}
     \end{tikzpicture}
   \end{center}
 \end{frame}
@@ -470,8 +476,7 @@
 
 \begin{frame}{Examples of Non-Conservative Force}
   The majority of forces are \textbf{non-conservative}. The common forces
-  discussed in the previous class (and also in Grade 11/12 Physics) are
-  generally non-conservative:
+  discussed in the previous class are generally non-conservative:
   \begin{itemize}
   \item Applied force
   \item Tension force
@@ -504,13 +509,13 @@
   \begin{center}
     \begin{tikzpicture}[scale=.75]
       \fill[pattern=north east lines] rectangle(7,-.2);
-      \draw[thick](0,0)--(7,0);
-      \draw[thick](1,0)     rectangle(4,1.2) node[midway]{$m_1$};
-      \draw[thick](1.7,1.2) rectangle(3.3,2) node[midway]{$m_2$};
-      \draw[->,very thick](4,.6)--(6,.6)     node[right] {$F$};
-      \draw[<-](0.95,0.05)to[out=150,in=-40](0,.5)
+      \draw[thick] (0,0)--(7,0);
+      \draw[thick] (1,0) rectangle(4,1.2) node[midway]{$m_1$};
+      \draw[thick] (1.7,1.2) rectangle(3.3,2) node[midway]{$m_2$};
+      \draw[vectors] (4,.6)--(6,.6) node[right]{$F$};
+      \draw[<-] (0.95,0.05) to[out=150,in=-40] (0,.5)
       node[left]{\footnotesize frictionless};
-      \draw[<-](3.35,1.25)to[out=20, in=220](4.5,1.8)
+      \draw[<-] (3.35,1.25) to[out=20, in=220] (4.5,1.8)
       node[right]{\footnotesize$\mu$};
     \end{tikzpicture}
   \end{center}
@@ -518,25 +523,21 @@
   color are action-reaction pairs.)
   \begin{center}
     \vspace{-.1in}
-    \begin{tikzpicture}[scale=.9]
+    \begin{tikzpicture}[scale=.9,vectors]
       \fill circle(.08);
-      \begin{scope}[->,very thick]
-        \draw(0,0)--(0,-1) node[below]{\small$m_2\vec g$};
-        \draw(0,0)--(0, 1) node[above,fill=pink!50]{\small$\vec N_{12}$};
-        \draw(0,0)--(1.5,0)node[right,fill=yellow!50]{\small$\vec f_{12}$};
-      \end{scope}
+      \draw (0,0)--(0,-1) node[below]{\small$m_2\vec g$};
+      \draw (0,0)--(0, 1) node[above,fill=pink!50]{\small$\vec N_{12}$};
+      \draw (0,0)--(1.5,0) node[right,fill=yellow!50]{\small$\vec f_{12}$};
     \end{tikzpicture}
     \hspace{.2in}
-    \begin{tikzpicture}
+    \begin{tikzpicture}[vectors]
       \fill circle(.08);
-      \begin{scope}[->,very thick]
-        \draw(0,0)--(0,-1) node[below left]{\small$m_1\vec g$};
-        \draw(.05,0)--(.05,-1)
-        node[below right,fill=pink!50]{\small$\vec N_{12}$};
-        \draw(0,0)--(0, 1) node[above]{\small$\vec N_1$};
-        \draw(0,0)--(-1.5,0)node[left,fill=yellow!50]{\small$\vec f_{12}$};
-        \draw(0,0)--(2,0)node[right]{\small$\vec F$};
-      \end{scope}
+      \draw (0,0)--(0,-1) node[below left]{\small$m_1\vec g$};
+      \draw (.05,0)--(.05,-1)
+      node[below right,fill=pink!50]{\small$\vec N_{12}$};
+      \draw (0,0)--(0, 1) node[above]{\small$\vec N_1$};
+      \draw (0,0)--(-1.5,0) node[left,fill=yellow!50]{\small$\vec f_{12}$};
+      \draw (0,0)--(2,0) node[right]{\small$\vec F$};
     \end{tikzpicture}
   \end{center}
 \end{frame}
@@ -547,13 +548,11 @@
   \begin{columns}
     \column{.25\textwidth}
     \centering
-    \begin{tikzpicture}[scale=1.2]
+    \begin{tikzpicture}[scale=1.2,vectors]
       \fill circle(.08);
-      \begin{scope}[->,very thick]
-        \draw(0,0)--(0,-1) node[below]{$m_2\vec g$};
-        \draw(0,0)--(0, 1) node[above]{$\vec N_{12}$};
-        \draw(0,0)--(1.5,0)node[right,fill=yellow!50]{$\vec f_{12}$};
-      \end{scope}
+      \draw (0,0)--(0,-1) node[below]{$m_2\vec g$};
+      \draw (0,0)--(0, 1) node[above]{$\vec N_{12}$};
+      \draw (0,0)--(1.5,0) node[right,fill=yellow!50]{$\vec f_{12}$};
     \end{tikzpicture}
 
     \column{.75\textwidth}
@@ -575,14 +574,12 @@
     
     \column{.4\textwidth}
     \centering
-    \begin{tikzpicture}[scale=1.2]
+    \begin{tikzpicture}[scale=1.2,vectors]
       \fill circle(.08);
-      \begin{scope}[->,very thick]
-        \draw(0,0)--(0,-1) node[below]{$m_1\vec g+\vec N_{12}$};
-        \draw(0,0)--(0, 1) node[above]{$\vec N_1$};
-        \draw(0,0)--(-1.5,0)node[left,fill=yellow!50]{$\vec f_{12}$};
-        \draw(0,0)--(2,0)node[right]{$\vec F$};
-      \end{scope}
+      \draw (0,0)--(0,-1) node[below]{$m_1\vec g+\vec N_{12}$};
+      \draw (0,0)--(0,1) node[above]{$\vec N_1$};
+      \draw (0,0)--(-1.5,0) node[left,fill=yellow!50]{$\vec f_{12}$};
+      \draw (0,0)--(2,0) node[right]{$\vec F$};
     \end{tikzpicture}    
   \end{columns}
 \end{frame}
@@ -608,9 +605,9 @@
   \begin{columns}
     \column{.28\textwidth}
     \begin{tikzpicture}
-      \draw[very thick,fill=gray!10](-.2,-.2) rectangle(2.2,2.2);
-      \draw[line width=.5mm,->](0,2.5)--(2,2.5) node[right]{$v$};
-      \draw[line width=.5mm,|<-|](-.5,1)--(-.5,-3) node[midway,left]{$h$};
+      \draw[very thick,fill=gray!10] (-.2,-.2) rectangle(2.2,2.2);
+      \draw[vectors] (0,2.5)--(2,2.5) node[right]{$v$};
+      \draw[very thick,|<-|] (-.5,1)--(-.5,-3) node[midway,left]{$h$};
       \foreach \i in {1,...,40}{
        \fill[red](rand+1,rand+1) circle(.06);
       }
@@ -708,11 +705,11 @@
     \begin{tikzpicture}[scale=.7]
       \fill[pattern=north east lines] rectangle(5,4);
       \draw[thick] rectangle(5,4);
-      \draw[thick,fill=blue!5](.2,.2) rectangle(4.8,3.8);
+      \draw[thick,fill=blue!5] (.2,.2) rectangle(4.8,3.8);
       \draw[thick,
         decoration={aspect=.3,segment length=2mm, amplitude=2.5mm, coil},
-        decorate] (2.5,3.8)--(2.5,2.2) node[midway,right]{$\;\;k$};
-      \draw[thick,fill=cyan](2,2.25) rectangle(3,1.25) node[midway]{$m$};
+        decorate] (2.5,3.8)--(2.5,2.2) node[midway,right=3.5]{$k$};
+      \draw[mass] (2,2.25) rectangle(3,1.25) node[midway]{$m$};
     \end{tikzpicture}
   \end{center}
   Since the system is isolated from the surrounding environment, the
@@ -727,18 +724,16 @@
   horizontal spring-mass system is a closed system:
   \begin{center}
     \begin{tikzpicture}[scale=1.15]
-      \draw[thick,fill=cyan](5,.5) rectangle(6,1.5) node[midway]{$m$};
+      \draw[mass] (5,.5) rectangle(6,1.5);
       \draw[thick,
         decoration={aspect=.3,segment length=2mm, amplitude=2.5mm, coil},
         decorate] (0,1)--(5,1);
       \fill[pattern=north east lines] (6.5,.5)--(6.5,.3)--(-.2,.3)
       --(-.2,2)--(0,2)--(0,.5)--cycle;
       \draw[very thick] (0,2)--(0,.5)--(6.5,.5);
-      \begin{scope}[very thick,->,red]
-        \draw (5.5,1)--(5.5,0) node[below]{$m\vec g$};
-        \draw (5.5,1)--(5.5,2) node[above]{$\vec N$};
-        \draw (5.5,1)--(4.5,1) node[above]{$\vec F_s$};
-      \end{scope}
+      \draw[vectors,red] (5.5,1)--(5.5,0) node[below]{$m\vec g$};
+      \draw[vectors,red] (5.5,1)--(5.5,2) node[above]{$\vec N$};
+      \draw[vectors,red] (5.5,1)--(4.5,1) node[above]{$\vec F_s$};
     \end{tikzpicture}
   \end{center}
   The sum of the kinetic energy of the mass ($K$) and the elastic potential
@@ -757,8 +752,8 @@
   \begin{center}
     \begin{tikzpicture}[scale=.7]
       \draw[thick,fill=cyan!20] (7.75,0) arc(75:105:30);
-      \draw[thick,fill=cyan] (0,3) circle(.2) node[right]{$\;m$};
-      \draw[very thick,red,->] (0,3)--(0,1.25) node[below]{$m\vec g$};
+      \draw[thick,fill=cyan] (0,3) circle(.2) node[right=3]{$m$};
+      \draw[vectors,red] (0,3)--(0,1.25) node[below]{$m\vec g$};
     \end{tikzpicture}
   \end{center}
   The sum of the kinetic energy of the mass ($K$) and the gravitational
@@ -776,17 +771,15 @@
     \column{.25\textwidth}
     \centering
     \begin{tikzpicture}
-      \draw[thick,fill=cyan](.5,1.5) rectangle(1.5,2.5) node[midway]{$m$};
+      \draw[mass] (.5,1.5) rectangle(1.5,2.5);
       \draw[thick,
         decoration={aspect=.4,segment length=2mm, amplitude=2.5mm, coil},
         decorate] (1,5)--(1,2.5); 
       \fill[pattern=north east lines] (0,5) rectangle (2,5.2);
-      \draw[very thick](0,5)--(2,5);
-      \begin{scope}[very thick,->,red]
-        \draw(1,2)--(1,1)node[right]{$m\vec g$};
-        \draw(1,2)--(1,3)node[right]{$\vec F_s$};
-      \end{scope}
-      \fill[red](1,2) circle(.05);      
+      \draw[very thick] (0,5)--(2,5);
+      \draw[vectors,red] (1,2)--(1,1)node[right]{$m\vec g$};
+      \draw[vectors,red] (1,2)--(1,3)node[right]{$\vec F_s$};
+      \fill[red] (1,2) circle(.05);      
     \end{tikzpicture}
 
     \column{.75\textwidth}
@@ -830,18 +823,18 @@
     \centering
     \begin{tikzpicture}
       \fill[pattern=north east lines] (-1,0) rectangle (1,0.2);
-      \draw[thick](-1,0)--(1,0);
+      \draw[thick] (-1,0)--(1,0);
       \begin{scope}[rotate=15]
-        \draw[thick](0,0)--(0,-5);
+        \draw[thick] (0,0)--(0,-5);
         \shade[ball color=cyan] (0,-5) circle(.2) node[right]{$\;m$};
-        \begin{scope}[red,very thick,->]
-          \draw(0,-5)--(0,-3.5) node[left]{$\vec T$};
-          \draw[rotate around={-15:(0,-5)}](0,-5)--(0,-6.3)
+        \begin{scope}[red,vectors]
+          \draw (0,-5)--(0,-3.5) node[left]{$\vec T$};
+          \draw[rotate around={-15:(0,-5)}] (0,-5)--(0,-6.3)
           node[below]{$m\vec g$};
         \end{scope}
       \end{scope}
-      \draw[dashed,thin](0,0)--(0,-5);
-      \draw[->](0,-2) arc(270:285:2) node[midway,below]{$\phi$};
+      \draw[dashed,thin] (0,0)--(0,-5);
+      \draw[->] (0,-2) arc(270:285:2) node[midway,below]{$\phi$};
     \end{tikzpicture}
   \end{columns}
 \end{frame}
@@ -855,11 +848,11 @@
     \begin{tikzpicture}[scale=.66]
       \fill[pattern=north east lines] rectangle(5,4);
       \draw[thick] rectangle(5,4);
-      \draw[thick,fill=blue!5](.2,.2) rectangle(4.8,3.8);
+      \draw[thick,fill=blue!5] (.2,.2) rectangle(4.8,3.8);
       \draw[thick,
         decoration={aspect=.3,segment length=2mm, amplitude=2.5mm, coil},
-        decorate] (2.5,3.8)--(2.5,2.25) node[midway,right]{$\;\;k$};
-      \draw[thick,fill=cyan](2,2.25) rectangle(3,1.25) node[midway]{$m$};
+        decorate] (2.5,3.8)--(2.5,2.25) node[midway,right=3.5]{$k$};
+      \draw[mass] (2,2.25) rectangle(3,1.25) node[midway]{$m$};
     \end{tikzpicture}
   \end{center}
   The energies of this system include
@@ -885,11 +878,11 @@
     \begin{tikzpicture}[scale=.6]
       \fill[pattern=north east lines] rectangle(5,4);
       \draw[thick] rectangle(5,4);
-      \draw[thick,fill=blue!5](.2,.2) rectangle(4.8,3.8);
+      \draw[thick,fill=blue!5] (.2,.2) rectangle(4.8,3.8);
       \draw[thick,
         decoration={aspect=.3,segment length=2mm, amplitude=2.5mm, coil},
-        decorate] (2.5,3.8)--(2.5,2.25) node[midway,right]{$\;\;k$};
-      \draw[thick,fill=cyan](2,2.25) rectangle(3,1.25) node[midway]{$m$};
+        decorate] (2.5,3.8)--(2.5,2.25) node[midway,right=3.5]{$k$};
+      \draw[mass] (2,2.25) rectangle(3,1.25) node[midway]{$m$};
     \end{tikzpicture}
 
     \column{.6\textwidth}
@@ -911,12 +904,12 @@
   always practical, especially when the air molecules are not confined to a box.
   \begin{center}
     \begin{tikzpicture}[scale=.6]
-      \draw[very thick](-3,4)--(8,4);
-      \fill[blue!5](-3,0) rectangle(8,4);
+      \draw[very thick] (-3,4)--(8,4);
+      \fill[blue!5] (-3,0) rectangle(8,4);
       \draw[thick,
         decoration={aspect=.3,segment length=2mm, amplitude=2.5mm, coil},
-        decorate] (2.5,4)--(2.5,2.25) node[midway,right]{$\;\;k$};
-      \draw[thick,fill=cyan](2,2.25) rectangle(3,1.25) node[midway]{$m$};
+        decorate] (2.5,4)--(2.5,2.25) node[midway,right=3.5]{$k$};
+      \draw[mass] (2,2.25) rectangle(3,1.25) node[midway]{$m$};
     \end{tikzpicture}
   \end{center}
   The solution:
