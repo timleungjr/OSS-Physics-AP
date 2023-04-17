@@ -3,7 +3,7 @@
 \usetikzlibrary{decorations.pathmorphing,patterns}
 
 \begin{document}
-\genheader
+%\genheader
 
 \gentitle{10}{HARMONIC MOTION}
 
@@ -33,8 +33,8 @@
     that it rises to the same height with each bounce. The motion of the ball
     can be described as
     \begin{choices}
-      \choice harmonic motion with a period of $2$ \si\second
-      \choice harmonic motion with a period of $1$ \si\second
+      \choice harmonic motion with a period of \SI3\second
+      \choice harmonic motion with a period of \SI1\second
       \choice harmonic motion with a period of $1/2$ \si\second
       \choice motion with a constant velocity
       \choice motion with a constant momentum
@@ -46,7 +46,7 @@
     object is
     \begin{choices}
       \choice $1/4$ s
-      \choice 4 s
+      \choice \SI4\second
       \choice $\pi/4$ s
       \choice $\pi/2$ s
       \choice $4\pi$ s
@@ -162,10 +162,10 @@
     \question The period $T$ of oscillation is
     \begin{choices}
       \choice zero
-      \choice $\pi/4$\si{\second}
-      \choice $\pi/2$\si{\second}
-      \choice $\pi$  \si{\second}
-      \choice $2\pi$ \si{\second}
+      \choice $\pi/4$ \si\second
+      \choice $\pi/2$ \si\second
+      \choice $\pi$ \si\second
+      \choice $2\pi$ \si\second
     \end{choices}
     \label{last}   
   \end{questions}
@@ -282,8 +282,8 @@
         \begin{tabular}{|c|c|c|c|}
           \hline
           Rotational Inertia $I$ of Disk (\si{\kilo\gram\metre\squared}) &
-          Average Time for Ten Oscillations (s) &
-          Period $T$ (s) & $T^2$ (\si{\second\squared}) \\\hline
+          Average Time for Ten Oscillations (\si\second) &
+          Period $T$ (\si\second) & $T^2$ (\si{\second\squared}) \\\hline
           0.025 & 22.4 & 2.24 & 5.0  \\\hline
           0.036 & 26.8 & 2.68 & 7.2  \\\hline
           0.049 & 29.5 & 2.95 & 8.7  \\\hline
@@ -293,8 +293,8 @@
       \end{center}
     }
   
-    \part On the graph below, plot the data points. Draw a straight line that
-    best represents the data.
+    \part On the graph below, plot the data points, and draw a straight line
+    that best represents the data.
     \uplevel{
       \cpic{.9}{graph-paper}
     }
@@ -321,11 +321,11 @@
   attached to a fixed wall. The block is set into oscillatory motion by
   stretching the spring and releasing the block from rest at time $t=0$. A
   motion detector is used to record the position of the block as it oscillates.
-  The resulting graph of velocity $\varv$ versus time $t$ is shown below. The
+  The resulting graph of velocity $v$ versus time $t$ is shown below. The
   positive direction for all quantities is to the right.
   \cpic{.5}{oscillation1}
   \begin{parts}
-    \part Determine the equation for $\varv(t)$, including numerical values for
+    \part Determine the equation for $v(t)$, including numerical values for
     all constants.
     \vspace{\stretch1}
     
@@ -346,16 +346,16 @@
         \begin{tikzpicture}
           \draw[lightgray!70,line width=7.2](-.12,3)--(-.12,-.12)--(9,-.12);
           \draw[very thick](0,3)--(0,0)--(9,0);
-          \draw[dashed,thick](5.1,0)--(5.1,2.5);
-          \draw[thick](3.1,1.6)--(3.1,2.3);
-          \draw[very thick,fill=gray!60](2.5,0) rectangle (3.7,1.6);
-          \draw[thick,<->](3.1,2)--(5.1,2) node[midway,above]{$d$};
-          \draw[very thick,<-](6,0)--(7,.8) node[above]{Rough Surface};
-          \draw[very thick,<-](5.1,1.5)--(5.9,2.1)
-          node[right]{Equilibrium Position};
+          \draw[dashed,thick] (5.1,0)--(5.1,2.5);
+          \draw[thick] (3.1,1.6)--(3.1,2.3);
+          \draw[very thick,fill=gray!60] (2.5,0) rectangle (3.7,1.6);
+          \draw[thick,<->] (3.1,2)--(5.1,2) node[midway,above]{$d$};
+          \draw[vectors] (7,.8)--(6,0) node[pos=0,above]{Rough Surface};
+          \draw[vectors] (5.9,2.1)--(5.1,1.5)
+          node[pos=0,right]{Equilibrium Position};
           \draw[very thick,
-        decoration={aspect=.3,segment length=2mm, amplitude=3.5mm, coil},
-        decorate] (0,1)--(2.5,1);
+            decoration={aspect=.3,segment length=2mm, amplitude=3.5mm, coil},
+            decorate] (0,1)--(2.5,1);
         \end{tikzpicture}
       \end{center}
     }
@@ -385,23 +385,21 @@
       \end{center}
     \end{minipage}
     
-    \part Draw a sketch of $\varv$ versus $t$ in this case. Assume that
-    there is a negligible change in the period and that the positive direction
-    is still to the right.
+    \part Draw a sketch of $v$ versus $t$ in this case. Assume that there is a
+    negligible change in the period and that the positive direction is still to
+    the right.
     \uplevel{
       \centering
       \begin{tikzpicture}[xscale=5.2]
-        \begin{scope}[very thick,->]
-          \draw(0,-2)--(2.1,-2);
-          \draw(0,-2)--(0,2.5);
-        \end{scope}
-        \foreach \x in {0.1,0.2,...,2.0}\draw[dashed,thick](\x,-2.1)--(\x,2);
+        \draw[axes] (0,-2)--(2.1,-2);
+        \draw[axes] (0,-2)--(0,2.5);
+        \foreach \x in {0.1,0.2,...,2.0} \draw[dashed,thick] (\x,-2.1)--(\x,2);
         \foreach \x in {0.0,0.5,1.0,1.5,2.0}
-        \draw[thick](\x,-2)--(\x,2) node[pos=0,below]{$\x$};
-        \foreach \y in {-1,...,2}\draw[thick](0,\y)--(2.03,\y);
-        \draw[thick](0,0)--(-0.03,0) node[left]{$0$};
+        \draw[thick] (\x,-2)--(\x,2) node[pos=0,below]{$\x$};
+        \foreach \y in {-1,...,2} \draw[thick] (0,\y)--(2.03,\y);
+        \draw[thick] (0,0)--(-0.03,0) node[left]{$0$};
         \node at (1,-2.8){Time $t$ (\si\second)};
-        \node[rotate=90] at (-.15,0){Velocity $\varv$ (\si{\metre\per\second})};
+        \node[rotate=90] at (-.15,0){Velocity $v$ (\si{\metre\per\second})};
       \end{tikzpicture}
     }
   \end{parts}

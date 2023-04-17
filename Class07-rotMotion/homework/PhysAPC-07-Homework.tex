@@ -73,10 +73,10 @@
     stick and particle about the center of the rod is
     \begin{center}
       \begin{tikzpicture}[scale=3]
-        \draw[thick](-1,-.03) rectangle (1,.03);
+        \draw[thick] (-1,-.03) rectangle (1,.03);
         \fill circle(.02) node[above]{$m$};
-        \draw[thick,fill=gray!50](.85,-.1) rectangle(1,.1) node[midway]{$m$};
-        \draw[|<->|](-1,-.2)--(1,-.2) node[midway,below]{$L$};
+        \draw[thick,fill=gray!50] (.85,-.1) rectangle(1,.1) node[midway]{$m$};
+        \draw[|<->|] (-1,-.2)--(1,-.2) node[midway,below]{$L$};
       \end{tikzpicture}
     \end{center}
     \begin{choices}
@@ -112,8 +112,8 @@
       \begin{tikzpicture}[scale=1.5]
         \begin{scope}[thick]
           \draw circle(.1);
-          \draw(4,0) circle(.15);
-          \draw(.1,0)--(3.85,0);
+          \draw (4,0) circle(.15);
+          \draw (.1,0)--(3.85,0);
         \end{scope}
         \fill (1,0) circle(.05);
         \fill (2,0) circle(.05);
@@ -145,13 +145,13 @@
       begins from rest in the horizontal position.
       \begin{center}
         \begin{tikzpicture}[scale=1.5]
-          \draw[very thick](-3,0)--(1,0);
-          \draw[thick](1,-.2) rectangle(1.4,.2) node[midway]{$4m$};
-          \draw[thick](-3,-.11) rectangle(-3.22,.11) node[midway]{$m$};
+          \draw[ultra thick] (-3,0)--(1,0);
+          \draw[thick] (1,-.2) rectangle(1.4,.2) node[midway]{$4m$};
+          \draw[thick] (-3,-.11) rectangle(-3.22,.11) node[midway]{$m$};
           \fill circle(.05) node[above]{$P$};
           \node at (.5,.15){$L$};
           \node at (-1.5,.15){$3L$};
-          \draw[thick,->,rotate=40](.35,0) arc(0:260:.35);
+          \draw[axes,rotate=40] (.35,0) arc(0:260:.35);
         \end{tikzpicture}
       \end{center}
     }
@@ -185,18 +185,15 @@
     as shown. The magnitude of the net torque acting on the system of wheels is
     \begin{center}
       \begin{tikzpicture}[scale=.6]
-        \begin{scope}[thick]
-          \draw circle(1.2);
-          \draw circle(3);
-          \fill circle(.08);
-        \end{scope}
-        \begin{scope}[very thick]
-          \draw[<->](0,0)--(0,-1.2) node[midway,right]{$r$};
-          \draw[<->,rotate=-55](0,0)--(0,-3) node[midway,left]{$3r$};
-          \draw[->](0,-1.2)--(2,-1.2) node[right]{$F$};
-          \draw[->](1.2,0)--(1.2,2) node[left]{$F$};
-          \draw[->](-3,0)--(-3,3) node[above]{$2F$};
-        \end{scope}
+        \draw[thick] circle(1.2);
+        \draw[thick] circle(3);
+        \fill[thick] circle(.08);
+        \draw[thick,<->] (0,0)--(0,-1.2) node[midway,right]{$r$};
+        \draw[thick,<->,rotate=-55] (0,0)--(0,-3)
+        node[pos=.6,above,rotate=35]{$3r$};
+        \draw[vectors] (0,-1.2)--(2,-1.2) node[right]{$F$};
+        \draw[vectors] (1.2,0)--(1.2,2) node[left]{$F$};
+        \draw[vectors] (-3,0)--(-3,3) node[above]{$2F$};
       \end{tikzpicture}
     \end{center}
     \begin{choices}
@@ -220,9 +217,9 @@
   \begin{tikzpicture}[scale=1.1]
     \draw[thick] rectangle(6,.28);
     \fill(.16,.14) circle(.08);
-    \draw[|<->|](0,.55)--(6,.55) node[midway,fill=white]{$L$};
-    \draw[<-](6,.14) to[in=270,out=0](6.5,.55) node[above]{$M$};
-    \draw[<-](.15,.06) to[in=0,out=250](-.5,-.5) node[left]{Pivot Point};
+    \draw[|<->|] (0,.55)--(6,.55) node[midway,fill=white]{$L$};
+    \draw[<-] (6,.14) to[in=270,out=0] (6.5,.55) node[above]{$M$};
+    \draw[<-] (.15,.06) to[in=0,out=250] (-.5,-.5) node[left]{Pivot Point};
   \end{tikzpicture}
 \end{center}
 
@@ -239,16 +236,15 @@
     \uplevel{
       \begin{center}
         \begin{tikzpicture}
-          \draw[thick,dashed](0,.28) rectangle(.28,-5.72);
+          \draw[thick,dashed] (0,.28) rectangle(.28,-5.72);
           \draw[thick,fill=white] rectangle(6,.28);
           \fill(.16,.14) circle(.08);
           \node[right] at (6,.14){$A$};
           \node[below] at (.14,-5.72){$B$};
-          \draw[->,very thick](3,-.15) arc(-5:-85:2.8);
+          \draw[axes] (3,-.15) arc(-5:-85:2.8);
           \draw[thick,fill=white](.16,.14)--(.06,.7)--(.26,.7)--cycle;
-          \fill[gray](-.4,.7) rectangle(.7,.9);
-          \draw[thick](-.4,.7)--(.7,.7);
-          %\draw[<-](.15,.06) to[in=0,out=250](-.5,-.5) node[left]{Pivot Point};
+          \fill[gray] (-.4,.7) rectangle(.7,.9);
+          \draw[thick] (-.4,.7)--(.7,.7);
         \end{tikzpicture}
       \end{center}
       The rod is fixed at one end and allowed to fall from the horizontal
@@ -271,8 +267,9 @@
         \def\arraystretch{1.45}
         \begin{tabular}{|c|c|c|c|c|c|c|}
           \hline
-          Length (m)     & 0.25 & 0.50 & 0.75 & 1.00 & 1.25 & 1.50\\\hline
-          Velocity (m/s) & 2.7  & 3.8  & 4.6  & 5.2  & 5.8  & 6.3 \\\hline
+          Length (\si\metre) & 0.25 & 0.50 & 0.75 & 1.00 & 1.25 & 1.50\\\hline
+          Velocity (\si{\metre\per\second}) & 2.7  & 3.8  & 4.6  & 5.2  & 5.8
+          & 6.3 \\\hline
           & & & & & & \\\hline
           & & & & & & \\\hline
         \end{tabular}
@@ -296,10 +293,12 @@
     and label all axes, including units as appropriate. Draw a straight line
     that best represents the data.
     \begin{center}
+      \vspace{.3in}
       \begin{tikzpicture}[xscale=.58,yscale=.38]
-        \draw[dashed,thick] grid(30,25);
+        \draw[gray] grid(30,25);
         \draw[step=5,very thick] grid(30,25);
       \end{tikzpicture}
+      \vspace{.3in}
     \end{center}
     
     \part
@@ -323,7 +322,7 @@
   $h$ above the ice in a radial direction, as shown in the figures above. The
   coefficient of friction between the disk and the ice is $\mu$. All velocities
   are measured relative to the ground. The time it takes to throw the stone is
-  negligible. Express all algebraic answers in terms of $m$, $R$, $v_0$,
+  negligible. Express all algebraic answers in terms of $m$, $R$, $\varv_0$,
   $h$, $m$, and fundamental constants, as appropriate.
   \begin{parts}
     \part Derive an expression for the length of time it will take the stone to
@@ -343,11 +342,11 @@
     \uplevel{
       \begin{center}
         \begin{tikzpicture}[scale=.85]
-          \draw[very thick,fill=gray!70] circle(2);
-          \draw[very thick,fill=black!60] circle(.1);
-          \draw[very thick,fill=white](2,0) circle(.1);
+          \draw[thick,fill=gray!70] circle(2);
+          \draw[thick,fill=black!60] circle(.1);
+          \draw[thick,fill=white] (2,0) circle(.1);
           \fill (1.73,0) circle(.17);
-          \draw[ultra thick,->](2,.1)--(2,1.5) node[above]{$v_0$};
+          \draw[vectors] (2,.1)--(2,1.5) node[above]{$\varv_0$};
         \end{tikzpicture}
 
         Top View
@@ -355,7 +354,7 @@
       The person now stands on a similar disk of mass $m$ and radius $R$ that
       has a fixed pole through its center so that it can only rotate on the
       ice. The person throws the same stone horizontally in a tangential
-      direction at initial speed $v_0$, as shown in the figure above. The
+      direction at initial speed $\varv_0$, as shown in the figure above. The
       rotational inertia of  the disk is $mR^2/2$.
     }
 
@@ -364,7 +363,7 @@
     \vspace{\stretch1}
     
     \part The person now stands on the disk at rest $R/2$ from the center of the
-    disk. The person now throws the stone horizontally with a speed $v_0$ in
+    disk. The person now throws the stone horizontally with a speed $\varv_0$ in
     the same direction as in part (\ref{partd}). Is the angular speed of the
     disk immediately after throwing the stone from this new position greater
     than, less than, or equal to the angular speed found in part (\ref{partd})?

@@ -236,11 +236,11 @@
     
     \question The speed of the sphere when it reaches the bottom of the plane is
     \begin{choices}
-      \choice $\dfrac{8gh}5$
-      \choice $\dfrac{6gh}5$
-      \choice $\dfrac{5gh}6$
-      \choice $\dfrac{7gh}{10}$
-      \choice $\dfrac{gh}2$
+      \choice $\sqrt{\dfrac{8gh}5}$
+      \choice $\sqrt{\dfrac{6gh}5}$
+      \choice $\sqrt{\dfrac{5gh}6}$
+      \choice $\sqrt{\dfrac{7gh}{10}}$
+      \choice $\sqrt{\dfrac{gh}2}$
     \end{choices}
     \label{hollow2}
     \columnbreak
@@ -298,8 +298,8 @@
   \begin{center}
     \begin{tikzpicture}[scale=.5]
       \draw[fill=lightgray] circle(2);
-      \draw[thick](2,0)--(2,5);
-      \draw[ultra thick,->](2,0)--(2,3) node[right]{$T$};
+      \draw[thick] (2,0)--(2,5);
+      \draw[ultra thick,->] (2,0)--(2,3) node[right]{$T$};
     \end{tikzpicture}
   \end{center}
   \begin{parts}
@@ -312,18 +312,18 @@
   % TAKEN FROM THE 2004 AP PHYSICS C MECHANICS EXAM FREE-RESPONSE QUESTION 2
   \uplevel{
     \centering
-    \begin{tikzpicture}[scale=.85]
-      \draw[very thick] circle(1);
+    \begin{tikzpicture}[scale=.85,very thick]
+      \draw circle(1);
       \fill circle(.07);
-      \draw[very thick](0,0)--(0,2);
-      \fill[lightgray](-3,2) rectangle(3,2.3);
-      \draw[very thick](-3,2)--(3,2);
-      \draw[thick,->,rotate=30](0,0)--(1,0) node[midway,above]{$R$};
-      \draw[very thick](-1,0)--(-1,-2);
-      \draw[very thick](-1.4,-2) rectangle(-.6,-2.5) node[midway]{$m$};
-      \draw[thick,|<->](-2,-2.5)--(-2,-5) node[midway,fill=white]{$D$};
-      \fill[lightgray](-3,-5) rectangle(3,-5.3);
-      \draw[very thick](-3,-5)--(3,-5);
+      \draw (0,0)--(0,2);
+      \fill[lightgray] (-3,2) rectangle(3,2.3);
+      \draw (-3,2)--(3,2);
+      \draw[thick,->,rotate=30] (0,0)--(1,0) node[midway,above]{$R$};
+      \draw (-1,0)--(-1,-2);
+      \draw (-1.4,-2) rectangle(-.6,-2.5) node[midway]{$m$};
+      \draw[thick,|<->] (-2,-2.5)--(-2,-5) node[midway,fill=white]{$D$};
+      \fill[lightgray] (-3,-5) rectangle(3,-5.3);
+      \draw (-3,-5)--(3,-5);
     \end{tikzpicture}
   }
   \question A solid disk of unknown mass and known radius $R$ is used as a
@@ -356,11 +356,12 @@
       \subpart On the grid below, plot the quantities determined in (b)i,
       label the axes, and draw the best-fit line to the data.
       \begin{center}
-        \vspace{.1in}
+        \vspace{.2in}
         \begin{tikzpicture}[xscale=.6,yscale=.35]
-          \draw[dashed] grid(20,20);
+          \draw[gray] grid(20,20);
           \draw[very thick,step=5] grid(20,20);
         \end{tikzpicture}
+        \vspace{.2in}
       \end{center}
       \newpage
       
@@ -402,10 +403,14 @@
     \underline{Note:} Diagram not drawn to scale
   }
   \question A uniform ball of radius $r$, with a mass of $M$, and a rotational
-  inertia of $\dfrac25Mr^2$, rolls without slipping along the loop-the-loop
-  track in the figure below. The ball starts at rest at a height of $h$ above
+  inertia of $I=\dfrac25Mr^2$, rolls without slipping along the loop-the-loop
+  track in the figure above. The ball starts at rest at a height of $h$ above
   the bottom of the loop. The radius of the loop is $R$.
   \begin{parts}
+    \part Find the slowest speed that the ball can have without leaving the
+    track.
+    \vspace{\stretch{.5}}
+    
     \part If it is not to leave the track at the top of the loop, what is the
     least value $h$ can have (in terms of radius $R$ of the loop)?
     \vspace{\stretch1}

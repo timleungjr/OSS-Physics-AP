@@ -1,16 +1,19 @@
-\documentclass{../../oss-handout}
+\documentclass{../oss-handout}
 \usepackage{enumitem}
 \usepackage{tikz}
 \usepackage{siunitx}
 \usepackage{newtxtext,newtxmath}
 \usepackage{bm}
 \usepackage{cancel}
+\usepackage[ISO]{diffcoeff}
+%\diffdef{}{ op-symbol=\mathsf{d} }
 
 \sisetup{
   inter-unit-product=\cdot,
   per-mode=symbol
 }
 \tikzset{>=latex}
+\tikzstyle{vectors}=[ultra thick,->]
 
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{6pt}
@@ -22,12 +25,12 @@
 \pagestyle{plain}
 
 % Course & handout information
-\renewcommand{\institution}{Olympiads School, Toronto, Ontario, Canada}
+\renewcommand{\institution}{Olympiads School}%, Toronto, Ontario, Canada}
 \renewcommand{\coursetitle}{AP Physics C}
-\renewcommand{\term}{Winter 2021}
+\renewcommand{\term}{Summer 2022}
 \title{Solutions to Mechanics Mock Exam}
-\author{Dr.\ Timothy Leung}
-\date{\today}
+%\author{Dr.\ Timothy Leung}
+%\date{\today}
 
 \begin{document}
 \thispagestyle{title}
@@ -40,13 +43,13 @@
 \item\textbf{(D)} Displacement depends only on the initial and final position.
 
 \item\textbf{(B)} Velocity is defined as the rate of change of position (a
-  vector) $\dfrac{d\bm{x}}{dt}$ while acceleration is defined as the rate of
-  change of of velocity $\dfrac{d\bm{v}}{dt}$ which is also a vector.
+  vector) $\displaystyle\diff{\mathbf x}t$, while acceleration is defined as the rate of
+  change of of velocity $\displaystyle\diff{\mathbf v}t$ which is also a vector.
 
 \item\textbf{(E)} Both projectiles have the same range, but the one at \ang{60}
   goes higher and therefore stays in the air longer.
 
-\item\textbf{(D)} $t=\SI{2}{\second}$, there is no external net force, so there
+\item\textbf{(D)} $t=\SI2\second$, there is no external net force, so there
   is no acceleration.
 
 \item\textbf{(A)} By definition, equilibrium means no net force (II) acting on
@@ -87,7 +90,7 @@
   the students does positive work). This is analogous to the ``explosion
   problem'' in linear momentum conservation, which there is a net kinetic
   energy after the explosion. Linear momentum is also not conserved
-  because the center of mass of the platform is not moving after the student
+  because the centre of mass of the platform is not moving after the student
   jumps off (i.e.\ the axle of the platform exerts an external force as the
   student jumps off), but angular momentum is conserved because the student
   does not exert a torque (nor does the external force from the axle).
@@ -101,7 +104,7 @@
   To get a straight graph, plot \fbox{$T^2$ vs.\ $L$}.
 
 \item\textbf{(B)} When a planet orbits the sun, there is a non-zero angular
-  momentu. Since gravity is a central force, in that it does not generate any
+  momentum. Since gravity is a central force, in that it does not generate any
   torque about the sun, the angular momentum is constant.
 
 \item\textbf{(D)} Two satellites orbiting the same planet must have the same
@@ -120,11 +123,11 @@
     a=\frac Fm=\frac{-3}6t=\frac{-1}2t
   \end{displaymath}
   Integrating in time to get the velocity, and then substituting the initial
-  velocity $v_0=\SI{4}{\metre\per\second}$:
+  velocity $v_0=\SI4{\metre\per\second}$:
   \begin{displaymath}
-    v=\frac{-1}2\int tdt=\frac{-1}4t^2+v_0=\frac{-1}4t^2+4
+    v=\frac{-1}2\int t\dl t=\frac{-1}4t^2+v_0=\frac{-1}4t^2+4
   \end{displaymath}
-  Setting $v=0$ and gives $\boxed{t=\SI4{\second}}$.
+  Setting $v=0$ and gives $\boxed{t=\SI4\second}$.
 
 \item\textbf{(E)} The velocity function is quadratic in time, which means that
   the position function is cubic. There is an initial positive position, which
@@ -135,10 +138,10 @@
 \item\textbf{(B)} This can be solved by a simple free body diagram of $M_2$:
   \begin{center}
     \begin{tikzpicture}
-      \draw(0,0) circle(.05);
-      \draw[very thick,->](0,0)--(0,1) node[above]{$T$};
-      \draw[very thick,->](0,0)--(0,-1) node[below]{$M_2g$};
-      \draw[very thick,->](1,.5)--(1,-.5) node[midway,right]{$a$};
+      \draw circle(.05);
+      \draw[vectors] (0,0)--(0,1) node[above]{$T$};
+      \draw[vectors] (0,0)--(0,-1) node[below]{$M_2g$};
+      \draw[vectors] (1,.5)--(1,-.5) node[midway,right]{$a$};
     \end{tikzpicture}
   \end{center}
   Using the second law of motion:
@@ -158,9 +161,9 @@
 
 \item\textbf{(E)} We can do a quick energy conservation equation:
   \begin{displaymath}
-    \cancel{K} +\cancel{U_{g1}} +\cancel{U_{g2}}+\cancel{U_e}+
+    \cancel{K} +\cancel{U_{g1}} +\cancel{U_{g2}}+\cancel{U_s}+
     \underbrace{W_f}_{<0}=
-    \cancel{K'}+\cancel{U_{g1}'}+\underbrace{U_{g2}'}_{<0}+U_e'
+    \cancel{K'}+\cancel{U_{g1}'}+\underbrace{U_{g2}'}_{<0}+U_s'
   \end{displaymath}
   Since friction does negative non-conservative work on the system, the gain
   in elastic potential energy must be less than the loss in gravitational
@@ -168,16 +171,16 @@
   
 \item\textbf{(C)} After the block stops, the forces on Block 1 must be balanced.
   
-\item\textbf{(C)} The area under the force vs.\ time graph is the impuslse,
+\item\textbf{(C)} The area under the force vs.\ time graph is the impulse,
   which is also the change in momentum. In this case, the area is in the form
   of a triangle, with an area of
   \begin{equation*}
-    \Delta p = I = \boxed{\frac12 Ft}
+    \Delta p = J_\text{net} = \boxed{\frac12 F_\text{net}t}
   \end{equation*}
 
-\item\textbf{(E)} This is a simple center of mass calculation. If the distance
+\item\textbf{(E)} This is a simple centre of mass calculation. If the distance
   between the moon and the planet is $r_A$, then the CM would be located at
-  $\dfrac{m}{50m}r_A=\dfrac1{50}r_A$ from the planet, or
+  $\dfrac m{50m}r_A=\dfrac1{50}r_A$ from the planet, or
   $\boxed{\dfrac{49}{50}r_A}$ from the moon.
  
 \item\textbf{(B)} The angular momentum of the moon about the planet is constant
@@ -213,7 +216,7 @@
   displacement by $F=x^3$. Integrating this from 0 to 3 gives the potential
   energy of:
   \begin{displaymath}
-    U=\int_0^3 Fdx=\int_0^3 x^3dx = \frac14x^4\Biggr|^3_0 = \frac{81}4
+    U=\int_0^3 F\dl x=\int_0^3 x^3\dl x = \frac14x^4\Biggr|^3_0 = \frac{81}4
   \end{displaymath}
 
 \item\textbf{(B)} In such a spring, the velocity function will be given by
@@ -230,9 +233,9 @@
   \end{displaymath}
 
 \item\textbf{(C)} The work done by the external force can be found by
-  integrating the force by displacment $dx$:
+  integrating the force by displacement $\dl x$:
   \begin{displaymath}
-    W= \int_D^0 Fdx = \int_D^0 (-ax+bx^2)dx
+    W= \int_D^0 F\dl x = \int_D^0 (-ax+bx^2)\dl x
     =\left(\frac{-1}2ax^2+\frac13bx^3\right)\Biggr|^0_D
     =\boxed{\frac12aD^2-\frac13bD^3}
   \end{displaymath}
@@ -243,24 +246,24 @@
     \begin{tikzpicture}[scale=.9]
       \draw[very thick](0,5)--(0,0)--(4,0);
       \begin{scope}[rotate around = {atan(.75):(3,0)}]
-        \draw[fill=gray,very thick](3,0) rectangle (3.2,5);
-        \fill[red!70!black](3.1,2.5) circle(.08);
-        \draw[red!70!black,ultra thick,->,rotate around={-atan(.75):(3.1,2.5)}]
+        \draw[fill=gray,very thick] (3,0) rectangle (3.2,5);
+        \fill[red!70!black] (3.1,2.5) circle(.08);
+        \draw[red!70!black,vectors,rotate around={-atan(.75):(3.1,2.5)}]
         (3.1,2.5)--(3.1,1) node[left]{$W$};
       \end{scope}
-      \fill[red!70!black](3,0) circle(.08);
-      \draw[red!70!black,ultra thick,->] (3,0)--(3,1.5) node[right]{$N_1=W$};
-      \draw[red!70!black,ultra thick,->] (3,0)--(2,0) node[below]{$f$};
-      \fill[red!70!black](0,4) circle(.08);
-      \draw[red!70!black,ultra thick,->] (0,4)--(1,4) node[right]{$N_2=f$};
+      \fill[red!70!black] (3,0) circle(.08);
+      \draw[red!70!black,vectors] (3,0)--(3,1.5) node[right]{$N_1=W$};
+      \draw[red!70!black,vectors] (3,0)--(2,0) node[below]{$f$};
+      \fill[red!70!black] (0,4) circle(.08);
+      \draw[red!70!black,vectors] (0,4)--(1,4) node[right]{$N_2=f$};
     \end{tikzpicture}
   \end{center}
-  The normal force exerted by the floor is equaled to the weight of the ladder,
+  The normal force exerted by the floor is equalled to the weight of the ladder,
   i.e. $N_1=W$, since they are the only vertical forces.
   
 \item\textbf{(E)} In order for the ladder to be static, the sum of all the
   torques must be zero. The net torque can be calculated \emph{anywhere}, but
-  for this problem it is easiest to calculate it at the center of mass. The
+  for this problem it is easiest to calculate it at the centre of mass. The
   normal force at the wall must be equal to static friction, $N_2=f$, because
   these are the only two horizontal forces. The torques are:
   \begin{align*}
@@ -273,7 +276,7 @@
   force to stretch it by the same distance, therefore the spring constant
   increases by a factor of 2, i.e.\ $\boxed{2k}$.
 
-\item\textbf{(C)} This planet has half the radius of earth, $r'=\frac12 r$, but
+\item\textbf{(C)} This planet has half the radius of earth, $r'=\dfrac12 r$, but
   the weight of the astronaut is also twice that of Earth, i.e.\ $g'=2g$. Using
   the definition of gravitational field, we find the mass of the planet is half
   that of Earth:
@@ -285,15 +288,15 @@
   \end{equation*}
   The escape speed of any small object from a much larger planet is given by
   \begin{equation*}
-    v_\text{esc}=\sqrt{\frac{2GM}{r}}
+    v_\text{esc}=\sqrt{\frac{2GM}r}
   \end{equation*}
   In this case, decreasing the mass by half, while decreasing the radius by half
   does not change the escape velocity.
 \item\textbf{(E)} The gravitational force on $m$ is linearly proportional
-  to the distance from the center $F_g=\dfrac{GMm}{R^3}r$, therefore the kinetic
-  energy at the center is given by:
+  to the distance from the centre $F_g=\dfrac{GMm}{R^3}r$, therefore the kinetic
+  energy at the centre is given by:
   \begin{equation*}
-    W=K=\int F_gdr=\frac{GMm}{R^3}\int_0^R rdr=
+    W=K=\int F_g\dl r=\frac{GMm}{R^3}\int_0^R r\dl r=
     \frac{GMm}{2R^3}r^2\Biggr|^R_0=\boxed{\frac{GMm}{2R}}
   \end{equation*}
   Which is (III). However, given that the gravitational field at the surface

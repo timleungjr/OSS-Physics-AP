@@ -2,7 +2,7 @@
 \newcounter{last}
 
 \begin{document}
-\genheader
+%\genheader
 
 \gentitle{12}{PLANETARY MOTION}
 
@@ -43,8 +43,8 @@
       \vspace{-.1in}
       \begin{tikzpicture}[scale=1.4]
         \draw ellipse (2 and 1);
-        \fill( 2,0) circle(.05) node[right]{A};
-        \fill(-2,0) circle(.05) node[left]{B};
+        \fill ( 2,0) circle(.05) node[right]{A};
+        \fill (-2,0) circle(.05) node[left]{B};
         \shade[ball color=gray](.5,0) circle(.2);
       \end{tikzpicture}
     \end{center}
@@ -220,11 +220,10 @@
   Saturn shown below and is asked to use the data to determine the mass $M_S$
   of Saturn. Assume the orbits of these moons are circular.
   \begin{center}
-    \def\arraystretch{1.5}
+    \def\arraystretch{1.7}
     \begin{tabular}{|c|c|p{1in}|p{1in}|}
       \hline
-      Orbital Period, $T$ &  Orbital Radius, $R$ & & \\
-      (seconds)           &  (meters)            & & \\
+      Orbital Period, $T$ (\si\second) & Orbital Radius, $R$ (\si\metre) & & \\
       \hline
       \num{8.14e4} & \num{1.85e8} & & \\ \hline
       \num{1.18e5} & \num{2.38e8} & & \\ \hline
@@ -257,10 +256,10 @@
     used and appropriate numbers to indicate the scale.
     \begin{center}
       \begin{tikzpicture}[xscale=.48,yscale=.35]
-        \draw[very thick,->](0,0)--(31,0);
-        \draw[very thick,->](0,0)--(0,31);
-        \draw[gray] grid(30,30);
-        \draw[very thick,step=5] grid(30,30);
+        \draw[axes] (0,0)--(31,0);
+        \draw[axes] (0,0)--(0,31);
+        \draw[gray,help lines] grid(30,30);
+        \draw[thick,step=5] grid(30,30);
       \end{tikzpicture}
     \end{center}
     \vspace{.4in}

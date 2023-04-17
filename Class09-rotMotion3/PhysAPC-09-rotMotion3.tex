@@ -1,8 +1,6 @@
 \documentclass[12pt,compress,aspectratio=169]{beamer}
 \input{../mybeamer}
 
-\usetikzlibrary{patterns}
-
 \title{Class 9: Rigid Body Rotational Motion, Part 3}
 \subtitle{Advanced Placement Physics C}
 \input{../me}
@@ -19,7 +17,7 @@
 
 \section{Review}
 
-\begin{frame}{Curvilinear vs. Rectilinear Motion}
+\begin{frame}{Curvilinear vs.\ Rectilinear Motion}
   Kinematic quantities for rectilinear (translational) vs.\ curvilinear
   (circular) motion are related:
 
@@ -48,7 +46,7 @@
   The laws of motion are also related between translational and rotational
   motion:
   
-  \vspace{-.3in}{\large
+  \vspace{-.2in}{\large
     \begin{align*}
       \vec F_\text{net}=\diff{\vec p_\text{cm}}t &\quad\rightarrow\quad
       \tau_\text{net}=\diff Lt \\
@@ -96,15 +94,14 @@
     \boxed{K=K_t+K_r=\frac12mv_\text{cm}^2+\frac12I_\text{cm}\omega^2}
   }
   
-  In this case, $I_\text{cm}$ is calculated at the center of
-  mass. For simple problems, we only need to compute rotational kinetic energy
-  at the pivot:
+  In this case, $I_\text{cm}$ is calculated at the center of mass. For simple
+  problems, we only need to compute rotational kinetic energy at the pivot:
 
   \eq{-.1in}{
-    \boxed{K=\frac12I_\text{P}\omega^2}
+    \boxed{K=\frac12I_\text{p}\omega^2}
   }
   
-  In this case, the $I_\text{P}$ is calculated at the pivot.
+  In this case, the $I_\text{p}$ is calculated at the pivot.
   \textbf{IMPORTANT:} $I_\text{cm}\neq I_\text{P}$
 \end{frame}
 
@@ -120,24 +117,19 @@
   \vspace{.2in}
   \begin{columns}
     \column{.35\textwidth}
-    \begin{tikzpicture}[scale=.9]
-      \begin{scope}[rotate=-30]
-        \shade[ball color=gray!20] circle(1);
-        \draw[thick](-2,-1)--(4,-1);
-        \draw[->,rotate=30](0,0)--(-1,0) node[left]{$R$};
-        \draw[thick,->](0,1.2) arc(90:60:1.2) node[right]{$\omega$};
-        \draw[->](2,0)--(3,0) node[right]{$x$};
-        \draw[->](2,0)--(2,1) node[above]{$y$};
-        \fill circle(.05) node[right]{\small cm};
-        \begin{scope}[->,ultra thick]
-          \draw[blue,rotate=30](0,0)--(0,-1.5) node[below]{$m\vec g$};
-          \draw[red](0,-1)--(0,.5) node[above]{$\vec N$};
-          \draw[orange](.0,-1)--(-1,-1) node[left]{$\vec f_s$};
-        \end{scope}
-        \begin{scope}[rotate around={30:(4,-1)}]
-          \draw[thick](4,-1)--(2,-1) node[pos=.6,above]{$\phi$};
-        \end{scope}
-      \end{scope}
+    \begin{tikzpicture}[scale=.9,rotate=-30]
+      \shade[ball color=gray!20] circle(1);
+      \draw[thick] (-2,-1)--(4,-1);
+      \draw[axes,rotate=30] (0,0)--(-1,0) node[left]{$R$};
+      \draw[axes] (2,0)--(3,0) node[right]{$x$};
+      \draw[axes] (2,0)--(2,1) node[above]{$y$};
+      \draw[vectors] (0,1.2) arc(90:60:1.2) node[right]{$\omega$};
+      \fill circle(.05) node[right]{\small cm};
+      \draw[vectors,blue,rotate=30] (0,0)--(0,-1.5) node[below]{$m\vec g$};
+      \draw[vectors,red] (0,-1)--(0,.5) node[above]{$\vec N$};
+      \draw[vectors,orange] (0,-1)--(-1,-1) node[left]{$\vec f_s$};
+      \draw[thick,rotate around={30:(4,-1)}] (4,-1)--(2,-1)
+      node[pos=.6,above]{$\phi$};
     \end{tikzpicture}
 
     \column{.65\textwidth}
@@ -161,24 +153,19 @@
   \vspace{.2in}
   \begin{columns}
     \column{.35\textwidth}
-    \begin{tikzpicture}[scale=.9]
-      \begin{scope}[rotate=-30]
-        \shade[ball color=gray!20] circle(1);
-        \draw[thick](-2,-1)--(4,-1);
-        \draw[->,rotate=30](0,0)--(-1,0) node[left]{$R$};
-        \draw[thick,->](0,1.2) arc(90:60:1.2) node[right]{$\omega$};
-        \draw[->](2,0)--(3,0) node[right]{$x$};
-        \draw[->](2,0)--(2,1) node[above]{$y$};
-        \fill circle(.05) node[right]{\small cm};
-        \begin{scope}[->,ultra thick]
-          \draw[blue,rotate=30](0,0)--(0,-1.5) node[below]{$m\vec g$};
-          \draw[red](0,-1)--(0,.5) node[above]{$\vec N$};
-          \draw[orange](.0,-1)--(-1,-1) node[left]{$\vec f_s$};
-        \end{scope}
-        \begin{scope}[rotate around={30:(4,-1)}]
-          \draw[thick](4,-1)--(2,-1) node[pos=.6,above]{$\phi$};
-        \end{scope}
-      \end{scope}
+    \begin{tikzpicture}[scale=.9,rotate=-30]
+      \shade[ball color=gray!20] circle(1);
+      \draw[thick] (-2,-1)--(4,-1);
+      \draw[axes,rotate=30] (0,0)--(-1,0) node[left]{$R$};
+      \draw[axes] (2,0)--(3,0) node[right]{$x$};
+      \draw[axes] (2,0)--(2,1) node[above]{$y$};
+      \draw[vectors] (0,1.2) arc(90:60:1.2) node[right]{$\omega$};
+      \fill circle(.05) node[right]{\small cm};
+      \draw[vectors,blue,rotate=30] (0,0)--(0,-1.5) node[below]{$m\vec g$};
+      \draw[vectors,red] (0,-1)--(0,.5) node[above]{$\vec N$};
+      \draw[vectors,orange] (0,-1)--(-1,-1) node[left]{$\vec f_s$};
+      \draw[thick,rotate around={30:(4,-1)}](4,-1)--(2,-1)
+      node[pos=.6,above]{$\phi$};
     \end{tikzpicture}
 
     \column{.65\textwidth}
@@ -205,24 +192,19 @@
   \vspace{.2in}
   \begin{columns}
     \column{.35\textwidth}
-    \begin{tikzpicture}[scale=.9]
-      \begin{scope}[rotate=-30]
-        \shade[ball color=gray!20] circle(1);
-        \draw[thick](-2,-1)--(4,-1);
-        \draw[->,rotate=30](0,0)--(-1,0) node[left]{$R$};
-        \draw[thick,->](0,1.2) arc(90:60:1.2) node[right]{$\omega$};
-        \draw[->](2,0)--(3,0) node[right]{$x$};
-        \draw[->](2,0)--(2,1) node[above]{$y$};
-        \fill circle(.05) node[right]{\small cm};
-        \begin{scope}[->,ultra thick]
-          \draw[blue,rotate=30](0,0)--(0,-1.5) node[below]{$m\vec g$};
-          \draw[red](0,-1)--(0,.5) node[above]{$\vec N$};
-          \draw[orange](.0,-1)--(-1,-1) node[left]{$\vec f_s$};
-        \end{scope}
-        \begin{scope}[rotate around={30:(4,-1)}]
-          \draw[thick](4,-1)--(2,-1) node[pos=.6,above]{$\phi$};
-        \end{scope}
-      \end{scope}
+    \begin{tikzpicture}[scale=.9,rotate=-30]
+      \shade[ball color=gray!20] circle(1);
+      \draw[thick] (-2,-1)--(4,-1);
+      \draw[axes,rotate=30] (0,0)--(-1,0) node[left]{$R$};
+      \draw[axes] (2,0)--(3,0) node[right]{$x$};
+      \draw[axes] (2,0)--(2,1) node[above]{$y$};
+      \draw[vectors] (0,1.2) arc(90:60:1.2) node[right]{$\omega$};
+      \fill circle(.05) node[right]{\small cm};
+      \draw[vectors,blue,rotate=30] (0,0)--(0,-1.5) node[below]{$m\vec g$};
+      \draw[vectors,red] (0,-1)--(0,.5) node[above]{$\vec N$};
+      \draw[vectors,orange] (0,-1)--(-1,-1) node[left]{$\vec f_s$};
+      \draw[thick,rotate around={30:(4,-1)}] (4,-1)--(2,-1)
+      node[pos=.6,above]{$\phi$};
     \end{tikzpicture}
 
     \column{.65\textwidth}
@@ -245,24 +227,19 @@
 \begin{frame}{Rolling on an Inclined Surface}
   \begin{columns}
     \column{.35\textwidth}
-    \begin{tikzpicture}[scale=.9]
-      \begin{scope}[rotate=-30]
-        \shade[ball color=gray!20] circle(1);
-        \draw[thick](-2,-1)--(4,-1);
-        \draw[->,rotate=30](0,0)--(-1,0) node[left]{$R$};
-        \draw[thick,->](0,1.2) arc(90:60:1.2) node[right]{$\omega$};
-        \draw[->](2,0)--(3,0) node[right]{$x$};
-        \draw[->](2,0)--(2,1) node[above]{$y$};
-        \fill circle(.05) node[right]{\small cm};
-        \begin{scope}[->,ultra thick]
-          \draw[blue,rotate=30](0,0)--(0,-1.5) node[below]{$m\vec g$};
-          \draw[red](0,-1)--(0,.5) node[above]{$\vec N$};
-          \draw[orange](.0,-1)--(-1,-1) node[left]{$\vec f_s$};
-        \end{scope}
-        \begin{scope}[rotate around={30:(4,-1)}]
-          \draw[thick](4,-1)--(2,-1) node[pos=.6,above]{$\phi$};
-        \end{scope}
-      \end{scope}
+    \begin{tikzpicture}[scale=.9,rotate=-30]
+      \shade[ball color=gray!20] circle(1);
+      \draw[thick] (-2,-1)--(4,-1);
+      \draw[axes,rotate=30] (0,0)--(-1,0) node[left]{$R$};
+      \draw[axes] (2,0)--(3,0) node[right]{$x$};
+      \draw[axes] (2,0)--(2,1) node[above]{$y$};
+      \draw[vectors] (0,1.2) arc(90:60:1.2) node[right]{$\omega$};
+      \fill circle(.05) node[right]{\small cm};
+      \draw[vectors,blue,rotate=30] (0,0)--(0,-1.5) node[below]{$m\vec g$};
+      \draw[vectors,red] (0,-1)--(0,.5) node[above]{$\vec N$};
+      \draw[vectors,orange] (0,-1)--(-1,-1) node[left]{$\vec f_s$};
+      \draw[thick,rotate around={30:(4,-1)}] (4,-1)--(2,-1)
+      node[pos=.6,above]{$\phi$};
     \end{tikzpicture}
 
     \column{.65\textwidth}
