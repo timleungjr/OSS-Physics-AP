@@ -118,6 +118,59 @@
 
 \section{Pure Rolling Problems}
 
+\begin{frame}{Motion with Both Translation and Rotation}
+  Often motion of an object includes both translational and rotational motion.
+  \begin{center}
+    \begin{tikzpicture}
+      \fill circle(1);
+      \fill[black!2] circle(.8);
+      \fill circle(.1);
+      \draw[thick] (-3,-1)--(3,-1);
+      \draw[vectors,red] (1.25,0)--(2.5,0) node[right]{$v$};
+      \draw[vectors,red,rotate=-40] (0,1.1) arc(90:0:1.1) node[right]{$\omega$};
+    \end{tikzpicture}
+  \end{center}
+  For example, a tire that is rolling on the road without slipping has both
+  translational velocity $v$ and angular velocity $\omega$.
+\end{frame}
+
+
+
+\begin{frame}{No-Slip Rolling}
+
+  \begin{center}
+    \begin{tikzpicture}[scale=.8]
+      \foreach\x in {0,5,10}{
+      \fill(\x,0) circle(1);
+      \fill[black!2](\x,0) circle(.8);
+      \fill (\x,0) circle(.1);
+      }
+      \foreach\y in {-1,0,1}{
+        \fill[red](0,\y) circle(.05);
+        \draw[vectors,red] (0,\y)--(1.5,\y) node[right]{$v$};
+      }
+      \node[above] at (0,1.5) {Translation};
+      \node at (2.5,0) {\Huge$+$};
+      
+      \draw[vectors,blue,rotate around={-40:(5,0)}] (5,1.1) arc(90:0:1.1)
+      node[right]{$\omega$};
+      \draw[vectors,blue] (5,1)--(6.5,1) node[above]{$v=\omega R$};
+      \draw[vectors,blue] (5,-1)--(3.5,-1) node[below]{$v=\omega R$};
+      \foreach\y in {-1,1} \fill[blue](5,\y)circle(.05);
+      \node[above] at (5,1.5) {Rotation};
+      \node at (7.5,0) {\Huge$=$};
+      
+      \foreach\y in {0,1} \fill[violet](10,\y)circle(.05);
+      \draw[vectors,violet] (10,1)--(13,1) node[right]{$v=2\omega R$};
+      \draw[vectors,violet] (10,0)--(11.5,0) node[right]{$v=\omega R$};
+      \fill[violet] (10,-1) circle(.05) node[right]{$v=0$};
+    \end{tikzpicture}
+  \end{center}
+  At the contact point, if there is no slipping, the speed is zero.
+\end{frame}
+
+
+
 \begin{frame}{Pure Rolling Problems}
   In a \textbf{pure rolling} problem, a smooth solid sphere (any object that
   can roll with do) rolls along a smooth surface without slipping
@@ -126,16 +179,14 @@
     \centering
     \begin{tikzpicture}[scale=1.1]
       \shade[ball color=gray!5] circle(1);
-      \draw[thick](-2,-1)--(2,-1);
-      \draw[thick,->](1.2,0)--(2.2,0) node[above]{$\vec v$};
-      \draw[thick,->](0,1.2) arc(90:60:1.2) node[midway,above]{$\omega$};
-      \draw[->](1,-2)--(1.5,-2) node[right]{$x$};
-      \draw[->](1,-2)--(1,-1.5) node[above]{$y$};
+      \draw (-2,-1)--(2,-1);
+      \draw[vectors] (1.2,0)--(2.2,0) node[above]{$\vec v$};
+      \draw[vectors] (0,1.2) arc(90:60:1.2) node[midway,above]{$\omega$};
+      \draw[axes] (1,-2)--(1.5,-2) node[right]{$x$};
+      \draw[axes] (1,-2)--(1,-1.5) node[above]{$y$};
       \fill circle(.05);
-      \begin{scope}[->,ultra thick]
-        \draw[blue](0,0)--(0,-1.5) node[below]{$m\vec g$};
-        \draw[red](-.03,-1)--(-.03,.5) node[above]{$\vec N$};
-      \end{scope}
+      \draw[vectors,blue] (0,0)--(0,-1.5) node[below]{$m\vec g$};
+      \draw[vectors,red] (-.03,-1)--(-.03,.5) node[above]{$\vec N$};
     \end{tikzpicture}
 
     \column{.65\textwidth}
@@ -184,14 +235,12 @@
     \column{.35\textwidth}
     \begin{tikzpicture}
       \shade[ball color=gray!10] circle(1);
-      \draw[thick](-2,-1)--(2,-1);
-      \draw[thick,->](1.5,0)--(2.5,0) node[right]{$\vec v$};
-      \draw[thick,->](0,1.2) arc(90:60:1.2) node[midway,above]{$\vec\omega$};
+      \draw[thick] (-2,-1)--(2,-1);
+      \draw[vectors] (1.5,0)--(2.5,0) node[right]{$\vec v$};
+      \draw[vectors] (0,1.2) arc(90:60:1.2) node[midway,above]{$\vec\omega$};
       \fill circle(.05) node[right]{\small cm};
-      \begin{scope}[->,ultra thick]
-        \draw[blue](0,0)--(0,-1.5) node[below]{$m\vec g$};
-        \draw[red](-.03,-1)--(-.03,.5) node[above]{$\vec N$};
-      \end{scope}
+      \draw[vectors,blue](0,0)--(0,-1.5) node[below]{$m\vec g$};
+      \draw[vectors,red](-.03,-1)--(-.03,.5) node[above]{$\vec N$};
     \end{tikzpicture}
   \end{columns}
 \end{frame}
@@ -230,15 +279,13 @@
     \centering
     \begin{tikzpicture}
       \shade[ball color=gray!5] circle(1);
-      \draw[thick](-1.5,-1)--(1.5,-1);
-      \draw[thick,->](1.5,0)--(2.5,0) node[right]{$\vec v$};
-      \draw[thick,->](0,1.2) arc(90:60:1.2) node[midway,above]{$\omega$};
+      \draw[thick] (-1.5,-1)--(1.5,-1);
+      \draw[vectors] (1.5,0)--(2.5,0) node[right]{$\vec v$};
+      \draw[vectors] (0,1.2) arc(90:60:1.2) node[midway,above]{$\omega$};
       \fill circle(.05);
-      \begin{scope}[->,ultra thick]
-        \draw[blue](-0.03,0)--(-.03,-1.5) node[below]{$m\vec g$};
-        \draw[red](0,-1)--(0,.5) node[above]{$\vec N$};
-        \draw[green!80!black](0,-1)--(1,-1) node[below]{$\vec f_k$};
-      \end{scope}
+      \draw[vectors,blue](-0.03,0)--(-.03,-1.5) node[below]{$m\vec g$};
+      \draw[vectors,red](0,-1)--(0,.5) node[above]{$\vec N$};
+      \draw[vectors,green!80!black] (0,-1)--(1,-1) node[below]{$\vec f_k$};
     \end{tikzpicture}
 
     \column{.73\textwidth}
