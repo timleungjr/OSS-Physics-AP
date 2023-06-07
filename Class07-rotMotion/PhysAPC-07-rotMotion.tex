@@ -31,7 +31,7 @@
       \draw[dash dot] circle(2.5);
       \begin{scope}[rotate=38]
         \draw[vectors] (2.45,0)--(1,0) node[left]{$\vec F_c$};
-        \draw[vectors] (2.5,0) arc(0:100:2.5) node[above left]{$\omega$};
+        \draw[vectors] (2.5,0) arc(0:30:2.5) node[left]{$\omega$};
         \draw[mass] (2.5,0) circle(.1);
       \end{scope}
     \end{tikzpicture}
@@ -39,8 +39,10 @@
     \column{.7\textwidth}
     \begin{itemize}
     \item Centripetal force $\vec F_c\perp\vec v$
-    \item $\vec F_c$ does not do any mechanical work
-    \item Therefore, angular velocity $\vec\omega$ remains constant
+      \begin{itemize}
+      \item $\vec F_c$ does not do any mechanical work
+      \item Angular velocity $\vec\omega$ remains constant
+      \end{itemize}
     \item\textbf{The ``rotational state'' of the object does not change}
     \item Rotation of an object is not determined by merely what forces are
       acting it
@@ -57,11 +59,11 @@
     \pic{1.1}{wrench}
     
     \column{.7\textwidth}
-    Similarly, when tightening/loosening a bolt by turning a wrench,
+    Similarly, when tightening/loosening a nut by turning a wrench,
     \begin{itemize}
     \item When the nut turns, its ``rotational state'' changes
-    \item The applied force has to be directed at a distance away from the
-      bolt
+    \item The applied force has to be directed at some distance away from the
+      nut
     \item How easy to turn the nut depends on \emph{both} the distance and the
       force
     \end{itemize}
@@ -70,39 +72,41 @@
 
 
 
-\begin{frame}{Torque}
-  Recall the second law of motion for objects with constant mass:
-    
-  \eq{-.1in}{
-    \vec F_\text{net}=m\vec a
-  }
-
-  \vspace{-.1in}Is it also true for \emph{rotational} motion? If a net force
-  $\vec F_\text{net}$ causes the center of mass of an object to begin to
-  accelerate, what causes a mass to rotate?
-\end{frame}
+%\begin{frame}{Torque}
+%  Recall the second law of motion for objects with constant mass:
+%    
+%  \eq{-.1in}{
+%    \vec F_\text{net}=m\vec a
+%  }
+%
+%  \vspace{-.1in}Is it also true for \emph{rotational} motion? If a net force
+%  $\vec F_\text{net}$ causes the center of mass of an object to begin to
+%  accelerate, what causes a mass to rotate?
+%\end{frame}
 
 
 
 \begin{frame}{What is Torque?}
-  \textbf{Torque} (or \textbf{moment}) is the tendency for a force to change
-  the rotational motion of a body.
+  \textbf{Torque} (also known as the \textbf{moment of force}, or just
+  \textbf{moment}) is the tendency for a force to change the rotational motion
+  of a body. The SI unit for torque is a \textbf{newton meter}
+  (\si{\newton\metre}).
   \begin{itemize}
-  \item A force $\vec F$ acting at a point some distance $\vec r$ (called the
-    \textbf{moment arm}) from a \textbf{fulcrum} (or \textbf{pivot}) at an angle
-    $\phi$ between $\vec F$ and $\vec r$
-  \item e.g.\ the force to twist a screw
+  \item A force $\vec F$ acts at a point some position $\vec r$ from a
+    \textbf{pivot}, or \textbf{fulcrum}
+  \item There is an angle $\phi$ between $\vec F$ and $\vec r$
+  %\item In the example below, a force $\vec F$ is applied $\vec r$ away from
+  %  the pivot at an angle $\phi$. This generates a torque around the pivot.
   \end{itemize}
-  In the example below, a force $\vec F$ is applied $\vec r$ away from the pivot
-  at an angle $\phi$. This generates a torque around the pivot.
   \begin{center}
-    \begin{tikzpicture}[scale=2.8]
-      \draw[thick,fill=lightgray] (0,-.05) rectangle(2,.05);
-      \draw[thick,fill=lightgray] circle(.15);
-      \fill circle(.03);
-      \draw[vectors,red] (0,0)--(1.8,0) node[midway,below]{$\vec r$};
-      \draw[vectors,blue] (1.2,-.7)--(1.8,0) node[pos=0,below]{$\vec F$};
-      \draw[vectors] (1.4,0) arc(180:230:.4) node[midway,left]{$\phi$};
+    \begin{tikzpicture}[scale=1.2]
+      \draw[thick,fill=lightgray] (-.13,-.13) rectangle (5.13,.13);
+      \draw[vectors,red] (0,0)--(5,0) node[midway,below]{\normalsize$\vec r$};
+      \draw[vectors,blue] (5,0)--(5.7,-1.5) node[right]{\normalsize$\vec F$};
+      \draw[dashed] (5,0)--(6,0);
+      \draw[axes] (5.7,0) arc(0:-atan(1.5/.7):.7)
+      node[midway,right]{\normalsize$\phi$};
+      \fill circle(.06) node[above=1]{\scriptsize\textbf{pivot}};
     \end{tikzpicture}
   \end{center}
 \end{frame}
@@ -111,29 +115,167 @@
 
 \begin{frame}{Torque}
   Torque $\vec\tau$ is defined as the cross product of the force $\vec F$ and
-  the \textbf{moment arm} $\vec r$. The unit for torque is a \textbf{newton
-    meter} (\si{\newton\metre}).
+  the position vector $\vec r$ from the pivot, and where the force is applied.
+  The unit for torque is a \textbf{newton meter} (\si{\newton\metre}).
 
   \eq{-.1in}{
     \boxed{\vec\tau=\vec r\times\vec F}
   }
 
-  \vspace{-.1in}Its magnitude can be calculated in scalar form
-  using the angle $\phi$ between $\vec F$ and $\vec r$:
+  \vspace{-.1in}with a magnitude of:
 
   \eq{-.1in}{
-    \boxed{\tau=Fr\sin\phi}
+    \boxed{\tau=rF\sin\phi}
   }
+
   \begin{center}
     \begin{tabular}{l|c|c}
       \rowcolor{pink}
       \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
       Torque        & $\vec\tau$ & \si{\newton\metre} \\
       Applied force & $\vec F$   & \si\newton \\
-      Moment arm (from fulcrum to force) & $\vec r$ & \si\metre \\
+      Position vector from fulcrum to force & $\vec r$ & \si\metre \\
       Angle between force and moment arm & $\phi$ & (no units)
     \end{tabular}
   \end{center}
+\end{frame}
+
+
+
+\begin{frame}{Generating a Torque}
+  \begin{columns}[T]
+    \column{.33\textwidth}
+
+    \vspace{-.09in}
+    \begin{tikzpicture}[scale=.6]
+      \draw[thick,fill=lightgray] (-.2,-.2) rectangle(5.2,.2);
+      \draw[vectors,red] (0,0)--(5,0) node[midway,below]{$\vec r$};
+      \draw[vectors,blue] (5,0)--(5,2) node[above]{$\vec F$};
+      \fill circle(.08) node[above]{\scriptsize pivot};
+    \end{tikzpicture}
+
+    \vspace{.18in}
+    {\footnotesize Force is perpendicular to the position vector, i.e.\
+      $\vec r\perp\vec F$. In this case, the torque is easy to calculate. The
+      position vector $\vec r$ is known as the \textbf{moment arm}.\par}
+    
+    \eq{-.16in}{
+      \boxed{ \tau = rF }
+    }
+
+    \column{.33\textwidth}
+    \begin{tikzpicture}[scale=.6]
+      \draw[thick,fill=lightgray](-.2,-.2) rectangle(5.2,.2);
+      \draw[vectors,red] (0,0)--(5,0) node[midway,below]{$\vec r$};
+      \draw[vectors,blue] (5,0)--(6.2,1.6) node[above]{$\vec F$};
+      \draw[vectors,blue,dashed] (5,0)--(5,1.6) node[left]{$\vec F_\perp$};
+      \draw[vectors,blue,dashed] (5,0)--(6.2,0) node[right]{$\vec F_\parallel$};
+      \fill circle (.08) node[above]{\scriptsize pivot};
+      \draw (5.6,0) arc(0:atan(4/3):.6) node[pos=2/3,right=0]{$\phi$};
+    \end{tikzpicture}
+
+    \vspace{.19in}{\footnotesize Force is applied at an angle $\phi$ to the
+      position vector. Only the perpendicular component ($F_\perp$) generates a
+      torque; the parallel component ($F_\parallel$) does not.\par}
+    
+    \eq{-.34in}{
+      \boxed{
+        \tau = r{\color{blue}F_\perp}=r{\color{blue}F\sin\phi}
+      }
+    }
+    
+    \column{.33\textwidth}
+    \vspace{-.01in}
+    \begin{tikzpicture}[scale=.6]
+      \draw[thick,fill=lightgray] (-.2,-.2) rectangle(5.2,.2);
+      \draw[vectors,red] (0,0)--(5,0) node[midway,below]{$\vec r$};
+      \draw[vectors,blue] (5,0)--(6.2,1.6) node[above]{$\vec F$};
+      \begin{scope}[rotate=-atan(3/4)]
+        \draw[vectors,red] (0,0)--(4,0) node[midway,below]{$\vec r_\perp$};
+        \draw (4,-.5)--(4,5.5)
+        node[pos=0,right]{\scriptsize line of action of $\vec F$};
+        \draw (0,-1)--(0,2);
+        \draw[vectors,blue,dash dot] (4,0)--(4,2) node[midway,right]{$\vec F$};
+        \fill[blue] (4,0) circle(.04);
+      \end{scope}
+      \fill circle(.08) node[above]{\scriptsize pivot};
+      \draw (5,0)--(6.3,0);
+      \draw (5.6,0) arc(0:atan(4/3):.6) node[pos=2/3,right]{$\phi$};
+      \draw (.6,0) arc(0:atan(4/3):.6) node[pos=2/3,right]{$\phi$};
+    \end{tikzpicture}
+
+    {\footnotesize $\vec F$ can be moved along its line of action until it
+      intersects the perpendicular component of $\vec r$\par}
+    
+    \eq{-.33in}{
+      \boxed{
+        \tau = {\color{red}r_\perp}F
+        ={\color{red}r}F{\color{red}\sin\phi}
+      }
+    }
+
+    \vspace{-.25in}{\footnotesize The moment arm is $\vec r_\perp$ in this
+      case.}
+  \end{columns}
+\end{frame}
+
+
+
+\begin{frame}{\emph{NOT} Generating a Torque}
+  No torque is generated if the line of action of the force goes through the
+  pivot.
+  \begin{columns}[T]
+    \column{.5\textwidth}
+    \centering
+    \vspace{.45in}
+    \begin{tikzpicture}[scale=.7]
+      \draw[thick,fill=lightgray] (-.2,-.2) rectangle(5.2,.2);
+      \draw[vectors,red] (0,0)--(5,0) node[midway,below]{$\vec r$};
+      \draw[vectors,blue] (5,0)--(7,0) node[above]{$\vec F$};
+      \draw (-1,0)--(9,0) node[above]{\scriptsize line of action};
+      \fill circle(.08) node[above]{\scriptsize pivot};
+      \fill[blue] (5,0) circle(.04);
+    \end{tikzpicture}
+
+    \vspace{.03in}
+    {\footnotesize Force $\vec F$ is parallel to $\vec r$.\par}
+
+    \column{.5\textwidth}
+    \centering
+    \begin{tikzpicture}[scale=.7]
+      \draw[thick,fill=lightgray] (-.2,-.2) rectangle(5.2,.2);
+      \begin{scope}[rotate=-atan(3/4)]
+        \draw (0,-1)--(0,3) node[right]{\scriptsize line of action};
+        \draw[vectors,blue] (0,0)--(0,2) node[right]{$\vec F$};
+      \end{scope}
+      \fill circle(.08) node[above]{\scriptsize pivot};
+    \end{tikzpicture}
+
+    {\footnotesize $\vec F$ is applied at the pivot.\par}
+  \end{columns}
+\end{frame}
+
+
+
+\begin{frame}{Net Torque}
+  Net torque is the sum of all torques acting at a point. Keep in mind the sign
+  convention:
+
+  \eq{-.1in}{
+    \boxed{
+      \vec\tau_\text{net}=\sum_{i=1}^N\vec\tau_i
+    }
+  }
+  \begin{itemize}
+  \item Torque can come from individual forces acting at a point, i.e.
+
+    \eq{-.15in}{ \tau_i = F_ir_i }
+
+  \item\vspace{-.15in} Most often the forces that generate torques are spread
+    over an area, e.g.\ force on the head of a screwdriver
+  \item For rotational motion, we only care about the torque; in most cases, we
+    don't have to worry about exactly how the force generates the torque
+  \end{itemize}
 \end{frame}
 
 
@@ -156,12 +298,12 @@
         \draw[rotate around={-30:(1.5,0)}] (1.5,0)--(2.2,0)
         node[right]{\SI{10}\newton};
       \end{scope}
-      \draw[axes] (0,.4)   arc(90:45:.4)  node[pos=.7,above]{\ang{45}};
-      \draw[axes] (-1.9,0) arc(180:210:.4)node[midway,left] {\ang{30}};
-      \draw[axes] (1.9,0)  arc(0:-30:.4)  node[midway,right]{\ang{30}};
+      \draw[axes] (0,.4) arc(90:45:.4) node[pos=.7,above]{\ang{45}};
+      \draw[axes] (-1.9,0) arc(180:210:.4) node[midway,left]{\ang{30}};
+      \draw[axes] (1.9,0) arc(0:-30:.4) node[midway,right]{\ang{30}};
       \fill (-1.5,0) circle(.1) node[white]{\textbf{A}};
-      \fill (   0,0) circle(.1) node[white]{\textbf{B}};
-      \fill ( 1.5,0) circle(.1) node[white]{\textbf{C}};
+      \fill circle(.1) node[white]{\textbf{B}};
+      \fill (1.5,0) circle(.1) node[white]{\textbf{C}};
     \end{tikzpicture}
   \end{center}
 \end{frame}
@@ -370,7 +512,7 @@
 
 
 
-\begin{frame}{Second Law of Motion for Translational Motion}
+\begin{frame}{First \& Second Law of Motion for Translational Motion}
   For translational motion, the general form of the first and second laws of
   motion relate the net force to the rate of change of the object's momentum:
 
@@ -387,7 +529,7 @@
 
 
 
-\begin{frame}{Second Law of Motion for Rotational Motion}
+\begin{frame}{First \& Second Law of Motion for Rotational Motion}
   Likewise, the second law of motion for rotational motion has a similar form,
   but with torque $\vec\tau$ replacing force $\vec F$, and angular momentum
   $\vec L$ replacing linear momentum $\vec p$:

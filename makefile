@@ -1,4 +1,4 @@
-TERM=2022-09-Fall
+TERM=2023-01-Winter-Physics
 DESTINATION=$(HOME)/Documents/ossfiles/$(TERM)/Physics.APC
 
 export DESTINATION

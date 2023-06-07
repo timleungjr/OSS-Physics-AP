@@ -108,8 +108,6 @@
   \eq{-.1in}{
     \diff[2]xt + \frac kmx=0
   }
-  
-
 \end{frame}
 
 
@@ -196,19 +194,19 @@
 
     \column{.6\textwidth}
     \begin{tikzpicture}[yscale=.5]
-      \draw[->](0,-2)--(0,2) node[left]{$x$};
-      \draw[->](-1,0)--(8,0) node[right]{$t$};
-      \draw[red,very thick,smooth,samples=80,domain=0:7.5]
+      \draw[axes] (0,-2)--(0,2) node[left]{$x$};
+      \draw[axes] (-1,0)--(8,0) node[right]{$t$};
+      \draw[functions,smooth,samples=80,domain=0:7.5]
       plot(\x,{1.5*cos(90*\x)});
       
-      \draw[->](0,-7)--(0,-3)  node[left]{$v$};
-      \draw[->](-1,-5)--(8,-5) node[right]{$t$};
+      \draw[axes] (0,-7)--(0,-3)  node[left]{$v$};
+      \draw[axes] (-1,-5)--(8,-5) node[right]{$t$};
       \draw[blue,very thick,smooth,samples=80,domain=0:7.5]
       plot(\x,{-1.5*sin(90*\x)-5});
       
-      \draw[->](0,-12)--(0,-8)  node[left]{$a$};
-      \draw[->](-1,-10)--(8,-10) node[right]{$t$};
-      \draw[purple!70!black,very thick,smooth,samples=80,domain=0:7.5]
+      \draw[axes] (0,-12)--(0,-8)  node[left]{$a$};
+      \draw[axes] (-1,-10)--(8,-10) node[right]{$t$};
+      \draw[violet,veyr thick,smooth,samples=80,domain=0:7.5]
       plot(\x,{-1.5*cos(90*\x)-10});
     \end{tikzpicture}
   \end{columns}

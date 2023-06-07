@@ -21,20 +21,18 @@
   toward one side of the conductor.
   \begin{center}
     \begin{tikzpicture}
-      \node at (4.5,3.8) {\color{cyan}\footnotesize$\vec B_\text{in}$};
+      \node at (4.5,3.8) {\color{cyan}$\vec B_\text{in}$};
       \foreach \x in {0,.5,...,6}{
-        \foreach \y in {.5,1,...,3.5}{
-          \node at (\x,\y) {\color{cyan}\footnotesize$\times$};
-        }
+        \foreach \y in {.5,1,...,3.5} \node at (\x,\y) {\color{cyan}$\times$};
       }
-      \fill[brown!40,opacity=.6](.8,1.2) rectangle(5.2,2.8);
-      \draw[thick](.8,1.2) rectangle(5.2,2.8);
-      \draw[very thick](-.4,2)--(.8,2);
-      \draw[very thick](5.2,2)--(6.4,2);
+      \fill[brown!40,opacity=.6](.8,1.2) rectangle (5.2,2.8);
+      \draw[thick] (.8,1.2) rectangle (5.2,2.8);
+      \draw[ultra thick] (-.4,2)--(.8,2);
+      \draw[ultra thick] (5.2,2)--(6.4,2);
 
-      \draw[->,very thick](2.18,2)--(3.3,2) node[right]{$\vec v_d$};
-      \draw[->,very thick,red](2,2.18)--(2,3) node[above]{$\vec F_m$};
-      \draw[very thick,fill=gray](2,2) circle(.18) node{$+$};
+      \draw[vectors] (2.18,2)--(3.3,2) node[right]{$\vec v_d$};
+      \draw[vectors,red] (2,2.18)--(2,3) node[above]{$\vec F_m$};
+      \draw[very thick,fill=gray] (2,2) circle (.18) node{$+$};
     \end{tikzpicture}
   \end{center}
   This is most evident in a \emph{thin}, \emph{flat} conductor as illustrated.
@@ -46,20 +44,18 @@
 \begin{frame}{Magnetic Force}
   \begin{center}
     \begin{tikzpicture}
-      \node at (4.5,3.8) {\color{cyan}\footnotesize$\vec B_\text{in}$};
+      \node at (4.5,3.8) {\color{cyan}$\vec B_\text{in}$};
       \foreach \x in {0,.5,...,6}{
-        \foreach \y in {.5,1,...,3.5}{
-          \node at (\x,\y) {\color{cyan}\footnotesize$\times$};
-        }
+        \foreach \y in {.5,1,...,3.5} \node at (\x,\y) {\color{cyan}$\times$};
       }
-      \fill[brown!40,opacity=.6](.8,1.2) rectangle(5.2,2.8);
-      \draw[thick](.8,1.2) rectangle(5.2,2.8);
-      \draw[ultra thick](-.4,2)--(.8,2);
-      \draw[ultra thick](5.2,2)--(6.4,2);
+      \fill[brown!40,opacity=.6] (.8,1.2) rectangle (5.2,2.8);
+      \draw[thick] (.8,1.2) rectangle (5.2,2.8);
+      \draw[ultra thick] (-.4,2)--(.8,2);
+      \draw[ultra thick] (5.2,2)--(6.4,2);
 
-      \draw[->,ultra thick](2.18,2)--(3.3,2) node[right]{$\vec v_d$};
-      \draw[->,ultra thick,red](2,2.18)--(2,3) node[above]{$\vec F_m$};
-      \draw[ultra thick,fill=gray](2,2) circle(.18) node{$+$};
+      \draw[vectors] (2.18,2)--(3.3,2) node[right]{$\vec v_d$};
+      \draw[vectors,red] (2,2.18)--(2,3) node[above]{$\vec F_m$};
+      \draw[very thick,fill=gray] (2,2) circle (.18) node{$+$};
     \end{tikzpicture}
   \end{center}
   \vspace{-.1in}As the charges enter the magnetic field, $\vec F_m$ is directed
@@ -81,23 +77,19 @@
 \begin{frame}[t]{Hall Voltage}
   \begin{center}
     \begin{tikzpicture}
-      \node at (4.5,3.8) {\color{cyan}\footnotesize$\vec B_\text{in}$};
+      \node at (4.5,3.8) {\color{cyan}$\vec B_\text{in}$};
       \foreach \x in {0,.5,...,6}{
-        \foreach \y in {.5,1,...,3.5}{
-          \node at (\x,\y) {\color{cyan}\footnotesize$\times$};
-        }
+        \foreach \y in {.5,1,...,3.5} \node at (\x,\y) {\color{cyan}$\times$};
       }
-      \fill[brown!40,opacity=.6](.8,1.2) rectangle(5.2,2.8);
-      \draw[thick](.8,1.2) rectangle(5.2,2.8);
-      \draw[ultra thick](-.4,2)--(.8,2);
-      \draw[ultra thick](5.2,2)--(6.4,2);
+      \fill[brown!40,opacity=.6] (.8,1.2) rectangle (5.2,2.8);
+      \draw[thick] (.8,1.2) rectangle (5.2,2.8);
+      \draw[ultra thick] (-.4,2)--(.8,2);
+      \draw[ultra thick] (5.2,2)--(6.4,2);
 
-      \foreach \x in {1.2,1.7,...,5}{ \node at (\x,1){\textcolor{red}{$-$}};}
-      \foreach \x in {1.2,1.7,...,5}{ \node at (\x,3){\textcolor{red}{$+$}};}
-      \foreach \x in {1,1.5,...,5}{
-        \draw[thick,->,red] (\x,2.8)--(\x,1.2);
-      }
-      \node at (4.85,2) {\textcolor{red}{\footnotesize$\vec E$}};
+      \foreach \x in {1.2,1.7,...,5} \node at (\x,1){\textcolor{red}{$-$}};
+      \foreach \x in {1.2,1.7,...,5} \node at (\x,3){\textcolor{red}{$+$}};
+      \foreach \x in {1,1.5,...,5} \draw[vectors,orange] (\x,2.8)--(\x,1.2);
+      \node at (4.85,2) {\textcolor{orange}{$\vec E$}};
     \end{tikzpicture}
   \end{center}
   The charge imbalance on the conductor creates an electric field $\vec E$,
@@ -114,26 +106,22 @@
 \begin{frame}[t]{Balancing Electrostatic \& Magnetic Forces}
   \begin{center}
     \begin{tikzpicture}
-      \node at (4.5,3.8) {\color{cyan}\footnotesize$\vec B_\text{in}$};
+      \node at (4.5,3.8) {\color{cyan}$\vec B_\text{in}$};
       \foreach \x in {0,.5,...,6}{
-        \foreach \y in {.5,1,...,3.5}{
-          \node at (\x,\y) {\color{cyan}\footnotesize$\times$};
-        }
+        \foreach \y in {.5,1,...,3.5} \node at (\x,\y) {\color{cyan}$\times$};
       }
-      \fill[brown!40,opacity=.6](.8,1.2) rectangle(5.2,2.8);
-      \draw[thick](.8,1.2) rectangle(5.2,2.8);
-      \draw[ultra thick](-.4,2)--(.8,2);
-      \draw[ultra thick](5.2,2)--(6.4,2);
+      \fill[brown!40,opacity=.6] (.8,1.2) rectangle (5.2,2.8);
+      \draw[thick] (.8,1.2) rectangle (5.2,2.8);
+      \draw[ultra thick] (-.4,2)--(.8,2);
+      \draw[ultra thick] (5.2,2)--(6.4,2);
 
-      \foreach \x in {1,1.5,...,5}{
-        \draw[thick,->,red] (\x,2.8)--(\x,1.2);
-      }
-      \node at (4.85,2) {\color{red}\footnotesize$\vec E$};
+      \foreach \x in {1,1.5,...,5} \draw[vectors,orange] (\x,2.8)--(\x,1.2);
+      \node at (4.85,2) {\color{orange}$\vec E$};
       
-      \draw[->,ultra thick](2.18,2)--(3.3,2) node[right]{$\vec v_d$};
-      \draw[->,ultra thick,red](2,2.18)--(2,3) node[above]{$\vec F_m$};
-      \draw[->,ultra thick,red](2,1.82)--(2,1) node[below]{$\vec F_q$};
-      \draw[ultra thick,fill=gray](2,2) circle(.18) node{$+$};
+      \draw[vectors] (2.18,2)--(3.3,2) node[right]{$\vec v_d$};
+      \draw[vectors,red] (2,2.18)--(2,3) node[above]{$\vec F_m$};
+      \draw[vectors,red] (2,1.82)--(2,1) node[below]{$\vec F_q$};
+      \draw[very thick,fill=gray] (2,2) circle (.18) node{$+$};
     \end{tikzpicture}
   \end{center}
   Subsequently, charge carriers entering the magnetic field will experience

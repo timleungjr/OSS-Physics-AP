@@ -14,17 +14,17 @@
 \end{frame}
 
 
-\section{Faraday's Law}
+\section{Magnetic Flux}
 
-\begin{frame}{Magnetic Flux}
-  \textbf{Question:} If a current-carrying wire can generate a magnetic field,
-  can a magnetic field affect the current in a wire?
-
-  \vspace{.3in}\textbf{Answer:} Yes, sort of\ldots
-
-  \vspace{.3in}To understand how to \emph{induce} a current by a magnetic field,
-  we need to look at fluxes again.
-\end{frame}
+%\begin{frame}{Magnetic Flux}
+%  \textbf{Question:} If a current-carrying wire can generate a magnetic field,
+%  can a magnetic field affect the current in a wire?
+%
+%  \vspace{.3in}\textbf{Answer:} Yes, sort of\ldots
+%
+%  \vspace{.3in}To understand how to \emph{induce} a current by a magnetic field,
+%  we need to look at fluxes again.
+%\end{frame}
 
 
 \begin{frame}{Magnetic Flux}
@@ -36,7 +36,7 @@
     Magnetic flux is defined as:
     
     \eq{-.1in}{
-      \boxed{\Phi_m=\int\vec B\cdot\dl\vec A}
+      \boxed{\Phi_m=\int_\mathcal{S}\vec B\cdot\dl\vec A}
     }
     
     where $\vec B$ is the magnetic field, and $\dl\vec A$ is the infinitesimal
@@ -44,7 +44,7 @@
     expressed as:
 
     \eq{-.1in}{
-      \boxed{\Phi_m=\int(\vec B\cdot\hat n)\dl A}
+      \boxed{\Phi_m=\int_\mathcal{S}(\vec B\cdot\hat n)\dl A}
     }
 
     where $\hat n$ is the outward normal direction
@@ -54,51 +54,60 @@
 
 
 \begin{frame}{Magnetic Flux Over a Closed Surface}
-  The SI unit for magnetic flux is a \textbf{weber} (\si\weber), in honor of
+  The SI unit for magnetic flux is a \textbf{weber} (\si\weber), after
   German physicist Wilhelm Weber, who invented the electromagnetic telegraph
   with Carl Gauss. The unit is defined as:
 
-  \eq{-.1in}{
+  \eq{-.15in}{
     \SI1\weber=\SI1{\tesla\metre\squared}
   }
   
-  The magnetic flux over a closed surface is always zero (\textbf{Gauss's law
-    for magnetism}):
+  The magnetic flux over any closed surface $\mathcal S$ must always be zero.
+  This is \textbf{Gauss's law for magnetism}:
 
   \eq{-.1in}{
-    \boxed{\oint\vec B\cdot\dl\vec A=0}
+    \boxed{\oint_{\mathcal S}\vec B\cdot\dl\vec A=0}
   }
 
   Since magnetic field lines only exist as a loop, that means there should be
   equal amount of ``flux'' flowing out of a closed surface as entering the
   surface.
-  \vspace{.2in}
 \end{frame}
 
 
 
 \begin{frame}{Changing Magnetic Flux}
-  Changes to magnetic flux can be due to a number of reasons:
+  Magnetic flux can change due to any of these three reasons:
   \begin{enumerate}
-  \item\textbf{Changing magnetic field} $\vec B$: the magnetic field is
-    created by a time-dependent source (e.g.\ alternating current)
-  \item\textbf{Changing area} $A$: the surface area from which the flux is
-    calculated is changing
-  \item\textbf{Changing orientation of magnetic field} $\vec B\cdot\dl\vec A$:
-    the surface area is moving relative to the magnetic field
+  \item A time-dependent magnetic field:
+    \begin{displaymath}
+      \vec B=\vec B(t)
+    \end{displaymath}
+  \item A time-dependent surface area:
+    \begin{displaymath}
+      \mathcal S=\mathcal S(t)
+    \end{displaymath}
+  \item The orientation of the magnetic field with the surface is
+    time-dependent:
+    \begin{displaymath}
+      \dl\Phi_m(t)=%\vec B\cdot\dl\vec A=
+      B\sin\left(\theta(t)\right)\dl A
+    \end{displaymath}
   \end{enumerate}
 \end{frame}
 
 
 
+\section{Faraday's Law}
+
 \begin{frame}{Faraday's Law}
-  \textbf{Faraday's law} states that the rate of change of magnetic flux
-  produces an electric field $\vec E$ in a circuit, and therefore an
-  electromotive force $\mathcal E$ (voltage):
+  \textbf{Faraday's law} states that the time rate of change of magnetic flux
+  induces electric field $\vec E$ in a circuit, and therefore an
+  induced electromotive force, or \emph{emf}, $\mathcal E$ (voltage gain):
 
   \eq{-.1in}{
     \boxed{
-      \mathcal E=\oint\vec E\cdot\dl\vec\ell={\color{red}{-}}
+      \mathcal E=-\oint\vec E\cdot\dl\vec\ell={\color{red}-}
       \diff{\Phi_m}t
     }
   }
@@ -109,54 +118,141 @@
 
 
 
+\begin{frame}{Example}
+  \vspace{.1in}
+  A loop of wire is place inside a uniform time-dependent magnetic field
+  $\vec B_\text{in}(t)$ into the page that is increasing in magnitude in time.
+  The plane of the loop is perpendicular to $\vec B$.
 
-
-\begin{frame}{When Magnetic Flux is Changing}
-  \begin{itemize}
-  \item When the magnetic flux $\Phi_m$ is changing, an electromotive force
-    (\emph{emf}, $\mathcal E$) is created in the wire.
-  \item Unlike in a circuit, where the \emph{emf} is concentrated at the
-    terminals of the battery, the induced \emph{emf} is spread across the
-    entire wire.
-  \end{itemize}
-  \begin{columns}
-    \column{.3\textwidth}
-    \begin{center}
-      \begin{tikzpicture}[scale=.35]
-        \foreach \xx in {-4.5,-3,...,4.5}{
-          \foreach \yy in {-4.5,-3,...,4.5}{
-            \node at (\xx,\yy) {\footnotesize\textcolor{cyan}{$\times$}};
-          }
-        }
-        \draw[gray,ultra thick] circle(2.9);
-        \draw[->,rotate=45](0,0)--(2.9,0) node[midway,left]{\footnotesize $r$};
-        \foreach \x in {0,90,...,360} {
-          \draw[rotate=\x,ultra thick,red,->](2.9,0)--(2.9,2.5)
-          node[pos=0,above left]{$\vec E$};
-        }
-      \end{tikzpicture}
-    \end{center}
+  \vspace{.1in}
+  \begin{tikzpicture}[scale=.35]
+    \foreach \xx in {-4.5,-3,...,4.5}{
+      \foreach \yy in {-4.5,-3,...,4.5}
+      \node at (\xx,\yy) {\color{cyan}$\times$};
+    }
+    \node[cyan] at (2.75,5.4) {$\vec B_\text{in}$};
+    \draw[ultra thick] circle (3);
+    \uncover<2->{
+      \draw[ultra thick,fill=magenta!50,opacity=.5] circle (3);
+      
+      \node[thick,draw=red,fill=red!5,text width=4.8cm]
+      (flux) at (-14,2.8){\color{red}
+        Magnetic flux through the wire loop into the page is increasing, and
+        it is a function of time:
+        
+        \vspace{-.25in}\begin{displaymath}
+          \Phi_m(t)=\int_{\mathcal S}\vec B(t)\cdot\dl\vec A=B(t)A
+        \end{displaymath}\par
+      };
+      \draw[thick,->,red] (flux) to[out=0,in=110] (-.75,1.5)
+      node[below=-2]{\scriptsize$\mathcal S$};
+    }
     
-    \column{.7\textwidth}
-    \begin{itemize}
-    \item Since \emph{emf} is work per unit charge, that means that there is an
-      electric field inside the wire to move the charges.
-    \item In this example:
-      \begin{itemize}
-      \item Magnetic field $\vec B$ into the page
-      \item The direction of the electric field $\vec E$ corresponds to an
-        \emph{increase} in magnetic flux
-      \end{itemize}
-    \end{itemize}
-  \end{columns}
+    \uncover<3->{
+      \node[thick,draw=green!60!black,fill=green!5,text width=4.8cm]
+      (emf) at (-14,-4.8){\color{green!60!black}
+        An electric field $\vec E$ is generated inside the wire, resulting in
+        an induced \emph{emf} $\mathcal E$:
+        
+        \vspace{-.07in}\begin{displaymath}
+          \mathcal E=\left|\diff{\Phi_m}t\right|
+        \end{displaymath}\par
+      };
+      %\draw[thick,->,green!60!black] (flux)--(emf);
+      \foreach \x in {0,45,90,...,360}
+      \draw[rotate=\x,vectors,green!60!black] (3,0)--(3,2.5);
+    }
+    \uncover<4->{
+      \node[thick,draw=blue!70!black,fill=blue!5,text width=4.7cm]
+      (curr) at (14,0){\color{blue!70!black}
+        An induced current runs in the wire in direction of the electric
+        field (Ohm's law):
+        
+        \vspace{-.05in}\begin{displaymath}
+          I=\frac{\mathcal E}R
+        \end{displaymath}\par
+        $R$ is the internal resistance of the wire loop
+      };
+      %\draw[thick,->,blue!70!black] (emf) to[out=0,in=270] (curr);
+      
+      \draw[vectors,blue!70!black] (2.7,0) arc (0:300:2.7) node[above]{$I$};
+    }
+
+    \uncover<5>{
+      \node[text width=9.6cm,font=\normalsize] at (8,-7.5){
+        One remaining (and very important) question: how do we know the
+        direction of the electric field $\vec E$ and current $I$?
+      };
+    }
+  \end{tikzpicture}
 \end{frame}
 
 
-\begin{frame}{AC Generators}
-  A simple AC (alternating current) generator makes use of the fact that a 
-  coil rotating against a fixed magnetic field has a changing flux.
+
+\begin{frame}{Lenz's Law}
+  To find the direction of the current, we apply \textbf{Lenz's law}:
   \begin{center}
-    \pic{.45}{generator}
+    \fcolorbox{black}{yellow!10}{
+      \begin{minipage}{.7\textwidth}
+        \textbf{LENZ'S LAW:} The induced \emph{emf} and induced current are in
+        such are direction as to oppose the change that produces them
+      \end{minipage}
+    }
+  \end{center}
+  The law comes from the conservation of energy, which disallows perpetual
+  motion machines.
+  %So basically, the conservation of energy
+\end{frame}
+
+
+
+%\begin{frame}{When Magnetic Flux is Changing}
+%  \begin{itemize}
+%  \item When the magnetic flux $\Phi_m$ is changing, an electromotive force
+%    (\emph{emf}, $\mathcal E$) is created in the wire.
+%  \item Unlike in a circuit, where the \emph{emf} is concentrated at the
+%    terminals of the battery, the induced \emph{emf} is spread across the
+%    entire wire.
+%  \end{itemize}
+%  \begin{columns}
+%    \column{.3\textwidth}
+%    \centering
+%    \begin{tikzpicture}[scale=.35]
+%      \foreach \xx in {-4.5,-3,...,4.5}{
+%        \foreach \yy in {-4.5,-3,...,4.5}
+%        \node at (\xx,\yy) {\color{cyan}$\times$};
+%      }
+%      \draw[gray,ultra thick] circle (2.9);
+%      \draw[axes,rotate=45] (0,0)--(2.9,0) node[midway,left]{$r$};
+%      \foreach \x in {0,90,...,360} {
+%        \draw[rotate=\x,vectors,red] (2.9,0)--(2.9,2.5)
+%        node[pos=0,above left]{$\vec E$};
+%      }
+%    \end{tikzpicture}
+%    
+%    \column{.7\textwidth}
+%    \begin{itemize}
+%    \item Since \emph{emf} is work per unit charge, that means that there is an
+%      electric field inside the wire to move the charges.
+%    \item In this example:
+%      \begin{itemize}
+%      \item Magnetic field $\vec B$ into the page
+%      \item The direction of the electric field $\vec E$ corresponds to an
+%        \emph{increase} in magnetic flux
+%      \end{itemize}
+%    \end{itemize}
+%  \end{columns}
+%\end{frame}
+
+
+
+\section{AC Generator}
+
+\begin{frame}{AC Generator}
+  A simple AC (alternating current) generator makes use of the fact that a 
+  coil rotating against a fixed magnetic field has a changing magnetic flux.
+  \begin{center}
+    \pic{.5}{generator}
   \end{center}
   Let's say the permanent magnets produce a uniform magnetic field $B$, and the
   coil between them has $N$ turns, and an area $A$. Now let's say that the coil
@@ -165,43 +261,31 @@
 
 
 
-\begin{frame}{AC Generators}
+\begin{frame}{AC Generator}
   \begin{columns}
     \column{.35\textwidth}
     \pic1{generator}
 
     \column{.65\textwidth}
-    When the coil is turning, the angle between the coil and the magnetic field
-    is:
+    When the coil is turning with an angular frequency $\omega$, the angle
+    between the coil and the magnetic field is:
     
-    \eq{-.1in}{
+    \eq{-.15in}{
       \theta=\omega t+\delta
     } 
 
-    where $\delta$ is the initial angle. (This term is not important.) The
-    magnetic flux through the coil is given by:
+    \vspace{-.15in}The initial angle $\delta$ is not important. The magnetic
+    flux through the coil is given by:
     
-    \eq{-.1in}{
+    \eq{-.13in}{
       \Phi_m = NBA\cos\theta = NBA\cos(\omega t+\delta)
     }
-    
-    as the coil turns
-  \end{columns}
-\end{frame}
 
-
-
-\begin{frame}{AC Generators}
-  \begin{columns}
-    \column{.35\textwidth}
-    \pic1{generator}
-
-    \column{.65\textwidth}  
-    The electromotive force \emph{emf} produced is therefore the rate of change
-    of the magnetic flux:
+    \vspace{-.15in}as the generator turns. The induced \emph{emf} is the rate
+    of change of magnetic flux:
 
     \eq{-.1in}{
-      \mathcal E =-\diff{\Phi_m}t =
+      \mathcal E(t) =\left|\diff{\Phi_m}t\right| =
       \underbracket{NBA\omega}_{\mathcal E_\text{max}}\sin(\omega t+\delta)
     }
   \end{columns}
@@ -209,55 +293,114 @@
 
 
 
+%\begin{frame}{Motional EMF: What happens when I slide the rod to the right?}
+%  \begin{columns}
+%    \column{.45\textwidth}
+%    \pic1{motional-emf-1}
+%
+%    \column{.55\textwidth}
+%    When sliding the rod to the right with speed $v$, the magnetic flux through
+%    the loop (and its rate of change) is:
+%
+%    \vspace{-.3in}{\large
+%      \begin{align*}
+%        \Phi_m &=BA=B\ell x\\
+%        \mathcal E &= \diff{\Phi_m}r = B\ell\diff xt=B\ell v
+%      \end{align*}
+%    }
+%    
+%    We can use the magnetic force on the charges on the rod to find the
+%    direction of the induced current $I$, and its magnitude is:
+%
+%    \eq{-.15in}{
+%      I=\frac{\mathcal E}R
+%      }
+%  \end{columns}
+%\end{frame}
+
+
+\section{Motional EMF}
+
 \begin{frame}{Motional EMF}
-  {What happens when I slide the rod to the right?}
-  \begin{columns}
-    \column{.45\textwidth}
-    \pic1{motional-emf-1}
+  What happens when I slide the rod to the right?
+  \begin{center}
+    \begin{tikzpicture}
+      \node {\pic{.45}{motional-emf-1}};
+      \uncover<2->{
+        \fill[magenta!60,opacity=.6] (-2.75,-1.37) rectangle (.97,1.17);
 
-    \column{.55\textwidth}
-    When sliding the rod to the right with speed $v$, the magnetic flux through
-    the loop (and its rate of change) is:
+        \node[thick,draw=red,fill=pink!30,text width=4cm]
+        (phi) at (-4,-3.3){\color{red}
+          The magnetic flux through the circuit is given by
+          
+          \vspace{-.15in}
+          \begin{displaymath}
+            \Phi_m=BA=B\ell x
+          \end{displaymath}\par
+        };
+        \draw[axes,red] (phi)--(-1,-.7);
+      }
 
-    \vspace{-.3in}{\large
-      \begin{align*}
-        \Phi_m &=BA=B\ell x\\
-        \diff{\Phi_m}r &= B\ell\diff xt=\boxed{B\ell v=\mathcal E}
-      \end{align*}
-    }
-    
-    We can use the Lorentz force law on the charges on the rod to find the
-    direction of the current $I$.
-  \end{columns}
-\end{frame}
+      \uncover<3->{
+        \node[thick,draw=green!60!black,fill=green!10,text width=6.4cm]
+        (phi) at (2.5,-3.3){\color{green!60!black}
+          When sliding the rod to the right at speed $v$, the rate
+          of change in magnetic flux is
 
+          \vspace{-.1in}
+          \begin{displaymath}
+            \mathcal E = \left|\diff{\Phi_m}t\right| = B\ell\diff xt=B\ell v
+          \end{displaymath}\par
+        };
+      }
 
+      \uncover<4->{
+        \node[thick,draw=blue!70!black,fill=blue!10,text width=2.5cm]
+        (i) at (5,0){\color{blue!70!black}
+          This emf induces a current of:
 
-\begin{frame}{Motional EMF}{What happens when I slide the rod to the right?}
-  \begin{columns}
-    \column{.22\textwidth}
-    \begin{tikzpicture}[scale=1.5]
-      \draw[thick](1.5,0) to[battery1,l_=$\mathcal E$] (1.5,1.5)--(0,1.5)
-      to[R,l_=$R$] (0,0)--(1.5,0);
+          \vspace{-.1in}
+          \begin{displaymath}
+            I=\frac{\mathcal E}R
+          \end{displaymath}\par
+        };
+      }
     \end{tikzpicture}
-    
-    \column{.78\textwidth}
-    \begin{itemize}
-    \item An equivalent circuit is shown on the left
-    \item The amount of current can be found using Ohm's law: $V=IR$
-    \item Note that the ``motional emf'' produced is spread over the entire
-      circuit
-      \begin{itemize}
-      \item In constrast, in a voltaic cell (or battery), the \emph{emf} is
-        concentrated between the two terminals.
-      \end{itemize}
-    \end{itemize}
-  \end{columns}
+  \end{center}
+%    \column{.55\textwidth}
+%    
+%    We can use the magnetic force on the charges on the rod to find the
+%    direction of the induced current $I$, and its magnitude is:
+%
+
+%  \end{columns}
 \end{frame}
 
 
 
-\section{Lenz's Law}
+%\begin{frame}{Motional EMF}
+%  \begin{columns}
+%    \column{.22\textwidth}
+%    \begin{tikzpicture}[scale=1.5,thick]
+%      \draw (1.5,0) to[battery1,l_=$\mathcal E$] (1.5,1.5)--(0,1.5)
+%      to[R,l_=$R$] (0,0)--(1.5,0);
+%    \end{tikzpicture}
+%    
+%    \column{.78\textwidth}
+%    \begin{itemize}
+%    \item An equivalent circuit is shown on the left
+%    \item The amount of current can be found using Ohm's law: $V=IR$
+%    \item Note that the ``motional emf'' produced is spread over the entire
+%      circuit
+%      \begin{itemize}
+%      \item In constrast, in a voltaic cell (or battery), the \emph{emf} is
+%        concentrated between the two terminals.
+%      \end{itemize}
+%    \end{itemize}
+%  \end{columns}
+%\end{frame}
+
+
 
 \begin{frame}{Lenz's Law}
   Something very interesting happens when the current starts running on the
@@ -266,22 +409,68 @@
     \pic{.35}{motional-emf-2}
   \end{center}
   It produces an ``induced magnetic field'' out of the page, in the opposite
-  direction as the field that generated the current in the first place.
+  direction as the field that generated the current in the first place, just
+  as we expect from Lenz's law.
 \end{frame}
 
 
 
-\begin{frame}{Lenz's Law}
-  \begin{center}
-    \fbox{
-      \begin{minipage}{.7\textwidth}
-        \textbf{LENZ'S LAW}\\
-        The induced \emph{emf} and induced current are in such are
-        direction as to oppose the change that produces them
-      \end{minipage}
-    }
-  \end{center}
-  So basically, the conservation of energy
+
+
+
+
+\begin{frame}{Solving Problems with Faraday's Law \& Lenz's Law}
+  \centering
+  \vspace{.2in}
+  \begin{tikzpicture}[auto,node distance=105, thick]
+    \node[fill=pink!40,font=\large] (a) {
+      $\displaystyle\Phi_m=\int_{\mathcal S}\vec B\cdot\dl\vec A$};
+    \node[fill=green!20,font=\large] (b) [right of=a] {
+      $\displaystyle\left|\diff{\Phi_m}t\right|=\mathcal E$};
+    \node[fill=blue!20,font=\large] (c) [right of=b] {
+      $I=\dfrac{\mathcal E}R$};
+    \node[fill=orange!20,font=\large] (d) [right of=c]{
+      $P=I^2R=\dfrac{\mathcal E^2}R$};
+    \draw[->] (a)--(b);
+    \draw[->] (b)--(c);
+    \draw[->] (c)--(d);
+    \draw[<-,red] (a)--+(0,-1.3)
+    node[draw=red,fill=pink!30,text width=2.7cm,below,font=\scriptsize]{
+      Find the loop of circuit and calculate magnetic flux $\Phi_m$ through it
+      as a function of time 
+    };
+
+    \draw[<-,green!60!black] (b)--+(0,-1.3) node[
+      draw=green!60!black,fill=green!10,text width=2.8cm,below,font=\scriptsize
+    ]{
+      Take time derivative to find the induced \emph{emf} $\mathcal E$
+      generated in the circuit loop
+    };
+
+    \draw[<-,blue!80!black] (c)--+(0,-1.3) node (cc) [
+      draw=blue!80!black,fill=blue!10,text width=2.9cm,below,font=\scriptsize
+    ]{
+      Apply Ohm's law to find the induced current in the circuit. $R$ can be the
+      internal resistance, or a resistor in the circuit
+    };
+
+    \draw[<-,orange] (d)--+(0,-1.3) node[
+      draw=orange,fill=orange!10,text width=3.2cm,below,font=\scriptsize
+    ]{
+      Calculate power dissipated in the circuit, and compare to the
+      power input
+    };
+
+    \node[fill=gray!20,draw=black,font=\scriptsize,text width=7.2cm]
+    (I) at (1.9,-3.9) {Direction of induced current $I$ must produce a magnetic
+      field that opposes the change in magnetic flux.
+      \begin{itemize}
+      \item If $\Phi_m$ is increasing, magnetic field must decrease it
+      \item If $\Phi_m$ is decreasing, magnetic field must increase it
+      \end{itemize}\par
+    };
+    \draw[->] (cc) to[out=270,in=0] (I);
+  \end{tikzpicture}
 \end{frame}
 
 
@@ -291,11 +480,10 @@
 \begin{frame}{Back \emph{emf}}
   Consider a very simple circuit consisting of a voltage source and a coil
   \begin{center}
-    \begin{tikzpicture}[american voltages,scale=1.3]
-      \draw[thick](0,0) to[battery1,l=$\mathcal E$] (0,1.5)
-      to[short,-*](.5,1.5);
-      \draw[thick](.55,1.7) to[short,*-*](1,1.5)--(1.5,1.5)
-      to[L] (1.5,0)--(0,0);
+    \begin{tikzpicture}[american voltages,scale=1.3,thick]
+      \draw (0,0) to[battery1,l=$\mathcal E$] (0,1.5)
+      to[short,-*] (.5,1.5);
+      \draw (.55,1.7) to[short,*-*] (1,1.5)--(1.5,1.5) to[L] (1.5,0)--(0,0);
     \end{tikzpicture}
   \end{center}
   \begin{itemize}
@@ -312,11 +500,10 @@
 
 \begin{frame}{Back \emph{emf}}
   \begin{center}
-    \begin{tikzpicture}[american voltages,scale=1.3]
-      \draw[thick](0,0) to[battery1,l=$\mathcal E$] (0,1.5)
-      to[short,-*](.5,1.5);
-      \draw[thick](.55,1.7) to[short,*-*](1,1.5)--(1.5,1.5)
-      to[L] (1.5,0)--(0,0);
+    \begin{tikzpicture}[american voltages,scale=1.3,thick]
+      \draw (0,0) to[battery1,l=$\mathcal E$] (0,1.5)
+      to[short,-*] (.5,1.5);
+      \draw (.55,1.7) to[short,*-*] (1,1.5)--(1.5,1.5) to[L] (1.5,0)--(0,0);
     \end{tikzpicture}
   \end{center}
   \begin{itemize}
@@ -366,11 +553,11 @@
     \begin{tabular}{l|c|c}
       \rowcolor{pink}
       \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
-      Self inductance                    & $L$     & \si\henry\\
-      Vacuum permeability      & $\mu_0$ & \si{\tesla.\metre\per\ampere} \\
-      Number of coils per unit length    & $n$     & \si\ampere \\
-      Cross-section area of the solenoid & $A$     & \si{\metre\squared} \\
-      Length of the solenoid             & $\ell$  & \si\metre
+      Self inductance & $L$ & \si\henry\\
+      Vacuum permeability & $\mu_0$ & \si{\tesla.\metre\per\ampere} \\
+      Number of coils per unit length & $n$ & \si\ampere \\
+      Cross-section area of the solenoid & $A$ & \si{\metre\squared} \\
+      Length of the solenoid & $\ell$ & \si\metre
     \end{tabular}
   \end{center}
   Note that $A\ell$ is the \emph{enclosed volume} of the solenoid. The SI unit

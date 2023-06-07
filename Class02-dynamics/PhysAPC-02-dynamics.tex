@@ -261,12 +261,10 @@
     \centering
     \begin{tikzpicture}
       \draw[thick] (-1,0)--(2.5,0);
-      \draw[fill=cyan!50,thick] rectangle (1.5,1);
+      \draw[mass] rectangle (1.5,1);
       \fill (.75,.5) circle(2pt);
-      \begin{scope}[->,very thick]
-        \draw (.75,.5)--(.75,-.5) node[below]{$m\vec g$};
-        \draw (.75,.5)--(.75,1.5) node[above]{$\vec N$};
-      \end{scope}
+      \draw[vectors] (.75,.5)--(.75,-.5) node[below]{$m\vec g$};
+      \draw[vectors] (.75,.5)--(.75,1.5) node[above]{$\vec N$};
     \end{tikzpicture}
     
     $m\vec g=-\vec N$\\(special case)
@@ -290,14 +288,14 @@
   \begin{center}
     \begin{tikzpicture}[scale=.9]
       \draw[thick] (0,0)--(5,0);
-      \draw[->,thick] (1.7,0) arc (0:30:1.7) node[pos=.6,right] {$\theta$};
+      \draw[axes] (1.7,0) arc (0:30:1.7) node[pos=.6,right] {$\theta$};
       \begin{scope}[rotate=30]
         \draw[thick] (0,0)--(5,0);
-        \draw[fill=cyan!50,thick] (2,0) rectangle (4,1.5);
-        \draw [->,very thick,rotate around={-30:(3,.75)}]
+        \draw[mass] (2,0) rectangle (4,1.5);
+        \draw[vectors,rotate around={-30:(3,.75)}]
         (3,.75)--(3,-1) node[right]{$m\vec g$};
-        \draw [->,very thick,red] (3,.75)--(3,2.25) node[left]{$\vec N$};
-        \fill(3,.75) circle(.06);
+        \draw[vectors,red] (3,.75)--(3,2.25) node[left]{$\vec N$};
+        \fill (3,.75) circle (.06);
       \end{scope}
     \end{tikzpicture}
   \end{center}
@@ -436,22 +434,20 @@
     \column{.4\textwidth}
     \centering
     \begin{tikzpicture}
-      \draw [thick] (-1,0)--(2.5,0);
-      \draw [fill=cyan!50,thick] rectangle (1.5,1);
+      \draw[thick] (-1,0)--(2.5,0);
+      \draw[mass] rectangle (1.5,1);
       \fill (.75,.5) circle(2pt);
-      \begin{scope}[->,very thick]
-        \draw(.75,.5)--(.75,-.5) node[below]{$m\vec g$};
-        \draw(.75,.5)--(.75,1.5) node[above]{$\vec N$};
-        \draw(.75,.5)--(2.,.5)   node[right]{$\vec F_a$};
-        \draw(.75,.5)--(.1,.5)   node[left] {$\vec f$};
-      \end{scope}
+      \draw[vectors] (.75,.5)--(.75,-.5) node[below]{$m\vec g$};
+      \draw[vectors] (.75,.5)--(.75,1.5) node[above]{$\vec N$};
+      \draw[vectors] (.75,.5)--(2.,.5) node[right]{$\vec F_a$};
+      \draw[vectors] (.75,.5)--(.1,.5) node[left]{$\vec f$};
     \end{tikzpicture}
 
     \column{.6\textwidth}
     \centering
-    \begin{tikzpicture}[scale=.5]
-      \draw[very thick,->](0,0)--(10,0) node[right]{$F_a$};
-      \draw[very thick,->](0,0)--(0,5) node[left]{$f$};
+    \begin{tikzpicture}[scale=.5,vectors]
+      \draw (0,0)--(10,0) node[right]{$F_a$};
+      \draw (0,0)--(0,5) node[left]{$f$};
     \end{tikzpicture}
   \end{columns}
 \end{frame}
@@ -533,9 +529,9 @@
     \vspace{-.15in}
     \begin{center}
       \begin{tikzpicture}[scale=.9]
-        \draw[very thick,->](0,0)--(0,-1.5) node[below]{$m\vec g$};
-        \draw[very thick,->,black!2](0,0)--(0,1.5) node[above]{$\vec D$};
-        \fill circle(.07);
+        \draw[vectors] (0,0)--(0,-1.5) node[below]{$m\vec g$};
+        \draw[vectors,black!2] (0,0)--(0,1.5) node[above]{$\vec D$};
+        \fill circle (.07);
       \end{tikzpicture}
     \end{center}
     
@@ -547,10 +543,10 @@
     \vspace{-.15in}
     \begin{center}
       \begin{tikzpicture}[scale=.9]
-        \draw[very thick,->](0,0)--(0,-1.5) node[below]{$m\vec g$};
-        \draw[very thick,->,black!2](0,0)--(0,1.5) node[above]{$\vec D$};
-        \draw[very thick,->,green](0,0)--(0,.6) node[above]{$\vec D$};
-        \fill circle(.07);
+        \draw[vectors] (0,0)--(0,-1.5) node[below]{$m\vec g$};
+        \draw[vectors,black!2] (0,0)--(0,1.5) node[above]{$\vec D$};
+        \draw[vectors,green] (0,0)--(0,.6) node[above]{$\vec D$};
+        \fill circle (.07);
       \end{tikzpicture}
     \end{center}
     
@@ -562,9 +558,9 @@
     \vspace{-.15in}
     \begin{center}
       \begin{tikzpicture}[scale=.9]
-        \draw[very thick,->](0,0)--(0,-1.5) node[below]{$m\vec g$};
-        \draw[very thick,->,red](0,0)--(0,1.5) node[above]{$\vec D$};
-        \fill circle(.07);
+        \draw[vectors] (0,0)--(0,-1.5) node[below]{$m\vec g$};
+        \draw[vectors,red] (0,0)--(0,1.5) node[above]{$\vec D$};
+        \fill circle (.07);
       \end{tikzpicture}
     \end{center}
         
@@ -640,16 +636,16 @@
   \vspace{.1in}
   \begin{center}
     \begin{tikzpicture}
-      \draw[thick,fill=cyan!40] (5,.5) rectangle (6,1.5);
+      \draw[mass] (5,.5) rectangle (6,1.5);
       \draw[thick,
         decoration={aspect=.6,segment length=5mm, amplitude=2.5mm, coil},
         decorate] (0,1)--(5,1);
-      \fill[pattern=north east lines](-.2,0) rectangle(0,2);
-      \draw[thick](0,.0)--(0,2);
-      \fill[red] (5.5,1) circle(.06);
-      \draw[ultra thick,->,red](5.5,1)--(4,1) node[above]{$\vec F_s$};
-      \draw[dashed](3,0)--(3,2) node[above]{\small Equilibrium position};
-      \draw[ultra thick,->](3,.3)--(5,.3) node[midway,below]{$\vec x$};
+      \fill[pattern=north east lines] (-.2,0) rectangle (0,2);
+      \draw[thick] (0,.0)--(0,2);
+      \fill[red] (5.5,1) circle (.06);
+      \draw[vectors,red] (5.5,1)--(4,1) node[above]{$\vec F_s$};
+      \draw[dashed] (3,0)--(3,2) node[above]{Equilibrium position};
+      \draw[vectors] (3,.3)--(5,.3) node[midway,below]{$\vec x$};
     \end{tikzpicture}
     \hspace{.2in}
     \begin{tikzpicture}
@@ -660,16 +656,16 @@
       \fill[pattern=north east lines](-.2,0) rectangle(0,2);
       \draw[thick](0,.0)--(0,2);
       \fill[gray!30] (5.5,1) circle(.06);
-      \draw[ultra thick,->,gray!30](5.5,1)--(4,1) node[above]{$\vec F_s$};
+      \draw[vectors,gray!30] (5.5,1)--(4,1) node[above]{$\vec F_s$};
       \draw[dashed](3,0)--(3,2);
-      \draw[ultra thick,->,gray!30](3,.3)--(5,.3)node[midway,below]{$\vec x$};
-      \draw[thick,fill=cyan!40] (1.5,.5) rectangle (2.5,1.5);
+      \draw[vectors,gray!30](3,.3)--(5,.3)node[midway,below]{$\vec x$};
+      \draw[mass] (1.5,.5) rectangle (2.5,1.5);
       \draw[thick,
         decoration={aspect=.3,segment length=1.5mm, amplitude=2.5mm, coil},
         decorate] (0,1)--(1.5,1);
-      \draw[ultra thick,->](3,.3)--(1.5,.3) node[midway,below]{$\vec x$};
-      \fill[red] (2,1) circle(.06);
-      \draw[ultra thick,->,red](2,1)--(3,1) node[above]{$\vec F_s$};
+      \draw[vectors] (3,.3)--(1.5,.3) node[midway,below]{$\vec x$};
+      \fill[red] (2,1) circle (.06);
+      \draw[vectors,red] (2,1)--(3,1) node[above]{$\vec F_s$};
     \end{tikzpicture}
   \end{center}
 \end{frame}
@@ -701,13 +697,11 @@
   represented by the ``big dot''. For example:
   \begin{center}
     \begin{tikzpicture}[scale=.8]
-      \fill(1.5,1) circle(.1);
-      \begin{scope}[->,very thick]
-        \draw(1.5,1)--(1.5,-.5) node[below]{$m\vec g$};
-        \draw(1.5,1)--(1.5,2.5) node[above]{$\vec N$};
-        \draw(1.5,1)--(3.1,1)   node[right]{$\vec F_a$};
-        \draw(1.5,1)--(.75,1)   node[left] {$\vec f$};
-      \end{scope}
+      \fill (1.5,1) circle(.1);
+      \draw[vectors] (1.5,1)--(1.5,-.5) node[below]{$m\vec g$};
+      \draw[vectors] (1.5,1)--(1.5,2.5) node[above]{$\vec N$};
+      \draw[vectors] (1.5,1)--(3.1,1) node[right]{$\vec F_a$};
+      \draw[vectors] (1.5,1)--(.75,1) node[left] {$\vec f$};
     \end{tikzpicture}
   \end{center}
   However, for motion where \emph{rotation} is (at least) a possibility, we
@@ -726,19 +720,16 @@
   sphere rolling down a ramp should have weight $m\vec g$, normal force $\vec N$
   and static friction $\vec f_s$ acting on it:
   \begin{center}
-    \begin{tikzpicture}[scale=1.1]
-      \begin{scope}[rotate=-30]
-	\shade[ball color=red!20] circle(1);
-	\draw[thick](-2,-1)--(2,-1);
-	\draw[thick,->](0,1.2) arc(90:60:1.2) node[pos=.3,right]{$\omega$};
-	\fill circle(.05);
-	\draw[->,very thick,rotate=30](0,0)--(0,-1.5)
-	node[below]{$m\vec g$};
-	\draw[->,very thick](0,-1)--(0,.3)  node[above]{$\vec N$};
-	\draw[->,very thick](0,-1)--(-.5,-1) node[left]{$\vec f_s$};
-	\draw[->](2,0)--(2.5,0) node[right]{$x$};
-        \draw[->](2,0)--(2,.5) node[above]{$y$};
-      \end{scope}
+    \begin{tikzpicture}[scale=1.1,rotate=-30]
+      \shade[ball color=red!20] circle(1);
+      \draw[thick] (-2,-1)--(2,-1);
+      \fill circle(.05);
+      \draw[vectors,rotate=30] (0,0)--(0,-1.5) node[below]{$m\vec g$};
+      \draw[vectors] (0,-1)--(0,.3) node[above]{$\vec N$};
+      \draw[vectors] (0,-1)--(-.5,-1) node[left]{$\vec f_s$};
+      \draw[axes] (2,0)--(2.5,0) node[right]{$x$};
+      \draw[axes] (2,0)--(2,.5) node[above]{$y$};
+      \draw[axes] (0,1.2) arc (90:60:1.2) node[pos=.3,right]{$\omega$};
     \end{tikzpicture}
   \end{center}
   Once the FBD is drawn, decide on the axes to help you solve the motion. One of
@@ -831,12 +822,10 @@
   there are definitely action/reaction forces between the blocks.
   \begin{center}
     \begin{tikzpicture}[scale=.8]
-      \begin{scope}[thick]
-        \draw(-3,0)--(4,0);
-        \draw rectangle(1,1) node[midway]{$m$};
-        \draw(1,0) rectangle(3,1.5) node[midway]{$M$};
-      \end{scope}
-      \draw[very thick,->](-1.5,.5)--(0,.5) node[pos=0,left]{$\vec F_a$};
+      \draw[thick] (-3,0)--(4,0);
+      \draw[thick] rectangle (1,1) node[midway]{$m$};
+      \draw[thick] (1,0) rectangle (3,1.5) node[midway]{$M$};
+      \draw[vectors] (-1.5,.5)--(0,.5) node[pos=0,left]{$\vec F_a$};
     \end{tikzpicture}
   \end{center}
   Or multiple objects stacked on top of one another. The contact surface between
@@ -844,12 +833,10 @@
   $M$ and $m$ must have a friction coefficient $\mu$.
   \begin{center}
     \begin{tikzpicture}[scale=.8]
-      \begin{scope}[thick]
-        \draw(-1,0)--(5.5,0);
-        \draw rectangle(3,1.5) node[midway]{$M$};
-        \draw(.75,1.5) rectangle(2.25,2.5) node[midway]{$m$};
-      \end{scope}
-      \draw[very thick,->](3,.5)--(4.5,.5) node[right]{$\vec F_a$};
+      \draw[thick] (-1,0)--(5.5,0);
+      \draw[thick] rectangle(3,1.5) node[midway]{$M$};
+      \draw[thick] (.75,1.5) rectangle(2.25,2.5) node[midway]{$m$};
+      \draw[vectors] (3,.5)--(4.5,.5) node[right]{$\vec F_a$};
     \end{tikzpicture}
   \end{center}
 \end{frame}
@@ -938,22 +925,22 @@
   frictionless pulley as shown in the diagram.
   \begin{center}
     \begin{tikzpicture}[scale=1.2]
-      \draw[thick,brown](-4,.4)--(.1,.4);
-      \draw[thick](0,0)--(-5.5,0) node[midway,below]{$\mu$};
-      \draw[thick,fill=magenta!20](-4,0) rectangle(-5,.75)node[midway]{$m$};
+      \draw[thick,brown] (-4,.4)--(.1,.4);
+      \draw[thick] (0,0)--(-5.5,0) node[midway,below]{$\mu$};
+      \draw[thick,fill=magenta!20] (-4,0) rectangle (-5,.75) node[midway]{$m$};
       \begin{scope}[rotate=-30,thick]
-        \draw[brown](1,.4)--(-.05,.4);
-        \draw(0,0)--(3,0) node[midway,below left] {$\mu$};
-        \draw[fill=cyan!50](1,0) rectangle(2.5,1)node[midway]{$M$};
+        \draw[brown] (1,.4)--(-.05,.4);
+        \draw (0,0)--(3,0) node[midway,below left] {$\mu$};
+        \draw[mass] (1,0) rectangle(2.5,1)node[midway]{$M$};
       \end{scope}
       \begin{scope}[rotate=-15]
         \draw[thick,fill=gray] (0,.3) circle(.15);
         \draw[thick,fill=lightgray] (0,.3) circle(.1);
         \draw[ultra thick] (0,0)--(0,.3);
-        \fill(0,.3) circle(.04);
+        \fill (0,.3) circle(.04);
       \end{scope}
-      \draw[thick,gray!70](0,0)--(0,-1.5);
-      \draw[thick,->](0,-.5)arc(270:330:.5) node[midway,below]{$\phi$};
+      \draw[thick,gray!70] (0,0)--(0,-1.5);
+      \draw[axes] (0,-.5) arc (270:330:.5) node[midway,below]{$\phi$};
     \end{tikzpicture}
   \end{center}
   \begin{enumerate}[(a)]

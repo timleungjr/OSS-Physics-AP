@@ -82,14 +82,15 @@
   $\iii$), i.e.:
   
   \eq{-.1in}{
-    \sum F_x=ma \quad\quad \sum F_y=0 \quad\quad \sum F_z=0
+    \sum F_x=ma \quad\quad \sum F_y=0 %\quad\quad \sum F_z=0
   }
 
-  There are also three equations for rotation, and torque is only applied in
-  one direction (likely $\kkk$):
+  For AP Physics C, there is also one equation for rotation, as torque is only
+  applied in one direction:
     
   \eq{-.1in}{
-    \sum\tau_x=0 \quad\quad \sum\tau_y=0 \quad\quad \sum\tau_z=I_z\alpha
+    %\sum\tau_x=0 \quad\quad \sum\tau_y=0 \quad\quad
+    \sum\tau=I\alpha
   }
 \end{frame}
 
@@ -172,32 +173,16 @@
 
 
 \begin{frame}{Pure Rolling Problems}
-  In a \textbf{pure rolling} problem, a smooth solid sphere (any object that
-  can roll with do) rolls along a smooth surface without slipping
   \begin{columns}
     \column{.35\textwidth}
-    \centering
-    \begin{tikzpicture}[scale=1.1]
-      \shade[ball color=gray!5] circle(1);
-      \draw[thick] (-2,-1)--(2,-1);
-      \draw[vectors] (1.2,0)--(2.2,0) node[above]{$\vec v$};
-      \draw[vectors] (0,1.2) arc(90:60:1.2) node[midway,above]{$\omega$};
-      \draw[axes] (1,-2)--(1.5,-2) node[right]{$x$};
-      \draw[axes] (1,-2)--(1,-1.5) node[above]{$y$};
-      \fill circle(.05);
-      \draw[vectors,blue] (0,0)--(0,-1.5) node[below]{$m\vec g$};
-      \draw[vectors,red] (-.03,-1)--(-.03,.5) node[above]{$\vec N$};
-    \end{tikzpicture}
+    \input{noslip}
 
     \column{.65\textwidth}
+    In a \textbf{pure rolling} problem, a smooth solid sphere (any object that
+    can roll with do) rolls along a smooth surface without slipping
     \begin{itemize}
-    \item Assumptions:
-      \begin{itemize}
-      \item Both the sphere and the surface are both perfectly rigid (they
-        do not deform)
-      \item The sphere and the surface are both perfectly smooth without defects
-        even at the microscopic level
-      \end{itemize}
+    \item Assumption: Both the sphere and the surface are both perfectly rigid
+      (they do not deform)
     \item There are only two forces acting on the sphere:
       \begin{itemize}
       \item Gravitational force $m\vec g$
@@ -211,7 +196,6 @@
 
 
 \begin{frame}{Pure Rolling Problems}
-  The free-body diagram is simple enough that we can see that:
   \begin{columns}
     \column{.65\textwidth}
     \begin{itemize}
@@ -221,27 +205,20 @@
       \eq{-.1in}{
         \sum\vec F=\vec 0\quad\quad \vec v=\text{constant}
       }
-    \item Neither gravity or normal force generate a torque about the CM,
-      therefore there is no net torque, and the rotational state $\omega$ is
+    \item The line of action of both normal force $\vec N$ and gravity $m\vec g$
+      go through the CM, therefore neither force generate a torque about the CM.
+    \item There is no net torque, and the rotational state $\omega$ is
       constant:
 
-      \eq{-.1in}{
+      \eq{-.15in}{
         \sum\tau=0\quad\quad\omega=\text{constant}
       }
-    \item In \emph{theory}, this sphere will roll along with angular velocity
+    \item In \emph{theory}, this sphere will roll along with angular speed
       $\omega$ and speed $v=\omega R$ forever
     \end{itemize}
 
     \column{.35\textwidth}
-    \begin{tikzpicture}
-      \shade[ball color=gray!10] circle(1);
-      \draw[thick] (-2,-1)--(2,-1);
-      \draw[vectors] (1.5,0)--(2.5,0) node[right]{$\vec v$};
-      \draw[vectors] (0,1.2) arc(90:60:1.2) node[midway,above]{$\vec\omega$};
-      \fill circle(.05) node[right]{\small cm};
-      \draw[vectors,blue] (0,0)--(0,-1.5) node[below]{$m\vec g$};
-      \draw[vectors,red] (-.03,-1)--(-.03,.5) node[above]{$\vec N$};
-    \end{tikzpicture}
+    \input{noslip}
   \end{columns}
 \end{frame}
 
@@ -273,22 +250,13 @@
 
 
 \begin{frame}{Rolling with Slipping on Rough Surface}
-  What if the rolling sphere is slipping against the surface?
   \begin{columns}
     \column{.27\textwidth}
-    \centering
-    \begin{tikzpicture}
-      \shade[ball color=gray!5] circle(1);
-      \draw[thick] (-1.5,-1)--(1.5,-1);
-      \draw[vectors] (1.5,0)--(2.5,0) node[right]{$\vec v$};
-      \draw[vectors] (0,1.2) arc(90:60:1.2) node[midway,above]{$\omega$};
-      \fill circle(.05);
-      \draw[vectors,blue] (-.03,0)--(-.03,-1.5) node[below]{$m\vec g$};
-      \draw[vectors,red] (0,-1)--(0,.5) node[above]{$\vec N$};
-      \draw[vectors,violet] (0,-1)--(1,-1) node[below]{$\vec f_k$};
-    \end{tikzpicture}
+    \input{slipping}
 
     \column{.73\textwidth}
+    What if the rolling sphere is slipping against the surface? In this
+    example, the sphere is rolling at rate $r\omega>v$
     \begin{itemize}
     \item Slippage at the point of contact between the sphere and the flat
       surface
@@ -309,33 +277,24 @@
 \begin{frame}{Rolling with Slipping on Rough Surface}
   \begin{columns}
     \column{.27\textwidth}
-    \begin{tikzpicture}
-      \shade[ball color=gray!5] circle(1);
-      \draw[thick] (-1.5,-1)--(1.5,-1);
-      \draw[vectors] (1.5,0)--(2.5,0) node[right]{$\vec v$};
-      \draw[vectors] (0,1.2) arc(90:60:1.2) node[midway,above]{$\omega$};
-      \fill circle(.05);
-      \draw[vectors,blue] (-.03,0)--(-.03,-1.5) node[below]{$m\vec g$};
-      \draw[vectors,red] (0,-1)--(0,.5) node[above]{$\vec N$};
-      \draw[vectors,violet] (0,-1)--(1,-1) node[below]{$\vec f_k$};
-    \end{tikzpicture}
+    \input{slipping}
 
     \column{.73\textwidth}
     \begin{itemize}
     \item Kinetic friction $f_k$ causes the center of mass of the sphere to
       accelerate toward the right
 
-      \eq{-.1in}{
+      \eq{-.15in}{
         F_\text{net}=f_k=ma_\text{cm}
       }
 
-    \item Since $f_k$ is constant, acceleration is also constant as well, as
-      long as the sphere slips.
+    \item\vspace{-.2in}Since $f_k$ is constant, acceleration is also constant
+      as well, as long as the sphere slips.
     \item e.g.: A car with its tires spinning on ice still has a small
       forward acceleration
     \item The acceleration of the center of mass is:
 
-      \eq{-.1in}{
+      \eq{-.15in}{
         a_\text{cm}=\mu_kg
       }
     \end{itemize}
@@ -347,23 +306,14 @@
 \begin{frame}{Rolling with Slipping on Rough Surface}
   \begin{columns}
     \column{.27\textwidth}
-    \begin{tikzpicture}
-      \shade[ball color=gray!5] circle(1);
-      \draw[thick] (-1.5,-1)--(1.5,-1);
-      \draw[vectors] (1.5,0)--(2.5,0) node[right]{$\vec v$};
-      \draw[vectors] (0,1.2) arc(90:60:1.2) node[midway,above]{$\omega$};
-      \fill circle(.05);
-      \draw[vectors,blue] (-.03,0)--(-.03,-1.5) node[below]{$m\vec g$};
-      \draw[vectors,red] (0,-1)--(0,.5) node[above]{$\vec N$};
-      \draw[vectors,violet] (0,-1)--(1,-1) node[below]{$\vec f_k$};
-    \end{tikzpicture}
+    \input{slipping}
 
     \column{.73\textwidth}
     \begin{itemize}
     \item The constant net torque in the $+\kkk$ (counter clockwise) direction
       generates a constant angular acceleration (because $f_k$ is constant)
 
-      \eq{-.1in}{
+      \eq{-.15in}{
         \tau_\text{net}=f_kR=I\alpha
       }
     \item The angular acceleration causes the angular speed $\omega$ to
@@ -386,16 +336,7 @@
 \begin{frame}{Rolling with Slipping on Rough Surface}
   \begin{columns}
     \column{.27\textwidth}
-    \begin{tikzpicture}
-      \shade[ball color=gray!5] circle(1);
-      \draw[thick] (-1.5,-1)--(1.5,-1);
-      \draw[vectors] (1.5,0)--(2.5,0) node[right]{$\vec v$};
-      \draw[vectors] (0,1.2) arc(90:60:1.2) node[midway,above]{$\omega$};
-      \fill circle(.05);
-      \draw[vectors,blue] (-.03,0)--(-.03,-1.5) node[below]{$m\vec g$};
-      \draw[vectors,red] (0,-1)--(0,.5) node[above]{$\vec N$};
-      \draw[vectors,violet] (0,-1)--(1,-1) node[below]{$\vec f_k$};
-    \end{tikzpicture}
+    \input{slipping}
 
     \column{.73\textwidth}
     \begin{itemize}
@@ -415,29 +356,14 @@
 
 
 \begin{frame}{Rolling on an Inclined Surface}
-  For a rigid and smooth sphere of radius $R$ rolling down a ramp of angle
-  $\phi$ without slippage.
-
-  \vspace{.2in}
   \begin{columns}
     \column{.35\textwidth}
-    \begin{tikzpicture}[scale=.9,rotate=-30]
-      \shade[ball color=gray!20] circle(1);
-      \draw[thick] (-2,-1)--(4,-1);
-      \draw[axes,rotate=30] (0,0)--(-1,0) node[left]{$R$};
-      \draw[axes] (2,0)--(3,0) node[right]{$x$};
-      \draw[axes] (2,0)--(2,1) node[above]{$y$};
-      \draw[vectors] (0,1.2) arc(90:60:1.2) node[right]{$\omega$};
-      \fill circle(.05) node[right]{\small cm};
-      \draw[vectors,blue,rotate=30] (0,0)--(0,-1.5) node[below]{$m\vec g$};
-      \draw[vectors,red] (0,-1)--(0,.5) node[above]{$\vec N$};
-      \draw[vectors,orange] (0,-1)--(-1,-1) node[left]{$\vec f_s$};
-      \draw[thick,rotate around={30:(4,-1)}] (4,-1)--(2,-1)
-      node[pos=.6,above]{$\phi$};
-    \end{tikzpicture}
+    \input{roll-down-ramp}
 
     \column{.65\textwidth}
-    Three forces act on the sphere as it rolls down the ramp
+    For a rigid and smooth sphere of radius $R$ rolling down a ramp of angle
+    $\phi$ without slippage, three forces act on the sphere as it rolls down
+    the ramp
     \begin{itemize}
     \item The weight ($mg$) of the sphere acts at the CM
     \item The normal force ($N$) acts at the point of contact
@@ -456,23 +382,10 @@
 
 \begin{frame}{Rolling on an Inclined Surface}
   \begin{columns}
-    \column{.33\textwidth}
-    \begin{tikzpicture}[scale=.9,rotate=-30]
-      \shade[ball color=gray!20] circle(1);
-      \draw[thick] (-2,-1)--(4,-1);
-      \draw[axes,rotate=30] (0,0)--(-1,0) node[left]{$R$};
-      \draw[axes] (2,0)--(3,0) node[right]{$x$};
-      \draw[axes] (2,0)--(2,1) node[above]{$y$};
-      \draw[vectors] (0,1.2) arc(90:60:1.2) node[right]{$\omega$};
-      \fill circle(.05) node[right]{\small cm};
-      \draw[vectors,blue,rotate=30] (0,0)--(0,-1.5) node[below]{$m\vec g$};
-      \draw[vectors,red] (0,-1)--(0,.5) node[above]{$\vec N$};
-      \draw[vectors,orange] (0,-1)--(-1,-1) node[left]{$\vec f_s$};
-      \draw[thick,rotate around={30:(4,-1)}] (4,-1)--(2,-1)
-      node[pos=.6,above]{$\phi$};
-    \end{tikzpicture}
+    \column{.35\textwidth}
+    \input{roll-down-ramp}
 
-    \column{.67\textwidth}
+    \column{.65\textwidth}
     To solve this problem, there are three dynamics equations:
 
     \vspace{-.3in}{\large
@@ -494,23 +407,10 @@
 
 \begin{frame}{Rolling on an Inclined Surface}
   \begin{columns}
-    \column{.33\textwidth}
-    \begin{tikzpicture}[scale=.9,rotate=-30]
-      \shade[ball color=gray!20] circle(1);
-      \draw[thick] (-2,-1)--(4,-1);
-      \draw[axes,rotate=30] (0,0)--(-1,0) node[left]{$R$};
-      \draw[axes] (2,0)--(3,0) node[right]{$x$};
-      \draw[axes] (2,0)--(2,1) node[above]{$y$};
-      \draw[vectors] (0,1.2) arc(90:60:1.2) node[right]{$\omega$};
-      \fill circle(.05) node[right]{\small cm};
-      \draw[vectors,blue,rotate=30] (0,0)--(0,-1.5) node[below]{$m\vec g$};
-      \draw[vectors,red] (0,-1)--(0,.5) node[above]{$\vec N$};
-      \draw[vectors,orange] (0,-1)--(-1,-1) node[left]{$\vec f_s$};
-      \draw[thick,rotate around={30:(4,-1)}] (4,-1)--(2,-1)
-      node[pos=.6,above]{$\phi$};
-  \end{tikzpicture}
+    \column{.35\textwidth}
+    \input{roll-down-ramp}
 
-    \column{.67\textwidth}
+    \column{.65\textwidth}
     For non-slip case, angular and translational acceleration are related using
     relative motion:
 
@@ -525,8 +425,8 @@
       \frac25mR^2\cdotp\frac aR\cdotp\frac1R=\frac25ma
     }
 
-    It is substituted into the force equation in the $\iii$ direction to
-    solve for the acceleration of the CM down the ramp:
+    \vspace{-.1in}It is substituted into the force equation in the $\iii$
+    direction to solve for the acceleration of the CM down the ramp:
 
     \eq{-.1in}{
       mg\sin\phi-\frac25 ma=ma
@@ -538,23 +438,10 @@
 
 \begin{frame}{Rolling on an Inclined Surface}
   \begin{columns}
-    \column{.33\textwidth}
-    \begin{tikzpicture}[scale=.9,rotate=-30]
-      \shade[ball color=gray!20] circle(1);
-      \draw[thick] (-2,-1)--(4,-1);
-      \draw[axes,rotate=30] (0,0)--(-1,0) node[left]{$R$};
-      \draw[axes] (2,0)--(3,0) node[right]{$x$};
-      \draw[axes] (2,0)--(2,1) node[above]{$y$};
-      \draw[vectors] (0,1.2) arc(90:60:1.2) node[right]{$\omega$};
-      \fill circle(.05) node[right]{\small cm};
-      \draw[vectors,blue,rotate=30] (0,0)--(0,-1.5) node[below]{$m\vec g$};
-      \draw[vectors,red] (0,-1)--(0,.5) node[above]{$\vec N$};
-      \draw[vectors,orange] (0,-1)--(-1,-1) node[left]{$\vec f_s$};
-      \draw[thick,rotate around={30:(4,-1)}] (4,-1)--(2,-1)
-      node[pos=.6,above]{$\phi$};
-    \end{tikzpicture}
+    \column{.35\textwidth}
+    \input{roll-down-ramp}
 
-    \column{.67\textwidth}
+    \column{.65\textwidth}
     The acceleration of the center of mass is therefore:
 
     \eq{-.1in}{
@@ -562,45 +449,18 @@
     }
 
     \vspace{-.1in}Compare this to an object \emph{sliding} without friction
-    down the same ramp, which is higher than the pure rolling case.
+    down the same ramp, which is higher than the pure-rolling case.
     
-    \eq{-.1in}{
+    \eq{-.25in}{
       a=g\sin\phi
     }
     
-%The simplest explanation is that some of the gravitational potential energy is
-%converted to both translational and rotational kinetic energies, while for the
-%sliding case, all of the potential energy is converted into translational
-%kinetic energy.
-%If this is indeed the case, it means that the sphere will actually slip while
-%rolling down the ramp, and the friction at the contact point is in fact kinetic
-%friction.
-
     \vspace{-.2in}If the sphere starts from rest, the speed of the sphere when
     it reaches the bottom of the ramp, a distance $d$ away, would be:
 
     \eq{-.2in}{
       v=\sqrt{2ad}=\sqrt{\frac{10}7gd\sin\phi}
     }
-
-%There is, of course, one ``sanity check'' that must be done, that is to make
-%sure that the friction calculated in Eq.~\ref{f_s} has not exceeded the maximum
-%static friction, given by
-%\begin{equation}
-%  f_s\leq\mu_s N
-%  \label{maxf}
-%\end{equation}
-%Combining the expression for $f_s$ in Eq.~\ref{f_s}, the acceleration in
-%Eq.~\ref{pure-roll-accel}, and the normal force on an incline, Eq.~\ref{maxf}
-%becomes:
-%\begin{align}
-%  f_s&\leq\mu_sN\\
-%  \frac27mg\sin\theta&\leq\mu_smg\cos\theta\\
-%  \frac27\tan\theta&\leq\mu_s
-%\end{align}
-%If the ramp angle is too steep, then the friction will transition from static
-    %to kinetic, which is a much more difficult problem.
-
   \end{columns}
 \end{frame}
 
@@ -665,11 +525,11 @@
   only need to compute rotational kinetic energy at the pivot:
 
   \eq{-.1in}{
-    \boxed{K=\frac12I_\text{P}\omega^2}
+    \boxed{K=\frac12I_\text{p}\omega^2}
   }
   
-  In this case, the $I_\text{P}$ is calculated at the pivot.
-  \textbf{IMPORTANT:} $I_\text{cm}\neq I_\text{P}$
+  In this case, the $I_\text{p}$ is calculated at the pivot.
+  \textbf{IMPORTANT:} $I_\text{cm}\neq I_\text{p}$
 \end{frame}
 
 

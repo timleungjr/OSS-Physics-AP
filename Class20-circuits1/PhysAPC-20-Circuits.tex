@@ -106,8 +106,8 @@
       \draw (0,0)--(10,0);
       \draw (0,1)--(10,1) node[midway,above]{$I\longrightarrow$};
       \foreach \x in {1,3,...,9}{
-        \draw[thick,fill=pink!40](\x,.5) circle(.25) node{$+$};
-        \draw[thick,->](\x+.25,.5)--(\x+.75,.5);
+        \draw[thick,fill=pink!40] (\x,.5) circle (.25) node{$+$};
+        \draw[vectors] (\x+.25,.5)--(\x+.75,.5);
       }
     \end{tikzpicture}
   \end{center}
@@ -118,8 +118,8 @@
       \draw (0,0)--(10,0);
       \draw (0,1)--(10,1) node[midway,above]{$I\longrightarrow$};
       \foreach \x in {1,3,...,9}{
-        \draw[thick,fill=blue!40!gray!20](\x,.5) circle(.25) node{$-$};
-        \draw[thick,->](\x-.25,.5)--(\x-.75,.5);
+        \draw[thick,fill=blue!40!gray!20] (\x,.5) circle (.25) node{$-$};
+        \draw[vectors] (\x-.25,.5)--(\x-.75,.5);
       }
     \end{tikzpicture}
   \end{center}
@@ -256,17 +256,17 @@
   across the device and the current through the device is linear, i.e.:
   \begin{center}
     \begin{tikzpicture}[scale=.9]
-      \draw[ultra thick,red](0,0)--(2.5,2.5)
-      node[midway,below right]{\small $\text{slope}=R$};
-      \draw[thick,->](0,0)--(3,0) node[right]{$I$};
-      \draw[thick,->](0,0)--(0,3) node[right]{$V$};
+      \draw[functions] (0,0)--(2.5,2.5)
+      node[midway,below right]{$\text{slope}=R$};
+      \draw[axes] (0,0)--(3,0) node[right]{$I$};
+      \draw[axes] (0,0)--(0,3) node[right]{$V$};
     \end{tikzpicture}
     \hspace{.15in}
     \begin{tikzpicture}[scale=.9]
-      \draw[ultra thick,red](0,0)--(2.5,2.5)
-      node[pos=.65,below right]{\small $\text{slope}=\dfrac1R$};
-      \draw[thick,->](0,0)--(3,0) node[right]{$V$};
-      \draw[thick,->](0,0)--(0,3) node[right]{$I$};
+      \draw[functions] (0,0)--(2.5,2.5)
+      node[pos=.65,below right]{$\text{slope}=\dfrac1R$};
+      \draw[axes] (0,0)--(3,0) node[right]{$V$};
+      \draw[axes] (0,0)--(0,3) node[right]{$I$};
     \end{tikzpicture}
   \end{center}
 \end{frame}
@@ -278,9 +278,9 @@
   between voltage and current is \emph{not} linear.
   \begin{center}
     \begin{tikzpicture}[scale=.9]
-      \draw[thick,->](0,0)--(3,0) node[right]{$V$};
-      \draw[thick,->](0,0)--(0,3) node[right]{$I$};
-      \draw[ultra thick,red,domain=0:2.45,smooth] plot(\x,.0008*\x^9);
+      \draw[axes] (0,0)--(3,0) node[right]{$V$};
+      \draw[axes] (0,0)--(0,3) node[right]{$I$};
+      \draw[functions,domain=0:2.45,smooth] plot(\x,.0008*\x^9);
     \end{tikzpicture}
   \end{center}
   For example, diodes (e.g.\ your TV's LED screen) are non-ohmic.
@@ -318,17 +318,12 @@
   \begin{columns}
     \column{.4\textwidth}
     \begin{tikzpicture}[scale=1.6]
-      \begin{scope}[thick]
-        \draw(.2,1) to[short,o-] (1.5,1)--(3.5,1)--(3.5,-.2);
-        \draw(1.5,1)--(1.5,-.2);
-        \draw(2.5,1)--(2.5,-.2);
-      \end{scope}
-      \begin{scope}[ultra thick,->,red]
-        \foreach\x in {1,...,3}{
-          \draw(\x+.5,.9)--(\x+.5,.1)   node[midway,left]{$I_{\x}$};
-        }
-        \draw(.4,1)--(1.3,1) node[midway,above]{$I$};
-      \end{scope}
+      \draw[thick] (.2,1) to[short,o-] (1.5,1)--(3.5,1)--(3.5,-.2);
+      \draw[thick] (1.5,1)--(1.5,-.2);
+      \draw[thick] (2.5,1)--(2.5,-.2);
+      \foreach \x in {1,...,3}
+      \draw[vectors,red] (\x+.5,.9)--(\x+.5,.1) node[midway,left]{$I_{\x}$};
+      \draw[vectors,red] (.4,1)--(1.3,1) node[midway,above]{$I$};
     \end{tikzpicture}
 
     \column{.6\textwidth}
@@ -376,10 +371,10 @@
 \begin{frame}{Resistors in Parallel}
   \begin{columns}
     \column{.32\textwidth}
-    \begin{tikzpicture}
-     \draw[thick](0,2) to[short,o-] (1,2)to[R=$R_1$] (1,0) to[short,-o] (0,0);
-     \draw[thick](1,2) to[short] (2.25,2)to[R=$R_2$] (2.25,0)to[short] (1,0);
-     \draw[thick](2.25,2)to[short](3.5,2) to[R=$R_3\cdots$] (3.5,0)
+    \begin{tikzpicture}[thick]
+     \draw (0,2) to[short,o-] (1,2) to[R=$R_1$] (1,0) to[short,-o] (0,0);
+     \draw (1,2) to[short] (2.25,2) to[R=$R_2$] (2.25,0) to[short] (1,0);
+     \draw (2.25,2) to[short] (3.5,2) to[R=$R_3\cdots$] (3.5,0)
      to[short] (2.25,0);
     \end{tikzpicture}
     
@@ -394,8 +389,7 @@
     Since $V_1=V_2=V_3=\cdots=V$ from the voltage law, we can re-write as
 
     \eq{-.1in}{
-      I=\frac V{R_p}=V\left(\frac1{R_1}+\frac1{R_2}+\frac1{R_3}
-      \cdots\right)
+      I=\frac V{R_p}=V\left(\frac1{R_1}+\frac1{R_2}+\frac1{R_3}+\cdots\right)
     }
   \end{columns}
 \end{frame}
@@ -403,7 +397,7 @@
 
 
 \begin{frame}{Equivalent Resistance of Resistors in Parallel} 
-  The reciprocal of the equivalent resistance for resistors connected in
+  The inverse of the equivalent resistance for $N$ resistors connected in
   parallel is the sum of the inverses of the individual resistances.
 
   \eq{-.1in}{
@@ -428,9 +422,8 @@
 
 \begin{frame}{Resistors in Series}
   \begin{center}
-    \begin{tikzpicture}
-      \draw[thick](0,0) to[R=$R_1$,o-] (2,0) to[R=$R_2$] (4,0)
-      to[R=$R_3$,-o] (6,0);
+    \begin{tikzpicture}[thick]
+      \draw (0,0) to[R=$R_1$,o-] (2,0) to[R=$R_2$] (4,0) to[R=$R_3$,-o] (6,0);
     \end{tikzpicture}
   \end{center}
 
@@ -519,18 +512,17 @@
   Some of these problems require you to solve a system of linear equations.
   The following is a simple example with two voltage sources:
   \begin{center}
-    \begin{tikzpicture}[american voltages,scale=1.3]
-      \draw[thick](0,0) to[battery,l=$\mathcal E_1$](0,2) to[R,l=$R_1$](2,2)
-      to[R,l=$R_3$](2,0)--(0,0);
-      \draw[thick](2,0)--(4,0) to[battery,l_=$\mathcal E_2$](4,2)
-      to[R,l_=$R_2$](2,2);
+    \begin{tikzpicture}[american voltages,scale=1.3,thick]
+      \draw (0,0) to[battery,l=$\mathcal E_1$] (0,2) to[R,l=$R_1$] (2,2)
+      to[R,l=$R_3$] (2,0)--(0,0);
+      \draw (2,0)--(4,0) to[battery,l_=$\mathcal E_2$] (4,2)
+      to[R,l_=$R_2$] (2,2);
       \uncover<2->{
-        \draw[very thick,red,->](2,0.4)--(2,0)
-        node[midway,right]{\small $I_1+I_2$};
-        \draw[very thick,red,->] (0.6,0.4)..controls (0,2) and (2,2)..(1.6,.4)
-        node[midway,below]{\small $I_1$};
-        \draw[very thick,red,->] (3.4,0.4)..controls (4,2) and (2,2)..(2.4,.4)
-        node[midway,below]{\small $I_2$};
+        \draw[vectors,red] (2,.4)--(2,0) node[midway,right]{$I_1+I_2$};
+        \draw[vectors,red] (.6,.4) ..controls (0,2) and (2,2).. (1.6,.4)
+        node[midway,below]{$I_1$};
+        \draw[vectors,red] (3.4,.4) ..controls (4,2) and (2,2).. (2.4,.4)
+        node[midway,below]{$I_2$};
       }
     \end{tikzpicture}
   \end{center}
@@ -541,64 +533,64 @@
 
 
 
-%\begin{frame}{A More Difficult Example}
-%  \begin{columns}
-%    \column{.4\textwidth}
-%    
-%    \vspace{-.3in}
-%    \begin{tikzpicture}[american voltages]
-%      \draw(0,0) to[battery=$V_1$](0,2) to[R=$R_1$](2,2)to[R=$R_3$](2,0)--(0,0);
-%      \draw(2,0)--(4,0) to[battery,l_=$V_2$](4,2) to[R,l_=$R_2$](2,2);
-%      \draw[very thick,red,->](2,0.4)--(2,0)
-%      node[midway,right]{\tiny $I_1+I_2$};
-%      \draw[very thick,red,->] (0.6,0.4)..controls (0,2) and (2,2)..(1.6,.4)
-%      node[midway,below]{\tiny $I_1$};
-%      \draw[very thick,red,->] (3.4,0.4)..controls (4,2) and (2,2)..(2.4,.4)
-%      node[midway,below]{\tiny $I_2$};
-%    \end{tikzpicture}
-%    \column{.6\textwidth}
-%    We split the circuit into two loops, and apply Kirchkoff's voltage in both:
-%
-%    \vspace{-.4in}{\Large
-%      \begin{align*}
-%        V_1-I_1R_1-(I_1+I_2)R_3&=0\\
-%        V_2-I_2R_2-(I_1+I_2)R_3&=0
-%      \end{align*}
-%    }
-%  \end{columns}
-%
-%  \vspace{-.1in}Two equations, two unknowns ($I_1$ and $I_2$). We can subtract
+\begin{frame}{A More Difficult Example}
+  \begin{center}
+    \begin{tikzpicture}[american voltages,thick]
+      \draw (0,0) to[battery, l=$\mathcal E_1$] (0,2) to[R=$R_1$] (2,2)
+      to[R=$R_3$] (2,0)--(0,0);
+      \draw (2,0)--(4,0) to[battery,l_=$\mathcal E_2$] (4,2) to[R,l_=$R_2$]
+      (2,2);
+      \begin{scope}[vectors,red]
+        \draw (2,.4)--(2,0) node[midway,right]{$I_1+I_2$};
+        \draw (.6,.4) ..controls (0,2) and (2,2).. (1.6,.4)
+        node[midway,below]{$I_1$};
+        \draw (3.4,0.4) ..controls (4,2) and (2,2).. (2.4,.4)
+        node[midway,below]{$I_2$};
+      \end{scope}
+    \end{tikzpicture}
+  \end{center}
+  
+  We split the circuit into two loops, and apply Kirchkoff's voltage in both:
+  
+  \vspace{-.3in}{\large
+    \begin{align*}
+      \mathcal E_1-I_1R_1-(I_1+I_2)R_3&=0\\
+      \mathcal E_2-I_2R_2-(I_1+I_2)R_3&=0
+    \end{align*}
+  }
+
+  There are two equations and two unknowns ($I_1$ and $I_2$) which we can either
+  solve algebraically or numerically. %We can subtract
 %  (2) from (1), then solve for $I_1$ and $I_2$:
 %
-%  \eq{-.4in}{
+%  \eq{-.1in}{
 %    I_1=\frac{V_1-I_2R_3}{R_1+R_3}
 %    \quad\quad
 %    I_2=
 %    \frac{\left[V_2-\frac{(V_1-V_2)R_3}{R_1}\right]}
 %         {\left[R_2+\frac{(R_1+R_2)R_3}{R_1}\right]}
 %  }
-%
-%  (Try this at home as an exercise.)
-%\end{frame}
+  (Try this at home as an exercise.)
+\end{frame}
 
 
 \begin{frame}{As Difficult As It Gets}
   \begin{columns}
     \column{.45\textwidth}
-    \begin{tikzpicture}[american voltages,scale=1.2]
-      \draw[thick](0,0)--(0,2) to[R=3<\ohm>] (0,4)
+    \begin{tikzpicture}[american voltages,scale=1.2,thick]
+      \draw (0,0)--(0,2) to[R=3<\ohm>] (0,4)
       to[battery1,l=42<\volt>] (2,4) to[R=3<\ohm>] (4,4)--(4,2)
       to[R=4<\ohm>](4,0)--(2,0) to[battery1,l=6<\volt>] (2,2)
       to[R,l_=4<\ohm>] (0,2);
-      \draw[thick](0,0) to[R,l_=6<\ohm>](2,0);
-      \draw[thick](2,2) to[R,l_=6<\ohm>](4,2);
+      \draw (0,0) to[R,l_=6<\ohm>](2,0);
+      \draw (2,2) to[R,l_=6<\ohm>](4,2);
       \uncover<2->{
-        \begin{scope}[ultra thick, red,->]
-          \draw (.5,3.5)..controls(4.75,4)and(4.75,2)..(.5,2.5)
+        \begin{scope}[vectors,red]
+          \draw (.5,3.5) ..controls(4.75,4) and (4.75,2).. (.5,2.5)
           node[midway,left]{$I_1$};
-          \draw (0.6,0.4)..controls (0,2) and (2,2)..(1.4,.4)
+          \draw (.6,.4) ..controls (0,2) and (2,2).. (1.4,.4)
           node[midway,below]{$I_3$};
-          \draw (2.6,0.4)..controls (2,2) and (4,2)..(3.4,.4)
+          \draw (2.6,.4) ..controls (2,2) and (4,2).. (3.4,.4)
           node[midway,below]{$I_2$};
         \end{scope}
       }

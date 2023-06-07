@@ -40,8 +40,7 @@
   something abstract, like electric field (which is what we are interested
   in). We can compute a flux as long as there is a vector field i.e.\
   $\vec X=\vec X(x,y,z)$. In the case of \textbf{electric flux}, the quantity
-  $\vec X$ is just the
-  electric field, i.e.:
+  $\vec X$ is just the electric field, i.e.:
     
   \eq{-.1in}{
     \boxed{ \Phi_E=\int\vec E\cdot\dl\vec A }
@@ -54,12 +53,14 @@
 
 
 \begin{frame}{Electric Flux and Gauss's Law}
-  \textbf{Gauss's law} tells us that if we have a closed surface (think of
-  the surface of a balloon), the total electric flux is very well defined:
+  \textbf{Gauss's law} tells us that if we have a closed surface $\mathcal S$
+  (think of the surface of a balloon), the total electric flux is very well
+  defined:
 
   \eq{-.1in}{
     \boxed{
-      \Phi_E=\oint\vec E\cdot\dl\vec A=\frac{Q_\text{encl}}{\epsilon_0}
+      \Phi_E=\oint_{\mathcal S}\vec E\cdot\dl\vec A
+      =\frac{Q_\text{encl}}{\epsilon_0}
     }
   }
     
@@ -90,14 +91,14 @@
     \column{.35\textwidth}
     \begin{tikzpicture}[scale=1.2]
       \foreach \x in {1,...,12}{
-        \draw[red!65!black,thick,rotate=30*\x,->](0,0)--(0,1);
-        \draw[red!65!black,thick,rotate=30*\x](0,0)--(0,2);
+        \draw[red!65!black,axes,rotate=30*\x] (0,0)--(0,1);
+        \draw[red!65!black,thick,rotate=30*\x] (0,0)--(0,2);
       }
-      \shade[ball color=red!70!black] circle(.08);
+      \shade[ball color=red!70!black] circle (.08);
       \node[red!65!black,right] at (2,0) (E) {$\vec E$};
       \uncover<2>{
-        \shade[ball color=blue,opacity=.5] circle(1.5);
-        \draw[thick,->](0,1.5)--(0,2) node[above]{$\hat n$};
+        \shade[ball color=blue,opacity=.5] circle (1.5);
+        \draw[axes] (0,1.5)--(0,2) node[above]{$\hat n$};
       }
     \end{tikzpicture}
     
@@ -106,7 +107,7 @@
     so the integral reduces to:
 
     \eq{-.1in}{
-      \Phi_E=\oint\vec E\cdot\dl\vec A=EA=\frac q{\epsilon_0}
+      \Phi_E=\oint_{\mathcal S}\vec E\cdot\dl\vec A=EA=\frac q{\epsilon_0}
     }
 
     Since area of a sphere is $A=4\pi r^2$, we recover Coulomb's law and the
@@ -129,20 +130,20 @@
     \column{.28\textwidth}
     \centering
     \begin{tikzpicture}[scale=.9]
-      \draw[thick,fill=black!70] circle(1.5);
-      \draw[thick,fill=black!2] circle(1.45);
-      \draw[thick,->,rotate=60](0,0)--(1.5,0)node[above]{$R$};
+      \draw[thick,fill=black!70] circle (1.5);
+      \draw[thick,fill=black!2] circle (1.45);
+      \draw[axes,rotate=60] (0,0)--(1.5,0) node[above]{$R$};
       \uncover<1>{
-        \shade[ball color=red,opacity=.7] circle(1.5);
+        \shade[ball color=red,opacity=.7] circle (1.5);
       }
       \uncover<2>{
-        \draw[thick,->,rotate=-20](0,0)--(1,0)node[midway,below]{$r_i$};
-        \draw[dashed,gray,thick] circle(1);
+        \draw[axes,rotate=-20] (0,0)--(1,0) node[midway,below]{$r_i$};
+        \draw[dashed,gray,thick] circle (1);
       }
 
       \uncover<3>{
-        \draw[thick,->,rotate=-20](0,0)--(2.25,0)node[pos=.4,below]{$r_0$};
-        \draw[dashed,gray,thick] circle(2.25);
+        \draw[axes,rotate=-20] (0,0)--(2.25,0) node[pos=.4,below]{$r_0$};
+        \draw[dashed,gray,thick] circle (2.25);
       }
     \end{tikzpicture}
     
@@ -153,7 +154,7 @@
       the electric field must be zero:
       
       \eq{-.1in}{
-        \oint\vec E\cdot\dl\vec A=\frac{q_\text{encl}}{\epsilon_0}=0
+        \oint_{\mathcal S}\vec E\cdot\dl\vec A=\frac{q_\text{encl}}{\epsilon_0}=0
         \quad\rightarrow\quad E=0
       }
     }
@@ -164,7 +165,7 @@
       charge:
       
       \eq{-.15in}{
-        \oint\vec E\cdot\dl\vec A=\frac Q{\epsilon_0}
+        \oint_{\mathcal S}\vec E\cdot\dl\vec A=\frac Q{\epsilon_0}
         \;\rightarrow\; E=\frac Q{\epsilon_0A}
         =\frac1{4\pi\epsilon_0}\left[\frac Q{r^2}\right]
       }
@@ -179,15 +180,14 @@
   $r$ from the center of the shell:
   \begin{center}
     \begin{tikzpicture}
-      \draw[thick,->](0,0)--(0,3)  node[right]{$E$};
-      \draw[thick,->](0,0)--(5.5,0)node[right]{$r$};
-      \draw[thick,dashed](1,0)
-      --(1,2) node[pos=0,below]{$R$}
-      --(0,2) node[left]{\small$\dfrac1{4\pi\epsilon_0}\dfrac Q{R^2}$};
-      \draw[very thick,red,smooth,domain=1:5] plot(\x,{2/\x});
-      \draw[very thick,red](0,0)--(1,0);
-      \draw[very thick,red,fill=black!2](1,0) circle(.06);
-      \fill[red](1,2) circle(.06);
+      \draw[axes] (0,0)--(0,3) node[right]{$E$};
+      \draw[axes] (0,0)--(5.5,0) node[right]{$r$};
+      \draw[dashed] (1,0)--(1,2) node[pos=0,below]{$R$}
+      --(0,2) node[left]{$\dfrac1{4\pi\epsilon_0}\dfrac Q{R^2}$};
+      \draw[functions,smooth,domain=1:5] plot(\x,{2/\x});
+      \draw[functions] (0,0)--(1,0);
+      \draw[functions,fill=black!2] (1,0) circle (.06);
+      \fill[red!80!black] (1,2) circle (.06);
     \end{tikzpicture}
   \end{center}
   \begin{itemize}
@@ -239,7 +239,7 @@
     Gauss's law simplifies to:
     
     \eq{-.1in}{
-      \oint\vec E\cdot\dl\vec A=\frac{q_\text{encl}}{\epsilon_0}
+      \oint_{\mathcal S}\vec E\cdot\dl\vec A=\frac{q_\text{encl}}{\epsilon_0}
       \;\rightarrow\;
       E(2A)=\frac{\sigma A}{\epsilon_0}
     }
@@ -261,25 +261,23 @@
 
 \begin{frame}{Electric Field Between Parallel Charged Plates}
   \begin{center}
-    \begin{tikzpicture}[xscale=.8]
-      \begin{scope}[thick]
-        \draw(0,0) rectangle (8,.2);
-        \draw(0,1.4) rectangle (8,1.6);
-        \foreach \x in {.4,.8,1.2,...,7.6}{
-          \draw[->](\x,1.4)--(\x,.7);
-          \draw    (\x,1.4)--(\x,.2);
-        }
-        \foreach \x in {.8,1.6,2.4,...,7.2}{
-          \node at (\x,1.78) {\scriptsize $\bm{+}$};
-          \node at (\x,-.28) {\scriptsize $\bm{-}$};
-        }
-        
-        \draw[->] (0,1.5)..controls(-.15,1.2)..(-.2,.7);
-        \draw (-.2,.8)..controls(-.15,.4)..(0,.1);
-        
-        \draw[->](8,1.5)..controls(8.15,1.2)..(8.2,.7);
-        \draw    (8.2,.8)..controls(8.15,.4)..(8,.1);
-      \end{scope}
+    \begin{tikzpicture}[xscale=.8,thick]
+      \draw rectangle (8,.2);
+      \draw (0,1.4) rectangle (8,1.6);
+      \foreach \x in {.4,.8,1.2,...,7.6}{
+        \draw[->] (\x,1.4)--(\x,.7);
+        \draw (\x,1.4)--(\x,.2);
+      }
+      \foreach \x in {.8,1.6,2.4,...,7.2}{
+        \node at (\x,1.78) {$\bm{+}$};
+        \node at (\x,-.28) {$\bm{-}$};
+      }
+      
+      \draw[->] (0,1.5) ..controls(-.15,1.2).. (-.2,.7);
+      \draw (-.2,.8) ..controls(-.15,.4).. (0,.1);
+      
+      \draw[->] (8,1.5) ..controls(8.15,1.2).. (8.2,.7);
+      \draw (8.2,.8) ..controls(8.15,.4).. (8,.1);
     \end{tikzpicture}
   \end{center}
   \begin{itemize}
@@ -315,25 +313,23 @@
 
 \begin{frame}{Electric Field and Electric Potential Difference}
   \begin{center}
-    \begin{tikzpicture}[scale=.7]
-      \begin{scope}[thick]
-        \draw rectangle (8,.2);
-        \draw(0,1.4) rectangle (8,1.6);
-        \foreach\x in {.4,.8,1.2,...,7.6}{
-          \draw[->](\x,1.4)--(\x,.7);
-          \draw(\x,1.4)--(\x,.2);
-        }
-        \foreach\x in {.8,1.6,2.4,...,7.2}{
-          \node at (\x,1.78) {\scriptsize $\bm{+}$};
-          \node at (\x,-.28) {\scriptsize $\bm{-}$};
-        }
+    \begin{tikzpicture}[scale=.7,thick]
+      \draw rectangle (8,.2);
+      \draw (0,1.4) rectangle (8,1.6);
+      \foreach \x in {.4,.8,1.2,...,7.6}{
+        \draw[->] (\x,1.4)--(\x,.7);
+        \draw (\x,1.4)--(\x,.2);
+      }
+      \foreach \x in {.8,1.6,2.4,...,7.2}{
+        \node at (\x,1.78) {$\bm{+}$};
+        \node at (\x,-.28) {$\bm{-}$};
+      }
         
-        \draw[->](0,1.5)..controls(-.15,1.2)..(-.2,.7);
-        \draw(-.2,.8)..controls(-.15,.4)..(0,.1);
-        
-        \draw[->](8,1.5)..controls(8.15,1.2)..(8.2,.7);
-        \draw(8.2,.8)..controls(8.15,.4)..(8,.1);
-      \end{scope}
+      \draw[->] (0,1.5) ..controls(-.15,1.2).. (-.2,.7);
+      \draw (-.2,.8) ..controls(-.15,.4).. (0,.1);
+      
+      \draw[->] (8,1.5) ..controls(8.15,1.2).. (8.2,.7);
+      \draw (8.2,.8) ..controls(8.15,.4).. (8,.1);
     \end{tikzpicture}
   \end{center}
   In the case of two parallel plates, the electric field is uniform, and the

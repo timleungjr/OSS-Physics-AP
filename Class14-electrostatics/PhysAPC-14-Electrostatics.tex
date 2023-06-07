@@ -36,24 +36,27 @@
 \begin{frame}{Coulomb's Law for Electrostatic Force}
   \begin{center}
     \begin{tikzpicture}[scale=.65]
-      \begin{scope}[->,very thick]
-        \draw[red] (0,0)--(2,0) node[right]{$\vec F_{21}$};
-        \draw[blue](8,0)--(6,0) node[left] {$\vec F_{12}$};
-      \end{scope}
+      \draw[vectors,red] (0,0)--(2,0) node[right]{$\vec F_q$};
+      \draw[vectors,blue] (8,0)--(6,0) node[left] {$\vec F_q$};
       \shade[ball color=red] circle(.2) node[above]{$q_1$};
       \shade[ball color=blue] (8,0) circle(.2) node[above]{$q_2$};
       \draw[dashed] (0,0)--(0,-1.5);
       \draw[dashed] (8,0)--(8,-1.5);
-      \draw[->,thick](0,-1.3)--(8,-1.3) node[midway,below]{$\vec r_{12}$};
+      \draw[vectors] (0,-1.3)--(8,-1.3) node[midway,below]{$\vec r_{12}$};
     \end{tikzpicture}
   \end{center}
-  The \textbf{electrostatic force} (or \textbf{coulomb force}) is a mutually
-  repulsive/attractive force between all charged objects. The force that charge
-  $q_1$ exerts on $q_2$ is given by \textbf{Coulomb's law}:
+  The \textbf{electrostatic force}\footnote{It is also known as the
+  \textbf{electric force} or \textbf{coulomb force} in different textbooks and
+  technical journals. We will use these terms interchangeably throughout the
+  course.} $\vec F_q$ is a mutually repulsive/attractive force between all
+  charged objects. The force that point charge $q_1$ exerts on $q_2$ is given
+  by \textbf{Coulomb's law}:
 
   \eq{-.1in}{
-    \boxed{\vec F_{12}=\frac{kq_1q_2}{|\vec r_{12}|^2}\hat r_{12}}
+    \boxed{\vec F_q=\frac{kq_1q_2}{|\vec r_{12}|^2}\hat r_{12}}
   }
+  \vspace{.2in}
+  
 \end{frame}
 
 
@@ -67,7 +70,8 @@
       \rowcolor{pink}
       \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
       Electrostatic force    & $\vec F_{12}$ & \si\newton \\
-      Coulomb's constant     & $k$          & \si{N.m^2/C^2} \\
+      Coulomb's constant & $k$ &
+      \si{\newton\metre\squared\per\coulomb\squared}\\
       Point charges 1 and 2  & $q_1$, $q_2$ &  \si\coulomb \\
       Distance between point charges & $|\vec r_{12}|$ & \si\metre \\
       Unit vector of direction between point charges & $\hat r_{12}$ &
@@ -87,7 +91,8 @@
   \textbf{coulomb's constant}, defined as:
 
   \eq{-.1in}{
-    k=\dfrac1{4\pi\epsilon_0}=\SI{8.99e9}{N.m^2/C^2}
+    k=\dfrac1{4\pi\epsilon_0}=
+    \SI{8.99e9}{\newton\metre\squared\per\coulomb\squared}
   }
 
   where $\epsilon_0$ is a fundamental constant called the
@@ -103,15 +108,13 @@
 \begin{frame}{Coulomb's Law for Electrostatic Force}
   \begin{center}
     \begin{tikzpicture}[scale=.5]
-      \begin{scope}[->,very thick]
-        \draw[red] (0,0)--(2,0) node[right]{$\vec F_{12}$};
-        \draw[blue](8,0)--(6,0) node[left] {$\vec F_{21}$};
-      \end{scope}
+      \draw[vectors,red] (0,0)--(2,0) node[right]{$\vec F_{12}$};
+      \draw[vectors,blue] (8,0)--(6,0) node[left] {$\vec F_{21}$};
       \shade[ball color=red] circle(.2) node[above]{$q_1$};
       \shade[ball color=blue] (8,0) circle(.2) node[above]{$q_2$};
       \draw[dashed] (0,0)--(0,-1.5);
       \draw[dashed] (8,0)--(8,-1.5);
-      \draw[->,thick](0,-1.3)--(8,-1.3) node[midway,below]{$\vec r_{12}$};
+      \draw[axes] (0,-1.3)--(8,-1.3) node[midway,below]{$\vec r_{12}$};
     \end{tikzpicture}
   \end{center}
   \begin{itemize}
@@ -139,26 +142,22 @@
       \shade[ball color=red] circle(.72) node[white]{$Q$};
 
       \begin{scope}[rotate=45]
-        \draw[->,very thick,blue](.72,0)--(2.5,0) node[right]{$\vec F_1$};
+        \draw[vectors,blue] (.72,0)--(2.5,0) node[right]{$\vec F_1$};
         \shade[ball color=blue] (7,0) circle(1) node[white]{$q_1$};
       \end{scope}
       
       \begin{scope}[rotate=105]
-        \draw[->,very thick,green](.72,0)--(2,0)
-        node[right]{$\vec F_2$};
+        \draw[vectors,green] (.72,0)--(2,0) node[right]{$\vec F_2$};
         \shade[ball color=green] (4,0) circle(.65) node[white]{$q_2$};
       \end{scope}
 
       \begin{scope}[rotate=190]
-        \draw[->,very thick,yellow](.7,0)--(3.5,0)
-        node[above]{$\vec F_3$};
-        \shade[ball color=yellow!70!black]
-        (6,0) circle(1.1) node[white]{$q_3$};
+        \draw[vectors,yellow] (.7,0)--(3.5,0) node[above]{$\vec F_3$};
+        \shade[ball color=yellow!70!black] (6,0) circle(1.1) node[white]{$q_3$};
       \end{scope}
 
       \begin{scope}[rotate=260]
-        \draw[->,very thick,violet](.72,0)--(1.4,0)
-        node[right]{$\vec F_4$};
+        \draw[vectors,violet] (.72,0)--(1.4,0) node[right]{$\vec F_4$};
         \shade[ball color=violet] (9,0) circle(.8) node[white]{$q_4$};
       \end{scope}
 
@@ -200,9 +199,9 @@
 
 
 \begin{frame}{Infinitesimal Charge $\dl q$}
-  The calculation for the infinitesimal charge $\dl q$ is similar to the
-  calculation for the infinitesimal mass $\dl m$ earlier in the course (See
-  Class 5: Center of Mass)
+  Expressions for infinitesimal charge $\dl q$ is similar to that for the
+  infinitesimal mass $\dl m$ earlier in the course\footnote{See Class 5: Center
+  of Mass, and Class 7: Rotational Motion}
   \begin{itemize}
   \item Linear charge density (for 1D problems)
 
@@ -210,13 +209,13 @@
       \gamma = \diff qL\quad\rightarrow\quad \dl q =\gamma\dl L
     }
 
-  \item Surface charge density (for 2D problems)
+  \item\vspace{-.05in} Surface charge density (for 2D problems)
 
     \eq{-.1in}{
       \sigma=\diff qA\quad\rightarrow\quad \dl q=\sigma\dl A
     }
 
-  \item Charge density (for 3D problems)
+  \item\vspace{-.05in} Charge density (for 3D problems)
 
     \eq{-.1in}{
       \rho=\diff qV\quad\rightarrow\quad \dl q=\rho\dl V
@@ -260,8 +259,8 @@
       Electric field intensity    & $\vec E$ & \si{\newton\per\coulomb}\\
       Coulomb's constant          & $k$   & \si{N.m^2/C^2} \\
       Source charge               & $q$   & \si\coulomb \\
-      Distance from source charge & $r=|\vec r|$ & \si\metre \\
-      Outward unit vector from point source & $\hat r$ &
+      Distance from source charge & $r$ & \si\metre \\
+      Radially outward direction from point source & $\hat r$ &
     \end{tabular}
   \end{center}
   The direction of $\vec E$ is radially outward from a positive point charge
@@ -274,8 +273,8 @@
 
 
 \begin{frame}{More Than One Charge}
-  When multiple point charges are present, the total electric field at any
-  position $\vec r$ is the vector sum of all the fields $\vec E_i$:
+  When multiple discrete point charges are present, the total electric field at
+  any position $\vec r$ is the vector sum of all the fields $\vec E_i$:
     
   \eq{-.1in}{
     \boxed{\vec E
@@ -285,8 +284,8 @@
   }
 
   As $N\rightarrow\infty$, the summation becomes an integral, and can now be
-  used to describe the electric field generated by charges with
-  \emph{spatial extend}:
+  used to describe the electric field generated by \emph{charge distributions
+  with spatial extend}:
 
   \eq{-.1in}{
     \boxed{
@@ -294,9 +293,8 @@
     }
   }
   
-  This integral may be difficult to compute if the geometry of is complicated,
-  but in general, in AP Physics C, there are usually symmetry that can be
-  exploited.
+  In general, this integral is difficult to evaluate for complex geometries,
+  but in AP Physics C, we can usually exploit symmetry.
 \end{frame}
 
 
@@ -319,13 +317,13 @@
 
 \begin{frame}{Electric Field Lines}
   \textbf{Electric field lines} can be used to visualize the direction of the
-  electric field.
+  electric field. For point charges:
   \begin{center}
     \begin{tikzpicture}[scale=.5]
       \shade[ball color=blue] circle(.35) node[white]{\tiny $+q$};
       \foreach \theta in {15,30,...,360}{
         \begin{scope}[rotate=\theta,red!70!black,thick]
-          \draw[->](.35,0)--(3,0);
+          \draw[->] (.35,0)--(3,0);
           \draw (2.8,0)--(4,0);
         \end{scope}
         }
@@ -336,7 +334,7 @@
       \foreach \theta in {15,30,...,360}{
         \begin{scope}[rotate=\theta,red!70!black,thick]
           \draw (.35,0)--(2.5,0);
-          \draw[<-](2.3,0)--(4,0);
+          \draw[<-] (2.3,0)--(4,0);
         \end{scope}
         }
     \end{tikzpicture}
@@ -435,7 +433,7 @@
     \pic1{serway}
     
     \column{.65\textwidth}
-    Luckily for us, the integral is in the form of $\int u^ndu$,
+    Luckily for us, the integral is in the form of $\int u^n\dl u$,
     with $u=x^2+r^2$ and $n=\frac{-3}2$. You can find the integral in any math
     textbook:
 
@@ -450,33 +448,35 @@
 \section{Electric Potential Energy}
 
 \begin{frame}{Electric Potential Energy}
-  The electrostsatic force is a conservative force, therefore the work done
-  by $F_q$ is related to the \textbf{electric potential energy} $U_q$:
+  The electrostatic force is a conservative force; the work done by $\vec F_q$
+  is related to the change in \textbf{electric potential energy} $U_q$:
   
   \eq{-.1in}{
-    W=\int\vec F_q\cdot\dl\vec r
+    W_q=\int\vec F_q\cdot\dl\vec r
     =kq_1q_2\int_{r_1}^{r_2}\frac{\dl r}{r^2}
     =-\frac{kq_1q_2} r\Big|^{r_2}_{r_1}=-\Delta U_q
   }
 
-  where
+  $U_q$ is the energy stored between a system of two charges, defined as:
     
-  \eq{-.1in}{
+  \eq{-.15in}{
     \boxed{U_q=\frac{kq_1q_2} r}
   }
   \begin{itemize}
-  \item $U_q$ can be ($+$) or ($-$), because charges can be either ($+$) or
-    ($-$)
   \item Positive work done by $F_q$ decreases $U_q$, while
   \item Negative work done by $F_q$ increases $U_q$
-  \item $W$ depends on $r_1$ and $r_2$ but not \emph{how} the charge moves from
-    $r_1\rightarrow r_2$
+  \item $W_q$ depends on $r_1$ and $r_2$ but not \emph{how} the charge moves
+    from $r_1\rightarrow r_2$
+  \item Only work done by $\vec F_q$ can change $U_q$
   \end{itemize}
 \end{frame}
 
 
 
 \begin{frame}{How it Differs from Gravitational Potential Energy}
+  $U_q$ can be ($+$) or ($-$), because charges can be either ($+$) or ($-$)
+ 
+  \vspace{.2in}
   \begin{columns}
     \column{.33\textwidth}
     \centering
@@ -497,10 +497,12 @@
     \eq{-.3in}{U_q<0}
   \end{columns}
   \begin{itemize}
-  \item $U_q>0$ means positive work is done to bring two charges together from
-   $r=\infty$ to $r$ (both charges of the same sign)
-  \item $U_q<0$ means negative work (the charges are opposite signs)
-  \item For gravitational potential $U_g$ is always $<0$
+  \item $U_q>0$ (both charges have the same sign): work is done to bring two
+    charges together from $r=\infty$ to $r$
+  \item $U_q<0$ (the charges are opposite signs): work is done to separate the
+    two charges from $r$ to $r=\infty$
+  \item Gravitational potential $U_g$ is always $<0$ because mass can only be
+    positive
   \end{itemize}
 \end{frame}
 
@@ -511,12 +513,56 @@
   ($\vec F_q$) to electric potential energy ($U_q$) by the gradient operator:
 
   \eq{-.1in}{
-    \Delta U_q=-\int\vec F_q\cdot\dl\vec r\quad\rightarrow\quad
+    U_q=-\int\vec F_q\cdot\dl\vec r\quad\rightarrow\quad
     \vec F_q(r)=-\nabla U_q=-\diffp{U_q}r\hat r
   }
 
   Electrostatic force $\vec F_q$ always points from high to low potential
   energy (steepest descent direction)
+\end{frame}
+
+
+
+\begin{frame}{Potential Energy with More Than Two Charges}
+  When there are more than two charges, the total potential energy is the
+  total between the systems of 2 charges:
+
+  \vspace{.1in}
+  \begin{columns}
+    \column{.36\textwidth}
+    \begin{tikzpicture}[scale=1.3]
+      \draw (0,0)--(1,-2) node[midway,fill=black!2]{$r_3$}
+      --(-3,-2) node[midway,fill=black!2]{$r_2$}
+      --(0,0) node[midway,fill=black!2]{$r_1$};
+      \draw[mass] circle(.18) node{$q_1$};
+      \draw[mass] (1,-2) circle(.18) node{$q_3$};
+      \draw[mass] (-3,-2) circle(.18) node{$q_2$};
+    \end{tikzpicture}
+
+    \column{.64\textwidth}
+    \eq{-.1in}{
+      U_q=\frac{kq_1q_2}{r_1} +\frac{kq_2q_3}{r_2} +\frac{kq_1q_3}{r_3}
+    }
+  \end{columns}
+  
+  \vspace{.1in}The energy stored can be either positive or negative depending
+  on the sign of the signs of $q_1$, $q_2$ and $q_3$.
+\end{frame}
+
+
+
+\begin{frame}{Example Problem}
+  \textbf{Example:} Four identical charges $q$ are located at the four corners
+  of a square of length $L$. What is the total potential energy of the system?
+  \begin{center}
+    \begin{tikzpicture}[scale=1.3]
+      \draw rectangle(2,2) node[midway,above=35]{$L$};
+      \draw[mass] (0,2) circle(.15) node{$q$};
+      \draw[mass] (0,0) circle(.15) node{$q$};
+      \draw[mass] (2,0) circle(.15) node{$q$};
+      \draw[mass] (2,2) circle(.15) node{$q$};
+    \end{tikzpicture}
+  \end{center}
 \end{frame}
 
 
@@ -532,26 +578,40 @@
   }
   
   This ``constant'' $V_g$ is called the \textbf{gravitational potential}, which
-  is the \emph{gravitational potential energy per unit mass}. In the trivial
+  is the \emph{gravitational potential energy per unit mass}. In the simple
   case with a uniform gravitational field:
 
   \eq{-.1in}{
     V_g=\frac{U_g}m=gh
   }
 
-  This also applies to the general case of the gravitational
-  potential energy:
+\end{frame}
+
+
+
+\begin{frame}{Electric Potential: Using Gravity as Example}
+  In the general case for the gravitational potential energy stored between
+  $M$ and $m$, we can define the gravitational potential from ``source mass''
+  $M$:
   
   \eq{-.1in}{
-    V_g=\frac{U_g}m=-\frac{Gm}r
-  }  
+    V_g=\frac{U_g}m=-\frac{GM}r
+  }
+
+  When $m$ is in this potential $V_g$, the gravitational potential energy is:
+
+  \eq{-.1in}{
+    U_g=mV_g=-\frac{GMm}r
+  }
+
+  In agreement with the previous equations
 \end{frame}
 
 
 
 \begin{frame}{Electric Potential}
-  This is also true for moving a charged particle $q$ against an electric
-  electric field created by $q_s$, and the ``constant'' is called the
+  This is also true for a charged particle $q$ in an electric electric field
+  created by $q_s$. In this case, the potential (the ``constant'') is called the
   \textbf{electric potential}. The unit for electric potential is a \emph{volt}
   which is \emph{one joule per coulomb}, i.e.\
   $\SI1\volt=\SI1{\joule\per\coulomb}$
@@ -562,7 +622,7 @@
     }
   }
 
-  The electric potential from a source point charge $q_s$ is therefore:
+  The electric potential from a source \emph{point} charge $q_s$ is therefore:
 
   \eq{-.1in}{
     \boxed{
@@ -573,77 +633,15 @@
 
 
 
-\begin{frame}{Electric Potential from Multiple Charges}
-  When there are multiple point charges present, the electric potential is
-  given by the summation:
-
-  \eq{-.1in}{
-    \boxed{
-      V =k\sum_{i=1}^N\frac{q_i}{r_i}
-    }
-  }
-
-  As $N\rightarrow\infty$ the summation becomes an integral:
-
-  \eq{-.1in}{
-    \boxed{
-      V =k\int\frac{\dl q}r
-    }
-  }
-
-  where $r$ is the distance to the infinitesimal charge $\dl q$
-\end{frame}
-
-
-
-\section{Electric Potential Difference}
-
-\begin{frame}{Potential Difference}
-  \begin{columns}
-    \column{.45\textwidth}
-    \begin{tikzpicture}[scale=.75]
-      \shade[ball color=blue] circle(.3) node[white]{\footnotesize$Q$};
-      \foreach \theta in {30,60,...,360}{
-        \draw[rotate=\theta,->,gray,thick](.3,0)--({7-4*sin(\theta/2)},0);
-      }
-      \draw[red,ultra thick,dotted,<-]
-      (2.5*cos{30}+.23,-2.5*sin{30}) to[out=0,in=270](5*cos{15},5*sin{15}-.2);
-      \draw[thick,red,rotate=-70] (2.5,0) arc(0:100:2.5) node[above]{$V_2$};
-      \draw[thick,red,rotate=-60] (5,0)   arc(0:90:5)    node[above]{$V_1$};
-      \begin{scope}[rotate=-30]
-        \shade[ball color=red](2.5,0) circle(.23) node[white]{\footnotesize$q$};
-        \draw[<->,thick](.3,0)--(2.27,0) node[midway,above]{$r_2$};
-      \end{scope}
-      \begin{scope}[rotate=15]
-        \shade[ball color=red](5,0) circle(.23) node[white]{\footnotesize$q$};
-        \draw[<->,thick](.3,0)--(4.77,0) node[pos=2/3,below]{$r_1$};
-      \end{scope}
-    \end{tikzpicture}
-
-    \column{.55\textwidth}
-    When a charge is moved from $r_1$ to $r_2$, the change in electric potential
-    energy is related to the change in electric potential by:
-
-    \eq{-.1in}{
-      \Delta U_q=U_2-U_1=q\Delta V
-    }
-
-    where $\Delta V$ is called the \textbf{potential difference}
-  \end{columns}
-\end{frame}
-
-
-
-
-\begin{frame}{Electric Potential}
+\begin{frame}{Electric Potential: Point Charges}
   \begin{columns}
     \column{.4\textwidth}
     \centering
     \begin{tikzpicture}[scale=.75]
       \shade[ball color=blue] circle(.3) node[white]{\tiny$\bm{+q}$};
       \foreach \theta in {20,40,...,360}{
-        \draw[rotate=\theta,->,gray,thick](.3,0)--(3,0);
-        \draw[rotate=\theta,gray,thick](2.8,0)--(4,0);
+        \draw[rotate=\theta,axes,gray] (.3,0)--(3,0);
+        \draw[rotate=\theta,thick,gray] (2.8,0)--(4,0);
       }
       \foreach \r in {1,2,3}{
         \draw[very thick,red] circle(\r);
@@ -652,7 +650,7 @@
     \end{tikzpicture}
  
     \column{.6\textwidth}
-    For a point charge $q$, every point at a distance $r$ will have the same
+    For a point charge $q$, every point at a distance $r$ has the same
     electric potential $V(r)$.
     \begin{itemize}
     \item The red lines have the same electric potential; they are called
@@ -666,6 +664,8 @@
       }
     \end{itemize}
   \end{columns}
+  \vspace{.1in}In AP Physics C, equipotential contours are sometimes also known
+  as \textbf{isolines of equal electric potential}.
 \end{frame}
 
 
@@ -677,20 +677,20 @@
     \begin{tikzpicture}[scale=.75]
       \shade[ball color=blue] circle(.3) node[white]{\tiny$\bm{+q}$};
       \foreach \theta in {20,40,...,360}{
-        \draw[rotate=\theta,->,gray,thick](.3,0)--(3,0);
-        \draw[rotate=\theta,gray,thick](2.8,0)--(4,0);
+        \draw[rotate=\theta,->,gray,thick] (.3,0)--(3,0);
+        \draw[rotate=\theta,gray,thick] (2.8,0)--(4,0);
       }
       \foreach \r in {1,2,3}{
         \draw[very thick,red] circle(\r);
         \node[red,below] at (0,-\r+0.09){\footnotesize$V_\r$};
       }
-      \shade[ball color=red,rotate=-20](2,0) circle(.23)
+      \shade[ball color=red,rotate=-20] (2,0) circle(.23)
       node[white]{\footnotesize$Q$};
     \end{tikzpicture}
     
     \column{.6\textwidth}
-    A charge $Q$ that is placed inside this electric field will now have an
-    electric potential energy of:
+    A charge $Q$ that is placed inside this electric field has an electric
+    potential energy of:
 
     \eq{-.1in}{
       U_q=QV=Q\left[\frac{kq}r\right]
@@ -699,6 +699,117 @@
     in agreement with equation for electric potential energy
   \end{columns}
 \end{frame}
+
+
+
+
+\begin{frame}{Electric Potential from Multiple Charges}
+  When there are multiple point charges present, the electric potential is
+  given by the summation\footnote{Thankfully this is straight scalar
+  summation!}:
+
+  \eq{-.15in}{
+    \boxed{
+      V =k\sum_{i=1}^N\frac{q_i}{r_i}
+    }
+  }
+
+  As $N\rightarrow\infty$ the summation becomes an integral, and we can use it
+  to evaluate the potential from a distribution of charges:
+
+  \eq{-.1in}{
+    \boxed{
+      V =k\int\frac{\dl q}r
+    }
+  }
+  \vspace{.3in}
+  %where $r$ is the distance to the infinitesimal charge $\dl q$
+\end{frame}
+
+
+
+
+\begin{frame}{Electric Potential: Example}
+  \begin{columns}
+    \column{.35\textwidth}
+    \begin{tikzpicture}
+      \draw[axes] (-2,0)--(2,0) node[right]{$x$};
+      \draw[axes] (0,-2)--(0,2) node[right]{$y$};
+      \draw[gray] circle(1.5);
+      \draw[line width=2,red,rotate=90] (1.5,0) arc(0:180:1.5)
+      node[pos=.25,above=3]{$Q$};
+    \end{tikzpicture}
+    
+    \column{.65\textwidth}
+    \textbf{Example:} A uniform charge $Q$ is located
+
+    \begin{enumerate}[(a)]
+    \item What is the electric field at the origin?
+    \item What is the electric potential at the origin?
+    \item A charge $q$ is moved from $x=\infty$ to the origin. What is the
+      work done?
+    \end{enumerate}
+  \end{columns}
+\end{frame}
+
+
+
+\begin{frame}{Relating $V$ to $\vec E$}
+  In the same way that the fundamental theorem of calculus relates the 
+  electrostatic force ($\vec F_q$) and electric potential energy ($U_q$) by the
+  gradient operator, electric field ($\vec E$) and electric potential ($V$) are
+  also related the same way:
+
+  \eq{-.1in}{
+    V_q=-\int\vec E\cdot\dl\vec r\quad\rightarrow\quad
+    \vec E(r)=-\nabla V_q=-\diffp Vr\hat r
+  }
+  \begin{itemize}
+  \item Electric field $\vec E$ always points from high to low electric
+    potential
+  \item Electric field is also called ``potential gradient''
+  \end{itemize}
+\end{frame}
+
+
+
+
+\section{Electric Potential Difference}
+
+\begin{frame}{Potential Difference}
+  \begin{columns}
+    \column{.45\textwidth}
+    \begin{tikzpicture}[scale=.75]
+      \shade[ball color=blue] circle(.3) node[white]{\footnotesize$Q$};
+      \foreach \theta in {30,60,...,360}{
+        \draw[rotate=\theta,axes,gray] (.3,0)--({7-4*sin(\theta/2)},0);
+      }
+      \draw[red,ultra thick,dotted,<-]
+      (2.5*cos{30}+.23,-2.5*sin{30}) to[out=0,in=270](5*cos{15},5*sin{15}-.2);
+      \draw[thick,red,rotate=-70] (2.5,0) arc(0:100:2.5) node[above]{$V_2$};
+      \draw[thick,red,rotate=-60] (5,0) arc(0:90:5) node[above]{$V_1$};
+      \begin{scope}[rotate=-30]
+        \shade[ball color=red](2.5,0) circle(.23) node[white]{\footnotesize$q$};
+        \draw[<->,thick] (.3,0)--(2.27,0) node[midway,above]{$r_2$};
+      \end{scope}
+      \begin{scope}[rotate=15]
+        \shade[ball color=red] (5,0) circle(.23) node[white]{\footnotesize$q$};
+        \draw[<->,thick] (.3,0)--(4.77,0) node[pos=2/3,below]{$r_1$};
+      \end{scope}
+    \end{tikzpicture}
+
+    \column{.55\textwidth}
+    When a charge moves from $r_1$ to $r_2$, the change in electric potential
+    energy is related to the change in electric potential by:
+
+    \eq{-.1in}{
+      \Delta U_q=U_2-U_1=q\Delta V
+    }
+
+    where $\Delta V$ is called the \textbf{potential difference}
+  \end{columns}
+\end{frame}
+
 
 
 
@@ -725,23 +836,22 @@
 
 
 
-\begin{frame}{Relating $V$ to $\vec E$}
-  In the same way that the fundamental theorem of calculus relates the 
-  electrostatic force ($\vec F_q$) and electric potential energy ($U_q$) by the
-  gradient operator, electric field ($\vec E$) and electric potential ($V$) are
-  also related the same way:
+\begin{frame}{Relating $V$ and $\Delta V$}
+  Electric potential $V_q$ is related to the electric field $E$ by an
+  indefinite integral, and therefore $V_q$ is a function is space:
 
   \eq{-.1in}{
-    \Delta V_q=-\int\vec E_q\cdot\dl\vec r\quad\rightarrow\quad
-    \vec E(r)=-\nabla V_q=-\diffp Vr\hat r
+    V_q=-\int\vec E\cdot\dl\vec r
   }
-  \begin{itemize}
-  \item Electrostatic field $\vec E$ always points from high to low electric
-    potential
-  \item Electric field is also called ``potential gradient''
-  \end{itemize}
-\end{frame}
 
+  Whereas electric potential difference is related to the electric field $E$
+  by a definite integral from $\vec r_1$ to $\vec r_2$, and therefore it has a
+  definite value:
+  
+  \eq{-.1in}{
+   \Delta V_q=-\int_{\vec r_1}^{\vec r_2}\vec E\cdot\dl\vec r
+  }
+\end{frame}
 
 
 

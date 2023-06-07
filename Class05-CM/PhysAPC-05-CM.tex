@@ -30,7 +30,7 @@
 
 \begin{frame}{Start with a Definition}
   The \textbf{center of mass} (``CM'') is the \emph{weighted average of the
-    masses in a system.} The ``system'' may be:
+  masses in a system.} The ``system'' may be:
   \begin{itemize}
   \item A collection of individual particles
   \item A continuous distribution of mass with constant density. In this case,
@@ -51,7 +51,7 @@
       \draw[->] (-4,0)--(4,0) node[right]{$x$};
       \draw[fill=lightgray] (-2.5,0) circle(.3) node{$m$};
       \draw[fill=lightgray] (2.5,0) circle(.3) node{$m$};
-      \fill circle(.05) node[below]{\small cm};
+      \fill circle(.05) node[below]{cm};
     \end{tikzpicture}
   \end{center}
   The answer is simple: the half way point between them:
@@ -78,7 +78,7 @@
       \draw[->] (-4,0)--(4,0) node[right]{$x$};
       \draw[fill=lightgray] (-2.5,0) circle(.3) node{$m$};
       \draw[fill=lightgray] (2.5,0) circle(.42) node{$2m$};
-      \fill(2.5/3,0) circle(.05) node[below]{\small cm};
+      \fill(2.5/3,0) circle(.05) node[below]{cm};
     \end{tikzpicture}
   \end{center}
   The answer is still simple. The CM is no longer half way between the two
@@ -201,13 +201,13 @@
 
     \column{.35\textwidth}
     \begin{tikzpicture}[scale=.8]
-      \draw[->](0,0)--(4,0) node[right]{\footnotesize $x$};
-      \draw[->](0,0)--(0,5) node[above]{\footnotesize $y$};
+      \draw[->](0,0)--(4,0) node[right]{ $x$};
+      \draw[->](0,0)--(0,5) node[above]{ $y$};
       \draw[fill=lightgray](0,0)--(3,0) node[midway,below]{$a$}
       --(0,4)--cycle node[midway,left]{$b$};
       \uncover<2->{
         \draw[fill=red](1,0)--(1.2,0)--(1.2,2.4)--(1,2.67)
-          node[midway,right]{\footnotesize $\dl m=y\dl x$}--cycle;
+          node[midway,right]{ $\dl m=y\dl x$}--cycle;
       }
     \end{tikzpicture}
   \end{columns}
@@ -225,16 +225,16 @@
 %
 %    \column{.4\textwidth}
 %    \begin{tikzpicture}[scale=3]
-%      \draw[->](0,0)--(1.25,0) node[right]{\footnotesize $x$};
-%      \draw[->](0,0)--(0,1.25) node[above]{\footnotesize $y$};
+%      \draw[->](0,0)--(1.25,0) node[right]{ $x$};
+%      \draw[->](0,0)--(0,1.25) node[above]{ $y$};
 %      \draw[fill=green!40]
 %      plot[smooth,samples=40,domain=0:1] (\x,{\x*\x*\x})--
 %      plot[smooth,samples=40,domain=1:0] (\x,{\x^(.5)});
 %      
 %      \draw[red!70,thick]  plot[smooth,samples=40,domain=0:1] (\x,{\x*\x*\x});
 %      \draw[blue!70,thick] plot[smooth,samples=40,domain=0:1] (\x,{\x^(.5)});
-%      \node at (.4,.85){\textcolor{blue!70}{\footnotesize $y=\sqrt{x}$}};
-%      \node at (.9,.3){\textcolor{red!70}{\footnotesize $y=x^3$}};
+%      \node at (.4,.85){\textcolor{blue!70}{ $y=\sqrt{x}$}};
+%      \node at (.9,.3){\textcolor{red!70}{ $y=x^3$}};
 %    \end{tikzpicture}
 %  \end{columns}
 %\end{frame}
@@ -263,9 +263,9 @@
         \draw[thick,fill=lightgray] circle(2);
         \draw[thick,fill=black!2](0,1) circle(1);
         \fill circle(.04);
-        \draw[thick,->](0,0)--(-1.41,-1.41)node[midway,below]{\footnotesize$r$};
+        \draw[thick,->](0,0)--(-1.41,-1.41)node[midway,below]{$r$};
         \draw[fill=black](0,1) circle(.04);
-        \draw[thick,->](0,1)--(.707,.293) node[right]{\footnotesize$r/2$};
+        \draw[thick,->](0,1)--(.707,.293) node[right]{$r/2$};
       \end{tikzpicture}
     \end{center}
   \end{itemize}
@@ -279,15 +279,15 @@
     \begin{center}
       \begin{tikzpicture}[scale=.6]
         \draw[thick,fill=lightgray] circle(2);
-        \draw[thick,fill=black!2](0,1) circle(1);
-        \draw[fill=black](0,0) circle(.04);
-        \draw[thick,->](0,0)--(-1.41,-1.41)
-        node[midway,below]{\footnotesize$r$};
+        \draw[thick,fill=black!2] (0,1) circle(1);
+        \draw circle (.04);
+        \draw[thick,->] (0,0)--(-1.41,-1.41)
+        node[midway,below]{$r$};
         \fill (0,1) circle(.04);
-        \draw[thick,->](0,1)--(.707,.293) node[right]{\footnotesize$r/2$};
+        \draw[thick,->] (0,1)--(.707,.293) node[right]{$r/2$};
       
-        \draw[thick,fill=lightgray](6,0) circle(2) node{\large$A$};
-        \draw[thick](11,1) circle(1) node{\large$B$};
+        \draw[thick,fill=lightgray] (6,0) circle(2) node{\large$A$};
+        \draw[thick] (11,1) circle(1) node{\large$B$};
         \node at (3,0) {\huge=};
         \node at (9,0) {\huge -};
       \end{tikzpicture}

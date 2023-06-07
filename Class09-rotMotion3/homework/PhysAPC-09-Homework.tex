@@ -2,7 +2,7 @@
 \newcounter{lastmc}
 
 \begin{document}
-\genheader
+%\genheader
 
 \gentitle{9}{ROTATIONAL MOTION, PARTS 2 AND 3}
 %\begin{center}
@@ -23,13 +23,11 @@
     \begin{center}
       \begin{tikzpicture}[scale=.9]
         \fill(2,1.5) circle(.08);
-        \begin{scope}[thick]
-          \draw[->](-.2,0)--(3,0) node[right]{$x$} node[pos=0,below]{$O$};
-          \draw[->](0,-.2)--(0,2.5) node[above]{$y$};
-          \draw[dashed](0,1.5)--(2,1.5) node[pos=0,left]{$y_0$}
-          --(2,0)node[below]{$x_0$};
-        \end{scope}
-        \draw[very thick,->](2,1.5)--(2,.5) node[midway,right]{$v$};
+        \draw[axes] (-.2,0)--(3,0) node[right]{$x$} node[pos=0,below]{$O$};
+        \draw[axes] (0,-.2)--(0,2.5) node[above]{$y$};
+        \draw[thick,dashed] (0,1.5)--(2,1.5) node[pos=0,left]{$y_0$}
+        --(2,0) node[below]{$x_0$};
+        \draw[vectors] (2,1.5)--(2,.5) node[midway,right]{$v$};
       \end{tikzpicture}
     \end{center}
     \begin{choices}
@@ -46,16 +44,14 @@
     up the incline to a maximum vertical height of
     \begin{center}
       \begin{tikzpicture}
-        \fill[lightgray](0,-.2) rectangle(7,0);
-        \begin{scope}[thick]
-          \draw(0,0)--(7,0);
-          \draw(3.5,0)--(7,1.2)--(7,0);
-          \draw(1.5,.4) circle(.4);
-          \fill(1.5,.4) circle(.06);
-          \draw[->](1.5,.4)--(2.5,.4) node[right]{$v$};
-          \draw[->](.95,.4) arc(180:45:.55);
-        \end{scope}
-        \draw[|<->|](7.2,0)--(7.2,1.2) node[midway,right]{$h$};
+        \fill[lightgray] (0,-.2) rectangle (7,0);
+        \draw[thick] (0,0)--(7,0);
+        \draw[thick] (3.5,0)--(7,1.2)--(7,0);
+        \draw[thick] (1.5,.4) circle (.4);
+        \fill (1.5,.4) circle(.06);
+        \draw[vectors] (1.5,.4)--(2.5,.4) node[right]{$v$};
+        \draw[vectors] (.95,.4) arc (180:45:.55);
+        \draw[thick,|<->|] (7.2,0)--(7.2,1.2) node[midway,right]{$h$};
       \end{tikzpicture}
     \end{center}
     \begin{choices}
@@ -85,7 +81,7 @@
       \choice $\dfrac{\omega_i}{\Delta t}$
       \choice $\dfrac{\omega_i^2}{\Delta t}$
       \choice $\dfrac{I\omega_i}{2\Delta t}$
-      \choice $\dfrac{I\omega_i^2}{\Delta t}$
+      \choice $\dfrac{I\omega_i^2}{2\Delta t}$
       \choice $\dfrac{I\omega_i}{\Delta t^2}$
     \end{choices}    
     \columnbreak
@@ -100,15 +96,15 @@
     \begin{center}
       \begin{tikzpicture}
         \begin{scope}[thick]
-          \draw circle(.2) node{$m$};
-          \draw(0,2) circle(.2) node{$m$};
-          \draw(0,.2)--(0,1.8);
-          \draw(-1.2,0) circle(.2) node{$m$};
-          \draw[->](-1,0)--(-.5,0) node[above left]{$v$};
+          \draw circle (.2) node{$m$};
+          \draw (0,2) circle (.2) node{$m$};
+          \draw (0,.2)--(0,1.8);
+          \draw (-1.2,0) circle (.2) node{$m$};
+          \draw[->] (-1,0)--(-.5,0) node[above left]{$v$};
 
-          \draw(1.9,0) ellipse(.35 and .2) node{$2m$};
-          \draw(2,2) circle(.2) node{$m$};
-          \draw(2,.2)--(2,1.8);
+          \draw (1.9,0) ellipse (.35 and .2) node{$2m$};
+          \draw (2,2) circle (.2) node{$m$};
+          \draw (2,.2)--(2,1.8);
         \end{scope}
         \node at (0,2.5) {Before};
         \node at (2,2.5) {After};
@@ -133,25 +129,14 @@
     of the collision, the ball stops. The angular speed of the rod immediately
     after the collision is
     \begin{center}
-      \begin{tikzpicture}
-        \fill circle(.1);
-        \begin{scope}[thick]
-          \draw(.25,0) arc(0:180:.25);
-          \draw(-.25,0)--(-.25,-3);
-          \draw( .25,0)--( .25,-3);
-          \draw(-.25,-3) arc(180:360:.25);
-          \begin{scope}[dashed,rotate=90]
-            \draw(.25,0) arc(0:180:.25);
-            \draw(-.25,0)--(-.25,-3);
-            \draw( .25,0)--( .25,-3);
-            \draw(-.25,-3) arc(180:360:.25);
-          \end{scope}
-          \draw(-1,-2.8) circle(.2) node{$m$};
-          \draw[very thick,->](-1.5,-2.4)--(-.5,-2.4)
-          node[midway,above]{$v$};
-          \node[left] at (-.3,-1.5) {$L$};
-          \node[right] at (.3,-1.5) {$I$, $M$};
-        \end{scope}
+      \begin{tikzpicture}[thick]
+        \fill circle(.06);
+        \draw (-.15,.15) rectangle (.15,-3);
+        \draw[dashed] (-.15,-.15) rectangle (3,.15);
+        \draw (-2,-2.95) circle (.2) node{$m$};
+        \draw[vectors] (-1.8,-2.95)--(-1,-2.95) node[midway,above]{$v$};
+        \node[left] at (-.2,-1.5) {$L$};
+        \node[right] at (.2,-1.5) {$I$, $M$};
       \end{tikzpicture}
     \end{center}
     \begin{choices}
@@ -170,13 +155,11 @@
       hollow sphere is $\dfrac23mR^2$.
       \begin{center}
         \begin{tikzpicture}
-          \begin{scope}[thick]
-            \draw(0,0)--(-4,0)--(-4,2)--cycle;
-            \draw[|<->|](-4.3,2)--(-4.3,0) node[midway,left]{$h$};
-          \end{scope}
-          \begin{scope}[thick,rotate=-atan(2/4)]
-            \draw(-3.5,.4) circle(.4);
-            \fill(-3.5,.4) circle(.05);
+          \draw[thick] (0,0)--(-4,0)--(-4,2)--cycle;
+          \draw[thick,|<->|] (-4.3,2)--(-4.3,0) node[midway,left]{$h$};
+          \begin{scope}[rotate=-atan(2/4)]
+            \draw[thick] (-3.5,.4) circle (.4);
+            \fill (-3.5,.4) circle (.05);
           \end{scope}
         \end{tikzpicture}
       \end{center}
@@ -187,8 +170,8 @@
     \begin{choices}
       \choice
       \begin{tikzpicture}[scale=.7]
-        \draw circle(1);
-        \fill circle(.1);
+        \draw[thick] circle (1);
+        \fill circle (.1);
         \draw[vectors] (0,0)--(0,-2) node[below]{$mg$};
         \draw[vectors,rotate=45] (-1,0)--(2,0) node[right]{$N$};
         \draw[vectors,rotate=45] (-1,0)--(-1,1.5) node[left]{$f$};
@@ -196,8 +179,8 @@
       
       \choice
       \begin{tikzpicture}[scale=.7]
-        \draw circle(1);
-        \fill circle(.1);
+        \draw[thick] circle (1);
+        \fill circle (.1);
         \draw[vectors] (0,0)--(0,-2) node[below]{$mg$};
         \draw[vectors] (0,0)--(0,2) node[above]{$N$};
         \draw[vectors,rotate=45] (-1,0)--(-1,1.5) node[left]{$f$};
@@ -205,8 +188,8 @@
 
       \choice
       \begin{tikzpicture}[scale=.7]
-        \draw circle(1);
-        \fill circle(.1);
+        \draw[thick] circle (1);
+        \fill circle (.1);
         \draw[vectors] (0,0)--(0,-2) node[below]{$mg$};
         \draw[vectors,rotate=45] (-1,0)--(2,0) node[right]{$N$};
         \draw[vectors,rotate=45] (-1,0)--(-1,-1.5) node[right]{$f$};
@@ -214,8 +197,8 @@
 
       \choice
       \begin{tikzpicture}[scale=.7]
-        \draw circle(1);
-        \fill circle(.1);
+        \draw[thick] circle (1);
+        \fill circle (.1);
         \draw[vectors] (0,0)--(0,-2) node[below]{$mg$};
         \draw[vectors,rotate=45] (-1,0)--(2,0) node[right]{$N$};
         \draw[vectors] (-1,0)--(-1,1.5) node[right]{$f$};
@@ -223,8 +206,8 @@
       
       \choice
       \begin{tikzpicture}[scale=.7]
-        \draw circle(1);
-        \fill circle(.1);
+        \draw[thick] circle (1);
+        \fill circle (.1);
         \draw[vectors,rotate=45] (0,0)--(0,-2) node[below]{$mg$};
         \draw[vectors,rotate=45] (0,0)--(2,0) node[right]{$N$};
         \draw[vectors,rotate=45] (-1,0)--(-1,1.5) node[above]{$f$};
@@ -268,12 +251,12 @@
 % TAKEN FROM THE 2015 AP PHYSICS C FREE-RESPONSE QUESTION MECH 3
 
 \begin{center}
-  \begin{tikzpicture}[scale=.8]
+  \begin{tikzpicture}[scale=.8,thick]
     \shade[ball color=lightgray] circle (2);% node[below right]{$m$};
-    \draw circle(2);
-    \fill circle(.15);
-    \draw[thick] (2,0)--(2,-4);
-    \draw[fill=gray!30] (1.5,-4) rectangle(2.5,-5) node[midway]{$m$};
+    \draw circle (2);
+    \fill circle (.15);
+    \draw (2,0)--(2,-4);
+    \draw[fill=gray!30] (1.5,-4) rectangle (2.5,-5) node[midway]{$m$};
     \draw[vectors] (2,-4)--(2,-1.8) node[right]{$T$};
   \end{tikzpicture}
 \end{center}
@@ -295,8 +278,8 @@
   around it. The string is held fixed, and the cylinder falls vertically as
   shown in the figure below. Find
   \begin{center}
-    \begin{tikzpicture}[scale=.5]
-      \draw[fill=lightgray] circle(2);
+    \begin{tikzpicture}[scale=.5,thick]
+      \draw[fill=lightgray] circle (2);
       \draw[thick] (2,0)--(2,5);
       \draw[vectors] (2,0)--(2,3) node[right]{$T$};
     \end{tikzpicture}
@@ -312,16 +295,16 @@
   \uplevel{
     \centering
     \begin{tikzpicture}[scale=.85,very thick]
-      \draw circle(1);
-      \fill circle(.07);
+      \draw circle (1);
+      \fill circle (.07);
       \draw (0,0)--(0,2);
-      \fill[lightgray] (-3,2) rectangle(3,2.3);
+      \fill[lightgray] (-3,2) rectangle (3,2.3);
       \draw (-3,2)--(3,2);
-      \draw[thick,->,rotate=30] (0,0)--(1,0) node[midway,above]{$R$};
+      \draw[axes,rotate=30] (0,0)--(1,0) node[midway,above]{$R$};
       \draw (-1,0)--(-1,-2);
-      \draw (-1.4,-2) rectangle(-.6,-2.5) node[midway]{$m$};
+      \draw (-1.4,-2) rectangle (-.6,-2.5) node[midway]{$m$};
       \draw[thick,|<->] (-2,-2.5)--(-2,-5) node[midway,fill=white]{$D$};
-      \fill[lightgray] (-3,-5) rectangle(3,-5.3);
+      \fill[lightgray] (-3,-5) rectangle (3,-5.3);
       \draw (-3,-5)--(3,-5);
     \end{tikzpicture}
   }
@@ -357,8 +340,8 @@
       \begin{center}
         \vspace{.2in}
         \begin{tikzpicture}[xscale=.6,yscale=.35]
-          \draw[gray] grid(20,20);
-          \draw[very thick,step=5] grid(20,20);
+          \draw[gray] grid (20,20);
+          \draw[very thick,step=5] grid (20,20);
         \end{tikzpicture}
         \vspace{.2in}
       \end{center}
@@ -385,16 +368,16 @@
     \centering
     \begin{tikzpicture}[scale=.8,thick]
       \draw[fill=cyan!40] (0,-2) rectangle (5,-1.9);
-      \draw[fill=cyan!40] circle(2);
-      \draw[fill=white] circle(1.9);
+      \draw[fill=cyan!40] circle (2);
+      \draw[fill=white] circle (1.9);
       \begin{scope}[rotate=-40]
         \draw[fill=cyan!40] (0,-2)--(-7,-2)--(-7,-1.9)--(0,-1.9);
-        \shade[ball color=red](-6.5,-1.65) circle(.25);
+        \shade[ball color=red] (-6.5,-1.65) circle (.25);
       \end{scope}
-      \draw[dashed](0,-2)--(-7.5,-2);
+      \draw[dashed] (0,-2)--(-7.5,-2);
       \draw[<->](-6.25,-2)--(-6.25,2.65) node[midway,fill=white]{$h$};
       \begin{scope}[rotate=25]
-        \draw[->](0,0)--(1.65,0) node[midway,below]{$R$};
+        \draw[->] (0,0)--(1.65,0) node[midway,below]{$R$};
         \draw[dashed] (1.65,0) circle(.25);
       \end{scope}
     \end{tikzpicture}

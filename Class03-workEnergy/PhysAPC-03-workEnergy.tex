@@ -33,7 +33,6 @@
 \begin{frame}{Mechanical Work}
   \textbf{Mechanical work} $\dl W$ is done when a force $\vec F(x)$ displaces an
   object by $\dl\vec x$. If the force moves an object along a path $\mathcal C$,
-  %from  $\vec x_0$ to $\vec x_1$,
   the total work done by the force is defined as:
 
   \eq{-.1in}{
@@ -49,29 +48,30 @@
     $\vec F\cdot\dl\vec x=0$ (i.e.\ the force did not cause the displacement)
   \item No work done if no displacement ($\dl\vec x=\vec 0$)
   \item Work can be positive or negative depending on the dot product
+  \item The SI unit for work is a \emph{joule} where
+    $\SI1\joule=\SI1{\kilogram.\metre^2\per\second^2}$
   \end{itemize}
 \end{frame}
 
 
 
 \begin{frame}{In One Dimension}
-  For motion confined that moves in only one direction in a one-dimensional
-  coordinate system (which is common for AP Physics C), the previous
-  expression simplifies to:
+  For motion confined to one direction in a 1D coordinate system (which is
+  common for AP Physics C), the previous expression simplifies to:
   
   \eq{-.1in}{
     W=\int_{x_0}^{x_1} F(x)\dl x
   }
 
-  (Direction still matters for $F$ and $x$, even in 1D, in that there is still
-  a positive and negative direction.)
+  Remember that direction still matters in 1D, i.e.\ there is still a positive
+  and a negative direction.
 \end{frame}
 
 
 
 \begin{frame}{Work by Constant Force}
   For a constant force, if the object moves along straight path, the integral
-  simplifies to just the dot product of the two vectors:
+  simplifies to the dot product of the two vectors:
 
   \eq{-.1in}{
     \boxed{
@@ -79,10 +79,13 @@
     }
   }
 
-  In scalar form that is more familiar in Grades 11/12 Physics:
+  We can express this also in a scalar form that is more familiar in Grades
+  11/12 Physics:
 
   \eq{-.1in}{
-    \boxed{W=|\vec F||\Delta\vec x|\cos\theta}
+    \boxed{
+      W=\vec F\Delta\vec x\cos\theta
+    }
   }
 
   where $\theta$ is the angle between the force and displacement vectors
@@ -95,7 +98,7 @@
   \begin{itemize}
   \item The work done by \emph{one specific force}
   \item Example: A boy pushes a cart forward. The ``work done by the boy'' is
-    the work done by the applied force.
+    the work done by the applied force
   \end{itemize}
 
   \vspace{.15in}\textbf{Work done on an object}
@@ -113,24 +116,22 @@
 
 \begin{frame}{Kinetic Energy}
   When a net force on an object (with constant mass) accelerates it, the
-  resulting amount of work done on the object (net work $W_\text{net}$) is
-  given by:
+  resulting work done on the object (net work $W_\text{net}$) is given by:
 
   \eq{-.1in}{
     W_\text{net}
-    =\int_{x_0}^{x_1}F_\text{net}(x)\dl x
+    =\int F_\text{net}(x)\dl x
     =\int ma\dl x
     =m\int\diff vt\dl x
   }
 
   Both $v$ and $x$ are continuously differentiable in time, we can switch the
-  order of differentiation.
+  order of differentiation:
   
   \eq{-.1in}{
     =m\int\diff xt\dl\vec v=m\int_{v_0}^{v_1}v\dl v
   }
-
-  where $v_0=v(x_0)$ and $v_1=v(x_1)$.
+  %where $v_0=v(x_0)$ and $v_1=v(x_1)$.
 \end{frame}
 
 
@@ -160,19 +161,24 @@
 
 \begin{frame}{Work-Energy Theorem}
   The \emph{definition} of kinetic energy came from this integration, in that
-  work equals to the change in \emph{something}, and we define that as kinetic
-  energy. This is the \textbf{work-energy theorem}:
+  work equals to the change in \emph{something}, and we define that
+  \emph{something} as kinetic energy. This is the \textbf{work-energy theorem},
+  also known as the \textbf{work-energy principle}:
 
-  \eq{-.2in}{
+  \eq{-.1in}{
     \boxed{
       W_\text{net}=\Delta K
     }
   }
   \begin{itemize}
-  \item $\Delta K$ can be positive or negative depending on the dot product
-  \item When multiple forces acting on an object; each force can add or remove
-    kinetic energy from an object
-  \item Therefore we use the ``net'' amount of work done in the above equation
+  %\item $\Delta K$ can be positive or negative depending on whether work done
+  %  is positive or negative:
+  \item $K$ increases ($\Delta K>0$) if net work is positive ($W_\text{net}>0$),
+    and
+  \item $K$ decreases ($\Delta K<0$) if net work is negative ($W_\text{net}>0$)
+  %\item When multiple forces acting on an object; each force can add or remove
+  %  kinetic energy from an object
+  %\item Therefore we use the ``net'' amount of work done in the above equation
   \item It does not matter \emph{what} the net force is composed of
   \end{itemize}
 \end{frame}
@@ -180,12 +186,12 @@
 
 
 \begin{frame}{Example}
-  \textbf{Example 1:} A force $F=4x$ (in newtons) acts on an object of mass
-  \SI2{\kilo\gram} as it moves along the $x$-axis from $x=1$ to $x=\SI5\metre$.
-  Given that the object is at rest at $x=1$,
-  \begin{enumerate}[(a)]
-  \item Calculate the net work
-  \item What is the final speed of the object?
+  \textbf{Example:} A force $F=4x$, measured in newtons, acts on an object of
+  mass \SI2{\kilo\gram} as it moves along the $x$-axis from $x=1$ to
+  $x=\SI5\metre$. Given that the object is at rest at $x=1$, calculate
+  \begin{enumerate}[a.]
+  \item the net work on the object
+  \item the final speed of the object
   \end{enumerate}
 \end{frame}
 
@@ -198,16 +204,15 @@
   distance of $\Delta x$:
   \begin{center}
     \begin{tikzpicture}[scale=.6]
-      \draw[thick,fill=cyan!20] (7.75,0) arc(75:105:30);
-      \draw[mass] (0,4) circle(.2) node[right=2.5]{$m$};
-      \draw[vectors,red] (0,4)--(0,3) node[below]{$m\vec g$};
+      \draw[thick,fill=cyan!10] (7.75,0) arc (75:105:30);
+      \draw[mass] (0,4) circle (.2) node[right=2.5]{$m$};
+      \draw[vectors,red] (0,4)--(0,2) node[below=-1]{$m\vec g$};
     \end{tikzpicture}
   \end{center}
   \begin{itemize}
-  \item Assuming that $\Delta\vec x$ is small, $\vec g$ can be considered to be
-    constant
+  \item When $\Delta\vec x$ is small, $\vec g$ can be considered constant
   \item The work done by the gravity ($W_g$) is \emph{positive}, and
-    therefore, there is an increase in kinetic energy. The object speeds up.
+    therefore, there is an increase in kinetic energy, and the object speeds up
 
     \eq{-.2in}{
       W_g=mg\Delta x=\Delta K > 0
@@ -222,17 +227,21 @@
   height. Using ground as the reference level (i.e.\ $h=0$):
   \begin{center}
     \begin{tikzpicture}[scale=.55,thick]
-      \draw[fill=cyan!20] (7.75,0) arc(75:105:30);
-      \draw[mass] (0,6) circle(.25);
+      \draw[fill=cyan!10] (7.75,0) arc (75:105:30);
+      \draw[mass] (0,6) circle (.25);
       \draw[vectors,violet] (0,6)--(0,3) node[midway,right]{$\Delta x$};
       \draw[->|,blue] (-.4,1)--(-.4,6) node[midway,left]{$h_0$};
       \draw[->|,blue] (0,1)--(0,3) node[midway,right]{$h_1$};
     \end{tikzpicture}
   \end{center}
 
-  \eq{-.2in}{
-    W_g
-    = mg(h_0-h_1)=-mg(h_1-h_0)=-(mgh_1-mgh_0) = -\Delta U_g
+  \vspace{-.2in}{\large
+    \begin{align*}
+      W_g &
+      = mg{\color{magenta}\Delta x}= mg{\color{magenta}(h_0-h_1)}
+      ={\color{magenta}-}mg{\color{magenta}(h_1-h_0)}\\
+      &=-(mgh_1-mgh_0)= -\Delta U_g
+    \end{align*}
   }
 \end{frame}
 
@@ -242,7 +251,8 @@
   Defining the \textbf{gravitational potential energy} $U_g$ as:
 
   \eq{-.1in}{
-    \boxed{U_g=mgh}
+    \boxed{U_g=mgh}\quad{\normalsize\text{or}}\quad
+    \boxed{\Delta U_g=mg\Delta h}
   }
 
   The work done by gravity is related to this potential energy by:
@@ -262,6 +272,7 @@
         energy
       \item $W_g$ depends on the end points $h_0$ and $h_1$, but not \emph{how}
         it went from $h_0\rightarrow h_1$
+      \item Only work done by gravity can affect gravitational potential energy
       \end{itemize}
     \end{minipage}
   }
@@ -287,11 +298,11 @@
       \draw[thick,
         decoration={aspect=.6,segment length=5mm, amplitude=2.5mm, coil},
         decorate] (0,1)--(5,1);
-      \fill[pattern=north east lines](-.2,0) rectangle(0,2);
+      \fill[pattern=north east lines](-.2,0) rectangle (0,2);
       \draw[thick] (0,0)--(0,2);
-      \fill[red] (5.5,1) circle(.06);
+      \fill[red] (5.5,1) circle (.06);
       \draw[vectors,red] (5.5,1)--(4,1) node[above]{$\vec F_s$};
-      \draw[dashed] (3,0)--(3,2) node[above]{\scriptsize Equilibrium position};
+      \draw[dashed] (3,0)--(3,2) node[above]{equilibrium/unstretched position};
       \draw[vectors] (3,.3)--(5,.3) node[midway,below]{$\vec x$};
     \end{tikzpicture}
     \hspace{.2in}
@@ -300,9 +311,9 @@
       \draw[thick,gray!20,
         decoration={aspect=.6,segment length=5mm, amplitude=2.5mm, coil},
         decorate] (0,1)--(5,1);
-      \fill[pattern=north east lines](-.2,0) rectangle(0,2);
+      \fill[pattern=north east lines](-.2,0) rectangle (0,2);
       \draw[thick] (0,0)--(0,2);
-      \fill[gray!30] (5.5,1) circle(.06);
+      \fill[gray!30] (5.5,1) circle (.06);
       \draw[vectors,gray!30] (5.5,1)--(4,1) node[above]{$\vec F_s$};
       \draw[dashed] (3,0)--(3,2);
       \draw[vectors,gray!30] (3,.3)--(5,.3)node[midway,below]{$\vec x$};
@@ -311,7 +322,7 @@
         decoration={aspect=.3,segment length=1.5mm, amplitude=2.5mm, coil},
         decorate] (0,1)--(1.5,1);
       \draw[vectors] (3,.3)--(1.5,.3) node[midway,below]{$\vec x$};
-      \fill[red] (2,1) circle(.06);
+      \fill[red] (2,1) circle (.06);
       \draw[vectors,red] (2,1)--(3,1) node[above]{$\vec F_s$};
     \end{tikzpicture}
   \end{center}
@@ -355,6 +366,8 @@
       \item \emph{Negative} work by the spring increases spring potential energy
       \item $W_s$ depends on the end points $x_0$ and $x_1$, but not \emph{how}
         it went from $x_0$ to $x_1$
+      \item Only work done by the spring force can affect elastic potential
+        energy
       \end{itemize}
     \end{minipage}
   }
@@ -390,8 +403,10 @@
   must be the negative gradient of the potential energies:
 
   \eq{-.1in}{
-    \vec F=-\nabla U=
-    -\diffp Ux\hat\imath-\diffp Uy\hat\jmath-\diffp Uz\hat k
+    \boxed{
+      \vec F=-\nabla U=
+      -\diffp Ux\hat\imath-\diffp Uy\hat\jmath-\diffp Uz\hat k
+    }
   }
 
   In one-dimension:
@@ -403,7 +418,7 @@
   }
 
   The direction of a conservative force \emph{always} decreases the potential
-  energy. (Pay attention to the negative sign. Students often forget it.)
+  energy. (Pay attention to the negative sign.)
 \end{frame}
 
 
@@ -421,9 +436,9 @@
       to[out=0,in=180] (7,3.5)
       to[out=0,in=180] (8,2.5)
       to[out=0,in=250] (9.5,4.5);
-      \fill (1.5,2.5) circle(.07) node[below]{$A$};
-      \fill (7,3.5) circle(.07) node[below]{$B$};
-      \fill (8,2.5) circle(.07) node[above]{$C$};
+      \fill (1.5,2.5) circle (.07) node[below]{$A$};
+      \fill (7,3.5) circle (.07) node[below]{$B$};
+      \fill (8,2.5) circle (.07) node[above]{$C$};
       \begin{scope}[<-]
         \draw (1.6,2.7)--(2,3.3) node[right]{\scriptsize Unstable equilibrium};
         \draw (6.9,3.6)--(6.4,4.2) node[left]{\scriptsize Unstable equilibrium};
@@ -453,23 +468,23 @@
 
 
 
-\begin{frame}{Conservation of Mechanical Energy}
-  Positive work done by conservative forces on an object does two things:
-  \begin{enumerate}[1.]
-  \item Decrease its potential energy, while
-  \item Increase its kinetic energy by the same amount
-  \end{enumerate}
-  Mathematically, this shows that mechanical energy must \emph{always} be
-  conserved when there are only conservative forces:
-
-  \eq{-.1in}{
-    W_c=-\Delta U = \Delta K \quad\longrightarrow\quad
-    \Delta K + \Delta U =0
-  }
-
-  That's why those forces are called conservative forces, and they form the
-  basis for conservation of energy.
-\end{frame}
+%\begin{frame}{Conservation of Mechanical Energy}
+%  Positive work done by conservative forces on an object does two things:
+%  \begin{enumerate}[1.]
+%  \item Decrease its potential energy, while
+%  \item Increase its kinetic energy by the same amount
+%  \end{enumerate}
+%  Mathematically, this shows that mechanical energy must \emph{always} be
+%  conserved when there are only conservative forces:
+%
+%  \eq{-.1in}{
+%    W_c=-\Delta U = \Delta K \quad\longrightarrow\quad
+%    \Delta K + \Delta U =0
+%  }
+%
+%  That's why those forces are called conservative forces, and they form the
+%  basis for conservation of energy.
+%\end{frame}
 
 
 \section{Non-Conservative Forces}
@@ -503,20 +518,18 @@
 
 
 \begin{frame}{Work by Friction, an Illustration}
-  Work done by friction---and other non-conservative forces---is illustrated
-  below. Two blocks ($m_1$ and $m_2$), stacked vertically, move to the right by
-  external force.% $\vec F$ applied to $m_1$.
+  Work done by friction is illustrated below. Two blocks ($m_1$ and $m_2$),
+  stacked vertically, move to the right by external force.
+  % $\vec F$ applied to $m_1$.
   \begin{center}
     \begin{tikzpicture}[scale=.75]
-      \fill[pattern=north east lines] rectangle(7,-.2);
+      \fill[pattern=north east lines] rectangle (7,-.2);
       \draw[thick] (0,0)--(7,0);
-      \draw[thick] (1,0) rectangle(4,1.2) node[midway]{$m_1$};
-      \draw[thick] (1.7,1.2) rectangle(3.3,2) node[midway]{$m_2$};
+      \draw[thick] (1,0) rectangle (4,1.2) node[midway]{$m_1$};
+      \draw[thick] (1.7,1.2) rectangle (3.3,2) node[midway]{$m_2$};
       \draw[vectors] (4,.6)--(6,.6) node[right]{$F$};
-      \draw[<-] (0.95,0.05) to[out=150,in=-40] (0,.5)
-      node[left]{\footnotesize frictionless};
-      \draw[<-] (3.35,1.25) to[out=20, in=220] (4.5,1.8)
-      node[right]{\footnotesize$\mu$};
+      \draw[<-] (0.95,0.05) to[out=150,in=0] (0,.5) node[left]{frictionless};
+      \draw[<-] (3.35,1.25) to[out=20,in=180] (4.5,1.8) node[right]{$\mu$};
     \end{tikzpicture}
   \end{center}
   The FBDs of the blocks are shown below. (The forces highlighted in the same
@@ -524,20 +537,20 @@
   \begin{center}
     \vspace{-.1in}
     \begin{tikzpicture}[scale=.9,vectors]
-      \fill circle(.08);
-      \draw (0,0)--(0,-1) node[below]{\small$m_2\vec g$};
-      \draw (0,0)--(0, 1) node[above,fill=pink!50]{\small$\vec N_{12}$};
-      \draw (0,0)--(1.5,0) node[right,fill=yellow!50]{\small$\vec f_{12}$};
+      \fill circle (.08);
+      \draw (0,0)--(0,-1) node[below]{$m_2\vec g$};
+      \draw (0,0)--(0, 1) node[above,fill=pink!50]{$\vec N_{12}$};
+      \draw (0,0)--(1.5,0) node[right,fill=yellow!50]{$\vec f_{12}$};
     \end{tikzpicture}
     \hspace{.2in}
     \begin{tikzpicture}[vectors]
-      \fill circle(.08);
-      \draw (0,0)--(0,-1) node[below left]{\small$m_1\vec g$};
+      \fill circle (.08);
+      \draw (0,0)--(0,-1) node[below left]{$m_1\vec g$};
       \draw (.05,0)--(.05,-1)
-      node[below right,fill=pink!50]{\small$\vec N_{12}$};
-      \draw (0,0)--(0, 1) node[above]{\small$\vec N_1$};
-      \draw (0,0)--(-1.5,0) node[left,fill=yellow!50]{\small$\vec f_{12}$};
-      \draw (0,0)--(2,0) node[right]{\small$\vec F$};
+      node[below right,fill=pink!50]{$\vec N_{12}$};
+      \draw (0,0)--(0, 1) node[above]{$\vec N_1$};
+      \draw (0,0)--(-1.5,0) node[left,fill=yellow!50]{$\vec f_{12}$};
+      \draw (0,0)--(2,0) node[right]{$\vec F$};
     \end{tikzpicture}
   \end{center}
 \end{frame}
@@ -549,7 +562,7 @@
     \column{.25\textwidth}
     \centering
     \begin{tikzpicture}[scale=1.2,vectors]
-      \fill circle(.08);
+      \fill circle (.08);
       \draw (0,0)--(0,-1) node[below]{$m_2\vec g$};
       \draw (0,0)--(0, 1) node[above]{$\vec N_{12}$};
       \draw (0,0)--(1.5,0) node[right,fill=yellow!50]{$\vec f_{12}$};
@@ -575,7 +588,7 @@
     \column{.4\textwidth}
     \centering
     \begin{tikzpicture}[scale=1.2,vectors]
-      \fill circle(.08);
+      \fill circle (.08);
       \draw (0,0)--(0,-1) node[below]{$m_1\vec g+\vec N_{12}$};
       \draw (0,0)--(0,1) node[above]{$\vec N_1$};
       \draw (0,0)--(-1.5,0) node[left,fill=yellow!50]{$\vec f_{12}$};
@@ -605,11 +618,11 @@
   \begin{columns}
     \column{.28\textwidth}
     \begin{tikzpicture}
-      \draw[very thick,fill=gray!10] (-.2,-.2) rectangle(2.2,2.2);
+      \draw[very thick,fill=gray!10] (-.2,-.2) rectangle (2.2,2.2);
       \draw[vectors] (0,2.5)--(2,2.5) node[right]{$v$};
       \draw[very thick,|<-|] (-.5,1)--(-.5,-3) node[midway,left]{$h$};
       \foreach \i in {1,...,40}{
-       \fill[red](rand+1,rand+1) circle(.06);
+       \fill[red](rand+1,rand+1) circle (.06);
       }
     \end{tikzpicture}
 
@@ -625,8 +638,8 @@
 
     \eq{-.1in}{ U_g=Mgh }
 
-    But the random motion of the air molecules also contribute to additional
-    energy, called the \textbf{internal energy} $E_\text{int}$, or
+    \vspace{-.1in}But the random motion of the air molecules also contribute to
+    additional energy, called the \textbf{internal energy} $E_\text{int}$, or
     \textbf{thermal energy}.
   \end{columns}
 \end{frame}
@@ -642,7 +655,8 @@
   }
 
   It is a function of the molecules' \textbf{absolute temperature}, measured in
-  \emph{kelvin}.
+  \emph{kelvin}. This is a topic that is covered in AP Physics 2; we have only
+  included them here for completeness.
   %\begin{itemize}
   %\item For an ideal gas: $E_\text{int}=\dfrac32NkT$
   %\item For an diatomic gas: $E_\text{int}=\dfrac32NkT$
@@ -656,23 +670,60 @@
 \begin{frame}{Law of Conservation of Energy}
   The \textbf{law of conservation of energy}, which is based on the work-energy
   theorem, states that \emph{the change in the total energy of a system is
-    equal to the external work done to it.}
+  equal to the external work done to it}:
 
   \eq{-.1in}{
     \boxed{
-      \Delta K + \Delta U + \Delta E_\text{int}= W_\text{ext}
+      \Delta E_\text{sys}=W_\text{ext}
     }
   }
 
+  A \textbf{system} is a predefined collection of objects that apply forces
+  on each other (therefore doing work on each other). A system can be
+  \begin{itemize}
+  \item\textbf{Isolated}: objects in the system do work \emph{only} on
+    each other
+  \item\textbf{Open}: objects in the system do work on each other as
+    well as to objects in its surroundings
+  \end{itemize}
+\end{frame}
+
+
+
+\begin{frame}{Law of Conservation of Energy}
+  The energy of a system includes the kinetic energies of all the objects, the
+  potential energies stored between the objects, and the internal/thermal
+  energies of the objects:
+
+  \eq{-.1in}{
+    \boxed{
+      E_\text{sys} = \underbrace{K + \sum U_i}_\text{mechanical} +
+      \underbrace{\sum E_\text{int}}_\text{thermal}
+    }
+  }
+  
+  Not suprisingly, the \emph{change} in the system enenrgy is the net change
+  in all these forms of energies:
+  
+  \eq{-.2in}{
+    \boxed{
+      \Delta E_\text{sys}=\Delta K + \sum\Delta U + \sum\Delta E_\text{int}
+      %= W_\text{ext}
+    }
+  }
+\end{frame}
+
+
+
+\begin{frame}{Law of Conservation of Energy}
   In an isolated system that does not interact with the outside (and therefore
   no external work can be done), conservation of energy reduces to
 
   \eq{-.1in}{
     \boxed{
-      \Delta K + \Delta U + \Delta E_\text{int}= 0
+      \Delta K + \sum\Delta U + \sum\Delta E_\text{int}= 0
     }
   }
-
 \end{frame}
 
 
@@ -697,34 +748,35 @@
 
 
 
-\begin{frame}{Isolated Systems and the Conservation of Energy}
-  An \textbf{isolated system} is a system of objects that does not interact with
-  the surrounding. Think of an isolated system as a bunch of objects inside an
-  insulated box.
-  \begin{center}
-    \begin{tikzpicture}[scale=.7]
-      \fill[pattern=north east lines] rectangle(5,4);
-      \draw[thick] rectangle(5,4);
-      \draw[thick,fill=blue!5] (.2,.2) rectangle(4.8,3.8);
-      \draw[thick,
-        decoration={aspect=.3,segment length=2mm, amplitude=2.5mm, coil},
-        decorate] (2.5,3.8)--(2.5,2.2) node[midway,right=3.5]{$k$};
-      \draw[mass] (2,2.25) rectangle(3,1.25) node[midway]{$m$};
-    \end{tikzpicture}
-  \end{center}
-  Since the system is isolated from the surrounding environment, the
-  environment can't do any work on it. Likewise, the energy inside the system
-  cannot escape either.
-\end{frame}
+%\begin{frame}{Isolated Systems and the Conservation of Energy}
+%  An \textbf{isolated system} is a system of objects that does not interact with
+%  the surrounding. Think of an isolated system as a bunch of objects inside an
+%  insulated box.
+%  \begin{center}
+%    \begin{tikzpicture}[scale=.7]
+%      \fill[pattern=north east lines] rectangle (5,4);
+%      \draw[thick] rectangle (5,4);
+%      \draw[thick,fill=blue!5] (.2,.2) rectangle (4.8,3.8);
+%      \draw[thick,
+%        decoration={aspect=.3,segment length=2mm, amplitude=2.5mm, coil},
+%        decorate] (2.5,3.8)--(2.5,2.2) node[midway,right=3.5]{$k$};
+%      \draw[mass] (2,2.25) rectangle (3,1.25) node[midway]{$m$};
+%    \end{tikzpicture}
+%  \end{center}
+%  Since the system is isolated from the surrounding environment, the
+%  environment can't do any work on it. Likewise, the energy inside the system
+%  cannot escape either.
+%\end{frame}
 
 
 
 \begin{frame}{Example: Horizontal Spring-Mass System}
-  Assuming that there are no friction, drag or other damping forces present, a
-  horizontal spring-mass system is a closed system:
+  When there are no friction, drag or other damping forces present, a
+  horizontal spring-mass system is an isolated system. It consists of the
+  mass and the spring:
   \begin{center}
     \begin{tikzpicture}[scale=1.15]
-      \draw[mass] (5,.5) rectangle(6,1.5);
+      \draw[mass] (5,.5) rectangle (6,1.5);
       \draw[thick,
         decoration={aspect=.3,segment length=2mm, amplitude=2.5mm, coil},
         decorate] (0,1)--(5,1);
@@ -747,12 +799,12 @@
 
 
 \begin{frame}{Example: Gravity}
-  Assuming that there are no friction and drag, a free-falling object forms a
-  closed system with Earth:
+  When there are no friction and drag, a free-falling object forms an isolated
+  system with Earth:
   \begin{center}
     \begin{tikzpicture}[scale=.7]
-      \draw[thick,fill=cyan!20] (7.75,0) arc(75:105:30);
-      \draw[thick,fill=cyan] (0,3) circle(.2) node[right=3]{$m$};
+      \draw[thick,fill=cyan!10] (7.75,0) arc (75:105:30);
+      \draw[mass] (0,3) circle (.2) node[right=3]{$m$};
       \draw[vectors,red] (0,3)--(0,1.25) node[below]{$m\vec g$};
     \end{tikzpicture}
   \end{center}
@@ -771,7 +823,7 @@
     \column{.25\textwidth}
     \centering
     \begin{tikzpicture}
-      \draw[mass] (.5,1.5) rectangle(1.5,2.5);
+      \draw[mass] (.5,1.5) rectangle (1.5,2.5);
       \draw[thick,
         decoration={aspect=.4,segment length=2mm, amplitude=2.5mm, coil},
         decorate] (1,5)--(1,2.5); 
@@ -779,7 +831,7 @@
       \draw[very thick] (0,5)--(2,5);
       \draw[vectors,red] (1,2)--(1,1)node[right]{$m\vec g$};
       \draw[vectors,red] (1,2)--(1,3)node[right]{$\vec F_s$};
-      \fill[red] (1,2) circle(.05);      
+      \fill[red] (1,2) circle (.05);      
     \end{tikzpicture}
 
     \column{.75\textwidth}
@@ -826,7 +878,7 @@
       \draw[thick] (-1,0)--(1,0);
       \begin{scope}[rotate=15]
         \draw[thick] (0,0)--(0,-5);
-        \shade[ball color=cyan] (0,-5) circle(.2) node[right]{$\;m$};
+        \shade[ball color=cyan] (0,-5) circle (.2) node[right=3]{$m$};
         \begin{scope}[red,vectors]
           \draw (0,-5)--(0,-3.5) node[left]{$\vec T$};
           \draw[rotate around={-15:(0,-5)}] (0,-5)--(0,-6.3)
@@ -846,13 +898,13 @@
   molecules inside the box:
   \begin{center}
     \begin{tikzpicture}[scale=.66]
-      \fill[pattern=north east lines] rectangle(5,4);
-      \draw[thick] rectangle(5,4);
-      \draw[thick,fill=blue!5] (.2,.2) rectangle(4.8,3.8);
+      \fill[pattern=north east lines] rectangle (5,4);
+      \draw[thick] rectangle (5,4);
+      \draw[thick,fill=blue!5] (.2,.2) rectangle (4.8,3.8);
       \draw[thick,
         decoration={aspect=.3,segment length=2mm, amplitude=2.5mm, coil},
         decorate] (2.5,3.8)--(2.5,2.25) node[midway,right=3.5]{$k$};
-      \draw[mass] (2,2.25) rectangle(3,1.25) node[midway]{$m$};
+      \draw[mass] (2,2.25) rectangle (3,1.25) node[midway]{$m$};
     \end{tikzpicture}
   \end{center}
   The energies of this system include
@@ -876,13 +928,13 @@
     \column{.4\textwidth}
     \centering
     \begin{tikzpicture}[scale=.6]
-      \fill[pattern=north east lines] rectangle(5,4);
-      \draw[thick] rectangle(5,4);
-      \draw[thick,fill=blue!5] (.2,.2) rectangle(4.8,3.8);
+      \fill[pattern=north east lines] rectangle (5,4);
+      \draw[thick] rectangle (5,4);
+      \draw[thick,fill=blue!5] (.2,.2) rectangle (4.8,3.8);
       \draw[thick,
         decoration={aspect=.3,segment length=2mm, amplitude=2.5mm, coil},
         decorate] (2.5,3.8)--(2.5,2.25) node[midway,right=3.5]{$k$};
-      \draw[mass] (2,2.25) rectangle(3,1.25) node[midway]{$m$};
+      \draw[mass] (2,2.25) rectangle (3,1.25) node[midway]{$m$};
     \end{tikzpicture}
 
     \column{.6\textwidth}
@@ -905,11 +957,11 @@
   \begin{center}
     \begin{tikzpicture}[scale=.6]
       \draw[very thick] (-3,4)--(8,4);
-      \fill[blue!5] (-3,0) rectangle(8,4);
+      \fill[blue!5] (-3,0) rectangle (8,4);
       \draw[thick,
         decoration={aspect=.3,segment length=2mm, amplitude=2.5mm, coil},
         decorate] (2.5,4)--(2.5,2.25) node[midway,right=3.5]{$k$};
-      \draw[mass] (2,2.25) rectangle(3,1.25) node[midway]{$m$};
+      \draw[mass] (2,2.25) rectangle (3,1.25) node[midway]{$m$};
     \end{tikzpicture}
   \end{center}
   The solution:
@@ -998,13 +1050,12 @@
 
 
 \begin{frame}{Power}
-  If a constant force is used to push an object at a constant velocity, the
-  power produced by the force is:
+  If a force is used to push an object at a constant velocity, the power
+  produced by the force is:
   
   \eq{-.1in}{
-    P=\diff Wt=\frac{\vec F\cdot\dl\vec x}{\dl t}
-    =\vec F\cdot\diff{\vec x}t
-    \quad\rightarrow\quad
+    P=\diff Wt=\frac{F\cdot\dl\vec x}{\dl t}
+    =\vec F\cdot\diff{\vec x}t \quad\longrightarrow\quad
     \boxed{P=\vec F\cdot\vec v}
   }
   
