@@ -1,14 +1,10 @@
 \documentclass{../../oss-apphys-exam}
-%\usepackage{bm}
 \newcounter{lastmc}
 
 \begin{document}
-\genheader
+%\genheader
 
 \gentitle{1}{KINEMATICS}
-
-%\genmultidirections
-%\gengravity
 
 \raggedcolumns
 
@@ -21,12 +17,11 @@
     \begin{center}
       \begin{tikzpicture}
         \fill[gray!50] rectangle (4.5,-.3);
-        \draw[thick](0,0)--(4.5,0);
-        \fill circle(.07);
-        \draw[thick,smooth,domain=0:4,dashed]
-        plot({\x},{-.5*((\x-2)*(\x-2))+2});
-        \draw[very thick,rotate=62,->](0,0)--(1.3,0);
-        \draw(.7,0) arc(0:62:.7) node[midway,right]{\ang{60}};
+        \draw[thick] (0,0)--(4.5,0);
+        \fill circle (.07);
+        \draw[thick,smooth,domain=0:4,dashed] plot(\x,{-.5*((\x-2)*(\x-2))+2});
+        \draw[vectors,rotate=62] (0,0)--(1.3,0);
+        \draw(.7,0) arc (0:62:.7) node[midway,right]{\ang{60}};
       \end{tikzpicture}
     \end{center}
     \begin{choices}
@@ -45,7 +40,7 @@
     The velocity of the falling filters as a function of time of fall is
     \begin{choices}
       \choice $-kv^2$
-      \choice $-1⁄2kv^2$
+      \choice $-\dfrac1{2kv^2}$
       \choice $-k$
       \choice $\ln(kt)$
       \choice $v_0e^{-kt}$
@@ -82,8 +77,8 @@
 %    bicycle rider. The displacement of the rider between $0$ and \SI4{\hour} is
 %    \begin{center}
 %      \begin{tikzpicture}[xscale=.8,yscale=.05]
-%        \draw[thick,->](0,0)--(4.4,0) node[right]{$t$ (h)};
-%        \draw[thick,->](0,-22)--(0,28)node[above]{$v$ (km/h)};
+%        \draw[axes] (0,0)--(4.4,0) node[right]{$t$ (h)};
+%        \draw[axes] (0,-22)--(0,28)node[above]{$v$ (km/h)};
 %        \foreach\x in {1,...,4} \draw(\x,2)--(\x,-2)node[below]{\x};
 %        \foreach\y in {-20,-10,...,20} \draw(.1,\y)--(-.1,\y)node[left]{$\y$};
 %        \draw[very thick](0,0)--(1,20)--(2,20)--(3,0)--(4,-20);
@@ -116,7 +111,7 @@
     \uplevel{
       \textbf{Questions \ref{car1}--\ref{car2}}: A car of mass $m$ travels
       along a straight horizontal road. The car begins with a speed $v_0$, and
-      accelerates according to the velocity function
+      accelerates according to the velocity function\\
       $v(t)=\sqrt{v_0^2+\dfrac{Ct^2}m}$, where $t$ is time, and $C$ is a
       positive constant.
     }
@@ -145,16 +140,16 @@
     time graph below. The object is intially at rest. Which of the following
     statements is true about the motion of the object?
     \begin{center}
-      \begin{tikzpicture}[scale=.47,thick]
-        \draw[->] (0,0)--(6.3,0) node[right]{$t$};
-        \draw[->] (0,-3.5)--(0,3.5) node[above]{$a$};
-        \draw[ultra thick](0,2)--(2,2);
-        \draw[ultra thick](2,-2)--(4,-2);
-        \draw[dashed] (2,2)--(2,-2);
-        \draw (2,.2)--(2,-.2) node[below]{2};
-        \draw (4,.2)--(4,-.2) node[below]{4};
-        \draw (.2,2)--(-.2,2) node[left]{+2};
-        \draw (.2,-2)--(-.2,-2) node[left]{-2};
+      \begin{tikzpicture}[scale=.47]
+        \draw[axes] (0,0)--(6.3,0) node[right]{$t$};
+        \draw[axes] (0,-3.5)--(0,3.5) node[above]{$a$};
+        \draw[ultra thick] (0,2)--(2,2);
+        \draw[ultra thick] (2,-2)--(4,-2);
+        \draw[thick,dashed] (2,2)--(2,-2);
+        \draw[thick] (2,.2)--(2,-.2) node[below]{2};
+        \draw[thick] (4,.2)--(4,-.2) node[below]{4};
+        \draw[thick] (.2,2)--(-.2,2) node[left]{+2};
+        \draw[thick] (.2,-2)--(-.2,-2) node[left]{-2};
       \end{tikzpicture}
     \end{center}
     \begin{choices}
@@ -168,16 +163,16 @@
 
     \uplevel{
       \centering
-      \begin{tikzpicture}[scale=.4,thick]
-        \draw[->] (0,0)--(8,0) node[right]{$t$};
-        \draw[->] (0,-3)--(0,3) node[above]{$a$};
-        \draw[ultra thick](0,2)--(2,2);
-        \draw[ultra thick](2,0)--(4,0);
-        \draw[ultra thick](4,-2)--(6,-2);
-        \draw[ultra thick](6,0)--(8,0);
-        \draw[dashed] (2,2)--(2,0);
-        \draw[dashed] (4,0)--(4,-2);
-        \draw[dashed] (6,0)--(6,-2);
+      \begin{tikzpicture}[scale=.4]
+        \draw[axes] (0,0)--(9,0) node[right]{$t$};
+        \draw[axes] (0,-3)--(0,3) node[above]{$a$};
+        \draw[ultra thick] (0,2)--(2,2);
+        \draw[ultra thick] (2,0)--(4,0);
+        \draw[ultra thick] (4,-2)--(6,-2);
+        \draw[ultra thick] (6,0)--(8,0);
+        \draw[thick,dashed] (2,2)--(2,0);
+        \draw[thick,dashed] (4,0)--(4,-2);
+        \draw[thick,dashed] (6,0)--(6,-2);
       \end{tikzpicture}
     }
     
@@ -186,82 +181,82 @@
     shown above? Assume $v=0$ and $x=0$ at $t=0$.
     \begin{choices}
       \choice
-      \begin{tikzpicture}[scale=.78,thick]
-        \draw[->] (0,0)--(4,0) node[right]{$t$};
-        \draw[->] (0,0)--(0,2) node[right]{$x$};
-        \foreach \x in {1,2,3}\draw (\x,.1)--(\x,-.1);
-        \draw[very thick](0,1.5)--(.7,1.5)to[out=0,in=180](2.3,.3)--(3,.3);
+      \begin{tikzpicture}[scale=.78]
+        \draw[axes] (0,0)--(4,0) node[right]{$t$};
+        \draw[axes] (0,0)--(0,2) node[right]{$x$};
+        \foreach \x in {1,2,3} \draw[thick] (\x,.1)--(\x,-.1);
+        \draw[very thick] (0,1.5)--(.7,1.5) to[out=0,in=180] (2.3,.3)--(3,.3);
       \end{tikzpicture}
       \hspace{.2in}
-      \begin{tikzpicture}[scale=.78,thick]
-        \draw[->] (0,0)--(4,0) node[right]{$t$};
-        \draw[->] (0,0)--(0,2) node[right]{$v$};
-        \foreach \x in {1,2,3}\draw (\x,.1)--(\x,-.1);
+      \begin{tikzpicture}[scale=.78]
+        \draw[axes] (0,0)--(4,0) node[right]{$t$};
+        \draw[axes] (0,0)--(0,2) node[right]{$v$};
+        \foreach \x in {1,2,3} \draw[thick] (\x,.1)--(\x,-.1);
         \draw[very thick] (0,1.5)--(1,1.5)--(2,0);
       \end{tikzpicture}
 
       \choice
-      \begin{tikzpicture}[scale=.78,thick]
-        \draw[->] (0,0)--(4,0) node[right]{$t$};
-        \draw[->] (0,0)--(0,2) node[right]{$x$};
-        \foreach \x in {1,2,3}\draw (\x,.1)--(\x,-.1);
-        \draw[very thick](0,1.5)to[out=-80,in=180](1.5,.5)
-        to[out=0,in=120](3,0);
+      \begin{tikzpicture}[scale=.78]
+        \draw[axes] (0,0)--(4,0) node[right]{$t$};
+        \draw[axes] (0,0)--(0,2) node[right]{$x$};
+        \foreach \x in {1,2,3} \draw[thick] (\x,.1)--(\x,-.1);
+        \draw[very thick] (0,1.5) to[out=-80,in=180] (1.5,.5)
+        to[out=0,in=120] (3,0);
       \end{tikzpicture}
       \hspace{.2in}
-      \begin{tikzpicture}[scale=.78,thick]
-        \draw[->] (0,0)--(4,0) node[right]{$t$};
-        \draw[->] (0,0)--(0,2) node[right]{$v$};
-        \foreach \x in {1,2,3}\draw (\x,.1)--(\x,-.1);
-        \draw[very thick](0,0)--(1,1.5)--(2,1.5) to[out=-80,in=170] (3,0);
+      \begin{tikzpicture}[scale=.78]
+        \draw[axes] (0,0)--(4,0) node[right]{$t$};
+        \draw[axes] (0,0)--(0,2) node[right]{$v$};
+        \foreach \x in {1,2,3} \draw[thick] (\x,.1)--(\x,-.1);
+        \draw[very thick] (0,0)--(1,1.5)--(2,1.5) to[out=-80,in=170] (3,0);
       \end{tikzpicture}
 
       \choice
-      \begin{tikzpicture}[scale=.78,thick]
-        \draw[->] (0,0)--(4,0) node[right]{$t$};
-        \draw[->] (0,0)--(0,2) node[right]{$x$};
-        \foreach \x in {1,2,3}\draw (\x,.1)--(\x,-.1);
+      \begin{tikzpicture}[scale=.78]
+        \draw[axes] (0,0)--(4,0) node[right]{$t$};
+        \draw[axes] (0,0)--(0,2) node[right]{$x$};
+        \foreach \x in {1,2,3} \draw[thick] (\x,.1)--(\x,-.1);
         \draw[very thick] (0,0) to[out=0,in=180] (2.5,1.5)--(3,1.5);
       \end{tikzpicture}
       \hspace{.2in}
-      \begin{tikzpicture}[scale=.78,thick]
-        \draw[->] (0,0)--(4,0) node[right]{$t$};
-        \draw[->] (0,0)--(0,2) node[right]{$v$};
-        \foreach \x in {1,2,3}\draw (\x,.1)--(\x,-.1);
+      \begin{tikzpicture}[scale=.78]
+        \draw[axes] (0,0)--(4,0) node[right]{$t$};
+        \draw[axes] (0,0)--(0,2) node[right]{$v$};
+        \foreach \x in {1,2,3} \draw[thick] (\x,.1)--(\x,-.1);
         \draw[very thick] (0,0)--(1,1.5)--(2,1.5)--(3,0);
       \end{tikzpicture}
 
       \choice
-      \begin{tikzpicture}[scale=.78,thick]
-        \draw[->] (0,0)--(4,0) node[right]{$t$};
-        \draw[->] (0,0)--(0,2) node[right]{$x$};
-        \foreach \x in {1,2,3}\draw (\x,.1)--(\x,-.1);
-        \draw[very thick](0,0) to[out=45,in=240] (1,1.5)--(2,1.5)
+      \begin{tikzpicture}[scale=.78]
+        \draw[axes] (0,0)--(4,0) node[right]{$t$};
+        \draw[axes] (0,0)--(0,2) node[right]{$x$};
+        \foreach \x in {1,2,3} \draw[thick] (\x,.1)--(\x,-.1);
+        \draw[very thick] (0,0) to[out=45,in=240] (1,1.5)--(2,1.5)
         to[out=0,in=100] (3,0);
       \end{tikzpicture}
       \hspace{.2in}
-      \begin{tikzpicture}[scale=.78,thick]
-        \draw[->] (0,0)--(4,0) node[right]{$t$};
-        \draw[->] (0,0)--(0,2) node[right]{$v$};
-        \foreach \x in {1,2,3}\draw (\x,.1)--(\x,-.1);
+      \begin{tikzpicture}[scale=.78]
+        \draw[axes] (0,0)--(4,0) node[right]{$t$};
+        \draw[axes] (0,0)--(0,2) node[right]{$v$};
+        \foreach \x in {1,2,3} \draw[thick] (\x,.1)--(\x,-.1);
         \draw[very thick] (0,.2)--(1,.2) to[out=50,in=180] (2,1.5)
         to[out=0,in=110] (3,0);
       \end{tikzpicture}
 
       \choice
-      \begin{tikzpicture}[scale=.78,thick]
-        \draw[->] (0,0)--(4,0) node[right]{$t$};
-        \draw[->] (0,0)--(0,2) node[right]{$x$};
-        \foreach \x in {1,2,3}\draw (\x,.1)--(\x,-.1);
+      \begin{tikzpicture}[scale=.78]
+        \draw[axes] (0,0)--(4,0) node[right]{$t$};
+        \draw[axes] (0,0)--(0,2) node[right]{$x$};
+        \foreach \x in {1,2,3} \draw[thick] (\x,.1)--(\x,-.1);
         \draw[very thick] (0,.8)--(1,.8) to[out=70,in=180] (2,1.5)
         to[out=-85,in=180] (3,.5);
       \end{tikzpicture}
       \hspace{.2in}
-      \begin{tikzpicture}[scale=.78,thick]
-        \draw[->] (0,0)--(4,0) node[right]{$t$};
-        \draw[->] (0,0)--(0,2) node[right]{$v$};
-        \foreach \x in {1,2,3}\draw (\x,.1)--(\x,-.1);
-        \draw[very thick](0,1.5)--(1,1.5)--(2,0) to[out=0,in=250] (3,1.5);
+      \begin{tikzpicture}[scale=.78]
+        \draw[axes] (0,0)--(4,0) node[right]{$t$};
+        \draw[axes] (0,0)--(0,2) node[right]{$v$};
+        \foreach \x in {1,2,3} \draw[thick] (\x,.1)--(\x,-.1);
+        \draw[very thick] (0,1.5)--(1,1.5)--(2,0) to[out=0,in=250] (3,1.5);
       \end{tikzpicture}
     \end{choices}
     \columnbreak
@@ -296,56 +291,56 @@
     \label{q:fall2}
     \columnbreak
   
-    \question Two velocity vectors $v_1$ and $v_2$ each have a magnitude
-    of \SI{10}{\metre\per\second}. Graph 1 shows the velocity $v_1$ at
+    \question Two velocity vectors $v_1$ and $v_2$ each have a magnitude of
+    \SI{10}{\metre\per\second}. Graph 1 shows the velocity $v_1$ at
     $t=\SI0\second$, and then the same object has a velocity $v_2$ at
     $t=\SI2\second$, shown in Graph 2. Which of the following vectors best
     represents the average acceleration vector that causes the object's velocity
     to change from $v_1$ to $v_2$ ?
     \begin{center}
-      \begin{tikzpicture}[scale=.5,thick]
-        \draw (-2,0)--(2,0);
-        \draw (0,-2)--(0,2) node[pos=0,below]{Graph 1};
-        \draw[ultra thick,->](0,0)--(1.5,0) node[above]{$v_1$};
+      \begin{tikzpicture}
+        \draw[thick] (-1,0)--(1,0);
+        \draw[thick] (0,-1)--(0,1) node[pos=0,below]{Graph 1};
+        \draw[vectors] (0,0)--(.8,0) node[above]{$v_1$};
       \end{tikzpicture}
       \hspace{.2in}
-      \begin{tikzpicture}[scale=.5,thick]
-        \draw (-2,0)--(2,0);
-        \draw (0,-2)--(0,2) node[pos=0,below]{Graph 2};
-        \draw[ultra thick,->](0,0)--(0,1.5) node[right]{$v_2$};
+      \begin{tikzpicture}
+        \draw[thick] (-1,0)--(1,0);
+        \draw[thick] (0,-1)--(0,1) node[pos=0,below]{Graph 2};
+        \draw[vectors] (0,0)--(0,.8) node[right]{$v_2$};
       \end{tikzpicture}
     \end{center}
     
     \begin{choices}
       \choice
-      \begin{tikzpicture}[scale=.5,thick]
-        \draw (-2,0)--(2,0);
-        \draw (0,-2)--(0,2);
-        \draw[ultra thick,->](0,0)--(0,1.5);
+      \begin{tikzpicture}
+        \draw[thick] (-1,0)--(1,0);
+        \draw[thick] (0,-1)--(0,1);
+        \draw[vectors] (0,0)--(0,8);
       \end{tikzpicture}
       \choice
-      \begin{tikzpicture}[scale=.5,thick]
-        \draw (-2,0)--(2,0);
-        \draw (0,-2)--(0,2);
-        \draw[ultra thick,->](0,0)--(1.5,0);
+      \begin{tikzpicture}
+        \draw[thick] (-1,0)--(1,0);
+        \draw[thick] (0,-1)--(0,1);
+        \draw[vectors] (0,0)--(.8,0);
       \end{tikzpicture}
       \choice
-      \begin{tikzpicture}[scale=.5,thick]
-        \draw (-2,0)--(2,0);
-        \draw (0,-2)--(0,2);
-        \draw[ultra thick,->](0,0)--(-1.5,0);
+      \begin{tikzpicture}
+        \draw[thick] (-1,0)--(1,0);
+        \draw[thick] (0,-1)--(0,1);
+        \draw[vectors] (0,0)--(-.8,0);
       \end{tikzpicture}
       \choice
-      \begin{tikzpicture}[scale=.5,thick]
-        \draw (-2,0)--(2,0);
-        \draw (0,-2)--(0,2);
-        \draw[ultra thick,->](0,0)--(1.12,1.12);
+      \begin{tikzpicture}
+        \draw[thick] (-1,0)--(1,0);
+        \draw[thick] (0,-1)--(0,1);
+        \draw[vectors] (0,0)--(.75,.75);
       \end{tikzpicture}
       \choice
-      \begin{tikzpicture}[scale=.5,thick]
-        \draw (-2,0)--(2,0);
-        \draw (0,-2)--(0,2);
-        \draw[ultra thick,->](0,0)--(-1.12,1.12);
+      \begin{tikzpicture}
+        \draw[thick] (-1,0)--(1,0);
+        \draw[thick] (0,-1)--(0,1);
+        \draw[vectors] (0,0)--(-.75,.75);
       \end{tikzpicture}
     \end{choices}
 
@@ -362,58 +357,58 @@
     \end{choices}
     \columnbreak
     
-    \question The graph below shows the displacement as a function of time for a
-    car moving in a straight line. Which of the following graphs shows the
+    \question The graph below shows the displacement as a function of time for
+    a car moving in a straight line. Which of the following graphs shows the
     velocity vs.\ time graph for the same time intervals?
     \begin{center}
-      \begin{tikzpicture}[thick]
-        \draw[->] (0,0)--(4,0) node[right]{$t$};
-        \draw[->] (0,0)--(0,2.5) node[right]{$x$};
+      \begin{tikzpicture}
+        \draw[axes] (0,0)--(4,0) node[right]{$t$};
+        \draw[axes] (0,0)--(0,2.5) node[right]{$x$};
         \draw[very thick] (0,0) to[out=0,in=180] (3,2)--(3.5,2);
-        \draw[dash dot] (3,-.1)--(3,2);
-        \draw[dash dot] (2,-.1)--(2,1.6);
-        \draw[dash dot] (1,-.1)--(1,.4);
+        \draw[thick,dash dot] (3,-.1)--(3,2);
+        \draw[thick,dash dot] (2,-.1)--(2,1.6);
+        \draw[thick,dash dot] (1,-.1)--(1,.4);
       \end{tikzpicture}
     \end{center}
     \begin{choices}
       \choice
-      \begin{tikzpicture}[thick]
-        \draw[->] (0,0)--(4,0) node[right]{$t$};
-        \draw[->] (0,-1.2)--(0,1.5) node[right]{$v$};
-        \foreach \x in {1,2,3}\draw (\x,.1)--(\x,-.1);
+      \begin{tikzpicture}
+        \draw[axes] (0,0)--(4,0) node[right]{$t$};
+        \draw[axes] (0,-1.2)--(0,1.5) node[right]{$v$};
+        \foreach \x in {1,2,3} \draw[thick] (\x,.1)--(\x,-.1);
         \draw[very thick] (0,0)--(1,1)--(2,1)--(3,0);
       \end{tikzpicture}
 
       \choice
-      \begin{tikzpicture}[thick]
-        \draw[->] (0,0)--(4,0) node[right]{$t$};
-        \draw[->] (0,-1.2)--(0,1.5) node[right]{$v$};
-        \foreach \x in {1,2,3}\draw (\x,.1)--(\x,-.1);
+      \begin{tikzpicture}
+        \draw[axes] (0,0)--(4,0) node[right]{$t$};
+        \draw[axes] (0,-1.2)--(0,1.5) node[right]{$v$};
+        \foreach \x in {1,2,3} \draw[thick] (\x,.1)--(\x,-.1);
         \draw[very thick] (0,0) to[out=0,in=180] (3,1.2);
       \end{tikzpicture}
 
       \choice
-      \begin{tikzpicture}[thick]
-        \draw[->] (0,0)--(4,0) node[right]{$t$};
-        \draw[->] (0,-1.2)--(0,1.5) node[right]{$v$};
-        \foreach \x in {1,2,3}\draw (\x,.1)--(\x,-.1);
+      \begin{tikzpicture}
+        \draw[axes] (0,0)--(4,0) node[right]{$t$};
+        \draw[axes] (0,-1.2)--(0,1.5) node[right]{$v$};
+        \foreach \x in {1,2,3} \draw[thick] (\x,.1)--(\x,-.1);
         \draw[very thick] (0,0)--(1,-1)--(2,-1)--(3,0);
       \end{tikzpicture}
 
       \choice
-      \begin{tikzpicture}[thick]
-        \draw[->] (0,0)--(4,0) node[right]{$t$};
-        \draw[->] (0,-1.2)--(0,1.5) node[right]{$v$};
-        \foreach \x in {1,2,3}\draw (\x,.1)--(\x,-.1);
+      \begin{tikzpicture}
+        \draw[axes] (0,0)--(4,0) node[right]{$t$};
+        \draw[axes] (0,-1.2)--(0,1.5) node[right]{$v$};
+        \foreach \x in {1,2,3} \draw[thick] (\x,.1)--(\x,-.1);
         \draw[very thick] (0,0) to[out=70,in=180] (1,1)--(2,1)
         to[out=0,in=110] (3,0);
       \end{tikzpicture}
       
       \choice
-      \begin{tikzpicture}[thick]
-        \draw[->] (0,0)--(4,0) node[right]{$t$};
-        \draw[->] (0,-1.2)--(0,1.5) node[right]{$v$};
-        \foreach \x in {1,2,3}\draw (\x,.1)--(\x,-.1);
+      \begin{tikzpicture}
+        \draw[axes] (0,0)--(4,0) node[right]{$t$};
+        \draw[axes] (0,-1.2)--(0,1.5) node[right]{$v$};
+        \foreach \x in {1,2,3} \draw[thick] (\x,.1)--(\x,-.1);
         \draw[very thick] (0,0) to[out=0,in=180] (1,1) to[out=0,in=140] (2,-.7)
         to[out=-50,in=180] (3,-1)--(3.5,-1);
       \end{tikzpicture}
@@ -422,9 +417,6 @@
   \setcounter{lastmc}{\value{question}}    
 \end{multicols*}
 \newpage
-
-%\genfreetitle{1}{KINEMATICS}{3}
-%\genfreedirections
 
 \begin{questions}
   \setcounter{question}{\value{lastmc}}
@@ -458,26 +450,27 @@
     positive?
     \vspace{\stretch1}
     \newpage
+    
   \item On the graph (on the next page), sketch position $x$, velocity $v$ and
     acceleration $a$ as functions of time.
   \end{parts}
   \begin{center}
     \begin{tikzpicture}
-      \draw[help lines](0,-3) grid(10,3);
-      \draw[thick,->](0,-3.2)--(0,3.5) node[above]{$x$};
-      \draw[thick,->](0,0)--(11,0) node[above]{$t$};
+      \draw[help lines] (0,-3) grid (10,3);
+      \draw[axes] (0,-3.2)--(0,3.5) node[above]{$x$};
+      \draw[axes] (0,0)--(11,0) node[above]{$t$};
     \end{tikzpicture}
 
     \begin{tikzpicture}
-      \draw[help lines](0,-3) grid(10,3);
-      \draw[thick,->](0,-3.2)--(0,3.5) node[above]{$v$};
-      \draw[thick,->](0,0)--(11,0) node[above]{$t$};
+      \draw[help lines] (0,-3) grid (10,3);
+      \draw[axes] (0,-3.2)--(0,3.5) node[above]{$v$};
+      \draw[axes] (0,0)--(11,0) node[above]{$t$};
     \end{tikzpicture}
 
     \begin{tikzpicture}
-      \draw[help lines](0,-3) grid(10,3);
-      \draw[thick,->](0,-3.2)--(0,3.5) node[above]{$a$};
-      \draw[thick,->](0,0)--(11,0) node[above]{$t$};
+      \draw[help lines] (0,-3) grid (10,3);
+      \draw[axes] (0,-3.2)--(0,3.5) node[above]{$a$};
+      \draw[axes] (0,0)--(11,0) node[above]{$t$};
     \end{tikzpicture}
   \end{center}
   \newpage
@@ -530,18 +523,18 @@
     intercepts, asymptotes, maxima, or minima with numerical values or
     algebraic expressions, as appropriate.
     \begin{center}
-      \begin{tikzpicture}[scale=1.8,very thick,->]
-        \draw (0,0)--(2.5,0)  node[right]{$t$};
+      \begin{tikzpicture}[scale=1.8,axes]
+        \draw (0,0)--(2.5,0) node[right]{$t$};
         \draw (0,-1.5)--(0,1.5) node[above]{$x$};
       \end{tikzpicture}
       \hspace{.2in}
-      \begin{tikzpicture}[scale=1.8,very thick,->]
-        \draw (0,0)--(2.5,0)  node[right]{$t$};
+      \begin{tikzpicture}[scale=1.8,axes]
+        \draw (0,0)--(2.5,0) node[right]{$t$};
         \draw (0,-1.5)--(0,1.5) node[above]{$v$};
       \end{tikzpicture}
       \hspace{.2in}
-      \begin{tikzpicture}[scale=1.8,very thick,->]
-        \draw (0,0)--(2.5,0)  node[right]{$t$};
+      \begin{tikzpicture}[scale=1.8,axes]
+        \draw (0,0)--(2.5,0) node[right]{$t$};
         \draw (0,-1.5)--(0,1.5) node[above]{$a$};
       \end{tikzpicture}
     \end{center}
@@ -561,8 +554,8 @@
     intercepts, asymptotes, maxima, or minima with numerical values or
     algebraic expressions, as appropriate.
     \begin{center}
-      \begin{tikzpicture}[scale=1.8,very thick,->]
-        \draw (0,0)--(2.5,0)  node[right]{$t$};
+      \begin{tikzpicture}[scale=1.8,axes]
+        \draw (0,0)--(2.5,0) node[right]{$t$};
         \draw (0,-1.5)--(0,1.5) node[above]{$v$};
       \end{tikzpicture}
     \end{center}
@@ -611,11 +604,11 @@
     $t=0$ to a time $t>T$. Label the original model $F_1$ and the new model
     $F_2$.
     \begin{center}
-      \begin{tikzpicture}[thick]
-        \draw[->] (0,0)--(10,0)node[right]{$t$};
-        \draw[->] (0,0)--(0,6) node[above]{$F$};
-        \draw (-.2,1.5)--(.2,1.5)node[pos=0,left]{$mg\sin\theta$};
-        \draw (5.5,-.2)--(5.5,.2)node[pos=0,below]{$T$};
+      \begin{tikzpicture}
+        \draw[axes] (0,0)--(10,0) node[right]{$t$};
+        \draw[axes] (0,0)--(0,6) node[above]{$F$};
+        \draw[thick] (-.2,1.5)--(.2,1.5) node[pos=0,left]{$mg\sin\theta$};
+        \draw[thick] (5.5,-.2)--(5.5,.2) node[pos=0,below]{$T$};
       \end{tikzpicture}
     \end{center}
     \vspace{\stretch1}

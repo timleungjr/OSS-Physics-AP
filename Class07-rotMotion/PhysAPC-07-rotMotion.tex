@@ -101,11 +101,11 @@
   \begin{center}
     \begin{tikzpicture}[scale=1.2]
       \draw[thick,fill=lightgray] (-.13,-.13) rectangle (5.13,.13);
-      \draw[vectors,red] (0,0)--(5,0) node[midway,below]{\normalsize$\vec r$};
-      \draw[vectors,blue] (5,0)--(5.7,-1.5) node[right]{\normalsize$\vec F$};
+      \draw[vectors,red] (0,0)--(5,0) node[midway,below]{$\vec r$};
+      \draw[vectors,blue] (5,0)--(5.7,-1.5) node[right]{$\vec F$};
       \draw[dashed] (5,0)--(6,0);
-      \draw[axes] (5.7,0) arc(0:-atan(1.5/.7):.7)
-      node[midway,right]{\normalsize$\phi$};
+      \draw[axes] (5.7,0) arc (0:-atan(1.5/.7):.7)
+      node[midway,right]{$\phi$};
       \fill circle(.06) node[above=1]{\scriptsize\textbf{pivot}};
     \end{tikzpicture}
   \end{center}
@@ -125,7 +125,7 @@
   \vspace{-.1in}with a magnitude of:
 
   \eq{-.1in}{
-    \boxed{\tau=rF\sin\phi}
+    \boxed{\tau=rF_\perp=rF\sin\phi}
   }
 
   \begin{center}
@@ -598,10 +598,96 @@
 
 
 \begin{frame}{Example Problem}
-  \textbf{Example:} A \SI{1.}{\kilo\gram} mass swings in a vertical circle
+  \textbf{Example:} A \SI{1.0}{\kilo\gram} mass swings in a vertical circle
   after having been released from a horizontal position with zero initial
   velocity. The mass is attached to a massless rigid rod of length
   \SI{1.5}\metre. What is the angular momentum of the mass, when it is in its
   lowest position?
 \end{frame}
+
+
+\begin{frame}{Spinning Disk}
+  \begin{columns}
+    \column{.3\textwidth}
+    \begin{tikzpicture}
+      \draw[mass] circle (2);
+      \draw[thick] circle (.13);
+      \fill (0,0)--(.13,0) arc (0:90:.13) node[above=-2]{\scriptsize CM/pivot}
+      --(0,0);
+      \fill (0,0)--(-.13,0) arc(180:270:.13)--(0,0);
+      \draw[axes,rotate=-30] (1,0) arc (0:60:1) node[above]{$\omega$, $\alpha$};
+      \draw[axes,rotate=40] (0,0)--(-2,0) node[midway,right]{$R$};
+      \node at (0,-2.5) {Mass $M$};
+      \node at (0,-3.3) {$I=\dfrac12MR^2$};
+      \only<2>{
+        \begin{scope}[violet]
+          \draw[thick,dash dot] (0,-.13)--(0,-2);
+          \foreach \y in {-.4,-.8,...,-2.1} \draw[vectors] (0,\y)--(-.8*\y,\y);
+          \node[right] at (1.6,-2) {$\vec v=\omega R$};
+        \end{scope}
+      }
+    \end{tikzpicture}
+
+    \column{.7\textwidth}
+    \only<2>{Speed at any point on this disk is proportional to its distance
+      to the pivot:
+
+      \eq{-.1in}{
+        v=\omega r \quad\text{for}\quad 0\leq r\leq R
+      }
+    }
+    \only<3>{When it is spinning, it has an angular momentum of
+
+      \eq{-.1in}{
+        L = I\omega
+      }
+
+      and a rotational kinetic energy:
+      
+      \eq{-.1in}{
+        K_r = \frac12I\omega^2
+      }
+    }
+    
+%    \item Any angular acceleration that it may have will be due to the net
+%      torque at the pivot/CM:
+%      \begin{displaymath}
+%        \tau_\text{net}=\frac{\Delta L}{\Delta t}=I\alpha
+%      \end{displaymath}
+%    \end{itemize}
+  \end{columns}
+\end{frame}
+
+
+\begin{frame}{A Rotating Rod}
+  \begin{columns}
+    \column{.3\textwidth}
+    \centering
+    \begin{tikzpicture}
+      \draw[mass] (-.15,0) rectangle (.15,-5);
+      \draw[thick] (0,-2.5) circle(.13);
+      \fill (0,-2.5)--(.13,-2.5) node[right=-1]{\scriptsize CM} arc(0:90:.13)
+      --(0,-2.5);
+      \fill (0,-2.5)--(-.13,-2.5) arc(180:270:.13)--(0,-2.5);
+      \fill circle(.07) node[above]{\scriptsize pivot};
+      \draw[axes,rotate=-90] (.7,0) arc(0:180:.7)
+      node[left]{$\omega$, $\alpha$};
+      \draw[thick,|<->|] (-.5,0)--(-.5,-5) node[midway,fill=black!2]{$L$};
+%      \node at (0,-2.5) {Mass $M$};
+%      \node at (0,-3.3) {$I=\dfrac12MR^2$};
+%      \only<2>{
+%        \begin{scope}[violet]
+%          \draw[thick,dash dot] (0,-.13)--(0,-2);
+%          \foreach \y in {-.4,-.8,...,-2.1}\draw[vectors] (0,\y)--(-.8*\y,\y);
+%          \node[right] at (1.6,-2) {$\vec v=\omega R$};
+%        \end{scope}
+%      }
+    \end{tikzpicture}
+
+    \column{.7\textwidth}
+  \end{columns}
+\end{frame}
+
+
+
 \end{document}

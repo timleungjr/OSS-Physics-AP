@@ -36,11 +36,12 @@
 
 
 \begin{frame}{Relating Gravitational and Centripetal Force}
-  Assuming a small mass $m$ in circular orbit around a much larger mass $M$.
-  The required centripetal force is supplied by the gravitational force:
+  Assuming a small mass $m$ in \emph{circular} orbit around a much larger mass
+  $M$. The required centripetal force is supplied by the gravitational force:
   
   \eq{-.1in}{
-    F_g=F_c\quad\longrightarrow\quad \frac{GMm}{r^2}=\frac{mv^2}r
+    F_c=ma_c\quad\longrightarrow\quad
+    F_g=ma_c\quad\longrightarrow\quad \frac{GMm}{r^2}=\frac{mv^2}r
   }
 
   \vspace{-.1in}Solving for $v$, we obtain the \textbf{orbital velocity}
@@ -51,7 +52,8 @@
     \boxed{v_\text{orbit}=\sqrt{\frac{GM}r}}
   }
 
-  This equation is only applicable for perfectly circular orbits.
+  This equation is only applicable for perfectly circular orbits. The direction
+  of the orbital velocity is tangent to the circular path.
 \end{frame}
 
 
@@ -73,7 +75,7 @@
   since gravity is a conservative force, i.e.:
 
   \eq{-.1in}{
-    K + U_g = K' + U_g'
+    K + U = K_\infty + U_\infty
   }
   \begin{itemize}
   \item Initial gravitational potential energy at the surface is:
@@ -82,9 +84,9 @@
       U_g=-\frac{GMm}{r_i}
     }
   \item The final gravitational potential energy is at the other side of the
-    universe ($r_f=\infty$), where $U_g'=0$. At this point, the object has
+    universe ($r_f=\infty$), where $U_\infty=0$. At this point, the object has
     \emph{escaped} the gravitational pull of the planet/star
-  \item The minimum kinetic energy at $r=\infty$ is $K'=0$
+  \item The minimum requied kinetic energy at $r=\infty$ is $K_\infty=0$
 %  \item The work against gravity converts kinetic energy into gravitational
 %    potential energy.
 %  \item If you start with \emph{more} kinetic energy than required to do all
@@ -136,19 +138,19 @@
   Both objects have the same escape velocity:
   \begin{center}
     \begin{tikzpicture}[scale=1.3]
-      \draw[fill=cyan] circle(.2) node[midway,below]{\scriptsize $M$};
-      \draw[dash dot] circle(1);
+      \draw[thick,fill=cyan] circle (.2) node[below=6]{$M$};
+      \draw[dashed] circle (1);
       \fill (0,1) circle(.05);
-      \draw[axes] (0,0)--(0,.98) node[midway,right]{\scriptsize $r$};
-      \fill (2,0) circle(.05);
+      \draw[axes] (0,0)--(0,1) node[midway,right=0]{$r$};
+      \fill (2,0) circle (.05);
       \draw[axes] (0,1) to[out=0,in=135] (2,0);
     \end{tikzpicture}
     \hspace{.3in}
     \begin{tikzpicture}[scale=1.3]
-      \draw[fill=cyan!20] circle(1) node[midway,below]{\scriptsize $M$};
-      \fill (0,1) circle(.05);
-      \draw[axes] (0,0)--(0,.98) node[midway,right]{\scriptsize $r$};
-      \fill (2,0) circle(.05);
+      \draw[thick,fill=cyan!20] circle (1) node[below=6]{$M$};
+      \fill (0,1) circle (.05);
+      \draw[axes] (0,0)--(0,1) node[midway,right]{$r$};
+      \fill (2,0) circle (.05);
       \draw[axes] (0,1) to[out=0,in=135] (2,0);
     \end{tikzpicture}
   \end{center}
@@ -400,16 +402,16 @@
       \draw ellipse ({\a} and {\b});% Draw the ellipse
       \draw ({sqrt(\a*\a-\b*\b)},-2.65)--({sqrt(\a*\a-\b*\b)},2.65);
       \draw (-\a-.2,0)--(\a+.2,0);
-      \fill ({sqrt(\a*\a-\b*\b)},0) circle(.1) node[below right]{\tiny $M$};
+      \fill ({sqrt(\a*\a-\b*\b)},0) circle (.1) node[below right]{$M$};
       \begin{scope}[rotate around={\angle:({sqrt(\a*\a-\b*\b)},0)}]
-        \draw[->]({sqrt(\a*\a-\b*\b)},0)--(8.5,0)
-        node[pos=.45,below]{\tiny$\vec r$}
-        node[left]{\tiny $\vec v_r$};
-        \draw[->](7.65,0)--(7.65,.85) node[below]{\tiny $\vec v_\theta$};
-        \fill (7.65,0) circle(.1) node[above]{\tiny $m$};
+        \draw[vectors]({sqrt(\a*\a-\b*\b)},0)--(8.5,0)
+        node[pos=.45,below]{$\vec r$}
+        node[left]{$\vec v_r$};
+        \draw[vectors] (7.65,0)--(7.65,.85) node[below]{$\vec v_\theta$};
+        \fill (7.65,0) circle (.1) node[above]{$m$};
       \end{scope}
-      \draw[->]({sqrt(\a*\a-\b*\b)+.5},0) arc(0:\angle:.5)
-      node[pos=.4,above]{\tiny$\theta$};
+      \draw[axes]({sqrt(\a*\a-\b*\b)+.5},0) arc(0:\angle:.5)
+      node[midway,above=0]{$\theta$};
 %      \draw[<->]({sqrt(\a*\a-\b*\b)-.2},0)--({sqrt(\a*\a-\b*\b)-.2},-2.65)
 %      node[midway,left]{\tiny$r_0$};
     \end{tikzpicture}
@@ -628,11 +630,11 @@
   \begin{columns}
     \column{.45\textwidth}
     \begin{tikzpicture}[scale=.35]
-      \fill circle(.1);
-      \draw[dashed] circle(4);
-      \draw[dashed] circle(8);
-      \shade[ball color=red] (4,0) circle(1) node[white]{$m_1$};
-      \shade[ball color=blue] (-8,0) circle(.7) node[white]{$m_2$};
+      \fill circle (.1);
+      \draw[dashed] circle (4);
+      \draw[dashed] circle (8);
+      \shade[ball color=red] (4,0) circle (1) node[white]{$m_1$};
+      \shade[ball color=blue] (-8,0) circle (.7) node[white]{$m_2$};
       \draw[vectors,blue] (-7.3,0)--(-5.3,0) node[above]{$\vec F_g$};
       \draw[vectors,red] (3,0)--(1,0) node[above]{$\vec F_g$};
     \end{tikzpicture}

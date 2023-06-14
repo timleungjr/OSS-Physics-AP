@@ -88,19 +88,19 @@
 
 
 \begin{frame}{Position}
+  \textbf{Position} ($\vec r(t)$) is the location of an object in a coordinate
+  system as a function if time. It is measured in \textbf{meters}
+  (\si\metre).
   \begin{columns}
     \column{.7\textwidth}
-    \textbf{Position} ($\vec r(t)$) is the location of an object in a coordinate
-    system, as a function if time. It is measured in \textbf{meters}
-    (\si\metre).
 
     \eq{-.1in}{
       \boxed{\vec r(t)=x(t)\iii + y(t)\jjj + z(t)\kkk}
     }
     \begin{itemize}
-    \item\textbf{IJK notation}: $\iii$, $\jjj$ and $\kkk$ are \textbf{basis
-      vectors} indicating the directions of the $x$, $y$ and $z$ axes. Basis
-      vectors are \textbf{unit vectors} (i.e.\ length $1$)
+    \item\vspace{-.1in}\textbf{IJK notation}: $\iii$, $\jjj$ and $\kkk$ are
+      \textbf{basis vectors} indicating the directions of the $x$, $y$ and $z$
+      axes. Basis vectors are \textbf{unit vectors} (i.e.\ length 1)
     \item The IJK notation does not explicitly give the magnitude or the
       direction of the vector (needs to be calculated using the Pythagorean
       theorem)
@@ -111,6 +111,7 @@
       \draw[axes] (0,0)--(5,0) node[right]{$x$};
       \draw[axes] (0,0)--(0,5) node[above]{$y$};
       \draw[axes] (0,0)--(-2,-2) node[below]{$z$};
+      \fill[red] (4,3) circle(.1);
       \draw[vectors,red] (0,0)--(4,3) node[midway,above]{$\vec r$}
       node[above]{$(x,y,z)$};
     \end{tikzpicture}
@@ -121,7 +122,8 @@
 
 \begin{frame}{Displacement}
   \textbf{Displacement} $\Delta\vec r(t)$ is the change in position from the
-  initial position $\vec r_0$ within the same coordinate system:
+  initial position $\vec r_0$ within the same coordinate system. It is also a
+  function of time.
 
   \eq{-.1in}{
     \boxed{
@@ -148,7 +150,7 @@
     \item The \emph{length of the path} taken by an object when it travels from
       $\vec r_0$ to $\vec r(t)$
     \item A scalar quantity
-    \item Always positive, i.e.\ $s\geq 0$
+    \item Non-negative, i.e.\ $s\geq 0$
     \item Although the magnitude of the displacement vector is also a scalar,
       it is not necessarily the same as distance
     \item $s\geq |\Delta\vec r|$
@@ -171,8 +173,9 @@
 
 \begin{frame}{Instantaneous \& Average Velocity}
   \textbf{Instantaneous velocity} $\vec v(t)$ is the rate of change of
-  position\footnote{Or displacement} w.r.t.\ time. It is related to positiion
-  $\vec r(t)$ by:
+  position\footnote{Or the rate of change of displacement. The two quantities
+  only differ by the constant $\vec r_0$.} with respect to time. It is related
+  to position $\vec r(t)$ by:
 
   \eq{-.13in}{
     \boxed{
@@ -182,14 +185,15 @@
     }
   }
 
-  The constant of integration $\vec r_0$ evaluated at $t=0$. Likewise, the
+  $\vec r_0$ is the constant of integration evaluated at $t=t_0$. Likewise, the
   \textbf{average velocity} $\vec v_\text{avg}(t)$ is the displacement (change
   in position) $\Delta\vec r(t)$ over a finite time interval $\Delta t$:
 
   \eq{-.1in}{
     \boxed{
-      \vec v_\text{avg}(t) = \frac{\Delta\vec r}t=
-      \frac{\vec r(t)-\vec r_0}{\Delta t} = \frac{\int_0^t\vec v\dl t}{\Delta t}
+      \vec v_\text{avg}(t) = \frac{\Delta\vec r(t)}{\Delta t}=
+      \frac{\vec r(t)-\vec r_0}{\Delta t}
+      = \frac{\int_{t_0}^t\vec v\dl t}{\Delta t}
     }
   }
 
@@ -212,8 +216,8 @@
     }
   }
 
-  \textbf{Average speed} $v_\text{avg}(t)$ is the distance $s(t)$ travelled
-  over a finite time interval $\Delta t$:
+  \textbf{Average speed} $v_\text{avg}(t)$ is the distance $s(t)$ traveled over
+  a finite time interval $\Delta t$:
   
   \eq{-.1in}{
     \boxed{
@@ -221,7 +225,7 @@
     }
   }
 
-  The SI unit of speed is also \si{\metre\per\second}.
+  The SI unit of speed is also measured in \si{\metre\per\second}.
 \end{frame}
 
 
@@ -240,8 +244,8 @@
 
 \begin{frame}{Instantaneous \& Average Acceleration}
   In the same way that velocity is the time rate of change in position,
-  \textbf{instantaneous acceleration} $\vec a(t)$ is related to
-  instantaneous velocity by:
+  \textbf{instantaneous acceleration} $\vec a(t)$ is the time rate of change of
+  instantaneous velocity:
 
   \eq{-.1in}{
     \boxed{
@@ -254,20 +258,20 @@
   The SI unit for acceleration is \textbf{meters per second squared}
   (\si{\metre\per\second\squared}). \textbf{Average acceleration}
   $\vec a_\text{avg}(t)$ is the finite change in velocity $\Delta\vec v(t)$ over
-  a finite time interval $t$:
+  a finite time interval $\Delta t$:
 
   \eq{-.1in}{
     \boxed{
       \vec a_\text{avg}(t)=
-      \frac{\Delta\vec v(t)}t
-      =\frac{\vec v(t)-\vec v_0}t
-      =\frac{\int_0^t\vec a\dl t}t
+      \frac{\Delta\vec v(t)}{\Delta t}
+      =\frac{\vec v(t)-\vec v_0}{\Delta t}
+      =\frac{\int_{t_0}^t\vec a\dl t}{\Delta t}
     }
   }
 
-  Note that acceleration only requires a \emph{change} in velocity. It does
-  \emph{not} necessarily mean an object speeds up or slows down (e.g.\ uniform
-  circular motion).
+  \textbf{Important note:} Aacceleration only requires a \emph{change} in
+  velocity; it does \emph{not} necessarily mean an object speeds up or slows
+  down (e.g.\ uniform circular motion)
 \end{frame}
 
 
@@ -290,8 +294,8 @@
 
 \begin{frame}{Linear Independence}
   The $x$, $y$ and $z$ components of $\vec r$ along the $\iii$, $\jjj$ and
-  $\kkk$ directions are \emph{linearly independent}, therefore the time
-  derivative and integral can be separated into components:
+  $\kkk$ directions are \emph{linearly independent}, therefore time
+  derivatives and integrals can be separated into components:
 
   \vspace{-.2in}{\large
     \begin{align*}
@@ -324,22 +328,22 @@
   
   The next two derivatives of snap are called \textbf{crackle} and
   \textbf{pop}, but these higher derivatives of position vector are rarely used.
-  We will \emph{not} be using them.
+  We will \emph{not} be using them for AP Physics.
 \end{frame}
 
 
 
 \begin{frame}{Acceleration as Functions of Velocity and Position}
   Acceleration may be expressed as functions of velocity and position rather
-  than of time, if motion is driven by these forces:
+  than of time, if motion is driven by these forces that you have learned from
+  Physics 11, 12 or AP Physics 1 \& 2:
   \begin{itemize}
   \item Gravitational or electrostatic forces:
     $a(r)=\dfrac{Gm_s}{r^2}\quad a(r)=\dfrac{kq_1q_2}{mr^2}$
   \item Spring force: $a(r)=-\dfrac kmr$
   \item Damping force: $a(v)=-bv$
-  \item Aerodynamic lift and drag:
-    $a(v)=\left[\dfrac{\rho C_L A}{2m}\right] v^2$ and
-    $a(v)=\left[\dfrac{\rho C_D A}{2m}\right]v^2$
+  \item Aerodynamic drag:
+    $a(v)=\left[\dfrac{\rho C_L A}{2m}\right] v^2$
   \end{itemize}
 
   \vspace{.1in}In these cases, solving for $r(t)$, $v(t)$ and $a(t)$ will
@@ -353,9 +357,9 @@
 \begin{frame}{Kinematic Equations}
   While kinematic problems in AP Physics C exams often require calculus, these
   basic kinematic equations for \underline{constant acceleration} are still a
-  powerful tool.
+  powerful tool:
 
-  \vspace{-.2in}{\large
+  \vspace{-.25in}{\large
     \begin{align*}
       x &= x_0+ v_0t + \frac12at^2\\
       v &= v_0+at\\
@@ -363,9 +367,8 @@
     \end{align*}
   }
 
-  For AP Physics, you will only be given three kinematic equations in your
-  equation sheet. You will still be required to integrate when acceleration is
-  not constant.
+  For AP Physics, you are only given three kinematic equations. You are
+  required to integrate when acceleration is not constant.
 \end{frame}
 
 
@@ -408,9 +411,9 @@
   \end{center}
   \begin{itemize}
   \item Constant velocity has a straight line in the $x-t$ graph
-  \item The slope of the $x-t$ graph is the velocity $v$, which is constant
-  \item The slope of the $v-t$ graph is the acceleration $a$, which is zero in
-    this case
+  \item The slope of the $x$-$t$ graph is the velocity $v$, which is constant
+  \item The slope of the $v$-$t$ graph is the acceleration $a$, which is zero
+    in this case
   \end{itemize}
 \end{frame}
 
@@ -422,7 +425,7 @@
       \draw[axes] (0,0)--(4.5,0) node[right]{$t$};
       \draw[axes] (0,-1.5)--(0,4.5) node[above]{$x$};
       \draw[smooth,samples=20,domain=0:4,functions]
-      plot({\x},{.35*(\x-1)*(\x-1)+1});
+      plot(\x,{.35*(\x-1)*(\x-1)+1});
     \end{tikzpicture}
     \hspace{.15in}
     \begin{tikzpicture}[scale=.5]
@@ -438,13 +441,13 @@
     \end{tikzpicture}
   \end{center}
   \begin{itemize}
-  \item The $x-t$ graph for motion with constant acceleration is part of a
+  \item The $x$-$t$ graph for motion with constant acceleration is part of a
     \emph{parabola}
     \begin{itemize}
     \item If the parabola opens up, then acceleration is positive
     \item If the parabola opens down, then acceleration is negative
     \end{itemize}
-  \item The $v-t$ graph is a straight line; its slope (a constant) is the
+  \item The $v$-$t$ graph is a straight line; its slope (a constant) is the
     acceleration
   \end{itemize}
 \end{frame}
@@ -460,25 +463,25 @@
     \begin{tikzpicture}[scale=.5]
       \draw[axes] (0,0)--(4.5,0) node[right]{$t$};
       \draw[axes] (0,-2.5)--(0,2.5) node[above]{$x$};
-      \draw[smooth,samples=50,domain=0:4,functions] plot({\x},{2*sin(150*\x)});
+      \draw[smooth,samples=50,domain=0:4,functions] plot(\x,{2*cos(150*\x)});
     \end{tikzpicture}
     \hspace{.15in}
     \begin{tikzpicture}[scale=.5]
       \draw[axes] (0,0)--(4.5,0) node[right]{$t$};
       \draw[axes] (0,-2.5)--(0,2.5) node[above]{$v$};
-      \draw[smooth,samples=50,domain=0:4,functions] plot({\x},{2*cos(150*\x)});
+      \draw[smooth,samples=50,domain=0:4,functions] plot(\x,{-2*sin(150*\x)});
     \end{tikzpicture}
     \hspace{.15in}
     \begin{tikzpicture}[scale=.5]
       \draw[axes] (0,0)--(4.5,0) node[right]{$t$};
       \draw[axes] (0,-2.5)--(0,2.5) node[above]{$a$};
-      \draw[smooth,samples=50,domain=0:4,functions] plot({\x},{-2*sin(150*\x)});
+      \draw[smooth,samples=50,domain=0:4,functions] plot(\x,{-2*cos(150*\x)});
     \end{tikzpicture}
   \end{center}
   Bottom line: regardless of the type motion,
   \begin{itemize}
-  \item The $v-t$ graph is the slope of the $x-t$ graph
-  \item The $a-t$ graph is the slope of the $v-t$ graph
+  \item The $v$-$t$ graph is the slope of the $x$-$t$ graph
+  \item The $a$-$t$ graph is the slope of the $v$-$t$ graph
   \end{itemize}
 \end{frame}
 
@@ -746,7 +749,7 @@
       \draw (2,3)--(3,3) node[right]{$y$};
       \draw (2,3)--(2,4) node[above]{$z$};
 
-      \draw[vectors,blue] (0,0)--(3,1)  node[midway,below]{$\vec r_{AC}$};
+      \draw[vectors,blue] (0,0)--(3,1) node[midway,below]{$\vec r_{AC}$};
       \draw[vectors,orange] (2,3)--(3,1) node[midway,right]{$\vec r_{AB}$};
       \fill[red] (3,1) circle (.03) node[right]{$A$};
     \end{tikzpicture}
@@ -798,8 +801,7 @@
 
     \eq{-.1in}{
       \boxed{
-        {\color{blue}\vec r_{AC}}=
-        {\color{orange}\vec r_{AB}}+
+        {\color{blue}\vec r_{AC}} = {\color{orange}\vec r_{AB}} +
         {\color{violet}\vec r_{BC}}
       }
     }
@@ -812,7 +814,7 @@
   \begin{columns}
     \column{.4\textwidth}
     \begin{tikzpicture}[scale=1.3,axes]
-      \draw (0,0)--(-.5,-.5)  node[left]{$x'$}
+      \draw (0,0)--(-.5,-.5) node[left]{$x'$}
       node[pos=0,above left]{$\mathcal C$};
       \draw (0,0)--(1,0) node[right]{$y'$};
       \draw (0,0)--(0,1) node[above]{$z'$};
@@ -897,5 +899,4 @@
   \item You \emph{will} be given an equation sheet
   \end{itemize}
 \end{frame}
-
 \end{document}

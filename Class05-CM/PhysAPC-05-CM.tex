@@ -36,82 +36,83 @@
   \item A continuous distribution of mass with constant density. In this case,
     CM is also the geometric center (\textbf{centroid}) of the object
   \item A continuous distribution of mass with varying density
-  \item If the masses are inside of a gravitational field, then the CM is also
-    its \textbf{center of gravity} (``CG'')
+  \item If the masses are inside a \emph{uniform} gravitational field, then the
+    CM is also its \textbf{center of gravity} (``CG'')
   \end{itemize}
 \end{frame}
 
 
+\section{Finding the Center of Mass}
 
 \begin{frame}{Simple Example}
-  Start with a very simple example: two equal masses $m$ along the $x$-axis,
-  located at $x_1$ and $x_1$. What is the center of mass of the system?
+  Two equal masses $m$ along the $x$-axis, located at $x_1$ and $x_2$. Where is
+  the center of mass of the system?
   \begin{center}
     \begin{tikzpicture}
-      \draw[->] (-4,0)--(4,0) node[right]{$x$};
-      \draw[fill=lightgray] (-2.5,0) circle(.3) node{$m$};
-      \draw[fill=lightgray] (2.5,0) circle(.3) node{$m$};
-      \fill circle(.05) node[below]{cm};
+      \draw[axes] (-1,0)--(8,0) node[right]{$x$};
+      \draw[mass] (2,0) circle (.2) node{$m$};
+      \draw[mass] (6,0) circle (.2) node{$m$};
+      \draw[thick] (0,.85)--(0,-.45) node[below]{$O$};
+      \fill (4,0) circle (.05) node[above]{cm};
+      \begin{scope}[very thick,->|]
+        \draw (0,.35)--(2,.35) node[pos=0,left]{$x_1$};
+        \draw (0,.75)--(6,.75) node[pos=0,left]{$x_2$};
+        \draw[violet] (0,-.3)--(4,-.3) node[pos=0,left]{$x_\text{cm}$};
+      \end{scope}
     \end{tikzpicture}
   \end{center}
-  The answer is simple: the half way point between them:
+  The center of mass is at the half-way point between the masses:
 
   \eq{-.1in}{
     x_\text{cm}=\frac{x_1+x_2}2
-  }
-
-  Multiply both numerator and denominator by mass $m$ (for generalization
-  later), the equation becomes:
-
-  \eq{-.1in}{
+    \quad\quad\text{or}\quad\quad
     x_\text{cm}=\frac{mx_1+mx_2}{2m}
   }
 \end{frame}
 
- 
+
+
 \begin{frame}{Slightly More Challenging}
   What if one of the masses are increased to $2m$? This is still not a
   difficult problem; you can still \emph{guess} the right answer without
   knowing the equation for center of mass. 
   \begin{center}
     \begin{tikzpicture}
-      \draw[->] (-4,0)--(4,0) node[right]{$x$};
-      \draw[fill=lightgray] (-2.5,0) circle(.3) node{$m$};
-      \draw[fill=lightgray] (2.5,0) circle(.42) node{$2m$};
-      \fill(2.5/3,0) circle(.05) node[below]{cm};
+      \draw[axes] (-4,0)--(4,0) node[right]{$x$};
+      \draw[mass] (-2.5,0) circle (.3) node{$m$};
+      \draw[mass] (2.5,0) circle (.42) node{$2m$};
+      \fill (5/6,0) circle (.05) node[below]{cm};
     \end{tikzpicture}
   \end{center}
-  The answer is still simple. The CM is no longer half way between the two
-  masses, but now $\frac13$ the total distance from the larger masses. We can
-  show using a weighted average:
+  The answer is still simple. The center of mass is no longer half way between
+  the two masses, but now $\frac13$ the total distance from the larger masses.
+  We can show using a weighted average:
   
   \eq{-.1in}{
     x_\text{cm}=\frac{mx_1+(2m)x_2}{m+2m}
-  }  
+  }
 \end{frame}
 
 
 
-\begin{frame}{Complicating Things Further}{Many Point Masses}
+\begin{frame}{Many Point Masses}
   The weighted average concept can now be applied to cases when there are
-  masses in 2D or 3D:
+  masses in two or more dimensions:
   \begin{center}
-    \vspace{-.2in}
     \begin{tikzpicture}
-      \draw[->] (-3,0)--(3,0) node[right]{$x$};
-      \draw[->] (0,-1.5)--(0,1.5) node[above]{$y$};
-      \draw[fill=lightgray] (-1.3,1) circle(.4);
-      \draw[fill=lightgray] (-1.5,-.5) circle(.1);
-      \draw[fill=lightgray] (1,.3) circle(.15);
-      \draw[fill=lightgray] (0,.3) circle(.2);
-      \draw[fill=lightgray] (2,-1) circle(.25);
+      \draw[axes] (-3,0)--(3,0) node[right]{$x$};
+      \draw[axes] (0,-1.5)--(0,1.5) node[above]{$y$};
+      \draw[mass] (-1.3,1) circle (.4) node{$m_1$};
+      \draw[mass] (-1.5,-.5) circle (.3) node{$m_2$};
+      \draw[mass] (1,.3) circle (.25) node{$m_3$};
+      \draw[mass] (0,.3) circle (.2) node{$m_4$};
+      \draw[mass] (2,-1) circle (.25) node{$m_5$};
     \end{tikzpicture}
   \end{center}
 \end{frame}
 
 
-
-\begin{frame}{An Equation Helps}
+\begin{frame}{Center of Mass Equation}
   The center of mass is defined for discrete number of masses with the weighted
   average:
 
@@ -190,10 +191,11 @@
 \end{frame}
 
 
+
 \begin{frame}{An Example with Integrals}
   \begin{columns}
     \column{.65\textwidth}
-    \textbf{Example 2:} A triangular plate is placed in a Cartesian coordinate
+    \textbf{Example:} A triangular plate is placed in a Cartesian coordinate
     system with two of its edges along the $x$ and $y$-axis. The length of the
     edges along the axes are $a$ and $b$ respectively. Assuming that the
     surface area density $\sigma$ is uniform, determine the coordinate of its
@@ -201,18 +203,63 @@
 
     \column{.35\textwidth}
     \begin{tikzpicture}[scale=.8]
-      \draw[->](0,0)--(4,0) node[right]{ $x$};
-      \draw[->](0,0)--(0,5) node[above]{ $y$};
-      \draw[fill=lightgray](0,0)--(3,0) node[midway,below]{$a$}
+      \draw[axes] (0,0)--(4,0) node[right]{$x$};
+      \draw[axes] (0,0)--(0,5) node[above]{$y$};
+      \draw[fill=lightgray] (0,0)--(3,0) node[midway,below]{$a$}
       --(0,4)--cycle node[midway,left]{$b$};
       \uncover<2->{
-        \draw[fill=red](1,0)--(1.2,0)--(1.2,2.4)--(1,2.67)
-          node[midway,right]{ $\dl m=y\dl x$}--cycle;
+        \draw[fill=red] (1,0)--(1.2,0)--(1.2,2.4)--(1,2.67)
+        node[midway,right]{$\dl m=y\dl x$}--cycle;
       }
     \end{tikzpicture}
   \end{columns}
 \end{frame}
 
+
+
+\begin{frame}{Centroid}
+  For an object with a uniform mass distribution (i.e.\ constant density), the
+  center of mass is also its geometric center, called the \textbf{centroid}.
+  The locations of centroids can be found in most physics textbooks.
+  \begin{center}
+    \pic{.65}{eng130C9_11}
+  \end{center}
+\end{frame}
+
+
+
+\begin{frame}{Compound Shapes}
+  For compound shapes, the center of mass is the weighted average of the center
+  of mass of each component. For example, for the T-beam below:
+  \begin{center}
+    \begin{tikzpicture}[scale=.7]
+      \draw[axes] (0,0)--(4.5,0) node[right]{$x$};
+      \draw[axes] (0,0)--(0,4.5) node[left]{$y$};
+      \draw[blue!70!black,mass] (0,4)--(4,4)--(4,3)--(2.5,3)
+      --(2.5,0)--(1.5,0)--(1.5,3)--(0,3)--(0,4);
+    \end{tikzpicture}
+    \hspace{.1in}
+    \begin{tikzpicture}[scale=.7]
+      \draw[lightgray,fill=gray!20,thick] (0,4)--(4,4)--(4,3)--(2.5,3)--(2.5,0)
+      --(1.5,0)--(1.5,3)--(0,3)--(0,4);
+      \draw[lightgray,dotted,thick] (1.5,3)--(2.5,3);
+      \draw[axes] (0,0)--(4.5,0) node[right]{$x$};
+      \draw[axes] (0,0)--(0,4.5) node[left]{$y$};
+      \fill[blue!70!black] (2,3.5) circle (.08) node[right]{$\vec x_1$};
+      \fill[blue!70!black] (2,1.5) circle (.08) node[right]{$\vec x_2$};
+    \end{tikzpicture}
+    \hspace{.1in}
+    \begin{tikzpicture}[scale=.7]
+      \draw[lightgray,thick] (0,4)--(4,4)--(4,3)--(2.5,3)
+      --(2.5,0)--(1.5,0)--(1.5,3)--(0,3)--(0,4);
+      \draw[axes] (0,0)--(4.5,0) node[right]{$x$};
+      \draw[axes] (0,0)--(0,4.5) node[left]{$y$};
+      \fill[blue!30] (2,3.5) circle (.08) node[right]{$\vec x_1$};
+      \fill[blue!30] (2,1.5) circle (.08) node[right]{$\vec x_2$};
+      \fill[red!70!black] (2,2.64) circle (.08) node[right]{$\vec x_\text{cm}$};
+    \end{tikzpicture}
+  \end{center}
+\end{frame}
 
 
 %\begin{frame}{A Difficult Example to Try at Home}
@@ -241,7 +288,7 @@
 
 
 
-\begin{frame}{Symmetry}{There are always shortcuts!}
+\begin{frame}{Symmetric Configurations}
   \begin{itemize}
   \item Any plane of symmetry, mirror line, axis of rotation, point of inversion
     \emph{must} contain the center of mass.
@@ -260,12 +307,12 @@
   \item\textbf{Example:} What is the center of mass of this shape?
     \begin{center}
       \begin{tikzpicture}
-        \draw[thick,fill=lightgray] circle(2);
-        \draw[thick,fill=black!2](0,1) circle(1);
-        \fill circle(.04);
-        \draw[thick,->](0,0)--(-1.41,-1.41)node[midway,below]{$r$};
-        \draw[fill=black](0,1) circle(.04);
-        \draw[thick,->](0,1)--(.707,.293) node[right]{$r/2$};
+        \draw[thick,fill=lightgray] circle (2);
+        \draw[thick,fill=black!2] (0,1) circle (1);
+        \fill circle (.04);
+        \draw[axes] (0,0)--(-1.41,-1.41) node[midway,below]{$r$};
+        \fill (0,1) circle (.04);
+        \draw[axes] (0,1)--(.707,.293) node[right]{$r/2$};
       \end{tikzpicture}
     \end{center}
   \end{itemize}
@@ -278,16 +325,15 @@
   \item This is how we would think of it:
     \begin{center}
       \begin{tikzpicture}[scale=.6]
-        \draw[thick,fill=lightgray] circle(2);
-        \draw[thick,fill=black!2] (0,1) circle(1);
+        \draw[thick,fill=lightgray] circle (2);
+        \draw[thick,fill=black!2] (0,1) circle (1);
         \draw circle (.04);
-        \draw[thick,->] (0,0)--(-1.41,-1.41)
-        node[midway,below]{$r$};
+        \draw[axes] (0,0)--(-1.41,-1.41) node[midway,below]{$r$};
         \fill (0,1) circle(.04);
-        \draw[thick,->] (0,1)--(.707,.293) node[right]{$r/2$};
+        \draw[axes] (0,1)--(.707,.293) node[right]{$r/2$};
       
-        \draw[thick,fill=lightgray] (6,0) circle(2) node{\large$A$};
-        \draw[thick] (11,1) circle(1) node{\large$B$};
+        \draw[thick,fill=lightgray] (6,0) circle (2) node{\large$A$};
+        \draw[thick] (11,1) circle (1) node{\large$B$};
         \node at (3,0) {\huge=};
         \node at (9,0) {\huge -};
       \end{tikzpicture}
@@ -308,29 +354,7 @@
 
 
 
-
-%\begin{frame}{Velocity, Acceleration and Momentum}
-%  Take time derivative of the equation for $\vec x_\text{cm}$ to get the
-%  velocity at the CM:
-%    
-
-%  The integral in the numerator is the sum of the momentum of all the masses in
-%  the system ($\vec p_\text{net}$) which means that we have
-%
-%  \eq{-.1in}{
-%    \vec p_\text{net}=m\vec v_\text{cm}
-%    }
-%
-%  Taking the derivative of $\vec p_\text{net}$ relates force and acceleration
-%  at the CM as well:
-%    
-%  \eq{-.1in}{
-%    \vec F_\text{net}=\diff{\vec p_\text{net}}t=m\diff{\vec v_\text{cm}}t
-%    =m\vec a_\text{cm}
-%  }
-%\end{frame}
-
-
+\section{Momentum and Center of Mass}
 
 \begin{frame}{Velocity of the Center of Mass}
   Take time derivative of the equation for $\vec x_\text{cm}$ to get the
@@ -343,7 +367,7 @@
     =\frac{\int\vec v\dl m}m
   }
 
-  Or, in the form that is familiar, the velocity at the center of mass is the
+  Or, in the form that is familiar, the velocity of the CM is the
   weighted sum of the velocities of the distribution of mass:
   
   \eq{-.1in}{
@@ -372,6 +396,65 @@
 
 
 
+\begin{frame}{Center of Mass During Collision}
+  \vspace{.1in}
+  During a collision\footnote{As we have studied in conservation of momentum in
+  Physics 12 and in our previous class}, there are no external forces,
+  therefore the velocity of the CM remains constant. Consider this 1D inelastic
+  collision in between two masses:
+  \begin{center}
+    \begin{tikzpicture}[scale=.8,thick]
+      \begin{scope}[violet]
+        \draw (1,0) rectangle (2,1) node[midway]{$m_1$};
+        \draw (4,0) rectangle (5,1) node[midway]{$m_2$};
+        \draw[vectors] (.8,1.3)--(2.5,1.3) node[right]{$v_1$};
+        \draw[vectors] (4,1.3)--(5,1.3) node[right]{$v_2$};
+        \node[above] at (3,1.5) {Before Collision};
+      \end{scope}
+      \draw[vectors] (2.7,.5)--(3.7,.5) node[above]{$v_\text{cm}$};
+      \begin{scope}[orange]
+        \draw (10,0) rectangle (11,1) node[midway]{$m_1$};
+        \draw (11,0) rectangle (12,1) node[midway]{$m_2$};
+        \draw[vectors] (10.2,1.3)--(11.8,1.3) node[right]{$v'$};
+        \node[above] at (11,1.5) {After Collision};
+      \end{scope}
+      \draw (0,0)--(14,0);
+      \draw (2.7,.5) circle (.15);
+      \fill (2.7,.5)--(2.85,.5) arc (0:90:.15)--cycle;
+      \fill (2.7,.5)--(2.55,.5) arc (180:270:.15)
+      node[below=-2] (c){\scriptsize cm\par}--cycle; 
+
+      \draw (11,.5) circle (.15);
+      \fill (11,.5)--(11.15,.5) arc (0:90:.15)--cycle;
+      \fill (11,.5)--(10.85,.5) arc (180:270:.15)
+      node[below=-2] {\scriptsize cm\par}--cycle; 
+
+      \node[text width=2.in,draw,violet,below right] (a) at (-.5,-.6)
+           {\scriptsize Using the definition of the velocity of the CM, we find
+             that \emph{before} the collision:
+             \vspace{-.1in}
+             \begin{displaymath}
+               v_\text{cm} = \frac{\sum m_iv_i}{\sum m_i}
+               =\frac{m_1v_1+m_2v_2}{m_1+m_2}
+             \end{displaymath}\par
+           };
+      \draw[axes,violet] (a)--(c);
+           
+      \node[text width=2.05in,draw,orange,below left] at (14.5,-.6)
+           {\scriptsize Using momentum conservation, we find that the final
+             velocity \emph{after} the collision is:
+             \vspace{-.08in}
+             \begin{displaymath}
+               v'=\frac{m_1v_1+m_2v_2}{m_1+m_2}=v_\text{cm}
+             \end{displaymath}
+             \par
+           };
+    \end{tikzpicture}
+    \vspace{.3in}
+  \end{center}
+\end{frame}
+
+
 \begin{frame}{Acceleration of the Center of Mass}
   Finding the rate of change of the net momentum (i.e\ applying the 2nd law of
   motion to this distribution of masses):
@@ -392,8 +475,9 @@
     }
   }
   
-  We can see that when a net force is applied to an object, the object's
-  acceleration is evaluated at the center of mass.
+  We can see that when a net force is applied to an object (or a system of
+  objects), the object's (or the system's)  acceleration is evaluated at the
+  CM.
 \end{frame}
 
 

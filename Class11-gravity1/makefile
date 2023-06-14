@@ -1,6 +1,8 @@
 all:
 	xelatex PhysAPC-11-univGravity
 	xelatex PhysAPC-11-univGravity
+	xelatex PhysAPC-11-univGravity-print
+	xelatex PhysAPC-11-univGravity-print
 	cd homework ; make
 
 clean:

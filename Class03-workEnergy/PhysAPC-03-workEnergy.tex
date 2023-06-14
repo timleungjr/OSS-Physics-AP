@@ -31,13 +31,13 @@
 \section{Mechanical Work}
 
 \begin{frame}{Mechanical Work}
-  \textbf{Mechanical work} $\dl W$ is done when a force $\vec F(x)$ displaces an
+  \textbf{Mechanical work} $W$ is done when a force $\vec F(x)$ displaces an
   object by $\dl\vec x$. If the force moves an object along a path $\mathcal C$,
   the total work done by the force is defined as:
 
   \eq{-.1in}{
     \boxed{
-      W=\int_\mathcal{C}\vec F(\vec x)\cdot\dl\vec x
+      W=\int_{\mathcal C}\dl W= \int_{\mathcal C}\vec F(\vec x)\cdot\dl\vec x
     }
   }
 
@@ -46,7 +46,7 @@
   \item Work is (generally) path dependent
   \item No work done if the force is perpendicular to displacement, when
     $\vec F\cdot\dl\vec x=0$ (i.e.\ the force did not cause the displacement)
-  \item No work done if no displacement ($\dl\vec x=\vec 0$)
+  \item No work done if there is no displacement ($\dl\vec x=\vec 0$)
   \item Work can be positive or negative depending on the dot product
   \item The SI unit for work is a \emph{joule} where
     $\SI1\joule=\SI1{\kilogram.\metre^2\per\second^2}$
@@ -162,8 +162,9 @@
 \begin{frame}{Work-Energy Theorem}
   The \emph{definition} of kinetic energy came from this integration, in that
   work equals to the change in \emph{something}, and we define that
-  \emph{something} as kinetic energy. This is the \textbf{work-energy theorem},
-  also known as the \textbf{work-energy principle}:
+  \emph{something} as kinetic energy. This is the
+  \textbf{work-energy theorem}\footnote{Also known as the
+  \textbf{work-energy principle}}:
 
   \eq{-.1in}{
     \boxed{
@@ -171,14 +172,9 @@
     }
   }
   \begin{itemize}
-  %\item $\Delta K$ can be positive or negative depending on whether work done
-  %  is positive or negative:
   \item $K$ increases ($\Delta K>0$) if net work is positive ($W_\text{net}>0$),
     and
   \item $K$ decreases ($\Delta K<0$) if net work is negative ($W_\text{net}>0$)
-  %\item When multiple forces acting on an object; each force can add or remove
-  %  kinetic energy from an object
-  %\item Therefore we use the ``net'' amount of work done in the above equation
   \item It does not matter \emph{what} the net force is composed of
   \end{itemize}
 \end{frame}
@@ -206,7 +202,7 @@
     \begin{tikzpicture}[scale=.6]
       \draw[thick,fill=cyan!10] (7.75,0) arc (75:105:30);
       \draw[mass] (0,4) circle (.2) node[right=2.5]{$m$};
-      \draw[vectors,red] (0,4)--(0,2) node[below=-1]{$m\vec g$};
+      \draw[vectors,red] (0,4)--(0,2) node[below=-1]{$\vec F_g$};
     \end{tikzpicture}
   \end{center}
   \begin{itemize}
@@ -215,7 +211,7 @@
     therefore, there is an increase in kinetic energy, and the object speeds up
 
     \eq{-.2in}{
-      W_g=mg\Delta x=\Delta K > 0
+      W_g=F_g\Delta x=mg\Delta x=\Delta K > 0
     }
   \end{itemize}
 \end{frame}
@@ -229,7 +225,7 @@
     \begin{tikzpicture}[scale=.55,thick]
       \draw[fill=cyan!10] (7.75,0) arc (75:105:30);
       \draw[mass] (0,6) circle (.25);
-      \draw[vectors,violet] (0,6)--(0,3) node[midway,right]{$\Delta x$};
+      \draw[vectors,magenta] (0,6)--(0,3) node[midway,right]{$\Delta x$};
       \draw[->|,blue] (-.4,1)--(-.4,6) node[midway,left]{$h_0$};
       \draw[->|,blue] (0,1)--(0,3) node[midway,right]{$h_1$};
     \end{tikzpicture}
@@ -783,7 +779,7 @@
       \fill[pattern=north east lines] (6.5,.5)--(6.5,.3)--(-.2,.3)
       --(-.2,2)--(0,2)--(0,.5)--cycle;
       \draw[very thick] (0,2)--(0,.5)--(6.5,.5);
-      \draw[vectors,red] (5.5,1)--(5.5,0) node[below]{$m\vec g$};
+      \draw[vectors,red] (5.5,1)--(5.5,0) node[below]{$\vec F_g$};
       \draw[vectors,red] (5.5,1)--(5.5,2) node[above]{$\vec N$};
       \draw[vectors,red] (5.5,1)--(4.5,1) node[above]{$\vec F_s$};
     \end{tikzpicture}
@@ -805,7 +801,7 @@
     \begin{tikzpicture}[scale=.7]
       \draw[thick,fill=cyan!10] (7.75,0) arc (75:105:30);
       \draw[mass] (0,3) circle (.2) node[right=3]{$m$};
-      \draw[vectors,red] (0,3)--(0,1.25) node[below]{$m\vec g$};
+      \draw[vectors,red] (0,3)--(0,1.25) node[below]{$\vec F_g$};
     \end{tikzpicture}
   \end{center}
   The sum of the kinetic energy of the mass ($K$) and the gravitational
@@ -814,6 +810,34 @@
   \eq{-.1in}{
     K+U_g=\text{constant}
   }
+\end{frame}
+
+
+
+\begin{frame}{Example: Gravity}
+  Energy is also conserved for an object sliding down an arbitrarily-shaped
+  ramp, assuming that there is no friction or drag:
+  \begin{center}
+    \begin{tikzpicture}[scale=.7]
+      \draw[thick] (0,4) to[out=-30,in=180] (3,1) to[out=0,in=180] (5,3)
+      to[out=0,in=170] (8,0) to[out=-10,in=180] (10,0);
+      \draw[mass,rotate around={-60.5:(1,2.93)}] (1,2.93) rectangle +(.6,.6);
+      \fill[red] (1.4,2.8) circle (.08);
+      \draw[vectors,red] (1.4,2.8)--+(0,-1.5) node[left]{$\vec F_g$};
+      \draw[vectors,red,
+        rotate around={30:(1.4,2.8)}] (1.4,2.8)--+(1.4,0) node[right]{$\vec N$};
+    \end{tikzpicture}
+  \end{center}
+  \begin{itemize}
+  \item Both normal force $\vec N$ and gravity $\vec F_g$ act on the object,
+    but only gravity does mechanical work ($\vec N$ is perpendicular to motion)
+  \item The sum of the kinetic energy ($K$) and gravitational potential energy
+    is constant
+    
+    \eq{-.15in}{
+      K + U_g = \text{constant}
+    }
+  \end{itemize}
 \end{frame}
 
 
@@ -829,7 +853,7 @@
         decorate] (1,5)--(1,2.5); 
       \fill[pattern=north east lines] (0,5) rectangle (2,5.2);
       \draw[very thick] (0,5)--(2,5);
-      \draw[vectors,red] (1,2)--(1,1)node[right]{$m\vec g$};
+      \draw[vectors,red] (1,2)--(1,1)node[right]{$\vec F_g$};
       \draw[vectors,red] (1,2)--(1,3)node[right]{$\vec F_s$};
       \fill[red] (1,2) circle (.05);      
     \end{tikzpicture}
@@ -858,11 +882,10 @@
     spring, the simple pendulum system (consists of the mass and Earth) is a
     closed system.
     \begin{itemize}
-    \item Gravity ($m\vec g$), which is conservative, is the only force that
+    \item Gravity ($\vec F_g$), which is conservative, is the only force that
       does work
-    \item Tension ($\vec T$), which is non-conservative, does not do work on the
-      pendulum because it is always perpendicular to the motion of the pendulum
-      bob
+    \item Tension ($\vec F_T$) does not do work because it is \emph{always}
+      perpendicular to the motion of the pendulum bob
     \end{itemize}
     The sum of the kinetic energy of the mass ($K$), the gravitational
     potential energy stored between the mass and Earth ($U_g$) is constant:
@@ -880,13 +903,13 @@
         \draw[thick] (0,0)--(0,-5);
         \shade[ball color=cyan] (0,-5) circle (.2) node[right=3]{$m$};
         \begin{scope}[red,vectors]
-          \draw (0,-5)--(0,-3.5) node[left]{$\vec T$};
+          \draw (0,-5)--(0,-3.5) node[left]{$\vec F_T$};
           \draw[rotate around={-15:(0,-5)}] (0,-5)--(0,-6.3)
-          node[below]{$m\vec g$};
+          node[below]{$\vec F_g$};
         \end{scope}
       \end{scope}
       \draw[dashed,thin] (0,0)--(0,-5);
-      \draw[->] (0,-2) arc(270:285:2) node[midway,below]{$\phi$};
+      \draw[->] (0,-2) arc (270:285:2) node[midway,below]{$\phi$};
     \end{tikzpicture}
   \end{columns}
 \end{frame}

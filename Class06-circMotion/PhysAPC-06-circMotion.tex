@@ -45,7 +45,7 @@
         \draw[vectors] (0,0)--(2.45,0) node[midway,above]{$r$};
         \draw[vectors] (2.5,0)--(3.5,0) node[right]{$\hat r$};
         \draw[vectors] (2.5,0)--(2.5,1) node[above]{$\hat\theta$};
-        \draw[mass] (2.5,0) circle(.1);
+        \draw[mass] (2.5,0) circle (.1);
       \end{scope}
       \draw[axes] (1.5,0) arc (0:38:1.5) node[pos=.55,right]{$\theta$};
     \end{tikzpicture}
@@ -144,7 +144,7 @@
 
 \begin{frame}{Angular Position and Angular Velocity}
   \vspace{.2in}
-  \begin{columns}
+  \begin{columns}[T]
     \column{.35\textwidth}
     \begin{tikzpicture}[scale=.75]
       \draw[axes] (-3,0)--(3,0) node[right]{$x$};
@@ -152,7 +152,7 @@
       \draw[axes] (1,0) arc (0:38:1) node[midway,right]{$\theta$};
       \draw circle(2.5);
       \begin{scope}[rotate=38]
-        \draw[vectors] (0,0)--(2.44,0) node[midway,above]{$r$};
+        \draw[vectors] (0,0)--(2.44,0) node[midway,above]{$\vec r$};
         \draw[mass] (2.5,0) circle (.1);
       \end{scope}
     \end{tikzpicture}
@@ -199,8 +199,7 @@
 
     \eq{-.1in}{
       v=r\omega
-    }    
-
+    }
     \begin{itemize}
     \item The direction of $\vec v$ is tangent to circle, along
       $\hat\theta$, and therefore $\perp$ to $\hat r$
@@ -388,7 +387,7 @@
 
 \begin{frame}{A Simple Example}
   \textbf{Example:} An object moves in a circle with angular acceleration
-  \SI{3.}{\radian\per\second\squared}. The radius is \SI{2.}{\metre} and it
+  \SI{3.0}{\radian\per\second\squared}. The radius is \SI{2.0}{\metre} and it
   starts from rest. How long does it take for this object to finish a circle?
 \end{frame}
 
@@ -439,7 +438,7 @@
   \begin{columns}
     \column{.25\textwidth}
     \begin{tikzpicture}[scale=4.2]
-      \draw[dashed] (.866,-.5) arc(-30:30:1);
+      \draw[dashed] (.866,-.5) arc (-30:30:1);
       \draw[vectors,magenta] (1,0)--(.5,0) node[midway,below]{$a_c=\omega^2r$};
       \draw[vectors,cyan] (1,0)--(1,.3) node[right]{$a_t=r\alpha$};
       \fill (1,0) circle (.02);
@@ -486,13 +485,11 @@
     \pic1{puck-on-table}
     
     \column{.6\textwidth}
-    \textbf{Example:} In the figure on the left, a mass
-    $m_1=\SI{3.}{\kilo\gram}$ is rolling around a frictionless table with
-    radius $R=\SI{1.}\metre$ with a speed of \SI{2.}{\metre\per\second}.
-    What is the mass of the weight $m_2$?
+    \textbf{Example:} In the figure on the left, a mass $m_1$ is rolling around
+    a frictionless table with radius $R$ with a speed $v$. What is the mass of
+    $m_2$?
   \end{columns}
 \end{frame}
-
 
 
 \begin{frame}{Banked Curves on Highways and Racetracks}
@@ -501,22 +498,22 @@
     \centering
     \pic{.8}{banked-turn-acceleration}
     
-    \begin{tikzpicture}
-      \fill circle(.08);
-      \draw[vectors,rotate=-30] (0,0)--(0,1)node[above]{$\vec N$};
-      \draw[vectors] (0,0)--(0,-1)node[below]{$m\vec g$};
-      \draw[vectors,rotate=60] (0,0)--(0,-1)node[right]{$\vec f$};
+    \begin{tikzpicture}[vectors]
+      \fill circle (.08);
+      \draw[rotate=-30] (0,0)--(0,1) node[above]{$\vec N$};
+      \draw (0,0)--(0,-1) node[below]{$\vec F_g$};
+      \draw[rotate=60] (0,0)--(0,-1) node[right]{$\vec f$};
     \end{tikzpicture}
-    \begin{tikzpicture}
-      \draw[->](0,0)--(1,0) node[right]{$x$};
-      \draw[->](0,0)--(0,1) node[above]{$y$};
+    \begin{tikzpicture}[axes]
+      \draw (0,0)--(1,0) node[right]{$x$};
+      \draw (0,0)--(0,1) node[above]{$y$};
     \end{tikzpicture}
 
     \column{.65\textwidth}
     No motion in the $y$ direction, i.e.\ no net force:
 
     \eq{-.1in}{
-      \sum F_y=N\cos\theta-f\sin\theta-w=0
+      \sum F_y=N\cos\theta-f\sin\theta-F_g=0
     }
 
     Net force in the $x$ direction is the centripetal force:
@@ -537,21 +534,21 @@
     \centering
     \pic{.8}{banked-turn-acceleration}
     
-    \begin{tikzpicture}
-      \fill circle(.08);
-      \draw[vectors,rotate=-30] (0,0)--(0,1)node[above]{$\vec N$};
-      \draw[vectors] (0,0)--(0,-1)node[below]{$m\vec g$};
-      \draw[vectors,rotate=60] (0,0)--(0,-1)node[right]{$\vec f$};
+    \begin{tikzpicture}[vectors]
+      \fill circle (.08);
+      \draw[rotate=-30] (0,0)--(0,1)node[above]{$\vec N$};
+      \draw (0,0)--(0,-1)node[below]{$\vec F_g$};
+      \draw[rotate=60] (0,0)--(0,-1)node[right]{$\vec f$};
     \end{tikzpicture}
-    \begin{tikzpicture}
-      \draw[->](0,0)--(1,0) node[right]{$x$};
-      \draw[->](0,0)--(0,1) node[above]{$y$};
+    \begin{tikzpicture}[axes]
+      \draw (0,0)--(1,0) node[right]{$x$};
+      \draw (0,0)--(0,1) node[above]{$y$};
     \end{tikzpicture}
 
     \column{.65\textwidth}
     For analysis, use the simplified equation for friction $f=\mu N$ (i.e.\
     assume either kinetic friction or maximum static friction), and weight
-    $w=mg$, the equations on the previous slides can be arranged as:
+    $F_g=mg$, the equations on the previous slides can be arranged as:
 
     \vspace{-.3in}{\large
       \begin{align*}
@@ -568,15 +565,15 @@
     \column{.35\textwidth}
     \centering
     \pic{.8}{banked-turn-acceleration}\\
-    \begin{tikzpicture}
+    \begin{tikzpicture}[vectors]
       \fill circle(.08);
-      \draw[vectors,rotate=-30] (0,0)--(0,1)node[above]{$\vec N$};
-      \draw[vectors] (0,0)--(0,-1)node[below]{$m\vec g$};
-      \draw[vectors,rotate=60] (0,0)--(0,-1)node[right]{$\vec f$};
+      \draw[rotate=-30] (0,0)--(0,1) node[above]{$\vec N$};
+      \draw (0,0)--(0,-1) node[below]{$\vec F_g$};
+      \draw[rotate=60] (0,0)--(0,-1) node[right]{$\vec f$};
     \end{tikzpicture}
-    \begin{tikzpicture}
-      \draw[->](0,0)--(1,0) node[right]{$x$};
-      \draw[->](0,0)--(0,1) node[above]{$y$};
+    \begin{tikzpicture}[axes]
+      \draw (0,0)--(1,0) node[right]{$x$};
+      \draw (0,0)--(0,1) node[above]{$y$};
     \end{tikzpicture}
 
     \column{.65\textwidth}
@@ -664,16 +661,16 @@
         \begin{scope}[vectors,red]
           \draw (0,-5)--(0,-3.3) node[left]{$\vec F_T$};
           \draw[rotate around={-20:(0,-5)}] (0,-5)--(0,-6.5)
-          node[below]{$m\vec g$};
+          node[below]{$\vec F_g$};
         \end{scope}
       \end{scope}
       \draw[dashed] (0,0)--(0,-5);
-      \draw[dashed] (3.54,-3.54) arc(315:225:5);
+      \draw[dashed] (3.54,-3.54) arc (315:225:5);
     \end{tikzpicture}
 
     \column{.65\textwidth}
     \begin{itemize}
-    \item There are two forces act on the pendulum: weight $m\vec g$, and
+    \item There are two forces act on the pendulum: weight $\vec F_g$, and
     tension $\vec F_T$
     \item Speed of the pendulum at any height is found using conservation
       of energy
@@ -700,17 +697,17 @@
         \draw[thick] (0,0)--(0,-5);
         \shade[ball color=red] (0,-5) circle (.2) node[right=2.5]{$m$};
         \begin{scope}[vectors,red]
-          \draw[dotted] (0,-5)--(-1.1,-5)node[left]{$mg\sin\theta$};
+          \draw[dotted] (0,-5)--(-1.1,-5)node[left]{$F_g\sin\theta$};
           \draw[dotted] (0,-5)--(0,-6.1)
-          node[right,fill=yellow!20]{$mg\cos\theta$};
+          node[right,fill=yellow!20]{$F_g\cos\theta$};
           \draw (0,-5)--(0,-3.9) node[left,fill=yellow!20]{$\vec F_T$};
           \draw[rotate around={-45:(0,-5)}] (0,-5)--(0,-6.5)
-          node[below]{$m\vec g$};
+          node[below]{$\vec F_g$};
         \end{scope}
       \end{scope}
       \draw[dashed] (0,0)--(0,-5);
-      \draw[dashed] (3.54,-3.54) arc(315:225:5);
-      \draw[->] (0,-2) arc(270:315:2) node[pos=.5,below]{$\theta$};
+      \draw[dashed] (3.54,-3.54) arc (315:225:5);
+      \draw[axes] (0,-2) arc (270:315:2) node[midway,below]{$\theta$};
     \end{tikzpicture}
 
     \column{.5\textwidth}
@@ -737,7 +734,7 @@
 
 \begin{frame}{Simple Pendulum: Tangential Forces at the Highest Point}
   \vspace{.2in}
-  \begin{columns}
+  \begin{columns}[T]
     \column{.5\textwidth}
     \begin{tikzpicture}[scale=.75]
       \fill[pattern=north east lines] (-1,0) rectangle (1,0.2);
@@ -747,16 +744,16 @@
         \shade[ball color=red] (0,-5) circle(.2) node[right=2.5]{$m$};
         \begin{scope}[vectors,red]
           \draw[dotted] (0,-5)--(-1.1,-5)
-          node[left,fill=cyan!10]{$mg\sin\theta$};
-          \draw[dotted] (0,-5)--(0,-6.1) node[right]{$mg\cos\theta$};
+          node[left,fill=cyan!10]{$F_g\sin\theta$};
+          \draw[dotted] (0,-5)--(0,-6.1) node[right]{$F_g\cos\theta$};
           \draw (0,-5)--(0,-3.9) node[left]{$\vec F_T$};
           \draw[rotate around={-45:(0,-5)}] (0,-5)--(0,-6.5)
-          node[below]{$m\vec g$};
+          node[below]{$\vec F_g$};
         \end{scope}
       \end{scope}
       \draw[dashed] (0,0)--(0,-5);
       \draw[dashed] (3.54,-3.54) arc (315:225:5);
-      \draw[->] (0,-2) arc(270:315:2) node[midway,below]{$\theta$};
+      \draw[axes] (0,-2) arc (270:315:2) node[midway,below]{$\theta$};
     \end{tikzpicture}
 
     \column{.5\textwidth}
@@ -786,8 +783,8 @@
       \draw[thick] (0,0)--(0,-5);
       \shade[ball color=red] (0,-5) circle (0.2) node[below right]{$m$};
       \draw[vectors,red] (0,-5)--(0,-2.5) node[right]{$\vec F_T$};
-      \draw[vectors,red] (0,-5)--(0,-6.5) node[below]{$m\vec g$};
-      \draw[dashed] (3.54,-3.54) arc(315:225:5);
+      \draw[vectors,red] (0,-5)--(0,-6.5) node[below]{$\vec F_g$};
+      \draw[dashed] (3.54,-3.54) arc (315:225:5);
     \end{tikzpicture}
 
     \column{.65\textwidth}
@@ -806,7 +803,7 @@
     \item At the lowest point, tension is the highest:
 
       \eq{-.1in}{
-        F_T=mg+F_c=m\left(g+\frac{v^2}r\right)
+        F_T=F_g+F_c=m\left(g+\frac{v^2}r\right)
       }
     \end{itemize}
   \end{columns}
@@ -814,17 +811,239 @@
 
 
 
-\begin{frame}{Example Problem}
-  \textbf{Example:} You are playing with a yo-yo with a mass of $M$. The
-  full length of the string is $R$. You decide to see how slowly you can swing
-  it in a vertical circle while keeping the string fully extended, even when
-  the yo-yo is at the top of its swing.
+\begin{frame}{Example Problem: Vertical Motion}
+  \textbf{Example:} You are playing with a yo-yo with a mass $M$. The full
+  length of the string is $R$. You decide to see how slowly you can swing it in
+  a vertical circle while keeping the string fully extended, even when the
+  yo-yo is at the top of its swing.
   \begin{enumerate}[a.]
   \item Calculate the minimum speed at which you can swing the yo-yo while
     keeping it on a circular path.
-  \item Find the tension in the string when the yo-yo is at the side and at the
-    bottom of its swing. 
+  \item If the yo-yo is at its minumum speed at the top of its swing, find the
+    tension in the string when the yo-yo is at the side and at the bottom.
   \end{enumerate}
+\end{frame}
+
+
+
+\begin{frame}{Example Problem: Vertical Motion}
+  %This is a very typical problem for vertical motion.
+  %To solve this problem, we
+  First, we draw free-body diagrams for each of the positions in the circle.
+  There are two forces acting on the yo-yo: gravity ($\vec F_g$) and tension
+  ($\vec F_T$).
+  %\footnote{We are, of
+  %course, ignoring drag and friction, but a this speed, this will not affect
+  %our answers}
+  \begin{center}
+    \begin{tikzpicture}[scale=.75]
+      \draw[thick] circle (2);
+      \begin{scope}[red]
+        \fill (0,2) circle (.1);
+        \draw[vectors] (-.06,2)--+(0,-1) node[left]{$\vec F_T$};
+        \draw[vectors] (.06,2)--+(0,-1.5) node[right]{$\vec F_g$};
+      \end{scope}
+      \begin{scope}[violet]
+        \fill (-2,0) circle (.1);
+        \draw[vectors] (-2,0)--+(1.5,0) node[below left]{$\vec F_T$};
+        \draw[vectors] (-2,0)--+(0,-1.5) node[left]{$\vec F_g$};
+      \end{scope}
+      \begin{scope}[orange]
+        \fill (0,-2) circle (.1);
+        \draw[vectors] (0,-2)--+(0,1.7) node[right]{$\vec F_T$};
+        \draw[vectors] (0,-2)--+(0,-1.5) node[left]{$\vec F_g$}; 
+      \end{scope}
+    \end{tikzpicture}
+  \end{center}
+  \vspace{-.2in}Since the circular motion is not uniform (i.e.\ the speed of
+  the yo-yo is not constant), we have to also use conservation of energy to
+  solve it.
+\end{frame}
+
+
+
+
+\begin{frame}{Example Problem: Vertical Motion}
+  \centering
+  \begin{tikzpicture}
+    \draw[dashed] circle (2);
+    \begin{scope}[red]
+      \fill (0,2) circle (.1);
+      \draw[vectors] (-.06,2)--+(0,-1) node[left]{$\vec F_T$};
+      \draw[vectors] (.06,2)--+(0,-1.5) node[right]{$\vec F_g$};
+      \draw[vectors,black] (-.2,2)--+(-1,0) node[left]{$\vec v$};
+    \end{scope}
+
+    \node[text width=7.8cm,fill=red!10] (fc) at (6.6,2.5){
+      At the top of the circle, centripetal force is provided by both gravity
+      and string tension, i.e.:
+      
+      \vspace{-.1in}\begin{displaymath}
+        F_c = Ma_c\quad\rightarrow\quad
+        F_T+F_g = \frac{Mv^2}R
+      \end{displaymath}\par
+    };
+    \draw[axes,red] (fc) to[out=180,in=80] (0,2.2);
+    \uncover<2->{
+      \node[text width=7.8cm,fill=yellow!10] (min) at (6.6,0){
+        Since $M$, $g$ and $R$ are constant, minimum velocity $v_\text{min}$ on
+        the right side means $F_T=0$ on the left side. We are left with:
+        
+        \vspace{-.1in}\begin{displaymath}
+          Mg = \frac{Mv_\text{min}^2}R
+        \end{displaymath}\par
+      };
+    }
+    \uncover<3->{
+      \node[text width=7.8cm,fill=green!12] at (6.6,-2.4){
+        Cancelling $M$ and solving for $v_\text{min}$, we have:
+      
+        \vspace{-.12in}\begin{displaymath}
+          v^2=gR\quad\rightarrow\quad\boxed{v_\text{min} = \sqrt{gR}}
+        \end{displaymath}\par
+      };
+    }
+  \end{tikzpicture}
+\end{frame}
+
+
+
+
+\begin{frame}{Example Problem: Vertical Motion}
+  \centering
+  \begin{tikzpicture}
+    \fill circle (.05);
+    \draw[dashed] circle (2);
+    \begin{scope}[violet]
+      \fill (-2,0) circle (.1);
+      \draw[vectors] (-2,0)--+(1.5,0) node[below left]{$\vec F_T$};
+      \draw[vectors] (-2,0)--+(0,-1.5) node[right]{$\vec F_g$};
+    \end{scope}
+
+    \node[text width=5.5cm,fill=red!10] (fc) at (-5.2,2.2){
+      At the side of the circle, centripetal force is provided only by
+      tension:
+
+      \vspace{-.1in}\begin{displaymath}
+        F_c = Ma_c\quad\rightarrow\quad
+        F_T = \frac{Mv^2}R
+      \end{displaymath}
+      But we do not know the speed $v$ of the yo-yo at this location yet.
+    };
+    
+    \uncover<2->{
+      \node[text width=4.5cm,fill=yellow!15] (min) at (4.5,2.6){
+        Using conservation of energy:
+        
+        \vspace{-.2in}\begin{align*}
+          K_\text{top} + U_\text{top} &= K_\text{side}\\
+          \frac12Mv_\text{top}^2 + MgR &=\frac 12Mv_\text{side}^2
+        \end{align*}
+      };
+    }
+    
+    \uncover<3->{
+      \node[text width=4.5cm,fill=green!10] at (4.5,.4){
+        Cancelling $M$ term and solving for $v_\text{side}^2$, we have:
+
+        \vspace{-.1in}\begin{displaymath}
+          v_\text{side}^2 = v_\text{top}^2+2gR
+        \end{displaymath}\par
+      };
+    }
+
+
+    \uncover<4->{
+      \node[text width=4.5cm,fill=blue!15] at (4.5,-1.6){
+        Since $v_\text{top}^2=v_\text{min}^2=gR$ that we have just calculated,
+
+        \vspace{-.2in}\begin{displaymath}
+          v_\text{side}^2 = (gR)^2+2gR=3gR
+        \end{displaymath}\par
+      };
+    }
+
+    \uncover<5->{
+      \node[text width=5.5cm,fill=violet!15] at (-5.2,-1.1){
+        Now the final expression for tension:
+        
+        \vspace{-.2in}\begin{displaymath}
+          F_T = \frac{Mv^2}R = \frac{M(3rR)}R=\boxed{3Mg}
+        \end{displaymath}
+        Tension is 3 times the weight of the yo-yo!
+      };
+    }
+  \end{tikzpicture}
+\end{frame}
+
+
+
+\begin{frame}{Example Problem: Vertical Motion}
+  \centering
+  \begin{tikzpicture}
+    \fill circle (.05);
+    \draw[dashed] circle (2);
+    \begin{scope}[orange]
+      \fill (0,-2) circle (.1);
+      \draw[vectors] (0,-2)--+(0,1.7) node[right]{$\vec F_T$};
+      \draw[vectors] (0,-2)--+(0,-1.5) node[left]{$\vec F_g$}; 
+    \end{scope}
+
+    \node[text width=5.6cm,fill=red!10] (fc) at (-5,1.2){
+      At the bottom of the circle, tension contributes to centripetal force,
+      while gravity contributes \emph{against} it:
+
+      \vspace{-.22in}\begin{displaymath}
+        F_c = Ma_c\quad\rightarrow\quad
+        F_T-F_g = \frac{Mv^2}R
+      \end{displaymath}
+      Again, we need to find the speed of the yo-yo at this location.
+    };
+    
+    \uncover<2->{
+      \node[text width=4.6cm,fill=yellow!10] (min) at (4.5,1.7){
+        Using conservation of energy again:
+        
+        \vspace{-.2in}\begin{align*}
+          K_\text{top} + U_\text{top} &= K_\text{bottom}\\
+          \frac12Mv_\text{top}^2 + MgR &=\frac 12Mv_\text{bottom}^2
+        \end{align*}
+      };
+    }
+    
+    \uncover<3->{
+      \node[text width=4.6cm,fill=green!10] at (4.5,-.6){
+        Cancelling $M$ term and solving for $v_\text{bottom}^2$, we have:
+
+        \vspace{-.1in}\begin{displaymath}
+          v_\text{bottom}^2 = v_\text{top}^2+4gR
+        \end{displaymath}\par
+      };
+    }
+
+
+    \uncover<4->{
+      \node[text width=4.6cm,fill=blue!15] at (4.5,-2.5){
+        Recognizing that $v_\text{top}^2=gR$ like we did before:
+
+        \vspace{-.2in}\begin{displaymath}
+          v_\text{bottom}^2 = (gR)^2+4gR=5gR
+        \end{displaymath}\par
+      };
+    }
+
+    \uncover<5->{
+      \node[text width=5.6cm,fill=violet!15] at (-5,-2.2){
+        Now the final expression for tension:
+        
+        \vspace{-.2in}\begin{align*}
+          F_T &= Mg+\frac{Mv^2}R =Mg + \frac{M(5rR)}R\\
+          &=\boxed{6Mg}
+        \end{align*}
+        $F_T$ is 6 times the weight of the yo-yo
+      };
+    }
+  \end{tikzpicture}
 \end{frame}
 
 

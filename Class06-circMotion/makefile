@@ -1,6 +1,8 @@
 all:
 	xelatex PhysAPC-06-circMotion
 	xelatex PhysAPC-06-circMotion
+	xelatex PhysAPC-06-circMotion-print
+	xelatex PhysAPC-06-circMotion-print
 	cd homework ; make
 
 clean:

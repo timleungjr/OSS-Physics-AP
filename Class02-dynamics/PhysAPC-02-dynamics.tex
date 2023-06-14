@@ -29,8 +29,8 @@
   \begin{center}
     \fbox{
       \begin{minipage}{.7\textwidth}
-        \textbf{Law \#1: Every object will remain in its state of rest or
-          uniform motion, until a net external force is applied to it.}
+        \textbf{Law \#1: An object will remain in its state of rest or uniform
+          motion, until a net external force is applied to it.}
       \end{minipage}
     }
   \end{center}
@@ -67,7 +67,7 @@
 
 \begin{frame}{There is No Absolute Rest}
   \begin{center}
-    \fbox{\textbf{Absolute rest cannot be determined}}
+    \fbox{\textbf{\large Absolute rest cannot be determined}}
   \end{center}
   \begin{columns}
     \column{.35\textwidth}
@@ -89,7 +89,7 @@
 
 \begin{frame}{There is No Absolute Rest}
   \begin{center}
-    \fbox{\textbf{Uniform motion is indistinguishable from rest}}
+    \fbox{\textbf{\large Uniform motion is indistinguishable from rest}}
   \end{center}
   \begin{columns}
     \column{.25\textwidth}
@@ -179,9 +179,9 @@
     }
   \end{center}
 
-  For every action force on an object (B) due to another object (A), there is a
-  reaction force which is equal in magnitude but opposite in direction, on
-  object (A), due to object (B):
+  Whenever object (B) exerts any force on object (A), (A) will immediately
+  exert a reaction force on (B) that is equal in magnitude but opposite in
+  direction:
 
   \eq{-.1in}{
     \boxed{\vec F_\text{AB} = -\vec F_\text{BA}}
@@ -189,9 +189,8 @@
   \begin{itemize}
   \item The action and reaction forces act on different objects!
   \item Third law is the natural consequence of the first and second law.
-    Action/reaction forces are \emph{internal} forces.
+    Action/reaction forces are \emph{internal} forces to the system of objects.
   \end{itemize}
-  \vspace{.2in}
 \end{frame}
 
 
@@ -216,15 +215,15 @@
 \section{Common Forces}
 
 \begin{frame}{Common Forces}
-  Common forces that we encounter in AP Physics include:
+  Common forces that we encounter in AP Physics C include:
   \begin{itemize}
-  \item Weight (gravitational force) $\vec w$ (or $\vec F_g$, or just $m\vec g$)
+  \item Weight (gravitational force) $\vec F_g$
   \item Normal force $\vec N$
-  \item Friction (static $\vec f_s$ and kinetic $\vec f_k$)
-  \item Tension $\vec T$
+  \item Friction force (static $\vec f_s$ and kinetic $\vec f_k$)
+  \item Tension force $\vec F_T$
   \item Applied force $\vec F_a$
   \item Spring force $\vec F_e$
-  \item Drag $\vec D$ (fluid resistance)
+  \item Aerdynamic drag $\vec D$ (a.k.a.\ fluid resistance)
   \item Buoyant force $\vec B$ (discussed in fluid mechanics, in AP Physics 2)
   \item Electrostatic force $\vec F_q$ (discussed in E \& M)
   \item Magnetic force $\vec F_m$ (discussed E \& M)
@@ -263,11 +262,10 @@
       \draw[thick] (-1,0)--(2.5,0);
       \draw[mass] rectangle (1.5,1);
       \fill (.75,.5) circle(2pt);
-      \draw[vectors] (.75,.5)--(.75,-.5) node[below]{$m\vec g$};
+      \draw[vectors] (.75,.5)--(.75,-.5) node[below]{$\vec F_g$};
       \draw[vectors] (.75,.5)--(.75,1.5) node[above]{$\vec N$};
     \end{tikzpicture}
-    
-    $m\vec g=-\vec N$\\(special case)
+    %$\vec F_g=-\vec N$\\(special case)
     
     \column{.78\textwidth}
     \begin{itemize}
@@ -293,15 +291,15 @@
         \draw[thick] (0,0)--(5,0);
         \draw[mass] (2,0) rectangle (4,1.5);
         \draw[vectors,rotate around={-30:(3,.75)}]
-        (3,.75)--(3,-1) node[right]{$m\vec g$};
+        (3,.75)--(3,-1) node[right]{$\vec F_g$};
         \draw[vectors,red] (3,.75)--(3,2.25) node[left]{$\vec N$};
         \fill (3,.75) circle (.06);
       \end{scope}
     \end{tikzpicture}
   \end{center}
-  However, it is not always clear what the magnitude of the normal force is.
-  In the next class we will look at methods of finding the magnitude of the
-  normal force, and other forces as well.
+  \textbf{Important note:} It is not always clear what the magnitude of the
+  normal force is. Finding the magnitude of the normal force is part of the
+  analysis process.
 \end{frame}
 
 
@@ -326,7 +324,7 @@
 %        \draw [->,very thick,dotted,red] (1.5,1)--(.45,1)
 %        node[left]{$mg\sin\theta$};
 %        \draw [->,very thick,red] (1.5,1)--(.45,-.5)
-%        node[below]{$m\vec g$};
+%        node[below]{$\vec F_g$};
 %        \draw [->,very thick] (1.5,1)--(1.5,2.5) node[above]{$\vec N$};
 %      \end{scope}
 %    \end{tikzpicture}
@@ -437,7 +435,7 @@
       \draw[thick] (-1,0)--(2.5,0);
       \draw[mass] rectangle (1.5,1);
       \fill (.75,.5) circle(2pt);
-      \draw[vectors] (.75,.5)--(.75,-.5) node[below]{$m\vec g$};
+      \draw[vectors] (.75,.5)--(.75,-.5) node[below]{$\vec F_g$};
       \draw[vectors] (.75,.5)--(.75,1.5) node[above]{$\vec N$};
       \draw[vectors] (.75,.5)--(2.,.5) node[right]{$\vec F_a$};
       \draw[vectors] (.75,.5)--(.1,.5) node[left]{$\vec f$};
@@ -529,7 +527,7 @@
     \vspace{-.15in}
     \begin{center}
       \begin{tikzpicture}[scale=.9]
-        \draw[vectors] (0,0)--(0,-1.5) node[below]{$m\vec g$};
+        \draw[vectors] (0,0)--(0,-1.5) node[below]{$\vec F_g$};
         \draw[vectors,black!2] (0,0)--(0,1.5) node[above]{$\vec D$};
         \fill circle (.07);
       \end{tikzpicture}
@@ -543,7 +541,7 @@
     \vspace{-.15in}
     \begin{center}
       \begin{tikzpicture}[scale=.9]
-        \draw[vectors] (0,0)--(0,-1.5) node[below]{$m\vec g$};
+        \draw[vectors] (0,0)--(0,-1.5) node[below]{$\vec F_g$};
         \draw[vectors,black!2] (0,0)--(0,1.5) node[above]{$\vec D$};
         \draw[vectors,green] (0,0)--(0,.6) node[above]{$\vec D$};
         \fill circle (.07);
@@ -558,7 +556,7 @@
     \vspace{-.15in}
     \begin{center}
       \begin{tikzpicture}[scale=.9]
-        \draw[vectors] (0,0)--(0,-1.5) node[below]{$m\vec g$};
+        \draw[vectors] (0,0)--(0,-1.5) node[below]{$\vec F_g$};
         \draw[vectors,red] (0,0)--(0,1.5) node[above]{$\vec D$};
         \fill circle (.07);
       \end{tikzpicture}
@@ -606,7 +604,7 @@
 
 
 \begin{frame}{Tension Force}
-  \textbf{Tension} $\vec T$ is the force that is transmitted through objects
+  \textbf{Tension} $\vec F_T$ is the force that is transmitted through objects
   that can be stretched, e.g.\ a rope that is being pulled
   \begin{center}
     \pic{.6}{graphics/3-rope}
@@ -644,7 +642,7 @@
       \draw[thick] (0,.0)--(0,2);
       \fill[red] (5.5,1) circle (.06);
       \draw[vectors,red] (5.5,1)--(4,1) node[above]{$\vec F_s$};
-      \draw[dashed] (3,0)--(3,2) node[above]{Equilibrium position};
+      \draw[dashed] (3,0)--(3,2) node[above]{\scriptsize Equilibrium position};
       \draw[vectors] (3,.3)--(5,.3) node[midway,below]{$\vec x$};
     \end{tikzpicture}
     \hspace{.2in}
@@ -698,7 +696,7 @@
   \begin{center}
     \begin{tikzpicture}[scale=.8]
       \fill (1.5,1) circle(.1);
-      \draw[vectors] (1.5,1)--(1.5,-.5) node[below]{$m\vec g$};
+      \draw[vectors] (1.5,1)--(1.5,-.5) node[below]{$\vec F_g$};
       \draw[vectors] (1.5,1)--(1.5,2.5) node[above]{$\vec N$};
       \draw[vectors] (1.5,1)--(3.1,1) node[right]{$\vec F_a$};
       \draw[vectors] (1.5,1)--(.75,1) node[left] {$\vec f$};
@@ -707,7 +705,7 @@
   However, for motion where \emph{rotation} is (at least) a possibility, we
   must note that:
   \begin{itemize}
-  \item Gravitational force $m\vec g$ acts at the CM, but
+  \item Gravitational force $\vec F_g$ acts at the CM, but
   \item Normal force $\vec N$, friction $\vec f$ and applied force $\vec F_a$
     act at the point of contact
   \end{itemize}
@@ -717,14 +715,14 @@
 
 \begin{frame}{Free-Body Diagrams}
   In those cases, forces should be drawn where they are applied. For example, a
-  sphere rolling down a ramp should have weight $m\vec g$, normal force $\vec N$
+  sphere rolling down a ramp should have weight $\vec F_g$, normal force $\vec N$
   and static friction $\vec f_s$ acting on it:
   \begin{center}
     \begin{tikzpicture}[scale=1.1,rotate=-30]
       \shade[ball color=red!20] circle(1);
       \draw[thick] (-2,-1)--(2,-1);
       \fill circle(.05);
-      \draw[vectors,rotate=30] (0,0)--(0,-1.5) node[below]{$m\vec g$};
+      \draw[vectors,rotate=30] (0,0)--(0,-1.5) node[below]{$\vec F_g$};
       \draw[vectors] (0,-1)--(0,.3) node[above]{$\vec N$};
       \draw[vectors] (0,-1)--(-.5,-1) node[left]{$\vec f_s$};
       \draw[axes] (2,0)--(2.5,0) node[right]{$x$};
