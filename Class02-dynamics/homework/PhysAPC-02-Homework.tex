@@ -2,7 +2,7 @@
 \newcounter{lastmc}
 
 \begin{document}
-\genheader
+%\genheader
 
 \gentitle{2}{DYNAMICS}
 
@@ -69,7 +69,7 @@
       \choice\SI{.22}\second
       \choice\SI{.44}\second
       \choice\SI{.67}\second
-      \choice\SI{1.}\second
+      \choice\SI{1.0}\second
     \end{choices}
     \label{pos2}
     \columnbreak
@@ -81,14 +81,14 @@
     \begin{center}
       \begin{tikzpicture}
         \begin{scope}[thick]
-          \draw(0,0)--(-3.46,0)--(-3.46,2)--cycle;
-          \draw[thick](-1,0) arc(180:150:1) node[midway,left]{\ang{30}};
-        \begin{scope}[rotate=-30]
-          \draw(-2,0) rectangle(-2.8,.8);
-          \fill(-2.4,.4) circle(.05);
-          \draw[->](-2.4,.4)--(-1.,.4)node[right]{$v$};
+          \draw (0,0)--(-3.46,0)--(-3.46,2)--cycle;
+          \draw (-1,0) arc (180:150:1) node[midway,left]{\ang{30}};
+          \begin{scope}[rotate=-30]
+            \draw (-2,0) rectangle(-2.8,.8);
+            \fill (-2.4,.4) circle(.05);
+            \draw[->] (-2.4,.4)--(-1.,.4) node[right]{$v$};
+          \end{scope}
         \end{scope}
-      \end{scope}
       \end{tikzpicture}
     \end{center}
     \begin{choices}
@@ -144,13 +144,15 @@
       \begin{center}
         \begin{tikzpicture}[scale=.8]
           \begin{scope}[thick]
-            \draw circle(1);
-            \fill circle(.08);
-            \draw(1,0)--(1,-2.5);
-            \draw(.5,-2.5) rectangle(1.5,-3.3) node[midway]{\SI1{\kilo\gram}};
-            \draw(-1,0)--(-1,-1.5);
-            \draw(-1.7,-1.5) rectangle(-.3,-2.5) node[midway]{\SI2{\kilo\gram}};
-            \draw[|<->|](-2,-2.5)--(-2,-5.5) node[midway,fill=white]{$D$};
+            \draw circle (1);
+            \fill circle (.08);
+            \draw (1,0)--(1,-2.5);
+            \draw (.5,-2.5) rectangle (1.5,-3.3)
+            node[midway]{\SI1{\kilo\gram}};
+            \draw (-1,0)--(-1,-1.5);
+            \draw (-1.7,-1.5) rectangle (-.3,-2.5)
+            node[midway]{\SI2{\kilo\gram}};
+            \draw[|<->|] (-2,-2.5)--(-2,-5.5) node[midway,fill=white]{$D$};
           \end{scope}
         \end{tikzpicture}
       \end{center}
@@ -368,9 +370,9 @@
         \begin{tikzpicture}[scale=.95]
           \fill[pattern=north east lines] (3,0) rectangle(9,-.3);
           \draw[thick] (3,0)--(9,0);
-          \draw[thick](5,1) rectangle(6,2) node[midway]{\SI2{\kilo\gram}};
-          \draw[thick](4,0) rectangle(7,1) node[midway]{\SI4{\kilo\gram}};
-          \draw[thick,->](7,.5)--(8,.5) node[right]{$\vec F$};
+          \draw[thick] (5,1) rectangle(6,2) node[midway]{\SI2{\kilo\gram}};
+          \draw[thick] (4,0) rectangle(7,1) node[midway]{\SI4{\kilo\gram}};
+          \draw[thick,->] (7,.5)--(8,.5) node[right]{$\vec F$};
         \end{tikzpicture}
       \end{center}
     }
@@ -440,7 +442,7 @@
       \draw[ultra thick](-2,0)--(5,0);
       \draw[thick,dashed](2,1.5)--(5,1.5);
       \draw[ultra thick,->](2,1.5)--(4.5,3.5) node[midway,above left]{$F_1$};
-      \draw[->,thick](3,1.5) arc(0:40:1) node[midway,right]{$\theta$};
+      \draw[->,thick] (3,1.5) arc(0:40:1) node[midway,right]{$\theta$};
     \end{tikzpicture}
   }
   \question A block of mass $m$ is pulled along a rough horizontal surface by a
@@ -545,88 +547,88 @@
   \end{parts}
   \newpage
   
-  % THIS IS TAKEN FROM THE 2011 AP PHYSICS C FREE-RESPONSE QUESTION MECH 2
-  \uplevel{
-    \cpic{.5}{amusement}
-  }
-  
-  \question An amusement park ride features a passenger compartment of mass $M$
-  that is released from rest at point $A$, as shown in the figure above, and
-  moves along a track to point $E$. The compartment is in free fall between
-  points $A$ and $B$, which are a distance of $3R/4$ apart, then moves along
-  the circular arc of radius $R$ between points $B$ and $D$. Assume the track is
-  frictionless from point $A$ to point $D$ and the dimensions of the passenger
-  compartment are negligible compared to $R$.
-  \begin{parts}
-    \part On the dot below that represents the passenger compartment, draw and
-    label the forces (not components) that act on the passenger compartment
-    when it is at point $C$, which is at an angle $\theta$ from point $B$.
-    \begin{center}
-      \begin{tikzpicture}
-        \fill circle(.25);
-        \draw[rotate=35,dashed,very thick](0,2)--(0,-2);
-      \end{tikzpicture}
-    \end{center}
-    
-    \part In terms of $\theta$ and the magnitudes of the forces drawn in part
-    (a), determine an expression for the magnitude of the centripetal force
-    acting on the compartment at point $C$. If you need to draw anything
-    besides what you have shown in part (a) to assist in your solution, use the
-    space below. Do NOT add anything to the figure in part (a).
-    \vspace{\stretch1}
-    
-    \part Derive an expression for the speed $v_D$ of the passenger compartment
-    as it reaches point $D$ in terms of $M$, $R$, and fundamental constants, as
-    appropriate.
-    \vspace{\stretch1}
-    
-    \uplevel{
-      A force acts on the compartment between points $D$ and $E$ and brings it
-      to rest at point $E$.
-    }
-    
-    \part If the compartment is brought to rest by friction, calculate the
-    numerical value of the coefficient of friction $\mu$ between the
-    compartment and the track.
-    \vspace{\stretch1}
-    \newpage
-    
-    \uplevel{
-      Now consider the case in which there is no friction between the
-      compartment and the track, but instead the compartment is brought to rest
-      by a braking force $-k\vec v$, where $k$ is a constant and $\vec v$ is the
-      velocity of the compartment. Express all algebraic answers to the
-      following in terms of $M$, $R$, $k$, $v_D$, and fundamental constants, as
-      appropriate.
-    }
-
-    \part Write, but do NOT solve, the differential equation for $v(t)$.
-    \vspace{\stretch1}
-    \label{diffeq}
-    
-    \part Solve the differential equation you wrote in part (\ref{diffeq}).
-    \vspace{\stretch1}
-    
-    \part On the axes below, sketch a graph of the magnitude of the
-    acceleration of the compartment as a function of time. On the axes,
-    explicitly label any intercepts, asymptotes, maxima, or minima with
-    numerical values or algebraic expressions, as appropriate.
-    \begin{center}
-      \vspace{.2in}
-      \begin{tikzpicture}[scale=1.5]
-        \begin{scope}[very thick,->]
-          \draw(0,0)--(7,0) node[right]{$t$};
-          \draw(0,0)--(0,3) node[above]{$a$};
-        \end{scope}
-      \end{tikzpicture}
-    \end{center}
-    \vspace{\stretch2}
-  \end{parts}
-  \newpage
+%  % THIS IS TAKEN FROM THE 2011 AP PHYSICS C FREE-RESPONSE QUESTION MECH 2
+%  \uplevel{
+%    \cpic{.5}{amusement}
+%  }
+%  
+%  \question An amusement park ride features a passenger compartment of mass $M$
+%  that is released from rest at point $A$, as shown in the figure above, and
+%  moves along a track to point $E$. The compartment is in free fall between
+%  points $A$ and $B$, which are a distance of $3R/4$ apart, then moves along
+%  the circular arc of radius $R$ between points $B$ and $D$. Assume the track is
+%  frictionless from point $A$ to point $D$ and the dimensions of the passenger
+%  compartment are negligible compared to $R$.
+%  \begin{parts}
+%    \part On the dot below that represents the passenger compartment, draw and
+%    label the forces (not components) that act on the passenger compartment
+%    when it is at point $C$, which is at an angle $\theta$ from point $B$.
+%    \begin{center}
+%      \begin{tikzpicture}
+%        \fill circle(.25);
+%        \draw[rotate=35,dashed,very thick](0,2)--(0,-2);
+%      \end{tikzpicture}
+%    \end{center}
+%    
+%    \part In terms of $\theta$ and the magnitudes of the forces drawn in part
+%    (a), determine an expression for the magnitude of the centripetal force
+%    acting on the compartment at point $C$. If you need to draw anything
+%    besides what you have shown in part (a) to assist in your solution, use the
+%    space below. Do NOT add anything to the figure in part (a).
+%    \vspace{\stretch1}
+%    
+%    \part Derive an expression for the speed $v_D$ of the passenger compartment
+%    as it reaches point $D$ in terms of $M$, $R$, and fundamental constants, as
+%    appropriate.
+%    \vspace{\stretch1}
+%    
+%    \uplevel{
+%      A force acts on the compartment between points $D$ and $E$ and brings it
+%      to rest at point $E$.
+%    }
+%    
+%    \part If the compartment is brought to rest by friction, calculate the
+%    numerical value of the coefficient of friction $\mu$ between the
+%    compartment and the track.
+%    \vspace{\stretch1}
+%    \newpage
+%    
+%    \uplevel{
+%      Now consider the case in which there is no friction between the
+%      compartment and the track, but instead the compartment is brought to rest
+%      by a braking force $-k\vec v$, where $k$ is a constant and $\vec v$ is the
+%      velocity of the compartment. Express all algebraic answers to the
+%      following in terms of $M$, $R$, $k$, $v_D$, and fundamental constants, as
+%      appropriate.
+%    }
+%
+%    \part Write, but do NOT solve, the differential equation for $v(t)$.
+%    \vspace{\stretch1}
+%    \label{diffeq}
+%    
+%    \part Solve the differential equation you wrote in part (\ref{diffeq}).
+%    \vspace{\stretch1}
+%    
+%    \part On the axes below, sketch a graph of the magnitude of the
+%    acceleration of the compartment as a function of time. On the axes,
+%    explicitly label any intercepts, asymptotes, maxima, or minima with
+%    numerical values or algebraic expressions, as appropriate.
+%    \begin{center}
+%      \vspace{.2in}
+%      \begin{tikzpicture}[scale=1.5]
+%        \begin{scope}[very thick,->]
+%          \draw(0,0)--(7,0) node[right]{$t$};
+%          \draw(0,0)--(0,3) node[above]{$a$};
+%        \end{scope}
+%      \end{tikzpicture}
+%    \end{center}
+%    \vspace{\stretch2}
+%  \end{parts}
+%  \newpage
 
   % TAKEN FROM THE 2009 AP PHYSICS C MECH EXAM FREE-RESPONSE QUESTION MECH 3
   \uplevel{
-    \cpic{.65}{pulley1}
+    \cpic{.62}{pulley1}
   }
   \question A block of mass $M/2$ rests on a frictionless horizontal table, as
   shown above. It is connected to one end of a string that passes over a

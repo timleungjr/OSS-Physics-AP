@@ -3,7 +3,7 @@
 
 \renewcommand{\arraystretch}{1.2}
 \begin{document}
-\genheader
+%\genheader
 
 \gentitle{21}{CIRCUIT ANALYSIS, PART 2}
 
@@ -82,13 +82,12 @@
       \choice $\mathcal E/2RC$
       \choice $C\mathcal E/R$
     \end{choices}
-    \columnbreak
     
     \question Circuit I and Circuit II shown each consist of a capacitor and a
     resistor. A battery is connected across a and b, and then removed. Which of
     the following statements is true of the circuits?
     \begin{center}
-      \begin{tikzpicture}
+      \begin{tikzpicture}[scale=.8]
         \node[above] at (1,2.5){Circuit I};
         \draw(0,1.25) to[short,*-](0,2.5)--(2,2.5) to[C=$C$](2,1.25)
         to[R=$R$](2,0)--(0,0) to[short,-*](0,0.75);
@@ -96,7 +95,7 @@
         \node at (-0.3,1.25) {b};
       \end{tikzpicture}
       \hspace{.5in}
-      \begin{tikzpicture}
+      \begin{tikzpicture}[scale=.8]
         \node[above] at (1.5,2){Circuit II};
         \draw(0,1.25) to[short,*-](0,2)--(1.5,2) to[R=$R$](1.5,0)--(0,0)
         to[short,-*](0,0.75);
@@ -117,7 +116,8 @@
       \choice Current will continue to flow in both circuits after the battery
       is removed.
     \end{choices}
-  
+    \columnbreak
+    
     \question A thin sheet of copper is placed in a uniform magnetic field. A
     battery is connected to the top and bottom ends of the copper sheet, so that
     conventional current flows from the top to the bottom of the sheet.
@@ -308,84 +308,84 @@
   \newpage
 
   
-  %TAKEN FROM 2017 AP PHYSICS C EXAM FREE-RESPONSE QUESTION E&M 2
-  \uplevel{
-    \cpic{.4}{r-c-3}
-  }
-  \question In the circuit above, an ideal battery of voltage $V_0$ is
-  connected to a capacitor with capacitance $C_0$ and resistors with
-  resistances $R_1$ and $R_2$ , with $R_1>R_2$. The switch $S$ is open, and the
-  capacitor is initially uncharged.
-  \begin{parts}
-    \part The switch is closed at time $t=0$. On the axes below, sketch the
-    charge $q$ on the capacitor as a function of time $t$. Explicitly label any
-    intercepts, asymptotes, maxima, or minima with numerical values or algebraic
-    expressions, as appropriate.
-    \begin{center}
-      \begin{tikzpicture}[scale=.65]
-        \draw[very thick,->](0,0)--(10,0) node[right]{$t$};
-        \draw[very thick,->](0,0)--(0,5)  node[above]{$q$};
-      \end{tikzpicture}
-    \end{center}
-    \vspace{\stretch1}
-    
-    \part On the axes below, sketch the current $I$ through each resistor as a
-    function of time $t$. Clearly label the two curves as $I_1$ and $I_2$ , the
-    currents through resistors $R_1$ and $R_2$, respectively. Explicitly label
-    any intercepts, asymptotes, maxima, or minima with numerical values or
-    algebraic expressions, as appropriate.
-    \begin{center}
-      \begin{tikzpicture}[scale=.65]
-        \draw[very thick,->](0,0)--(10,0) node[right]{$t$};
-        \draw[very thick,->](0,0)--(0,5)  node[above]{$I$};
-      \end{tikzpicture}
-    \end{center}
-    \vspace{\stretch1}
-    \newpage
-    
-    \uplevel{
-      The circuit is constructed using an ideal \SI{1.5}{\volt} battery, an
-      \SI{80}{\micro\farad} capacitor, and resistors $R_1=\SI{150}\ohm$ and
-      $R_2=\SI{100}\ohm$. The switch is closed, allowing the capacitor to fully
-      charge. The switch is then opened, allowing the capacitor to discharge.
-    }
-
-    \part The time it takes to charge the capacitor to \SI{50}{\percent} of its
-    maximum charge is $\Delta t_C$. The time it takes for the capacitor to
-    discharge to \SI{50}{\percent} of its maximum charge is $\Delta t_D$.
-    Which of the following correctly relates the two time intervals?
-    
-    \vspace{.1in}
-    \underline{\hspace{.3in}} $\Delta t_C > \Delta t_D$\hspace{.3in}
-    \underline{\hspace{.3in}} $\Delta t_C = \Delta t_D$\hspace{.3in}
-    \underline{\hspace{.3in}} $\Delta t_C < \Delta t_D$
-
-    \vspace{.1in}Justify your answer.
-    \vspace{\stretch1}
-    
-    \part Calculate the current through resistor $R_2$ immediately after
-    the switch is opened.
-    \vspace{\stretch1}
-
-    \part Is the current through resistor $R_2$ increasing, decreasing, or
-    constant immediately after the switch is opened?
-      
-    \vspace{.1in}
-    \underline{\hspace{.3in}} Increasing\hspace{.3in}
-    \underline{\hspace{.3in}} Decreasing\hspace{.3in}
-    \underline{\hspace{.3in}} Constant
-
-    \vspace{.1in}Justify your answer.
-    \vspace{\stretch1}
-    
-    \part Calculate the energy stored in the capacitor immediately after the
-    switch is opened.
-    \vspace{\stretch1}
-    
-    \part Calculate the energy dissipated by resistor $R_1$ as the capacitor
-    completely discharges.
-    \vspace{\stretch1}
-  \end{parts}
+%  %TAKEN FROM 2017 AP PHYSICS C EXAM FREE-RESPONSE QUESTION E&M 2
+%  \uplevel{
+%    \cpic{.4}{r-c-3}
+%  }
+%  \question In the circuit above, an ideal battery of voltage $V_0$ is
+%  connected to a capacitor with capacitance $C_0$ and resistors with
+%  resistances $R_1$ and $R_2$ , with $R_1>R_2$. The switch $S$ is open, and the
+%  capacitor is initially uncharged.
+%  \begin{parts}
+%    \part The switch is closed at time $t=0$. On the axes below, sketch the
+%    charge $q$ on the capacitor as a function of time $t$. Explicitly label any
+%    intercepts, asymptotes, maxima, or minima with numerical values or algebraic
+%    expressions, as appropriate.
+%    \begin{center}
+%      \begin{tikzpicture}[scale=.65]
+%        \draw[very thick,->](0,0)--(10,0) node[right]{$t$};
+%        \draw[very thick,->](0,0)--(0,5)  node[above]{$q$};
+%      \end{tikzpicture}
+%    \end{center}
+%    \vspace{\stretch1}
+%    
+%    \part On the axes below, sketch the current $I$ through each resistor as a
+%    function of time $t$. Clearly label the two curves as $I_1$ and $I_2$ , the
+%    currents through resistors $R_1$ and $R_2$, respectively. Explicitly label
+%    any intercepts, asymptotes, maxima, or minima with numerical values or
+%    algebraic expressions, as appropriate.
+%    \begin{center}
+%      \begin{tikzpicture}[scale=.65]
+%        \draw[very thick,->](0,0)--(10,0) node[right]{$t$};
+%        \draw[very thick,->](0,0)--(0,5)  node[above]{$I$};
+%      \end{tikzpicture}
+%    \end{center}
+%    \vspace{\stretch1}
+%    \newpage
+%    
+%    \uplevel{
+%      The circuit is constructed using an ideal \SI{1.5}{\volt} battery, an
+%      \SI{80}{\micro\farad} capacitor, and resistors $R_1=\SI{150}\ohm$ and
+%      $R_2=\SI{100}\ohm$. The switch is closed, allowing the capacitor to fully
+%      charge. The switch is then opened, allowing the capacitor to discharge.
+%    }
+%
+%    \part The time it takes to charge the capacitor to \SI{50}{\percent} of its
+%    maximum charge is $\Delta t_C$. The time it takes for the capacitor to
+%    discharge to \SI{50}{\percent} of its maximum charge is $\Delta t_D$.
+%    Which of the following correctly relates the two time intervals?
+%    
+%    \vspace{.1in}
+%    \underline{\hspace{.3in}} $\Delta t_C > \Delta t_D$\hspace{.3in}
+%    \underline{\hspace{.3in}} $\Delta t_C = \Delta t_D$\hspace{.3in}
+%    \underline{\hspace{.3in}} $\Delta t_C < \Delta t_D$
+%
+%    \vspace{.1in}Justify your answer.
+%    \vspace{\stretch1}
+%    
+%    \part Calculate the current through resistor $R_2$ immediately after
+%    the switch is opened.
+%    \vspace{\stretch1}
+%
+%    \part Is the current through resistor $R_2$ increasing, decreasing, or
+%    constant immediately after the switch is opened?
+%      
+%    \vspace{.1in}
+%    \underline{\hspace{.3in}} Increasing\hspace{.3in}
+%    \underline{\hspace{.3in}} Decreasing\hspace{.3in}
+%    \underline{\hspace{.3in}} Constant
+%
+%    \vspace{.1in}Justify your answer.
+%    \vspace{\stretch1}
+%    
+%    \part Calculate the energy stored in the capacitor immediately after the
+%    switch is opened.
+%    \vspace{\stretch1}
+%    
+%    \part Calculate the energy dissipated by resistor $R_1$ as the capacitor
+%    completely discharges.
+%    \vspace{\stretch1}
+%  \end{parts}
 
 
   

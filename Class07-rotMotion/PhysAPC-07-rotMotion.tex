@@ -31,8 +31,8 @@
       \draw[dash dot] circle(2.5);
       \begin{scope}[rotate=38]
         \draw[vectors] (2.45,0)--(1,0) node[left]{$\vec F_c$};
-        \draw[vectors] (2.5,0) arc(0:30:2.5) node[left]{$\omega$};
-        \draw[mass] (2.5,0) circle(.1);
+        \draw[vectors] (2.5,0) arc (0:30:2.5) node[left]{$\omega$};
+        \draw[mass] (2.5,0) circle (.1);
       \end{scope}
     \end{tikzpicture}
 
@@ -273,8 +273,10 @@
 
   \item\vspace{-.15in} Most often the forces that generate torques are spread
     over an area, e.g.\ force on the head of a screwdriver
-  \item For rotational motion, we only care about the torque; in most cases, we
-    don't have to worry about exactly how the force generates the torque
+    \begin{itemize}
+    \item For rotational motion, we only care about the torque; in most cases,
+      we don't have to worry about exactly how the force generates the torque
+    \end{itemize}
   \end{itemize}
 \end{frame}
 
@@ -395,8 +397,8 @@
   }
     
   The quantity $I=mr^2$ is called the \textbf{moment of inertia}\footnote{Also
-  known as \textbf{rotational inertia} in AP Physics}, with a unit of
-  \textbf{kilogram meter squared} (\si{\kilo\gram\metre\squared}).
+  known as \textbf{rotational inertia} in AP Physics in recently years}, with
+  a unit of \textbf{kilogram meter squared} (\si{\kilo\gram\metre\squared}).
 
   \eq{-.1in}{
     \boxed{\vec L=I\vec\omega}
@@ -416,10 +418,10 @@
     \boxed{I=mr^2}
   }
 
-  For a \emph{collection of particles} rotating at the same $\omega$, each of
-  mass $m_i$ at distance $r_i$ from the pivot:
+  \vspace{-.1in}For a \emph{collection of discrete particles} rotating at the
+  same $\omega$, each of mass $m_i$ at distance $r_i$ from the pivot:
 
-  \eq{-.1in}{
+  \eq{-.15in}{
     \boxed{I=\sum m_ir_i^2}
   }
 
@@ -467,9 +469,9 @@
   }
 
   This does \emph{not} mean that the object has no translational motion; it
-  just means that the object's \emph{translational state} is not changing,
-  i.e.\ momentum $\vec p$ is constant. For constant mass $m$, this means that
-  $\vec a=\vec 0$.
+  just means that the object's translational state is not changing, i.e.\
+  momentum $\vec p$ is constant. For constant mass $m$, this means that
+  $\vec a=\vec 0$ and $\vec v=\text{constant}$.
 \end{frame}
 
 
@@ -484,9 +486,9 @@
   }
   
   This does \emph{not} mean that the object has no rotational motion; it just
-  means that the object's \emph{rotational state} is not changing, i.e.\
+  means that the object's rotational state is not changing, i.e.\
   angular momentum $\vec L$ is constant. For constant moment of inertia $I$,
-  this means that $\vec\alpha=\vec 0$.
+  this means that $\vec\alpha=\vec 0$, and $\vec\omega=\text{constant}$.
 \end{frame}
 
 
@@ -606,57 +608,127 @@
 \end{frame}
 
 
-\begin{frame}{Spinning Disk}
-  \begin{columns}
-    \column{.3\textwidth}
-    \begin{tikzpicture}
-      \draw[mass] circle (2);
-      \draw[thick] circle (.13);
-      \fill (0,0)--(.13,0) arc (0:90:.13) node[above=-2]{\scriptsize CM/pivot}
-      --(0,0);
-      \fill (0,0)--(-.13,0) arc(180:270:.13)--(0,0);
-      \draw[axes,rotate=-30] (1,0) arc (0:60:1) node[above]{$\omega$, $\alpha$};
-      \draw[axes,rotate=40] (0,0)--(-2,0) node[midway,right]{$R$};
-      \node at (0,-2.5) {Mass $M$};
-      \node at (0,-3.3) {$I=\dfrac12MR^2$};
-      \only<2>{
-        \begin{scope}[violet]
-          \draw[thick,dash dot] (0,-.13)--(0,-2);
-          \foreach \y in {-.4,-.8,...,-2.1} \draw[vectors] (0,\y)--(-.8*\y,\y);
-          \node[right] at (1.6,-2) {$\vec v=\omega R$};
-        \end{scope}
-      }
-    \end{tikzpicture}
 
-    \column{.7\textwidth}
-    \only<2>{Speed at any point on this disk is proportional to its distance
-      to the pivot:
+\section{Work \& Energy in Rotational Motion}
 
-      \eq{-.1in}{
-        v=\omega r \quad\text{for}\quad 0\leq r\leq R
-      }
+\begin{frame}{Mechanical Work}
+  For translational motion, mechanical work is defined as
+
+  \eq{-.1in}{
+    W_t=\int_{x_1}^{x_2}F\dl x
+  }
+
+  For rotational motion, mechanical work is defined similarly as:
+
+  \eq{-.1in}{
+    W=\int_{x_1}^{x_2}F\dl x=\int_{\theta_1}^{\theta_2}F(r\dl\theta)
+    \quad\rightarrow\quad
+    \boxed{
+      W_r=\int_{\theta_1}^{\theta_2}\tau\dl\theta
     }
-    \only<3>{When it is spinning, it has an angular momentum of
+  }
 
-      \eq{-.1in}{
-        L = I\omega
-      }
+  The work-energy theorem still applies to rotational motion, i.e.:
 
-      and a rotational kinetic energy:
-      
-      \eq{-.1in}{
-        K_r = \frac12I\omega^2
-      }
-    }
+  \eq{-.1in}{
+    W_r=\Delta K_r
+  }
+\end{frame}
+
+
+
+\begin{frame}{Rotational Kinetic Energy}
+  To find the kinetic energy of a rotating system of particles (discrete number
+  of particles, or continuous mass distribution), we sum the
+  kinetic energies of the individual particles:
     
+  \eq{-.1in}{
+    K_r=\sum_i\frac12m_iv_i^2=\sum\frac12m_i(r_i\omega)^2
+    =\frac12\left(\sum_i m_ir_i^2\right)\omega^2
+  }
+  
+  It's no surprise that rotational kinetic energy is given by:
+  
+  \eq{-.1in}{
+    \boxed{K_r=\frac12I\omega^2}
+  }
+\end{frame}
+
+
+
+\begin{frame}{Kinetic Energy of a Rotating System}
+  The total kinetic energy of a rotating system is the sum of its translational
+  and rotational kinetic energies at its center of mass:
+
+  \eq{-.1in}{
+    \boxed{K=K_t+K_r=\frac12mv_\text{cm}^2+\frac12I_\text{cm}\omega^2}
+  }
+  
+  In this case, $I_\text{cm}$ is calculated at the CM. For simple problems, we
+  only need to compute rotational kinetic energy at the pivot:
+
+  \eq{-.1in}{
+    \boxed{K=\frac12I_\text{p}\omega^2}
+  }
+  
+  In this case, the $I_\text{p}$ is calculated at the pivot.
+  \textbf{IMPORTANT:} $I_\text{cm}\neq I_\text{p}$
+\end{frame}
+
+
+
+\begin{frame}{Spinning Disk}
+%  \begin{columns}
+%    \column{.3\textwidth}
+  \begin{tikzpicture}
+    \draw[mass] circle (2);
+    \draw[thick] circle (.13);
+    \fill (0,0)--(.13,0) arc (0:90:.13) node[above=-2]{\scriptsize CM/pivot}
+    --(0,0);
+    \fill (0,0)--(-.13,0) arc(180:270:.13)--(0,0);
+    \draw[axes,rotate=-30] (1,0) arc (0:60:1) node[above]{$\omega$, $\alpha$};
+    \draw[axes,rotate=40] (0,0)--(-2,0) node[midway,right]{$R$};
+    \node at (0,-2.5) {Mass $M$};
+    \node at (0,-3.3) {$I=\dfrac12MR^2$};
+%    \only<2>{
+%      \begin{scope}[violet]
+%        \draw[thick,dash dot] (0,-.13)--(0,-2);
+%        \foreach \y in {-.4,-.8,...,-2.1} \draw[vectors] (0,\y)--(-.8*\y,\y);
+%        \node[right] at (1.6,-2) {$\vec v=\omega R$};
+%      \end{scope}
+%    }
+  \end{tikzpicture}
+
+%    \column{.7\textwidth}
+%    \only<2>{Speed at any point on this disk is proportional to its distance
+%      to the pivot:
+%
+%      \eq{-.1in}{
+%        v=\omega r \quad\text{for}\quad 0\leq r\leq R
+%      }
+%    }
+%    \only<3>{When it is spinning, it has an angular momentum of
+%
+%      \eq{-.1in}{
+%        L = I\omega
+%      }
+%
+%      and a rotational kinetic energy:
+%      
+%      \eq{-.1in}{
+%        K_r = \frac12I\omega^2
+%      }
+%    }
+%    
 %    \item Any angular acceleration that it may have will be due to the net
 %      torque at the pivot/CM:
 %      \begin{displaymath}
 %        \tau_\text{net}=\frac{\Delta L}{\Delta t}=I\alpha
 %      \end{displaymath}
 %    \end{itemize}
-  \end{columns}
+%  \end{columns}
 \end{frame}
+
 
 
 \begin{frame}{A Rotating Rod}

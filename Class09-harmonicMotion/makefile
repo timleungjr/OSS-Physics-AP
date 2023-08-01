@@ -10,5 +10,6 @@ clean:
 
 public:
 	mkdir -p $(DESTINATION)/Class09
-	cp *-print.pdf $(DESTINATION)/Class09
-	cp homework/*Homework.pdf $(DESTINATION)/Class09
+	mkdir -p $(DESTINATION)/Class10
+	cp *.pdf $(DESTINATION)/Class09
+	cp homework/*Homework.pdf $(DESTINATION)/Class10

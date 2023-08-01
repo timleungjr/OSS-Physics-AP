@@ -11,5 +11,5 @@ clean:
 
 public:
 	mkdir -p $(DESTINATION)/Class07
-	cp *-print.pdf $(DESTINATION)/Class07
+	cp *.pdf $(DESTINATION)/Class07
 	cp homework/*-Homework.pdf $(DESTINATION)/Class07

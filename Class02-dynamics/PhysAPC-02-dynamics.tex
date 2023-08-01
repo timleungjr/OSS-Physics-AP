@@ -18,7 +18,7 @@
 
 \begin{frame}{Dynamics}
   While \textbf{kinematics} describes the motion of any object mathematically,
-  \textbf{dynamics} describes \emph{what} causes motion motion to change
+  \textbf{dynamics} describes \emph{what} causes motion to change
 \end{frame}
 
 
@@ -188,8 +188,8 @@
   }
   \begin{itemize}
   \item The action and reaction forces act on different objects!
-  \item Third law is the natural consequence of the first and second law.
-    Action/reaction forces are \emph{internal} forces to the system of objects.
+  \item Third law is an application of the first law. Action/reaction forces
+    are \emph{internal} forces to the system of objects.
   \end{itemize}
 \end{frame}
 
@@ -218,13 +218,13 @@
   Common forces that we encounter in AP Physics C include:
   \begin{itemize}
   \item Weight (gravitational force) $\vec F_g$
-  \item Normal force $\vec N$
+  \item Normal force $\vec F_N$
   \item Friction force (static $\vec f_s$ and kinetic $\vec f_k$)
   \item Tension force $\vec F_T$
   \item Applied force $\vec F_a$
-  \item Spring force $\vec F_e$
-  \item Aerdynamic drag $\vec D$ (a.k.a.\ fluid resistance)
-  \item Buoyant force $\vec B$ (discussed in fluid mechanics, in AP Physics 2)
+  \item Spring force $\vec F_s$
+  \item Aerdynamic drag $\vec F_D$ (a.k.a.\ fluid resistance)
+  \item Buoyant force $\vec F_B$ (discussed in fluid mechanics, in AP Physics 2)
   \item Electrostatic force $\vec F_q$ (discussed in E \& M)
   \item Magnetic force $\vec F_m$ (discussed E \& M)
   \end{itemize}
@@ -261,11 +261,11 @@
     \begin{tikzpicture}
       \draw[thick] (-1,0)--(2.5,0);
       \draw[mass] rectangle (1.5,1);
-      \fill (.75,.5) circle(2pt);
+      \fill (.75,.5) circle (2pt);
       \draw[vectors] (.75,.5)--(.75,-.5) node[below]{$\vec F_g$};
-      \draw[vectors] (.75,.5)--(.75,1.5) node[above]{$\vec N$};
+      \draw[vectors] (.75,.5)--(.75,1.5) node[above]{$\vec F_N$};
     \end{tikzpicture}
-    %$\vec F_g=-\vec N$\\(special case)
+    %$\vec F_g=-\vec F_N$\\(special case)
     
     \column{.78\textwidth}
     \begin{itemize}
@@ -292,7 +292,7 @@
         \draw[mass] (2,0) rectangle (4,1.5);
         \draw[vectors,rotate around={-30:(3,.75)}]
         (3,.75)--(3,-1) node[right]{$\vec F_g$};
-        \draw[vectors,red] (3,.75)--(3,2.25) node[left]{$\vec N$};
+        \draw[vectors,red] (3,.75)--(3,2.25) node[left=-1]{$\vec F_N$};
         \fill (3,.75) circle (.06);
       \end{scope}
     \end{tikzpicture}
@@ -325,7 +325,7 @@
 %        node[left]{$mg\sin\theta$};
 %        \draw [->,very thick,red] (1.5,1)--(.45,-.5)
 %        node[below]{$\vec F_g$};
-%        \draw [->,very thick] (1.5,1)--(1.5,2.5) node[above]{$\vec N$};
+%        \draw [->,very thick] (1.5,1)--(1.5,2.5) node[above]{$\vec F_N$};
 %      \end{scope}
 %    \end{tikzpicture}
 %    
@@ -351,7 +351,7 @@
     \begin{itemize}
     \item Normal force $N$: The force the two surfaces are pressed against
       each other
-    \item Coefficient of friction ($\mu_s$ and $\mu_k$): Smoothness of the
+    \item Coefficients of friction ($\mu_s$ and $\mu_k$): Smoothness of the
       surfaces, which itself depends on
       \begin{itemize}
       \item The material(s) the surfaces are made of
@@ -396,7 +396,7 @@
 \begin{frame}{Kinetic Friction}
   When the two surfaces are moving relative to each other, the friction is
   called \textbf{kinetic friction} $f_k$. $f_k$ is approximately constant along
-  the path of movement as long  as $\vec N$ stays constant
+  the path of movement as long  as $\vec F_N$ stays constant
 %  \textbf{Kinetic friction} between two surfaces is when they are moving
 %  relative to each other.
 
@@ -407,9 +407,9 @@
     \begin{tabular}{l|c|c}
       \rowcolor{pink}
       \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
-      Magnitude of kinetic friction   & $f_k$ & \si\newton \\
+      Magnitude of kinetic friction & $f_k$ & \si\newton \\
       Coefficient of kinetic friction & $\mu_k$ & no units \\
-      Magnitude of normal force       & $N$ & \si\newton
+      Magnitude of normal force & $N$ & \si\newton
     \end{tabular}
   \end{center}
 \end{frame}
@@ -434,9 +434,9 @@
     \begin{tikzpicture}
       \draw[thick] (-1,0)--(2.5,0);
       \draw[mass] rectangle (1.5,1);
-      \fill (.75,.5) circle(2pt);
+      \fill (.75,.5) circle (2pt);
       \draw[vectors] (.75,.5)--(.75,-.5) node[below]{$\vec F_g$};
-      \draw[vectors] (.75,.5)--(.75,1.5) node[above]{$\vec N$};
+      \draw[vectors] (.75,.5)--(.75,1.5) node[above]{$\vec F_N$};
       \draw[vectors] (.75,.5)--(2.,.5) node[right]{$\vec F_a$};
       \draw[vectors] (.75,.5)--(.1,.5) node[left]{$\vec f$};
     \end{tikzpicture}
@@ -469,7 +469,7 @@
 
 \begin{frame}{Drag}
   When an object moves through a fluid (most gases and liquids), it experiences
-  are fluid resistance force called \textbf{drag} $\vec D$.
+  a fluid resistance force called \textbf{drag} $\vec F_D$.
   \begin{center}
     \pic{.338}{graphics/boeing787}
     \pic{.35}{graphics/ganna}
@@ -479,11 +479,11 @@
   object relative to the fluid that it is moving in:
   
   \eq{-.15in}{
-    D=\frac12\rho v_\infty^2C_DA
+    F_D=\frac12\rho v_\infty^2C_DA
   }
 
-  \vspace{-.1in}In AP Physics you do \emph{not} need to know the drag equation,
-  just that $D\propto v^2$, and $D\propto A$.
+  \vspace{-.1in}In AP Physics C you don't need to know the drag equation,
+  just that $F_D\propto v^2$, and $F_D\propto A$
 \end{frame}
 
 
@@ -491,14 +491,14 @@
 \begin{frame}{Drag}
   \eq{-.1in}{
     \boxed{
-      D=\frac12\rho v_\infty^2C_DA
+      F_D=\frac12\rho v_\infty^2C_DA
     }
   }  
   \begin{center}
     \begin{tabular}{l|c|c}
       \rowcolor{pink}
       \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
-      Magnitude of drag force & $D$       & \si\newton \\
+      Magnitude of drag force & $F_D$     & \si\newton \\
       Density of the fluid    & $\rho$    & \si{\kilo\gram\per\metre\cubed}\\
       Free-stream velocity    & $v_\infty$ & \si{\metre\per\second}\\
       Reference area          & $A$       & \si{\metre\squared}\\
@@ -526,9 +526,9 @@
 
     \vspace{-.15in}
     \begin{center}
-      \begin{tikzpicture}[scale=.9]
-        \draw[vectors] (0,0)--(0,-1.5) node[below]{$\vec F_g$};
-        \draw[vectors,black!2] (0,0)--(0,1.5) node[above]{$\vec D$};
+      \begin{tikzpicture}[scale=.9,vectors]
+        \draw (0,0)--(0,-1.5) node[below]{$\vec F_g$};
+        \draw[black!2] (0,0)--(0,1.5) node[above]{$\vec F_D$};
         \fill circle (.07);
       \end{tikzpicture}
     \end{center}
@@ -540,10 +540,10 @@
 
     \vspace{-.15in}
     \begin{center}
-      \begin{tikzpicture}[scale=.9]
-        \draw[vectors] (0,0)--(0,-1.5) node[below]{$\vec F_g$};
-        \draw[vectors,black!2] (0,0)--(0,1.5) node[above]{$\vec D$};
-        \draw[vectors,green] (0,0)--(0,.6) node[above]{$\vec D$};
+      \begin{tikzpicture}[scale=.9,vectors]
+        \draw (0,0)--(0,-1.5) node[below]{$\vec F_g$};
+        \draw[black!2] (0,0)--(0,1.5) node[above]{$\vec F_D$};
+        \draw[green] (0,0)--(0,.6) node[above]{$\vec F_D$};
         \fill circle (.07);
       \end{tikzpicture}
     \end{center}
@@ -555,9 +555,9 @@
 
     \vspace{-.15in}
     \begin{center}
-      \begin{tikzpicture}[scale=.9]
-        \draw[vectors] (0,0)--(0,-1.5) node[below]{$\vec F_g$};
-        \draw[vectors,red] (0,0)--(0,1.5) node[above]{$\vec D$};
+      \begin{tikzpicture}[scale=.9,vectors]
+        \draw (0,0)--(0,-1.5) node[below]{$\vec F_g$};
+        \draw[red] (0,0)--(0,1.5) node[above]{$\vec F_D$};
         \fill circle (.07);
       \end{tikzpicture}
     \end{center}
@@ -592,7 +592,9 @@
 %    for what time interval did it slide?
 %  \end{itemize}
 %\end{frame}
-%
+
+
+
 %\begin{frame}{Example: Vertical Motion}
 %  \textbf{Example 10:} A \SI{55}{kg} person is standing on a scale in an
 %  elevator. If
@@ -651,9 +653,9 @@
       \draw[thick,gray!20,
         decoration={aspect=.6,segment length=5mm, amplitude=2.5mm, coil},
         decorate] (0,1)--(5,1);
-      \fill[pattern=north east lines](-.2,0) rectangle(0,2);
+      \fill[pattern=north east lines](-.2,0) rectangle (0,2);
       \draw[thick](0,.0)--(0,2);
-      \fill[gray!30] (5.5,1) circle(.06);
+      \fill[gray!30] (5.5,1) circle (.06);
       \draw[vectors,gray!30] (5.5,1)--(4,1) node[above]{$\vec F_s$};
       \draw[dashed](3,0)--(3,2);
       \draw[vectors,gray!30](3,.3)--(5,.3)node[midway,below]{$\vec x$};
@@ -695,9 +697,9 @@
   represented by the ``big dot''. For example:
   \begin{center}
     \begin{tikzpicture}[scale=.8]
-      \fill (1.5,1) circle(.1);
+      \fill (1.5,1) circle (.1);
       \draw[vectors] (1.5,1)--(1.5,-.5) node[below]{$\vec F_g$};
-      \draw[vectors] (1.5,1)--(1.5,2.5) node[above]{$\vec N$};
+      \draw[vectors] (1.5,1)--(1.5,2.5) node[above]{$\vec F_N$};
       \draw[vectors] (1.5,1)--(3.1,1) node[right]{$\vec F_a$};
       \draw[vectors] (1.5,1)--(.75,1) node[left] {$\vec f$};
     \end{tikzpicture}
@@ -706,7 +708,7 @@
   must note that:
   \begin{itemize}
   \item Gravitational force $\vec F_g$ acts at the CM, but
-  \item Normal force $\vec N$, friction $\vec f$ and applied force $\vec F_a$
+  \item Normal force $\vec F_N$, friction $\vec f$ and applied force $\vec F_a$
     act at the point of contact
   \end{itemize}
 \end{frame}
@@ -714,16 +716,16 @@
 
 
 \begin{frame}{Free-Body Diagrams}
-  In those cases, forces should be drawn where they are applied. For example, a
-  sphere rolling down a ramp should have weight $\vec F_g$, normal force $\vec N$
-  and static friction $\vec f_s$ acting on it:
+  In those cases, forces should be drawn where they are applied. For example,
+  a sphere rolling down a ramp should have weight $\vec F_g$, normal force
+  $\vec F_N$ and static friction $\vec f_s$ acting on it:
   \begin{center}
     \begin{tikzpicture}[scale=1.1,rotate=-30]
-      \shade[ball color=red!20] circle(1);
+      \shade[ball color=red!20] circle (1);
       \draw[thick] (-2,-1)--(2,-1);
-      \fill circle(.05);
+      \fill circle (.05);
       \draw[vectors,rotate=30] (0,0)--(0,-1.5) node[below]{$\vec F_g$};
-      \draw[vectors] (0,-1)--(0,.3) node[above]{$\vec N$};
+      \draw[vectors] (0,-1)--(0,.3) node[above]{$\vec F_N$};
       \draw[vectors] (0,-1)--(-.5,-1) node[left]{$\vec f_s$};
       \draw[axes] (2,0)--(2.5,0) node[right]{$x$};
       \draw[axes] (2,0)--(2,.5) node[above]{$y$};
@@ -745,9 +747,9 @@
   \vspace{.2in}
   \begin{columns}
     \column{.75\textwidth}
-    \textbf{Example:} A uniform ladder is \SI5{\metre} long and weighs
+    \textbf{Example:} A uniform ladder is \SI{5.0}{\metre} long and weighs
     \SI{400}\newton. The ladder rests against a slippery vertical wall, as
-    shown in Figure. The inclination angle between the ladder and the rough
+    shown in the figure. The inclination angle between the ladder and the rough
     floor is \ang{53}. Find the reaction forces from the floor and
     from the wall on the ladder and the coefficient of static friction $\mu_s$
     at the interface of the ladder with the floor that prevents the ladder from
@@ -832,8 +834,8 @@
   \begin{center}
     \begin{tikzpicture}[scale=.8]
       \draw[thick] (-1,0)--(5.5,0);
-      \draw[thick] rectangle(3,1.5) node[midway]{$M$};
-      \draw[thick] (.75,1.5) rectangle(2.25,2.5) node[midway]{$m$};
+      \draw[thick] rectangle (3,1.5) node[midway]{$M$};
+      \draw[thick] (.75,1.5) rectangle (2.25,2.5) node[midway]{$m$};
       \draw[vectors] (3,.5)--(4.5,.5) node[right]{$\vec F_a$};
     \end{tikzpicture}
   \end{center}
@@ -928,14 +930,14 @@
       \draw[thick,fill=magenta!20] (-4,0) rectangle (-5,.75) node[midway]{$m$};
       \begin{scope}[rotate=-30,thick]
         \draw[brown] (1,.4)--(-.05,.4);
-        \draw (0,0)--(3,0) node[midway,below left] {$\mu$};
-        \draw[mass] (1,0) rectangle(2.5,1)node[midway]{$M$};
+        \draw (0,0)--(3,0) node[midway,below left]{$\mu$};
+        \draw[mass] (1,0) rectangle (2.5,1) node[midway]{$M$};
       \end{scope}
       \begin{scope}[rotate=-15]
-        \draw[thick,fill=gray] (0,.3) circle(.15);
-        \draw[thick,fill=lightgray] (0,.3) circle(.1);
+        \draw[thick,fill=gray] (0,.3) circle (.15);
+        \draw[thick,fill=lightgray] (0,.3) circle (.1);
         \draw[ultra thick] (0,0)--(0,.3);
-        \fill (0,.3) circle(.04);
+        \fill (0,.3) circle (.04);
       \end{scope}
       \draw[thick,gray!70] (0,0)--(0,-1.5);
       \draw[axes] (0,-.5) arc (270:330:.5) node[midway,below]{$\phi$};
