@@ -19,13 +19,11 @@
     \begin{center}
       \begin{tikzpicture}[scale=.9]
         \fill(2,1.5) circle(.08);
-        \begin{scope}[thick]
-          \draw[->](-.2,0)--(3,0) node[right]{$x$} node[pos=0,below]{$O$};
-          \draw[->](0,-.2)--(0,2.5) node[above]{$y$};
-          \draw[dashed](0,1.5)--(2,1.5) node[pos=0,left]{$y_0$}
-          --(2,0)node[below]{$x_0$};
-        \end{scope}
-        \draw[very thick,->](2,1.5)--(2,.5) node[midway,right]{$v$};
+        \draw[axes] (-.2,0)--(3,0) node[right]{$x$} node[pos=0,below]{$O$};
+        \draw[axes] (0,-.2)--(0,2.5) node[above]{$y$};
+        \draw[thick, dashed] (0,1.5)--(2,1.5) node[pos=0,left]{$y_0$}
+        --(2,0)node[below]{$x_0$};
+        \draw[vectors] (2,1.5)--(2,.5) node[midway,right]{$v$};
       \end{tikzpicture}
     \end{center}
     \begin{choices}
@@ -113,14 +111,14 @@
       \begin{tikzpicture}
         \begin{scope}[thick]
           \draw circle(.2) node{$m$};
-          \draw(0,2) circle(.2) node{$m$};
-          \draw(0,.2)--(0,1.8);
-          \draw(-1.2,0) circle(.2) node{$m$};
-          \draw[->](-1,0)--(-.5,0) node[above left]{$v$};
+          \draw (0,2) circle(.2) node{$m$};
+          \draw (0,.2)--(0,1.8);
+          \draw (-1.2,0) circle(.2) node{$m$};
+          \draw[vectors] (-1,0)--(-.5,0) node[above left]{$v$};
 
-          \draw(1.9,0) ellipse(.35 and .2) node{$2m$};
-          \draw(2,2) circle(.2) node{$m$};
-          \draw(2,.2)--(2,1.8);
+          \draw (1.9,0) ellipse (.35 and .2) node{$2m$};
+          \draw (2,2) circle (.2) node{$m$};
+          \draw (2,.2)--(2,1.8);
         \end{scope}
         \node at (0,2.5) {Before};
         \node at (2,2.5) {After};
@@ -141,12 +139,12 @@
 
     \question A rod of mass $M$, length $L$, and rotational inertia $I$ hangs
     at rest from a frictionless axle as shown. A ball of mass $m$ with a speed
-    $v$ strikes therod perpendicularly at the end of the rod. As a result
+    $v$ strikes the rod perpendicularly at the end of the rod. As a result
     of the collision, the ball stops. The angular speed of the rod immediately
     after the collision is
     \begin{center}
       \begin{tikzpicture}[thick]
-        \fill circle(.06);
+        \fill circle (.06);
         \draw (-.15,.15) rectangle (.15,-3);
         \draw[dashed] (-.15,-.15) rectangle (3,.15);
         \draw (-2,-2.95) circle (.2) node{$m$};
@@ -227,55 +225,45 @@
       \begin{tikzpicture}[scale=.7]
         \draw circle(1);
         \fill circle(.1);
-        \begin{scope}[very thick,->]
-        \draw (0,0)--(0,-2) node[below]{$mg$};
-        \draw[rotate=45](-1,0)--(2,0) node[right]{$N$};
-        \draw[rotate=45](-1,0)--(-1,1.5) node[left]{$f$};
-        \end{scope}
+        \draw[vectors] (0,0)--(0,-2) node[below]{$F_g$};
+        \draw[vectors,rotate=45] (-1,0)--(2,0) node[right]{$F_N$};
+        \draw[vectors,rotate=45] (-1,0)--(-1,1.5) node[left]{$F_f$};
       \end{tikzpicture}
 
       \choice
       \begin{tikzpicture}[scale=.7]
         \draw circle(1);
         \fill circle(.1);
-        \begin{scope}[very thick,->]
-          \draw (0,0)--(0,-2) node[below]{$mg$};
-          \draw (0,0)--(0,2) node[above]{$N$};
-          \draw[rotate=45](-1,0)--(-1,1.5) node[left]{$f$};
-        \end{scope}
+        \draw[vectors] (0,0)--(0,-2) node[below]{$F_g$};
+        \draw[vectors] (0,0)--(0,2) node[above]{$F_N$};
+        \draw[vectors,rotate=45] (-1,0)--(-1,1.5) node[left]{$F_f$};
       \end{tikzpicture}
 
       \choice
       \begin{tikzpicture}[scale=.7]
-        \draw circle(1);
-        \fill circle(.1);
-        \begin{scope}[very thick,->]
-          \draw (0,0)--(0,-2) node[below]{$mg$};
-          \draw[rotate=45](-1,0)--(2,0) node[right]{$N$};
-          \draw[rotate=45](-1,0)--(-1,-1.5) node[right]{$f$};
-        \end{scope}
+        \draw circle (1);
+        \fill circle (.1);
+        \draw[vectors] (0,0)--(0,-2) node[below]{$F_g$};
+        \draw[vectors,rotate=45] (-1,0)--(2,0) node[right]{$F_N$};
+        \draw[vectors,rotate=45] (-1,0)--(-1,-1.5) node[right]{$F_f$};
       \end{tikzpicture}
       
       \choice
       \begin{tikzpicture}[scale=.7]
-        \draw circle(1);
-        \fill circle(.1);
-        \begin{scope}[very thick,->]
-          \draw (0,0)--(0,-2) node[below]{$mg$};
-          \draw[rotate=45](-1,0)--(2,0) node[right]{$N$};
-          \draw(-1,0)--(-1,1.5) node[right]{$f$};
-        \end{scope}
+        \draw circle (1);
+        \fill circle (.1);
+        \draw[vectors] (0,0)--(0,-2) node[below]{$F_g$};
+        \draw[vectors,rotate=45] (-1,0)--(2,0) node[right]{$F_N$};
+        \draw[vectors] (-1,0)--(-1,1.5) node[right]{$F_f$};
       \end{tikzpicture}
       
       \choice
       \begin{tikzpicture}[scale=.7]
-        \draw circle(1);
-        \fill circle(.1);
-        \begin{scope}[very thick,->]
-          \draw[rotate=45](0,0)--(0,-2) node[below]{$mg$};
-          \draw[rotate=45](0,0)--(2,0) node[right]{$N$};
-          \draw[rotate=45](-1,0)--(-1,1.5) node[above]{$f$};
-        \end{scope}
+        \draw circle (1);
+        \fill circle (.1);
+        \draw[vectors,rotate=45] (0,0)--(0,-2) node[below]{$F_g$};
+        \draw[vectors,rotate=45] (0,0)--(2,0) node[right]{$F_N$};
+        \draw[vectors,rotate=45] (-1,0)--(-1,1.5) node[above]{$F_f$};
       \end{tikzpicture}
     \end{oneparchoices}
     \label{hollow1}
@@ -295,38 +283,33 @@
 \end{multicols*}
 \newpage
 
-%\genfreetitle{8}{ROTATIONAL MOTION, PART 2}{4}
-%\genfreedirections
-
-% TAKEN FROM THE 2015 AP PHYSICS C FREE-RESPONSE QUESTION MECH 3
-
 \begin{center}
   \begin{tikzpicture}[scale=.8]
     \shade[ball color=lightgray] circle (2);% node[below right]{$m$};
-    \draw circle(2);
-    \fill circle(.15);
-    \draw[thick](2,0)--(2,-4);
-    \draw[fill=gray!30](1.5,-4) rectangle(2.5,-5) node[midway]{$m$};
-    \draw[ultra thick,->](2,-4)--(2,-1.8) node[right]{$T$};
+    \draw circle (2);
+    \fill circle (.15);
+    \draw[thick] (2,0)--(2,-4);
+    \draw[fill=gray!30] (1.5,-4) rectangle(2.5,-5) node[midway]{$m$};
+    \draw[ultra thick,->] (2,-4)--(2,-1.8) node[right]{$T$};
   \end{tikzpicture}
 \end{center}
 
 \begin{questions}
   \setcounter{question}{\value{lastmc}}
   
-  \question A uniform sphere of mass $M$ and radius $R$ is free to rotate,
-  without friction, about a horizontal axis through its center. A string is
-  wrapped around the sphere and is attached to a body of mass $m$ as shown in
-  the figure above. Find
+  \question A uniform sphere of mass $M$, and radius $R$ (rotational inertia
+  $I=\frac25MR^2$) is free to rotate, without friction, about a horizontal axis
+  through its center. A string is wrapped around the sphere and is attached to
+  a body of mass $m$ as shown in the figure above. Find
   \begin{parts}
     \part the acceleration of the body, and
     \part the tension in the string.
   \end{parts}
   \newpage
 
-  \question A uniform cylinder of mass $M$ and radius $R$ has a string wrapped
-  around it. The string is held fixed, and the cylinder falls vertically as
-  shown in the figure below. Find
+  \question A cylinder of mass $M$ and radius $R$ (rotational inertia
+  $I=\frac12MR^2$) has a string wrapped around it. The string is held fixed,
+  and the cylinder falls vertically as shown in the figure below. Find
   \begin{center}
     \begin{tikzpicture}[scale=.5]
       \draw[fill=lightgray] circle(2);
@@ -350,7 +333,7 @@
       \draw (0,0)--(0,2);
       \fill[lightgray] (-3,2) rectangle(3,2.3);
       \draw (-3,2)--(3,2);
-      \draw[thick,->,rotate=30] (0,0)--(1,0) node[midway,above]{$R$};
+      \draw[axes,rotate=30] (0,0)--(1,0) node[midway,above]{$R$};
       \draw (-1,0)--(-1,-2);
       \draw (-1.4,-2) rectangle(-.6,-2.5) node[midway]{$m$};
       \draw[thick,|<->] (-2,-2.5)--(-2,-5) node[midway,fill=white]{$D$};

@@ -1,7 +1,7 @@
 \documentclass[12pt,aspectratio=169]{beamer}
 \input{../mybeamer}
 
-\title{Class 14: Electrostatics Part 1 (Point Charges)}
+\title{Class 14: Electrostatics, Part 1 (Point Charges)}
 \subtitle{Advanced Placement Physics C}
 \input{../me}
 \input{../mycommands}
@@ -38,8 +38,8 @@
     \begin{tikzpicture}[scale=.65]
       \draw[vectors,red] (0,0)--(2,0) node[right]{$\vec F_q$};
       \draw[vectors,blue] (8,0)--(6,0) node[left] {$\vec F_q$};
-      \shade[ball color=red] circle(.2) node[above]{$q_1$};
-      \shade[ball color=blue] (8,0) circle(.2) node[above]{$q_2$};
+      \shade[ball color=red] circle (.2) node[above]{$q_1$};
+      \shade[ball color=blue] (8,0) circle (.2) node[above]{$q_2$};
       \draw[dashed] (0,0)--(0,-1.5);
       \draw[dashed] (8,0)--(8,-1.5);
       \draw[vectors] (0,-1.3)--(8,-1.3) node[midway,below]{$\vec r_{12}$};
@@ -110,8 +110,8 @@
     \begin{tikzpicture}[scale=.5]
       \draw[vectors,red] (0,0)--(2,0) node[right]{$\vec F_{12}$};
       \draw[vectors,blue] (8,0)--(6,0) node[left] {$\vec F_{21}$};
-      \shade[ball color=red] circle(.2) node[above]{$q_1$};
-      \shade[ball color=blue] (8,0) circle(.2) node[above]{$q_2$};
+      \shade[ball color=red] circle (.2) node[above]{$q_1$};
+      \shade[ball color=blue] (8,0) circle (.2) node[above]{$q_2$};
       \draw[dashed] (0,0)--(0,-1.5);
       \draw[dashed] (8,0)--(8,-1.5);
       \draw[axes] (0,-1.3)--(8,-1.3) node[midway,below]{$\vec r_{12}$};
@@ -139,26 +139,26 @@
   \begin{columns}
     \column{.4\textwidth}
     \begin{tikzpicture}[scale=.4]
-      \shade[ball color=red] circle(.72) node[white]{$Q$};
+      \shade[ball color=red] circle (.72) node[white]{$Q$};
 
       \begin{scope}[rotate=45]
         \draw[vectors,blue] (.72,0)--(2.5,0) node[right]{$\vec F_1$};
-        \shade[ball color=blue] (7,0) circle(1) node[white]{$q_1$};
+        \shade[ball color=blue] (7,0) circle (1) node[white]{$q_1$};
       \end{scope}
       
       \begin{scope}[rotate=105]
         \draw[vectors,green] (.72,0)--(2,0) node[right]{$\vec F_2$};
-        \shade[ball color=green] (4,0) circle(.65) node[white]{$q_2$};
+        \shade[ball color=green] (4,0) circle (.65) node[white]{$q_2$};
       \end{scope}
 
       \begin{scope}[rotate=190]
         \draw[vectors,yellow] (.7,0)--(3.5,0) node[above]{$\vec F_3$};
-        \shade[ball color=yellow!70!black] (6,0) circle(1.1) node[white]{$q_3$};
+        \shade[ball color=yellow!70!black] (6,0) circle (1.1) node[white]{$q_3$};
       \end{scope}
 
       \begin{scope}[rotate=260]
         \draw[vectors,violet] (.72,0)--(1.4,0) node[right]{$\vec F_4$};
-        \shade[ball color=violet] (9,0) circle(.8) node[white]{$q_4$};
+        \shade[ball color=violet] (9,0) circle (.8) node[white]{$q_4$};
       \end{scope}
 
       \begin{scope}[rotate=125]
@@ -303,14 +303,16 @@
   $\vec E$ itself \emph{doesn't do anything} until another charge interacts with
   it. And when there is a charge $q$, the electrostatic force $\vec F_q$ that
   the charge experiences is proportional to $q$ and $\vec E$, regardless of how
-  the electric field is generated:
+  the electric field is generated\footnote{Analogous to the relationship
+  for gravity: $\vec F_g=m\vec g$}:
 
   \eq{-.1in}{
     \boxed{\vec F_q=q\vec E}
   }
 
   A positive charge in the electric field experiences an electrostatic force
-  $\vec F$ in the same direction as $\vec E$.
+  $\vec F_q$ in the same direction as $\vec E$; a negative charge experiences
+  a force in the opposite direction as $\vec E$.
 \end{frame}
 
 
@@ -320,7 +322,7 @@
   electric field. For point charges:
   \begin{center}
     \begin{tikzpicture}[scale=.5]
-      \shade[ball color=blue] circle(.35) node[white]{\tiny $+q$};
+      \shade[ball color=blue] circle (.35) node[white]{\tiny $+q$};
       \foreach \theta in {15,30,...,360}{
         \begin{scope}[rotate=\theta,red!70!black,thick]
           \draw[->] (.35,0)--(3,0);
@@ -330,7 +332,7 @@
     \end{tikzpicture}
     \hspace{.2in}
     \begin{tikzpicture}[scale=.5]
-      \shade[ball color=blue] circle(.35) node[white]{\tiny $-q$};
+      \shade[ball color=blue] circle (.35) node[white]{\tiny $-q$};
       \foreach \theta in {15,30,...,360}{
         \begin{scope}[rotate=\theta,red!70!black,thick]
           \draw (.35,0)--(2.5,0);
@@ -393,7 +395,9 @@
   \vspace{.1in}Integrating this over all charges $\dl q$, we have:
   
   \eq{-.1in}{
-    E_x =\frac{kx}{(x^2+a^2)^{3/2}}\int \dl q=\boxed{\frac{kQx}{(x^2+a^2)^{3/2}}}
+    E_x
+    =\int \dl E_x
+    =\frac{kx}{(x^2+a^2)^{3/2}}\int \dl q=\boxed{\frac{kQx}{(x^2+a^2)^{3/2}}}
   }
 \end{frame}
 
@@ -453,8 +457,8 @@
   
   \eq{-.1in}{
     W_q=\int\vec F_q\cdot\dl\vec r
-    =kq_1q_2\int_{r_1}^{r_2}\frac{\dl r}{r^2}
-    =-\frac{kq_1q_2} r\Big|^{r_2}_{r_1}=-\Delta U_q
+    =kq_1q_2\int_{r_0}^{r_1}\frac{\dl r}{r^2}
+    =-\frac{kq_1q_2} r\Big|^{r_1}_{r_0}=-\Delta U_q
   }
 
   $U_q$ is the energy stored between a system of two charges, defined as:
@@ -465,10 +469,10 @@
   \fcolorbox{black}{yellow!5}{
     \begin{minipage}{.9\linewidth}
       \begin{itemize}
-      \item Positive work done by $F_q$ decreases $U_q$, while
-      \item Negative work done by $F_q$ increases $U_q$
-      \item $W_q$ depends on $r_1$ and $r_2$, but not \emph{how} the charge
-        moves from $r_1\rightarrow r_2$
+      \item Positive work done by electrostatic force decreases $U_q$, while
+      \item Negative work done by electrostatic force increases $U_q$
+      \item $W_q$ depends on $r_0$ and $r_1$, but not \emph{how} the charge
+        moves from $r_0\rightarrow r_1$
       \item Only work done by $\vec F_q$ can change $U_q$
       \end{itemize}
     \end{minipage}
@@ -535,12 +539,11 @@
   \begin{columns}
     \column{.36\textwidth}
     \begin{tikzpicture}[scale=1.3]
-      \draw (0,0)--(1,-2) node[midway,fill=black!2]{$r_3$}
-      --(-3,-2) node[midway,fill=black!2]{$r_2$}
-      --(0,0) node[midway,fill=black!2]{$r_1$};
-      \draw[mass] circle(.18) node{$q_1$};
-      \draw[mass] (1,-2) circle(.18) node{$q_3$};
-      \draw[mass] (-3,-2) circle(.18) node{$q_2$};
+      \draw (0,0)--(1,-2) node[midway,right]{$r_3$}
+      --(-3,-2) node[midway,below]{$r_2$} -- (0,0) node[midway,left=3]{$r_1$};
+      \draw[mass] circle (.2) node{$q_1$};
+      \draw[mass] (1,-2) circle (.2) node{$q_3$};
+      \draw[mass] (-3,-2) circle (.2) node{$q_2$};
     \end{tikzpicture}
 
     \column{.64\textwidth}
@@ -549,8 +552,8 @@
     }
   \end{columns}
   
-  \vspace{.1in}The energy stored can be either positive or negative depending
-  on the sign of the signs of $q_1$, $q_2$ and $q_3$.
+  \vspace{.2in}The energy stored can be either positive or negative depending
+  on the sign of the charges of $q_1$, $q_2$ and $q_3$.
 \end{frame}
 
 
@@ -560,11 +563,11 @@
   of a square of length $L$. What is the total potential energy of the system?
   \begin{center}
     \begin{tikzpicture}[scale=1.3]
-      \draw rectangle(2,2) node[midway,above=35]{$L$};
-      \draw[mass] (0,2) circle(.15) node{$q$};
-      \draw[mass] (0,0) circle(.15) node{$q$};
-      \draw[mass] (2,0) circle(.15) node{$q$};
-      \draw[mass] (2,2) circle(.15) node{$q$};
+      \draw rectangle (2,2) node[midway,above=35]{$L$};
+      \draw[mass] (0,2) circle (.15) node{$q$};
+      \draw[mass] (0,0) circle (.15) node{$q$};
+      \draw[mass] (2,0) circle (.15) node{$q$};
+      \draw[mass] (2,2) circle (.15) node{$q$};
     \end{tikzpicture}
   \end{center}
 \end{frame}
@@ -582,11 +585,11 @@
   }
   
   This ``constant'' $V_g$ is called the \textbf{gravitational potential}, which
-  is the \emph{gravitational potential energy per unit mass}. In the simple
-  case with a uniform gravitational field:
+  is defined as \emph{gravitational potential energy per unit mass}. In the
+  simple case with a uniform gravitational field:
 
   \eq{-.1in}{
-    V_g=\frac{U_g}m=gh
+    V_g(h)=\frac{U_g}m=gh
   }
 
 \end{frame}
@@ -605,7 +608,7 @@
   When $m$ is in this potential $V_g$, the gravitational potential energy is:
 
   \eq{-.1in}{
-    U_g=mV_g=-\frac{GMm}r
+    U_g=V_gm=-\frac{GMm}r
   }
 
   In agreement with the previous equations
@@ -614,7 +617,7 @@
 
 
 \begin{frame}{Electric Potential}
-  This is also true for a charged particle $q$ in an electric electric field
+  This is also true for a charged particle $q$ in an electric field
   created by $q_s$. In this case, the potential (the ``constant'') is called the
   \textbf{electric potential}. The unit for electric potential is a \emph{volt}
   which is \emph{one joule per coulomb}, i.e.\
@@ -626,7 +629,8 @@
     }
   }
 
-  The electric potential from a source \emph{point} charge $q_s$ is therefore:
+  The electric potential from a source \underline{\emph{point}} charge $q_s$ is
+  therefore:
 
   \eq{-.1in}{
     \boxed{
@@ -642,34 +646,33 @@
     \column{.4\textwidth}
     \centering
     \begin{tikzpicture}[scale=.75]
-      \shade[ball color=blue] circle(.3) node[white]{\tiny$\bm{+q}$};
+      \shade[ball color=blue] circle (.3) node[white]{\tiny$\bm{+q}$};
       \foreach \theta in {20,40,...,360}{
         \draw[rotate=\theta,axes,gray] (.3,0)--(3,0);
         \draw[rotate=\theta,thick,gray] (2.8,0)--(4,0);
       }
       \foreach \r in {1,2,3}{
-        \draw[very thick,red] circle(\r);
-        \node[red,below] at (0,-\r+.09){\footnotesize $V_\r$};
+        \draw[very thick,red] circle (\r);
+        \node[red,below] at (0,-\r+.09){$V_\r$};
       }
     \end{tikzpicture}
  
     \column{.6\textwidth}
     For a point charge $q$, every point at a distance $r$ has the same
-    electric potential $V(r)$.
+    electric potential $V$.
     \begin{itemize}
     \item The red lines have the same electric potential; they are called
       \textbf{equipotential lines}, or \textbf{equipotential contours}
     \item Equipotential lines are perpendicular to the electric field lines
-    \item Electric field lines always points from higher $V$ toward lower $V$,
-      i.e.
+    \item Electric field lines always points from higher $V$ toward lower $V$
 
       \eq{-.1in}{
         V_1>V_2>V_3
       }
     \end{itemize}
   \end{columns}
-  \vspace{.1in}In AP Physics C, equipotential contours are sometimes also known
-  as \textbf{isolines of equal electric potential}.
+  %\vspace{.1in}In AP Physics C, equipotential contours are sometimes also known
+  %as \textbf{isolines of equal electric potential}.
 \end{frame}
 
 
@@ -679,17 +682,16 @@
     \column{.4\textwidth}
     \centering
     \begin{tikzpicture}[scale=.75]
-      \shade[ball color=blue] circle(.3) node[white]{\tiny$\bm{+q}$};
+      \shade[ball color=blue] circle (.3) node[white]{\tiny$\bm{+q}$};
       \foreach \theta in {20,40,...,360}{
-        \draw[rotate=\theta,->,gray,thick] (.3,0)--(3,0);
+        \draw[rotate=\theta,axes,gray] (.3,0)--(3,0);
         \draw[rotate=\theta,gray,thick] (2.8,0)--(4,0);
       }
       \foreach \r in {1,2,3}{
-        \draw[very thick,red] circle(\r);
-        \node[red,below] at (0,-\r+0.09){\footnotesize$V_\r$};
+        \draw[very thick,red] circle (\r);
+        \node[red,below] at (0,-\r+0.09){$V_\r$};
       }
-      \shade[ball color=red,rotate=-20] (2,0) circle(.23)
-      node[white]{\footnotesize$Q$};
+      \shade[ball color=red,rotate=-20] (2,0) circle (.23) node[white]{$Q$};
     \end{tikzpicture}
     
     \column{.6\textwidth}
@@ -708,8 +710,8 @@
 
 
 \begin{frame}{Electric Potential from Multiple Charges}
-  When there are multiple point charges present, the electric potential is
-  given by the summation\footnote{Thankfully this is straight scalar
+  When multiple discrete point charges are present, the total electric
+  potential is given by the summation\footnote{Note that this is scalar
   summation!}:
 
   \eq{-.15in}{
@@ -718,8 +720,8 @@
     }
   }
 
-  As $N\rightarrow\infty$ the summation becomes an integral, and we can use it
-  to evaluate the potential from a distribution of charges:
+  As $N\rightarrow\infty$, the summation becomes an integral, and we can use it
+  to evaluate the potential from a continuous distribution of charges:
 
   \eq{-.1in}{
     \boxed{
@@ -739,8 +741,8 @@
     \begin{tikzpicture}
       \draw[axes] (-2,0)--(2,0) node[right]{$x$};
       \draw[axes] (0,-2)--(0,2) node[right]{$y$};
-      \draw[gray] circle(1.5);
-      \draw[line width=2,red,rotate=90] (1.5,0) arc(0:180:1.5)
+      \draw[gray] circle (1.5);
+      \draw[line width=2,red,rotate=90] (1.5,0) arc (0:180:1.5)
       node[pos=.25,above=3]{$Q$};
     \end{tikzpicture}
     
@@ -748,7 +750,7 @@
     \textbf{Example:} A uniform charge $Q$ is located
 
     \begin{enumerate}[(a)]
-    \item What is the electric field at the origin?
+    %\item What is the electric field at the origin?
     \item What is the electric potential at the origin?
     \item A charge $q$ is moved from $x=\infty$ to the origin. What is the
       work done?
@@ -765,8 +767,8 @@
   also related the same way:
 
   \eq{-.1in}{
-    V_q=-\int\vec E\cdot\dl\vec r\quad\rightarrow\quad
-    \vec E(r)=-\nabla V_q=-\diffp Vr\hat r
+    V(r)=-\int\vec E(r)\cdot\dl\vec r\quad\rightarrow\quad
+    \vec E(r)=-\nabla V(r)=-\diff Vr\hat r
   }
   \begin{itemize}
   \item Electric field $\vec E$ always points from high to low electric
@@ -784,20 +786,20 @@
   \begin{columns}
     \column{.45\textwidth}
     \begin{tikzpicture}[scale=.75]
-      \shade[ball color=blue] circle(.3) node[white]{\footnotesize$Q$};
+      \shade[ball color=blue] circle (.3) node[white]{$Q$};
       \foreach \theta in {30,60,...,360}{
         \draw[rotate=\theta,axes,gray] (.3,0)--({7-4*sin(\theta/2)},0);
       }
       \draw[red,ultra thick,dotted,<-]
       (2.5*cos{30}+.23,-2.5*sin{30}) to[out=0,in=270](5*cos{15},5*sin{15}-.2);
-      \draw[thick,red,rotate=-70] (2.5,0) arc(0:100:2.5) node[above]{$V_2$};
-      \draw[thick,red,rotate=-60] (5,0) arc(0:90:5) node[above]{$V_1$};
+      \draw[thick,red,rotate=-70] (2.5,0) arc (0:100:2.5) node[above]{$V_2$};
+      \draw[thick,red,rotate=-60] (5,0) arc (0:90:5) node[above]{$V_1$};
       \begin{scope}[rotate=-30]
-        \shade[ball color=red](2.5,0) circle(.23) node[white]{\footnotesize$q$};
+        \shade[ball color=red](2.5,0) circle (.23) node[white]{$q$};
         \draw[<->,thick] (.3,0)--(2.27,0) node[midway,above]{$r_2$};
       \end{scope}
       \begin{scope}[rotate=15]
-        \shade[ball color=red] (5,0) circle(.23) node[white]{\footnotesize$q$};
+        \shade[ball color=red] (5,0) circle (.23) node[white]{$q$};
         \draw[<->,thick] (.3,0)--(4.77,0) node[pos=2/3,below]{$r_1$};
       \end{scope}
     \end{tikzpicture}
@@ -827,9 +829,9 @@
     \boxed{\dl V=\frac{\dl U_q}q}
   }
 
-  Here, we can relate $\Delta V$ to an equation that we knew from Grade 11
-  Physics and AP Physics 1/2, which related to the energy dissipated in a
-  resistor in a circuit $\Delta U$ to the voltage drop $\Delta V$:
+  Here, we can relate $\Delta V$ to an equation that we knew from Physics 11
+  and AP Physics 2, which related to the energy dissipated in a resistor in a
+  circuit $\Delta U$ to the voltage drop $\Delta V$:
     
   \eq{-.1in}{
     \boxed{\Delta U_q=q\Delta V}
@@ -841,19 +843,21 @@
 
 
 \begin{frame}{Relating $V$ and $\Delta V$}
-  Electric potential $V_q$ is related to the electric field $E$ by an
-  indefinite integral, and therefore $V_q$ is a function is space:
+  Electric potential $V(r)$, a furnction of space, is related to the electric
+  field $E$ by an {\color{red}indefinite} integral:
 
   \eq{-.1in}{
-    V_q=-\int\vec E\cdot\dl\vec r
+    V{\color{red}(r)}=-\int\vec E(\vec r)\cdot\dl\vec r
   }
 
   Whereas electric potential difference is related to the electric field $E$
-  by a definite integral from $\vec r_1$ to $\vec r_2$, and therefore it has a
-  definite value:
+  by a {\color{blue}definite} integral from $r_0$ to $r_1$, with a definite
+  value:
   
   \eq{-.1in}{
-   \Delta V_q=-\int_{\vec r_1}^{\vec r_2}\vec E\cdot\dl\vec r
+    {\color{blue}\Delta} V
+    =-\int_{\vec r_0}^{\vec r_1}
+    \vec E(\vec r)\cdot\dl\vec r
   }
 \end{frame}
 
