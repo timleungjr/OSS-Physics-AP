@@ -574,41 +574,41 @@
 \end{frame}
 
 
-\begin{frame}{As Difficult As It Gets}
-  \begin{columns}
-    \column{.45\textwidth}
-    \begin{tikzpicture}[american voltages,scale=1.2,thick]
-      \draw (0,0)--(0,2) to[R=3<\ohm>] (0,4)
-      to[battery1,l=42<\volt>] (2,4) to[R=3<\ohm>] (4,4)--(4,2)
-      to[R=4<\ohm>](4,0)--(2,0) to[battery1,l=6<\volt>] (2,2)
-      to[R,l_=4<\ohm>] (0,2);
-      \draw (0,0) to[R,l_=6<\ohm>](2,0);
-      \draw (2,2) to[R,l_=6<\ohm>](4,2);
-      \uncover<2->{
-        \begin{scope}[vectors,red]
-          \draw (.5,3.5) ..controls(4.75,4) and (4.75,2).. (.5,2.5)
-          node[midway,left]{$I_1$};
-          \draw (.6,.4) ..controls (0,2) and (2,2).. (1.4,.4)
-          node[midway,below]{$I_3$};
-          \draw (2.6,.4) ..controls (2,2) and (4,2).. (3.4,.4)
-          node[midway,below]{$I_2$};
-        \end{scope}
-      }
-    \end{tikzpicture}
-    
-    \column{.55\textwidth}
-    \begin{itemize}
-    \item To solve this problem, we define a few ``loops'' around the circuit:
-      one on top, one on bottom left, and one on bottom right.
-    \item<2-> Apply the voltage law in the loops. For example, in the
-      lower left:
-
-      \eq{-.1in}{
-        4(I_1-I_3)-6-6I_3=0
-      }      
-    \item<2-> Solve the linear system to find the current. If the current that
-      you worked out is negative, it means that you have the direction wrong.
-    \end{itemize}
-  \end{columns}
-\end{frame}
+%\begin{frame}{As Difficult As It Gets}
+%  \begin{columns}
+%    \column{.45\textwidth}
+%    \begin{tikzpicture}[american voltages,scale=1.2,thick]
+%      \draw (0,0)--(0,2) to[R=3<\ohm>] (0,4)
+%      to[battery1,l=42<\volt>] (2,4) to[R=3<\ohm>] (4,4)--(4,2)
+%      to[R=4<\ohm>](4,0)--(2,0) to[battery1,l=6<\volt>] (2,2)
+%      to[R,l_=4<\ohm>] (0,2);
+%      \draw (0,0) to[R,l_=6<\ohm>](2,0);
+%      \draw (2,2) to[R,l_=6<\ohm>](4,2);
+%      \uncover<2->{
+%        \begin{scope}[vectors,red]
+%          \draw (.5,3.5) ..controls(4.75,4) and (4.75,2).. (.5,2.5)
+%          node[midway,left]{$I_1$};
+%          \draw (.6,.4) ..controls (0,2) and (2,2).. (1.4,.4)
+%          node[midway,below]{$I_3$};
+%          \draw (2.6,.4) ..controls (2,2) and (4,2).. (3.4,.4)
+%          node[midway,below]{$I_2$};
+%        \end{scope}
+%      }
+%    \end{tikzpicture}
+%    
+%    \column{.55\textwidth}
+%    \begin{itemize}
+%    \item To solve this problem, we define a few ``loops'' around the circuit:
+%      one on top, one on bottom left, and one on bottom right.
+%    \item<2-> Apply the voltage law in the loops. For example, in the
+%      lower left:
+%
+%      \eq{-.1in}{
+%        4(I_1-I_3)-6-6I_3=0
+%      }      
+%    \item<2-> Solve the linear system to find the current. If the current that
+%      you worked out is negative, it means that you have the direction wrong.
+%    \end{itemize}
+%  \end{columns}
+%\end{frame}
 \end{document}

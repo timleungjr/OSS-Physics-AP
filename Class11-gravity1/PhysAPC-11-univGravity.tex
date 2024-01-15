@@ -63,7 +63,7 @@
   \item Third law of motion: If $m_1$ exerts a gravitational force $\vec F_{12}$
     on $m_2$, then $m_2$ likewise also exerts a reaction force of
     $\vec F_{21}=-\vec F_{12}$ on $m_1$. The two forces are equal in magnitude
-    an d opposite in direction
+    and opposite in direction
   \item $m_1$ and $m_2$ are \emph{point masses} that do not occupy any space
   \item The (more familiar) scalar form is often used as well:
 
@@ -77,42 +77,26 @@
 
 \begin{frame}{More Than One Mass}
   \begin{columns}
-    \column{.4\textwidth}
+    \column{.37\textwidth}
     \begin{tikzpicture}[scale=.4]
-      \shade[ball color=red] circle(.72) node[white]{$M$};
-      \begin{scope}[rotate=45]
-        \draw[->,very thick,blue](.72,0)--(2.5,0) node[right]{$\vec F_1$};
-        \shade[ball color=blue] (7,0) circle(1) node[white]{$m_1$};
-      \end{scope}
-      \uncover<2->{
-        \begin{scope}[rotate=105]
-          \draw[->,very thick,green](.72,0)--(2,0)
-          node[right]{$\vec F_2$};
-          \shade[ball color=green] (4,0) circle(.65) node[white]{$m_2$};
-        \end{scope}
-      }
-      \uncover<3->{
-        \begin{scope}[rotate=190]
-          \draw[->,very thick,yellow](.7,0)--(3.5,0)
-          node[above]{$\vec F_3$};
-          \shade[ball color=yellow!70!black](6,0)circle(1.1) node[white]{$m_3$};
-        \end{scope}
-      }
-      \uncover<4->{
-        \begin{scope}[rotate=260]
-          \draw[->,very thick,purple](.72,0)--(1.4,0)
-          node[right]{$\vec F_4$};
-          \shade[ball color=purple] (9,0) circle(.8) node[white]{$m_4$};
-        \end{scope}
-      }
-      \uncover<5>{
-        \begin{scope}[rotate=125]
-          \draw[->,ultra thick](.72,0)--(3.5,0) node[left]{$\vec F$};
-        \end{scope}
-      }
+      \shade[ball color=red] circle (.7) node[white]{$M$};
+
+      \draw[vectors,blue,rotate=45] (.7,0)--(2.5,0) node[right]{$\vec F_1$};
+      \shade[ball color=blue] (5,5) circle (.8) node[white]{$m_1$};
+
+      \draw[vectors,green,rotate=-45] (-.7,0)--(-2,0) node[left]{$\vec F_2$};
+      \shade[ball color=green] (-5,5) circle (.6) node[white]{$m_2$};
+
+      \draw[vectors,violet,rotate=45](-.7,0)--(-3.5,0) node[left]{$\vec F_3$};
+      \shade[ball color=violet] (-5,-5) circle (1.2) node[white]{$m_3$};
+
+      \draw[vectors,magenta,rotate=-45](.7,0)--(2.7,0) node[right]{$\vec F_4$};
+      \shade[ball color=magenta] (5,-5) circle (.8) node[white]{$m_4$};
+
+      %\draw[vectors] (.7,0)--(3.5,0) node[left]{$\vec F$};
     \end{tikzpicture}
 
-    \column{.6\textwidth}
+    \column{.63\textwidth}
     For a mass that is subjected to the influence of multiple discrete point
     masses $m_i$, the total gravitational force that $M$ experiences is the
     vector sum of all the forces $\vec F_i$:
@@ -164,7 +148,7 @@
   }
 
   The vector field function $\vec g$ is known as the \textbf{acceleration due
-    to gravity} in kinematics, and \textbf{gravitational field} in field theory.
+    to gravity}, and \textbf{gravitational field}.
 \end{frame}
 
 
@@ -370,8 +354,8 @@
     \column{.7\textwidth}
     That $\vec g_\text{inside}=\vec 0$ can be calculated by:
     \begin{itemize}
-    \item Integrating the fields created by infinitesimal mass elements $dm$ at
-      any point inside the shell, or
+    \item Integrating the fields created by infinitesimal mass elements $\dl m$
+      at any point inside the shell, or
     \item Using \textbf{Gauss's law} for gravity, similar to finding the
       electric field inside a charged conducting sphere:
       

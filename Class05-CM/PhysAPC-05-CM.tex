@@ -169,13 +169,13 @@
 
 
 \begin{frame}{Densities}
-  Linear density (for 1D problems)
+  Linear mass density (for 1D problems)
 
   \eq{-.1in}{
     \gamma = \diff mL\quad\rightarrow\quad \dl m =\gamma\dl L
   }
 
-  Surface area density (for 2D problems)
+  Surface mass density (for 2D problems)
 
   \eq{-.1in}{
     \sigma=\diff mA\quad\rightarrow\quad \dl m =\sigma\dl A
@@ -220,7 +220,7 @@
 \begin{frame}{Centroid}
   For an object with a uniform mass distribution (i.e.\ constant density), the
   center of mass is also its geometric center, called the \textbf{centroid}.
-  The locations of centroids can be found in most physics textbooks.
+  The locations of centroids can be found in most physics and math textbooks.
   \begin{center}
     \pic{.65}{eng130C9_11}
   \end{center}
@@ -310,9 +310,11 @@
         \draw[thick,fill=lightgray] circle (2);
         \draw[thick,fill=black!2] (0,1) circle (1);
         \fill circle (.04);
-        \draw[axes] (0,0)--(-1.41,-1.41) node[midway,below]{$r$};
+        \draw[axes,rotate=45] (0,0)--(-2,0) node[midway,below]{$r$};
         \fill (0,1) circle (.04);
-        \draw[axes] (0,1)--(.707,.293) node[right]{$r/2$};
+        \draw[axes,rotate around={-45:(0,1)}] (0,1)--(1,1) node[right]{$r/2$};
+        \draw[axes](-2.4,0)--(2.4,0) node[right]{$x$};
+        \draw[axes](0,-2.4)--(0,2.4) node[above]{$y$};
       \end{tikzpicture}
     \end{center}
   \end{itemize}
@@ -328,9 +330,9 @@
         \draw[thick,fill=lightgray] circle (2);
         \draw[thick,fill=black!2] (0,1) circle (1);
         \draw circle (.04);
-        \draw[axes] (0,0)--(-1.41,-1.41) node[midway,below]{$r$};
+        \draw[axes,rotate=45] (0,0)--(-2,0) node[midway,below]{$r$};
         \fill (0,1) circle(.04);
-        \draw[axes] (0,1)--(.707,.293) node[right]{$r/2$};
+        \draw[axes,rotate around={-45:(0,1)}] (0,1)--(1,1) node[right]{$r/2$};
       
         \draw[thick,fill=lightgray] (6,0) circle (2) node{\large$A$};
         \draw[thick] (11,1) circle (1) node{\large$B$};

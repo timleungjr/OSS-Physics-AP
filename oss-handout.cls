@@ -95,3 +95,16 @@
   \vspace{.2in}
 }
 
+\RequirePackage{siunitx}
+\sisetup{
+  inter-unit-product=\cdotp,
+  per-mode=symbol,
+}
+
+\RequirePackage{tikz}
+\tikzset{
+  >=latex
+}
+\tikzstyle{axes}=[thick,->]
+\tikzstyle{vector}=[very thick,->]
+\tikzstyle{function}=[very thick,red]
