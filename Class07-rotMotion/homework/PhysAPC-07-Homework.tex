@@ -12,7 +12,6 @@
 \raggedcolumns
 \begin{multicols*}{2}
   \begin{questions}
-
     \question A meter stick of mass \SI{.1}{\kilo\gram} rests on a table as
     shown. A length of \SI{40}{\centi\metre} extends over the edge of the table.
     How far from the edge of the table could a \SI{.05}{\kilo\gram} mass be
@@ -37,12 +36,25 @@
       \choice\SI{20}{\centi\metre}
       \choice\SI{30}{\centi\metre}
     \end{choices}
-    
-    \question A metal bar of constant density and weight $\vec w$ is attached
+
+    \uplevel{
+      \centering
+      \begin{tikzpicture}[scale=.9,very thick]
+        \draw[fill=gray] (.4,.25)--(0,.25) arc (90:270:.25)--(.4,-.25);
+        \draw (.4,3)--(.4,-1);
+        \fill[pattern=north east lines] (.4,3) rectangle (.7,-1);
+        \draw[fill=white] (.2,.2) rectangle (-4,-.2);
+        \fill circle (.1);
+        \draw[ultra thick] (-3.9,.2)--(.4,2.5);
+        \draw[thick] (.4,2) arc(270:210:.5)
+        node[midway,below left]{\small\SI{60}\degree};
+      \end{tikzpicture}
+    }
+    \question A metal bar of constant density and weight $\vec F_g$ is attached
     to a pivot on the wall at point $P$ and supported by a rope that makes an
-    angle of \ang{60} with the vertical wall. The reaction force exerted by the
-    pivot on the bar at point $P$ is best represented by which arrow?
-    \cpic{.25}{metal-bar}
+    angle of \ang{60} with the vertical wall, as shown above. The reaction
+    force exerted by the pivot on the bar at point $P$ is best represented by
+    which arrow?
     \begin{choices}
       \choice{\Huge$\nearrow$}
       \choice{\Huge$\uparrow$}
@@ -74,8 +86,8 @@
     \begin{center}
       \begin{tikzpicture}[scale=3]
         \draw[thick] (-1,-.03) rectangle (1,.03);
-        \fill circle(.02) node[above]{$m$};
-        \draw[thick,fill=gray!50] (.85,-.1) rectangle(1,.1) node[midway]{$m$};
+        \fill circle (.02) node[above]{$m$};
+        \draw[thick,fill=gray!50] (.85,-.1) rectangle (1,.1) node[midway]{$m$};
         \draw[|<->|] (-1,-.2)--(1,-.2) node[midway,below]{$L$};
       \end{tikzpicture}
     \end{center}
@@ -111,13 +123,11 @@
     \begin{center}
       \begin{tikzpicture}[scale=1.5]
         \begin{scope}[thick]
-          \draw circle(.1);
-          \draw (4,0) circle(.15);
+          \draw circle (.1);
+          \draw (4,0) circle (.15);
           \draw (.1,0)--(3.85,0);
         \end{scope}
-        \fill (1,0) circle(.05);
-        \fill (2,0) circle(.05);
-        \fill (3,0) circle(.05);
+        \foreach \x in {1,2,3} \fill (\x,0) circle (.05);
         \node at (0,-.3){A};
         \node at (1,-.3){B};
         \node at (2,-.3){C};
@@ -146,12 +156,12 @@
       \begin{center}
         \begin{tikzpicture}[scale=1.5]
           \draw[ultra thick] (-3,0)--(1,0);
-          \draw[thick] (1,-.2) rectangle(1.4,.2) node[midway]{$4m$};
-          \draw[thick] (-3,-.11) rectangle(-3.22,.11) node[midway]{$m$};
-          \fill circle(.05) node[above]{$P$};
+          \draw[thick] (1,-.2) rectangle (1.4,.2) node[midway]{$4m$};
+          \draw[thick] (-3,-.11) rectangle (-3.22,.11) node[midway]{$m$};
+          \fill circle (.05) node[above]{$P$};
           \node at (.5,.15){$L$};
           \node at (-1.5,.15){$3L$};
-          \draw[axes,rotate=40] (.35,0) arc(0:260:.35);
+          \draw[axes,rotate=40] (.35,0) arc (0:260:.35);
         \end{tikzpicture}
       \end{center}
     }
@@ -184,13 +194,12 @@
     frictionless axle. Three forces act tangentially on the edge of the wheels
     as shown. The magnitude of the net torque acting on the system of wheels is
     \begin{center}
-      \begin{tikzpicture}[scale=.6]
-        \draw[thick] circle(1.2);
-        \draw[thick] circle(3);
-        \fill[thick] circle(.08);
-        \draw[thick,<->] (0,0)--(0,-1.2) node[midway,right]{$r$};
-        \draw[thick,<->,rotate=-55] (0,0)--(0,-3)
-        node[pos=.6,above,rotate=35]{$3r$};
+      \begin{tikzpicture}[scale=.6,thick]
+        \draw circle (1.2);
+        \draw circle (3);
+        \fill circle (.08);
+        \draw[<->] (0,0)--(0,-1.2) node[midway,right]{$r$};
+        \draw[<->,rotate=-55] (0,0)--(0,-3) node[pos=.6,above,rotate=35]{$3r$};
         \draw[vectors] (0,-1.2)--(2,-1.2) node[right]{$F$};
         \draw[vectors] (1.2,0)--(1.2,2) node[left]{$F$};
         \draw[vectors] (-3,0)--(-3,3) node[above]{$2F$};
@@ -236,14 +245,14 @@
     \uplevel{
       \begin{center}
         \begin{tikzpicture}
-          \draw[thick,dashed] (0,.28) rectangle(.28,-5.72);
-          \draw[thick,fill=white] rectangle(6,.28);
-          \fill(.16,.14) circle(.08);
+          \draw[thick,dashed] (0,.28) rectangle (.28,-5.72);
+          \draw[thick,fill=white] rectangle (6,.28);
+          \fill(.16,.14) circle (.08);
           \node[right] at (6,.14){$A$};
           \node[below] at (.14,-5.72){$B$};
-          \draw[axes] (3,-.15) arc(-5:-85:2.8);
+          \draw[axes] (3,-.15) arc (-5:-85:2.8);
           \draw[thick,fill=white](.16,.14)--(.06,.7)--(.26,.7)--cycle;
-          \fill[gray] (-.4,.7) rectangle(.7,.9);
+          \fill[gray] (-.4,.7) rectangle (.7,.9);
           \draw[thick] (-.4,.7)--(.7,.7);
         \end{tikzpicture}
       \end{center}
@@ -324,7 +333,7 @@
   $h$ above the ice in a radial direction, as shown in the figures above. The
   coefficient of friction between the disk and the ice is $\mu$. All velocities
   are measured relative to the ground. The time it takes to throw the stone is
-  negligible. Express all algebraic answers in terms of $m$, $R$, $\varv_0$,
+  negligible. Express all algebraic answers in terms of $m$, $R$, $v_0$,
   $h$, $m$, and fundamental constants, as appropriate.
   \begin{parts}
     \part Derive an expression for the length of time it will take the stone to
@@ -332,8 +341,8 @@
     \vspace{\stretch1}
     
     \part Assuming that the disk is free to slide on the ice, derive an
-    expression for the speed of the disk and person immediately after the stone
-    is thrown.
+    expression for the speed of the disk and person immediately
+    after the stone is thrown.
     \vspace{\stretch1}
     
     \part Derive an expression for the time it will take the disk to stop
@@ -344,11 +353,11 @@
     \uplevel{
       \begin{center}
         \begin{tikzpicture}[scale=.85]
-          \draw[thick,fill=gray!70] circle(2);
-          \draw[thick,fill=black!60] circle(.1);
-          \draw[thick,fill=white] (2,0) circle(.1);
-          \fill (1.73,0) circle(.17);
-          \draw[vectors] (2,.1)--(2,1.5) node[above]{$\varv_0$};
+          \draw[thick,fill=gray!70] circle (2);
+          \draw[thick,fill=black!60] circle (.1);
+          \draw[thick,fill=white] (2,0) circle (.1);
+          \fill (1.73,0) circle (.17);
+          \draw[vectors] (2,.1)--(2,1.5) node[above]{$v_0$};
         \end{tikzpicture}
 
         Top View
@@ -356,7 +365,7 @@
       The person now stands on a similar disk of mass $m$ and radius $R$ that
       has a fixed pole through its center so that it can only rotate on the
       ice. The person throws the same stone horizontally in a tangential
-      direction at initial speed $\varv_0$, as shown in the figure above. The
+      direction at initial speed $v_0$, as shown in the figure above. The
       rotational inertia of  the disk is $mR^2/2$.
     }
 
@@ -365,7 +374,7 @@
     \vspace{\stretch1}
     
     \part The person now stands on the disk at rest $R/2$ from the center of the
-    disk. The person now throws the stone horizontally with a speed $\varv_0$ in
+    disk. The person now throws the stone horizontally with a speed $v_0$ in
     the same direction as in part (\ref{partd}). Is the angular speed of the
     disk immediately after throwing the stone from this new position greater
     than, less than, or equal to the angular speed found in part (\ref{partd})?

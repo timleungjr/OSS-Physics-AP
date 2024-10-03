@@ -1,5 +1,5 @@
-TERM=2023-09-Fall-Physics
-CLOUD=cloud.meritusacademy.ca
+TERM=2024-07-Summer-Physics
+CLOUD=ossfiles
 WORKFILES_DIR=000-Timothy\ L
 DESTINATION=$(HOME)/Documents/$(CLOUD)/$(WORKFILES_DIR)/$(TERM)/Physics.APC
 
