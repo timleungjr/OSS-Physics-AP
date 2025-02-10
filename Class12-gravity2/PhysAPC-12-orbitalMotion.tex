@@ -3,8 +3,11 @@
 
 \usetikzlibrary{decorations.pathmorphing,patterns}
 
+\tikzstyle{balloon1}=[ball color=red]
+\tikzstyle{balloon2}=[ball color=blue]
+
 \title{Class 12: Orbital Mechanics}
-\subtitle{Advanced Placement Physics C}
+\subtitle{AP Physics C}
 \input{../me}
 \input{../mycommands}
 
@@ -35,25 +38,59 @@
 
 
 
-\begin{frame}{Relating Gravitational and Centripetal Force}
-  Assuming a small mass $m$ in \emph{circular} orbit around a much larger mass
-  $M$. The required centripetal force is supplied by the gravitational force:
-  
+\begin{frame}{Orbital Velocity}
+  \begin{columns}
+    \column{.35\textwidth}
+    \begin{tikzpicture}[scale=.8]
+      \foreach \x in {0,3} \draw (\x,0)--+(0,-1);
+      \draw[dashed,thick] circle (3);
+      \shade[balloon2] circle (.7) node[white]{$M$};
+      \draw[vectors,red] (3,0)--+(-1.2,0) node[above]{$\vec F_g$};
+      \shade[balloon1] (3,0) circle (.16) node[white]{$m$};
+      \draw[<->] (0,-.8)--(3,-.8) node[midway,fill=white]{$r$};
+    \end{tikzpicture}
+    
+    \column{.65\textwidth}
+    To calculate the magnitude of orbital velocity, we make these asumptions:
+    \begin{itemize}
+    \item A small mass ($m$) orbits a much larger one ($M$), i.e.\ $M\gg m$
+    \item The orbit is perfectly circular
+    \end{itemize}
+    Following these assumptions:
+    \begin{itemize}
+    \item $M$ is treated as a stationary object; only $m$ moves
+    \item Orbital radius ($r$) is the same as the distance between the masses
+    \item Centripetal force is provided by gravity
+      %\eq{-.1in}{
+      %  F_c=F_g=\frac{GMm}{r^2}
+      %}
+    \item The orbital motion is a uniform circular motion
+    \end{itemize}
+  \end{columns}
+\end{frame}
+
+
+
+\begin{frame}{Orbital Velocity}
+  The centripetal force for mass $m$ staying in orbit is provided by gravity:
+
   \eq{-.1in}{
-    F_c=ma_c\quad\longrightarrow\quad
-    F_g=ma_c\quad\longrightarrow\quad \frac{GMm}{r^2}=\frac{mv^2}r
+    \underbracket[1pt]{F_c}_{{\color{orange}=F_g}} =
+    m{\color{magenta}a_c}\quad\rightarrow\quad
+    %F_g = ma_c\quad\rightarrow\quad
+    {\color{orange}\frac{GMm}{r^2}}
+    = \frac{m{\color{magenta}v^2}}{\color{magenta}r}
   }
 
-  \vspace{-.1in}Solving for $v$, we obtain the \textbf{orbital velocity}
-  $v_\text{orbit}$, which does not depend on the mass of the small object in
-  orbit:
+  \vspace{-.05in}Cancelling $m$ and $r$ terms on both sides, and solving for
+  magnitude of velocity, we find the magnitude of the orbital velocity to be:
 
   \eq{-.1in}{
-    \boxed{v_\text{orbit}=\sqrt{\frac{GM}r}}
+    v=\boxed{v_\text{orbit}=\sqrt{\frac{GM}r}}
   }
 
-  This equation is only applicable for perfectly circular orbits. The direction
-  of the orbital velocity is tangent to the circular path.
+  This equation is only applicable for perfectly circular orbits.
+  The direction of the orbital velocity is tangent to the circular orbit.
 \end{frame}
 
 
