@@ -18,22 +18,40 @@
 
 
 
-\begin{frame}{Work and Energy}
-  We start with some definition at are (unfortunately) not very useful:
+\begin{frame}{Mechanical Work and Energy}
+  What are work and energ?
   \begin{itemize}
-    \item \textbf{Energy} is the ability to do work.
-    \item \textbf{Work} is the mechanism in which energy is transformed.
+  \item\textbf{Energy} is the ability to do work.
+  \item\textbf{Mechanical work}\footnote{It is usually referred to as just
+  \textbf{work}} is the mechanism in which energy is transformed.
   \end{itemize}
-  Luckily, we can also use equations to define these concepts.
+  On first glance, these definitions are (unfortunately) not very useful. What
+  we should take away from the definitions is that:
+  \begin{itemize}
+  \item These two concepts cannot be separated:
+    \begin{itemize}
+    \item Defining work without leading to energy is pointless
+    \item Energy cannot be understood without mechanical work
+    \end{itemize}
+  \item These concepts can only be fully understood with mathematics.
+  \end{itemize}
 \end{frame}
+%\begin{frame}{Work and Energy}
+%  We start with some definition at are (unfortunately) not very useful:
+%  \begin{itemize}
+%    \item \textbf{Energy} is the ability to do work.
+%    \item \textbf{Work} is the mechanism in which energy is transformed.
+%  \end{itemize}
+%  Luckily, we can also use equations to define these concepts.
+%\end{frame}
 
 
 \section{Mechanical Work}
 
 \begin{frame}{Mechanical Work}
-  \textbf{Mechanical work} $W$ is done when a force $\vec F(\vec x)$ displaces
-  an object by $\dl\vec x$. When the force moves an object along a path
-  $\mathcal C$, the total work done by the force is defined as:
+  \textbf{Mechanical work} $\dl W$ is done when a force $\vec F(\vec x)$
+  displaces an object by $\dl\vec x$. When the force moves an object along a
+  path $\mathcal C$, the total work done by the force is defined as:
 
   \eq{-.1in}{
     \boxed{
@@ -57,21 +75,25 @@
 
 \begin{frame}{In One Dimension}
   For motion confined to one direction in a 1D coordinate system (which is
-  common for AP Physics C), the equation for work simplifies to:
+  common for AP Physics C), the definition of work simplifies to:
   
   \eq{-.1in}{
     W=\int_{x_0}^{x_1} F(x)\dl x
   }
 
-  (Direction still matters in 1D, i.e.\ there is still a positive and a
-  negative direction.)
+  Direction still matters in 1D, i.e.\ there is still a positive and a
+  negative direction.
 \end{frame}
 
 
 
 \begin{frame}{Work by Constant Force}
-  For a constant force, if the object moves along straight path, the integral
-  simplifies to the dot product of the two vectors:
+  For a constant or average force\footnote{The average force is based on
+  \emph{distance} instead of time; i.e.
+  \begin{displaymath}
+    F_\text{avg}=\frac{\int_{x_0}^{x_1}F(x)\dl x}{\Delta x}
+  \end{displaymath}}, if the object moves along straight path, the
+  integral simplifies to the dot product of the force and displacement vectors:
 
   \eq{-.1in}{
     \boxed{
@@ -79,16 +101,18 @@
     }
   }
 
-  We can express this also in a scalar form that is more familiar in Grades
-  11/12 Physics:
+  \vspace{-.15in}We can express this dot product in a form that is more
+  familiar in Grades 11/12 Physics or AP Physics 1:
 
   \eq{-.1in}{
     \boxed{
-      W=\vec F\Delta\vec x\cos\theta
+      W=|\vec F||\Delta\vec x|\cos\theta
     }
   }
 
-  where $\theta$ is the angle between the force and displacement vectors
+  \vspace{-.1in}where $\theta$ is the angle between the force and displacement
+  vectors
+  \vspace{.3in}
 \end{frame}
 
 
@@ -99,14 +123,16 @@
   \item The work done by \emph{one specific force}
   \item Example: A boy pushes a cart forward. The ``work done by the boy'' is
     the work done by the applied force
+  \item This quantity is important if we want to know the mechanism in which
+    how energy is transformed
   \end{itemize}
 
   \vspace{.15in}\textbf{Work done on an object}
   \begin{itemize}
-  \item There may be more than one force acting on an object
   \item The \emph{sum} of all the work done on the object by each force
   \item The work done by the net force
   \item Also called the \textbf{net work} $W_\text{net}$
+  \item This quantity is important if we want to know how work changes motion
   \end{itemize}
 \end{frame}
 
@@ -116,8 +142,10 @@
 
 \begin{frame}{Kinetic Energy}
   When a net force accelerates an object\footnote{We assume that the object has
-  a constant mass}, the resulting work done on the object (net work
-  $W_\text{net}$) is given by:
+  a constant mass}, the work done on the object (net work
+  $W_\text{net}$)\footnote{In 1D, a net force always does work, but in higher
+  dimensions, it is possible that the net force does not do any work if
+  $\vec F_\text{net}$ is perpendicular to motion.} is given by:
 
   \eq{-.1in}{
     W_\text{net}
@@ -133,7 +161,7 @@
     =m\int\diff xt\dl v=m\int_{v_0}^{v_1}v\dl v
   }
   where $v_0=v(x_0)$ and $v_1=v(x_1)$.
-  \vspace{.3in}
+  \vspace{.2in}
 \end{frame}
 
 
@@ -174,9 +202,10 @@
     }
   }
   \begin{itemize}
-  \item $K$ increases ($\Delta K>0$) if net work is positive ($W_\text{net}>0$),
-    and
-  \item $K$ decreases ($\Delta K<0$) if net work is negative ($W_\text{net}>0$)
+  \item $K$ increases ($\Delta K>0$) if net work is positive ($W_\text{net}>0$);
+    the object speeds up
+  \item $K$ decreases ($\Delta K<0$) if net work is negative ($W_\text{net}>0$);
+    the object slows down
   \item It does not matter \emph{what} the net force is composed of
   \end{itemize}
 \end{frame}
@@ -198,8 +227,10 @@
 \section{Potential Energy}
 
 \begin{frame}{Gravitational Force \& Gravitational Potential Energy}
-  Consider an object that is free-falling under the force of gravity over a
-  distance of $\Delta x$:
+  Consider an object that is free-falling downwards under the force of
+  gravity\footnote{By definition, free-fall means that the only force acting on
+  the object is gravitational force, and this is precisely what we need in
+  order to isolate the work done by gravity.} over a distance of $\Delta x$:
   \begin{center}
     \begin{tikzpicture}[scale=.6]
       \draw[thick,fill=cyan!10] (7.75,0) arc (75:105:30);
@@ -212,10 +243,11 @@
   \item The work done by the gravity ($W_g$) is \emph{positive}, and
     therefore, there is an increase in kinetic energy, and the object speeds up
 
-    \eq{-.2in}{
+    \eq{-.25in}{
       W_g=F_g\Delta x=mg\Delta x=\Delta K > 0
     }
   \end{itemize}
+  \vspace{.2in}
 \end{frame}
 
 
@@ -274,6 +306,44 @@
       \end{itemize}
     \end{minipage}
   }
+\end{frame}
+
+
+
+\begin{frame}{Work Done by Gravity---Path Independence}
+  The
+  %change in gravitational potential energy (i.e.\
+  work done by gravity
+  is \textbf{path independent:} it depends only on the weight ($\vec F_g$) of
+  the object, and the end points ($h_0$ and $h_1$), but not the path.
+  \begin{center}
+    \begin{tikzpicture}
+      \draw[thick,dashed] (0,0)--(12,0) node[right]{$h_0$};
+      \draw[thick,dashed] (0,-2)--+(12,0) node[right]{$h_1$};
+
+      \fill[red] (1,0) circle (.07);
+      \draw[vectors,red] (1,0)--+(0,-2);
+      \draw[thick,red] (1,-2) circle (.07);
+      \node[below,red] at (1,-2.3){Dropped};
+
+      \fill[violet] (3.5,0) circle (.07);
+      \draw[vectors,violet] (3.5,0)--+(0,1.2) arc(180:0:.05)--+(0,-3.2);
+      \draw[thick,violet] (3.6,-2) circle (.07);
+      \node[below,violet] at (3.55,-2.3){Thrown straight up};
+      
+      \fill[orange] (5.5,0) circle (.07);
+      \draw[vectors,orange] (5.5,0) to[out=50,in=120] +(2,-2);
+      \draw[thick,orange] (7.5,-2) circle (.07);
+      \node[below,orange] at (6.5,-2.3){Projectile};
+      
+      \fill[magenta] (8.5,0) circle (.07);
+      \draw[vectors,magenta] (8.5,0) to[out=-50,in=230] +(2.5,-2);
+      \draw[thick,magenta] (11,-2) circle (.07);
+      \node[below,magenta] at (9.75,-2.3){Arbitrary ramp/slide };
+    \end{tikzpicture}
+  \end{center}
+  $W_g$ is the same in all above cases because they all have the same $h_0$ and
+  $h_1$.
 \end{frame}
 
 
@@ -349,8 +419,8 @@
 
 
 \begin{frame}{Elastic Potential Energy}
-  The the work done by the spring force can be related to the elastic
-  potential energy by:
+  The work done by the spring force is equal to the negative change in the
+  elastic potential energy:
   
   \eq{-.1in}{
     \boxed{  W_s=-\Delta U_s }
@@ -428,7 +498,7 @@
   \begin{center}
     \begin{tikzpicture}[scale=.8]
       \draw[axes] (0,0)--(10,0) node[right]{$x$};
-      \draw[axes] (0,0)--(0,5) node[right]{$U(x)$};
+      \draw[axes] (0,0)--(0,5) node[above]{$U(x)$};
       \draw[very thick] (.2,4.5)
       to[out=-70,in=180] (1.5,2.5)
       to[out=0,in=180] (2.5,1)
@@ -652,12 +722,12 @@
   }
 
   It is a function of the molecules' \textbf{absolute temperature}. This is
-  part of a major field within physics called thermodynamics that is not
-  covered in this course\footnote{The introductory dicussion is covered in AP
-  Physics 2}; we are only including them here for completeness.\footnote{For
-  those who are interested, for ideal and monatomic gases,
-  $E_\text{int}=\frac32NkT$; for diatomic gases, $E_\text{int}\approx\frac52NkT$;
-  and for solids, $E_\text{int}\approx3NkT$. }
+  part of a major field in physics called thermodynamics that is not covered in
+  this course\footnote{The introductory dicussion is covered in AP Physics 2};
+  we are only including them here for completeness.\footnote{For those who are
+  interested, for ideal and monatomic gases, $E_\text{int}=\frac32Nk_BT$; for
+  diatomic gases, $E_\text{int}\approx\frac52Nk_BT$; and for solids,
+  $E_\text{int}\approx3Nk_BT$.}
 \end{frame}
 
 
@@ -667,7 +737,7 @@
 
 \begin{frame}{Law of Conservation of Energy}
   The \textbf{law of conservation of energy} states that \emph{the change in
-  the total energy of a system is equal to the external work done to it}:
+  the total energy of a system is equal to the net external work done to it}:
 
   \eq{-.1in}{
     \boxed{
@@ -678,10 +748,13 @@
   A \textbf{system} is a predefined collection of objects that apply forces
   on each other (and may or may not do work on each other). A system can be
   \begin{itemize}
-  \item\textbf{Isolated}: objects in the system do work \emph{only} on
-    each other
-  \item\textbf{Open}: objects in the system do work on each other as
-    well as to objects in its surroundings
+  \item\textbf{Isolated:} objects in the system do work \emph{only} on
+    each other; there are no external forces
+  \item\textbf{Closed:} There are external forces on the system by the
+    surrounding, but these external forces do not do work
+  \item\textbf{Open:} There are external forces that do work on the system;
+    objects in the system do work on each other as well as to objects in its
+    surroundings
   \end{itemize}
 \end{frame}
 
@@ -694,8 +767,8 @@
 
   \eq{-.1in}{
     \boxed{
-      E_\text{sys} = \underbrace{\sum K + \sum U_i}_\text{mechanical} +
-      \underbrace{\sum E_\text{int}}_\text{thermal}
+      E_\text{sys} = \underbracket[1pt]{\sum K + \sum U_i}_\text{mechanical} +
+      \underbracket[1pt]{\sum E_\text{int}}_\text{thermal}
     }
   }
   
@@ -724,8 +797,9 @@
 
 \begin{frame}{Law of Conservation of Energy}
   In almost all of the problem encountered in AP Physics C, there will be no
-  change in the internal energy of the system, and conservation of energy
-  reduces to:
+  change in the internal energy of the system\footnote{In other words, whereas
+  the object itself is part of the system, the individual molecules are not},
+  and conservation of energy reduces to:
   
   \eq{-.2in}{
     \boxed{\sum\Delta K + \sum\Delta U = W_\text{ext} }\quad\rightarrow\quad
@@ -735,7 +809,7 @@
   External work $W_\text{ext}$ is
   \begin{itemize}
   \item\textbf{Positive} if work is done \text{to} the system
-  \item\textbf{Negative} if work is done \text{by} by the system to the
+  \item\textbf{Negative} if work is done \text{by} the system to the
     surrounding
   \end{itemize}
 \end{frame}

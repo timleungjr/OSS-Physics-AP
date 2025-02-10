@@ -4,7 +4,7 @@
 \usetikzlibrary{decorations.pathmorphing,patterns}
 
 \title{Class 11: Universal Gravitation}
-\subtitle{Advanced Placement Physics C}
+\subtitle{AP Physics C}
 \input{../me}
 \input{../mycommands}
 
@@ -41,7 +41,7 @@
 
   where $G=\SI{6.674e-11}{\newton.\metre\squared\per\kilo\gram\squared}$ is the
   \textbf{universal gravitational constant}, $r=|\vec r_{12}|$ is the distance
-  between the centers of the masses, and $\hat r_{12}=\vec r_{12}/|\vec r_{12}|$
+  between the centres of the masses, and $\hat r_{12}=\vec r_{12}/|\vec r_{12}|$
   is the unit vector pointing in the direction from $m_1$ to $m_2$.
 \end{frame}
 
@@ -63,7 +63,7 @@
   \item Third law of motion: If $m_1$ exerts a gravitational force $\vec F_{12}$
     on $m_2$, then $m_2$ likewise also exerts a reaction force of
     $\vec F_{21}=-\vec F_{12}$ on $m_1$. The two forces are equal in magnitude
-    an d opposite in direction
+    and opposite in direction
   \item $m_1$ and $m_2$ are \emph{point masses} that do not occupy any space
   \item The (more familiar) scalar form is often used as well:
 
@@ -77,42 +77,26 @@
 
 \begin{frame}{More Than One Mass}
   \begin{columns}
-    \column{.4\textwidth}
+    \column{.37\textwidth}
     \begin{tikzpicture}[scale=.4]
-      \shade[ball color=red] circle(.72) node[white]{$M$};
-      \begin{scope}[rotate=45]
-        \draw[->,very thick,blue](.72,0)--(2.5,0) node[right]{$\vec F_1$};
-        \shade[ball color=blue] (7,0) circle(1) node[white]{$m_1$};
-      \end{scope}
-      \uncover<2->{
-        \begin{scope}[rotate=105]
-          \draw[->,very thick,green](.72,0)--(2,0)
-          node[right]{$\vec F_2$};
-          \shade[ball color=green] (4,0) circle(.65) node[white]{$m_2$};
-        \end{scope}
-      }
-      \uncover<3->{
-        \begin{scope}[rotate=190]
-          \draw[->,very thick,yellow](.7,0)--(3.5,0)
-          node[above]{$\vec F_3$};
-          \shade[ball color=yellow!70!black](6,0)circle(1.1) node[white]{$m_3$};
-        \end{scope}
-      }
-      \uncover<4->{
-        \begin{scope}[rotate=260]
-          \draw[->,very thick,purple](.72,0)--(1.4,0)
-          node[right]{$\vec F_4$};
-          \shade[ball color=purple] (9,0) circle(.8) node[white]{$m_4$};
-        \end{scope}
-      }
-      \uncover<5>{
-        \begin{scope}[rotate=125]
-          \draw[->,ultra thick](.72,0)--(3.5,0) node[left]{$\vec F$};
-        \end{scope}
-      }
+      \shade[ball color=red] circle (.7) node[white]{$M$};
+
+      \draw[vectors,blue,rotate=45] (.7,0)--(2.5,0) node[right]{$\vec F_1$};
+      \shade[ball color=blue] (5,5) circle (.8) node[white]{$m_1$};
+
+      \draw[vectors,green,rotate=-45] (-.7,0)--(-2,0) node[left]{$\vec F_2$};
+      \shade[ball color=green] (-5,5) circle (.6) node[white]{$m_2$};
+
+      \draw[vectors,violet,rotate=45](-.7,0)--(-3.5,0) node[left]{$\vec F_3$};
+      \shade[ball color=violet] (-5,-5) circle (1.2) node[white]{$m_3$};
+
+      \draw[vectors,magenta,rotate=-45](.7,0)--(2.7,0) node[right]{$\vec F_4$};
+      \shade[ball color=magenta] (5,-5) circle (.8) node[white]{$m_4$};
+
+      %\draw[vectors] (.7,0)--(3.5,0) node[left]{$\vec F$};
     \end{tikzpicture}
 
-    \column{.6\textwidth}
+    \column{.63\textwidth}
     For a mass that is subjected to the influence of multiple discrete point
     masses $m_i$, the total gravitational force that $M$ experiences is the
     vector sum of all the forces $\vec F_i$:
@@ -164,7 +148,7 @@
   }
 
   The vector field function $\vec g$ is known as the \textbf{acceleration due
-    to gravity} in kinematics, and \textbf{gravitational field} in field theory.
+    to gravity}, and \textbf{gravitational field}.
 \end{frame}
 
 
@@ -213,14 +197,14 @@
     \end{tabular}
   \end{center}
   The negative sign indicates that \emph{direction} of the gravitational field
-  is toward $m$.
+  is towards $m$.
 \end{frame}
 
 
 
 \begin{frame}{More Than One Mass}
   When multiple point masses are present, the total gravitational field at any
-  position $\vec r$ is the vector sum of all the forces $\vec F_i$:
+  position $\vec r$ is the vector sum of all the fields $\vec g_i$:
     
   \eq{-.1in}{
     \boxed{\vec g
@@ -256,16 +240,16 @@
   \eq{-.1in}{
     \boxed{\vec F_g=m\vec g}
   }
-  \begin{center}
-    \begin{tabular}{l|c|c}
-      \rowcolor{pink}
-      \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
-      Gravitational force on a mass & $\vec F_g$ & \si\newton \\
-      Mass inside the gravitational field & $m$ & \si{\kilo\gram}\\
-      Gravitational field & $\vec g$   & \si{\newton\per\kilogram}
-    \end{tabular}
-  \end{center}
-  Note: A point mass is not affected by the gravitational field that itself
+%  \begin{center}
+%    \begin{tabular}{l|c|c}
+%      \rowcolor{pink}
+%      \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
+%      Gravitational force on a mass & $\vec F_g$ & \si\newton \\
+%      Mass inside the gravitational field & $m$ & \si{\kilo\gram}\\
+%      Gravitational field & $\vec g$   & \si{\newton\per\kilogram}
+%    \end{tabular}
+%  \end{center}
+  Note: A mass is not affected by the gravitational field that itself
   generates.
 \end{frame}
 
@@ -370,8 +354,8 @@
     \column{.7\textwidth}
     That $\vec g_\text{inside}=\vec 0$ can be calculated by:
     \begin{itemize}
-    \item Integrating the fields created by infinitesimal mass elements $dm$ at
-      any point inside the shell, or
+    \item Integrating the fields created by infinitesimal mass elements $\dl m$
+      at any point inside the shell, or
     \item Using \textbf{Gauss's law} for gravity, similar to finding the
       electric field inside a charged conducting sphere:
       
@@ -427,7 +411,7 @@
 
 
 
-\begin{frame}{Falling Toward the Center of Earth}
+\begin{frame}{Falling Towards the Centre of Earth}
   \begin{columns}
     \column{.3\textwidth}
     \pic1{eartholeg}
@@ -439,15 +423,15 @@
     \item The part that is ``above'' you is like the spherical shell, and does
       not contribute to the gravitational field, and therefore does not exert
       any force
-    \item The part that is ``below'' you gets smaller as you fall toward the
-      center
+    \item The part that is ``below'' you gets smaller as you fall towards the
+      centre
     \end{itemize}
   \end{columns}
 \end{frame}
 
 
 
-\begin{frame}{Falling Toward the Center of Earth}
+\begin{frame}{Falling Towards the Centre of Earth}
   Assuming that Earth's density is uniform, and neglecting air resistance and
   other factors, the value of $g$ as the person falls through Earth ($r<R$) is
   given by finding how much mass is still ``below'' the person, $M(r)$:
@@ -458,27 +442,27 @@
   }
 
   where $M_E$ is the mass of Earth, $r_E$ is the radius of Earth, $\rho$ is the
-  (constant) density, and $r$ is the distance from Earth's center. Then $M(r)$
-  is the amount of mass ``below'' the person as he/she falls toward the center.
+  (constant) density, and $r$ is the distance from Earth's centre. Then $M(r)$
+  is the amount of mass ``below'' the person as he/she falls towards the centre.
 \end{frame}
 
 
 
-\begin{frame}{Falling Toward the Center of Earth}
+\begin{frame}{Falling Towards the Centre of Earth}
   \begin{columns}
     \column{.3\textwidth}
     \pic1{eartholeg}
 
     \column{.7\textwidth}
     The gravitational field strength inside this hypothetical Earth is a
-    linear function of distance $r$ from the center:
+    linear function of distance $r$ from the centre:
 
     \eq{-.1in}{
       g(r)=\frac{GM_E r}{r_E^3}=\left(\frac r{r_E}\right)g_0
     }
     
     where $g_0=\SI{9.81}{\newton\per\kilogram}$ is the field strength at the
-    surface. At the center ($r=0$), $g=0$. The gravitational force is:
+    surface. At the centre ($r=0$), $g=0$. The gravitational force is:
     
     \eq{-.1in}{
       F_g(r)=-\underbrace{\left[\frac{mg_0}{r_E}\right]}_k r
@@ -504,14 +488,14 @@
 
 
 
-\begin{frame}{Falling Toward the Center of Earth}
+\begin{frame}{Falling Towards the Centre of Earth}
   \begin{columns}
     \column{.25\textwidth}
     \pic1{eartholsat}
 
     \column{.75\textwidth}
     The gravitational force has the same form as Hooke's law: it is
-    proportional to displacement from the center, but in the opposite
+    proportional to displacement from the centre, but in the opposite
     direction:
 
     \eq{-.2in}{
@@ -533,7 +517,7 @@
 
 
 
-\begin{frame}{Falling Toward the Center of Earth}
+\begin{frame}{Falling Towards the Centre of Earth}
   \begin{columns}
     \column{.25\textwidth}
     \pic1{eartholsat}
@@ -561,7 +545,7 @@
     \end{tikzpicture}
   \end{center}
   \begin{itemize}
-  \item The direction of $\vec g$ is toward the center of the object that
+  \item The direction of $\vec g$ is towards the centre of the object that
     created it
   \item Field lines do not tell the intensity (i.e.\ magnitude) of $\vec g$,
     only the direction

@@ -3,7 +3,7 @@
 \usepackage{mathtools}
   
 \title{Class 1: Kinematics}
-\subtitle{Advanced Placement Physics C}
+\subtitle{AP Physics C}
 \input{../me}
 \input{../mycommands}
 
@@ -70,26 +70,26 @@
 
 \section{Kinematics}
 
-%\begin{frame}{Kinematics}
-%  \textbf{Kinematics} is a discipline within mechanics concerning the
-%  motion of bodies. It describes the mathematical relationship between 
-%  \begin{itemize}
-%  \item<alert@1> Position
-%  \item<alert@1> Displacement
-%  \item Distance 
-%  \item<alert@1> Velocity
-%  \item Speed
-%  \item<alert@1> Acceleration
-%  \end{itemize}
-%  Kinematics does not deal with the causes of motion. The quantities that are
-%  highlighted are vectors.
-%\end{frame}
+\begin{frame}{Kinematics}
+  \textbf{Kinematics} is a discipline within mechanics concerning the
+  motion of bodies. It describes the mathematical relationship between 
+  \begin{itemize}
+  \item<alert@1> Position
+  \item<alert@1> Displacement
+  \item Distance 
+  \item<alert@1> Velocity
+  \item Speed
+  \item<alert@1> Acceleration
+  \end{itemize}
+  Kinematics does not deal with the causes of motion. The quantities that are
+  highlighted are vectors.
+\end{frame}
 
 
 
 \begin{frame}{Position}
   \textbf{Position} ($\vec r(t)$) is the location of an object in a coordinate
-  system as a function if time. It is measured in \textbf{meters}
+  system as a continuous function if time. It is measured in \textbf{metres}
   (\si\metre).
   \begin{columns}
     \column{.7\textwidth}
@@ -111,7 +111,7 @@
       \draw[axes] (0,0)--(5,0) node[right]{$x$};
       \draw[axes] (0,0)--(0,5) node[above]{$y$};
       \draw[axes] (0,0)--(-2,-2) node[below]{$z$};
-      \fill[red] (4,3) circle(.1);
+      \fill[red] (4,3) circle (.1);
       \draw[vectors,red] (0,0)--(4,3) node[midway,above]{$\vec r$}
       node[above]{$(x,y,z)$};
     \end{tikzpicture}
@@ -123,7 +123,7 @@
 \begin{frame}{Displacement}
   \textbf{Displacement} $\Delta\vec r(t)$ is the change in position from the
   initial position $\vec r_0$ within the same coordinate system. It is also a
-  function of time.
+  continuous function of time.
 
   \eq{-.1in}{
     \boxed{
@@ -132,10 +132,10 @@
     }
   }
 
-  where the initial position is give by:
+  where the initial position ($\vec r_0=\vec r(0)$) is give by:
 
   \eq{-.2in}{
-    r_0=x_0\iii+y_0\jjj + z_0\kkk
+    \vec r_0=x_0\iii+y_0\jjj + z_0\kkk
   }
   
 \end{frame}
@@ -148,9 +148,10 @@
     \column{.7\textwidth}
     \begin{itemize}
     \item The \emph{length of the path} taken by an object when it travels from
-      $\vec r_0$ to $\vec r(t)$
+      $\vec r_0$ (initial position) to $\vec r(t)$ (current position)
     \item A scalar quantity
     \item Non-negative, i.e.\ $s\geq 0$
+    \item Always increasing as the object moves
     \item Although the magnitude of the displacement vector is also a scalar,
       it is not necessarily the same as distance
     \item $s\geq |\Delta\vec r|$
@@ -173,31 +174,34 @@
 
 \begin{frame}{Instantaneous \& Average Velocity}
   \textbf{Instantaneous velocity} $\vec v(t)$ is the rate of change of
-  position\footnote{Or the rate of change of displacement. The two quantities
-  only differ by the constant $\vec r_0$.} with respect to time. It is related
-  to position $\vec r(t)$ by:
+  position or displacement
+  %(The two quantities
+  %only differ by the constant $\vec r_0$.}
+  with respect to time. It is related to position $\vec r(t)$ by:
 
   \eq{-.13in}{
     \boxed{
       \vec v(t)= \diff{\vec r}t
       \quad\quad
-      \vec r(t)=\int\vec v(t)\dl t + \vec r_0
+      \vec r(t)=\int\vec v(t)\dl t + \vec{\mathcal C}
     }
   }
 
-  $\vec r_0$ is the constant of integration evaluated at $t=t_0$. Likewise, the
-  \textbf{average velocity} $\vec v_\text{avg}(t)$ is the displacement (change
-  in position) $\Delta\vec r(t)$ over a finite time interval $\Delta t$:
+  $\vec{\mathcal C}$ is the constant of integration based on\footnote{Note that
+  $\vec{\mathcal C}$ is \emph{not} necessarily the initial position!} initial
+  condition at $t=t_0$. Likewise, the \textbf{average velocity}
+  $\vec v_\text{avg}(t)$ is the displacement $\Delta\vec r(t)$ over a finite
+  time interval $\Delta t$:
 
   \eq{-.1in}{
     \boxed{
       \vec v_\text{avg}(t) = \frac{\Delta\vec r(t)}{\Delta t}=
       \frac{\vec r(t)-\vec r_0}{t-t_0}
-      = \frac{\int_{t_0}^t\vec v\dl t}{t-t_0}
+      = \frac{\int_{t_0}^t\vec v(t)\dl t}{t-t_0}
     }
   }
 
-  The SI unit of velocity is \textbf{meters per second} (\si{\metre\per\second})
+  The SI unit of velocity is \textbf{metres per second} (\si{\metre\per\second})
   \vspace{.2in}
 \end{frame}
 
@@ -205,10 +209,10 @@
 
 
 \begin{frame}{Instantaneous \& Average Speed}
-  \textbf{Instantaneous speed} $v$ is the time rate of change of
-  \emph{distance}. It is the \emph{magnitude} of instantaneous velocity
+  \textbf{Instantaneous speed} $v$ is the rate of change of \emph{distance}
+  with respect to time. It is the \emph{magnitude} of instantaneous velocity
   (i.e.\ $v=|\vec v|$). Since $s\geq 0$, instantaneous speed must be positive,
-  i.e.\ $v\geq 0$.
+  (i.e.\ $v\geq 0$).
 
   \eq{-.1in}{
     \boxed{
@@ -216,7 +220,7 @@
     }
   }
 
-  \textbf{Average speed} $v_\text{avg}(t)$ is the distance $s(t)$ traveled over
+  \textbf{Average speed} $v_\text{avg}(t)$ is the distance $s(t)$ travelled over
   a finite time interval $\Delta t$:
   
   \eq{-.1in}{
@@ -244,18 +248,18 @@
 
 \begin{frame}{Instantaneous \& Average Acceleration}
   In the same way that velocity is the time rate of change in position,
-  \textbf{instantaneous acceleration} $\vec a(t)$ is the time rate of change of
-  instantaneous velocity:
+  \textbf{instantaneous acceleration} $\vec a(t)$ is the rate of change of
+  instantaneous velocity with respect to time:
 
   \eq{-.1in}{
     \boxed{
       \vec a(t)= \diff{\vec v}t=\diff[2]{\vec r}t
-      \quad\quad
-      \vec v(t)=\int\vec a(t)\dl t+\vec v_0
+      \quad\quad\quad
+      \vec v(t)=\int\vec a(t)\dl t+\vec{\mathcal V}
     }
   }
 
-  The SI unit for acceleration is \textbf{meters per second squared}
+  The SI unit for acceleration is \textbf{metres per second squared}
   (\si{\metre\per\second\squared}). \textbf{Average acceleration}
   $\vec a_\text{avg}(t)$ is the finite change in velocity $\Delta\vec v(t)$ over
   a finite time interval $\Delta t$:
@@ -269,7 +273,7 @@
     }
   }
 
-  \textbf{Important note:} Aacceleration only requires a \emph{change} in
+  \textbf{Important note:} Acceleration only requires a \emph{change} in
   velocity; it does \emph{not} necessarily mean an object speeds up or slows
   down (e.g.\ uniform circular motion)
 \end{frame}
@@ -290,6 +294,7 @@
 
   We will use this notation whenever it is convenient
 \end{frame}
+
 
 
 \begin{frame}{Linear Independence}
@@ -328,7 +333,8 @@
   
   The next two derivatives of snap are called \textbf{crackle} and
   \textbf{pop}, but these higher derivatives of position vector are rarely used.
-  We will \emph{not} be using them for AP Physics.
+  (It is unclear what physical significance they have.) We will \emph{not} be
+  using them for AP Physics.
 \end{frame}
 
 
@@ -410,7 +416,7 @@
     \end{tikzpicture}
   \end{center}
   \begin{itemize}
-  \item Constant velocity has a straight line in the $x-t$ graph
+  \item Constant velocity has a straight line in the $x$-$t$ graph
   \item The slope of the $x$-$t$ graph is the velocity $v$, which is constant
   \item The slope of the $v$-$t$ graph is the acceleration $a$, which is zero
     in this case
@@ -515,44 +521,273 @@
 
 
 
-\begin{frame}{Velocity Squared vs.\ Displacement}
-  If velocity information is given as a function of position\footnote{Depends
-    on experimental set up} then a motion graph can be plotted using this
-  kinematic equation:
+\section{Advanced Graphing Techniques}
+
+\begin{frame}{Advanced Graphing Technique: $x$ vs.\ $t^2$}
+  \begin{columns}[T]
+    \column{.4\textwidth}
+    \begin{tikzpicture}[scale=.7,rotate around={-10:(9,0)}]
+      \draw[thick] (0,0)--+(8.8,0);
+      \draw[thick] (.3,.1) rectangle +(.8,.2);
+      \draw[thick,fill=black!2] (.5,.1) circle (.1);
+      \draw[thick,fill=black!2] (.9,.1) circle (.1);
+      \foreach \x in {.7,1.2,...,8.5}
+      \draw[thick](\x,0)--+(0,-.15); % node[below]{\tiny$\x$};
+    \end{tikzpicture}
+
+    \column{.6\textwidth}
+    A toy cart rolls down a ramp from rest (i.e.\ $v_0=0$). At regular
+    distances, time is recorded. In this case, the acceleration of the cart
+    \emph{should} be constant. Can we determine the car's acceleration?
+  \end{columns}
+  
+  \vspace{.3in}
+  \begin{columns}[T]
+    \column{.51\textwidth}
+    \uncover<2->{\color{magenta}
+      
+      \vspace{.03in}Based on the data, we can plot an $x$--$t$ graph.
+      Unfortunately this graph would not be very helpful in determining
+      acceleration.
+
+      \begin{tabular}{c|c}
+        $x$ & $t$ \\\hline
+        $x_0$ & 0 \\
+        $x_1$ & $t_1$\\
+        \vdots & \vdots \\
+        $x_N$ & $t_N$
+      \end{tabular}
+      \hspace{.2in}
+      \begin{minipage}{.4\textwidth}
+        \begin{tikzpicture}
+          \draw[axes](0,0)--(0,2) node[right]{$x$};
+          \draw[axes](0,0)--(2,0) node[right]{$t$};
+          \draw[smooth,domain={0:1.8},very thick] plot(\x,{.4*\x*\x+.3});
+        \end{tikzpicture}
+      \end{minipage}
+    }
+
+    \column{.49\textwidth}
+    \uncover<3>{\color{violet}
+      If, instead, we plot $x$--$t^2$, the graph would be \emph{linear}, and
+      the slope will tell us about the acceleration.
+
+      \begin{tabular}{c|c}
+        $x$ & $t^2$ \\\hline
+        $x_0$ & 0 \\
+        $x_1$ & $t_1^2$\\
+        \vdots & \vdots \\
+        $x_N$ & $t_N^2$
+      \end{tabular}
+      \hspace{.2in}
+      \begin{minipage}{.4\textwidth}
+        \begin{tikzpicture}
+          \draw[axes] (0,0)--(0,2) node[right]{$x$};
+          \draw[axes] (0,0)--(2,0) node[right]{$t^2$};
+          \draw[very thick] (0,.3)--(1.8,1.8);
+        \end{tikzpicture}
+      \end{minipage}
+    }
+  \end{columns}
+\end{frame}
+
+
+
+\begin{frame}{Advanced Graphing Technique: $x$ vs.\ $t^2$}
+  When we plot $x$ as a function of $t^2$ instead of a function of $t$, we are
+  essentially doing this to the kinematic equation (from a few slide ago):
 
   \eq{-.1in}{
-    \underbracket{v^2}_y=\underbracket{v_0^2}_b+\underbracket{2a}_m
-    \underbracket{(x-x_0)}_x
+    \underbracket[1pt]{x}_y=\underbracket[1pt]{x_0}_b +
+    \underbracket[1pt]{\frac12a}_m\underbracket[1pt]{t^2}_x
   }
-
-  by plotting $v^2$ on the $y$-axis and displacement $\Delta x=x-x_0$ on the
-  $x$-axis. The slope of the graph is $m=2a$. The square of the initial
-  velocity ($v_0^2$) is the $y$-intercept.
-\end{frame}
-
-
-
-\begin{frame}{Graphing ``Linear'' Functions}
-  This concept extends to graphing other physical quantities not relating to
-  motion:
+  
+  \vspace{-.05in}and turning it into a linear function in the form $y=mx+b$
+  that is familiar to everyone.
   \begin{itemize}
-  \item To find the index of refraction of a material using Snell's law, plot
-    $\sin\theta_i$ vs.\ $\sin\theta_2$ (rather than $\theta_1$ vs.\ $\theta_2$).
-    The slope is the index $n$:
-
-    \eq{-.1in}{
-      \underbracket{\sin\theta_1}_y=\underbracket{n}_m
-      \underbracket{\sin\theta_2}_x
-    }
-  \item To relate the period of oscillation of a simple pendulum to the length
-    of the pendulum, plot $T^2$ vs.\ $L$:
-
-    \eq{-.2in}{
-      \underbracket{T^2}_y=\underbracket{\frac{4\pi^2}g}_m
-      \underbracket{L}_x
-    }
+  \item The slope of the $x$ vs. $t^2$ graph is $\dfrac12a$ (or acceleration
+    is 2 times the slope)
+  \item If the $x$ vs.\ $t^2$ graph is \emph{not} linear, we will know that
+    our assumption of constant acceleration was incorrect, and that there are
+    other factors that we neglected
   \end{itemize}
 \end{frame}
+
+
+\begin{frame}{Advanced Graphing Technique: $v^2$ vs.\ $\Delta x$}
+  \begin{columns}[T]
+    \column{.4\textwidth}
+    \begin{tikzpicture}[scale=.7,rotate around={-10:(9,0)}]
+      \draw[thick] (0,0)--+(8.8,0);
+      \draw[thick] (.3,.1) rectangle +(.8,.2);
+      \draw[thick,fill=black!2] (.5,.1) circle (.1);
+      \draw[thick,fill=black!2] (.9,.1) circle (.1);
+      \foreach \x in {.7,1.2,...,8.5}
+      \draw[thick](\x,0)--+(0,-.15); % node[below]{\tiny$\x$};
+    \end{tikzpicture}
+
+    \column{.6\textwidth}
+    A toy cart rolls down a ramp. At regular positions $x$ along the ramp, the
+    cart's velocity $v$ is recorded instead. Again, acceleration \emph{should}
+    be constant. Can we determine the car's acceleration from the data?
+  \end{columns}
+
+  \vspace{.3in}
+  \begin{columns}[T]
+    \column{.5\textwidth}
+    \uncover<2->{\color{magenta}
+      
+      \vspace{.03in}Plotting the data would give us a $v$--$x$ graph.
+      Unfortunately (again) this graph would not help us find the acceleration.
+
+      \begin{tabular}{c|c}
+        $x$ & $v$ \\\hline
+        $x_0$ & $v_0$ \\
+        $x_1$ & $v_1$\\
+        \vdots & \vdots \\
+        $x_N$ & $v_N$
+      \end{tabular}
+      \hspace{.2in}
+      \begin{minipage}{.6\textwidth}
+        \begin{tikzpicture}
+          \draw[axes] (0,0)--(0,2) node[right]{$v$};
+          \draw[axes] (0,0)--(2,0) node[right]{$x$};
+          \draw[smooth,domain={0:1.8},samples=40,very thick]
+          plot(\x,{\x^.5+.3});
+        \end{tikzpicture}
+      \end{minipage}
+    }
+
+    \column{.5\textwidth}
+    \uncover<3>{\color{violet}
+      But if we plot $v^2$ vs.\ $\Delta x$, the graph would be \emph{linear},
+      and the slope will give us information about acceleration.
+
+      \begin{tabular}{c|c}
+        $v^2$ & $\Delta x$ \\\hline
+        $v_0$ & 0 \\
+        $v_1$ & $x_1-x_0$\\
+        \vdots & \vdots \\
+        $v_N$ & $x_N-x_0$
+      \end{tabular}
+      \hspace{.2in}
+      \begin{minipage}{.4\textwidth}
+        \begin{tikzpicture}
+          \draw[axes] (0,0)--(0,2) node[right]{$v^2$};
+          \draw[axes] (0,0)--(2,0) node[right]{$\Delta x$};
+          \draw[very thick] (0,.3)--(1.8,1.8);
+        \end{tikzpicture}
+      \end{minipage}
+    }
+  \end{columns}
+\end{frame}
+
+
+
+\begin{frame}{Velocity Squared vs.\ Displacement}
+  If velocity and position are given, then the relationship would be best
+  expressed using this kinematic equation (we have studied a few slide ago):
+
+  \eq{-.1in}{
+    \underbracket[1pt]{v^2}_y=\underbracket[1pt]{v_0^2}_b+
+    \underbracket[1pt]{2a}_m
+    \underbracket[1pt]{(x-x_0)}_x
+  }
+
+  by plotting $v^2$ vs. $\Delta x=x-x_0$, we again have a linear function in the
+  form of $y=mx+b$.
+  \begin{itemize}
+  \item The slope of the graph is two times the acceleration $m=2a$ (i.e.\
+    acceleration is one half of the slope).
+  \item The square of the initial velocity ($v_0^2$) is the $y$-intercept
+  \item \emph{If} our assumption was incorrect (i.e.\ acceleration is \emph{not}
+    constant) then the line would not be straight
+  \end{itemize}
+\end{frame}
+
+
+
+\begin{frame}{Graphing ``Linear'' Functions: Example}
+  This concept extends to graphing other physical relationships not related to
+  kinematics. For example, to find the index of refraction of a material using
+  Snell's law, we can plot $\sin\theta_1$ vs.\ $\sin\theta_2$ (instead than
+  $\theta_1$ vs.\ $\theta_2$). The slope is the ratio of the indices $n_1/n_2$:
+
+  \eq{-.1in}{
+    \underbracket[1pt]{\sin\theta_2}_y=
+    \underbracket[1pt]{\left[\frac{n_1}{n_2}\right]}_m
+    \underbracket[1pt]{\sin\theta_1}_x
+  }
+
+  In an experiment, we can vary the incident angle $\theta_1$ in a medium with
+  a known index ($n_1$), and measure the corresponding refracted angle
+  $\theta_2$. Once the slope of the graph ($n_1/n_2$) is known, we can find
+  $n_2$.
+\end{frame}
+
+
+
+\begin{frame}{Graphing ``Linear'' Functions: Another Example}
+  To relate the period of oscillation (the time it takes to swing back and
+  forth once) of a simple pendulum to the length of the pendulum, plot $T$
+  vs.\ $\sqrt\ell$:
+
+  \eq{-.15in}{
+    \underbracket[1pt]{T}_y=\underbracket[1pt]{\frac{2\pi}{\sqrt g}}_m
+    \underbracket[1pt]{\sqrt\ell}_x
+  }
+
+  or alternatively, by squaring both sides of the equation to relate $T^2$ to
+  $\ell$:
+
+  \eq{-.15in}{
+    \underbracket[1pt]{T^2}_y=\underbracket[1pt]{\left[\frac{4\pi^2}g\right]}_m
+    \underbracket[1pt]{\ell}_x
+  }
+
+  We can change the length of the pendulum $\ell$ and measure the period $T$ of
+  the oscillation.
+\end{frame}
+
+
+%\begin{frame}{Velocity Squared vs.\ Displacement}
+%  If velocity information is given as a function of position\footnote{Depends
+%    on experimental set up} then a motion graph can be plotted using this
+%  kinematic equation:
+%
+%  \eq{-.1in}{
+%    \underbracket{v^2}_y=\underbracket{v_0^2}_b+\underbracket{2a}_m
+%    \underbracket{(x-x_0)}_x
+%  }
+%
+%  by plotting $v^2$ on the $y$-axis and displacement $\Delta x=x-x_0$ on the
+%  $x$-axis. The slope of the graph is $m=2a$. The square of the initial
+%  velocity ($v_0^2$) is the $y$-intercept.
+%\end{frame}
+%
+%
+%
+%\begin{frame}{Graphing ``Linear'' Functions}
+%  This concept extends to graphing other physical quantities not relating to
+%  motion:
+%  \begin{itemize}
+%  \item To find the index of refraction of a material using Snell's law, plot
+%    $\sin\theta_i$ vs.\ $\sin\theta_2$ (rather than $\theta_1$ vs.\ $\theta_2$).
+%    The slope is the index $n$:
+%
+%    \eq{-.1in}{
+%      \underbracket{\sin\theta_1}_y=\underbracket{n}_m
+%      \underbracket{\sin\theta_2}_x
+%    }
+%  \item To relate the period of oscillation of a simple pendulum to the length
+%    of the pendulum, plot $T^2$ vs.\ $L$:
+%
+%    \eq{-.2in}{
+%      \underbracket{T^2}_y=\underbracket{\frac{4\pi^2}g}_m
+%      \underbracket{L}_x
+%    }
+%  \end{itemize}
+%\end{frame}
 
 
 
@@ -901,3 +1136,5 @@
   \end{itemize}
 \end{frame}
 \end{document}
+
+% LocalWords:  IJK

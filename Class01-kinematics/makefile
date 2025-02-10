@@ -1,6 +1,8 @@
 all:
 	xelatex PhysAPC-01-kinematics
 	xelatex PhysAPC-01-kinematics
+	xelatex PhysAPC-01-kinematics-print
+	xelatex PhysAPC-01-kinematics-print
 	cd courseOutline ; make
 	cd homework ; make
 	cd Handouts ; make

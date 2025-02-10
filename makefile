@@ -1,5 +1,7 @@
-TERM=2023-07-Summer-Physics
-DESTINATION=$(HOME)/Documents/ossfiles/$(TERM)/Physics.APC
+TERM=2024-09-Fall-Physics
+CLOUD=ossfiles
+WORKFILES_DIR=000-Timothy\ L
+DESTINATION=$(HOME)/Documents/$(CLOUD)/$(WORKFILES_DIR)/$(TERM)/Physics.APC
 
 export DESTINATION
 

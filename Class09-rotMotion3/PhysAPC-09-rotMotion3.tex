@@ -2,7 +2,7 @@
 \input{../mybeamer}
 
 \title{Class 9: Rigid Body Rotational Motion, Part 3}
-\subtitle{Advanced Placement Physics C}
+\subtitle{AP Physics C}
 \input{../me}
 \input{../mycommands}
 
@@ -15,95 +15,96 @@
 
 
 
-\section{Review}
-
-\begin{frame}{Curvilinear vs.\ Rectilinear Motion}
-  Kinematic quantities for rectilinear (translational) vs.\ curvilinear
-  (circular) motion are related:
-
-  \vspace{-.25in}{\large
-    \begin{align*}
-      \vec r &\quad\rightarrow\quad \theta \\
-      \vec v &\quad\rightarrow\quad \omega \\
-      \vec a &\quad\rightarrow\quad \alpha
-    \end{align*}
-  }
-
-  Dynamics:
-  
-  \vspace{-.25in}{\large
-    \begin{align*}
-      m &\quad\rightarrow\quad I\\
-      \vec F &\quad\rightarrow\quad\tau\\
-      \vec p=m\vec v_\text{cm} &\quad\rightarrow\quad L=I\omega
-    \end{align*}
-  }
-\end{frame}
-
-
-
-\begin{frame}{Laws of Motion}
-  The laws of motion are also related between translational and rotational
-  motion:
-  
-  \vspace{-.2in}{\large
-    \begin{align*}
-      \vec F_\text{net}=\diff{\vec p_\text{cm}}t &\quad\rightarrow\quad
-      \tau_\text{net}=\diff Lt \\
-      \vec F_\text{net}=m \vec a_\text{cm} &\quad\rightarrow\quad
-      \tau_\text{net}=I\alpha
-    \end{align*}
-  }
-\end{frame}
-
-
-
-
-\begin{frame}{Mechanical Work}
-  Mechanical Work:
-
-  \eq{-.1in}{
-    W_t=\int_{x_1}^{x_2}\vec F\dl x
-    \quad\longrightarrow\quad
-    W_r=\int_{\theta_1}^{\theta_2}\tau\dl\theta
-  }
-
-  Work-energy theorem:
-
-  \eq{-.1in}{
-    W_t=\Delta K_t
-    \quad\longrightarrow\quad
-    W_r=\Delta K_r
-  }
-
-  Kinetic Energy:
-  
-  \eq{-.1in}{
-    K_t=\frac12mv_\text{cm}^2
-    \quad\longrightarrow\quad
-    K_r=\frac12I\omega^2
-  }
-\end{frame}
-
-
-\begin{frame}{Kinetic Energy of a Rotating System}
-  The total kinetic energy of a rotating system is the sum of its translational
-  and rotational kinetic energies at its center of mass:
-
-  \eq{-.1in}{
-    \boxed{K=K_t+K_r=\frac12mv_\text{cm}^2+\frac12I_\text{cm}\omega^2}
-  }
-  
-  In this case, $I_\text{cm}$ is calculated at the center of mass. For simple
-  problems, we only need to compute rotational kinetic energy at the pivot:
-
-  \eq{-.1in}{
-    \boxed{K=\frac12I_\text{p}\omega^2}
-  }
-  
-  In this case, the $I_\text{p}$ is calculated at the pivot.
-  \textbf{IMPORTANT:} $I_\text{cm}\neq I_\text{P}$
-\end{frame}
+%\section{Review}
+%
+%\begin{frame}{Curvilinear vs.\ Rectilinear Motion}
+%  Kinematic quantities for rectilinear (translational) vs.\ curvilinear
+%  (circular) motion are related:
+%
+%  \vspace{-.25in}{\large
+%    \begin{align*}
+%      \vec r &\quad\rightarrow\quad \theta \\
+%      \vec v &\quad\rightarrow\quad \omega \\
+%      \vec a &\quad\rightarrow\quad \alpha
+%    \end{align*}
+%  }
+%
+%  Dynamics:
+%  
+%  \vspace{-.25in}{\large
+%    \begin{align*}
+%      m &\quad\rightarrow\quad I\\
+%      \vec F &\quad\rightarrow\quad\tau\\
+%      \vec p=m\vec v_\text{cm} &\quad\rightarrow\quad L=I\omega
+%    \end{align*}
+%  }
+%\end{frame}
+%
+%
+%
+%\begin{frame}{Laws of Motion}
+%  The laws of motion are also related between translational and rotational
+%  motion:
+%  
+%  \vspace{-.2in}{\large
+%    \begin{align*}
+%      \vec F_\text{net}=\diff{\vec p_\text{cm}}t &\quad\rightarrow\quad
+%      \tau_\text{net}=\diff Lt \\
+%      \vec F_\text{net}=m \vec a_\text{cm} &\quad\rightarrow\quad
+%      \tau_\text{net}=I\alpha
+%    \end{align*}
+%  }
+%\end{frame}
+%
+%
+%
+%
+%\begin{frame}{Mechanical Work}
+%  Mechanical Work:
+%
+%  \eq{-.1in}{
+%    W_t=\int_{x_1}^{x_2}\vec F\dl x
+%    \quad\longrightarrow\quad
+%    W_r=\int_{\theta_1}^{\theta_2}\tau\dl\theta
+%  }
+%
+%  Work-energy theorem:
+%
+%  \eq{-.1in}{
+%    W_t=\Delta K_t
+%    \quad\longrightarrow\quad
+%    W_r=\Delta K_r
+%  }
+%
+%  Kinetic Energy:
+%  
+%  \eq{-.1in}{
+%    K_t=\frac12mv_\text{cm}^2
+%    \quad\longrightarrow\quad
+%    K_r=\frac12I\omega^2
+%  }
+%\end{frame}
+%
+%
+%
+%\begin{frame}{Kinetic Energy of a Rotating System}
+%  The total kinetic energy of a rotating system is the sum of its translational
+%  and rotational kinetic energies at its centre of mass:
+%
+%  \eq{-.1in}{
+%    \boxed{K=K_t+K_r=\frac12mv_\text{cm}^2+\frac12I_\text{cm}\omega^2}
+%  }
+%  
+%  In this case, $I_\text{cm}$ is calculated at the centre of mass. For simple
+%  problems, we only need to compute rotational kinetic energy at the pivot:
+%
+%  \eq{-.1in}{
+%    \boxed{K=\frac12I_\text{p}\omega^2}
+%  }
+%  
+%  In this case, the $I_\text{p}$ is calculated at the pivot.
+%  \textbf{IMPORTANT:} $I_\text{cm}\neq I_\text{P}$
+%\end{frame}
 
 
 
@@ -122,9 +123,9 @@
     \column{.65\textwidth}
     Three forces act on the sphere as it rolls down the ramp
     \begin{itemize}
-    \item The weight ($mg$) of the sphere acts at the CM
-    \item The normal force ($N$) acts at the point of contact
-    \item The static friction ($f_s$) act at the point of contact
+    \item The weight ($\vec F_g$) of the sphere acts at the CM
+    \item The normal force ($\vec F_n$) acts at the point of contact
+    \item The static friction ($\vec f_s$) act at the point of contact
     \end{itemize}
     Only static friction generates a torque about the CM in the clockwise
     direction
@@ -134,7 +135,7 @@
 
 
 \begin{frame}{Rolling on an Inclined Surface}
-  The center of mass of the sphere will translate down the ramp, along the
+  The centre of mass of the sphere will translate down the ramp, along the
   $\iii$ direction. The sphere will also rotate in the clockwise direction.
 
   \vspace{.2in}
@@ -145,11 +146,11 @@
     \column{.65\textwidth}
     The work done by the three forces acting on the sphere:
     \begin{itemize}
-    \item Weight ($mg$) does $+$ translational work, but no rotational
+    \item Weight ($\vec F_g$) does $+$ translational work, but no rotational
       work
-    \item Normal force ($N$) does no translational work, and no rotational
-      work
-    \item Static friction ($f_s$) does $(-)$ translational work, and $(+)$
+    \item Normal force ($\vec F_n$) does no translational work, and no
+      rotational work
+    \item Static friction ($\vec f_s$) does $(-)$ translational work, and $(+)$
       rotational work
     \end{itemize}
     Although static friction is non-conservative, the work done stays inside
@@ -173,7 +174,7 @@
     \begin{itemize}
     \item The translational kinetic energy of the sphere
     \item The rotational kinetic energy of the sphere
-    \item The gravitational kinetic energy stored between the sphere \& Earth
+    \item The gravitational potential energy stored between the sphere \& Earth
     \end{itemize}
     The system is an isolated system, because there is no external work done
     \begin{itemize}
