@@ -55,7 +55,7 @@
 
 \begin{frame}{Reminder on the cross product}
   Whenever the ``right-hand rule'' is mentioned, or when an equation has
-  ``$\sin\theta$'' in it, that usually means that the equation involces a
+  ``$\sin\theta$'' in it, that usually means that the equation involves a
   cross product in it. Just a reminder on a few properties:
   \begin{itemize}
   \item If $\vec C=\vec A\times\vec B$, then $\vec C$ is perpendicular to both
@@ -135,13 +135,12 @@
     \emph{infinitely-long straight wire} gives a simple expression:
 
     \eq{-.1in}{
-      \boxed{\vec B=\frac{\mu_0(\vec I\times\hat r)}{2\pi r}}
-      \quad\text{or}\quad
+      %\boxed{\vec B=\frac{\mu_0(\vec I\times\hat r)}{2\pi r}}
+      %\quad\text{or}\quad
       \boxed{B=\frac{\mu_0I}{2\pi r}}
     }
 
-    The magnitude and direction current ``vector'' $\vec I$ is
-    straightforward
+    %The magnitude and direction current ``vector'' $\vec I$ is straightforward
     \begin{tabular}{l|c|c}
       \rowcolor{pink}
       \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
@@ -172,15 +171,16 @@
 
 
 \begin{frame}{Wounding Wires Into a Coil}
+   When a current-carrying wire is wound into a coil, it becomes a
+  \textbf{solenoid}
   \begin{itemize}
-  \item A \textbf{solenoid} is when you wound a wire into a coil
-  \item You create a magnet very similar to a bar magnet, with an effective
-    north pole and a south pole
+  \item The magnetic field is very similar to a bar magnet, with an effective
+    north and south pole
   \item Magnetic field inside the solenoid is uniform
   \item Magnetic field strength can be increased by the addition of an iron core
   \end{itemize}
   \begin{center}
-    \pic{.5}{barsol}
+    \pic{.45}{barsol}
   \end{center}
 \end{frame}
 
@@ -212,7 +212,8 @@
       \boxed{B=\frac{\mu NI}{\ell}}
     }
     
-    Direction of $\vec B$ determined by \textbf{right-hand rule}
+    Direction of $\vec B$ determined by \textbf{right-hand rule} (i.e.\ vector
+    cross product)
     \begin{center}
       \begin{tabular}{l|c|c}
         \rowcolor{pink}
@@ -256,9 +257,9 @@
     \begin{center}
       \pic{.4}{paramagnetic}
     \end{center}
-    The atoms that have unpaired electrons are called \textbf{paramagnetic}
-    because they are attracted to magnets; atoms that have no unpaired
-    electrons are called \textbf{diamagnetic}.
+    The atoms that have unpaired electrons are \textbf{paramagnetic} because
+    they are attracted to magnets; atoms that have no unpaired electrons are
+    \textbf{diamagnetic}.
   \end{enumerate}
 \end{frame}
 
@@ -267,9 +268,9 @@
 \begin{frame}{Permanent Magnets}
   \begin{enumerate}
     \setcounter{enumi}{2}
-  \item While many atoms exhibit paramagnetism, they do not make good magnets,
+  \item While many atoms exhibit para magnetism, they do not make good magnets,
     because the atoms are most often arranged in a way where the magnetic fields
-    cancel. This is callled \textbf{ferrimagnetism}:
+    cancel. This is called \textbf{ferrimagnetism}:
     \begin{center}
       \begin{tikzpicture}
         \foreach\x in {0,2,...,8}{
@@ -305,9 +306,9 @@
 \begin{frame}{Permanent Magnets}
   \begin{enumerate}
     \setcounter{enumi}{3}
-  \item The atoms in these ferromagnetic materials are arranged in ``domains''
-    wher their magnetic moment is aligned. In the presence of a strong
-    external magnetic field, these domains will line up, creating a magnet.
+  \item The atoms in ferromagnetic materials are arranged in ``domains'' where
+    their magnetic moment is aligned. In the presence of a strong external
+    magnetic field, these domains will line up, creating a magnet.
     \begin{center}
       \pic{.6}{domain}
     \end{center}
@@ -344,37 +345,68 @@
     symmetric configurations:
 
     \eq{-.1in}{
-      \boxed{\oint_C \vec B\cdot\dl{\vec\ell}=\mu_0 I_C}
+      \boxed{\oint_{\mathcal C} \vec B\cdot\dl{\vec\ell}=\mu_0 I_C}
     }
     where
     \begin{itemize}
-    \item $C$ is a closed curve around a current (``Amperian loop'')
+    \item $\mathcal C$ is a closed curve around a current (``Amperian loop'')
     \item $\dl{\vec\ell}$ is an infinitesimal length along the closed curve
-    \item $I_c$ is the net current that penetrates the area bounded by $C$
+    \item $I_c$ is the net current that penetrates the area bounded by
+      $\mathcal C$
     \end{itemize}
   \end{columns}
 \end{frame}
 
 
 
-\begin{frame}{Application of Amp\`{e}re's Law: Infinitely Long Wire}
-  \begin{columns}
-    \column{.3\textwidth}
-    \pic1{4iM3O}
-
-    \column{.7\textwidth}
-    An \emph{infinitely} long wire must generate a magnetic field that only
-    depend on radial distance. We place an Amperian loop as a circle of radius
-    $r$ around the wire. Amp\`{e}re's law reduces to:
+\begin{frame}{Amp\`{e}re's Law}
+  
+  \eq{0in}{
+    \boxed{\oint_{\mathcal C} \vec B\cdot\dl{\vec\ell}=\mu_0 I_C}
+  }
+  \begin{itemize}
+  \item Similar to using Gauss's law, using the general equation for
+    Amp\`{e}re's law to find the magnetic field $\vec B$ is very difficult
+    (i.e.\ difficult to integrate a function without knowing what function
+    you are integrating)
+  \item In practice, we define the Amperian loop in such a way (by exploiting
+    symmetry) such that the integral can be converted into a multiplication
 
     \eq{-.1in}{
-      \oint_C \vec B\cdot\dl{\vec\ell}=\mu_0 I_C
+      \oint_{\mathcal C} \vec B\cdot\dl{\vec\ell}
+      \quad\xRightarrow{\text{symmetry}}\quad
+      BL
+    }
+  \end{itemize}
+\end{frame}
+
+
+\begin{frame}{Application of Amp\`{e}re's Law: Infinitely-Long Wire}
+  \begin{columns}
+    \column{.3\textwidth}
+    \begin{tikzpicture}[red]
+      \node at (0,0) {\pic1{4iM3O}};
+      \draw[very thick] (-.03,0) ellipse (2.2 and .58);
+      \draw[axes] (-.5,-3) to[out=0,in=270] (1,-.5);
+      \node[left] at (-.5,-3) {\scriptsize Amperian loop};
+      \draw[axes,rotate=10] (0,0)--(1.8,0) node[midway,below]{$r$};
+    \end{tikzpicture}
+
+    \column{.7\textwidth}
+    An infinitely-long wire must generate a magnetic field that only depend on
+    radial distance. We place an Amperian loop as a circle of radius $r$ around
+    the wire. Amp\`{e}re's law reduces to:
+
+    \eq{-.3in}{
+      \oint_{\mathcal C} \vec B\cdot\dl{\vec\ell}=\mu_0 I_C
+      \;\rightarrow\;
+      BL=\mu_0 I
       \;\rightarrow\;
       B(2\pi r)=\mu_0 I
     }
       
-    From this, we get our expression of the magnetic field from an infinitely
-    long wire:
+    \vspace{-.1in}From this, we get our expression of the magnetic field from
+    an infinitely long wire:
       
     \eq{-.1in}{
       B=\frac{\mu_0 I}{2\pi r}
@@ -410,6 +442,7 @@
 \end{frame}
 
 
+
 \begin{frame}{Toroid}
   \begin{columns}
     \column{.3\textwidth}
@@ -436,6 +469,87 @@
 \end{frame}
 
 
+
+\begin{frame}{Application of Amp\`{e}re's Law: Inside an Infinitely-Long Wire}
+  \begin{columns}[T]
+    \column{.27\textwidth}
+    \centering
+    \begin{tikzpicture}[scale=.65]
+      \draw[very thick] ellipse (2.2 and .58);
+      \draw[axes,rotate=10] (0,0)--(1.8,0) node[above=0]{$R$};
+      \foreach \x in {-2.2,2.2} \draw[very thick,red] (\x,-5)--(\x,5);
+      \node[below=-3] at (0,4) {\pic{.25}{55186}};
+      \node[above=-3] at (0,4) {$I=JA$};
+      \draw[very thick,red,dashed] ellipse (1.1 and .29);
+      \draw[axes,red] (.5,-2) to[out=180,in=270] (.5,-.25);
+      \node[right,red] at (.5,-2) {\scriptsize Amperian loop};
+
+    \end{tikzpicture}
+
+    \column{.73\textwidth}
+    Assuming that current is uniformly distributed across the entire
+    cross-section of the wire, we can define the current density $J$ as:
+
+    \eq{-.13in}{
+      I=JA\quad\longrightarrow\quad J=\frac IA=\frac I{\pi R^2}
+    }
+
+    \vspace{-.1in}The ``penetrating current'' through the Amperian loop is:
+
+    \eq{-.1in}{
+      I_c=JA_c=\left(\frac I{\pi R^2}\right)\pi r^2
+      =\left(\frac{r^2}{R^2}\right)I
+    }
+
+    \vspace{-.05in}By symmetry,
+
+    \eq{-.2in}{
+      \oint_C \vec B\cdot\dl{\vec\ell}=BL=B(2\pi r)
+    }
+  \end{columns}
+\end{frame}
+
+
+
+\begin{frame}{Application of Amp\`{e}re's Law: Inside an Infinitely-Long Wire}
+  \begin{columns}[T]
+    \column{.27\textwidth}
+    \centering
+    \begin{tikzpicture}[scale=.65]
+      \draw[very thick] ellipse (2.2 and .58);
+      \draw[axes,rotate=10] (0,0)--(1.8,0) node[above=0]{$R$};
+      \foreach \x in {-2.2,2.2} \draw[very thick,red] (\x,-5)--(\x,5);
+      \node[below=-3] at (0,4) {\pic{.25}{55186}};
+      \node[above=-3] at (0,4) {$I=JA$};
+      \draw[very thick,red,dashed] ellipse (1.1 and .29);
+      \draw[axes,red] (.5,-2) to[out=180,in=270] (.5,-.25);
+      \node[right,red] at (.5,-2) {\scriptsize Amperian loop};
+
+    \end{tikzpicture}
+
+    \column{.73\textwidth}
+    So the magnitude of magnetic field is:
+    
+    \eq{-.1in}{
+      B=\frac{\mu_0 I}{2\pi R^2}r
+    }
+
+    The magnitude of magnetic field inside and outside this wire is:
+    \begin{center}
+      \begin{tikzpicture}[scale=.8]
+        \draw[axes] (0,0)--(5,0) node[right]{$r$};
+        \draw[axes] (0,0)--(0,4) node[right]{$B$};
+        \begin{scope}[functions]
+          \draw (0,0)--(1.5,2);
+          \draw[domain={1.5:4.7},smooth] plot(\x,{3/\x});
+          \draw[dash dot,domain={.8:1.5},smooth] plot(\x,{3/\x});
+        \end{scope}
+        \draw (1.5,-.1)--(1.5,2) node[pos=0,below=-1]{$R$};
+        \draw (-.,2)--(1.5,2) node[pos=0,left=-1]{$\dfrac{\mu_0I}{2\pi R}$};
+      \end{tikzpicture}
+    \end{center}
+  \end{columns}
+\end{frame}
 
 
 \section{Magnetic Force}
