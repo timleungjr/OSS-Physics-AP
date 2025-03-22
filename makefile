@@ -1,4 +1,4 @@
-TERM=2024-09-Fall-Physics
+TERM=2025-07-Summer-Physics
 CLOUD=ossfiles
 WORKFILES_DIR=000-Timothy\ L
 DESTINATION=$(HOME)/Documents/$(CLOUD)/$(WORKFILES_DIR)/$(TERM)/Physics.APC
