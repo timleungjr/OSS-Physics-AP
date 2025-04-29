@@ -1,10 +1,10 @@
 \documentclass[12pt,aspectratio=169]{beamer}
-\input{../mybeamer}
+\input{../../mybeamer}
 
-\title{Class 14: Electrostatics, Part 1 (Point Charges)}
-\subtitle{Advanced Placement Physics C}
-\input{../me}
-\input{../mycommands}
+\title{Class 1: Electrostatics, Part 1 (Point Charges)}
+\subtitle{AP Physics C: Electricity and Magnetism}
+\input{../../me}
+\input{../../mycommands}
 
 
 \begin{document}
@@ -105,6 +105,7 @@
 \end{frame}
 
 
+
 \begin{frame}{Coulomb's Law for Electrostatic Force}
   \begin{center}
     \begin{tikzpicture}[scale=.5]
@@ -136,47 +137,59 @@
 
 
 \begin{frame}{More Than One Charge}
+  A charge $Q$ subjected to the influence of $N$ multiple discrete point
+  charges $q_i$ will experience a total force that is the vector sum of all the
+  forces $\vec F_i$:
   \begin{columns}
-    \column{.4\textwidth}
+    \column{.27\textwidth}
+    \centering
     \begin{tikzpicture}[scale=.4]
-      \shade[ball color=red] circle (.72) node[white]{$Q$};
-
       \begin{scope}[rotate=45]
-        \draw[vectors,blue] (.72,0)--(2.5,0) node[right]{$\vec F_1$};
-        \shade[ball color=blue] (7,0) circle (1) node[white]{$q_1$};
+        \draw[vectors,blue] (0,0)--(2,0) node[right]{$\vec F_1$};
+        \shade[ball color=blue] (7,0) circle (.2) node[above=3,blue]{$q_1$};
       \end{scope}
+
+      \begin{scope}[rotate=135]
+        \draw[vectors,orange] (0,0)--(-3,0) node[right]{$\vec F_2$};
+        \shade[ball color=orange] (4,0) circle (.2) node[above=3,orange]{$q_2$};
+      \end{scope}
+
+      \begin{scope}[rotate=270]
+        \draw[vectors,magenta] (0,0)--(1.5,0) node[below]{$\vec F_3$};
+        \shade[ball color=magenta] (6,0) circle (.2) node[below=3,magenta]{
+          $q_3$};
+      \end{scope}
+
+%      \begin{scope}[rotate=260]
+%        \draw[vectors,violet] (.72,0)--(1.4,0) node[right]{$\vec F_4$};
+%        \shade[ball color=violet] (9,0) circle (.8) node[white]{$q_4$};
+%      \end{scope}
+%
+%      \begin{scope}[rotate=125]
+%        \draw[->,ultra thick](.72,0)--(3.5,0) node[left]{$\vec F$};
+%      \end{scope}
       
-      \begin{scope}[rotate=105]
-        \draw[vectors,green] (.72,0)--(2,0) node[right]{$\vec F_2$};
-        \shade[ball color=green] (4,0) circle (.65) node[white]{$q_2$};
-      \end{scope}
-
-      \begin{scope}[rotate=190]
-        \draw[vectors,yellow] (.7,0)--(3.5,0) node[above]{$\vec F_3$};
-        \shade[ball color=yellow!70!black] (6,0) circle (1.1) node[white]{$q_3$};
-      \end{scope}
-
-      \begin{scope}[rotate=260]
-        \draw[vectors,violet] (.72,0)--(1.4,0) node[right]{$\vec F_4$};
-        \shade[ball color=violet] (9,0) circle (.8) node[white]{$q_4$};
-      \end{scope}
-
-      \begin{scope}[rotate=125]
-        \draw[->,ultra thick](.72,0)--(3.5,0) node[left]{$\vec F$};
-      \end{scope}
+      \shade[ball color=red] circle (.35) node[white]{$Q$};
     \end{tikzpicture}
 
-    \column{.6\textwidth}
-    For a charge $Q$ that is subjected to the influence of multiple discrete
-    point charges $q_i$, the total electrostatic force that $Q$ experiences is
-    the vector sum of all the forces $\vec F_i$:
+    \column{.73\textwidth}
     
     \eq{-.1in}{
-      \boxed{\vec F
-        =\sum_i\vec F_i
+      \boxed{\vec F_q
+        =\sum_{i=1}^N\vec F_i
         =kQ\left(\sum_{i=1}^N\frac{q_i}{r_i^2}\hat r_i\right)
       }
     }
+
+    If charge $Q$ is free to move, it will have an acceleration
+
+    \eq{-.1in}{
+      \vec a=\frac{\vec F_q}m
+    }
+
+    \vspace{-.1in}where $m$ is the mass of charge $Q$. As it accelerates, both
+    magnitude and direction of $\vec a$ changes. Predicting the motion of $Q$
+    is generally difficult, or at least tedious
   \end{columns}
 \end{frame}
 
@@ -199,26 +212,29 @@
 
 
 \begin{frame}{Infinitesimal Charge $\dl q$}
-  Expressions for infinitesimal charge $\dl q$ is similar to the infinitesimal
-  mass $\dl m$ concept discussed earlier in the course (Class 5:
-  Center of Mass, and Class 7: Rotational Motion)
+  The infinitesimal charge $\dl q$ is defined similar to the infinitesimal
+  mass $\dl m$ introduced in AP Physics C--Mechanics. The densities do not
+  have to be uniform (constant)
+  %\footnote{At Meritus, this
+  %is discussed in Class 5: Centre of Mass, and Class 7: Rotational Motion in
+  %the Mechanics course}
   \begin{itemize}
   \item Linear charge density (for 1D problems)
 
     \eq{-.1in}{
-      \gamma = \diff qL\quad\rightarrow\quad \dl q =\gamma\dl L
+      \gamma(x) = \diff qx\quad\rightarrow\quad \dl q =\gamma(x)\dl x
     }
 
   \item\vspace{-.05in} Surface charge density (for 2D problems)
 
     \eq{-.1in}{
-      \sigma=\diff qA\quad\rightarrow\quad \dl q=\sigma\dl A
+      \sigma(x,y)=\diff qA\quad\rightarrow\quad \dl q=\sigma(x,y)\dl A
     }
 
   \item\vspace{-.05in} Charge density (for 3D problems)
 
     \eq{-.1in}{
-      \rho=\diff qV\quad\rightarrow\quad \dl q=\rho\dl V
+      \rho(x,y,z)=\diff qV\quad\rightarrow\quad \dl q=\rho(x,y,z)\dl V
     }
   \end{itemize}
 \end{frame}
@@ -229,28 +245,29 @@
 
 \begin{frame}{Electric Field}
   The expression for \textbf{electric field} is obtained by repeating the same
-  procedure as with gravitational field, by grouping the variables in
-  Coulomb's law:
+  procedure as with gravitational field\footnote{Again a topic discussed in
+  Physics C: Mechanics}, by grouping the variables in Coulomb's law:
 
   \eq{-.1in}{
     F_q
-    =\underbrace{
+    =\underbracket[1pt]{
       \left[\frac{kq_1}{|\vec r_{12}|^2}\hat r\right]
     }_{\vec E}q_2
   }
 
   The electric field $\vec E$ created by $q_1$ is a vector function (called a
-  \textbf{vector field}) that shows how it influences other charged particles
-  around it.
+  \textbf{vector field}) that describes how $q_1$ influences other charged
+  particles around it.
 \end{frame}
 
 
 
 \begin{frame}{Electric Field Near a Point Charge}
-  The electric field a distance $r$ away from a point charge $q$ is given by:
+  The electric field $\vec E$ a distance $r$ away from a source (point) charge
+  $q_s$ is given by:
 
   \eq{-.1in}{
-    \boxed{\vec E(q,\vec r)=\frac{kq}{r^2}\hat r}
+    \boxed{\vec E(q_s,\vec r)=\frac{kq_s}{r^2}\hat r}
   }
   \begin{center}
     \begin{tabular}{l|c|c}
@@ -258,7 +275,7 @@
       \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
       Electric field intensity    & $\vec E$ & \si{\newton\per\coulomb}\\
       Coulomb's constant          & $k$   & \si{N.m^2/C^2} \\
-      Source charge               & $q$   & \si\coulomb \\
+      Source point charge         & $q_s$   & \si\coulomb \\
       Distance from source charge & $r$ & \si\metre \\
       Radially outward direction from point source & $\hat r$ &
     \end{tabular}
@@ -273,12 +290,13 @@
 
 
 \begin{frame}{More Than One Charge}
-  When multiple discrete point charges are present, the total electric field at
-  any position $\vec r$ is the vector sum of all the fields $\vec E_i$:
+  When $N$ multiple discrete point charges are present, the total electric
+  field at any position $\vec r$ is the vector sum of all the fields $\vec E_i$
+  at that point:
     
   \eq{-.1in}{
     \boxed{\vec E
-      =\sum_i\vec E_i
+      =\sum_{i=1}^N\vec E_i
       =k\left(\sum_{i=1}^N\frac{q_i}{r_i^2}\hat r_i\right)
     }
   }
@@ -293,8 +311,8 @@
     }
   }
   
-  In general, this integral is difficult to evaluate for complex geometries,
-  but in AP Physics C, we can usually exploit symmetry.
+  In general, this integral is difficult to evaluate for complex or irregular
+  geometries, but in AP Physics C, we can usually exploit symmetry.
 \end{frame}
 
 
@@ -303,14 +321,14 @@
   $\vec E$ itself \emph{doesn't do anything} until another charge interacts with
   it. And when there is a charge $q$, the electrostatic force $\vec F_q$ that
   the charge experiences is proportional to $q$ and $\vec E$, regardless of how
-  the electric field is generated\footnote{Analogous to the relationship
-  for gravity: $\vec F_g=m\vec g$}:
+  the electric field is created\footnote{This is, of course, analogous to the
+  relationship for gravity: $\vec F_g=m\vec g$}:
 
   \eq{-.1in}{
     \boxed{\vec F_q=q\vec E}
   }
 
-  A positive charge in the electric field experiences an electrostatic force
+  A positive charge in an electric field experiences an electrostatic force
   $\vec F_q$ in the same direction as $\vec E$; a negative charge experiences
   a force in the opposite direction as $\vec E$.
 \end{frame}
@@ -353,20 +371,25 @@
   \item Electric field lines must begin and/or end at a charge
   \item Field lines do not cross
   \item Direction of the electric field is tangent to the field lines
+  \item Electric field lines to not tell us anything about the magnitude of the
+    fields, although electric field lines that are closer together indicate
+    stronger fields
   \end{itemize}
 \end{frame}
 
 
 
 \begin{frame}{Lord of the Ring Charge}
-  Suppose you have been given \emph{The One Ring To Rule Them All}, and you
-  found out that it is charged! What is its electric field at point $P$ along
-  its axis?
+  Suppose you have been given \emph{The One Ring To Rule Them All}\footnote{This
+  is a \emph{Lord of the Rings} reference, if you don't know already.}, and you
+  found out that it is charged! What is the magnitude of its electric field at
+  point $P$ along its axis, i.e.\ $E(x)$?
   \begin{center}
-    \pic{.5}{physicsbook_emism_graphik_35}
+    \pic{.4}{physicsbook_emism_graphik_35}
   \end{center}
-  Note that calculating the electric field away from the axis is very
-  difficult.
+  Note that calculating the electric field away from the axis is \emph{very}
+  difficult, and well beyond the scope of this course.
+  \vspace{.2in}
 \end{frame}
 
 
@@ -403,8 +426,17 @@
 
 
 
+\begin{frame}{Sanity Check}
+  Before we move on to the next example, we need to do a quick sanity check:
+  from very far away, this ring will look like a point charge. Does the electric
+  field approach $\dfrac{kQ}{x^2}$ as $x\to\infty$?
+\end{frame}
+
+
+
 \begin{frame}{Electric Field Along Axis of a Uniformly Charged Disk}
-  Let's extend what we know to a disk of radius $a$ and charge density $\sigma$
+  Let's extend what we know to a disk of radius $a$ and a uniform surface
+  charge density $\sigma$:
 
   \vspace{.1in}
   \begin{columns}
@@ -445,6 +477,8 @@
       E_x =2\pi k\sigma\left(1-\frac x{\sqrt{x^2+a^2}}\right)
     }
   \end{columns}
+  (Problems at this level of difficulty are commonplace for a university-level
+  second course, but you are very unlikely to see in an AP Physics C exam.)
 \end{frame}
 
 
@@ -452,8 +486,9 @@
 \section{Electric Potential Energy}
 
 \begin{frame}{Electric Potential Energy}
-  The electrostatic force is a conservative force; the work done by $\vec F_q$
-  is related to the change in \textbf{electric potential energy} $U_q$:
+  Using the definition of mechanical work, the work done by $\vec F_q$ as it
+  moves point charges $q_1$ and $q_2$ is expressed by:
+  %is related to the change in  $U_q$:
   
   \eq{-.1in}{
     W_q=\int\vec F_q\cdot\dl\vec r
@@ -461,22 +496,54 @@
     =-\frac{kq_1q_2} r\Big|^{r_1}_{r_0}=-\Delta U_q
   }
 
-  $U_q$ is the energy stored between a system of two charges, defined as:
+  The work done by $\vec F_q$ is equal to the negative change of a quantity
+  $U_q$ called the \textbf{electric potential energy}. For a system of two
+  charges, it is defined as:
     
-  \eq{-.15in}{
+  \eq{-.1in}{
     \boxed{U_q=\frac{kq_1q_2} r}
   }
-  \fcolorbox{black}{yellow!5}{
-    \begin{minipage}{.9\linewidth}
-      \begin{itemize}
-      \item Positive work done by electrostatic force decreases $U_q$, while
-      \item Negative work done by electrostatic force increases $U_q$
-      \item $W_q$ depends on $r_0$ and $r_1$, but not \emph{how} the charge
-        moves from $r_0\rightarrow r_1$
-      \item Only work done by $\vec F_q$ can change $U_q$
-      \end{itemize}
-    \end{minipage}
-  }
+  %\fcolorbox{black}{yellow!5}{
+  %  \begin{minipage}{.9\linewidth}
+  %    \begin{itemize}
+  %    \item Positive work done by electrostatic force decreases $U_q$, while
+  %    \item Negative work done by electrostatic force increases $U_q$
+  %    \item $W_q$ depends on $r_0$ and $r_1$, but not \emph{how} the charge
+  %      moves from $r_0\rightarrow r_1$
+  %    \item Only work done by $\vec F_q$ can change $U_q$
+  %    \end{itemize}
+  %  \end{minipage}
+  %}
+\end{frame}
+
+
+
+\begin{frame}{Electric Potential Energy}
+  The existence of the electric potential energy means that the electrostatic
+  force $\vec F_q$ is a conservative force, with properties that are common to
+  all conservative forces
+
+  \begin{enumerate}
+  \item Work done by the electrostatic force is equal to the negative change in
+    the electric potential energy:
+    
+    \eq{-.2in}{
+      \boxed{W_q=-\Delta U_q}
+    }
+    %\fcolorbox{black}{yellow!5}{
+    %\begin{minipage}{.9\linewidth}
+    \begin{itemize}
+    \item\vspace{-.1in}Positive work (i.e.\ $W_q>0$)
+      decreases potential energy (i.e.\ $\Delta U_q<0$), while
+    \item Negative work (i.e.\ $W_q<0$) increases potential
+      energy (i.e.\ $\Delta U_q>0$)
+    \end{itemize}
+  \item Work done is \textbf{path independent}: $W_q$ depends on initial and
+    final positions ($r_0$ and $r_1$), but not \emph{how} the charge
+    moves from $r_0\rightarrow r_1$
+  \item Only work done by electric force $\vec F_q$ can change the electric
+    potential energy $U_q$
+  \end{enumerate}
 \end{frame}
 
 
@@ -505,10 +572,10 @@
     \eq{-.3in}{U_q<0}
   \end{columns}
   \begin{itemize}
-  \item $U_q>0$ (both charges have the same sign): work is done to bring two
-    charges together from $r=\infty$ to $r$
-  \item $U_q<0$ (the charges are opposite signs): work is done to separate the
-    two charges from $r$ to $r=\infty$
+  \item $U_q>0$ (both charges have the same sign): positive external work is
+    done to bring two charges together from $r=\infty$ to $r$
+  \item $U_q<0$ (the charges are opposite signs): positive external work is
+    done to separate the two charges from $r$ to $r=\infty$
   \item Gravitational potential $U_g$ is always $<0$ because mass can only be
     positive
   \end{itemize}
@@ -559,7 +626,9 @@
 
 
 \begin{frame}{Example Problem}
-  \textbf{Example:} Four identical charges $q$ are located at the four corners
+  \textbf{Example:} Four identical charges $q$\footnote{They are either all
+  positive, or all negative. But once we have solved the answer, we should be
+  able to tell that the sign does not matter} are located at the four corners
   of a square of length $L$. What is the total potential energy of the system?
   \begin{center}
     \begin{tikzpicture}[scale=1.3]
@@ -584,9 +653,11 @@
     U_g=V_gm
   }
   
-  This ``constant'' $V_g$ is called the \textbf{gravitational potential}, which
-  is defined as \emph{gravitational potential energy per unit mass}. In the
-  simple case with a uniform gravitational field:
+  This ``constant''\footnote{This ``constant'' depends on where the object is,
+  i.e.\ this is really a \emph{function} of $gh$} $V_g$ is called the
+  \textbf{gravitational potential}, defined as
+  \emph{gravitational potential energy per unit mass}. In the simple case with
+  a uniform gravitational field:
 
   \eq{-.1in}{
     V_g(h)=\frac{U_g}m=gh
@@ -658,7 +729,7 @@
     \end{tikzpicture}
  
     \column{.6\textwidth}
-    For a point charge $q$, every point at a distance $r$ has the same
+    For a source point charge $q$, every point at a distance $r$ has the same
     electric potential $V$.
     \begin{itemize}
     \item The red lines have the same electric potential; they are called
@@ -747,8 +818,8 @@
     \end{tikzpicture}
     
     \column{.65\textwidth}
-    \textbf{Example:} A uniform charge $Q$ is located
-
+    \textbf{Example:} A uniform charge $Q$ is distributed along a semi-circle
+    of radius $R$, with the centre at the origin.
     \begin{enumerate}[(a)]
     %\item What is the electric field at the origin?
     \item What is the electric potential at the origin?
@@ -843,7 +914,7 @@
 
 
 \begin{frame}{Relating $V$ and $\Delta V$}
-  Electric potential $V(r)$, a furnction of space, is related to the electric
+  Electric potential $V(r)$, a function of space, is related to the electric
   field $E$ by an {\color{red}indefinite} integral:
 
   \eq{-.1in}{

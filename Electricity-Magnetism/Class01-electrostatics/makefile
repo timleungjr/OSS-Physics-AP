@@ -1,6 +1,6 @@
 all:
-	xelatex PhysAPC-14-Electrostatics
-	xelatex PhysAPC-14-Electrostatics
+	pdflatex PhysAPC-EM-C01-Electrostatics
+	pdflatex PhysAPC-EM-C01-Electrostatics
 	cd homework ; make
 
 clean:
