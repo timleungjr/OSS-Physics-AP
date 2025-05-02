@@ -180,16 +180,64 @@
 \end{frame}
 
 
+
 \section{Cylindrical Capacitors}
 
 \begin{frame}{Cylindrical Capacitors}
+  Not all capacitors are parallel plates. Cylindrical capacitors are also
+  popular:
   \begin{columns}
-    \column{.4\textwidth}
-    \pic{1.05}{cylindrical-capacitor}
+    \column{.23\textwidth}
+    \begin{tikzpicture}[scale=.5]
+      \fill[cyan!30,opacity=.2] (-2,8)--(-2,0) arc (180:0:2.5 and 1)--(3,8)
+      arc (0:180:2.5 and 1);
+      \draw[cyan,thick] (-2,8)--(-2,0);
+      \draw[cyan,thick] (3,0)--(3,8) arc (0:180:2.5 and 1);
+      
+      \fill[violet,opacity=.1] (-1,8)--(-1,0) arc (180:0:1.5 and .5) -- (2,8)
+      arc (0:180:1.5 and .5) -- (-1,8);
+      \draw[dash dot,thick,violet] (-1,8)--(-1,0) arc (180:0:1.5 and .5)--
+      (2,8) arc (0:180:1.5 and .5);
 
-    \column{.56\textwidth}
-    Not all capacitors are parallel plates. Cylindrical capacitors are also
-    popular.
+      \fill[orange!50, opacity=.6] (0,8)--(0,0) arc (180:0:.5 and .2) -- (1,8)
+      arc (0:180:.5 and .2) -- (0,8);
+      \draw[orange,thick] (0,0)--(0,8) arc (180:0:.5 and .2)--(1,0);
+      
+      \fill[orange,opacity=.8] (0,8)--(0,0) arc (180:360:.5 and .2) -- (1,8)
+      arc (0:-180:.5 and .2) -- (0,8);
+
+      \fill[violet,opacity=.1] (-1,8)--(-1,0) arc (180:360:1.5 and .5)--(2,8)
+      arc (0:-180:1.5 and .5) -- (-1,8);
+      \draw[dash dot,thick,violet] (-1,8) arc (180:360:1.5 and .5);
+
+      \fill[cyan!30] (-2,8)--(-2,0) arc (180:360:2.5 and 1)
+      --(3,8) arc (0:-180:2.5 and 1);
+      \draw[cyan] (-2,8)--(-2,0) arc (180:360:2.5 and 1)
+      --(3,8) arc (0:-180:2.5 and 1);
+
+      \draw[|<->|] (3.4,8)--(3.4,0) node[midway,fill=black!2]{$\ell$};
+      \draw[axes,rotate around={10:(.5,8)}](.5,8)--(.95,8) node[right]{$a$};
+      \draw[axes,rotate around={-30:(.5,8)}](.5,8)--(2.15,8) node[below]{$b$};
+    \end{tikzpicture}
+
+    \column{.15\textwidth}
+    \centering
+    \begin{tikzpicture}[scale=.8]
+      \draw[thick,cyan,fill=cyan!30] circle (1.5);
+      \draw[thick,cyan,fill=black!2] circle (1.45);
+      \foreach\theta in {0,30,...,359}
+      \draw[vectors,red,rotate=\theta] (.5,0)--(1.45,0);
+      \draw[thick,orange,fill=orange!50] circle (.5);
+      \draw[axes,rotate=30] (0,0)--(.5,0) node[midway,below]{$a$};
+      \draw[axes,rotate=110] (0,0)--(1.45,0) node[midway,right]{$b$};
+      \node[red] at (-.2,-1){$\vec E$};
+      %\draw[violet,thick,dash dot] circle (1);
+      %\draw[thick,<-,violet] (-.707,-.707)--+(-1,-1)
+      %node[below=-3]{Gaussian Surface};
+    \end{tikzpicture}\\
+    {\footnotesize End view\par}
+    
+    \column{.62\textwidth}
     \begin{itemize}
     \item The capacitor has length $\ell$ which is much larger than the radii
       of the inner \& outer cylinders ($a$, $b$)
@@ -205,12 +253,25 @@
 
 \begin{frame}{Cylindrical Capacitors: Electric Field}
   \begin{columns}
-    \column{.4\textwidth}
-    \pic{1.05}{cylindrical-capacitor}
+    \column{.33\textwidth}
+    \begin{tikzpicture}
+      \draw[thick,cyan,fill=cyan!30] circle (1.5);
+      \draw[thick,cyan,fill=black!2] circle (1.45);
+      \foreach\theta in {0,30,...,359}
+      \draw[vectors,red,rotate=\theta] (.5,0)--(1.45,0);
+      \draw[thick,orange,fill=orange!50] circle (.5);
+      \draw[axes,rotate=30] (0,0)--(.5,0) node[midway,below]{$a$};
+      \draw[axes,rotate=110] (0,0)--(1.45,0) node[midway,right]{$b$};
+      \node[red] at (-.2,-1){$\vec E$};
+      \draw[violet,thick,dash dot] circle (1);
+      \draw[thick,<-,violet] (-.707,-.707)--+(-1,-1)
+      node[below=-3]{Gaussian Surface};
+    \end{tikzpicture}
+    %\pic{1.05}{cylindrical-capacitor}
 
-    \column{.56\textwidth}
-    Use Gauss's law to find the electric field between the cylinders, by placing
-    a Gaussian surface of radius $r$ between the cylinders: 
+    \column{.67\textwidth}
+    We can use Gauss's law to find the electric field between the cylinders, by
+    placing a Gaussian surface of radius $r$ between the cylinders: 
 
     \eq{-.1in}{
       \oint\vec E\cdot\dl\vec A=2\pi r\ell E=\frac Q{\epsilon_0}
@@ -234,7 +295,7 @@
   Integrating the eclectic field to get voltage across the plates:
 
   \eq{-.1in}{
-    \Delta V= \int_a^b E\dl r=\frac Q{2\pi\ell\epsilon_0}\int_b^a\frac{\dl r}r
+    |\Delta V|= \int_a^b E\dl r=\frac Q{2\pi\ell\epsilon_0}\int_b^a\frac{\dl r}r
     =\frac Q{2\pi\ell\epsilon_0}\ln\left[\frac ba\right]
   }
 
@@ -243,14 +304,73 @@
 
   \eq{-.1in}{
     C=\frac Q{\Delta V}=\frac{2\pi\ell\epsilon_0}{\ln(b/a)}
-    \quad\longrightarrow\quad
-    \boxed{\frac C\ell=\frac{2\pi\epsilon_0}{\ln(b/a)}\;\;\text{cylindrical}}
+    \quad\to\quad
+    \boxed{\frac C\ell=\frac{2\pi\epsilon_0}{\ln(b/a)}}%\;\;\text{cylindrical}}
   }
 
-  The capacitance is generally expressed by $C/\ell$ (with unit
-  \si{\farad\per\metre}). Like the parallel-plate capacitor, the capacitance of
-  the cylindrical capacitor also only depends on the geometry (i.e.\ the raidii
-  $a$ and $b$) and the permittiviy.
+  The capacitance of a cylindrical capacitor is often expressed by $C/\ell$
+  (with unit \si{\farad\per\metre}). Like the parallel-plate capacitor, the
+  capacitance of the cylindrical capacitor also only depends on the geometry
+  (i.e.\ the raidii $a$ and $b$) and the permittiviy.
+\end{frame}
+
+
+
+\section{Spherical Capacitor}
+
+\begin{frame}{Spherical Capacitor}
+  Two spherical charges can also be arranged to act as a capacitor. In the
+  configuration shown below, the inner sphere carries a charge of $+Q$, while
+  the outer spherical shell carries a charge of $-Q$.
+  \begin{columns}[T]
+    \column{.5\textwidth}
+    \centering
+    \begin{tikzpicture}
+      \shade[ball color=cyan] circle (.7);
+      \draw[thick,cyan] circle (.7);
+      \shade[ball color=magenta,opacity=.3] circle (2);
+      \draw[thick,magenta] circle (2);
+      \draw[axes,rotate=100] (0,0)--(.7,0) node[midway,right]{$a$};
+      \draw[axes,rotate=-130] (0,0)--(2,0) node[midway,below]{$b$};
+    \end{tikzpicture}
+    
+    \column{.5\textwidth}
+    %\centering
+    \begin{tikzpicture}
+      \draw[thick,magenta,fill=magenta!30] circle (2);
+      \draw[thick,magenta,fill=black!2] circle (1.95);
+      \draw[thick,cyan,fill=cyan!30] circle (.7);
+      \draw[axes,rotate=100] (0,0)--(.7,0) node[midway,right]{$a$};
+      \draw[axes,rotate=-120] (0,0)--(1.95,0) node[midway,below]{$b$};
+      \foreach \theta in {15,45,...,360}{
+        \draw[vectors,orange,rotate=\theta] (.7,0)--(1.95,0);
+      }
+      \draw[thick,dashed,red] circle (1);
+      \draw[thick] (0,-2)--(0,-2.5)--(2.5,-2.5)
+      to[battery,l_=$\mathcal E$] (2.5,0)--(2.05,0) arc (0:-180:.08)--(.7,0);
+    \end{tikzpicture}
+  \end{columns}
+
+  We are interested in the electric field between the spheres.
+\end{frame}
+
+
+
+\begin{frame}{Spherical Capacitor}
+  Whave already determined, using Gauss's law, the magnitude of the electric
+  field between the inner and outer spheres:
+  
+  \eq{-.1in}{
+    E=\frac1{4\pi\epsilon_0}\frac Q{r^2}
+  }
+
+  Therefore the electric potential difference between the inner sphere ($r=a$)
+  and the outer spherical shell $r=b$) is given by:
+
+  \eq{-.1in}{
+    |\Delta V|=\int_a^bE\dl r=\frac Q{4\pi\epsilon_0}\int_a^b\frac{\dl r}{r^2}
+    =\frac Q{4\pi\epsilon_0}\left(\frac1a-\frac1b\right)
+  }
 \end{frame}
 
 

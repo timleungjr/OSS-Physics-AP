@@ -55,8 +55,8 @@
 
 
 \begin{frame}{Maxwell's Modification to Amp\`{e}re's Law}
-  James Clerk Maxwell, in 1860, proposed a modification to Amp\`{e}re's Law
-  to make it work with unsteady current as well
+  In 1860, James Clerk Maxwell proposed a modification to Amp\`{e}re's Law to
+  make it work with unsteady current as well
 
   \eq{-.1in}{
     \boxed{
@@ -246,6 +246,93 @@
 
 
 
+\begin{frame}{The Spark-Gap Experiment}
+  To prove the existence of the EM wave, and to validate Faraday's law,
+  %a young
+  German physicist Heinrich Hertz devised a ``spark-gap experiment'', which
+  consisted of a \textbf{spark-gap generator} and a \textbf{receiver ring}:
+  \begin{center}
+    \begin{tikzpicture}[scale=.8]
+      \node at (0,0) {\pic{.57}{Hertz_exp_2}};
+      \uncover<2>{
+        \fill[red,opacity=.2] (-3.8,-1.6) rectangle (-.7,1.8)
+        node[midway,above=52,red,opacity=1]{spark-gap generator};
+      }
+      \uncover<3>{
+        \fill[cyan,opacity=.2] (-.6,-1.7) rectangle (.5,1.7)
+        node[midway,below=52,cyan,opacity=1]{dipole antenna};
+      }
+    \end{tikzpicture}
+  \end{center}
+  \begin{itemize}
+  \item\vspace{-.07in}The spark-gap generator used a capacitor and an induction
+    coil to convert the DC voltage from the batteries into an AC voltage
+  \item The induction coil is connected to a secondary coil (acts as a
+    transformer), which is then connected to another set of capacitors as an
+    antenna to amplify the signal
+  %\item\vspace{-.1in}Also showed that light has the same wavelengths as
+  %  predicted by Maxwell's equations
+  %\item Discovered \textbf{photoelectric effect} that was caused by ultraviolet
+  %  radiation
+  %\item Physicist who repeated his experiments did not have an explanation
+  \end{itemize}
+\end{frame}
+
+
+
+\begin{frame}{The Spark-Gap Experiment}
+  The electrons in the antenna would vibrate, generating an (standing)
+  electromagnetic wave. The oscillation of the electric field is on the plane
+  of this page, and the magnetic field oscillates in and out of the page.
+  \begin{center}
+    \begin{tikzpicture}[thick,scale=.35]
+      \foreach \y in {0,6} \draw (0,\y) rectangle +(1.5,2);
+      \draw (.75,2) to[short,-o] (.75,3.8);
+      \draw (.75,6) to[short,-o] (.75,4.2);
+      \foreach \y in {3,5} \draw (-2,\y) to[short,-*] (.75,\y);
+      \node[left] at (-1,4){spark-gap generator};
+
+      \draw[very thick,red,<->] (.75,2.2)--(.75,5.8);
+      
+      \draw (2,4)--+(7.5,0);
+      \draw[functions,domain=2:9.5,samples=100,smooth]
+      plot(\x,{1.5*sin(150*\x)+4});
+      \draw[vectors,red] (5,6)--+(2,0) node[right]{wave travel};
+
+      \draw (15,5.75) arc (95:445:1.75);
+      \node at (15.1,4) {receiver};
+      \draw[fill=black!2] (15,5.75) circle (.1);
+      \draw[fill=black!2] (15.3,5.75) circle (.1);
+    \end{tikzpicture}
+  \end{center}
+  If the receiver lies along the plane of the electric field oscillations
+  \begin{itemize}
+  \item there is a change in magnetic flux through the receiver as the
+    wave passes through
+  \item There is an induced \emph{emf} in the coil
+  \end{itemize}
+  Conversely, if the plane of the coil is facing the incoming EM wave, then
+  there is no magnetic flux in the first place, and no \emph{emf} is induced.
+\end{frame}
+
+
+
+\begin{frame}{The Spark-Gap Experiment}
+  \begin{center}
+    \begin{tikzpicture}
+      \node at (0,0) {\pic{.65}{Hertz_exp_2}};
+      \fill[red,opacity=.1] (-3.8,-1.6) rectangle (-.7,1.8)
+      node[midway,above=65,red,opacity=1]{spark-gap generator};
+    \end{tikzpicture}
+  \end{center}
+  By altering the inductance (of the induction coil) and capacitance (in the
+  capacitor), Hertz can generate AC voltages at \emph{any} frequency. He was
+  able to confirm the EM wave prediction in Maxwell's equations.
+\end{frame}
+
+
+
+
 \begin{frame}{Electromagnetic (EM) Wave}
   A EM wave is considered to be \textbf{polarized} if both $\vec E$
   (and therefore) $\vec B$ of the wave are confined to a single plane. The
@@ -295,7 +382,7 @@
 \begin{frame}{Einstein and Special Relativity}
   Einstein's Postulates of Special Relativity:
   \begin{enumerate}
-  \item\textbf{Principle of relavity:} All laws of physics must apply equally
+  \item\textbf{Principle of relativity:} All laws of physics must apply equally
     in all inertial frames of reference.
   \item\textbf{Principle of invariant speed of light:} As measured in any
     inertial frame of reference, light always propagated in a vacuum with a

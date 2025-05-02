@@ -1,5 +1,7 @@
 \documentclass[12pt,aspectratio=169]{beamer}
 \input{../../mybeamer}
+\usetikzlibrary{patterns}
+
 
 \title{Class 2: Gauss's Law}
 \subtitle{AP Physics C: Electricity and Magnetism}
@@ -81,6 +83,93 @@
     \column{.45\textwidth}
     \pic1{800px-SurfacesWithAndWithoutBoundary}
   \end{columns}
+\end{frame}
+
+
+
+\begin{frame}{Gauss's Law}
+  \begin{center}
+    \begin{tikzpicture}[scale=.4]
+      \node (0) at (-4.25, 0.75) {};
+      \node (1) at (-2.25, 1) {};
+      \node (2) at (-4.5, -0.25) {};
+      \node (3) at (-2.5, -0.25) {};
+      \node (4) at (1.25, 1.75) {};
+      \node (5) at (-0.75, 3) {};
+      \node (6) at (-5.5, 3) {};
+      \node (7) at (-7.5, 0.25) {};
+      \node (8) at (-5.25, -2.5) {};
+      \node (9) at (0, -1) {};
+      \node (10) at (4.25, 4.25) {};
+      \node (11) at (-2.5, 5.25) {};
+      \node (12) at (-9.75, 4.75) {};
+      \node (13) at (-10.75, -1) {};
+      \node (15) at (-3, -5) {};
+      \node (16) at (4.5, -1) {};
+      
+      \draw[very thick,pattern=north east lines] (1.center)
+      to[in=45, out=-180, looseness=1.5] (0.center)
+      to[in=135, out=-135, looseness=0.75] (2.center)
+      to[in=165, out=-60, looseness=0.75] (3.center)
+      to[in=0, out=-15, looseness=1.25] (1.center);
+  
+      \shade[ball color=orange,opacity=.7] (5.center)
+      to[in=15,out=-150] (6.center)
+      to[in=105,out=-165] (7.center)
+      to[in=180,out=-75] (8.center)
+      to[in=165,out=0,looseness=1.25] (9.center)
+      to[in=-75,out=0] (4.center)
+      to[in=30,out=105,looseness=.75] (5.center);
+
+      \draw[thick,orange] (5.center)
+      to[in=15,out=-150] (6.center)
+      to[in=105,out=-165] (7.center)
+      to[in=180,out=-75] (8.center)
+      to[in=165,out=0,looseness=1.25] (9.center)
+      to[in=-75,out=0] (4.center)
+      to[in=30,out=105,looseness=.75] (5.center);
+    
+      \begin{scope}[vectors,orange]
+        \draw (-5,2.5)--+(-.5,1.7);
+        \draw (-4,2.5)--+(-.3,2);
+        \draw (-3,2.5)--+(.1,2) node[right]{$\bm E$};
+        \draw (-2,2.2)--+(.4,1.8);
+        \draw (-1,2.35)--+(.7,1.8);
+      \end{scope}
+    
+      \shade[ball color=violet,opacity=.2] (10.center)
+      to[in=0,out=150,looseness=1.50] (11.center)
+      to[in=30,out=-180] (12.center)
+      to[in=90,out=-150,looseness=1.5] (13.center)
+      to[in=150,out=-90,looseness=1.25] (15.center)
+      to[in=-90,out=-30,looseness=.75] (16.center)
+      to[in=-30,out=90,looseness=.75]  (10.center);
+      
+      \draw[thick,violet] (10.center)
+      to[in=0,out=150,looseness=1.50] (11.center)
+      to[in=30,out=-180] (12.center)
+      to[in=90,out=-150,looseness=1.5] (13.center)
+      to[in=150,out=-90,looseness=1.25] (15.center)
+      to[in=-90,out=-30,looseness=.75] (16.center)
+      to[in=-30,out=90,looseness=.75]  (10.center);
+
+      \begin{scope}[vectors,violet]
+        \draw (-9.75,4.4)--+(-.5,.6);
+        \draw (-8,5.1)--+(-.4,.8);
+        \draw (-6,5.3)--+(-.3,.8) node[right]{$\bm E$};
+        \draw (-4,5.2)--+(-.2,.7);
+        \draw (-2,5.1)--+(.1,.8);
+        \draw (0,5.2)--+(.2,.6);
+        \draw (2,5.2)--+(.4,.5);
+      \end{scope}
+      \draw[thick] (-3.3,.5) to[out=270,in=90] +(2,-2)
+      node[below]{$Q_\text{encl}$};
+      \node[right,violet] at (4.3,4.3) {$\mathcal S_2$};
+      \node[right,orange] at (1.3,1.8) {$\mathcal S_1$};
+    \end{tikzpicture}
+  \end{center}
+  Two different Gaussian surfaces over the same enclosed charge have the same
+  total flux.
 \end{frame}
 
 
@@ -195,6 +284,152 @@
   \item For gravity, replace $\epsilon_0$ with $4\pi G$
   \end{itemize}
 \end{frame}
+
+
+
+\begin{frame}{Electric Fields from a Uniformly-Charged Sphere}
+  For a slightly more difficult example, consider a uniformly-charged sphere
+  with radius $R$ and a total charge of $Q$.
+  %, as shown in
+  %Fig.~\ref{fig:uniform-spherical-charge}.
+  The charge is evenly spread over the
+  entire volume of the sphere.
+  \begin{center}
+    \begin{tikzpicture}
+      \foreach \x in {0,15,...,359}{
+        \draw[orange,vectors,rotate=\x] (0,1.5)--+(0,1);
+        \draw[orange,very thick,rotate=\x] (0,1.5)--+(0,1.5);
+      }
+      \draw[thick,red] circle (1.5);
+      \shade[ball color=red,opacity=.6] circle (1.5);
+      
+      \draw[axes] (0,0)--(1,0) node[right]{$r_i$};
+      \draw[dashed,thick] circle (1);
+
+      \draw[axes,rotate=-50] (0,0)--(2.4,0) node[below]{$r_o$};
+      \draw[dashed,thick] circle (2.4);
+    \end{tikzpicture}
+    %\caption{Gaussian surfaces inside and outside a spherical charge.}
+    %\label{fig:uniform-spherical-charge}
+  \end{center}
+  Again, we are interested in the electric field inside ($r_i<R$) and outside
+  ($r_o>R$) the sphere. To analyis the electric field, we contruct two spherical
+  Gaussian surfaces concentric with the sphere, one inside and one outside the
+  sphere.
+\end{frame}
+
+
+
+
+\begin{frame}{Infinitely-long charge rod with uniform density}
+  Gauss's law can be used to find the electric fields inside and outside an
+  infinitely-long charged rod of radius $R$ with uniform charge density.
+  %  as shown in Fig.~\ref{fig:charged-rod}.
+  In this example, since the rod is infinitely long, the total charge would be
+  infinite, it would be easier to describe the charge by its charge density
+  $\rho$.
+  \begin{center}
+%  \begin{subfigure}{.6\linewidth}
+%    \centering
+    \begin{tikzpicture}[scale=.6]
+      \draw[thick,dashed,violet,fill=violet!30,opacity=.2] (0,2.8)--(8,2.8)
+      arc (90:270:1.4 and 2.8)--(0,-2.8) arc(270:90:1.4 and 2.8);
+
+      \draw[thick,fill=lightgray] ellipse (1 and 2);
+
+      \draw[thick,dashed,magenta,fill=magenta!30,opacity=.3] (0,1)--(8,1)
+      arc (90:270:.5 and 1)--(0,-1) arc(270:90:.5 and 1);
+      \draw[thick,dashed,magenta,fill=magenta!50,opacity=.3] (0,1)--(8,1)
+      arc (90:-90:.5 and 1)--(0,-1) arc(-90:90:.5 and 1);
+      
+      \draw[thick,fill=gray] (0,2)--(8,2) arc (90:-90:1 and 2)--(0,-2)
+      arc (-90:90:1 and 2);
+
+      \draw[thick] (-5,0)--(0,0);
+      \draw[thick] (9,0)--(11,0);
+      \draw[thick,dashed] (-5,2)--(11,2);
+      \draw[thick,dashed] (-5,-2)--(11,-2);
+      \draw[thick,dashed,violet] ellipse (1.4 and 2.8);
+      \draw[thick,dashed,violet,fill=violet!50,opacity=.2] (0,2.8)--(8,2.8)
+      arc (90:-90:1.4 and 2.8)--(0,-2.8) arc(-90:90:1.4 and 2.8);
+      \foreach \x in {0,...,8}{
+        \draw[vectors,orange!50] (\x,2.8)--(\x,4.1);
+        \draw[vectors,orange!50] (\x,-2.8)--(\x,-4);
+      }
+      \draw[violet] (7.5,-2.8)--(6,-5) node[left]{Gaussian surface};
+    \end{tikzpicture}
+  \end{center}
+\end{frame}
+
+
+\begin{frame}{Infinitely-long charge rod with uniform density}
+%  \end{subfigure}
+  \begin{center}
+    \begin{tikzpicture}[scale=.6]
+      \draw[thick,fill=lightgray] circle (2);
+      \fill circle (.05);
+
+      \foreach \x in {0,30,...,359}{
+        \draw[orange,vectors,rotate=\x] (0,0)--(0,1.8);
+        \draw[orange,very thick,rotate=\x] (0,0)--(0,2);
+        \draw[orange!50,vectors,rotate=\x] (0,2)--(0,4);
+      }
+      \draw[axes,rotate=-45] (0,0)--(2,0) node[right]{$R$};
+      \draw[thick,dashed,magenta] circle (1);
+      \draw[thick,dashed,violet] circle (2.8);
+      \begin{scope}[rotate=-110,violet]
+        \draw[axes] (0,0)--(2.8,0) node[right]{$r_o$};
+        \draw (0,0)--(5,0) node[right]{Gaussian surface};
+      \end{scope}
+    \end{tikzpicture}
+  \end{center}
+%  \caption{Infinitely-Long charged rod with uniform charge density}
+%  \label{fig:charged-rod}
+\end{frame}
+
+  
+%
+%\textbf{Inside the rod:} By symmetry, the electric field must only be in the
+%radial direction: radially outward if the rod is positively charged, and
+%radially inward if negative. Here we assume that the rod is positively charged.
+%We then contruct a cylindrical Gaussian surface with radius $r_i<R$ and length
+%$L$ that aligns with the axis of the rod. Since the electric field is radial,
+%there is no flux through the ends of the Gaussian surface, only through the
+%side. The total charge enclosed by the Gaussian surface is:
+%\begin{equation*}
+%  q_\text{encl}=\rho V_\text{encl}=\rho(\pi r_i^2L)
+%\end{equation*}
+%Substituting this into Gauss's law, and simplifying the terms:
+%\begin{equation*}
+%  \oint_{\mathcal S}\bm E\cdot\dl\bm A=EA=\frac{q_\text{encl}}{\epsilon_0}
+%  \quad\longrightarrow\quad
+%  E=\frac{q_\text{encl}}{\epsilon_0A}
+%  =\frac{\rho\pi r_i^2L}{\epsilon_0(2\pi r_iL)}
+%  =\left[\frac\rho{2\epsilon_0}\right]r_i
+%\end{equation*}
+%Inside the rod, electric field strength scales linearly with the distance from
+%the axis of the rod.
+%
+%\textbf{Outside the rod:} The symmetry, the electric field outside the rod
+%must also be entirely in the radial direction. Again, we construct a
+%cylindrical Gaussian surface of radius $r_o>R$ and length $L$ as before. The
+%enclosed charge is therefore:
+%\begin{equation*}
+%  q_\text{encl}=\rho\pi R^2L
+%\end{equation*}
+%Substituting this into Gauss's law:
+%\begin{equation*}
+%  \oint_{\mathcal S}\bm E\cdot\dl\bm A=EA=\frac{q_\text{encl}}{\epsilon_0}
+%  \quad\longrightarrow\quad
+%  E=\frac{q_\text{encl}}{\epsilon_0A}
+%  =\frac{\rho\pi R^2L}{\epsilon_0(2\pi r_oL)}
+%  =\left[\frac{\rho R^2}{2\epsilon_0}\right]\frac1{r_o}
+%\end{equation*}
+%Outside the rod, electric field strength is inversely proprotional to the
+%distance from axis of the rod.
+
+
+
 
 
 
