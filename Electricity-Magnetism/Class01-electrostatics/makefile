@@ -1,6 +1,8 @@
 all:
 	pdflatex PhysAPC-EM-C01-Electrostatics
 	pdflatex PhysAPC-EM-C01-Electrostatics
+	pdflatex PhysAPC-EM-C01-courseOutline
+	pdflatex PhysAPC-EM-C01-courseOutline
 	cd homework ; make
 
 clean:
@@ -8,6 +10,6 @@ clean:
 	cd homework ; make clean
 
 public:
-	mkdir -p $(DESTINATION)/Class14
-	cp PhysAPC*.pdf $(DESTINATION)/Class14
-	cp homework/*.pdf $(DESTINATION)/Class14
+	mkdir -p $(DESTINATION)/Class01
+	cp PhysAPC*.pdf $(DESTINATION)/Class01
+	cp homework/*.pdf $(DESTINATION)/Class01
