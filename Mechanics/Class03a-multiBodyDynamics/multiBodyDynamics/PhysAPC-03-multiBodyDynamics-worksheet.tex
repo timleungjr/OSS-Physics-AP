@@ -1,0 +1,137 @@
+\documentclass{../../../oss-handout}
+\usepackage{enumitem}
+\usepackage{tikz}
+
+
+\tikzset{
+  >=latex
+}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{8pt}
+\setlength{\headheight}{26pt}
+
+
+% Set the page style for the document
+\pagestyle{plain}
+
+% Course & handout information
+\renewcommand{\institution}{Meritus Academy}
+\renewcommand{\coursetitle}{AP Physics C--Mechanics}
+\renewcommand{\term}{Updated: Summer 2025}
+
+\title{Example Multi-Body Dynamic Problems}
+\author{}%Dr.\ Timothy Leung}
+\date{\today}
+
+\begin{document}
+\thispagestyle{title}
+\gentitle
+
+\begin{enumerate}[leftmargin=12pt]
+\item Three masses ($m_1$, $m_2$ and $m_3$), connected by massless ropes, are
+  pulled forward by an external force $\mathbf F$ over a frictionless surface,
+  as shown in the figure below.
+  \begin{center}
+    \begin{tikzpicture}[thick]
+      \draw (-1,0)--(12,0);
+      \draw[fill=purple!40] rectangle (1.5,1) node[midway]{$m_3$};
+      \draw (1.5,.5)--(3.5,.5) node[midway,above]{$T_2$};
+      \draw[fill=purple!40] (3.5,0) rectangle (5,1) node[midway]{$m_2$};
+      \draw (5,.5)--(7,.5) node[midway,above]{$T_1$};
+      \draw[fill=purple!40] (7,0) rectangle (8.5,1) node[midway]{$m_1$};
+      \draw[ultra thick,->] (8.5,.5)--(10.5,.5) node[right]{$\mathbf F$};  
+    \end{tikzpicture}
+  \end{center}
+  Assuming that the cables do not break,
+  \begin{enumerate}[nosep]
+  \item What is the acceleration of the masses?
+  \item What are the magnitude of the tension forces ($T_1$ and $T_2$) in the
+    ropes?
+  \end{enumerate}
+  \newpage
+
+
+\item Three masses are pushed forward by an external force $\mathbf F$ over a
+  frictionless surface, as shown below.
+  \begin{center}
+    \begin{tikzpicture}[thick]
+      \draw (-3,0)--(6,0);
+      \draw[fill=cyan!10] rectangle(1,1) node[midway]{$m_1$};
+      \draw[fill=cyan!30] (1,0) rectangle(2.5,1.5) node[midway]{$m_2$};
+      \draw[fill=cyan!50] (2.5,0) rectangle(4.3,1.8) node[midway]{$m_3$};
+      \draw[ultra thick,->] (-1.5,.5)--(0,.5) node[pos=0,left]{$\mathbf F$};  
+    \end{tikzpicture}
+  \end{center}
+  \begin{enumerate}[nosep]
+  \item What is the acceleration of the masses?
+  \item Whst is the force that $m_3$ exerts on $m_2$?
+  \end{enumerate}
+  \newpage
+
+\item Masses $m_1$ and $m_2$, stacked top of each other on a table, are pulled
+  to the right by a external force $\mathbf F$ without slipping, as shown
+  below. The static and kinetic coefficients of friction are $\mu_s$ and
+  $\mu_k$ respectively, where $\mu_s>\mu_k$, but there is no friction between
+  the tabletop and $m_2$.
+  \begin{center}
+    \begin{tikzpicture}[thick]
+      \draw (-1.5,0)--(5.5,0);
+      \draw[fill=magenta!50] rectangle (3,1.5) node[midway]{$m_2$};
+      \draw[fill=magenta!25] (.75,1.5) rectangle (2.25,2.5) node[midway]{$m_1$};
+      \draw[ultra thick,->] (3,.8)--(4.5,.8) node[right]{$\mathbf F$};
+    \end{tikzpicture}
+  \end{center}
+  \begin{enumerate}[nosep]
+  \item What is the \emph{maximum} acceleration that the masses can have without
+    slipping?
+  \item What is the magnitude of the external force at maximum acceleration?
+  \item If the external applied force is increased from $\mathbf F$ to
+    $2\mathbf F$, what would be the accelerations of the masses?
+  \end{enumerate}
+  \newpage
+
+\item Two masses ($M>m$) are connected by a massless string over a massless and
+  frictionless pulley. What is the magnitude of acceleration of the masses?
+  \begin{center}
+    \begin{tikzpicture}[thick]
+      \draw circle (.5);
+      \draw (0,0)--(0,1);
+      \draw (.5,0)--(.5,-2);
+      \draw (-.5,0)--(-.5,-3);
+      \draw[fill=lightgray] (.2,-2) rectangle (.8,-2.6) node[below left]{$m$};
+      \draw[fill=gray] (-.2,-3) rectangle (-.8,-4.2) node[below right]{$M$};
+      \draw (-2,1)--(2,1);
+    \end{tikzpicture}
+  \end{center}
+  \newpage
+
+\item Masses $M$ and $m$ are connected by a massless cable over a massless and
+  frictionles pulley, as shown below. The coeffeicient of friction between the
+  masses and the surface is $\mu$. The masses are released from rest. 
+  \begin{center}
+    \begin{tikzpicture}[scale=1.2,thick]
+      \draw[brown] (-4,.4)--(.1,.4);
+      \draw (0,0)--(-5.5,0) node[midway,below]{$\mu$};
+      \draw[fill=magenta!20] (-4,0) rectangle(-5,.75)node[midway]{$m$};
+      \begin{scope}[rotate=-30]
+        \draw[brown] (1,.4)--(-.05,.4);
+        \draw (0,0)--(3,0) node[midway,below left] {$\mu$};
+        \draw[fill=cyan!50] (1,0) rectangle(2.5,1)node[midway,rotate=-30]{$M$};
+      \end{scope}
+      \begin{scope}[rotate=-15]
+        \draw[fill=gray] (0,.3) circle(.15);
+        \draw[fill=lightgray] (0,.3) circle(.1);
+        \draw[ultra thick] (0,0)--(0,.3);
+        \fill(0,.3) circle(.04);
+      \end{scope}
+      \draw[gray!70] (0,0)--(0,-1.5);
+      \draw[->] (0,-.5)arc(270:330:.5) node[midway,below]{$\phi$};
+    \end{tikzpicture}
+  \end{center}
+  \begin{enumerate}[nosep]
+  \item What is the magnitude of acceleration of the masses?
+  \item What is the tension in the cable?
+  \end{enumerate}
+\end{ennumerate}
+\end{document}

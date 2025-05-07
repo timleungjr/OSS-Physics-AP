@@ -1,18 +1,18 @@
 \documentclass[12pt,compress,aspectratio=169]{beamer}
-\input{../mybeamer}
+\input{../../mybeamer}
 
 \usetikzlibrary{patterns}
 
-\title{Class 7: Rotational Motion of a Rigid Body}
-\subtitle{Advanced Placement Physics C}
-\input{../me}
-\input{../mycommands}
+\title{Class 9: Rotational Motion of a Rigid Body}
+\subtitle{AP Physics C--Mechanics}
+\input{../../me}
+\input{../../mycommands}
 
 \begin{document}
 
 \begin{frame}
   \maketitle
-\end{frame}
+1\end{frame}
 
 
 \section{Introduction}
@@ -106,7 +106,7 @@
       \draw[dashed] (5,0)--(6,0);
       \draw[axes] (5.7,0) arc (0:-atan(1.5/.7):.7)
       node[midway,right]{$\phi$};
-      \fill circle (.06) node[above=1]{\scriptsize\textbf{pivot}};
+      \fill circle (.06) node[above=1]{\textbf{pivot}};
     \end{tikzpicture}
   \end{center}
 \end{frame}
@@ -151,7 +151,7 @@
       \draw[thick,fill=lightgray] (-.2,-.2) rectangle(5.2,.2);
       \draw[vectors,red] (0,0)--(5,0) node[midway,below]{$\vec r$};
       \draw[vectors,blue] (5,0)--(5,2) node[above]{$\vec F$};
-      \fill circle (.08) node[above]{\scriptsize pivot};
+      \fill circle (.08) node[above]{pivot};
     \end{tikzpicture}
 
     \vspace{.18in}
@@ -170,7 +170,7 @@
       \draw[vectors,blue] (5,0)--(6.2,1.6) node[above]{$\vec F$};
       \draw[vectors,blue,dashed] (5,0)--(5,1.6) node[left]{$\vec F_\perp$};
       \draw[vectors,blue,dashed] (5,0)--(6.2,0) node[right]{$\vec F_\parallel$};
-      \fill circle (.08) node[above]{\scriptsize pivot};
+      \fill circle (.08) node[above]{pivot};
       \draw (5.6,0) arc(0:atan(4/3):.6) node[pos=2/3,right=0]{$\phi$};
     \end{tikzpicture}
 
@@ -193,12 +193,12 @@
       \begin{scope}[rotate=-atan(3/4)]
         \draw[vectors,red] (0,0)--(4,0) node[midway,below]{$\vec r_\perp$};
         \draw (4,-.5)--(4,5.5)
-        node[pos=0,right]{\scriptsize line of action of $\vec F$};
+        node[pos=0,right]{line of action of $\vec F$};
         \draw (0,-1)--(0,2);
         \draw[vectors,blue,dash dot] (4,0)--(4,2) node[midway,right]{$\vec F$};
         \fill[blue] (4,0) circle(.04);
       \end{scope}
-      \fill circle(.08) node[above]{\scriptsize pivot};
+      \fill circle(.08) node[above]{pivot};
       \draw (5,0)--(6.3,0);
       \draw (5.6,0) arc(0:atan(4/3):.6) node[pos=2/3,right]{$\phi$};
       \draw (.6,0) arc(0:atan(4/3):.6) node[pos=2/3,right]{$\phi$};
@@ -232,8 +232,8 @@
       \draw[thick,fill=lightgray] (-.2,-.2) rectangle(5.2,.2);
       \draw[vectors,red] (0,0)--(5,0) node[midway,below]{$\vec r$};
       \draw[vectors,blue] (5,0)--(7,0) node[above]{$\vec F$};
-      \draw (-1,0)--(9,0) node[above]{\scriptsize line of action};
-      \fill circle(.08) node[above]{\scriptsize pivot};
+      \draw (-1,0)--(9,0) node[above]{line of action};
+      \fill circle(.08) node[above]{pivot};
       \fill[blue] (5,0) circle(.04);
     \end{tikzpicture}
 
@@ -245,10 +245,10 @@
     \begin{tikzpicture}[scale=.7]
       \draw[thick,fill=lightgray] (-.2,-.2) rectangle(5.2,.2);
       \begin{scope}[rotate=-atan(3/4)]
-        \draw (0,-1)--(0,3) node[right]{\scriptsize line of action};
+        \draw (0,-1)--(0,3) node[right]{line of action};
         \draw[vectors,blue] (0,0)--(0,2) node[right]{$\vec F$};
       \end{scope}
-      \fill circle(.08) node[above]{\scriptsize pivot};
+      \fill circle(.08) node[above]{pivot};
     \end{tikzpicture}
 
     {\footnotesize $\vec F$ is applied at the pivot.\par}
@@ -377,7 +377,7 @@
       \begin{scope}[rotate=70]
         \draw[line width=3.5] (0,0)--(2,0);
         \fill (2,0) circle(.04) node[right]{$m$};
-        \fill circle(.05) node[right]{\small pivot};
+        \fill circle(.05) node[right]{pivot};
         \draw[vectors,red] (0,0)--(2,0)node[midway,right]{$\vec r$};
         \draw[vectors,cyan] (2,0)--(2,.5)node[left]{$\vec v$};
       \end{scope}
@@ -391,7 +391,7 @@
   %Look again at the definition of angular momentum:
     
   \eq{-.1in}{
-    \vec L=\underbrace{mr^2}_I\vec\omega
+    \vec L=\underbracket[1pt]{mr^2}_I\vec\omega
   }
     
   The quantity $I=mr^2$ is called the \textbf{moment of inertia}\footnote{Also
@@ -561,27 +561,27 @@
     \begin{tikzpicture}
       \draw[dashed] (-5,0)--(5,0);
       \draw[vectors,red] (-5,0)--(-3,0) node[below]{$\vec v$};
-      \shade[ball color=red] (-5,0) circle(.2) node[above=3]{$m$};
+      \shade[ball color=red] (-5,0) circle (.2) node[above=4]{$m$};
       \draw[vectors,blue] (0,-2)--(-5,0)
-      node[midway,below,rotate=-atan{2/5}]{$\vec r$};
+      node[midway,below,rotate=-atan{2/5}]{$\vec r_1$};
       \uncover<2->{
-        \draw[dash dot] circle(.2) node[above=3]{$m$};
+        \draw circle (.2) node[above=4]{$m$};
         \draw[vectors,red!40] (.2,0)--(2,0) node[right]{$\vec v$};
-        \draw[vectors,blue!40] (0,-2)--(0,0) node[midway,left]{$\vec r$};
+        \draw[vectors,blue!40] (0,-2)--(0,0) node[midway,left]{$\vec r_2$};
       }
       \uncover<3->{
-        \draw[dash dot] (4,0) circle(.2) node[above=3]{$m$};
+        \draw (4,0) circle (.2) node[above=4]{$m$};
         \draw[vectors,red!40] (4.2,0)--(6,0) node[right]{$\vec v$};
         \draw[vectors,blue!40] (0,-2)--(4,0)
-        node[midway,below,rotate=atan{2/4}]{$\vec r$};
+        node[midway,below,rotate=atan{2/4}]{$\vec r_3$};
       }
-      \fill (0,-2) circle(.05) node[below]{$P$};
+      \fill (0,-2) circle (.05) node[below]{$P$};
     \end{tikzpicture}
   \end{center}
   \uncover<4>{
     Since there is no force and no torque acting on the object, both the linear
     momentum ($\vec p=m\vec v$) and angular momentum
-    ($\vec L=\vec r\times\vec v$) are constant.
+    ($\vec L=m(\vec r\times\vec v)$) are constant.
   }
 \end{frame}
 
@@ -682,11 +682,11 @@
   \begin{tikzpicture}
     \draw[mass] circle (2);
     \draw[thick] circle (.13);
-    \fill (0,0)--(.13,0) arc (0:90:.13) node[above=-2]{\scriptsize CM/pivot}
+    \fill (0,0)--(.13,0) arc (0:90:.13) node[above=-2]{cm/pivot}
     --(0,0);
     \fill (0,0)--(-.13,0) arc(180:270:.13)--(0,0);
     \draw[axes,rotate=-30] (1,0) arc (0:60:1) node[above]{$\omega$, $\alpha$};
-    \draw[axes,rotate=40] (0,0)--(-2,0) node[midway,right]{$R$};
+    \draw[axes,rotate=40] (0,0)--(-2,0) node[midway,below=3]{$R$};
     \node at (0,-2.5) {Mass $M$};
     \node at (0,-3.3) {$I=\dfrac12MR^2$};
 %    \only<2>{
@@ -737,11 +737,11 @@
     \begin{tikzpicture}
       \draw[mass] (-.15,0) rectangle (.15,-5);
       \draw[thick] (0,-2.5) circle(.13);
-      \fill (0,-2.5)--(.13,-2.5) node[right=-1]{\scriptsize CM} arc(0:90:.13)
+      \fill (0,-2.5)--(.13,-2.5) node[right=-1]{cm} arc(0:90:.13)
       --(0,-2.5);
       \fill (0,-2.5)--(-.13,-2.5) arc(180:270:.13)--(0,-2.5);
-      \fill circle(.07) node[above]{\scriptsize pivot};
-      \draw[axes,rotate=-90] (.7,0) arc(0:180:.7)
+      \fill circle(.07) node[above]{pivot};
+      \draw[axes,rotate=-90] (.7,0) arc (0:180:.7)
       node[left]{$\omega$, $\alpha$};
       \draw[thick,|<->|] (-.5,0)--(-.5,-5) node[midway,fill=black!2]{$L$};
 %      \node at (0,-2.5) {Mass $M$};
