@@ -3,7 +3,7 @@
 
 \usetikzlibrary{patterns}
 
-\title{Class 9: Rotational Motion of a Rigid Body}
+\title{Class 9 and 10: Rotational Motion of a Rigid Body}
 \subtitle{AP Physics C--Mechanics}
 \input{../../me}
 \input{../../mycommands}
@@ -269,11 +269,11 @@
   \begin{itemize}
   \item Torque can come from individual forces acting at a point, i.e.
 
-    \eq{-.15in}{ \tau_i = F_ir_i }
+    \eq{-.15in}{ \tau_i = r_iF_i }
 
-  \item\vspace{-.15in} Most often the forces that generate torques are spread
+  \item\vspace{-.15in}Often the forces that generate torques are spread
     over an area, e.g.\ force on the head of a screwdriver
-  \item For rotational motion, we only care about the torque; in most cases,
+  \item For rotational motion, we only care about the torque; generally
     we don't have to worry about exactly how the force generates the torque
   \end{itemize}
 \end{frame}
@@ -436,7 +436,9 @@
 
 \begin{frame}{Moment of Inertia}
   \centering
-  \pic{.7}{mic}
+  \pic{.6}{mic}\\
+  In AP Physics C, you may be asked to derive the moment of inertia for simple
+  shapes.
 \end{frame}
 
 
@@ -614,43 +616,111 @@
   For translational motion, mechanical work is defined as
 
   \eq{-.1in}{
-    W_t=\int_{x_1}^{x_2}F\dl x
+    W_\text{trans}=\int_{x_1}^{x_2}F\dl x
   }
 
   For rotational motion, mechanical work is defined similarly as:
 
   \eq{-.1in}{
-    W=\int_{x_1}^{x_2}F\dl x=\int_{\theta_1}^{\theta_2}F(r\dl\theta)
-    \quad\rightarrow\quad
+    W_\text{rot}=\int_{x_1}^{x_2}F\dl x=\int_{\theta_1}^{\theta_2}F(r\dl\theta)
+    \quad\to\quad
     \boxed{
-      W_r=\int_{\theta_1}^{\theta_2}\tau\dl\theta
+      W_\text{rot}=\int_{\theta_1}^{\theta_2}\tau\dl\theta
     }
   }
 
-  The work-energy theorem still applies to rotational motion, i.e.:
-
-  \eq{-.1in}{
-    W_r=\Delta K_r
-  }
+  All we have done is to replace $F\to\tau$ and $\dl x\to\dl\theta$
+  %The work-energy theorem still applies to rotational motion, i.e.:
+  %
+  %\eq{-.1in}{
+  %  W_r=\Delta K_r
+  %}
 \end{frame}
 
 
 
 \begin{frame}{Rotational Kinetic Energy}
-  To find the kinetic energy of a rotating system of particles (discrete number
-  of particles, or continuous mass distribution), we sum the
-  kinetic energies of the individual particles:
+  When a net \emph{torque} causes an angular acceleration in a rotational
+  system (assuming that the system has a constant \emph{moment of inertia}),
+  the total (net) rotational work done on the object $W_\text{net}$ is given by:
+
+  \eq{-.1in}{
+    W_\text{net,rot}
+    =\int_{\theta_0}^{\theta_1} \tau_\text{net}(\theta)\dl\theta
+    =\int I\alpha\dl\theta
+    =I\int\diff{\omega}t\dl\theta
+  }
+
+  Since both $\omega(t)$ and $\theta(t)$ are continuously differentiable in
+  time, we can switch the order of differentiation:
+  
+  \eq{-.1in}{
+    =I\int\diff{\theta}t\dl\omega=m\int_{\omega_0}^{\omega_1}\omega\dl\omega
+  }
+  where $\omega_0=\omega(\theta_0)$ and $\omega_1=\omega(\theta_1)$.
+\end{frame}
+
+
+
+\begin{frame}{Kinetic Energy}
+  This integral, when integrated from $\omega_0$ to $\omega_1$, becomes:
+
+  \eq{-.1in}{
+    =I\int_{\omega_0}^{\omega_1}\omega\dl\omega
+    =\frac12I\omega^2\Big|^{\omega_1}_{\omega_0}
+    =\frac12I\omega_1^2-\frac12I\omega_0^2
+    =\Delta K_\text{rot}
+  }
+  
+  where $K_\text{rot}$ is defined as the \textbf{rotational kinetic energy}:
+
+  \eq{-.1in}{
+    \boxed{
+      K_\text{rot}=\frac12I\omega^2
+    }
+  }
+  This is, of course, the same mathematics that we did for translational work.
+\end{frame}
+
+
+
+\begin{frame}{Work-Energy Theorem}
+  Like the translational kinetic energy, the definition of emph{rotational}
+  kinetic energy came from this integration, in that net \emph{rotational} work
+  equals to the change in \emph{rotational} kinetic energy:
+
+  \eq{-.1in}{
+    \boxed{
+      W_\text{net,rot}=\Delta K_\text{rot}
+    }
+  }
+  \begin{itemize}
+  \item $K_\text{rot}$ increases ($\Delta K_\text{rot}>0$) if net work is
+    positive ($W_\text{net,rot}>0$); the object's angular speed increases
+  \item $K_\text{rot}$ decreases ($\Delta K_\text{rot}<0$) if net work is
+    negative ($W_\text{net,rot}>0$); the object's angular speed decreases
+  \item It does not matter \emph{what} the net torque consists of
+  \end{itemize}
+\end{frame}
+
+
+
+
+\begin{frame}{Rotational Kinetic Energy}
+  Alternatively, to find the kinetic energy of a rotating system of particles
+  (discrete number of particles, or continuous mass distribution), we also
+  sum/integrate the kinetic energies of the individual particles:
     
   \eq{-.1in}{
-    K_r=\sum_i\frac12m_iv_i^2=\sum\frac12m_i(r_i\omega)^2
-    =\frac12\left(\sum_i m_ir_i^2\right)\omega^2
+    K_\text{rot}=\sum_i\frac12m_iv_i^2=\sum_i\frac12m_i(r_i\omega)^2
+    =\frac12\left[\sum_i m_ir_i^2\right]\omega^2 = \frac12I\omega^2
   }
   
-  It's no surprise that rotational kinetic energy is given by:
-  
-  \eq{-.1in}{
-    \boxed{K_r=\frac12I\omega^2}
-  }
+%  It's no surprise that rotational kinetic energy is given by:
+%  
+%  \eq{-.1in}{
+%    \boxed{K_r=
+%  }
 \end{frame}
 
 
@@ -660,14 +730,18 @@
   and rotational kinetic energies at its centre of mass:
 
   \eq{-.1in}{
-    \boxed{K=K_t+K_r=\frac12mv_\text{cm}^2+\frac12I_\text{cm}\omega^2}
+    \boxed{
+      K_\text{tot}
+      =K_\text{trans}+K_\text{rot}
+      =\frac12mv_\text{cm}^2+\frac12I_\text{cm}\omega^2
+    }
   }
   
   In this case, $I_\text{cm}$ is calculated at the CM. For simple problems, we
   only need to compute rotational kinetic energy at the pivot:
 
   \eq{-.1in}{
-    \boxed{K=\frac12I_\text{p}\omega^2}
+    \boxed{K_\text{tot}=\frac12I_\text{p}\omega^2}
   }
   
   In this case, the $I_\text{p}$ is calculated at the pivot.
@@ -676,7 +750,70 @@
 
 
 
-\begin{frame}{Spinning Disk}
+\begin{frame}{Power}
+  As you have seen in other physics course (and earlier in this course),
+  \textbf{power} is the \emph{rate} at which work is done, i.e.\ the rate at
+  which energy is being transformed. For a rotational system:
+
+  \eq{-.1in}{
+    \boxed{P(t) = \diff Wt}\quad\quad
+    \boxed{\overline P = \frac W{\Delta t}}
+  }
+
+  It is defined the same way as it was in the translational system:
+\end{frame}
+
+
+
+\begin{frame}{Power}
+  If a torque is used to push an object, the instantaneous power produced by the
+  force is:
+  
+  \eq{-.1in}{
+    P(t)=\diff Wt=\frac{\tau\dl\theta}{\dl t}
+    =\tau\diff{\theta}t \quad\to\quad
+    \boxed{P(t)=\tau(t)\omega(t)}
+  }
+  
+  Consider an engine that is able to produce a torque $\tau$, the total power
+  that it generates (i.e.\ converts from fuel) is equal to $\tau$ multiplied
+  by how fast it is spinning (i.e. $\omega$):
+\end{frame}
+
+
+
+
+\section{Momentum in a Rotational System}
+
+\begin{frame}{Conservation of Momentum}
+  
+  During a collision/explosion, there is no external force, therefore the total
+  linear momentum of the total system is conserved:
+
+  \eq{-.1in}{
+    \sum\vec p_i=\sum\vec p_i'
+  }
+  
+  But if there is no external force, there is also no external torque as well,
+  therefore, the total \emph{angular} momentum must also be conserved in a
+  collision:
+  
+  \eq{-.1in}{
+    \boxed{
+      \sum L_i=\sum L_i'
+    }
+  }
+
+  Let's remind ourselves the sign convention for angular momentum on the
+  $xy$-plane: $L$ is $+$ when rotational motion is counter clockwise, and $-$
+  when it is clockwise
+\end{frame}
+
+
+
+
+
+\begin{frame}{Spinning Disk - Pivot at the Centre of Mass}
 %  \begin{columns}
 %    \column{.3\textwidth}
   \begin{tikzpicture}
@@ -758,7 +895,6 @@
     \column{.7\textwidth}
   \end{columns}
 \end{frame}
-
 
 
 \end{document}
