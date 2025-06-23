@@ -64,7 +64,7 @@
 \setlength{\parindent}{0pt}
 \setlength{\headheight}{14pt}
 
-\usepackage[margin=.5in,letterpaper]{geometry}
+\usepackage[margin=.7in,letterpaper]{geometry}
 \usepackage{tikz}
 \usepackage{newtxtext,newtxmath}
 \usepackage[document]{ragged2e}
