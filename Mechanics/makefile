@@ -12,9 +12,9 @@ all:
 	cd Class03a-multiBodyDynamics ; make
 	cd Class03b-workEnergy ; make
 	cd Class04-workEnergy-part2 ; make
-#	cd Class05-momentum	; make
-#	cd Class06-CM		; make
-#	cd Class07-circMotion	; make
+	cd Class05-momentumImpulse ; make
+	cd Class06-CM		; make
+	cd Class07-circMotion	; make
 #	cd Class07-rotMotion	; make
 #	cd Class08-rotMotion2	; make
 #	cd Class09-rotMotion3	; make
@@ -30,9 +30,9 @@ clean:
 	cd Class03a-multiBodyDynamics ; make clean
 	cd Class03b-workEnergy	; make clean
 	cd Class04-workEnergy-part2 ; make clean
-#	cd Class05-momentum	; make clean
-#	cd Class06-CM		; make clean
-#	cd Class07-circMotion	; make clean
+	cd Class05-momentumImpulse ; make clean
+	cd Class06-CM		; make clean
+	cd Class07-circMotion	; make clean
 #	cd Class07-rotMotion 	; make clean
 #	cd Class08-rotMotion2	; make clean
 #	cd Class09-rotMotion3	; make clean
@@ -48,9 +48,9 @@ public:
 	cd Class03a-multiBodyDynamics ; make public
 	cd Class03b-workEnergy	; make public
 	cd Class04-workEnergy-part2 ; make public
-#	cd Class05-momentum	; make public
-#	cd Class06-CM		; make public
-#	cd Class07-circMotion	; make public
+	cd Class05-momentumImpulse ; make public
+	cd Class06-CM		; make public
+	cd Class07-circMotion	; make public
 #	cd Class07-rotMotion	; make public
 #	cd Class08-rotMotion2	; make public
 #	cd Class09-rotMotion3	; make public
