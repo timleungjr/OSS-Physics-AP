@@ -18,9 +18,10 @@ all:
 	cd Class09-rotMotion-part1 ; make
 	cd Class10-rotMotion-part2 ; make
 #	cd Class09-rotMotion3	; make
-#	cd Class09-harmonicMotion ; make
-#	cd Class14-universalGravitation ; make
-#	cd Class12-gravity2	; make
+	cd Class12-harmonicMotion-part1 ; make
+	cd Class13-harmonicMotion-part2 ; make
+	cd Class14-universalGravitation ; make
+	cd Class15-planetaryMotion	; make
 
 clean:
 	rm -rf *.*~ *~ *.log
@@ -36,9 +37,10 @@ clean:
 	cd Class09-rotMotion-part1 ; make clean
 	cd Class10-rotMotion-part2 ; make clean
 #	cd Class09-rotMotion3	; make clean
-#	cd Class09-harmonicMotion ; make clean
-#	cd Class14-universalGravitation ; make clean
-#	cd Class12-gravity2	; make clean
+	cd Class12-harmonicMotion-part1 ; make clean
+	cd Class13-harmonicMotion-part2 ; make clean
+	cd Class14-universalGravitation ; make clean
+	cd Class15-planetaryMotion	; make clean
 
 public:
 	mkdir -p $(DESTINATION)
@@ -54,6 +56,7 @@ public:
 	cd Class09-rotMotion-part1 ; make public
 	cd Class10-rotMotion-part2 ; make public
 #	cd Class09-rotMotion3	; make public
-#	cd Class09-harmonicMotion ; make public
-#	cd Class14-universalGravitation ; make public
-#	cd Class12-gravity2	; make public
+	cd Class12-harmonicMotion-part1 ; make public
+	cd Class13-harmonicMotion-part2 ; make public
+	cd Class14-universalGravitation ; make public
+	cd Class15-planetaryMotion	; make public
