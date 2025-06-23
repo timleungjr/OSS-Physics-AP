@@ -1,8 +1,8 @@
 all:
-	pdflatex PhysAPC-Mech-C02a-kinematics2
-	pdflatex PhysAPC-Mech-C02a-kinematics2
-	pdflatex PhysAPC-Mech-C02a-kinematics2-print
-	pdflatex PhysAPC-Mech-C02a-kinematics2-print
+	pdflatex PhysAPC-Mech-C02a-graphingTechniques
+	pdflatex PhysAPC-Mech-C02a-graphingTechniques
+	pdflatex PhysAPC-Mech-C02a-graphingTechniques-print
+	pdflatex PhysAPC-Mech-C02a-graphingTechniques-print
 
 clean:
 	rm -rf *~ *.*~ *.log *.nav *.aux *.out *.snm *.toc

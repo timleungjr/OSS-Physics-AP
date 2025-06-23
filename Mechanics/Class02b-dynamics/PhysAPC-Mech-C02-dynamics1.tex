@@ -27,13 +27,57 @@
 
 \begin{frame}{First Law of Motion}
   \begin{center}
-    \fbox{
-      \begin{minipage}{.7\textwidth}
-        \textbf{Law \#1: An object will remain in its state of rest or uniform
+    \fcolorbox{black}{yellow!15}{
+      \begin{minipage}{.65\textwidth}
+        \textbf{Law \#1: An object remains in its state of rest or uniform
           motion, until a net external force is applied to it.}
       \end{minipage}
     }
   \end{center}
+  Under the first law of motion, these equations are equivalent:
+  
+  \eq{-.1in}{
+    \boxed{
+      \vec F_\text{net}=\sum\vec F=\vec 0
+    }
+    \quad\Longleftrightarrow\quad
+    \boxed{
+      \vec v=\text{constant}
+    }
+    \quad\Longleftrightarrow\quad
+    \boxed{
+      \vec a=\vec 0
+    }
+  }
+
+  \vspace{-.15in}
+  \begin{columns}[T]
+    \column{.4\textwidth}
+    \begin{itemize}
+    \item No net external force
+    \item Vector sum of all forces on the object is zero
+    \item Forces on the object are \emph{balanced}
+    \item\textbf{State of equilibrium}
+    \end{itemize}
+    
+    \column{.31\textwidth}
+    \begin{itemize}
+    \item Constant velocity (constant magnitude \underline{\emph{and}}
+      direction)
+    \item\textbf{Uniform motion}
+    \item Object moves in a straight line
+    \end{itemize}
+    
+    \column{.29\textwidth}
+    \begin{itemize}
+    \item Zero acceleration
+    \end{itemize}
+  \end{columns}
+\end{frame}
+
+
+
+\begin{frame}{First Law of Motion}
   \begin{itemize}
   \item Uniform motion means constant velocity; an object ``at rest'' is also
     in uniform motion with $\vec v=\vec 0$
@@ -43,13 +87,16 @@
     \begin{itemize}
     \item A hockey puck sliding on very smooth ice has gravity and normal
       force, but the net force is zero
-    \item A car traveling on a highway at \SI{100}{\kilo\metre\per\hour}
-      has many forces acting on it, but the net force is zero 
+    \item A car travelling along a straight line on a levels stretch highway at
+      \SI{100}{\kilo\metre\per\hour} has many forces acting on it, but the net
+      force is zero 
     \end{itemize}
   \item{\color{red!80!black}This is a special case that assumes a constant
     mass}
   \end{itemize}
 \end{frame}
+
+
 
 \begin{frame}{Aristotle}
   Prior to Galileo, the understanding of motion came primarily from Greek
@@ -111,20 +158,20 @@
 
 
 
-\begin{frame}{Translational Equilibrium}
-  If the net force on an object is zero ($\sum\vec F=\vec 0$) then the
-  object is in a \emph{state of translational equilibrium}
-  \begin{itemize}
-  \item Dynamic equilibrium: the object is moving relative to us
-  \item Static equilibrium: the object is not moving relative to us
-  \end{itemize}
-\end{frame}
+%\begin{frame}{Translational Equilibrium}
+%  If the net force on an object is zero ($\sum\vec F=\vec 0$) then the
+%  object is in a \emph{state of translational equilibrium}
+%  \begin{itemize}
+%  \item Dynamic equilibrium: the object is moving relative to us
+%  \item Static equilibrium: the object is not moving relative to us
+%  \end{itemize}
+%\end{frame}
 
 
 
 \begin{frame}{Second Law of Motion}
   \begin{center}
-    \fbox{
+    \fcolorbox{black}{yellow!15}{
       \begin{minipage}{.6\textwidth}
         \textbf{Law \#2: The acceleration of an object is proportional to,
           and along the direction of, the net external force.}
@@ -132,19 +179,19 @@
     }
   \end{center}
   \begin{itemize}
-  \item\textcolor{red!80!black}{Like the first law, this is also a
-    ``special case'' that assumes a constant mass.}
-  \item The first two laws of motion can be summarized in the equation:
+    \item The first two laws of motion can be summarized in the equation:
 
     \eq{-.1in}{
-      \boxed{\vec F_\text{net}=\sum\vec F=m\vec a}
+      \boxed{\vec F_\text{net}(t)=\sum\vec F(t)=m\vec a(t)}
     }
+  \item\textcolor{red!80!black}{Like the first law, the equation is also a
+    ``special case'' that assumes a constant mass.}
   \item For non-constant mass, net force is the rate of change of momentum
-    $\vec p$:
+    $\vec p(t)$:
 
     \eq{-.1in}{
       \boxed{
-        \vec F_\text{net}=\diff{\vec p}t
+        \vec F_\text{net}=\diff{\vec p(t)}t
       }
     }
   \end{itemize}
@@ -170,8 +217,8 @@
 
 \begin{frame}{Third Law of Motion}
   \begin{center}
-    \fbox{
-      \begin{minipage}{.9\textwidth}
+    \fcolorbox{black}{yellow!15}{
+      \begin{minipage}{.73\textwidth}
         \textbf{Law \#3: For every action there is always an opposite and
           equal reaction; the mutual actions of two objects on each other are
           always equal, and directed to the other object.}
@@ -187,6 +234,7 @@
     \boxed{\vec F_\text{AB} = -\vec F_\text{BA}}
   }
   \begin{itemize}
+  \item Forces are \emph{always} created in pairs
   \item The action and reaction forces act on different objects!
   \item Third law is an application of the first law. Action/reaction forces
     are \emph{internal} forces to the system of objects.
@@ -196,19 +244,27 @@
 
 
 \begin{frame}{Forces}
-  A \textbf{force} is the interaction between the objects.
+  A \textbf{force} is a ``push'' or ``pull'' upon an object resulting from the
+  object's \emph{interaction} with another object
   \begin{itemize}
-  \item When there is interaction, then forces are created
-  \item A ``push'' or a ``pull''
+  \item Whenever there is an interaction between two objects, there is a force
+    on the objects
+  \item The interaction could be by contact or at a distance
+  \item When the interaction ceases, the two objects no longer experience the
+    force
+  \item The unit of force is a \textbf{newton}, defined using base SI units:
+    $\SI1\newton=\SI1{\kilo\gram\metre\per\second\squared}$
   \end{itemize}
   There are two broad categories of forces:
   \begin{itemize}
-  \item\textbf{Contact forces} act between two objects that are in contact
-    with one another
-  \item\textbf{Non-contact forces} act between two objects without them
-    touching each other. They are also called ``action-at-a-distance'' force
+  \item The majority of forces are \textbf{contact forces} that act between
+    objects in contact with one another
+  \item There are also some \textbf{non-contact forces} act between two objects
+    without them touching each other. They are also called
+    ``action-at-a-distance'' force
   \end{itemize}
 \end{frame}
+
 
 
 
@@ -218,7 +274,7 @@
   Common forces that we encounter in AP Physics C include:
   \begin{itemize}
   \item Weight (gravitational force) $\vec F_g$
-  \item Normal force $\vec F_N$
+  \item Normal force $\vec F_n$
   \item Friction force (static $\vec f_s$ and kinetic $\vec f_k$)
   \item Tension force $\vec F_T$
   \item Applied force $\vec F_a$
@@ -263,9 +319,9 @@
       \draw[mass] rectangle (1.5,1);
       \fill (.75,.5) circle (2pt);
       \draw[vectors] (.75,.5)--(.75,-.5) node[below]{$\vec F_g$};
-      \draw[vectors] (.75,.5)--(.75,1.5) node[above]{$\vec F_N$};
+      \draw[vectors] (.75,.5)--(.75,1.5) node[above]{$\vec F_n$};
     \end{tikzpicture}
-    %$\vec F_g=-\vec F_N$\\(special case)
+    %$\vec F_g=-\vec F_n$\\(special case)
     
     \column{.78\textwidth}
     \begin{itemize}
@@ -273,7 +329,7 @@
     \item Always \textbf{perpendicular} to the contact surface
     \item\textbf{Special case:} When an object is on a horizontal surface
       with no additional applied force, the magnitude of the normal force is
-      equal to the magnitude of the weight of the object, i.e.\ $F_N=mg$
+      equal to the magnitude of the weight of the object, i.e.\ $F_n=mg$
     \end{itemize}
   \end{columns}
 \end{frame}
@@ -292,7 +348,7 @@
         \draw[mass] (2,0) rectangle (4,1.5);
         \draw[vectors,rotate around={-30:(3,.75)}]
         (3,.75)--(3,-1) node[right]{$\vec F_g$};
-        \draw[vectors,red] (3,.75)--(3,2.25) node[left=-1]{$\vec F_N$};
+        \draw[vectors,red] (3,.75)--(3,2.25) node[left=-1]{$\vec F_n$};
         \fill (3,.75) circle (.06);
       \end{scope}
     \end{tikzpicture}
@@ -325,7 +381,7 @@
 %        node[left]{$mg\sin\theta$};
 %        \draw [->,very thick,red] (1.5,1)--(.45,-.5)
 %        node[below]{$\vec F_g$};
-%        \draw [->,very thick] (1.5,1)--(1.5,2.5) node[above]{$\vec F_N$};
+%        \draw [->,very thick] (1.5,1)--(1.5,2.5) node[above]{$\vec F_n$};
 %      \end{scope}
 %    \end{tikzpicture}
 %    
@@ -368,17 +424,15 @@
 
 
 \begin{frame}{Static Friction}
-  When there is no relative motion between the two surface, the friction is
-  called the \textbf{static friction}
-%  \textbf{Static friction} between the two surfaces is when there is no
-%  relative motion between them
+  \textbf{Static friction} is the resistive force between two surfaces when
+  there is no relative motion between them
   \begin{itemize}
   \item Increases with increasing applied force
   \item Maximum when the object is just about to move
   \end{itemize}
 
   \eq{-.1in}{
-    \boxed{f_s\leq\mu_sN}
+    \boxed{f_s\leq\mu_sF_n}
   }
   \begin{center}
     \begin{tabular}{l|c|c}
@@ -386,7 +440,7 @@
       \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
       Magnitude of static friction & $f_s$ & \si\newton \\
       Coefficient of static friction & $\mu_s$ & no units \\
-      Magnitude of normal force    & $N$ & \si\newton
+      Magnitude of normal force    & $F_n$ & \si\newton
     \end{tabular}
   \end{center}
 \end{frame}
@@ -394,14 +448,12 @@
 
 
 \begin{frame}{Kinetic Friction}
-  When the two surfaces are moving relative to each other, the friction is
-  called \textbf{kinetic friction} $f_k$. $f_k$ is approximately constant along
-  the path of movement as long  as $\vec F_N$ stays constant
-%  \textbf{Kinetic friction} between two surfaces is when they are moving
-%  relative to each other.
+  \textbf{Kinetic friction} is the resistive force between two surfaces that
+  are moving relative to each other. It is (nearly) constant along the path of
+  movement as long as the normal force stays constant:
 
   \eq{-.1in}{
-    \boxed{f_k = \mu_kN}
+    \boxed{f_k = \mu_kF_n}
   }
   \begin{center}
     \begin{tabular}{l|c|c}
@@ -409,7 +461,7 @@
       \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
       Magnitude of kinetic friction & $f_k$ & \si\newton \\
       Coefficient of kinetic friction & $\mu_k$ & no units \\
-      Magnitude of normal force & $N$ & \si\newton
+      Magnitude of normal force & $F_n$ & \si\newton
     \end{tabular}
   \end{center}
 \end{frame}
@@ -436,7 +488,7 @@
       \draw[mass] rectangle (1.5,1);
       \fill (.75,.5) circle (2pt);
       \draw[vectors] (.75,.5)--(.75,-.5) node[below]{$\vec F_g$};
-      \draw[vectors] (.75,.5)--(.75,1.5) node[above]{$\vec F_N$};
+      \draw[vectors] (.75,.5)--(.75,1.5) node[above]{$\vec F_n$};
       \draw[vectors] (.75,.5)--(2.,.5) node[right]{$\vec F_a$};
       \draw[vectors] (.75,.5)--(.1,.5) node[left]{$\vec f$};
     \end{tikzpicture}
@@ -453,17 +505,21 @@
 
 
 \begin{frame}{Tires}
-  Most people associate friction as the force that slows down things, but very
-  often friction is what accelerates things. \textbf{Example:} the forward
-  acceleration of a car is caused by the static friction between the tires and
-  the road.
+  Friction is often the force that slows things down, but sometimes friction is
+  responsible for speeding up and object. For example, the forward acceleration
+  of a car is caused by the static friction between the tires and the road.
   \begin{center}
-    \pic{.38}{graphics/all-season-tires}
+    \begin{tikzpicture}
+      \node at (0,0) {\pic{.5}{graphics/all-season-tires}};
+      \draw[vectors,yellow] (.05,-1.45)--+(1,0) node[right]{$\vec F_s$};
+      \draw[vectors,orange,rotate around={70:(.05,-.28)}]
+      (1.1,-.28) arc (0:-200:1.06)
+      node[left]{\textbf{Dir.\ of Rotation}};
+    \end{tikzpicture}
   \end{center}
-  Tires also generated a force called \emph{rolling resistance} as it rolls
+  Tires also generate a force called \emph{rolling resistance} as it rolls
   along a road because the weight of the car deforms the tires.
 \end{frame}
-
 
 
 
@@ -622,18 +678,16 @@
 
 
 \begin{frame}{Spring Force}
-  The spring force $\vec F_s$ is the force that a compressed/stretched spring
+  The spring force $\vec F_e$ is the force that a compressed/stretched spring
   exerts on the object connected to it.  An \emph{ideal} spring obeys Hooke's
   law:
     
   \eq{-.1in}{
-    \boxed{\vec F_s=-k\vec x}
+    \boxed{\vec F_e=-k\vec x}
   }
 
   \vspace{-.1in}The spring force acts in the opposite direction to the spring's
   displacement, and is proportional to the amount of compression/stretching.
-
-  \vspace{.1in}
   \begin{center}
     \begin{tikzpicture}
       \draw[mass] (5,.5) rectangle (6,1.5);
@@ -643,8 +697,8 @@
       \fill[pattern=north east lines] (-.2,0) rectangle (0,2);
       \draw[thick] (0,.0)--(0,2);
       \fill[red] (5.5,1) circle (.06);
-      \draw[vectors,red] (5.5,1)--(4,1) node[above]{$\vec F_s$};
-      \draw[dashed] (3,0)--(3,2) node[above]{\scriptsize Equilibrium position};
+      \draw[vectors,red] (5.5,1)--(4,1) node[above]{$\vec F_e$};
+      \draw[dashed] (3,0)--(3,2) node[above]{Equilibrium position};
       \draw[vectors] (3,.3)--(5,.3) node[midway,below]{$\vec x$};
     \end{tikzpicture}
     \hspace{.2in}
@@ -656,7 +710,7 @@
       \fill[pattern=north east lines](-.2,0) rectangle (0,2);
       \draw[thick](0,.0)--(0,2);
       \fill[gray!30] (5.5,1) circle (.06);
-      \draw[vectors,gray!30] (5.5,1)--(4,1) node[above]{$\vec F_s$};
+      \draw[vectors,gray!30] (5.5,1)--(4,1) node[above]{$\vec F_e$};
       \draw[dashed](3,0)--(3,2);
       \draw[vectors,gray!30](3,.3)--(5,.3)node[midway,below]{$\vec x$};
       \draw[mass] (1.5,.5) rectangle (2.5,1.5);
@@ -665,9 +719,12 @@
         decorate] (0,1)--(1.5,1);
       \draw[vectors] (3,.3)--(1.5,.3) node[midway,below]{$\vec x$};
       \fill[red] (2,1) circle (.06);
-      \draw[vectors,red] (2,1)--(3,1) node[above]{$\vec F_s$};
+      \draw[vectors,red] (2,1)--(3,1) node[above]{$\vec F_e$};
     \end{tikzpicture}
   \end{center}
+  When a spring acts on an object, the object's acceleration is usually
+  non-constnt, so solving motion involving springs would usually require
+  calculus, or conservation of energy.
 \end{frame}
 
 
@@ -699,7 +756,7 @@
     \begin{tikzpicture}[scale=.8]
       \fill (1.5,1) circle (.1);
       \draw[vectors] (1.5,1)--(1.5,-.5) node[below]{$\vec F_g$};
-      \draw[vectors] (1.5,1)--(1.5,2.5) node[above]{$\vec F_N$};
+      \draw[vectors] (1.5,1)--(1.5,2.5) node[above]{$\vec F_n$};
       \draw[vectors] (1.5,1)--(3.1,1) node[right]{$\vec F_a$};
       \draw[vectors] (1.5,1)--(.75,1) node[left] {$\vec f$};
     \end{tikzpicture}
@@ -708,7 +765,7 @@
   must note that:
   \begin{itemize}
   \item Gravitational force $\vec F_g$ acts at the CM, but
-  \item Normal force $\vec F_N$, friction $\vec f$ and applied force $\vec F_a$
+  \item Normal force $\vec F_n$, friction $\vec f$ and applied force $\vec F_a$
     act at the point of contact
   \end{itemize}
 \end{frame}
@@ -718,14 +775,14 @@
 \begin{frame}{Free-Body Diagrams}
   In those cases, forces should be drawn where they are applied. For example,
   a sphere rolling down a ramp should have weight $\vec F_g$, normal force
-  $\vec F_N$ and static friction $\vec f_s$ acting on it:
+  $\vec F_n$ and static friction $\vec f_s$ acting on it:
   \begin{center}
     \begin{tikzpicture}[scale=1.1,rotate=-30]
       \shade[ball color=red!20] circle (1);
       \draw[thick] (-2,-1)--(2,-1);
       \fill circle (.05);
       \draw[vectors,rotate=30] (0,0)--(0,-1.5) node[below]{$\vec F_g$};
-      \draw[vectors] (0,-1)--(0,.3) node[above]{$\vec F_N$};
+      \draw[vectors] (0,-1)--(0,.3) node[above]{$\vec F_n$};
       \draw[vectors] (0,-1)--(-.5,-1) node[left]{$\vec f_s$};
       \draw[axes] (2,0)--(2.5,0) node[right]{$x$};
       \draw[axes] (2,0)--(2,.5) node[above]{$y$};
@@ -762,221 +819,221 @@
 
 
 
-\section{Multi-Body Problems}
-
-\begin{frame}{Applying Third Law on Connected Bodies}
-  \begin{center}
-    \pic{.7}{graphics/worldslongestroadtrainwithpowertrailer8}
-  \end{center}
-  \begin{itemize}
-  \item The objects are connected by a cable or a solid linkage with negligible
-    mass
-  \item All objects (usually) have the same acceleration
-  \item Require multiple free-body diagrams
-  \end{itemize}
-\end{frame}
-
-
-
-\begin{frame}{Solving Connected-Bodies Problems}
-  To solve a connected-bodies problem, you can follow these procedures:
-  \begin{enumerate}
-  \item Draw a FBD on each of the objects
-  \item Sum all the forces on all the objects along the direction of motion
-    \begin{itemize}
-    \item Direction of motion is usually very obvious
-    \item All internal forces should cancel and do not figure into the
-      acceleration of the system
-    \end{itemize}
-  \item Compute the acceleration of the entire system using second law of motion
-    \begin{itemize}
-    \item Remember that (usually) every object has the same acceleration!
-    \end{itemize}
-  \item Go back to the FBD of each of the objects and compute the unknown
-    forces (usually tension)
-  \end{enumerate}
-\end{frame}
-
-
-
-%\begin{frame}{Connected Bodies: Example}
-%  \textbf{Example:} A tractor-trailer pulling two trailers starts from rest
-%  and accelerates with an acceleration $a$ on a straight, level road. The mass
-%  of the truck (T) is \SI{5450}{\kilo\gram}, the mass of the first trailer (A)
-%  is \SI{31500}{\kilo\gram}, and the mass of the second trailer (B) is
-%  \SI{19600}{\kilo\gram}.
-%  \begin{enumerate}
-%  \item What magnitude of force must the truck generate in order to accelerate
-%    the entire vehicle?
-%  \item What magnitude of force must each of the trailer hitches withstand
-%    while the vehicle is accelerating?
-%  \end{enumerate}
-%  Assume that frictional forces are negligible in comparison with the forces
-%  needed to accelerate the large masses.
-%\end{frame}
-
-
-
-\begin{frame}{Different Types of Connected Bodies}
-  Multiple objects pressed against one another. There may not be friction, but
-  there are definitely action/reaction forces between the blocks.
-  \begin{center}
-    \begin{tikzpicture}[scale=.8]
-      \draw[thick] (-3,0)--(4,0);
-      \draw[thick] rectangle (1,1) node[midway]{$m$};
-      \draw[thick] (1,0) rectangle (3,1.5) node[midway]{$M$};
-      \draw[vectors] (-1.5,.5)--(0,.5) node[pos=0,left]{$\vec F_a$};
-    \end{tikzpicture}
-  \end{center}
-  Or multiple objects stacked on top of one another. The contact surface between
-  $M$ and the floor may (or may not) have friction, while the surface between
-  $M$ and $m$ must have a friction coefficient $\mu$.
-  \begin{center}
-    \begin{tikzpicture}[scale=.8]
-      \draw[thick] (-1,0)--(5.5,0);
-      \draw[thick] rectangle (3,1.5) node[midway]{$M$};
-      \draw[thick] (.75,1.5) rectangle (2.25,2.5) node[midway]{$m$};
-      \draw[vectors] (3,.5)--(4.5,.5) node[right]{$\vec F_a$};
-    \end{tikzpicture}
-  \end{center}
-\end{frame}
-
-
-
-\section{Pulley Problems}
-
-\begin{frame}{Example Problem: Atwood Machine}
-  \begin{columns}
-    \column{.25\textwidth}
-    \centering
-    \begin{tikzpicture}[scale=.7]
-      \draw[ultra thick,brown] (-1,-1.6)--(-1,0);
-      \draw[ultra thick,brown] (1,0)--(1,-3);
-      \draw[thick,fill=gray] circle (1.05);
-      \draw[thick,fill=gray!40] circle (.95);
-      \draw[line width=5.5] (0,-.15)--(0,2);
-      \draw[very thick] (-2,2)--(2,2);
-      \fill[white] circle (.1);
-      \draw[mass] (-1.5,-1.6) rectangle +(1,-1) node[midway]{$M$};
-      \draw[mass] (.5,-3) rectangle +(1,-1.4) node[midway]{$m$};
-    \end{tikzpicture}   
-
-    \column{.7\textwidth}
-    An \textbf{Atwood machine} is made of two objects connected by a rope that
-    runs over a pulley. The pulley allows the direction of force and direction
-    of motion to change between two objects.
-    
-    \vspace{.2in}\textbf{Example:} The object on the left has a mass of $M$ and
-    the object on the right has a mass of $m$.
-    \begin{enumerate}[(a)]
-    \item What is the acceleration of the masses?
-    \item What is the tension in the rope?
-    \end{enumerate}
-  \end{columns}
-\end{frame}
-%\begin{frame}{Example Problem: Atwood Machine}
-%  An \textbf{Atwood machine} is made of two objects connected by a rope that
-%  runs over a pulley. The pulley allows the direction of force and direction
-%  of motion to change between two objects.
-%  \begin{columns}
-%    \column{.35\textwidth}
-%    \centering
-%    \pic1{graphics/pulley_prob_2}
+%\section{Multi-Body Problems}
 %
-%    \column{.65\textwidth}
-%    \textbf{Example:} The object on the left has a mass of $M$ and the object
-%    on the right has a mass of $m$.
+%\begin{frame}{Applying Third Law on Connected Bodies}
+%  \begin{center}
+%    \pic{.7}{graphics/worldslongestroadtrainwithpowertrailer8}
+%  \end{center}
+%  \begin{itemize}
+%  \item The objects are connected by a cable or a solid linkage with negligible
+%    mass
+%  \item All objects (usually) have the same acceleration
+%  \item Require multiple free-body diagrams
+%  \end{itemize}
+%\end{frame}
+%
+%
+%
+%\begin{frame}{Solving Connected-Bodies Problems}
+%  To solve a connected-bodies problem, you can follow these procedures:
+%  \begin{enumerate}
+%  \item Draw a FBD on each of the objects
+%  \item Sum all the forces on all the objects along the direction of motion
 %    \begin{itemize}
+%    \item Direction of motion is usually very obvious
+%    \item All internal forces should cancel and do not figure into the
+%      acceleration of the system
+%    \end{itemize}
+%  \item Compute the acceleration of the entire system using second law of motion
+%    \begin{itemize}
+%    \item Remember that (usually) every object has the same acceleration!
+%    \end{itemize}
+%  \item Go back to the FBD of each of the objects and compute the unknown
+%    forces (usually tension)
+%  \end{enumerate}
+%\end{frame}
+%
+%
+%
+%%\begin{frame}{Connected Bodies: Example}
+%%  \textbf{Example:} A tractor-trailer pulling two trailers starts from rest
+%%  and accelerates with an acceleration $a$ on a straight, level road. The mass
+%%  of the truck (T) is \SI{5450}{\kilo\gram}, the mass of the first trailer (A)
+%%  is \SI{31500}{\kilo\gram}, and the mass of the second trailer (B) is
+%%  \SI{19600}{\kilo\gram}.
+%%  \begin{enumerate}
+%%  \item What magnitude of force must the truck generate in order to accelerate
+%%    the entire vehicle?
+%%  \item What magnitude of force must each of the trailer hitches withstand
+%%    while the vehicle is accelerating?
+%%  \end{enumerate}
+%%  Assume that frictional forces are negligible in comparison with the forces
+%%  needed to accelerate the large masses.
+%%\end{frame}
+%
+%
+%
+%\begin{frame}{Different Types of Connected Bodies}
+%  Multiple objects pressed against one another. There may not be friction, but
+%  there are definitely action/reaction forces between the blocks.
+%  \begin{center}
+%    \begin{tikzpicture}[scale=.8]
+%      \draw[thick] (-3,0)--(4,0);
+%      \draw[thick] rectangle (1,1) node[midway]{$m$};
+%      \draw[thick] (1,0) rectangle (3,1.5) node[midway]{$M$};
+%      \draw[vectors] (-1.5,.5)--(0,.5) node[pos=0,left]{$\vec F_a$};
+%    \end{tikzpicture}
+%  \end{center}
+%  Or multiple objects stacked on top of one another. The contact surface between
+%  $M$ and the floor may (or may not) have friction, while the surface between
+%  $M$ and $m$ must have a friction coefficient $\mu$.
+%  \begin{center}
+%    \begin{tikzpicture}[scale=.8]
+%      \draw[thick] (-1,0)--(5.5,0);
+%      \draw[thick] rectangle (3,1.5) node[midway]{$M$};
+%      \draw[thick] (.75,1.5) rectangle (2.25,2.5) node[midway]{$m$};
+%      \draw[vectors] (3,.5)--(4.5,.5) node[right]{$\vec F_a$};
+%    \end{tikzpicture}
+%  \end{center}
+%\end{frame}
+%
+%
+%
+%\section{Pulley Problems}
+%
+%\begin{frame}{Example Problem: Atwood Machine}
+%  \begin{columns}
+%    \column{.25\textwidth}
+%    \centering
+%    \begin{tikzpicture}[scale=.7]
+%      \draw[ultra thick,brown] (-1,-1.6)--(-1,0);
+%      \draw[ultra thick,brown] (1,0)--(1,-3);
+%      \draw[thick,fill=gray] circle (1.05);
+%      \draw[thick,fill=gray!40] circle (.95);
+%      \draw[line width=5.5] (0,-.15)--(0,2);
+%      \draw[very thick] (-2,2)--(2,2);
+%      \fill[white] circle (.1);
+%      \draw[mass] (-1.5,-1.6) rectangle +(1,-1) node[midway]{$M$};
+%      \draw[mass] (.5,-3) rectangle +(1,-1.4) node[midway]{$m$};
+%    \end{tikzpicture}   
+%
+%    \column{.7\textwidth}
+%    An \textbf{Atwood machine} is made of two objects connected by a rope that
+%    runs over a pulley. The pulley allows the direction of force and direction
+%    of motion to change between two objects.
+%    
+%    \vspace{.2in}\textbf{Example:} The object on the left has a mass of $M$ and
+%    the object on the right has a mass of $m$.
+%    \begin{enumerate}[(a)]
 %    \item What is the acceleration of the masses?
 %    \item What is the tension in the rope?
-%    \end{itemize}
+%    \end{enumerate}
 %  \end{columns}
 %\end{frame}
-
-
-
-%\begin{frame}{A Difficult Problem!}
-%  \begin{columns}
-%    \column{.6\textwidth}
-%    \textbf{Example:} Two blocks of mass $m$ and $M$ are connected via pulley
-%    with a configuration as shown on the right. The coefficient of static
-%    friction between the left block and the surface is $\mu_{s,1}$, and the
-%    coefficient of static friction between the right block and the surface is
-%    $\mu_{s,2}$. Formulate a mathematical inequality for the condition that no
-%    sliding occurs. There may be more than one inequality. 
-%    
-%    \column{.4\textwidth}
-%    \pic{1}{graphics/pulley_prob_6}
-%  \end{columns}
+%%\begin{frame}{Example Problem: Atwood Machine}
+%%  An \textbf{Atwood machine} is made of two objects connected by a rope that
+%%  runs over a pulley. The pulley allows the direction of force and direction
+%%  of motion to change between two objects.
+%%  \begin{columns}
+%%    \column{.35\textwidth}
+%%    \centering
+%%    \pic1{graphics/pulley_prob_2}
+%%
+%%    \column{.65\textwidth}
+%%    \textbf{Example:} The object on the left has a mass of $M$ and the object
+%%    on the right has a mass of $m$.
+%%    \begin{itemize}
+%%    \item What is the acceleration of the masses?
+%%    \item What is the tension in the rope?
+%%    \end{itemize}
+%%  \end{columns}
+%%\end{frame}
+%
+%
+%
+%%\begin{frame}{A Difficult Problem!}
+%%  \begin{columns}
+%%    \column{.6\textwidth}
+%%    \textbf{Example:} Two blocks of mass $m$ and $M$ are connected via pulley
+%%    with a configuration as shown on the right. The coefficient of static
+%%    friction between the left block and the surface is $\mu_{s,1}$, and the
+%%    coefficient of static friction between the right block and the surface is
+%%    $\mu_{s,2}$. Formulate a mathematical inequality for the condition that no
+%%    sliding occurs. There may be more than one inequality. 
+%%    
+%%    \column{.4\textwidth}
+%%    \pic{1}{graphics/pulley_prob_6}
+%%  \end{columns}
+%%\end{frame}
+%%
+%%
+%%
+%%\begin{frame}{Multiple Pulleys}
+%%  When there are multiple pulleys involved, we have to remember that tension
+%%  force is distributed evenly along the cable.
+%%
+%%  \vspace{.2in}
+%%  \begin{columns}
+%%    \column{.6\textwidth}
+%%    \textbf{Example:} A block of mass $m$ is pulled, via two pulleys as shown,
+%%    at constant velocity along a surface inclined at angle $\theta$. The
+%%    coefficient of kinetic friction is $\mu_k$, between block and surface.
+%%    Determine the pulling force $F$. Ignore the mass of the pulleys. 
+%%    
+%%    \column{.4\textwidth}
+%%    \pic{1}{graphics/pulley_prob_7}
+%%  \end{columns}  
+%%\end{frame}
+%
+%
+%%\begin{frame}{One More!}
+%%  \begin{columns}
+%%    \column{.75\textwidth}
+%%    \textbf{Example:} A block of mass $M$ is lifted at constant velocity, via
+%%    an arrangement of pulleys as shown. Determine the pulling force $F$. Ignore
+%%    the mass of the pulleys. 
+%%
+%%    \uncover<2>{
+%%      \vspace{.2in}\textbf{Example:} The pulling force is replaced by a $10M$
+%%      mass, and was let go. What are the accelerations of the $M$ and the
+%%      $10M$ mass?
+%%    }
+%%    
+%%    \column{.25\textwidth}
+%%    \pic{1}{graphics/pulley_prob_9}
+%%  \end{columns}
+%%\end{frame}
+%
+%
+%\begin{frame}{A More Typical Problem}
+%  More typically, an Atwood machine problem is one where two objects are
+%  sliding on a surface. These surfaces may have (or may not) have friction. In
+%  this example, two blocks are connected by a massless string over a
+%  frictionless pulley as shown in the diagram.
+%  \begin{center}
+%    \begin{tikzpicture}[scale=1.2]
+%      \draw[thick,brown] (-4,.4)--(.1,.4);
+%      \draw[thick] (0,0)--(-5.5,0) node[midway,below]{$\mu$};
+%      \draw[thick,fill=magenta!20] (-4,0) rectangle (-5,.75) node[midway]{$m$};
+%      \begin{scope}[rotate=-30,thick]
+%        \draw[brown] (1,.4)--(-.05,.4);
+%        \draw (0,0)--(3,0) node[midway,below left]{$\mu$};
+%        \draw[mass] (1,0) rectangle (2.5,1) node[midway]{$M$};
+%      \end{scope}
+%      \begin{scope}[rotate=-15]
+%        \draw[thick,fill=gray] (0,.3) circle (.15);
+%        \draw[thick,fill=lightgray] (0,.3) circle (.1);
+%        \draw[ultra thick] (0,0)--(0,.3);
+%        \fill (0,.3) circle (.04);
+%      \end{scope}
+%      \draw[thick,gray!70] (0,0)--(0,-1.5);
+%      \draw[axes] (0,-.5) arc (270:330:.5) node[midway,below]{$\phi$};
+%    \end{tikzpicture}
+%  \end{center}
+%  \begin{enumerate}[(a)]
+%  \item Determine the acceleration of the blocks.
+%  \item Calculate the tension in the string.
+%  \end{enumerate}
 %\end{frame}
-%
-%
-%
-%\begin{frame}{Multiple Pulleys}
-%  When there are multiple pulleys involved, we have to remember that tension
-%  force is distributed evenly along the cable.
-%
-%  \vspace{.2in}
-%  \begin{columns}
-%    \column{.6\textwidth}
-%    \textbf{Example:} A block of mass $m$ is pulled, via two pulleys as shown,
-%    at constant velocity along a surface inclined at angle $\theta$. The
-%    coefficient of kinetic friction is $\mu_k$, between block and surface.
-%    Determine the pulling force $F$. Ignore the mass of the pulleys. 
-%    
-%    \column{.4\textwidth}
-%    \pic{1}{graphics/pulley_prob_7}
-%  \end{columns}  
-%\end{frame}
-
-
-%\begin{frame}{One More!}
-%  \begin{columns}
-%    \column{.75\textwidth}
-%    \textbf{Example:} A block of mass $M$ is lifted at constant velocity, via
-%    an arrangement of pulleys as shown. Determine the pulling force $F$. Ignore
-%    the mass of the pulleys. 
-%
-%    \uncover<2>{
-%      \vspace{.2in}\textbf{Example:} The pulling force is replaced by a $10M$
-%      mass, and was let go. What are the accelerations of the $M$ and the
-%      $10M$ mass?
-%    }
-%    
-%    \column{.25\textwidth}
-%    \pic{1}{graphics/pulley_prob_9}
-%  \end{columns}
-%\end{frame}
-
-
-\begin{frame}{A More Typical Problem}
-  More typically, an Atwood machine problem is one where two objects are
-  sliding on a surface. These surfaces may have (or may not) have friction. In
-  this example, two blocks are connected by a massless string over a
-  frictionless pulley as shown in the diagram.
-  \begin{center}
-    \begin{tikzpicture}[scale=1.2]
-      \draw[thick,brown] (-4,.4)--(.1,.4);
-      \draw[thick] (0,0)--(-5.5,0) node[midway,below]{$\mu$};
-      \draw[thick,fill=magenta!20] (-4,0) rectangle (-5,.75) node[midway]{$m$};
-      \begin{scope}[rotate=-30,thick]
-        \draw[brown] (1,.4)--(-.05,.4);
-        \draw (0,0)--(3,0) node[midway,below left]{$\mu$};
-        \draw[mass] (1,0) rectangle (2.5,1) node[midway]{$M$};
-      \end{scope}
-      \begin{scope}[rotate=-15]
-        \draw[thick,fill=gray] (0,.3) circle (.15);
-        \draw[thick,fill=lightgray] (0,.3) circle (.1);
-        \draw[ultra thick] (0,0)--(0,.3);
-        \fill (0,.3) circle (.04);
-      \end{scope}
-      \draw[thick,gray!70] (0,0)--(0,-1.5);
-      \draw[axes] (0,-.5) arc (270:330:.5) node[midway,below]{$\phi$};
-    \end{tikzpicture}
-  \end{center}
-  \begin{enumerate}[(a)]
-  \item Determine the acceleration of the blocks.
-  \item Calculate the tension in the string.
-  \end{enumerate}
-\end{frame}
 \end{document}
