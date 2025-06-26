@@ -16,7 +16,7 @@
 
 \newcommand{\gentitle}[2]{
   \begin{center}
-    {\large\textbf{AP PHYSICS C CLASS #1: #2}}
+    {\fontfamily{phv}\Large\textbf{AP PHYSICS C CLASS #1: #2}}
   \end{center}
 }
 
@@ -51,24 +51,27 @@
 %  \end{center}
 %}
 %
-\newcommand{\genfreedirections}{
-  \textbf{Directions:} Answer all questions. The parts within a
-  question may not have equal weight. All final numerical answers should
-  include appropriate units. Credit depends on the quality of your solutions
-  and explanations, so you should show your work. Credit also depends on
-  demonstrating that you know which physical principles would be appropriate to
-  apply in a particular situation. Therefore, you should clearly indicate which
-  part of a question your work is for.
-}
+%\newcommand{\genfreedirections}{
+%  \textbf{Directions:} Answer all questions. The parts within a
+%  question may not have equal weight. All final numerical answers should
+%  include appropriate units. Credit depends on the quality of your solutions
+%  and explanations, so you should show your work. Credit also depends on
+%  demonstrating that you know which physical principles would be appropriate to
+%  apply in a particular situation. Therefore, you should clearly indicate which
+%  part of a question your work is for.
+%}
 
 \setlength{\parindent}{0pt}
 \setlength{\headheight}{14pt}
 
 \usepackage[margin=.7in,letterpaper]{geometry}
+\usepackage{amsmath}
 \usepackage{tikz}
-\usepackage{newtxtext,newtxmath}
-\usepackage[document]{ragged2e}
-\usepackage[none]{hyphenat}
+%\usepackage{newtxtext,newtxmath}
+\usepackage{charter}
+\usepackage[charter]{mathdesign}
+%\usepackage[document]{ragged2e}
+%\usepackage[none]{hyphenat}
 \usepackage{siunitx}
 \usepackage{multicol}
 \usepackage{circuitikz}
@@ -87,8 +90,16 @@
 \tikzstyle{axes}=[thick,->]
 
 \pagestyle{headandfoot}
-\header{}{}{}
-\footer{}{}{}
+\firstpageheader{}{}{}
+\firstpagefooter{\fontfamily{phv}\small Meritus Academy}{}{}
+\runningheader{
+  \fontfamily{phv}\small
+  \textcolor{gray}{AP PHYSICS C $\blacksquare$}}{}{}
+%\textbf{FREE-RESPONSE QUESTIONS}}{}{}
+\runningfooter{\fontfamily{phv}\small Meritus Academy}{}{}
+
+\renewcommand\questionlabel{\textbf{\thequestion.}}
+\renewcommand\partlabel{\MakeUppercase{\textbf{\thepartno.}}}
 
 \renewcommand{\choiceshook}{
   \setlength{\leftmargin}{22pt}
@@ -98,3 +109,7 @@
   \setlength\parsep{0pt}
 }
 \renewcommand{\choicelabel}{(\thechoice)}
+
+\setlength{\parskip}{8pt}
+
+

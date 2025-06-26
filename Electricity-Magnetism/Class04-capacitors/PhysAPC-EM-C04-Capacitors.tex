@@ -376,8 +376,8 @@
 
 
 \begin{frame}{Capacitance}
-  Regardless of the geometry of the capacitor, the electric field will always
-  be proportional to the charge, i.e.:
+  Regardless of the geometry of the capacitor, the electric field is always
+  proportional to the charge, i.e.:
 
   \eq{-.2in}{ E\propto Q }
 
@@ -473,6 +473,8 @@
 
 
 
+\section{Capacitors in Circuit}
+
 \begin{frame}{Capacitors in Electric Circuits}
   Capacitors are an important part of an electric circuits because it stores
   energy in the electric field. Suppose we replace a battery with a capacitor
@@ -488,4 +490,85 @@
     charge across the capacitor plates decreases.
   \end{itemize}
 \end{frame}
+
+
+
+\begin{frame}{Capacitors in Parallel}
+  \begin{center}
+    \begin{tikzpicture}[scale=1.2,thick]
+      \draw (0,1) to[short,o-] (1,1) to[C=$C_1$] (1,0) to[short,-o] (0,0);
+      \draw (1,1)--(3,1) to[C=$C_2$] (3,0)--(1,0);
+      \draw (3,1)--(5,1) to[C=$C_3\ldots$] (5,0)--(3,0);
+    \end{tikzpicture}
+  \end{center}
+  From the voltage law, we know that the voltage across all the capacitors are
+  the same, i.e.\ $V_1=V_2=V_3=\cdots=V$. We can express the total charge
+  $Q_\text{tot}$ stored across all the capacitors in terms of capacitance and
+  this common voltage $V$: 
+
+  \eq{-.1in}{
+    Q_\text{tot}=Q_1+Q_2+Q_3+\cdots=C_1V+C_2V+C_3V+\cdots
+  }
+  
+  Factoring out $V$ from each term gives us the equivalent capacitance for
+  $N$ capacitors connected in parallel:
+
+  \eq{-.2in}{
+    \boxed{C_\text{parallel}=\sum_{i=1}^N C_i}
+  }
+\end{frame}
+
+
+
+\begin{frame}{Capacitors in Series}
+  Likewise, we can do a similar analysis to capacitors connected in series.
+  \begin{center}
+    \begin{tikzpicture}[scale=1.2,thick]
+      \draw (0,0) to[C=$C_1$,o-] (1.25,0) to[C=$C_2$] (2.5,0)
+      to[C=$C_3$,-o] (3.75,0);
+    \end{tikzpicture}
+  \end{center}
+  The total voltage across these capacitors are the sum of the voltages across
+  each of them, i.e.\ $V_\text{tot}=V_1+V_2+V_3+\cdots$
+  
+  \vspace{.1in}The charge stored on all the capacitors must be the same! The
+  total voltage in terms of capacitance and charge is:
+
+  \eq{-.1in}{
+    V_\text{tot}=\frac Q{C_1}+\frac Q{C_2}+\frac Q{C_3}+\cdots
+  }
+\end{frame}
+
+
+
+
+\begin{frame}{Equivalent Capacitance in Series}
+  The inverse of the equivalent capacitance for $N$ capacitors connected in
+  series is the sum of the inverses of the individual capacitance.
+
+  \eq{-.1in}{
+    \boxed{ \frac1{C_\text{series}}=\sum_{i=1}^N\frac1{C_i} }
+  }
+  
+  Make sure we don't confuse ourselves with resistors\footnote{You should know
+  about parallel and series resistors in either Grade 9 Science, AP Physics 2
+  or Grade 11 Physics.}
+\end{frame}
+
+
+
+\begin{frame}{How Do We Know That Charges Are The Same?}
+  It's simple to show that the charges across all the capacitors are the same
+  \begin{center}
+    \begin{tikzpicture}[scale=1.5]
+      \draw[thick] (0,0) to[C=$C_1$,o-] (1.25,0) to[C=$C_2$,-o] (2.5,0);
+      \draw[dashed] (0.625,-.75) rectangle (1.875,1);
+    \end{tikzpicture}
+  \end{center}
+  The capacitor plates and the wire connecting them are really one piece of
+  conductor. There is nowhere for the charges to leave the conductor, therefore
+  when charges are accumulating on $C_1$, $C_2$ must also have the same charge
+  because of conservation of charges.
+\end{frame}
+
 \end{document}
