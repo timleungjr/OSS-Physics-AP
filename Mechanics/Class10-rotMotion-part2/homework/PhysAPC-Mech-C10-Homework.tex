@@ -1,5 +1,6 @@
 \documentclass{../../../oss-apphys-exam}
 \newcounter{lastmc}
+\usetikzlibrary{decorations.pathmorphing,decorations.markings,calc}
 
 \begin{document}
 
@@ -8,8 +9,7 @@
 \raggedcolumns
 
 \runningheader{
-  \fontfamily{phv}\small
-  \textcolor{gray}{AP PHYSICS C: MECHANICS $\blacksquare$}
+  \fontfamily{phv}\small  \textcolor{gray}{AP PHYSICS C: MECHANICS $\blacksquare$}
   \textbf{MULTIPLE-CHOICE QUESTIONS}}{}{}
 
 \begin{multicols*}{2}
@@ -20,7 +20,7 @@
     the origin is
     \begin{center}
       \begin{tikzpicture}[scale=.9]
-        \fill (2,1.5) circle(.08);
+        \fill (2,1.5) circle (.08);
         \draw[axes] (-.2,0)--(3,0) node[right]{$x$} node[pos=0,below]{$O$};
         \draw[axes] (0,-.2)--(0,2.5) node[above]{$y$};
         \draw[thick, dashed] (0,1.5)--(2,1.5) node[pos=0,left]{$y_0$}
@@ -192,8 +192,9 @@
       \end{center}
     }
 
-    \question Which of the following diagrams best represents the forces acting
-    on the sphere as it rolls down the plane?
+    \question Which of the following diagrams best represents the
+    gravitational, normal and frictional forces acting on the sphere as it
+    rolls down the plane?
 
     \begin{oneparchoices}
       \choice
@@ -296,7 +297,7 @@
       \end{tikzpicture}
       \hspace{1.75in}
       \begin{tikzpicture}[scale=.7]
-        \draw[fill=gray!30] (1.5,-4) rectangle(2.5,-5) node[midway]{$m$};
+        \draw[fill=gray!30] (1.5,-4) rectangle (2.5,-5) node[midway]{$m$};
       \end{tikzpicture}
       \vspace{.4in}
     \end{center}
@@ -311,15 +312,17 @@
   \end{parts}
   \newpage
 
-  \question A cylinder of mass $M$ and radius $R$ (rotational inertia
-  $I=\dfrac12MR^2$) has a string wrapped around it. The string is held fixed,
-  and the cylinder falls vertically as shown in the figure below.
-  \begin{center}
+  \uplevel{
+    \centering
     \begin{tikzpicture}[scale=.5]
       \draw[fill=lightgray] circle (2);
       \draw[thick] (2,0)--(2,5);
     \end{tikzpicture}
-  \end{center}
+  }
+  
+  \question A cylinder of mass $M$ and radius $R$ (rotational inertia
+  $I=\dfrac12MR^2$) has a string wrapped around it. The string is held fixed,
+  and the cylinder falls vertically as shown in the figure above.
   \begin{parts}
     \part On the diagram that represent the cylinder, \textbf{draw} and
     \textbf{label} all forces acting on it. Forces should be drawn at the point
@@ -390,8 +393,8 @@
     \vspace{\stretch1}
 
     \newpage
-    \part On the grid below, plot the quantities determined in (b)i,
-    label the axes
+    \part On the grid below, \textbf{plot} the quantities determined in (b)i,
+    \textbf{label} the axes
     \begin{center}
       \vspace{.2in}
       \begin{tikzpicture}[xscale=.6,yscale=.35]
@@ -419,42 +422,80 @@
   \end{parts}
   \newpage
 
-%  \uplevel{
-%    \centering
-%    \begin{tikzpicture}[scale=.8,thick]
-%      \draw[fill=cyan!40] (0,-2) rectangle (5,-1.9);
-%      \draw[fill=cyan!40] circle(2);
-%      \draw[fill=white] circle(1.9);
-%      \begin{scope}[rotate=-40]
-%        \draw[fill=cyan!40] (0,-2)--(-7,-2)--(-7,-1.9)--(0,-1.9);
-%        \shade[ball color=red](-6.5,-1.65) circle(.25);
-%      \end{scope}
-%      \draw[dashed](0,-2)--(-7.5,-2);
-%      \draw[<->](-6.25,-2)--(-6.25,2.65) node[midway,fill=white]{$h$};
-%      \begin{scope}[rotate=25]
-%        \draw[->](0,0)--(1.65,0) node[midway,below]{$R$};
-%        \draw[dashed] (1.65,0) circle(.25);
-%      \end{scope}
-%    \end{tikzpicture}
-%
-%    \underline{Note:} Diagram not drawn to scale
-%  }
-%  \question A uniform ball of radius $r$, with a mass of $M$, and a rotational
-%  inertia of $I=\dfrac25Mr^2$, rolls without slipping along the loop-the-loop
-%  track in the figure above. The ball starts at rest at a height of $h$ above
-%  the bottom of the loop. The radius of the loop is $R$.
-%  \begin{parts}
-%    \part Find the slowest speed that the ball can have without leaving the
-%    track.
-%    \vspace{\stretch{.5}}
-%    
-%    \part If it is not to leave the track at the top of the loop, what is the
-%    least value $h$ can have (in terms of radius $R$ of the loop)?
-%    \vspace{\stretch1}
-%    
-%    \part What would $h$ have to be if, instead of rolling, the ball slides
-%    without friction?
-%    \vspace{\stretch1}
-%  \end{parts}
+  \uplevel{
+    \centering
+    \begin{tikzpicture}
+      \draw[very thick] (0,0)--(5,0);
+      \draw[very thick, postaction=decorate,decoration={markings,
+          mark= between positions 1cm and 3cm step 5mm with {% Places five of them
+            \node[transform shape,inner sep=1pt] 
+            (mark-\pgfkeysvalueof{/pgf/decoration/mark info/sequence number}) {};
+          }
+        }
+      ]{
+        decorate[
+          decoration={random steps,segment length=1.5mm,amplitude=1pt}]
+        %Roughness is amplitude
+        {
+          (5,0)--(12,0)
+        }
+      }
+
+      \begin{scope}[line width=2]
+        \draw (1.5,1) circle (1) node[above=30]{Sliding only};
+        \draw[dashed] (6.5,1) circle (1) node[above=30]{Sliding and rotating};
+        \draw[dashed] (10.5,1) circle (1) node[above=30]{Rotating, no sliding};
+      \end{scope}
+      \draw[axes] (1.5,1)--+(1.7,0) node[above]{$v_0$};
+      \draw[axes] (6.5,1)--+(1.7,0);
+      \draw[axes] (10.5,1)--+(1.7,0);
+      \draw[thick,|<->|] (0,-1.3)--+(5,0) node[midway,fill=white]{No friction}
+      node[below]{$t=0$};
+      \draw[thick,<->|] (5,-1.3)--+(7,0) node[midway,fill=white]{
+        Friction with coefficient $\mu$};
+      \draw[thick,|<->|] (5,-.7)--+(4.5,0) node[midway,fill=white]{$L$};
+    \end{tikzpicture}
+  }
+  
+  \question A ring of mass $M$, radius $R$, and rotational inertia
+  $MR^2$ is initially sliding on a frictionless surface at constan velocity
+  $v_0$ to the right, as shown above. At time $t=0$ it encounters a surface
+  with coefficient of friction $\mu$ and begins sliding and rotating. After
+  traveling a distance $L$, the ring begins rolling without sliding. Express
+  all answers to the following in terms of $M$, $R$, $v_0$, $\mu$, and
+  fundamental constants, as appropriate.
+  \begin{parts}
+    \part Starting from the second law of motion in either translational or
+    rotational form, as appropriate, \textbf{derive}, but do NOT solve, a
+    differential equation that can be used to solve for the magnitude of the
+    following as the ring is sliding and rotating:
+    \begin{subparts}
+      \subpart The linear velocity $v$ of the ring as a function of time $t$
+      \subpart The angular velocity $\omega$ of the ring as a function of time
+      $t$
+    \end{subparts}
+    \vspace{\stretch1}
+
+    \part\textbf{Derive} an expression for the magnitude of the following as
+    the ring is sliding and rotating.
+    \begin{subparts}
+      \subpart The linear velocity $v$ of the ring as a function of time $t$
+      \subpart The angular velocity $\omega$ of the ring as a function of time
+      $t$
+    \end{subparts}
+    \vspace{\stretch1}
+
+    \part\textbf{Derive} an expression for the time it takes the ring to travel
+    the distance $L$.
+    \vspace{\stretch1}
+    \newpage
+
+    \part\textbf{Derive} an expression for the magnitude of the velocity of the
+    ring immediately after it has travelled the distance $L$.
+    \vspace{\stretch1}
+    
+    \part\textbf{Derive} an expression for the distance $L$.
+    \vspace{\stretch2}
+  \end{parts}
 \end{questions}
 \end{document}

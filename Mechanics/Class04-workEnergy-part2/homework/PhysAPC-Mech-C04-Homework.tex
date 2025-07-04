@@ -171,7 +171,17 @@
     \uplevel{
       \textbf{Questions \ref{q:well1}--\ref{q:well2}}: Consider the potential
       energy function shown below.
-      \cpic{.28}{potential-well}
+      \begin{center}
+        \begin{tikzpicture}
+          \draw[axes] (-3,0)--(3,0) node[right]{$x$};
+          \draw[axes] (0,0)--(0,3) node[above]{$U(x)$};
+          \draw[smooth,samples=30,domain=-2.5:2.5] plot(\x,{.4*\x*\x+1});
+          \fill (0,1) circle (.07) node[below left]{$\frac12U_0$};
+          \fill (0,2) circle (.07) node[left]{$U_0$};
+          \draw[dashed,gray] (1.6,0)--(1.6,2) node[pos=0,below,black]{$x_0$}
+          --(0,2);
+        \end{tikzpicture}
+      \end{center}
     }
 
     \question Assuming that no non-conservative forces are present, if a
@@ -198,27 +208,7 @@
       \choice There is a linear restoring force
     \end{choices}
     
-%    \question A pendulum bob of mass $m$ is released from rest as shown in the
-%    figure below. What is the tension in the string as the pendulum swings
-%    through the lowest point of its motion?
-%    \begin{center}
-%      \begin{tikzpicture}
-%        \draw[thick,dashed] (0,0)--(0,-3.5);
-%        \begin{scope}[rotate=60]
-%          \draw[very thick] (0,0)--(0,-4);
-%          \fill (0,-4) circle (.13) node[right]{$\;m$};
-%          \draw[<->,thick] (.5,0)--(.5,-4) node[midway,above right]{$l$};
-%        \end{scope}
-%        \draw[<->,thick] (0,-1) arc (270:330:1) node[pos=.6,below]{\ang{60}};
-%      \end{tikzpicture}
-%    \end{center}
-%    \begin{choices}
-%      \choice $T=\dfrac12mg$
-%      \choice $T=mg$
-%      \choice $T=\dfrac32mg$
-%      \choice $T=2mg$
-%      \choice None of the above
-%    \end{choices}
+
 
 %    \question A force is applied to a block of mass $m$ at a downward angle of
 %    $\theta$ to the vertical as shown. The block moves with a constant speed
@@ -480,47 +470,47 @@
   \end{parts}
   \newpage
 
-%  % TAKEN FROM 2012 AP PHYSICS C MECHANICS EXAM FREE-RESPONSE QUESTION MECH 2
-%  \question You are to perform an experiment investigating the conservation of
-%  mechanical energy involving a transformation from initial gravitational
-%  potential energy to translational kinetic energy.
-%  \begin{parts}
-%    \part You are given the equipment listed below, all the supports required
-%    to hold the equipment, and a lab table. On the list below, indicate each
-%    piece of equipment you would use by checking the line next to each item.
-%
-%    \begin{tabular}{lll}
-%      \underline{\hspace{.3in}} Track &
-%      \underline{\hspace{.3in}} Meterstick &
-%      \underline{\hspace{.3in}} Set of objects of different masses\\
-%      \underline{\hspace{.3in}} Cart &
-%      \underline{\hspace{.3in}} Electronic balance &
-%      \underline{\hspace{.3in}} Lightweight low-friction pulley\\
-%      \underline{\hspace{.3in}} String &
-%      \underline{\hspace{.3in}} Stopwatch & \\
-%    \end{tabular}
-%
-%    \part Outline a procedure for performing the experiment. Include a diagram
-%    of your experimental setup. Label the equipment in your diagram. Also
-%    include a description of the measurements you would make and a symbol for
-%    each measurement.
-%    \label{procedure}
-%    
-%    \part Give a detailed account of the calculations of gravitational
-%    potential energy and translational kinetic energy both before and after the
-%    transformation, in terms of the quantities measured in part
-%    (\ref{procedure}).
-%
-%    \part After your first trial, your calculations show that the energy
-%    increased during the experiment. Assuming you made no mathematical errors,
-%    give a reasonable explanation for this result.
-%
-%    \part On all other trials, your calculations show that the energy decreased
-%    during the experiment. Assuming you made no mathematical errors, give a
-%    reasonable physical explanation for the fact that the average energy you
-%    determined decreased. Include references to conservative and
-%    nonconservative forces, as appropriate.
-%  \end{parts}
+  % TAKEN FROM 2012 AP PHYSICS C MECHANICS EXAM FREE-RESPONSE QUESTION MECH 2
+  \question You are to perform an experiment investigating the conservation of
+  mechanical energy involving a transformation from initial gravitational
+  potential energy to translational kinetic energy.
+  \begin{parts}
+    \part You are given the equipment listed below, all the supports required
+    to hold the equipment, and a lab table. On the list below, indicate each
+    piece of equipment you would use by checking the line next to each item.
+
+    \begin{tabular}{lll}
+      \underline{\hspace{.3in}} Track &
+      \underline{\hspace{.3in}} Meterstick &
+      \underline{\hspace{.3in}} Set of objects of different masses\\
+      \underline{\hspace{.3in}} Cart &
+      \underline{\hspace{.3in}} Electronic balance &
+      \underline{\hspace{.3in}} Lightweight low-friction pulley\\
+      \underline{\hspace{.3in}} String &
+      \underline{\hspace{.3in}} Stopwatch & \\
+    \end{tabular}
+
+    \part Outline a procedure for performing the experiment. Include a diagram
+    of your experimental setup. Label the equipment in your diagram. Also
+    include a description of the measurements you would make and a symbol for
+    each measurement.
+    \label{procedure}
+    
+    \part Give a detailed account of the calculations of gravitational
+    potential energy and translational kinetic energy both before and after the
+    transformation, in terms of the quantities measured in part
+    (\ref{procedure}).
+
+    \part After your first trial, your calculations show that the energy
+    increased during the experiment. Assuming you made no mathematical errors,
+    give a reasonable explanation for this result.
+
+    \part On all other trials, your calculations show that the energy decreased
+    during the experiment. Assuming you made no mathematical errors, give a
+    reasonable physical explanation for the fact that the average energy you
+    determined decreased. Include references to conservative and
+    nonconservative forces, as appropriate.
+  \end{parts}
 
 \end{questions}
 \end{document}

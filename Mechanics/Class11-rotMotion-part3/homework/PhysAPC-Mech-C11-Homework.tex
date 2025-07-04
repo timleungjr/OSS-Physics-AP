@@ -376,8 +376,28 @@
   % MODIFICATIONS
   \uplevel{
     \centering
-    \pic{.5}{before-after}
-
+    \begin{tikzpicture}[scale=.82,very thick]
+      \draw rectangle (4.5,5) node[midway,below=60]{Before Collision};
+      \draw[thick,dashed] (2.25,.2)--(2.25,4.8);
+      \fill (2.25,1) circle (.15) node[below right]{$M_2$};
+      \fill (2.25,4) circle (.07) node[right]{$P$};
+      \begin{scope}[rotate around={-30:(2.25,4)}]
+        \draw (2.15,4.1) rectangle (2.35,.9) node[midway,below right=-2]{$M_1$};
+        \draw[thick,|<->|] (1.8,4.1)--(1.8,.9) node[midway,above left=-3]{$d$};
+        \draw[axes] (2.15,.8) arc (270:285:4) node[midway,below left]{$\omega$};
+      \end{scope}
+    \end{tikzpicture}
+    \hspace{.35in}
+    \begin{tikzpicture}[scale=.82,very thick]
+      \draw rectangle (4.5,5) node[midway,below=60]{After Collision};
+      \draw[thick,dashed] (2.25,.2)--(2.25,4.8);
+      \fill (2.7,1) circle (.15) node[below=2]{$M_2$};
+      \fill (2.25,4) circle (.07) node[right]{$P$};
+      \draw (2.15,4.1) rectangle (2.35,.9) node[midway,right]{$M_1$};
+      \draw[thick,|<->|] (1.8,4.1)--(1.8,.9) node[midway,left]{$d$};
+      \draw[axes] (3,1)--+(1,0);
+    \end{tikzpicture}
+    
     TOP VIEWS
   }
   \question A system consists of a ball of mass $M_2$ and a uniform rod of mass
@@ -403,7 +423,19 @@
     \newpage
     
     \uplevel{
-      \cpic{.22}{newball}
+      \centering
+      \begin{tikzpicture}[scale=.82,very thick]
+      \draw rectangle (4.5,5) node[midway,below=60]{Before Collision};
+      \draw[thick,dashed] (2.25,.2)--(2.25,4.8);
+      \fill (2.25,2.5) circle (.15) node[below right]{$M_1$};
+      \fill (2.25,4) circle (.07) node[above right]{$P$};
+      \draw[thick,|<->|] (2.7,4)--(2.7,2.5) node[midway,right=-2]{$x$};
+      \begin{scope}[rotate around={-30:(2.25,4)}]
+        \draw (2.15,4.1) rectangle (2.35,.9);
+        \draw[thick,|<->|] (1.8,4.1)--(1.8,.9) node[midway,above left=-3]{$d$};
+        \draw[axes](2.15,.8)arc(270:285:4) node[midway,below left=-3]{$\omega$};
+      \end{scope}
+    \end{tikzpicture}
     }
     \part A new ball with the same mass $M_1$ as the rod is now placed a
     distance $x$ from the pivot, as shown above. Again assuming the collision

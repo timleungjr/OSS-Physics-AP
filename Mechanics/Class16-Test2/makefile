@@ -1,10 +1,12 @@
 all:
-	xelatex PhysAPC-10-mockTest-Classkick
-	xelatex PhysAPC-10-mockTest-Classkick
+	pdflatex PhysAPC-Mech-C16-Test2
+	pdflatex PhysAPC-Mech-C16-Test2
+	pdflatex PhysAPC-Mech-C16-Test2-FRQ
+	pdflatex PhysAPC-Mech-C16-Test2-FRQ
 
 clean:
 	rm -rf *~ *.*~ *.log *.nav *.aux *.out *.snm *.toc
 
 public:
-	mkdir -p $(DESTINATION)/Topic10
-	cp *-notice.pdf $(DESTINATION)/Topic10
+	mkdir -p $(DESTINATION)/Class16
+	cp *-notice.pdf $(DESTINATION)/Class16
