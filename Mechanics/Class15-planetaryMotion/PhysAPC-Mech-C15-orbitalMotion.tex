@@ -19,51 +19,121 @@
 \end{frame}
 
 
-\section{Orbits}
+\section{Orbital Speed}
 
-\subsection{Orbital Velocity and Escape Velocity}
+%\begin{frame}{Newton's Thought Experiment}
+%  In \emph{Treatise of the System of the World}, the third book in
+%  \emph{Principia}, Newton presented this thought experiment:
+%  \begin{center}
+%    \pic{.8}{figure-5}
+%  \end{center}
+%  \begin{itemize}
+%  \item How fast does the cannonball have to travel before it goes around Earth
+%    without falling? (i.e.\ goes into orbit)
+%  \item How fast does the cannonball have to travel before it never comes back?
+%  \end{itemize}
+%\end{frame}
+
+
 
 \begin{frame}{Newton's Thought Experiment}
   In \emph{Treatise of the System of the World}, the third book in
-  \emph{Principia}, Newton presented this thought experiment:
-  \begin{center}
-    \pic{.8}{figure-5}
-  \end{center}
+  \emph{Principia}, Newton presented this thought experiment. A cannonball is
+  launched from a high mountain, parallel to Earth's surface:
+
+  \vspace{-.2in}\begin{columns}[T]
+    \column{.25\textwidth}
+    \begin{center}
+      \begin{tikzpicture}[scale=.8]
+        \node at (0,0) {\pic{.81}{earth-1200px}};
+        \fill[red] (0,1.7) circle (.05);
+        \draw[functions,->] (0,1.7) arc (90:30:1 and 1.45);
+        \draw[gray] circle (1.7);
+      \end{tikzpicture}
+    \end{center}
+    {\scriptsize If initial velocity is slow, the object falls back onto the
+      planet after travelling a short distance\par}
+  
+    \column{.25\textwidth}
+    \begin{center}
+      \begin{tikzpicture}[scale=.8]
+        \node at (0,0) {\pic{.81}{earth-1200px}};
+        \fill[red] (0,1.7) circle (.05);
+        \draw[functions,->] (0,1.7) arc (90:-55:1.5 and 1.5);
+        \draw[gray] circle (1.7);
+      \end{tikzpicture}
+    \end{center}
+    {\scriptsize With a higher initial velocity, the projectile travels a
+      longer distance, but eventually, it still falls\par}
+
+    \column{.25\textwidth}
+    \begin{center}
+      \begin{tikzpicture}[scale=.8]
+        \node at (0,0) {\pic{.81}{earth-1200px}};
+        \fill[red] (0,1.7) circle (.05);
+        \draw[functions,->] (0,1.7) arc (90:-270:1.7);
+      \end{tikzpicture}
+    \end{center}
+    {\scriptsize With a sufficiently high initial speed, called the
+      \textbf{orbital speed}, the object stays on a circular path around the
+      planet. It is now in orbit\par}
+
+    \column{.25\textwidth}
+    \begin{center}
+      \begin{tikzpicture}[scale=.8]
+        \node at (0,0) {\pic{.81}{earth-1200px}};
+        \fill[red] (0,1.7) circle (.05);
+        \draw[gray] circle (1.7);
+        \draw[functions,->,domain=0:2.2] plot(\x,{-.3*\x*\x+1.7});
+      \end{tikzpicture}
+    \end{center}
+    {\scriptsize At even higher initial speed, called the \textbf{escape speed},
+      the object escapes the gravitational pull of the planet, and never
+      returns\par}
+  \end{columns}
+\end{frame}
+
+
+
+\begin{frame}{Orbital Speed}
+  \textbf{Orbital speed} is the speed required for an object to stay in a
+  circular path without falling back onto the surface. For example:
   \begin{itemize}
-  \item How fast does the cannonball have to travel before it goes around Earth
-    without falling? (i.e.\ goes into orbit)
-  \item How fast does the cannonball have to travel before it never comes back?
+  \item A spy satellite orbiting around the Earth
+  \item The moon orbiting around the Earth
+  \item Planets of the solar system orbiting around the Sun
   \end{itemize}
 \end{frame}
 
 
 
-\begin{frame}{Orbital Velocity}
+\begin{frame}{Orbital Speed}
+  To calculate the orbital speed, we begin with these asumptions:
   \begin{columns}
     \column{.35\textwidth}
     \begin{tikzpicture}[scale=.8]
+      \draw[gray] circle (3) node[above=88]{\scriptsize orbital path};
+      \node at (0,0) {\pic{.4}{earth-1200px}};
+      \node at (0,0) {$M$};
       \foreach \x in {0,3} \draw (\x,0)--+(0,-1);
-      \draw[dashed,thick] circle (3);
-      \shade[balloon2] circle (.7) node[white]{$M$};
       \draw[vectors,red] (3,0)--+(-1.2,0) node[above]{$\vec F_g$};
-      \shade[balloon1] (3,0) circle (.16) node[white]{$m$};
-      \draw[<->] (0,-.8)--(3,-.8) node[midway,fill=white]{$r$};
+      \shade[balloon1] (3,0) circle (.16) node[white]{\scriptsize$m$};
+      \draw[<->] (0,-.8)--(3,-.8) node[midway,fill=black!2]{$r$};
     \end{tikzpicture}
     
     \column{.65\textwidth}
-    To calculate the magnitude of orbital velocity, we make these asumptions:
     \begin{itemize}
-    \item A small mass ($m$) orbits a much larger one ($M$), i.e.\ $M\gg m$
+    \item A small mass ($m$) orbits around a much larger mass ($M$), i.e.\
+      $M\gg m$
     \item The orbit is perfectly circular
+    \item The only force acting on the objects is gravity; centripetal force is
+      provided by gravity
     \end{itemize}
     Following these assumptions:
     \begin{itemize}
-    \item $M$ is treated as a stationary object; only $m$ moves
+    \item $M$ is treated as stationary; only $m$ moves
     \item Orbital radius ($r$) is the same as the distance between the masses
-    \item Centripetal force is provided by gravity
-      %\eq{-.1in}{
-      %  F_c=F_g=\frac{GMm}{r^2}
-      %}
+
     \item The orbital motion is a uniform circular motion
     \end{itemize}
   \end{columns}
@@ -71,33 +141,66 @@
 
 
 
-\begin{frame}{Orbital Velocity}
+%\begin{frame}{Orbital Speed}
+%  \begin{columns}
+%    \column{.35\textwidth}
+%    \begin{tikzpicture}[scale=.8]
+%      \foreach \x in {0,3} \draw (\x,0)--+(0,-1);
+%      \draw[dashed,thick] circle (3);
+%      \shade[balloon2] circle (.7) node[white]{$M$};
+%      \draw[vectors,red] (3,0)--+(-1.2,0) node[above]{$\vec F_g$};
+%      \shade[balloon1] (3,0) circle (.16) node[white]{$m$};
+%      \draw[<->] (0,-.8)--(3,-.8) node[midway,fill=white]{$r$};
+%    \end{tikzpicture}
+%    
+%    \column{.65\textwidth}
+%    To calculate the magnitude of Orbital Speed, we make these asumptions:
+%    \begin{itemize}
+%    \item A small mass ($m$) orbits a much larger one ($M$), i.e.\ $M\gg m$
+%    \item The orbit is perfectly circular
+%    \end{itemize}
+%    Following these assumptions:
+%    \begin{itemize}
+%    \item $M$ is treated as a stationary object; only $m$ moves
+%    \item Orbital radius ($r$) is the same as the distance between the masses
+%    \item Centripetal force is provided by gravity
+%      %\eq{-.1in}{
+%      %  F_c=F_g=\frac{GMm}{r^2}
+%      %}
+%    \item The orbital motion is a uniform circular motion
+%    \end{itemize}
+%  \end{columns}
+%\end{frame}
+
+
+
+\begin{frame}{Orbital Speed}
   The centripetal force for mass $m$ staying in orbit is provided by gravity:
 
   \eq{-.1in}{
     \underbracket[1pt]{F_c}_{{\color{orange}=F_g}} =
-    m{\color{magenta}a_c}\quad\rightarrow\quad
+    m{\color{magenta}a_c}\quad\to\quad
     %F_g = ma_c\quad\rightarrow\quad
     {\color{orange}\frac{GMm}{r^2}}
     = \frac{m{\color{magenta}v^2}}{\color{magenta}r}
   }
 
   \vspace{-.05in}Cancelling $m$ and $r$ terms on both sides, and solving for
-  magnitude of velocity, we find the magnitude of the orbital velocity to be:
+  $v$, we find the orbital speed to be:
 
-  \eq{-.1in}{
+  \eq{-.15in}{
     v=\boxed{v_\text{orbit}=\sqrt{\frac{GM}r}}
   }
 
-  This equation is only applicable for perfectly circular orbits.
-  The direction of the orbital velocity is tangent to the circular orbit.
+  This equation is only applicable for perfectly circular orbits. The direction
+  of the orbital vector is tangent to the circular orbit.
 \end{frame}
 
 
 
-\subsection{Escape Velocity}
+\section{Escape Speed}
 
-\begin{frame}{Escape Velocity}
+\begin{frame}{Escape Speed}
   An object can leave the surface of Earth at any speed. But when all the
   kinetic energy of that object is converted to gravitational potential energy,
   it will return back to the surface of the earth. There is, however, a
@@ -107,18 +210,19 @@
 
 
 
-\begin{frame}{Escape Velocity}
-  The calculation for escape is a simple exercise in conservation of energy,
-  since gravity is a conservative force, i.e.:
+\begin{frame}{Escape Speed}
+  %The calculation for escape is a simple exercise in conservation of energy,
+  Since gravity is a conservative force:
 
   \eq{-.1in}{
-    K + U = K_\infty + U_\infty
+    \underbracket[1pt]{K_i + U_i}_\text{launch} =
+    \underbracket[1pt]{K_\infty + U_\infty}_\text{escaped}
   }
   \begin{itemize}
-  \item Initial gravitational potential energy at the surface is:
+  \item Initial gravitational potential energy at launch is:
 
     \eq{-.1in}{
-      U_g=-\frac{GMm}{r_i}
+      U_i=-\frac{GMm}{r_i}
     }
   \item The final gravitational potential energy is at the other side of the
     universe ($r_f=\infty$), where $U_\infty=0$. At this point, the object has
@@ -134,21 +238,21 @@
 
 
 
-\begin{frame}{Escape Velocity from Circular Orbits}
+\begin{frame}{Escape Speed}% from Circular Orbits}
   Setting $K$ to equal to $-U_g$:
 
   \eq{-.1in}{
     \frac12mv_i^2=\frac{GMm}{r_i}
   }
 
-  We can then solve for the initial speed $v_i=v_\text{esc}$
-  (\textbf{escape speed} or \textbf{escape velocity}):
+  We can then solve for the initial speed $v_i=v_\text{esc}$, called the
+  \textbf{escape speed}: % or \textbf{escape velocity}):
 
   \eq{-.1in}{
     \boxed{v_\text{esc}=\sqrt{\frac{2GM}{r_i}}}
   }
 
-  where $r_i$ is the initial distance from the center of the planet/star. There
+  where $r_i$ is the initial distance from the centre of the planet/star. There
   is a simple relationship between orbital speed and escape speed:
 
   \eq{-.1in}{
@@ -158,84 +262,275 @@
 
 
 
-\begin{frame}{Example Problem}
-  \textbf{Example:} Determine the escape velocity and energy for a
-  \SI{1.60e4}{\kilo\gram} rocket leaving the surface of Earth.
+\begin{frame}{Escape Speed}
 
-  \uncover<2>{
-    \vspace{.5in}Note: The equation for the escape speed is based on the object
-    have a \emph{constant} mass, which is \emph{not} the case for a rocket
-    going into space.
+  \eq{-.2in}{
+    \boxed{v_\text{esc}=\sqrt{\frac{2GM}r}}
   }
+
+  Any object with $v\geq v_\text{esc}$ can break free of a planet's
+  gravitational pull. But the equation assumes that:
+  \begin{itemize}
+  \item Mass of the object remains constant
+  \item All the work is done by gravity
+  \end{itemize}
+  This is not the case for launching a \emph{real} rocket, where we must
+  consider the change in mass when the rocket is burning fuel, and the
+  (positive) work done by the rocket's thrust and negative work done by the
+  enormous drag while travelling at hypersonic speeds while in the atmosphere
 \end{frame}
 
 
 
-\begin{frame}{What if I'm not escaping from the surface?}
-  Both objects have the same escape velocity:
+\begin{frame}{Example Problem}
+  \textbf{Example:} Determine the escape speed for a \SI{1.60e4}{\kilo\gram}
+  rocket leaving the surface of Earth.
+
+  %\uncover<2>{
+  %  \vspace{.5in}Note: The equation for the escape speed is based on the object
+  %  have a \emph{constant} mass, which is \emph{not} the case for a rocket
+  %  going into space.
+  %}
+\end{frame}
+
+
+
+%\begin{frame}{What if I'm not escaping from the surface?}
+%  Both objects have the same escape speed:
+%  \begin{center}
+%    \begin{tikzpicture}[scale=1.3]
+%      \draw[thick,fill=cyan] circle (.2) node[below=6]{$M$};
+%      \draw[dashed] circle (1);
+%      \fill (0,1) circle(.05);
+%      \draw[axes] (0,0)--(0,1) node[midway,right=0]{$r$};
+%      \fill (2,0) circle (.05);
+%      \draw[axes] (0,1) to[out=0,in=135] (2,0);
+%    \end{tikzpicture}
+%    \hspace{.3in}
+%    \begin{tikzpicture}[scale=1.3]
+%      \draw[thick,fill=cyan!20] circle (1) node[below=6]{$M$};
+%      \fill (0,1) circle (.05);
+%      \draw[axes] (0,0)--(0,1) node[midway,right]{$r$};
+%      \fill (2,0) circle (.05);
+%      \draw[axes] (0,1) to[out=0,in=135] (2,0);
+%    \end{tikzpicture}
+%  \end{center}
+%  The difference is that the object in orbit (left) already has orbital speed
+%  $v_\text{orbit}$, so escaping from that orbit requires only an additional
+%  speed of
+%  
+%  \eq{-.1in}{
+%    \Delta v=v_\text{esc}-v_\text{orbit}=(\sqrt2-1)v_\text{orbit}
+%  }
+%  \begin{itemize}
+%  \item What if $v_\text{orbit}<v<v_\text{esc}$?
+%  \item What if $v<v_\text{orbit}$?
+%  \end{itemize}
+%\end{frame}
+
+
+\begin{frame}{Escaping from Orbit}
+  These two objects with mass $m$ have the same escape speed:
   \begin{center}
-    \begin{tikzpicture}[scale=1.3]
-      \draw[thick,fill=cyan] circle (.2) node[below=6]{$M$};
-      \draw[dashed] circle (1);
-      \fill (0,1) circle(.05);
-      \draw[axes] (0,0)--(0,1) node[midway,right=0]{$r$};
-      \fill (2,0) circle (.05);
-      \draw[axes] (0,1) to[out=0,in=135] (2,0);
+    \begin{tikzpicture}[scale=1.5]
+      \node at (0,0) {\pic{.07}{earth-1200px}};
+      \node[left] at (-.2,0) {$M$};
+      \draw[gray!50] circle (1);
+      \draw[mass] (0,1) circle (.04) node[above]{$m$};
+      \draw[axes] (0,0)--(0,1) node[midway,right]{$r$};
+      \fill (2,0) circle (.03);
+      \draw[axes,dashed] (0,1) to[out=0,in=135] (2,0);
     \end{tikzpicture}
     \hspace{.3in}
-    \begin{tikzpicture}[scale=1.3]
-      \draw[thick,fill=cyan!20] circle (1) node[below=6]{$M$};
-      \fill (0,1) circle (.05);
+    \begin{tikzpicture}[scale=1.5]
+      \node at (0,0) {\pic{.283}{earth-1200px}};
+      \node[left] at (0,0) {$M$};
+      \draw[mass] (0,1) circle (.04) node[above]{$m$};
       \draw[axes] (0,0)--(0,1) node[midway,right]{$r$};
-      \fill (2,0) circle (.05);
-      \draw[axes] (0,1) to[out=0,in=135] (2,0);
+      \fill (2,0) circle (.03);
+      \draw[axes,dashed] (0,1) to[out=0,in=135] (2,0);      
     \end{tikzpicture}
   \end{center}
-  The difference is that the object in orbit (left) already has orbital speed
-  $v_\text{orbit}$, so escaping from that orbit requires only an additional
-  speed of
   
-  \eq{-.1in}{
+  Both are at a distance $r$ from the centre of the planet of mass $M$, but the
+  one in orbit (left) already has orbital speed $v_\text{orbit}$, so escaping
+  from orbit only requires an additional speed of
+
+  \eq{-.25in}{
     \Delta v=v_\text{esc}-v_\text{orbit}=(\sqrt2-1)v_\text{orbit}
   }
-  \begin{itemize}
-  \item What if $v_\text{orbit}<v<v_\text{esc}$?
-  \item What if $v<v_\text{orbit}$?
-  \end{itemize}
 \end{frame}
 
 
 
 \begin{frame}{Non-Circular Orbits}
-  \centering
-  \pic{.6}{newton-cannon-orbital-types-Seeds}
+  \begin{columns}[T]
+    \column{.25\textwidth}
+    \begin{center}
+      \begin{tikzpicture}[scale=.4]
+        \node at (0,0) {\pic{.3}{earth-1200px}};
+        \draw[axes,magenta] (0,4) arc (90:-260:4);
+        \draw[axes] (0,4)--+(2,0) node[right]{$\vec v_\text{orbit}$};
+        \draw[mass] (0,4) circle (.1) node[above]{$P$};
+        \draw[->] (0,0)--(0,4) node[pos=.6,right]{$r$};
+      \end{tikzpicture}
+    \end{center}
+    
+    {\scriptsize At orbital speed ($v=v_\text{orbit}$), the orbit is circular.
+      Distance to the centre of the planet $r$ is constant\par}
+
+    \column{.25\textwidth}
+    \begin{center}
+      \begin{tikzpicture}[scale=.4]
+        \node at (0,0) {\pic{.3}{earth-1200px}};
+        \draw[gray!50] circle (4);
+        \draw[axes,violet,domain={0:4}] plot(\x,-.1*\x*\x+4);
+        %node[below]{$v_\text{esc}$};
+        \draw[axes] (0,4)--+(2.5,0) node[right]{$\vec v_\text{esc}$};
+        \draw[mass] (0,4) circle (.1) node[above]{$P$};
+        \draw[->] (0,0)--(0,4) node[pos=.6,right]{$r$};
+      \end{tikzpicture}
+    \end{center}
+
+    {\scriptsize At escape speed ($v=v_\text{esc}$), the object leaves the planet
+      in a parabolic path. The object will not return to the planet\par}
+    
+    \column{.25\textwidth}
+    \begin{center}
+      \begin{tikzpicture}[scale=.4]
+        \node at (0,0) {\pic{.3}{earth-1200px}};
+        \draw[gray!50] circle (4);
+        \draw[thick,cyan] (0,.5) ellipse (3.2 and 3.5);
+        \draw[axes] (0,4)--+(1.7,0) node[right]{$\vec v$};
+        \draw[mass] (0,4) circle (.1) node[above]{$P$};
+        \fill (0,-3) circle (.1) node[below]{$P'$};
+        \draw[->] (0,0)--(0,4) node[pos=.6,right]{$r$};
+      \end{tikzpicture}
+    \end{center}
+
+    {\scriptsize\vspace{-.02in}At speed \emph{slightly below} orbital speed
+      ($v<v_\text{orbit}$), the orbital path is elliptical. The object will be
+      closer to the planet on the other side of the planet, at $P'$\par}
+    
+    \column{.25\textwidth}
+    \begin{center}
+      \begin{tikzpicture}[scale=.4]
+        \node at (0,0) {\pic{.3}{earth-1200px}};
+        \draw[gray!50] circle (4);
+        \draw[thick,orange] (0,-.5) ellipse (4.2 and 4.5);
+        \draw[axes] (0,4)--+(2.2,0) node[right]{$\vec v$};
+        \draw[mass] (0,4) circle (.1) node[above]{$P$};
+        \fill (0,-5) circle (.08) node[below]{$P''$};
+        \draw[->] (0,0)--(0,4) node[pos=.6,right]{$r$};
+      \end{tikzpicture}
+    \end{center}
+    \vspace{-.17in}{\scriptsize At speed \emph{slightly above} orbital
+      speed ($v_\text{orbit}<v<v_\text{esc}$), the orbital path is also
+      elliptical. The object will gain altitude on the other side of the planet
+      at $P''$\par}
+  \end{columns}
 \end{frame}
 
 
 
-\subsection{Orbital Energies}
+\section{Orbital Energies}
 
-\begin{frame}{Orbital Energies}
+\begin{frame}{Orbital Kinetic Energy}
   We can obtain the \textbf{orbital kinetic energy} in a perfectly circular
-  orbit by using the orbital speed in our expression of kinetic energy:
-
+  orbit by applying the orbital speed expression in our expression of kinetic
+  energy:
+  
   \eq{-.1in}{
     K_\text{orbit}=\frac12mv_\text{orbit}^2=\frac12m
     \left(\sqrt{\frac{GM}r}\right)^2=\boxed{\frac{GMm}{2r}}
   }
 
-  We already have an expression for gravitational potential energy:
+  This equation uses the expression for orbital speed $v_\text{orbit}$,
+  therefore it relies on the same assumption, i.e.\ a perfectly circular orbit
+\end{frame}
 
+
+
+\begin{frame}{Total Orbital Energy}
+  Total orbital energy is the sum of kinetic and gravitational potential
+  energies while in orbit:
+
+  \eq{-.1in}{
+    E_\text{orbit}={\color{cyan}K_\text{orbit}}+{\color{magenta}U_g}
+  }
+  
+  Substituting the expressions for $K_\text{orbit}$ and $U_g$ derived earlier:
+
+  \eq{-.1in}{
+    E_\text{orbit}=
+    {\color{cyan}\frac{GMm}{2r}} +
+    {\color{magenta}{\left[-\frac{GMm}r\right]}}=
+    \boxed{-\frac{GMm}{2r}}
+  }
+\end{frame}
+
+
+
+\begin{frame}{Orbital Energies}
+  Orbital kinetic energy can be exprssed in terms of orbital velocities, or
+  in terms of $M$ and orbital radius $r$:
+
+  \eq{-.1in}{
+    K_\text{orbit}=\frac12mv_\text{orbit}^2=\frac{GMm}{2r}
+  }
+  
+  Gravitational potential energy is $-2$ times the orbital kinetic energy:
+  
   \eq{-.1in}{
     U_g=-\frac{GMm}r=-2K_\text{orbit}
   }
-  
-  The \textbf{total orbital energy} is the sum of $K$ and $U_g$:
 
-  \eq{-.1in}{
-    E_T=K_\text{orbit}+U_g=-\frac{GMm}{2r}=-K_\text{orbit}
+  %\vspace{-.05in}
+  Adding $K_\text{orbit}$ and $U_g$ together, the total orbital
+  energy must be the negative of the orbit kinetic energy:
+  
+  \eq{-.15in}{
+    E_\text{orbit}=K_\text{orbit}+U_g=-\frac{GMm}{2r}=-K_\text{orbit}
   }
 \end{frame}
+
+
+\begin{frame}{Binding Energy}
+  Binding energy $E_\text{binding}$ is the energy required to remove the mass
+  $m$ from its orbit, and bring it to $r=\infty$, where total energy
+  $E_\infty=0$. To do so, we need to make up for the deficit
+  in total energy, therefore:
+
+  \eq{-.1in}{
+    E_\text{binding}=E_\infty-E_\text{orbit}=0-(-K_\text{orbit})=K_\text{orbit}
+  }
+
+  For those with a background in chemistry, the binding energy is analogous to
+  the \emph{ionization energy} of removing the valence electron from an atom.
+\end{frame}
+
+
+%\begin{frame}{Orbital Energies}
+%  We can obtain the \textbf{orbital kinetic energy} in a perfectly circular
+%  orbit by using the orbital speed in our expression of kinetic energy:
+%
+%  \eq{-.1in}{
+%    K_\text{orbit}=\frac12mv_\text{orbit}^2=\frac12m
+%    \left(\sqrt{\frac{GM}r}\right)^2=\boxed{\frac{GMm}{2r}}
+%  }
+%
+%  We already have an expression for gravitational potential energy:
+%
+%  \eq{-.1in}{
+%    U_g=-\frac{GMm}r=-2K_\text{orbit}
+%  }
+%  
+%  The \textbf{total orbital energy} is the sum of $K$ and $U_g$:
+%
+%  \eq{-.1in}{
+%    E_T=K_\text{orbit}+U_g=-\frac{GMm}{2r}=-K_\text{orbit}
+%  }
+%\end{frame}
 
 
 
@@ -248,26 +543,70 @@
 
 
 
+%\begin{frame}{Properties of Gravitational Force}
+%  Two properties of gravity are crucial to understanding of orbital mechanics:
+%  \begin{enumerate}
+%  \item Gravity is a \emph{conservative force}, in that
+%    \begin{itemize}
+%    \item The total mechanical energy of objects under gravity is constant
+%    \item Work done by gravity converts gravitational potential energy $U_g$
+%      into kinetic energy $K$; work against gravity converts $K$ into $U_g$
+%    \end{itemize}
+%  \item Gravity is a \emph{central force}, in that
+%    \begin{itemize}
+%    \item Gravitational force $\vec F_g$ is always in the $-\hat r$ direction,
+%      i.e.\ $\vec F\times\vec r=\vec 0$
+%    \item Therefore gravity doesn't generate any torque
+%    \item And therefore angular momentum $\vec L$ is constant
+%    \end{itemize}
+%  \end{enumerate}
+%  These two properties are true regardless of the shape of the orbit, and even
+%  for objects that are not in orbit at all!
+%\end{frame}
+
+
 \begin{frame}{Properties of Gravitational Force}
   Two properties of gravity are crucial to understanding of orbital mechanics:
   \begin{enumerate}
-  \item Gravity is a \emph{conservative force}, in that
-    \begin{itemize}
-    \item The total mechanical energy of objects under gravity is constant
-    \item Work done by gravity converts gravitational potential energy $U_g$
-      into kinetic energy $K$; work against gravity converts $K$ into $U_g$
-    \end{itemize}
-  \item Gravity is a \emph{central force}, in that
-    \begin{itemize}
-    \item Gravitational force $\vec F_g$ is always in the $-\hat r$ direction,
-      i.e.\ $\vec F\times\vec r=\vec 0$
-    \item Therefore gravity doesn't generate any torque
-    \item And therefore angular momentum $\vec L$ is constant
-    \end{itemize}
-  \end{enumerate}
+  \item Gravity is a \emph{conservative force}
+  \item Gravity is a \emph{central force}
+   \end{enumerate}
   These two properties are true regardless of the shape of the orbit, and even
-  for objects that are not in orbit at all!
+  for objects that are not in orbit at all! 
 \end{frame}
+
+
+\begin{frame}{Gravitational Force as a Conservative Force}
+%  Two properties of gravity are crucial to understanding of orbital mechanics:
+%  \begin{enumerate}
+  Gravity is a \textbf{conservative force}:
+  \begin{itemize}
+  \item Positive work done by gravity converts gravitational potential energy
+    $U_g$ into kinetic energy $K$ by the same amount;
+  \item Negative work done by gravity converts $K$ into $U_g$
+  \item Work done by gravity is path independent
+  \item In the absense of any friction, drag or other external forces, the
+    total mechanical energy of the star-planet system is constant
+  \item The star-planet system is an isolated system
+  \end{itemize}
+\end{frame}
+
+
+
+\begin{frame}{Gravitational Force as a Conservative Force}
+  Gravity is a \textbf{central force}, in that
+  \begin{itemize}
+  \item Gravitational force $\vec F_g$ is always in the $-\hat r$ direction,
+    i.e.\ $\vec F\times\vec r=\vec 0$
+  \item Therefore gravity doesn't generate any torque
+  \item And therefore angular momentum $\vec L$ is constant
+  \end{itemize}
+%  \end{enumerate}
+%  These two properties are true regardless of the shape of the orbit, and even
+%  for objects that are not in orbit at all!
+\end{frame}
+
+
 
 
 \begin{frame}{Kepler's Laws of Planetary Motion}
@@ -564,7 +903,7 @@
 %    $M$,\\
 %    $M$ is also subjected to a centripetal force supplied by the gravity from
 %    $m$.
-%  \item $m$ does not actually orbit about the center of $M$, but rather, the
+%  \item $m$ does not actually orbit about the centre of $M$, but rather, the
 %    centre of mass between $M$ and $m$.
 %  \end{itemize}
 %\end{frame}
@@ -576,14 +915,14 @@
 \begin{frame}{Reality of Orbital Motion}
   As always, nothing is as simple as is first seems
   \begin{itemize}
-  \item Most AP Problems will be circular instead of elliptical, but you must
+  \item Most AP C problems will be circular instead of elliptical, but you must
     know the nature of gravitational force (conservative, central)
   \item The analysis on the slides shown assumes a small mass $m$ orbiting
     around a large mass $M$. In reality:
     \begin{itemize}
     \item Just as planets experience a gravitational force by the Sun, the Sun
-      experiences a gravitational force from the planets
-    \item The smaller mass $m$ does not actually orbit about the center of $M$,
+      experiences a gravitational force from the planets (3rd law of motion)
+    \item The smaller mass $m$ does not actually orbit about the centre of $M$,
       but rather, the \emph{centre of mass between $M$ and $m$}
     \item Especially important when the two objects orbiting each other has
       similar masses (e.g.\ a binary star system)
@@ -679,7 +1018,7 @@
     \column{.55\textwidth}
     In a binary star system, two stars orbit around their centre of mass. Both
     have the same period, and the gravitational force provides the centripetal
-    force, but this time, the distance to the center of motion is empty space.
+    force, but this time, the distance to the centre of motion is empty space.
   \end{columns}
 \end{frame}
 \end{document}

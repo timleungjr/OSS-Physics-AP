@@ -19,11 +19,11 @@
 
 \begin{frame}{Review of Circular Motion}
   In a \textbf{circular motion}, an object of mass $m$ moves in a circular path
-  about a fixed center. In Grade 12 Physics, you should have studied
+  about a fixed centre. In Grade 12 Physics, you should have studied
   \emph{uniform} circular motion, where:
   \begin{itemize}
   \item the object's speed (magnitude of velocity) is constant
-  \item the object's \textbf{centripetal acceleration} is toward the center
+  \item the object's \textbf{centripetal acceleration} is towards the centre
   \item the object's acceleration is caused by a \textbf{centripetal force}
   \end{itemize}
 \end{frame}
@@ -163,19 +163,26 @@
     object's position as a function of time. It is measured in
     \textbf{radian} (\si{\radian}):
 
-    \eq{-.1in}{
+    \eq{-.15in}{
       \boxed{\theta=\theta(t)}
     }
-    
-    \vspace{-.1in}\textbf{Angular velocity} $\omega$ (or \textbf{angular
-      frequency}) is its time derivative, measured in \textbf{radian per second}
-    (\si{\radian\per\second}):
-      
+
+    \vspace{-.1in}When the object moves along this circular path, the change
+    in angle is its \textbf{angular displacement}:
+
     \eq{-.1in}{
-      \boxed{\omega(t)=\diff{\theta}t}
+      \boxed{\Delta\theta(t)=\theta(t)-\theta_0}
     }
+
+    \vspace{-.1in}where $\theta_0$ is the initial angular position
   \end{columns}
 \end{frame}
+
+
+
+
+%  \end{columns}
+%\end{frame}
 
 
 
@@ -195,16 +202,25 @@
     \end{tikzpicture}
 
     \column{.67\textwidth}
-    The velocity of the object in circular motion is related to the angular
-    velocity (or angular frequency) by:
 
+    \vspace{-.1in}\textbf{Angular velocity} $\omega$ (or \textbf{angular
+      frequency}) is its time derivative, measured in \textbf{radian per second}
+    (\si{\radian\per\second}):
+      
     \eq{-.1in}{
-      v=r\omega
+      \boxed{\omega(t)=\diff{\theta}t}
+    }
+
+    \vspace{-.05in}The speed ($v$) of the object in circular motion is related
+    to the angular velocity ($\omega$) by:
+
+    \eq{-.2in}{
+      v=r|\omega|
     }
     \begin{itemize}
-    \item\vspace{-.15in}The direction of $\vec v$ is tangent to circle, along
-      $\hat\theta$, and therefore $\perp$ to $\hat r$
-    \item If $\omega>0$, the motion is counter-clockwise
+    %\item\vspace{-.2in}The direction of $\vec v$ is tangent to circle, along
+    %  $\hat\theta$, and therefore $\perp$ to $\hat r$
+    \item\vspace{-.2in}If $\omega>0$, the motion is counter-clockwise
     \item If $\omega<0$, the motion is clockwise
     \end{itemize}
   \end{columns}
@@ -228,17 +244,18 @@
     \end{tikzpicture}
 
     \column{.67\textwidth}
-    The velocity of the object in circular motion is more properly related to
-    the angular velocity using this vector cross product:
+    The actual velocity vector ($\vec v$) in circular motion is more properly
+    related to the angular velocity using this vector cross product:
 
     \eq{-.1in}{
-      \vec v=\vec\omega\times\vec r
+      \boxed{
+        \vec v=\vec\omega\times\vec r
+      }
     }
-
     \begin{itemize}
-    \item\vspace{-.2in}$\vec\omega$: out of the page if motion is
+    \item\vspace{-.2in}$\vec\omega$ out of the page if motion is
       counter-clockwise
-    \item $\vec\omega$: into the page if motion is clockwise
+    \item $\vec\omega$ into the page if motion is clockwise
     \end{itemize}
     Visualizing $\vec\omega$ takes practice, but this vector notation is
     mathematically rigorous and consistent
@@ -249,7 +266,7 @@
 
 %\begin{frame}{Relativity Velocity}
 %  If two points $A$ and $B$ are rotating with the same angular velocity with the
-%  same center, their relative position is given by:
+%  same centre, their relative position is given by:
 %
 %  \eq{-.1in}{
 %    \boxed{
@@ -280,49 +297,22 @@
     \end{tikzpicture}
 
     \column{.67\textwidth}
-    For constant angular velocity $\omega$ (uniform circular motion), the
-    motion is periodic. Its \textbf{frequency} and \textbf{period} are given by:
+    For constant angular velocity $\omega$ (therefore constant speed $v$),
+    called \textbf{uniform circular motion}, the motion is strictly periodic.
+    Its \textbf{frequency} and \textbf{period} are given by:
 
     \eq{-.1in}{
       f=\frac\omega{2\pi}\quad
-      T=\frac{2\pi}\omega\quad
-      f=\frac1T
+      T=\frac 1f=\frac{2\pi}\omega
     }
     
     $T$ is in \textbf{seconds} (\si\second) and $f$ is in \textbf{hertz}
     (\si\hertz)
+
+    \vspace{.2in}{\small(\textbf{Note:} Even for non-uniform circular motion,
+      the motion can still be periodic, with a defined frequency and period)}
   \end{columns}
 \end{frame}
-
-
-
-%\begin{frame}{Rotating Object Without Slipping}
-%  A tire with radius $r$ rolls along the road with an angular velocity $\omega$
-%  \emph{without slipping}. (This is a very common case for analysis.)  What
-%  is its velocity $v$
-%  \begin{enumerate}[a.]
-%  \item at the contact between the ground and the tire?
-%  \item at the center?
-%  \item at the top of the tire?
-%  \end{enumerate}
-%
-%  \vspace{-.4in}
-%  \begin{center}
-%    \hspace{1in}
-%    \begin{tikzpicture}[scale=.7]
-%      \draw[fill=black] circle(3);
-%      \draw[fill=white] circle(2.2);
-%      \draw[ultra thick](-6,-3)--(6,-3);
-%      \draw[ultra thick,blue!70,->](-.707,-.707) arc(225:135:1)
-%      node[midway,left]{$\omega$};
-%      \draw[fill=blue!70,blue!70](0,-3) circle(.1) node[below right]{$v_a$};
-%      \draw[fill=blue!70,blue!70] circle(.1);
-%      \draw[ultra thick,blue!70,->](0,0)--(1,0) node[right]{$v_b$};
-%      \draw[fill=blue!70,blue!70](0,3) circle(.1);
-%      \draw[ultra thick,blue!70,->](0,3)--(2,3) node[right]{$v_c$};
-%    \end{tikzpicture}
-%  \end{center}
-%\end{frame}
 
 
 
@@ -341,9 +331,12 @@
   \eq{-.1in}{
     a_t(t)=\diff vt=r\diff{\omega}t=r\alpha
   }
-    
-  For \emph{uniform} circular motion, $\omega$ is constant, and therefore
-  $a_t=0$
+
+  \begin{itemize}
+  \item Tangential acceleration $a_t$ is along (parallel or anti-parallel) to
+    direction of motion
+  \item For uniform circular motion, $\omega$ is constant, therefore $a_t=0$
+  \end{itemize}
 \end{frame}
 
 
@@ -406,18 +399,8 @@
     \boxed{\vec a_c=-\frac{v^2}r\hat r=-(\omega^2r)\hat r}
   }
 
-  The force that causes the centripetal acceleration is
-  called the \textbf{centripetal force}:
-
-  \eq{-.1in}{
-    \boxed{
-      \vec F_c=m\vec a_c=-\frac{mv^2}r\hat r=-(m\omega^2r)\hat r
-    }
-  }
-
-  The negative sign indicates that $\vec a_c$ and $\vec F_c$ are radially
-  \emph{inward}, toward the center of motion, as $\hat r$ is the outward radial
-  direction.
+  The negative sign indicates that $\vec a_c$ is radially \emph{inward}, towards
+  the centre of motion, as $\hat r$ is the outward radial direction.
 \end{frame}
 
 
@@ -445,22 +428,24 @@
 
 \begin{frame}{Acceleration: The General Case}
   \begin{columns}
-    \column{.25\textwidth}
-    \begin{tikzpicture}[scale=4.2]
+    \column{.28\textwidth}
+    \begin{tikzpicture}[scale=5]
       \draw[dashed] (.866,-.5) arc (-30:30:1);
       \draw[vectors,magenta] (1,0)--(.5,0) node[midway,below]{$a_c=\omega^2r$};
       \draw[vectors,cyan] (1,0)--(1,.3) node[right]{$a_t=r\alpha$};
-      \fill (1,0) circle (.02);
+      \draw[vectors] (1,0)--(.5,.3) node[right=7]{$\vec a=\vec a_t+\vec a_c$};
+      \fill (1,0) circle (.015);
     \end{tikzpicture}
     
-    \column{.75\textwidth}
+    \column{.7\textwidth}
     In general circular motion, there are two components of acceleration:
     \begin{itemize}
-    \item\textcolor{magenta}{\textbf{Centripetal acceleration} $a_c$} depends on
-      radius of curvature $r$ and instantaneous speed $v$. The direction of
-      the acceleration is toward the center of the circle.
-    \item \textcolor{cyan}{\textbf{Tangential acceleration} $a_t$}
-      depends on radius $r$  and angular acceleration $\alpha$. The direction
+    \item\textcolor{magenta}{\textbf{Centripetal acceleration} $\vec a_c$}
+      depends on radius of curvature $r$ and instantaneous speed $v$ (or angular
+      speed $\omega$). The direction of the acceleration is towards the centre
+      of the circle
+    \item \textcolor{cyan}{\textbf{Tangential acceleration} $\vec a_t$}
+      depends on radius $r$ and angular acceleration $\alpha$. The direction
       of the acceleration is tangent to the circle
     \end{itemize}
   \end{columns}
@@ -468,21 +453,47 @@
 
 
 
-\begin{frame}{How to Solve Circular Motion Problems}
-%  The condition for circular motion is the second law of motion:
+\begin{frame}{Dynamics of Circular Motion Problems}
+  By the second law of motion, acceleration must be caused by a net force.
+  The components of the net force are:
+  \begin{itemize}
+  \item\textbf{Tangential force} $\vec F_t$ along the direction causes the
+    tangential acceleration:
+
+    \eq{-.1in}{
+      \boxed{
+        \vec F_t=m\vec a_t=mr\alpha
+      }
+    }
+  \item\textbf{Centripetal force} $\vec F_c$ towards the centre of the motion
+    causes centripetal acceleration:
+
+%  The force that causes the centripetal acceleration is
+%  called the \textbf{centripetal force}:
 %
-%  \eq{-.1in}{
-%    \vec F_c=\sum\vec F=m\vec a_c
-%  }
-  
-  The forces that generate the centripetal force comes from the free-body
-  diagram. It may include:
+    \eq{-.15in}{
+      \boxed{
+        \vec F_c=m\vec a_c=-\frac{mv^2}r\hat r=-(m\omega^2r)\hat r
+      }
+    }
+    
+%    \eq{-.1in}{
+%      \vec F_c=\sum\vec F=m\vec a_c=
+%    }
+  \end{itemize}
+\end{frame}
+
+
+\begin{frame}{Dynamics of Circular Motion Problems}
+  The forces that generate the centripetal and tangential forces may be from
+  any of the forces that we have studied, including, but not limited to:
+  %free-body
+  %diagram. It may include:
   \begin{itemize}
   \item Gravity
   \item Friction
   \item Normal force
   \item Tension
-  \item Etc.
   \end{itemize}
 \end{frame}
 
@@ -511,7 +522,7 @@
       \fill circle (.08);
       \draw[rotate=-30] (0,0)--(0,1) node[above]{$\vec N$};
       \draw (0,0)--(0,-1) node[below]{$\vec F_g$};
-      \draw[rotate=60] (0,0)--(0,-1) node[right]{$\vec f$};
+      \draw[rotate=60] (0,0)--(0,-1) node[right]{$\vec f_s$};
     \end{tikzpicture}
     \begin{tikzpicture}[axes]
       \draw (0,0)--(1,0) node[right]{$x$};
@@ -519,19 +530,20 @@
     \end{tikzpicture}
 
     \column{.65\textwidth}
-    No motion in the $y$ direction, i.e.\ no net force:
+    There is no motion in the vertical ($y$) direction, therefore there is no
+    net vertical force:
 
     \eq{-.1in}{
-      \sum F_y=N\cos\theta-f\sin\theta-F_g=0
+      \sum F_y=F_n\cos\theta-f_s\sin\theta-F_g=0
     }
 
     Net force in the $x$ direction is the centripetal force:
 
     \eq{-.1in}{
-      \sum F_x=N\sin\theta +f\cos\theta = \frac{mv^2}r
+      \sum F_x=F_n\sin\theta +f_s\cos\theta = \frac{mv^2}r
     }
 
-    Friction force $\vec f$ may be static or kinetic.
+    %Friction force $\vec f$ may be static or kinetic.
   \end{columns}
 \end{frame}
 
@@ -545,9 +557,9 @@
     
     \begin{tikzpicture}[vectors]
       \fill circle (.08);
-      \draw[rotate=-30] (0,0)--(0,1)node[above]{$\vec N$};
+      \draw[rotate=-30] (0,0)--(0,1)node[above]{$\vec F_n$};
       \draw (0,0)--(0,-1)node[below]{$\vec F_g$};
-      \draw[rotate=60] (0,0)--(0,-1)node[right]{$\vec f$};
+      \draw[rotate=60] (0,0)--(0,-1)node[right]{$\vec f_s$};
     \end{tikzpicture}
     \begin{tikzpicture}[axes]
       \draw (0,0)--(1,0) node[right]{$x$};
@@ -555,16 +567,21 @@
     \end{tikzpicture}
 
     \column{.65\textwidth}
-    For analysis, use the simplified equation for friction $f=\mu N$ (i.e.\
-    assume either kinetic friction or maximum static friction), and weight
-    $F_g=mg$, the equations on the previous slides can be arranged as:
+    For simplicity, we use the equation for \emph{maximum} static friction
+    $f_s=\mu F_n$
+    %(i.e.\
+    %assume either kinetic friction or maximum static friction),
+    and weight $F_g=mg$, the equations on the previous slides can be arranged
+    as:
 
     \vspace{-.3in}{\large
       \begin{align*}
-        N\left(\cos\theta-\mu\sin\theta\right) &=mg\\
-        N\left(\sin\theta+\mu\cos\theta\right) &=\frac{mv^2}r
+        F_n\left(\cos\theta-\mu\sin\theta\right) &=mg\\
+        F_n\left(\sin\theta+\mu\cos\theta\right) &=\frac{mv_\text{max}^2}r
       \end{align*}
     }
+
+    where the speed is now the maximum $v_\text{max}$ without skidding out
   \end{columns}
 \end{frame}
 
@@ -576,9 +593,9 @@
     \pic{.8}{banked-turn-acceleration}\\
     \begin{tikzpicture}[vectors]
       \fill circle(.08);
-      \draw[rotate=-30] (0,0)--(0,1) node[above]{$\vec N$};
+      \draw[rotate=-30] (0,0)--(0,1) node[above]{$\vec F_n$};
       \draw (0,0)--(0,-1) node[below]{$\vec F_g$};
-      \draw[rotate=60] (0,0)--(0,-1) node[right]{$\vec f$};
+      \draw[rotate=60] (0,0)--(0,-1) node[right]{$\vec f_s$};
     \end{tikzpicture}
     \begin{tikzpicture}[axes]
       \draw (0,0)--(1,0) node[right]{$x$};
@@ -827,7 +844,7 @@
   \begin{enumerate}[a.]
   \item Calculate the minimum speed at which you can swing the yo-yo while
     keeping it on a circular path.
-  \item If the yo-yo is at its minumum speed at the top of its swing, find the
+  \item If the yo-yo is at its minimum speed at the top of its swing, find the
     tension in the string when the yo-yo is at the side and at the bottom.
   \end{enumerate}
 \end{frame}
@@ -882,9 +899,9 @@
       \draw[vectors,black] (-.2,2)--+(-1,0) node[left]{$\vec v$};
     \end{scope}
 
-    \node[text width=7.8cm,fill=red!10] (fc) at (6.6,2.5){
+    \node[text width=7.8cm,fill=red!10] (fc) at (6.6,2.2){
       At the top of the circle, centripetal force is provided by both gravity
-      and string tension, i.e.:
+      and string tension:
       
       \vspace{-.1in}\begin{displaymath}
         F_c = Ma_c\quad\rightarrow\quad
@@ -895,7 +912,7 @@
     \uncover<2->{
       \node[text width=7.8cm,fill=yellow!10] (min) at (6.6,0){
         Since $M$, $g$ and $R$ are constant, minimum velocity $v_\text{min}$ on
-        the right side means $F_T=0$ on the left side. We are left with:
+        the right side requires $F_T=0$ on the left side. We are left with:
         
         \vspace{-.1in}\begin{displaymath}
           Mg = \frac{Mv_\text{min}^2}R
@@ -903,10 +920,10 @@
       };
     }
     \uncover<3->{
-      \node[text width=7.8cm,fill=green!12] at (6.6,-2.4){
+      \node[text width=7.8cm,fill=green!12] at (6.6,-2){
         Cancelling $M$ and solving for $v_\text{min}$, we have:
       
-        \vspace{-.12in}\begin{displaymath}
+        \vspace{-.1in}\begin{displaymath}
           v^2=gR\quad\rightarrow\quad\boxed{v_\text{min} = \sqrt{gR}}
         \end{displaymath}\par
       };
@@ -928,11 +945,11 @@
       \draw[vectors] (-2,0)--+(0,-1.5) node[right]{$\vec F_g$};
     \end{scope}
 
-    \node[text width=5.5cm,fill=red!10] (fc) at (-5.2,2.2){
+    \node[text width=190,fill=red!10] (fc) at (-5.2,2.2){
       At the side of the circle, centripetal force is provided only by
       tension:
 
-      \vspace{-.1in}\begin{displaymath}
+      \vspace{-.15in}\begin{displaymath}
         F_c = Ma_c\quad\rightarrow\quad
         F_T = \frac{Mv^2}R
       \end{displaymath}
@@ -940,7 +957,7 @@
     };
     
     \uncover<2->{
-      \node[text width=4.5cm,fill=yellow!15] (min) at (4.5,2.6){
+      \node[text width=155,fill=yellow!15] (min) at (4.5,2.6){
         Using conservation of energy:
         
         \vspace{-.2in}\begin{align*}
@@ -951,7 +968,7 @@
     }
     
     \uncover<3->{
-      \node[text width=4.5cm,fill=green!10] at (4.5,.4){
+      \node[text width=155,fill=green!10] at (4.5,.4){
         Cancelling $M$ term and solving for $v_\text{side}^2$, we have:
 
         \vspace{-.1in}\begin{displaymath}
@@ -962,7 +979,7 @@
 
 
     \uncover<4->{
-      \node[text width=4.5cm,fill=blue!15] at (4.5,-1.6){
+      \node[text width=155,fill=blue!15] at (4.5,-1.6){
         Since $v_\text{top}^2=v_\text{min}^2=gR$ that we have just calculated,
 
         \vspace{-.2in}\begin{displaymath}
@@ -972,7 +989,7 @@
     }
 
     \uncover<5->{
-      \node[text width=5.5cm,fill=violet!15] at (-5.2,-1.1){
+      \node[text width=190,fill=violet!15] at (-5.2,-1.1){
         Now the final expression for tension:
         
         \vspace{-.2in}\begin{displaymath}
@@ -997,7 +1014,7 @@
       \draw[vectors] (0,-2)--+(0,-1.5) node[left]{$\vec F_g$}; 
     \end{scope}
 
-    \node[text width=5.6cm,fill=red!10] (fc) at (-5,1.2){
+    \node[text width=190,fill=red!10] (fc) at (-5,1.2){
       At the bottom of the circle, tension contributes to centripetal force,
       while gravity contributes \emph{against} it:
 
@@ -1009,18 +1026,18 @@
     };
     
     \uncover<2->{
-      \node[text width=4.6cm,fill=yellow!10] (min) at (4.5,1.7){
-        Using conservation of energy again:
+      \node[text width=170,fill=yellow!10] (min) at (4.5,1.5){
+        Using conservation of energy:
         
         \vspace{-.2in}\begin{align*}
           K_\text{top} + U_\text{top} &= K_\text{bottom}\\
-          \frac12Mv_\text{top}^2 + MgR &=\frac 12Mv_\text{bottom}^2
+          \frac12Mv_\text{top}^2 + Mg(2R) &=\frac 12Mv_\text{bottom}^2
         \end{align*}
       };
     }
     
     \uncover<3->{
-      \node[text width=4.6cm,fill=green!10] at (4.5,-.6){
+      \node[text width=170,fill=green!10] at (4.5,-.6){
         Cancelling $M$ term and solving for $v_\text{bottom}^2$, we have:
 
         \vspace{-.1in}\begin{displaymath}
@@ -1031,17 +1048,17 @@
 
 
     \uncover<4->{
-      \node[text width=4.6cm,fill=blue!15] at (4.5,-2.5){
-        Recognizing that $v_\text{top}^2=gR$ like we did before:
+      \node[text width=170,fill=blue!15] at (4.5,-2.5){
+        Recognizing that $v_\text{top}^2=gR$ as before:
 
-        \vspace{-.2in}\begin{displaymath}
+        \vspace{-.25in}\begin{displaymath}
           v_\text{bottom}^2 = gR+4gR=5gR
         \end{displaymath}\par
       };
     }
 
     \uncover<5->{
-      \node[text width=5.6cm,fill=violet!15] at (-5,-2.2){
+      \node[text width=190,fill=violet!15] at (-5,-2.2){
         Now the final expression for tension:
         
         \vspace{-.2in}\begin{align*}
