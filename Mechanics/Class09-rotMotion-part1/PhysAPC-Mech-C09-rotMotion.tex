@@ -21,7 +21,8 @@
   Consider the uniform circular motion of an object with angular velocity
   $\vec\omega$.\footnote{If rotation is counterclockwise, $\vec\omega$ is
   \emph{out of the page}; if rotation is clockwise, $\vec\omega$ is
-  \emph{into the page}.}
+  \emph{into the page}. Or we can treat it as 1D motion: ($+$) if CCW; ($-$) if
+  CW.}
   \begin{columns}
     \column{.3\textwidth}
     \centering
@@ -61,8 +62,9 @@
     \column{.7\textwidth}
     Similarly, when tightening/loosening a nut by turning a wrench,
     \begin{itemize}
-    \item When the nut turns, its ``rotational state'' changes
-    \item The applied force has to be directed at some distance away from the
+    \item When the nut turns, its ``rotational state'' changes, i.e.\ the nut
+      goes from not rotating to rotating
+    \item The applied force must be directed at some distance away from the
       nut
     \item How easy to turn the nut depends on \emph{both} the distance and the
       force
@@ -80,7 +82,7 @@
 %  }
 %
 %  \vspace{-.1in}Is it also true for \emph{rotational} motion? If a net force
-%  $\vec F_\text{net}$ causes the center of mass of an object to begin to
+%  $\vec F_\text{net}$ causes the centre of mass of an object to begin to
 %  accelerate, what causes a mass to rotate?
 %\end{frame}
 
@@ -88,9 +90,9 @@
 
 \begin{frame}{What is Torque?}
   \textbf{Torque} (also known as the \textbf{moment of force}, or just
-  \textbf{moment}) is the tendency for a force to change the rotational motion
-  of a body. The SI unit for torque is a \textbf{newton meter}
-  (\si{\newton\metre}).
+  \textbf{moment}) is the tendency for a force to change the rotational state
+  of a body.% The SI unit for torque is a \textbf{newton metre}
+  %(\si{\newton\metre}).
   \begin{itemize}
   \item A force $\vec F$ acts at a point some position $\vec r$ from a
     \textbf{pivot}, or \textbf{fulcrum}
@@ -116,18 +118,31 @@
 \begin{frame}{Torque}
   Torque $\vec\tau$ is defined as the cross product of the force $\vec F$ and
   the position vector $\vec r$ from the pivot, and where the force is applied.
-  The unit for torque is a \textbf{newton meter} (\si{\newton\metre}).
 
   \eq{-.1in}{
     \boxed{\vec\tau=\vec r\times\vec F}
   }
+  \begin{itemize}
+  \item\vspace{-.1in}The unit for torque is a \textbf{newton metre}
+    (\si{\newton\metre})
+  \item The direction of the torque vector is orthogonal to both $\vec r$ and
+    $\vec F$.
+  \item The magnitude of torque:
 
-  \vspace{-.1in}with a magnitude of:
+    \eq{-.2in}{
+      \boxed{\tau=rF_\perp=rF\sin\phi}
+    }
+    
+    \vspace{-.07in}where $F_\perp$ is the component of $\vec F$ orthogonal
+    (perpendicular) to the position vector
+  \end{itemize}
 
-  \eq{-.1in}{
-    \boxed{\tau=rF_\perp=rF\sin\phi}
+  \vspace{.1in}{\footnotesize
+    It is unlikely that you will do an actual cross product in an AP exam (it
+    takes too long, and it does not actually test your knowledge in the
+    physics), but you will need to know the basic properties of how a cross
+    product applies in this situation.\par
   }
-
 %  \begin{center}
 %    \begin{tabular}{l|c|c}
 %      \rowcolor{pink}
@@ -156,8 +171,9 @@
 
     \vspace{.18in}
     {\footnotesize Force is perpendicular to the position vector, i.e.\
-      $\vec r\perp\vec F$. In this case, the torque is easy to calculate. The
-      position vector $\vec r$ is known as the \textbf{moment arm}.\par}
+      $\vec r\perp\vec F$. In this case, the torque generated from the force is
+      easy to calculate. The position vector $\vec r$ is known as the
+      \textbf{moment arm}.\par}
     
     \eq{-.16in}{
       \boxed{ \tau = rF }
@@ -178,7 +194,7 @@
       position vector. Only the perpendicular component ($F_\perp$) generates a
       torque; the parallel component ($F_\parallel$) does not.\par}
     
-    \eq{-.34in}{
+    \eq{-.2in}{
       \boxed{
         \tau = r{\color{blue}F_\perp}=r{\color{blue}F\sin\phi}
       }
@@ -193,7 +209,7 @@
       \begin{scope}[rotate=-atan(3/4)]
         \draw[vectors,red] (0,0)--(4,0) node[midway,below]{$\vec r_\perp$};
         \draw (4,-.5)--(4,5.5)
-        node[pos=0,right]{line of action of $\vec F$};
+        node[pos=0,right]{\small line of action of $\vec F$};
         \draw (0,-1)--(0,2);
         \draw[vectors,blue,dash dot] (4,0)--(4,2) node[midway,right]{$\vec F$};
         \fill[blue] (4,0) circle(.04);
@@ -207,7 +223,7 @@
     {\footnotesize $\vec F$ can be moved along its line of action until it
       intersects the perpendicular component of $\vec r$\par}
     
-    \eq{-.33in}{
+    \eq{-.24in}{
       \boxed{
         \tau = {\color{red}r_\perp}F
         ={\color{red}r}F{\color{red}\sin\phi}
@@ -227,7 +243,7 @@
   \begin{columns}[T]
     \column{.5\textwidth}
     \centering
-    \vspace{.45in}
+    \vspace{.52in}
     \begin{tikzpicture}[scale=.7]
       \draw[thick,fill=lightgray] (-.2,-.2) rectangle(5.2,.2);
       \draw[vectors,red] (0,0)--(5,0) node[midway,below]{$\vec r$};
@@ -237,8 +253,9 @@
       \fill[blue] (5,0) circle(.04);
     \end{tikzpicture}
 
-    \vspace{.03in}
-    {\footnotesize Force $\vec F$ is parallel to $\vec r$.\par}
+    \vspace{.03in}{\footnotesize
+      Force $\vec F$ is parallel to $\vec r$ (i.e.\ $F_\perp=0$).\par
+    }
 
     \column{.5\textwidth}
     \centering
@@ -251,15 +268,17 @@
       \fill circle(.08) node[above]{pivot};
     \end{tikzpicture}
 
-    {\footnotesize $\vec F$ is applied at the pivot.\par}
+    {\footnotesize
+      $\vec F$ is applied at the pivot (i.e.\ $\vec r=\vec 0$).\par
+    }
   \end{columns}
 \end{frame}
 
 
 
 \begin{frame}{Net Torque}
-  Net torque is the sum of all torques acting at a point. Keep in mind the sign
-  convention:
+  Net torque is the vector sum of all torques acting at a point. Keep in mind
+  the sign convention:
 
   \eq{-.1in}{
     \boxed{
@@ -369,7 +388,7 @@
     }
 
     \vspace{-.2in}The unit for angular momentum is a
-    \textbf{kilogram meter squared per second}
+    \textbf{kilogram metre squared per second}
     (\si{\newton\metre\squared\per\second}).
     
     \column{.23\textwidth}
@@ -396,14 +415,15 @@
     
   The quantity $I=mr^2$ is called the \textbf{moment of inertia}\footnote{Also
   known as \textbf{rotational inertia} in AP Physics in recently years}, with
-  a unit of \textbf{kilogram metre squared} (\si{\kilo\gram\metre\squared}).
+  an SI unit of \textbf{kilogram metre squared} (\si{\kilo\gram\metre\squared}).
 
   \eq{-.1in}{
     \boxed{\vec L=I\vec\omega}
   }
 
-  \vspace{-.15in}Momentum of inertia can be considered to be an object's
-  ``rotational mass''
+  \vspace{-.15in}Moment of inertia can be considered to be an object's
+  ``rotational mass'' (i.e.\ moment of inertia in rotational motion is
+  equivalent to what mass is for translational motion)
   \vspace{.3in}
 \end{frame}
 
@@ -417,17 +437,17 @@
     \boxed{I=mr^2}
   }
 
-  \vspace{-.1in}For a \emph{collection of discrete particles} rotating at the
-  same $\omega$, each of mass $m_i$ at distance $r_i$ from the pivot:
+  \vspace{-.1in}For a \emph{collection of $N$ discrete particles} rotating at
+  the same $\omega$, each of mass $m_i$ at distance $r_i$ from the pivot:
 
-  \eq{-.15in}{
-    \boxed{I=\sum m_ir_i^2}
+  \eq{-.2in}{
+    \boxed{I=\sum_{i=1}^N m_ir_i^2}
   }
 
-  For a \emph{continuous distribution of mass} rotating about a pivot, integral
-  calculus is need:
+  For a \emph{continuous distribution of mass} (i.e.\ as $N\to\infty$) rotating
+  about a pivot, integral calculus is need:
 
-  \eq{-.1in}{
+  \eq{-.2in}{
     \boxed{I=\int r^2\dl m}
   }
 \end{frame}
@@ -460,6 +480,27 @@
 
 
 \section{Laws of Motion}
+
+\begin{frame}{Second Law of Motion for Rotational Motion}
+  The net torque is the time rate of change of angular momentum:
+
+  \eq{-.1in}{
+    \vec\tau_\text{net}=\vec r\times\vec F_\text{net}
+    =\vec r\times\diff{\vec p}t
+    =\diff{(\vec r\times\vec p)}t\;\;\longrightarrow\;\;
+    \boxed{\vec\tau_\text{net}=\diff{\vec L}t}
+  }
+  \begin{itemize}
+  \item If the net torque on a system is zero, then the rate of change
+    of angular momentum is zero, and we say that the angular momentum is
+    conserved. 
+  \item e.g.\ When an ice skater starts to spin and draws his arms inward.
+    Since angular momentum is conserved, a decrease in $r$ means an increase in
+    $\omega$. The mass of the skater cannot change, but the distance of the mass
+    from the rotational axis can
+  \end{itemize}
+\end{frame}
+
 
 \begin{frame}{Equilibrium: First Law of Motion}
   An object is in \textbf{translational equilibrium} is when the net force
@@ -494,27 +535,6 @@
 
 
 
-\begin{frame}{Second Law of Motion for Rotational Motion}
-  The net torque is the time rate of change of angular momentum:
-
-  \eq{-.1in}{
-    \vec\tau_\text{net}=\vec r\times\vec F_\text{net}
-    =\vec r\times\diff{\vec p}t
-    =\diff{(\vec r\times\vec p)}t\;\;\longrightarrow\;\;
-    \boxed{\vec\tau_\text{net}=\diff{\vec L}t}
-  }
-  \begin{itemize}
-  \item If the net torque on a system is zero, then the rate of change
-    of angular momentum is zero, and we say that the angular momentum is
-    conserved. 
-  \item e.g.\ When an ice skater starts to spin and draws his arms inward.
-    Since angular momentum is conserved, a decrease in $r$ means an
-    increase in $\omega$.
-  \end{itemize}
-\end{frame}
-
-
-
 \begin{frame}{First \& Second Law of Motion for Translational Motion}
   For translational motion, the general form of the first and second laws of
   motion relate the net force to the rate of change of the object's momentum:
@@ -534,8 +554,9 @@
 
 \begin{frame}{First \& Second Law of Motion for Rotational Motion}
   Likewise, the equation for the first and second laws of motion for rotational
-  motion has a similar form, but with torque $\vec\tau$ replacing force
-  $\vec F$, and angular momentum $\vec L$ replacing linear momentum $\vec p$:
+  motion has a similar form, but with net torque $\vec\tau_\text{net}$ replacing
+  net force $\vec F_\text{net}$, and angular momentum $\vec L$ replacing linear
+  momentum $\vec p$:
 
   \eq{-.1in}{
     \boxed{
@@ -558,21 +579,21 @@
   Even when there is no apparent rotational motion, it does not necessarily
   mean that angular momentum is zero! In this case, mass $m$ travels along a
   straight path at constant velocity (uniform motion), but the angular momentum
-  around point $P$ is not zero:
+  around point $P$ is \emph{not} zero:
   \begin{center}
     \begin{tikzpicture}
       \draw[dashed] (-5,0)--(5,0);
       \draw[vectors,red] (-5,0)--(-3,0) node[below]{$\vec v$};
-      \shade[ball color=red] (-5,0) circle (.2) node[above=4]{$m$};
+      \shade[ball color=red] (-5,0) circle (.15) node[above=4]{$m$};
       \draw[vectors,blue] (0,-2)--(-5,0)
       node[midway,below,rotate=-atan{2/5}]{$\vec r_1$};
       \uncover<2->{
-        \draw circle (.2) node[above=4]{$m$};
+        \draw circle (.15) node[above=4]{$m$};
         \draw[vectors,red!40] (.2,0)--(2,0) node[right]{$\vec v$};
         \draw[vectors,blue!40] (0,-2)--(0,0) node[midway,left]{$\vec r_2$};
       }
       \uncover<3->{
-        \draw (4,0) circle (.2) node[above=4]{$m$};
+        \draw (4,0) circle (.15) node[above=4]{$m$};
         \draw[vectors,red!40] (4.2,0)--(6,0) node[right]{$\vec v$};
         \draw[vectors,blue!40] (0,-2)--(4,0)
         node[midway,below,rotate=atan{2/4}]{$\vec r_3$};
@@ -581,9 +602,9 @@
     \end{tikzpicture}
   \end{center}
   \uncover<4>{
-    Since there is no force and no torque acting on the object, both the linear
+    There is no force and no torque acting on the object, therefore both linear
     momentum ($\vec p=m\vec v$) and angular momentum
-    ($\vec L=m(\vec r\times\vec v)$) are constant.
+    ($\vec L=\vec r\times\vec p$) are constant
   }
 \end{frame}
 
@@ -613,7 +634,8 @@
 \section{Work \& Energy in Rotational Motion}
 
 \begin{frame}{Mechanical Work}
-  For translational motion, mechanical work is defined as
+  For translational motion\footnote{Showing 1D motion for simplicity},
+  mechanical work is defined as
 
   \eq{-.1in}{
     W_\text{trans}=\int_{x_0}^{x_1}F\dl x
@@ -628,13 +650,10 @@
       W_\text{rot}=\int_{\theta_0}^{\theta_1}\tau\dl\theta
     }
   }
+  \vspace{.2in}
 
-  All we have done is to replace $F\to\tau$ and $\dl x\to\dl\theta$
-  %The work-energy theorem still applies to rotational motion, i.e.:
-  %
-  %\eq{-.1in}{
-  %  W_r=\Delta K_r
-  %}
+  Like in deriving the laws of motion, all we have done is to replace
+  $F\to\tau$, and $\dl x\to\dl\theta$
 \end{frame}
 
 
@@ -655,7 +674,7 @@
   time, we can switch the order of differentiation:
   
   \eq{-.1in}{
-    =I\int\diff{\theta}t\dl\omega=m\int_{\omega_0}^{\omega_1}\omega\dl\omega
+    =I\int\diff{\theta}t\dl\omega=I\int_{\omega_0}^{\omega_1}\omega\dl\omega
   }
   where $\omega_0=\omega(\theta_0)$ and $\omega_1=\omega(\theta_1)$.
 \end{frame}
@@ -685,21 +704,27 @@
 
 
 \begin{frame}{Work-Energy Theorem}
-  Like the translational kinetic energy, the definition of \emph{rotational}
-  kinetic energy came from this integration, in that net \emph{rotational} work
-  equals to the change in \emph{rotational} kinetic energy:
+  Like translational kinetic energy, the definition of \emph{rotational}
+  kinetic energy came from integrating net work, in that net \emph{rotational}
+  work equals to the change in \emph{rotational} kinetic energy:
 
-  \eq{-.1in}{
+  \eq{-.2in}{
     \boxed{
       W_\text{net,rot}=\Delta K_\text{rot}
     }
   }
   \begin{itemize}
-  \item $K_\text{rot}$ increases ($\Delta K_\text{rot}>0$) if net work is
-    positive ($W_\text{net,rot}>0$); the object's angular speed increases
-  \item $K_\text{rot}$ decreases ($\Delta K_\text{rot}<0$) if net work is
-    negative ($W_\text{net,rot}>0$); the object's angular speed decreases
-  \item It does not matter \emph{what} the net torque consists of
+  \item If net rotaional work is positive ($W_\text{net,rot}>0$)
+    \begin{itemize}
+    \item $K_\text{rot}$ increases ($\Delta K_\text{rot}>0$) by the same amount
+    \item The object's angular speed increases
+    \end{itemize}
+  \item If net rotaional work is negative ($W_\text{net,rot}<0$)
+    \begin{itemize}
+    \item $K_\text{rot}$ decreases ($\Delta K_\text{rot}<0$) by the same amount
+    \item The object's angular speed decreases
+    \end{itemize}
+  \item It does not matter \emph{what} net torque consists of
   \end{itemize}
 \end{frame}
 
@@ -712,8 +737,8 @@
   sum/integrate the kinetic energies of the individual particles:
     
   \eq{-.1in}{
-    K_\text{rot}=\sum_i\frac12m_iv_i^2=\sum_i\frac12m_i(r_i\omega)^2
-    =\frac12\left[\sum_i m_ir_i^2\right]\omega^2 = \frac12I\omega^2
+    K_\text{rot}=\sum_{i=1}^N\frac12m_iv_i^2=\sum_{i=1}^N\frac12m_i(r_i\omega)^2
+    =\frac12\left[\sum_{i=1}^N m_ir_i^2\right]\omega^2 = \frac12I\omega^2
   }
 \end{frame}
 
@@ -747,14 +772,13 @@
 \begin{frame}{Power}
   As you have seen in other physics course (and earlier in this course),
   \textbf{power} is the \emph{rate} at which work is done, i.e.\ the rate at
-  which energy is being transformed. For a rotational system:
-
+  which energy is being transformed. A rotational system is defined the same
+  way as it was in the translational system:
+  
   \eq{-.1in}{
     \boxed{P(t) = \diff Wt}\quad\quad
     \boxed{\overline P = \frac W{\Delta t}}
   }
-
-  It is defined the same way as it was in the translational system:
 \end{frame}
 
 
@@ -782,15 +806,15 @@
 \begin{frame}{Conservation of Momentum}
   
   During a collision/explosion, there is no external force, therefore the total
-  linear momentum of the total system is conserved:
+  linear momentum of the system is conserved:
 
   \eq{-.1in}{
     \sum\vec p_i=\sum\vec p_i'
   }
   
-  But if there is no external force, there is also no external torque as well,
-  therefore, the total \emph{angular} momentum must also be conserved in a
-  collision:
+  But if there is no external force, there is also be no external torque.
+  Therefore, total \emph{angular} momentum of the system must also be conserved
+  in a collision:
   
   \eq{-.1in}{
     \boxed{
@@ -798,9 +822,9 @@
     }
   }
 
-  Let's remind ourselves the sign convention for angular momentum on the
-  $xy$-plane: $L$ is $+$ when rotational motion is counter clockwise, and $-$
-  when it is clockwise
+  %Let's remind ourselves the sign convention for angular momentum on the
+  %$xy$-plane: $L$ is $+$ when rotational motion is counter clockwise, and $-$
+  %when it is clockwise
 \end{frame}
 
 

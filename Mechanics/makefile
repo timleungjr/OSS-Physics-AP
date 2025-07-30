@@ -1,4 +1,4 @@
-TERM=2025-07-Summer-Physics
+TERM=2025-09-Fall-Physics
 CLOUD=ossfiles
 DESTINATION=$(HOME)/Documents/$(CLOUD)/$(TERM)/Physics.APC-Mechanics
 
