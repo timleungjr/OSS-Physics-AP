@@ -6,6 +6,8 @@
 \tikzset{
   >=latex
 }
+\setlength\extrarowheight{5pt}
+\renewcommand{\arraystretch}{1.7}
 
 \runningheader{
   \fontfamily{phv}\small
@@ -18,14 +20,14 @@
 \begin{center}
   {
     \fontfamily{phv}\Large
-    \textbf{PHYSICS C: MECHANICS\\SECTION II\\TIME -- 80 MINUTES}
+    \textbf{PHYSICS C: MECHANICS\\SECTION II\\TIME -- 60 MINUTES}
   }
 \end{center}
 
 \vspace{2in}
 \textbf{Directions:}
 
-Section II has 4 questions and lasts 80 minutes.
+Section II has 3 questions and lasts 60 minutes.
 
 You may use the available paper for scratch work and planning, but you must
 write your answers in the free-response booklet. Label parts (e.g., A, B, C)
@@ -59,144 +61,218 @@ The clock will turn red when 5 minutes remain---\textbf{the proctor will not
 \newpage
 
 
-%% THIS QUESTION IS BASED ON THE 2024 AP PHYSICS C MECHANICS EXAM SET 2
-%% QUESTION 1. FOR NOW, IT IS USED WITHOUT MODIFICATIONS
-%
-%\begin{center}
-%  \pic{.7}{two-blocks-slide}
-%        
-%  \underline{Note:} Figure not drawn to scale.
-%        
-%  Figure 1
-%\end{center}
-%
-\begin{questions} 
-%  \question Block A and Block B of masses $m$ and $3m$, respectively, are
-%  arranged in a setup consisting of an ideal spring with spring constant $k$
-%  and a horizontal surface. Friction between the surface and the blocks is
-%  negligible except in a region of length $D$, where the coefficient of kinetic
-%  friction between Block A and the surface is $\mu$. Block B is attached to a
-%  string of length $\ell$ and negligible mass, as shown in Figure 1. Block A
-%  is held against the spring, compressing the spring a distance $x_c$.
-%
-%  \vspace{.2in}At time $t=0$, Block A is located at position $x = x_0$ and is
-%  released from rest. After the block is released, the following occurs.
-%
-%  \begin{itemize}[itemsep=6pt]  
-%  \item At time $t=t_1$, Block A is at $x=x_1$ after traveling a distance
-%    $x_c$. Block A moves with speed $v$, and the spring is at its equilibrium
-%    position.
-%
-%  \item At time $t=t_2$, the left side of Block A is at $x=x_2$ after passing
-%    through a distance D across the region with nonnegligible friction.
-%
-%  \item At time $t=t_3$, Block A is at $x=x_3$ and Block A collides with and
-%    sticks to Block B.
-%  \end{itemize}
-%
-%  For parts (\ref{speedt1}) and (\ref{speedt3}), express your answer in terms
-%  of $m$, $k$, $D$, $\mu$, $x_c$, and physical constants, as appropriate.
-%  \begin{parts}
-%    \part\textbf{Derive} an expression for the speed $v$ of Block A at
-%    time $t_1$.
-%    \label{speedt1}
-%    \vspace{\stretch1}
-%    
-%    \part\textbf{Derive} an expression for the speed $v_{A,B}$ of the two-block
-%    system immediately after the collision at time $t_3$.
-%    \label{speedt3}
-%    \vspace{\stretch1}
-%    \newpage
-%    
-%    \part On the following axes, sketch a graph of the kinetic energy $K$ of
-%    Block A as a function of time $t$ from time $t=0$ to time $t_3$.
-%    \label{sketch}
-%    \begin{center}
-%      \begin{tikzpicture}[scale=.9]
-%        \draw[axes] (0,0)--(10,0) node[right]{$t$};
-%        \draw[axes] (0,0)--(0,5.5) node[above]{$K$};
-%        \foreach \x in {1,2,3}{
-%          \draw[dashed] (\x*2.5,0)--+(0,5) node[pos=0,below]{$t_\x$};
-%        }
-%      \end{tikzpicture}
-%    \end{center}
-%    
-%    \part Use principles of work and energy to \textbf{justify} the graph drawn
-%    in part (\ref{sketch}) for the time interval $t=0$ to $t=t_1$. Explicitly
-%    reference features of the shape of the graph you drew in part
-%    (\ref{sketch}).
-%    \vspace{\stretch1}
-%    
-%    \uplevel{
-%      \begin{center}
-%        \pic{.3}{swing}
-%        
-%        \underline{Note:} Figure not drawn to scale.
-%        
-%        Figure 2
-%      \end{center}
-%      After the collision, the two-block system instantaneously comes to rest
-%      at time $t_4$ which occurs when the string makes a small angle
-%      $\theta_\text{max}$ with the vertical, as shown in Figure 2. For times
-%      $t>t_4$, the system oscillates with frequency $f_\ell$. The support holding
-%      the string is raised, and the procedure is then repeated using a new
-%      string of length $2\ell$
-%    }
-%
-%    \part\textbf{Indicate} how the new frequency of oscillation $f_{2\ell}$ of
-%    the system on the new string of length $2\ell$ will compare to the
-%    frequency of oscillation $f_\ell$ from the original procedure.
-%
-%    \vspace{.2in}
-%    \underline{\hspace{.5in}} $f_\ell > f_{2\ell}$\hspace{.5in}
-%    \underline{\hspace{.5in}} $f_\ell < f_{2\ell}$\hspace{.5in}
-%    \underline{\hspace{.5in}} $f_\ell = f_{2\ell}$
-%    
-%    \vspace{.2in}Briefly \textbf{justify} your answer.
-%    \vspace{\stretch1}
-%  \end{parts}
-%  \newpage
-%
-%
-%  % THIS QUESTION IS BASED ON THE 2000 AP PHYSICS C MECHANICS EXAM QUESTION 1.
-%  % FOR NOW, IT IS USED WITHOUT MODIFICATIONS
-%  \question A rubber ball of mass $m$ is dropped from a cliff. As the ball
-%  falls, it is subject to air drag (a resistive force caused by the air). The
-%  drag force on the ball has magnitude $bv^2$, where $b$ is a constant drag
-%  coefficient and $v$ is the instantaneous speed of the ball. The drag
-%  coefficient $b$ is directly proportional to the cross-sectional area of the
-%  ball and the density of the air and does not depend on the mass of the ball.
-%  As the ball falls, its speed approaches a constant value called the terminal
-%  speed.
-%  \begin{parts}
-%    \part On the figure below, draw and label all the forces on the ball at
-%    some instant before it reaches terminal speed.
-%    \begin{center}
-%      \vspace{.5in}{\tikz\draw[very thick,fill=lightgray] circle (.13);}
-%      \vspace{.5in}
-%    \end{center}
-%    \part State whether the magnitude of the acceleration of the ball of mass
-%    $m$ increases, decreases, or remains the same as the ball approaches
-%    terminal speed. Explain.
-%    \vspace{\stretch1}
-%    
-%    \part\textbf{Write}, but do NOT solve, a differential equation for the
-%    instantaneous speed $v$ of the ball in terms of time $t$, the given
-%    quantities, and fundamental constants.
-%    \vspace{\stretch1}
-%    
-%    \part Determine the terminal speed $v_t$  in terms of the given quantities
-%    and fundamental constants.
-%    \vspace{\stretch1}
-%    
-%    \part Determine the energy dissipated by the drag force during the fall if
-%    the ball is released at height $h$ and reaches its terminal speed before
-%    hitting the ground, in terms of the given quantities and fundamental
-%    constants.
-%    \vspace{\stretch1}
-%  \end{parts}
-%  \newpage
+% THIS QUESTION IS BASED ON THE 2023 AP PHYSICS C MECHANICS EXAM SET 2
+% QUESTION 1. FOR NOW, IT IS USED WITHOUT MODIFICATIONS
 
+\begin{center}
+  \pic{.6}{vertical-springs}
+\end{center}
+
+\begin{questions}
+  \question A student conducts an investigation to determine the relationship
+  between the period of oscillation $T$ of a system consisting of a block and
+  $N$ attached springs. The student starts with a block of mass $m$ attached
+  to a single ideal spring of spring constant $k$, as shown in Figure 1. The
+  student holds the block so that the spring is neither stretched nor
+  compressed at a vertical height \SI{1.00}{\metre} above a motion detector.
+  The student releases the block from rest and records the period of
+  oscillation for the system consisting of the single spring and block. An
+  additional identical spring is attached in parallel, as shown in Figure 2,
+  and the procedure is repeated for $N=2$ springs. This procedure is repeated
+  through $N=10$ springs.
+
+  \begin{parts}
+    \part\textbf{Derive} an expression for $T$ as a function of $N$. Express
+    your answer in terms of $m$, $k$, $N$, and physical constants as
+    appropriate.
+    \vspace{\stretch1}
+
+    \part On the following axes, \textbf{sketch} a graph of $T$ as a function
+    of $N$ for $N\geq1$.
+    \begin{center}
+      \begin{tikzpicture}[scale=.8]
+        \draw[axes] (0,0)--(8,0) node[right]{$N$};
+        \draw[axes] (0,0)--(0,5.5) node[above]{$T$};
+      \end{tikzpicture}
+    \end{center}
+    \newpage
+    \uplevel{
+      The student plots the data for $T^2$ as a function of $N^{-1}$, as shown.
+      \begin{center}
+        \pic{.65}{data-points}
+      \end{center}
+    }
+
+
+    \part\textbf{Draw} the best-fit line for the data.\label{best}
+    
+    \part The mass of the block is measured to be $m=\SI{1.5}{\kilo\gram}$.
+    Using the graph, \textbf{calculate} an experimental value for the spring
+    constant $k$ for a single spring.
+    \vspace{\stretch1}
+    
+    \part The student finds that the value given by the manufacturer for the
+    spring constant is larger than the value determined experimentally in part
+    (c)(ii). Determine a single source of experimental error that could result
+    in the observed difference in the value for $k$. Briefly \textbf{justify}
+    your answer.
+    \vspace{\stretch1}
+    \newpage
+    
+    \uplevel{
+      \begin{center}
+        \pic{.27}{horizontal-spring}
+
+        Figure 3
+      \end{center}
+      The student conducts a similar investigation to determine the
+      relationship between the period of oscillation $T$ of a system consisting
+      of a block and a number $N$ of identical springs but arranges the
+      block-spring system horizontally on a table, as shown in Figure 3.
+      Frictional forces between the table and the block are negligible. In each
+      trial, the block is displaced the same horizontal distance from
+      equilibrium and released from rest.
+    }
+
+    \part The student plots $T^2$ as a function of $N^{-1}$ for this new data.
+    Would the slope of the best-fit line from this new investigation be greater
+    than, less than, or the same as the slope of the best-fit line in part
+    (\ref{best})?
+
+    \vspace{.2in}
+    \underline{\hspace{.5in}} greater than \hspace{.5in}
+    \underline{\hspace{.5in}} less than \hspace{.5in}
+    \underline{\hspace{.5in}} the same as
+    
+    \vspace{.2in}\textbf{Justify} your answer.
+    \vspace{\stretch1}
+    
+    \part When $N=1$, the maximum speed of the block is found to be
+    $v_\text{max}$. When $N$ increases, will $v_\text{max}$ increase, decrease,
+    or stay the same?
+
+    \vspace{.2in}
+    \underline{\hspace{.5in}} increase \hspace{.5in}
+    \underline{\hspace{.5in}} decrease \hspace{.5in}
+    \underline{\hspace{.5in}} stay the same
+    
+    \vspace{.2in}\textbf{Justify} your answer.
+    \vspace{\stretch3}
+    \end{parts}
+  \newpage
+
+  % THIS QUESTION IS BASED ON THE 2019 AP PHYSICS C MECHANICS PRACTICE TEST
+  % QUESTION 3.
+  
+  \uplevel{
+    \centering
+    \pic{.55}{pulley-mass}
+  }
+  
+  \question Three blocks are connected by strings that pass over pulleys of
+  negligible mass. Block  is on a level, horizontal surface of negligible
+  friction. Block A is on top of block B. String 1 connects blocks A and B. The
+  coefficients of static and kinetic friction between blocks A and B are
+  $\mu_s$ and $\mu_k$, respectively. Block C is hanging over the end of the
+  table and is attached to block B by string 2, as shown above. The masses of
+  blocks A, B, and C are $m_A$, $m_B$, and $m_C$, respectively. When block C is
+  released, the system remains at rest.
+  \begin{parts}
+    \part On the dot below, which represents block A, \textbf{draw and label}
+    the forces (not components) that act on block A. Each force must be
+    represented by a distinct arrow starting on, and pointing away from, the
+    dot.
+    \begin{center}
+      \underline{Block A}
+
+      \vspace{.6in}{\tikz\fill circle(.15);}\vspace{.6in}
+    \end{center}
+
+    \part On the dot below, which represents block B, \textbf{draw and label}
+    the forces (not components) that act on block B. Each force must be
+    represented by a distinct arrow starting on, and pointing away from, the
+    dot.
+    \begin{center}
+      \underline{Block B}
+
+      \vspace{.6in}{\tikz\fill circle(.15);}\vspace{.6in}
+    \end{center}
+
+    \part Derive an expression for the maximum value for $m_C$ at which the
+    blocks will remain at rest. Express all algebraic answers in terms of
+    $\mu_s$, $\mu_k$, $m_A$, $m_B$, $m_C$, and physical constants, as
+    appropriate.
+    \vspace{\stretch1}
+    \newpage
+    \uplevel{
+      \begin{center}
+        \pic{.5}{clay}
+      \end{center}
+      The setup is modified, as shown in the figure above. Block A and one of
+      the pulleys are removed, and block B remains on the table. There is still
+      negligible friction between block B and the table. A lump of clay is
+      added to block B. The students use second law of motion to derive an
+      equation for the acceleration $a_C$ of block C. The acceleration is given
+      by the equation
+      \begin{displaymath}
+        a_C=\frac{m_C}{m_\text{tot}}g
+      \end{displaymath}
+      where $m_\text{tot}$ is the combined mass of the clay and the two blocks.
+      Students use the setup shown above to experimentally determine the
+      acceleration $g$ due to gravity. In each trial, a student moves a small
+      amount of clay from block B to block C and then releases the blocks from
+      rest, recording the new values of $m_C$ and $a_C$. The total mass of the
+      clay and the two blocks is $m_\text{tot}=\SI{5.0}{\kilo\gram}$. The graph
+      below shows $a_C$ as a function of $m_C$ , where $m_C$ is now the
+      combined mass of block C and the mass of clay added to block C.
+      \begin{center}
+        \pic{.5}{acceleration-data}
+      \end{center}
+    }
+    \part\textbf{Draw} a best-fit line to the data points in the graph above.
+    \label{best-fit-again}
+    
+    \part Use the best-fit line from part (\ref{best-fit-again}) to
+    \textbf{calculate} an experimental value for the acceleration $g$ due to
+    gravity
+    \newpage
+    
+    \part If the mass of the pulley in part (\ref{best-fit-again}) is
+    significant, would the experimental value of g be greater than, less
+    than, or equal to the value calculated in part (c)(ii) ?
+
+    \vspace{.2in}
+    \underline{\hspace{.5in}} Greater than \hspace{.5in}
+    \underline{\hspace{.5in}} Less than \hspace{.5in}
+    \underline{\hspace{.5in}} Equal to
+    
+    \vspace{.2in}\textbf{Justify} your answer.
+    \vspace{\stretch1}
+
+    \part A different group of students repeats the experiment, but instead of
+    moving clay from block B to block C, they just remove a small amount of
+    clay from block B and set it aside, away from the setup. The equation
+    $a_C=m_C g/ m_\text{tot}$ still applies to the new experiment. In order to
+    provide a straight-line graph that can be used to determine an
+    experimental value for $g$, what two quantities should the students now
+    graph? Check all that apply.
+
+    \vspace{.2in}
+    \begin{tabular}{lll}
+      \underline{\hspace{.4in}} $a_c$ VS.\ $\dfrac1{m_\text{tot}}$ \hspace{.5in}&
+      \underline{\hspace{.4in}} $a_c$ VS.\ $m_\text{tot}$ \hspace{.5in} &
+      \underline{\hspace{.4in}} $a_c$ VS.\ $\dfrac{m_C}{m_\text{tot}}$ \\
+
+      \underline{\hspace{.4in}} $a_c$ VS.\ $m_C$  \hspace{.5in} &
+      \underline{\hspace{.4in}} $m_C$ VS.\ $m_\text{tot}$ \hspace{.5in} &
+      \underline{\hspace{.4in}} $m_C$ VS.\ $\dfrac1{m_\text{tot}}$ \\
+    \end{tabular}
+
+    \vspace{.2in}\textbf{Justify} your answer.\vspace{\stretch2}
+    
+  \end{parts}
+  \newpage
+  
   % THIS QUESTION IS A SLIGHTLY MODIFIED VERSION OF THE 2008 AP PHYSICS C
   % MECHANICS EXAM PRACTICE TEST QUESTION 1. IT HAS BEEN MODIFIED TO REFLECT
   % THE LANGUAGE USED IN MORE CURRENT AP EXAMS.

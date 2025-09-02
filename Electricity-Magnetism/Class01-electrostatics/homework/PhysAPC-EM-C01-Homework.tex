@@ -1,16 +1,64 @@
 \documentclass{../../../oss-apphys-exam}
+\usepackage{enumitem}
 \newcounter{last}
 
 \begin{document}
-%\genheader
 
 \gentitle{1}{ELECTROSTATICS, PART 1}
 
-%\genmultidirections
-
 \raggedcolumns
+
+\runningheader{
+  \fontfamily{phv}\small
+  \textcolor{gray}{AP PHYSICS C: ELECTRICITY AND MAGNETISM $\blacksquare$}
+  \textbf{MULTIPLE-CHOICE QUESTIONS}}{}{}
+
+
 \begin{multicols*}{2}
   \begin{questions}
+    \question Two fixed charges $A$ and $B$ are separated by a distance $r$.
+    The electric force on charge $B$ by charge $A$ has a magnitude $F$. Which
+    of the following statement(s) \textbf{must} be correct?
+    \begin{enumerate}[label=\Roman*.]
+    \item The electric force on charge $A$ by charge $B$ has a magnitude $F$.
+    \item The magnitude of charge of $A$ and $B$ are the same.
+    \item When distance $r$ is doubled, $F$ is halved.
+    \end{enumerate}
+    \begin{choices}
+      \choice I only
+      \choice II only
+      \choice I and III only
+      \choice I, II and III
+      \choice None of the the above statements are correct
+    \end{choices}
+    \uplevel{
+      \centering
+      \vspace{.1in}
+      \begin{tikzpicture}[scale=1.1]
+        \draw[dashed,gray] (0,0)--(4,0);
+        \fill (.8,0) circle (.06) node[above]{\small$A$};
+        \fill (1.6,0) circle (.06) node[above]{\small$B$};
+        \fill (3.2,0) circle (.06) node[above]{\small$C$};
+      \end{tikzpicture}
+    }
+    \question Three point charges, $A$, $B$ and $C$ are fixed along a straight
+    line, as shown in above figure. The resultant electric force on charge $B$
+    is zero. Which of the following statement(s) \textbf{must} be correct?
+    \begin{enumerate}[label=\Roman*.]
+    \item Charge $A$ carries a charge of the same sign as charge $C$.
+    \item The electric force on charge $B$ by charge $A$ is half of that by
+      charge $C$.
+    \item The magnitude of charge carried by charge $C$ is 4 times that of
+      charge $A$.
+    \end{enumerate}
+     \begin{choices}
+      \choice I only
+      \choice II only
+      \choice I and III only
+      \choice II and III only
+      \choice None of the the above statements are correct
+    \end{choices}
+    
     \question A positive charge is placed on a spherical conducting hollow shell
     of radius $R$. Which of the following statements is true?
     \begin{choices}
@@ -23,20 +71,19 @@
       \choice The charge is concentrated at the poles on the surface of the
       sphere.
     \end{choices}
-    \vspace{.7in}
   
-%  \question A negative charge is placed on a solid conducting sphere of radius
-%  $R$. Which of the following statements is true?
-%  \begin{choices}
-%    \choice The electric field is zero everywhere inside the sphere.
-%    \choice The electric field is zero just outside the surface of the sphere.
-%    \choice The electric field is maximum at the center of the sphere.
-%    \choice The electric field is directed radially outward outside the surface
-%    of the sphere.
-%    \choice The electric field inside the sphere is equal and opposite to
-%    the electric field outside the surface of the sphere.
-%  \end{choices}
-
+    \question A positive charge is placed on a solid conducting sphere of radius
+    $R$. Which of the following statements is true?
+    \begin{choices}
+      \choice The electric field is zero everywhere inside the sphere.
+      \choice The electric field is zero just outside the surface of the sphere.
+      \choice The electric field is maximum at the center of the sphere.
+      \choice The electric field is directed radially outward outside the
+      surface of the sphere.
+      \choice The electric field inside the sphere is equal and opposite to
+      the electric field outside the surface of the sphere.
+    \end{choices}
+  
     \uplevel{
       \textbf{Questions \ref{cond1}--\ref{cond2}}: A positive charge $Q$ is
       placed at the center of a hollow conducting sphere.
@@ -69,6 +116,30 @@
     \end{choices}
     \label{cond2}
     \columnbreak
+
+    \uplevel{
+      \textbf{Questions \ref{pair1}--\ref{pair2}}: An electron and a proton are
+      released from rest in free space. The attract each other due to the
+      electrical force on them
+    }
+    \question Which of them will have a larger magnitude of momentum when they
+    collide?
+    \label{pair1}
+    \begin{choices}
+      \choice The proton
+      \choice The electron
+      \choice Both will have the same magnitude of momentum
+      \choice There is not enough information to determine
+    \end{choices}
+
+    \question Which of them will have more kinetic enegy when they collide?
+    \label{pair2}
+    \begin{choices}
+      \choice The proton
+      \choice The electron
+      \choice Both will have the same amount of kinetic energy
+      \choice There is not enough information to determine
+    \end{choices}
     
     \uplevel{
       \centering
@@ -89,20 +160,31 @@
       \choice a counterclockwise rotation and an upward acceleration
       \choice no rotation, but a downward acceleration
     \end{choices}
-    \vspace{.7in}
   
-%    \question An electron and a proton are separated by \SI{1.50e-10}\metre. If
-%    they are released, which one will accelerate at a greater rate, and what is
-%    the magnitude of that acceleration?
-%    \begin{choices}
-%      \choice The electron; \SI{1.12e22}{m/s^2}
-%      \choice The proton; \SI{1.12e22}{m/s^2}
-%      \choice The electron; \SI{6.13e18}{m/s^2}
-%      \choice The proton; \SI{6.13e18}{m/s^2}
-%      \choice They both accelerate at the same rate; \SI{1.02e-8}{m/s^2}
-%    \end{choices}
-%    \columnbreak
-  
+    \question An electron and a proton are separated by \SI{1.50e-10}\metre. If
+    they are released, which one will accelerate at a greater rate, and what is
+    the magnitude of that acceleration?
+    \begin{choices}
+      \choice The electron; \SI{1.12e22}{m/s^2}
+      \choice The proton; \SI{1.12e22}{m/s^2}
+      \choice The electron; \SI{6.13e18}{m/s^2}
+      \choice The proton; \SI{6.13e18}{m/s^2}
+      \choice They both accelerate at the same rate; \SI{1.02e-8}{m/s^2}
+    \end{choices}
+    \columnbreak
+    
+    \question Eight identical charges $q$ are fixed on the vertices of a cube
+    of side length $\ell$. The resultant force on each one of the charges is
+    $F$. If the cube now expands, and the new side length becomes $2\ell$, what
+    is the resultant force on each positive charge?
+    \begin{choices}
+      \choice $F$
+      \choice $2F$
+      \choice $4F$
+      \choice $F/2$
+      \choice $F/4$
+    \end{choices}
+    
     \question Four charges are arranged at the corners of a square of side a as
     shown. Which of the following is true of the electric field and the electric
     potential at the center of the square?
@@ -134,46 +216,46 @@
     \begin{oneparchoices}
       \choice
       \begin{tikzpicture}[scale=1.5]
-        \draw[dashed] rectangle(1,1);
-        \draw[fill=white] circle(.1) node[below left]{$-q$};
-        \draw[fill=white](1,0) circle(.1) node[below right]{$+q$};
-        \draw[fill=white](0,1) circle(.1) node[above left]{$-q$};
-        \draw[fill=white](1,1) circle(.1) node[above right]{$+q$};
+        \draw[dashed] rectangle (1,1);
+        \draw[fill=white] circle (.1) node[below left]{$-q$};
+        \draw[fill=white] (1,0) circle (.1) node[below right]{$+q$};
+        \draw[fill=white] (0,1) circle (.1) node[above left]{$-q$};
+        \draw[fill=white] (1,1) circle (.1) node[above right]{$+q$};
       \end{tikzpicture}
       \choice
       \begin{tikzpicture}[scale=1.5]
-        \draw[dashed] rectangle(1,1);
-        \draw[fill=white] circle(.1) node[below left]{$+q$};
-        \draw[fill=white](1,0) circle(.1) node[below right]{$+q$};
-        \draw[fill=white](0,1) circle(.1) node[above left]{$-q$};
-        \draw[fill=white](1,1) circle(.1) node[above right]{$-q$};
+        \draw[dashed] rectangle (1,1);
+        \draw[fill=white] circle (.1) node[below left]{$+q$};
+        \draw[fill=white] (1,0) circle(.1) node[below right]{$+q$};
+        \draw[fill=white] (0,1) circle(.1) node[above left]{$-q$};
+        \draw[fill=white] (1,1) circle(.1) node[above right]{$-q$};
       \end{tikzpicture}
       \choice
       \begin{tikzpicture}[scale=1.5]
-        \draw[dashed] rectangle(1,1);
-        \draw[fill=white] circle(.1) node[below left]{$-q$};
-        \draw[fill=white](1,0) circle(.1) node[below right]{$-q$};
-        \draw[fill=white](0,1) circle(.1) node[above left]{$+q$};
-        \draw[fill=white](1,1) circle(.1) node[above right]{$+q$};
+        \draw[dashed] rectangle (1,1);
+        \draw[fill=white] circle (.1) node[below left]{$-q$};
+        \draw[fill=white] (1,0) circle (.1) node[below right]{$-q$};
+        \draw[fill=white] (0,1) circle (.1) node[above left]{$+q$};
+        \draw[fill=white] (1,1) circle (.1) node[above right]{$+q$};
       \end{tikzpicture}
       \choice
       \begin{tikzpicture}[scale=1.5]
-        \draw[dashed] rectangle(1,1);
-        \draw[fill=white] circle(.1) node[below left]{$+q$};
-        \draw[fill=white](1,0) circle(.1) node[below right]{$-q$};
-        \draw[fill=white](0,1) circle(.1) node[above left]{$-q$};
-        \draw[fill=white](1,1) circle(.1) node[above right]{$+q$};
+        \draw[dashed] rectangle (1,1);
+        \draw[fill=white] circle (.1) node[below left]{$+q$};
+        \draw[fill=white] (1,0) circle (.1) node[below right]{$-q$};
+        \draw[fill=white] (0,1) circle (.1) node[above left]{$-q$};
+        \draw[fill=white] (1,1) circle (.1) node[above right]{$+q$};
       \end{tikzpicture}
       \choice
       \begin{tikzpicture}[scale=1.5]
-        \draw[dashed] rectangle(1,1);
-        \draw[fill=white] circle(.1) node[below left]{$+q$};
-        \draw[fill=white](1,0) circle(.1) node[below right]{$-q$};
-        \draw[fill=white](0,1) circle(.1) node[above left]{$+q$};
-        \draw[fill=white](1,1) circle(.1) node[above right]{$-q$};
+        \draw[dashed] rectangle (1,1);
+        \draw[fill=white] circle (.1) node[below left]{$+q$};
+        \draw[fill=white] (1,0) circle (.1) node[below right]{$-q$};
+        \draw[fill=white] (0,1) circle (.1) node[above left]{$+q$};
+        \draw[fill=white] (1,1) circle (.1) node[above right]{$-q$};
       \end{tikzpicture}
     \end{oneparchoices}
-    \vspace{.7in}
+    \columnbreak
     
     \question Three charges, $+Q$, $-Q$, and $+2Q$, are arranged in an
     equilateral triangle as shown. Which of the arrows below best represents the
@@ -197,19 +279,18 @@
     \end{choices}
     \columnbreak
     
-%    \question Electric potential
-%    \begin{choices}
-%      \choice is a vector quantity that depends on the direction of the electric
-%      field
-%      \choice is a scalar quantity that depends on the magnitude and sign of
-%      charges in the vicinity
-%      \choice is a scalar quantity that depends on the square of the distance
-%      from the charges in the vicinity
-%      \choice is a vector quantity that depends on the sign of the charges in
-%      the vicinity
-%      \choice is a vector quantity that must point from high to low potential
-%    \end{choices}
-%    \vspace{.6in}
+    \question Electric potential
+    \begin{choices}
+      \choice is a vector quantity that depends on the direction of the electric
+      field
+      \choice is a scalar quantity that depends on the magnitude and sign of
+      charges in the vicinity
+      \choice is a scalar quantity that depends on the square of the distance
+      from the charges in the vicinity
+      \choice is a vector quantity that depends on the sign of the charges in
+      the vicinity
+      \choice is a vector quantity that must point from high to low potential
+    \end{choices}
    
     \question A positively charged ring of radius $R$ is made of conducting
     material and has a charge $Q$ distributed uniformly around it. The center of
@@ -233,7 +314,6 @@
       \choice $V=\sqrt{\dfrac{kQ}{R^2+9d^2}}$
       \choice $V=\dfrac{kQ}{\sqrt{R^2+9d^2}}$
     \end{choices}
-    \vspace{.7in}
       
     \question Which of the following statements is true of electric field and
     equipotential lines?
@@ -248,7 +328,6 @@
       \choice Equipotential lines always form a circle around electric field
       lines.
     \end{choices}
-    \vspace{.7in}
     
     \question The potential $V$ as a function of distance $r$ for a particular
     charge distribution is given by the equation $V=ar^{-1}$. The electric field
@@ -286,9 +365,14 @@
 %  \end{parts}
 %  \newpage
 
+\runningheader{
+  \fontfamily{phv}\small
+  \textcolor{gray}{AP PHYSICS C: MECHANICS $\blacksquare$}
+  \textbf{FREE-RESPONSE QUESTIONS}}{}{}
 
-  % TAKEN FROM 2010 AP PHYSICS C EXAM FREE-RESPONSE QUESTION E&M 1
-  % MODIFIED FROM THE STANDARD QUESTION
+
+% TAKEN FROM 2010 AP PHYSICS C EXAM FREE-RESPONSE QUESTION E&M 1
+% MODIFIED FROM THE STANDARD QUESTION
 \begin{center}
   \begin{tikzpicture}[scale=1.2]
     \draw[thick,dashed,->](-2,0)--(2,0) node[right]{$x$};

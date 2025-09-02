@@ -1,14 +1,14 @@
-TERM=2025-09-Fall-Physics
+TERM=Current-Physics-Curriculum-Courses
 CLOUD=ossfiles
-DESTINATION=$(HOME)/Documents/$(CLOUD)/$(TERM)/Physics.APC-EM
+WORK_DIR=000-Timothy\ L
+DESTINATION=$(HOME)/Documents/$(CLOUD)/$(WORK_DIR)/$(TERM)/Physics.APC-EM
+#DESTINATION=$(HOME)/Documents/$(CLOUD)/$(TERM)/Physics.APC-EM
 
-export DESTINATION
+export 
 
 all:
-#	cd Class01-kinematics	; make
-#	cd Class02a-kinematics2	; make
-#	cd Class02b-dynamics	; make
-#	cd Class03a-multiBodyDynamics ; make
+	cd Class01-electrostatics ; make
+	cd Class02-electrostatics-part2 ; make
 #	cd Class03b-workEnergy ; make
 #	cd Class04-workEnergy-part2 ; make
 #	cd Class05-momentumImpulse ; make
@@ -23,10 +23,9 @@ all:
 #	cd Class15-planetaryMotion	; make
 
 clean:
-#	rm -rf *.*~ *~ *.log
-#	cd Class01-kinematics	; make clean
-#	cd Class02a-kinematics2	; make clean
-#	cd Class02b-dynamics	; make clean
+	rm -rf *.*~ *~ *.log
+	cd Class01-electrostatics ; make clean
+	cd Class02-electrostatics-part2 ; make clean
 #	cd Class03a-multiBodyDynamics ; make clean
 #	cd Class03b-workEnergy	; make clean
 #	cd Class04-workEnergy-part2 ; make clean
@@ -43,9 +42,8 @@ clean:
 
 public:
 	mkdir -p $(DESTINATION)
-#	cd Class01-kinematics	; make public
-#	cd Class02a-kinematics2	; make public
-#	cd Class02b-dynamics	; make public
+	cd Class01-electrostatics ; make public
+	cd Class02-electrostatics-part2 ; make public
 #	cd Class03a-multiBodyDynamics ; make public
 #	cd Class03b-workEnergy	; make public
 #	cd Class04-workEnergy-part2 ; make public

@@ -46,33 +46,103 @@
 \end{frame}
 
 
+\begin{frame}{Scalar Form}
+  The scalar form (that you may be more familiar with in Grade 12 Physics or
+  AP Physics 1) is often used as well:
 
-\begin{frame}{Law of Universal Gravitation}
-  \begin{center}
-    \begin{tikzpicture}[scale=.65]
-      \draw[vectors,red] (0,0)--(2,0) node[right]{$\vec F_{21}$};
-      \draw[vectors,blue] (8,0)--(6,0) node[left]{$\vec F_{12}$};
-      \shade[ball color=red] circle (.7) node[white]{$m_1$};
-      \shade[ball color=blue](8,0) circle (1)  node[white]{$m_2$};
-      \draw[dashed] (0,0)--(0,-1.5);
-      \draw[dashed] (8,0)--(8,-1.5);
-      \draw[axes] (0,-1.3)--(8,-1.3) node[midway,below]{$\vec r_{12}$};
-    \end{tikzpicture}
-  \end{center}
-  \begin{itemize}
-  \item Third law of motion: If $m_1$ exerts a gravitational force $\vec F_{12}$
-    on $m_2$, then $m_2$ likewise also exerts a reaction force of
-    $\vec F_{21}=-\vec F_{12}$ on $m_1$. The two forces are equal in magnitude
-    and opposite in direction
-  \item $m_1$ and $m_2$ are \emph{point masses} that do not occupy any space
-  \item The (more familiar) scalar form is often used as well:
+  \eq{-.1in}{
+    \boxed{|\vec F_g|=\frac{Gm_1m_2}{r^2}}
+  }
 
-    \eq{-.1in}{
-      \boxed{F_g=G\frac{m_1m_2}{r^2}}
-    }
-  \end{itemize}
+  We already know that the direction of the gravitational force is attractive
 \end{frame}
 
+
+
+\begin{frame}{Background}
+  The law of universal gravitation is based on combining
+  \begin{itemize}
+  \item The \textbf{laws of planetary motion} of Johannes Kepler (to be
+    discussed in Class 15)
+  \item The \textbf{second law of motion} of Newton
+  \end{itemize}
+  Although Newton derived the \emph{form} of the law, the \emph{numerical value}
+  of the universal gravitational constant was not discovered for another 100
+  years
+\end{frame}
+
+
+\begin{frame}{Third Law of Motion}
+  Like \emph{all} forces, the law of universal gravitation must obey the
+  \emph{third law of motion}
+  \begin{center}
+    \begin{tikzpicture}[scale=.65]
+      \draw[vectors,red] (0,0)--+(2,0) node[right]{$\vec F_{21}$};
+      \draw[vectors,blue] (8,0)--+(-2,0) node[left]{$\vec F_{12}$};
+      \shade[ball color=red] circle (.3) node[white]{$m_1$};
+      \shade[ball color=blue] (8,0) circle (.7) node[white]{$m_2$};
+      \draw[dashed] (0,0)--(0,-1.5);
+      \draw[dashed] (8,0)--(8,-1.5);
+      \draw[thick,<->] (0,-1.3)--(8,-1.3) node[midway,fill=black!2]{$r_{12}$};
+    \end{tikzpicture}
+  \end{center}
+  If $m_1$ exerts a gravitational force $\vec F_{12}$ on $m_2$, then $m_2$
+  \emph{must} likewise also exerts a reaction force of $\vec F_{21}=-\vec F_{12}$
+  on $m_1$. The two forces are equal in magnitude and opposite in
+  direction.\footnote{Remember: the \emph{force} on both masses may be the
+  same, but the \emph{effect} of the force, i.e.\ the acceleration on the
+  masses, are different.}
+\end{frame}
+
+
+
+\begin{frame}{Use of Point Mass}
+
+  \eq{-.1in}{
+    \boxed{F_g=\frac{Gm_1m_2}{r^2}}
+  }
+
+  In the law of universal gravitation, masses $m_1$ and $m_2$ are
+  \textbf{point masses} that do not occupy any space
+  \begin{itemize}
+  \item Point masses do not exist in the universe (even an electron has a finite
+    size)
+  \item The distance between the masses cannot be zero (no infinitely-large
+    force)
+  \item The equation assumes that one mass is not inside another
+  \item Matter of scale:
+    \begin{itemize}
+    \item At the scale of the solar system, the sun and every planet can be
+      approximated as point masses, \emph{but}
+    \item Near a planet, or an irregular-shaped asteroid, we will have to
+      consider the shape
+    \end{itemize}
+  \item Symmetrically spherical objects %(e.g.\ planets are stars in our
+    %solar system)
+    can be treated as point masses
+  \end{itemize}
+\end{frame}
+    
+
+
+\begin{frame}{Limitations of the Law}
+
+  \eq{-.1in}{
+    \boxed{F_g=\frac{Gm_1m_2}{r^2}}
+  }
+
+  As the law of universal gravitation is based on observing planetary motion in
+  our solar system, you may want to know its limitations:
+  \begin{itemize}
+  \item The law is not valid near extremely massive stellar objects, like black
+    holes and neutron stars (must be replaced with the field equations for
+    general relativity)
+  \item It is not known whether the equation is valid at the subatomic scale
+    (e.g.\ between protons, neutrons and electrons)
+  \end{itemize}
+  In the problems that we will solve in AP Physics C, we will assume that the
+  equation is valid
+\end{frame}
 
 
 \begin{frame}{More Than One Mass}
@@ -97,16 +167,19 @@
     \end{tikzpicture}
 
     \column{.63\textwidth}
-    For a mass that is subjected to the influence of multiple discrete point
-    masses $m_i$, the total gravitational force that $M$ experiences is the
-    vector sum of all the forces $\vec F_i$:
+    For a mass subjected to the influence of multiple discrete point masses
+    $m_i$, the total gravitational force that $M$ experiences is the vector sum
+    of all the forces $\vec F_i$:
     
     \eq{-.1in}{
       \boxed{
-        \vec F=\sum_{i=1}^N\vec F_i
+        \vec F_\text{net}=\sum_{i=1}^N\vec F_i
         =GM\left(\sum_{i=1}^N\frac{m_i}{r_i^2}\hat r_i\right)
       }
     }
+
+    As $M$ begins to accelerate, all the forces will change in both magnitude
+    and direction. Predicting motion of $M$ is not a simple exercise
   \end{columns}
 \end{frame}
 
@@ -123,9 +196,11 @@
     }
   }
 
-  Objects that are symmetrically spherical (e.g.\ planets are stars in our
-  solar system) can be treated as point masses, and integration can be avoided.
-  However, this is not always the case.
+  (The definition of the infinitesimal mass $\dl m$ was previously discussed in
+  Class \#6, on the centre of mass, and in Class \# 9, on moment of inertia.)
+  %Objects that are symmetrically spherical (e.g.\ planets are stars in our
+  %solar system) can be treated as point masses, and integration can be avoided.
+  %However, this is not always the case.
 \end{frame}
 
 
@@ -148,31 +223,11 @@
   }
 
   The vector field function $\vec g$ is known as the \textbf{acceleration due
-    to gravity}, and \textbf{gravitational field}.
-\end{frame}
-
-
-
-\begin{frame}{Gravitational Field}
-  On/near the surface of Earth, we can use
-
-  \vspace{-.3in}{\large
-    \begin{align*}
-      m_1&=m_E=\SI{5.972e24}{\kilo\gram}\\
-      r&=r_E=\SI{6.371e6}\metre
-    \end{align*}
-  }
-  
-  to obtain the commonly-known value of
-
-  \vspace{-.3in}{\large
-    \begin{align*}
-      g &\approx\SI{9.81}{\metre\per\second\squared}\\
-      g &\approx\SI{9.81}{\newton\per\kilo\gram}
-    \end{align*}
-  }
-
-  both units are equivalent
+    to gravity}, and \textbf{gravitational field}. In the above case,
+  \begin{itemize}
+  \item $g$ is a vector field created by \emph{source point mass} $m_1$
+  \item $\vec F_g$ is the gravitational force acting on $m_2$
+  \end{itemize}
 \end{frame}
 
 
@@ -202,6 +257,32 @@
 
 
 
+\begin{frame}{Gravitational Field}
+  On/near the surface of Earth, we can use
+
+  \vspace{-.3in}{\large
+    \begin{align*}
+      m_1&=m_E=\SI{5.972e24}{\kilo\gram}\\
+      r&=r_E=\SI{6.371e6}\metre
+    \end{align*}
+  }
+  
+  to obtain the commonly-known value of
+
+  \vspace{-.3in}{\large
+    \begin{align*}
+      g &\approx\SI{9.81}{\metre\per\second\squared}\\
+      g &\approx\SI{9.81}{\newton\per\kilo\gram}
+    \end{align*}
+  }
+
+  both units are equivalent. (The radius and mass of Earth are not on the
+  equation sheet, but if they become relevant in the AP exam, they will be
+  given to you in the question itself.)
+\end{frame}
+
+
+
 \begin{frame}{More Than One Mass}
   When multiple point masses are present, the total gravitational field at any
   position $\vec r$ is the vector sum of all the fields $\vec g_i$:
@@ -209,7 +290,7 @@
   \eq{-.1in}{
     \boxed{\vec g
       =\sum_{i=1}^N\vec g_i
-      =G\left(\sum_{i=1}^N\frac{m_i}{r_i^2}\hat r_i\right)
+      =-G\left(\sum_{i=1}^N\frac{m_i}{r_i^2}\hat r_i\right)
     }
   }
 
@@ -249,6 +330,7 @@
 %      Gravitational field & $\vec g$   & \si{\newton\per\kilogram}
 %    \end{tabular}
 %  \end{center}
+  
   Note: A mass is not affected by the gravitational field that itself
   generates.
 \end{frame}
@@ -432,9 +514,11 @@
 
 
 \begin{frame}{Falling Towards the Centre of Earth}
-  Assuming that Earth's density is uniform, and neglecting air resistance and
-  other factors, the value of $g$ as the person falls through Earth ($r<R$) is
-  given by finding how much mass is still ``below'' the person, $M(r)$:
+  Assuming that Earth's density is uniform\footnote{Earth's density is actually
+  \emph{not} uniform, so there is a limitation to the accuracy of our analysis
+  here}, and neglecting air resistance and other factors, the value of $g$ as
+  the person falls through Earth ($r<R$) is given by finding how much mass is
+  still ``below'' the person, $M(r)$:
 
   \eq{-.1in}{
     g(r)=\frac{GM(r)}{r^2}\quad\quad M(r)=\frac43\rho\pi r^3\quad\quad
@@ -443,7 +527,8 @@
 
   where $M_E$ is the mass of Earth, $r_E$ is the radius of Earth, $\rho$ is the
   (constant) density, and $r$ is the distance from Earth's centre. Then $M(r)$
-  is the amount of mass ``below'' the person as he/she falls towards the centre.
+  is the amount of mass ``below'' the traveller as they falls towards the
+  centre
 \end{frame}
 
 
@@ -473,10 +558,16 @@
 
 
 \begin{frame}{Gravitational Field Strength Inside a Uniform Sphere}
-  The gravitational field strength inside a uniform sphere is:
+  For a uniform spherical mass of radius $R$, the gravitational field strength
+  \begin{itemize}
+  \item is zero at the centre
+  \item increases with $r$ linearly inside the sphere
+  \item reaching a maximum value of $\frac{GM}{R^2}$ at the surface, then
+  \item decreases with $1/r^2$ (like a point mass) outside the sphere
+  \end{itemize}
   \begin{center}
     \begin{tikzpicture}
-      \draw[axes] (0,0)--(0,3) node[right]{$|\vec g|$};
+      \draw[axes] (0,0)--(0,3) node[above]{$|\vec g|$};
       \draw[axes] (0,0)--(5.5,0) node[right]{$r$};
       \draw[thick,dashed] (1,0)--(1,2) node[pos=0,below]{$R$}--(0,2)
       node[left]{$\dfrac{GM}{R^2}$};
@@ -498,19 +589,20 @@
     proportional to displacement from the centre, but in the opposite
     direction:
 
-    \eq{-.2in}{
+    \eq{-.25in}{
       F_g(r)=-kr
     }
     
-    \vspace{-.1in}The motion is a simple harmonic motion. The traveller will
-    oscillate through Earth with a period of:
+    \vspace{-.15in}The resulting motion is a simple harmonic motion (same as a
+    spring-mass system). The traveller will oscillate through Earth with a
+    period of:
 
     \eq{-.1in}{
       T=2\pi\sqrt{\frac mk}=2\pi\sqrt{\frac{r_E}{g_0}}
     }
 
     For Earth, $T=\SI{5068}\second$. The traveller would pop up on the opposite
-    side every \SI{42}{min}.
+    side every 42 minutes.
   \end{columns}
 \end{frame}
 
@@ -525,7 +617,7 @@
     \column{.75\textwidth}
     Since simple harmonic motion is a projection of a uniform circular motion,
     if a satellite is in a circular orbit just above the surface, and passes
-    overhead just above the traveller as he/she popped up out of the hole. The
+    overhead just above the traveller as they popped up out of the hole. The
     period of such an orbit would be the same as oscillating traveller.
   \end{columns}
 \end{frame}
@@ -571,7 +663,7 @@
 
 \begin{frame}{Gravitational Potential Energy}
   \textbf{Gravitational potential energy} is found by integrating the work
-  done by the gravitational force:
+  done \emph{by} the gravitational force:
 
   \vspace{-.2in}{\large
     \begin{align*}
@@ -608,14 +700,18 @@
   \fcolorbox{black}{yellow!10}{
     \begin{minipage}{.98\textwidth}
       \begin{itemize}
-      \item $(+)$ work by gravity decreases gravitational potential energy
-      \item $(-)$ work by gravity increases gravitational potential energy
+      \item $(+)$ work by gravity decreases gravitational potential energy by
+        the same amount
+      \item $(-)$ work by gravity increases gravitational potential energy by
+        the same amount
       \item $W_g$ depends on $r_0$ and $r_1$, but not \emph{how}
         it goes from $r_0\rightarrow r_1$ (path independence)
       \item Only work done by gravity can affect gravitational potential energy
       \end{itemize}
     \end{minipage}
   }
+
+  As expected, gravitational force is still a conservative force.
 \end{frame}
 
 

@@ -48,7 +48,7 @@
   The \textbf{electrostatic force}\footnote{It is also known as the
   \textbf{electric force} or \textbf{coulomb force} in different textbooks and
   technical journals. We will use these terms interchangeably throughout the
-  course.} $\vec F_q$ is a mutually repulsive/attractive force between all
+  course.} $\vec F_q$ is a mutually repulsive or attractive force between all
   charged objects. The force that point charge $q_1$ exerts on $q_2$ is given
   by \textbf{Coulomb's law}:
 
@@ -84,23 +84,23 @@
 \begin{frame}{Coulomb's Constant}
 
   \eq{-.1in}{
-    \boxed{\vec F_{12}=\frac{kq_1q_2}{|\vec r_{12}|^2}\hat r_{12}}
+    \vec F_{12}=\frac{{\color{red}k}q_1q_2}{|\vec r_{12}|^2}\hat r_{12}
   }
 
-  The constant $k$ in the Coulomb's law is called the
+  The constant $\color{red}{k}$ in the Coulomb's law is called the
   \textbf{coulomb's constant}, defined as:
 
   \eq{-.1in}{
-    k=\dfrac1{4\pi\epsilon_0}=
+    k=\dfrac1{4\pi\varepsilon_0}=
     \SI{8.99e9}{\newton\metre\squared\per\coulomb\squared}
   }
 
-  where $\epsilon_0$ is a fundamental constant called the
+  where $\varepsilon_0$ is a fundamental constant called the
   \textbf{permittivity of free space}, or \textbf{vacuum permittivity}. It
   measures a vacuum's ability to resist the formation of an electric field:
 
   \eq{-.1in}{
-    \epsilon_0=\SI{8.85e-12}{C^2/N.m^2}
+    \varepsilon_0=\SI{8.85e-12}{C^2/N.m^2}
   }
 \end{frame}
 
@@ -169,7 +169,7 @@
 %        \draw[->,ultra thick](.72,0)--(3.5,0) node[left]{$\vec F$};
 %      \end{scope}
       
-      \shade[ball color=red] circle (.35) node[white]{$Q$};
+      \shade[ball color=red] circle (.4) node[white]{$Q$};
     \end{tikzpicture}
 
     \column{.73\textwidth}
@@ -197,9 +197,9 @@
 
 \begin{frame}{Continuous Distribution of Charges}
   As $N\rightarrow\infty$, the summation becomes an integral, and can now be
-  used to describe the force from charges with \emph{spatial extend} i.e.\
-  charges that take up physical space (e.g.\ a continuous distribution of
-  charges):
+  used to describe the electroststatic force on charges with
+  \emph{spatial extend} i.e.\ charges that take up physical space (e.g.\ a
+  continuous distribution of charges):
 
   \eq{-.1in}{
     \boxed{\vec F
@@ -207,44 +207,170 @@
       =kQ\int\frac{\dl q}{r^2}\hat r
     }
   }
+
+  The definition of the infinitesimal charge $\dl q$ is similar to that of the
+  infinitesimal mass $\dl m$ from AP Physics C Mechanics.
 \end{frame}
 
 
 
 \begin{frame}{Infinitesimal Charge $\dl q$}
-  The infinitesimal charge $\dl q$ is defined similar to the infinitesimal
-  mass $\dl m$ introduced in AP Physics C--Mechanics.\footnote{At Meritus, this
-  is discussed in Classs 6: Centre of Mass, and Class 9: Rotational Motion} The
-  densities do not have to be uniform (constant)
+  %The infinitesimal charge $\dl q$ is defined similar to the infinitesimal
+  %mass $\dl m$ introduced in AP Physics C Mechanics.
+  %\footnote{At Meritus, this
+  %is discussed in Class 6: Centre of Mass, and Class 9: Rotational Motion}
+  Like mass densities, charge densities also do not have to be uniform
+  (constant):
   \begin{itemize}
   \item Linear charge density (for 1D problems)
 
-    \eq{-.1in}{
+    \eq{-.15in}{
       \gamma(x) = \diff qx\quad\rightarrow\quad \dl q =\gamma(x)\dl x
     }
 
   \item\vspace{-.05in} Surface charge density (for 2D problems)
 
-    \eq{-.1in}{
+    \eq{-.15in}{
       \sigma(x,y)=\diff qA\quad\rightarrow\quad \dl q=\sigma(x,y)\dl A
     }
 
   \item\vspace{-.05in} Charge density (for 3D problems)
 
-    \eq{-.1in}{
+    \eq{-.15in}{
       \rho(x,y,z)=\diff qV\quad\rightarrow\quad \dl q=\rho(x,y,z)\dl V
     }
   \end{itemize}
+  You may be asked to do simple integration in an AP Physics C exam.
 \end{frame}
 
     
 
 \section{Electric Field}
 
+
+\begin{frame}{Review of Gravitational Field}
+  To understand the concept of electric field, we first review the topic of
+  \textbf{gravitational field} which was studied in AP Physics 1, Grade 12
+  Physics, and AP Physics C (Mechanics).
+\end{frame}
+
+
+
+\begin{frame}{Review of Gravitational Field}
+  \begin{center}
+    \begin{tikzpicture}[scale=.65]
+      \draw[vectors,red] (0,0)--(2,0) node[right]{$\vec F_g$};
+      \draw[vectors,blue] (8,0)--(6,0) node[left]{$\vec F_g$};
+      \shade[ball color=red] circle (.35) node[white]{$m_1$};
+      \shade[ball color=blue] (8,0) circle (.55) node[white]{$m_2$};
+      \foreach \x in {0,8} \draw[dashed] (\x,0)--+(0,-1.2);
+      \draw[thick,<->] (0,-1)--+(8,0) node[midway,fill=black!2]{$r$};
+    \end{tikzpicture}
+  \end{center}
+  In classical mechanics, \textbf{gravity} is the mutually attractive force
+  between massive objects governed by the \textbf{law of universal gravitation}:
+
+  \eq{-.1in}{
+    F_g=\frac{Gm_1m_2}{r^2}
+  }
+
+  which has a very similar form to Coulomb's law that we have just studied
+\end{frame}
+
+
+\begin{frame}{Gravitational Field}
+  When solving for force problems where a mass is under the influence of
+  gravity, we generally describe the gravitational force (weight) as:
+  
+  \eq{-.1in}{
+    \vec F_g=m\vec g
+  }
+
+  To find ``$\vec g$'', we group the variables in the law of universal
+  gravitation:
+    
+  \eq{-.1in}{
+    \vec F_g
+    =\underbracket[1pt]{\left[-\frac{Gm_1}{r^2}\hat r\right]}_{=\vec g}m_2
+    =m_2\vec g
+  }
+
+  The vector field function $\vec g$ is known as the \textbf{acceleration due
+    to gravity} in kinematics, and \textbf{gravitational field}.
+\end{frame}
+
+
+
+\begin{frame}{Gravitational Field}
+  The \textbf{gravitational field} $\vec g$ generated by point mass $m$
+  shows how it influences the gravitational forces on other masses:
+
+  \eq{-.1in}{
+    g(m,\vec r)=-\frac{Gm}{r^2}\hat r
+  }
+
+  The SI unit for gravitational field is
+  \textbf{newton per kilogram} (\si{\newton\per\kilo\gram}).
+  %\begin{center}
+  %  \begin{tabular}{l|c|c}
+  %    \rowcolor{pink}
+  %    \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
+  %    Gravitational field       & $\vec g$ & \si{\newton\per\kilo\gram}\\
+  %    Universal gravitational constant
+  %    & $G$ & \si{\newton\metre\squared\per\kilo\gram\squared} \\
+  %    Source mass               & $m$ & \si{\kilo\gram} \\
+  %    Distance from source mass & $r$ & \si\metre \\
+  %    Outward radial unit vector from source & $\hat r$ & N/A
+  %  \end{tabular}
+  %\end{center}
+  The negative sign indicates that \emph{direction} of the gravitational field
+  is towards $m$.
+\end{frame}
+
+
+
+\begin{frame}{More Than One Mass}
+  When $N$ multiple point masses are present, the total gravitational field at
+  any position $\vec r$ is the vector sum of all the fields $\vec g_i$:
+    
+  \eq{-.1in}{
+    \vec g
+    =\sum_{i=1}^N\vec g_i
+    %=G\left(\sum_{i=1}^N\frac{m_i}{r_i^2}\hat r_i\right)
+  }
+
+  At the limit $N\rightarrow\infty$, the summation becomes an integral, and can
+  now be used to describe the gravitational field generated by objects with
+  \emph{spatial extend}:
+
+  \eq{-.1in}{
+    \vec g
+    =\int\dl\vec g
+    =G\int\frac{\dl m}{r^2}\hat r
+  }
+  
+  This integral may be difficult to compute, if the geometry is complicated.
+\end{frame}
+
+
+
+\begin{frame}{Relating Gravitational Field \& Gravitational Force}
+  When a mass $m$ is placed inside a gravitational field $\vec g$, it
+  experiences a gravitational force given by the familiar equation:
+
+  \eq{-.1in}{
+    \vec F_g=m\vec g
+  }
+
+  Note: A mass is not affected by its own gravitational field
+\end{frame}
+
+
+
 \begin{frame}{Electric Field}
   The expression for \textbf{electric field} is obtained by repeating the same
-  procedure as with gravitational field\footnote{Again a topic discussed in
-  Physics C: Mechanics}, by grouping the variables in Coulomb's law:
+  procedure as with gravitational field for masses, by grouping the variables
+  in Coulomb's law:
 
   \eq{-.1in}{
     F_q
@@ -630,11 +756,11 @@
   of a square of length $L$. What is the total potential energy of the system?
   \begin{center}
     \begin{tikzpicture}[scale=1.3]
-      \draw rectangle (2,2) node[midway,above=35]{$L$};
-      \draw[mass] (0,2) circle (.15) node{$q$};
-      \draw[mass] (0,0) circle (.15) node{$q$};
-      \draw[mass] (2,0) circle (.15) node{$q$};
-      \draw[mass] (2,2) circle (.15) node{$q$};
+      \draw rectangle (2,2) node[midway,above=50]{$L$};
+      \shade[ball color=blue] (0,2) circle (.15) node[white]{$q$};
+      \shade[ball color=blue] (0,0) circle (.15) node[white]{$q$};
+      \shade[ball color=blue] (2,0) circle (.15) node[white]{$q$};
+      \shade[ball color=blue] (2,2) circle (.15) node[white]{$q$};
     \end{tikzpicture}
   \end{center}
 \end{frame}
@@ -652,7 +778,7 @@
   }
   
   This ``constant''\footnote{This ``constant'' depends on where the object is,
-  i.e.\ this is really a \emph{function} of $gh$} $V_g$ is called the
+  i.e.\ this is really a \emph{function} of position} $V_g$ is called the
   \textbf{gravitational potential}, defined as
   \emph{gravitational potential energy per unit mass}. In the simple case with
   a uniform gravitational field:

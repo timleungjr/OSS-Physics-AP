@@ -1,6 +1,8 @@
-TERM=2025-09-Fall-Physics
+#TERM=2025-09-Fall-Physics
+TERM=Current-Physics-Curriculum-Courses
 CLOUD=ossfiles
-DESTINATION=$(HOME)/Documents/$(CLOUD)/$(TERM)/Physics.APC-Mechanics
+WORK_DIR=000-Timothy\ L
+DESTINATION=$(HOME)/Documents/$(CLOUD)/$(WORK_DIR)/$(TERM)/Physics.APC-Mechanics
 
 export DESTINATION
 
