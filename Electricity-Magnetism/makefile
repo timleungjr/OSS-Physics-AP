@@ -9,9 +9,9 @@ export
 all:
 	cd Class01-electrostatics ; make
 	cd Class02-electrostatics-part2 ; make
-#	cd Class03b-workEnergy ; make
-#	cd Class04-workEnergy-part2 ; make
-#	cd Class05-momentumImpulse ; make
+	cd Class03-gaussLaw ; make
+	cd Class04-gaussLaw-part2 ; make
+	cd Class05-capacitors ; make
 #	cd Class06-CM		; make
 #	cd Class07-circMotion	; make
 #	cd Class09-rotMotion-part1	; make
@@ -26,10 +26,9 @@ clean:
 	rm -rf *.*~ *~ *.log
 	cd Class01-electrostatics ; make clean
 	cd Class02-electrostatics-part2 ; make clean
-#	cd Class03a-multiBodyDynamics ; make clean
-#	cd Class03b-workEnergy	; make clean
-#	cd Class04-workEnergy-part2 ; make clean
-#	cd Class05-momentumImpulse ; make clean
+	cd Class03-gaussLaw ; make clean
+	cd Class04-gaussLaw-part2 ; make clean
+	cd Class05-capacitors ; make clean
 #	cd Class06-CM		; make clean
 #	cd Class07-circMotion	; make clean
 #	cd Class09-rotMotion-part1	; make clean
@@ -44,10 +43,9 @@ public:
 	mkdir -p $(DESTINATION)
 	cd Class01-electrostatics ; make public
 	cd Class02-electrostatics-part2 ; make public
-#	cd Class03a-multiBodyDynamics ; make public
-#	cd Class03b-workEnergy	; make public
-#	cd Class04-workEnergy-part2 ; make public
-#	cd Class05-momentumImpulse ; make public
+	cd Class03-gaussLaw ; make public
+	cd Class04-gaussLaw-part2 ; make public
+	cd Class05-capacitors ; make public
 #	cd Class06-CM		; make public
 #	cd Class07-circMotion	; make public
 #	cd Class09-rotMotion-part1	; make public

@@ -1,6 +1,6 @@
 all:
-	pdflatex PhysAPC-EM-C04-Capacitors
-	pdflatex PhysAPC-EM-C04-Capacitors
+	pdflatex PhysAPC-EM-C05-Capacitors
+	pdflatex PhysAPC-EM-C05-Capacitors
 	cd homework ; make
 
 clean:
@@ -8,6 +8,6 @@ clean:
 	cd homework ; make clean
 
 public:
-	mkdir -p $(DESTINATION)/Class04
-	cp *.pdf $(DESTINATION)/Class04
-	cp homework/*Homework.pdf $(DESTINATION)/Class04
+	mkdir -p $(DESTINATION)/Class05
+	cp *.pdf $(DESTINATION)/Class05
+	cp homework/*Homework.pdf $(DESTINATION)/Class05
