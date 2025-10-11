@@ -120,6 +120,7 @@
       \vec x_\text{cm}=\frac{\sum \vec x_i m_i}{\sum m_i}
     }
   }
+  where $\sum m_i$ in the denominator is the total mass of the system of objects
   \begin{center}
     \begin{tabular}{l|c|c}
       \rowcolor{pink}
@@ -216,13 +217,86 @@
 
 
 \begin{frame}{Centroid}
-  For an object with a uniform mass distribution (i.e.\ constant density), the
-  centre of mass is also its geometric centre, called the \textbf{centroid}.
-  The locations of centroids can be found in most physics and math textbooks.
+  For objects with uniform mass distribution (i.e.\ constant density), the CM
+  is also its \textbf{centroid}. The locations of centroids can be found in
+  most physics and math textbooks (no need to remember for this course). Here
+  are some 2D examples:
   \begin{center}
-    \pic{.65}{eng130C9_11}
+    \begin{tikzpicture}[scale=.45]
+      \draw[mass] rectangle (7,4) node[midway,above=35]{Rectangular Area};
+      \draw[<->] (-.3,0)--+(0,4) node[midway,left=-1]{\small $a$};
+      \draw[<->] (0,-.3)--+(7,0) node[midway,below=-1]{\small $b$};
+      
+      \draw[<->] (3.5,0)--+(0,2) node[midway,right=-1]{\small $\frac a2$};
+      \draw[<->] (0,2)--+(3.5,0) node[midway,above=-1]{\small $\frac b2$};
+
+      \fill[red] (3.5,2) circle (.08) node[right]{\small cm};
+    \end{tikzpicture}
+    \begin{tikzpicture}[scale=.45]
+      \draw[mass] (0,0)--(5.5,4)--(8,0)--(0,0);
+      \draw (5.5,0)--+(0,4);
+      \node[above] at (4,4) {Triangular Area};
+      \draw[<->] (-.3,0)--+(0,4) node[midway,fill=black!2]{\small $h$};
+      \draw[<->] (0,-.3)--+(5.5,0) node[midway,below=-1]{\small $b$};
+      \draw[<->] (5.5,-.3)--+(2.5,0) node[midway,below=-1]{\small $a$};
+      
+      \draw[<->] (11.5/3,0)--+(0,4/3) node[midway,left=-1]{\small $\frac h3$};
+      \draw[<->] (11.5/3,4/3)--(8,4/3) node[midway,above=-1]{
+        \small $\frac{b+2a}3$};
+      \draw (8,0)--(8,1.5);
+      \draw (-.5,4)--(6,4);
+      \fill[red] (11.5/3,4/3) circle (.08) node[above]{\small cm};
+    \end{tikzpicture}
+    \begin{tikzpicture}[scale=.45]
+      \draw[mass] (0,0)--(0,4.5)--(7,3)--(7,0)--(0,0);
+      \node[above] at (4.5,4) {Trapezoidal Area};
+      \draw[<->] (-.3,0)--+(0,4.5) node[midway,left=-1]{\small $a$};
+      \draw[<->] (7.3,0)--+(0,3) node[midway,right=-1]{\small $b$};
+      \draw[<->] (0,-.3)--+(7,0) node[midway,below=-1]{\small $L$};
+      
+      \draw[<->] (3.3,0)--+(0,1.9) node[midway,right=-1]{
+        \small $\frac{a^2+ab+b^2}{3(a+b)}$};
+      \draw[<->] (0,1.9)--+(3.3,0) node[midway,above=-1]{
+        \small $\frac{L(a+2b)}{2(a+b)}$};
+
+      \fill[red] (3.3,1.9) circle (.08) node[right]{\small cm};
+    \end{tikzpicture}
+
+    \begin{tikzpicture}[scale=.5]
+      \draw[mass] circle (2.5);
+      \node[above] at (0,2.5) {Circular Area};
+      \draw[->,rotate=-50] (0,0)--(2.5,0) node[midway,above=-1]{\small$r$};
+      \fill[red] circle (.08) node[left]{\small cm};
+    \end{tikzpicture}
+    \hspace{.1in}
+    \begin{tikzpicture}[scale=.5]
+      \draw[black!2] circle (2.5);
+      \draw[mass] (2.5,0) arc (0:180:2.5)--(2.5,0);
+      \node[above] at (0,2.5) {Semi-Circular Area};
+      \draw[dash dot] (0,0)--(0,2.7);
+      \draw[<->] (0,0)--+(0,1.1) node[midway,right=-1]{\small$\frac{4r}{3\pi}$};
+
+      \draw[->,rotate=-45] (0,0)--(-2.5,0) node[midway,above=-1]{\small$r$};
+      \fill[red] (0,1.1) circle (.08) node[above]{\small cm};
+    \end{tikzpicture}
+    \hspace{.1in}
+    \begin{tikzpicture}[scale=.5]
+      \draw[black!2] circle (2.5);
+      \draw[mass] (0,0)--(0,2.5) arc (90:180:2.5)--(0,0);
+      \node[above] at (-1.1,2.5) {Quarter-Circular Area};
+      \draw (-1.1,-.5)--(-1.1,1.1)--(.5,1.1);
+      
+      \draw[<->|] (.3,1.1)--(.3,0) node[midway,right=-1]{
+        \small$\frac{4r}{3\pi}$};
+      \draw[<->|] (-1.1,-.3)--(0,-.3) node[midway,below=-1]{
+        \small$\frac{4r}{3\pi}$};
+      
+      \draw[->,rotate=-45] (0,0)--(-2.5,0) node[midway,above=-1]{\small$r$};
+      \fill[red] (-1.1,1.1) circle (.08) node[left]{\small cm};
+    \end{tikzpicture}
   \end{center}
 \end{frame}
+
 
 
 
@@ -297,16 +371,16 @@
 
 
 
-\begin{frame}{``Negative Mass''}{A Mathematical Trick}
+\begin{frame}{``Negative Mass'': A Mathematical Trick}
   \begin{itemize}
   \item Where there is a ``hole'' in the geometry, treat it as having negative
     mass density $-\sigma$ in that region.
   \item Negative masses don't exist, so this is really just a trick.
   \item\textbf{Example:} What is the centre of mass of this shape?
     \begin{center}
-      \begin{tikzpicture}
-        \draw[thick,fill=lightgray] circle (2);
-        \draw[thick,fill=black!2] (0,1) circle (1);
+      \begin{tikzpicture}[scale=.9,thick]
+        \draw[mass] circle (2);
+        \draw[fill=black!2] (0,1) circle (1);
         \fill circle (.04);
         \draw[axes,rotate=45] (0,0)--(-2,0) node[midway,below]{$r$};
         \fill (0,1) circle (.04);
@@ -324,18 +398,27 @@
   \begin{itemize}
   \item This is how we would think of it:
     \begin{center}
-      \begin{tikzpicture}[scale=.6]
-        \draw[thick,fill=lightgray] circle (2);
+      \begin{tikzpicture}[scale=.55]
+        \draw[mass] circle (2);
         \draw[thick,fill=black!2] (0,1) circle (1);
-        \draw circle (.04);
-        \draw[axes,rotate=45] (0,0)--(-2,0) node[midway,below]{$r$};
-        \fill (0,1) circle(.04);
-        \draw[axes,rotate around={-45:(0,1)}] (0,1)--(1,1) node[right]{$r/2$};
-      
-        \draw[thick,fill=lightgray] (6,0) circle (2) node{\large$A$};
-        \draw[thick] (11,1) circle (1) node{\large$B$};
-        \node at (3,0) {\huge=};
-        \node at (9,0) {\huge -};
+        \draw[axes] (-2.2,0)--(2.5,0) node[right]{$x$};
+        \draw[axes] (0,-2.2)--(0,2.5) node[above]{$y$};
+        \fill circle (.06);
+        \draw[axes,rotate=45] (0,0)--(-2,0) node[pos=1.1]{\small$r$};
+        \fill (0,1) circle (.06);
+        \draw[axes,rotate around={-45:(0,1)}] (0,1)--(1,1)
+        node[right]{\small$r/2$};
+
+        \draw[mass] (7,0) circle (2) node[above right]{$A$};
+        \draw[axes] (4.7,0)--(9.5,0) node[right]{$x$};
+        \draw[axes] (7,-2.2)--(7,2.5) node[above]{$y$};
+                
+        \draw[thick] (14,1) circle (1) node[right]{$B$};
+        \draw[axes] (11.8,0)--(16.5,0) node[right]{$x$};
+        \draw[axes] (14,-2.2)--(14,2.5) node[above]{$y$};
+        
+        \node at (3.75,0) {\huge=};
+        \node at (11,0) {\huge -};
       \end{tikzpicture}
     \end{center}
   \item Let the origin of the coordinate system to located at the centre of $A$
@@ -362,16 +445,16 @@
 
   \eq{-.1in}{
     \vec v_\text{cm}=\diff{\vec x_\text{cm}}t
-    =\frac1m\diff{}t\left(\int\vec x\dl m\right)
-    =\frac1m\int\diff{\vec x}t\dl m
-    =\frac{\int\vec v\dl m}m
+    =\frac1{m_\text{tot}}\diff{}t\left(\int\vec x\dl m\right)
+    =\frac1{m_\text{tot}}\int\diff{\vec x}t\dl m
+    =\frac{\int\vec v\dl m}{m_\text{tot}}
   }
 
   Or, in the form that is familiar, the velocity of the CM is the
   weighted sum of the velocities of the distribution of mass:
   
   \eq{-.1in}{
-    \vec v_\text{cm} = \frac{\int\vec v\dl m}m
+    \vec v_\text{cm} = \frac{\int\vec v\dl m}{m_\text{tot}}
   }
 \end{frame}
 
@@ -383,25 +466,25 @@
   of the mass distribution $p_\text{net}$:
   
   \eq{-.05in}{
-    \vec v_\text{cm} = \frac{\int\vec v\dl m}m
+    \vec v_\text{cm} = \frac{\int\vec v\dl m}{m_\text{tot}}
     \quad\longrightarrow\quad
     \vec p_\text{net}=m\vec v_\text{cm}
   }
 
-  During a collision, there is no change in the net momentum\footnote{Because
-  there are are no external forces}, the centre of mass will continue to move
-  at the same velocity before/after the collision, as if the collision never
-  occurred.
+  During a collision, there is no net force, so there is no change in the net
+  momentum of the system. The centre of mass will continue to move at the same
+  velocity before/after the collision, as if the collision never occurred.
 \end{frame}
 
 
 
 \begin{frame}{Centre of Mass During Collision}
   \vspace{.1in}
-  During a collision\footnote{As we have studied in conservation of momentum in
-  Physics 12 and in our previous class}, there are no external forces,
-  therefore the velocity of the CM remains constant. Consider this 1D inelastic
-  collision in between two masses:
+  During a collision,
+  %\footnote{As we have studied in conservation of momentum in
+  %Physics 12 and in our previous class},
+  there are no external forces, therefore the velocity of the CM remains
+  constant. Consider this 1D inelastic collision in between two masses:
   \begin{center}
     \begin{tikzpicture}[scale=.8,thick]
       \begin{scope}[violet]
@@ -428,7 +511,7 @@
       \fill (11,.5)--(11.15,.5) arc (0:90:.15)--cycle;
       \fill (11,.5)--(10.85,.5) arc (180:270:.15) node[below=-2] {cm}--cycle; 
 
-      \node[text width=2.05in,draw,violet,below right] (a) at (-.5,-.6)
+      \node[text width=2.9in,draw,violet,below right] (a) at (-.5,-.6)
            {Using the definition of the velocity of the CM, we find
              that \emph{before} the collision:
              \vspace{-.1in}
@@ -439,7 +522,7 @@
            };
       \draw[axes,violet] (a)--(c);
            
-      \node[text width=2.05in,draw,orange,below left] at (14.5,-.6)
+      \node[text width=3in,draw,orange,below left] at (14.5,-.6)
            {Using momentum conservation, we find that the final
              velocity \emph{after} the collision is:
              \vspace{-.08in}
@@ -456,8 +539,8 @@
 
 
 \begin{frame}{Acceleration of the Centre of Mass}
-  The rate of change of the net momentum\footnote{i.e\ applying the 2nd law of
-  motion to this distribution of masses}:
+  Taking the derivative of net momentum with respect to time\footnote{i.e\
+  applying the 2nd law of motion to this distribution of masses}:
   
   \eq{-.1in}{
     \diff{\vec p_\text{net}}t =

@@ -1,7 +1,7 @@
 \documentclass[12pt,aspectratio=169]{beamer}
 \input{../../mybeamer}
 
-\title{Class 5: Capacitors}
+\title{Classes 5 \& 6: Capacitors}
 \subtitle{AP Physics C: Electricity and Magnetism}
 \input{../../me}
 \input{../../mycommands}
@@ -42,33 +42,39 @@
 
 \begin{frame}{Electric Field and Electric Potential Difference}
   \begin{center}
-    \begin{tikzpicture}[xscale=.7,yscale=.9]
-      \draw[thick] rectangle (8,.2);
-      \draw[thick](0,1.4) rectangle (8,1.6);
-      \foreach\x in {.4,.8,1.2,...,7.6}{
-        \draw[->,thick](\x,1.4)--(\x,.7);
-        \draw[thick](\x,1.4)--(\x,.2);
+    \begin{tikzpicture}[thick]%[xscale=.7,yscale=.9]
+      \foreach \x in {.4,.8,1.2,...,7.6}{
+        \draw[vectors,red] (\x,1.4)--(\x,.7);
+        \draw[very thick,red] (\x,1.4)--(\x,.2);
       }
-      \foreach\x in {.8,1.6,2.4,...,7.2}{
-        \node at (\x,1.78) {\scriptsize $+$};
-        \node at (\x,-.28) {\scriptsize $-$};
+      \foreach\x in {.4,.8,...,7.9}{ %{.8,1.6,2.4,...,7.2}{
+        \node at (\x,1.5) {\small$\bm +$};
+        \node at (\x,.1) {\small$\bm -$};
       }
       
-      \draw[->,thick](0,1.5)..controls(-.15,1.2)..(-.2,.7);
-      \draw[thick](-.2,.8)..controls(-.15,.4)..(0,.1);
+      \draw[vectors,red] (0,1.5) ..controls(-.15,1.2).. (-.2,.7);
+      \draw[very thick,red] (-.2,.8) ..controls(-.15,.4).. (0,.1);
 
-      \draw[->,thick](8,1.5)..controls(8.15,1.2)..(8.2,.7);
-      \draw[thick](8.2,.8)..controls(8.15,.4)..(8,.1);
+      \draw[vectors,red] (8,1.5) ..controls(8.15,1.2).. (8.2,.7);
+      \draw[very thick,red] (8.2,.8) ..controls(8.15,.4).. (8,.1);
+
+      \draw rectangle +(8,.2);
+      \draw (0,1.4) rectangle +(8,.2);
     \end{tikzpicture}
   \end{center}
-  Recall that for two charged parallel plates, the electric field is uniform,
-  and the relationship between electric field and potential difference
-  simplifies to:
+  Recall that, for two charged parallel plates (where the area $A$ of the plate
+  is larger compared to plate separation $d$), the electric field $E$ between
+  the plate is uniform. There are two ways to express the electric field
+  strength:
+
+  %, and the relationship between electric field and
+  %potential difference simplifies to:
 
   \eq{-.1in}{
     \boxed{E=\frac{\Delta V}d}
     \quad\text{or}\quad
-    \boxed{\Delta V=Ed}
+    \boxed{E=\frac{\sigma}{\varepsilon_0}}
+    %\boxed{\Delta V=Ed}
   }
 \end{frame}
 
@@ -93,19 +99,18 @@
   $Q$ divided by the area of the plates $A$:
 
   \eq{-.1in}{
-    E=\frac{\textcolor{red}{\sigma}}{\epsilon_0}=
-    \frac{\textcolor{red}{Q}}{\textcolor{red}{A}\epsilon_0}
+    E=\frac{\color{red}\sigma}{\varepsilon_0}=
+    \frac{\color{red}Q}{{\color{red}A}\varepsilon_0}
   }
   
-  Substituting this into the relationship between the plate voltage $V$ and
-  electric field, we find the relationship between the charges across the
+  Equating the two expressions for electric field, we find a linear
+  relationship between the plate voltage $V$ and charges across the
   plates and the voltage:
 
   \eq{-.1in}{
-    \Delta V=\textcolor{blue} Ed=
-    \frac{\textcolor{blue}{Q}d}{\textcolor{blue}{A\epsilon_0}}
+    E=\frac Q{A\varepsilon_0}=\frac{\Delta V}d
     \quad\longrightarrow\quad
-    \boxed{Q=\left[\frac{A\epsilon_0}d\right]\Delta V}
+    \boxed{Q=\left[\frac{A\varepsilon_0}d\right]\Delta V}
   }
 \end{frame}
 
@@ -113,7 +118,7 @@
 
 \begin{frame}{Parallel-Plate Capacitors}
   Since area $A$, distance of separation $d$ and the vacuum permittivity
-  $\epsilon_0$ are all constants, the relationship between charge $Q$ and
+  $\varepsilon_0$ are all constants, the relationship between charge $Q$ and
   voltage $\Delta V$ is \emph{linear}. The constant is called the
   \textbf{capacitance} $C$, defined as:
 
@@ -124,7 +129,7 @@
   For parallel plates:
 
   \eq{-.1in}{
-    \boxed{C=\frac{A\epsilon_0}d\quad\text{parallel plate}}
+    \boxed{C=\frac{A\varepsilon_0}d\quad\text{parallel plate}}
   }
 
   The unit for capacitance is a \textbf{farad} (named after Michael Faraday),
@@ -188,7 +193,7 @@
   popular:
   \begin{columns}
     \column{.23\textwidth}
-    \begin{tikzpicture}[scale=.5]
+    \begin{tikzpicture}[scale=.6]
       \fill[cyan!30,opacity=.2] (-2,8)--(-2,0) arc (180:0:2.5 and 1)--(3,8)
       arc (0:180:2.5 and 1);
       \draw[cyan,thick] (-2,8)--(-2,0);
@@ -217,7 +222,7 @@
 
       \draw[|<->|] (3.4,8)--(3.4,0) node[midway,fill=black!2]{$\ell$};
       \draw[axes,rotate around={10:(.5,8)}](.5,8)--(.95,8) node[right]{$a$};
-      \draw[axes,rotate around={-30:(.5,8)}](.5,8)--(2.15,8) node[below]{$b$};
+      \draw[axes,rotate around={-30:(.5,8)}](.5,8)--(2.15,8) node[pos=1.2]{$b$};
     \end{tikzpicture}
 
     \column{.15\textwidth}
@@ -229,7 +234,7 @@
       \draw[vectors,red,rotate=\theta] (.5,0)--(1.45,0);
       \draw[thick,orange,fill=orange!50] circle (.5);
       \draw[axes,rotate=30] (0,0)--(.5,0) node[midway,below]{$a$};
-      \draw[axes,rotate=110] (0,0)--(1.45,0) node[midway,right]{$b$};
+      \draw[axes,rotate=110] (0,0)--(1.45,0) node[pos=1.2]{$b$};
       \node[red] at (-.2,-1){$\vec E$};
       %\draw[violet,thick,dash dot] circle (1);
       %\draw[thick,<-,violet] (-.707,-.707)--+(-1,-1)
@@ -257,7 +262,7 @@
     \begin{tikzpicture}
       \draw[thick,cyan,fill=cyan!30] circle (1.5);
       \draw[thick,cyan,fill=black!2] circle (1.45);
-      \foreach\theta in {0,30,...,359}
+      \foreach \theta in {0,30,...,359}
       \draw[vectors,red,rotate=\theta] (.5,0)--(1.45,0);
       \draw[thick,orange,fill=orange!50] circle (.5);
       \draw[axes,rotate=30] (0,0)--(.5,0) node[midway,below]{$a$};
@@ -274,14 +279,14 @@
     placing a Gaussian surface of radius $r$ between the cylinders: 
 
     \eq{-.1in}{
-      \oint\vec E\cdot\dl\vec A=2\pi r\ell E=\frac Q{\epsilon_0}
+      \oint\vec E\cdot\dl\vec A=2\pi r\ell E=\frac Q{\varepsilon_0}
     }
     
     which gives the expression:
 
     \eq{-.1in}{
-      E=\frac Q{2\pi r\ell\epsilon_0}\quad\text{or}\quad
-      E=\frac\lambda{2\pi r\epsilon_0}
+      E=\frac Q{2\pi r\ell\varepsilon_0}\quad\text{or}\quad
+      E=\frac\lambda{2\pi r\varepsilon_0}
     }
     
     where $\lambda=Q/\ell$ is the linear charge density
@@ -295,17 +300,17 @@
   Integrating the eclectic field to get voltage across the plates:
 
   \eq{-.1in}{
-    |\Delta V|= \int_a^b E\dl r=\frac Q{2\pi\ell\epsilon_0}\int_b^a\frac{\dl r}r
-    =\frac Q{2\pi\ell\epsilon_0}\ln\left[\frac ba\right]
+    |\Delta V|= \int_a^b E\dl r=\frac Q{2\pi\ell\varepsilon_0}\int_b^a\frac{\dl r}r
+    =\frac Q{2\pi\ell\varepsilon_0}\ln\left[\frac ba\right]
   }
 
   Like parallel plates, the relationship between voltage and charge is still
   linear, but in this case, the capacitance is defined as:
 
   \eq{-.1in}{
-    C=\frac Q{\Delta V}=\frac{2\pi\ell\epsilon_0}{\ln(b/a)}
+    C=\frac Q{\Delta V}=\frac{2\pi\ell\varepsilon_0}{\ln(b/a)}
     \quad\to\quad
-    \boxed{\frac C\ell=\frac{2\pi\epsilon_0}{\ln(b/a)}}%\;\;\text{cylindrical}}
+    \boxed{\frac C\ell=\frac{2\pi\varepsilon_0}{\ln(b/a)}}
   }
 
   The capacitance of a cylindrical capacitor is often expressed by $C/\ell$
@@ -335,7 +340,6 @@
     \end{tikzpicture}
     
     \column{.5\textwidth}
-    %\centering
     \begin{tikzpicture}
       \draw[thick,magenta,fill=magenta!30] circle (2);
       \draw[thick,magenta,fill=black!2] circle (1.95);
@@ -361,15 +365,15 @@
   field between the inner and outer spheres:
   
   \eq{-.1in}{
-    E=\frac1{4\pi\epsilon_0}\frac Q{r^2}
+    E=\frac1{4\pi\varepsilon_0}\frac Q{r^2}
   }
 
   Therefore the electric potential difference between the inner sphere ($r=a$)
   and the outer spherical shell $r=b$) is given by:
 
   \eq{-.1in}{
-    |\Delta V|=\int_a^bE\dl r=\frac Q{4\pi\epsilon_0}\int_a^b\frac{\dl r}{r^2}
-    =\frac Q{4\pi\epsilon_0}\left(\frac1a-\frac1b\right)
+    |\Delta V|=\int_a^bE\dl r=\frac Q{4\pi\varepsilon_0}\int_a^b\frac{\dl r}{r^2}
+    =\frac Q{4\pi\varepsilon_0}\left(\frac1a-\frac1b\right)
   }
 \end{frame}
 
@@ -429,7 +433,7 @@
   \emph{effective permittivity}:
   
   \eq{-.1in}{
-    \boxed{\epsilon=\kappa\epsilon_0}
+    \boxed{\varepsilon=\kappa\varepsilon_0}
   }
 \end{frame}
 
@@ -547,7 +551,9 @@
   series is the sum of the inverses of the individual capacitance.
 
   \eq{-.1in}{
-    \boxed{ \frac1{C_\text{series}}=\sum_{i=1}^N\frac1{C_i} }
+    \boxed{
+      \frac1{C_\text{series}}=\sum_{i=1}^N\frac1{C_i}
+    }
   }
   
   Make sure we don't confuse ourselves with resistors\footnote{You should know
