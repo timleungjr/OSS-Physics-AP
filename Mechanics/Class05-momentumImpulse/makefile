@@ -9,5 +9,4 @@ clean:
 
 public:
 	mkdir -p $(DESTINATION)/Class05
-	cp *-print.pdf $(DESTINATION)/Class05
-	cp *-notice.pdf $(DESTINATION)/Class05
+	cp *.pdf $(DESTINATION)/Class05

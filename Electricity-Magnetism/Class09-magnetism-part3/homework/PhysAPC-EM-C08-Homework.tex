@@ -6,7 +6,7 @@
 \begin{document}
 \genheader
 
-\gentitle{8}{MAGNETISM, PART 3 (FARADAY'S LAW)}
+\gentitle{9}{MAGNETISM, PART 3 (FARADAY'S LAW)}
 
 %\genfreedirections
   
@@ -28,12 +28,11 @@
     below.
     \begin{center}
       \begin{tikzpicture}[yscale=1.2]
-        \draw[very thick,->](-.1,0)--(11,0) node[pos=0,left]{0}
-        node[right]{$t$ (s)};
-        \draw[very thick,->](0,-2.3)--(0,3)
-        node[above]{$\Phi_m$ (\si{\tesla.\metre\squared})};
-        \foreach\x in {1,...,10}{
-          \draw[thick,dashed](\x,-2.3)--(\x,2.7);
+        \draw[axes] (-.1,0)--(11,0) node[pos=0,left]{0} node[right]{$t$ [s]};
+        \draw[axes] (0,-2.3)--(0,3) node[above]{
+          $\Phi_m$ [\si{\tesla.\metre\squared}]};
+        \foreach \x in {1,...,10}{
+          \draw[thick,dashed] (\x,-2.3)--(\x,2.7);
           \node[fill=white,below] at (\x,-.03) {$\x$};
         }
         \foreach\y in {-0.1,-0.05,0.05,0.1}
@@ -61,20 +60,20 @@
   \uplevel{
     \centering
     \begin{tikzpicture}
-      \draw[thick] rectangle(4,3);
-      \draw[|<->|](0,3.3)--(4,3.3) node[midway,fill=white]{$4\ell$};
-      \draw[|<->|](-.4,0)--(-.4,3) node[midway,fill=white]{$3\ell$};
-      \draw[|<->|](-.4,0)--(-.4,-1) node[midway,fill=white]{$\ell$};
-      \draw[thick,->](-2,-1)--(2,-1) node[below]{$I$};
-      \draw[thick](1.9,-1)--(6,-1);
+      \draw[thick] rectangle (4,3);
+      \draw[|<->|] (0,3.3)--(4,3.3) node[midway,fill=white]{$4\ell$};
+      \draw[|<->|] (-.4,0)--(-.4,3) node[midway,fill=white]{$3\ell$};
+      \draw[|<->|] (-.4,0)--(-.4,-1) node[midway,fill=white]{$\ell$};
+      \draw[vector] (-2,-1)--(2,-1) node[below]{$I$};
+      \draw[very thick] (1.9,-1)--(6,-1);
     \end{tikzpicture}
   }
   \question A rectangular loop of dimensions $3\ell$ and $4\ell$ lies in the
   plane of the page as shown above. A long straight wire also in the plane of
   the page carries a current $I$.
   \begin{parts}
-    \part Calculate the magnetic flux through the rectangular loop in terms of
-    $I$, $\ell$, and fundamental constants.
+    \part\textbf{Calculate} the magnetic flux through the rectangular loop in
+    terms of $I$, $\ell$, and fundamental constants.
     \vspace{\stretch1}
     
     \uplevel{
