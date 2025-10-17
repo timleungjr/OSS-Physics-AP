@@ -1,6 +1,6 @@
 all:
-	pdflatex PhysAPC-EM-C07-homework
-	pdflatex PhysAPC-EM-C07-homework
+	pdflatex PhysAPC-EM-C07-notice
+	pdflatex PhysAPC-EM-C07-notice
 
 clean:
 	rm -rf *~ *.*~ *.log *.nav *.aux *.out *.snm *.toc

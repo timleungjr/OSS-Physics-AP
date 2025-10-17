@@ -4,7 +4,7 @@
 \begin{document}
 \genheader
 
-\gentitle{17}{MAGNETISM, PART 1}
+\gentitle{6}{MAGNETISM, PART 1}
 
 %\genmultidirections
 \raggedcolumns
@@ -13,14 +13,14 @@
     \question An electron is moving downward toward the bottom of the page when
     it passes through a region of magnetic field, as shown in the figure by
     the shaded area. The electron travels along a path that takes it through
-    the spot marked $X$. The gravitational force on the electron is very
+    the spot marked X. The gravitational force on the electron is very
     small. What is the direction of the magnetic field?
     \begin{center}
       \begin{tikzpicture}
-        \draw[thick,dashed,fill=gray!20] circle(1);
-        \node at (1.1,-.6) {$X$};
-        \draw[thick](0,2.5) circle(.1) node[above=3]{$e^-$};
-        \draw[thick,->](0,2.4)--(0,1);
+        \draw[thick,dashed,fill=gray!20] circle (1);
+        \node at (1.1,-.6) {X};
+        \draw[thick] (0,2.5) circle (.1) node[above=3]{$e^-$};
+        \draw[vectors] (0,2.4)--+(0,-1);
       \end{tikzpicture}
     \end{center}
     \begin{choices}
@@ -28,19 +28,18 @@
       \choice Toward the top of the page
       \choice Out of the page
       \choice Into the page
+      \choice The direction cannot be determined
     \end{choices}
-    \vspace{.6in}
     
     \question Two long parallel wires carry currents ($I_A$ and $I_B$), as shown
-    in the figure. Current $I_A$ in the left wire is twice that of current
-    $I_B$ in the right wire. The magnetic force on the right wire is $F$. What
-    is the magnetic force on the left wire in terms of $F$?
+    in the figure. Current $I_A$ in the left wire is twice that of $I_B$ in the
+    right wire. The magnetic force on the right wire is $F$. What is the
+    magnetic force on the left wire in terms of $F$?
     \begin{center}
-      \begin{tikzpicture}[scale=1.3,thick]
-        \draw rectangle(.15,2);
-        \draw(1,0) rectangle(1.15,2);
-        \draw[->](.075,2)--(.075,3) node[above]{$I_A$};
-        \draw[->](1.075,2)--(1.075,3) node[above]{$I_B$};
+      \begin{tikzpicture}[scale=1.3]
+        \foreach \x in {0,1} \draw[thick] (\x,0) rectangle +(.15,3);
+        \draw[vectors] (.075,2)--(.075,3) node[above]{\small$I_A$};
+        \draw[vectors] (1.075,2)--(1.075,3) node[above]{\small$I_B$};
       \end{tikzpicture}
     \end{center}
     \begin{choices}
@@ -48,6 +47,7 @@
       \choice $F$ in the opposite direction
       \choice $F/2$ in the same direction
       \choice $F/2$ in the opposite direction
+      \choice $2F$ in the opposite direction
     \end{choices}
     \columnbreak
     
@@ -61,7 +61,6 @@
 %
 %      \pic{.45}{domains}
 %    \end{center}
-%    \columnbreak
     
     \question A magnetic field, directed into the page, is placed between two
     charged capacitor plates, as shown in the figure. The magnetic and electric
@@ -70,148 +69,94 @@
     Which of the following force diagrams most accurately depicts the forces
     acting on the proton when traveling at $2v$?
     \begin{center}
-      \begin{tikzpicture}[scale=.9]
-        \begin{scope}[thick]
-          \draw rectangle(.1,4);
-          \draw(2,0) rectangle(2.1,4);
-          \foreach\x in {.3,.6,...,2}{
-            \foreach\y in {.2,.5,...,4} \node at (\x,\y) {$\times$};
-          }
-          \draw[very thick,->](1.05,-.5)--(1.05,4.5);
-          \draw[very thick](1.05,-.7) circle(.2) node{$p$};
-        \end{scope}
+      \begin{tikzpicture}[scale=.9,thick]
+        \foreach \x in {0,2} \draw (\x,0) rectangle +(.1,4);
+        \foreach \x in {.3,.6,...,2}{
+          \foreach \y in {.2,.5,...,4} \node at (\x,\y) {$\times$};
+        }
+        \draw[vectors] (1.05,-.5)--(1.05,4.5);
+        \draw[very thick] (1.05,-.7) circle (.2) node{\small$p$};
       \end{tikzpicture}
     \end{center}
     \begin{choices}
       \choice
       \begin{tikzpicture}[very thick]
-        \draw circle(.2) node{$p$};
-        \draw[->](.2,0)--(1.2,0);
-        \draw[->](-.2,0)--(-1.2,0);
+        \draw circle (.2) node{$p$};
+        \draw[->] (.2,0)--(1.2,0);
+        \draw[->] (-.2,0)--(-1.2,0);
       \end{tikzpicture}
       
       \choice
       \begin{tikzpicture}[very thick]
-        \draw circle(.2) node{$p$};
-        \draw[->](.2,0)--(2.2,0);
-        \draw[->](-.2,0)--(-1.2,0);
+        \draw circle (.2) node{$p$};
+        \draw[->] (.2,0)--(2.2,0);
+        \draw[->] (-.2,0)--(-1.2,0);
       \end{tikzpicture}
 
       \choice
       \begin{tikzpicture}[very thick]
-        \draw circle(.2) node{$p$};
-        \draw[->](.2,0)--(1.2,0);
-        \draw[->](-.2,0)--(-2.2,0);
+        \draw circle (.2) node{$p$};
+        \draw[->] (.2,0)--(1.2,0);
+        \draw[->] (-.2,0)--(-2.2,0);
       \end{tikzpicture}
       
       \choice
       \begin{tikzpicture}[very thick]
-        \draw circle(.2) node{$p$};
-        \draw[->](.2,0)--(1.2,0);
-        \draw[->](-.2,0)--(-2.2,0);
-        \draw[->](0,.2)--(0,1.2);
+        \draw circle (.2) node{$p$};
+        \draw[->] (.2,0)--(1.2,0);
+        \draw[->] (-.2,0)--(-2.2,0);
+        \draw[->] (0,.2)--(0,1.2);
       \end{tikzpicture}
     \end{choices}
-    \vspace{.7in}
     
-    \question Which of the following is true concerning the force on the
-    current-carrying wire due to the electron?
+    \question Which of the following is true concerning the direction of the
+    force on the current-carrying wire due to the electron?
     \begin{center}
-      \begin{tikzpicture}[thick]
-        \draw[->] (0,4)--(0,2.5);
-        \draw (0,3)--(0,0);
-        \fill(-.5,2) circle(.1) node[above] {$e$};
-        \draw[->] (-.5,2)--(-.5,1) node[below]{$v$};
+      \begin{tikzpicture}
+        \draw[vectors] (0,4)--(0,2.5);
+        \draw[very thick] (0,3)--(0,0);
+        \fill[thick] (-.5,2) circle (.1) node[left=3]{$e^-$};
+        \draw[vectors] (-.5,2)--(-.5,1) node[below]{$v$};
       \end{tikzpicture}
     \end{center}
     \begin{choices}
       \choice The force is directed toward the right.
       \choice The force is directed toward the left.
       \choice The force is directed into the page.
+      \choice There is not enough information to determine the direction of the
+      force.
       \choice There is no force on the current-carrying wire due to the
       electron.
     \end{choices}
     \columnbreak
     
-%    \question A loop of wire in the plane of the page carries a clockwise
-%    current $I$ and is placed in a magnetic field that is directed into the
-%    page as shown. Which of the following will happen as a result of the wire
-%    loop being in the magnetic field?
-%    \begin{center}
-%      \begin{tikzpicture}
-%        \foreach \x in {-1,0,1}{
-%          \foreach \y in {-1,0,1}{
-%            \node at (\x,\y) {$\times$};
-%          }
-%        }
-%        \draw[thick] circle(.75);
-%        \draw[thick,->](-.75,0) arc(180:135:.75) node[above]{$I$};
-%        \node at (1.3,1) {$B$};
-%      \end{tikzpicture}
-%    \end{center}
-%    \begin{choices}
-%      \choice The wire loop will rotate clockwise.
-%      \choice The wire loop will rotate counterclockwise.
-%      \choice The wire loop will flip on a horizontal axis through its center.
-%      \choice The wire loop will expand in size.
-%      \choice The wire loop will contract in size.
-%    \end{choices}
-%    
-%    \uplevel{
-%      \textbf{Questions \ref{q:2wires1}--\ref{q:2wires2}}
-%  
-%      Two wires carry currents $2A$ and $4A$ in the directions shown. Point $P$
-%      is a distance $r$ from the wire carrying $2A$, and a distance $2r$ from
-%      the wire carrying $4A$.
-%      \begin{center}
-%        \begin{tikzpicture}[scale=1.3]
-%          \draw[thick](0,0)--(2,0);
-%          \draw[thick,->](0,0)--(1.5,0) node[below]{$4A$};
-%          \draw[thick](0,0)--(0,2.5);
-%          \draw[thick,->](0,0)--(0,1.75) node[left]{$2A$};
-%          \draw[thick,dashed](0,2)--(1,2)node[midway,above]{$r$}
-%          --(1,0) node[midway,right]{$2r$};
-%          \fill (1,2) circle(.05) node[above right]{$P$};
-%        \end{tikzpicture}
-%      \end{center}
-%    }
-%
-%    \question Which of the following statements is true?
-%    \begin{choices}
-%      \choice The magnetic field produced at point $P$ by the wire carrying
-%      $2A$ is greater than the magnetic field produced at point $P$ by the wire
-%      carrying $4A$, but opposite in direction.
-%      \choice The magnetic field produced at point $P$ by the wire carrying
-%      $2A$ is less than the magnetic field produced at point $P$ by the wire
-%      carrying $4A$, and in the same direction.
-%      \choice The magnetic field produced at point $P$ by the wire carrying
-%      $2A$ is equal to the magnetic field produced at point $P$ by the wire
-%      carrying $4A$, but opposite in direction.
-%      \choice The magnetic field produced at point $P$ by the wire carrying
-%      $2A$ is equal to the magnetic field produced at point $P$ by the wire
-%      carrying $4A$, and in the same direction.
-%      \choice The magnetic field produced at point $P$ by the wire carrying
-%      $2A$ is greater than the magnetic field produced at point $P$ by the wire
-%      carrying $4A$, and in the same direction.
-%    \end{choices}
-%    \label{q:2wires1}
-%    \vspace{.7in}
-%    
-%    \question The magnitude of the resultant magnetic field at point $P$ due to
-%    the current in the two wires is
-%    \begin{choices}
-%      \choice zero
-%      \choice $\dfrac{\mu_0(2A)}{2\pi r}$
-%      \choice $\dfrac{\mu_0(2A)}{\pi r}$
-%      \choice $\dfrac{\mu_0(4A)}{2\pi r}$
-%      \choice $\dfrac{\mu_0(6A)}{4\pi r}$
-%    \end{choices}
-%    \label{q:2wires2}
+    \question A loop of wire in the plane of the page carries a clockwise
+    current $I$ and is placed in a magnetic field that is directed into the
+    page as shown. Which of the following will happen as a result of the wire
+    loop being in the magnetic field?
+    \begin{center}
+      \begin{tikzpicture}
+        \foreach \x in {-1,-.5,...,1}{
+          \foreach \y in {-1,-.5,...,1}{
+            \node at (\x,\y) {\color{gray}$\times$};
+          }
+        }
+        \draw[vectors,rotate=-35] (-.75,0) arc (180:-190:.75) node[above]{$I$};
+        \node at (1.3,1) {$B$};
+      \end{tikzpicture}
+    \end{center}
+    \begin{choices}
+      \choice The wire loop will rotate clockwise.
+      \choice The wire loop will rotate counterclockwise.
+      \choice The wire loop will flip on a horizontal axis through its center.
+      \choice The wire loop will expand in size.
+      \choice The wire loop will contract in size.
+    \end{choices}
 
     \uplevel{
       \textbf{Questions \ref{q:2curr1}--\ref{q:2curr2}}: Two wires are parallel
-      to each other, one carrying twice the current as the other. The two
-      currents flow in the same direction.
+      to each other.%, one carrying twice the current as the other.
+      The two currents flow in the same direction.
     }
 
     \question Which of the following is true of the forces the wires exert on
@@ -227,7 +172,6 @@
       \choice The net force between the wires is zero.
     \end{choices}
     \label{q:2curr1}
-    \vspace{.7in}
     
     \question The direction of the force between the wires is
     \begin{choices}
@@ -238,8 +182,56 @@
       \choice out of the page
     \end{choices}
     \label{q:2curr2}
-    \vspace{.7in}
     
+    \uplevel{
+      \textbf{Questions \ref{q:2wires1}--\ref{q:2wires2}}: Two wires carry
+      currents $2A$ and $4A$ in the directions shown. Point $P$ is a distance
+      $r$ from the wire carrying $2A$, and a distance $2r$ from the wire
+      carrying $4A$.
+      \begin{center}
+        \begin{tikzpicture}[scale=1.3]
+          \draw[very thick] (0,0)--(2,0);
+          \draw[vectors] (0,0)--(1.5,0) node[below]{$4A$};
+          \draw[very thick] (0,0)--(0,2.5);
+          \draw[vectors] (0,0)--(0,1.75) node[left]{$2A$};
+          \draw[thick,dashed] (0,2)--(1,2) node[midway,above]{$r$}
+          --(1,0) node[midway,right]{$2r$};
+          \fill (1,2) circle (.05) node[right]{$P$};
+        \end{tikzpicture}
+      \end{center}
+    }
+
+    \question Which of the following statements is true?
+    \begin{choices}
+      \choice The magnetic field produced at point $P$ by the wire carrying
+      $2A$ is greater than the magnetic field produced at point $P$ by the wire
+      carrying $4A$, but opposite in direction.
+      \choice The magnetic field produced at point $P$ by the wire carrying
+      $2A$ is less than the magnetic field produced at point $P$ by the wire
+      carrying $4A$, and in the same direction.
+      \choice The magnetic field produced at point $P$ by the wire carrying
+      $2A$ is equal to the magnetic field produced at point $P$ by the wire
+      carrying $4A$, but opposite in direction.
+      \choice The magnetic field produced at point $P$ by the wire carrying
+      $2A$ is equal to the magnetic field produced at point $P$ by the wire
+      carrying $4A$, and in the same direction.
+      \choice The magnetic field produced at point $P$ by the wire carrying
+      $2A$ is greater than the magnetic field produced at point $P$ by the wire
+      carrying $4A$, and in the same direction.
+    \end{choices}
+    \label{q:2wires1}
+
+    \question The magnitude of the resultant magnetic field at point $P$ due to
+    the current in the two wires is
+    \begin{choices}
+      \choice zero
+      \choice $\dfrac{\mu_0(2A)}{2\pi r}$
+      \choice $\dfrac{\mu_0(2A)}{\pi r}$
+      \choice $\dfrac{\mu_0(4A)}{2\pi r}$
+      \choice $\dfrac{\mu_0(6A)}{4\pi r}$
+    \end{choices}
+    \label{q:2wires2}
+
     %\question A dynamic microphone contains a magnet and a coil of wire
     %connected to a movable diaphragm, as shown in the figure. Sound waves
     %directed at the diaphragm generate a current in the wires leading from the
@@ -254,7 +246,6 @@
     %  \choice The strength of the magnetic field in the plane of the coil
     %  changes.
     %\end{choices}
-    \columnbreak
     
     \uplevel{
       \textbf{Questions \ref{q:circ1}--\ref{q:circ2}}:
@@ -296,62 +287,62 @@
     \end{choices}
     \label{q:circ2}
     
-%    \question A current is passed through an analog ammeter and the needle moves
-%    to indicate the current flowing through the circuit. Which of the
-%    following best explains how an analog ammeter works?
-%    \begin{choices}
-%      \choice Current is passed through the needle placed in a magnetic field,
-%      and the needle is attracted to the high side of the scale.
-%      \choice The needle is a magnet, and is attracted to a magnet on the high
-%      side of the scale.
-%      \choice The needle gathers an electrostatic charge from the current, and
-%      is attracted to an electrostatic charge on the high side of the scale.
-%      \choice Current is passed through a spring coil of wire placed in a
-%      magnetic field, and the coil rotates, moving the needle
-%      proportionally to the current in the coil.
-%      \choice Current flows through the needle, making it heavier, and it falls
-%      to the high side of the scale.
-%    \end{choices}
-%    \vspace{.7in}
-%    
-%    \question An electric motor consists of a current-carrying loop of wire
-%    mounted to an axle and turned at a slight angle in a magnetic field as
-%    shown. The wire loop will
-%    \cpic{.35}{motor-drawing}
-%    \begin{choices}
-%      \choice experience a torque and turn clockwise
-%      \choice experience a torque and turn counterclockwise
-%      \choice accelerate upward out of the magnetic field
-%      \choice accelerate downward out of the magnetic field
-%      \choice not experience a force or torque
-%    \end{choices}
+    \question A current is passed through an analog ammeter and the needle moves
+    to indicate the current flowing through the circuit. Which of the
+    following best explains how an analog ammeter works?
+    \begin{choices}
+      \choice Current is passed through the needle placed in a magnetic field,
+      and the needle is attracted to the high side of the scale.
+      \choice The needle is a magnet, and is attracted to a magnet on the high
+      side of the scale.
+      \choice The needle gathers an electrostatic charge from the current, and
+      is attracted to an electrostatic charge on the high side of the scale.
+      \choice Current is passed through a spring coil of wire placed in a
+      magnetic field, and the coil rotates, moving the needle
+      proportionally to the current in the coil.
+      \choice Current flows through the needle, making it heavier, and it falls
+      to the high side of the scale.
+    \end{choices}
+    
+    \question An electric motor consists of a current-carrying loop of wire
+    mounted to an axle and turned at a slight angle in a magnetic field as
+    shown. The wire loop will
+    \cpic{.35}{motor-drawing}
+    \begin{choices}
+      \choice experience a torque and turn clockwise
+      \choice experience a torque and turn counterclockwise
+      \choice accelerate upward out of the magnetic field
+      \choice accelerate downward out of the magnetic field
+      \choice not experience a force or torque
+    \end{choices}
   \end{questions}
   \setcounter{last}{\value{question}}
 \end{multicols*}
 \newpage
 
-%\genfreetitle{17}{MAGNETISM}{3}
-%\genfreedirections
 
-% TAKEN FROM 2001 AP PHYSICS C EXAM FREE-RESPONSE QUESTION E&M 3
-\begin{center}
-  \begin{tikzpicture}[american voltages,scale=1.2]
-    \draw[ultra thick](-5,0)--(5,0);
-    \draw[line width=.8mm](-2,1)--(2,1) node[midway,above]{$\ell$};
-    \draw[thick](-2,1)--(-2,2.5)node[midway,left]{$d$}
-    to[battery1=$\mathcal E$](2,2.5)--(2,1) node[midway,right]{$d$};
-    \draw[<->](-1,1)--(-1,0) node[midway,fill=white]{$r$};
-    \draw[<-](4.7,0) to[in=270,out=-80](5.5,-.3) node[above]{Cable};
-    \draw[<-](1.7,1) to[in=180,out=-80](3,.85)
-    node[right]{Rod (mass $m$, resistance $R$)};
-    \draw[<-](1.5,2.5) to[in=270,out=90](2.5,3)
-    node[above]{Fixed Horizontal Wires};
-  \end{tikzpicture}
-\end{center}
 
 \begin{questions}
   \setcounter{question}{\value{last}}
-  
+
+  % TAKEN FROM 2001 AP PHYSICS C EXAM FREE-RESPONSE QUESTION E&M 3
+  \uplevel{
+    \centering
+    \begin{tikzpicture}[american voltages,scale=1.2]
+      \draw[ultra thick] (-5,0)--(5,0);
+      \draw[line width=1mm] (-2,1)--(2,1) node[midway,above]{$\ell$};
+      \draw[thick] (-2,1)--(-2,2.5) node[midway,left]{$d$}
+      to[battery1=$\mathcal E$] (2,2.5)--(2,1) node[midway,right]{$d$};
+      \draw[<->] (-1,1)--(-1,0) node[midway,fill=white]{$r$};
+      \begin{scope}[<-]
+        \draw (4.7,0) to[in=180,out=-60] (5.5,-.3) node[right]{Cable};
+        \draw (1.7,1) to[in=180,out=-80] (3,.85) node[right]{Rod};
+        %Rod (mass $m$, resistance $R$)};
+        \draw (1.5,2.5) to[in=270,out=90] (2.5,3) node[above]{
+          Fixed Horizontal Wire};
+      \end{scope}
+    \end{tikzpicture}
+  }
   \question The circuit shown above consists of a battery of emf $\mathcal E$
   in series with a rod of length $\ell$, mass $m$, and resistance $R$. The rod
   is suspended by vertical connecting wires of length $d$, and the horizontal
@@ -361,16 +352,19 @@
   Earth's gravitational pull is toward the bottom of the page. Express all
   algebraic answers in terms of the given quantities and fundamental constants.
   \begin{parts}
-    \part What is the magnitude and direction of the current $I$ in the rod?
+    \part\textbf{Determine} the magnitude and direction of the current $I$ in
+    the rod.
     \vspace{\stretch1}
     
-    \part In which direction must there be a current in the cable to exert an
-    upward force on the rod? Justify your answer.
+    \part\textbf{Determine} the direction of current in the cable to exert an
+    upward force on the rod. \textbf{Justify} your answer.
+    %direction must there be a current in the cable to exert an
+    %upward force on the rod? Justify your answer.
     \vspace{\stretch1}
     
     \part With the proper current in the cable, the rod can be lifted up such
-    that there is no tension in the connecting wires. Determine the minimum
-    current $I_c$ in the cable that satisfies this situation.
+    that there is no tension in the connecting wires. \textbf{Determine} the
+    minimum  current $I_c$ in the cable that satisfies this situation.
     \vspace{\stretch1}
     
     %\part Determine the magnitude of the magnetic flux through the circuit due
@@ -381,20 +375,18 @@
   \uplevel{
     \centering
     \begin{tikzpicture}[scale=1.2]
-      \draw rectangle(5,0.2);
-      \draw(0,1.8) rectangle(5,2);
-      \draw(-.75,0.2) rectangle(-2.5,1.8) node[midway]{\small Radioactive};
+      \foreach \y in {.1,1.8} \draw (0,\y) rectangle +(5,.1);
+      \draw (-.75,.2) rectangle (-2.5,1.8) node[midway]{\small Radioactive};
       \foreach \x in {.5,1,...,4.5}{
-        \foreach \y in {.5,1,1.5} \draw(\x,\y) circle(.08);
+        \foreach \y in {.5,1,1.5} \draw(\x,\y) circle (.06);
       }
-      \draw[dashed](0,1)--(7,1);
-      \draw[very thick,<->](4.3,.2)--(4.3,1.8) node[pos=.7,left]{$d$};
+      \draw[dashed] (0,1)--(7,1);
+      \draw[thick,<->] (4.3,.2)--(4.3,1.8) node[pos=.7,left=-1]{$d$};
       \foreach \xx in {-.5,5.5}{
-        \draw[fill=gray!60](\xx,1) circle(.1);
-        \draw[very thick,->](\xx+.2,1)--(\xx+1.2,1) node[midway,above]{$v$};
+        \draw[vectors] (\xx,1)--+(1,0) node[midway,above]{$v$};
+        \draw[thick,fill=gray!60] (\xx,1) circle (.1);
       }
-      \draw(5.4,1.3) rectangle(5.6,2.5);
-      \draw(5.4,0.7) rectangle(5.6,-.5);
+      \foreach \y in {-.5,1.3} \draw (5.4,\y) rectangle +(.15,1.2);
     \end{tikzpicture}
   }
 
@@ -413,61 +405,61 @@
     \part Explain why it is acceptable to neglect the effects of gravity on the
     electrons passing through the apparatus.
     \vspace{\stretch1}
-    \part Explain why the electrons pass through the capacitor plates
-    undeflected. Support your argument with an algebraic equation
+    \part\textbf{Explain} why the electrons pass through the capacitor plates
+    undeflected. \textbf{Support} your argument with an algebraic equation
     and an appropriately drawn force diagram.
-    \label{passthrough}
     \vspace{\stretch1}
       
-    \part Use your equation from (\ref{passthrough}) to calculate the
+    \part Use your equation from part \textbf{B} to \textbf{calculate} the
     potential difference ($\Delta V$) between the capacitor plates.
     \vspace{\stretch1}
       
-    \part Which capacitor plate has the highest potential? Justify your 
-    reasoning making reference to the electric field.
+    \part\textbf{Indicate} which capacitor plate has the highest potential.
+    \textbf{Justify} your reasoning making reference to the electric field.
     \vspace{\stretch1}
       
-    \part Calculate the magnitude of the energy that is stored in the
+    \part\textbf{Calculate} the magnitude of the energy that is stored in the
     capacitor.
     \vspace{\stretch1}
     \newpage
 
     \uplevel{
-      A positron enters the apparatus along the same path as the electrons
-      from part (\ref{passthrough}).
+      A positron enters the apparatus along the same path as the electrons from
+      part \textbf{B}.
     }
     
-    \part Explain why the positron, traveling at the same speed as the
+    \part\textbf{Explain} why the positron, traveling at the same speed as the
     electrons, will also travel straight through the device undeflected.
-    Support your argument with an equation.
+    \textbf{Support} your argument with an equation.
     \vspace{\stretch1}
       
     \part A second positron enters the apparatus at a speed of $2v$.
-    Sketch the path of the positron through the capacitor plates on the
-    figure.
-    \vspace{.5in}
+    \textbf{Sketch} the path of the positron through the capacitor plates on
+    the figure on the previous page.
+    \vspace{.2in}
     
     \uplevel{
       An electron exits the apparatus at a velocity of
       $v=\SI{1.0e7}{\metre\per\second}$ parallel to a long wire of a circuit,
-      as shown in the figure. The distance between the electron and the wire is
-      \SI1{\milli\metre}.
+      as shown in the figure below. The distance between the electron and the
+      wire is \SI1{\milli\metre}.
       \begin{center}
         \begin{tikzpicture}[american voltages,scale=1.2]
-          \draw(0,-.5)--(0,1)--(4,1)--(4,-.5) to[battery1=$\mathcal E$] (2,-.5)
-          to[R=$R$] (0,-.5);
-          \draw[fill=gray!60](1.5,1.3) circle (0.1);
-          \draw[thick,->](1.7,1.3)--(2.7,1.3) node[midway,above]{$v$};
+          \draw[thick] (0,-.5)--(0,1)--(4,1)--(4,-.5)
+          to[battery1=$\mathcal E$] (2,-.5) to[R=$R$] (0,-.5);
+          \draw[vectors] (1.5,1.3)--+(1.2,0) node[midway,above]{$v$};
+          \draw[thick,fill=lightgray] (1.5,1.3) circle (.1);
         \end{tikzpicture}
       \end{center}
     }
-    \part Calculate the potential difference-to-resistance ratio of the circuit
-    such that the electron will experience a force $F$ of \SI{1.3e-16}\newton.
+    \part\textbf{Calculate} the potential difference-to-resistance ratio of the
+    circuit such that the electron will experience a force $F$ of
+    \SI{1.3e-16}\newton.
     \vspace{\stretch1}      
       
-    \part Draw a force vector on the figure to show the direction of the
-    force on the electron.
-    \vspace{1in}
+    \part\textbf{Draw} a force vector on the figure above to show the direction
+    of the force on the electron.
+    \vspace{.2in}
   \end{parts}
   \newpage
   
@@ -649,7 +641,8 @@
 %    calculate the induced emf in the loop as a function of time $t$, assuming
 %    that the loop is horizontal at $t=0$.
 %  \end{parts}
-%  \newpage
+  %  \newpage
+  
   \uplevel{
     \cpic{.6}{long-cylinder}
   }
@@ -657,9 +650,9 @@
   outer radius $b$ carries a current $I_0$ that has a uniform current density,
   as shown in the figure above.
   \begin{parts}
-    \part Using Amp\`{e}re's law, derive an expression for the magnitude of
-    the magnetic field in the following regions as a function of the distance
-    $r$ from the central axis.
+    \part Using Amp\`{e}re's law, \textbf{derive} an expression for the
+    magnitude of the magnetic field in the following regions as a function of
+    the distance $r$ from the central axis.
     \begin{subparts}
       \subpart $r<a$
       \vspace{\stretch1}
@@ -671,52 +664,55 @@
       \vspace{\stretch1}
     \end{subparts}
     
-    \part On the cross-sectional view in the diagram above, indicate the
-    direction of the field at point $P$, which is at a distance $r=2b$ from the
-    axis of the cylinder.
+    \part On the cross-sectional view in the diagram above, \textbf{indicate}
+    the direction of the field at point $P$, which is at a distance $r=2b$ from
+    the axis of the cylinder.
     \vspace{\stretch1}
     
-    \part An electron is at rest at point $P$. Describe any electromagnetic
-    forces acting on the electron. Justify your answer.
+    \part An electron is at rest at point $P$. \textbf{Describe} any
+    electromagnetic forces acting on the electron. \textbf{Justify} your answer.
     \vspace{\stretch1}
     \newpage
     
     \uplevel{
       Now consider a long, solid conducting cylinder of radius $b$ carrying a
       current $I_0$. The magnitude of the magnetic field inside this cylinder
-      as a function of $r$ is given by $B=\mu_0I_0r/2\pi b^2$. An experiment is
-      conducted using a particular solid cylinder of radius \SI{.010}{\metre}
-      carrying a current of \SI{25}\ampere. The magnetic field inside the
-      cylinder is measured as a function of $r$, and the data is tabulated
-      below.
+      as a function of $r$ is given by
+      \begin{displaymath}
+        B(r)=\mu_0I_0r/2\pi b^2
+      \end{displaymath}
+      An experiment is conducted using a particular solid cylinder of radius
+      \SI{.010}{\metre} carrying a current of \SI{25}\ampere. The magnetic
+      field inside the cylinder is measured as a function of $r$, and the data
+      is tabulated below.
 
       \vspace{.1in}
       \begin{center}
         \begin{tabular}{|l|l|l|l|l|l|}
           \hline
-          Distance $r$ (m)    & 0.002 & 0.004 & 0.006 & 0.008 & 0.010\\ \hline
-          Magnetic Field $B$ (T) & \num{1.2e-4} & \num{2.7e-4} & \num{3.6e-4}
+          Distance $r$ [m] & 0.002 & 0.004 & 0.006 & 0.008 & 0.010\\ \hline
+          Magnetic Field $B$ [T] & \num{1.2e-4} & \num{2.7e-4} & \num{3.6e-4}
           & \num{4.7e-4} & \num{6.4e-4} \\
           \hline
         \end{tabular}
       \end{center}
     }
     
-    \part On the graph below, plot the data points for the magnetic field
-    $B$ as a function of the distance $r$, and label the scale on both axes.
-    Draw a straight line that best represents the data.
+    \part On the graph below, \textbf{plot} the data points for the magnetic
+    field $B$ as a function of the distance $r$, and label the scale on both
+    axes.
     \begin{center}
-      \vspace{.4in}
+      \vspace{.1in}
       \begin{tikzpicture}[xscale=.6,yscale=.22]
         \draw[help lines] grid (25,35);
-        %\draw[very thick,->] (0,0)--(26,0);
-        %\draw[very thick,->] (0,0)--(0,37);
-        \draw[very thick,step=5] grid (25,35);
+        \draw[thick,step=5] grid (25,35);
       \end{tikzpicture}
     \end{center}
-    \vspace{.4in}
-
-    \part Use the slope of your line to estimate a value of the vacuum
+    \vspace{.2in}
+    
+    \part\textbf{Draw} a straight line that best represents the data.
+    
+    \part Use the slope of your line to \textbf{estimate} a value of the vacuum
     permeability $\mu_0$.
   \end{parts}
   \newpage

@@ -13,7 +13,7 @@ all:
 	cd Class04-gaussLaw-part2 ; make
 	cd Class05-capacitors ; make
 	cd Class06-magnetism-part1 ; make
-#	cd Class07-circMotion	; make
+	cd Class07-magnetism-part2 ; make
 #	cd Class09-rotMotion-part1	; make
 #	cd Class10-rotMotion-part2	; make
 #	cd Class11-rotMotion-part3	; make
@@ -30,7 +30,7 @@ clean:
 	cd Class04-gaussLaw-part2 ; make clean
 	cd Class05-capacitors ; make clean
 	cd Class06-magnetism-part1 ; make clean
-#	cd Class07-circMotion	; make clean
+	cd Class07-magnetism-part2 ; make clean
 #	cd Class09-rotMotion-part1	; make clean
 #	cd Class10-rotMotion-part2	; make clean
 #	cd Class11-rotMotion-part3	; make clean
@@ -47,7 +47,7 @@ public:
 	cd Class04-gaussLaw-part2 ; make public
 	cd Class05-capacitors ; make public
 	cd Class06-magnetism-part1 ; make public
-#	cd Class07-circMotion	; make public
+	cd Class07-magnetism-part2 ; make public
 #	cd Class09-rotMotion-part1	; make public
 #	cd Class10-rotMotion-part2	; make public
 #	cd Class11-rotMotion-part3	; make public
