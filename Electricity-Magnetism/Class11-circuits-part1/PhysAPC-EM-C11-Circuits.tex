@@ -220,7 +220,8 @@
   \textbf{metallic bonds}. The atoms are arranged in a lattice-crystalline
   structure, and they share a cloud of valence electrons. Depending on the
   element, each atom may have 1 or 2 ``free electrons'' that can move under a
-  very weak electric field inside the material.
+  very weak electric field inside the material. (This was discussed earlier, in
+  Classes \#1 and \#2.)
   \begin{center}
     \begin{tikzpicture}
       \draw grid (3,2);
@@ -286,28 +287,28 @@
         \draw[very thick,dashed,lightgray] (4,4)--(4,-4);
         
         \draw[thick,fill=pink!20] (1.5,1) circle (.4) node{$+$};
-        \draw[thick,->] (1.9,1)--+(1.5,0);
+        \draw[vectors] (1.9,1)--+(1.5,0);
 
         \draw[thick,fill=pink!20] (2,-1.3) circle (.4) node{$+$};
-        \draw[thick,->] (2.4,-1.3)--+(1.5,0);
+        \draw[vectors] (2.4,-1.3)--+(1.5,0);
 
         \draw[thick,fill=pink!20] (3,1.9) circle (.4) node{$+$};
-        \draw[thick,->] (3.4,1.9)--+(1.5,0);
+        \draw[vectors] (3.4,1.9)--+(1.5,0);
 
         \draw[thick,fill=pink!20] (3.8,0) circle (.4) node{$+$};
-        \draw[thick,->] (4.2,0)--+(1.5,0) node[right=-2]{\small$\vec F_q$};
+        \draw[vectors] (4.2,0)--+(1.5,0) node[right=-2]{\small$\vec F_q$};
 
         \draw[thick,fill=pink!20] (5.3,-2) circle (.4) node{$+$};
-        \draw[thick,->] (5.7,-2)--+(1.5,0);
+        \draw[vectors] (5.7,-2)--+(1.5,0);
 
         \draw[thick,fill=pink!20] (6.3,1.5) circle (.4) node{$+$};
-        \draw[thick,->] (6.7,1.5)--+(1.5,0);
+        \draw[vectors] (6.7,1.5)--+(1.5,0);
       \end{tikzpicture}
     \end{center}
     \vspace{-.1in}{\scriptsize We assume that positive charge carriers are
-      all positively charged, and they move
-      with the same \textbf{drift velocity}. In most circuits, the drift
-      velocity is in the order of 0.1 to \SI1{\milli\metre\per\second}.\par}
+      positively charged, and they move with the same \textbf{drift velocity}.
+      In most circuits, drift velocity is in the order of 0.1 to
+      \SI1{\milli\metre\per\second}.\par}
     
     \column{.32\textwidth}
     \color{blue}
@@ -334,11 +335,11 @@
         \draw[thick,fill=pink!20] (2.5,1.8) circle (.4) node{\small$e^-$};
       \end{tikzpicture}
     \end{center}
-    \vspace{-.1in}{\scriptsize In reality, the current comes from motion of the
-      negatively-charged electrons in the \emph{opposite} direction of
+    \vspace{-.1in}{\scriptsize In reality, electrical current comes from motion
+      of negatively-charged electrons in the \emph{opposite} direction of
       convention current. The electron's motion is chaotic, because as they
-      move, they collide with other electrons and atoms. The drift velocity is
-      the \emph{average speed} of the electrons\par}
+      move, they collide with other electrons and atoms. Drift velocity is
+      the \emph{average} velocity of the electrons\par}
   \end{columns}
   \vspace{.1in}For circuit analysis, we use the conventional current for
   simplicity.
@@ -348,10 +349,10 @@
 
 \begin{frame}{Electric Current in Solutions}
   Materials that are formed by ionic bonds (e.g.\ sodium chloride, or table
-  salt) do not conduct electricity, but they can be dissolved, for example,
-  in water, and the solution containing the ions is now conductive.
+  salt) do not conduct electricity, but they can be dissolved (e.g.\ in water)
+  and the solution containing the ions is now conductive.
   \begin{center}
-    \begin{tikzpicture}[scale=.9]
+    \begin{tikzpicture}
       \draw[fill=cyan!20] rectangle (6,2.5);
       \foreach \x in {.4,5.6} \draw[line width=3] (\x,.5)--(\x,2);
       \draw[thick] (.4,1.25)--+(-1.5,0) node[left]{\large$+$};
@@ -367,24 +368,26 @@
       \end{scope}
       \begin{scope}[thick,cyan,fill=cyan!10]
         \draw[vectors] (1,1.2)--+(-.5,0);
-        \draw (1.2,1.2) circle (.18) node{$-$};
+        \draw (1.2,1.2) circle (.2) node{$-$};
 
         \draw[vectors] (1.7,.7)--+(-.5,0);
-        \draw (1.9,.7) circle (.18) node{$-$};
+        \draw (1.9,.7) circle (.2) node{$-$};
 
         \draw[vectors] (2.8,2)--+(-.5,0);
-        \draw (3,2) circle (.18) node{$-$};
+        \draw (3,2) circle (.2) node{$-$};
 
         \draw[vectors] (3.1,1.6)--+(-.5,0);
-        \draw (3.3,1.6) circle (.18) node{$-$};
+        \draw (3.3,1.6) circle (.2) node{$-$};
 
         \draw[vectors] (4.5,.5)--+(-.5,0);
-        \draw (4.7,.5) circle (.18) node{$-$};
+        \draw (4.7,.5) circle (.2) node{$-$};
       \end{scope}
     \end{tikzpicture}
   \end{center}
-  Positive ions move towards negative terminal; while negative ions
-  move towards positive terminal.
+  \begin{itemize}
+  \item Positive ions move towards negative terminal; while
+  \item Negative ions move towards positive terminal
+  \end{itemize}
 \end{frame}
 %
 %
@@ -508,7 +511,7 @@
   \end{center}
   The resistivity $\rho$ is determined by the material.\footnote{Don't confuse
   resistivity with the \emph{density} of the material; both use the same Greek
-  letter $\rho$} For an ``ohmic''device, resistivity should be independent of
+  letter $\rho$} For an ``ohmic'' device, resistivity should be independent of
   temperature and direction of current.
   \vspace{.2in}
 \end{frame}
@@ -631,7 +634,7 @@
 
 
 \begin{frame}{Non-Ohmic Devices}
-  Loads that do not obey Ohm's law are \textbf{non-ohmic}; the relationship
+  Devices that do not obey Ohm's law are \textbf{non-ohmic}; the relationship
   between voltage and current is \emph{not} linear. For example:
   \begin{center}
     \begin{tikzpicture}[scale=.7]
@@ -757,7 +760,7 @@
   \end{center}
   A \textbf{capacitor} also acts as a energy source. When a capacitor is
   charged---with charge $+Q$ on one plate, and $-Q$ on the other, a voltage
-  is generated, according to the equation $V=Q/C$ (studied in Class \#4).
+  is generated, according to the equation $V=Q/C$ (studied in Class \#5).
   \begin{center}
     \begin{tikzpicture}[thick]
       \draw (3,0) to[C,l=Capacitor,o-o] (5,0);
@@ -1144,8 +1147,8 @@
 
 
 \begin{frame}{Equivalent Resistance: Resistors in Series}
-  The equivalent resistance of loads is the sum of the resistances of the
-  individual loads.
+  The equivalent resistance of $N$ loads connected in series is the sum of the
+  resistances of the individual loads.
   
   \eq{-.1in}{
     \boxed{R_s=\sum_{i=1}^NR_i}

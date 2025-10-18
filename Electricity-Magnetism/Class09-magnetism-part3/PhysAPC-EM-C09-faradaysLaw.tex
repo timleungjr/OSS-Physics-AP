@@ -1,7 +1,7 @@
 \documentclass[12pt,aspectratio=169]{beamer}
 \input{../../mybeamer}
 
-\title{Classes 8 \& 9: Faraday's Law and Magnetic Induction}
+\title{Classes 9 \& 10: Faraday's Law and Magnetic Induction}
 \subtitle{AP Physics C: E\&M}
 \input{../../me}
 \input{../../mycommands}
@@ -126,16 +126,15 @@
       \draw[ultra thick,fill=magenta!50,opacity=.5] circle (3);
       
       \node[thick,draw=red,fill=red!5,text width=5.8cm]
-      (flux) at (-14,2.8){\color{red}
-        Magnetic flux through the wire loop into the page is increasing, and
-        it is a function of time:
+      (flux) at (-14,2.8){\color{red}Magnetic flux through the wire loop into
+        the page is increasing, and it is a function of time:
         
         \vspace{-.25in}
         \begin{displaymath}
           \Phi_m(t)=\int_{\mathcal S}\vec B(t)\cdot\dl\vec A=B(t)A
         \end{displaymath}\par
       };
-      \draw[thick,->,red] (flux) to[out=0,in=110] (-.75,1.5)
+      \draw[axes,red] (flux) to[out=0,in=110] (-.75,1.5)
       node[below=-2]{$\mathcal S$};
     }
     
@@ -151,29 +150,29 @@
         \end{displaymath}\par
       };
       %\draw[thick,->,green!60!black] (flux)--(emf);
-      \foreach \x in {0,45,90,...,360}
-      \draw[rotate=\x,vectors,green!60!black] (3,0)--(3,2.5);
+      \foreach \theta in {0,45,90,...,360}
+      \draw[rotate=\theta,vectors,green!60!black] (3,0)--(3,2.5)
+      node[pos=1.2]{$\vec E$};
     }
     \uncover<4->{
-      \node[thick,draw=blue!70!black,fill=blue!5,text width=7.6cm]
-      (curr) at (14,0){\color{blue!70!black}
-        An induced current runs in the wire in direction of the electric
-        field (Ohm's law):
+      \node[thick,draw=blue!70!black,fill=blue!5,text width=7.4cm]
+      (curr) at (14,0){\color{blue!70!black}An induced current runs in the wire
+        in direction of the electric field (Ohm's law):
         
         \vspace{-.05in}\begin{displaymath}
           I=\frac{\mathcal E}R
         \end{displaymath}\par
-        $R$ is the internal resistance of the wire loop
+        $R$ is the internal resistance of the wire loop, or it is
+        connected to a resistor
       };
-      %\draw[thick,->,blue!70!black] (emf) to[out=0,in=270] (curr);
       
       \draw[vectors,blue!70!black] (2.7,0) arc (0:300:2.7) node[above]{$I$};
     }
 
     \uncover<5>{
-      \node[text width=10cm,font=\large] at (8,-7.5){
+      \node[text width=14cm,font=\large] at (8,-7){
         One remaining (and very important) question: how do we know the
-        direction of the electric field $\vec E$ and current $I$?
+        direction of the electric field $\vec E$ and therefore the current $I$?
       };
     }
   \end{tikzpicture}
@@ -193,7 +192,6 @@
   \end{center}
   The law comes from the conservation of energy, which disallows perpetual
   motion machines.
-  %So basically, the conservation of energy
 \end{frame}
 
 
@@ -276,7 +274,7 @@
     \vspace{-.25in}as the generator turns. The induced \emph{emf} is the rate
     of change of magnetic flux:
 
-    \eq{-.1in}{
+    \eq{-.3in}{
       \mathcal E(t) =\left|\diff{\Phi_m}t\right| =
       \underbracket[1pt]{NAB\omega}_{\mathcal E_\text{max}}\sin(\omega t+\theta_0)
     }
@@ -296,8 +294,8 @@
         \fill[magenta!60,opacity=.6] (-2.75,-1.37) rectangle (.97,1.17);
 
         \node[thick,draw=red,fill=pink!30,text width=4.7cm]
-        (phi) at (-4,-3.3){\color{red}
-          The magnetic flux through the circuit is given by
+        (phi) at (-4,-3.3){\color{red}The magnetic flux through the circuit is
+          given by
           
           \vspace{-.15in}
           \begin{displaymath}
@@ -309,9 +307,8 @@
 
       \uncover<3->{
         \node[thick,draw=green!60!black,fill=green!10,text width=7.6cm]
-        (phi) at (2.5,-3.3){\color{green!60!black}
-          When sliding the rod to the right at speed $v$, the rate
-          of change in magnetic flux is
+        (phi) at (2.5,-3.3){\color{green!60!black}When sliding the rod to the
+          right at speed $v$, the rate of change in magnetic flux is
 
           \vspace{-.1in}
           \begin{displaymath}
@@ -322,8 +319,7 @@
 
       \uncover<4->{
         \node[thick,draw=blue!70!black,fill=blue!10,text width=3cm]
-        (i) at (5,0){\color{blue!70!black}
-          This emf induces a current of:
+        (i) at (5,0){\color{blue!70!black}This emf induces a current of:
 
           \vspace{-.1in}
           \begin{displaymath}
@@ -333,13 +329,6 @@
       }
     \end{tikzpicture}
   \end{center}
-%    \column{.55\textwidth}
-%    
-%    We can use the magnetic force on the charges on the rod to find the
-%    direction of the induced current $I$, and its magnitude is:
-%
-
-%  \end{columns}
 \end{frame}
 
 
