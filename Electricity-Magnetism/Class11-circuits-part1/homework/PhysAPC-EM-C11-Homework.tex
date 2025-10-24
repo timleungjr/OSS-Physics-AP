@@ -1,15 +1,19 @@
 \documentclass{../../../oss-apphys-exam}
 \newcounter{lastmc}
+\ctikzset{bipoles/length=1.1cm}
 
 \begin{document}
-%\genheader
 
 \gentitle{11}{CIRCUIT ANALYSIS, PART 1}
 
-%\genmultidirections
-%\gengravity
-
 \raggedcolumns
+
+\runningheader{
+  \fontfamily{phv}\small
+  \textcolor{gray}{AP PHYSICS C: ELECTRICITY AND MAGNETISM $\blacksquare$}
+  \textbf{MULTIPLE-CHOICE QUESTIONS}}{}{}
+
+
 \begin{multicols}{2}
   \begin{questions}
     \question Five resistors are made of the same material. Which of the
@@ -17,42 +21,42 @@
     \begin{choices}
       \choice
       \begin{tikzpicture}[scale=.6]
-        \draw ellipse(.5 and 1) node{$A$};
-        \draw(3,0) ellipse (.5 and 1) node{$A$};
-        \draw(0,1)--(3,1) node[midway,above]{\small$L$};
-        \draw(0,-1)--(3,-1);
+        \draw ellipse (.5 and 1) node{$A$};
+        \draw (3,0) ellipse (.5 and 1) node{$A$};
+        \draw (0,1)--(3,1) node[midway,above]{\small$L$};
+        \draw (0,-1)--(3,-1);
       \end{tikzpicture}
 
       \choice
       \begin{tikzpicture}[scale=.6]
-        \draw ellipse(.7 and 1.6) node{$2A$};
-        \draw(3,0) ellipse (.5 and 1) node{$A$};
-        \draw(0,1.6)--(3,1) node[midway,above]{\small$L$};
+        \draw ellipse (.7 and 1.6) node{$2A$};
+        \draw (3,0) ellipse (.5 and 1) node{$A$};
+        \draw (0,1.6)--(3,1) node[midway,above]{\small$L$};
         \draw(0,-1.6)--(3,-1);
       \end{tikzpicture}
 
       \choice
       \begin{tikzpicture}[scale=.6]
-        \draw ellipse(.7 and 1.6) node{$2A$};
-        \draw(3,0) ellipse (.7 and 1.6) node{$2A$};
-        \draw(0,1.6)--(3,1.6) node[midway,above]{\small$L$};
-        \draw(0,-1.6)--(3,-1.6);
+        \draw ellipse (.7 and 1.6) node{$2A$};
+        \draw (3,0) ellipse (.7 and 1.6) node{$2A$};
+        \draw (0,1.6)--(3,1.6) node[midway,above]{\small$L$};
+        \draw (0,-1.6)--(3,-1.6);
       \end{tikzpicture}
 
       \choice
       \begin{tikzpicture}[scale=.6]
-        \draw ellipse(.3 and .7) node[left]{$A/2\;\;$};
-        \draw(3,0) ellipse (.3 and .7) node[right]{$\;\;A/2$};
-        \draw(0,.7)--(3,.7) node[midway,above]{\small$L$};
-        \draw(0,-.7)--(3,-.7);
+        \draw ellipse (.3 and .7) node[left]{$A/2\;\;$};
+        \draw (3,0) ellipse (.3 and .7) node[right]{$\;\;A/2$};
+        \draw (0,.7)--(3,.7) node[midway,above]{\small$L$};
+        \draw (0,-.7)--(3,-.7);
       \end{tikzpicture}
 
       \choice
       \begin{tikzpicture}[scale=.6]
-        \draw ellipse(.3 and .7) node[left]{$A/2\;\;$};
-        \draw(3,0) ellipse (.5 and 1) node{$A$};
-        \draw(0,.7)--(3,1) node[midway,above]{\small$L$};
-        \draw(0,-.7)--(3,-1);
+        \draw ellipse (.3 and .7) node[left]{$A/2\;\;$};
+        \draw (3,0) ellipse (.5 and 1) node{$A$};
+        \draw (0,.7)--(3,1) node[midway,above]{\small$L$};
+        \draw (0,-.7)--(3,-1);
       \end{tikzpicture}
     \end{choices}
     
@@ -118,7 +122,7 @@
 %    \columnbreak
 
     \uplevel{
-      \textbf{Questions \ref{adjust1}--\ref{adjust2}} An adjustable resistor is
+      \textbf{Questions \ref{adjust1}--\ref{adjust2}} An variable resistor is
       connected to a battery of emf $\mathcal{E}$ in a simple circuit. A graph
       of power vs.\ current in the battery is shown in the figure.
       \cpic{.45}{adjustable}
@@ -133,7 +137,7 @@
       \choice 60 V
     \end{choices}
     
-    \question What is the resistance of the adjustable resistor when the power
+    \question What is the resistance of the variable resistor when the power
     in the circuit is 10 watts?
     \label{adjust2}
     \begin{choices}
@@ -202,16 +206,26 @@
 \end{multicols}
 \newpage
 
-%\genfreetitle{20}{CIRCUIT ANALYSIS}{2}
-%\genfreedirections
-
-
-%TAKEN FROM 2015 AP PHYSICS EXAM FREE-RESPONSE QUESTION E&M.2.
-\cpic{.25}{find-internal-resistance}
+\runningheader{
+  \fontfamily{phv}\small
+  \textcolor{gray}{AP PHYSICS C: ELECTRICITY AND MAGNETISM $\blacksquare$}
+  \textbf{FREE-RESPONSE QUESTIONS}}{}{}
 
 \begin{questions}
   \setcounter{question}{\value{lastmc}}
-  
+
+  %TAKEN FROM 2015 AP PHYSICS EXAM FREE-RESPONSE QUESTION E&M.2.
+  \uplevel{
+    \centering
+    \begin{tikzpicture}[scale=1.1]
+      \draw[thick] (4,0)--(3,0) to[battery1,l=$\mathcal{E}$] (2,0)
+      to[resistor,l=$r$] (1,0)--(0,0)--(0,2) to[vR,l_=$R$] (4,2)
+      --(4,0);
+      \draw[dashed] (.9,.5) rectangle (2.7,-.9);
+      \draw[thick] (.75,2)--(.75,2.75)--(3.25,2.75)--(3.25,2);
+      \draw[thick,fill=white] (2,2.75) circle (.25) node{V};
+    \end{tikzpicture}
+  }
   \question A student performs an experiment to determine the emf $\mathcal E$
   and internal resistance $r$ of a given battery. The student connects the
   battery in series to a variable resistance $R$, with a voltmeter across the
@@ -233,50 +247,46 @@
     \end{tabular}
   \end{center}
   \begin{parts}
-    \part Derive an expression for the measured voltage $V$. Express your
-    answer in terms of $R$, $\mathcal E$, $r$, and physical constants, as
+    \part\textbf{Derive} an expression for the measured voltage $V$. Express
+    your answer in terms of $R$, $\mathcal E$, $r$, and physical constants, as
     appropriate.
     \vspace{\stretch1}
     
-    \part Rewrite your expression from part (a) to express
+    \part\textbf{Rewrite} your expression from part \textbf{A} to express
     $1/V$ as a function of $1/R$.
-    \vspace{\stretch1}
-    
-    \part On the grid below, plot data points for the graph of $1/V$ as a
-    function of $1/R$. Clearly scale and label all axes, including units as
-    appropriate. Draw a straight line that best represents the data.
-    \begin{center}
-      \begin{tikzpicture}[scale=1.6]
-        \draw[thick](0,0)--(5,0);
-        \draw[thick](0,0)--(0,5);
-        \foreach\x in {.2,.4,...,4.8}{
-          \draw[gray](\x,0)--(\x,5);
-          \draw[gray](0,\x)--(5,\x);
-        }
-        \foreach\x in {1,...,5}{
-          \draw[very thick](\x,0)--(\x,5);
-          \draw[very thick](0,\x)--(5,\x);
-        }
-      \end{tikzpicture}
-    \end{center}
+    \vspace{\stretch2}
     \newpage
     
-    \part Use the straight line from part (c) to obtain values for the
-    following.
+    \part On the grid below, \textbf{plot} data points for the graph of $1/V$
+    as a function of $1/R$. Clearly \textbf{scale} and \textbf{label} all axes,
+    including units as appropriate.
+    \begin{center}
+      \vspace{.1in}
+      \begin{tikzpicture}[scale=1.6]
+        \draw[gray,step=.2] grid (5,5);
+        \draw[thick] grid (5,5);
+      \end{tikzpicture}
+    \end{center}
+    \part \textbf{Draw} a straight line on the above graph that best represents
+    the data.
+    
+    \part Use the straight line from part \textbf{C} to \textbf{calculate}
+    values for the following:
     \begin{subparts}
       \subpart $\mathcal E$
       \subpart $r$
     \end{subparts}
     \vspace{\stretch1}
     
-    \part Using the results of the experiment, calculate the maximum current
-    that the battery can provide.
+    \part Using the results of the experiment, \textbf{calculate} the maximum
+    current that the battery can provide.
     \vspace{\stretch1}
+    \newpage
     
     \part A voltmeter is to be used to determine the emf of the battery after
     removing the battery from the circuit. Two voltmeters are available to take
     this measurement---one with low internal resistance and one with high
-    internal resistance. Indicate which voltmeter will provide the most
+    internal resistance. \textbf{Indicate} which voltmeter will provide the most
     accurate measurement.
     
     \vspace{.05in}
@@ -290,14 +300,21 @@
     \vspace{.05in}
     \underline{\hspace{.4in}} The two voltmeters will provide equal accuracy.
 
-    \vspace{.1in}Justify your answer.
-    \vspace{\stretch{1.5}}
+    \vspace{.1in}\textbf{Justify} your answer.
   \end{parts}
   \newpage
 
   %TAKEN FROM 2016 AP PHYSICS EXAM FREE-RESPONSE QUESTION E&M.2.
   \uplevel{
-    \cpic{.25}{sample}
+    \centering
+    \begin{tikzpicture}[scale=1.5]
+      \draw[thick] (0,0) to[battery,l=$\mathcal E$] (0,3)
+      to[resistor,l_=$R$] (2,3)
+      to[resistor,l=$r$] (2,0)-- (0,0);
+      \draw[thick,fill=white] (1,0) circle (.23) node{A};
+      \draw[thick] (.4,3)--(.4,3.6)--(1.6,3.6)--(1.6,3);
+      \draw[thick,fill=white] (1,3.6) circle (.23) node{V};
+    \end{tikzpicture}
   }
   \question The circuit shown above consists of a source of variable emf
   $\mathcal E$, an ideal ammeter A, an ideal voltmeter V, a resistor of
@@ -307,7 +324,7 @@
     through the resistor $R$?
     
     \vspace{.05in}
-    \underline{\hspace{.4in}} It is greater through R.
+    \underline{\hspace{.4in}} It is greater through $R$.
     
     \vspace{.05in}
     \underline{\hspace{.4in}} It is greater through the sample.
@@ -318,7 +335,7 @@
     \vspace{.05in}
     \underline{\hspace{.4in}} It depends on the resistance of the sample.
 
-    \vspace{.1in}Justify your answer.
+    \vspace{.1in}\textbf{Justify} your answer.
     \vspace{\stretch1}
     
     \part How does the potential difference across the wire sample compare with
@@ -336,7 +353,7 @@
     \vspace{.05in}
     \underline{\hspace{.4in}}It depends on the resistance of the sample.
 
-    \vspace{.1in}Justify your answer.
+    \vspace{.1in}\textbf{Justify} your answer.
     \vspace{\stretch1}
     \newpage
     
@@ -344,7 +361,9 @@
       a given value. The current through and potential difference across the
       resistor $R$ are measured. This is repeated for several values of emf,
       and the data are recorded in the table below.
+      
       \begin{center}
+        \vspace{.1in}
         \begin{tabular}{|c|c|c|p{.5in}|p{.5in}|}
           \hline
           $\mathcal E$ (\si\volt)&  $V_R$ (\si\volt) & $I_R$ (\si\ampere) & &\\
@@ -357,9 +376,9 @@
       \end{center}
     }
 
-    \part Indicate below which quantities should be graphed to yield a straight
-    line that could be used to calculate a numerical value for the resistance
-    of the wire sample.
+    \part \textbf{Indicate} below which quantities should be graphed to yield a
+    straight line that could be used to calculate a numerical value for the
+    resistance of the wire sample.
     \label{part2c}
 
     \vspace{.05in}
@@ -371,62 +390,54 @@
     You may use the remaining columns in the table above, as needed, to record
     any quantities that you indicated that are not given.
   
-    \part On the grid below, plot the straight line data points from part
-    (\ref{part2c}). Clearly scale and label all axes, including units if
-    appropriate. Draw a straight line that best represents the data.
-
+    \part On the grid below, \textbf{plot} the straight line data points from
+    the above table. Clearly \textbf{scale} and \textbf{label} all axes,
+    including units if appropriate.
     \uplevel{
       \centering
-      \vspace{.3in}
+      \vspace{.1in}
       \begin{tikzpicture}[scale=1.6]
-        \draw[thick](0,0)--(5,0);
-        \draw[thick](0,0)--(0,5);
-        \foreach\x in {.2,.4,...,4.8}{
-          \draw[gray](\x,0)--(\x,5);
-          \draw[gray](0,\x)--(5,\x);
-        }
-        \foreach\x in {1,...,5}{
-          \draw[very thick](\x,0)--(\x,5);
-          \draw[very thick](0,\x)--(5,\x);
-        }
+        \draw[gray,step=.2] grid (5,5);
+        \draw[thick] grid (5,5);
       \end{tikzpicture}
       \vspace{.3in}
     }
+    \part\textbf{Draw} a straight line that best represents the data.
     
-    \part Use your straight line to calculate the value of the resistance of
-    the wire sample.
-    \label{part2e}
-    \vspace{\stretch1}
-    
-    \part The wire sample has a length of \SI{3.00}{\metre} and a radius of
-    \SI{1.00e-3}\metre. Calculate the resistivity of the material from which
-    the wire sample is made.
+    \part Use your straight line to \textbf{calculate} the value of the
+    resistance of the wire sample.
     \vspace{\stretch1}
     \newpage
     
+    \part The wire sample has a length of \SI{3.00}{\metre} and a radius of
+    \SI{1.00e-3}\metre. \textbf{Calculate} the resistivity of the material from
+    which the wire sample is made.
+    \vspace{\stretch1}
+    
     \part Suppose the ammeter used to collect these data was not ideal.
-    Would the actual value of the resistance of the wire sample be greater
-    than, less than, or equal to that calculated in part (\ref{part2e})?
+    \textbf{Indicate} whether the actual value of the resistance of the wire
+    sample be greater than, less than, or equal to that calculated in
+    part \textbf{F}?
 
     \vspace{.2in}
-    \underline{\hspace{.4in}} Greater than\hspace{.5in}
-    \underline{\hspace{.4in}} Less than\hspace{.5in}
-    \underline{\hspace{.4in}} Equal to
+    \underline{\hspace{.3in}} Greater than\hspace{.5in}
+    \underline{\hspace{.3in}} Less than\hspace{.5in}
+    \underline{\hspace{.3in}} Equal to
       
-    \vspace{.1in}Justify your answer.
+    \vspace{.1in}\textbf{Justify} your answer.
     \vspace{\stretch1}
       
     \part If the ideal voltmeter is replaced by a voltmeter that is not
     ideal and the experiment is repeated, would the readings of the ideal
     ammeter be greater than, less than, or equal to those in the data chart
-    before part (\ref{part2c})?
+    before part \textbf{C}?
     
     \vspace{.2in}
-    \underline{\hspace{.4in}} Greater than\hspace{.5in}
-    \underline{\hspace{.4in}} Less than\hspace{.5in}
-    \underline{\hspace{.4in}} Equal to
+    \underline{\hspace{.3in}} Greater than\hspace{.5in}
+    \underline{\hspace{.3in}} Less than\hspace{.5in}
+    \underline{\hspace{.3in}} Equal to
 
-    \vspace{.1in}Justify your answer.
+    \vspace{.1in}\textbf{Justify} your answer.
     \vspace{\stretch1}
   \end{parts}
 \end{questions}
