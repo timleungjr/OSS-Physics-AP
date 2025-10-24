@@ -31,10 +31,10 @@
     \SI{6.e24}{\kilo\gram} and the Earth's radius is \SI{6.4e6}\metre, what is
     the satellite's speed?
     \begin{choices}
-      \choice\SI{1.e3}{\metre\per\second}
+      \choice\SI{1.0e3}{\metre\per\second}
       \choice\SI{3.5e3}{\metre\per\second}
       \choice\SI{7.8e3}{\metre\per\second}
-      \choice\SI{5e6}{\metre\per\second}
+      \choice\SI{5.0e6}{\metre\per\second}
       \choice\SI{6.1e7}{\metre\per\second}
     \end{choices}
     
@@ -43,11 +43,11 @@
     \SI{6.4e23}{\kilo\gram}. Approximately what is the gravitational force that
     the Sun exerts on Mars?
     \begin{choices}
-      \choice\SI{1.6e20}{\newton}
-      \choice\SI{1.6e21}{\newton}
-      \choice\SI{3.7e21}{\newton}
-      \choice\SI{3.7e32}{\newton}
-      \choice\SI{3.7e42}{\newton}
+      \choice\SI{1.6e20}\newton
+      \choice\SI{1.6e21}\newton
+      \choice\SI{3.7e21}\newton
+      \choice\SI{3.7e32}\newton
+      \choice\SI{3.7e42}\newton
     \end{choices}
     
     \question When climbing from sea level to the top of Mount Everest, a hiker
@@ -81,14 +81,14 @@
     \begin{center}
       \begin{tikzpicture}[scale=.7]
         \tikzstyle{balloon}=[ball color=gray];
-        \shade[balloon] circle(.25);
-        \draw[dashed] circle(1);
-        \draw[dashed] circle(3);
-        \draw(0,0)--(1,0) node[right]{X} node[midway,above]{$R$};
-        \draw[fill=black](1,0) circle(.05);
+        \shade[balloon] circle (.25);
+        \draw[dashed] circle (1);
+        \draw[dashed] circle (3);
+        \draw (0,0)--(1,0) node[right]{X} node[midway,above]{$R$};
+        \draw[fill=black](1,0) circle (.1);
         \begin{scope}[rotate=230]
-          \draw(0,0)--(3,0) node[left]{Y} node[pos=.7,right]{$3R$};
-          \draw[fill=black](3,0) circle(.05);
+          \draw (0,0)--(3,0) node[pos=1.15]{Y} node[pos=.7,right]{$3R$};
+          \draw[fill=black] (3,0) circle (.1);
         \end{scope}
       \end{tikzpicture}
     \end{center}
@@ -184,6 +184,8 @@
   \textbf{FREE-RESPONSE QUESTIONS}}{}{}
 
 \begin{questions}
+  \setcounter{question}{\value{last}}
+  
   % TAKEN FROM THE 2007 AP PHYSICS C MECHANICS EXAM FREE-RESPONSE QUESTION 2
   \question In March 1999 the Mars Global Surveyor (GS) entered its final orbit
   about Mars, sending data back to Earth. Assume a circular orbit with a period
@@ -191,17 +193,27 @@
   \SI{3.40e3}{\metre\per\second}. The mass of the GS is \SI{930}{\kilo\gram}
   and the radius of Mars is \SI{3.43e6}\metre.
   \begin{parts}
-    \part Calculate the radius of the GS orbit.
-    \part Calculate the mass of Mars.
-    \part Calculate the total mechanical energy of the GS in this orbit.
+    \part\textbf{Calculate} the radius of the GS orbit.
+    \vspace{\stretch1}
+    
+    \part\textbf{Calculate} the mass of Mars.
+    \vspace{\stretch1}
+    
+    \part\textbf{Calculate} the total mechanical energy of the GS in this orbit.
+    \vspace{\stretch1}
+    
     \part If the GS was to be placed in a lower circular orbit (closer to the
-    surface of Mars), would the new orbital period of the GS be greater than or
-    less than the given period? Justify your answer.
+    surface of Mars), \textbf{indicate} whether the new orbital period of the
+    GS would be greater than or less than the given period.
 
     \vspace{.15in}
-    \underline{\hspace{.3in}} Greater than\hspace{1in}
+    \underline{\hspace{.3in}} Greater than\hspace{.5in}
     \underline{\hspace{.3in}} Less than
 
+    \vspace{.1in}\textbf{Justify} your answer.
+    \vspace{\stretch1}
+    \newpage
+    
     \part In fact, the orbit the GS entered was slightly elliptical with its
     closest approach to Mars at \SI{3.71e5}{\metre} above the surface and its
     furthest distance at \SI{4.36e5}{\metre} above the surface. If the speed of
@@ -215,11 +227,10 @@
   Saturn shown below and is asked to use the data to determine the mass $M_S$
   of Saturn. Assume the orbits of these moons are circular.
   \begin{center}
-    \def\arraystretch{1.5}
+    \def\arraystretch{1.3}
     \begin{tabular}{|c|c|p{1in}|p{1in}|}
       \hline
-      Orbital Period, $T$ &  Orbital Radius, $R$ & & \\
-      (seconds)           &  (meters)            & & \\
+      Orbital Period, $T$ [\si\second] &  Orbital Radius, $R$ [\si\metre ]& &\\
       \hline
       \num{8.14e4} & \num{1.85e8} & & \\ \hline
       \num{1.18e5} & \num{2.38e8} & & \\ \hline
@@ -229,36 +240,46 @@
   \end{center}
   \def\arraystretch{1}
   \begin{parts}
-    \part Write an algebraic expression for the gravitational force between
-    Saturn and one of its moons.
-    \label{algebraic}
+    \part\textbf{Write} an algebraic expression for the gravitational force
+    between Saturn and one of its moons.
+    \vspace{\stretch1}
     
-    \part Use your expression from part (\ref{algebraic}) and the assumption of
-    circular orbits to derive an equation for the orbital period $T$ of a moon
-    as a function of its orbital radius $R$.
+    \part Use your expression from part \textbf{A} and the assumption of
+    circular orbits to \textbf{derive} an equation for the orbital period $T$
+    of a moon as a function of its orbital radius $R$.
+    \vspace{\stretch1}
     
-    \part Which quantities should be graphed to yield a straight line whose
-    slope could be used to determine Saturn's mass?
-
-    \part Complete the data table by calculating the two quantities to be
-    graphed. Label the top of each column, including units.
-
-    \part Plot the graph on the axes below. Label the axes with the variables
-    used and appropriate numbers to indicate the scale.
-    \cpic{.8}{graph-paper}
+    \part\textbf{Indicate} which quantities should be graphed to yield a
+    straight line whose slope could be used to determine Saturn's mass?
+    \vspace{\stretch1}
+    
+    \part\textbf{Complete} the data table by calculating the two quantities to
+    be graphed. \textbf{Label} the top of each column, including units.
+    \newpage
+    
+    \part\textbf{Plot} the graph on the axes below. \textbf{Label} the axes
+    with the variables used and appropriate numbers to indicate the scale.
+    \uplevel{
+      \centering
+      \begin{tikzpicture}[xscale=2.3,yscale=1.6]
+        \draw[gray,step=.2] grid (6,6);
+        \draw[thick] grid (6,6);
+        \draw[axes] (0,0)--(6.3,0);
+        \draw[axes] (0,0)--(0,6.3);
+      \end{tikzpicture}
+    }
     \part Using the graph, calculate a value for the mass of Saturn.
   \end{parts}
   \newpage
 
-\begin{center}
-  \begin{tikzpicture}
-    \draw[thick] circle(2);
-    \draw[thick] (-0.1,2) rectangle(0.1,-2);
-    \draw[vectors,rotate=35] (0,0)--(2,0) node[midway,below]{$R$};
-  \end{tikzpicture}
-\end{center}
-\begin{questions}
-  \setcounter{question}{\value{last}}
+  \uplevel{
+    \centering
+    \begin{tikzpicture}
+      \draw[thick] circle (2);
+      \draw[thick] (-0.1,2) rectangle (.1,-2);
+      \draw[vectors,rotate=35] (0,0)--(2,0) node[midway,below]{$R$};
+    \end{tikzpicture}
+  }
   
   \question A planet of mass $M$, radius $R$, and uniform density has a small
   tunnel drilled through the center of the planet, as shown above. When the
@@ -284,29 +305,32 @@
     \textbf{determine} how long will it take until it returns to its original
     position.
     \vspace{\stretch1}
+    \newpage
     
     \part If the mass is dropped from $R/2$ from the center of the planet,
     \textbf{indicate} whether it will require more, or less, or the same amount
     of time to return to its original position compared to if it was dropped
     from $R$?
 
-    \vspace{.2in}
-    \underline{\hspace{.5in}}More time\hspace{.3in}
-    \underline{\hspace{.5in}}Less time\hspace{.3in}
-    \underline{\hspace{.5in}}Same amount of time
-    \newpage
+    \vspace{.15in}
+    \underline{\hspace{.3in}} More time\hspace{.3in}
+    \underline{\hspace{.3in}} Less time\hspace{.3in}
+    \underline{\hspace{.3in}} Same amount of time
+
+    \vspace{.1in}\textbf{Justify} your answer.
+    \vspace{\stretch1}
     
     \part If the mass is dropped from $2R$ from the center of the planet, will
     it require more, or less, or the same amount of time to return to its
     original position compared to if it was dropped from $R$?
 
-    \vspace{.2in}
-    \underline{\hspace{.5in}}More time\hspace{.3in}
-    \underline{\hspace{.5in}}Less time\hspace{.3in}
-    \underline{\hspace{.5in}}Same amount of time
+    \vspace{.15in}
+    \underline{\hspace{.3in}} More time\hspace{.3in}
+    \underline{\hspace{.3in}} Less time\hspace{.3in}
+    \underline{\hspace{.3in}} Same amount of time
 
-    \vspace{.2in}\textbf{Justify} your answer.
-    \vspace{\stretch1}
+    \vspace{.1in}\textbf{Justify} your answer.
+    \vspace{\stretch3}
   \end{parts}
   \newpage
 
