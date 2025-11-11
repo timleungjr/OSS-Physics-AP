@@ -1,6 +1,7 @@
 \documentclass{../../../oss-apphys-exam}
 \newcounter{lastmc}
-\ctikzset{bipoles/length=1.1cm}
+\ctikzset{bipoles/length=1cm}
+\tikzstyle{every node}=[scale=.85]
 
 \begin{document}
 
@@ -14,78 +15,80 @@
   \textbf{MULTIPLE-CHOICE QUESTIONS}}{}{}
 
 
-\begin{multicols}{2}
-  \begin{questions}
-    \question Five resistors are made of the same material. Which of the
-    following has the highest resistance?
-    \begin{choices}
-      \choice
-      \begin{tikzpicture}[scale=.6]
-        \draw ellipse (.5 and 1) node{$A$};
-        \draw (3,0) ellipse (.5 and 1) node{$A$};
-        \draw (0,1)--(3,1) node[midway,above]{\small$L$};
-        \draw (0,-1)--(3,-1);
-      \end{tikzpicture}
+\begin{questions}
+  \question Five resistors are made of the same material. Which of the
+  following has the highest resistance?
 
-      \choice
-      \begin{tikzpicture}[scale=.6]
-        \draw ellipse (.7 and 1.6) node{$2A$};
-        \draw (3,0) ellipse (.5 and 1) node{$A$};
-        \draw (0,1.6)--(3,1) node[midway,above]{\small$L$};
-        \draw(0,-1.6)--(3,-1);
-      \end{tikzpicture}
-
-      \choice
-      \begin{tikzpicture}[scale=.6]
-        \draw ellipse (.7 and 1.6) node{$2A$};
-        \draw (3,0) ellipse (.7 and 1.6) node{$2A$};
-        \draw (0,1.6)--(3,1.6) node[midway,above]{\small$L$};
-        \draw (0,-1.6)--(3,-1.6);
-      \end{tikzpicture}
-
-      \choice
-      \begin{tikzpicture}[scale=.6]
-        \draw ellipse (.3 and .7) node[left]{$A/2\;\;$};
-        \draw (3,0) ellipse (.3 and .7) node[right]{$\;\;A/2$};
-        \draw (0,.7)--(3,.7) node[midway,above]{\small$L$};
-        \draw (0,-.7)--(3,-.7);
-      \end{tikzpicture}
-
-      \choice
-      \begin{tikzpicture}[scale=.6]
-        \draw ellipse (.3 and .7) node[left]{$A/2\;\;$};
-        \draw (3,0) ellipse (.5 and 1) node{$A$};
-        \draw (0,.7)--(3,1) node[midway,above]{\small$L$};
-        \draw (0,-.7)--(3,-1);
-      \end{tikzpicture}
-    \end{choices}
+  \begin{oneparchoices}
+    \choice
+    \begin{tikzpicture}[scale=.6]
+      \draw ellipse (.5 and 1) node{$A$};
+      \draw (3,0) ellipse (.5 and 1) node{$A$};
+      \draw (0,1)--(3,1) node[midway,above]{\small$L$};
+      \draw (0,-1)--(3,-1);
+    \end{tikzpicture}
+    \choice
+    \begin{tikzpicture}[scale=.6]
+      \draw ellipse (.7 and 1.6) node{$2A$};
+      \draw (3,0) ellipse (.5 and 1) node{$A$};
+      \draw (0,1.6)--(3,1) node[midway,above]{\small$L$};
+      \draw(0,-1.6)--(3,-1);
+    \end{tikzpicture}   
+    \choice
+    \begin{tikzpicture}[scale=.6]
+      \draw ellipse (.7 and 1.6) node{$2A$};
+      \draw (3,0) ellipse (.7 and 1.6) node{$2A$};
+      \draw (0,1.6)--(3,1.6) node[midway,above]{\small$L$};
+      \draw (0,-1.6)--(3,-1.6);
+    \end{tikzpicture}
+    \choice
+    \begin{tikzpicture}[scale=.6]
+      \draw ellipse (.3 and .7) node[left]{$A/2\;\;$};
+      \draw (3,0) ellipse (.3 and .7) node[right]{$\;\;A/2$};
+      \draw (0,.7)--(3,.7) node[midway,above]{\small$L$};
+      \draw (0,-.7)--(3,-.7);
+    \end{tikzpicture}\\
+    \choice
+    \begin{tikzpicture}[scale=.6]
+      \draw ellipse (.3 and .7) node[left]{$A/2\;\;$};
+      \draw (3,0) ellipse (.5 and 1) node{$A$};
+      \draw (0,.7)--(3,1) node[midway,above]{\small$L$};
+      \draw (0,-.7)--(3,-1);
+    \end{tikzpicture}
+  \end{oneparchoices}
     
-    \uplevel{
-      \cpic{.46}{add-resistor}
-    }
-    \vspace{-.2in}
-    \question In the circuit shown, what effect would adding another resistor in
-    parallel with the resistor labeled $R$ have?
-    \begin{choices}
-      \choice The reading on the voltmeter would increase.
-      \choice The reading on the ammeter would increase.
-      \choice The reading on the voltmeter would decrease.
-      \choice The reading on the ammeter would decrease.
-      \choice The reading on the ammeter would not change.
-    \end{choices}
-    \columnbreak
+  \uplevel{
+    \centering
+    \begin{tikzpicture}[thick,scale=2.5]
+      \draw (0,0) to[battery,l=$\mathcal E$] (0,1)--(1,1)
+      to[R,l=$R_1$] (1,.5) to[R,l=$R_2$] (1,0)--(0,0);
+      \draw (1,1)--(1.5,1) to[R,l=$R_3$] (1.5,0)--(1,0);
+      \draw[fill=white] (.8,0) circle (.1) node{A};
+      \draw (.5,1)--(.5,0);
+      \draw[fill=white] (.5,.5) circle (.1) node{V};
+    \end{tikzpicture}
+  }
+  \question In the circuit shown, what effect would removing resistor labelled
+  $R_2$ have?
+  \begin{choices}
+    \choice The reading on the voltmeter would increase.
+    \choice The reading on the ammeter would increase.
+    \choice The reading on the voltmeter would decrease.
+    \choice The reading on the ammeter would decrease.
+    \choice The reading on the ammeter would not change.
+  \end{choices}
     
-    \question The current flowing in a wire as a function of time is given by
-    the equation $I=4t^3$. The charge that passes through the wire from
-    \SI0{\second} to \SI2{\second} is
-    \begin{choices}
-      \choice\SI2\coulomb
-      \choice\SI4\coulomb
-      \choice\SI8\coulomb
-      \choice\SI{16}\coulomb
-      \choice\SI{24}\coulomb
-    \end{choices}
-    
+  \question The current flowing in a wire as a function of time is given by
+  the equation $I=4t^3$. The charge that passes through the wire from
+  \SI0{\second} to \SI2{\second} is
+  \begin{choices}
+    \choice\SI2\coulomb
+    \choice\SI4\coulomb
+    \choice\SI8\coulomb
+    \choice\SI{16}\coulomb
+    \choice\SI{24}\coulomb
+  \end{choices}
+  
 %    \question Which of the following statements best summarizes a series circuit
 %    with three different resistances?
 %    \begin{choices}
@@ -119,101 +122,142 @@
 %      \choice\SI{12}\volt
 %      \choice\SI{18}\volt
 %    \end{choices}
-%    \columnbreak
-
-    \uplevel{
-      \textbf{Questions \ref{adjust1}--\ref{adjust2}} An variable resistor is
-      connected to a battery of emf $\mathcal{E}$ in a simple circuit. A graph
-      of power vs.\ current in the battery is shown in the figure.
-      \cpic{.45}{adjustable}
-    }
-    \question The emf $\mathcal E$ of the battery is most nearly
-    \label{adjust1}
-    \begin{choices}
-      \choice 5 V
-      \choice 10 V
-      \choice 20 V
-      \choice 40 V
-      \choice 60 V
-    \end{choices}
+  \newpage
+  
+  \uplevel{
+    \textbf{Questions \ref{adjust1}--\ref{adjust2}} A variable resistor is
+    connected to a battery of emf $\mathcal E$ in a simple circuit. A graph of
+    power vs.\ current in the battery is shown in the figure.
+    \cpic{.45}{adjustable}
+  }
+  \question The emf $\mathcal E$ of the battery is most nearly
+  \label{adjust1}
+  \begin{choices}
+    \choice 5 V
+    \choice 10 V
+    \choice 20 V
+    \choice 40 V
+    \choice 60 V
+  \end{choices}
     
-    \question What is the resistance of the variable resistor when the power
-    in the circuit is 10 watts?
-    \label{adjust2}
-    \begin{choices}
-      \choice\SI{1.25}\ohm
-      \choice\SI{1.5}\ohm
-      \choice\SI{2.5}\ohm
-      \choice\SI{5.0}\ohm
-      \choice\SI{0}\ohm
-    \end{choices}    
+  \question What is the resistance of the variable resistor when the power
+  in the circuit is 10 watts?
+  \label{adjust2}
+  \begin{choices}
+    \choice\SI{1.25}\ohm
+    \choice\SI{1.5}\ohm
+    \choice\SI{2.5}\ohm
+    \choice\SI{5.0}\ohm
+    \choice\SI{0}\ohm
+  \end{choices}    
     
-%    \uplevel{
-%      \textbf{Questions \ref{series1}--\ref{series2}}
-%      \cpic{.45}{r-in-series}
-%    }
-%
-%    \question Which is the correct ranking of the currents for the resistors?
-%    \label{series1}
-%    \begin{choices}
-%      \choice$I_A=I_B=I_C$
-%      \choice$I_A>I_B>I_C$
-%      \choice$I_C>I_A=I_B$
-%      \choice$I_C>I_B>I_A$
-%      \choice$I_C<I_B<I_A$
-%    \end{choices}
-%
-%    \question Which is the correct ranking of the potential differences of the
-%    resistors?
-%    \label{series2}
-%    \begin{choices}
-%      \choice $V_A=V_B=V_C$
-%      \choice $V_A>V_B>V_C$
-%      \choice $V_A=V_B>V_C$
-%      \choice $V_C>V_B>V_A$
-%      \choice $V_C<V_B<V_A$
-%    \end{choices}    
-    \columnbreak
+  \uplevel{
+    \textbf{Questions \ref{series1}--\ref{series2}}
+    \cpic{.45}{r-in-series}
+  }
+
+  \question Which is the correct ranking of the currents for the resistors?
+  \label{series1}
+  \begin{choices}
+    \choice$I_A=I_B=I_C$
+    \choice$I_A>I_B>I_C$
+    \choice$I_C>I_A=I_B$
+    \choice$I_C>I_B>I_A$
+    \choice$I_C<I_B<I_A$
+  \end{choices}
+
+  \question Which is the correct ranking of the potential differences of the
+  resistors?
+  \label{series2}
+  \begin{choices}
+    \choice $V_A=V_B=V_C$
+    \choice $V_A>V_B>V_C$
+    \choice $V_A=V_B>V_C$
+    \choice $V_C>V_B>V_A$
+    \choice $V_C<V_B<V_A$
+  \end{choices}    
     
-    \uplevel{
-      \textbf{Questions \ref{bulb1}--\ref{bulb2}}: Four identical light bulbs
-      are connected to a battery as shown.
-      \cpic{.5}{bulbs}
-      }
-    \question Which bulb will burn the brightest?
-    \label{bulb1}
-    \begin{choices}
-       \choice 1
-       \choice 2
-       \choice 3
-       \choice 4
-       \choice All will emit the same brightness.
-    \end{choices}
-    \columnbreak
+  \uplevel{
+    \textbf{Questions \ref{bulb1}--\ref{bulb2}}: Four identical light bulbs
+    are connected to a battery as shown.
+    \cpic{.35}{bulbs}
+  }
+  \question Which bulb will burn the brightest?
+  \label{bulb1}
+  \begin{choices}
+    \choice 1
+    \choice 2
+    \choice 3
+    \choice 4
+    \choice All will emit the same brightness.
+  \end{choices}
     
-    \question If bulb 4 is removed, how will the brightness of each of the bulbs
-    change, if at all?
-    \label{bulb2}
-    \begin{choices}
-      \choice Bulb 2 will be less bright.
-      \choice Bulb 2 will be brighter.
-      \choice Bulb 3 will not change its brightness.
-      \choice Bulb 1 will not give off light.
-      \choice None of the bulbs will change their brightness.
-    \end{choices}
-  \end{questions}
-  \setcounter{lastmc}{\value{question}}
-\end{multicols}
-\newpage
+  \question If bulb 4 is removed, how will the brightness of each of the bulbs
+  change, if at all?
+  \label{bulb2}
+  \begin{choices}
+    \choice Bulb 2 will be less bright.
+    \choice Bulb 2 will be brighter.
+    \choice Bulb 3 will not change its brightness.
+    \choice Bulb 1 will not give off light.
+    \choice None of the bulbs will change their brightness.
+  \end{choices}
 
-\runningheader{
-  \fontfamily{phv}\small
-  \textcolor{gray}{AP PHYSICS C: ELECTRICITY AND MAGNETISM $\blacksquare$}
-  \textbf{FREE-RESPONSE QUESTIONS}}{}{}
+  \uplevel{
+    \centering
+    \begin{tikzpicture}[scale=1.5]
+      \draw[thick] (0,0) to[battery1,l_=$\mathcal E$] (-.6,0)--(-1,0)--(-1,-1)
+      to[R,l=$R$] (1,-1)--(1,0)--(.6,0) to[R,l_=$r$] (0,0);
+      \draw[dashed,thick] (-.6,-.3) rectangle (.7,.5);
+      \draw[axes](1,-1)--(1,-.5) node[right]{$I$};
+    \end{tikzpicture}
+    \hspace{.4in}
+    \begin{tikzpicture}[scale=1.5]
+      \draw[thick] (0,0) to[battery1,l_=$\mathcal E$] (-.6,0)--(-1,0)--(-1,-1)
+      to[R,l=$3R$] (1,-1)--(1,0)--(.6,0) to[R,l_=$r$] (0,0);
+      \draw[dashed,thick] (-.6,-.3) rectangle (.7,.5);
+      \draw[axes](1,-1)--(1,-.5) node[right]{$I/2$};
+    \end{tikzpicture}
+  }
+  \question When a battery is connected to an external resistance $R$, as shown
+  above on the left, there is a current $I$ in the circuit. When the external
+  resistance is changed to $3R$, the current changes to $I/2$, as shown above
+  on the right. What is the internal resistance $r$ of the battery?
+  \begin{choices}
+    \choice$R/4$
+    \choice$R/2$
+    \choice$R$
+    \choice$2R$
+    \choice$4R$
+  \end{choices}
+  \newpage
+  
+  \uplevel{
+    \centering
+    \pic{.5}{some-resistors}
+  }
+  \question A circuit contains three identical light bulbs and a switch S
+  connected to an ideal battery of \emph{emf} $\mathcal E$, as shown in the
+  figure above. The switch is initially open and bulbs A and B have equal
+  brightness, while C is not lit. What happens to the brightness of bulbs A and
+  B when the switch S is closed and bulb C lights up?
+  
+  \begin{tabular}{rll}
+    & \underline{\textbf{Bulb A}} & \underline{\textbf{Bulb B}}\\
+    (A) & Remains the same & Becomes dimmer\\
+    (B) & Becomes dimmer   & Becomes dimmer\\
+    (C) & Becomes brighter & Becomes dimmer\\
+    (D) & Becomes brighter & Not lit\\
+    (E) & Remains the same   & Not lit
+  \end{tabular}
+  \newpage
+  
+  \runningheader{
+    \fontfamily{phv}\small
+    \textcolor{gray}{AP PHYSICS C: ELECTRICITY AND MAGNETISM $\blacksquare$}
+    \textbf{FREE-RESPONSE QUESTIONS}}{}{}
 
-\begin{questions}
-  \setcounter{question}{\value{lastmc}}
-
+  
   %TAKEN FROM 2015 AP PHYSICS EXAM FREE-RESPONSE QUESTION E&M.2.
   \uplevel{
     \centering
@@ -235,8 +279,8 @@
   \begin{center}
     \begin{tabular}{|c|c|c|c|c|}
       \hline
-      Trial \# & Resistance (\si\ohm) & Voltage (\si\volt) &
-      $1/R$ (\si{\per\ohm}) & $1/V$ (\si{\per\volt}) \\
+      Trial \# & Resistance [\si\ohm] & Voltage [\si\volt] &
+      $1/R$ [\si{\per\ohm}] & $1/V$ [\si{\per\volt}] \\
       \hline
       1 & 0.50 & 5.6 & 2.00 & 0.179 \\ \hline
       2 & 1.0 &  7.4 & 1.00 & 0.135 \\ \hline
@@ -366,7 +410,7 @@
         \vspace{.1in}
         \begin{tabular}{|c|c|c|p{.5in}|p{.5in}|}
           \hline
-          $\mathcal E$ (\si\volt)&  $V_R$ (\si\volt) & $I_R$ (\si\ampere) & &\\
+          $\mathcal E$ [\si\volt] & $V_R$ [\si\volt] & $I_R$ [\si\ampere] & &\\
           \hline
           0.250 & 0.179 & 0.162 & & \\ \hline
           0.500 & 0.335 & 0.327 & & \\ \hline
