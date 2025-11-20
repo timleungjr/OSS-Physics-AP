@@ -115,6 +115,18 @@
 \begin{frame}{Discharging a Capacitor}
   An \textbf{RC circuit} has both resistors and capacitors. In its simplest
   form, a resistor and a capacitor are connected in series.
+  \begin{center}
+    \begin{tikzpicture}[scale=1.2,thick]
+      \draw (.7,0) to[short,*-] (0,0) to[R=$R$] (0,2)--(2,2) to[C=$C$]
+      (2,0)--(1.2,0) to[short,-*] (.78,-.3);
+    \end{tikzpicture}
+  \end{center}
+  Initially ($t<0$), the switch is open.
+\end{frame}
+
+
+
+\begin{frame}{Discharging a Capacitor}
   \begin{columns}
     \column{.3\textwidth}
     \centering
@@ -122,12 +134,7 @@
       \draw (.7,0) to[short,o-] (0,0) to[R=$R$] (0,2)--(2,2) to[C=$C$]
       (2,0)--(1.2,0) to[short,-o] (.78,-.3);
     \end{tikzpicture}
-    
     \column{.7\textwidth}
-    \begin{itemize}
-    \item The capacitor is initially charged to $Q_0$
-    \item Initial voltage across the capacitor $V_c=\dfrac{Q_0}C$
-    \end{itemize}
     At $t=0$, the switch is closed
     \begin{itemize}
     \item As current starts to flow, the charge on the capacitor decreases
@@ -135,10 +142,10 @@
       \begin{itemize}
       \item Over time, capacitor is fully discharged, and current stops flowing
       \end{itemize}
-    \item The voltage across a capacitor is decreases as a function of time:
+    \item The voltage across a capacitor decreases as a function of time:
       $V_c(t)=Q(t)/C$
     \item The current in the circuit \emph{decreases} the total charge in
-      the capacitor, i.e. $I=-\diff Q/t$,
+      the capacitor, i.e. $I=-\diff Q/t$
     \end{itemize}
   \end{columns}
 \end{frame}
@@ -155,7 +162,7 @@
   equation for $Q$:
   
   \eq{-.1in}{
-    V_c-\underbrace{V_R}_{IR}=0\quad\longrightarrow\quad
+    V_c-\underbracket[1pt]{V_R}_{IR}=0\quad\to\quad
     \frac QC+R\diff Qt=0
   }
 \end{frame}
@@ -173,13 +180,13 @@
 
   \eq{-.1in}{
     \int\frac{\dl Q}Q =-\int\frac{\dl t}{RC}
-    \quad\rightarrow\quad
+    \quad\to\quad
     \ln Q=-\frac t{RC} + K
-    \quad\rightarrow\quad
+    \quad\to\quad
     Q(t)=e^Ke^{-t/RC}
   }
 
-  The constant of integration $K$ (really, $e^k$) is the initial charge on the
+  The constant of integration $K$ (really, $e^K$) is the initial charge on the
   capacitor $Q_0$:
 
   \eq{-.13in}{
@@ -250,8 +257,8 @@
   equation:
 
   \eq{-.1in}{
-    \mathcal E-\underbrace{V_R}_{IR}-\underbrace{V_c}_{Q/C}=0
-    \quad\longrightarrow\quad
+    \mathcal E-\underbracket[1pt]{V_R}_{IR}-\underbracket[1pt]{V_c}_{Q/C}=0
+    \quad\to\quad
     \mathcal E-R\diff Qt-\frac QC=0
   }
 \end{frame}
@@ -262,7 +269,7 @@
   
   \eq{-.1in}{
     \int\frac{\dl Q}{C\mathcal E-Q}=\int\frac{\dl t}{RC}
-    \quad\rightarrow\quad-\ln(C\mathcal E-Q)=\frac t{RC}+K
+    \quad\to\quad-\ln(C\mathcal E-Q)=\frac t{RC}+K
   }
   
   ``Exponentiating'' both sides, we have
@@ -279,7 +286,7 @@
   }
 
   \vspace{-.15in}which is the charge stored in the capacitor as
-  $t\rightarrow\infty$.
+  $t\to\infty$.
   
 \end{frame}
 
@@ -307,7 +314,7 @@
     $I_0=\dfrac{Q_\text{tot}}\tau=\dfrac{Q_\text{tot}}{RC}=\dfrac{\mathcal E}R$.
     This makes sense because $V_C(0)=0$, all the energy must be dissipated
     through the resistor
-  \item As $t\rightarrow\infty$, $I_\infty=0$
+  \item As $t\to\infty$, $I_\infty=0$
   \end{itemize}
 \end{frame}
 
@@ -330,7 +337,7 @@
   have resistor(s) and capacitor(s) arranged in series or in parallel. For
   example:
   \begin{center}
-    \begin{tikzpicture}[scale=1.2,american voltages,thick]
+    \begin{tikzpicture}[american voltages,thick]
       \draw (0,0) to[battery1,l=12<\volt>] (0,2) to[R=4<\ohm>] (2,2)
       to[short,-*] (2.46,2.3);
       \draw (2.5,2) to[short,*-] (3,2) to[short] (4.5,2)
@@ -348,31 +355,146 @@
 
 
 
-\begin{frame}{Practical RC Circuits: Example}
-  \begin{columns}[T]
-    \column{.5\textwidth}
-    At $t=0$, the capacitor is uncharged, and it acts like a short circuit.
-    There is no current through the \SI8{\ohm} resistor.
-    \begin{center}
-      \begin{tikzpicture}[american voltages,thick]
-        \draw (0,0) to[battery1,l=12<\volt>] (0,2) to[R=4<\ohm>] (2,2)
-        --(4.5,2)--(4.5,0)--(0,0);
-        \draw (3,0) to[R=8<\ohm>] (3,2);
-      \end{tikzpicture}
-    \end{center}
-    
-    \column{.5\textwidth}
-    As $t\rightarrow\infty$, the capacitor becomes fully charged, and it acts
-    like an open circuit. It has the same voltage as the \SI8{\ohm} resistor.
-    \begin{center}
-      \begin{tikzpicture}[american voltages,thick]
-        \draw (0,0) to[battery1,l=12<\volt>] (0,2) to[R=4<\ohm>] (2,2)--(4.5,2)
-        to[short,-o] (4.5,1.2);
-        \draw (4.5,.8) to[short,o-](4.5,0)--(0,0);
-      \draw (3,0) to[R=8<\ohm>] (3,2);
-      \end{tikzpicture}
-    \end{center}
+\begin{frame}{Typical RC Circuit Problem}
+  \begin{columns}
+    \column{.35\textwidth}
+    Immediately after the switch is closed (i.e.\ at $t=0$), the circuit behaves
+    like this:
+
+    \vspace{.2in}
+    \begin{tikzpicture}[scale=1.1,american voltages]
+      \draw[thick] (4,0)--(0,0)
+      to[battery,l=12<\volt>] (0,2) to[R=4<\ohm>] (2,2)--(4,2)--(4,0);
+      \draw[thick] (3,0) to[R=8<\ohm>] (3,2);
+      \draw[line width=6,yellow,opacity=.3] (0,0)--(0,2)--(4,2)--(4,0)--cycle;
+    \end{tikzpicture}
+
+    \column{.65\textwidth}
+    \begin{itemize}
+    \item No charges and therefore voltage across the capacitor; it acts like a
+      short circuit
+
+      \eq{-.2in}{
+        V_c(0)=0\quad Q_c(0)=0
+      }
+    \item No voltage across the \SI8{\ohm} resistor (in parallel with the 
+      capacitor), therefore no current through it:
+
+      \eq{-.2in}{
+        I_{\SI8\ohm}=0\quad V_{\SI8\ohm}=0
+      }
+    \item Current out of battery:
+
+      \eq{-.33in}{
+        I_\text{batt}(0)=I_{\SI4\ohm}(0)=I_c(0)=\frac{\mathcal E}{R_{\SI4\ohm}}
+        =\SI3\ampere
+      }
+    \end{itemize}
   \end{columns}
+\end{frame}
+
+
+
+\begin{frame}{Typical RC Circuit Problem}
+  \begin{columns}
+    \column{.35\textwidth}
+    \begin{tikzpicture}[scale=1.1,american voltages]
+      \draw[thick] (4,0)--(0,0)
+      to[battery,l=12<\volt>] (0,2) to[R=4<\ohm>] (2,2)--(4,2);
+      \draw[very thick,red] (4,2) to[short,-o] (4,1.2);
+      \draw[very thick,red] (4,.8) to[short,o-] (4,0);
+      \draw[thick] (3,0) to[R=8<\ohm>] (3,2);
+      \draw[line width=6,yellow,opacity=.3] (0,0)--(0,2)--(3,2)--(3,0)--cycle;
+    \end{tikzpicture}
+
+    \column{.65\textwidth}
+    A long time after the switch is closed (i.e.\ as $t\to\infty$);
+    \begin{itemize}
+    \item The capacitor is fully charged. There is no current through it; it
+      acts like an open circuit:
+
+      \eq{-.2in}{
+        I_c(\infty)=0
+      }   
+    \item Current out of battery:
+      
+      \eq{-.3in}{
+        I_\text{batt}(\infty)=I_{\SI4\ohm}(\infty)=I_{\SI8\ohm}(\infty)=
+        \frac{\mathcal E}{R_s}=\SI1\ampere
+      }
+   
+    \item\vspace{-.2in}The voltage across capacitor is the same as across the
+      \SI8{\ohm} resistor (they are parallel):
+
+      \eq{-.35in}{
+        V_c(\infty)=V_{\SI8\ohm}(\infty)=I(\infty)R=\SI8\volt
+      }
+
+    \end{itemize}
+  \end{columns}
+\end{frame}
+
+
+
+\begin{frame}{Typical RC Circuit Problem}
+  Once we know the initial ($t=0$) and ``steady-state'' ($t\to\infty$)
+  solutions, we can sketch what is in between.  We cannot (easily) find the
+  time constant for such a circuit, but the overall behaviour is still
+  an exponential decay
+  \begin{center}
+    \begin{tikzpicture}[scale=1.1,american voltages,thick]
+      \draw (0,0) to[battery,l=\SI{12}\volt] (0,2)
+      to[R=\SI4\ohm](2,2)--(4,2) to[C=\SI6{\micro\farad}] (4,0)--(0,0);
+      \draw (3,0) to[R=\SI8\ohm] (3,2);
+      \begin{scope}[red]
+        \draw[vectors] (0,1.3)--(0,2)--(.4,2);
+        \draw[axes] (-2.5,2)--+(1.5,0) node[right]{$t$};
+        \draw[axes] (-2.5,2)--+(0,1.8);
+        \draw[thick] (-2.5,3.5)--+(-.1,0) node[left=-3]{\SI3\ampere};
+        \draw[thick] (-2.5,2.5)--+(-.1,0) node[left=-3]{\SI1\ampere};
+        \draw[thick,dashed] (-2.5,2.5)--+(1.5,0);
+        \draw[thick,domain=-2.5:-1] plot(\x,{exp(-4*(\x+2.5))+2.5});
+        \node[above] at (-1.75,3.7){$I_\text{batt}$ and $I_{\SI4\ohm}$};
+      \end{scope}
+    
+      \begin{scope}[violet]
+        %\draw[vectors] (0,1.3)--(0,2)--(.4,2);
+        \draw[axes] (0,3)--+(1.5,0) node[right]{$t$};
+        \draw[axes] (0,3)--+(0,1.8);
+        \draw[thick] (0,4.5)--+(-.1,0) node[left=-3]{\SI{12}\volt};
+        \draw[thick] (0,3.5)--+(-.1,0) node[left=-3]{\SI4\volt};
+        \draw[thick,dashed] (0,3.5)--+(1.5,0);
+        \draw[thick,domain=0:1.5] plot(\x,{exp(-4*\x)+3.5});
+        \node[above] at (.75,4.5){$V_{\SI4\ohm}$};
+      \end{scope}
+
+      \begin{scope}[orange]
+        \draw[vectors] (3,2)--+(0,-.6);
+        \draw[axes] (2.5,2.5)--+(1.5,0) node[right]{$t$};
+        \draw[axes] (2.5,2.5)--+(0,1.4);
+        \draw[thick] (2.5,3.5)--+(-.1,0) node[left=-3]{\SI1\ampere};
+        \draw[thick,dashed] (2.5,3.5)--+(1.5,0);
+        \draw[thick,domain=2.5:4] plot(\x,{1-exp(-4*(\x-2.5))+2.5});
+        \node at (3.25,4){$I_{\SI8\ohm}$};
+
+        \draw[axes] (5,2.5)--+(1.5,0) node[right]{$t$};
+        \draw[axes] (5,2.5)--+(0,1.4);
+        \draw[thick] (5,3.5)--+(-.1,0) node[left=-3]{\SI8\volt};
+        \draw[thick,dashed] (5,3.5)--+(1.5,0);
+        \draw[thick,domain=5:6.5] plot(\x,{1-exp(-4*(\x-5))+2.5});
+        \node at (5.75,4){$V_{\SI8\ohm}$ and $V_c$};
+      \end{scope}
+
+      \begin{scope}[blue]
+        \draw[vectors] (3.5,2)--(4,2)--(4,1.2);
+        \draw[axes] (5.5,.5)--+(1.5,0) node[right]{$t$};
+        \draw[axes] (5.5,.5)--+(0,1.4);
+        \draw[thick] (5.5,1.5)--+(-.1,0) node[left=-3]{\SI3\ampere};
+        \draw[thick,domain=5.5:7] plot(\x,{exp(-4*(\x-5.5))+.5});
+        \node[above] at (6.25,1.5){$I_c$};
+      \end{scope}      
+    \end{tikzpicture}
+  \end{center}
 \end{frame}
 
 
@@ -412,7 +534,7 @@
     Applying the voltage law:
 
     \eq{-.3in}{
-      \mathcal E-V_R-V_L=0\quad\rightarrow\quad
+      \mathcal E-V_R-V_L=0\quad\to\quad
       \mathcal E-IR-L\diff It=0
     }
 
@@ -453,7 +575,7 @@
   \begin{itemize}
   \item At $t=0$, when the switch is closed, the back emf prevents current from
     flowing, therefore the inductor acts like an open circuit
-  \item As $t\rightarrow\infty$, magnetic flux no longer changes with time, and
+  \item As $t\to\infty$, magnetic flux no longer changes with time, and
     the inductor (which has no resistance) acts like a short circuit
   \end{itemize}
 \end{frame}
@@ -496,7 +618,7 @@
     \end{center}
     
     \column{.5\textwidth}{\footnotesize
-      As $t\rightarrow\infty$, magnetic flux through the inductor is no longer
+      As $t\to\infty$, magnetic flux through the inductor is no longer
       channging, and no back \emph{emf} is generated. The inductor acts like a
       short circuit. There is no current through the \SI8{\ohm} resistor.\par}
     \begin{center}
@@ -526,9 +648,9 @@
   
   \eq{-.2in}{
     V_C-V_L=0
-    \quad\longrightarrow\quad
+    \quad\to\quad
     \frac QC+L\diff It=0
-    \quad\longrightarrow\quad
+    \quad\to\quad
     \diff{}t\left(\frac QC+L\diff It=0\right)
   }
   
@@ -545,7 +667,7 @@
 
   \eq{-.1in}{
     \frac1C\diff Qt+L\diff[2]It=0
-    \quad\longrightarrow\quad
+    \quad\to\quad
     \frac1{LC}I+\diff[2]It=0
   }
 

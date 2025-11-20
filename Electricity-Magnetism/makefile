@@ -15,10 +15,8 @@ all:
 	cd Class06-magnetism-part1 ; make
 	cd Class07-magnetism-part2 ; make
 	cd Class09-magnetism-part3 ; make
-#	cd Class09-rotMotion-part1	; make
-#	cd Class10-rotMotion-part2	; make
-#	cd Class11-rotMotion-part3	; make
-#	cd Class12-harmonicMotion-part1 ; make
+	cd Class10-magnetism-part4 ; make
+	cd Class11-circuits-part1 ; make
 #	cd Class13-harmonicMotion-part2 ; make
 #	cd Class14-universalGravitation ; make
 #	cd Class15-planetaryMotion	; make
@@ -33,10 +31,8 @@ clean:
 	cd Class06-magnetism-part1 ; make clean
 	cd Class07-magnetism-part2 ; make clean
 	cd Class09-magnetism-part3 ; make clean
-#	cd Class09-rotMotion-part1	; make clean
-#	cd Class10-rotMotion-part2	; make clean
-#	cd Class11-rotMotion-part3	; make clean
-#	cd Class12-harmonicMotion-part1 ; make clean
+	cd Class10-magnetism-part4 ; make clean
+	cd Class11-circuits-part1 ; make clean
 #	cd Class13-harmonicMotion-part2 ; make clean
 #	cd Class14-universalGravitation ; make clean
 #	cd Class15-planetaryMotion	; make clean
@@ -51,10 +47,8 @@ public:
 	cd Class06-magnetism-part1 ; make public
 	cd Class07-magnetism-part2 ; make public
 	cd Class09-magnetism-part3 ; make public
-#	cd Class09-rotMotion-part1	; make public
-#	cd Class10-rotMotion-part2	; make public
-#	cd Class11-rotMotion-part3	; make public
-#	cd Class12-harmonicMotion-part1 ; make public
+	cd Class10-magnetism-part4 ; make public
+	cd Class11-circuits-part1 ; make public
 #	cd Class13-harmonicMotion-part2 ; make public
 #	cd Class14-universalGravitation ; make public
 #	cd Class15-planetaryMotion	; make public

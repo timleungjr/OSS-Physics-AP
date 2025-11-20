@@ -6,6 +6,10 @@
 \input{../../me}
 \input{../../mycommands}
 
+%\ctikzset{
+%  misc/scale=.5,
+%}
+
 \begin{document}
 
 \begin{frame}
@@ -67,20 +71,45 @@
 \end{frame}
 
 
-\begin{frame}{Current}
-  The \textbf{electric current} $I(t)$ is defined as the rate at which
-  \textbf{charges} $Q$ pass through a point in a circuit. In differential form:
+\begin{frame}{Electric Current}
+  The \textbf{electric current} $I(t)$ is the rate at which \textbf{charges}
+  $Q$ pass through a point in a circuit.\footnote{To be clear, as discussed in
+  Classes \#6 and \#7, \emph{current}, measured in \emph{amp\`{e}re}, is the
+  base SI unit, so the formal definition should be written as:
+  \begin{displaymath}
+    Q(t)=\int I(t)\dl t
+  \end{displaymath}
+  } In differential form, the instantaneous electric current $I$:
   
   \eq{-.1in}{
-    \boxed{I(t)=\diff Qt} = \frac QV\diff Vt = (ne)(Av_d)
+    \boxed{
+      I(t)=\diff Qt
+    } % = \frac QV\diff Vt = (ne)(Av_d)
+  }
+\end{frame}
+
+\begin{frame}{Electric Current}
+
+  We can expand the equation for electric current
+  
+  \eq{-.1in}{
+    I(t)=\diff Qt = \left[\frac QV\right]\diff Vt = (ne)(Av_d)
   }
   \begin{itemize}
-  \item $Q/V$ is the amount of charge carriers \emph{per volume}, which
-    is just
-    the \textbf{charge carrier density} (number of charge carriers per volume)
-    $n$ times the \textbf{elementary charge} $e$
-  \item $\diff V/t$ is the rate the volume of charges moves through the
-    conductor, give by the wire's cross-section area $A$ times the
+  \item $Q/V$ is the amount of free charges \emph{per volume}
+    \begin{itemize}
+    \item The \textbf{charge carrier density} (number of charge carriers per
+      volume) $n$ times the \textbf{elementary charge} $e$
+    \item Here, we assume that the electron is the charge carrier
+    \end{itemize}
+  \item $\diff V/t$ is the rate the volume of charges flows through the
+    conductor
+    \begin{itemize}
+    \item i.e. the the volume flow rate,
+    \item i.e.\ the velocity flux (discussed earlier in Class \#3 and \#4 as an
+      introduction to Gauss's law)
+    \end{itemize}
+    given by the wire's cross-section area $A$ times the
     \textbf{drift velocity} $v_d$ of the charge carrier
   \end{itemize}
 \end{frame}
@@ -103,10 +132,11 @@
 
 
 \begin{frame}{Charge Carrier Density}
-  Collecting all the terms from the last slide, we have:
+  Collecting all the terms from the last slide, we have a charge carrier
+  density of:
   
   \eq{-.1in}{
-    \boxed{n=\frac{\rho kN_A}M}
+    n=\frac{\rho kN_A}M
   }
   \begin{center}
     \begin{tabular}{l|c|c}
@@ -141,8 +171,8 @@
         \draw[axes] (0,0)--(0,4) node[above]{$I$};
       \end{tikzpicture}
     \end{center}
-    \vspace{-.1in}{\footnotesize A circuit with only resistors has a constant,
-      time-independent current\par
+    \vspace{-.1in}{\footnotesize A circuit with only resistors usually has a
+      constant, time-independent current\par
     }
     
     \column{.32\textwidth}
@@ -155,7 +185,7 @@
       \end{tikzpicture}
     \end{center}
     \vspace{-.1in}{\footnotesize A circuit with a charging or discharging
-      capacitor has an exponentially decaying current\par}
+      capacitor has an exponentially-decaying current\par}
     
     \column{.32\textwidth}
     \begin{center}
@@ -167,7 +197,7 @@
       \end{tikzpicture}
     \end{center}
     \vspace{-.1in}{\footnotesize A circuit with capacitors and inductors has a
-      current that has a sinusoidal component\par}
+      current with a sinusoidal component\par}
   \end{columns}
 \end{frame}
 
@@ -197,8 +227,8 @@
 \begin{frame}{Current}
   Another alternate description of the electric current is to express it in
   terms of the \textbf{current density} $J$, with a unit of of \emph{amp\`{e}re
-    per meters squared} (\si{\ampere\per\meter\squared}).\footnote{We had
-    previously encountered this quantity when studying Amp\`{e}re's law.}
+  per meters squared} (\si{\ampere\per\meter\squared}). We had encountered this
+  quantity in Classes \#6 and \#7 when studying Amp\`{e}re's law:
 
   \eq{-.1in}{
     \boxed{I(t)=J(t)A}
@@ -258,18 +288,18 @@
     \begin{center}
       Conventional Current
       
-      \begin{tikzpicture}[scale=.4]
-        \draw[very thick] ellipse (1 and 3);
-        \draw[very thick] (0,3)--+(8,0);
-        \draw[very thick] (0,-3)--+(8,0);
-        \draw[very thick] (8,-3) arc(-90:90:1 and 3);
-        \draw[very thick,dashed] (8,-3) arc (270:90:1 and 3);
-        \draw[very thick,dashed,lightgray] (4,4)--(4,-4);
-        \node at (1.8,0){\huge$I$};
+      \begin{tikzpicture}[scale=.4,very thick]
+        \draw ellipse (1 and 3);
+        \draw (0,3)--+(8,0);
+        \draw (0,-3)--+(8,0);
+        \draw (8,-3) arc(-90:90:1 and 3);
+        \draw[dashed] (8,-3) arc (270:90:1 and 3);
+        \draw[dashed,lightgray] (4,4)--(4,-4);
+        \node at (2.5,0){\huge$I$};
         \node at (5.3,0){\pic{.45}{arrow-east}};
       \end{tikzpicture}
     \end{center}
-    \vspace{-.1in}{\scriptsize\textbf{Conventional current} flows from the
+    \vspace{-.07in}{\scriptsize\textbf{Conventional current} flows from the
       positive terminal (cathode) to the negative terminal (anode). The flow
       of current is assumed to be a continuous function of time\par
     }
@@ -278,13 +308,13 @@
     \color{red}\begin{center}
       Model: motion of (+) charges
       
-      \begin{tikzpicture}[scale=.4]
-        \draw[very thick] ellipse (1 and 3);
-        \draw[very thick] (0,3)--+(8,0);
-        \draw[very thick] (0,-3)--+(8,0);
-        \draw[very thick] (8,-3) arc(-90:90:1 and 3);
-        \draw[very thick,dashed] (8,-3) arc (270:90:1 and 3);
-        \draw[very thick,dashed,lightgray] (4,4)--(4,-4);
+      \begin{tikzpicture}[scale=.4, very thick]
+        \draw ellipse (1 and 3);
+        \draw (0,3)--+(8,0);
+        \draw (0,-3)--+(8,0);
+        \draw (8,-3) arc(-90:90:1 and 3);
+        \draw[dashed] (8,-3) arc (270:90:1 and 3);
+        \draw[dashed,lightgray] (4,4)--(4,-4);
         
         \draw[thick,fill=pink!20] (1.5,1) circle (.4) node{$+$};
         \draw[vectors] (1.9,1)--+(1.5,0);
@@ -314,25 +344,25 @@
     \color{blue}
     \begin{center}
       Reality: \textbf{electrons flow}
-      \begin{tikzpicture}[scale=.4]
-        \draw[very thick] ellipse (1 and 3);
-        \draw[very thick] (0,3)--+(8,0);
-        \draw[very thick] (0,-3)--+(8,0);
-        \draw[very thick] (8,-3) arc(-90:90:1 and 3);
-        \draw[very thick,dashed] (8,-3) arc (270:90:1 and 3);
-        \draw[very thick,dashed,lightgray] (4,4)--(4,-4);
+      \begin{tikzpicture}[scale=.4,very thick]
+        \draw ellipse (1 and 3);
+        \draw (0,3)--+(8,0);
+        \draw (0,-3)--+(8,0);
+        \draw (8,-3) arc(-90:90:1 and 3);
+        \draw[dashed] (8,-3) arc (270:90:1 and 3);
+        \draw[dashed,lightgray] (4,4)--(4,-4);
 
         \draw[axes] (5,1)--(4,0)--(2.5,.5)--(.5,.8)--(0,0);
-        \draw[thick,fill=pink!20] (5,1) circle (.4) node{\small$e^-$};
+        \draw[thick,fill=pink!20] (5,1) circle (.3) node{\tiny$e^-$};
 
         \draw[axes] (8,-1)--(5,0)--(4.5,-.5)--(0,-.8); %--(0,0);
-        \draw[thick,fill=pink!20] (8,-1) circle (.4) node{\small$e^-$};
+        \draw[thick,fill=pink!20] (8,-1) circle (.3) node{\tiny$e^-$};
 
         \draw[axes] (6.5,-1.8)--(4.2,-2)--(4,-1)--(2.5,-1.8)--(1,-1.5);
-        \draw[thick,fill=pink!20] (6.5,-1.8) circle (.4) node{\small$e^-$};
+        \draw[thick,fill=pink!20] (6.5,-1.8) circle (.3) node{\tiny$e^-$};
 
         \draw[axes] (2.5,1.8)--(0,1.8);
-        \draw[thick,fill=pink!20] (2.5,1.8) circle (.4) node{\small$e^-$};
+        \draw[thick,fill=pink!20] (2.5,1.8) circle (.3) node{\tiny$e^-$};
       \end{tikzpicture}
     \end{center}
     \vspace{-.1in}{\scriptsize In reality, electrical current comes from motion
@@ -427,8 +457,12 @@
   Inside the wire, there is a weak electric field, which exerts a force on the
   free electrons as they move in the wire
   \begin{itemize}
-  \item As the charges move through a conductor, they lose potential energy
-    (because electric potential is a conservative force)
+  \item As the charges move through a conductor,
+    \begin{itemize}
+    \item Electric field does positive work on the charges, therefore
+    \item The charges lose potential energy (because electric force is
+      conservative)
+    \end{itemize}
   \item Unlike a free-falling objects in a vacuum, where gravitational potential
     energy is completely converted into kinetic energy, in a circuit, charge
     carriers do not move in a vacuum, and their potential energy is transformed
@@ -441,9 +475,9 @@
 \section{Resistance}
 
 \begin{frame}{Ohm's Law}
-  Georg Ohm discovered that when you pass an electric current through a
-  conductor, the voltage (electric potential difference) $V$ the two ends of
-  the conductor is \emph{linearly proportional} to the amount of current $I$
+  Georg Ohm discovered that when an electric current passes through a conductor,
+  the voltage (electric potential difference) $V$ at the two ends of the
+  conductor is \emph{linearly proportional} to the amount of current $I$
   through the material
   \begin{center}
     \vspace{-.1in}
@@ -451,13 +485,14 @@
       \draw (-4,0)--(14,0);
       \draw (-1,0)--(-1,-3)--(11,-3)--(11,0);
       \draw[fill=lightgray] (0,-1) rectangle (10,1) node[midway]{$\rho$};
-      \draw[fill=black!2] (5,-3) circle (1) node{\large V};
-      \draw[thick,|<->|] (0,1.6)--(10,1.6) node[midway,above]{$L$};
-      \draw[thick,<-] (10,.5) to[out=0,in=180] (13,1.5) node[right]{$A$};
+      \draw[fill=black!2] (5,-3) circle (.8) node{\large V};
+      \draw[|<->|] (0,1.6)--(10,1.6) node[midway,above]{$L$};
+      \draw[<-] (10,.5) to[out=0,in=180] (13,1.5) node[right]{$A$};
     \end{tikzpicture}
   \end{center}
-  The proportionality constant between voltage and is called
-  \textbf{resistance}. Note that Ohm's law is not a fundamental law in physics.
+  The proportionality constant between voltage and current is called
+  \textbf{resistance}. \textbf{Note that Ohm's law is \emph{not} a fundamental
+    law in physics.}
 \end{frame}
 
 
@@ -473,14 +508,13 @@
     \begin{tabular}{l|c|c}
       \rowcolor{pink}
       \textbf{Quantity} & \textbf{Symbol} & \textbf{SI Unit} \\ \hline
-      Potential difference & $V$    & \si\volt \\
-      Current              & $I$    & \si\ampere \\
-      Resistance           & $R$    & \si\ohm
+      Potential difference & $V$ & \si\volt \\
+      Current              & $I$ & \si\ampere \\
+      Resistance           & $R$ & \si\ohm
     \end{tabular}
   \end{center}
-  Resistance is due to collisions between the free electrons
-  %(which causes the current)
-  with the atoms in the conductor.
+  Resistance is due to collisions between the electrons and the atoms in the
+  conductor
   \begin{itemize}
   \item The collisions transfer energy from the electrons to the atoms
   \item The additional energy causes the atoms to vibrate
@@ -509,11 +543,8 @@
       Cross-sectional area & $A(x)$ & \si{\metre\squared}
     \end{tabular}
   \end{center}
-  The resistivity $\rho$ is determined by the material.\footnote{Don't confuse
-  resistivity with the \emph{density} of the material; both use the same Greek
-  letter $\rho$} For an ``ohmic'' device, resistivity should be independent of
-  temperature and direction of current.
-  \vspace{.2in}
+  \textbf{Don't confuse resistivity with the \emph{density} of the material;
+    both use the same Greek letter $\rho$}
 \end{frame}
 
 
@@ -526,6 +557,10 @@
       R=\rho\frac LA
     }
   }
+
+  Resistivity $\rho$ is determined by the material.
+  For an ``ohmic'' device, resistivity should be independent of
+  temperature and direction of current.
 \end{frame}
 
 
@@ -541,7 +576,7 @@
     \begin{center}
       \begin{tabular}{c|c|c}
         \rowcolor{cyan!30} Gauge & Diameter & $R/L$ \\
-        \rowcolor{cyan!30} & (\si{\milli\metre}) & (\SI{e-3}{\ohm\per\metre}) \\
+        \rowcolor{cyan!30} & [\si{\milli\metre}] & [\SI{e-3}{\ohm\per\metre}]\\
         \hline
         0  & \num{9.35} & \num{0.31} \\
         10 & \num{2.59} & \num{2.20} \\
@@ -556,7 +591,7 @@
     \centering
     \begin{tabular}{c|c}
       \rowcolor{cyan!30}
-      Material & Resistivity $\rho$ (\si{\ohm\metre}) \\ \hline
+      Material & Resistivity $\rho$ [\si{\ohm\metre}] \\ \hline
       silver    & \num{1.6e-8} \\
       copper    & \num{1.7e-8} \\
       aluminum  & \num{2.7e-8} \\
@@ -572,8 +607,8 @@
 
 
 \begin{frame}{Resistivity and Electric Field}
-  The resistivity of a material is proportional to the electric field and
-  current density:
+  The resistivity of a material is proportional to the electric field inside
+  the conductor, and current density:
 
   \eq{-.1in}{
     \boxed{\vec E=\rho\vec J}
@@ -598,6 +633,7 @@
 \end{frame}
 
 
+
 \begin{frame}{Ohmic Devices}
   A load is considered to be \textbf{ohmic} if it obeys Ohm's law; the
   relationship between voltage across the device and the current through the
@@ -611,24 +647,24 @@
     \hspace{.15in}
     \begin{tikzpicture}[scale=.7]
       \draw[functions] (0,0)--(2.5,2.5)
-      node[right]{$\text{slope}=\dfrac1R$};
+      node[right]{$\text{slope}=\frac1R$};
       \draw[axes] (0,0)--(3,0) node[right]{$V$};
       \draw[axes] (0,0)--(0,3) node[right]{$I$};
     \end{tikzpicture}
   \end{center}
-  Ohmic devices are loads that give off heat and light (i.e.\ EM
-  radiation). For example:
+  Ohmic devices are loads that emit EM radiation (e.g.\ heat and light). For
+  example:
   \begin{center}
-    \begin{circuitikz}[american voltages]
-      \draw[thick] (0,0) to[R,l=Resistor,o-o] (2,0);
-      \draw[thick] (3,0) to[bulb,l=Light Bulb,o-o] (5,0);
-      \draw[thick] (6,0) to[lamp,l=Lamp,o-o] (8,0);
+    \begin{circuitikz}[american voltages,thick]
+      \draw (0,0) to[R,l=Resistor,o-o] (2,0);
+      \draw (3,0) to[bulb,l=Light Bulb,o-o] (5,0);
+      \draw (6,0) to[lamp,l=Lamp,o-o] (8,0);
     \end{circuitikz}
   \end{center}
 
   {\footnotesize(Strictly speaking, light bulbs and lamps are \emph{not} ohmic,
-    because their resistance increases with temperature. However, in AP and IB
-    exams, we will assume that their behaviour is approximately ohmic)\par}
+    because their resistance increases with temperature. However, in AP exams,
+    we will assume that their behaviour is approximately ohmic)\par}
 \end{frame}
 
 
@@ -676,11 +712,11 @@
     \end{itemize}
   \item Neon lights
   \item DC motors\footnote{A DC motor is ohmic if it is \emph{stalled}, i.e.\
-  current flows through it, but the motor shaft does not turn. All of the
+  current flows through it, but the motor shaft/axle does not turn. All of the
   energy is dissipated by the resistance in the wires inside the motor.
   A properly-operating DC motor is non-ohmic because as the armature turns, it
   generates a ``back \emph{emf}'' when the magnetic flux through the armature
-  changes.}
+  changes, as discussed in the slides for Classes 9 and 10.}
   \end{itemize}
   \vspace{.25in}
 \end{frame}
@@ -725,8 +761,8 @@
 
 
 \begin{frame}{Power Dissipated by a Resistor}
-  Power is the rate at which work $W$ is done, and from electrostatics, the
-  change in electric potential energy $\Delta E_q$ is proportional to the
+  Power ($P$) is the rate at which work ($W$) is done, and from electrostatics,
+  the change in electric potential energy $\Delta E_q$ is proportional to the
   amount of charge $q$ and the voltage $V$. This gives a very simple expression
   for power through a resistor:
   
@@ -766,12 +802,11 @@
       \draw (3,0) to[C,l=Capacitor,o-o] (5,0);
     \end{tikzpicture}
   \end{center}
-  
-  {\footnotesize In voltaic cells and batteries, the \emph{emf} is controlled
-    chemically; the raw \emph{emf} output from each solar cell may vary, but
-    the overall \emph{emf} from a solar panel is generally controlled by a
-    a device called a \emph{maximum power tracker}; a generic DC voltage
-    may not have a constant \emph{emf}.\par}
+  In voltaic cells and batteries, the \emph{emf} is controlled chemically; the
+  raw \emph{emf} output from each solar cell may vary, but the overall
+  \emph{emf} from a solar panel is generally controlled by a device called the
+  \emph{maximum power point tracker} (MPPT); a generic DC voltage may not have
+  a constant \emph{emf}.
 \end{frame}
 
 
@@ -813,7 +848,7 @@
       \begin{tikzpicture}[scale=1.5,thick]
         \draw (.2,0) to[R,l=$R$] (2.8,0);
         \draw (.7,0) to[short,*-](.7,-.8)--(2.3,-.8) to[short,-*] (2.3,0);
-        \draw[very thick,fill=black!2] (1.5,-.8) circle (.3) node{V};
+        \draw[very thick,fill=black!2] (1.5,-.8) circle (.2) node{V};
       \end{tikzpicture}
     \end{center}
 
@@ -826,7 +861,7 @@
     \begin{center}
       \begin{tikzpicture}[scale=1.5]
         \draw[thick] (0,0) to[short] (1,0) to[R,l=$R$] (2.8,0);
-        \draw[very thick,fill=black!2] (.7,0) circle (.3) node{A};
+        \draw[very thick,fill=black!2] (.7,0) circle (.2) node{A};
       \end{tikzpicture}
     \end{center}
     \vspace{.47in}{\footnotesize An \textbf{ammeter} is placed in \emph{series}
@@ -839,7 +874,7 @@
       \begin{tikzpicture}[scale=1.5,thick]
         \draw (0,0) to[R,l=$R$] (3,0);
         \draw (.7,0) to[short,*-] (.7,-.8)--(2.3,-.8) to[short,-*](2.3,0);
-        \draw[very thick,fill=black!2] (1.5,-.8) circle (.3) node{$\Omega$};
+        \draw[very thick,fill=black!2] (1.5,-.8) circle (.2) node{$\Omega$};
       \end{tikzpicture}    
     \end{center}
     
@@ -872,8 +907,8 @@
 
 \begin{frame}{Kirchhoff's Junction Law}
   In the \textbf{junction law}, also known as the \textbf{current law}, the
-  electrical current that flows into any junction in a circuit must
-  be equal to the current which flows out.
+  electrical current that flows into any junction in a circuit must be equal to
+  the current which flows out.
 
   \vspace{.05in}
   \begin{columns}[T]
@@ -882,7 +917,7 @@
     \begin{tikzpicture}[scale=1.2]
       \draw[thick] (1,1) to[short,o-*] (1,0)--(0,0)--(0,-.7) to[R] (0,-2);
       \draw[thick] (1,-2) to[C] (1,-.7)--(1,0)--(2,0)--(2,-.7) to[L] (2,-2);
-      \begin{scope}[ultra thick,red,->]
+      \begin{scope}[vectors,red]
         \draw (1,.9)--(1,.1) node[midway,right]{$I$};
         \draw (.9,0)--(.1,0) node[midway,above]{$I_1$};
         \draw (1,-.1)--(1,-.9) node[midway,right]{$I_2$};
@@ -902,7 +937,7 @@
     to. In the example, a resistor, a capacitor and an inductor are joined at
     the junction.
   \end{columns}
-  \vspace{.13in}It means that there must be \emph{no} accumulation of charges
+  \vspace{.1in}It means that there must be \emph{no} accumulation of charges
   anywhere in the circuit.
 \end{frame}
 
@@ -937,9 +972,9 @@
     
     \vspace{-.3in}{\large
       \begin{align*}
-        +\mathcal E-V_1-V_2 &= 0\quad\text{(ABCHA)}\\
-        +\mathcal E-V_1-V_C &= 0\quad\text{(ABCDGHA)}\\
-        +\mathcal E-V_1-V_L &=0\quad\text{(ABCDEFGHA)}
+        +\mathcal E-V_{R_1}-V_{R_2} &= 0\quad\text{(ABCHA)}\\
+        +\mathcal E-V_{R_1}-V_C &= 0\quad\text{(ABCDGHA)}\\
+        +\mathcal E-V_{R_1}-V_L &=0\quad\text{(ABCDEFGHA)}
       \end{align*}
     }
   \end{columns}
@@ -964,7 +999,7 @@
     in parallel (side by side) must be the same:
     
     \eq{-.1in}{
-      V_2=V_C=V_L
+      V_{R_2}=V_C=V_L
     }
 
     \textbf{It does not matter what devices are connected in parallel}
@@ -1279,41 +1314,42 @@
 \end{frame}
 
 
-%\begin{frame}{As Difficult As It Gets}
-%  \begin{columns}
-%    \column{.45\textwidth}
-%    \begin{tikzpicture}[american voltages,scale=1.2,thick]
-%      \draw (0,0)--(0,2) to[R=3<\ohm>] (0,4)
-%      to[battery1,l=42<\volt>] (2,4) to[R=3<\ohm>] (4,4)--(4,2)
-%      to[R=4<\ohm>](4,0)--(2,0) to[battery1,l=6<\volt>] (2,2)
-%      to[R,l_=4<\ohm>] (0,2);
-%      \draw (0,0) to[R,l_=6<\ohm>](2,0);
-%      \draw (2,2) to[R,l_=6<\ohm>](4,2);
-%      \uncover<2->{
-%        \begin{scope}[vectors,red]
-%          \draw (.5,3.5) ..controls(4.75,4) and (4.75,2).. (.5,2.5)
-%          node[midway,left]{$I_1$};
-%          \draw (.6,.4) ..controls (0,2) and (2,2).. (1.4,.4)
-%          node[midway,below]{$I_3$};
-%          \draw (2.6,.4) ..controls (2,2) and (4,2).. (3.4,.4)
-%          node[midway,below]{$I_2$};
-%        \end{scope}
-%      }
-%    \end{tikzpicture}
-%    
-%    \column{.55\textwidth}
-%    \begin{itemize}
-%    \item To solve this problem, we define a few ``loops'' around the circuit:
-%      one on top, one on bottom left, and one on bottom right.
-%    \item<2-> Apply the voltage law in the loops. For example, in the
-%      lower left:
-%
-%      \eq{-.1in}{
-%        4(I_1-I_3)-6-6I_3=0
-%      }      
-%    \item<2-> Solve the linear system to find the current. If the current that
-%      you worked out is negative, it means that you have the direction wrong.
-%    \end{itemize}
-%  \end{columns}
-%\end{frame}
+
+\begin{frame}{As Difficult As It Gets}
+  \begin{columns}
+    \column{.45\textwidth}
+    \begin{tikzpicture}[american voltages,scale=1.2,thick]
+      \draw (0,0)--(0,2) to[R=3<\ohm>] (0,4)
+      to[battery1,l=42<\volt>] (2,4) to[R=3<\ohm>] (4,4)--(4,2)
+      to[R=4<\ohm>](4,0)--(2,0) to[battery1,l=6<\volt>] (2,2)
+      to[R,l_=4<\ohm>] (0,2);
+      \draw (0,0) to[R,l_=6<\ohm>](2,0);
+      \draw (2,2) to[R,l_=6<\ohm>](4,2);
+      \uncover<2->{
+        \begin{scope}[vectors,red]
+          \draw (.5,3.5) ..controls(4.75,4) and (4.75,2).. (.5,2.5)
+          node[midway,left]{$I_1$};
+          \draw (.6,.4) ..controls (0,2) and (2,2).. (1.4,.4)
+          node[midway,below]{$I_3$};
+          \draw (2.6,.4) ..controls (2,2) and (4,2).. (3.4,.4)
+          node[midway,below]{$I_2$};
+        \end{scope}
+      }
+    \end{tikzpicture}
+    
+    \column{.55\textwidth}
+    \begin{itemize}
+    \item To solve this problem, we define a few ``loops'' around the circuit:
+      one on top, one on bottom left, and one on bottom right.
+    \item<2-> Apply the voltage law in the loops. For example, in the
+      lower left:
+
+      \eq{-.1in}{
+        4(I_1-I_3)-6-6I_3=0
+      }      
+    \item<2-> Solve the linear system to find the current. If the current that
+      you worked out is negative, it means that you have the direction wrong.
+    \end{itemize}
+  \end{columns}
+\end{frame}
 \end{document}

@@ -1,6 +1,11 @@
 \documentclass{../../../oss-apphys-exam}
 \newcounter{lastmc}
-\ctikzset{bipoles/length=1cm}
+\ctikzset{
+  voltage=american,
+  misc/scale=.75,
+  %bipoles/length=1cm,
+  %misc/thickness=.5,
+}
 \tikzstyle{every node}=[scale=.85]
 
 \begin{document}
@@ -208,15 +213,15 @@
     \begin{tikzpicture}[scale=1.5]
       \draw[thick] (0,0) to[battery1,l_=$\mathcal E$] (-.6,0)--(-1,0)--(-1,-1)
       to[R,l=$R$] (1,-1)--(1,0)--(.6,0) to[R,l_=$r$] (0,0);
-      \draw[dashed,thick] (-.6,-.3) rectangle (.7,.5);
-      \draw[axes](1,-1)--(1,-.5) node[right]{$I$};
+      \draw[dashed,thick] (-.6,-.3) rectangle (.7,.6);
+      \draw[axes] (1,-1)--(1,-.5) node[right]{$I$};
     \end{tikzpicture}
     \hspace{.4in}
     \begin{tikzpicture}[scale=1.5]
       \draw[thick] (0,0) to[battery1,l_=$\mathcal E$] (-.6,0)--(-1,0)--(-1,-1)
       to[R,l=$3R$] (1,-1)--(1,0)--(.6,0) to[R,l_=$r$] (0,0);
-      \draw[dashed,thick] (-.6,-.3) rectangle (.7,.5);
-      \draw[axes](1,-1)--(1,-.5) node[right]{$I/2$};
+      \draw[dashed,thick] (-.6,-.3) rectangle (.7,.6);
+      \draw[axes] (1,-1)--(1,-.5) node[right]{$I/2$};
     \end{tikzpicture}
   }
   \question When a battery is connected to an external resistance $R$, as shown
@@ -250,26 +255,30 @@
     (D) & Becomes brighter & Not lit\\
     (E) & Remains the same   & Not lit
   \end{tabular}
-  \newpage
+\end{questions}
+\setcounter{lastmc}{\value{question}}
+\newpage
   
-  \runningheader{
-    \fontfamily{phv}\small
-    \textcolor{gray}{AP PHYSICS C: ELECTRICITY AND MAGNETISM $\blacksquare$}
-    \textbf{FREE-RESPONSE QUESTIONS}}{}{}
+\runningheader{
+  \fontfamily{phv}\small
+  \textcolor{gray}{AP PHYSICS C: ELECTRICITY AND MAGNETISM $\blacksquare$}
+  \textbf{FREE-RESPONSE QUESTIONS}}{}{}
 
   
   %TAKEN FROM 2015 AP PHYSICS EXAM FREE-RESPONSE QUESTION E&M.2.
-  \uplevel{
-    \centering
-    \begin{tikzpicture}[scale=1.1]
-      \draw[thick] (4,0)--(3,0) to[battery1,l=$\mathcal{E}$] (2,0)
-      to[resistor,l=$r$] (1,0)--(0,0)--(0,2) to[vR,l_=$R$] (4,2)
-      --(4,0);
-      \draw[dashed] (.9,.5) rectangle (2.7,-.9);
-      \draw[thick] (.75,2)--(.75,2.75)--(3.25,2.75)--(3.25,2);
-      \draw[thick,fill=white] (2,2.75) circle (.25) node{V};
-    \end{tikzpicture}
-  }
+\begin{center}
+  \begin{tikzpicture}[scale=1.1]
+    \draw[thick] (4,0)--(3,0) to[battery1,l=$\mathcal{E}$] (2,0)
+    to[resistor,l=$r$] (1,0)--(0,0)--(0,2) to[vR,l_=$R$] (4,2)
+    --(4,0);
+    \draw[dashed] (.9,.5) rectangle (2.7,-.9);
+    \draw[thick] (.75,2)--(.75,2.75)--(3.25,2.75)--(3.25,2);
+    \draw[thick,fill=white] (2,2.75) circle (.25) node{V};
+  \end{tikzpicture}
+\end{center}
+
+\begin{questions}
+  \setcounter{question}{\value{lastmc}}
   \question A student performs an experiment to determine the emf $\mathcal E$
   and internal resistance $r$ of a given battery. The student connects the
   battery in series to a variable resistance $R$, with a voltmeter across the
@@ -352,15 +361,15 @@
   \uplevel{
     \centering
     \begin{tikzpicture}[scale=1.5]
-      \draw[thick] (0,0) to[battery,l=$\mathcal E$] (0,3)
-      to[resistor,l_=$R$] (2,3)
+      \draw[thick] (0,0) to[battery,l=$\mathcal E$] (0,2)
+      to[resistor,l_=$R$] (2,2)
       to[resistor,l=$r$] (2,0)-- (0,0);
       \draw[thick,fill=white] (1,0) circle (.23) node{A};
-      \draw[thick] (.4,3)--(.4,3.6)--(1.6,3.6)--(1.6,3);
-      \draw[thick,fill=white] (1,3.6) circle (.23) node{V};
+      \draw[thick] (.4,2)--(.4,2.6)--(1.6,2.6)--(1.6,2);
+      \draw[thick,fill=white] (1,2.6) circle (.23) node{V};
     \end{tikzpicture}
   }
-  \question The circuit shown above consists of a source of variable emf
+  \question The circuit shown above consists of a source of variable \emph{emf}
   $\mathcal E$, an ideal ammeter A, an ideal voltmeter V, a resistor of
   resistance $R$, and a sample of wire with resistance $r$.
   \begin{parts}
@@ -368,16 +377,16 @@
     through the resistor $R$?
     
     \vspace{.05in}
-    \underline{\hspace{.4in}} It is greater through $R$.
+    \underline{\hspace{.3in}} It is greater through $R$.
     
     \vspace{.05in}
-    \underline{\hspace{.4in}} It is greater through the sample.
+    \underline{\hspace{.3in}} It is greater through the sample.
     
     \vspace{.05in}
-    \underline{\hspace{.4in}} It is the same through both.
+    \underline{\hspace{.3in}} It is the same through both.
     
     \vspace{.05in}
-    \underline{\hspace{.4in}} It depends on the resistance of the sample.
+    \underline{\hspace{.3in}} It depends on the resistance of the sample.
 
     \vspace{.1in}\textbf{Justify} your answer.
     \vspace{\stretch1}
@@ -408,7 +417,8 @@
       
       \begin{center}
         \vspace{.1in}
-        \begin{tabular}{|c|c|c|p{.5in}|p{.5in}|}
+        \def\arraystretch{2}
+        \begin{tabular}{|c|c|c|p{.8in}|p{.8in}|}
           \hline
           $\mathcal E$ [\si\volt] & $V_R$ [\si\volt] & $I_R$ [\si\ampere] & &\\
           \hline
@@ -417,6 +427,7 @@
           0.750 & 0.520 & 0.490 & & \\ \hline
           1.000 & 0.670 & 0.687 & & \\ \hline
         \end{tabular}
+        \def\arraystretch{1}
       \end{center}
     }
 
