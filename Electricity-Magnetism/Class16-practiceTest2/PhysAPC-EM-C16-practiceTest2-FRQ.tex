@@ -1,6 +1,6 @@
 \documentclass[12pt]{../../oss-apphys-exam}
 %\usepackage{enumitem}
-%\usepackage{bm}
+\usepackage{bm}
 
 \runningheader{
   \fontfamily{phv}\small
@@ -21,12 +21,12 @@
 \vspace{2in}
 \textbf{Directions:}
 
-Section II has 4 questions and lasts 60 minutes.
+Section II has 3 questions and lasts 45 minutes.
 
 You may use the available paper for scratch work and planning, but you must
-write your answers in the free-response booklet. Label parts (e.g., A, B, C)
-and sub-parts (e.g., i, ii, iii) as needed. Use a pencil or a pen with black or
-dark blue ink to write your responses.
+write your answers in the free-response booklet. Label parts (e.g., \textbf{A},
+\textbf{B}, \textbf{C}) and sub-parts (e.g., i, ii, iii) as needed. Use a
+pencil or a pen with black or dark blue ink to write your responses.
 
 A calculator is allowed in this section, as well as a ruler and straightedge.
 You may use a handheld four-function, scientific, or graphing calculator, or
@@ -55,14 +55,14 @@ The clock will turn red when 5 minutes remain---\textbf{the proctor will not
 \newpage
 
 
-\begin{center}
-  \begin{tikzpicture}[scale=1.5,thick]
-    \draw (0,0) to[battery,l=$V_0$] (0,2) to[R,l=$R$,-*] (1.5,2);
-    \draw (0,0)--(2,0) to[C,l_=$X$,-*] (2,2);
-    \draw (0,0)--(2,0)--(4,0) to[C,l_=$Y$] (4,2) to[short,-*] (2.5,2);
-  \end{tikzpicture}
-\end{center}
-\newpage
+%\begin{center}
+%  \begin{tikzpicture}[scale=1.5,thick]
+%    \draw (0,0) to[battery,l=$V_0$] (0,2) to[R,l=$R$,-*] (1.5,2);
+%    \draw (0,0)--(2,0) to[C,l_=$X$,-*] (2,2);
+%    \draw (0,0)--(2,0)--(4,0) to[C,l_=$Y$] (4,2) to[short,-*] (2.5,2);
+%  \end{tikzpicture}
+%\end{center}
+%\newpage
 
 \begin{questions}
 
@@ -152,12 +152,12 @@ The clock will turn red when 5 minutes remain---\textbf{the proctor will not
 
       \vspace{.1in}
       \begin{center}
-        \begin{tikzpicture}
-          \draw[thick] rectangle (4,1);
-          \fill (1,.5) circle (.065) node[right]{A};
-          \fill (2,.5) circle (.065) node[right]{B};
-          \fill (4.25,.5) circle (.065) node[right]{C};
-          \fill (2,1.5) circle (.065) node[above]{D};
+        \begin{tikzpicture}[thick]
+          \draw rectangle (4,1);
+          \fill (1,.5) circle (.06) node[right]{A};
+          \fill (2,.5) circle (.06) node[right]{B};
+          \fill (4.25,.5) circle (.06) node[right]{C};
+          \fill (2,1.5) circle (.06) node[above]{D};
         \end{tikzpicture}
       \end{center}
       \vspace{.15in}
@@ -193,7 +193,7 @@ The clock will turn red when 5 minutes remain---\textbf{the proctor will not
       function of $NI/\ell$ is shown below. The best-fit lines for the data are
       shown as a solid line for solenoid 1 and as a dashed line for solenoid 2.
       
-      \cpic{.85}{results}
+      \cpic{.9}{results}
     }
 
     \part Which solenoid's best-fit line would give the best results for
@@ -224,8 +224,85 @@ The clock will turn red when 5 minutes remain---\textbf{the proctor will not
     on. \textbf{Explain} what causes the failure of the multimeter.
     \vspace{\stretch1}
   \end{parts}
+  \newpage
 
+  % TAKEN FROM 2012 AP PHYSICS C E&M EXAM FREE-RESPONSE QUESTION 3. THE
+  % FORMATTING OF THIS QUESTION HAS CHANGED, BUT NO OTHER CHANGES HAVE BEEN
+  % MADE TO THIS QUESTION
+  \uplevel{
+    \centering
+    \begin{tikzpicture}[scale=.7]
+      \foreach \x in {0,...,5}{
+        \foreach \y in {0,...,8} \node[gray] at (\x,\y) {$\bm\times$};
+      }
+      \draw[thick,fill=gray] (.5,7.4) rectangle (4.5,7.7);
+      \draw[ultra thick](.5,9)--(.5,.7)--(4.5,.7)--(4.5,9);
+      \foreach \x in {.5,4.5} \draw (\x,.6)--+(0,-1.5);
+      \draw[<->] (.5,-.5)--+(4,0) node[midway,fill=white]{$L$};
 
+      \foreach \y in {.7,7.55} \draw (4.6,\y)--+(1.8,0);
+      \draw[<->] (5.8,.7)--(5.8,7.55) node[midway,fill=white]{$h_0$};
 
+      \draw[thick,<-] (2.5,7.8)--(2.8,9) node[above]{Crossbar};
+      \node at (1.5,3.5) {$B_0$};
+    \end{tikzpicture}
+  }
+  
+  \question A closed loop is made of a U-shaped metal wire of negligible
+  resistance and a movable metal crossbar of resistance $R$. The crossbar has
+  mass $m$ and length $L$. It is initially located a distance $h_0$ from the
+  other end of the loop. The loop is placed vertically in a uniform horizontal
+  magnetic field of magnitude $B_0$ into the plane of the loop, as shown in the
+  figure above.
+  %in the direction shown in the figure above.
+  Express all algebraic answers to the questions below in terms of $B_0$, $L$,
+  $m$, $h_0$, $R$, and fundamental constants, as appropriate.
+  \begin{parts}
+    \part\textbf{Determine} the magnitude of the magnetic flux $\Phi_m$ through
+    the loop when the crossbar is in the position shown.
+    \vspace{\stretch1}
+
+    \uplevel{
+      The crossbar is released from rest and slides with negligible friction
+      down the U-shaped wire without losing electrical contact.
+    }
+
+    \part On the figure below, \textbf{indicate} the direction of the current
+    in the crossbar as it falls.
+    \begin{center}
+      \vspace{.4in}
+      
+      {\tikz\draw[very thick,fill=lightgray] rectangle (3,.3);}
+
+      \vspace{.4in}
+    \end{center}
+    \textbf{Justify} your answer.
+    \vspace{\stretch2}
+    \newpage
+    
+    \part\textbf{Calculate} the magnitude of the current in the crossbar as it
+    falls as a function of the crossbar's speed $v$.
+    \vspace{\stretch1}
+    
+    \part\textbf{Derive}, but do NOT solve, the differential equation that
+    could be used to determine the speed u of the crossbar as a function of
+    time $t$.
+    \vspace{\stretch1}
+    
+    \part\textbf{Determine} the terminal speed $v_T$ of the crossbar.
+    \vspace{\stretch1}
+    
+    \part If the resistance $R$ of the crossbar is increased, \textbf{indicate}
+    whether the terminal speed increases, decreases, or remains the same?
+
+    \vspace{.15in}
+    \underline{\hspace{.4in}} Increases \hspace{.4in}
+    \underline{\hspace{.4in}} Decreases \hspace{.4in}
+    \underline{\hspace{.4in}} Remains the same
+    
+    \vspace{.15in}\textbf{Justify} your answer in terms of the forces on the
+    crossbar.
+    \vspace{\stretch2}
+  \end{parts}
 \end{questions}
 \end{document}
