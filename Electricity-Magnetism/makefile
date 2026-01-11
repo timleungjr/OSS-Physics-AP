@@ -18,8 +18,8 @@ all:
 	cd Class10-magnetism-part4 ; make
 	cd Class11-circuits-part1 ; make
 #	cd Class13-harmonicMotion-part2 ; make
-#	cd Class14-universalGravitation ; make
-#	cd Class15-planetaryMotion	; make
+	cd Class14A-hallEffect ; make
+	cd Class14B-maxwellsEqs ; make
 
 clean:
 	rm -rf *.*~ *~ *.log
@@ -34,8 +34,8 @@ clean:
 	cd Class10-magnetism-part4 ; make clean
 	cd Class11-circuits-part1 ; make clean
 #	cd Class13-harmonicMotion-part2 ; make clean
-#	cd Class14-universalGravitation ; make clean
-#	cd Class15-planetaryMotion	; make clean
+	cd Class14A-hallEffect ; make clean
+	cd Class14B-maxwellsEqs ; make clean
 
 public:
 	mkdir -p $(DESTINATION)
@@ -50,5 +50,5 @@ public:
 	cd Class10-magnetism-part4 ; make public
 	cd Class11-circuits-part1 ; make public
 #	cd Class13-harmonicMotion-part2 ; make public
-#	cd Class14-universalGravitation ; make public
-#	cd Class15-planetaryMotion	; make public
+	cd Class14A-hallEffect ; make public
+	cd Class14B-maxwellsEqs ; make public
