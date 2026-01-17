@@ -1,8 +1,7 @@
 \documentclass{../../../oss-apphys-exam}
 \usepackage{bm}
 \usepackage{enumitem}
-
-%\raggedcolumns
+\newcounter{last}
 
 \runningheader{
   \fontfamily{phv}\small
@@ -138,19 +137,24 @@
     \choice 14 A
     \choice 24 A
   \end{choices}
-  \newpage
+\end{questions}
+\setcounter{last}{\value{question}}
+\newpage
   
-  \runningheader{
-    \fontfamily{phv}\small
-    \textcolor{gray}{AP PHYSICS C: ELECTRICITY AND MAGNETISM $\blacksquare$}
-    \textbf{FREE-RESPONSE QUESTIONS}}{}{}
+\runningheader{
+  \fontfamily{phv}\small
+  \textcolor{gray}{AP PHYSICS C: ELECTRICITY AND MAGNETISM $\blacksquare$}
+  \textbf{FREE-RESPONSE QUESTIONS}}{}{}
+  
+% TAKEN FROM THE 2009 AP PHYSICS C FREE-RESPONSE QUESTION E&M 2. THIS IS A
+% HALL-EFFECT QUESTION
+\begin{center}
+  \pic{.45}{hall2}
+\end{center}
 
+\begin{questions}
+  \setcounter{question}{\value{last}}
   
-  % TAKEN FROM THE 2009 AP PHYSICS C FREE-RESPONSE QUESTION E&M 2. THIS IS A
-  % HALL-EFFECT QUESTION
-  \uplevel{
-    \cpic{.45}{hall2}
-  }
   \question A \SI{9.0}{\volt} battery is connected to a rectangular bar of
   length \SI{0.080}{\metre}, uniform cross-sectional area
   \SI{5.0e-6}{\metre\squared}, and resistivity \SI{4.5e-4}{\ohm\metre}, as

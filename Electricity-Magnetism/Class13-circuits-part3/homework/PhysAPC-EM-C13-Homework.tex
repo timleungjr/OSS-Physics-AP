@@ -1,6 +1,6 @@
 \documentclass{../../../oss-apphys-exam}
 \newcounter{last}
-\ctikzset{bipoles/length=1cm}
+\ctikzset{bipoles/length=.9cm}
 %\tikzstyle{every node}=[scale=.85]
 
 \renewcommand{\arraystretch}{1.2}
@@ -47,17 +47,17 @@
 %  \end{choices}
   
 \textbf{Question \ref{switch1}--\ref{switch2}}: The circuit shows a
-capacitor, a battery, and a resistor. Switch $S$ is first connected to point
+capacitor, a battery, and a resistor. Switch S is first connected to point
 $a$ to charge the capacitor, then a long time later switched to point $b$ to
 discharge the capacitor through the resistor.
 \begin{center}
-  \begin{tikzpicture}[american voltages]
+  \begin{tikzpicture}[thick]
     \draw (0,0) to[battery,l=$\mathcal E$] (0,2) to[short,-*] (1.5,2);
     \draw (2.5,2) to[short,*-] (3.5,2) to[R=$R$] (3.5,0)--(0,0);
     \draw (2,0) to[C=$C$,-*] (2,1.25);
-    \draw (2,1.25)--(2.3,2.15) node[above]{s};
-    \node at (1.5,1.8) (a){a};
-    \node at (2.5,1.8) (b){b};
+    \draw (2,1.25)--(2.3,2.15) node[above]{S};
+    \node[below] at (1.5,2) (a){$a$};
+    \node[below]at (2.5,2) (b){$b$};
   \end{tikzpicture}
 \end{center}
 
@@ -88,23 +88,41 @@ discharge the capacitor through the resistor.
   resistor. A battery is connected across a and b, and then removed. Which of
   the following statements is true of the circuits?
   \begin{center}
-    \begin{tikzpicture}[scale=.8]
-      \node[above] at (1,2.5){Circuit I};
-      \draw(0,1.25) to[short,*-] (0,2.5)--(2,2.5) to[C=$C$](2,1.25)
-      to[R=$R$] (2,0)--(0,0) to[short,-*] (0,0.75);
-      \node at (-0.3,0.75) {a};
-      \node at (-0.3,1.25) {b};
+    \begin{tikzpicture}[thick]
+      \node[above=10] at (1.5,2){\textbf{Circuit I}};
+      \draw (0,1.25) to[short,*-] (0,2) to[C,l_=$C$] (1.5,2)
+      to[R,l_=$R$] (3,2)--(3,0)--(0,0) to[short,-*] (0,0.75);
+      \node[left] at (0,0.75) {$a$};
+      \node[left] at (0,1.25) {$b$};
     \end{tikzpicture}
     \hspace{.5in}
-    \begin{tikzpicture}[scale=.8]
-      \node[above] at (1.5,2){Circuit II};
-      \draw (0,1.25) to[short,*-] (0,2)--(1.5,2) to[R=$R$](1.5,0)--(0,0)
+    \begin{tikzpicture}[thick]
+      \node[above=10] at (1.5,2){\textbf{Circuit II}};
+      \draw (0,1.25) to[short,*-] (0,2)--(1.5,2) to[R,l_=$R$](1.5,0)--(0,0)
       to[short,-*] (0,.75);
       \draw (1.5,2)--(3,2) to[C=$C$] (3,0)--(1.5,0);
-      \node at (-.3,.75) {a};
-      \node at (-.3,1.25) {b};
+      \node[left] at (0,0.75) {$a$};
+      \node[left] at (0,1.25) {$b$};
     \end{tikzpicture}
   \end{center}
+  %\begin{center}
+  %  \begin{tikzpicture}[scale=.8]
+  %    \node[above] at (1,2.5){Circuit I};
+  %    \draw(0,1.25) to[short,*-] (0,2.5)--(2,2.5) to[C=$C$](2,1.25)
+  %    to[R=$R$] (2,0)--(0,0) to[short,-*] (0,0.75);
+  %    \node at (-0.3,0.75) {a};
+  %    \node at (-0.3,1.25) {b};
+  %  \end{tikzpicture}
+  %  \hspace{.5in}
+  %  \begin{tikzpicture}[scale=.8]
+  %    \node[above] at (1.5,2){Circuit II};
+  %    \draw (0,1.25) to[short,*-] (0,2)--(1.5,2) to[R=$R$](1.5,0)--(0,0)
+  %    to[short,-*] (0,.75);
+  %    \draw (1.5,2)--(3,2) to[C=$C$] (3,0)--(1.5,0);
+  %    \node at (-.3,.75) {a};
+  %    \node at (-.3,1.25) {b};
+  %  \end{tikzpicture}
+  %\end{center}
   \begin{choices}
     \choice Circuit I and Circuit II will both retain stored energy when the
     battery is removed.
@@ -145,26 +163,96 @@ discharge the capacitor through the resistor.
     \choice Point $Y$ is at zero potential, and point $X$ has a negative
     potential.
   \end{choices}
-  \newpage
-  
-  \runningheader{
-    \fontfamily{phv}\small
-    \textcolor{gray}{AP PHYSICS C: ELECTRICITY AND MAGNETISM $\blacksquare$}
-    \textbf{FREE-RESPONSE QUESTIONS}}{}{}
-  
+
   \uplevel{
     \centering
-    \begin{tikzpicture}[scale=2,thick]
-      \draw (2,0) to[battery1,l=\SI{30}\volt] (0,0)--(0,2)
-      to[R,l=\SI{40}\ohm] (1,2) to[C,l=\SI{10}{\micro\farad}] (2,2)--(2,0);
-      \draw (0,1) to[C,l_=\SI{5.0}{\micro\farad}] (1,1)
-      to[R,l_=\SI{20}\ohm] (2,1);
-
-      \draw[fill=white] (2,1.5) circle (.15) node{A};
-      \draw (1,2) to[short,-*] (1,1.66);
-      \draw (1,1) to[short,-*] (1,1.33)--(1.15,1.65) node[midway,right]{S};
+    \begin{tikzpicture}[thick,scale=1.2]
+      \draw (0,0)--(0,2) to[L,l=\mbox{$L=\SI{5.0}\henry$}] (2,2)
+      to[R,l=\mbox{$R=\SI{20}{\kilo\ohm}$}] (4,2)--(4,0) to[short,-*] (3.3,0);
+      \draw (2.8,0) to[short,*-] (2,0)
+      to[battery1,l=\mbox{$\mathcal E=\SI{20}\volt$}] (0,0);
+      \draw (2.8,0) to (3.35,.3) node[above left]{Switch};
     \end{tikzpicture}
   }
+
+  \question After the switch is closed in the circuit above, the current in the
+  circuit is given by $i(t)=I\left(1-e^{-t/\zeta}\right)$ where $I$ and $\zeta$
+  are positive constants. What is the value of $I$?
+  \begin{choices}
+    \choice 0
+    \choice \SI{.001}\ampere
+    \choice \SI{.80}\ampere
+    \choice \SI{1.0}\ampere
+    \choice \SI{4.0}\ampere
+  \end{choices}
+  
+  \uplevel{
+    \begin{center}
+      \begin{tikzpicture}[thick,scale=1.5]
+        \draw (0,0) to[L=$L$] (0,2) to[short,-*] (1.3,2);
+        \draw (0,0)--(3,0)--(3,.5) to[battery1,l_=$\mathcal E$] (3,1)
+        to[R,l_=$R$] (3,1.7)--(3,2) to[short,-*] (1.7,2);
+        \draw (1.5,0) to[C=$C$,-*] (1.5,1.6);
+        \draw (1.3,2)--(1.65,2.2) node[midway,above]{$S_3$};
+        \draw (1.3,2)--(1.4,1.55) node[midway,left]{$S_2$};
+        \draw (1.7,2)--(1.6,1.55) node[midway,right]{$S_1$};
+      \end{tikzpicture}
+    \end{center}
+    \textbf{Questions \ref{rlc1}--\ref{rlc2}:} A circuit is constructed using a
+    battery of emf $\mathcal E$, a resistor of resistance $R$, a capacitor of
+    capacitance $C$, an inductor of self inductance $L$, and three switches, as
+    shown in the figure above. The three switches are labelled $S_1$, $S_2$ and
+    $S_3$, and they can be operated independently.
+  }
+
+  \question Initially, all switches are open, and there is no stored energy in
+  the capacitor or the inductor. Switch $S_3$ is closed. What is the current in
+  the inductor after steady state has been reached?
+  \label{rlc1}
+  \begin{choices}
+    \choice $\dfrac{\mathcal E}{LR}$
+    \choice $\dfrac{\mathcal ER}L$
+    \choice $\dfrac{\mathcal EL}R$
+    \choice $\dfrac{\mathcal E}R$
+    \choice zero
+  \end{choices}
+
+  \question All switches are open, and there is no stored energy in the
+  capacitor or the inductor. Switch $S_1$ is closed. After the capacitor is
+  fully charged, switch $S_1$ is opened and switch $S_2$ is closed. Which of
+  the following expressions represents the maximum current in the $LC$ circuit?
+  \label{rlc2}
+  \begin{choices}
+    \choice$\dfrac{\mathcal E}R$
+    \choice$\mathcal E\sqrt{\dfrac CL}$
+    \choice$\mathcal E\sqrt{\dfrac LC}$
+    \choice$\dfrac{\mathcal EC}L$
+    \choice$\dfrac{\mathcal EL}C$
+  \end{choices}
+\end{questions}
+\setcounter{last}{\value{question}}
+\newpage
+  
+\runningheader{
+  \fontfamily{phv}\small
+  \textcolor{gray}{AP PHYSICS C: ELECTRICITY AND MAGNETISM $\blacksquare$}
+  \textbf{FREE-RESPONSE QUESTIONS}}{}{}
+  
+\begin{center}
+  \begin{tikzpicture}[scale=2,thick]
+    \draw (2,0) to[battery1,l=\SI{30}\volt] (0,0)--(0,2)
+    to[R,l=\SI{40}\ohm] (1,2) to[C,l=\SI{10}{\micro\farad}] (2,2)--(2,0);
+    \draw (0,1) to[C,l_=\SI{5.0}{\micro\farad}] (1,1)
+    to[R,l_=\SI{20}\ohm] (2,1);
+    
+    \draw[fill=white] (2,1.5) circle (.15) node{A};
+    \draw (1,2) to[short,-*] (1,1.66);
+    \draw (1,1) to[short,-*] (1,1.33)--(1.15,1.65) node[midway,right]{S};
+  \end{tikzpicture}
+\end{center}
+
+\begin{questions}
+  \setcounter{question}{\value{last}}
   \question In the circuit illustrated above, switch S is initially open and
   the battery has been connected for a long time.
   \begin{parts}
