@@ -6,63 +6,61 @@
 
 \gentitle{1}{KINEMATICS}
 
-\raggedcolumns
-
+%\raggedcolumns
 
 \runningheader{
   \fontfamily{phv}\small
   \textcolor{gray}{AP PHYSICS C: MECHANICS $\blacksquare$}
   \textbf{MULTIPLE-CHOICE QUESTIONS}}{}{}
 
-\begin{multicols*}{2}
-  \begin{questions}
-    \question A golf ball is hit from level ground and has a horizontal range of
-    \SI{100}\metre. The ball leaves the golf club at an angle of \ang{60} to
-    the level ground. At what other angle(s) can the ball be struck at the same
-    initial velocity and still have a range of \SI{100}\metre?
-    \begin{center}
-      \begin{tikzpicture}
-        \fill[gray!50] rectangle (4.5,-.3);
-        \draw[thick] (0,0)--(4.5,0);
-        \fill circle (.07);
-        \draw[thick,smooth,domain=0:4,dashed] plot(\x,{-.5*((\x-2)*(\x-2))+2});
-        \draw[vectors,rotate=62] (0,0)--(1.3,0);
-        \draw(.7,0) arc (0:62:.7) node[midway,right]{\ang{60}};
-      \end{tikzpicture}
-    \end{center}
-    \begin{choices}
-      \choice\ang{30}
-      \choice\ang{20} and \ang{80}
-      \choice\ang{10} and \ang{120}
-      \choice\ang{45} and \ang{135}
-      \choice There is no other angle other than \ang{60} in which the ball will
-      have a range of \SI{100}\metre.
-    \end{choices}
+\begin{questions}
+  \question A golf ball is hit from level ground and has a horizontal range of
+  \SI{100}\metre. The ball leaves the golf club at an angle of \ang{60} to the
+  level ground. At what other angle(s) can the ball be struck at the same
+  initial velocity and still have a range of \SI{100}\metre?
+  \begin{center}
+    \begin{tikzpicture}
+      \fill[gray!50] rectangle (4.5,-.3);
+      \draw[thick] (0,0)--(4.5,0);
+      \fill circle (.07);
+      \draw[thick,smooth,domain=0:4,dashed] plot(\x,{-.5*((\x-2)*(\x-2))+2});
+      \draw[vectors,rotate=62] (0,0)--(1.3,0);
+      \draw (.7,0) arc (0:62:.7) node[midway,right]{\ang{60}};
+    \end{tikzpicture}
+  \end{center}
+  \begin{choices}
+    \choice\ang{30}
+    \choice\ang{20} and \ang{80}
+    \choice\ang{10} and \ang{120}
+    \choice\ang{45} and \ang{135}
+    \choice There is no other angle other than \ang{60} in which the ball will
+    have a range of \SI{100}\metre.
+  \end{choices}
 
-    \question A toy dart gun fires a dart at an angle of \ang{45} to the
-    horizontal and the dart reaches a maximum height of 1 metre. If the dart
-    were fired straight up into the air along the vertical, the dart would
-    reach a height of
-    \begin{choices}
-      \choice\SI1\metre
-      \choice\SI2\metre
-      \choice\SI3\metre
-      \choice\SI4\metre
-      \choice\SI5\metre
-    \end{choices}
-      
-    \question A stack of coffee filters falls through the air with an initial
-    velocity $v_0$. Due to air resistance, the filters fall with an
-    acceleration proportional to the velocity of fall, that is, $a=-kv$, where
-    $k$ is a positive constant. The velocity of the falling filters as a
-    function of time of fall is
-    \begin{choices}
-      \choice $-kv^2$
-      \choice $-\dfrac1{2kv^2}$
-      \choice $-k$
-      \choice $\ln(kt)$
-      \choice $v_0e^{-kt}$
-    \end{choices}
+  \question A toy dart gun fires a dart at an angle of \ang{45} to the
+  horizontal and the dart reaches a maximum height of 1 metre. If the dart were
+  fired straight up into the air along the vertical, the dart would reach a
+  height of
+  \begin{choices}
+    \choice\SI1\metre
+    \choice\SI2\metre
+    \choice\SI3\metre
+    \choice\SI4\metre
+    \choice\SI5\metre
+  \end{choices}
+  
+  \question A stack of coffee filters falls through the air with an initial
+  velocity $v_0$. Due to air resistance, the filters fall with an acceleration
+  proportional to the velocity of fall, that is, $a=-kv$, where $k$ is a
+  positive constant. The velocity of the falling filters as a function of time
+  of fall is
+  \begin{choices}
+    \choice $-kv^2$
+    \choice $-\dfrac1{2kv^2}$
+    \choice $-k$
+    \choice $\ln(kt)$
+    \choice $v_0e^{-kt}$
+  \end{choices}
     
 %    \question A rubber ball is dropped from rest onto a plane angled at
 %    $\theta=\ang{30}$ to the horizontal floor and bounces off the plane with a
@@ -113,49 +111,47 @@
 %      \choice $-\SI{10}{\kilo\metre}$
 %    \end{choices}
 
-    \columnbreak
+  \question An object starts from rest at $t=0$ and position $x=0$, then moves
+  in a straight line with an acceleration described by the equation $a=4t^2$ in
+  \si{\metre\per\second\squared}. What is the position of the object at
+  $t=\SI3\second$?
+  \begin{choices}
+    \choice\SI6\metre
+    \choice\SI1\metre
+    \choice\SI{27}\metre
+    \choice\SI{54}\metre
+    \choice\SI{108}\metre
+  \end{choices}
+  \newpage
+  
+  \uplevel{
+    \textbf{Questions \ref{q:fall1}--\ref{q:fall2}}: An object is released from
+    rest and falls through a resistive medium. The resistance causes the
+    velocity of the object to change according to the equation
+    $v=16t-\dfrac12t^4$, where $v$ is in \si{\metre\per\second}, and time is in
+    seconds.
+  }
+  
+  \question Which of the following is a possible equation for the acceleration
+  of the object as a function of time?
+  \begin{choices}
+    \choice $16-2t^2$
+    \choice $16-2t^3$
+    \choice $16-2t$
+    \choice $8t^3-2t^2$
+    \choice $32t^3-2t^5$
+  \end{choices}
+  \label{q:fall1}
     
-    \question An object starts from rest at $t=0$ and position $x=0$, then moves
-    in a straight line with an acceleration described by the equation $a=4t^2$
-    in \si{\metre\per\second\squared}. What is the position of the object at
-    $t=\SI3\second$?
-    \begin{choices}
-      \choice\SI6\metre
-      \choice\SI1\metre
-      \choice\SI{27}\metre
-      \choice\SI{54}\metre
-      \choice\SI{108}\metre
-    \end{choices}
-
-    \uplevel{
-      \textbf{Questions \ref{q:fall1}--\ref{q:fall2}}: An object is released
-      from rest and falls through a resistive medium. The resistance causes the
-      velocity of the object to change according to the equation
-      $v=16t-\dfrac12t^4$, where $v$ is in \si{\metre\per\second}, and time is
-      in seconds.
-    }
-
-    \question Which of the following is a possible equation for the
-    acceleration of the object as a function of time?
-    \begin{choices}
-      \choice $16-2t^2$
-      \choice $16-2t^3$
-      \choice $16-2t$
-      \choice $8t^3-2t^2$
-      \choice $32t^3-2t^5$
-    \end{choices}
-    \label{q:fall1}
-    
-    \question What is the terminal velocity of the object as it falls?
-    \begin{choices}
-      \choice \SI5{\metre\per\second}
-      \choice \SI{10}{\metre\per\second}
-      \choice \SI{24}{\metre\per\second}
-      \choice \SI{32}{\metre\per\second}
-      \choice The object never reaches a terminal velocity.
-    \end{choices}
-    \label{q:fall2}
-    \columnbreak
+  \question What is the terminal velocity of the object as it falls?
+  \begin{choices}
+    \choice \SI5{\metre\per\second}
+    \choice \SI{10}{\metre\per\second}
+    \choice \SI{24}{\metre\per\second}
+    \choice \SI{32}{\metre\per\second}
+    \choice The object never reaches a terminal velocity.
+  \end{choices}
+  \label{q:fall2}
     
 %    \uplevel{
 %      \textbf{Questions \ref{car1}--\ref{car2}}: A car of mass $m$ travels
@@ -185,242 +181,237 @@
 %    \end{choices}
 %    \label{car2}
   
-    \question The motion of an object is represented by the acceleration vs.\
-    time graph below. The object is initially at rest. Which of the following
-    statements is true about the motion of the object?
-    \begin{center}
-      \begin{tikzpicture}[scale=.47]
-        \draw[axes] (0,0)--(6.3,0) node[right]{$t$ [s]};
-        \draw[axes] (0,-3.5)--(0,3.5) node[above]{$a$};
-        \draw[ultra thick] (0,2)--(2,2);
-        \draw[ultra thick] (2,-2)--(4,-2);
-        \draw[thick,dashed] (2,2)--(2,-2);
-        \draw[thick] (2,.2)--(2,-.2) node[below]{2};
-        \draw[thick] (4,.2)--(4,-.2) node[below]{4};
-        \draw[thick] (.2,2)--(-.2,2) node[left]{+2};
-        \draw[thick] (.2,-2)--(-.2,-2) node[left]{-2};
+  \question The motion of an object is represented by the acceleration vs.\
+  time graph below. The object is initially at rest. Which of the following
+  statements is true about the motion of the object?
+  \begin{center}
+    \begin{tikzpicture}[scale=.47]
+      \draw[axes] (0,0)--(6.3,0) node[right]{$t$ [s]};
+      \draw[axes] (0,-3.5)--(0,3.5) node[above]{$a$};
+      \draw[ultra thick] (0,2)--(2,2);
+      \draw[ultra thick] (2,-2)--(4,-2);
+      \draw[thick,dashed] (2,2)--(2,-2);
+      \draw[thick] (2,.2)--(2,-.2) node[below]{2};
+      \draw[thick] (4,.2)--(4,-.2) node[below]{4};
+      \draw[thick] (.2,2)--(-.2,2) node[left]{+2};
+      \draw[thick] (.2,-2)--(-.2,-2) node[left]{-2};
+    \end{tikzpicture}
+  \end{center}
+  \begin{choices}
+    \choice The object returns to its original position.
+    \choice The velocity of the object is zero at $t=\SI2\second$.
+    \choice The velocity of the object is zero at $t=\SI4\second$.
+    \choice The displacement of the object is zero at $t=\SI4\second$.
+    \choice The acceleration of the object is zero at $t=\SI2\second$.
+  \end{choices}
+  \newpage
+  
+  \uplevel{
+    \centering
+    \begin{tikzpicture}[scale=.4]
+      \draw[axes] (0,0)--(9,0) node[right]{$t$};
+      \draw[axes] (0,-3)--(0,3) node[above]{$a$};
+      \draw[ultra thick] (0,2)--(2,2);
+      \draw[ultra thick] (2,0)--(4,0);
+      \draw[ultra thick] (4,-2)--(6,-2);
+      \draw[ultra thick] (6,0)--(8,0);
+      \draw[thick,dashed] (2,2)--(2,0);
+      \draw[thick,dashed] (4,0)--(4,-2);
+      \draw[thick,dashed] (6,0)--(6,-2);
       \end{tikzpicture}
-    \end{center}
-    \begin{choices}
-      \choice The object returns to its original position.
-      \choice The velocity of the object is zero at $t=\SI2\second$.
-      \choice The velocity of the object is zero at $t=\SI4\second$.
-      \choice The displacement of the object is zero at $t=\SI4\second$.
-      \choice The acceleration of the object is zero at $t=\SI2\second$.
-    \end{choices}
-
-    \uplevel{
-      \centering
-      \begin{tikzpicture}[scale=.4]
-        \draw[axes] (0,0)--(9,0) node[right]{$t$};
-        \draw[axes] (0,-3)--(0,3) node[above]{$a$};
-        \draw[ultra thick] (0,2)--(2,2);
-        \draw[ultra thick] (2,0)--(4,0);
-        \draw[ultra thick] (4,-2)--(6,-2);
-        \draw[ultra thick] (6,0)--(8,0);
-        \draw[thick,dashed] (2,2)--(2,0);
-        \draw[thick,dashed] (4,0)--(4,-2);
-        \draw[thick,dashed] (6,0)--(6,-2);
-      \end{tikzpicture}
-    }
+  }
     
-    \question Which of the following pairs of graphs could show the position
-    vs.\ time and velocity vs.\ time graphs for the acceleration vs. time graph
-    shown above? Assume $v=0$ and $x=0$ at $t=0$.
-    \begin{choices}
-      \choice
-      \begin{tikzpicture}[scale=.7]
-        \draw[axes] (0,0)--(4,0) node[right]{$t$};
-        \draw[axes] (0,0)--(0,2) node[right]{$x$};
-        \foreach \x in {1,2,3} \draw[thick] (\x,.1)--(\x,-.1);
-        \draw[very thick] (0,1.5)--(.7,1.5) to[out=0,in=180] (2.3,.3)--(3,.3);
-      \end{tikzpicture}
-      \hspace{.2in}
-      \begin{tikzpicture}[scale=.7]
-        \draw[axes] (0,0)--(4,0) node[right]{$t$};
-        \draw[axes] (0,0)--(0,2) node[right]{$v$};
-        \foreach \x in {1,2,3} \draw[thick] (\x,.1)--(\x,-.1);
-        \draw[very thick] (0,1.5)--(1,1.5)--(2,0);
-      \end{tikzpicture}
+  \question Which of the following pairs of graphs could show the position
+  vs.\ time and velocity vs.\ time graphs for the acceleration vs. time graph
+  shown above? Assume $v=0$ and $x=0$ at $t=0$.
+  \begin{choices}
+    \choice
+    \begin{tikzpicture}[scale=.7]
+      \draw[axes] (0,0)--(4,0) node[right]{$t$};
+      \draw[axes] (0,0)--(0,2) node[right]{$x$};
+      \foreach \x in {1,2,3} \draw[thick] (\x,.1)--(\x,-.1);
+      \draw[very thick] (0,1.5)--(.7,1.5) to[out=0,in=180] (2.3,.3)--(3,.3);
+    \end{tikzpicture}
+    \hspace{.2in}
+    \begin{tikzpicture}[scale=.7]
+      \draw[axes] (0,0)--(4,0) node[right]{$t$};
+      \draw[axes] (0,0)--(0,2) node[right]{$v$};
+      \foreach \x in {1,2,3} \draw[thick] (\x,.1)--(\x,-.1);
+      \draw[very thick] (0,1.5)--(1,1.5)--(2,0);
+    \end{tikzpicture}
 
-      \choice
-      \begin{tikzpicture}[scale=.7]
-        \draw[axes] (0,0)--(4,0) node[right]{$t$};
-        \draw[axes] (0,0)--(0,2) node[right]{$x$};
-        \foreach \x in {1,2,3} \draw[thick] (\x,.1)--(\x,-.1);
-        \draw[very thick] (0,1.5) to[out=-80,in=180] (1.5,.5)
-        to[out=0,in=120] (3,0);
-      \end{tikzpicture}
-      \hspace{.2in}
-      \begin{tikzpicture}[scale=.7]
-        \draw[axes] (0,0)--(4,0) node[right]{$t$};
-        \draw[axes] (0,0)--(0,2) node[right]{$v$};
-        \foreach \x in {1,2,3} \draw[thick] (\x,.1)--(\x,-.1);
-        \draw[very thick] (0,0)--(1,1.5)--(2,1.5) to[out=-80,in=170] (3,0);
-      \end{tikzpicture}
+    \choice
+    \begin{tikzpicture}[scale=.7]
+      \draw[axes] (0,0)--(4,0) node[right]{$t$};
+      \draw[axes] (0,0)--(0,2) node[right]{$x$};
+      \foreach \x in {1,2,3} \draw[thick] (\x,.1)--(\x,-.1);
+      \draw[very thick] (0,1.5) to[out=-80,in=180] (1.5,.5)
+      to[out=0,in=120] (3,0);
+    \end{tikzpicture}
+    \hspace{.2in}
+    \begin{tikzpicture}[scale=.7]
+      \draw[axes] (0,0)--(4,0) node[right]{$t$};
+      \draw[axes] (0,0)--(0,2) node[right]{$v$};
+      \foreach \x in {1,2,3} \draw[thick] (\x,.1)--(\x,-.1);
+      \draw[very thick] (0,0)--(1,1.5)--(2,1.5) to[out=-80,in=170] (3,0);
+    \end{tikzpicture}
 
-      \choice
-      \begin{tikzpicture}[scale=.7]
-        \draw[axes] (0,0)--(4,0) node[right]{$t$};
-        \draw[axes] (0,0)--(0,2) node[right]{$x$};
-        \foreach \x in {1,2,3} \draw[thick] (\x,.1)--(\x,-.1);
-        \draw[very thick] (0,0) to[out=0,in=180] (2.5,1.5)--(3,1.5);
-      \end{tikzpicture}
-      \hspace{.2in}
-      \begin{tikzpicture}[scale=.7]
-        \draw[axes] (0,0)--(4,0) node[right]{$t$};
-        \draw[axes] (0,0)--(0,2) node[right]{$v$};
-        \foreach \x in {1,2,3} \draw[thick] (\x,.1)--(\x,-.1);
-        \draw[very thick] (0,0)--(1,1.5)--(2,1.5)--(3,0);
-      \end{tikzpicture}
+    \choice
+    \begin{tikzpicture}[scale=.7]
+      \draw[axes] (0,0)--(4,0) node[right]{$t$};
+      \draw[axes] (0,0)--(0,2) node[right]{$x$};
+      \foreach \x in {1,2,3} \draw[thick] (\x,.1)--(\x,-.1);
+      \draw[very thick] (0,0) to[out=0,in=180] (2.5,1.5)--(3,1.5);
+    \end{tikzpicture}
+    \hspace{.2in}
+    \begin{tikzpicture}[scale=.7]
+      \draw[axes] (0,0)--(4,0) node[right]{$t$};
+      \draw[axes] (0,0)--(0,2) node[right]{$v$};
+      \foreach \x in {1,2,3} \draw[thick] (\x,.1)--(\x,-.1);
+      \draw[very thick] (0,0)--(1,1.5)--(2,1.5)--(3,0);
+    \end{tikzpicture}
 
-      \choice
-      \begin{tikzpicture}[scale=.7]
-        \draw[axes] (0,0)--(4,0) node[right]{$t$};
-        \draw[axes] (0,0)--(0,2) node[right]{$x$};
-        \foreach \x in {1,2,3} \draw[thick] (\x,.1)--(\x,-.1);
-        \draw[very thick] (0,0) to[out=45,in=240] (1,1.5)--(2,1.5)
-        to[out=0,in=100] (3,0);
-      \end{tikzpicture}
-      \hspace{.2in}
-      \begin{tikzpicture}[scale=.7]
-        \draw[axes] (0,0)--(4,0) node[right]{$t$};
-        \draw[axes] (0,0)--(0,2) node[right]{$v$};
-        \foreach \x in {1,2,3} \draw[thick] (\x,.1)--(\x,-.1);
-        \draw[very thick] (0,.2)--(1,.2) to[out=50,in=180] (2,1.5)
-        to[out=0,in=110] (3,0);
-      \end{tikzpicture}
+    \choice
+    \begin{tikzpicture}[scale=.7]
+      \draw[axes] (0,0)--(4,0) node[right]{$t$};
+      \draw[axes] (0,0)--(0,2) node[right]{$x$};
+      \foreach \x in {1,2,3} \draw[thick] (\x,.1)--(\x,-.1);
+      \draw[very thick] (0,0) to[out=45,in=240] (1,1.5)--(2,1.5)
+      to[out=0,in=100] (3,0);
+    \end{tikzpicture}
+    \hspace{.2in}
+    \begin{tikzpicture}[scale=.7]
+      \draw[axes] (0,0)--(4,0) node[right]{$t$};
+      \draw[axes] (0,0)--(0,2) node[right]{$v$};
+      \foreach \x in {1,2,3} \draw[thick] (\x,.1)--(\x,-.1);
+      \draw[very thick] (0,.2)--(1,.2) to[out=50,in=180] (2,1.5)
+      to[out=0,in=110] (3,0);
+    \end{tikzpicture}
 
-      \choice
-      \begin{tikzpicture}[scale=.7]
-        \draw[axes] (0,0)--(4,0) node[right]{$t$};
-        \draw[axes] (0,0)--(0,2) node[right]{$x$};
-        \foreach \x in {1,2,3} \draw[thick] (\x,.1)--(\x,-.1);
-        \draw[very thick] (0,.8)--(1,.8) to[out=70,in=180] (2,1.5)
-        to[out=-85,in=180] (3,.5);
-      \end{tikzpicture}
-      \hspace{.2in}
-      \begin{tikzpicture}[scale=.7]
-        \draw[axes] (0,0)--(4,0) node[right]{$t$};
-        \draw[axes] (0,0)--(0,2) node[right]{$v$};
-        \foreach \x in {1,2,3} \draw[thick] (\x,.1)--(\x,-.1);
-        \draw[very thick] (0,1.5)--(1,1.5)--(2,0) to[out=0,in=250] (3,1.5);
-      \end{tikzpicture}
-    \end{choices}
-    \columnbreak
+    \choice
+    \begin{tikzpicture}[scale=.7]
+      \draw[axes] (0,0)--(4,0) node[right]{$t$};
+      \draw[axes] (0,0)--(0,2) node[right]{$x$};
+      \foreach \x in {1,2,3} \draw[thick] (\x,.1)--(\x,-.1);
+      \draw[very thick] (0,.8)--(1,.8) to[out=70,in=180] (2,1.5)
+      to[out=-85,in=180] (3,.5);
+    \end{tikzpicture}
+    \hspace{.2in}
+    \begin{tikzpicture}[scale=.7]
+      \draw[axes] (0,0)--(4,0) node[right]{$t$};
+      \draw[axes] (0,0)--(0,2) node[right]{$v$};
+      \foreach \x in {1,2,3} \draw[thick] (\x,.1)--(\x,-.1);
+      \draw[very thick] (0,1.5)--(1,1.5)--(2,0) to[out=0,in=250] (3,1.5);
+    \end{tikzpicture}
+  \end{choices}
     
-    \question Two velocity vectors $\vec v_1$ and $\vec v_2$ each have a
-    magnitude of \SI{10}{\metre\per\second}. Graph 1 shows the velocity
-    $\vec v_1$ at $t=\SI0\second$, and then the same object has a velocity
-    $\vec v_2$ at $t=\SI2\second$, shown in Graph 2. Which of the following
-    vectors best represents the average acceleration vector that causes the
-    object's velocity to change from $\vec v_1$ to $\vec v_2$ ?
-    \begin{center}
-      \begin{tikzpicture}
-        \draw (-1,0)--(1,0);
-        \draw (0,-1)--(0,1) node[pos=0,below]{Graph 1};
-        \draw[vectors] (0,0)--(.8,0) node[above]{$\vec v_1$};
-      \end{tikzpicture}
-      \hspace{.2in}
-      \begin{tikzpicture}
-        \draw (-1,0)--(1,0);
-        \draw (0,-1)--(0,1) node[pos=0,below]{Graph 2};
-        \draw[vectors] (0,0)--(0,.8) node[right]{$\vec v_2$};
-      \end{tikzpicture}
-    \end{center}
-    \begin{oneparchoices}
-      \choice
-      \begin{tikzpicture}
-        \draw (-1,0)--(1,0);
-        \draw (0,-1)--(0,1);
-        \draw[vectors] (0,0)--(0,1);
-      \end{tikzpicture}
-      \choice
-      \begin{tikzpicture}
-        \draw (-1,0)--(1,0);
-        \draw (0,-1)--(0,1);
-        \draw[vectors] (0,0)--(.8,0);
-      \end{tikzpicture}
-      \choice
-      \begin{tikzpicture}
-        \draw (-1,0)--(1,0);
-        \draw (0,-1)--(0,1);
-        \draw[vectors] (0,0)--(-.8,0);
-      \end{tikzpicture}
-      \choice
-      \begin{tikzpicture}
-        \draw (-1,0)--(1,0);
-        \draw (0,-1)--(0,1);
-        \draw[vectors] (0,0)--(.75,.75);
-      \end{tikzpicture}
-      \choice
-      \begin{tikzpicture}
-        \draw[thick] (-1,0)--(1,0);
-        \draw[thick] (0,-1)--(0,1);
-        \draw[vectors] (0,0)--(-.75,.75);
-      \end{tikzpicture}
-    \end{oneparchoices}
-    \columnbreak
-    
-    \question The graph below shows the displacement as a function of time for
-    a car moving in a straight line. Which of the following graphs shows the
-    velocity vs.\ time graph for the same time intervals?
-    \begin{center}
-      \begin{tikzpicture}
-        \draw[axes] (0,0)--(4,0) node[right]{$t$};
-        \draw[axes] (0,0)--(0,2.5) node[right]{$x$};
-        \draw[very thick] (0,0) to[out=0,in=180] (3,2)--(3.5,2);
-        \draw[thick,dash dot] (3,-.1)--(3,2);
-        \draw[thick,dash dot] (2,-.1)--(2,1.6);
-        \draw[thick,dash dot] (1,-.1)--(1,.4);
-      \end{tikzpicture}
-    \end{center}
-    \begin{choices}
-      \choice
-      \begin{tikzpicture}
-        \draw[axes] (0,0)--(4,0) node[right]{$t$};
-        \draw[axes] (0,-1.2)--(0,1.5) node[right]{$v$};
-        \foreach \x in {1,2,3} \draw[thick] (\x,.1)--(\x,-.1);
-        \draw[very thick] (0,0)--(1,1)--(2,1)--(3,0);
-      \end{tikzpicture}
-
-      \choice
-      \begin{tikzpicture}
-        \draw[axes] (0,0)--(4,0) node[right]{$t$};
-        \draw[axes] (0,-1.2)--(0,1.5) node[right]{$v$};
-        \foreach \x in {1,2,3} \draw[thick] (\x,.1)--(\x,-.1);
-        \draw[very thick] (0,0) to[out=0,in=180] (3,1.2);
-      \end{tikzpicture}
-
-      \choice
-      \begin{tikzpicture}
-        \draw[axes] (0,0)--(4,0) node[right]{$t$};
-        \draw[axes] (0,-1.2)--(0,1.5) node[right]{$v$};
-        \foreach \x in {1,2,3} \draw[thick] (\x,.1)--(\x,-.1);
-        \draw[very thick] (0,0)--(1,-1)--(2,-1)--(3,0);
-      \end{tikzpicture}
-
-      \choice
-      \begin{tikzpicture}
-        \draw[axes] (0,0)--(4,0) node[right]{$t$};
-        \draw[axes] (0,-1.2)--(0,1.5) node[right]{$v$};
-        \foreach \x in {1,2,3} \draw[thick] (\x,.1)--(\x,-.1);
-        \draw[very thick] (0,0) to[out=70,in=180] (1,1)--(2,1)
-        to[out=0,in=110] (3,0);
-      \end{tikzpicture}
-      
-      \choice
-      \begin{tikzpicture}
-        \draw[axes] (0,0)--(4,0) node[right]{$t$};
-        \draw[axes] (0,-1.2)--(0,1.5) node[right]{$v$};
-        \foreach \x in {1,2,3} \draw[thick] (\x,.1)--(\x,-.1);
-        \draw[very thick] (0,0) to[out=0,in=180] (1,1) to[out=0,in=140] (2,-.7)
-        to[out=-50,in=180] (3,-1)--(3.5,-1);
-      \end{tikzpicture}
-    \end{choices}
-  \end{questions}
-  \setcounter{lastmc}{\value{question}}
-\end{multicols*}
+  \question Two velocity vectors $\vec v_1$ and $\vec v_2$ each have a
+  magnitude of \SI{10}{\metre\per\second}. Graph 1 shows the velocity
+  $\vec v_1$ at $t=\SI0\second$, and then the same object has a velocity
+  $\vec v_2$ at $t=\SI2\second$, shown in Graph 2. Which of the following
+  vectors best represents the average acceleration vector that causes the
+  object's velocity to change from $\vec v_1$ to $\vec v_2$ ?
+  \begin{center}
+    \begin{tikzpicture}
+      \draw (-1,0)--(1,0);
+      \draw (0,-1)--(0,1) node[pos=0,below]{Graph 1};
+      \draw[vectors] (0,0)--(.8,0) node[above]{$\vec v_1$};
+    \end{tikzpicture}
+    \hspace{.2in}
+    \begin{tikzpicture}
+      \draw (-1,0)--(1,0);
+      \draw (0,-1)--(0,1) node[pos=0,below]{Graph 2};
+      \draw[vectors] (0,0)--(0,.8) node[right]{$\vec v_2$};
+    \end{tikzpicture}
+  \end{center}
+  \begin{oneparchoices}
+    \choice
+    \begin{tikzpicture}
+      \draw (-1,0)--(1,0);
+      \draw (0,-1)--(0,1);
+      \draw[vectors] (0,0)--(0,1);
+    \end{tikzpicture}
+    \choice
+    \begin{tikzpicture}
+      \draw (-1,0)--(1,0);
+      \draw (0,-1)--(0,1);
+      \draw[vectors] (0,0)--(.8,0);
+    \end{tikzpicture}
+    \choice
+    \begin{tikzpicture}
+      \draw (-1,0)--(1,0);
+      \draw (0,-1)--(0,1);
+      \draw[vectors] (0,0)--(-.8,0);
+    \end{tikzpicture}
+    \choice
+    \begin{tikzpicture}
+      \draw (-1,0)--(1,0);
+      \draw (0,-1)--(0,1);
+      \draw[vectors] (0,0)--(.75,.75);
+    \end{tikzpicture}
+    \choice
+    \begin{tikzpicture}
+      \draw (-1,0)--(1,0);
+      \draw (0,-1)--(0,1);
+      \draw[vectors] (0,0)--(-.75,.75);
+    \end{tikzpicture}
+  \end{oneparchoices}
+  \newpage
+  
+  \question The graph below shows the displacement as a function of time for
+  a car moving in a straight line. Which of the following graphs shows the
+  velocity vs.\ time graph for the same time intervals?
+  \begin{center}
+    \begin{tikzpicture}
+      \draw[axes] (0,0)--(4,0) node[right]{$t$};
+      \draw[axes] (0,0)--(0,2.5) node[right]{$x$};
+      \draw[very thick] (0,0) to[out=0,in=180] (3,2)--(3.5,2);
+      \draw[thick,dash dot] (3,-.1)--(3,2);
+      \draw[thick,dash dot] (2,-.1)--(2,1.6);
+      \draw[thick,dash dot] (1,-.1)--(1,.4);
+    \end{tikzpicture}
+  \end{center}
+  \begin{oneparchoices}
+    \choice
+    \begin{tikzpicture}
+      \draw[axes] (0,0)--(4,0) node[right]{$t$};
+      \draw[axes] (0,-1.2)--(0,1.5) node[right]{$v$};
+      \foreach \x in {1,2,3} \draw[thick] (\x,.1)--(\x,-.1);
+      \draw[very thick] (0,0)--(1,1)--(2,1)--(3,0);
+    \end{tikzpicture}
+    \choice
+    \begin{tikzpicture}
+      \draw[axes] (0,0)--(4,0) node[right]{$t$};
+      \draw[axes] (0,-1.2)--(0,1.5) node[right]{$v$};
+      \foreach \x in {1,2,3} \draw[thick] (\x,.1)--(\x,-.1);
+      \draw[very thick] (0,0) to[out=0,in=180] (3,1.2);
+    \end{tikzpicture}
+    \choice
+    \begin{tikzpicture}
+      \draw[axes] (0,0)--(4,0) node[right]{$t$};
+      \draw[axes] (0,-1.2)--(0,1.5) node[right]{$v$};
+      \foreach \x in {1,2,3} \draw[thick] (\x,.1)--(\x,-.1);
+      \draw[very thick] (0,0)--(1,-1)--(2,-1)--(3,0);
+    \end{tikzpicture}
+    \choice
+    \begin{tikzpicture}
+      \draw[axes] (0,0)--(4,0) node[right]{$t$};
+      \draw[axes] (0,-1.2)--(0,1.5) node[right]{$v$};
+      \foreach \x in {1,2,3} \draw[thick] (\x,.1)--(\x,-.1);
+      \draw[very thick] (0,0) to[out=70,in=180] (1,1)--(2,1)
+      to[out=0,in=110] (3,0);
+    \end{tikzpicture}
+    \choice
+    \begin{tikzpicture}
+      \draw[axes] (0,0)--(4,0) node[right]{$t$};
+      \draw[axes] (0,-1.2)--(0,1.5) node[right]{$v$};
+      \foreach \x in {1,2,3} \draw[thick] (\x,.1)--(\x,-.1);
+      \draw[very thick] (0,0) to[out=0,in=180] (1,1) to[out=0,in=140] (2,-.7)
+      to[out=-50,in=180] (3,-1)--(3.5,-1);
+    \end{tikzpicture}
+  \end{oneparchoices}
+\end{questions}
+\setcounter{lastmc}{\value{question}}
 \newpage
 
 \runningheader{
@@ -537,17 +528,17 @@
     \textbf{label} any intercepts, asymptotes, maxima, or minima with numerical
     values or  algebraic expressions, as appropriate.
     \begin{center}
-      \begin{tikzpicture}[scale=1.8,axes]
+      \begin{tikzpicture}[scale=1.7,axes]
         \draw (0,0)--(2.5,0) node[right]{$t$};
         \draw (0,-1.5)--(0,1.5) node[above]{$x$};
       \end{tikzpicture}
       \hspace{.2in}
-      \begin{tikzpicture}[scale=1.8,axes]
+      \begin{tikzpicture}[scale=1.7,axes]
         \draw (0,0)--(2.5,0) node[right]{$t$};
         \draw (0,-1.5)--(0,1.5) node[above]{$v$};
       \end{tikzpicture}
       \hspace{.2in}
-      \begin{tikzpicture}[scale=1.8,axes]
+      \begin{tikzpicture}[scale=1.7,axes]
         \draw (0,0)--(2.5,0) node[right]{$t$};
         \draw (0,-1.5)--(0,1.5) node[above]{$a$};
       \end{tikzpicture}
@@ -619,7 +610,7 @@
     models, from $t=0$ to a time $t>T$. \textbf{Label} the original model $F_1$
     and the new model $F_2$.
     \begin{center}
-      \begin{tikzpicture}
+      \begin{tikzpicture}[scale=.9]
         \draw[axes] (0,0)--(10,0) node[right]{$t$};
         \draw[axes] (0,0)--(0,6) node[above]{$F$};
         \draw[thick] (-.2,1.5)--(.2,1.5) node[pos=0,left]{$mg\sin\theta$};

@@ -178,15 +178,16 @@
 
 \begin{frame}{Instantaneous Velocity}
   \textbf{Instantaneous velocity} $\vec v(t)$ is the rate of change of
-  position or displacement
-  %(The two quantities
-  %only differ by the constant $\vec r_0$.}
-  with respect to time. It is related to position $\vec r(t)$ by:
-
+  position or displacement with respect to time. It is a continuous function,
+  but not necessarily continuously differentiable. It is related to position
+  $\vec r(t)$ by:
+  
   \eq{-.13in}{
     \boxed{
       \vec v(t)= \diff{\vec r}t
-      \quad\quad
+    }
+    \quad\longleftrightarrow\quad
+    \boxed{
       \vec r(t)=\int\vec v(t)\dl t + \vec{\mathcal R}
     }
   }
@@ -196,15 +197,9 @@
   condition at $t=t_0$. The SI unit of velocity is \textbf{metres per second}
   (\si{\metre\per\second}). Displacement from $t_0$ to $t$ can also be found by
   doing a \emph{definite} integral:
-  %Likewise, the \textbf{average velocity}
-  %$\vec v_\text{avg}(t)$ is the displacement $\Delta\vec r(t)$ over a finite
-  %time interval $\Delta t$:
 
-  \eq{-.1in}{
+  \eq{-.13in}{
     \boxed{
-  %    \vec v_\text{avg}(t) = \frac{\Delta\vec r(t)}{\Delta t}=
-  %    \frac{\vec r(t)-\vec r_0}{t-t_0}
-      %    = \frac{
       \Delta\vec r(t)=\int_{t_0}^t\vec v(t)\dl t
     }
   }
@@ -214,23 +209,6 @@
 
 
 \begin{frame}{Average Velocity}
-%  \textbf{Instantaneous velocity} $\vec v(t)$ is the rate of change of
-%  position or displacement
-%  %(The two quantities
-%  %only differ by the constant $\vec r_0$.}
-%  with respect to time. It is related to position $\vec r(t)$ by:
-%
-%  \eq{-.13in}{
-%    \boxed{
-%      \vec v(t)= \diff{\vec r}t
-%      \quad\quad
-%      \vec r(t)=\int\vec v(t)\dl t + \vec{\mathcal R}
-%    }
-%  }
-%
-%  $\vec{\mathcal R}$ is the constant of integration based on\footnote{Note that
-%  $\vec{\mathcal R}$ is \emph{not} necessarily the initial position!} initial
-  %  condition at $t=t_0$.
   Likewise, the \textbf{average velocity} $\vec v_\text{avg}(t)$ is the
   displacement $\Delta\vec r(t)$ over a finite time interval $\Delta t$:
 
@@ -241,6 +219,17 @@
       = \frac{\int_{t_0}^t\vec v(t)\dl t}{t-t_0}
     }
   }
+  \uncover<2>{
+    \begin{tikzpicture}[overlay]
+      \draw[thick,red] (9.4,.2) rectangle +(2.27,1.75);
+      \fill[fill=red!10,opacity=.3] (9.4,.2) rectangle +(2.27,1.75);
+      \node[text width=278,draw=red,thick,fill=red!5] (t) at (4,-1) {
+        \color{red}This type of averaging is called a ``time average''. Later,
+        when we discuss mechanical work, we will also use another type of
+        averaging called ``spatial average''.};
+      \draw[axes,red] (t) to[out=0,in=270] (10.4,.2);
+    \end{tikzpicture}
+  }
 \end{frame}
 
 
@@ -248,8 +237,8 @@
 \begin{frame}{Instantaneous \& Average Speed}
   \textbf{Instantaneous speed} $v$ is the rate of change of \emph{distance}
   with respect to time. It is the \emph{magnitude} of instantaneous velocity
-  (i.e.\ $v=|\vec v|$). Since $s\geq 0$, instantaneous speed must be positive,
-  (i.e.\ $v\geq 0$).
+  (i.e.\ $v=|\vec v|$). Since $s\geq 0$, instantaneous speed must be
+  non-negative, (i.e.\ $v\geq 0$).
 
   \eq{-.1in}{
     \boxed{
@@ -266,7 +255,7 @@
     }
   }
 
-  The SI unit of speed is also measured in \si{\metre\per\second}.
+  The SI unit of speed is also \si{\metre\per\second}.
 \end{frame}
 
 
@@ -284,14 +273,17 @@
 
 
 \begin{frame}{Instantaneous \& Average Acceleration}
-  In the same way that velocity is the time rate of change in position,
-  \textbf{instantaneous acceleration} $\vec a(t)$ is the rate of change of
-  instantaneous velocity with respect to time:
+  %In the same way that velocity is the time rate of change in position,
+  If velocity $\vec v(t)$ is a differentiable function, then
+  \textbf{instantaneous acceleration} $\vec a(t)$ is the time rate of change of
+  instantaneous velocity:
 
   \eq{-.1in}{
     \boxed{
       \vec a(t)= \diff{\vec v}t=\diff[2]{\vec r}t
-      \quad\quad\quad
+    }
+    \quad\longleftrightarrow\quad
+    \boxed{
       \vec v(t)=\int\vec a(t)\dl t+\vec{\mathcal V}
     }
   }
@@ -368,7 +360,7 @@
     =\diff[2]{\vec a}t=\diff[3]{\vec v}t=\diff[4]{\vec r}t
   }
   
-  The next two derivatives of snap are called \textbf{crackle} and
+  The next two derivatives are called \textbf{crackle} and
   \textbf{pop}, but these higher derivatives of position vector are rarely used.
   (It is unclear what physical significance they have.) We will \emph{not} be
   using them for AP Physics.
