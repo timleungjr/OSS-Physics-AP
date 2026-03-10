@@ -249,7 +249,7 @@
       other
     \item $N$ exerts both a horizontal force to slow down the sphere, as well
       as a torque to slow down its rotation
-    \item The normal force does not point toward the CM because of the
+    \item The normal force does not point towards the CM because of the
       deformation.
     \end{itemize}
 
@@ -273,10 +273,10 @@
     \begin{itemize}
     \item Slippage at the point of contact between the sphere and the flat
       surface
-    \item There is \emph{kinetic} friction $f_k=\mu_kN$ in the $+\iii$
-      direction (toward the right). The friction force generates:
+    \item There is \emph{kinetic} friction $f_k=\mu_kF_n$ in the $+\iii$
+      direction (towards the right). The friction force generates:
       \begin{itemize}
-      \item A net force $F_\text{net}$ in the $+\iii$ direction, toward the
+      \item A net force $F_\text{net}$ in the $+\iii$ direction, towards the
         right
       \item A net torque $\tau_\text{net}$ in the $+\kkk$ direction, i.e.\
         counter clockwise
@@ -295,7 +295,7 @@
     \column{.73\textwidth}
     \begin{itemize}
     \item Kinetic friction $f_k$ causes the centre of mass of the sphere to
-      accelerate toward the right
+      accelerate towards the right
 
       \eq{-.15in}{
         F_\text{net}=f_k=ma_\text{cm}
@@ -496,16 +496,70 @@
     \end{tikzpicture}   
 
     \column{.7\textwidth}
-    We have solved pulley problems like these ones in Classes 2 and 3, on
-    dynamics. However, each time we solve these problems, we always insist that
-    the pulley is massless and frictionless.
+    Pulley problems like these are common in most dynamics courses (e.g.\ as
+    we gave seen in Classes 2 and 3). However, when we solve these problems, we
+    always insist that the pulley is massless and frictionless.
     \begin{itemize}
     \item We can get away with this \emph{if} the mass of the pulley is small
       compared to $m_1$ and $m_2$
+    \item We cannot treat the problem the same way if the mass of the pulley is
+      large
     \end{itemize}
   \end{columns}
 \end{frame}
 
+
+
+\begin{frame}{Pulley Problem Example}
+  \begin{columns}
+    \column{.25\textwidth}
+    \centering
+    \begin{tikzpicture}[scale=.7]
+      \draw[ultra thick,brown] (-1,-1.6)--(-1,0);
+      \draw[ultra thick,brown] (1,0)--(1,-3);
+      \draw[thick,fill=gray] circle (1.05);
+      \draw[thick,fill=gray!40] circle (.95);
+      \draw[line width=5.5] (0,-.15)--(0,2);
+      \draw[very thick] (-2,2)--(2,2);
+      \fill[white] circle (.1);
+      \draw[mass] (-1.5,-1.6) rectangle +(1,-1) node[midway]{$M$};
+      \draw[mass] (.5,-3) rectangle +(1,-1.4) node[midway]{$m$};
+    \end{tikzpicture}   
+
+    \column{.7\textwidth}
+    Instead, we have to solve the problem using rotational dynamics:
+    \begin{itemize}
+    \item As the masses accelerate upwards/downwards, cable tension must also
+      generate a torque on the pulley
+    \item The tension will not be constant along the cable
+    \end{itemize}
+  \end{columns}
+\end{frame}
+
+
+
+\begin{frame}{Pulley Problem Example}
+  \begin{columns}
+    \column{.25\textwidth}
+    \centering
+    \begin{tikzpicture}[scale=.7]
+      \draw[ultra thick,brown] (-1,-1.6)--(-1,0);
+      \draw[ultra thick,brown] (1,0)--(1,-3);
+      \draw[thick,fill=gray] circle (1.05);
+      \draw[thick,fill=gray!40] circle (.95);
+      \draw[line width=5.5] (0,-.15)--(0,2);
+      \draw[very thick] (-2,2)--(2,2);
+      \fill[white] circle (.1);
+      \draw[mass] (-1.5,-1.6) rectangle +(1,-1) node[midway]{$m_1$};
+      \draw[mass] (.5,-3) rectangle +(1,-1.4) node[midway]{$m_2$};
+    \end{tikzpicture}   
+
+    \column{.7\textwidth}
+    \textbf{Example:} Two masses are connected by a pulley with radius $R$,
+    mass $m_3$ and a rotational inertia of $I=\dfrac12m_3R^2$. Assuming that
+    $m_1>m_2$, what is the magnitude of the acceleration ($a$) of the masses?
+  \end{columns}
+\end{frame}
 
 %\begin{frame}{Parallel Axis Theorem}
 %  \begin{columns}

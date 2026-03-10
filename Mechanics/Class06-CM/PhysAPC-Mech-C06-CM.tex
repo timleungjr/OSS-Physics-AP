@@ -111,13 +111,14 @@
 \end{frame}
 
 
-\begin{frame}{Centre of Mass Equation}
-  The centre of mass is defined for discrete number of masses with the weighted
-  average:
 
-  \eq{-.1in}{
+\begin{frame}{Centre of Mass Equation}
+  For discrete number of point masses, the centre of mass is defined
+  as the weighted average:
+
+  \eq{-.2in}{
     \boxed{
-      \vec x_\text{cm}=\frac{\sum \vec x_i m_i}{\sum m_i}
+      \vec x_\text{cm}=\frac{\sum_{i=1}^N \vec x_i m_i}{\sum_{i=1}^N m_i}
     }
   }
   where $\sum m_i$ in the denominator is the total mass of the system of objects
@@ -130,7 +131,7 @@
       Point mass $i$ & $m_i$ & \si{\kilo\gram}
     \end{tabular}
   \end{center}
-  In components:
+  Components:
 
   \eq{-.1in}{
     x_\text{cm}=\frac{\sum x_i m_i}{\sum m_i}\quad\quad
@@ -187,6 +188,58 @@
     \rho(x,y,z)=\diff mV\quad\rightarrow\quad \dl m =\rho(x,y,z)\dl V
   }
   %The densities do not have to be constant
+\end{frame}
+
+
+
+\begin{frame}[t]{Example: Finding the CM in a continuous mass distribution}
+  A uniform thin rod of length $L$ with mass $M$ lies along the $x$-axis with
+  the left edge located at $x=0$. What is the $x$ coordinate of its centre of
+  mass?
+  \begin{center}
+    \begin{tikzpicture}[thick]
+      \draw[axes] (0,0)--(8.5,0) node[right]{$x$};
+      \draw (0,0)--+(0,-.3) node[below]{$O$};
+      \draw (8,0)--+(0,-.3) node[below]{$L$};
+      \draw[mass] (0,0) rectangle (8,.2);
+    \end{tikzpicture}
+  \end{center}
+\end{frame}
+
+
+\begin{frame}[t]{Example: Finding the CM in a continuous mass distribution}
+  A thin rod of length $L$ lies along the $x$-axis with the left edge located
+  at $x=0$. The rod's linear mass density varies linearly along the $x$-axis:
+  $\gamma=\alpha x$ What is the $x$ coordinate of its centre of mass?
+  \begin{center}
+    \begin{tikzpicture}[thick]
+      \draw[axes] (0,0)--(8.5,0) node[right]{$x$};
+      \draw (0,0)--+(0,-.3) node[below]{$O$};
+      \draw (8,0)--+(0,-.3) node[below]{$L$};
+      \shade[left color=white,right color=cyan!50] rectangle (8,.2);
+      \draw rectangle (8,.2);
+    \end{tikzpicture}
+  \end{center}
+\end{frame}
+
+
+
+\begin{frame}{Example: Finding the CM in a continuous mass distribution}
+  On first glance, you may think that the last example is just a math problem,
+  but think about what object would have a mass distribution that varies
+  linearly! In fact, what we are solving for is the centroid of a triangle:
+  \begin{center}
+    \begin{tikzpicture}
+      \draw[axes] (0,0)--(8.5,0) node[right]{$x$};
+      \draw[axes] (0,-.5)--(0,.5) node[above]{$y$};
+      \draw[mass] (0,0)--(8,.3)--(8,-.3)--cycle;
+      \draw[thick] (5.33,0) circle (.15);
+      \fill (5.48,0) arc (0:90:.15)--(5.33,0);
+      \fill (5.18,0) arc (180:270:.15)--(5.33,0);
+    \end{tikzpicture}
+  \end{center}
+  which is $1/3$ the height of the triangle from the base, or a distance of
+  $2L/3$ from the top of the triangle.
 \end{frame}
 
 
@@ -440,8 +493,9 @@
 \section{Momentum and Centre of Mass}
 
 \begin{frame}{Velocity of the Centre of Mass}
-  Take time derivative of the equation for $\vec x_\text{cm}$ to get the
-  velocity at the centre of mass:
+  As the masses that makes up the system move over time, so does the CM,
+  i.e.\ the position of the CM is a function of time.  Taking time derivative
+  of the equation for $\vec x_\text{cm}$ to get the velocity at the CM:
 
   \eq{-.1in}{
     \vec v_\text{cm}=\diff{\vec x_\text{cm}}t
@@ -462,13 +516,15 @@
 
 \begin{frame}{Velocity and Momentum}
   We can also rearrange the equation for the velocity of the centre of mass to
-  relate it to momentum, because the term $\int\vec v\dl m$ is the net momentum
-  of the mass distribution $p_\text{net}$:
+  relate it to momentum, because the term $\vec v\dl m=\dl{\vec p}$ is the
+  momentum of the infinitesimal mass $\dl m$, and
+  $\int\vec v\dl m=\vec p_\text{net}$ is the net momentum of the entire mass
+  distribution:
   
   \eq{-.05in}{
     \vec v_\text{cm} = \frac{\int\vec v\dl m}{m_\text{tot}}
     \quad\longrightarrow\quad
-    \vec p_\text{net}=m\vec v_\text{cm}
+    \vec p_\text{net}=m_\text{tot}\vec v_\text{cm}
   }
 
   During a collision, there is no net force, so there is no change in the net
@@ -484,7 +540,8 @@
   %\footnote{As we have studied in conservation of momentum in
   %Physics 12 and in our previous class},
   there are no external forces, therefore the velocity of the CM remains
-  constant. Consider this 1D inelastic collision in between two masses:
+  constant. Consider this perflectly inelastic 1D collision in between two
+  masses:
   \begin{center}
     \begin{tikzpicture}[scale=.8,thick]
       \begin{scope}[violet]
@@ -532,38 +589,104 @@
              \par
            };
     \end{tikzpicture}
-    \vspace{.3in}
   \end{center}
+  If we define an inertial (i.e. a non-accelerating) frame of reference that
+  moves with the CM, then before the collision, the total momentum is
+  zero, and after the collision, total momentum is still zero. The frame is
+  called the ``centre of momentum frame''
 \end{frame}
 
 
 
 \begin{frame}{Acceleration of the Centre of Mass}
-  Taking the derivative of net momentum with respect to time\footnote{i.e\
-  applying the 2nd law of motion to this distribution of masses}:
+  The \emph{acceleration} of the CM is, not surprisingly, also a function of
+  time. Taking time derivative of the equation for $\vec v_\text{cm}$ to get the
+  acceleration at the CM:
+
+  \eq{-.1in}{
+    \vec a_\text{cm}=\diff{\vec v_\text{cm}}t
+    =\frac1{m_\text{tot}}\diff{}t\left(\int\vec v\dl m\right)
+    =\frac1{m_\text{tot}}\int\diff{\vec v}t\dl m
+    =\frac{\int\vec a\dl m}{m_\text{tot}}
+  }
+
+  Or, in the form that is familiar, the acceleration of the CM is the weighted
+  sum of the accelerations of the masses that make up the system:
+  
+  \eq{-.1in}{
+    \boxed{
+      \vec a_\text{cm} = \frac{\int\vec a\dl m}{m_\text{tot}}
+    }
+  }
+\end{frame}
+
+
+
+\begin{frame}{Acceleration of the Centre of Mass}
+  
+  \eq{0in}{
+    \vec a_\text{cm} = \frac{\int\vec a\dl m}{m_\text{tot}}
+  }
+  \begin{itemize}
+  \item By the second law of motion, $\vec a\dl m=\dl{\vec F}$ is the net force
+    acting on the infinitesimal mass $\dl m$
+  \item Therefore $\int\vec a\dl m=\vec F_\text{net}$ is the net force on the
+    entire system
+  \end{itemize}
+  In other words,
+  
+  \eq{-.1in}{
+    \boxed{
+      \vec F_\text{net}=m_\text{tot}\vec a_\text{cm}
+    }
+  }
+  
+  \vspace{-.1in}When a net force is applied to an object (or a system of
+  objects), the object's (or the system's) acceleration is evaluated at the CM.
+\end{frame}
+
+
+\begin{frame}{Acceleration of the Centre of Mass}
+  Alternatively, we can also take the derivative of net momentum with respect
+  to time:%\footnote{i.e\ applying the 2nd law of motion to this distribution of
+  %masses}:
   
   \eq{-.1in}{
     \diff{\vec p_\text{net}}t =
-    \diff{}t (m\vec v_\text{cm})
+    \diff{}t (m_\text{tot}\vec v_\text{cm})
   }
 
   If the system mass is constant, then this equation reduces to:
 
   \eq{-.1in}{
     \diff{\vec p_\text{net}}t
-    =m\diff{\vec v_\text{cm}}t
+    =m_\text{tot}\diff{\vec v_\text{cm}}t
     \quad\longrightarrow\quad
     \boxed{
-      \vec F_\text{net}=m\vec a_\text{cm}
+      \vec F_\text{net}=m_\text{tot}\vec a_\text{cm}
     }
   }
   
-  We can see that when a net force is applied to an object (or a system of
-  objects), the object's (or the system's)  acceleration is evaluated at the
-  CM.
+  Aagin, we see that when a net force is applied to an object (or a system of
+  objects), the object's (or the system's) acceleration is evaluated at the CM.
   \vspace{.3in}
 \end{frame}
 
+
+
+\begin{frame}[b]{The Exploding Canonball Problem}
+%  \begin{center}
+%    \begin{tikzpicture}[scale=1.2]
+%      \draw[very thick] (0,0)--(12,0);
+%      \begin{scope}[rotate around={35:(.5,.5)}]
+%        \draw[thick] (.5,.7) arc (90:270:.2)--(1.7,.3)--(1.7,.7)--(.5,.7);
+%        \draw[line width=3] (1.7,.28)--(1.7,.72);
+%        %\draw[thick] (.3,.3) rectangle +(2,.4);
+%      \end{scope}
+%      \draw[thick] (.5,.5) circle (.1);
+%    \end{tikzpicture}
+%  \end{center}
+\end{frame}
 
 
 %\begin{frame}{What This All Means}

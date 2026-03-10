@@ -163,7 +163,58 @@
 
 \begin{frame}{Comparing Damped System}
   \centering
-  \pic{.5}{oscda8}
+  \begin{tikzpicture}
+    \begin{axis}[
+        width=4in,
+        height=2.5in,
+        xmin=0,xmax=1.6,
+        xlabel={Time ($t$) [\si\second]},
+        %xlabel style={anchor=west,at={(current axis.east)}},
+        %xtick={0,1,2,3},
+        %xticklabels={0,$\omega$,$2\omega$,$3\omega$},
+        ymin=-1,
+        ymax=1.5,
+        ylabel={Relative Amplitude},
+        ytick={-1,-.5,0,.5,1,1.5},
+        grid=both,
+        %axis lines=middle
+      ]
+      \addplot[
+        samples=200,
+        domain=0:1.6,
+        thick]{1.005*exp(-x)*cos(deg(sqrt(99)*x)-5.74)};
+      \addlegendentry{$b=0.1b_c$}
+      \addplot[
+        samples=200,
+        domain=0:1.6,
+        thick,dash dot]{1.048*exp(-3*x)*cos(deg(sqrt(91)*x)-17.46)};
+      \addlegendentry{$b=0.3b_c$}
+      \addplot[
+        samples=200,
+        domain=0:1.6,
+        thick,dashed]{1.154*exp(-5*x)*cos(deg(sqrt(75)*x)-30)};
+      \addlegendentry{$b=0.5b_c$}
+      \addplot[
+        color=red,
+        samples=100,
+        domain=0:1.6,
+        thick]{(1+10*x)*exp(-10*x)};
+      \addlegendentry{Critically damped ($b=b_c$)}
+      \addplot[
+        color=pink,
+        samples=100,
+        domain=0:1.6,
+        thick]{1.077*exp(-2.679*x)-0.077*exp(-37.32*x};
+      \addlegendentry{Over damped ($b=2b_c$)}
+    \end{axis}
+    %\node[right,gray] at (5.9,1){\scriptsize Undamped};
+    %\node[right] at (1.8,1){\scriptsize$b=\dfrac{b_c}{10}$};
+    %\node[right] at (1.5,2.7){\scriptsize$b=\dfrac{b_c}2$};
+    %\node[right,red, text width=2cm,align=center] at (.7,4.3){\scriptsize
+    %  Critically\\damped};
+    %\node[right,pink] at (.8,5.5){\scriptsize Overdamped};
+  \end{tikzpicture}
+  %\pic{.5}{oscda8}
   
   The motion of the damped oscillator is not strictly periodic.
 \end{frame}

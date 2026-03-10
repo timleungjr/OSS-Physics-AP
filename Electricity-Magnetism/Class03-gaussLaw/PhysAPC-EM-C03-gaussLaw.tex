@@ -3,7 +3,7 @@
 \usetikzlibrary{patterns}
 
 
-\title{Classes 2 \& 3: Gauss's Law}
+\title{Classes 3 \& 4: Gauss's Law}
 \subtitle{AP Physics C: Electricity and Magnetism}
 \input{../../me}
 \input{../../mycommands}
@@ -24,8 +24,8 @@
   through a surface. In integral form:
 
   \eq{-.1in}{
-    \Phi=\int\vec X\cdot\dl\vec A\quad\text{or}\quad
-    \Phi=\int(\vec X\cdot\hat n)\dl A
+    \Phi=\int_{\mathcal S}\vec X\cdot\dl\vec A\quad\text{or}\quad
+    \Phi=\int_{\mathcal S}(\vec X\cdot\hat n)\dl A
   }
 
   The direction of the infinitesimal area $\dl\vec A$ is \textbf{outward normal}
@@ -459,7 +459,7 @@
 
     \column{.75\textwidth}
     \begin{itemize}
-    \item Charge density (charge per unit area) $\sigma$
+    \item Finite surface charge density (charge per unit area) $\sigma$
     \item By symmetry, $\vec E$ must be perpendicular to the plane
     \item Our Gaussian surface is a cylinder shown in the left with an area
       $A$; the height of the cylinder is unimportant
@@ -492,7 +492,7 @@
       \boxed{E=\frac\sigma{2\epsilon_0}}
     }
     \begin{itemize}
-    \item $E$ is a constant
+    \item $\vec E$ is uniform
     \item Independent of distance from the plane
     \item Both sides of the plane are the same
     \end{itemize}
@@ -541,10 +541,11 @@
 
 \begin{frame}{Electric Field and Electric Potential Difference}
   Recall the relationship between electric field ($\vec E$) and electric
-  potential difference ($V$):
+  potential difference ($V$). If electric field is a function of radial distance
+  only, then:
     
   \eq{-.1in}{
-    \vec E=-\diffp Vr\hat r
+    \vec E=-\diff Vr\hat r
   }
   
   This relationship holds regardless of the charge configuration.

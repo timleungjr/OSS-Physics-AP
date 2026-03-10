@@ -56,8 +56,8 @@ discharge the capacitor through the resistor.
     \draw (2.5,2) to[short,*-] (3.5,2) to[R=$R$] (3.5,0)--(0,0);
     \draw (2,0) to[C=$C$,-*] (2,1.25);
     \draw (2,1.25)--(2.3,2.15) node[above]{S};
-    \node[below] at (1.5,2) (a){$a$};
-    \node[below]at (2.5,2) (b){$b$};
+    \node[below] at (1.5,2) {$a$};
+    \node[below]at (2.5,2) {$b$};
   \end{tikzpicture}
 \end{center}
 
@@ -85,8 +85,8 @@ discharge the capacitor through the resistor.
   \end{choices}
     
   \question Circuit I and Circuit II shown each consist of a capacitor and a
-  resistor. A battery is connected across a and b, and then removed. Which of
-  the following statements is true of the circuits?
+  resistor. A battery is connected across $a$ and $b$, and then removed. Which
+  of the following statements is true of the circuits?
   \begin{center}
     \begin{tikzpicture}[thick]
       \node[above=10] at (1.5,2){\textbf{Circuit I}};
@@ -105,24 +105,6 @@ discharge the capacitor through the resistor.
       \node[left] at (0,1.25) {$b$};
     \end{tikzpicture}
   \end{center}
-  %\begin{center}
-  %  \begin{tikzpicture}[scale=.8]
-  %    \node[above] at (1,2.5){Circuit I};
-  %    \draw(0,1.25) to[short,*-] (0,2.5)--(2,2.5) to[C=$C$](2,1.25)
-  %    to[R=$R$] (2,0)--(0,0) to[short,-*] (0,0.75);
-  %    \node at (-0.3,0.75) {a};
-  %    \node at (-0.3,1.25) {b};
-  %  \end{tikzpicture}
-  %  \hspace{.5in}
-  %  \begin{tikzpicture}[scale=.8]
-  %    \node[above] at (1.5,2){Circuit II};
-  %    \draw (0,1.25) to[short,*-] (0,2)--(1.5,2) to[R=$R$](1.5,0)--(0,0)
-  %    to[short,-*] (0,.75);
-  %    \draw (1.5,2)--(3,2) to[C=$C$] (3,0)--(1.5,0);
-  %    \node at (-.3,.75) {a};
-  %    \node at (-.3,1.25) {b};
-  %  \end{tikzpicture}
-  %\end{center}
   \begin{choices}
     \choice Circuit I and Circuit II will both retain stored energy when the
     battery is removed.
@@ -135,7 +117,8 @@ discharge the capacitor through the resistor.
     \choice Current will continue to flow in both circuits after the battery
     is removed.
   \end{choices}
-    
+  \newpage
+  
   \question A thin sheet of copper is placed in a uniform magnetic field. A
   battery is connected to the top and bottom ends of the copper sheet, so that
   conventional current flows from the top to the bottom of the sheet.
@@ -143,7 +126,7 @@ discharge the capacitor through the resistor.
   respectively. Which of the following statements is true?
   \begin{center}
     \begin{tikzpicture}[scale=.7]
-      \foreach\x in {0,...,3}{
+      \foreach \x in {0,...,3}{
         \foreach \y in {0,...,3} \fill[gray](\x,\y) circle (.08); 
       }
       \draw[thick] (.3,-.2) rectangle (2.7,3.2);
@@ -185,6 +168,7 @@ discharge the capacitor through the resistor.
     \choice \SI{1.0}\ampere
     \choice \SI{4.0}\ampere
   \end{choices}
+  \newpage
   
   \uplevel{
     \begin{center}
@@ -216,7 +200,7 @@ discharge the capacitor through the resistor.
     \choice $\dfrac{\mathcal E}R$
     \choice zero
   \end{choices}
-
+  
   \question All switches are open, and there is no stored energy in the
   capacitor or the inductor. Switch $S_1$ is closed. After the capacitor is
   fully charged, switch $S_1$ is opened and switch $S_2$ is closed. Which of
@@ -396,14 +380,14 @@ discharge the capacitor through the resistor.
     
     \part The capacitor is now discharged, its dielectric of constant
     $\kappa=1$ is replaced by a dielectric of constant $\kappa=3$, and the
-    procedure is repeated. Is the amount of charge on one plate of the
-    capacitor at $t=\SI{4.0}\second$ now greater than, less than, or the same
-    as before?
+    procedure is repeated. \textbf{Indicate} whether the amount of charge on
+    one plate of the capacitor at $t=\SI{4.0}\second$ is now greater than, less
+    than, or the same as before:
 
-    \vspace{.1in}
-    \underline{\hspace{.3in}} Greater than\hspace{.5in}
-    \underline{\hspace{.3in}} Less than\hspace{.5in}
-    \underline{\hspace{.3in}} The same
+    \vspace{.15in}
+    \underline{\hspace{.4in}} Greater than\hspace{.5in}
+    \underline{\hspace{.4in}} Less than\hspace{.5in}
+    \underline{\hspace{.4in}} The same
 
     \vspace{.1in}\textbf{Justify} your answer.
     \vspace{\stretch3}
@@ -414,7 +398,7 @@ discharge the capacitor through the resistor.
   %TAKEN FROM 2017 AP PHYSICS C EXAM FREE-RESPONSE QUESTION E&M 2
   \uplevel{
     \centering
-    \begin{tikzpicture}[scale=2.2,thick]
+    \begin{tikzpicture}[scale=2,thick]
       \draw (0,0) to[battery1,l=$\mathcal E_0$] (0,2) to[short,-*]
       (.35,2)--(.65,2.2) node[midway,above]{S};
       \draw (.65,2)--(2,2) to[R,l=$R_2$] (2,0)--(0,0);
@@ -426,10 +410,10 @@ discharge the capacitor through the resistor.
   resistances $R_1$ and $R_2$ , with $R_1>R_2$. The switch S is open, and the
   capacitor is initially uncharged.
   \begin{parts}
-    \part The switch is closed at time $t=0$. On the axes below, sketch the
-    charge $q$ on the capacitor as a function of time $t$. Explicitly label any
-    intercepts, asymptotes, maxima, or minima with numerical values or algebraic
-    expressions, as appropriate.
+    \part The switch is closed at time $t=0$. On the axes below, \textbf{sketch}
+    the charge $q$ on the capacitor as a function of time $t$. Explicitly
+    \textbf{label} any intercepts, asymptotes, maxima, or minima with numerical
+    values or algebraic expressions, as appropriate.
     \begin{center}
       \begin{tikzpicture}[scale=.65,axes]
         \draw (0,0)--(10,0) node[right]{$t$};
@@ -437,11 +421,11 @@ discharge the capacitor through the resistor.
       \end{tikzpicture}
     \end{center}
     
-    \part On the axes below, sketch the current $I$ through each resistor as a
-    function of time $t$. Clearly label the two curves as $I_1$ and $I_2$, the
-    currents through resistors $R_1$ and $R_2$, respectively. Explicitly label
-    any intercepts, asymptotes, maxima, or minima with numerical values or
-    algebraic expressions, as appropriate.
+    \part On the axes below, \textbf{sketch} the current $I$ through each
+    resistor as a function of time $t$. Clearly \textbf{label} the two curves
+    as $I_1$ and $I_2$, the currents through resistors $R_1$ and $R_2$,
+    respectively. Explicitly \textbf{label} any intercepts, asymptotes, maxima,
+    or minima with numerical values or algebraic expressions, as appropriate.
     \begin{center}
       \begin{tikzpicture}[scale=.65,axes]
         \draw (0,0)--(10,0) node[right]{$t$};
@@ -461,12 +445,13 @@ discharge the capacitor through the resistor.
     \part The time it takes to charge the capacitor to \SI{50}{\percent} of its
     maximum charge is $\Delta t_C$. The time it takes for the capacitor to
     discharge to \SI{50}{\percent} of its maximum charge is $\Delta t_D$.
-    Which of the following correctly relates the two time intervals?
+    \textbf{Indicate} which of the following correctly relates the two time
+    intervals:
     
-    \vspace{.1in}
-    \underline{\hspace{.3in}} $\Delta t_C > \Delta t_D$\hspace{.3in}
-    \underline{\hspace{.3in}} $\Delta t_C = \Delta t_D$\hspace{.3in}
-    \underline{\hspace{.3in}} $\Delta t_C < \Delta t_D$
+    \vspace{.15in}
+    \underline{\hspace{.4in}} $\Delta t_C > \Delta t_D$\hspace{.5in}
+    \underline{\hspace{.4in}} $\Delta t_C = \Delta t_D$\hspace{.5in}
+    \underline{\hspace{.4in}} $\Delta t_C < \Delta t_D$
 
     \vspace{.1in}\textbf{Justify} your answer.
     \vspace{\stretch1}
@@ -475,8 +460,8 @@ discharge the capacitor through the resistor.
     the switch is opened.
     \vspace{\stretch1}
 
-    \part Is the current through resistor $R_2$ increasing, decreasing, or
-    constant immediately after the switch is opened?
+    \part\textbf{Indicate} whether the current through resistor $R_2$
+    increasing, decreasing, or constant immediately after the switch is opened:
       
     \vspace{.1in}
     \underline{\hspace{.3in}} Increasing\hspace{.3in}
@@ -498,42 +483,43 @@ discharge the capacitor through the resistor.
   
 
   
-  %TAKEN FROM THE 2001 AP PHYSICS C FREE-RESPONSE QUESTION E&M 2
-  \uplevel{
-    \centering
-    \pic{.6}{discharge-curve}
-  }
-  \question You have been hired to determine the internal resistance of
-  \SI{8.}{\micro\farad} capacitors for an electronic component manufacturer.
-  (Ideal capacitors have an infinite internal resistance---that is, the material
-  between their plates is a perfect insulator. In practice, however, the
-  material has a very small, but nonzero, conductivity.) You cannot simply
-  connect the capacitors to an ohmmeter, because their resistance is too large
-  for an ohmmeter to measure. Therefore you charge the capacitor to a potential
-  difference of \SI{10}{\volt} with a battery, disconnect it from the battery
-  and measure the potential difference across the capacitor every 20 minutes
-  with an ideal voltmeter, obtaining the graph shown above.
-  \begin{parts}
-    \part Determine the internal resistance of the capacitor.
-    \vspace{\stretch1}
-    
-    \uplevel{
-      The capacitor can be approximated as a parallel-plate capacitor separated
-      by a \SI{.10}{\milli\metre} thick dielectric with $\kappa=5.6$.
-    }
-    
-    \part Determine the approximate surface area of one of the capacitor
-    ``plates.''
-    \vspace{\stretch1}
-    
-    \part Determine the resistivity of the dielectric.
-    \vspace{\stretch1}
-    
-    \part Determine the magnitude of the charge leaving the positive plate of
-    the capacitor in the first \SI{100}{min}.
-    \vspace{\stretch1}
-  \end{parts}
-  \newpage
+%  %TAKEN FROM THE 2001 AP PHYSICS C FREE-RESPONSE QUESTION E&M 2
+%  \uplevel{
+%    \centering
+%    \pic{.57}{discharge-curve}
+%  }
+%  \question You have been hired to determine the internal resistance of
+%  \SI{8.}{\micro\farad} capacitors for an electronic component manufacturer.
+%  (Ideal capacitors have an infinite internal resistance---that is, the
+%  dielectric material between their plates is a perfect insulator. In practice,
+%  however, the material has a very small, but nonzero, conductivity.) You cannot
+%  simply connect the capacitors to an ohmmeter, because their resistance is too
+%  large for an ohmmeter to measure. Therefore you charge the capacitor to a
+%  potential
+%  difference of \SI{10}{\volt} with a battery, disconnect it from the battery
+%  and measure the potential difference across the capacitor every 20 minutes
+%  with an ideal voltmeter, obtaining the graph shown above.
+%  \begin{parts}
+%    \part\textbf{Calculate} the internal resistance of the capacitor.
+%    \vspace{\stretch1}
+%    
+%    \uplevel{
+%      The capacitor can be approximated as a parallel-plate capacitor separated
+%      by a \SI{.10}{\milli\metre} thick dielectric with $\kappa=5.6$.
+%    }
+%    
+%    \part\textbf{Calculate} the approximate surface area of one of the
+%    capacitor ``plates''.
+%    \vspace{\stretch1}
+%    
+%    \part\textbf{Calculate} the resistivity of the dielectric.
+%    \vspace{\stretch1}
+%    
+%    \part\textbf{Calculate} the magnitude of the charge leaving the positive
+%    plate of the capacitor in the first \SI{100}{min}.
+%    \vspace{\stretch1}
+%  \end{parts}
+%  \newpage
 \end{questions}
 \end{document}
 
