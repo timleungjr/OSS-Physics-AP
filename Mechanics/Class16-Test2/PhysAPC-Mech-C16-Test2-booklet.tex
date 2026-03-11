@@ -1,0 +1,297 @@
+\documentclass[12pt,twoside]{article}
+\usepackage[top=1.5in,bottom=1.3in,left=.7in,right=.7in,letterpaper]{geometry}
+\usepackage{times}
+\usepackage{amsmath}
+
+\usepackage{fancyhdr}
+
+\fancyhead{} % clear all header fields
+\fancyfoot{} % clear all footer fields
+\fancyfoot[LE,RO]{\sffamily\large\textbf{Page \thepage}}
+
+\usepackage{tikz}
+\usepackage{tikzpagenodes}
+
+\usetikzlibrary{calc}
+
+\tikzset{
+  >=latex
+}
+\tikzstyle{vectors}=[very thick,->]
+\tikzstyle{axes}=[thick,->]
+
+\newcommand{\addframe}[2]{
+  \begin{tikzpicture}[remember picture, overlay]
+
+    \fill[gray!25]
+    ($(current page text area.north west) +(-5mm,.7in)$)
+    rectangle
+    ($(current page text area.north east) +(+5mm,.2in)$);
+    
+    \fill
+    ($(current page text area.north west) +(2.33in,.7in)$)
+    rectangle
+    ($(current page text area.north west) +(4.67in,.2in)$)
+    node[midway,white]{\sffamily\large\textbf{Question #1}};
+    
+    \draw[line width=1.8pt]
+    ($(current page text area.north west) +(-5mm,.7in)$)
+    rectangle
+    ($(current page text area.south east) +(5mm,-.5in)$)
+    node[above=4.75in,midway,black!70]{\sffamily\footnotesize Use a pencil or a
+      pen with black or dark blue ink. Do NOT write your name. Do NOT write
+      outside the box.}
+    node[below=4.75in,midway,black!70]{\sffamily\textbf{#2}};
+    
+    %\draw[red]
+    %($(current page text area.north west)$)
+    %rectangle
+    %($(current page text area.south east)$);
+  \end{tikzpicture}
+}
+
+%\def\hrulefill{\leavevmode\leaders\hrule height 1.2pt\hfill\kern\z}
+
+\setlength{\parindent}{0pt}
+\renewcommand{\arraystretch}{1.7}
+
+\newcommand{\pic}[2]{\includegraphics[width=#1\textwidth]{#2}}
+
+
+
+\begin{document}
+\pagestyle{fancy}
+
+
+\begin{tikzpicture}[remember picture, overlay]
+  \draw[line width=1.8pt,fill=gray!20]
+  ($(current page text area.north west) +(-5mm,.7in)$)
+  rectangle
+  ($(current page text area.south east) +(5mm,-.5in)$)
+  node[midway,text width=4.2in]{\sffamily
+
+    \begin{center}
+      \parbox[c]{4in}{
+        \centering
+        \pic{.25}{laptop}
+        \hspace{.1in}{\Huge $\leftrightarrow$}\hspace{.1in}
+        \pic{.22}{openbook}
+      
+        \vspace{.2in}{\Huge\textbf{Question 1}}\
+      }
+    \end{center}
+
+    \vspace{.7in}{
+      \Large In the \emph{real} AP Physics C exam, some of the questions will
+      have four version; you will be answering one version.\par
+    }
+
+    \vspace{.5in}{
+      \Large Bluebook will indicate which version to answer (J, K, L, or M) and
+      the page number in the booklet.\par
+    }
+    \vspace{.5in}{
+      \Large Make sure you respond in the correct space in the booklet.\par
+    }
+  }
+  node[midway,below=4.75in,color=black!70]{
+    \sffamily\textbf{Continue to Question 1.}};
+\end{tikzpicture}
+
+
+
+\clearpage
+\addframe{1}{Question 1 is continued on the next page.}
+
+{\sffamily\textbf{PART A}}
+\vspace{\stretch1}
+
+\hrulefill
+
+{\sffamily\textbf{PART B}}
+\begin{center}
+  \begin{tikzpicture}
+    \draw[axes] (0,0)--(8,0) node[right]{$N$};
+    \draw[axes] (0,0)--(0,5.5) node[above]{$T$};
+  \end{tikzpicture}
+\end{center}
+
+
+
+
+
+\clearpage
+\addframe{1}{Question 1 is continued on the next page.}
+
+{\sffamily\textbf{PART C}}
+\begin{center}
+  \pic{.7}{data-points}
+\end{center}
+
+\hrulefill
+
+{\sffamily\textbf{PART D}}
+\vspace{\stretch1}
+
+
+
+\clearpage
+\addframe{1}{Go to Question 2 when you're done with this question.}
+
+{\sffamily\textbf{PART E}}
+\vspace{\stretch1}
+
+\hrulefill
+
+{\sffamily\textbf{PART F}}
+
+\vspace{.2in}
+\underline{\hspace{.5in}} greater than \hspace{.5in}
+\underline{\hspace{.5in}} less than \hspace{.5in}
+\underline{\hspace{.5in}} the same as
+\vspace{\stretch1}
+
+\hrulefill
+
+{\sffamily\textbf{PART G}}
+
+\vspace{.2in}
+\underline{\hspace{.5in}} increase \hspace{.5in}
+\underline{\hspace{.5in}} decrease \hspace{.5in}
+\underline{\hspace{.5in}} stay the same
+\vspace{\stretch1}
+
+
+\clearpage
+
+\addframe{2}{Question 2 is continued on the next page.}
+
+{\sffamily\textbf{PART A}}
+\begin{center}
+  \underline{Block A}
+  
+  \vspace{.8in}{\tikz\fill circle(.15);}\vspace{.8in}
+\end{center}
+
+\hrulefill
+
+{\sffamily\textbf{PART B}}
+\begin{center}
+  \underline{Block B}
+
+  \vspace{.8in}{\tikz\fill circle(.15);}\vspace{.8in}
+\end{center}
+
+\hrulefill
+
+{\sffamily\textbf{PART C}}
+\vspace{\stretch1}
+
+\clearpage
+\addframe{2}{Question 2 is continued on the next page.}
+
+{\sffamily\textbf{PART D}}
+\begin{center}
+  \pic{.5}{acceleration-data}
+\end{center}
+
+\hrulefill
+
+{\sffamily\textbf{PART E}}
+\vspace{\stretch1}
+
+\hrulefill
+
+{\sffamily\textbf{PART F}}
+
+\vspace{.2in}
+\underline{\hspace{.5in}} Greater than \hspace{.5in}
+\underline{\hspace{.5in}} Less than \hspace{.5in}
+\underline{\hspace{.5in}} Equal to
+\vspace{\stretch1}
+
+
+
+
+\clearpage
+\addframe{2}{Go to Question 3 when you're done with this question.}
+{\sffamily\textbf{PART G}}
+
+\vspace{.2in}
+\begin{tabular}{lll}
+  \underline{\hspace{.4in}} $a_c$ VS.\ $\dfrac1{m_\text{tot}}$ \hspace{.5in}&
+  \underline{\hspace{.4in}} $a_c$ VS.\ $m_\text{tot}$ \hspace{.5in} &
+  \underline{\hspace{.4in}} $a_c$ VS.\ $\dfrac{m_C}{m_\text{tot}}$ \\
+  
+  \underline{\hspace{.4in}} $a_c$ VS.\ $m_C$  \hspace{.5in} &
+  \underline{\hspace{.4in}} $m_C$ VS.\ $m_\text{tot}$ \hspace{.5in} &
+  \underline{\hspace{.4in}} $m_C$ VS.\ $\dfrac1{m_\text{tot}}$ \\
+\end{tabular}
+
+\clearpage
+\addframe{3}{Question 3 is continued on the next page.}
+
+{\sffamily\textbf{PART A}}
+\vspace{\stretch1}
+
+\hrulefill
+
+{\sffamily\textbf{PART B}}
+\vspace{\stretch1}
+
+\hrulefill
+
+{\sffamily\textbf{PART C}}
+\vspace{\stretch1}
+
+
+\clearpage
+\addframe{3}{Go on to the next page.}
+
+{\sffamily\textbf{PART D}}
+\vspace{\stretch1}
+
+\hrulefill
+
+
+{\sffamily\textbf{PART E}}
+\vspace{\stretch1}
+
+
+
+\clearpage
+\fancyfoot{} % clear all footer fields
+\begin{tikzpicture}[remember picture, overlay]
+  \draw[line width=1.8pt,fill=gray!20]
+  ($(current page text area.north west) +(-5mm,.7in)$)
+  rectangle
+  ($(current page text area.south east) +(5mm,-.5in)$)
+  node[midway,text width=4.2in]{\sffamily
+
+    \begin{center}
+      \pic{.25}{laptop}
+
+      \vspace{.2in}{\Huge\textbf{AFTER THE EXAM}}
+    \end{center}
+
+    \vspace{.7in}{
+      \Large\textbf{Do not close your device.}\par
+    }
+
+    \vspace{.5in}{
+      \Large\textbf{Stop writing.} Place your free-response
+      booklet face down on the desk.\par
+    }
+
+    \vspace{.5in}{
+      \Large\textbf{Remain Seated.} Wait for your proctor to
+      collect your exam materials.\par
+    }
+
+    \vspace{.5in}{
+      \Large\textbf{Remain quiet.} Other students may still be testing.
+    }
+  };
+\end{tikzpicture}
+
+\end{document}

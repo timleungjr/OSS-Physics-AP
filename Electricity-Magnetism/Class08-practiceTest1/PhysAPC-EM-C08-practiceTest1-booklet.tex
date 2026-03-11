@@ -1,12 +1,14 @@
-\documentclass[12pt,twoside]{article}
+\documentclass[11pt,twoside]{article}
 \usepackage[top=1.5in,bottom=1.3in,left=.7in,right=.7in,letterpaper]{geometry}
-\usepackage{times}
-
+%\usepackage{times}
 \usepackage{fancyhdr}
+\usepackage{enumitem}
+\usepackage{multicol}
+\usepackage{fontspec}
 
 \fancyhead{} % clear all header fields
 \fancyfoot{} % clear all footer fields
-\fancyfoot[LE,RO]{\sffamily\large\textbf{Page \thepage}}
+\fancyfoot[LE,RO]{\sffamily\Large\textbf{Page \thepage}}
 
 \usepackage{tikz}
 \usepackage{tikzpagenodes}
@@ -31,7 +33,7 @@
     ($(current page text area.north west) +(2.33in,.7in)$)
     rectangle
     ($(current page text area.north west) +(4.67in,.2in)$)
-    node[midway,white]{\sffamily\large\textbf{Question #1}};
+    node[midway,white]{\sffamily\Large\textbf{Question #1}};
     
     \draw[line width=1.8pt]
     ($(current page text area.north west) +(-5mm,.7in)$)
@@ -56,7 +58,99 @@
 
 \newcommand{\pic}[2]{\includegraphics[width=#1\textwidth]{#2}}
 
+
+%\setsansfont{Inter}
+
+
 \begin{document}
+\pagestyle{plain}
+
+\setmainfont{Charter}
+
+\vspace{-.5in}
+This is approximately what the answering booklet will look like in your actual
+AP Physics C Electricity \& Magnetism exam, except that it will have a lot more
+details for their computer system to read your work. Some of the fonts are also
+purposely slightly different from the standard font that the exam uses. Please
+print a copy before class, and follow your teacher's instructions
+during the practice test.
+
+%\vspace{.2in}
+%\begin{tikzpicture}
+%  \draw[ultra thick,fill=black] rectangle (1,1);
+%  \draw[ultra thick] (1,0) rectangle +(1.2,1) node[midway]{\Large\textbf{AP}};
+%\end{tikzpicture}
+
+\vspace{.8in}{\Huge
+  \textbf{AP Physics C: Electricity \\and Magnetism}
+  \par
+}
+
+{\tikz\fill rectangle (9,.2);}
+
+{\fontsize{40}{46}\selectfont Sample Answer Booklet\par}
+
+\vspace{.5in}{\fontspec{Arial Black}\Large SECTION II: FREE-RESPONSE}
+
+\setmainfont{Inter}
+\setsansfont{Inter}
+
+\vspace{.1in}
+\fcolorbox{pink!70}{pink!70}{
+  \begin{minipage}{\textwidth}
+    \begin{multicols}{2}
+      {\fontspec{Arial Black}ENTER YOUR IDENTIFICATION\\INFORMATION}
+
+      \begin{enumerate}
+      \item First two letters of your last name
+        {\tikz[xscale=.7,yscale=.8]\draw[thick] grid (2,1);}
+        
+        First letter of your first name\hspace{.32in}
+        {\tikz[xscale=.7,yscale=.8]\draw[thick] rectangle (1,1);}
+        
+      \item  Date of Birth
+        {\tikz[xscale=.7,yscale=.8]
+          \draw[thick] grid (2,1) node[pos=0,below]{\hspace{.7in}Month};
+        }
+        {\tikz[xscale=.7,yscale=.8]
+          \draw[thick] grid (2,1) node[pos=0,below]{\hspace{.7in}Day};
+        }
+
+      \item Six-digit school code\\
+        {\tikz[xscale=.7,yscale=.8]\draw[thick] grid (5,1);}
+      \end{enumerate}
+      \columnbreak
+      
+      \textbf{Time:} 1 hour\hfill
+      \textbf{Questions:} 4\hspace{.2in}
+      \begin{itemize}[itemsep=.5pt]
+      \item In the real AP exam, free-response questions and the section timer
+        will be in Bluebook.
+      \item Write answers in this booklet.
+      \item Use a pencil or pen with black or dark blue ink.
+      \item Do not write outside the box. Erased or crossed-out work will not be
+        scored.
+      \item In the real AP exam, reference information will be in Bluebook.
+      \end{itemize}
+    \end{multicols}
+  \end{minipage}
+}
+
+\vspace{.3in}
+\begin{tikzpicture}[scale=.8]
+  \draw[ultra thick,red!60,fill=pink!30,rounded corners] rectangle (8,2)
+  node[midway]{\sffamily\small\textbf{Affix AP ID Label Here}};
+\end{tikzpicture}
+\hfill
+\begin{minipage}{.2\textwidth}
+  \centering
+  \vspace{-.5in}
+  \pic1{fake-barcode}\\{\small SOME BARCODE}
+\end{minipage}
+\clearpage
+
+
+\setmainfont{Charter}
 \pagestyle{fancy}
 
 
@@ -68,14 +162,11 @@
   node[midway,text width=4.2in]{\sffamily
 
     \begin{center}
-      \parbox[c]{4in}{
-        \centering
-        \pic{.25}{laptop}
-        \hspace{.1in}{\Huge $\leftrightarrow$}\hspace{.1in}
-        \pic{.22}{openbook}
+      \pic{.25}{laptop}
+      \hspace{.1in}{\Huge $\leftrightarrow$}\hspace{.1in}
+      \pic{.22}{openbook}
       
-        \vspace{.2in}{\Huge\textbf{Question 1}}\
-      }
+      \vspace{.2in}{\fontspec{Arial Black}\Huge Question 1}
     \end{center}
 
     \vspace{.7in}{
@@ -113,20 +204,15 @@
 
 {\sffamily\textbf{PART C}}
 
-\textbf{Indicate} the direction of the electric field.
-
 \vspace{.1in}
-\hspace{.2in}\underline{\hspace{.4in}} To the left
+\underline{\hspace{.4in}} To the left\hspace{.5in}
+\underline{\hspace{.4in}} Toward the top of the page\hspace{.5in}
+\underline{\hspace{.4in}} Into the page
 
-\hspace{.2in}\underline{\hspace{.4in}} Toward the top of the page
-
-\hspace{.2in}\underline{\hspace{.4in}} Into the page
-
-\hspace{.2in}\underline{\hspace{.4in}} To the right
-
-\hspace{.2in}\underline{\hspace{.4in}} Toward the bottom of the page
-
-\hspace{.2in}\underline{\hspace{.4in}} Out of the page
+\vspace{.15in}
+\underline{\hspace{.4in}} To the right\hspace{.4in}
+\underline{\hspace{.4in}} Toward the bottom of the page\hspace{.25in}
+\underline{\hspace{.4in}} Out of the page
 
 \vspace{\stretch1}
 
@@ -134,30 +220,27 @@
 
 {\sffamily\textbf{PART D}}
 
-\vspace{\stretch{1.5}}
+\vspace{\stretch1}
 
 \clearpage
 \addframe{1}{Go to Question 2 when you're done with this question.}
 
 {\sffamily\textbf{PART E}}
-\vspace{\stretch{1.5}}
+\vspace{\stretch1}
 
 \hrulefill
 
 {\sffamily\textbf{PART F}}
 
 \vspace{.1in}
-\underline{\hspace{.6in}} To the left
+\underline{\hspace{.4in}} To the left\hspace{.5in}
+\underline{\hspace{.4in}} Toward the top of the page\hspace{.5in}
+\underline{\hspace{.4in}} Into the page
 
-\underline{\hspace{.6in}} Toward the top of the page
-
-\underline{\hspace{.6in}} Into the page
-
-\underline{\hspace{.6in}} To the right
-
-\underline{\hspace{.6in}} Toward the bottom of the page
-
-\underline{\hspace{.6in}} Out of the page
+\vspace{.15in}
+\underline{\hspace{.4in}} To the right\hspace{.4in}
+\underline{\hspace{.4in}} Toward the bottom of the page\hspace{.25in}
+\underline{\hspace{.4in}} Out of the page
 
 \vspace{\stretch1}
 
@@ -212,7 +295,7 @@
 
 
 \clearpage
-\addframe{3}{Go to Question 4 when you'e done with this question.}
+\addframe{3}{Go to Question 4 when you're done with this question.}
 
 {\sffamily\textbf{PART D}}
 \vspace{\stretch1}
@@ -273,7 +356,7 @@
     \begin{center}
       \pic{.25}{laptop}
 
-      \vspace{.2in}{\Huge\textbf{AFTER THE EXAM}}
+      \vspace{.2in}{\fontspec{Arial Black}\Huge AFTER THE EXAM}
     \end{center}
 
     \vspace{.7in}{
@@ -281,7 +364,7 @@
     }
 
     \vspace{.5in}{
-      \Large\textbf{Stop writing.} Plase your free-response
+      \Large\textbf{Stop writing.} Place your free-response
       booklet face down on the desk.\par
     }
 

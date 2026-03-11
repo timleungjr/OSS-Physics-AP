@@ -3,6 +3,8 @@ all:
 	pdflatex PhysAPC-Mech-C16-Test2
 	pdflatex PhysAPC-Mech-C16-Test2-FRQ
 	pdflatex PhysAPC-Mech-C16-Test2-FRQ
+	pdflatex PhysAPC-Mech-C16-Test2-booklet
+	pdflatex PhysAPC-Mech-C16-Test2-booklet
 
 clean:
 	rm -rf *~ *.*~ *.log *.nav *.aux *.out *.snm *.toc
