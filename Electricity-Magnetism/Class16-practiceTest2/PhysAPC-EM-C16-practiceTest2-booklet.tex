@@ -1,8 +1,9 @@
 \documentclass[12pt,twoside]{article}
 \usepackage[top=1.5in,bottom=1.3in,left=.7in,right=.7in,letterpaper]{geometry}
-\usepackage{times}
-
 \usepackage{fancyhdr}
+\usepackage{enumitem}
+\usepackage{multicol}
+\usepackage{fontspec}
 
 \fancyhead{} % clear all header fields
 \fancyfoot{} % clear all footer fields
@@ -57,6 +58,95 @@
 \newcommand{\pic}[2]{\includegraphics[width=#1\textwidth]{#2}}
 
 \begin{document}
+\pagestyle{plain}
+
+\setmainfont{Charter}
+
+This is approximately what the answering booklet will look like in your actual
+AP Physics C Electricity \& Magnetism exam, except that it will have a lot more
+details for their computer system to read your work. Some of the fonts are also
+purposely slightly different from the standard font that the exam uses. Please
+print a copy before class, and follow your teacher's instructions
+during the practice test.
+
+%\vspace{.2in}
+%\begin{tikzpicture}
+%  \draw[ultra thick,fill=black] rectangle (1,1);
+%  \draw[ultra thick] (1,0) rectangle +(1.2,1) node[midway]{\Large\textbf{AP}};
+%\end{tikzpicture}
+
+
+\setmainfont{Roboto Slab}
+
+\vspace{.5in}{\Huge
+  \textbf{AP Physics C: Electricity \\and Magnetism}
+  \par
+}
+
+{\tikz\fill rectangle (9,.2);}
+
+{\fontsize{40}{46}\selectfont Sample Answer Booklet\par}
+
+\vspace{.5in}{\fontspec{Arial Black}\Large SECTION II: FREE-RESPONSE}
+
+\setmainfont{Inter}
+\setsansfont{Inter}
+
+\vspace{.1in}
+\fcolorbox{pink!70}{pink!70}{
+  \begin{minipage}{\textwidth}
+    \begin{multicols}{2}
+      {\fontspec{Arial Black}ENTER YOUR IDENTIFICATION\\INFORMATION}
+
+      \begin{enumerate}
+      \item First two letters of your last name
+        {\tikz[xscale=.7,yscale=.8]\draw[thick] grid (2,1);}
+        
+        First letter of your first name\hspace{.32in}
+        {\tikz[xscale=.7,yscale=.8]\draw[thick] rectangle (1,1);}
+        
+      \item  Date of Birth
+        {\tikz[xscale=.7,yscale=.8]
+          \draw[thick] grid (2,1) node[pos=0,below]{\hspace{.7in}Month};
+        }
+        {\tikz[xscale=.7,yscale=.8]
+          \draw[thick] grid (2,1) node[pos=0,below]{\hspace{.7in}Day};
+        }
+
+      \item Six-digit school code\\
+        {\tikz[xscale=.7,yscale=.8]\draw[thick] grid (5,1);}
+      \end{enumerate}
+      \columnbreak
+      
+      \textbf{Time:} 1 hour\hfill
+      \textbf{Questions:} 4\hspace{.2in}
+      \begin{itemize}[itemsep=.5pt]
+      \item In the real AP exam, free-response questions and the section timer
+        will be in Bluebook.
+      \item Write answers in this booklet.
+      \item Use a pencil or pen with black or dark blue ink.
+      \item Do not write outside the box. Erased or crossed-out work will not be
+        scored.
+      \item In the real AP exam, reference information will be in Bluebook.
+      \end{itemize}
+    \end{multicols}
+  \end{minipage}
+}
+
+\vspace{.3in}
+\begin{tikzpicture}[scale=.8]
+  \draw[ultra thick,red!60,fill=pink!30,rounded corners] rectangle (8,2)
+  node[midway]{\sffamily\small\textbf{Affix AP ID Label Here}};
+\end{tikzpicture}
+\hfill
+\begin{minipage}{.2\textwidth}
+  \centering
+  \vspace{-.5in}
+  \pic1{../Class08-practiceTest1/fake-barcode}\\{\small SOME BARCODE}
+\end{minipage}
+\clearpage
+
+\setmainfont{Charter}
 \pagestyle{fancy}
 
 
@@ -65,7 +155,7 @@
   ($(current page text area.north west) +(-5mm,.7in)$)
   rectangle
   ($(current page text area.south east) +(5mm,-.5in)$)
-  node[midway,text width=4.2in]{\sffamily
+  node[midway,text width=4.3in]{\sffamily
 
     \begin{center}
       \parbox[c]{4in}{
@@ -269,7 +359,7 @@
   ($(current page text area.north west) +(-5mm,.7in)$)
   rectangle
   ($(current page text area.south east) +(5mm,-.5in)$)
-  node[midway,text width=4.2in]{\sffamily
+  node[midway,text width=4.3in]{\sffamily
 
     \begin{center}
       \pic{.25}{../Class08-practiceTest1/laptop}
