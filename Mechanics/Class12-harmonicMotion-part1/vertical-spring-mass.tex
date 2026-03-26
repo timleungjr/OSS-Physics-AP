@@ -1,0 +1,18 @@
+\begin{tikzpicture}[scale=1.3]
+  \draw[mass] (.7,1.7) rectangle (1.3,2.3);
+  \draw[thick,
+    decoration={aspect=0.3,segment length=2mm, amplitude=2.5mm, coil},
+    decorate] (1,5)--(1,2.5); 
+  \fill[pattern=north east lines] (0,5) rectangle (2,5.2);
+  \draw[very thick] (0,5)--(2,5);
+  \draw[vectors,red] (1,2)--(1,1.2) node[right]{$\vec F_g$};
+  \draw[vectors,red] (1,2)--(1,2.8) node[right]{$\vec F_s$};
+  \fill[red] (1,2) circle (.05);
+  \draw[axes] (1,1)--(1,.5) node[below]{$+$};
+  \draw[vectors] (.3,4)--(.3,2.3) node[midway,left]{$x$};
+  \draw[vectors] (1.7,4)--(1.7,3.5) node[midway,right]{$B$};
+  \begin{scope}[thick,dashed]
+    \draw (0,4)--(2,4) node[right]{\scriptsize unstretched};
+    \draw (0,3.5)--(2,3.5) node[right]{\scriptsize equilibrium};
+  \end{scope}
+\end{tikzpicture}

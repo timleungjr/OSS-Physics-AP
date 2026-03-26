@@ -1,8 +1,8 @@
 all:
 	pdflatex PhysAPC-Mech-C09-rotMotion
 	pdflatex PhysAPC-Mech-C09-rotMotion
-	pdflatex PhysAPC-Mech-C09-rotMotion-print
-	pdflatex PhysAPC-Mech-C09-rotMotion-print
+#	pdflatex PhysAPC-Mech-C09-rotMotion-print
+#	pdflatex PhysAPC-Mech-C09-rotMotion-print
 	cd homework ;make
 
 clean:

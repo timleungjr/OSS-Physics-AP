@@ -76,6 +76,10 @@
 \usepackage{multicol}
 \usepackage{circuitikz}
 
+\usepackage[ISO]{diffcoeff}[=v4]
+\diffdef{}{ op-symbol=\mathrm{d} }
+
+
 \usetikzlibrary{decorations.pathmorphing,patterns}
 
 \sisetup{

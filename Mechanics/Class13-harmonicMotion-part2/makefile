@@ -1,6 +1,6 @@
 all:
-	pdflatex PhysAPC-Mech-13-harmonicMotion2
-	pdflatex PhysAPC-Mech-13-harmonicMotion2
+	pdflatex PhysAPC-Mech-13-notice
+	pdflatex PhysAPC-Mech-13-notice
 	cd homework ; make
 clean:
 	rm -rf *~ *.*~ *.log *.nav *.aux *.out *.snm *.toc

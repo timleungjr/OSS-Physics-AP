@@ -14,18 +14,157 @@
 \begin{center}
   {
     \fontfamily{phv}\Large
-    \textbf{PHYSICS C: ELECTRICITY AND MAGNETISM\\
-      SECTION I\\
-      TIME -- 30 MINUTES}
+    \textbf{PHYSICS C: ELECTRICITY AND MAGNETISM\\SECTION I\\
+      TIME -- 45 MINUTES}
   }
 \end{center}
 
 \textbf{Directions:} Each of the questions or incomplete statements below is
 followed by five suggested answers or completions. Select the one that is best
-in each case and place the letter of your choice in the corresponding box on
-the student answer sheet.
+in each case.
+%and place the letter of your choice in the corresponding box on
+%the student answer sheet.
 
 \begin{questions}
+
+  \question The electric potential along an $x$-axis is given by the equation
+  $V(x)=ax-bx^2$, where $a$ and $b$ are constants. At what point on the
+  $x$-axis is the electric field zero?
+  \begin{choices}
+    \choice $x=0$
+    \choice $x=\dfrac a{2b}$
+    \choice $x=\dfrac ab$
+    \choice $x=\dfrac{3a}{2b}$
+    \choice At no point
+  \end{choices}
+  \newpage
+
+  \uplevel{
+    \centering
+
+    \begin{tikzpicture}[thick]
+      \draw rectangle (2,2);
+      \draw (1.1,1.1) rectangle +(2,2);
+      \foreach \x in {0,2}{
+        \foreach \y in {0,2} \draw (\x,\y)--+(1.1,1.1);
+      }
+      \draw[|<->|] (0,-.3)--+(2,0) node[midway,fill=white]{$d$};
+      \draw[|<->|] (-.3,0)--+(0,2) node[midway,fill=white]{$d$};
+      \draw[|<->|,rotate around={-45:(2,0)}]
+      (2.25,0)--+(0,1.55) node[midway,fill=white,rotate=45]{$d$};
+    \end{tikzpicture}
+    \hspace{.3in}
+    \begin{tikzpicture}[thick,scale=1.2]
+      \draw circle (1);
+      \draw[|<->|] (-1,-1.3)--+(2,0) node[midway,fill=white]{$d$};
+      \draw (-1,0) arc (180:360:1 and .35);
+    \end{tikzpicture}
+  }
+  \question The figure above shows two Gaussian surfaces: a cube with side
+  length $d$ and a sphere with diameter $d$. The net electric charge enclosed
+  within each surface is the same, $+Q$. If $\Phi_C$ denotes the total electric
+  flux through the cubical surface, and $\Phi_S$  denotes the total electric
+  flux through the spherical surface, then which of the following is true?
+  \begin{choices}
+    \choice $\Phi_C=\dfrac\pi6\Phi_S$
+    \choice $\Phi_C=\dfrac\pi3\Phi_S$
+    \choice $\Phi_C=\Phi_S$
+    \choice $\Phi_C=\dfrac 3\pi\Phi_S$
+    \choice $\Phi_C=\dfrac 6\pi\Phi_S$
+  \end{choices}
+  \newpage
+
+  \uplevel{
+    \centering
+    \begin{tikzpicture}
+      \draw[very thick] circle (1);
+      \draw[very thick] circle (2);
+      \draw[axes,rotate=20] (0,0)--(1,0) node[midway,below]{$R$};
+      \draw[axes,rotate=70] (0,0)--(2,0) node[pos=.75,left]{$2R$};
+      \draw[thick,fill=gray!10] (-.05,-1) rectangle (.05,-2);
+      \draw[axes] (-1,-2.5) to[out=0,in=180] (-.1,-1.5);
+      \node[left,text width=1.5cm] at (-1,-2.5) {insulating support};
+    \end{tikzpicture}
+  }
+  \question The figure above shows a cross section of two concentric spherical
+  metal shells of radii $R$ and $2R$, respectively. Find the capacitance.
+  \begin{choices}
+    \choice $\dfrac1{8\pi\varepsilon_0R}$
+    \choice $\dfrac1{4\pi\varepsilon_0R}$
+    \choice $2\pi\varepsilon_0R$
+    \choice $4\pi\varepsilon_0R$
+    \choice $8\pi\varepsilon_0R$
+  \end{choices}
+  \newpage
+  
+%  \question The advantage of using a dielectric in a capacitor is that it
+%  \begin{choices}
+%    \choice increases the capacitance of the capacitor
+%    \choice increases the conductivity of the capacitor
+%    \choice decreases the charging time of the capacitor
+%    \choice makes the capacitor dissipate less power
+%    \choice eliminates the electric field in the capacitor
+%  \end{choices}
+%  \newpage
+  
+  \question A parallel-plate capacitor is connected to a battery, fully
+  charged, disconnected, and isolated from the battery. A dielectric slab is
+  then inserted between the plates of the capacitor. Which of the following is
+  a true statement about what happens when the dielectric slab is inserted?
+  \begin{choices}
+    \choice The magnitude of the electric field between the plates of the
+    capacitor will increase.
+    \choice The potential difference between the plates of the capacitor will
+    decrease.
+    \choice The capacitance of the capacitor will decrease.
+    \choice The charge stored on the capacitor will increase.
+    \choice The energy stored in the capacitor will increase.
+  \end{choices}
+  \newpage
+
+    \uplevel{
+    \centering
+    \begin{tikzpicture}
+      \foreach \x in {0,1} \draw[thick] (\x,0)--+(0,2);
+      \draw[<->] (0,1)--(1,1) node[midway,above]{$d$};
+      \node at (.5,2.3){A};
+    \end{tikzpicture}
+    \hspace{.5in}
+    \begin{tikzpicture}
+      \foreach \x in {0,2} \draw[thick] (\x,0)--+(0,2);
+      \draw[<->] (0,1)--(2,1) node[midway,above]{$2d$};
+      \node at (1,2.3){B};
+    \end{tikzpicture}
+    \hspace{.5in}
+    \begin{tikzpicture}
+      \fill[lightgray] rectangle (1,2);
+      \foreach \x in {0,1} \draw[thick] (\x,0)--+(0,2);
+      \draw[<->] (0,1)--(1,1) node[midway,above]{$d$};
+      \node at (.5,2.3){C};
+    \end{tikzpicture}
+    \hspace{.5in}
+    \begin{tikzpicture}
+      \fill[lightgray] rectangle (2,2);
+      \foreach \x in {0,2} \draw[thick] (\x,0)--+(0,2);
+      \draw[<->] (0,1)--(2,1) node[midway,above]{$2d$};
+      \node at (1,2.3){D};
+    \end{tikzpicture}
+  }
+  \question Four parallel-plate capacitors all have the same plate area and
+  have the plate separations shown above. Both capacitors A and B have air
+  between the plates, while the space between the plates of both capacitors C
+  and D is filled with a dielectric slab of dielectric constant $\kappa=2$.
+  Which of the following correctly ranks the capacitors in order of their
+  capacitance from largest to smallest?
+  \begin{choices}
+    \choice $B>(A=D)>C$
+    \choice $(A=C)>(B=D)$
+    \choice $C>(A=D)>C$
+    \choice $(B=D)>(A=C)$
+    \choice $D>C>B>A$
+  \end{choices}
+  \newpage
+  
   \question Three long, current-carrying wires are shown in the cross-sectional
   view below. The currents in wires R and S are out of the page, and the
   current in wire T is into the page. The currents in the wires have equal
@@ -35,19 +174,19 @@ the student answer sheet.
   direction of the magnetic field at point P due to all three wires?
   \uplevel{
     \centering
-    \begin{tikzpicture}[scale=.8]
+    \begin{tikzpicture}
       \draw[axes] (0,0)--(10,0) node[right]{$x$};
-      \draw[very thick,fill=white] (2,0) circle (.3) node[below=7]{Wire R};
+      \draw[very thick,fill=white] (2,0) circle (.3) node[below=9]{Wire R};
       \fill (2,0) circle (.2);
       \draw (2,.3)--(2,.7) node[above]{$x=0$};
 
-      \draw[very thick,fill=white] (4,0) circle (.3) node[below=7]{Wire S};
+      \draw[very thick,fill=white] (4,0) circle (.3) node[below=9]{Wire S};
       \fill (4,0) circle (.2);
       \draw (4,.3)--(4,.7) node[above]{$x=d$};
       
       \fill (6,0) circle (.1) node[below right]{P};
 
-      \draw[very thick,fill=white] (8,0) circle (.3) node[below=7]{Wire T};
+      \draw[very thick,fill=white] (8,0) circle (.3) node[below=9]{Wire T};
       \begin{scope}[ultra thick,rotate around={45:(8,0)}]
         \draw (7.7,0)--(8.3,0);
         \draw (8,.3)--(8,-.3);
@@ -65,7 +204,8 @@ the student answer sheet.
     (D) & $5B_S/2$ & Top of the page \\
     (E) & $5B_S/2$ & Bottom of the page
   \end{tabular}
-
+  \newpage
+  
   \question Two wires perpendicular to the $x$-axis have currents $I$ directed
   out of the page, as shown below. Each wire is a distance $d$ from the
   $y$-axis. Point P lies on the $y$-axis at the coordinate $(0,a)$, and point R
@@ -73,7 +213,7 @@ the student answer sheet.
   expressions represents the magnitude of the magnetic field at point R?
   \uplevel{
     \centering
-    \begin{tikzpicture}[scale=.75]
+    \begin{tikzpicture}
       \draw[axes] (-4,0)--(4,0) node[right]{$x$};
       \draw[axes] (0,-1)--(0,3.5) node[above]{$y$};
       \draw[very thick,fill=white] (-3,0) circle (.3) node[above left=4]{$I$};
@@ -104,6 +244,61 @@ the student answer sheet.
 
   \uplevel{
     \centering
+    \begin{tikzpicture}
+      \draw[thick,fill=lightgray] circle (1.5);
+      \draw[axes,rotate=-65] (0,0)--(1.5,0) node[midway,left]{$a$}
+      node[right=10]{$(R>a)$};
+      \begin{scope}[rotate=10]
+        \draw[thick] (0,0)--(3,0);
+        \draw[axes]  (0,0)--(2.3,0) node[below]{$R$};
+        \draw[<->] (1.6,0) arc (0:30:1.6) node[midway,right=-1]{$\theta$};
+        \draw[thick] (3,0) arc (0:30:3)--(0,0);
+        \draw[axes]  (3,0) arc (0:18:3);
+      \end{scope}
+      \draw[axes,rotate=40] (3,0)--(2.3,0) node[above=3]{$R$};
+      \node at (-.4,.2) {$I$};
+    \end{tikzpicture}
+  }
+  
+  \question A long, straight wire of radius $a$ carries a current $I$ out of
+  the page, which is uniformly distributed over the cross section of the wire.
+  The value of $\oint \vec B\cdot\dl{\vec\ell}$, the line integral of the
+  magnetic field $\vec B$ around the wedge-shaped path, equals which of the
+  following?
+  \begin{choices}
+  \item $\dfrac{\mu_0\theta I}{2\pi}$
+  \item $\dfrac{\mu_0\theta I}{2\pi^2a^2}$
+  \item $\dfrac{\mu_0\theta I}{2\pi^2R^2}$
+  \item $\dfrac{\mu_0I}{\pi a^2}$
+  \item $\dfrac{\mu_0I}{\pi R^2}$
+  \end{choices}
+  \newpage
+  
+  \uplevel{
+    \centering
+    \begin{tikzpicture}[scale=.7]
+      \foreach \x in {0,...,5}{
+        \foreach \y in {0,...,5} \fill (\x,\y) circle (.08);
+      }
+      \draw[very thick] (2.5,2.5) circle (2.1);
+      \node at (4.5,4.5){$\vec B$};
+    \end{tikzpicture}
+  }
+  \question The metal loop of wire shown in the above diagram is situated in a
+  magnetic field $\vec B$ pointing out of the plane of the page. If $\vec B$
+  decreases uniformly in strength, the induced electric current within the loop
+  is
+  \begin{choices}
+    \choice clockwise and decreasing
+    \choice clockwise and increasing
+    \choice counterclockwise and decreasing
+    \choice counterclockwise and constant
+    \choice counterclockwise and increasing
+  \end{choices}
+  \newpage
+  
+  \uplevel{
+    \centering
     \begin{tikzpicture}[thick]
       \draw (1.75,.35)--(1.2,0) node[midway,above left]{$S$}--(0,0)
       to[battery1,l=$\mathcal E$] (0,2) to[R,l=$R$] (4,2) to[C,l=$C$]
@@ -117,8 +312,7 @@ the student answer sheet.
   
   \begin{oneparchoices}
     \choice
-    \hspace{-.2in}
-    \begin{tikzpicture}
+    \begin{tikzpicture}[scale=1.2]
       \draw[axes] (0,0)--(2,0) node[right]{$t$};
       \draw[axes] (0,0)--(0,2) node[right]{$V_R$};
       \draw[very thick] (0,0)--(1.8,1.6);
@@ -126,8 +320,7 @@ the student answer sheet.
     \end{tikzpicture}
 
     \choice
-    \hspace{-.2in}
-    \begin{tikzpicture}
+    \begin{tikzpicture}[scale=1.2]
       \draw[axes] (0,0)--(2,0) node[right]{$t$};
       \draw[axes] (0,0)--(0,2) node[right]{$V_R$};
       \draw[very thick] (0,1.6)--(1.8,0);
@@ -135,8 +328,7 @@ the student answer sheet.
     \end{tikzpicture}
 
     \choice
-    \hspace{-.2in}
-    \begin{tikzpicture}
+    \begin{tikzpicture}[scale=1.2]
       \draw[axes] (0,0)--(2,0) node[right]{$t$};
       \draw[axes] (0,0)--(0,2) node[right]{$V_R$};
       \draw (.1,1.6)--(-.1,1.6) node[left]{$\mathcal E$};
@@ -144,8 +336,7 @@ the student answer sheet.
     \end{tikzpicture}
 
     \choice
-    \hspace{-.2in}
-    \begin{tikzpicture}
+    \begin{tikzpicture}[scale=1.2]
       \draw[axes] (0,0)--(2,0) node[right]{$t$};
       \draw[axes] (0,0)--(0,2) node[right]{$V_R$};
       \draw (.1,1.6)--(-.1,1.6) node[left]{$\mathcal E$};
@@ -153,17 +344,17 @@ the student answer sheet.
     \end{tikzpicture}
 
     \choice
-    \hspace{-.2in}
-    \begin{tikzpicture}
+    \begin{tikzpicture}[scale=1.2]
       \draw[axes] (0,0)--(2,0) node[right]{$t$};
       \draw[axes] (0,0)--(0,2) node[right]{$V_R$};
       \draw (.1,1.6)--(-.1,1.6) node[left]{$\mathcal E$};
       \draw[very thick,domain=0:1.7] plot(\x,{1.6*(1-exp(3.5*(\x-1.7)))});
     \end{tikzpicture}
   \end{oneparchoices}
-
+  \newpage
+  
   \uplevel{
-    \textbf{Question \ref{rcirc1}--\ref{rcirc2}}
+    \textbf{Questions \ref{rcirc1}--\ref{rcirc2}}
     \begin{center}
       \begin{tikzpicture}[thick,scale=1.4]
         \draw (0,0) to[battery1,l=\SI{12}\volt] (0,2)--(1.25,2)
@@ -199,6 +390,7 @@ the student answer sheet.
     \choice\SI2\ampere
     \choice\SI0\ampere, since the fuse would break the circuit
   \end{choices}
+  \newpage
   
   \question A fixed voltage is applied across the length of a tungsten wire. An
   increase in the power dissipated by the wire would result if which of the
@@ -210,7 +402,8 @@ the student answer sheet.
     \choice The temperature of the wire
     \choice The temperature of the wire’s surroundings
   \end{choices}
-
+  \newpage
+  
   \uplevel{
     \cpic{.22}{3-bulbs}
   }
@@ -226,6 +419,7 @@ the student answer sheet.
     \choice It cannot be determined without knowing the \emph{emf} of the
     battery.
   \end{choices}
+  \newpage
   
   \question A length of wire of resistance $R$ is connected across a battery
   with zero internal resistance. The wire is then cut in half and the two
@@ -241,7 +435,8 @@ the student answer sheet.
     (D) & Doubles    & Quadruples\\
     (E) & Quadruples & Quadruples
   \end{tabular}
-
+  \newpage
+  
   \uplevel{
     \centering
     \begin{tikzpicture}[thick,scale=1.2]
@@ -282,6 +477,7 @@ the student answer sheet.
     \choice $\mathcal E/R$
     \choice $L\mathcal E$
   \end{choices}
+  \newpage
   
   \uplevel{
     \textbf{Questions \ref{emf1}--\ref{emf2}}
@@ -330,6 +526,7 @@ the student answer sheet.
     \choice It is clockwise and increases with time.
     \choice It is clockwise and decreases with time
   \end{choices}
+  \newpage
   
   \question Which of the following statements contradicts one of Maxwell's
   equations?
@@ -343,7 +540,8 @@ the student answer sheet.
     \choice The electric field due to an isolated stationary point charge is
     inversely proportional to the square of the distance from the charge.
   \end{choices}
-
+  \newpage
+  
   \question A student building a circuit wishes to increase the frequency of an
   oscillator consisting of a capacitor of capacitance $C$ and an inductor of
   inductance $L$. Which of the following would accomplish this objective?
@@ -360,6 +558,7 @@ the student answer sheet.
     \choice II or III
     \choice III or IV
   \end{choices}
+  \newpage
   
   %\question A small positively charged sphere is lowered by a nonconducting
   %thread into a grounded metal cup without touching the inside surface of the
@@ -383,72 +582,7 @@ the student answer sheet.
   %  \choice Negative charge resides on the inside surface, and positive charge
   %  resides on the outside surface.
   %\end{choices}
-
-  \question A parallel plate capacitor is connected to a battery, fully
-  charged, disconnected, and isolated from the battery. A dielectric slab is
-  then inserted between the plates of the capacitor. Which of the following is
-  a true statement about what happens when the dielectric slab is inserted?
-  \begin{choices}
-    \choice The magnitude of the electric field between the plates of the
-    capacitor will increase.
-    \choice The potential difference between the plates of the capacitor will
-    decrease.
-    \choice The capacitance of the capacitor will decrease.
-    \choice The charge stored on the capacitor will increase.
-    \choice The energy stored in the capacitor will increase.
-  \end{choices}
-  \newpage
+ 
   
-  \question The advantage of using a dielectric in a capacitor is that it
-  \begin{choices}
-    \choice increases the capacitance of the capacitor
-    \choice increases the conductivity of the capacitor
-    \choice decreases the charging time of the capacitor
-    \choice makes the capacitor dissipate less power
-    \choice eliminates the electric field in the capacitor
-  \end{choices}
-
-  \uplevel{
-    \centering
-    \begin{tikzpicture}
-      \foreach \x in {0,1} \draw[thick] (\x,0)--+(0,2);
-      \draw[<->] (0,1)--(1,1) node[midway,above]{$d$};
-      \node at (.5,2.3){A};
-    \end{tikzpicture}
-    \hspace{.5in}
-    \begin{tikzpicture}
-      \foreach \x in {0,2} \draw[thick] (\x,0)--+(0,2);
-      \draw[<->] (0,1)--(2,1) node[midway,above]{$2d$};
-      \node at (1,2.3){B};
-    \end{tikzpicture}
-    \hspace{.5in}
-    \begin{tikzpicture}
-      \fill[lightgray] rectangle (1,2);
-      \foreach \x in {0,1} \draw[thick] (\x,0)--+(0,2);
-      \draw[<->] (0,1)--(1,1) node[midway,above]{$d$};
-      \node at (.5,2.3){C};
-    \end{tikzpicture}
-    \hspace{.5in}
-    \begin{tikzpicture}
-      \fill[lightgray] rectangle (2,2);
-      \foreach \x in {0,2} \draw[thick] (\x,0)--+(0,2);
-      \draw[<->] (0,1)--(2,1) node[midway,above]{$2d$};
-      \node at (1,2.3){D};
-    \end{tikzpicture}
-  }
-  
-  \question Four parallel plate capacitors all have the same plate area and
-  have the plate separations shown above. Both capacitors A and B have air
-  between the plates, while the space between the plates of both capacitors C
-  and D is filled with a dielectric slab of dielectric constant $\kappa=2$.
-  Which of the following correctly ranks the capacitors in order of their
-  capacitance from largest to smallest?
-  \begin{choices}
-    \choice $B>(A=D)>C$
-    \choice $(A=C)>(B=D)$
-    \choice $C>(A=D)>C$
-    \choice $(B=D)>(A=C)$
-    \choice $D>C>B>A$
-  \end{choices}
 \end{questions}
 \end{document}
