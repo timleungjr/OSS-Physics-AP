@@ -114,11 +114,28 @@ The clock will turn red when 5 minutes remain---\textbf{the proctor will not
     \textbf{D}. Determine a single source of experimental error that could
     result in the observed difference in the value for $k$. Briefly
     \textbf{justify} your answer.
+    \newpage
     
     \uplevel{
       \begin{center}
-        \pic{.27}{horizontal-spring}
+        \begin{tikzpicture}[very thick,scale=1.1]
+          \draw (2.5,0)--(-1.5,0)--(-1.5,2.7);
+          \draw rectangle (2,2) node[midway]{$m$};
+          \fill (-.08,.8) rectangle (0,.4);
+          \fill (-.08,1.2) rectangle (0,1.6);
 
+          \draw (0,.6)--(-.2,.6);
+          \draw[
+            decoration={aspect=.7,segment length=6,amplitude=4,coil},
+            decorate] (-.2,.6)--(-1.5,.6);
+
+          \draw (0,1.4)--(-.2,1.4);
+          \draw[
+            decoration={aspect=.7,segment length=6,amplitude=4,coil},
+            decorate] (-.2,1.4)--(-1.5,1.4);
+
+          \node at (1,2.8) {$N=2$};
+        \end{tikzpicture}\\
         Figure 3
       \end{center}
       The student conducts a similar investigation to determine the
@@ -129,7 +146,6 @@ The clock will turn red when 5 minutes remain---\textbf{the proctor will not
       trial, the block is displaced the same horizontal distance from
       equilibrium and released from rest.
     }
-    \newpage
     
     \part The student plots $T^2$ as a function of $N^{-1}$ for this new data.
     Would the slope of the best-fit line from this new investigation be greater
