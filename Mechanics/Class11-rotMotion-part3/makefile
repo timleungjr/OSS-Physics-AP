@@ -1,6 +1,6 @@
 all:
-	pdflatex PhysAPC-Mech-C11-rotMotion3
-	pdflatex PhysAPC-Mech-C11-rotMotion3
+	pdflatex PhysAPC-Mech-C11-notice
+	pdflatex PhysAPC-Mech-C11-notice
 	cd homework ; make
 
 clean:

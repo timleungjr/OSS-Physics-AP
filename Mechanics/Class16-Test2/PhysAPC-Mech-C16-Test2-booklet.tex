@@ -6,6 +6,7 @@
 \usepackage{enumitem}
 \usepackage{multicol}
 \usepackage{fontspec}
+\usepackage{siunitx}
 
 \fancyhead{} % clear all header fields
 \fancyfoot{} % clear all footer fields
@@ -88,8 +89,8 @@ during the practice test.
 
 \vspace{.5in}{\fontspec{Arial Black}\Large SECTION II: FREE-RESPONSE}
 
-\setmainfont{Inter}
-\setsansfont{Inter}
+\setmainfont{Arial}
+\setsansfont{Arial}
 
 \vspace{.1in}
 \fcolorbox{pink!70}{pink!70}{
@@ -281,7 +282,24 @@ during the practice test.
 
 {\sffamily\textbf{PART D}}
 \begin{center}
-  \pic{.5}{acceleration-data}
+  \begin{tikzpicture}[scale=1.4]
+    \draw[gray, step=.25] grid (5,5);
+    \draw[thick] grid (5,5);
+    \foreach \y in {0,...,5}
+    \draw[thick] (0,\y)--+(-.1,0) node[left]{$\y$};
+    \foreach \x in {0,0.5,...,2.5}
+    \draw[thick] (\x*2,0)--+(0,-.1) node[below]{$\x$};
+    
+    \node at (2.5,-.7) {$m_C$ [kg]};
+    \node[rotate=90] at (-.7,2.5){$a_C$ [\si{\metre\per\second\squared}]};
+    \fill (1,.94) circle (.05);
+    \fill (1.6,1.55) circle (.05);
+    \fill (2.25,1.93) circle (.05);
+    \fill (2.84,2.8) circle (.05);
+    \fill (3.48,3.5) circle (.05);
+    \fill (3.48,3.5) circle (.05);
+    \fill (4.08,3.92) circle (.05);
+  \end{tikzpicture}
 \end{center}
 
 \hrulefill

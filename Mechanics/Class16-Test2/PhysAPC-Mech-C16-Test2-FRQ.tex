@@ -216,10 +216,30 @@ The clock will turn red when 5 minutes remain---\textbf{the proctor will not
       clay and the two blocks is $m_\text{tot}=\SI{5.0}{\kilo\gram}$. The graph
       below shows $a_C$ as a function of $m_C$ , where $m_C$ is now the
       combined mass of block C and the mass of clay added to block C.
+      
       \begin{center}
-        \pic{.5}{acceleration-data}
+        \begin{tikzpicture}[scale=1.4]
+          \draw[gray, step=.25] grid (5,5);
+          \draw[thick] grid (5,5);
+          \foreach \y in {0,...,5}
+          \draw[thick] (0,\y)--+(-.1,0) node[left]{$\y$};
+          \foreach \x in {0,0.5,...,2.5}
+          \draw[thick] (\x*2,0)--+(0,-.1) node[below]{$\x$};
+
+          \node at (2.5,-.7) {$m_C$ [kg]};
+          \node[rotate=90] at (-.7,2.5){
+            $a_C$ [\si{\metre\per\second\squared}]};
+          \fill (1,.94) circle (.05);
+          \fill (1.6,1.55) circle (.05);
+          \fill (2.25,1.93) circle (.05);
+          \fill (2.84,2.8) circle (.05);
+          \fill (3.48,3.5) circle (.05);
+          \fill (3.48,3.5) circle (.05);
+          \fill (4.08,3.92) circle (.05);
+        \end{tikzpicture}
       \end{center}
     }
+      
     \part\textbf{Draw} a best-fit line to the data points in the graph above.
     \label{best-fit-again}
     
