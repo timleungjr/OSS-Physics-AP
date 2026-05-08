@@ -146,7 +146,7 @@
         
         \vspace{-.07in}
         \begin{displaymath}
-          \mathcal E=\left|\diff{\Phi_m}t\right|
+          \mathcal E(t)=\left|\diff{\Phi_m}t\right|
         \end{displaymath}\par
       };
       %\draw[thick,->,green!60!black] (flux)--(emf);
@@ -160,7 +160,7 @@
         in direction of the electric field (Ohm's law):
         
         \vspace{-.05in}\begin{displaymath}
-          I=\frac{\mathcal E}R
+          I(t)=\frac{\mathcal E(t)}R
         \end{displaymath}\par
         $R$ is the internal resistance of the wire loop, or it is
         connected to a resistor
@@ -186,7 +186,7 @@
     \fcolorbox{black}{yellow!10}{
       \begin{minipage}{.7\textwidth}
         \textbf{LENZ'S LAW:} The induced \emph{emf} and induced current are in
-        such are direction as to oppose the change that produces them
+        such a direction as to oppose the change that produces them
       \end{minipage}
     }
   \end{center}
@@ -299,7 +299,7 @@
           
           \vspace{-.15in}
           \begin{displaymath}
-            \Phi_m=BA=B\ell x
+            \Phi_m(t)=BA=B\ell x(t)
           \end{displaymath}\par
         };
         \draw[axes,red] (phi)--(-1,-.7);
@@ -312,7 +312,8 @@
 
           \vspace{-.1in}
           \begin{displaymath}
-            \mathcal E = \left|\diff{\Phi_m}t\right| = B\ell\diff xt=B\ell v
+            \mathcal E(t)=\left|\diff{\Phi_m(t)}t\right|
+            =B\ell\diff xt=B\ell v(t)
           \end{displaymath}\par
         };
       }
@@ -323,7 +324,7 @@
 
           \vspace{-.1in}
           \begin{displaymath}
-            I=\frac{\mathcal E}R
+            I(t)=\frac{\mathcal E(t)}R
           \end{displaymath}\par
         };
       }
@@ -378,14 +379,14 @@
   \centering
   \vspace{.2in}
   \begin{tikzpicture}[auto,node distance=145,thick]
-    \node[fill=pink!40,font=\LARGE] (a) {
-      $\displaystyle\Phi_m=\int_{\mathcal S}\vec B\cdot\dl\vec A$};
-    \node[fill=green!20,font=\LARGE] (b) [right of=a] {
-      $\displaystyle\left|\diff{\Phi_m}t\right|=\mathcal E$};
-    \node[fill=blue!20,font=\LARGE] (c) [right of=b] {
-      $I=\dfrac{\mathcal E}R$};
-    \node[fill=orange!20,font=\LARGE] (d) [right of=c]{
-      $P=I^2R=\dfrac{\mathcal E^2}R$};
+    \node[fill=pink!40,font=\Large] (a) {
+      $\displaystyle\Phi_m(t)=\int_{\mathcal S}\vec B\cdot\dl\vec A$};
+    \node[fill=green!20,font=\Large] (b) [right of=a] {
+      $\displaystyle\left|\diff{\Phi_m}t\right|=\mathcal E(t)$};
+    \node[fill=blue!20,font=\Large] (c) [right of=b] {
+      $I=\dfrac{\mathcal E(t)}R$};
+    \node[fill=orange!20,font=\Large] (d) [right of=c]{
+      $P(t)=I^2R=\dfrac{\mathcal E^2}R$};
     \draw[->] (a)--(b);
     \draw[->] (b)--(c);
     \draw[->] (c)--(d);
@@ -520,7 +521,7 @@
 
 \begin{frame}{Self Inductance and Induced EMF}
   If the current changes, the magnetic flux changes as well, therefore inducing
-  an electromotive force in the circuit According Faraday's law:
+  an electromotive force in the circuit according to Faraday's law:
 
   \eq{-.1in}{
     \boxed{\mathcal E=-\diff {\Phi_m}t=-L\diff It}
@@ -535,7 +536,7 @@
   At any instant, the magnitude of the induced emf is
 
   \eq{-.1in}{
-    \mathcal E=L\diff It
+    |\mathcal E|=L\diff It
   }
   so the power absorbed by the inductor is
 

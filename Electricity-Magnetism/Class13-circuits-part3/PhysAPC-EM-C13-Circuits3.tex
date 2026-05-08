@@ -121,7 +121,10 @@
       (2,0)--(1.2,0) to[short,-*] (.78,-.3);
     \end{tikzpicture}
   \end{center}
-  Initially ($t<0$), the switch is open.
+  Initially ($t<0$), the switch is open. At this time, let's assume that,
+  before the switch is closed, there is already an initial charge of $\pm Q_0$
+  on either side of the capacitor, and therefore an initial voltage of
+  $V_0=Q_0/C$.
 \end{frame}
 
 
@@ -238,7 +241,7 @@
     \begin{itemize}
     \item Current flow $I$ \emph{increases} the charge in the capacitor, i.e.\
       $I=+\diff Q/t$
-    \item Voltage across the capacitor $V_c=Q/C$ also increases
+    \item Voltage across the capacitor $V_c(t)=Q(t)/C$ also increases
     \end{itemize}
   \end{columns}
 \end{frame}
@@ -348,8 +351,10 @@
   The capacitor in the circuit is initially uncharged. At $t=0$, the switch is
   closed. Find the current through the battery and the resistors:
   \begin{enumerate}[(a)]
-  \item Immediately after the switch is closed
-  \item A long time after the switch is closed
+  \item Immediately after the switch is closed (the ``initial'' behaviour
+    at $t=0$)
+  \item A long time after the switch is closed (the ``steady-state''
+    behaviour when $t\to\infty$)
   \end{enumerate}
 \end{frame}
 
@@ -619,7 +624,7 @@
     
     \column{.5\textwidth}{\footnotesize
       As $t\to\infty$, magnetic flux through the inductor is no longer
-      channging, and no back \emph{emf} is generated. The inductor acts like a
+      changing, and no back \emph{emf} is generated. The inductor acts like a
       short circuit. There is no current through the \SI8{\ohm} resistor.\par}
     \begin{center}
       \begin{tikzpicture}[american voltages,thick]
@@ -660,10 +665,10 @@
 
 
 
-\begin{frame}{LC Circuits}
+\begin{frame}{LC Circuit}
   Since both sides are continuously differentiable, we can differentiate the
-  equation w.r.t.\ time, which gives us a second-order ordinary differential
-  equation with constant coefficients:
+  equation with respect to time, which gives us a second-order ordinary
+  differential equation with constant coefficients:
 
   \eq{-.1in}{
     \frac1C\diff Qt+L\diff[2]It=0
@@ -673,12 +678,12 @@
 
   The solution to such an equation is the simple harmonic motion\footnote{This
   was studied in AP Physics C Mechanics for spring-mass and pendulum systems.
-  Of couse there is no reason that the same math won't appear in E\&M!}.
+  Of course there is no reason that the same math won't appear in E\&M!}.
   Current flows as an alternating current (AC); the natural frequency
   $\omega_0$ is based on the inductance and capacitance:
 
   \eq{-.1in}{
-    I(t)=I_0\sin(\omega_0 t)\quad\text{\normalsize where}\quad
+    I(t)=I_0\sin(\omega_0 t+\theta_0)\quad\text{\normalsize where}\quad
     \omega_0=\frac1{\sqrt{LC}}
   }
 \end{frame}

@@ -17,6 +17,7 @@ all:
 	cd Class09-magnetism-part3 ; make
 	cd Class10-magnetism-part4 ; make
 	cd Class11-circuits-part1 ; make
+	cd Class12-circuits-part2 ; make
 	cd Class13-circuits-part3 ; make
 	cd Class14A-hallEffect ; make
 	cd Class14B-maxwellsEqs ; make
@@ -33,6 +34,7 @@ clean:
 	cd Class09-magnetism-part3 ; make clean
 	cd Class10-magnetism-part4 ; make clean
 	cd Class11-circuits-part1 ; make clean
+	cd Class12-circuits-part2 ; make clean
 	cd Class13-circuits-part3 ; make clean
 	cd Class14A-hallEffect ; make clean
 	cd Class14B-maxwellsEqs ; make clean
@@ -49,6 +51,7 @@ public:
 	cd Class09-magnetism-part3 ; make public
 	cd Class10-magnetism-part4 ; make public
 	cd Class11-circuits-part1 ; make public
+	cd Class12-circuits-part2 ; make public
 	cd Class13-circuits-part3 ; make public
 	cd Class14A-hallEffect ; make public
 	cd Class14B-maxwellsEqs ; make public
