@@ -66,7 +66,7 @@
 
     As the object moves in time, both the $x$-component $\vec x=x\iii$ and
     $y$-component $\vec y=y\jjj$ are functions of time, as we have seen many
-    times previously (Sass Class \#1 on kinematics if you need a refresher).
+    times previously (See Class \#1 on kinematics if you need a refresher).
   \end{columns}
 \end{frame}
 
@@ -132,7 +132,7 @@
 
     \begin{itemize}
     \item\vspace{-.15in}$r=|\vec r|$ is distance from the origin
-    \item $\theta$ is the standard angle, measured counter clockwise from the
+    \item $\theta$ is the standard angle, measured counter-clockwise from the
       $x$ axis in \emph{radians}
     \end{itemize}
   \end{columns}
@@ -231,13 +231,25 @@
     
     \column{.7\textwidth}
 
-    \vspace{-.1in}\textbf{Angular velocity} $\omega$, or
-    \textbf{angular frequency}, is the time derivative of position (i.e.\ how
-    quickly angular position is changing with time). It is measured in
-    \textbf{radian per second} (\si{\radian\per\second}):
+    \vspace{-.1in}\textbf{Angular velocity} $\omega$, or \textbf{angular
+      frequency}, is the time derivative of angular position or angular
+    displacement (i.e.\ how quickly angular position is changing with time). It
+    is measured in \textbf{radian per second} (\si{\radian\per\second}):
       
     \eq{-.1in}{
       \boxed{\omega(t)=\diff{\theta}t}
+    }
+
+    \vspace{-.05in}An average angular velocity can also be calculated over a
+    finite time interval ($\Delta t$):
+
+    \eq{-.1in}{
+      \boxed{
+        \omega_\text{avg(t)}
+        =\frac{\Delta\theta}{\Delta t}
+        =\frac{\theta(t)-\theta_0}{t-t_0}
+        =\frac{\int_{t_0}^t\omega(t)\dl t}{t-t_0}
+      }
     }
   \end{columns}
 \end{frame}
@@ -337,8 +349,9 @@
 
 
 \begin{frame}{Angular Acceleration}
-  The time derivative of $\omega$ is \textbf{angular acceleration}, which
-  has a unit of \si{\radian\per\second\squared}:
+  If angular velocity is ifferentiable with respect to time, then wherever a
+  derivative exists, we can find the \textbf{angular acceleration} $\omega$,
+  which has a unit of \si{\radian\per\second\squared}:
 
   \eq{-.1in}{
     \alpha=\diff{\omega}t=\diff[2]{\theta}t
@@ -353,8 +366,7 @@
   }
 
   \begin{itemize}
-  \item Tangential acceleration $a_t$ is along (parallel or anti-parallel) to
-    direction of motion
+  \item $a_t$ is along (parallel or anti-parallel to) the direction of motion
   \item For uniform circular motion, $\omega$ is constant, therefore $a_t=0$
   \end{itemize}
 \end{frame}
@@ -467,8 +479,9 @@
       speed $\omega$). The direction of the acceleration is towards the centre
       of the circle
     \item\textcolor{cyan}{\textbf{Tangential acceleration} $\vec a_t$} depends
-      on radius $r$ and angular acceleration $\alpha$. The direction of the
-      acceleration is tangent to the circle
+      on radius $r$ and angular acceleration $\alpha$. The direction of
+      acceleration is tangent to the circle (either parallel to anti-parallel
+      to motion)
     \end{itemize}
   \end{columns}
 \end{frame}
@@ -479,9 +492,8 @@
   By the second law of motion, acceleration must be caused by a net force.
   The components of the net force are:
   \begin{itemize}
-  \item\textbf{Tangential force} $\vec F_t$ along the direction of motion
-    (i.e.\ along the angular direction $\hat{\theta}$) causes the tangential
-    acceleration:
+  \item\textbf{Tangential force} ($\vec F_t$) along the direction of motion
+    (i.e.\ angular direction $\hat{\theta}$) causes the tangential acceleration:
 
     \eq{-.1in}{
       \boxed{
@@ -489,7 +501,7 @@
       }
     }
   \item\textbf{Centripetal force} ($\vec F_c$) towards the centre of the motion
-    (i.e.\ the inward radial direction $-\hat{r}$) causes centripetal
+    (i.e.\ the radially inward direction $-\hat{r}$) causes centripetal
     acceleration:
 
     \eq{-.15in}{
@@ -521,9 +533,13 @@
     \pic1{puck-on-table}
     
     \column{.6\textwidth}
-    \textbf{Example:} In the figure on the left, a mass $m_1$ is rolling around
-    a frictionless table with radius $R$ with a speed $v$. What is the mass of
-    $m_2$?
+    This example is considered to be a \emph{very} easy question that may show
+    up on a multiple-choice question. This is an example where a single force
+    is entirely responsible for generating the centripetal force.
+    
+    \vspace{.1in}\textbf{Example:} In the figure on the left, a mass $m_1$ is
+    rolling around a frictionless table with radius $R$ with a speed $v$. What
+    is the mass of $m_2$?
   \end{columns}
 \end{frame}
 
@@ -807,7 +823,7 @@
 
 \begin{frame}{What About a Pendulum?}
   A simple pendulum is like a vertical circular motion problem. While it does
-  not travel a full circle, we can still think of its path a a segment of a
+  not travel a full circle, we can still think of its path as a segment of a
   circle
   \begin{columns}[T]
     \column{.35\textwidth}
@@ -856,9 +872,9 @@
         \draw[thick] (0,0)--(0,-5);
         \shade[ball color=red] (0,-5) circle (.2) node[right=2.5]{$m$};
         \begin{scope}[vectors,red]
-          \draw[dotted] (0,-5)--(-1.1,-5) node[left]{$F_g\sin\theta$};
+          \draw[dotted] (0,-5)--(-1.1,-5) node[left]{$F_g\sin\theta_\text{max}$};
           \draw[dotted] (0,-5)--(0,-6.1)
-          node[right,fill=yellow!20,opacity=.8]{$F_g\cos\theta$};
+          node[right,fill=yellow!20,opacity=.8]{$F_g\cos\theta_\text{max}$};
           \draw (0,-5)--(0,-3.9)
           node[left,fill=yellow!20,opacity=.8]{$\vec F_T$};
           \draw[rotate around={-45:(0,-5)}] (0,-5)--(0,-6.5)
@@ -867,26 +883,26 @@
       \end{scope}
       \draw[dashed] (0,0)--(0,-5);
       \draw[dashed] (3.54,-3.54) arc (315:225:5);
-      \draw[axes] (0,-2) arc (270:315:2) node[midway,below]{$\theta$};
+      \draw[axes] (0,-2) arc (270:315:2) node[midway,below]{$\theta_\text{max}$};
     \end{tikzpicture}
 
     \column{.5\textwidth}
-    At the top of the swing, velocity $v$ is zero, therefore centripetal
-    acceleration is also zero:
+    At the top of the swing ($\theta=\theta_\text{max}$), velocity $v$ is zero,
+    therefore centripetal acceleration must also be zero:
 
     \eq{-.15in}{
-      a_c=\frac{v^2}r=0
+      a_c=\frac{v^2}\ell=0
     }
 
     \vspace{-.1in}the net force along the radial direction $\hat r$ is zero.
     The tension force $F_T$ can be calculated:
 
     \eq{-.15in}{
-      F_T=mg\cos\theta
+      F_T=mg\cos\theta_\text{max}
     }
     
-    \vspace{-.15in}At the highest point when $\theta$ is largest, tension is the
-    lowest.
+    \vspace{-.15in}At the highest point when $\theta=\theta_\text{max}$, tension
+    is the lowest
   \end{columns}
 \end{frame}
 
@@ -903,8 +919,8 @@
         \shade[ball color=red] (0,-5) circle(.2) node[right=2.5]{$m$};
         \begin{scope}[vectors,red]
           \draw[dotted] (0,-5)--(-1.1,-5)
-          node[left,fill=cyan!10]{$F_g\sin\theta$};
-          \draw[dotted] (0,-5)--(0,-6.1) node[right]{$F_g\cos\theta$};
+          node[left,fill=cyan!10]{$F_g\sin\theta_\text{max}$};
+          \draw[dotted] (0,-5)--(0,-6.1) node[right]{$F_g\cos\theta_\text{max}$};
           \draw (0,-5)--(0,-3.9) node[left]{$\vec F_T$};
           \draw[rotate around={-45:(0,-5)}] (0,-5)--(0,-6.5)
           node[below]{$\vec F_g$};
@@ -912,16 +928,16 @@
       \end{scope}
       \draw[dashed] (0,0)--(0,-5);
       \draw[dashed] (3.54,-3.54) arc (315:225:5);
-      \draw[axes] (0,-2) arc (270:315:2) node[midway,below]{$\theta$};
+      \draw[axes] (0,-2) arc (270:315:2) node[midway,below]{$\theta_\text{max}$};
     \end{tikzpicture}
 
     \column{.5\textwidth}
-    In the tangential direction $\hat\theta$, there is still a net force of
-    $mg\sin\theta$, therefore, there is a tangential acceleration with a
-    magnitude:
+    Along the angular direction $\hat\theta$, there is still a net force of
+    $mg\sin\theta_\text{max}$, therefore, there is a tangential acceleration
+    with magnitude:
 
     \eq{-.15in}{
-      a_t=g\sin\theta
+      a_t=g\sin\theta_\text{max}
     }
 
     %This is the same acceleration as an object sliding down a
@@ -951,7 +967,7 @@
     \item Centripetal acceleration is at maximum value:
 
       \eq{-.13in}{
-        a_c=\frac{v^2}r
+        a_c=\frac{v^2}\ell
       }
     \item There is no tangential acceleration because there are no tangential
       forces:
@@ -962,7 +978,7 @@
     \item At the lowest point, tension is the highest:
 
       \eq{-.1in}{
-        F_T=F_g+F_c=m\left(g+\frac{v^2}r\right)
+        F_T=F_g+F_c=m\left(g+\frac{v^2}\ell\right)
       }
     \end{itemize}
   \end{columns}

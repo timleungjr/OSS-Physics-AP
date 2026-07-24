@@ -1,0 +1,367 @@
+\documentclass[12pt,twoside]{article}
+\usepackage[top=1.5in,bottom=1.3in,left=.7in,right=.7in,letterpaper]{geometry}
+\usepackage{amsmath}
+
+\usepackage{fancyhdr}
+\usepackage{enumitem}
+\usepackage{multicol}
+%\usepackage{fontspec}
+\usepackage{mathspec}
+\usepackage{siunitx}
+
+\fancyhead{} % clear all header fields
+\fancyfoot{} % clear all footer fields
+\fancyfoot[LE,RO]{\sffamily\large\textbf{Page \thepage}}
+
+\usepackage{tikz}
+\usepackage{tikzpagenodes}
+
+\usetikzlibrary{calc}
+
+\tikzset{
+  >=latex
+}
+\tikzstyle{vectors}=[very thick,->]
+\tikzstyle{axes}=[thick,->]
+
+\newcommand{\addframe}[2]{
+  \begin{tikzpicture}[remember picture, overlay]
+
+    \fill[gray!25]
+    ($(current page text area.north west) +(-5mm,.7in)$)
+    rectangle
+    ($(current page text area.north east) +(+5mm,.2in)$);
+    
+    \fill
+    ($(current page text area.north west) +(2.33in,.7in)$)
+    rectangle
+    ($(current page text area.north west) +(4.67in,.2in)$)
+    node[midway,white]{\sffamily\large\textbf{Question #1}};
+    
+    \draw[line width=1.8pt]
+    ($(current page text area.north west) +(-5mm,.7in)$)
+    rectangle
+    ($(current page text area.south east) +(5mm,-.5in)$)
+    node[above=4.75in,midway,black!70]{\sffamily\footnotesize Use a pencil or a
+      pen with black or dark blue ink. Do NOT write your name. Do NOT write
+      outside the box.}
+    node[below=4.75in,midway,black!70]{\sffamily\textbf{#2}};
+  \end{tikzpicture}
+}
+
+%\def\hrulefill{\leavevmode\leaders\hrule height 1.2pt\hfill\kern\z}
+
+\setlength{\parindent}{0pt}
+\renewcommand{\arraystretch}{1.7}
+
+\newcommand{\pic}[2]{\includegraphics[width=#1\textwidth]{#2}}
+
+
+
+\begin{document}
+\pagestyle{plain}
+
+\setmainfont{Charter}
+
+\vspace{-.5in}
+This is a very close approximation what the answering booklet will look like in
+an actual AP Physics C Mehanics exam, except that it will have a lot more
+details for their computer system to read your work. Some of the fonts are also
+purposely slightly different from the standard font that the exam uses. Please
+print a copy before class, and follow your teacher's instructions
+during the practice test.
+
+%\vspace{.2in}
+%\begin{tikzpicture}
+%  \draw[ultra thick,fill=black] rectangle (1,1);
+%  \draw[ultra thick] (1,0) rectangle +(1.2,1) node[midway]{\Large\textbf{AP}};
+%\end{tikzpicture}
+
+\setmainfont{Roboto Slab}
+
+\vspace{.8in}{\Huge
+  \textbf{AP Physics C: Mechanics}
+  \par
+}
+
+{\tikz\fill rectangle (9,.2);}
+
+{\fontsize{40}{46}\selectfont Answering Booklet\par}
+
+\vspace{.5in}{\fontspec{Arial Black}\Large SECTION II: FREE-RESPONSE}
+
+\setmainfont{Arial}
+\setsansfont{Arial}
+
+\vspace{.1in}
+\fcolorbox{pink!70}{pink!70}{
+  \begin{minipage}{\textwidth}
+    \begin{multicols}{2}
+      {\fontspec{Arial Black}ENTER YOUR IDENTIFICATION\\INFORMATION}
+
+      \begin{enumerate}
+      \item First two letters of your last name
+        {\tikz[xscale=.7,yscale=.8]\draw[thick] grid (2,1);}
+        
+        First letter of your first name\hspace{.32in}
+        {\tikz[xscale=.7,yscale=.8]\draw[thick] rectangle (1,1);}
+        
+      \item  Date of Birth
+        {\tikz[xscale=.7,yscale=.8]
+          \draw[thick] grid (2,1) node[pos=0,below]{\hspace{.7in}Month};
+        }
+        {\tikz[xscale=.7,yscale=.8]
+          \draw[thick] grid (2,1) node[pos=0,below]{\hspace{.7in}Day};
+        }
+
+      \item Six-digit school code\\
+        {\tikz[xscale=.7,yscale=.8]\draw[thick] grid (5,1);}
+      \end{enumerate}
+      \columnbreak
+      
+      \textbf{Time:} 1 hour\hfill
+      \textbf{Questions:} 4\hspace{.2in}
+      \begin{itemize}[itemsep=.5pt,leftmargin=10pt]
+      \item In the real AP exam, free-response questions and the section timer
+        will be in Bluebook.
+      \item Write answers in this booklet.
+      \item Use a pencil or pen with black or dark blue ink.
+      \item Do not write outside the box. Erased or crossed-out work will not be
+        scored.
+      \item In the real AP exam, reference information will be in Bluebook.
+      \end{itemize}
+    \end{multicols}
+  \end{minipage}
+}
+
+\vspace{.3in}
+\begin{tikzpicture}[scale=.8]
+  \draw[ultra thick,red!60,fill=pink!30,rounded corners] rectangle (8,2)
+  node[midway]{\sffamily\small\textbf{Affix AP ID Label Here}};
+\end{tikzpicture}
+\hfill
+\begin{minipage}{.2\textwidth}
+  \centering
+  \vspace{-.5in}
+  \pic1{../../Electricity-Magnetism/Class08-practiceTest1/fake-barcode}\\
+       {\small SOME BARCODE}
+\end{minipage}
+\clearpage
+
+
+\setmainfont{Charter}
+%\setmathrm{Charter}
+
+\pagestyle{fancy}
+
+
+\begin{tikzpicture}[remember picture, overlay]
+  \draw[line width=1.8pt,fill=gray!20]
+  ($(current page text area.north west) +(-5mm,.7in)$)
+  rectangle
+  ($(current page text area.south east) +(5mm,-.5in)$)
+  node[midway,text width=4.4in]{\sffamily
+
+    \begin{center}
+      \parbox[c]{4in}{
+        \centering
+        \pic{.25}{../Class16-Test2/laptop}
+        \hspace{.1in}{\Huge $\leftrightarrow$}\hspace{.1in}
+        \pic{.22}{../Class16-Test2/openbook}
+      
+        \vspace{.2in}{\Huge\textbf{Question 1}}\
+      }
+    \end{center}
+
+    \vspace{.7in}{
+      \Large In the \emph{real} AP Physics C exam, some of the questions will
+      have four version; you will be only answering one version.\par
+    }
+
+    \vspace{.5in}{
+      \Large Bluebook will indicate which version to answer (J, K, L, or M) and
+      the page number in the booklet.\par
+    }
+    \vspace{.5in}{
+      \Large Make sure you respond in the correct space in the booklet.\par
+    }
+  }
+  node[midway,below=4.75in,color=black!70]{
+    \sffamily\textbf{Continue to Question 1.}};
+\end{tikzpicture}
+
+
+
+\clearpage
+\addframe{1}{Question 1 is continued on the next page.}
+
+{\sffamily\textbf{PART A}}
+\vspace{\stretch1}
+
+\hrulefill
+
+{\sffamily\textbf{PART B}}
+\vspace{\stretch1}
+
+
+
+
+\clearpage
+\addframe{1}{Question 1 is continued on the next page.}
+
+{\sffamily\textbf{PART C}}
+\begin{center}
+  \begin{tikzpicture}
+    \draw[axes] (0,0)--(10,0) node[right]{$t$};
+    \draw[axes] (0,0)--(0,5.5) node[above]{$K$};
+    \foreach \x in {1,2,3}{
+      \draw[dashed] (\x*2.5,0)--+(0,5) node[pos=0,below]{$t_\x$};
+    }
+  \end{tikzpicture}
+\end{center}
+
+\hrulefill
+
+{\sffamily\textbf{PART D}}
+\vspace{\stretch1}
+
+
+
+\clearpage
+\addframe{1}{Go to Question 2 when you're done with this question.}
+
+{\sffamily\textbf{PART E}}
+
+\vspace{.2in}
+\underline{\hspace{.5in}} $f_\ell > f_{2\ell}$\hspace{.5in}
+\underline{\hspace{.5in}} $f_\ell < f_{2\ell}$\hspace{.5in}
+\underline{\hspace{.5in}} $f_\ell = f_{2\ell}$
+
+\vspace{\stretch1}
+
+
+
+\clearpage
+
+\addframe{2}{Question 2 is continued on the next page.}
+
+{\sffamily\textbf{PART A}}
+\begin{center}
+  \vspace{1in}{\tikz\draw[very thick,fill=lightgray] circle (.13);}
+  \vspace{1in}
+\end{center}
+
+\hrulefill
+
+{\sffamily\textbf{PART B}}
+
+\vspace{.15in}
+\underline{\hspace{.3in}} Increases\hspace{.4in}
+\underline{\hspace{.3in}} Decreases\hspace{.4in}
+\underline{\hspace{.3in}} Remains the same
+\vspace{\stretch1}
+
+\hrulefill
+
+{\sffamily\textbf{PART C}}
+\vspace{\stretch1}
+
+\clearpage
+\addframe{2}{Go to Question 3 when you're done with this question.}
+
+{\sffamily\textbf{PART D}}
+\vspace{\stretch1}
+
+\hrulefill
+
+{\sffamily\textbf{PART E}}
+\vspace{\stretch1}
+
+
+\clearpage
+\addframe{3}{Question 3 is continued on the next page.}
+
+{\sffamily\textbf{PART A}}
+\vspace{\stretch1}
+
+\hrulefill
+
+{\sffamily\textbf{PART B}}
+
+\begin{center}
+  \begin{tabular}{|c|c|p{1in}|}
+    \hline
+    $x$ [m] & $F$ [N] & \\ \hline
+    0.05 & 4 & \\ \hline
+    0.10 & 17 & \\ \hline
+    0.15 & 38 & \\ \hline
+    0.20 & 68 & \\ \hline
+    0.25 & 106 & \\ \hline
+  \end{tabular}
+\end{center}
+
+\hrulefill
+
+{\sffamily\textbf{PART C}}
+
+\begin{center}
+  \begin{tikzpicture}[scale=.85]
+    \draw[axes] (0,0)--(14.5,0);
+    \draw[axes] (0,0)--(0,11);
+    \draw[dashed,gray] grid (13.8,10.8);
+  \end{tikzpicture}
+\end{center}
+
+\clearpage
+\addframe{3}{Go on to the next page.}
+
+{\sffamily\textbf{PART D}}
+\vspace{\stretch1}
+
+\hrulefill
+
+{\sffamily\textbf{PART E}}
+\vspace{\stretch1}
+
+\hrulefill
+
+{\sffamily\textbf{PART F}}
+\vspace{\stretch1}
+
+
+\clearpage
+\fancyfoot{} % clear all footer fields
+\begin{tikzpicture}[remember picture, overlay]
+  \draw[line width=1.8pt,fill=gray!20]
+  ($(current page text area.north west) +(-5mm,.7in)$)
+  rectangle
+  ($(current page text area.south east) +(5mm,-.5in)$)
+  node[midway,text width=4.3in]{\sffamily
+
+    \begin{center}
+      \pic{.25}{../Class16-Test2/laptop}
+
+      \vspace{.2in}{\Huge\textbf{AFTER THE EXAM}}
+    \end{center}
+
+    \vspace{.7in}{
+      \Large\textbf{Do not close your device.}\par
+    }
+
+    \vspace{.5in}{
+      \Large\textbf{Stop writing.} Place your free-response
+      booklet face down on the desk.\par
+    }
+
+    \vspace{.5in}{
+      \Large\textbf{Remain Seated.} Wait for your proctor to
+      collect your exam materials.\par
+    }
+
+    \vspace{.5in}{
+      \Large\textbf{Remain quiet.} Other students may still be testing.
+    }
+  };
+\end{tikzpicture}
+
+\end{document}
