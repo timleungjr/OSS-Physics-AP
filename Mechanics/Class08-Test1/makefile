@@ -3,8 +3,11 @@ all:
 	pdflatex PhysAPC-Mech-C08-Test1-MCQ
 	pdflatex PhysAPC-Mech-C08-Test1-FRQ
 	pdflatex PhysAPC-Mech-C08-Test1-FRQ
+	pdflatex PhysAPC-Mech-C08-Test1-notice
+	pdflatex PhysAPC-Mech-C08-Test1-notice
 	xelatex PhysAPC-Mech-C08-Test1-booklet
 	xelatex PhysAPC-Mech-C08-Test1-booklet
+
 
 clean:
 	rm -rf *~ *.*~ *.log *.nav *.aux *.out *.snm *.toc
@@ -12,3 +15,4 @@ clean:
 public:
 	mkdir -p $(DESTINATION)/Class08
 	cp PhysAPC-Mech-C08-Test1-booklet.pdf $(DESTINATION)/Class08
+	cp PhysAPC-Mech-C08-Test1-notice.pdf $(DESTINATION)/Class08

@@ -16,6 +16,7 @@ all:
 	cd Class05-momentumImpulse ; make
 	cd Class06-CM		; make
 	cd Class07-circMotion	; make
+	cd Class08-Test1	; make
 	cd Class09-rotMotion-part1	; make
 	cd Class10-rotMotion-part2	; make
 	cd Class11-rotMotion-part3	; make
@@ -35,6 +36,7 @@ clean:
 	cd Class05-momentumImpulse ; make clean
 	cd Class06-CM		; make clean
 	cd Class07-circMotion	; make clean
+	cd Class08-Test1	; make clean
 	cd Class09-rotMotion-part1	; make clean
 	cd Class10-rotMotion-part2	; make clean
 	cd Class11-rotMotion-part3	; make clean
@@ -54,6 +56,7 @@ public:
 	cd Class05-momentumImpulse ; make public
 	cd Class06-CM		; make public
 	cd Class07-circMotion	; make public
+	cd Class08-Test1	; make public
 	cd Class09-rotMotion-part1	; make public
 	cd Class10-rotMotion-part2	; make public
 	cd Class11-rotMotion-part3	; make public
