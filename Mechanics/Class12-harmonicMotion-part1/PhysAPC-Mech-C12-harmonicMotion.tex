@@ -226,7 +226,7 @@
   %  }
   %  
   %  Starting with the general form and
-  We can take the time derivatives $x(t)$ to obtain the velocity and
+  We can take the time derivatives of $x(t)$ to obtain the velocity and
   acceleration of the mass as functions of time:
  
   \vspace{-.2in}{\large
@@ -280,9 +280,9 @@
 
 
 \begin{frame}{Periodic vs.\ Simple harmonic}
-  A simple harmonic motion is periodic, but not all periodic motions are
-  simple harmonic motions. To ``qualify'' a periodic motion as simple harmonic,
-  we require a restoring force in the form of Hooke's law.
+  A simple harmonic motion is strictly periodic, but not all periodic motions
+  are simple harmonic motions. To ``qualify'' a periodic motion as simple
+  harmonic, we require a restoring force in the form of Hooke's law.
 \end{frame}
 
 
@@ -310,8 +310,8 @@
     \column{.65\textwidth}
     \begin{itemize}
     \item An object moving in uniform circular motion with radius $R$
-      and angular frequency $\omega$. The angular position $\theta(t)$ of the
-      object is:
+      and constant angular frequency $\omega_0$. The angular position
+      $\theta(t)$ of the object is:
 
       \eq{-.15in}{
         \theta(t)=\omega t+\theta_0
@@ -321,8 +321,8 @@
 
       \vspace{-.33in}{\large
         \begin{align*}
-          x(t) &= R\cos(\omega t+\theta_0)\\
-          y(t) &= R\sin(\omega t+\theta_0)
+          x(t) &= R\cos(\omega_0 t+\theta_0)\\
+          y(t) &= R\sin(\omega_0 t+\theta_0)
         \end{align*}
       }
 
@@ -344,9 +344,9 @@
   \begin{columns}
     \column{.4\textwidth}
     \begin{align*}
-      x(t)&=A\cos(\omega_0 t+\theta_0)\\
-      v(t)&=-A\omega_0\sin(\omega_0 t+\theta_0)\\
-      a(t)&=-A\omega_0^2\cos(\omega_0 t+\theta_0)=-\omega_0^2x
+      x(t)&=A\cos(\omega_0t)\\
+      v(t)&=-A\omega_0\sin(\omega_0t)\\
+      a(t)&=-A\omega_0^2\cos(\omega_0t)=-\omega_0^2x
     \end{align*}
 
     \column{.6\textwidth}
@@ -571,11 +571,13 @@
       B=\frac{mg}k
     }
 
-    Angular frequency (natural frequency) remains the same as the horizontal
-    case:
+    Angular frequency (natural frequency) $\omega_0$, frequency $f_0$ and
+    period $T_0$ remains the same as the horizontal case:
 
     \eq{-.1in}{
-      \omega_0=\sqrt{\frac km}
+      \boxed{\omega_0=\sqrt{\frac km}}\quad
+      \boxed{f_0=\frac1{2\pi}\sqrt{\frac km}}\quad
+      \boxed{T_0=2\pi\sqrt{\frac mk}}
     }
   \end{columns}
 \end{frame}
@@ -650,7 +652,7 @@
     \item In a \textbf{simple pendulum}, all of the mass is concentrated at the
       end point 
     \item Two forces act on the mass: weight $\vec F_g$ and tension $\vec F_T$
-    \item It has been shown in Class 6 (circular motion) that when the mass is
+    \item It has been shown in Class \#7 (circular motion) that when the mass is
       deflected by an angle $\theta$, the tangential force is
       $F_\text{tangent}=-mg\sin\theta$
     \item No need to worry about the radial direction; it does not contribute
@@ -910,7 +912,7 @@
       \vspace{-.3in}{\large
         \begin{align*}
           x(t) &=\ell\sin\left(\theta(t)\right)\approx\ell\theta(t)\\
-          &=\ell\theta_\text{max}\cos(\omega_0 t)
+          &\approx\ell\theta_\text{max}\cos(\omega_0 t)
         \end{align*}
       }
 
@@ -1189,7 +1191,7 @@
   which corresponds to the \textbf{critical damping constant} $b_c$:
 
   \eq{-.1in}{
-    b_c=2m\omega_0=2\sqrt{km}
+    b_c=2m\omega_0=\sqrt{4mk}
   }
 
   Critical or near-critical damping is desired in many engineering designs
